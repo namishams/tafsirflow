@@ -3,6 +3,7 @@ import { mergePoints, type Points } from "./points";
 import { mergeListen, type Listen } from "./listen";
 import type { Srs } from "./learning";
 import { learnMerge, learnSnapshot } from "./learn/sync";
+import { syncParts } from "./learn/syncExtra";
 
 type Last = { chapter: number; verse: number; at?: number };
 type Days = Record<string, number>;
@@ -16,6 +17,17 @@ export async function fetchMe(): Promise<{ user: Me | null; available: boolean; 
   } catch {
     return { user: null, available: false, secure: true };
   }
+}
+
+// "could anybody be signed in?" – one /api/auth/me per page (asked again after a sign-in, "tf-auth"). Member-only calls
+// (Quran Talents, moments, the sharer's name) skip the request for signed-out visitors instead of collecting a 401 that
+// the browser logs as a console error. Unknown (offline, no answer) counts as yes, so the call still runs as before.
+let session: Promise<boolean> | null = null;
+export function maybeSignedIn(): Promise<boolean> {
+  if (!session && typeof window !== "undefined") window.addEventListener("tf-auth", () => { session = null; }, { once: true });
+  return (session ??= fetch("/api/auth/me", { cache: "no-store" })
+    .then(async (r) => (r.ok ? !!((await r.json()) as { user?: unknown }).user : true))
+    .catch(() => true));
 }
 
 const bestScores = (a: unknown, b: unknown) => {
@@ -75,11 +87,25 @@ const snapshot = (): Record<string, unknown> => ({
 
 let timer: ReturnType<typeof setTimeout> | null = null;
 
-async function push() {
-  await fetch("/api/sync", { method: "PUT", headers: { "content-type": "application/json" }, body: JSON.stringify(snapshot()) }).catch(() => undefined);
-  // the courses ported from the app (src/lib/learn/sync.ts) go in their own request, with the app's keys
-  const learn = learnSnapshot();
-  if (Object.keys(learn).length) await fetch("/api/sync", { method: "PUT", headers: { "content-type": "application/json" }, body: JSON.stringify(learn) }).catch(() => undefined);
+let retry: ReturnType<typeof setTimeout> | null = null;
+let retries = 0;
+// The older keys and the courses ported from the app (src/lib/learn/sync.ts) go out in parts below 300 KB, the same
+// split as the app (syncParts in src/lib/learn/syncExtra.ts): the server refuses a body above 400 KB (413) and stores
+// each key on its own (upsert per key), so splitting changes nothing about what is stored or how it is merged. A key
+// above 390 KB is not sent ("tf:srs" is cut to the most recently reviewed verses first). A part that fails does not stop
+// the others; the failure is logged and the push tried again (30 s, 2 min, 10 min).
+async function push(): Promise<boolean> {
+  const parts = syncParts({ ...snapshot(), ...learnSnapshot() });
+  let failed = 0;
+  for (const p of parts) {
+    const ok = await fetch("/api/sync", { method: "PUT", headers: { "content-type": "application/json" }, body: JSON.stringify(p.body) }).then((r) => r.ok, () => false);
+    if (!ok) failed++;
+  }
+  if (retry) { clearTimeout(retry); retry = null; }
+  if (!failed) { retries = 0; return true; }
+  console.warn(`sync: ${failed} of ${parts.length} parts not saved`);
+  if (retries < 3) retry = setTimeout(() => { retry = null; void push(); }, [30_000, 120_000, 600_000][retries++]);
+  return false;
 }
 
 // Call after sign-in or page load: merges the account's data into this browser and starts auto-upload

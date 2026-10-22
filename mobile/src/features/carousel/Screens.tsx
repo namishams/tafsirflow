@@ -1,5 +1,6 @@
-import { useCallback, useEffect, useState } from "react";
-import { ActivityIndicator, FlatList, Pressable, ScrollView, Text, View, useWindowDimensions } from "react-native";
+import { useCallback, useEffect, useMemo, useState } from "react";
+import { ActivityIndicator, Pressable, ScrollView, Text, View, useWindowDimensions } from "react-native";
+import { FlashList } from "@shopify/flash-list";
 import { router, type Href } from "expo-router";
 import { PageHero, goBack } from "@/components/page";
 import { useLang } from "@/i18n";
@@ -9,6 +10,7 @@ import { CarouselPost, CarouselTile } from "./Posts";
 import { registerCarousel } from "./registry";
 import { useCarouselTexts } from "./scripture";
 import { fill, useCarouselText } from "./text";
+import { AskTutor } from "@/features/tutor/AskTutor";
 import type { CarouselPayload } from "./types";
 
 // /carousels and /carousels/<id> in the app (the website's /[locale]/carousels pages): the gallery with the series as
@@ -46,33 +48,48 @@ export function CarouselGalleryScreen({ series: initial }: { series?: string }) 
       </Pressable>
     );
   };
+  // FlashList recycles the rows while scrolling through hundreds of covers. It has no columnWrapperStyle or gap, so the
+  // rows are built here with the same styles FlatList used (row: gap 8, 12 at the sides; 8 between header, rows, footer)
+  const rows = useMemo(() => {
+    const out: string[][] = [];
+    for (let i = 0; i < list.length; i += cols) out.push(list.slice(i, i + cols));
+    return out;
+  }, [list, cols]);
+  const open = useCallback((item: string) => router.push(`/carousels/${item.slice(3)}` as Href), []);
+  const footer = busy ? <ActivityIndicator style={{ marginTop: 20 }} color={t.accent} /> : err ? (
+    <Text onPress={() => void load(list.length)} accessibilityRole="button" style={{ fontFamily: FONT.semibold, fontSize: 14, color: t.accent, textAlign: "center", marginTop: 20 }}>{tx.offline}</Text>
+  ) : undefined;
   return (
-    <FlatList
-      style={{ flex: 1, backgroundColor: t.bg }}
-      data={list}
-      key={cols}
-      numColumns={cols}
-      keyExtractor={(id) => id}
-      columnWrapperStyle={{ gap: 8, paddingHorizontal: 12 }}
-      contentContainerStyle={{ gap: 8, paddingBottom: 120 }}
-      ListHeaderComponent={(
-        <View>
-          <PageHero back eyebrow={tx.carousel} title={tx.carousels} topInset />
-          <ScrollView horizontal showsHorizontalScrollIndicator={false} accessibilityRole="tablist" contentContainerStyle={{ gap: 8, paddingHorizontal: 12, paddingVertical: 14 }}>
-            {chip(undefined, tx.all)}
-            {all.map((s) => chip(s.id, s.label, s.count))}
-          </ScrollView>
-        </View>
-      )}
-      renderItem={({ item }) => <CarouselTile id={item} size={size} onPress={() => router.push(`/carousels/${item.slice(3)}` as Href)} />}
-      onEndReached={() => { if (!busy && list.length < total) void load(list.length); }}
-      onEndReachedThreshold={1.5}
-      ListFooterComponent={busy ? <ActivityIndicator style={{ marginTop: 20 }} color={t.accent} /> : err ? (
-        <Text onPress={() => void load(list.length)} accessibilityRole="button" style={{ fontFamily: FONT.semibold, fontSize: 14, color: t.accent, textAlign: "center", marginTop: 20 }}>{tx.offline}</Text>
-      ) : undefined}
-    />
+    <View style={{ flex: 1, backgroundColor: t.bg }}>
+      <FlashList
+        data={rows}
+        key={cols}
+        keyExtractor={(row) => row[0]}
+        contentContainerStyle={{ paddingBottom: 120 }}
+        ItemSeparatorComponent={RowGap}
+        ListHeaderComponent={(
+          <View style={{ paddingBottom: 8 }}>
+            <PageHero back eyebrow={tx.carousel} title={tx.carousels} topInset />
+            <ScrollView horizontal showsHorizontalScrollIndicator={false} accessibilityRole="tablist" contentContainerStyle={{ gap: 8, paddingHorizontal: 12, paddingVertical: 14 }}>
+              {chip(undefined, tx.all)}
+              {all.map((s) => chip(s.id, s.label, s.count))}
+            </ScrollView>
+          </View>
+        )}
+        renderItem={({ item: row }) => (
+          <View style={{ flexDirection: "row", gap: 8, paddingHorizontal: 12 }}>
+            {row.map((id) => <CarouselTile key={id} id={id} size={size} onPress={() => open(id)} />)}
+          </View>
+        )}
+        onEndReached={() => { if (!busy && list.length < total) void load(list.length); }}
+        onEndReachedThreshold={1.5}
+        ListFooterComponent={footer ? <View style={{ paddingTop: 8 }}>{footer}</View> : undefined}
+      />
+    </View>
   );
 }
+
+const RowGap = () => <View style={{ height: 8 }} />;
 
 export function CarouselDetailScreen({ id }: { id: string }) {
   const tx = useCarouselText();
@@ -96,6 +113,7 @@ export function CarouselDetailScreen({ id }: { id: string }) {
         <View style={{ marginTop: 12 }}>
           <CarouselPost id={`cr:${c.id}`} width={w} />
           <View style={{ paddingHorizontal: 16, gap: 14, marginTop: 8, maxWidth: 640, alignSelf: "center", width: "100%" }}>
+            <AskTutor context={{ kind: "carousel", id: c.id, title: c.cover.title }} />
             {c.slides.map((s) => (
               <View key={s.n} style={{ gap: 4 }}>
                 <Text style={{ fontFamily: FONT.semibold, fontSize: 12, color: t.muted }}>{fill(tx.slideOf, { n: s.n + 1, total: c.slides.length + 2 })}</Text>

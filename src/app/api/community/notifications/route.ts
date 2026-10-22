@@ -15,7 +15,7 @@ export async function GET(req: NextRequest) {
   if (g.res) return g.res;
   const p = pool()!;
   const r = await p.query(
-    `SELECT n.id, n.kind, n.post_id, n.created_at, n.read_at, n.moment_id, n.reaction, mo.kind AS m_kind, mo.ref AS m_ref, mo.data AS m_data, c.username, c.display_name, c.verified, c.badge, c.official, c.shares_total, po.verse_key
+    `SELECT n.id, n.kind, n.post_id, n.created_at, n.read_at, n.moment_id, n.reaction, mo.kind AS m_kind, mo.ref AS m_ref, mo.data AS m_data, c.username, c.display_name, c.verified, c.badge, c.official, c.founder, c.shares_total, po.verse_key
        FROM community_notifications n
        LEFT JOIN community_profiles c ON c.user_id = n.actor_id
        LEFT JOIN community_posts po ON po.id = n.post_id

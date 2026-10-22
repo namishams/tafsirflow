@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Image, Linking, Pressable, ScrollView, Text, View } from "react-native";
+import { Linking, Pressable, ScrollView, Text, View } from "react-native";
 import { Stack } from "expo-router";
 import { Page, PageHero } from "@/components/page";
 import { Eyebrow, GoldButton, GoldCard, TextLink } from "@/components/brand";
@@ -18,6 +18,7 @@ import { CourseList } from "@/features/abrahamic/courseKit";
 import { unitText } from "@/features/abrahamic/courseText";
 import { HARAMAIN_COURSE } from "./lessons";
 import { GUIDE_LABEL } from "./HajjGuide";
+import { RemoteImage } from "@/components/RemoteImage";
 
 // /haramain – the Kaaba, Mecca and Medina. The first section is free, the rest needs Pro ("haramain").
 export function HaramainScreen() {
@@ -150,7 +151,7 @@ function ItemCard({ item }: { item: ExtraItem }) {
   const t = useTheme();
   return (
     <View style={{ width: 260, borderRadius: 12, borderWidth: 1, borderColor: t.line, overflow: "hidden", backgroundColor: t.bg }}>
-      {item.image ? <Image source={{ uri: item.image }} style={{ width: "100%", aspectRatio: 4 / 3 }} resizeMode="cover" accessibilityIgnoresInvertColors /> : null}
+      {item.image ? <RemoteImage uri={item.image} style={{ width: "100%", aspectRatio: 4 / 3 }} /> : null}
       <View style={{ padding: 12, gap: 6 }}>
         <Text style={{ fontFamily: FONT.semibold, fontSize: 15.5, color: t.ink }}>{item.title}</Text>
         <Text style={{ fontFamily: FONT.regular, fontSize: 13.5, lineHeight: 20, color: t.ink }} numberOfLines={7}>{item.body}</Text>

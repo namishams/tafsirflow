@@ -1,7 +1,7 @@
 import { DoneShare } from "@/features/share/SharePrompt";
 import { useMemo, useState, type ReactNode } from "react";
 import { Pressable, Text, View } from "react-native";
-import { DAY, eventsFor, HIJRI_MONTHS, addMonths, calText, daysBetween, fmtGregorian, fmtHijri, fromHijri, hijriMonthName, monthGrid, monthLength, nextOccurrence, toHijri, todayUtc } from "@/web/hijri";
+import { DAY, eventSources, eventsFor, isMourning, HIJRI_MONTHS, addMonths, calText, daysBetween, fmtGregorian, fmtHijri, fromHijri, hijriMonthName, monthGrid, monthLength, nextOccurrence, toHijri, todayUtc } from "@/web/hijri";
 import { intlLocale, useLang } from "@/i18n";
 import { CALLIG_FONT, FONT, R, stage, useTheme, AR_RIGHT } from "@/lib/theme";
 import { Stage } from "@/components/brand";
@@ -130,9 +130,9 @@ function MonthView({ today, view, setView, locale, t, ev }: { today: number; vie
                   <View key={c.t} accessible accessibilityLabel={label} accessibilityState={{ selected: isToday }}
                     style={{ flex: 1, minHeight: 52, borderRadius: R.md, borderWidth: isToday ? 1.5 : 1, alignItems: "center", justifyContent: "center", paddingVertical: 4,
                       borderColor: isToday ? "rgb(201,166,94)" : "transparent", backgroundColor: isToday ? "rgba(201,166,94,0.15)" : white ? th.accentSoft : th.bg }}>
-                    <Text style={{ fontFamily: FONT.display, fontSize: 16, lineHeight: 18, color: e ? th.gold : th.ink }}>{c.h}</Text>
+                    <Text style={{ fontFamily: FONT.display, fontSize: 16, lineHeight: 18, color: e && !isMourning(e.id) ? th.gold : th.ink }}>{c.h}</Text>
                     <Text numberOfLines={1} style={{ fontFamily: FONT.regular, fontSize: 10, lineHeight: 12, color: th.muted, marginTop: 4 }}>{gDay === 1 || c.h === 1 ? fmtGregorian(c.t, locale, { day: "numeric", month: "short" }) : gDay}</Text>
-                    {e ? <View style={{ position: "absolute", right: 5, top: 5, width: 6, height: 6, transform: [{ rotate: "45deg" }], backgroundColor: "rgb(201,166,94)" }} /> : null}
+                    {e ? <View style={{ position: "absolute", right: 5, top: 5, width: 6, height: 6, transform: [{ rotate: "45deg" }], backgroundColor: isMourning(e.id) ? th.muted : "rgb(201,166,94)" }} /> : null}
                   </View>
                 );
               })}
@@ -155,8 +155,9 @@ function MonthView({ today, view, setView, locale, t, ev }: { today: number; vie
               const gt = fromHijri(view.y, view.m, e.d);
               return (
                 <View key={e.id} style={{ flexDirection: "row", flexWrap: "wrap", alignItems: "baseline", columnGap: 12, rowGap: 4, borderRadius: R.md, borderWidth: 1, borderColor: th.line, backgroundColor: th.surface, paddingHorizontal: 16, paddingVertical: 12 }}>
-                  <Text style={{ fontFamily: FONT.bold, fontSize: 14.5, color: th.gold }}>{e.d} {hijriMonthName(view.m, locale)}</Text>
+                  <Text style={{ fontFamily: FONT.bold, fontSize: 14.5, color: isMourning(e.id) ? th.muted : th.gold }}>{e.d} {hijriMonthName(view.m, locale)}</Text>
                   <Text style={{ fontFamily: FONT.semibold, fontSize: 14.5, color: th.ink }}>{ev(e.id).name}</Text>
+                  {isMourning(e.id) ? <Text style={{ fontFamily: FONT.regular, fontSize: 13, color: th.muted }}>{t("mourning")}</Text> : null}
                   {gt !== null ? <Text style={{ fontFamily: FONT.regular, fontSize: 14.5, color: th.muted }}>{fmtGregorian(gt, locale, { weekday: "short", day: "numeric", month: "long", year: "numeric" })}</Text> : null}
                 </View>
               );
@@ -184,13 +185,15 @@ function Upcoming({ today, locale, t, ev }: { today: number; locale: string; t: 
         {list.map(({ e, o }) => {
           const n = daysBetween(today, o!.t);
           const x = ev(e.id);
+          const sad = isMourning(e.id);
+          const src = eventSources(e.id);
           return (
             <View key={e.id} style={{ borderRadius: R.card, borderWidth: 1, borderColor: th.line, backgroundColor: th.surface, padding: 20, overflow: "hidden" }}>
-              <Niche color="rgba(201,166,94,0.2)" />
+              {!sad ? <Niche color="rgba(201,166,94,0.2)" /> : null}
               <View style={{ flexDirection: "row", flexWrap: "wrap", alignItems: "flex-start", justifyContent: "space-between", gap: 8 }}>
                 <Text accessibilityRole="header" style={{ flexShrink: 1, fontFamily: FONT.display, fontSize: 20, lineHeight: 26, color: th.ink }}>{x.name}</Text>
-                <View style={{ borderRadius: R.pill, backgroundColor: "rgba(201,166,94,0.15)", paddingHorizontal: 12, paddingVertical: 4 }}>
-                  <Text style={{ fontFamily: FONT.bold, fontSize: 13, color: th.gold }}>{n === 0 ? t("todayCount") : n === 1 ? t("tomorrow") : t("inDays", { n })}</Text>
+                <View style={{ borderRadius: R.pill, backgroundColor: sad ? th.bg : "rgba(201,166,94,0.15)", borderWidth: sad ? 1 : 0, borderColor: th.line, paddingHorizontal: 12, paddingVertical: 4 }}>
+                  <Text style={{ fontFamily: FONT.bold, fontSize: 13, color: sad ? th.muted : th.gold }}>{n === 0 ? t("todayCount") : n === 1 ? t("tomorrow") : t("inDays", { n })}</Text>
                 </View>
               </View>
               <Text style={{ fontFamily: FONT.regular, fontSize: 13.5, lineHeight: 20, color: th.muted, marginTop: 4 }}>
@@ -198,7 +201,9 @@ function Upcoming({ today, locale, t, ev }: { today: number; locale: string; t: 
               </Text>
               <Text style={{ fontFamily: FONT.regular, fontSize: 15, lineHeight: 24, color: th.ink, marginTop: 12 }}>{x.desc}</Text>
               {NIGHTS.has(e.id) ? <Text style={{ fontFamily: FONT.regular, fontSize: 13, color: th.muted, marginTop: 4 }}>{t("nightNote")}</Text> : null}
+              {sad ? <Text style={{ fontFamily: FONT.semibold, fontSize: 12.5, letterSpacing: 0.4, color: th.muted, marginTop: 8 }}>{t("mourning")}</Text> : null}
               {x.note ? <Text style={{ fontFamily: FONT.italic, fontSize: 13.5, lineHeight: 21, color: th.muted, marginTop: 8 }}>{x.note}</Text> : null}
+              {src.length ? <Text style={{ fontFamily: FONT.regular, fontSize: 12, lineHeight: 18, color: th.muted, marginTop: 8 }}>{t("sourcesLabel")}: {src.join(" · ")} · {t("reviewNote")}</Text> : null}
               {e.link ? <Text onPress={() => go(e.link!)} accessibilityRole="link" style={{ fontFamily: FONT.semibold, fontSize: 14, color: th.accent, paddingTop: 12, alignSelf: "flex-start" }}>{t("more")}</Text> : null}
             </View>
           );

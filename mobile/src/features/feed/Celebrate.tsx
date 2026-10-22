@@ -59,7 +59,7 @@ export function Celebrations() {
       </Animated.View>
       <Animated.View style={{ opacity: v, transform: [{ scale }] }}>
         <Pressable onPress={() => setQueue((q) => q.slice(1))} accessibilityRole="button" accessibilityLabel={text}
-          style={{ width: 268, borderRadius: R.card, overflow: "hidden", borderWidth: 1, borderColor: stage.gold, shadowColor: "#000", shadowOpacity: 0.3, shadowRadius: 24, shadowOffset: { width: 0, height: 10 } }}>
+          style={{ width: 268, borderRadius: R.card, overflow: "hidden", borderWidth: 1, borderColor: stage.gold, backgroundColor: stage.bg, shadowColor: "#000", shadowOpacity: 0.3, shadowRadius: 24, shadowOffset: { width: 0, height: 10 } }}>
           <LinearGradient colors={[stage.bg, stage.deep]} style={{ padding: 22, alignItems: "center", gap: 10 }}>
             <View pointerEvents="none" style={{ position: "absolute", left: 6, right: 6, top: 6, bottom: 6, borderRadius: R.card - 4, borderWidth: StyleSheet.hairlineWidth, borderColor: stage.goldSoft }} />
             <View>

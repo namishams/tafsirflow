@@ -11,6 +11,7 @@ import { CommunityCard } from "@/features/community/ui";
 import { TalentsCard } from "@/features/talents/ui";
 import { DiscoverRows } from "@/features/library/Discover";
 import { SectionTitle } from "@/components/brand";
+import { SistersEntryCard } from "@/features/sisters/ui";
 
 // Discover: one endless scroll in the Masterclass design. The Madrasa first (stage, next step, records), the study
 // wisdom, every faculty, course and tool with the learner's progress, the spotlights, then every remaining course,
@@ -40,6 +41,8 @@ export default function Discover() {
         {/* the Madrasa first: stage, next step, today's wird, faculties and records */}
         <MadrasaHero eyebrow="Quran Masterclass" />
         <View style={{ marginTop: 28 }}><StudyWisdom /></View>
+        {/* "Für Schwestern": only for sisters (identity), not after she declined the setup; the page itself is open to all */}
+        <View style={{ paddingHorizontal: 16, marginTop: 24 }}><SistersEntryCard /></View>
         {/* every faculty, course and tool with the learner's progress (the hero's records are not repeated) */}
         <View style={{ marginTop: 32 }}><CampusRailsView data={campus} skip={heroRecords} /></View>
         <View style={{ paddingHorizontal: 16, marginTop: 36 }}>

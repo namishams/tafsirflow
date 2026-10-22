@@ -20,6 +20,7 @@ import { PAGE_C, SIGN_LESSONS } from "./texts";
 import { goBack } from "@/components/page";
 import { QaidaCard } from "../qaida/Screens";
 import { LangCourseCard } from "../arabic-lang/Screens";
+import { Progressive } from "@/lib/progressive";
 
 // /arabic – the website's "Read the Quran" page (src/app/[locale]/(app)/arabic/page.tsx): the alphabet on a ring of
 // light, the learning path, how you learn, the signs of the script, where the sounds come from, every letter at a
@@ -40,6 +41,8 @@ export function ArabicPage() {
     <>
       <Stack.Screen options={{ headerShown: false }} />
       <ScrollView ref={scroll} style={{ flex: 1, backgroundColor: t.bg }} contentContainerStyle={{ paddingBottom: 48 }}>
+        {/* the sections below the first screen are built over the next frames (lib/progressive.tsx) */}
+        <Progressive>
         {/* hero: the alphabet on a ring of light */}
         <Hero onPath={() => scroll.current?.scrollTo({ y: pathY.current, animated: !reduce })} />
 
@@ -135,6 +138,7 @@ export function ArabicPage() {
         </Stage>
 
         <MoreTiles keys={["salah", "tajweed", "vocab", "shams"]} />
+        </Progressive>
       </ScrollView>
     </>
   );

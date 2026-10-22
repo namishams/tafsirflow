@@ -38,13 +38,21 @@ export async function buyPersonalDua(pack = false): Promise<boolean> {
   const { purchaseConsumable } = await import("./iap");
   return credited(await purchaseConsumable(pack ? DUA_PACK_PRODUCT : DUA_PRODUCT));
 }
+/** buy personal duas with the full store result: "ok" when the server has added the credits, "pending" (waiting for
+ *  approval, e.g. Ask to Buy), "unconfirmed" (paid, credited automatically later), "cancelled", "failed", "unavailable" */
+export async function buyPersonalDuaResult(pack = false): Promise<import("./iap").BuyResult> {
+  const { purchaseConsumableResult } = await import("./iap");
+  const r = await purchaseConsumableResult(pack ? DUA_PACK_PRODUCT : DUA_PRODUCT);
+  await credited(r === "ok");
+  return r;
+}
 /** a completed consumable purchase counts for the last tapped feed offer (30 minutes, see feed/monetize.tsx) */
 async function credited(ok: boolean): Promise<boolean> {
   if (ok) await import("@/features/feed/monetize").then((m) => m.creditOfferPurchase()).catch(() => undefined);
   return ok;
 }
 
-// Every price shown in the app is Apple's, in the buyer's own currency (Hamburg 4,99 €, Dubai AED 14.99). Until the
+// Every price shown in the app is Apple's, in the buyer's own currency (Hamburg 9,99 US$, Dubai AED 14.99). Until the
 // App Store has answered, or without a connection, no price is shown at all – never a fixed euro amount.
 let pricesOnce: Promise<import("./iap").StorePrices> | null = null;
 function storePrices() {

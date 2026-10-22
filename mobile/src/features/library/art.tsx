@@ -552,7 +552,10 @@ export function IslCard({ children, style, onPress, accessibilityLabel, highligh
       {children}
     </>
   );
-  const shadow: ViewStyle = { borderRadius: radius, shadowColor: isl.dark ? "#000" : "rgb(80,60,20)", shadowOpacity: isl.dark ? 0.5 : 0.16, shadowRadius: 16, shadowOffset: { width: 0, height: 12 }, flex: fill ? 1 : undefined };
+  // boxShadow (drawn outside the rounded box) instead of the iOS layer shadow: the card is translucent over the marble,
+  // and a layer shadow without a solid ground made RN warn for every card ("cannot calculate shadow efficiently", 92 on
+  // /shams). Same offset; CSS blur = 2 × the old shadowRadius.
+  const shadow: ViewStyle = { borderRadius: radius, boxShadow: `0px 12px 32px ${isl.dark ? "rgba(0,0,0,0.5)" : "rgba(80,60,20,0.16)"}`, flex: fill ? 1 : undefined };
   if (!onPress) return <View style={shadow}><View style={frame(false)}>{inner}</View></View>;
   return (
     <Pressable onPress={onPress} accessibilityRole="link" accessibilityLabel={accessibilityLabel} style={({ pressed }) => [shadow, { transform: [{ scale: pressed ? 0.985 : 1 }] }]}>

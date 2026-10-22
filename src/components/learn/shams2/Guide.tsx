@@ -16,6 +16,7 @@ import { Card, GoldButton, LearnHero, LearnMain, Stats } from "@/components/lear
 import { IconCheckCircle, IconEye, IconFlag } from "@/components/Icons";
 import { Chip, Fold, Glossary, Live, SmallBtn, SourceNote, Term, useBack, useNames } from "./ui";
 import { ContinueNext } from "./Continue";
+import { AdabPillarCard } from "./Adab";
 
 const ONBOARDED = "qmc.shams2.onboarded.v1";
 export const useOnboarded = () => !!useStored<number | null>(ONBOARDED, null);
@@ -95,6 +96,7 @@ export function HandbookScreen() {
             </Fold>
           ))}
         </section>
+        <AdabPillarCard />
         <section id="darajat" className="grid scroll-mt-20 gap-2.5">
           <h2 className="font-display text-[24px]">{s("darajatTitle")}</h2>
           <Card className="grid gap-2">

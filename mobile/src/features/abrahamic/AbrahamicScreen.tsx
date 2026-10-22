@@ -1,7 +1,7 @@
 import { ShareVerseButton } from "@/features/share/ShareKit";
 import { DoneShare } from "@/features/share/SharePrompt";
 import { useEffect, useState } from "react";
-import { Image, Linking, Pressable, Text, View } from "react-native";
+import { Linking, Pressable, Text, View } from "react-native";
 import { Stack } from "expo-router";
 import { Page, PageHero } from "@/components/page";
 import { Eyebrow, GoldButton, GoldCard, TextLink } from "@/components/brand";
@@ -16,6 +16,7 @@ import { UI, UNITS, type AbrahamicUnit } from "./content";
 import { CourseList } from "./courseKit";
 import { ABRAHAMIC_COURSE } from "./lessons";
 import { unitText } from "./courseText";
+import { RemoteImage } from "@/components/RemoteImage";
 
 // /abrahamic – "Abraham and the Abrahamic religions in the Quran". Unit 1 is free, the rest needs Pro ("abrahamic").
 export function AbrahamicScreen() {
@@ -108,7 +109,7 @@ function ItemCard({ item }: { item: ExtraItem }) {
   const t = useTheme();
   return (
     <View style={{ borderRadius: 12, borderWidth: 1, borderColor: t.line, overflow: "hidden", backgroundColor: t.bg }}>
-      {item.image ? <Image source={{ uri: item.image }} style={{ width: "100%", aspectRatio: 16 / 9 }} resizeMode="cover" accessibilityIgnoresInvertColors /> : null}
+      {item.image ? <RemoteImage uri={item.image} style={{ width: "100%", aspectRatio: 16 / 9 }} /> : null}
       <View style={{ padding: 12, gap: 6 }}>
         <Text style={{ fontFamily: FONT.semibold, fontSize: 15.5, color: t.ink }}>{item.title}</Text>
         <Text style={{ fontFamily: FONT.regular, fontSize: 13.5, lineHeight: 20, color: t.ink }} numberOfLines={8}>{item.body}</Text>

@@ -10,9 +10,11 @@ import { shamsGrow } from "@/lib/learn/garden/garden";
 import { useShams2 } from "@/lib/learn/shams2/model";
 import { noteCheck, noteWords } from "@/lib/learn/shams2/store";
 import { useS2 } from "@/lib/learn/shams2/text";
+import { useRv } from "@/lib/learn/shams2/review/text";
 import { weakSpots } from "@/lib/learn/shams2/weakSpots";
 import { Card, GoldButton, LearnHero, LearnMain, Spinner } from "@/components/learn/ui";
 import { PromptedWords, SpeechCheck, type CheckResult } from "./recite";
+import { useRec } from "@/lib/learn/shams2/rec/text";
 import { Live, SmallBtn, SourceNote, Term, useBack, useNames, useWebT } from "./ui";
 import { ContinueNext } from "./Continue";
 import { Briefing } from "./Tadabbur";
@@ -22,14 +24,16 @@ function Body({ surah }: { surah?: number }) {
   const w = useWebT();
   const { name } = useNames();
   const m = useShams2();
+  const { r } = useRec();
+  const rv = useRv();
   const spots = useMemo(() => {
-    const all = weakSpots(m.known, m.words, m.mut);
+    const all = weakSpots(m.known, m.words, m.mut, 40, m.links);
     if (!surah) return all;
     const inSurah = all.filter((x) => x.key.startsWith(`${surah}:`));
     if (inSurah.length) return inSurah;
     // nothing flagged in that surah: its weakest memorised verses
     return [...m.known.values()].filter((k) => k.key.startsWith(`${surah}:`)).sort((a, b) => a.recall - b.recall).slice(0, 10).map((k) => ({ key: k.key, words: [] as number[], reason: ["fading" as const], weight: 1 }));
-  }, [m.known, m.words, m.mut, surah]);
+  }, [m.known, m.words, m.mut, m.links, surah]);
   const [queue, setQueue] = useState<string[] | null>(null);
   const [i, setI] = useState(0);
   const [result, setResult] = useState<CheckResult | null>(null);
@@ -71,6 +75,7 @@ function Body({ surah }: { surah?: number }) {
                 <SmallBtn onClick={() => grade("good")}>{s("rate_hesitant")}</SmallBtn>
                 <SmallBtn primary onClick={() => grade("easy")}>{s("rate_fluent")}</SmallBtn>
               </div>
+              {spot?.words.length ? <SmallBtn href={`/shams/drill?s=${a}&v=${b}&w=${spot.words.slice(0, 12).join(",")}`}>{r("drillWords")}</SmallBtn> : null}
               <SmallBtn href={`/shams/talaqqi?s=${a}&v=${b}`}>{s("talaqqi")}</SmallBtn>
             </>
           )}
@@ -89,7 +94,7 @@ function Body({ surah }: { surah?: number }) {
             <li key={x.key} className="flex items-center gap-3 rounded-lg border border-line bg-surface p-3">
               <span className="min-w-0 flex-1">
                 <span className="block text-[15px] font-semibold">{ref(x.key)}</span>
-                <span className="block text-[13px] text-muted">{x.reason.map((r) => s(`why_${r}` as never)).join(" · ")}</span>
+                <span className="block text-[13px] text-muted">{x.reason.map((r) => (r === "transition" ? rv("why_transition") : s(`why_${r}` as never))).join(" · ")}</span>
               </span>
               {x.words.length > 0 && <span className="text-[13px] font-semibold tabular-nums text-[rgb(var(--hm-gold-d))]">{nf(x.words.length)}</span>}
             </li>

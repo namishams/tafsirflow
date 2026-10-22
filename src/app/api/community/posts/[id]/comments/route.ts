@@ -25,7 +25,7 @@ export async function GET(req: NextRequest, { params }: { params: Promise<{ id: 
   if (!post) return json({ error: "not_found" }, 404);
   const before = req.nextUrl.searchParams.get("before");
   const r = await pool()!.query(
-    `SELECT k.id, k.body, k.created_at, k.author_id, c.username, c.display_name, c.verified, c.badge, c.official, c.level, c.shares_total
+    `SELECT k.id, k.body, k.created_at, k.author_id, c.username, c.display_name, c.verified, c.badge, c.official, c.founder, c.level, c.shares_total
        FROM community_post_comments k JOIN community_profiles c ON c.user_id = k.author_id
       WHERE k.post_id = $2 AND k.removed_at IS NULL AND NOT c.suspended AND ${NOT_BLOCKED("k.author_id")}
         AND ($3::bigint IS NULL OR k.id < $3)

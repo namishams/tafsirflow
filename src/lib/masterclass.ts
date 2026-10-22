@@ -317,6 +317,6 @@ export function mobileAppLd(locale: string, abs: (p: string) => string, storeUrl
   return {
     "@type": "MobileApplication", "@id": abs("/#ios-app"), name: "Quran Masterclass", operatingSystem: "iOS", applicationCategory: "EducationalApplication",
     description, inLanguage: locale, url: abs(`/${locale}/app`), downloadUrl: storeUrl, installUrl: storeUrl, publisher: { "@id": abs("/#org") },
-    offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" },
+    // no price here: the download is free, but Quran Masterclass Pro is a paid subscription in the app
   };
 }

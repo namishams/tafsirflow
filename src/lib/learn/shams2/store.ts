@@ -33,7 +33,9 @@ export function useSettings(): Settings {
 export const saveSettings = (p: Partial<Settings>) => writeJSON(K.settings, { ...readJSON<Partial<Settings>>(K.settings, {}), ...p });
 
 export type Block = "sabaq" | "sabqi" | "manzil";
-export type DayLog = Partial<Record<Block, number>> & { r?: Record<string, "fluent" | "hesitant" | "weak"> };
+// `listen`: a listening and understanding day (listenDays.ts) – the wird was kept by listening, meaning and vocabulary
+// instead of reciting. It keeps the streak; the teacher snapshot does not show it (only the three blocks).
+export type DayLog = Partial<Record<Block, number>> & { listen?: number; r?: Record<string, "fluent" | "hesitant" | "weak"> };
 export type Log = Record<string, DayLog>;
 export const readLog = () => readJSON<Log>(K.log, {});
 export const useLog = () => useStored<Log>(K.log, {});
@@ -47,14 +49,27 @@ export function markBlock(b: Block, day = today()) {
   writeJSON(K.log, next);
   return true;
 }
+/** a listening and understanding day is done (listenDays.ts); false when it was already marked today */
+export function markListen(day = today()) {
+  const l = readLog();
+  const cur = l[day] ?? {};
+  if (cur.listen) return false;
+  writeJSON(K.log, { ...l, [day]: { ...cur, listen: Date.now() } });
+  return true;
+}
+/** per-verse and per-range marks (`r`) are kept for this many days; only today's are read (the wird's chips). The day
+ *  totals (blocks, listening days) that streaks, the teacher snapshot and the Sijill read are never trimmed here. */
+const MARK_DAYS = 60;
 export function rateRange(id: string, r: "fluent" | "hesitant" | "weak", day = today()) {
   const l = readLog();
   const cur = l[day] ?? {};
-  writeJSON(K.log, { ...l, [day]: { ...cur, r: { ...(cur.r ?? {}), [id]: r } } });
+  const next: Log = { ...l, [day]: { ...cur, r: { ...(cur.r ?? {}), [id]: r } } };
+  for (const [d, v] of Object.entries(next)) if (Number(d) < day - MARK_DAYS && v?.r) { const { r: _old, ...rest } = v; next[d] = rest; }
+  writeJSON(K.log, next);
 }
-/** consecutive days with at least one wird block done, ending today (or yesterday) */
+/** consecutive days with at least one wird block (or a listening day) done, ending today (or yesterday) */
 export function wirdStreak(l: Log, day = today()): number {
-  const any = (d: number) => !!(l[d] && (l[d].sabaq || l[d].sabqi || l[d].manzil));
+  const any = (d: number) => !!(l[d] && (l[d].sabaq || l[d].sabqi || l[d].manzil || l[d].listen));
   let d = any(day) ? day : day - 1, n = 0;
   while (any(d)) { n++; d--; }
   return n;

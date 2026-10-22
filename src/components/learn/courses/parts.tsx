@@ -7,6 +7,8 @@ import { Bar, GoldButton, Kicker, Option, Pill } from "@/components/learn/ui";
 import { StarGlyph } from "@/components/art/HomeOrnaments";
 import { useCT } from "@/lib/learn/courses/texts";
 import type { Tag } from "@/lib/learn/courses/types";
+import AskTutor from "@/components/tutor/AskTutor";
+import type { TutorContext } from "@/components/tutor/state";
 
 export type RunQ = { q: string; options: string[]; answer: number; explain?: string; verse?: string; /** the question is an Arabic word */ qAr?: boolean };
 export const shuffle = <T,>(a: T[]) => { const b = [...a]; for (let i = b.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [b[i], b[j]] = [b[j], b[i]]; } return b; };
@@ -40,7 +42,7 @@ export function CourseBadge({ word, size = 56, label, muted = false }: { word: s
 }
 
 /** multiple-choice quiz; one pick per question, feedback with explanation, then "Continue" */
-export function Quiz({ qs, onDone, header }: { qs: RunQ[]; onDone: (right: number) => void; header?: ReactNode }) {
+export function Quiz({ qs, onDone, header, ctx }: { qs: RunQ[]; onDone: (right: number) => void; header?: ReactNode; /** tutor context: "Why is this wrong?" after a wrong answer */ ctx?: TutorContext }) {
   const c = useCT();
   const [i, setI] = useState(0);
   const [pick, setPick] = useState<number | null>(null);
@@ -80,6 +82,7 @@ export function Quiz({ qs, onDone, header }: { qs: RunQ[]; onDone: (right: numbe
           <div className="space-y-3">
             <p className={`text-[15px] font-bold ${ok ? "text-accent" : "text-red-700 dark:text-red-400"}`}>{ok ? c("right") : `${c("wrong")}: ${q.options[q.answer]}`}</p>
             {q.explain && <p className="text-[14.5px] leading-relaxed text-muted">{q.explain}</p>}
+            {ctx && !ok && <AskTutor kind="why" context={{ ...ctx, question: q.q, chosen: q.options[pick], correct: q.options[q.answer], explain: q.explain }} />}
           </div>
         )}
       </div>

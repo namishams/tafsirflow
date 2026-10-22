@@ -1,0 +1,205 @@
+import { useCallback } from "react";
+import { useLang } from "@/i18n";
+import { useIntl } from "@/features/srs/format";
+
+// Shams 3.0 recitation trainer (blind recitation, drills, own rating) – interface texts. English, German (Sie-form)
+// and Arabic here; the other eleven languages in ./i18n/<lang>.json (own files, so the shared bundles stay untouched).
+// Missing keys fall back to English. Mirrored for the website in src/lib/learn/shams2/rec/text.ts.
+// Wording rule: speech recognition reports "words heard" and "possibly missed" – never a pronunciation or tajweed
+// score; the pronunciation rating is the learner's own or a teacher's, and says so.
+const en = {
+  eyebrow: "Shams Method",
+  blindTitle: "Blind recitation",
+  blindLead: "Recite a whole passage from memory with the text hidden. Afterwards you see which words were heard and which were possibly missed.",
+  pick: "What would you like to recite?",
+  src_today: "Today", src_surah: "Surah", src_page: "Page", src_section: "Section",
+  k_sabaq: "New", k_sabqi: "Recent", k_manzil: "Long-term",
+  noToday: "Today's wird is still empty. Choose a surah instead.",
+  verses: "Verses {a}–{b}", verseOne: "Verse {a}", pageN: "Page {p}", wholeSurah: "Whole surah", from: "From", to: "To",
+  words: "{n} words",
+  tooLong: "Long passages are recited in parts: this take runs to verse {v}.",
+  hidden: "The text stays hidden while you recite.",
+  heardNothing: "Nothing was heard. Please try again.",
+  start: "Recite from memory", stop: "Finish",
+  listening: "Listening · {n} words heard",
+  aligning: "Comparing with the verses…",
+  onDevice: "Recognition runs on this device. Your recording stays on this device.",
+  inBrowser: "Uses your browser's speech recognition; depending on the browser, the audio may be processed by its provider. The recording stays in this tab.",
+  honest: "This is a word check: it shows words heard and words possibly missed. It does not judge pronunciation or tajweed.",
+  result: "Result",
+  st_ok: "heard", st_partial: "partly heard", st_missing: "not heard", st_outOfOrder: "out of order", repeated: "recited twice",
+  missed: "{n} words possibly missed – please listen to your recording",
+  tapWord: "Tap a word to hear your recording from there and the reciter's word.",
+  mine: "My recording", reciter: "Reciter",
+  links: "Transitions", link_ok: "held", link_stalled: "stalled",
+  why_missing: "a verse was not heard", why_order: "out of order", why_restart: "started again", why_pause: "pause of {s} s",
+  pauses: "Pauses (timing only)", pauseAt: "{s} s before word {w} · verse {v}",
+  rateTitle: "Your rating – please confirm",
+  rateLead: "Suggested from the word check. You know best whether a verse held; change it where needed.",
+  r1: "Again", r2: "Hesitant", r3: "Good", r4: "Easy",
+  save: "Save rating", saved: "Saved: reviews, word statistics and transitions are updated.",
+  practise: "Start practice", again: "Recite again", other: "Another passage",
+  unavailable: "Speech recognition for Arabic is not available here. Recite with the text hidden and rate yourself.",
+  denied: "Microphone or speech recognition was not allowed. You can allow it in the system settings.",
+  manualLead: "Recite the passage from memory, then reveal it verse by verse and mark how each verse went.",
+  reveal: "Show verse",
+  takeKept: "The recording is kept only on this device, outside backups (the last 40; the system may remove it when storage runs low).", deleteTake: "Delete recording",
+  loadFailed: "The verses could not be loaded. Please check your connection.", retry: "Try again",
+  drillTitle: "Drill",
+  drillLead: "Single words, phrases and transitions: hear the reciter several times with a pause, then recite yourself.",
+  mode_word: "Words", mode_phrase: "Phrases", mode_link: "Transition",
+  loopN: "{n}× with pause", listen: "Listen", yourTurn: "Your turn",
+  wordOf: "Word {i} of {n}", phraseOf: "Phrase {i} of {n}",
+  linkLead: "Listen to the end of verse {a}, then continue from memory with the beginning of verse {b}.",
+  linkHeld: "Transition held", linkStalled: "Transition stalled",
+  next: "Next", drillDone: "Drill complete.", noTargets: "Nothing to practise here yet.",
+  drillWords: "Practise these words", drillMissed: "Practise the missed words",
+  rbTitle: "Your own rating",
+  rbLead: "After comparing with the reciter: how did it sound? This is your own assessment, not an automatic score. A teacher's rating takes precedence.",
+  rb_makharij: "Makhārij", rb_tajweed: "Tajweed rules", rb_waqf: "Stopping and starting", rb_pace: "Pace",
+  rbScale: "1 = needs work · 5 = very good",
+  rbSave: "Save my rating", rbSaved: "Saved as your own rating.", rbTeacher: "Teacher's rating ({by}): {v} of 5",
+};
+export type RecKey = keyof typeof en;
+type T = Record<RecKey, string>;
+
+const de: T = {
+  eyebrow: "Shams-Methode",
+  blindTitle: "Blind rezitieren",
+  blindLead: "Rezitieren Sie einen ganzen Abschnitt aus dem Gedächtnis, der Text bleibt verborgen. Danach sehen Sie, welche Wörter gehört wurden und welche möglicherweise ausgelassen wurden.",
+  pick: "Was möchten Sie rezitieren?",
+  src_today: "Heute", src_surah: "Sure", src_page: "Seite", src_section: "Abschnitt",
+  k_sabaq: "Neu", k_sabqi: "Jüngst", k_manzil: "Langfristig",
+  noToday: "Der heutige Wird ist noch leer. Wählen Sie stattdessen eine Sure.",
+  verses: "Verse {a}–{b}", verseOne: "Vers {a}", pageN: "Seite {p}", wholeSurah: "Ganze Sure", from: "Von", to: "Bis",
+  words: "{n} Wörter",
+  tooLong: "Lange Abschnitte werden in Teilen rezitiert: Diese Aufnahme reicht bis Vers {v}.",
+  hidden: "Der Text bleibt verborgen, während Sie rezitieren.",
+  heardNothing: "Es wurde nichts gehört. Bitte versuchen Sie es erneut.",
+  start: "Aus dem Gedächtnis rezitieren", stop: "Beenden",
+  listening: "Hört zu · {n} Wörter gehört",
+  aligning: "Wird mit den Versen verglichen…",
+  onDevice: "Die Erkennung läuft auf diesem Gerät. Ihre Aufnahme bleibt auf diesem Gerät.",
+  inBrowser: "Nutzt die Spracherkennung Ihres Browsers; je nach Browser verarbeitet dessen Anbieter den Ton. Die Aufnahme bleibt in diesem Tab.",
+  honest: "Dies ist eine Wortprüfung: Sie zeigt gehörte und möglicherweise ausgelassene Wörter. Aussprache und Tadschwid bewertet sie nicht.",
+  result: "Ergebnis",
+  st_ok: "gehört", st_partial: "teilweise gehört", st_missing: "nicht gehört", st_outOfOrder: "nicht an seiner Stelle", repeated: "zweimal rezitiert",
+  missed: "{n} Wörter möglicherweise ausgelassen – hören Sie bitte Ihre Aufnahme",
+  tapWord: "Tippen Sie auf ein Wort, um Ihre Aufnahme ab dort und das Wort des Rezitators zu hören.",
+  mine: "Meine Aufnahme", reciter: "Rezitator",
+  links: "Übergänge", link_ok: "sitzt", link_stalled: "gestockt",
+  why_missing: "ein Vers wurde nicht gehört", why_order: "nicht in der Reihenfolge", why_restart: "neu angesetzt", why_pause: "Pause von {s} s",
+  pauses: "Pausen (nur Zeitmessung)", pauseAt: "{s} s vor Wort {w} · Vers {v}",
+  rateTitle: "Ihre Bewertung – bitte bestätigen",
+  rateLead: "Vorschlag aus der Wortprüfung. Ob ein Vers saß, wissen Sie am besten; ändern Sie ihn, wo nötig.",
+  r1: "Nochmal", r2: "Gestockt", r3: "Gut", r4: "Leicht",
+  save: "Bewertung speichern", saved: "Gespeichert: Wiederholungen, Wortstatistik und Übergänge sind aktualisiert.",
+  practise: "Übung starten", again: "Noch einmal rezitieren", other: "Anderer Abschnitt",
+  unavailable: "Die Spracherkennung für Arabisch ist hier nicht verfügbar. Rezitieren Sie mit verborgenem Text und bewerten Sie sich selbst.",
+  denied: "Mikrofon oder Spracherkennung wurden nicht erlaubt. Sie können sie in den Systemeinstellungen erlauben.",
+  manualLead: "Rezitieren Sie den Abschnitt aus dem Gedächtnis, decken Sie ihn dann Vers für Vers auf und markieren Sie, wie jeder Vers lief.",
+  reveal: "Vers zeigen",
+  takeKept: "Die Aufnahme bleibt nur auf diesem Gerät, außerhalb von Backups (die letzten 40; bei knappem Speicher kann das System sie entfernen).", deleteTake: "Aufnahme löschen",
+  loadFailed: "Die Verse konnten nicht geladen werden. Bitte prüfen Sie Ihre Verbindung.", retry: "Erneut versuchen",
+  drillTitle: "Übung",
+  drillLead: "Einzelne Wörter, Sätze und Übergänge: Hören Sie den Rezitator mehrmals mit Pause und rezitieren Sie dann selbst.",
+  mode_word: "Wörter", mode_phrase: "Sätze", mode_link: "Übergang",
+  loopN: "{n}× mit Pause", listen: "Anhören", yourTurn: "Jetzt Sie",
+  wordOf: "Wort {i} von {n}", phraseOf: "Satz {i} von {n}",
+  linkLead: "Hören Sie das Ende von Vers {a} und setzen Sie dann aus dem Gedächtnis mit dem Anfang von Vers {b} fort.",
+  linkHeld: "Übergang sitzt", linkStalled: "Übergang gestockt",
+  next: "Weiter", drillDone: "Übung abgeschlossen.", noTargets: "Hier gibt es noch nichts zu üben.",
+  drillWords: "Diese Wörter üben", drillMissed: "Ausgelassene Wörter üben",
+  rbTitle: "Ihre eigene Einschätzung",
+  rbLead: "Nach dem Vergleich mit dem Rezitator: Wie klang es? Dies ist Ihre eigene Einschätzung, keine automatische Bewertung. Die Bewertung einer Lehrkraft hat Vorrang.",
+  rb_makharij: "Makharidsch", rb_tajweed: "Tadschwid-Regeln", rb_waqf: "Anhalten und Ansetzen", rb_pace: "Tempo",
+  rbScale: "1 = ausbaufähig · 5 = sehr gut",
+  rbSave: "Einschätzung speichern", rbSaved: "Als Ihre eigene Einschätzung gespeichert.", rbTeacher: "Bewertung der Lehrkraft ({by}): {v} von 5",
+};
+
+const ar: T = {
+  eyebrow: "منهج شمس",
+  blindTitle: "التسميع الغيبي",
+  blindLead: "اتلوا مقطعًا كاملًا من الحفظ والنص مخفي. بعد ذلك ترون الكلمات التي سُمعت والكلمات التي ربما سقطت.",
+  pick: "ماذا تريدون أن تتلوا؟",
+  src_today: "اليوم", src_surah: "سورة", src_page: "صفحة", src_section: "مقطع",
+  k_sabaq: "جديد", k_sabqi: "قريب", k_manzil: "بعيد",
+  noToday: "ورد اليوم فارغ بعد. اختاروا سورة بدلًا من ذلك.",
+  verses: "الآيات {a}–{b}", verseOne: "الآية {a}", pageN: "صفحة {p}", wholeSurah: "السورة كاملة", from: "من", to: "إلى",
+  words: "{n} كلمة",
+  tooLong: "المقاطع الطويلة تُتلى على أجزاء: هذا التسجيل حتى الآية {v}.",
+  hidden: "يبقى النص مخفيًا أثناء تلاوتكم.",
+  heardNothing: "لم يُسمع شيء. حاولوا مرة أخرى من فضلكم.",
+  start: "التلاوة من الحفظ", stop: "إنهاء",
+  listening: "يستمع · سُمعت {n} كلمة",
+  aligning: "تجري المقارنة بالآيات…",
+  onDevice: "يجري التعرّف على هذا الجهاز، ويبقى تسجيلكم على هذا الجهاز.",
+  inBrowser: "يستخدم التعرّف على الكلام في متصفحكم؛ وقد يعالج مزوّد المتصفح الصوت بحسب المتصفح. يبقى التسجيل في هذه النافذة.",
+  honest: "هذا فحص للكلمات: يبيّن الكلمات المسموعة والكلمات التي ربما سقطت، ولا يحكم على النطق ولا على التجويد.",
+  result: "النتيجة",
+  st_ok: "مسموعة", st_partial: "مسموعة جزئيًا", st_missing: "غير مسموعة", st_outOfOrder: "في غير موضعها", repeated: "تُليت مرتين",
+  missed: "{n} كلمة ربما سقطت – استمعوا إلى تسجيلكم من فضلكم",
+  tapWord: "اضغطوا على كلمة لتسمعوا تسجيلكم من عندها وكلمة القارئ.",
+  mine: "تسجيلي", reciter: "القارئ",
+  links: "الروابط بين الآيات", link_ok: "ثابت", link_stalled: "تعثّر",
+  why_missing: "لم تُسمع آية", why_order: "في غير الترتيب", why_restart: "إعادة البدء", why_pause: "توقف {s} ث",
+  pauses: "التوقفات (توقيت فقط)", pauseAt: "{s} ث قبل الكلمة {w} · الآية {v}",
+  rateTitle: "تقييمكم – أكّدوه من فضلكم",
+  rateLead: "اقتراح من فحص الكلمات. أنتم أعلم بثبات الآية؛ غيّروه حيث يلزم.",
+  r1: "مجددًا", r2: "متردد", r3: "جيد", r4: "سهل",
+  save: "حفظ التقييم", saved: "تم الحفظ: تحدّثت المراجعات وإحصاء الكلمات والروابط.",
+  practise: "ابدؤوا التمرين", again: "التلاوة مرة أخرى", other: "مقطع آخر",
+  unavailable: "التعرّف على الكلام بالعربية غير متاح هنا. اتلوا والنص مخفي وقيّموا أنفسكم.",
+  denied: "لم يُسمح بالميكروفون أو التعرّف على الكلام. يمكنكم السماح بذلك في إعدادات النظام.",
+  manualLead: "اتلوا المقطع من الحفظ، ثم اكشفوه آيةً آية وحدّدوا كيف كانت كل آية.",
+  reveal: "أظهر الآية",
+  takeKept: "يبقى التسجيل على هذا الجهاز وحده خارج النسخ الاحتياطية (آخر 40؛ وقد يحذفه النظام عند امتلاء التخزين).", deleteTake: "حذف التسجيل",
+  loadFailed: "تعذّر تحميل الآيات. تحقّقوا من الاتصال من فضلكم.", retry: "إعادة المحاولة",
+  drillTitle: "تمرين",
+  drillLead: "كلمات مفردة وجمل وروابط: استمعوا إلى القارئ مرات مع توقف، ثم اتلوا أنتم.",
+  mode_word: "كلمات", mode_phrase: "جمل", mode_link: "الرابط",
+  loopN: "{n}× مع توقف", listen: "استماع", yourTurn: "دوركم",
+  wordOf: "الكلمة {i} من {n}", phraseOf: "الجملة {i} من {n}",
+  linkLead: "استمعوا إلى نهاية الآية {a}، ثم أكملوا من الحفظ ببداية الآية {b}.",
+  linkHeld: "الرابط ثابت", linkStalled: "تعثّر الرابط",
+  next: "التالي", drillDone: "اكتمل التمرين.", noTargets: "لا شيء للتمرين هنا بعد.",
+  drillWords: "تمرّنوا على هذه الكلمات", drillMissed: "تمرّنوا على الكلمات الساقطة",
+  rbTitle: "تقييمكم الذاتي",
+  rbLead: "بعد المقارنة بالقارئ: كيف بدت التلاوة؟ هذا تقييمكم أنتم، لا تقييم آلي. ويُقدَّم تقييم المعلّم عليه.",
+  rb_makharij: "المخارج", rb_tajweed: "أحكام التجويد", rb_waqf: "الوقف والابتداء", rb_pace: "السرعة",
+  rbScale: "1 = يحتاج إلى عمل · 5 = جيد جدًا",
+  rbSave: "حفظ تقييمي", rbSaved: "حُفظ تقييمًا ذاتيًا.", rbTeacher: "تقييم المعلّم ({by}): {v} من 5",
+};
+
+/* eslint-disable @typescript-eslint/no-require-imports */
+const LOAD: Record<string, () => Partial<T>> = {
+  tr: () => require("./i18n/tr.json"), ur: () => require("./i18n/ur.json"), fa: () => require("./i18n/fa.json"), ps: () => require("./i18n/ps.json"),
+  fr: () => require("./i18n/fr.json"), es: () => require("./i18n/es.json"), id: () => require("./i18n/id.json"), ms: () => require("./i18n/ms.json"),
+  bn: () => require("./i18n/bn.json"), ru: () => require("./i18n/ru.json"), zh: () => require("./i18n/zh.json"),
+};
+/* eslint-enable @typescript-eslint/no-require-imports */
+const cache = new Map<string, T>();
+export function recText(lang: string): T {
+  if (lang === "de") return de;
+  if (lang === "ar") return ar;
+  if (lang === "en" || !LOAD[lang]) return en;
+  let d = cache.get(lang);
+  if (!d) {
+    let tr: Partial<T> = {};
+    try { tr = LOAD[lang]() ?? {}; } catch { tr = {}; }
+    d = { ...en, ...tr };
+    cache.set(lang, d);
+  }
+  return d;
+}
+const fill = (s: string, p?: Record<string, string | number>) => (p ? s.replace(/\{(\w+)\}/g, (_, x: string) => String(p[x] ?? "")) : s);
+export type Rt = (k: RecKey, p?: Record<string, string | number>) => string;
+/** texts of the recitation trainer, plus the number format of the app */
+export function useRec() {
+  const { lang } = useLang();
+  const nf = useIntl();
+  const d = recText(lang);
+  const r: Rt = useCallback((k, p) => fill(d[k] ?? en[k] ?? k, p), [d]);
+  return { r, nf, lang };
+}
+export const EN_REC = en;

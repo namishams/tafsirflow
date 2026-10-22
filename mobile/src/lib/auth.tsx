@@ -2,6 +2,8 @@ import { createContext, useCallback, useContext, useEffect, useMemo, useState, t
 import { api } from "./api";
 import { getToken, setToken } from "./storage";
 import { writeJSON } from "./store";
+import { claimTakes, clearTakeFiles } from "@/features/shams2/take";
+import { clearDeviceOnly } from "@/web/sisters/state";
 
 export type User = { id: number; email: string; name: string | null; plan: string; emailVerified: boolean; role: "user" | "admin"; birthYear?: number | null };
 export type RegisterInput = {
@@ -38,11 +40,13 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       const d = await api<{ user: User | null }>("/api/auth/me");
       setUser(d.user);
       rememberAge(d.user?.birthYear);
-      if (!d.user) await setToken(null); // session expired on the server
+      if (!d.user) { await setToken(null); clearTakeFiles(); } // session expired on the server: own recordings go too
     } catch { /* offline: keep what we have */ }
   }, []);
 
   useEffect(() => { refresh().finally(() => setReady(true)); }, [refresh]);
+  // recitation recordings on this device belong to one account: another account signing in starts without them
+  useEffect(() => { if (user) void claimTakes(user.id); }, [user?.id]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const signIn = useCallback(async (path: string, body: unknown, birthYear?: number) => {
     const d = await api<{ user: User; token?: string }>(path, { body });
@@ -58,6 +62,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     logout: async () => {
       await api("/api/auth/logout", { body: {} }).catch(() => undefined);
       await setToken(null);
+      clearTakeFiles(); // own recitation recordings stay with the person who made them
+      clearDeviceOnly(); // "Meine Tage", her school, prayer posture, listening days: device-only health data goes too
       setUser(null);
     },
     adopt: async (d) => {
@@ -68,6 +74,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     deleteAccount: async (password) => {
       await api("/api/account", { body: { action: "delete", current: password ?? "" } });
       await setToken(null);
+      clearTakeFiles();
       setUser(null);
     },
   }), [user, ready, refresh, signIn]);

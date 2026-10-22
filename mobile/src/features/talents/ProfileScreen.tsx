@@ -1,11 +1,12 @@
 import { useCallback, useEffect, useRef, useState, type Dispatch, type ReactNode, type SetStateAction } from "react";
+import { LinearGradient } from "expo-linear-gradient";
 import { ActionSheetIOS, Alert, Modal, Platform, Pressable, RefreshControl, ScrollView, Share, StyleSheet, Text, View, useWindowDimensions, type ScrollViewInstance } from "react-native";
 import { router, useGlobalSearchParams, type Href } from "expo-router";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { FONT, R, goldButton, stage, useTheme, type Theme } from "@/lib/theme";
 import { Loading, READ_WIDTH, goBack } from "@/components/page";
 import { useTabBarSpace } from "@/components/TabBar";
-import { GoldButton, OutlineButton } from "@/components/brand";
+import { GlassSurface, GoldButton, OutlineButton } from "@/components/brand";
 import { LabeledField } from "@/components/form";
 import { Icon, type IconName } from "@/components/icons";
 import { countryName } from "@/lib/countries";
@@ -37,6 +38,10 @@ import * as Haptics from "expo-haptics";
 import { ExtrasChips } from "./ExtrasEditor";
 import { useGoalLabels, useTravel } from "./travel";
 import { readV2 } from "@/features/plan/v2";
+import { CareerStats } from "@/features/stats/CareerStats";
+import { ProfileStrip } from "@/features/stats/ProfileStrip";
+import { CountryBadge } from "@/features/rankings/Flag";
+import { useCT } from "@/features/stats/text";
 
 // The talent profile, one layout for the own profile (Account tab, owner 21.10.2026: "the last tab IS your profile")
 // and for everybody else (/talents/u/<username>). TikTok structure in emerald and gold: top bar (own: name with a
@@ -156,7 +161,7 @@ export function useProfileData(username: string | null | undefined, opts: { enab
   };
 }
 
-type Tab = "posts" | "saved" | "awards" | "sijill" | "moments";
+type Tab = "posts" | "saved" | "awards" | "sijill" | "moments" | "stats";
 type Opt = { label: string; onPress: () => void; destructive?: boolean };
 
 /** the whole profile screen: top bar, header, tabs, grid and the sheets */
@@ -181,6 +186,7 @@ export function ProfileScreenView({ d, variant, title, canInteract, signedIn, re
   const pt = usePT();
   const st = useST();
   const tr = useT();
+  const ct = useCT();
   const err = useTalentErr();
   const { lang } = useLang();
   const insets = useSafeAreaInsets();
@@ -208,7 +214,9 @@ export function ProfileScreenView({ d, variant, title, canInteract, signedIn, re
   const [sheet, setSheet] = useState<{ title?: string; opts: Opt[] } | null>(null);
   // development only, like Page: `?auditY=900` scrolls the profile for screenshot audits of a headless simulator
   const scrollRef = useRef<ScrollViewInstance>(null);
-  const { auditY } = useGlobalSearchParams<{ auditY?: string }>();
+  const { auditY, tab: tabParam, demo: demoParam } = useGlobalSearchParams<{ auditY?: string; tab?: string; demo?: string }>();
+  // development only, for screenshot audits: `?tab=stats` opens the statistics tab, `&demo=stats` with sample data
+  useEffect(() => { if (__DEV__ && tabParam === "stats") setTab("stats"); }, [tabParam]);
   useEffect(() => {
     if (!__DEV__ || !auditY || d.state !== "ok") return;
     const id = setTimeout(() => scrollRef.current?.scrollTo({ y: Number(auditY) || 0, animated: false }), 900);
@@ -385,6 +393,7 @@ export function ProfileScreenView({ d, variant, title, canInteract, signedIn, re
         {/* no @username yet (this device only): the name, unless it is just the tab's title */}
         {handle || p.name !== title ? <Text numberOfLines={1} style={{ flexShrink: 1, fontFamily: FONT.bold, fontSize: 17, color: t.ink, writingDirection: handle ? "ltr" : undefined }}>{handle || p.name}</Text> : null}
         <BadgeButton badge={p.badge} size={17} />
+        {p.country ? <CountryBadge code={p.country} size={17} /> : null}
         {p.private && variant === "stack" ? <Icon name="lock" color={t.muted} size={14} /> : null}
       </View>
       <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "center", gap: 8, marginTop: 6 }}>
@@ -447,7 +456,11 @@ export function ProfileScreenView({ d, variant, title, canInteract, signedIn, re
         {p.bio ? <Text style={{ fontFamily: FONT.regular, fontSize: 14.5, lineHeight: 21, color: t.ink, textAlign: "center" }}>{p.bio}</Text> : null}
         {p.maqam ? <Text style={{ fontFamily: FONT.regular, fontSize: 13, color: t.muted }}>{`${tt("maqam")}: ${p.maqam}`}</Text> : null}
         {p.officialChannel ? <Text style={{ fontFamily: FONT.regular, fontSize: 13, color: t.gold }}>{tt("officialChannel", { c: p.officialChannel })}</Text> : null}
-        <SharerBadge tier={p.sharerTier} />
+        {/* founder (one account, set on the server): the line and the place */}
+        {p.founder ? <Text style={{ fontFamily: FONT.semibold, fontSize: 14, color: t.gold, textAlign: "center" }}>{tt("founderLine" as TKey)}</Text> : null}
+        {p.founder ? <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "center", gap: 6 }}><CountryBadge code="AE" size={16} /><Text style={{ fontFamily: FONT.regular, fontSize: 13, color: t.muted }}>{tt("founderPlace" as TKey)}</Text></View> : null}
+        {/* chips centred in their own row (owner 22.10.2026: the sharer chip sat left under the centred stage line) */}
+        <View style={{ flexDirection: "row", flexWrap: "wrap", justifyContent: "center", alignSelf: "stretch", gap: 6 }}><SharerBadge tier={p.sharerTier} /></View>
         {!p.private && p.username && live ? <View style={{ flexDirection: "row", justifyContent: "center" }}><RankLine username={p.username} /></View> : null}
         <ExtrasChips goals={ext.goals} city={ext.city} travel={ext.travel} labels={goalLabels} />
         <FollowedBy p={p} />
@@ -457,9 +470,11 @@ export function ProfileScreenView({ d, variant, title, canInteract, signedIn, re
     </View>
   );
 
-  // ---------- below the header: requests, suggestions, highlights, completeness, posting path ----------
+  // ---------- below the header: career card, requests, suggestions, highlights, completeness, posting path ----------
   const extras = (
     <View style={{ gap: 14, marginTop: 14 }}>
+      {!p.restricted && !p.blocked ? <ProfileStrip username={mode === "local" ? null : p.username} own={mode !== "other"} local={mode === "local" || d.source === "cache"} name={p.name}
+        demo={__DEV__ && (demoParam === "stats" || demoParam === "own" || demoParam === "other")} onOpen={() => setTab("stats")} /> : null}
       {mode === "own" && p.private && requests > 0 ? (
         <Pressable onPress={() => router.push("/talents/requests" as Href)} accessibilityRole="button" accessibilityLabel={`${pt("requestsRow")}, ${requests}`}
           style={({ pressed }) => ({ marginHorizontal: 16, flexDirection: "row", alignItems: "center", gap: 12, minHeight: 56, paddingHorizontal: 12, borderRadius: R.lg, backgroundColor: t.accentSoft, opacity: pressed ? 0.75 : 1 })}>
@@ -511,7 +526,7 @@ export function ProfileScreenView({ d, variant, title, canInteract, signedIn, re
   // ---------- tabs (icons, TikTok) ----------
   const tabs: [Tab, string, ProfileIconName | IconName][] = postingOn
     ? [["posts", tt("tabClips"), "gridTab"], ...(p.mine ? [["saved", tt("tabSaved"), "bookmark"] as [Tab, string, IconName]] : []), ["awards", tt("tabAwards"), "rosette"]]
-    : [["moments", pt("tabAchievements"), "gridTab"], ["sijill", st("tabSijill"), "record"], ["awards", pt("tabBadges"), "rosette"]];
+    : [["moments", pt("tabAchievements"), "gridTab"], ["sijill", st("tabSijill"), "record"], ["awards", pt("tabBadges"), "rosette"], ["stats", ct("tabStats"), "chart"]];
   // (a sticky header child loses its own style to the sticky wrapper, so the row sits one level deeper)
   const tabBar = (
     <View style={{ backgroundColor: bg, paddingTop: 6 }}>
@@ -530,7 +545,10 @@ export function ProfileScreenView({ d, variant, title, canInteract, signedIn, re
     </View>
     </View>
   );
-  const body = tab === "sijill" ? (
+  // owner 22.10.2026: the progress profile (career card, places, Shams, courses, exams, milestones, boards)
+  const body = tab === "stats" ? (
+    <CareerStats username={mode === "local" ? null : p.username} own={mode !== "other"} local={mode === "local" || d.source === "cache"} name={p.name} demo={__DEV__ && (demoParam === "stats" || demoParam === "own" || demoParam === "other")} />
+  ) : tab === "sijill" ? (
     <View style={{ padding: 16 }}>
       {sijill === null ? <Loading /> : sijill === "restricted" ? <Muted>{st("restricted")}</Muted>
         : <SijillShowcase s={sijill} mine={mode === "own"} name={p.name} username={p.username} />}
@@ -605,7 +623,7 @@ function ProfileSkeleton({ width }: { width: number }) {
   );
 }
 
-const isPIcon = (n: string): n is ProfileIconName => ["plusSquare", "userPlus", "dots", "gridTab", "record", "rosette", "userCheck"].includes(n);
+const isPIcon = (n: string): n is ProfileIconName => ["plusSquare", "userPlus", "dots", "gridTab", "record", "rosette", "userCheck", "chart"].includes(n);
 
 /** one counter: the number bold above the grey label (the MashaAllah label with a gold heart) */
 function Stat({ n, label, onPress, heart }: { n: string; label: string; onPress?: () => void; heart?: boolean }) {
@@ -634,15 +652,16 @@ function BarBtn({ icon, label, onPress, dot }: { icon: ProfileIconName | IconNam
   );
 }
 
-/** TikTok profile button: soft emerald (Edit, Share, Message, Following) or gold (Follow, Create) */
+/** profile button in the shared style: glass capsule (Edit, Share, Message, Following) or gold capsule (Follow, Create) */
 function Btn({ title, onPress, tone = "soft", disabled, label, grow, max = 162 }: { title: string; onPress: () => void; tone?: "soft" | "gold"; disabled?: boolean; label?: string; grow?: boolean; max?: number }) {
   const t = useTheme();
   const gold = tone === "gold";
+  const face = { minHeight: 42, paddingHorizontal: 14, borderRadius: R.pill, alignItems: "center" as const, justifyContent: "center" as const, overflow: "hidden" as const };
+  const text = <Text numberOfLines={1} style={{ fontFamily: FONT.bold, fontSize: 15, color: gold ? goldButton.text : t.ink }}>{title}</Text>;
   return (
     <Pressable onPress={onPress} disabled={disabled} accessibilityRole="button" accessibilityLabel={label ?? title} accessibilityState={{ disabled: !!disabled }}
-      style={({ pressed }) => ({ flexGrow: grow ? 1 : 0, flexBasis: grow ? 0 : undefined, maxWidth: max, minHeight: 42, paddingHorizontal: 14, borderRadius: R.md, alignItems: "center", justifyContent: "center",
-        backgroundColor: gold ? goldButton.to : softBg(t), opacity: disabled ? 0.55 : pressed ? 0.7 : 1 })}>
-      <Text numberOfLines={1} style={{ fontFamily: FONT.bold, fontSize: 15, color: gold ? goldButton.text : t.ink }}>{title}</Text>
+      style={({ pressed }) => ({ flexGrow: grow ? 1 : 0, flexBasis: grow ? 0 : undefined, maxWidth: max, opacity: disabled ? 0.55 : 1, transform: [{ scale: pressed ? 0.97 : 1 }] })}>
+      {gold ? <LinearGradient colors={[goldButton.from, goldButton.to]} style={face}>{text}</LinearGradient> : <GlassSurface interactive style={face}>{text}</GlassSurface>}
     </Pressable>
   );
 }
@@ -653,10 +672,12 @@ function Square({ icon, label, onPress, selected }: { icon: ProfileIconName | Ic
   const t = useTheme();
   return (
     <Pressable onPress={onPress} accessibilityRole="button" accessibilityLabel={label} accessibilityState={{ expanded: selected }}
-      style={({ pressed }) => ({ width: 44, minHeight: 42, borderRadius: R.md, alignItems: "center", justifyContent: "center", backgroundColor: softBg(t), opacity: pressed ? 0.7 : 1 })}>
-      <View style={{ transform: [{ rotate: selected && icon === "chevronDown" ? "180deg" : "0deg" }] }}>
-        {isPIcon(icon) ? <PIcon name={icon} color={t.ink} size={20} weight={1.9} /> : <Icon name={icon} color={t.ink} size={18} weight={2.4} />}
-      </View>
+      style={({ pressed }) => ({ transform: [{ scale: pressed ? 0.95 : 1 }] })}>
+      <GlassSurface interactive style={{ width: 44, minHeight: 42, borderRadius: 21, alignItems: "center", justifyContent: "center" }}>
+        <View style={{ transform: [{ rotate: selected && icon === "chevronDown" ? "180deg" : "0deg" }] }}>
+          {isPIcon(icon) ? <PIcon name={icon} color={t.ink} size={20} weight={1.9} /> : <Icon name={icon} color={t.ink} size={18} weight={2.4} />}
+        </View>
+      </GlassSurface>
     </Pressable>
   );
 }

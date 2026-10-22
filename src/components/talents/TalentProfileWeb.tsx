@@ -11,6 +11,11 @@ import { talentsText } from "@/lib/talentsWeb";
 import { sijillText } from "@/lib/sijillWeb";
 import { countryName } from "@/lib/countries";
 import type { Sijill } from "@/lib/sijill";
+import { maybeSignedIn } from "@/lib/sync";
+import CareerStatsWeb from "@/components/stats/CareerStatsWeb";
+import ProfileStripWeb from "@/components/stats/ProfileStripWeb";
+import CountryBadge from "@/components/rankings/CountryBadge";
+import { careerText } from "@/lib/careerWeb";
 
 // The talent profile on the website, 1:1 with the app (owner, 21.10.2026; mobile/src/features/talents/ProfileScreen.tsx):
 // TikTok structure in emerald and gold. Top bar (own: name with a chevron menu, "+" to share with the QR code, the menu
@@ -29,6 +34,8 @@ export type WebProfile = {
   following: number; followers: number; mashaallahTotal?: number; bio: string; rewaya: string; country: string | null; maqam: string;
   officialChannel: string | null; ijazahChain?: string; progress?: { treeStage: number; certJuz: number[]; hidden?: boolean } | null;
   mine?: boolean; followed?: boolean; requested?: boolean; followsMe?: boolean; canMessage?: boolean; restricted?: boolean; blocked?: boolean; connection?: Conn;
+  /** the one founder account (server flag) */
+  founder?: boolean;
   followedBy?: { total: number; users: { username: string; name: string; avatar: string | null }[] } | null;
   shareUrl?: string; shareQr?: string[]; moments?: GridMoment[]; momentCount?: number;
   /** learning goals, city, travel the viewer may see (profileExtras.ts) */
@@ -72,6 +79,7 @@ const I = {
   search: <><circle cx="11" cy="11" r="6.5" /><path d="M16 16l4 4" /></>,
   map: <><path d="M9 4.5L3.5 6.5v13L9 17.5l6 2 5.5-2v-13L15 6.5z" /><path d="M9 4.5v13M15 6.5v13" /></>,
   compass: <><circle cx="12" cy="12" r="8.5" /><path d="M15.5 8.5l-2 5-5 2 2-5z" /></>,
+  chart: <><path d="M4 20h16" /><path d="M6.5 16.5V11M11 16.5V6M15.5 16.5v-4M20 16.5V8.5" /></>,
 };
 export type WebIconName = keyof typeof I;
 export function Ico({ n, size = 24, sw = 1.7, className = "" }: { n: WebIconName; size?: number; sw?: number; className?: string }) {
@@ -81,7 +89,7 @@ const HL_ICON: Record<string, WebIconName> = { certificate: "star", exam: "check
 const soft = "bg-[rgba(6,108,78,0.08)] dark:bg-white/10";
 
 export function Avatar({ src, size, badge }: { src: string | null | undefined; size: number; badge?: WebBadge | null }) {
-  const strong = badge === "gold" || badge === "official";
+  const strong = badge === "gold" || badge === "official" || badge === "founder";
   return (
     <span className="grid shrink-0 place-items-center overflow-hidden rounded-full bg-[rgb(8,58,44)]"
       style={{ width: size, height: size, boxShadow: `inset 0 0 0 ${Math.max(2, size * (strong ? 0.06 : 0.035))}px ${strong ? "#E2C77F" : "rgb(201,166,94)"}`, padding: Math.max(2, size * (strong ? 0.06 : 0.035)) }}>
@@ -128,6 +136,8 @@ export default function TalentProfileWeb({ locale, initial, username, own, place
 
   const load = useCallback(async () => {
     let u = username;
+    // signed-out visitors see the server-rendered profile; the member calls below would only answer 401 (console errors)
+    if (!(await maybeSignedIn())) { setViewer("out"); if (own) setState(initial ? "ok" : "none"); return; }
     if (own) {
       const m = await call<{ profile: { username: string } | null; talent?: { canInteract?: boolean } }>("/api/community/me").catch(() => null);
       if (!m || !m.ok) { setViewer("out"); setState(initial ? "ok" : m && (m.status === 401 || m.status === 403) ? "none" : "error"); return; }
@@ -244,6 +254,7 @@ export default function TalentProfileWeb({ locale, initial, username, own, place
                   { label: t.editProfile, href: "/talents/me/edit" },
                   { label: t.shareProfile, onClick: () => void share() },
                   { label: t.menuLabel, href: "/account" },
+                  { label: careerText(locale).menuDetails, href: "/profile/details" },
                 ]} />
               ) : null}
             </div>
@@ -279,8 +290,11 @@ export default function TalentProfileWeb({ locale, initial, username, own, place
         <h1 className="mt-3 flex items-center justify-center gap-1.5 text-[17px] font-bold text-ink">
           <span dir="ltr">@{p.username}</span>
           {p.badge ? <a href="#badges" aria-label={`${tx[`badge_${p.badge}`]}. ${tx.badgeWhat}`}><BadgeIcon badge={p.badge} size={17} title={tx[`badge_${p.badge}`]} /></a> : null}
+          {p.country ? <CountryBadge code={p.country} size={17} /> : null}
           {p.private && mode === "other" ? <span className="text-muted"><Ico n="lock" size={14} /></span> : null}
         </h1>
+        {p.founder ? <p className="mt-1 text-[14px] font-semibold text-gold">{tx.founderLine}</p> : null}
+        {p.founder ? <p className="mt-0.5 flex items-center justify-center gap-1.5 text-[13px] text-muted"><CountryBadge code="AE" size={16} />{tx.founderPlace}</p> : null}
         <p className="sr-only">{p.name}</p>
         <div className="mt-1.5 flex items-center gap-2">
           <span className={`rounded-full px-2.5 py-0.5 text-[12px] font-semibold ${p.level === "master" || p.level === "sheikh" ? "border border-[#c6a65e] bg-[rgba(201,166,94,0.14)] text-gold" : "bg-accent-soft text-accent"}`}>{tx[`level_${p.level}`] ?? p.level}</span>
@@ -322,6 +336,9 @@ export default function TalentProfileWeb({ locale, initial, username, own, place
         {mode === "other" && canMessage && !p.blocked ? <p className="mt-2 max-w-sm text-[12.5px] leading-snug text-muted">{tx.messageInApp}</p> : null}
         {msg ? <p role="status" className="mt-2 text-[14px] font-semibold text-muted">{msg}</p> : null}
         {p.blocked && mode === "other" ? <p className="mt-2 text-[14px] text-muted">{t.blockedInfo}</p> : null}
+
+        {/* career card at the top of the profile (owner 22.10.2026) */}
+        {p.username && !p.restricted && !p.blocked ? <ProfileStripWeb username={p.username} locale={locale} /> : null}
 
         {/* bio */}
         <div className="mt-3 grid justify-items-center gap-1">
@@ -403,6 +420,8 @@ export default function TalentProfileWeb({ locale, initial, username, own, place
             { id: "achievements", label: t.tabAchievements, icon: <Ico n="gridTab" size={23} />, flush: true, panel: <MomentGrid edge username={p.username} locale={locale} initial={moments} empty={mode === "own" ? t.noMomentsMine : t.noMoments} /> },
             { id: "sijill", label: sx.tabSijill, icon: <Ico n="record" size={23} />, panel: <div className="px-4">{sijillPanel ?? (record ? <SijillShowcase s={record} moments={[]} locale={locale} /> : <p className="text-muted">{mode === "own" ? sx.notSynced ?? "" : sx.hiddenAll}</p>)}</div> },
             { id: "badges", label: t.tabBadges, icon: <Ico n="rosette" size={23} />, panel: <div className="px-4"><BadgesPanel p={p} tx={tx} own={mode === "own"} /></div> },
+            // owner 22.10.2026: the progress profile (career card, places, Shams, courses, exams, milestones, boards)
+            { id: "stats", label: careerText(locale).tabStats, icon: <Ico n="chart" size={23} />, flush: true, panel: <CareerStatsWeb locale={locale} username={p.username} own={mode === "own"} /> },
           ]} />
         )}
       </div>
@@ -497,7 +516,7 @@ function BadgesPanel({ p, tx, own }: { p: WebProfile; tx: Tx; own: boolean }) {
       <details className="rounded-lg border border-line bg-surface p-5" open={!!p.badge}>
         <summary className="cursor-pointer font-bold">{tx.badgeWhat}</summary>
         <ul className="mt-4 grid gap-4">
-          {(["emerald", "gold", "official"] as const).map((b) => (
+          {([...(p.badge === "founder" ? ["founder"] as const : []), "official", "gold", "emerald"] as const).map((b) => (
             <li key={b} className={`flex gap-3 rounded-md p-3 ${p.badge === b ? "bg-[#c6a65e]/10 ring-1 ring-[#c6a65e]/50" : ""}`}>
               <BadgeIcon badge={b} size={26} />
               <div><p className="font-semibold">{tx[`badge_${b}`]}</p><p className="text-[14px] leading-relaxed text-muted">{tx[`badge_${b}_text`]}</p></div>

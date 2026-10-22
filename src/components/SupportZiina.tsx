@@ -14,6 +14,7 @@ const AMOUNTS = [25, 50, 100, 250];
 export default function SupportZiina() {
   const locale = useLocale();
   const t = useTranslations("ziina");
+  const td = useTranslations("donate");
   const qs = useSearchParams();
   const [cfg, setCfg] = useState<{ api: boolean; link: string; qr?: string } | null>(null);
   const [amount, setAmount] = useState(50);
@@ -52,7 +53,7 @@ export default function SupportZiina() {
     <section className="stage girih relative overflow-hidden rounded-3xl px-6 pb-7 pt-9 text-[#eef0f3] shadow-[0_40px_80px_-40px_rgba(4,30,22,.9)] sm:px-9 sm:pb-9">
       <span aria-hidden className="illum-frame" />
       {["start-1.5 top-1.5", "end-1.5 top-1.5", "bottom-1.5 start-1.5", "bottom-1.5 end-1.5"].map((c) => <Rosette key={c} size={24} className={`absolute ${c}`} />)}
-      <p aria-hidden className="font-callig relative text-center text-[40px] leading-none text-[rgb(var(--gold))]" dir="rtl" lang="ar">صدقة</p>
+      <p aria-hidden className="font-callig relative text-center text-[34px] leading-none text-[rgb(var(--gold))]" dir="rtl" lang="ar">دعم المشروع</p>
       {paid === "completed" && <p role="status" className={note}>{t("thanks")}</p>}
       {paid === "checking" && <p role="status" className={`${note} font-normal text-white/75`}>{t("checking")}</p>}
       {paid === "pending" && <p role="status" className={`${note} font-normal text-white/75`}>{t("pending")}</p>}
@@ -100,6 +101,7 @@ export default function SupportZiina() {
         </div>
       ) : <p className="relative mt-6 rounded-xl bg-white/[0.06] p-4 text-center text-sm text-white/70">{t("soon")}</p>}
       <p className="relative mt-6 flex items-center justify-center gap-1.5 text-center text-xs text-white/50"><IconLock /> {t("safe")}</p>
+      <p className="relative mt-2 text-center text-xs leading-relaxed text-white/60">{td("legal")}</p>
     </section>
   );
 }

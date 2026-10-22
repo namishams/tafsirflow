@@ -8,7 +8,9 @@ import { useEffect, useRef, useState } from "react";
 import { firstLetter } from "@/lib/learn/shams2/memory";
 import type { Prompt } from "@/lib/learn/shams2/grades";
 import { useS2 } from "@/lib/learn/shams2/text";
+import { useRec } from "@/lib/learn/shams2/rec/text";
 import { useWordCheck } from "@/components/learn/media";
+import { align } from "@/lib/recite";
 import { IconEye } from "@/components/Icons";
 import { useWebT } from "./ui";
 
@@ -48,11 +50,14 @@ export function PromptedWords({ words, prompt, mark, size = 26, revealLabel }: {
 
 export type CheckResult = { ok: boolean[]; share: number; pass: boolean; ms: number; paceOk: boolean | null };
 
-export function SpeechCheck({ words, pass, targetMs, onResult, compact }: { words: W[]; pass: number; targetMs?: number | null; onResult: (r: CheckResult) => void; compact?: boolean }) {
+// strict (Shams 3.0): only the same word after normalisation counts
+export function SpeechCheck({ words, pass, targetMs, onResult, compact, strict }: { words: W[]; pass: number; targetMs?: number | null; onResult: (r: CheckResult) => void; compact?: boolean; strict?: boolean }) {
   const { s, nf } = useS2();
   const w = useWebT();
   const c = useWordCheck(words.map((x) => x.text));
   const [ms, setMs] = useState(0);
+  const [nothing, setNothing] = useState(false);
+  const { r } = useRec();
   const [res, setRes] = useState<boolean[] | null>(null);
   const started = useRef(0);
   const armed = useRef(false);
@@ -63,7 +68,10 @@ export function SpeechCheck({ words, pass, targetMs, onResult, compact }: { word
     if (c.state === "listening") { started.current = Date.now(); armed.current = true; setRes(null); return; }
     if (c.state === "done" && armed.current) {
       armed.current = false;
-      const ok = c.ok ?? words.map(() => false);
+      // nothing heard: no result, nothing recorded as missed; the learner tries again
+      if (!c.heard?.trim()) { setRes(null); setNothing(true); return; }
+      setNothing(false);
+      const ok = (strict && c.heard ? align(words.map((x) => x.text), c.heard, { strict: true }).ok : c.ok) ?? words.map(() => false);
       const share = ok.length ? ok.filter(Boolean).length / ok.length : 0;
       const took = Date.now() - started.current;
       setMs(took); setRes(ok);
@@ -90,6 +98,7 @@ export function SpeechCheck({ words, pass, targetMs, onResult, compact }: { word
           {words.map((x, i) => <span key={x.position} className={`font-arabic rounded px-1 text-[18px] leading-[1.8] ${live[i] ? "bg-accent-soft text-accent" : "text-muted"}`}>{x.text}</span>)}
         </p>
       )}
+      {nothing && !listening && <p aria-live="polite" className="text-[13px] font-semibold text-[rgb(var(--hm-gold-d))]">{r("heardNothing")}</p>}
       {res && (
         <div className="grid gap-1" aria-live="polite">
           <p className={`text-[14px] font-semibold ${passed ? "text-accent" : "text-[rgb(var(--hm-gold-d))]"}`}>{`${s("heardOf", { n: nf(n), total: nf(res.length) })} · ${passed ? s("passed") : s("notYetPassed")}`}</p>

@@ -3,11 +3,13 @@ import { readJSON, useStored, writeJSON } from "@/lib/store";
 import { SETUP_KEY, reschedulePrayerAlerts, type PrayerSetup } from "@/features/practice/prayer/alerts";
 import { SETTINGS_KEY } from "@/features/practice/prayer/place";
 import type { PrayerSettings } from "@/web/prayer";
+import type { TraditionChoice } from "@/lib/identity";
 
 // The learner's tradition, asked once (Today) and changeable in Account. It is kept where the guided prayer setup
 // keeps it ("qmc.prayerSetup".tradition: "sunni" | "shia" | "unsure"), so the setup, the trainers and the hadith
 // screens always agree. "unsure" is shown as "I'd rather not say / show both". Local only, never synced.
-export type TraditionChoice = "sunni" | "shia" | "both";
+// The rules (key, values, reading) live in the shared identity module (src/lib/identity.ts → @/web/identity).
+export type { TraditionChoice } from "@/lib/identity";
 /** what the prayer and wudu trainers open with */
 export type TrainerTradition = "sunni" | "shia";
 

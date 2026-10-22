@@ -40,7 +40,7 @@ export function TopicChips({ value, onChange, dark, className = "" }: { value: S
 function Tile({ card, big, onOpen }: { card: WebCard; big?: boolean; onOpen: () => void }) {
   const T = useFeedTexts();
   const tone = toneOf(card.verse?.key ?? card.id);
-  const label = card.kind === "verse" || card.kind === "word" ? `Quran ${card.verse?.key ?? ""}` : kindLabel(T, card);
+  const label = card.kind === "verse" || card.kind === "word" ? `${T.feed.verseLabel} ${card.verse?.key ?? ""}` : kindLabel(T, card);
   const ar = card.verse && (card.kind === "verse" || card.kind === "word") ? card.verse.arabic : card.arabic ?? "";
   const body = card.kind === "verse" ? "" : card.title;
   return (

@@ -10,8 +10,8 @@ import { Lantern } from "@/components/DonateCTA";
 import { PracticeStar, PracticeStarNum } from "@/components/art/PracticeArt";
 import { COMPANY } from "@/lib/company";
 
-// Voluntary support (sadaqa jariya). The website stays free; supporting unlocks nothing. Texts: messages/*.json → "support".
-const HADITH_AR = "إذا مات الإنسان انقطع عنه عمله إلا من ثلاثة: إلا من صدقة جارية، أو علم يُنتفع به، أو ولد صالح يدعو له";
+// Voluntary support payment to ICSL FZE for running Quran Masterclass – expressly not a charitable donation (UAE rules on
+// collecting donations). The website stays free; supporting unlocks nothing. Texts: messages/*.json → "support", "donate".
 const FOR = [1, 2, 3, 4] as const;
 const PROMISES = [1, 2, 3, 4] as const;
 const FAQ = [1, 2, 3, 4, 5, 6] as const;
@@ -27,12 +27,13 @@ export default async function SupportPage({ params }: { params: Promise<{ locale
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations("support");
+  const d = await getTranslations("donate");
   const ld = { "@context": "https://schema.org", "@type": "FAQPage", url: abs(`/${locale}/support`), inLanguage: locale, mainEntity: FAQ.map((i) => ({ "@type": "Question", name: t(`q${i}`), acceptedAnswer: { "@type": "Answer", text: t(`a${i}`) } })) };
   return (
     <div>
       <JsonLd data={ld} />
 
-      {/* hero: a lantern hangs in the arch of light; below it the sadaqa card */}
+      {/* hero: a lantern hangs in the arch of light; below it the support card */}
       <section className="stage girih relative overflow-hidden text-[#eef0f3]">
         <div className="pointer-events-none absolute inset-0" style={{ backgroundImage: "radial-gradient(circle at 50% 18%, rgb(240 200 106 / .18) 0, transparent 42%)" }} />
         <div className="relative mx-auto max-w-3xl px-5 pb-36 text-center sm:pb-40">
@@ -51,17 +52,16 @@ export default async function SupportPage({ params }: { params: Promise<{ locale
       <div className="relative z-[1] mx-auto -mt-28 max-w-2xl px-4 sm:-mt-32 sm:px-5"><Suspense><SupportZiina /></Suspense></div>
 
       <main className="mx-auto max-w-5xl px-5 pb-16">
-        {/* the hadith of the deed that keeps on giving */}
-        <figure className="pa-paper mx-auto mt-14 max-w-3xl px-6 pb-8 pt-10 text-center sm:px-10">
+        {/* what this payment is: stated plainly */}
+        <aside className="pa-paper mx-auto mt-14 max-w-3xl px-6 pb-8 pt-10 text-center sm:px-10">
           <span className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2"><PracticeStarNum n="" size={34} filled /></span>
-          <p className="relative text-xs font-bold uppercase tracking-[0.18em] text-gold rtl:tracking-normal">{t("hadithTitle")}</p>
-          {locale !== "ar" && <p className="font-arabic relative mx-auto mt-5 max-w-2xl text-[24px] leading-[2] sm:text-[27px]" dir="rtl" lang="ar">{HADITH_AR}</p>}
-          <blockquote className={`relative mx-auto mt-4 max-w-2xl leading-relaxed ${locale === "ar" ? "font-arabic text-[24px] leading-[2]" : "text-[18px] text-ink/85 sm:text-[19px]"}`}>{t("hadith")}</blockquote>
-          <figcaption className="relative mt-4 text-sm font-semibold text-gold">{t("hadithSrc")}</figcaption>
-        </figure>
+          <h2 className="relative text-xs font-bold uppercase tracking-[0.18em] text-gold rtl:tracking-normal">{t("legalTitle")}</h2>
+          <p className="relative mx-auto mt-4 max-w-2xl text-[17px] leading-relaxed text-ink/85 sm:text-[18px]">{d("legal")}</p>
+        </aside>
 
         <section className="mt-16">
           <h2 className="font-display text-3xl sm:text-4xl">{t("forTitle")}</h2>
+          <p className="mt-3 max-w-3xl text-[16px] leading-relaxed text-muted">{t("forLead")}</p>
           <ul className="mt-8 grid gap-4 sm:grid-cols-2">
             {FOR.map((i) => (
               <li key={i} className="pa-card flex gap-4 p-5 pt-6">

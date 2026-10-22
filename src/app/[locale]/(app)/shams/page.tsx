@@ -11,6 +11,7 @@ import { MoreTiles } from "@/components/PosterTiles";
 import { IslamArcadeLine, IslamBreak, IslamCorners, IslamNum, IslamRain, IslamStarMark, starPath } from "@/components/art/IslamArt";
 import { IslamStepIcon, IslamSun, STEP_AR } from "@/components/art/IslamShams";
 import { Shams2EntryCard } from "@/components/learn/shams2/EntryCard";
+import { AdabClassicLink } from "@/components/learn/shams2/Adab";
 import { ShamsModeChooser } from "@/components/learn/shams2/ModeChooser";
 import DonateCTA from "@/components/DonateCTA";
 import { ShamsDemoLive, ShamsNameVerse, ShamsStepVerse, ShamsWhyList } from "@/components/learn/shams2/Sources";
@@ -498,6 +499,7 @@ export default async function ShamsPage({ params }: { params: Promise<{ locale: 
         </div>
       </section>
       <div className="mx-auto max-w-6xl px-5 pt-12"><Shams2EntryCard /></div>
+      <div className="mx-auto max-w-6xl px-5 pt-4"><AdabClassicLink /></div>
       <div className="mx-auto max-w-6xl px-5 pt-12"><DonateCTA variant="slim" /></div>
       <MoreTiles keys={["courses", "plan", "map", "arabic"]} className="pt-12" />
     </div>

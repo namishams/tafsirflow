@@ -1,0 +1,235 @@
+{
+ "core": [
+  "account",
+  "language",
+  "nav",
+  "promo",
+  "radio",
+  "rewards"
+ ],
+ "routes": {
+  "[...rest]": [],
+  "@account": [
+   "free",
+   "security",
+   "signin",
+   "trust"
+  ],
+  "@admin": [],
+  "@home": [
+   "donate",
+   "player",
+   "premium",
+   "security",
+   "signin",
+   "social",
+   "trust"
+  ],
+  "@root": [
+   "donate",
+   "player",
+   "premium",
+   "security",
+   "signin",
+   "social",
+   "trust"
+  ],
+  "about": [],
+  "abrahamic": [],
+  "academy": [
+   "academy",
+   "donate",
+   "free",
+   "security",
+   "signin",
+   "trust"
+  ],
+  "app": [
+   "premium"
+  ],
+  "arabic": [
+   "donate",
+   "free",
+   "security",
+   "signin",
+   "trust"
+  ],
+  "assistant": [],
+  "blog": [],
+  "calendar": [
+   "donate"
+  ],
+  "cards": [],
+  "carousels": [
+   "donate"
+  ],
+  "changelog": [],
+  "community": [
+   "community"
+  ],
+  "courses": [
+   "donate"
+  ],
+  "dua-generator": [
+   "duagen"
+  ],
+  "duas": [
+   "donate",
+   "duas"
+  ],
+  "exams": [],
+  "feed": [
+   "donate",
+   "player",
+   "prayer",
+   "social"
+  ],
+  "feedback": [
+   "feedback",
+   "security",
+   "signin",
+   "trust"
+  ],
+  "garden": [],
+  "guides": [],
+  "haramain": [],
+  "how": [],
+  "islam": [
+   "donate"
+  ],
+  "journey": [],
+  "khatm": [
+   "free",
+   "khatm",
+   "security",
+   "signin",
+   "trust"
+  ],
+  "legal": [],
+  "map": [
+   "coach",
+   "map"
+  ],
+  "masterclass": [
+   "premium"
+  ],
+  "mishary": [],
+  "names": [
+   "donate"
+  ],
+  "plan": [
+   "free",
+   "plan",
+   "security",
+   "signin",
+   "trust"
+  ],
+  "prayer": [
+   "donate",
+   "prayer"
+  ],
+  "premium": [
+   "premium"
+  ],
+  "profile": [
+   "coach",
+   "donate",
+   "free",
+   "premium",
+   "profile",
+   "security",
+   "signin",
+   "trust"
+  ],
+  "quran": [
+   "donate",
+   "feedback",
+   "home",
+   "map",
+   "player"
+  ],
+  "radio": [
+   "donate",
+   "social"
+  ],
+  "ranking": [
+   "donate"
+  ],
+  "reciter-path": [],
+  "reciters": [
+   "donate"
+  ],
+  "salah": [],
+  "school": [],
+  "search": [
+   "app",
+   "home",
+   "search"
+  ],
+  "secrets": [
+   "donate"
+  ],
+  "shams": [
+   "donate",
+   "shams"
+  ],
+  "sisters": [],
+  "start": [
+   "shams"
+  ],
+  "stats": [
+   "donate"
+  ],
+  "support": [
+   "donate",
+   "ziina"
+  ],
+  "surah": [
+   "donate",
+   "home",
+   "player",
+   "premium",
+   "reader",
+   "recite",
+   "security",
+   "session",
+   "shams",
+   "signin",
+   "social",
+   "trust"
+  ],
+  "swipe": [],
+  "tajweed": [
+   "tajweed"
+  ],
+  "talents": [
+   "premium"
+  ],
+  "teacher": [],
+  "tests": [],
+  "today": [
+   "coach",
+   "donate",
+   "home2",
+   "map",
+   "onboard",
+   "prayer",
+   "session",
+   "today"
+  ],
+  "together": [],
+  "u": [],
+  "username": [],
+  "verify": [],
+  "vocab": [
+   "free",
+   "security",
+   "signin",
+   "trust",
+   "vocab"
+  ],
+  "vocab-decks": [],
+  "world": [],
+  "wudu": []
+ }
+}

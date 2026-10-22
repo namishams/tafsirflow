@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
 import JsonLd from "@/components/JsonLd";
+import { Link } from "@/i18n/navigation";
+import { careerText } from "@/lib/careerWeb";
 import DonateCTA from "@/components/DonateCTA";
 import { MoreTiles } from "@/components/PosterTiles";
 import WorldRanking, { type InitialRanking } from "@/components/rankings/WorldRanking";
@@ -63,6 +65,8 @@ export default async function RankingPage({ params }: { params: Promise<{ locale
         </div>
       </section>
       <section className="mx-auto max-w-4xl px-5 py-10">
+        {/* owner 22.10.2026: the global boards by period and category (week, month, all time; XP, verses, streak, exams) */}
+        <p className="mb-6"><Link href="/ranking/global" className="inline-flex min-h-11 items-center rounded-lg border border-[rgb(var(--gold))]/60 px-4 font-semibold hover:bg-[rgb(var(--gold))]/10">{careerText(locale).boardTitle}</Link></p>
         <WorldRanking initial={initial} />
         <HallOfFame hall={hall} locale={locale} />
       </section>

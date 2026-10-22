@@ -4,15 +4,15 @@ import type { ShamsPart } from "../../shamsContent";
 const c: ShamsPart = {
   heroKicker: "Quran Masterclass · méthode d’apprentissage",
   heroTitle: "La Méthode Shams",
-  heroLead: "Une manière d’apprendre le Coran pour qu’il reste : chaque verset est écouté, prononcé, compris, expliqué, rappelé de mémoire et relié à votre vie – en sept étapes et environ quatre minutes. Ce que la recherche sur l’apprentissage des langues et sur la mémoire sait de la rétention, uni à la manière dont les enseignants du Coran enseignent depuis des siècles.",
+  heroLead: "Une manière d’apprendre le Coran pour qu’il reste : chaque verset est écouté, prononcé, compris, expliqué, rappelé de mémoire et relié à votre vie – en sept étapes et, selon la longueur du verset, environ deux à huit minutes. Ce que la recherche sur l’apprentissage des langues et sur la mémoire sait de la rétention, uni à la manière dont les enseignants du Coran enseignent depuis des siècles.",
   heroBy: "Développée par Nami Shams à Dubaï",
   heroFacts: [
     { n: "7", l: "étapes pour chaque verset" },
-    { n: "≈ 4", l: "minutes pour un nouveau verset" },
-    { n: "6", l: "révisions planifiées en trois mois" },
+    { n: "2–8", l: "minutes par nouveau verset, selon sa longueur" },
+    { n: "3–6", l: "révisions en trois mois quand un verset est bien ancré – davantage s’il vacille" },
   ],
   stepsTitle: "Les sept étapes en détail",
-  stepsLead: "Chaque étape a une tâche claire. Ensemble, elles prennent environ quatre minutes par verset. La plateforme vous guide à travers chacune d’elles – vous n’avez rien à préparer.",
+  stepsLead: "Chaque étape a une tâche claire. Ensemble, elles prennent environ deux à huit minutes par verset, selon sa longueur. La plateforme vous guide à travers chacune d’elles – vous n’avez rien à préparer.",
   labels: { what: "Ce que vous faites", why: "Pourquoi cela fonctionne", platform: "Ce que la plateforme fait pour vous", time: "Durée" },
   steps: [
     { what: "Vous écoutez le verset trois fois de suite en suivant le texte arabe. Pas encore de traduction ni de répétition à voix haute – seulement écouter et regarder.", time: "environ 45 secondes" },
@@ -25,7 +25,7 @@ const c: ShamsPart = {
   ],
   demoTitle: "Un verset, quatre étapes",
   demoStages: ["Verset entier", "Construire à rebours", "Premières lettres seulement", "De mémoire"],
-  finalTitle: "Votre premier verset prend quatre minutes",
+  finalTitle: "Votre premier verset ne prend que quelques minutes",
   finalLead: "Commencez par Al-Fatihah. La plateforme vous guide à chaque étape.",
   finalPoints: ["Rien à préparer – la plateforme vous guide à chaque étape.", "La translittération et le sens apparaissent sous chaque mot.", "Ensuite, le modèle de mémoire planifie vos révisions."],
   whyCloseApp: "C’est pourquoi la Méthode Shams existe : pour que personne n’ait à repousser l’apprentissage le plus important de sa vie.",

@@ -15,7 +15,7 @@ import { VERSE_COUNTS } from "@/lib/counts";
 import { loadFeedTexts } from "./loadTexts";
 import { fill } from "./texts";
 import type { FeedTexts } from "./texts";
-import { DAY, memo, plain, pool, withTimeout } from "./net";
+import { DAY, memo, peek, plain, poke, pool, withTimeout } from "./net";
 import { duaByRef, lemmaCard, prefetchWiki, surahInfo, tafsirByRef, wikiCard, wordByRef } from "./sources";
 import { chapterNames, knowledgeByRef } from "./know";
 import { WEB_TOPICS } from "./types";
@@ -270,6 +270,27 @@ async function oneCard(i: FeedItem, cx: Ctx): Promise<WebCard | null> {
   }
 }
 
+/** a corpus item's card is the same for every reader of a language and tradition: resolved cards are kept for six
+ *  hours, so a page with another seed (every browser and install has its own order) is built from finished cards
+ *  instead of loading each verse, hadith and article again. Cards that could not be resolved are not kept. */
+const CARD_TTL = 6 * 3_600_000;
+/** FNV-1a over the whole item: an edited post (new text, other reference) is a new key */
+function fingerprint(i: FeedItem): string {
+  const s = JSON.stringify(i);
+  let h = 0x811c9dc5;
+  for (let k = 0; k < s.length; k++) { h ^= s.charCodeAt(k); h = Math.imul(h, 0x01000193); }
+  return `${s.length}.${(h >>> 0).toString(36)}`;
+}
+async function cachedCard(i: FeedItem, cx: Ctx): Promise<WebCard | null> {
+  if (i.kind !== "corpus") return oneCard(i, cx);
+  const key = `card:${cx.locale}:${cx.tradition}:${cx.tr}:${i.id}:${fingerprint(i)}`;
+  const hit = peek<WebCard>(key);
+  if (hit) return hit;
+  const c = await oneCard(i, cx);
+  if (c) poke(key, c, CARD_TTL);
+  return c;
+}
+
 const normalizeLocale = (l: string): FeedLocale => {
   const x = (l || "en").slice(0, 2).toLowerCase();
   return (FEED_LOCALES as readonly string[]).includes(x) ? (x as FeedLocale) : "en";
@@ -297,7 +318,7 @@ export async function resolveCards(items: FeedItem[], locale: string, opts: Reso
   const left = Math.max(0, (opts.budgetMs ?? 14_000) - (Date.now() - started));
   const deadline = new Promise<"late">((r) => { timer = setTimeout(() => r("late"), left); });
   const results: (WebCard | null)[] = new Array(list.length).fill(null);
-  const work = pool(list, 6, async (item, idx) => { const c = await oneCard(item, cx); results[idx] = c; return c; });
+  const work = pool(list, 6, async (item, idx) => { const c = await cachedCard(item, cx); results[idx] = c; return c; });
   await Promise.race([work, deadline]);
   clearTimeout(timer);
 

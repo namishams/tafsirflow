@@ -12,7 +12,7 @@ import { useWebT } from "@/i18n/web";
 import { TILES } from "@/web/tiles";
 import { hasAppRoute } from "@/lib/features";
 import { archPath, starPath } from "./web/practiceArt";
-import { goBack } from "@/components/page";
+import { StatusScrim, goBack } from "@/components/page";
 
 export { archPath, starPath };
 
@@ -386,13 +386,15 @@ export function LinkList({ title, links }: { title: string; links: readonly (rea
 export function PageScroll({ children, scrollRef }: { children: ReactNode; scrollRef?: Ref<ScrollViewInstance> }) {
   const t = useTheme();
   const [over, setOver] = useState(false);
+  const [under, setUnder] = useState(false);
   return (
-    <>
+    <View style={{ flex: 1, backgroundColor: t.bg }}>
       <StatusBar style={over && !t.dark ? "dark" : "light"} />
       <ScrollView ref={scrollRef} style={{ flex: 1, backgroundColor: t.bg }} contentContainerStyle={{ paddingBottom: 48 }} keyboardShouldPersistTaps="handled"
-        scrollEventThrottle={64} onScroll={(e) => setOver(e.nativeEvent.contentOffset.y > 320)}>
+        scrollEventThrottle={64} onScroll={(e) => { const y = e.nativeEvent.contentOffset.y; setOver(y > 320); setUnder(y > 6); }}>
         {children}
       </ScrollView>
-    </>
+      <StatusScrim visible={under} />
+    </View>
   );
 }

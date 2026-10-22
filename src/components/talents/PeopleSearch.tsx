@@ -5,6 +5,7 @@ import { BadgeIcon, type WebBadge } from "./BadgeIcon";
 import { Avatar, Ico, followLabel, type WebIconName } from "./TalentProfileWeb";
 import { tpText } from "@/lib/talentsProfileWeb";
 import { fill } from "@/lib/talentsWeb";
+import { maybeSignedIn } from "@/lib/sync";
 
 // Search like Instagram / TikTok on the website, 1:1 with the app (mobile/src/features/talents/Search.tsx): a rounded
 // field with live results as you type (250 ms), tabs Accounts (default) and Top (a few accounts plus learning content:
@@ -39,8 +40,9 @@ export default function PeopleSearch({ locale, surahs, courses, initialQ = "", i
 
   useEffect(() => { setRecent(readRecent()); }, []);
   useEffect(() => {
-    fetch("/api/community/suggested", { cache: "no-store" }).then(async (r) => {
-      if (r.status === 401) { setSignedIn(false); setSuggested([]); return; }
+    // signed-out visitors: straight to the sign-in hint, without a 401 from /suggested in the console
+    maybeSignedIn().then((maybe) => (maybe ? fetch("/api/community/suggested", { cache: "no-store" }) : null)).then(async (r) => {
+      if (!r || r.status === 401) { setSignedIn(false); setSuggested([]); return; }
       setSignedIn(true);
       const d = (await r.json().catch(() => ({}))) as { talents?: Row[] };
       setSuggested(d.talents ?? []);
@@ -50,6 +52,7 @@ export default function PeopleSearch({ locale, surahs, courses, initialQ = "", i
   useEffect(() => {
     const my = ++seq.current;
     if (!s) { setRows(null); setLoading(false); return; }
+    if (signedIn === false) { setBlocked("signin"); setRows([]); setLoading(false); return; } // accounts need a sign-in
     setLoading(true);
     const id = setTimeout(() => {
       fetch(`/api/community/search?q=${encodeURIComponent(s)}`, { cache: "no-store" }).then(async (r) => {
@@ -61,7 +64,7 @@ export default function PeopleSearch({ locale, surahs, courses, initialQ = "", i
       }).catch(() => { if (my === seq.current) { setBlocked("error"); setRows([]); } }).finally(() => { if (my === seq.current) setLoading(false); });
     }, 250);
     return () => clearTimeout(id);
-  }, [s]);
+  }, [s, signedIn]);
 
   const push = (r: Recent) => { const l = [r, ...readRecent().filter((x) => rid(x) !== rid(r))]; writeRecent(l); setRecent(l.slice(0, 20)); };
   const openAccount = (c: { username: string; name: string; avatar?: string | null; badge?: WebBadge | null }) => {

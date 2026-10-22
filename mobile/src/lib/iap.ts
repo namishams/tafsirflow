@@ -12,7 +12,9 @@ import { getToken } from "./storage";
 // Store purchases (StoreKit 2 on iOS, Google Play Billing on Android). Every purchase is checked by our server
 // (signature against Apple's root certificate) and bound to the signed-in account, so Pro and dua credits work on
 // every device; a transaction is only finished after the server confirmed it, so nothing gets lost offline.
-export type BuyResult = "ok" | "cancelled" | "pending" | "failed" | "unavailable";
+/** "unconfirmed": the store took the payment but the server has not confirmed it yet; the transaction stays open and is
+ *  credited automatically when settlePending runs again (launch, foreground, sign-in) */
+export type BuyResult = "ok" | "cancelled" | "pending" | "failed" | "unavailable" | "unconfirmed";
 
 let connection: Promise<boolean> | null = null;
 function connect(): Promise<boolean> {
@@ -137,7 +139,7 @@ async function buy(sku: string, type: "subs" | "in-app"): Promise<BuyResult> {
       if (p.productId !== sku) return;
       if (p.purchaseState === "pending") { finish("pending"); return; } // approved later: the app-wide listener settles it
       // not confirmed: stays unfinished and is retried by settlePending (launch / foreground)
-      finish((await settle(p)) ? "ok" : "failed");
+      finish((await settle(p)) ? "ok" : "unconfirmed");
     });
     const err = purchaseErrorListener((e) => finish(isUserCancelledError(e) ? "cancelled" : "failed"));
     const request = type === "subs"
@@ -148,10 +150,12 @@ async function buy(sku: string, type: "subs" | "in-app"): Promise<BuyResult> {
 }
 
 /** buy Pro: the monthly plan, or another Pro plan of PRO_SKUS (yearly) */
-export const purchasePro = (sku: string = PRO_PRODUCT) => buy(isPro(sku) ? sku : PRO_PRODUCT, "subs");
+export const purchasePro = async (sku: string = PRO_PRODUCT): Promise<BuyResult> => { const r = await buy(isPro(sku) ? sku : PRO_PRODUCT, "subs"); return r === "unconfirmed" ? "failed" : r; };
 export async function purchaseConsumable(sku: string): Promise<boolean> {
   return (await buy(sku, "in-app")) === "ok";
 }
+/** the same purchase with the full result (pending, paid but not yet confirmed, cancelled …) */
+export const purchaseConsumableResult = (sku: string): Promise<BuyResult> => buy(sku, "in-app");
 
 /** "Restore purchases": ask the store, let the server confirm each active one */
 export async function restore(): Promise<"restored" | "none" | "failed"> {

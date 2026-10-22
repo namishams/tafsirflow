@@ -6,6 +6,7 @@ import { clientIp, json, rateLimited, sameOrigin } from "@/lib/http";
 import { COUNTRY_CODES, GOALS } from "@/lib/countries";
 import { passwordProblem } from "@/lib/passwords";
 import { deleteUserMedia } from "@/lib/talentPosting";
+import { handOverCircles } from "@/lib/together";
 
 export const dynamic = "force-dynamic";
 
@@ -90,6 +91,8 @@ export async function POST(req: NextRequest) {
     // certificate recordings sent for review (absolute paths outside the web root; the rows go with the cascade)
     const recs = await p.query("SELECT q.recording_path AS f FROM review_queue q JOIN certificates c ON c.id = q.certificate_id WHERE c.user_id = $1 AND q.recording_path IS NOT NULL", [me.id]).catch(() => ({ rows: [] as { f: string }[] }));
     for (const r of recs.rows) await fs.unlink(r.f).catch(() => undefined);
+    // Together: study circles this account leads go to the longest-standing member (a circle without members is removed)
+    await handOverCircles(me.id).catch(() => undefined);
     await p.query("DELETE FROM users WHERE id = $1", [me.id]); // sessions, data, comments, likes are removed with it (ON DELETE CASCADE)
     await endSession();
     return json({ ok: true });

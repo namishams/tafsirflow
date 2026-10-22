@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import JsonLd from "@/components/JsonLd";
-import { ISLAM, islamUi, loadChapters, readingMinutes } from "@/lib/islam";
+import { ISLAM, islamUi, loadChapters, readingMinutes, tradUi } from "@/lib/islam";
+import IslamHubGrid from "@/components/islam/IslamHubGrid";
 import { abs, pageMeta } from "@/lib/site";
 import { CalligraphyDraw } from "@/components/Ornaments";
 import { IslamArcadeLine, IslamArchWindow, IslamCorners, IslamDome, IslamMosque, IslamNum, IslamRain, saw } from "@/components/art/IslamArt";
@@ -55,16 +56,10 @@ export default async function IslamHub({ params }: { params: Promise<{ locale: s
       <div className="isl-marble isl-under">
         <section className="mx-auto max-w-6xl px-5 pb-16 pt-14 sm:pb-20 sm:pt-20">
           <h2 className="font-display text-4xl leading-tight">{u.chapters}</h2>
-          <ol className="mt-8 grid grid-cols-1 gap-3 min-[340px]:grid-cols-2 sm:grid-cols-3 sm:gap-4 lg:grid-cols-4">
-            {ISLAM.map((d, i) => {
-              const c = chs[i];
-              return (
-                <li key={d.slug} className="min-w-0">
-                  <ChapterCard i={i} href={`/islam/${d.slug}`} title={c.title} lead={c.lead} kicker={c.kicker} ar={d.arabic} meta={`${u.read} · ${readingMinutes(c.body)} ${u.min}`} />
-                </li>
-              );
-            })}
-          </ol>
+          <IslamHubGrid slugs={ISLAM.map((d) => d.slug)} other={tradUi(locale).other} otherLead={tradUi(locale).otherLead} cards={ISLAM.map((d, i) => {
+            const c = chs[i];
+            return <ChapterCard key={d.slug} i={i} href={`/islam/${d.slug}`} title={c.title} lead={c.lead} kicker={c.kicker} ar={d.arabic} meta={`${u.read} · ${readingMinutes(c.body)} ${u.min}`} />;
+          })} />
         </section>
 
         <section className="mx-auto max-w-6xl px-5 pb-16 sm:pb-24">

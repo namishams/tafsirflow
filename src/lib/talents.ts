@@ -23,7 +23,7 @@ export const NO_STORE = { "Cache-Control": "private, no-store" };
 /** the full select of a profile row plus follower counts (alias c) */
 export const PROFILE_COLS = `c.user_id, c.username, c.display_name, c.bio, c.country, c.role, c.style, c.has_ijaza, c.public, c.shares_total,
   c.rewaya, c.maqam, c.ijazah_chain, c.level, c.verified, c.show_progress, c.tree_stage, c.tree_type, c.cert_juz, c.suspended,
-  c.avatar_path, c.avatar_version, c.private, c.message_policy, c.badge, c.official, c.official_channel,
+  c.avatar_path, c.avatar_version, c.private, c.message_policy, c.badge, c.official, c.official_channel, c.founder,
   (SELECT count(*)::int FROM community_follows f WHERE f.followee_id = c.user_id) AS followers,
   (SELECT count(*)::int FROM community_follows f WHERE f.follower_id = c.user_id) AS following`;
 
@@ -122,6 +122,6 @@ export const CONTENT_VISIBLE = (col: string) =>
   `(${col} = $1 OR NOT COALESCE((SELECT x.private FROM community_profiles x WHERE x.user_id = ${col}), false) OR EXISTS (SELECT 1 FROM community_follows fv WHERE fv.follower_id = $1 AND fv.followee_id = ${col}))`;
 
 /** SQL: the member shows a badge (alias c) */
-export const HAS_BADGE = "(c.verified OR c.official OR c.badge <> 'none')";
+export const HAS_BADGE = "(c.verified OR c.official OR c.founder OR c.badge <> 'none')";
 /** SQL rank for ordering: official, gold, emerald, none */
-export const BADGE_RANK = "(CASE WHEN c.official THEN 3 WHEN c.verified OR c.badge = 'gold' THEN 2 WHEN c.badge = 'emerald' THEN 1 ELSE 0 END)";
+export const BADGE_RANK = "(CASE WHEN c.founder THEN 4 WHEN c.official THEN 3 WHEN c.verified OR c.badge = 'gold' THEN 2 WHEN c.badge = 'emerald' THEN 1 ELSE 0 END)";

@@ -2,8 +2,8 @@
   "id": "hadith-intentions",
   "kind": "hadith",
   "hadithId": "bukhari:1",
-  "title": { "de": "Taten nach Absichten", "en": "Deeds by intentions" },
-  "body": { "de": "Der erste Hadith in Sahih al-Bukhari. Der Text wird aus der Quelle geladen.", "en": "The first hadith in Sahih al-Bukhari. The text is loaded from the source." },
+  "title": { "de": "Taten nach Absichten", "en": "Deeds by intentions", "ar": "إنما الأعمال بالنيات", "tr": "Ameller niyetlere göredir", "ur": "اعمال کا دارومدار نیتوں پر ہے", "fa": "ارزش اعمال به نیت‌هاست", "ps": "عملونه په نیتونو پورې تړلي دي", "fr": "Les actes ne valent que par les intentions", "es": "Las obras dependen de las intenciones", "id": "Amal tergantung niatnya", "ms": "Amalan bergantung pada niat", "bn": "আমল নিয়তের উপর নির্ভরশীল", "ru": "Дела оцениваются по намерениям", "zh": "行为以举意为准" },
+  "body": { "de": "Der erste Hadith in Sahih al-Bukhari. Der Text wird aus der Quelle geladen.", "en": "The first hadith in Sahih al-Bukhari. The text is loaded from the source.", "ar": "الحديث الأول في صحيح البخاري. يُحمَّل النص من المصدر.", "tr": "Sahîh-i Buhârî'deki ilk hadis. Metin kaynaktan yüklenir.", "ur": "صحیح بخاری کی پہلی حدیث۔ متن ماخذ سے لوڈ کیا جاتا ہے۔", "fa": "نخستین حدیث صحیح بخاری. متن از منبع بارگذاری می‌شود.", "ps": "د صحیح البخاري لومړی حدیث. متن له اصلي سرچینې څخه راوړل کېږي.", "fr": "Le premier hadith du Sahih al-Bukhari. Le texte est chargé depuis la source.", "es": "El primer hadiz del Sahih al-Bujari. El texto se carga desde la fuente.", "id": "Hadis pertama dalam Shahih al-Bukhari. Teksnya dimuat dari sumbernya.", "ms": "Hadis pertama dalam Sahih al-Bukhari. Teksnya dimuatkan daripada sumber.", "bn": "সহিহ আল-বুখারির প্রথম হাদিস। মূল উৎস থেকে পাঠ লোড করা হয়।", "ru": "Первый хадис сборника «Сахих аль-Бухари». Текст загружается из источника.", "zh": "《布哈里圣训实录》的第一段圣训。原文从出处加载。" },
   "source": "Sahih al-Bukhari", "sourceUrl": "https://sunnah.com/bukhari:1",
   "tradition": "sunni", "publishAt": "2026-10-21T00:00:00Z"
 }

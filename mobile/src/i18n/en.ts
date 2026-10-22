@@ -7,7 +7,7 @@ const en = {
     error: "Something went wrong. Please try again.", free: "Free", locked: "Pro", back: "Back", and: "and",
   },
   pro: {
-    cta: "Get Pro", name: "Quran Masterclass Pro", price: "{price} per month", priceFallback: "4,99 € per month",
+    cta: "Get Pro", name: "Quran Masterclass Pro", price: "{price} per month", priceFallback: "US$9.99 per month",
     lead: "The complete Masterclass: learn the tafsir of every surah with the Shams Method, with all reciters and courses.",
     f_shams: "Shams Method for all 114 surahs", f_reciters: "All reciters, with word highlighting", f_radio: "All radio stations",
     f_courses: "Complete Arabic and Tajweed courses", f_tests: "Academy tests for every surah", f_offline: "Surahs offline",

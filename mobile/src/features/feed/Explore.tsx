@@ -18,7 +18,7 @@ import { useFeedVoice } from "./voice";
 import { FeedEmpty, useStalled } from "./ui";
 import { SAVED_NAMES_KEY } from "./savedNames";
 import { useReducedMotionX } from "@/features/extra/motion";
-import { Image, TextInput } from "react-native";
+import { TextInput } from "react-native";
 import { LIB, LIB_TOPICS, LibScheduler, isLibId, isSubTopic, onLibData, takeRemoteNew, type LibTopic, type SubTopic } from "./library";
 import { KNOW_SUBJECTS } from "./knowKinds";
 import { knowItemOf, knowKindLabel } from "./KnowledgePost";
@@ -30,6 +30,7 @@ import { wasSeen } from "./seen";
 import { kindTopic, libText, topicLabel as libTopicLabel } from "./LibraryPost";
 import { SAVED_KEY as CAROUSEL_SAVED_KEY, isCarouselOrWisdom, postSearchText, savedPostIds, type SavedPost } from "@/features/carousel/registry";
 import { CarouselTile } from "@/features/carousel/Posts";
+import { RemoteImage } from "@/components/RemoteImage";
 
 // Explore (a 3-column grid of square tiles, like Instagram Explore) and the Saved collection. A tile opens the Reels
 // view at that item. Every text on a tile comes from the vetted sources (Quran API, library stories, hadith APIs).
@@ -63,7 +64,7 @@ const Tile = memo(function Tile({ e, size, onPress, big }: { e: Entry; size: num
   return (
     <Pressable onPress={onPress} accessibilityRole="button" accessibilityLabel={[label, body].filter(Boolean).join(". ")} style={({ pressed }) => ({ width: size, height: size, padding: 1, opacity: pressed && reduce ? 0.8 : 1, transform: [{ scale: pressed && !reduce ? 0.97 : 1 }] })}>
       <LinearGradient colors={tone} start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }} style={{ flex: 1, padding: 8, justifyContent: "space-between", overflow: "hidden" }}>
-        {img ? <Image source={{ uri: img }} resizeMode="cover" style={{ position: "absolute", left: 0, right: 0, top: 0, bottom: 0 }} accessibilityIgnoresInvertColors /> : null}
+        {img ? <RemoteImage uri={img} style={{ position: "absolute", left: 0, right: 0, top: 0, bottom: 0 }} /> : null}
         <Text numberOfLines={1} style={{ fontFamily: FONT.semibold, fontSize: 9.5, letterSpacing: 1, textTransform: "uppercase", color: stage.gold }}>{label}</Text>
         {ar ? <Text allowFontScaling={false} accessibilityLanguage="ar" numberOfLines={big ? 7 : 4} style={{ fontFamily: ARABIC_FONT, fontSize: big ? 22 : 14, lineHeight: big ? 40 : 26, color: "#fff", textAlign: "center", writingDirection: "rtl" }}>{ar}</Text> : null}
         {body ? <Text numberOfLines={ar ? 1 : 5} style={{ fontFamily: FONT.regular, fontSize: 11, lineHeight: 15, color: "rgba(255,255,255,0.86)", textAlign: "center" }}>{body}</Text> : <View />}

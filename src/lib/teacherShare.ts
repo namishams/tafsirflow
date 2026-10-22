@@ -50,7 +50,10 @@ export type ServerSnapshot = {
   log: [number, number][];
   weak: { total: number; lapses: number; fading: number; words: number; mut: number };
   itqan: { surahs: number; juz: number };
+  /** Shams 3.0: the six mastery dimensions over all memorised verses (0–100, null = no data yet); optional */
+  mastery?: Record<(typeof MASTERY_DIMS)[number], number | null>;
 };
+export const MASTERY_DIMS = ["hifz", "words", "links", "understand", "tajweed", "similar"] as const;
 const int = (v: unknown, lo: number, hi: number): number | null => {
   const n = typeof v === "number" ? Math.round(v) : NaN;
   return Number.isFinite(n) && n >= lo && n <= hi ? n : null;
@@ -89,11 +92,20 @@ export function cleanSnapshot(raw: unknown): ServerSnapshot | null {
   const itqan = { surahs: int(it.surahs, 0, 114), juz: int(it.juz, 0, 30) };
   if (!sabaq || !cyc || sabqi === null || manzil === null || minutes === null || !surahs || !juz || !log) return null;
   if (Object.values(weak).some((x) => x === null) || itqan.surahs === null || itqan.juz === null) return null;
+  // optional mastery (older apps do not send it): each dimension 0–100 or null; anything else drops the whole field
+  let mastery: ServerSnapshot["mastery"];
+  const ms = r.mastery as Record<string, unknown> | undefined;
+  if (ms && typeof ms === "object") {
+    const out = {} as NonNullable<ServerSnapshot["mastery"]>;
+    let ok = true;
+    for (const k of MASTERY_DIMS) { const v = ms[k]; if (v === null || v === undefined) out[k] = null; else { const n = int(v, 0, 100); if (n === null) ok = false; out[k] = n; } }
+    if (ok) mastery = out;
+  }
   return {
     v: 1, at: Date.now(), streak, wirdStreak, memorised, overall, grade,
     plan: { sabaq: sabaq as [number, number, number][], sabqi, manzil, minutes, cycle: cyc[0] as [number, number] },
     surahs: surahs as ServerSnapshot["surahs"], juz: juz as ServerSnapshot["juz"], log: log as [number, number][],
-    weak: weak as ServerSnapshot["weak"], itqan: itqan as ServerSnapshot["itqan"],
+    weak: weak as ServerSnapshot["weak"], itqan: itqan as ServerSnapshot["itqan"], ...(mastery ? { mastery } : {}),
   };
 }
 

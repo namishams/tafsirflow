@@ -3,11 +3,18 @@ import { useEffect, useMemo, useState } from "react";
 import { useLocale } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import {
-  DAY, EVENTS, HIJRI_MONTHS, addMonths, calText, daysBetween, fmtGregorian, fmtHijri, fromHijri, hijriMonthName, monthGrid, monthLength, nextOccurrence, toHijri, todayUtc,
+  DAY, eventSources, eventsFor, isMourning, HIJRI_MONTHS, addMonths, calText, daysBetween, fmtGregorian, fmtHijri, fromHijri, hijriMonthName, monthGrid, monthLength, nextOccurrence, toHijri, todayUtc,
 } from "@/lib/hijri";
 import { Rosette } from "./Ornaments";
+import { readTradition } from "@/lib/learn/tradition";
 
-const NIGHTS = new Set(["lastten", "qadr"]);
+const NIGHTS = new Set(["lastten", "qadr", "qadr19", "qadr21", "qadr23"]);
+/** the days of the learner's tradition (Shia: the Shia calendar; Sunni: the common days; not chosen: both), like the app */
+function useEvents() {
+  const [trad, setTrad] = useState<ReturnType<typeof readTradition>>(null);
+  useEffect(() => { setTrad(readTradition()); }, []);
+  return useMemo(() => eventsFor(trad), [trad]);
+}
 const toIso = (t: number) => new Date(t).toISOString().slice(0, 10);
 const fromIso = (s: string) => { const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(s); return m ? Date.UTC(+m[1], +m[2] - 1, +m[3]) : null; };
 
@@ -53,7 +60,8 @@ type Ev = ReturnType<typeof calText>["ev"];
 
 function TodayCard({ today, locale, t, ev, ar }: { today: number; locale: string; t: T; ev: Ev; ar: boolean }) {
   const h = toHijri(today);
-  const next = useMemo(() => EVENTS.map((e) => ({ e, o: nextOccurrence(e.m, e.d, today) })).filter((x) => x.o).sort((a, b) => a.o!.t - b.o!.t)[0], [today]);
+  const events = useEvents();
+  const next = useMemo(() => events.map((e) => ({ e, o: nextOccurrence(e.m, e.d, today) })).filter((x) => x.o).sort((a, b) => a.o!.t - b.o!.t)[0], [today, events]);
   const n = next ? daysBetween(today, next.o!.t) : 0;
   return (
     <section className="stage relative overflow-hidden rounded-2xl px-5 py-9 text-[#eef0f3] sm:px-10">
@@ -90,7 +98,7 @@ function MonthView({ today, view, setView, locale, t, ev, ar }: { today: number;
   const grid = useMemo(() => monthGrid(view.y, view.m, weekStart), [view.y, view.m, weekStart]);
   const th = toHijri(today);
   const isCurrent = th.y === view.y && th.m === view.m;
-  const evs = EVENTS.filter((e) => e.m === view.m);
+  const evs = useEvents().filter((e) => e.m === view.m);
   const last = grid.first + (grid.len - 1) * DAY;
   const span = `${fmtGregorian(grid.first, locale, { day: "numeric", month: "short" })} – ${fmtGregorian(last, locale, { day: "numeric", month: "short", year: "numeric" })}`;
   // weekday headers from a known Sunday (4 Jan 1970)
@@ -134,9 +142,9 @@ function MonthView({ today, view, setView, locale, t, ev, ar }: { today: number;
             return (
               <div key={c.t} aria-label={label} title={label} aria-current={isToday ? "date" : undefined}
                 className={`relative flex min-h-[3.25rem] flex-col items-center justify-center rounded-lg border px-0.5 py-1 sm:min-h-[4.5rem] ${isToday ? "border-[rgb(201_166_94)] bg-[rgb(201_166_94)]/15 shadow-[0_0_0_2px_rgb(201_166_94/0.35)]" : white ? "border-transparent bg-accent-soft/60" : "border-transparent bg-bg"}`}>
-                <span className={`font-display text-[16px] leading-none sm:text-[22px] ${e ? "text-gold" : ""}`}>{c.h}</span>
+                <span className={`font-display text-[16px] leading-none sm:text-[22px] ${e && !isMourning(e.id) ? "text-gold" : ""}`}>{c.h}</span>
                 <span className="mt-1 text-[10px] leading-none text-muted sm:text-[11px]">{gDay === 1 || c.h === 1 ? fmtGregorian(c.t, locale, { day: "numeric", month: "short" }) : gDay}</span>
-                {e && <span aria-hidden className="absolute end-1 top-1 h-1.5 w-1.5 rotate-45 bg-[rgb(201_166_94)]" />}
+                {e && <span aria-hidden className={`absolute end-1 top-1 h-1.5 w-1.5 rotate-45 ${isMourning(e.id) ? "bg-muted" : "bg-[rgb(201_166_94)]"}`} />}
               </div>
             );
           })}
@@ -157,8 +165,9 @@ function MonthView({ today, view, setView, locale, t, ev, ar }: { today: number;
               const gt = fromHijri(view.y, view.m, e.d);
               return (
                 <li key={e.id} className="flex flex-wrap items-baseline gap-x-3 gap-y-1 rounded-lg border border-line bg-surface px-4 py-3 text-[14.5px]">
-                  <b className="text-gold">{e.d} {hijriMonthName(view.m, locale)}</b>
+                  <b className={isMourning(e.id) ? "text-muted" : "text-gold"}>{e.d} {hijriMonthName(view.m, locale)}</b>
                   <span className="font-semibold">{ev(e.id).name}</span>
+                  {isMourning(e.id) && <span className="text-[13px] text-muted">{t("mourning")}</span>}
                   {gt !== null && <span className="text-muted">{fmtGregorian(gt, locale, { weekday: "short", day: "numeric", month: "long", year: "numeric" })}</span>}
                 </li>
               );
@@ -171,7 +180,8 @@ function MonthView({ today, view, setView, locale, t, ev, ar }: { today: number;
 }
 
 function Upcoming({ today, locale, t, ev }: { today: number; locale: string; t: T; ev: Ev }) {
-  const list = useMemo(() => EVENTS.map((e) => ({ e, o: nextOccurrence(e.m, e.d, today) })).filter((x) => x.o).sort((a, b) => a.o!.t - b.o!.t), [today]);
+  const events = useEvents();
+  const list = useMemo(() => events.map((e) => ({ e, o: nextOccurrence(e.m, e.d, today) })).filter((x) => x.o).sort((a, b) => a.o!.t - b.o!.t), [today, events]);
   return (
     <section>
       <h2 className="font-display text-3xl">{t("upcoming")}</h2>
@@ -179,19 +189,23 @@ function Upcoming({ today, locale, t, ev }: { today: number; locale: string; t: 
         {list.map(({ e, o }) => {
           const n = daysBetween(today, o!.t);
           const x = ev(e.id);
+          const sad = isMourning(e.id);
+          const src = eventSources(e.id);
           return (
             <li key={e.id} className="relative flex flex-col overflow-hidden rounded-xl border border-line bg-surface p-5">
-              <span aria-hidden className="niche !border-[rgb(201_166_94)]/20" />
+              {!sad && <span aria-hidden className="niche !border-[rgb(201_166_94)]/20" />}
               <div className="relative flex flex-wrap items-start justify-between gap-2">
                 <h3 className="font-display min-w-0 text-[20px] leading-snug">{x.name}</h3>
-                <span className="shrink-0 rounded-full bg-[rgb(201_166_94)]/15 px-3 py-1 text-[13px] font-bold text-gold">{n === 0 ? t("todayCount") : n === 1 ? t("tomorrow") : t("inDays", { n })}</span>
+                <span className={`shrink-0 rounded-full px-3 py-1 text-[13px] font-bold ${sad ? "border border-line bg-bg text-muted" : "bg-[rgb(201_166_94)]/15 text-gold"}`}>{n === 0 ? t("todayCount") : n === 1 ? t("tomorrow") : t("inDays", { n })}</span>
               </div>
               <p className="relative mt-1 text-[13.5px] text-muted">
                 <span className="font-semibold text-ink">{fmtHijri({ y: o!.y, m: e.m, d: e.d }, locale)}</span> · {fmtGregorian(o!.t, locale, { weekday: "long", day: "numeric", month: "long", year: "numeric" })}
               </p>
               <p className="relative mt-3 text-[15px] leading-relaxed">{x.desc}</p>
               {NIGHTS.has(e.id) && <p className="relative mt-1 text-[13px] text-muted">{t("nightNote")}</p>}
+              {sad && <p className="relative mt-2 text-[12.5px] font-semibold tracking-wide text-muted">{t("mourning")}</p>}
               {x.note && <p className="relative mt-2 text-[13.5px] italic leading-relaxed text-muted">{x.note}</p>}
+              {src.length > 0 && <p className="relative mt-2 break-words text-[12px] leading-relaxed text-muted">{t("sourcesLabel")}: {src.join(" · ")} · {t("reviewNote")}</p>}
               {e.link && <Link href={e.link} className="relative mt-auto inline-flex pt-3 text-sm font-semibold text-accent hover:underline">{t("more")}</Link>}
             </li>
           );

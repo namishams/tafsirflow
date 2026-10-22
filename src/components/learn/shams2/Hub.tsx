@@ -14,6 +14,8 @@ import { DueChecks, GradeCard } from "./Darajat";
 import { Briefing } from "./Tadabbur";
 import { useOnboarded } from "./Guide";
 import { ShamsModeChooser } from "./ModeChooser";
+import { AdabMethodLine, AdabPillarCard, AdabTodayCard, useAdabTile } from "./Adab";
+import { ListenDaysCard, SistersEntryCard } from "@/components/sisters/Sisters";
 
 function Today() {
   const { s, nf } = useS2();
@@ -36,6 +38,7 @@ function Today() {
 }
 
 function Tiles() {
+  const adab = useAdabTile();
   const { s, nf } = useS2();
   const m = useShams2();
   const weak = weakSpots(m.known, m.words, m.mut).length;
@@ -49,6 +52,7 @@ function Tiles() {
       <Tile title={s("weakTitle")} lead={weak ? s("weakCount", { n: nf(weak) }) : s("weakShort")} href="/shams/weak" />
       <Tile title={s("darajatTitle")} lead={s("darajatShort")} href="/shams/darajat" />
       <Tile title={s("weekTitle")} lead={s("weekShort")} href="/shams/week" />
+      <Tile title={adab.title} lead={adab.lead} href={adab.href} />
       <Tile title={s("handbookTitle")} lead={s("handbookShort")} href="/shams/handbook" />
       <Tile title={s("teacherTitle")} lead={s("teacherShort")} href="/shams/teacher" />
     </div>
@@ -57,6 +61,7 @@ function Tiles() {
 
 /** the same tiles without stored progress (server rendering and first paint) */
 function StaticTiles() {
+  const adab = useAdabTile();
   const { s } = useS2();
   return (
     <div className="grid gap-2.5 sm:grid-cols-2">
@@ -67,6 +72,7 @@ function StaticTiles() {
       <Tile title={s("weakTitle")} lead={s("weakShort")} href="/shams/weak" />
       <Tile title={s("darajatTitle")} lead={s("darajatShort")} href="/shams/darajat" />
       <Tile title={s("weekTitle")} lead={s("weekShort")} href="/shams/week" />
+      <Tile title={adab.title} lead={adab.lead} href={adab.href} />
       <Tile title={s("handbookTitle")} lead={s("handbookShort")} href="/shams/handbook" />
       <Tile title={s("teacherTitle")} lead={s("teacherShort")} href="/shams/teacher" />
     </div>
@@ -88,14 +94,19 @@ export function HubScreen() {
       <LearnHero back={{ href: "/shams", label: w.method }} kicker={s("eyebrow")} title={s("hubTitle")} lead={s("hubLead")} word="منهج شمس" uid="s2" />
       <LearnMain className="grid gap-5">
         <ShamsModeChooser className="pb-2" />
-        <Live fallback={null}><Onboard /><DueChecks /></Live>
-        <Live><Today /><GradeCard compact /></Live>
+        <Live fallback={null}><Onboard /><DueChecks /><ListenDaysCard compact /><SistersEntryCard always /></Live>
+        <Live><Today /></Live>
+        {/* pillar "Adab des Qurʾān-Trägers" (Shams 3.0): one adab of the day next to today's wird */}
+        <AdabTodayCard />
+        <Live><GradeCard compact /></Live>
         <Live fallback={<StaticTiles />}><Tiles /></Live>
         <Card><ContinueNext /></Card>
+        <AdabPillarCard />
         <section className="grid gap-3">
           <SectionTitle title={s("methodTitle")} />
           <div className="grid gap-2.5">
             {(["m1", "m2", "m3", "m4", "m5"] as const).map((k) => <p key={k} className="text-[15.5px] leading-relaxed">{s(k)}</p>)}
+            <AdabMethodLine />
           </div>
           <SourceNote src={["halaqa", "jazari", "nawawi", "fsrs", "retrieval", "interleave"]} review={{ status: "draft" }} />
         </section>

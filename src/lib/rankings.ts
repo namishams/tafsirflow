@@ -36,6 +36,9 @@ const REFRESH_MS = 10 * 60_000;
 const LOCK_ID = 7_210_026;
 
 const COL: Record<Metric, string> = { xp_week: "xp_week", xp_total: "xp_total", streak: "streak", verses: "verses", stickers: "stickers", mashaallah: "mashaallah" };
+/** passed exams count on the boards only for members who show exams in their Sijill (alias c); same exam kinds as sijill.ts */
+const EXAMS_SHOWN = "COALESCE((c.sijill_privacy ->> 'exams')::boolean, true)";
+const EXAM_LIST = ["qbank", "rp-level", "juz", "ar-unit", "surah"].map((x) => `'${x}'`).join(",");
 const AGE = (n: number) => `(u.birth_year IS NOT NULL AND extract(year from now())::int - u.birth_year >= ${n})`;
 /** SQL: the profile (alias c, user alias u) may be shown by name in worldwide lists right now */
 export const NAMED_LIVE = `(c.leaderboard_opt_in AND c.rankings_world AND c.public AND NOT c.private AND NOT c.suspended AND ${AGE(MIN_NAMED_AGE)})`;
@@ -100,10 +103,20 @@ async function build(c: PoolClient, cur: number) {
   const counted = `(c.count_country AND c.country IS NOT NULL AND c.country <> '' AND ${AGE(13)})`;
   const circle = `(c.leaderboard_opt_in AND ${AGE(13)})`;
   const cur0 = Math.floor(cur); // a number from mondayDay(), safe to inline (CREATE TABLE AS takes no parameters)
+  const now0 = new Date();
+  const monthFirst = Math.floor(Date.UTC(now0.getUTCFullYear(), now0.getUTCMonth(), 1) / DAY_MS); // integer day, safe to inline
+  const monthKey = now0.getUTCFullYear() * 100 + now0.getUTCMonth() + 1;
+  // month XP counts whole weeks by their Thursday, the same rule closePeriods uses for the month seasons: closed weeks
+  // whose Thursday falls in this month plus the running week when its Thursday does (no boundary week is dropped or
+  // counted twice; the running week of a month's last days belongs to the next month, as in the season)
+  const mx = monthFirst - 3;
+  const firstWeek = mx + ((7 - ((mx + 3) % 7)) % 7);
+  const nextMonthFirst = Math.floor(Date.UTC(now0.getUTCFullYear(), now0.getUTCMonth() + 1, 1) / DAY_MS);
+  const runningInMonth = cur0 >= firstWeek && cur0 + 3 < nextMonthFirst;
   await c.query(
     `CREATE TEMP TABLE rk_src ON COMMIT DROP AS
      SELECT c.user_id, c.username, c.display_name, c.avatar_path, c.avatar_version, upper(NULLIF(c.country, '')) AS country,
-            CASE WHEN c.official THEN 'official' WHEN c.badge = 'gold' OR c.verified THEN 'gold' WHEN c.badge = 'emerald' THEN 'emerald' END AS badge,
+            CASE WHEN c.founder THEN 'founder' WHEN c.official THEN 'official' WHEN c.badge = 'gold' OR c.verified THEN 'gold' WHEN c.badge = 'emerald' THEN 'emerald' END AS badge,
             c.level, ${named} AS named, ${circle} AS circle, c.public AS is_public, ${counted} AS counted,
             (CASE WHEN c.week_monday >= ${cur0} - 1 THEN c.week_xp ELSE 0 END)::int AS xp_week,
             COALESCE(NULLIF(c.achievements #>> '{level,xp}', '')::bigint, 0) AS xp_total,
@@ -111,24 +124,41 @@ async function build(c: PoolClient, cur: number) {
             c.memorised_verses AS verses,
             COALESCE(NULLIF(c.achievements #>> '{stickers,total}', '')::int, 0) AS stickers,
             COALESCE(m.n, 0)::int AS mashaallah,
+            -- progress profile boards (22.10.2026): month XP (weeks counted by their Thursday, see firstWeek above),
+            -- best streak, and distinct passed exams per period (only when the member shows exams in the Sijill)
+            (COALESCE(wm.xp, 0) + (CASE WHEN ${runningInMonth ? "true" : "false"} AND c.week_monday >= ${cur0} - 1 THEN c.week_xp ELSE 0 END))::bigint AS xp_month,
+            GREATEST(COALESCE(NULLIF(c.achievements #>> '{time,best}', '')::int, 0), (CASE WHEN c.achievements_updated_at >= now() - interval '2 days' THEN c.streak_days ELSE 0 END))::int AS best_streak,
+            (CASE WHEN ${EXAMS_SHOWN} THEN COALESCE(ex.wk, 0) ELSE 0 END)::int AS exams_week,
+            (CASE WHEN ${EXAMS_SHOWN} THEN COALESCE(ex.mo, 0) ELSE 0 END)::int AS exams_month,
+            (CASE WHEN ${EXAMS_SHOWN} THEN COALESCE(ex.n, 0) ELSE 0 END)::int AS exams_total,
             (c.week_monday >= ${cur0} - 1 AND (c.week_active > 0 OR c.week_xp > 0)) AS active7,
             COALESCE(c.achievements_updated_at >= now() - interval '30 days', false) AS active30
        FROM community_profiles c JOIN users u ON u.id = c.user_id
        LEFT JOIN (SELECT cr.receiver_id AS user_id, count(*) AS n FROM community_reaction_credits cr
                     JOIN community_moment_reactions r ON r.moment_id = cr.moment_id AND r.user_id = cr.giver_id AND r.reaction = 'mashallah'
                    GROUP BY cr.receiver_id) m ON m.user_id = c.user_id
+       LEFT JOIN (SELECT user_id, sum(xp)::bigint AS xp FROM ranking_week_xp WHERE week_monday >= ${firstWeek} AND week_monday < ${cur0} GROUP BY user_id) wm ON wm.user_id = c.user_id
+       LEFT JOIN (SELECT user_id, count(*)::int AS n, (count(*) FILTER (WHERE first_at >= date '1970-01-01' + ${cur0}))::int AS wk,
+                         (count(*) FILTER (WHERE first_at >= date '1970-01-01' + ${monthFirst}))::int AS mo
+                    FROM (SELECT user_id, exam, ref, min(submitted_at) AS first_at FROM exam_attempts
+                           WHERE passed AND status = 'submitted' AND sig IS NOT NULL AND exam IN (${EXAM_LIST}) GROUP BY user_id, exam, ref) e
+                   GROUP BY user_id) ex ON ex.user_id = c.user_id
       WHERE NOT c.suspended AND (${named} OR ${counted} OR ${circle})`,
   );
   // the sticker/verse counts the first time a member is seen this week: the base for the weekly gains
   await c.query("INSERT INTO ranking_week_base (week_monday, user_id, stickers, verses) SELECT $1::int, user_id, stickers, verses FROM rk_src ON CONFLICT DO NOTHING", [cur]);
+  await c.query("INSERT INTO ranking_month_base (month_key, user_id, verses) SELECT $1::int, user_id, verses FROM rk_src ON CONFLICT DO NOTHING", [monthKey]);
   await c.query("DELETE FROM ranking_snapshot");
   await c.query(
     `INSERT INTO ranking_snapshot (user_id, username, display_name, avatar_path, avatar_version, country, badge, level, named, circle, is_public, counted,
-                                   xp_week, xp_total, streak, verses, verses_week, stickers, stickers_week, mashaallah, active7, active30)
+                                   xp_week, xp_total, streak, verses, verses_week, stickers, stickers_week, mashaallah, active7, active30,
+                                   xp_month, verses_month, best_streak, exams_week, exams_month, exams_total)
      SELECT s.user_id, s.username, s.display_name, s.avatar_path, s.avatar_version, s.country, s.badge, s.level, s.named, s.circle, s.is_public, s.counted,
-            s.xp_week, s.xp_total, s.streak, s.verses, GREATEST(0, s.verses - b.verses), s.stickers, GREATEST(0, s.stickers - b.stickers), s.mashaallah, s.active7, s.active30
-       FROM rk_src s JOIN ranking_week_base b ON b.week_monday = $1 AND b.user_id = s.user_id`,
-    [cur],
+            s.xp_week, s.xp_total, s.streak, s.verses, GREATEST(0, s.verses - b.verses), s.stickers, GREATEST(0, s.stickers - b.stickers), s.mashaallah, s.active7, s.active30,
+            s.xp_month, GREATEST(0, s.verses - COALESCE(mb.verses, s.verses)), s.best_streak, s.exams_week, s.exams_month, s.exams_total
+       FROM rk_src s JOIN ranking_week_base b ON b.week_monday = $1 AND b.user_id = s.user_id
+       LEFT JOIN ranking_month_base mb ON mb.month_key = $2 AND mb.user_id = s.user_id`,
+    [cur, monthKey],
   );
   await c.query("DELETE FROM ranking_countries");
   await c.query(
@@ -141,6 +171,7 @@ async function build(c: PoolClient, cur: number) {
     [MIN_COUNTRY_MEMBERS],
   );
   await c.query("DELETE FROM ranking_week_base WHERE week_monday < $1", [cur - 14]);
+  await c.query("DELETE FROM ranking_month_base WHERE month_key < $1", [monthKey - 100]);
   await c.query("DELETE FROM ranking_week_xp WHERE week_monday < $1", [cur - 800]);
   await c.query("INSERT INTO ranking_meta (key, value) VALUES ('snapshot_monday', $1) ON CONFLICT (key) DO UPDATE SET value = $1, updated_at = now()", [String(cur)]);
   await c.query("INSERT INTO ranking_meta (key, value) VALUES ('refreshed', 'ok') ON CONFLICT (key) DO UPDATE SET value = 'ok', updated_at = now()");
@@ -228,9 +259,9 @@ async function closePeriods(c: PoolClient, cur: number) {
 
 // ---------------------------------------------------------------- reading (lists, standings, countries)
 export type RankRow = { rank: number; username: string; name: string; country: string | null; badge: Badge | null; level: string; avatar: string | null; score: number; streak: number; me: boolean };
-type Internal = RankRow & { userId: number };
+export type Internal = RankRow & { userId: number };
 const cache = new Map<string, { at: number; v: unknown }>();
-async function cached<T>(key: string, ttl: number, load: () => Promise<T>): Promise<T> {
+export async function cached<T>(key: string, ttl: number, load: () => Promise<T>): Promise<T> {
   const hit = cache.get(key);
   if (hit && Date.now() - hit.at < ttl) return hit.v as T;
   const v = await load();
@@ -239,12 +270,12 @@ async function cached<T>(key: string, ttl: number, load: () => Promise<T>): Prom
   return v;
 }
 
-const rowOf = (x: Record<string, unknown>, meId?: number): Internal => ({
+export const rowOf = (x: Record<string, unknown>, meId?: number): Internal => ({
   userId: Number(x.user_id), rank: Number(x.rk), username: String(x.username), name: String(x.display_name || x.username), country: (x.country as string) ?? null,
-  badge: displayBadge({ badge: x.badge as string | null, official: x.badge === "official", verified: x.badge === "gold" }), level: String(x.level ?? "talent"),
+  badge: displayBadge({ badge: x.badge as string | null, official: x.badge === "official", verified: x.badge === "gold", founder: x.badge === "founder" }), level: String(x.level ?? "talent"),
   avatar: x.avatar_path ? `/api/community/avatar/${x.username}?v=${Number(x.avatar_version ?? 0)}` : null, score: Number(x.score), streak: Number(x.streak), me: meId !== undefined && Number(x.user_id) === meId,
 });
-const COLS = "s.user_id, s.username, s.display_name, s.avatar_path, s.avatar_version, s.country, s.badge, s.level, s.streak";
+export const COLS = "s.user_id, s.username, s.display_name, s.avatar_path, s.avatar_version, s.country, s.badge, s.level, s.streak";
 
 /** top 100 by name (worldwide, or inside one country) */
 async function topList(metric: Metric, country: string | null): Promise<Internal[]> {
@@ -260,7 +291,7 @@ async function topList(metric: Metric, country: string | null): Promise<Internal
   });
 }
 
-const blockedOf = async (meId: number) => new Set((await pool()!.query("SELECT blocked_id AS o FROM community_blocks WHERE blocker_id = $1 UNION SELECT blocker_id FROM community_blocks WHERE blocked_id = $1", [meId])).rows.map((x) => Number(x.o)));
+export const blockedOf = async (meId: number) => new Set((await pool()!.query("SELECT blocked_id AS o FROM community_blocks WHERE blocker_id = $1 UNION SELECT blocker_id FROM community_blocks WHERE blocked_id = $1", [meId])).rows.map((x) => Number(x.o)));
 
 export async function listFor(scope: "world" | "country", metric: Metric, country: string | null, meId?: number): Promise<RankRow[]> {
   const rows = await topList(metric, scope === "country" ? country : null);
@@ -369,7 +400,7 @@ export async function seasons(kind: SeasonKind, limit = 60): Promise<SeasonInfo[
 export async function seasonRows(kind: SeasonKind, key: string, metric: SeasonMetric, limit = LIST_SIZE, meId?: number): Promise<RankRow[]> {
   const r = await pool()!.query(
     `SELECT r.rank AS rk, r.user_id, r.score, r.country, c.username, c.display_name, c.avatar_path, c.avatar_version, c.level, s.streak,
-            CASE WHEN c.official THEN 'official' WHEN c.badge = 'gold' OR c.verified THEN 'gold' WHEN c.badge = 'emerald' THEN 'emerald' END AS badge
+            CASE WHEN c.founder THEN 'founder' WHEN c.official THEN 'official' WHEN c.badge = 'gold' OR c.verified THEN 'gold' WHEN c.badge = 'emerald' THEN 'emerald' END AS badge
        FROM ranking_results r JOIN ranking_seasons z ON z.id = r.season_id
        JOIN community_profiles c ON c.user_id = r.user_id JOIN users u ON u.id = r.user_id
        LEFT JOIN ranking_snapshot s ON s.user_id = r.user_id

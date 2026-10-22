@@ -2,6 +2,7 @@
 // Days are handled as UTC midnights so that daylight saving never shifts a date.
 
 import { LOCALE_META, type AppLocale } from "./locales";
+import { SHIA_DAYS, SHIA_DAY_TEXT, SHIA_MOURNING, SHIA_REPLACES, shiaDaySources } from "./islam/shia-days";
 
 export type HDate = { y: number; m: number; d: number };
 export const DAY = 86_400_000;
@@ -166,8 +167,14 @@ export const EVENTS: HEvent[] = [
 // ---- tradition-specific days (dates standard in the respective tradition; all depend on moon sighting, ±1 day) ----
 export type Tradition = "sunni" | "shia" | "both" | null | undefined;
 const E = (id: string, m: number, d: number): HEvent => ({ id, m, d });
-const SHIA_ONLY: HEvent[] = [E("ghadir", 12, 18), E("arbaeen", 2, 20), E("mubahala", 12, 24), E("aliBirth", 7, 13), E("fatimiyya", 6, 3)];
-const SHIA_REPLACED = new Set(["ashura", "mawlid", "lastten", "qadr"]);
+// the Shia days: the five that were always here plus the births and martyrdoms of the Prophet ﷺ, Fatima al-Zahra and
+// the twelve Imams, Eid al-Mab'ath and the birth of Imam al-Mahdi (./islam/shia-days.ts, with sources)
+const SHIA_ONLY: HEvent[] = [E("ghadir", 12, 18), E("arbaeen", 2, 20), E("mubahala", 12, 24), E("aliBirth", 7, 13), E("fatimiyya", 6, 3), ...SHIA_DAYS.map((x) => E(x.id, x.m, x.d))];
+const SHIA_REPLACED = new Set<string>(["ashura", "mawlid", "lastten", "qadr", ...SHIA_REPLACES]);
+/** a day of mourning (Ashura, Arba'in, the martyrdoms): shown in a quiet tone, never as a celebration */
+export const isMourning = (id: string) => SHIA_MOURNING.has(id);
+/** the sources of a tradition-specific day (empty for the common days) */
+export const eventSources = (id: string) => shiaDaySources(id);
 /** the days one mode shows: Sunni = common set; Shia = common set with the Shia forms of Ashura, Mawlid (17 Rabi' al-Awwal)
  *  and Laylat al-Qadr (19/21/23 Ramadan) plus the Shia-only days; both (or not chosen) = everything, each date once */
 export function eventsFor(trad: Tradition): HEvent[] {
@@ -234,6 +241,9 @@ const CAL: Record<AppLocale, CalText> = {
     cdApprox: "Die Daten hängen von der Mondsichtung ab (±1 Tag).",
     notifDays: "{name} in {n} Tagen",
     notifTomorrow: "{name} ist morgen",
+    mourning: "Tag der Trauer",
+    sourcesLabel: "Quellen",
+    reviewNote: "Inhalt wird von Gelehrten geprüft.",
     ev: {
       newyear: { name: "Islamisches Neujahr", desc: "1. Muharram – Beginn des Hidschri-Jahres, gezählt ab der Auswanderung des Propheten ﷺ nach Medina." },
       ashura: { name: "ʿAschura", desc: "10. Muharram – der Tag, an dem Allah Musa und sein Volk errettete. Viele fasten an diesem Tag, dazu auch am 9." },
@@ -297,6 +307,9 @@ const CAL: Record<AppLocale, CalText> = {
     cdApprox: "Dates depend on moon sighting (±1 day).",
     notifDays: "{name} in {n} days",
     notifTomorrow: "{name} is tomorrow",
+    mourning: "Day of mourning",
+    sourcesLabel: "Sources",
+    reviewNote: "Content is being reviewed by scholars.",
     ev: {
       newyear: { name: "Islamic New Year", desc: "1 Muharram – the start of the Hijri year, counted from the Prophet's ﷺ emigration to Madinah." },
       ashura: { name: "Ashura", desc: "10 Muharram – the day Allah saved Musa and his people. Many fast on this day, together with the 9th." },
@@ -1087,5 +1100,7 @@ export function calText(locale: string) {
     if (vars) for (const [k, v] of Object.entries(vars)) s = s.replace(`{${k}}`, String(v));
     return s;
   };
-  return { t, ev: (id: string): Ev => d.ev[id] ?? CAL.en.ev[id] };
+  // the Shia days of ./islam/shia-days.ts are written in German and English; every other language shows English
+  const shia = locale === "de" ? SHIA_DAY_TEXT.de : SHIA_DAY_TEXT.en;
+  return { t, ev: (id: string): Ev => d.ev[id] ?? shia[id] ?? CAL.en.ev[id] ?? SHIA_DAY_TEXT.en[id] ?? { name: id, desc: "" } };
 }

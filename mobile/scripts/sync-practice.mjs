@@ -220,9 +220,11 @@ export type { Lang };
 /** the texts of a step (title, meaning, note): the website's L2 */
 export type Tx = L2;`);
 // wudu trainer: UI texts, Arabic counts, the drawing's paths and colours
-write("wuduTrainer", `${decls(comp("WuduTrainer"), ["UiKey", "Ui", "UI", "AR_TIMES", "GOLD", "WATER", "DROP", "HEAD", "HAIR", "FACE", "EAR", "LIPS", "NOSE", "HAND", "ARM", "FOOT", "INSTEP", "arc", "slips", "shuffle"], ["Lang"])}
+write("wuduTrainer", `${decls(comp("WuduTrainer"), ["UiKey", "Ui", "UI", "AR_TIMES", "GOLD", "WATER", "DROP", "HAND", "ARM", "FOOT", "INSTEP", "arc", "slips", "shuffle"], ["Lang"])}
 export type { Lang };`
   + `\nexport const DONE_AR = ${JSON.stringify(arabicJsx(comp("WuduTrainer"))[0])};`);
+// the painted world of both trainers (courtyard, figure, water): a pure geometry module, copied whole
+write("trainerArt", readFileSync(join(site, "src", "components", "art", "trainerArt.ts"), "utf8").trimEnd());
 // prayer board: the Arabic names of the prayer times
 write("prayerBoard", decls(comp("PrayerBoard"), ["AR_NAME"]));
 // sunnah duas: reading-mode texts, the Arabic names of the hadith collections for Arabic readers

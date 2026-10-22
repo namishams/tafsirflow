@@ -1,4 +1,5 @@
 import { NextRequest } from "next/server";
+import { usernameProblem } from "@/lib/usernameFilter";
 import { pool } from "@/lib/db";
 import { json } from "@/lib/http";
 import { ROLES, USERNAME_RE, adultEnough, badText, gate, reserved, shape, type CRole } from "@/lib/communityProfiles";
@@ -34,6 +35,12 @@ export async function PUT(req: NextRequest) {
   const country = typeof b.country === "string" && /^[A-Za-z]{2}$/.test(b.country) ? b.country.toUpperCase() : null;
   if (!USERNAME_RE.test(username)) return json({ error: "username_format" }, 400);
   if (reserved(username)) return json({ error: "username_reserved" }, 400);
+  {
+    // the same word filter as GET /api/community/username; an unchanged existing name stays allowed
+    const bad = usernameProblem(username);
+    const same = bad ? (await pool()!.query("SELECT 1 FROM community_profiles WHERE user_id = $1 AND username = $2", [me.id, username])).rows[0] : null;
+    if (bad && !same) return json({ error: bad === "reserved" ? "username_reserved" : "username_inappropriate" }, 400);
+  }
   if (!name) return json({ error: "name_required" }, 400);
   if (bio.length > 160) return json({ error: "bio_long" }, 400);
   if (!role) return json({ error: "role" }, 400);

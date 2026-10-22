@@ -55,12 +55,14 @@ function Canvas({ format, p, seed, children, n, total, lang, brand = "small", to
 }) {
   const { w, h } = CARD_SIZE[format];
   const b = BOX[format];
+  // the slide is an image: its rows already turn for Arabic (f.rtl → row-reverse), so the app's RTL layout must not
+  // turn them a second time
   return (
-    <View style={{ width: w, height: h, overflow: "hidden", backgroundColor: p.bg[1] }}>
+    <View style={{ width: w, height: h, overflow: "hidden", backgroundColor: p.bg[1], direction: "ltr" }}>
       <ShareGround p={p} w={w} h={h} seed={seed} />
       <ShareFrame p={p} w={w} h={h} l={b.frame} />
       {n !== undefined && total ? (
-        <View style={{ position: "absolute", top: format === "story" ? b.top - 30 : b.frame.frame + 12, end: b.frame.frame + 14, flexDirection: "row", alignItems: "center", gap: 4 }}>
+        <View style={{ position: "absolute", top: format === "story" ? b.top - 30 : b.frame.frame + 12, [RTL.has(lang) ? "left" : "right"]: b.frame.frame + 14, flexDirection: "row", alignItems: "center", gap: 4 }}>
           <Text allowFontScaling={false} style={{ fontFamily: FONT.semibold, fontSize: 10, letterSpacing: 1.2, color: p.accent }}>{digits(n, lang)}/{digits(total, lang)}</Text>
         </View>
       ) : null}
@@ -97,15 +99,36 @@ export function CoverSlide({ c, format, palette, total }: { c: CarouselPayload; 
   const p = PALETTES[palette ?? c.palette];
   const f = fontsFor(c.lang);
   const tx = carouselText(c.lang);
-  const { w } = CARD_SIZE[format];
-  const boxW = w - BOX[format].padX * 2;
+  const { w, h } = CARD_SIZE[format];
+  const bx = BOX[format];
+  const boxW = w - bx.padX * 2;
   const small = format === "square";
-  const rosette = c.cover.arabic ? (format === "story" ? 150 : small ? 92 : 118) : 0;
-  const tS = fit(c.cover.title.length, boxW, small ? 96 : format === "story" ? 170 : 130, f.rtl ? 0.5 : 0.52, 1.18, 21, format === "story" ? 40 : small ? 30 : 34);
+  const gap = small ? 8 : 12;
+  // The content is centred between the frame and the brand line and must fit there: kicker, rule, sub line(s) and the
+  // swipe pill are fixed, rosette and title share the rest. A long cover first gets a smaller title (down to a size that
+  // still reads as a title), then a smaller rosette, then the smallest title. Before (22.10.2026) a three-line title with
+  // rosette and sub line ran over the frame at the top and under the wordmark at the bottom ("Al-Fatihah: the prayer
+  // inside every prayer", "6 verses for when patience runs thin").
+  const room = h - bx.top - bx.bottom - (bx.foot + 18);
+  const sub = c.cover.sub ?? "";
+  const subS = small ? 13.5 : 15;
+  const subLH = small ? 19 : f.rtl ? 26 : 21;
+  const subLines = sub ? Math.min(small ? 2 : 3, Math.ceil((sub.length * subS * 0.52) / boxW)) : 0;
+  const fixed = 15 + 12 + 28 + (small ? 2 : 8) + subLines * subLH + gap * (sub ? 4 : 3);
+  const titleLH = f.rtl ? 1.55 : 1.16;
+  const titleH = (s: number) => Math.ceil((c.cover.title.length * s * (f.rtl ? 0.5 : 0.55)) / boxW) * s * titleLH;
+  let rosette = c.cover.arabic ? (format === "story" ? 150 : small ? 92 : 118) : 0;
+  const over = (s: number) => titleH(s) + (rosette ? rosette + gap : 0) > room - fixed;
+  let tS = fit(c.cover.title.length, boxW, small ? 96 : format === "story" ? 170 : 130, f.rtl ? 0.5 : 0.52, 1.18, 21, format === "story" ? 40 : small ? 30 : 34);
+  const comfy = small ? 22 : format === "story" ? 28 : 25;
+  while (tS > comfy && over(tS)) tS -= 0.5;
+  if (rosette && over(tS)) rosette = Math.max(small ? 60 : 72, Math.floor(room - fixed - gap - titleH(tS)));
+  while (tS > (small ? 16 : 19) && over(tS)) tS -= 0.5;
+  const titleLines = Math.max(1, Math.min(4, Math.floor((room - fixed - (rosette ? rosette + gap : 0)) / (tS * titleLH))));
   const arS = c.cover.arabic ? Math.min(rosette * 0.3, (rosette * 0.64 * 2.1) / Math.max(2.5, arLen(c.cover.arabic))) : 0;
   return (
     <Canvas format={format} p={p} seed={`cr:${c.id}`} lang={c.lang} brand="big">
-      <View style={{ alignItems: "center", gap: small ? 8 : 12 }}>
+      <View style={{ alignItems: "center", gap }}>
         <Text allowFontScaling={false} numberOfLines={1} style={{ fontFamily: FONT.semibold, fontSize: 11, letterSpacing: 1.6, color: p.accent, textAlign: "center" }}>{c.cover.kicker}</Text>
         <OrnamentRule p={p} width={110} />
         {c.cover.arabic ? (
@@ -113,8 +136,8 @@ export function CoverSlide({ c, format, palette, total }: { c: CarouselPayload; 
             <Text allowFontScaling={false} accessibilityLanguage="ar" numberOfLines={1} style={{ fontFamily: ARABIC_BOLD, fontSize: arS, lineHeight: arS * 1.75, color: p.arabic, textAlign: "center" }}>{c.cover.arabic}</Text>
           </Rosette>
         ) : null}
-        <Text allowFontScaling={false} numberOfLines={4} style={{ fontFamily: f.title, fontSize: tS, lineHeight: tS * (f.rtl ? 1.55 : 1.16), letterSpacing: f.rtl ? 0 : -0.4, color: p.ink, textAlign: "center", writingDirection: f.rtl ? "rtl" : "ltr" }}>{c.cover.title}</Text>
-        {c.cover.sub ? <Text allowFontScaling={false} numberOfLines={small ? 2 : 3} style={{ fontFamily: f.italic, fontSize: small ? 13.5 : 15, lineHeight: small ? 19 : f.rtl ? 26 : 21, color: p.soft, textAlign: "center", writingDirection: f.rtl ? "rtl" : "ltr" }}>{c.cover.sub}</Text> : null}
+        <Text allowFontScaling={false} numberOfLines={titleLines} style={{ fontFamily: f.title, fontSize: tS, lineHeight: tS * titleLH, letterSpacing: f.rtl ? 0 : -0.4, color: p.ink, textAlign: "center", writingDirection: f.rtl ? "rtl" : "ltr" }}>{c.cover.title}</Text>
+        {sub ? <Text allowFontScaling={false} numberOfLines={subLines} style={{ fontFamily: f.italic, fontSize: subS, lineHeight: subLH, color: p.soft, textAlign: "center", writingDirection: f.rtl ? "rtl" : "ltr" }}>{sub}</Text> : null}
         <View style={{ flexDirection: f.rtl ? "row-reverse" : "row", alignItems: "center", gap: 6, marginTop: small ? 2 : 8, paddingHorizontal: 14, height: 28, borderRadius: 14, borderWidth: 1, borderColor: p.line }}>
           <Text allowFontScaling={false} style={{ fontFamily: FONT.semibold, fontSize: 11.5, color: p.ink }}>{tx.swipe}</Text>
           <Text allowFontScaling={false} style={{ fontFamily: FONT.semibold, fontSize: 10.5, color: p.accent }}>{digits(total, c.lang)}</Text>

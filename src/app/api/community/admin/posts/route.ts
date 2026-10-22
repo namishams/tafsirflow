@@ -16,7 +16,7 @@ export async function GET(req: NextRequest) {
   void cleanupMedia();
   const r = await pool()!.query(
     `SELECT p.id, p.type, p.media_path, p.media_kind, p.has_video, p.duration_ms, p.caption, p.verse_key, p.word_check, p.created_at, p.expires_at,
-            c.username, c.verified, c.badge, c.official, c.level
+            c.username, c.verified, c.badge, c.official, c.founder, c.level
        FROM community_posts p LEFT JOIN community_profiles c ON c.user_id = p.author_id
       WHERE p.status = 'pending' AND p.deleted_at IS NULL ORDER BY p.created_at ASC LIMIT 100`,
   );

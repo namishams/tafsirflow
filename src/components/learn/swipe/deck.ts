@@ -17,6 +17,7 @@ import { buildQueue, readSrsState } from "@/lib/learn/srs/store";
 import { installSeed } from "@/lib/feedWeb/client";
 import type { WebCard, WebFeedPage } from "@/lib/feedWeb/types";
 import { readJSON, writeJSON } from "@/lib/learn/store";
+import { maybeSignedIn } from "@/lib/sync";
 import { mashaState, wasShown } from "@/lib/learn/swipe/store";
 import { profile, type Profile, type Source } from "@/lib/learn/swipe/personal";
 
@@ -181,9 +182,9 @@ export class SwipeDeck {
     if (!this.momentsOn || m.loading || m.done || this.moments.length >= 3 || Date.now() < m.retryAt) return;
     m.loading = true;
     const q = new URLSearchParams({ scope: m.scope, locale: this.lang, ...(m.before ? { before: m.before } : {}) });
-    void fetch(`/api/community/moments?${q}`, { headers: { Accept: "application/json" }, credentials: "same-origin" }).then(async (res) => {
-      // signed out, under 13 or no age confirmed: no moments in this session
-      if (res.status === 401 || res.status === 403) { this.stopMoments(); return; }
+    // signed out (known without a request: no 401 in the console), under 13 or no age confirmed: no moments in this session
+    void maybeSignedIn().then((maybe) => (maybe ? fetch(`/api/community/moments?${q}`, { headers: { Accept: "application/json" }, credentials: "same-origin" }) : null)).then(async (res) => {
+      if (!res || res.status === 401 || res.status === 403) { this.stopMoments(); return; }
       if (!res.ok) throw new Error("http");
       const r = (await res.json()) as { moments: Moment[]; more: string | null };
       if (!this.alive) return;

@@ -24,6 +24,9 @@ import { nameRefs, useAllahNames } from "./names";
 import { PASS, doneCount, isPassed, saveCourseLesson, useCP } from "./progress";
 import { useCT } from "./texts";
 import type { CLesson, CQuestion, Course, Tag } from "./types";
+import { AskTutor } from "@/features/tutor/AskTutor";
+import { useTutor } from "@/features/tutor/hooks";
+import type { TutorContext } from "@/features/tutor/api";
 
 // Screens of the academy courses: overview of all courses, one course (lesson path, sticker), one lesson (explanation,
 // verses by key from the Quran API, hadith references, tags, quiz, rewards). Rewards: a passed lesson counts as a
@@ -285,10 +288,11 @@ export function LessonScreen({ courseId, lessonId }: { courseId: string; lessonI
                   </View>
                 </View>
               ) : null}
+              <TutorLessonAsk context={{ kind: "lesson", id: courseId, lesson: lessonId, title }} />
               {qs.length ? <GoldButton title={c("startQuiz")} onPress={() => setPhase("quiz")} /> : null}
             </StepIn>
           ) : phase === "quiz" ? (
-            <Quiz qs={qs} onDone={finish} />
+            <Quiz qs={qs} onDone={finish} ctx={{ kind: "quiz", id: courseId, lesson: lessonId, title }} />
           ) : res ? (
             <Result score={res.score} xp={res.xp} burst={res.burst} complete={res.complete} stickerId={course.id}
               onRetry={() => setPhase("quiz")}
@@ -302,7 +306,18 @@ export function LessonScreen({ courseId, lessonId }: { courseId: string; lessonI
 }
 
 /** multiple-choice quiz; every first answer counts for the feed quests */
-export function Quiz({ qs, onDone, header }: { qs: RunQ[]; onDone: (right: number) => void; header?: ReactNode }) {
+/** tutor entry under the lesson text (Dalil / Hidaya, features/tutor) */
+function TutorLessonAsk({ context }: { context: TutorContext }) {
+  const { ui } = useTutor();
+  return <AskTutor context={context} label={ui.lessonAsk} />;
+}
+/** "Why is this wrong?" after a wrong answer: the tutor explains it from the lesson (quiz context) */
+function TutorWhy({ ctx, q, pick }: { ctx: TutorContext; q: RunQ; pick: number }) {
+  const { ui } = useTutor();
+  return <AskTutor context={{ ...ctx, question: q.q, chosen: q.options[pick], correct: q.options[q.answer], explain: q.explain }} question={ui.why} label={ui.why} />;
+}
+
+export function Quiz({ qs, onDone, header, ctx }: { qs: RunQ[]; onDone: (right: number) => void; header?: ReactNode; ctx?: TutorContext }) {
   const t = useTheme();
   const c = useCT();
   const nudge = useNudge();
@@ -345,6 +360,7 @@ export function Quiz({ qs, onDone, header }: { qs: RunQ[]; onDone: (right: numbe
         <View style={{ gap: 10 }}>
           <Text accessibilityLiveRegion="polite" style={{ fontFamily: FONT.bold, fontSize: 15, color: pick === q.answer ? t.accent : "rgb(160,58,52)" }}>{pick === q.answer ? c("right") : `${c("wrong")}: ${q.options[q.answer]}`}</Text>
           {q.explain ? <Text style={{ fontFamily: FONT.regular, fontSize: 14.5, lineHeight: 22, color: t.muted }}>{q.explain}</Text> : null}
+          {ctx && pick !== q.answer ? <TutorWhy ctx={ctx} q={q} pick={pick} /> : null}
           <GoldButton title={c("next")} onPress={next} />
         </View>
       ) : null}

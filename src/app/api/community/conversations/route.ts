@@ -13,7 +13,7 @@ export async function GET(req: NextRequest) {
   const g = await talentGate(req, "convs", 60, { minAge: MIN_POST_AGE });
   if (g.res) return g.res;
   const r = await pool()!.query(
-    `SELECT v.id, v.last_message_at, c.username, c.display_name, c.level, c.verified, c.badge, c.official, c.shares_total,
+    `SELECT v.id, v.last_message_at, c.username, c.display_name, c.level, c.verified, c.badge, c.official, c.founder, c.shares_total,
             (SELECT m.body FROM community_messages m WHERE m.conversation_id = v.id AND m.removed_at IS NULL ORDER BY m.id DESC LIMIT 1) AS last_body,
             (SELECT (m.sender_id = $1) FROM community_messages m WHERE m.conversation_id = v.id AND m.removed_at IS NULL ORDER BY m.id DESC LIMIT 1) AS last_mine,
             (SELECT count(*)::int FROM community_messages m WHERE m.conversation_id = v.id AND m.sender_id <> $1 AND m.removed_at IS NULL

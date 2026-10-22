@@ -8,4 +8,8 @@ export type IslamChapter = {
   faq: { q: string; a: string }[];   // 4–6 questions
   sources: string[];      // Quran references, hadith collections, books – plain text
 };
-export type IslamDoc = { slug: string; arabic: string; de: IslamChapter; en: IslamChapter };
+export type IslamDoc = {
+  slug: string; arabic: string; de: IslamChapter; en: IslamChapter;
+  /** new religious content not yet checked: the chapter shows "Inhalt wird von Gelehrten geprüft" */
+  needs_review?: boolean;
+};

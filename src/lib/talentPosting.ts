@@ -51,7 +51,7 @@ export async function postingStatus(me: User): Promise<PostingStatus> {
   const rules = postingRules();
   const p = pool()!;
   await refreshBadges(me.id);
-  const prof = (await p.query("SELECT verified, badge, official, reciter_level, suspended FROM community_profiles WHERE user_id = $1", [me.id])).rows[0];
+  const prof = (await p.query("SELECT verified, badge, official, founder, reciter_level, suspended FROM community_profiles WHERE user_id = $1", [me.id])).rows[0];
   const app = (await p.query("SELECT status, reject_reason FROM community_verifications WHERE user_id = $1 ORDER BY created_at DESC LIMIT 1", [me.id])).rows[0];
   const age = { ok: (ageOf(me.birthYear) ?? 0) >= rules.minAge };
   const pro = { ok: !rules.requirePro || me.plan === "premium", required: rules.requirePro };
@@ -84,7 +84,7 @@ export type PostRow = {
   username: string; display_name: string; verified: boolean; level: string; shares_total: number; media_path: string | null; badge?: string; official?: boolean;
 };
 export const POST_COLS = `p.id, p.type, p.verse_key, p.duration_ms, p.has_video, p.waveform, p.caption, p.status, p.created_at, p.expires_at, p.like_count,
-  p.reject_reason, p.media_path, p.comment_count, c.username, c.display_name, c.verified, c.level, c.shares_total, c.badge, c.official`;
+  p.reject_reason, p.media_path, p.comment_count, c.username, c.display_name, c.verified, c.level, c.shares_total, c.badge, c.official, c.founder`;
 export function postJson(r: PostRow, own = false) {
   return {
     id: String(r.id), type: r.type, verseKey: r.verse_key, durationMs: r.duration_ms, hasVideo: !!r.has_video, waveform: (r.waveform ?? []).map(Number),

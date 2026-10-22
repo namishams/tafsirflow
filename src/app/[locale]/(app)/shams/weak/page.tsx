@@ -3,6 +3,7 @@ import { setRequestLocale } from "next-intl/server";
 import { pageMeta } from "@/lib/site";
 import { s2Meta } from "@/components/learn/shams2/meta";
 import { WeakScreen } from "@/components/learn/shams2/Weak";
+import { DaysGate } from "@/components/sisters/Sisters";
 
 // /shams/weak – weak-spot practice (?s=) (mirrors mobile/src/app/shams/weak.tsx). A tool page without own content: not indexed.
 type SP = Promise<{ s?: string | string[] }>;
@@ -19,5 +20,5 @@ export default async function Page({ params, searchParams }: { params: Promise<{
   setRequestLocale(locale);
   const p = await searchParams;
   const s = Number(one(p.s));
-  return <WeakScreen surah={s >= 1 && s <= 114 ? s : undefined} />;
+  return <DaysGate kind="recite"><WeakScreen surah={s >= 1 && s <= 114 ? s : undefined} /></DaysGate>;
 }

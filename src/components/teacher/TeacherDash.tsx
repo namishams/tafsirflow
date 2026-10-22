@@ -1,6 +1,7 @@
 "use client";
 import { useCallback, useEffect, useState } from "react";
 import { fillT, teacherText, type TcKey } from "@/lib/teacherWeb";
+import Recitations from "./Recitations";
 
 // Teacher dashboard on the website: invitations, all students with their aggregates (those who have not practised
 // for a while come first), detail with the plan, the last 28 days and the quality per surah, preset encouragement and
@@ -86,6 +87,7 @@ export default function TeacherDash({ locale }: { locale: string }) {
           </div>
         ))}
       </section>
+      <Recitations locale={locale} />
     </div>
   );
 }

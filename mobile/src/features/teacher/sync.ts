@@ -3,6 +3,8 @@ import { readLog, wirdStreak } from "@/features/shams2/store";
 import { weakSpots } from "@/features/shams2/weakSpots";
 import { readGrade } from "@/features/shams2/grades";
 import { makeSnapshot } from "@/features/shams2/teacherModel";
+import { DIMS, masteryModel } from "@/features/shams2/mastery";
+import { readLinks, readRubric, readUnderstand } from "@/features/shams2/store2";
 import type { useShams2 } from "@/features/shams2/model";
 import { TL, type Inbox } from "./api";
 
@@ -25,7 +27,13 @@ export function buildSnapshot(m: ReturnType<typeof useShams2>) {
   const itq = (cs: { score: number | null }[]) => cs.filter((c) => (c.score ?? 0) >= 90).length;
   const { name: _name, ...rest } = base; // the name is the member's profile name on the server
   void _name;
-  return { ...rest, grade: readGrade().grade, weak: { total: weak.length, lapses: has("lapses"), fading: has("fading"), words: has("words"), mut: has("mutashabih") }, itqan: { surahs: itq(m.q.surahs), juz: itq(m.q.juz) } };
+  // Shams 3.0: the six mastery dimensions over everything memorised (0–100, null without data); older servers drop it
+  let mastery: Record<string, number | null> | undefined;
+  try {
+    const all = masteryModel({ known: m.known, words: m.words, checks: m.checks, mut: m.mut, links: readLinks(), understand: readUnderstand(), rubric: readRubric() }).overall;
+    mastery = Object.fromEntries(DIMS.map((d) => [d, all.dims[d].pct]));
+  } catch { mastery = undefined; }
+  return { ...rest, ...(mastery ? { mastery } : {}), grade: readGrade().grade, weak: { total: weak.length, lapses: has("lapses"), fading: has("fading"), words: has("words"), mut: has("mutashabih") }, itqan: { surahs: itq(m.q.surahs), juz: itq(m.q.juz) } };
 }
 
 /** takes the open suggestions the server answered with: accepted portions are already local, nothing else to do */

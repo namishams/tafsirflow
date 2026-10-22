@@ -14,6 +14,7 @@ import { TL, type Inbox, type MyTeacher, type StudentRow } from "./api";
 import { SuggestionsList } from "./Inbox";
 import { setActive, syncTeacher } from "./sync";
 import { useTT } from "./text";
+import { RecitationsCard } from "./Recitations";
 import { intlLocale, useLang } from "@/i18n";
 
 // /teacher – live teacher–student link through the Quran Talents network. Student: invite an accepted connection,
@@ -47,6 +48,7 @@ export function TeacherLiveScreen() {
           ) : (
             <>
               <Segmented value={tab} options={[["student", tt("student")], ["teacher", tt("teacher")]]} onChange={setTab} />
+              <RecitationsCard />
               {tab === "student" ? <StudentSide /> : <TeacherSide />}
             </>
           )}

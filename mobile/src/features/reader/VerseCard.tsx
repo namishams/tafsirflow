@@ -15,6 +15,7 @@ import { ReciteCheck } from "@/features/extra/ReciteCheck";
 import { FrameCorners, VerseStar } from "./ornaments";
 import { MemoControls } from "./MemoControls";
 import { useReaderT } from "./texts";
+import { AskAboutVerse } from "@/features/tutor/AskTutor";
 import type { Level, Memo, Tool } from "./memo";
 
 // One verse card of the website's Player.tsx: quiet and compact while inactive; the active verse is framed in gold with
@@ -330,6 +331,7 @@ export const VerseCard = memo(function VerseCard({ v, i, active, marked, note, n
           <Text maxFontSizeMultiplier={1.4} style={{ fontFamily: FONT.semibold, fontSize: 14, color: t.ink }}>{w("tafsir")}</Text>
         </Pressable>
       ) : null}
+      {active ? <AskAboutVerse verseKey={v.verse_key} style={{ marginTop: 10 }} /> : null}
     </View>
   );
 

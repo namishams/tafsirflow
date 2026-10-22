@@ -280,7 +280,8 @@
           "cameraPermission": "Quran Masterclass uses the camera only when you take a profile picture or, where offered, switch on video for a recitation clip. Nothing is recorded until you start.",
           "microphonePermission": false
         }
-      ]
+      ],
+      "expo-image"
     ],
     "experiments": {
       "typedRoutes": true

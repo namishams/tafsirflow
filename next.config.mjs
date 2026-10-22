@@ -1,7 +1,11 @@
 import createNextIntlPlugin from "next-intl/plugin";
+import { generateIntlNamespaces } from "./scripts/intl-namespaces.mjs";
 
 const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts");
 const prod = process.env.NODE_ENV === "production";
+// which message namespaces each part of the site sends to the browser – worked out from the code before every build
+// (src/i18n/ClientMessages.tsx); the development server sends all texts and does not need it
+if (prod) generateIntlNamespaces();
 const https = (process.env.SITE_URL ?? "").startsWith("https://");
 
 // Content Security Policy: only our own scripts, styles, fonts and data; audio may also come from Quran.com's CDN.
@@ -54,6 +58,13 @@ export default withNextIntl({
       { source: "/.well-known/apple-app-site-association", destination: "/api/aasa" }, // iOS app ↔ domain (src/app/api/aasa/route.ts)
     ];
   },
+  async redirects() {
+    // short links people share for project support (spenden, donate, support) without a language prefix
+    return ["donate", "spenden", "spende", "unterstuetzen", "support"].flatMap((s) => [
+      { source: `/${s}`, destination: "/support", permanent: false },
+      { source: `/:locale(de|en|ar|tr|ur|fa|ps|fr|es|id|ms|bn|ru|zh)/${s}`, destination: "/:locale/support", permanent: false },
+    ]).filter((r) => !(r.source === "/support" || r.source.endsWith(")/support")));
+  },
   async headers() {
     return [
       { source: "/:path*", headers: security },
@@ -61,6 +72,13 @@ export default withNextIntl({
       // public feed (config, new, page, web: no personal data), which set their own Cache-Control (a header here would
       // override the route's own)
       { source: "/api/:path((?!social/community$|feed/config$|feed/new$|feed/page$|feed/web$|feed/stories$).*)", headers: [{ key: "Cache-Control", value: "private, no-store" }] },
+      // pictures from public/ (garden, brand, lesson images, app screenshots, icons): Next.js serves them with max-age=0, so
+      // every visit asked for each one again. Their names are not hashed, so a day plus a week of background refresh –
+      // a replaced file shows within a day.
+      ...["/garden/:path*", "/brand/:path*", "/learn/:path*", "/app-screens/:path*", "/icon-192.png", "/icon-512.png", "/icon-maskable-512.png"].map((source) => ({
+        source,
+        headers: [{ key: "Cache-Control", value: "public, max-age=86400, stale-while-revalidate=604800" }],
+      })),
     ];
   },
 });

@@ -50,12 +50,19 @@ type SunnahDoc = { metadata: { name: string; section?: Record<string, string> };
 export async function sunniHadith(key: string, n: number, lang: string): Promise<HadithItem | null> {
   const c = sunniCollection(key);
   if (!c) return null;
-  const trEd = translationEdition(c, lang);
+  let trEd = translationEdition(c, lang);
   const url = (ed: string) => `${SUNNAH_CDN}/editions/${ed}/${n}.min.json`;
-  const [ar, tr] = await Promise.all([
+  const [ar, local] = await Promise.all([
     cachedJSON<SunnahDoc>(url(`ara-${key}`)).catch(() => null),
     trEd ? cachedJSON<SunnahDoc>(url(trEd)).catch(() => null) : Promise.resolve(null),
   ]);
+  let tr = local;
+  // the partial translation editions (tur-muslim 879, rus-muslim 4223 …) carry hadiths with an empty text: English then
+  // (as src/lib/feed/resolve.ts), instead of no hadith at all
+  if (trEd && !trEd.startsWith("eng-") && local && !(local.hadiths[0]?.text ?? "").trim()) {
+    trEd = `eng-${key}`;
+    tr = await cachedJSON<SunnahDoc>(url(trEd)).catch(() => null);
+  }
   if (!ar && !tr) throw new Error("offline");
   const a = ar?.hadiths[0], t = tr?.hadiths[0];
   const h = t ?? a;

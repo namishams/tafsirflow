@@ -1,0 +1,97 @@
+// Writes mutCandidates.ts for the website (src/lib/learn/shams2/) and the app (mobile/src/features/shams2/): pairs of
+// verses whose wording is very similar, found automatically – candidates for the mutashābihāt trainer next to the
+// reviewed groups in mutData.ts. Only the two verse keys and a similarity (percent) are stored, never the text
+// (BLUEPRINT §4); the text always comes from the Quran API when a pair is shown. The pairs are NOT reviewed by a
+// scholar and are shown as "automatisch gefunden, ungeprüft".
+// Method: the plain spelling of every verse (Quran.com text_imlaei_simple, letters unified: hamza forms of alif, alif
+// maqsura, ta marbuta), verses of at least 5 words; candidate pairs share a rare run of three words; similarity =
+// 2 × longest common word sequence / (words of both verses). Kept: 65–99 % (identical verses are left out, they differ
+// only by place; so are pairs where one verse is wholly contained in the other), at most 3 partners per verse, pairs of a reviewed group left out, the 400 most similar.
+// Usage: node scripts/gen-mut-candidates.mjs
+import { readFileSync, writeFileSync } from "node:fs";
+import { dirname, join } from "node:path";
+import { fileURLToPath } from "node:url";
+
+const UPSTREAM = process.env.QURAN_UPSTREAM ?? "https://api.quran.com/api/v4";
+const root = join(dirname(fileURLToPath(import.meta.url)), "..");
+const OUT = [join(root, "src", "lib", "learn", "shams2", "mutCandidates.ts"), join(root, "mobile", "src", "features", "shams2", "mutCandidates.ts")];
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+const MIN_WORDS = 5, MIN_SIM = 0.65, MAX_SIM = 0.995, PER_VERSE = 3, LIMIT = 400, RARE = 60;
+
+async function getJSON(url) {
+  for (let i = 0; i < 4; i++) {
+    try { const r = await fetch(url); if (r.ok) return await r.json(); } catch {}
+    await sleep(1500 * (i + 1));
+  }
+  throw new Error(`FAILED ${url}`);
+}
+
+const norm = (w) => w.replace(/[ً-ٰٟۖ-ۭـ]/g, "").replace(/[أإآٱ]/g, "ا").replace(/ى/g, "ي").replace(/ة/g, "ه").replace(/ؤ/g, "و").replace(/ئ/g, "ي");
+const verses = []; // [key, words[]]
+for (let s = 1; s <= 114; s++) {
+  for (let page = 1; page; ) {
+    const j = await getJSON(`${UPSTREAM}/verses/by_chapter/${s}?fields=text_imlaei_simple&per_page=300&page=${page}`);
+    for (const v of j.verses ?? []) verses.push([v.verse_key, String(v.text_imlaei_simple ?? "").split(/\s+/).filter(Boolean).map(norm).filter(Boolean)]);
+    page = j.pagination?.next_page ?? null;
+    await sleep(120);
+  }
+}
+if (verses.length !== 6236) throw new Error(`${verses.length} verses, expected 6236`);
+
+// pairs inside a reviewed group (mutData.ts) are already in the trainer
+const reviewed = new Set();
+const mutSrc = readFileSync(join(root, "src", "lib", "learn", "shams2", "mutData.ts"), "utf8");
+for (const m of mutSrc.matchAll(/keys: \[([^\]]+)\]/g)) {
+  const ks = [...m[1].matchAll(/"(\d+:\d+)"/g)].map((x) => x[1]);
+  for (const a of ks) for (const b of ks) if (a !== b) reviewed.add(`${a}|${b}`);
+}
+
+const index = new Map(); // three-word run -> verse indices
+verses.forEach(([, ws], i) => {
+  if (ws.length < MIN_WORDS) return;
+  const seen = new Set();
+  for (let j = 0; j + 3 <= ws.length; j++) { const g = ws.slice(j, j + 3).join(" "); if (seen.has(g)) continue; seen.add(g); (index.get(g) ?? index.set(g, []).get(g)).push(i); }
+});
+function lcs(a, b) {
+  const dp = new Array(b.length + 1).fill(0);
+  for (let i = 1; i <= a.length; i++) {
+    let prev = 0;
+    for (let j = 1; j <= b.length; j++) { const tmp = dp[j]; dp[j] = a[i - 1] === b[j - 1] ? prev + 1 : Math.max(dp[j], dp[j - 1]); prev = tmp; }
+  }
+  return dp[b.length];
+}
+const pairs = new Map();
+for (const list of index.values()) {
+  if (list.length < 2 || list.length > RARE) continue;
+  for (let x = 0; x < list.length; x++) for (let y = x + 1; y < list.length; y++) {
+    const id = `${list[x]}|${list[y]}`;
+    if (pairs.has(id)) continue;
+    const a = verses[list[x]][1], b = verses[list[y]][1];
+    const common = lcs(a, b);
+    // one verse wholly contained in the other: the shorter one has no word of its own (nothing to complete or mark in
+    // the trainer, distinctPositions in mutData.ts), so the pair is left out
+    if (common >= Math.min(a.length, b.length)) { pairs.set(id, 0); continue; }
+    pairs.set(id, (2 * common) / (a.length + b.length));
+  }
+}
+const ranked = [...pairs.entries()].filter(([, sim]) => sim >= MIN_SIM && sim < MAX_SIM).sort((p, q) => q[1] - p[1]);
+const count = new Map(), out = [];
+for (const [id, sim] of ranked) {
+  const [i, j] = id.split("|").map(Number);
+  const a = verses[i][0], b = verses[j][0];
+  if (reviewed.has(`${a}|${b}`) || (count.get(a) ?? 0) >= PER_VERSE || (count.get(b) ?? 0) >= PER_VERSE) continue;
+  count.set(a, (count.get(a) ?? 0) + 1); count.set(b, (count.get(b) ?? 0) + 1);
+  out.push([a, b, Math.round(sim * 100)]);
+  if (out.length >= LIMIT) break;
+}
+out.sort((p, q) => q[2] - p[2] || p[0].localeCompare(q[0], "en", { numeric: true }));
+
+const body = `// Generated by scripts/gen-mut-candidates.mjs – do not edit by hand. Pairs of verses with very similar wording, found
+// automatically (verse keys and similarity in percent only, no text); NOT reviewed by a scholar, shown as such.
+/** [verse key, verse key, similarity 0–100] */
+export const MUT_CANDIDATES: readonly (readonly [string, string, number])[] = [
+${out.map((p) => `  ${JSON.stringify(p)},`).join("\n")}
+];
+`;
+for (const f of OUT) writeFileSync(f, body);
+console.log(`mutCandidates.ts: ${out.length} pairs from ${pairs.size} compared`);

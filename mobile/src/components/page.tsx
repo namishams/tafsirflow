@@ -1,6 +1,8 @@
-import { useEffect, useRef, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ComponentRef, type ReactNode } from "react";
+import { useProgressiveChildren } from "@/lib/progressive";
 import { ActivityIndicator, Pressable, ScrollView, Text, View, useWindowDimensions, type ScrollViewInstance, type ScrollViewProps, type StyleProp, type ViewStyle } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { BlurView } from "expo-blur";
 import { router, useGlobalSearchParams } from "expo-router";
 import { ARABIC_FONT, CALLIG_FONT, FONT, R, goldButton, stage, type Theme, type, useTheme } from "@/lib/theme";
 import { Arcade, Display, Eyebrow, GoldButton, OutlineButton, SmallStar, Stage, Wordmark } from "./brand";
@@ -33,6 +35,8 @@ export function useWide() {
 
 export function Page({ children, style, padded = false, ...rest }: { children: ReactNode; style?: StyleProp<ViewStyle>; padded?: boolean } & ScrollViewProps) {
   const t = useTheme();
+  // long pages: the sections below the first screen are built over the next frames (lib/progressive.ts)
+  const sections = useProgressiveChildren(children);
   const { width } = useWindowDimensions();
   const wide = width > READ_WIDTH + 40;
   // development only: `?auditY=1800` in a deep link scrolls the page, for screenshot audits of a headless simulator
@@ -43,10 +47,44 @@ export function Page({ children, style, padded = false, ...rest }: { children: R
     const id = setTimeout(() => ref.current?.scrollTo({ y: Number(auditY) || 0, animated: false }), 1200);
     return () => clearTimeout(id);
   }, [auditY]);
+  // the scrim state lives in StatusScrim itself, so crossing the threshold never re-renders the page
+  const scrim = useRef<((on: boolean) => void) | null>(null);
+  const under = useRef(false);
+  const { onScroll, ...props } = rest;
   return (
-    <ScrollView ref={ref} style={{ flex: 1, backgroundColor: t.bg }} contentContainerStyle={[{ paddingBottom: 130 }, wide && { width: READ_WIDTH, alignSelf: "center" }, padded && { paddingHorizontal: 16, paddingTop: 16 }, style]} keyboardShouldPersistTaps="handled" {...rest}>
-      {children}
-    </ScrollView>
+    <View style={{ flex: 1, backgroundColor: t.bg }}>
+      <ScrollView ref={ref} style={{ flex: 1, backgroundColor: t.bg }} contentContainerStyle={[{ paddingBottom: 130 }, wide && { width: READ_WIDTH, alignSelf: "center" }, padded && { paddingHorizontal: 16, paddingTop: 16 }, style]} keyboardShouldPersistTaps="handled"
+        scrollEventThrottle={32} {...props}
+        onScroll={(e) => {
+          const on = e.nativeEvent.contentOffset.y > 6;
+          if (on !== under.current) { under.current = on; scrim.current?.(on); }
+          onScroll?.(e);
+        }}>
+        {sections}
+      </ScrollView>
+      <StatusScrim bind={scrim} />
+    </View>
+  );
+}
+
+/** frosted strip behind the status bar and Dynamic Island once content scrolls under it, so nothing reads half cut.
+ *  Dark like the stage, because the app's status bar is white; not drawn when the page sits below a native header. */
+export function StatusScrim({ visible, bind }: { visible?: boolean; bind?: { current: ((on: boolean) => void) | null } }) {
+  const insets = useSafeAreaInsets();
+  const [on, setOn] = useState(false);
+  const [underHeader, setUnderHeader] = useState(false);
+  const box = useRef<ComponentRef<typeof View>>(null);
+  useEffect(() => {
+    if (!bind) return;
+    bind.current = setOn;
+    return () => { bind.current = null; };
+  }, [bind]);
+  const shown = (visible ?? on) && !underHeader && insets.top > 0;
+  return (
+    <View ref={box} pointerEvents="none" onLayout={() => box.current?.measureInWindow((_x, y) => setUnderHeader(y > 4))}
+      style={{ position: "absolute", top: 0, left: 0, right: 0, height: insets.top, overflow: "hidden", opacity: shown ? 1 : 0 }}>
+      <BlurView intensity={50} tint="dark" style={{ flex: 1, backgroundColor: "rgba(6,28,20,0.72)", borderBottomWidth: 0.5, borderBottomColor: "rgba(214,180,108,0.35)" }} />
+    </View>
   );
 }
 

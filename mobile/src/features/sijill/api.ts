@@ -24,6 +24,8 @@ export type Summary = {
   week: { monday: number; xp: number[]; active: number };
   courses: { done: number; ids: string[]; qaida: number; arabic: number; rp: number; arLevels: string[] };
   goal: { minutes: number; focus: Focus };
+  /** Shams method in use: classic, 2.0, 3.0 */
+  method?: "classic" | "v2" | "v3" | null;
 };
 export type Certificate = { title: string; course: string; pct: number; url: string; at: string };
 export type ExamPassed = { exam: string; ref: string; pct: number; at: string; attempts: number };
@@ -31,7 +33,7 @@ export type Sijill = {
   updatedAt: string | null;
   privacy?: Privacy;
   leaderboard?: boolean;
-  level?: { xp: number; level: number; talentLevel: string; stage: StudyStage; rank: "talib" | "mutaqaddim"; overall: number | null };
+  level?: { xp: number; level: number; talentLevel: string; stage: StudyStage; rank: "talib" | "mutaqaddim"; overall: number | null; method?: "classic" | "v2" | "v3" | null };
   badges?: { badge: Badge | null; official: boolean };
   hifz?: Summary["hifz"];
   tree?: Summary["tree"];

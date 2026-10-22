@@ -3,6 +3,7 @@ import { Text } from "react-native";
 import { FONT, useTheme } from "@/lib/theme";
 import { api } from "@/lib/api";
 import { usePT, type PKey } from "./profileText";
+import { usernameProblem } from "./usernameFilter";
 
 // Live check of the unique @username while typing in Edit profile (GET /api/community/username, debounced):
 // format (3–20 of a-z 0-9 . _), reserved route and team names, the word filter, taken by someone else.
@@ -14,6 +15,9 @@ export function useUsernameCheck(username: string, current: string | null, onlin
     const u = username.trim().toLowerCase();
     if (!u || u === current) { setS("idle"); return; }
     if (!/^[a-z0-9_.]{3,20}$/.test(u)) { setS("format"); return; }
+    // instant answer from the same word filter as the server (src/lib/usernameFilter.ts)
+    const bad = usernameProblem(u);
+    if (bad) { setS(bad); return; }
     if (!online) { setS("idle"); return; }
     setS("checking");
     let live = true;

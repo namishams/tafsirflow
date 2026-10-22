@@ -4,8 +4,9 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { router, usePathname, type Href } from "expo-router";
 import { GlassView, isLiquidGlassAvailable } from "expo-glass-effect";
 import { BlurView } from "expo-blur";
-import { FONT, R, stage, useTheme } from "@/lib/theme";
+import { FONT, stage, useTheme } from "@/lib/theme";
 import { Icon } from "@/components/icons";
+import { GlassIconButton } from "@/components/brand";
 import { TAB_BAR_HEIGHT } from "@/components/TabBar";
 import { useWebT } from "@/i18n/web";
 import { isRTL, useLang } from "@/i18n";
@@ -16,7 +17,7 @@ import { currentReciter, initials, radio, useBackToLive, useRadio } from "./engi
 import { useAppT } from "./strings";
 import { useLoop, useReduceMotion } from "./motion";
 
-// One now-playing bar for the whole app, like Apple Music: a Liquid Glass capsule floating just above the tab bar that
+// One now-playing bar for the whole app, like Apple Music: a Liquid Glass capsule (emerald tint, gold hairline, gold play) floating just above the tab bar that
 // shows the source the listener used last – the radio (always on air) or a verse session that carries on after the
 // reader was left (versePlayback.ts). Starting one source hides the other's bar (the audio itself already pauses via the
 // tf-audio-start / tf-radio-start events). Nothing shows until something played in this session; close stops the
@@ -77,11 +78,11 @@ function Capsule({ onTabs, children }: { onTabs: boolean; children: ReactNode })
     <View pointerEvents="box-none" style={[s.wrap, { bottom }]}>
       <View style={[{ width: w, borderRadius: BAR_HEIGHT / 2 }, shadow]}>
         {GLASS ? (
-          <GlassView glassEffectStyle="regular" isInteractive tintColor={th.dark ? "rgba(7,22,17,0.35)" : "rgba(255,255,255,0.45)"} style={s.capsule}>
+          <GlassView glassEffectStyle="regular" isInteractive tintColor={th.dark ? "rgba(58,190,146,0.10)" : "rgba(6,108,78,0.07)"} style={[s.capsule, { borderWidth: StyleSheet.hairlineWidth, borderColor: th.dark ? "rgba(214,178,106,0.30)" : "rgba(150,116,52,0.30)" }]}>
             <View style={s.row}>{children}</View>
           </GlassView>
         ) : (
-          <View style={[s.capsule, { borderWidth: StyleSheet.hairlineWidth, borderColor: th.line, elevation: 8, backgroundColor: th.dark ? "rgba(13,33,26,0.6)" : "rgba(255,255,255,0.6)" }]}>
+          <View style={[s.capsule, { borderWidth: StyleSheet.hairlineWidth, borderColor: th.dark ? "rgba(214,178,106,0.30)" : "rgba(150,116,52,0.30)", elevation: 8, backgroundColor: th.dark ? "rgba(13,33,26,0.6)" : "rgba(255,255,255,0.6)" }]}>
             <BlurView intensity={70} tint={th.dark ? "systemChromeMaterialDark" : "systemChromeMaterialLight"} style={StyleSheet.absoluteFill} />
             <View style={s.row}>{children}</View>
           </View>
@@ -98,10 +99,7 @@ function Controls({ playing, onToggle, onNext, nextDisabled, onClose, labels }: 
   const th = useTheme();
   return (
     <>
-      <Pressable onPress={onToggle} accessibilityRole="button" accessibilityLabel={playing ? labels.pause : labels.play}
-        style={({ pressed }) => [s.btn, { borderRadius: 22, backgroundColor: th.accent, opacity: pressed ? 0.85 : 1 }]}>
-        <Icon name={playing ? "pause" : "play"} color={th.onAccent} size={20} />
-      </Pressable>
+      <GlassIconButton variant="gold" icon={playing ? "pause" : "play"} label={playing ? labels.pause : labels.play} onPress={onToggle} size={42} style={{ marginHorizontal: 2 }} />
       <Pressable onPress={onNext} disabled={nextDisabled} accessibilityRole="button" accessibilityLabel={labels.next} accessibilityState={{ disabled: !!nextDisabled }}
         style={({ pressed }) => [s.btn, { opacity: nextDisabled ? 0.35 : pressed ? 0.6 : 1 }]}>
         <Icon name="next" color={th.ink} size={20} />
@@ -133,7 +131,7 @@ function RadioBar({ onTabs }: { onTabs: boolean }) {
     <Capsule onTabs={onTabs}>
       <Pressable onPress={() => router.push("/radio/now" as Href)} accessibilityRole="button" accessibilityHint={t("openRadio")}
         accessibilityLabel={`${t("onAir")}. ${title}, ${sub}`} style={s.main}>
-        <View style={[s.art, { backgroundColor: stage.bg }]}>
+        <View style={[s.art, { backgroundColor: stage.bg, borderWidth: StyleSheet.hairlineWidth, borderColor: stage.goldSoft }]}>
           <View style={{ width: 30, height: 30, borderRadius: 15, borderWidth: 1.5, borderColor: stage.gold, alignItems: "center", justifyContent: "center" }}>
             <Text numberOfLines={1} adjustsFontSizeToFit minimumFontScale={0.6} style={{ fontFamily: FONT.bold, fontSize: 10.5, color: stage.gold, letterSpacing: isRTL(lang) ? 0 : 0.5 }}>{initials(reciter.name) || "Q"}</Text>
           </View>
@@ -185,8 +183,8 @@ function VerseBar({ onTabs }: { onTabs: boolean }) {
     <Capsule onTabs={onTabs}>
       <Pressable onPress={() => router.push(`/quran/${s0.chapterId}?v=${s0.idx + 1}` as Href)} accessibilityRole="button"
         accessibilityLabel={`${t("openSurah")}: ${title}, ${sub}${sleepText ? `, ${sleepText}` : ""}`} style={s.main}>
-        <View style={[s.art, { backgroundColor: th.accentSoft }]}>
-          <Text style={{ fontFamily: FONT.bold, fontSize: 14, color: th.accent, fontVariant: ["tabular-nums"] }}>{s0.chapterId}</Text>
+        <View style={[s.art, { backgroundColor: stage.bg, borderWidth: StyleSheet.hairlineWidth, borderColor: stage.goldSoft }]}>
+          <Text style={{ fontFamily: FONT.bold, fontSize: 14, color: stage.gold, fontVariant: ["tabular-nums"] }}>{s0.chapterId}</Text>
         </View>
         <View style={{ flex: 1, minWidth: 0 }}>
           <Text numberOfLines={1} style={[s.title, { color: th.ink }]}>{title}</Text>
@@ -222,7 +220,7 @@ const s = StyleSheet.create({
   capsule: { height: BAR_HEIGHT, borderRadius: BAR_HEIGHT / 2, overflow: "hidden" },
   row: { flex: 1, flexDirection: "row", alignItems: "center", paddingStart: 10, paddingEnd: 8, gap: 2 },
   main: { flex: 1, minWidth: 0, minHeight: 44, flexDirection: "row", alignItems: "center", gap: 10, marginEnd: 4 },
-  art: { width: 44, height: 44, borderRadius: R.sm, alignItems: "center", justifyContent: "center", overflow: "hidden" },
+  art: { width: 44, height: 44, borderRadius: 12, alignItems: "center", justifyContent: "center", overflow: "hidden" },
   title: { fontFamily: FONT.bold, fontSize: 14 },
   sub: { fontFamily: FONT.regular, fontSize: 12 },
   btn: { width: 44, height: 44, alignItems: "center", justifyContent: "center" },

@@ -1,7 +1,7 @@
 import { TILES, type Tile } from "@/web/tiles";
 
 // Every course and tool of the website, with the same route as on quranmasterclass.com (app/<route>.tsx).
-// The AI assistant is part of Pro in the app. Titles: website nav.<key>, texts: home2.<desc>.
+// The AI tutor (/assistant: Dalil, Hidaya for sisters) has a few free questions a day, many more with Pro. Titles: website nav.<key>, texts: home2.<desc>.
 
 /** website paths the app has a screen for (app/<route>.tsx or app/<route>/index.tsx). A tile the website adds later
  *  (web/tiles.ts is synced from the website) stays out of every tile list until its screen exists here. */

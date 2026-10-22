@@ -7,12 +7,14 @@ import { FONT, R, goldButton, useTheme } from "@/lib/theme";
 import { GoldButton } from "@/components/brand";
 import { useTT, type TKey } from "./text";
 
-// The three badges of Quran Talents (granted automatically, see the website's src/lib/talentBadges.ts):
-// emerald check (confirmed and complete profile), gold check "Masterclass Reciter" (Reciter Path certificate),
-// official star (proven public channel or invitation). Tapping a badge explains what it means.
-export type Badge = "emerald" | "gold" | "official";
+// The badges of Quran Talents (granted automatically, see the website's src/lib/talentBadges.ts): "emerald" = confirmed
+// and complete profile, "gold" = Masterclass Reciter (Reciter Path certificate, the top tier), official star (proven
+// public channel or invitation) and "founder" (exactly one account, set on the server). Colours (owner 22.10.2026, the
+// same on the website's BadgeIcon): founder gold, Masterclass Reciter grey, confirmed learners blue, official star as
+// before. The stored values keep their names. Tapping a badge explains what it means.
+export type Badge = "emerald" | "gold" | "official" | "founder";
 
-const EMERALD = "#0F8A63";
+export const BADGE_COLORS = { founder: goldButton.to, gold: "#8E959E", emerald: "#2F7FD8" } as const;
 const GOLD = goldButton.to;
 const DEEP = "rgb(8,58,44)";
 
@@ -28,10 +30,12 @@ export function BadgeMark({ badge, size = 16 }: { badge: Badge; size?: number })
       </Svg>
     );
   }
+  const fill = BADGE_COLORS[badge];
   return (
     <Svg width={size} height={size} viewBox="0 0 24 24">
-      <Circle cx={12} cy={12} r={12} fill={badge === "gold" ? GOLD : EMERALD} />
-      <Path d="M7 12.4l3.2 3.2L17.2 8.6" fill="none" stroke={badge === "gold" ? goldButton.text : "#FFFFFF"} strokeWidth={2.6} strokeLinecap="round" strokeLinejoin="round" />
+      <Circle cx={12} cy={12} r={12} fill={fill} />
+      {badge === "founder" ? <Circle cx={12} cy={12} r={10.6} fill="none" stroke="#F3E2B6" strokeWidth={1} /> : null}
+      <Path d="M7 12.4l3.2 3.2L17.2 8.6" fill="none" stroke={badge === "founder" ? goldButton.text : "#FFFFFF"} strokeWidth={2.6} strokeLinecap="round" strokeLinejoin="round" />
     </Svg>
   );
 }
@@ -44,7 +48,7 @@ export function BadgeSheetHost({ children }: { children: ReactNode }) {
   const tt = useTT();
   const insets = useSafeAreaInsets();
   const [open, setOpen] = useState<Badge | null>(null);
-  const rows: Badge[] = ["emerald", "gold", "official"];
+  const rows: Badge[] = open === "founder" ? ["founder", "official", "gold", "emerald"] : ["official", "gold", "emerald"];
   return (
     <Ctx.Provider value={setOpen}>
       {children}

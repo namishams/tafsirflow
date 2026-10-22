@@ -2,6 +2,7 @@
 import "@fontsource-variable/fraunces";
 import "@fontsource-variable/fraunces/wght-italic.css";
 import { useCallback, useEffect, useRef, useState } from "react";
+import SupportNudge from "@/components/SupportNudge";
 import { ShareArt } from "@/components/share/ShareArt";
 import { CARD_SIZE, PALETTES, PALETTE_IDS, type PaletteId } from "@/lib/share/formats";
 import { renderSlide, renderWisdom } from "@/lib/feed/carousels/render";
@@ -148,6 +149,8 @@ export default function CarouselViewer({ c, compact, initialFormat = "post" }: {
       <div className="mt-3 flex justify-center gap-1.5" aria-hidden>
         {Array.from({ length: total }, (_, i) => <span key={i} className="rounded-full transition-all" style={{ width: i === at ? 7 : 5.5, height: i === at ? 7 : 5.5, background: i === at ? GOLD : "rgb(127 127 127 / .45)" }} />)}
       </div>
+
+      {at === total - 1 && total > 1 ? <SupportNudge className="mt-4" /> : null}
 
       <div className="mt-4 flex flex-wrap items-center justify-center gap-2">
         <button type="button" onClick={() => void run("all")} disabled={!!busy} className="inline-flex h-11 items-center gap-2 rounded-full px-5 text-[14.5px] font-bold text-[rgb(8,38,29)] transition hover:brightness-105 disabled:opacity-60" style={{ background: "linear-gradient(180deg,#dcc48c,#c6a65e)" }}>

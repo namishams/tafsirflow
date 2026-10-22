@@ -1,21 +1,22 @@
-import AsyncStorage from "@react-native-async-storage/async-storage";
+import * as kv from "./kv";
 import * as SecureStore from "expo-secure-store";
 import { Platform } from "react-native";
 
-// Small persistent values (settings, progress). The session token lives in the keychain (SecureStore).
+// Small persistent values (settings, progress) in the key-value storage (lib/kv.ts: MMKV, AsyncStorage as safety copy).
+// The session token lives in the keychain (SecureStore).
 export async function load<T>(key: string, fallback: T): Promise<T> {
   try {
-    const v = await AsyncStorage.getItem(key);
+    const v = await kv.getItem(key);
     return v ? (JSON.parse(v) as T) : fallback;
   } catch {
     return fallback;
   }
 }
 export async function save(key: string, value: unknown) {
-  try { await AsyncStorage.setItem(key, JSON.stringify(value)); } catch { /* storage full or unavailable */ }
+  try { await kv.setItem(key, JSON.stringify(value)); } catch { /* storage full or unavailable */ }
 }
 export async function remove(key: string) {
-  try { await AsyncStorage.removeItem(key); } catch { /* ignore */ }
+  try { await kv.removeItem(key); } catch { /* ignore */ }
 }
 
 const TOKEN = "qmc.session";

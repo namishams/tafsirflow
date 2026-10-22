@@ -32,10 +32,28 @@ import { iman } from "./iman";
 import { sahaba } from "./sahaba";
 import { art } from "./art";
 import { history } from "./history";
+import { prayersSpecialShia } from "./prayers-special-shia";
+import { prayersSpecialSunni } from "./prayers-special-sunni";
+import { ziyarat } from "./ziyarat";
+import { reciterPathShia } from "./reciter-path-shia";
+import { hubOrderOf } from "./hub";
 
 export type { IslamChapter, IslamDoc };
-export const ISLAM: IslamDoc[] = [islam, iman, quran, prophet, sahaba, prophets, names, prayerSunni, prayerShia, daily, zakat, ramadan, eid, hajj, reciterPath, competition, cities, emirates, mosques, art, madhahib, hanafi, maliki, shafii, hanbali, jafari, zaydi, ibadi, zahiri, sunniShia, future, history];
+export const ISLAM: IslamDoc[] = [islam, iman, quran, prophet, sahaba, prophets, names, prayerSunni, prayerShia, prayersSpecialSunni, prayersSpecialShia, daily, zakat, ramadan, eid, hajj, reciterPath, reciterPathShia, competition, cities, ziyarat, emirates, mosques, art, madhahib, hanafi, maliki, shafii, hanbali, jafari, zaydi, ibadi, zahiri, sunniShia, future, history];
 export const islamDoc = (slug: string) => ISLAM.find((d) => d.slug === slug);
+
+// ---- the one tradition setting (src/lib/identity.ts) orders the hub: a Shia learner sees the Ja'fari chapters as the
+// main path and the Sunni school chapters behind "Andere Rechtsschulen"; a Sunni learner the other way round; "both" or
+// not chosen shows every chapter in reading order. Nothing is hidden, only collapsed.
+export { CHAPTER_TRADITION } from "./hub";
+/** indexes into ISLAM: `main` in reading order (the own tradition's chapters first), `other` for the expander */
+export const hubOrder = (trad: "sunni" | "shia" | "both" | null | undefined) => hubOrderOf(ISLAM.map((d) => d.slug), trad);
+/** small texts of the tradition order and the review note (German, English; other languages English) */
+const TRAD_UI = {
+  de: { other: "Andere Rechtsschulen", otherLead: "Die Kapitel der anderen Schulen – zum Vergleichen und Verstehen.", review: "Inhalt wird von Gelehrten geprüft." },
+  en: { other: "Other schools of law", otherLead: "The chapters of the other schools – to compare and understand.", review: "Content is being reviewed by scholars." },
+};
+export const tradUi = (locale: string) => (locale === "de" ? TRAD_UI.de : TRAD_UI.en);
 // German and English live in the chapter files; every other language in src/lib/islam/i18n/<locale>/<slug>.ts (falls back to English)
 const OTHER = ["ar", "bn", "es", "fa", "fr", "id", "ms", "ps", "ru", "tr", "ur", "zh"];
 export async function loadChapter(d: IslamDoc, locale: string): Promise<IslamChapter> {

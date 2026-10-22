@@ -8,7 +8,7 @@ const de: Dict = {
     error: "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut.", free: "Kostenlos", locked: "Pro", back: "Zurück", and: "und",
   },
   pro: {
-    cta: "Pro holen", name: "Quran Masterclass Pro", price: "{price} im Monat", priceFallback: "4,99 € im Monat",
+    cta: "Pro holen", name: "Quran Masterclass Pro", price: "{price} im Monat", priceFallback: "9,99 US$ im Monat",
     lead: "Die ganze Masterclass: den Tafsir jeder Sure mit der Shams-Methode lernen, mit allen Rezitatoren und Kursen.",
     f_shams: "Shams-Methode für alle 114 Suren", f_reciters: "Alle Rezitatoren, mit Wort-Hervorhebung", f_radio: "Alle Radiosender",
     f_courses: "Arabisch- und Tadschwid-Kurs komplett", f_tests: "Academy-Tests für jede Sure", f_offline: "Suren offline",

@@ -7,10 +7,13 @@ import { HOME_TILES, TILES } from "@/lib/tiles";
 import AppHeader from "@/components/AppHeader";
 import SiteFooter from "@/components/SiteFooter";
 import { setRequestLocale, getTranslations } from "next-intl/server";
+import { hasLocale } from "next-intl";
+import { notFound } from "next/navigation";
 import { Link } from "@/i18n/navigation";
 import JsonLd from "@/components/JsonLd";
 import WhyQuran from "@/components/WhyQuran";
 import AppShowcase from "@/components/AppShowcase";
+import { CarouselShowcase, SyncSection } from "@/components/HomePromo";
 import FeedSection from "@/components/feed/FeedSection";
 import { getChapters } from "@/lib/quran";
 import { BUNDLED_UI_VERSES } from "@/lib/uiVerses";
@@ -49,6 +52,7 @@ const HERO_RING = quoteRing([verseQuote("uthmani", "96:1"), verseQuote("uthmani"
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
+  if (!hasLocale(routing.locales, locale)) return {}; // /favicon.ico, /wp-login.php …: the layout answers 404
   const t = await getTranslations({ locale, namespace: "seo" });
   return pageMeta(locale, "", t("homeTitle"), t("homeDesc", { n: routing.locales.length }), t("keywords"));
 }
@@ -56,6 +60,9 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
 export default async function Landing({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
+  // a single unknown segment with a dot (/favicon.ico, /wp-login.php) skips the middleware and lands here: 404 before
+  // anything below runs (toLocaleString threw "Incorrect locale information" for every such request)
+  if (!hasLocale(routing.locales, locale)) notFound();
   setRequestLocale(locale);
   const t = await getTranslations();
   const n = routing.locales.length;
@@ -71,7 +78,8 @@ export default async function Landing({ params }: { params: Promise<{ locale: st
     "@context": "https://schema.org",
     "@graph": [
       organizationLd(abs),
-      { "@type": "WebSite", "@id": abs("/#site"), url: abs(`/${locale}`), name: "Quran Masterclass", inLanguage: routing.locales, publisher: { "@id": abs("/#org") } },
+      { "@type": "WebSite", "@id": abs("/#site"), url: abs(`/${locale}`), name: "Quran Masterclass", inLanguage: routing.locales, publisher: { "@id": abs("/#org") },
+        potentialAction: { "@type": "SearchAction", target: { "@type": "EntryPoint", urlTemplate: abs(`/${locale}/search?q={search_term_string}`) }, "query-input": "required name=search_term_string" } },
       { "@type": "SoftwareApplication", name: "Quran Masterclass", applicationCategory: "EducationalApplication", operatingSystem: "Web", description: t("seo.homeDesc", { n }), inLanguage: locale, offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" } },
       mobileAppLd(locale, abs, appStoreUrl(), m.hero.lead),
       ...courseLd(locale, abs),
@@ -172,8 +180,10 @@ export default async function Landing({ params }: { params: Promise<{ locale: st
         {/* 2a2 Feed preview (verse, hadith, Islamic date, posts) */}
         <FeedSection locale={locale} />
 
-        {/* 2b The iOS app */}
+        {/* 2b The iOS app, the carousels and the one-account promise */}
         <AppShowcase locale={locale} />
+        <CarouselShowcase locale={locale} appUrl={appStoreUrl()} />
+        <SyncSection locale={locale} />
 
         {/* 2c The Talents community and Free vs Pro */}
         <TalentsTeaser locale={locale} />

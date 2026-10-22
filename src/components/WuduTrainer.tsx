@@ -5,8 +5,12 @@ import { Link } from "@/i18n/navigation";
 import { RULE, WUDU, WUDU_KEY, langOf, type L3, type Lang, type Scene, type Tradition, type WuduDone, type WuduStep } from "@/lib/wudu";
 import { readJSON, writeJSON } from "@/lib/storage";
 import { award } from "@/lib/points";
-import { ArrowBack, ArrowNext, IconCheckCircle } from "./Icons";
-import { PracticeCelebrate, PracticeStar, PracticeWindow } from "./art/PracticeArt";
+import { ArrowNext, IconCheckCircle } from "./Icons";
+import { PracticeCelebrate, PracticeStar } from "./art/PracticeArt";
+import { Courtyard, Glyph, Motes, TS_CSS, TsDefs, useTsId } from "./art/TrainerScene";
+import { BUST, BUST_F, BUST_FIT, TA, star8, trainerDefaults, trainerUi, type FigureKind } from "./art/trainerArt";
+import { IDENTITY_KEY } from "@/lib/identity";
+import { trainerTradition } from "@/lib/learn/tradition";
 
 type UiKey = "sunni" | "shia" | "fard" | "sunnah" | "wajib" | "mustahabb" | "right" | "left" | "each" | "tapHint" | "again" | "count" | "play" | "pause" | "prev" | "next" | "steps" | "restart" | "toQuiz" | "quiz" | "back" | "meaning" | "passed" | "note" | "quizTitle" | "quizLead" | "wrong" | "hint" | "good" | "doneTitle" | "doneText" | "clean" | "slips1" | "slipsN" | "practise" | "toSalah" | "toVerse";
 type Ui = Record<UiKey, string>;
@@ -206,85 +210,155 @@ const CSS = `
 function Drop({ x, y, fall = 60, delay = 0, s = 1 }: { x: number; y: number; fall?: number; delay?: number; s?: number }) {
   return (
     <g transform={`translate(${x} ${y}) scale(${s})`}>
-      <path className="wd-drop" d={DROP} fill={WATER} style={{ "--fall": `${fall / s}px`, animationDelay: `-${delay}s` } as CSSProperties} />
+      <g className="wd-drop" style={{ "--fall": `${fall / s}px`, animationDelay: `-${delay}s` } as CSSProperties}>
+        <path d={DROP} fill={TA.water} />
+        <circle cx="-1" cy="0.6" r=".9" fill={TA.waterHi} opacity=".9" />
+      </g>
     </g>
   );
 }
 function Route({ d, kind, w = 2.6, delay = 0 }: { d: string; kind: "sweep" | "once"; w?: number; delay?: number }) {
   return (
     <>
-      <path d={d} fill="none" stroke={WATER} strokeOpacity=".4" strokeWidth="1.1" strokeDasharray="1 4" strokeLinecap="round" />
+      <path d={d} fill="none" stroke={TA.water} strokeOpacity=".45" strokeWidth="1.1" strokeDasharray="1 4" strokeLinecap="round" />
       <path d={d} {...water(w)} pathLength={100} className={kind === "sweep" ? "wd-sweep" : "wd-once"} style={delay ? { animationDelay: `-${delay}s` } : undefined} />
     </>
   );
 }
-const line = { fill: "none", stroke: "currentColor", strokeWidth: 1.6, strokeLinecap: "round", strokeLinejoin: "round" } as const;
-const faint = { ...line, strokeOpacity: 0.35, strokeWidth: 1.1 } as const;
+// the garden's way of drawing: lit forms with a fine gold rim, no outlines of their own
+const rim = { fill: "none", stroke: TA.goldHi, strokeOpacity: 0.5, strokeWidth: 0.9, strokeLinecap: "round", strokeLinejoin: "round" } as const;
+const crease = { fill: "none", stroke: TA.skinLo, strokeOpacity: 0.55, strokeWidth: 1.1, strokeLinecap: "round", strokeLinejoin: "round" } as const;
 const gold = (o = 1, w = 1.8) => ({ fill: "none", stroke: GOLD, strokeOpacity: o, strokeWidth: w, strokeLinecap: "round", strokeLinejoin: "round" }) as const;
-const water = (w = 2) => ({ fill: "none", stroke: WATER, strokeWidth: w, strokeLinecap: "round", strokeLinejoin: "round" }) as const;
+const water = (w = 2) => ({ fill: "none", stroke: TA.water, strokeWidth: w, strokeLinecap: "round", strokeLinejoin: "round" }) as const;
+/** a stream of water: a soft body and a bright core that flows along it */
+function Stream({ d, w = 2 }: { d: string; w?: number }) {
+  return (
+    <>
+      <path d={d} {...water(w + 1.4)} strokeOpacity=".28" />
+      <path d={d} {...water(w)} strokeOpacity=".85" />
+      <path d={d} fill="none" stroke={TA.waterHi} strokeWidth={Math.max(0.8, w * 0.45)} strokeLinecap="round" className="wd-flow" />
+    </>
+  );
+}
 
-// profile bust, facing the qibla side like the prayer trainer's figure
-const HEAD = "M86 150C74 136 66 118 66 98C66 64 90 42 120 42C146 42 160 58 160 78C160 86 158 92 157 96C160 100 162 103 164 106L172 120C173 123 170 125 165 124L160 125C161 128 162 130 161 132C159 133 158 133 157 134C159 135 161 137 160 140C159 142 156 143 156 145C158 150 158 156 152 159C146 162 138 162 132 162C130 166 130 172 130 180";
-const HAIR = "M158 66C146 68 132 76 125 86C121 92 118 96 116 100L104 126C98 136 92 144 86 150C74 136 66 118 66 98C66 64 90 42 120 42C146 42 160 58 160 78Z";
-const FACE = "M158 66C159 70 160 74 160 78C160 86 158 92 157 96C160 100 162 103 164 106L172 120C173 123 170 125 165 124L160 125C161 128 162 130 161 132C159 133 158 133 157 134C159 135 161 137 160 140C159 142 156 143 156 145C158 150 158 156 152 159C146 160 138 158 130 154C118 148 110 138 106 124L116 100C118 96 121 92 125 86C132 76 146 68 158 66Z";
-const EAR = "M110 92C104 86 95 90 95 100C95 110 97 118 101 123C104 127 109 126 109 121";
-const LIPS = "M160 125C161 128 162 130 161 132C159 133 158 133 157 134C159 135 161 137 160 140";
-const NOSE = "M157 96C160 100 162 103 164 106L172 120C173 123 170 125 165 124L160 125";
 
-function Bust({ hl, tradition }: { hl: Scene; tradition: Tradition }) {
+function Bust({ u, hl, tradition, kind }: { u: string; hl: Scene; tradition: Tradition; kind: FigureKind }) {
+  if (kind === "f") return <BustF u={u} hl={hl} tradition={tradition} />;
+  const B = BUST;
+  const bare = hl === "head" || hl === "ears"; // the kufi comes off to wipe the head and the ears
   return (
     <g>
-      <defs><clipPath id="wd-face"><path d={FACE} /></clipPath></defs>
-      {/* hair and garment, very light */}
-      <path d={HAIR} fill="currentColor" fillOpacity={hl === "head" ? 0 : 0.06} />
+      <defs><clipPath id={`${u}face`}><path d={B.face} /></clipPath></defs>
+      <path d={B.garment} fill={`url(#${u}robe)`} />
+      <path d={B.garment} {...rim} />
+      <path d={B.neckline} {...gold(0.95, 1.8)} />
+      <path d={B.neck} fill={`url(#${u}skin)`} />
+      <path d={B.head} fill={`url(#${u}skin)`} />
+      <path d={B.head} {...rim} />
+      <circle cx="108" cy="92" r="14" fill={TA.glint} opacity=".16" />
+      {bare && <path d={B.hair} fill={TA.hair} opacity=".92" />}
       {hl === "head" && (tradition === "sunni"
-        ? <path d={HAIR} fill={GOLD} fillOpacity=".16" className="wd-glow" />
-        : <path d="M128 45C142 48 152 56 157 66" {...gold(0.3, 10)} />)}
-      {hl === "face" && <path d={FACE} fill={GOLD} fillOpacity=".15" stroke={GOLD} strokeOpacity=".5" strokeWidth="1" />}
-      {hl === "ears" && <circle cx="103" cy="106" r="17" fill={GOLD} fillOpacity=".14" className="wd-glow" />}
-      {hl === "heart" && (
+        ? <path d={B.hair} fill={GOLD} fillOpacity=".32" className="wd-glow" />
+        : <path d={B.headRouteShia} {...gold(0.4, 10)} />)}
+      {hl === "face" && <path d={B.face} fill={GOLD} fillOpacity=".22" stroke={TA.goldHi} strokeOpacity=".7" strokeWidth="1" />}
+      {hl === "ears" && <circle cx={B.earGlow[0]} cy={B.earGlow[1]} r="18" fill={`url(#${u}aura)`} className="wd-glow" />}
+      <path d={B.ear} fill={TA.skinLo} opacity=".55" />
+      {hl === "ears" && <path d={B.ear} {...gold(1, 1.8)} />}
+      {!bare && (
         <g>
-          <circle cx="146" cy="212" r="22" fill={GOLD} fillOpacity=".14" className="wd-glow" />
-          <path d="M146 202l3 7 7 3-7 3-3 7-3-7-7-3 7-3z" fill={GOLD} fillOpacity=".85" />
+          <path d={B.kufi} fill={`url(#${u}cap)`} />
+          <path d={B.kufiBand} {...gold(1, 1.8)} />
         </g>
       )}
-      <path d={HEAD} {...line} />
-      <path d="M86 150C88 160 90 170 90 182" {...line} />
-      <path d="M130 180C146 186 168 196 180 214C186 224 188 232 189 240M90 182C74 190 58 200 50 214C46 222 44 232 43 240" {...line} />
-      <path d="M92 186C104 196 120 196 131 186" {...faint} />
-      <path d="M158 66C146 68 132 76 125 86C121 92 118 96 116 100" {...faint} />
-      <path d="M106 124C110 138 118 148 130 154C138 158 146 160 152 159" {...faint} />
-      <path d="M141 99C144 97 148 97 151 99" {...line} strokeWidth="1.3" />
-      <path d="M139 91C144 88 149 88 154 90" {...faint} />
-      <path d="M163 121C164 119 166 119 167 121" {...faint} />
-      <path d={EAR} {...(hl === "ears" ? gold(1, 2) : line)} />
-      <path d="M106 97C101 98 100 105 103 110" {...faint} />
+      {hl === "heart" && (
+        <g>
+          <circle cx={B.heart[0]} cy={B.heart[1]} r="26" fill={`url(#${u}aura)`} className="wd-glow" />
+          <path d={star8(B.heart[0], B.heart[1], 9)} fill={TA.gold} stroke={TA.goldInk} strokeWidth=".6" />
+        </g>
+      )}
       {hl === "mouth" && (
         <g>
-          <path d={LIPS} {...gold(1, 2.2)} />
-          <circle cx="165" cy="133" r="9" fill="none" stroke={WATER} strokeWidth="1.4" className="wd-ripple" />
-          <circle cx="165" cy="133" r="13" fill="none" stroke={WATER} strokeWidth="1.2" strokeDasharray="3 5" className="wd-turn" />
+          <path d={B.lips} {...gold(1, 2.4)} />
+          <circle cx={B.mouth[0]} cy={B.mouth[1]} r="8" fill="none" stroke={TA.water} strokeWidth="1.8" className="wd-ripple" />
+          <circle cx={B.mouth[0]} cy={B.mouth[1]} r="12" fill="none" stroke={TA.water} strokeWidth="1.5" strokeDasharray="3 5" className="wd-turn" />
         </g>
       )}
       {hl === "nose" && (
         <g>
-          <path d={NOSE} {...gold(1, 2.2)} />
-          <Route d="M172 140C169 133 166 127 164 122C162 117 160 113 159 108" kind="sweep" w={2.4} />
+          <path d={B.nose} {...gold(1, 2.4)} />
+          <Route d={B.noseRoute} kind="sweep" w={3} />
         </g>
       )}
       {hl === "face" && (
-        <g clipPath="url(#wd-face)">
-          <path d="M152 70C155 100 153 128 150 152M140 78C142 106 142 132 141 154M128 90C130 112 131 132 132 150M117 104C119 120 121 134 124 146" {...water(1.8)} className="wd-flow" />
+        <g clipPath={`url(#${u}face)`}>
+          <Stream d={B.faceFlow} w={2.4} />
         </g>
       )}
-      {hl === "face" && <><Drop x={150} y={164} fall={36} /><Drop x={142} y={166} fall={32} delay={1.2} s={0.8} /></>}
+      {hl === "face" && <><Drop x={B.faceDrops[0][0]} y={B.faceDrops[0][1]} fall={40} s={1.3} /><Drop x={B.faceDrops[1][0]} y={B.faceDrops[1][1]} fall={36} delay={1.2} s={1.1} /></>}
       {hl === "head" && (tradition === "sunni"
-        ? <Route d="M154 63C142 49 122 45 104 50C86 56 72 74 70 96C70 112 76 126 84 138" kind="sweep" w={3} />
-        : <Route d="M128 45C142 48 152 56 157 66" kind="once" w={3} />)}
+        ? <Route d={B.headRoute} kind="sweep" w={3.4} />
+        : <Route d={B.headRouteShia} kind="once" w={3.4} />)}
       {hl === "ears" && (
         <g>
-          <Route d="M107 97C102 99 101 106 104 111" kind="sweep" w={2.4} />
-          <Route d="M92 92C89 102 90 114 96 124" kind="sweep" w={2.4} delay={1.6} />
+          <Route d={B.earRoutes[0]} kind="sweep" w={2.8} />
+          <Route d={B.earRoutes[1]} kind="sweep" w={2.8} delay={1.6} />
+        </g>
+      )}
+    </g>
+  );
+}
+
+// the bust with a headscarf (BUST_F): the face open, the scarf over head, neck and shoulders; for wiping the head its
+// front edge is drawn back (the hairline shows), for the ears it is lifted there
+function BustF({ u, hl, tradition }: { u: string; hl: Scene; tradition: Tradition }) {
+  const B = BUST, F = BUST_F;
+  return (
+    <g>
+      <defs><clipPath id={`${u}faceF`}><path d={F.face} /></clipPath></defs>
+      <path d={B.garment} fill={`url(#${u}robe)`} />
+      <path d={F.scarf} fill={`url(#${u}robe)`} />
+      <path d={F.scarf} {...rim} />
+      <path d="M100 178C112 186 128 186 140 176" {...gold(0.9, 1.6)} />
+      <circle cx="108" cy="92" r="16" fill={TA.glint} opacity=".18" />
+      <path d={F.face} fill={`url(#${u}skin)`} />
+      <path d={F.trim} {...gold(1, 1.8)} />
+      {hl === "head" && (
+        <g>
+          <path d={F.hairline} fill={TA.hair} />
+          <path d={F.hairline} fill={GOLD} fillOpacity=".35" className="wd-glow" />
+          <Route d={F.headRoute} kind={tradition === "sunni" ? "sweep" : "once"} w={3.2} />
+        </g>
+      )}
+      {hl === "ears" && (
+        <g>
+          <path d={F.lift} fill={`url(#${u}skin)`} />
+          <circle cx={B.earGlow[0]} cy={B.earGlow[1]} r="18" fill={`url(#${u}aura)`} className="wd-glow" />
+          <path d={B.ear} fill={TA.skinLo} opacity=".6" />
+          <path d={B.ear} {...gold(1, 1.8)} />
+          <Route d={B.earRoutes[0]} kind="sweep" w={2.8} />
+          <Route d={B.earRoutes[1]} kind="sweep" w={2.8} delay={1.6} />
+        </g>
+      )}
+      {hl === "face" && <path d={F.face} fill={GOLD} fillOpacity=".22" stroke={TA.goldHi} strokeOpacity=".7" strokeWidth="1" />}
+      {hl === "face" && <g clipPath={`url(#${u}faceF)`}><Stream d={B.faceFlow} w={2.4} /></g>}
+      {hl === "face" && <><Drop x={B.faceDrops[0][0]} y={B.faceDrops[0][1]} fall={40} s={1.3} /><Drop x={B.faceDrops[1][0]} y={B.faceDrops[1][1]} fall={36} delay={1.2} s={1.1} /></>}
+      {hl === "heart" && (
+        <g>
+          <circle cx={B.heart[0]} cy={B.heart[1]} r="26" fill={`url(#${u}aura)`} className="wd-glow" />
+          <path d={star8(B.heart[0], B.heart[1], 9)} fill={TA.gold} stroke={TA.goldInk} strokeWidth=".6" />
+        </g>
+      )}
+      {hl === "mouth" && (
+        <g>
+          <path d={B.lips} {...gold(1, 2.4)} />
+          <circle cx={B.mouth[0]} cy={B.mouth[1]} r="8" fill="none" stroke={TA.water} strokeWidth="1.8" className="wd-ripple" />
+          <circle cx={B.mouth[0]} cy={B.mouth[1]} r="12" fill="none" stroke={TA.water} strokeWidth="1.5" strokeDasharray="3 5" className="wd-turn" />
+        </g>
+      )}
+      {hl === "nose" && (
+        <g>
+          <path d={B.nose} {...gold(1, 2.4)} />
+          <Route d={B.noseRoute} kind="sweep" w={3} />
         </g>
       )}
     </g>
@@ -293,39 +367,45 @@ function Bust({ hl, tradition }: { hl: Scene; tradition: Tradition }) {
 
 // open right hand, palm towards us; the left one is the mirror image
 const HAND = "M-17 0C-18 -14 -21 -26 -22 -40L-22 -62C-22 -69 -13 -69 -13 -62L-13 -52L-12 -76C-12 -84 -2 -84 -2 -76L-2 -54L-1 -80C-1 -88 9 -88 9 -80L9 -54L10 -75C10 -82 19 -82 19 -75L19 -44C22 -42 27 -46 31 -52C34 -57 41 -56 40 -50C38 -40 30 -26 22 -14C19 -9 18 -4 18 0";
-function Hand({ x, mirror }: { x: number; mirror?: boolean }) {
+function Hand({ u, x, mirror }: { u: string; x: number; mirror?: boolean }) {
   return (
     <g transform={`translate(${x} 204)${mirror ? " scale(-1 1)" : ""}`}>
-      <path d={`${HAND}Z`} fill={GOLD} fillOpacity=".13" />
-      <path d={HAND} {...line} />
-      <path d="M-15 -28C-6 -34 6 -36 15 -30M18 -20C11 -26 9 -36 13 -44" {...faint} />
+      <path d="M-18 0C-18 12 -16 24 -15 40H17C18 24 18 12 18 0Z" fill={`url(#${u}robe)`} />
+      <path d="M-18 1H18" {...gold(0.95, 1.6)} />
+      <path d={`${HAND}Z`} fill={`url(#${u}skin)`} />
+      <path d={HAND} {...rim} />
+      <path d="M-15 -28C-6 -34 6 -36 15 -30M18 -20C11 -26 9 -36 13 -44" {...crease} />
       <path d="M-20 -7L20 -7" {...gold(0.9, 1.3)} strokeDasharray="2 3" />
-      <path d="M-7 -66C-7 -48 -5 -30 -3 -12M4 -70C4 -50 5 -30 6 -12M14 -62C14 -46 13 -30 12 -16" {...water(1.6)} className="wd-flow" />
+      <Stream d="M-7 -66C-7 -48 -5 -30 -3 -12M4 -70C4 -50 5 -30 6 -12M14 -62C14 -46 13 -30 12 -16" w={1.6} />
     </g>
   );
 }
 
 const ARM = "M0 96C30 93 62 93 84 98C112 103 152 106 180 104C192 102 204 99 214 100C224 101 231 104 236 108C238 111 235 114 230 114C220 114 210 115 202 117C194 119 186 120 179 120C152 123 116 127 94 129C88 134 80 137 72 134C48 136 24 137 0 137";
-function Arm({ tradition, left }: { tradition: Tradition; left?: boolean }) {
+function Arm({ u, tradition, left }: { u: string; tradition: Tradition; left?: boolean }) {
+  const id = `${u}${left ? "arm-l" : "arm"}`;
   return (
     <g transform={left ? "translate(240 0) scale(-1 1)" : undefined}>
-      <defs><clipPath id={left ? "wd-arm-l" : "wd-arm"}><path d={`${ARM}Z`} /></clipPath></defs>
+      <defs><clipPath id={id}><path d={`${ARM}Z`} /></clipPath></defs>
       <g transform="translate(0 6)">
-        <rect x="64" y="80" width="180" height="70" fill={GOLD} fillOpacity=".15" clipPath={`url(#${left ? "wd-arm-l" : "wd-arm"})`} />
-        <path d={ARM} {...line} />
-        <path d="M214 105C222 106 229 107 235 109M184 114C194 113 204 113 214 112" {...faint} />
+        <path d={`${ARM}Z`} fill={`url(#${u}skin)`} />
+        <rect x="0" y="80" width="56" height="70" fill={`url(#${u}robe)`} clipPath={`url(#${id})`} />
+        <path d="M56 92V140" {...gold(0.95, 1.6)} clipPath={`url(#${id})`} />
+        <rect x="64" y="80" width="180" height="70" fill={GOLD} fillOpacity=".16" clipPath={`url(#${id})`} />
+        <path d={ARM} {...rim} />
+        <path d="M214 105C222 106 229 107 235 109M184 114C194 113 204 113 214 112" {...crease} />
         <path d="M64 84V148" {...gold(0.85, 1.3)} strokeDasharray="2 3" />
-        <circle cx="74" cy="134" r="3" fill={GOLD} />
+        <circle cx="74" cy="134" r="3" fill={TA.goldPale} />
         {tradition === "shia" ? (
           <>
-            <path d="M80 112C120 114 160 113 200 109C214 107 226 108 232 110M84 121C124 121 160 119 196 115" {...water(1.8)} className="wd-flow" />
+            <Stream d="M80 112C120 114 160 113 200 109C214 107 226 108 232 110M84 121C124 121 160 119 196 115" w={1.8} />
             <Drop x={233} y={120} fall={72} /><Drop x={226} y={120} fall={66} delay={1.3} s={0.8} />
           </>
         ) : (
           <>
             <Drop x={100} y={44} fall={50} /><Drop x={132} y={40} fall={58} delay={0.8} /><Drop x={164} y={46} fall={50} delay={1.5} /><Drop x={202} y={42} fall={50} delay={0.4} s={0.85} />
             <Drop x={118} y={134} fall={60} delay={1.1} s={0.8} /><Drop x={176} y={128} fall={64} delay={0.2} s={0.8} />
-            <path d="M84 112C120 116 160 116 200 110" {...water(1.6)} strokeOpacity=".7" className="wd-flow" />
+            <Stream d="M84 112C120 116 160 116 200 110" w={1.6} />
           </>
         )}
       </g>
@@ -335,26 +415,29 @@ function Arm({ tradition, left }: { tradition: Tradition; left?: boolean }) {
 
 const FOOT = "M90 30C86 74 88 116 96 146C99 158 96 170 90 184C84 198 86 214 102 214L198 214C212 214 220 210 220 204C220 198 213 194 203 192C179 188 152 176 136 160C129 152 127 140 127 124C127 92 129 60 130 30";
 const INSTEP = "M212 196C188 190 158 178 136 162";
-function Foot({ tradition }: { tradition: Tradition }) {
+function Foot({ u, tradition }: { u: string; tradition: Tradition }) {
   return (
     <g>
-      <defs><clipPath id="wd-foot"><path d={`${FOOT}Z`} /></clipPath></defs>
+      <defs><clipPath id={`${u}foot`}><path d={`${FOOT}Z`} /></clipPath></defs>
+      <ellipse cx="150" cy="218" rx="92" ry="7" fill={TA.water} fillOpacity=".22" />
+      <ellipse cx="150" cy="218" rx="70" ry="4" fill="none" stroke={TA.waterHi} strokeOpacity=".35" strokeWidth=".8" />
+      <path d={`${FOOT}Z`} fill={`url(#${u}skin)`} />
+      <rect x="60" y="0" width="100" height="62" fill={`url(#${u}robe)`} clipPath={`url(#${u}foot)`} />
+      <path d="M84 62H134" {...gold(0.95, 1.6)} clipPath={`url(#${u}foot)`} />
       {tradition === "sunni" ? (
         <>
-          <rect x="60" y="148" width="180" height="70" fill={GOLD} fillOpacity=".15" clipPath="url(#wd-foot)" />
+          <rect x="60" y="148" width="180" height="70" fill={GOLD} fillOpacity=".16" clipPath={`url(#${u}foot)`} />
           <path d="M84 148H140" {...gold(0.85, 1.3)} strokeDasharray="2 3" />
         </>
       ) : (
-        <path d={INSTEP} {...gold(0.3, 10)} />
+        <path d={INSTEP} {...gold(0.35, 10)} />
       )}
-      <path d={FOOT} {...line} />
-      <path d="M60 221H232" {...faint} />
-      <circle cx="114" cy="164" r="5" {...faint} />
-      <path d="M204 193C208 199 209 207 206 214M212 196C215 197 217 199 217 202" {...faint} />
+      <path d={FOOT} {...rim} />
+      <path d="M204 193C208 199 209 207 206 214M212 196C215 197 217 199 217 202" {...crease} />
       {tradition === "sunni" ? (
         <>
           <Drop x={152} y={100} fall={66} /><Drop x={176} y={104} fall={74} delay={0.9} /><Drop x={198} y={100} fall={84} delay={1.6} s={0.85} /><Drop x={118} y={92} fall={52} delay={0.5} s={0.85} />
-          <circle cx="208" cy="206" r="6" fill="none" stroke={WATER} strokeWidth="1.2" className="wd-ripple" />
+          <circle cx="208" cy="214" r="6" fill="none" stroke={WATER} strokeWidth="1.2" className="wd-ripple" />
         </>
       ) : (
         <Route d={INSTEP} kind="once" w={3} />
@@ -363,30 +446,38 @@ function Foot({ tradition }: { tradition: Tradition }) {
   );
 }
 
-// ewer: pours for the bismillah, rests at the end
-function Vessel({ pouring }: { pouring: boolean }) {
+// ewer of brass: pours into a marble basin for the bismillah, rests at the end
+const EWER = "M108 72C108 84 106 92 100 99C80 113 74 146 86 168C94 182 146 182 154 168C166 146 160 113 140 99C134 92 132 84 132 72Z";
+function Vessel({ u, pouring }: { u: string; pouring: boolean }) {
   return (
     <g>
-      {!pouring && <circle cx="120" cy="140" r="64" fill={GOLD} fillOpacity=".08" className="wd-glow" />}
-      <path d="M106 72C108 60 132 60 134 72M102 72H138" {...line} />
-      <circle cx="120" cy="57" r="3.2" {...line} />
-      <path d="M108 72C108 84 106 92 100 99C80 113 74 146 86 168C94 182 146 182 154 168C166 146 160 113 140 99C134 92 132 84 132 72" {...line} />
-      <path d="M100 180L96 194H144L140 180" {...line} />
-      <path d="M157 132C172 126 180 110 186 90M155 152C175 146 186 122 195 92M186 90C188 86 193 87 195 92" {...line} />
-      <path d="M107 80C88 72 64 82 64 104C64 117 71 125 80 129M107 86C92 81 72 88 72 104C72 113 76 118 81 121" {...line} />
-      <path d="M86 134C104 142 136 142 154 134" {...gold(0.9, 1.4)} />
-      <path d="M120 146l5 5-5 5-5-5z" fill={GOLD} />
-      <path d="M94 120C110 126 130 126 146 120" {...gold(0.5, 1)} strokeDasharray="1 4" />
+      {!pouring && <circle cx="120" cy="140" r="78" fill={`url(#${u}aura)`} className="wd-glow" />}
+      <path d="M157 132C172 126 180 110 186 90M155 152C175 146 186 122 195 92M186 90C188 86 193 87 195 92" fill="none" stroke={`url(#${u}metal)`} strokeWidth="3.4" strokeLinecap="round" />
+      <path d="M107 80C88 72 64 82 64 104C64 117 71 125 80 129M107 86C92 81 72 88 72 104C72 113 76 118 81 121" fill="none" stroke={`url(#${u}metal)`} strokeWidth="3" strokeLinecap="round" />
+      <path d={EWER} fill={`url(#${u}metal)`} />
+      <path d="M100 180L96 194H144L140 180Z" fill={`url(#${u}metal)`} />
+      <path d="M106 72C108 60 132 60 134 72Z" fill={`url(#${u}metal)`} />
+      <path d="M102 72H138" {...gold(1, 2)} />
+      <circle cx="120" cy="57" r="3.2" fill={TA.goldPale} />
+      <path d="M88 132C104 140 136 140 152 132C150 144 146 152 140 158C126 164 114 164 100 158C94 152 90 144 88 132Z" fill={TA.emerald} fillOpacity=".85" />
+      <path d="M86 134C104 142 136 142 154 134" {...gold(0.95, 1.4)} />
+      <path d="M120 144l5 5-5 5-5-5z" fill={TA.goldPale} />
+      <path d="M96 112C98 100 104 92 110 88" fill="none" stroke={TA.glint} strokeOpacity=".6" strokeWidth="3" strokeLinecap="round" />
+      <path d={EWER} {...rim} />
       {pouring ? (
         <>
-          <path d="M166 214C170 224 214 224 218 214M162 214H222" {...line} />
-          <ellipse cx="192" cy="214" rx="12" ry="3" fill="none" stroke={WATER} strokeWidth="1.2" className="wd-ripple" />
+          <path d="M166 214C166 226 218 226 218 214Z" fill={`url(#${u}face)`} />
+          <ellipse cx="192" cy="214" rx="26" ry="5" fill={TA.marble} />
+          <ellipse cx="192" cy="214" rx="26" ry="5" fill="none" stroke={TA.gold} strokeWidth="1" />
+          <ellipse cx="192" cy="214.4" rx="21" ry="3.4" fill={TA.water} fillOpacity=".7" />
+          <ellipse cx="192" cy="214.4" rx="12" ry="2.2" fill="none" stroke={TA.waterHi} strokeWidth="1" className="wd-ripple" />
+          <Stream d="M195 93C197 120 194 170 192 212" w={2.2} />
           <Drop x={194} y={100} fall={110} /><Drop x={194} y={100} fall={110} delay={0.8} /><Drop x={194} y={100} fall={110} delay={1.6} />
         </>
       ) : (
-        <g fill={GOLD}>
+        <g fill={TA.goldPale}>
           {[[62, 70, 0], [182, 58, 1.2], [56, 168, 2.1], [190, 176, 0.6], [150, 40, 2.8]].map(([x, y, d]) => (
-            <path key={`${x}-${y}`} d={`M${x} ${y - 6}l1.6 4.4 4.4 1.6-4.4 1.6-1.6 4.4-1.6-4.4-4.4-1.6 4.4-1.6z`} className="wd-twinkle" style={{ animationDelay: `-${d}s` }} />
+            <path key={`${x}-${y}`} d={star8(x, y, 5)} className="wd-twinkle" style={{ animationDelay: `-${d}s` }} />
           ))}
         </g>
       )}
@@ -394,25 +485,28 @@ function Vessel({ pouring }: { pouring: boolean }) {
   );
 }
 
-function Stage({ scene, tradition, label }: { scene: Scene; tradition: Tradition; label: string }) {
+// the scene of a step: the garden courtyard at dawn behind the close-up, motes of light in the air
+function Stage({ scene, tradition, label, kind }: { scene: Scene; tradition: Tradition; label: string; kind: FigureKind }) {
+  const u = useTsId("wd");
   const bust = scene === "heart" || scene === "mouth" || scene === "nose" || scene === "face" || scene === "head" || scene === "ears";
   return (
-    <svg viewBox="0 0 240 240" className="h-full w-full" role="img" aria-label={label}>
-      {/* mihrab outline behind every scene */}
-      <path d="M26 238V110C26 62 70 34 120 18C170 34 214 62 214 110V238" fill="none" stroke={GOLD} strokeOpacity=".16" strokeWidth="1" />
-      <path d="M120 10l3 5-3 5-3-5z" fill={GOLD} fillOpacity=".4" />
-      <g key={`${scene}-${tradition}`} className="wd-in">
-        {bust && <Bust hl={scene} tradition={tradition} />}
-        {scene === "hands" && (
-          <g>
-            <Hand x={152} /><Hand x={88} mirror />
-            <Drop x={72} y={46} fall={58} /><Drop x={90} y={40} fall={60} delay={1.1} s={0.85} /><Drop x={150} y={42} fall={62} delay={0.5} /><Drop x={168} y={48} fall={56} delay={1.7} s={0.85} />
-          </g>
-        )}
-        {(scene === "arm" || scene === "armL") && <Arm tradition={tradition} left={scene === "armL"} />}
-        {scene === "feet" && <Foot tradition={tradition} />}
-        {(scene === "vessel" || scene === "end") && <Vessel pouring={scene === "vessel"} />}
-      </g>
+    <svg viewBox="0 -36 240 290" className="h-full w-full" role="img" aria-label={label}>
+      <TsDefs u={u} />
+      <Courtyard u={u} H={254} G={240}>
+        <Motes />
+        <g key={`${scene}-${tradition}-${kind}`} className="wd-in">
+          {bust && <g transform={`translate(${BUST_FIT.cx} ${BUST_FIT.base}) scale(${BUST_FIT.s}) translate(${-BUST_FIT.cx} ${-BUST_FIT.base})`}><Bust u={u} hl={scene} tradition={tradition} kind={kind} /></g>}
+          {scene === "hands" && (
+            <g>
+              <Hand u={u} x={152} /><Hand u={u} x={88} mirror />
+              <Drop x={72} y={46} fall={58} /><Drop x={90} y={40} fall={60} delay={1.1} s={0.85} /><Drop x={150} y={42} fall={62} delay={0.5} /><Drop x={168} y={48} fall={56} delay={1.7} s={0.85} />
+            </g>
+          )}
+          {(scene === "arm" || scene === "armL") && <Arm u={u} tradition={tradition} left={scene === "armL"} />}
+          {scene === "feet" && <Foot u={u} tradition={tradition} />}
+          {(scene === "vessel" || scene === "end") && <Vessel u={u} pouring={scene === "vessel"} />}
+        </g>
+      </Courtyard>
     </svg>
   );
 }
@@ -480,6 +574,8 @@ export default function WuduTrainer() {
   const u = UI[lang];
   const tx = (v?: L3) => (v ? v[lang] : "");
   const [tradition, setTradition] = useState<Tradition>("sunni");
+  // the one tradition setting (profile, /start, the app) opens the trainer in that form; the switch here stays a local override
+  useEffect(() => { setTradition(trainerTradition()); }, []);
   const steps = WUDU[tradition];
   const order = useMemo(() => steps.filter((s) => s.quiz), [steps]);
   const [i, setI] = useState(0);
@@ -496,6 +592,10 @@ export default function WuduTrainer() {
   const last = i >= steps.length - 1;
 
   useEffect(() => { const r = readJSON<WuduDone | null>(WUDU_KEY, null); if (r?.done) setPassed(r); }, []);
+  // the figure follows the learner's identity (a sister sees the headscarf); anyone can switch it
+  const tu = trainerUi(lang);
+  const [kind, setKind] = useState<FigureKind>("m");
+  useEffect(() => { setKind(trainerDefaults(readJSON<unknown>(IDENTITY_KEY, null)).kind); }, []);
   useEffect(() => {
     if (!auto || mode !== "learn") return;
     if (last) { setAuto(false); return; }
@@ -534,61 +634,84 @@ export default function WuduTrainer() {
   const goStep = (k: number) => { setAuto(false); setMode("learn"); setI(k); };
   const kindLabel = (s: WuduStep) => (tradition === "sunni" ? u[s.kind] : u[s.kind === "fard" ? "wajib" : "mustahabb"]);
   const byId = (id: string) => steps.find((s) => s.id === id)!;
-  const chip = (on: boolean) => `pa-chip pa-chip-dark ${on ? "is-on" : ""}`;
-  const ghost = "h-12 rounded-full border border-white/25 px-5 text-sm font-bold transition hover:border-white/55 disabled:opacity-30";
-  const round = "grid h-12 w-12 shrink-0 place-items-center rounded-full border border-white/25 text-lg transition hover:border-white/60 disabled:opacity-30";
+  const ghost = "tg-btn tg-glass inline-flex h-12 items-center rounded-full px-5 text-sm font-bold text-white";
+  const round = "tg-btn tg-glass grid h-12 w-12 shrink-0 place-items-center rounded-full text-white";
+  const seg = (on: boolean) => `tg-btn min-h-9 rounded-full px-3.5 text-[13px] font-semibold sm:px-4 ${on ? "tg-lens" : "text-white/85"}`;
 
   return (
-    <div className="stage girih relative overflow-hidden rounded-2xl border border-[rgb(214_180_108)]/30 text-[#eef0f3] shadow-[0_40px_80px_-50px_rgba(4,30,22,.9)]">
-      <style>{CSS}</style>
-      <div className="relative flex flex-wrap items-center justify-between gap-3 border-b border-[rgb(214_180_108)]/20 p-4 sm:p-5">
-        <div className="flex flex-wrap gap-2" role="tablist">
-          {(["sunni", "shia"] as const).map((t) => <button key={t} role="tab" aria-selected={tradition === t} onClick={() => chooseTradition(t)} className={chip(tradition === t)}>{u[t]}</button>)}
+    <div className="relative overflow-clip rounded-[28px] bg-[#04201a] text-[#eef0f3] shadow-[0_40px_80px_-50px_rgba(4,30,22,.9)] ring-1 ring-[rgb(214_180_108)]/25">
+      <style>{CSS + TS_CSS}</style>
+      {/* tradition and quiz, as glass over the stage */}
+      {mode !== "learn" && (
+        <div className="relative flex flex-wrap items-center justify-between gap-2 border-b border-white/10 bg-[radial-gradient(120%_120%_at_0%_0%,rgba(47,125,102,.3),transparent_60%)] p-3 sm:p-4">
+          <div role="tablist" className="tg-glass tg-dark flex rounded-full p-1">
+            {(["sunni", "shia"] as const).map((t) => <button key={t} role="tab" aria-selected={tradition === t} onClick={() => chooseTradition(t)} className={seg(tradition === t)}>{u[t]}</button>)}
+          </div>
+          <div className="flex flex-wrap items-center gap-2">
+            {passed && <span className="inline-flex h-10 items-center gap-1.5 px-1 text-sm font-semibold text-[rgb(var(--gold))]"><IconCheckCircle className="h-5 w-5" />{u.passed}</span>}
+            <button onClick={() => goStep(i)} className="tg-btn tg-glass tg-dark inline-flex min-h-10 items-center gap-1.5 rounded-full px-4 text-[13px] font-semibold text-white"><Glyph name="prev" className="h-3.5 w-3.5" />{u.back}</button>
+          </div>
         </div>
-        <div className="flex flex-wrap items-center gap-2">
-          {passed && <span className="inline-flex h-10 items-center gap-1.5 px-1 text-sm font-semibold text-[rgb(var(--gold))]"><IconCheckCircle className="h-5 w-5" />{u.passed}</span>}
-          <button onClick={() => (mode === "learn" ? startQuiz() : goStep(i))} className={chip(false)}>{mode === "learn" ? u.quiz : u.back}</button>
-        </div>
-      </div>
+      )}
 
       {mode === "learn" && (
-        <div className="relative grid gap-0 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
-          <div className="relative border-b border-[rgb(214_180_108)]/20 p-4 md:border-b-0 md:border-e">
-            <div className="relative mx-auto aspect-square max-w-[360px] text-white">
-              <PracticeWindow uid="wudu-w" className="absolute left-1/2 top-0 h-full w-auto -translate-x-1/2 opacity-40" />
-              <div className="relative h-full w-full"><Stage scene={step.scene} tradition={tradition} label={tx(step.title)} /></div>
+        <div className="relative grid md:grid-cols-[minmax(0,1.05fr)_minmax(0,1fr)]">
+          <div className="relative">
+            <div className="relative aspect-[240/290] w-full bg-[#041d16]">
+              <div className="absolute inset-0"><Stage scene={step.scene} tradition={tradition} label={tx(step.title)} kind={kind} /></div>
+              <div className="absolute inset-x-3 top-3 flex flex-wrap items-start justify-between gap-2 sm:inset-x-4 sm:top-4">
+                <div role="tablist" className="tg-glass tg-dark flex rounded-full p-1">
+                  {(["sunni", "shia"] as const).map((t) => <button key={t} role="tab" aria-selected={tradition === t} onClick={() => chooseTradition(t)} className={seg(tradition === t)}>{u[t]}</button>)}
+                </div>
+                <button onClick={() => startQuiz()} className="tg-btn tg-glass tg-dark ms-auto inline-flex min-h-10 shrink-0 items-center gap-1.5 rounded-full px-3.5 text-[13px] font-semibold text-white">
+                  {passed && <IconCheckCircle className="h-4 w-4 text-[rgb(var(--gold))]" />}{u.quiz}
+                </button>
+              </div>
+              <div className="absolute inset-x-0 bottom-3 flex justify-center sm:bottom-4" aria-hidden>
+                <div className="tg-glass tg-dark flex flex-wrap justify-center gap-1.5 rounded-full px-3 py-2">
+                  {steps.map((s, k) => <span key={s.id} className={`h-1.5 rounded-full transition-all duration-500 ${k < i ? "w-4 bg-[rgb(var(--gold))]" : k === i ? "w-7 bg-gradient-to-r from-[#f2dfaa] to-[#c6a65e]" : "w-4 bg-white/20"}`} />)}
+                </div>
+              </div>
             </div>
-            <div className="mt-2 flex flex-wrap justify-center gap-1.5" aria-hidden>
-              {steps.map((s, k) => <span key={s.id} className={`h-1.5 rounded-full transition-all duration-500 ${k < i ? "w-5 bg-[rgb(var(--gold))]" : k === i ? "w-8 bg-gradient-to-r from-[#ecd7a2] to-[#c6a65e]" : "w-5 bg-white/15"}`} />)}
+            {/* the controls, part of the card right under the picture: they never cover any text */}
+            <div className="px-3 pt-3 sm:px-4">
+              <div className="tg-glass tg-dark rounded-[30px] p-2">
+                <div className="mx-3 mb-2 mt-1 h-1 overflow-hidden rounded-full bg-white/10" role="progressbar" aria-valuemin={1} aria-valuemax={steps.length} aria-valuenow={i + 1}>
+                  <div className="h-full rounded-full bg-gradient-to-r from-[#c6a65e] to-[#f2dfaa] transition-all duration-500 rtl:bg-gradient-to-l" style={{ width: `${((i + 1) / steps.length) * 100}%` }} />
+                </div>
+                <div className="flex items-center gap-2">
+                  <button onClick={() => { setAuto(false); setI((n) => Math.max(0, n - 1)); }} disabled={i === 0} aria-label={u.prev} title={u.prev} className={round}><Glyph name="prev" /></button>
+                  <button onClick={() => (last ? startQuiz() : setAuto((a) => !a))} className="tg-btn tg-lens inline-flex h-12 flex-1 items-center justify-center gap-2 rounded-full px-3 text-sm font-bold">{!last && <Glyph name={auto ? "pause" : "play"} className="h-4 w-4" />}{last ? u.toQuiz : auto ? u.pause : u.play}</button>
+                  <button onClick={() => { setAuto(false); setI((n) => Math.min(steps.length - 1, n + 1)); }} disabled={last} aria-label={u.next} title={u.next} className={round}><Glyph name="next" /></button>
+                </div>
+              </div>
+            </div>
+            <div className="px-3 pb-3 pt-3 sm:px-4 md:pb-4">
+              <div className="tg-glass tg-dark inline-flex items-center gap-1 rounded-full p-1" role="tablist" aria-label={tu.figure}>
+                <span className="px-2.5 text-[12px] font-semibold text-white/60">{tu.figure}</span>
+                {(["m", "f"] as const).map((k) => <button key={k} role="tab" aria-selected={kind === k} onClick={() => setKind(k)} className={seg(kind === k)}>{k === "m" ? tu.man : tu.woman}</button>)}
+              </div>
             </div>
           </div>
 
-          <div className="flex min-h-[420px] flex-col p-5 sm:p-7">
+          <div className="relative flex flex-col bg-[radial-gradient(120%_80%_at_0%_0%,rgba(47,125,102,.28),transparent_60%)] p-5 sm:p-7 md:min-h-[460px]">
             <div key={`${tradition}-${i}`} className="step-in">
               <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
                 <p className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.16em] text-[rgb(var(--gold))] rtl:tracking-normal"><PracticeStar size={10} /><span dir="ltr">{i + 1} / {steps.length}</span></p>
-                <span className={`rounded-full border px-2.5 py-0.5 text-[11px] font-semibold ${step.kind === "fard" ? "border-[rgb(var(--gold))]/70 text-[rgb(var(--gold))]" : "border-white/25 text-white/70"}`}>{kindLabel(step)}</span>
+                <span className={`tg-glass rounded-full px-2.5 py-0.5 text-[11px] font-semibold ${step.kind === "fard" ? "text-[rgb(var(--gold))]" : "text-white/75"}`}>{kindLabel(step)}</span>
               </div>
               <h3 className="font-display mt-2 text-3xl leading-tight">{tx(step.title)}</h3>
               <p className="mt-3 text-[16px] leading-relaxed text-white/85">{tx(step.text)}</p>
-              {step.times && <Counter key={`${tradition}-${step.id}`} times={step.times} sides={step.sides} u={u} lang={lang} />}
+              {step.times && <div className="tg-glass mt-5 rounded-[22px] px-4 pb-4 pt-px"><Counter key={`${tradition}-${step.id}`} times={step.times} sides={step.sides} u={u} lang={lang} /></div>}
               {step.duas?.map((d) => (
-                <div key={d.ar} className="mt-5 border-t border-[rgb(214_180_108)]/25 pt-4">
+                <div key={d.ar} className="tg-glass mt-5 rounded-[22px] px-4 py-3">
                   <p className="font-arabic text-[26px] leading-[2] sm:text-[30px]" dir="rtl" lang="ar">{d.ar}</p>
                   {lang !== "ar" && <p className="mt-2 text-[15px] italic leading-relaxed text-[rgb(var(--gold))]"><span dir="ltr">{d.translit}</span></p>}
                   {lang !== "ar" && <p className="mt-2 text-[15px] leading-relaxed text-white/80"><span className="font-semibold text-white">{u.meaning}: </span>{d.meaning[lang]}</p>}
                   {d.src && <p className="mt-1.5 text-xs font-semibold text-white/50">{tx(d.src)}</p>}
                 </div>
               ))}
-              {step.note && <p className="mt-4 rounded-xl border border-[rgb(214_180_108)]/25 bg-white/[0.05] p-3 text-sm leading-relaxed text-white/75">{tx(step.note)}</p>}
-            </div>
-            <div className="mt-auto pt-6">
-              <div className="h-1.5 overflow-hidden rounded-full bg-white/10"><div className="h-full rounded-full bg-gradient-to-r from-[#c6a65e] to-[#ecd7a2] transition-all duration-500 rtl:bg-gradient-to-l" style={{ width: `${((i + 1) / steps.length) * 100}%` }} /></div>
-              <div className="mt-4 flex items-center gap-2">
-                <button onClick={() => { setAuto(false); setI((n) => Math.max(0, n - 1)); }} disabled={i === 0} aria-label={u.prev} title={u.prev} className={round}><ArrowBack /></button>
-                <button onClick={() => (last ? startQuiz() : setAuto((a) => !a))} className="btn-gold h-12 flex-1 rounded-full px-3 text-sm font-bold">{last ? u.toQuiz : auto ? u.pause : u.play}</button>
-                <button onClick={() => { setAuto(false); setI((n) => Math.min(steps.length - 1, n + 1)); }} disabled={last} aria-label={u.next} title={u.next} className={round}><ArrowNext /></button>
-              </div>
+              {step.note && <p className="tg-glass mt-4 rounded-[18px] p-3.5 text-sm leading-relaxed text-white/80">{tx(step.note)}</p>}
             </div>
           </div>
         </div>
@@ -609,7 +732,7 @@ export default function WuduTrainer() {
                 <li key={`${id}-${isWrong ? wrong!.t : 0}`} className={isWrong ? "wd-shake" : undefined}>
                   <button
                     onClick={() => pick(id)} disabled={at >= 0}
-                    className={`flex min-h-[56px] w-full items-center gap-2.5 rounded-md border px-3 py-2 text-start text-[14.5px] font-semibold leading-snug transition ${at >= 0 ? "border-[rgb(var(--gold))]/60 bg-[rgb(var(--gold))]/15 text-white" : isHint ? "wd-hint border-[rgb(var(--gold))] bg-[rgb(var(--gold))]/[0.07]" : isWrong ? "border-amber-200/50 bg-white/[0.04]" : "border-white/15 bg-white/[0.04] hover:border-white/40"}`}
+                    className={`tg-btn tg-glass flex min-h-[56px] w-full items-center gap-2.5 rounded-[18px] px-3 py-2 text-start text-[14.5px] font-semibold leading-snug ${at >= 0 ? "!border-[rgb(var(--gold))]/60 bg-[rgb(var(--gold))]/15 text-white !opacity-100" : isHint ? "wd-hint !border-[rgb(var(--gold))]" : isWrong ? "!border-amber-200/50" : ""}`}
                   >
                     <span className={`grid h-7 w-7 shrink-0 place-items-center rounded-full text-xs font-bold tabular-nums ${at >= 0 ? "bg-[rgb(var(--gold))] text-[rgb(var(--stage))]" : "border border-white/20 text-white/40"}`}>{at >= 0 ? at + 1 : "·"}</span>
                     <span className="min-w-0">{tx(s.title)}</span>
@@ -632,26 +755,26 @@ export default function WuduTrainer() {
           <h3 className="font-display mx-auto mt-4 max-w-xl text-2xl leading-tight sm:text-3xl">{u.doneTitle}</h3>
           <p className="mx-auto mt-3 max-w-xl text-[15px] leading-relaxed text-white/75">{u.doneText} {slips(miss, lang, u)}</p>
           <div className="mt-7 flex flex-wrap justify-center gap-2">
-            <Link href="/salah" className="btn-gold inline-flex h-12 items-center rounded-full px-5 text-sm font-bold">{u.toSalah} <span className="ms-1.5"><ArrowNext /></span></Link>
-            <Link href="/surah/5?v=6" className="inline-flex h-12 items-center rounded-full border border-white/25 px-5 text-sm font-bold hover:border-white/50">{u.toVerse}</Link>
+            <Link href="/salah" className="tg-btn tg-lens inline-flex h-12 items-center rounded-full px-5 text-sm font-bold">{u.toSalah} <span className="ms-1.5"><ArrowNext /></span></Link>
+            <Link href="/surah/5?v=6" className={ghost}>{u.toVerse}</Link>
             <button onClick={() => startQuiz()} className={ghost}>{u.practise}</button>
           </div>
         </div>
       )}
 
-      <div className="relative border-t border-[rgb(214_180_108)]/20 p-4 sm:p-5">
-        <div className="flex flex-wrap items-center gap-x-4">
-          <button onClick={() => setList((v) => !v)} aria-expanded={list} className="inline-flex min-h-10 items-center gap-1.5 text-sm font-semibold text-white/80 hover:text-white">
-            <svg viewBox="0 0 12 12" className={`h-3 w-3 transition rtl:-scale-x-100 ${list ? "rotate-90 rtl:-rotate-90" : ""}`} aria-hidden><path d="M4 2l4 4-4 4" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" /></svg>
+      <div className="relative border-t border-white/10 p-4 sm:p-5">
+        <div className="flex flex-wrap items-center gap-2">
+          <button onClick={() => setList((v) => !v)} aria-expanded={list} className="tg-btn tg-glass inline-flex min-h-10 items-center gap-1.5 rounded-full px-4 text-sm font-semibold text-white/85">
+            <Glyph name="chevron" className={`h-3.5 w-3.5 transition ${list ? "rotate-90 rtl:-rotate-90" : ""}`} />
             {u.steps}
           </button>
-          {(i > 0 || mode !== "learn") && <button onClick={() => goStep(0)} className="inline-flex min-h-10 items-center text-sm font-semibold text-white/60 hover:text-white">{u.restart}</button>}
+          {(i > 0 || mode !== "learn") && <button onClick={() => goStep(0)} className="tg-btn inline-flex min-h-10 items-center gap-1.5 rounded-full px-3 text-sm font-semibold text-white/65 hover:text-white"><Glyph name="restart" className="h-3.5 w-3.5" />{u.restart}</button>}
         </div>
         {list && (
-          <ol className="mt-2 grid gap-1 text-sm sm:grid-cols-2">
+          <ol className="tg-glass mt-3 grid gap-1 rounded-[22px] p-2 text-sm sm:grid-cols-2">
             {steps.map((s, k) => (
               <li key={s.id}>
-                <button onClick={() => goStep(k)} className={`flex min-h-10 w-full items-center gap-2 rounded-lg px-2 py-1.5 text-start ${mode === "learn" && k === i ? "bg-[rgb(214_180_108)]/15 font-bold text-white" : "text-white/75 hover:bg-white/5"}`}>
+                <button onClick={() => goStep(k)} className={`tg-btn flex min-h-10 w-full items-center gap-2 rounded-[14px] px-3 py-1.5 text-start ${mode === "learn" && k === i ? "bg-[rgb(214_180_108)]/20 font-bold text-white" : "text-white/75 hover:bg-white/5"}`}>
                   <span className="min-w-0 flex-1">{k + 1}. {tx(s.title)}</span>
                   <span className={`shrink-0 text-[11px] ${s.kind === "fard" ? "text-[rgb(var(--gold))]" : "text-white/40"}`}>{kindLabel(s).split(" · ")[0]}</span>
                 </button>

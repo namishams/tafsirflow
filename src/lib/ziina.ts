@@ -1,4 +1,4 @@
-// Voluntary support (sadaqa) via Ziina, the UAE payment provider – server side only (imported by /api/support).
+// Voluntary support payment (not a charitable donation) via Ziina, the UAE payment provider – server side only (imported by /api/support).
 // Same approach as the owner's MediFlow portal (mediflow/src/lib/portal/ziina.ts, same ICSL FZE merchant account):
 // the key is read from the server environment on every call, is sent only to Ziina and is never logged or returned.
 // Card details are entered at Ziina only and never reach this server.

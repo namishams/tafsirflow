@@ -627,6 +627,24 @@ const SHIA: WuduStep[] = [
         ru: "Оставшейся влагой протрите верхнюю часть стопы – от кончиков пальцев ног до щиколотки, возвышения на верхней части стопы. Сначала правая нога, затем левая.",
         zh: "用剩余的湿润抹脚背——从脚趾尖抹到脚踝，即脚背上隆起的部分。先右脚，后左脚。",
       }),
+    // checked 22.10.2026: al-Sistani, Islamic Laws ruling 258 (https://www.sistani.org/english/book/48/2153/) – up to the
+    // joint; stopping at the raised part is not enough as an obligatory precaution (IMAM-US answers); other maraji'
+    // accept the raised part. needs_review: true
+    note: L("Nach Ayatollah al-Sistani wischt man bis zum Gelenk zwischen Fuß und Unterschenkel; nur bis zur Erhebung des Fußrückens reicht nach ihm als Pflichtvorsicht nicht. Andere Maradschiʿ lassen die Erhebung genügen. Folgen Sie Ihrem Mardschaʿ.",
+      "According to Ayatollah al-Sistani you wipe up to the joint between foot and shin; stopping at the raised part of the foot is not enough for him as an obligatory precaution. Other maraji' accept the raised part. Please follow your marja'.",
+      "عند السيد السيستاني يكون المسح إلى المفصل بين القدم والساق، ولا يكفي الاقتصار على قبّة القدم على الأحوط وجوبًا. ويكتفي بعض المراجع بالقبّة. اتّبعوا مرجعكم.", {
+        tr: "Ayetullah Sistani'ye göre ayak ile baldır arasındaki eklem yerine kadar meshedilir; ona göre sadece ayağın üstündeki yüksekliğe kadar meshetmek vacip ihtiyat gereği yeterli değildir. Diğer mercilere göre yükseklik yeterlidir. Kendi merciinize uyun.",
+        ur: "آیت اللہ سیستانی کے نزدیک پاؤں اور پنڈلی کے جوڑ تک مسح کیا جائے؛ صرف پاؤں کے ابھار تک مسح ان کے نزدیک احتیاطِ واجب کی بنا پر کافی نہیں۔ بعض دوسرے مراجع ابھار تک کافی سمجھتے ہیں۔ اپنے مرجع کی پیروی کریں۔",
+        fa: "به نظر آیت‌الله سیستانی مسح تا مفصل میان پا و ساق است و بنا بر احتیاط واجب، تنها تا برآمدگی روی پا کافی نیست. برخی مراجع دیگر برآمدگی را کافی می‌دانند. از مرجع خود پیروی کنید.",
+        ps: "د آیت الله سیستاني په نظر مسح د پښې او پنډۍ تر بند پورې کېږي؛ یوازې د پښې تر پورته شوې برخې پورې د واجب احتیاط له مخې بس نه دی. ځینې نور مراجع پورته برخه بس ګڼي. د خپل مرجع پیروي وکړئ.",
+        fr: "Selon l'ayatollah al-Sistani, on essuie jusqu'à l'articulation entre le pied et la jambe ; s'arrêter à la partie surélevée du pied ne suffit pas pour lui, par précaution obligatoire. D'autres marja' acceptent la partie surélevée. Suivez votre marja'.",
+        es: "Según el ayatolá al-Sistani se pasa la mano hasta la articulación entre el pie y la pierna; detenerse en la parte elevada del empeine no basta para él, por precaución obligatoria. Otros maraji' aceptan la parte elevada. Siga a su marja'.",
+        id: "Menurut Ayatullah al-Sistani, usapan sampai sendi antara kaki dan tulang kering; berhenti di bagian kaki yang menonjol tidak cukup menurut beliau sebagai kehati-hatian wajib. Marja' lain menerima bagian yang menonjol. Ikutilah marja' Anda.",
+        ms: "Menurut Ayatullah al-Sistani, sapuan hingga sendi antara kaki dan betis; berhenti di bahagian kaki yang timbul tidak memadai menurut beliau sebagai langkah berhati-hati wajib. Marja' lain menerima bahagian yang timbul. Ikutlah marja' anda.",
+        bn: "আয়াতুল্লাহ সিস্তানির মতে পা ও পায়ের নলার সংযোগস্থল পর্যন্ত মাসেহ করতে হয়; কেবল পায়ের উঁচু অংশ পর্যন্ত মাসেহ তাঁর মতে ওয়াজিব সতর্কতা হিসেবে যথেষ্ট নয়। অন্য কিছু মারজা উঁচু অংশকেই যথেষ্ট মনে করেন। আপনার মারজার অনুসরণ করুন।",
+        ru: "По мнению аятоллы ас-Систани, протирают до сустава между стопой и голенью; остановиться на возвышении стопы, по его мнению, недостаточно в порядке обязательной предосторожности. Другие марджа допускают возвышение. Следуйте своему марджа.",
+        zh: "按西斯坦尼阿亚图拉的观点，应抹到脚与小腿之间的关节；按其必要的谨慎，只抹到脚背隆起处并不足够。另一些玛尔吉阿认为抹到隆起处即可。请遵循您的玛尔吉阿。",
+      }),
   },
   ending(true),
 ];

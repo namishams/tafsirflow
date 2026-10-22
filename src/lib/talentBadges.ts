@@ -9,7 +9,10 @@ import { PUBLIC_SITE, SITE } from "./site";
 //   module (exam_attempts/certificates: server-timed, signed results; src/app/api/certificates)
 // - official star: a YouTube channel proven with Google OAuth (>= officialMinSubscribers, name matches) or an invite
 //   code; admins can grant or revoke (badge_override 'none' stops the automatic badges for a member)
-export type Badge = "emerald" | "gold" | "official";
+// Founder (owner 22.10.2026): a gold check for exactly one account (users.founder, set only by the migration in
+// db/schema.sql). Colours (owner 22.10.2026, the same in app and web): founder gold, "gold" (Masterclass Reciter, the top
+// tier) grey, "emerald" (confirmed learner) blue, official star unchanged. Stored values stay as they are.
+export type Badge = "emerald" | "gold" | "official" | "founder";
 export type BadgeRules = { requirePhone: boolean; goldMinLevel: number; officialMinSubscribers: number };
 
 export function badgeRules(): BadgeRules {
@@ -23,7 +26,8 @@ export function badgeRules(): BadgeRules {
 }
 
 /** the badge shown for a profile row */
-export function displayBadge(r: { badge?: string | null; official?: boolean | null; verified?: boolean | null }): Badge | null {
+export function displayBadge(r: { badge?: string | null; official?: boolean | null; verified?: boolean | null; founder?: boolean | null }): Badge | null {
+  if (r.founder) return "founder";
   if (r.official) return "official";
   if (r.badge === "gold" || r.verified) return "gold"; // an admin verification counts as gold
   if (r.badge === "emerald") return "emerald";

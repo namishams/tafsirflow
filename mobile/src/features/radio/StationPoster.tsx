@@ -41,7 +41,8 @@ export const StationPoster = memo(function StationPoster({ id, title, desc, word
   return (
     <Pressable onPress={() => onChoose(id)} accessibilityRole="button" accessibilityState={{ selected: on }} accessibilityLabel={label}
       style={({ pressed }) => [{ flex: 1, borderRadius: R.card, overflow: "hidden", transform: [{ scale: pressed ? 0.985 : 1 }],
-        shadowColor: "#000", shadowOpacity: 0.35, shadowRadius: 14, shadowOffset: { width: 0, height: 10 } }]}>
+        // a solid ground under the gradient gives the shadow its shape (else RN warns on every poster: "cannot calculate shadow efficiently")
+        backgroundColor: g.colors[g.colors.length - 1], shadowColor: "#000", shadowOpacity: 0.35, shadowRadius: 14, shadowOffset: { width: 0, height: 10 } }]}>
       <LinearGradient colors={g.colors} locations={g.locations} start={{ x: 0.37, y: 0 }} end={{ x: 0.63, y: 1 }} style={{ aspectRatio: 4 / 5, padding: 16, justifyContent: "flex-end" }}>
         <Svg style={StyleSheet.absoluteFill} pointerEvents="none">
           <Defs>

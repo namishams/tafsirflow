@@ -251,7 +251,7 @@ export function SwipeScreen() {
               </Animated.View>
             ) : null}
             <Animated.View {...pan.panHandlers} accessibilityLabel={st("a11yCard", { kind: kindLabel })}
-              style={{ position: "absolute", top: 0, left: 0, shadowColor: "#000", shadowOpacity: 0.35, shadowRadius: 18, shadowOffset: { width: 0, height: 10 }, transform: [{ translateX: drag }, { rotate: reduce ? "0deg" : rot }] }}>
+              style={{ position: "absolute", top: 0, left: 0, borderRadius: 22, boxShadow: "0px 10px 36px rgba(0,0,0,0.35)", transform: [{ translateX: drag }, { rotate: reduce ? "0deg" : rot }] }}>
               <LearnCard key={cur.id} card={cur} w={cardW} h={cardH} flipped={flipped} masha={masha}
                 onFlip={() => { if (hasBack(cur)) { tick(); setFlipped((f) => !f); } }}
                 answer={answer} onAnswer={(i) => { if (answer !== null) return; const q = (cur.lib as { quiz?: { answer: number } } | undefined)?.quiz; setAnswer(i < 0 ? q?.answer ?? 0 : i); if (i >= 0) { answered(i === q?.answer); tick(); } }} />

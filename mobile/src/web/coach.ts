@@ -3,6 +3,7 @@ import { readSrs, strength, today, type Srs } from "./learning";
 import { VERSE_COUNTS } from "./counts";
 import { TOTAL_VERSES } from "./quranIndex";
 import { ageProfile } from "./age";
+import { AVERAGE_WORDS, estimateMinutes, verseWords } from "./verseTime";
 
 // The Shams coach: a small learner model built only from the learner's own history (no server, no AI). It decides
 // how each verse is practised, what today's session holds and what comes next – different for every learner.
@@ -147,6 +148,35 @@ export const readGoal = () => readJSON<Goal | null>("tf:goal", null);
 
 export type DayPlan = { reviews: string[]; repair: string[]; newVerses: number; next: { surah: number; verse: number }; minutes: number; reason: "start" | "light" | "steady" | "consolidate" | "reviewOnly" };
 
+/** The learner's own pace on new verses (qmc.shams2.pace.v1, written by Shams 2.0's store): the samples scale the time
+ *  estimate of new verses once there are five of them (lib/verseTime.ts paceFactor). */
+export const PACE_KEY = "qmc.shams2.pace.v1";
+export const readPace = (): number[] => {
+  const xs = readJSON<{ newMsPerWord?: unknown } | null>(PACE_KEY, null)?.newMsPerWord;
+  return Array.isArray(xs) ? xs.filter((x): x is number => typeof x === "number" && Number.isFinite(x) && x > 0) : [];
+};
+
+/** the estimated minutes of each of the next `max` new verses from `next` on, by their length (lib/verseTime.ts); verses
+ *  already in `srs` are skipped (as the sabaq of computeWird does); past the end of the surah the mean of the verses
+ *  before stands in for the verses that follow */
+export function newVerseMinutes(next: { surah: number; verse: number }, max: number, pace: readonly number[] = readPace(), srs: Srs = {}): number[] {
+  const out: number[] = [];
+  const n = VERSE_COUNTS[next.surah - 1] ?? 0;
+  for (let v = Math.max(1, next.verse); v <= n && out.length < max; v++) {
+    if (srs[`${next.surah}:${v}`]) continue; // known already: not a new verse
+    out.push(estimateMinutes({ words: verseWords(next.surah, v), kind: "new", pace }));
+  }
+  const mean = out.length ? out.reduce((a, b) => a + b, 0) / out.length : estimateMinutes({ words: AVERAGE_WORDS, kind: "new", pace });
+  while (out.length < max) out.push(mean);
+  return out;
+}
+/** how many of these verses (in order) fit into `budget` minutes */
+export const versesThatFit = (minutes: readonly number[], budget: number) => {
+  let k = 0, sum = 0;
+  while (k < minutes.length && sum + minutes[k] <= budget + 1e-9) sum += minutes[k++];
+  return k;
+};
+
 // Today's session: reviews first (weakest first), then repairs, then as many new verses as the learner can carry.
 // When too much is due or verses slip often, the coach holds new verses back – consolidating comes first.
 export function dayPlan(srs: Srs = readSrs()): DayPlan {
@@ -156,11 +186,12 @@ export function dayPlan(srs: Srs = readSrs()): DayPlan {
   const repair = due.filter((k) => (verseStrength(srs, k) ?? 0) < 0.4 || (srs[k].lapses ?? 0) >= 3);
   const reviews = due.filter((k) => !repair.includes(k)).sort((a, b) => (verseStrength(srs, a) ?? 0) - (verseStrength(srs, b) ?? 0));
   // how much fits into a day, in minutes: the learner's own minutes (onboarding) or the pace of the last two weeks
-  // (a new verse takes about 4 minutes, a review about 0.7, a repair about 2)
+  // (a new verse takes 1.5–14 minutes by its length, estimated in lib/verseTime.ts; a review about 0.7, a repair about 2)
   const goal = readGoal();
   const capacity = Math.max(6, Math.min(60, goal?.minutes ? goal.minutes : Math.round((L.pace || 8) * 0.7)));
   const used = reviews.length * 0.7 + repair.length * 2;
-  const room = (share: number) => Math.floor(Math.max(0, capacity - used) * share / 4);
+  const ahead = newVerseMinutes(L.next, 10, readPace(), srs);
+  const room = (share: number) => versesThatFit(ahead, Math.max(0, capacity - used) * share);
   // the method page recommends 1–3 new verses a day for beginners, 3–5 when practised, 5–10 when intensive
   const maxNew = !L.learned || goal?.read === "no" ? 3 : goal?.aim === "hifz" && goal.minutes >= 30 ? 10 : goal?.aim === "hifz" || L.learned >= 30 || goal?.read === "fluent" ? 5 : 3;
   const cap = (n: number) => Math.min(maxNew, n);
@@ -170,6 +201,6 @@ export function dayPlan(srs: Srs = readSrs()): DayPlan {
   else if (L.retention !== null && L.retention < 0.7) { newVerses = cap(Math.max(1, room(0.5))); reason = "consolidate"; }
   else if (used > capacity * 0.7) { newVerses = cap(Math.max(1, room(1))); reason = "light"; }
   else { newVerses = cap(Math.max(1, room(1))); reason = "steady"; }
-  const minutes = Math.max(5, Math.round(used + newVerses * 4));
+  const minutes = Math.max(5, Math.round(used + ahead.slice(0, newVerses).reduce((a, b) => a + b, 0)));
   return { reviews, repair, newVerses, next: L.next, minutes, reason };
 }

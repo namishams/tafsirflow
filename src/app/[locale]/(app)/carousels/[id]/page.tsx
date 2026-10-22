@@ -4,6 +4,7 @@ import { setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import JsonLd from "@/components/JsonLd";
 import CarouselViewer from "@/components/carousel/CarouselViewer";
+import AskTutor from "@/components/tutor/AskTutor";
 import { CoverTile, TextVersion } from "@/components/carousel/CarouselParts";
 import { carouselById, carouselList, seriesKey } from "@/lib/feed/carousels/store";
 import { resolveCarousel } from "@/lib/feed/carousels/resolve";
@@ -45,6 +46,7 @@ export default async function CarouselPage({ params }: { params: Promise<{ local
         <h1 className="font-display mt-2 text-3xl sm:text-4xl">{c.cover.title}</h1>
         {c.cover.sub ? <p className="mt-3 text-muted">{c.cover.sub}</p> : null}
         <div className="mt-6"><CarouselViewer c={resolved} /></div>
+        <div className="mt-4"><AskTutor context={{ kind: "carousel", id: c.id, title: c.cover.title }} /></div>
         <TextVersion c={resolved} />
         <div className="mt-8 text-center"><Link href="/app" className="inline-flex h-12 items-center rounded-md bg-accent px-6 text-[15px] font-bold text-white transition hover:brightness-110">{wt.openApp}</Link></div>
       </div>

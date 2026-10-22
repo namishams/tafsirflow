@@ -18,6 +18,7 @@ import { useShams2 } from "./model";
 import { useSurahNames } from "./names";
 import { PromptedWords, SpeechCheck, type CheckResult } from "./recite";
 import { noteCheck, noteWords } from "./store";
+import { noteLink } from "./store2";
 import { useS2 } from "./text";
 import { Btn, Card, SourceNote, Term } from "./ui";
 import { ContinueNext } from "./Continue";
@@ -170,6 +171,15 @@ function Item({ k, onDone }: { k: string; onDone: (score: number) => void }) {
   const cue = prev?.data ? (m.grade.prompt === "hidden" ? prev.data.words.slice(-3) : prev.data.words) : [];
   const finish = (score: number) => {
     if (score < 1) noteMistake(k);
+    // the item asks for the transition from the previous verse into this one (Shams 3.0, links.v1): held when it sat.
+    // A stall counts only when the start went wrong: an error in the first three words heard, or (without a speech
+    // check) nothing recited at all; a partial score with a clean start is a mistake later in the verse, not in the
+    // transition, and leaves the transition as it is.
+    if (prevKey) {
+      const badStart = check ? check.ok.slice(0, 3).some((x) => !x) : score <= 0;
+      if (score >= 1) noteLink(k, true);
+      else if (badStart) noteLink(k, false);
+    }
     if (check) { noteWords(k, words.map((w, i) => ({ position: w.position, ok: !!check.ok[i] }))); noteCheck(k, check.ok.filter(Boolean).length, check.ok.length); }
     onDone(score);
   };

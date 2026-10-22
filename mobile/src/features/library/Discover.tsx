@@ -1,5 +1,5 @@
 import { memo, useCallback, useEffect, useRef, useState } from "react";
-import { ActivityIndicator, FlatList, Image, Linking, Pressable, Text, View, type NativeScrollEvent, type NativeSyntheticEvent } from "react-native";
+import { ActivityIndicator, FlatList, Linking, Pressable, Text, View, type NativeScrollEvent, type NativeSyntheticEvent } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { router, type Href } from "expo-router";
 import { Poster, SectionTitle, gradientColors } from "@/components/brand";
@@ -18,6 +18,7 @@ import { kindTopic, topicLabel } from "@/features/feed/LibraryPost";
 import { fillText, useFeedText } from "@/features/feed/texts";
 import { tick } from "@/features/feed/haptics";
 import { useDiscoverText, type DiscoverText } from "./discoverTexts";
+import { RemoteImage } from "@/components/RemoteImage";
 
 // The endless Discover: every course, tool and section as rich poster cards in themed rows (no "more" button),
 // followed by a stream of discovery cards from the content libraries (src/content/extra and src/content/sources)
@@ -210,7 +211,7 @@ const StreamCard = memo(function StreamCard({ item }: { item: Item }) {
       style={({ pressed }) => ({ borderRadius: R.card, overflow: "hidden", borderWidth: 1, borderColor: t.line, backgroundColor: t.surface, transform: [{ scale: pressed ? 0.99 : 1 }] })}>
       {ex.image ? (
         <LinearGradient colors={tone} style={{ height: 190 }}>
-          <Image source={{ uri: ex.image }} resizeMode="cover" style={{ flex: 1 }} accessibilityIgnoresInvertColors />
+          <RemoteImage uri={ex.image} style={{ flex: 1 }} />
         </LinearGradient>
       ) : ar ? (
         <LinearGradient colors={tone} style={{ padding: 20 }}>

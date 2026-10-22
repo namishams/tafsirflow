@@ -9,6 +9,7 @@ import { captchaToken } from "@/lib/captchaClient";
 import CaptchaBox from "./CaptchaBox";
 import CodeSignIn from "./auth/CodeSignIn";
 import ConfirmCode from "./auth/ConfirmCode";
+import { clearDeviceOnly } from "@/lib/sisters/state";
 
 const ERR: Record<string, string> = { invalid: "errInvalid", exists: "errExists", weak: "errWeak", email: "errEmail", rate: "errRate", insecure: "errInsecure", nodb: "errNoDb", token: "errToken", terms: "errTerms", name: "errName", country: "errCountry", age: "errAge", captcha: "errCaptcha" };
 type Mode = "login" | "register" | "forgot";
@@ -108,6 +109,7 @@ export default function AccountForm({ defaultMode = "login", bare = false }: { d
   const logout = async () => {
     await fetch("/api/auth/logout", { method: "POST" });
     stopSync();
+    clearDeviceOnly(); // device-only health data (sisters, posture, listening days)
     setMe(null);
   };
 

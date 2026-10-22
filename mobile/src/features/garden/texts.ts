@@ -767,16 +767,16 @@ export const GIFT_FULL: Record<string, string> = {
 };
 
 /** the calendar of the tree: its age and the days the next stage still needs (all app languages, polite form) */
-export const AGE_TEXT: Record<string, { age: string; age1: string; wait: string; wait1: string }> = {
-  en: { age: "Your tree is {n} days old", age1: "Your tree was planted today", wait: "Next stage in at least {n} days", wait1: "Next stage from tomorrow at the earliest" },
-  de: { age: "Ihr Baum ist {n} Tage alt", age1: "Ihr Baum wurde heute gepflanzt", wait: "Nächste Stufe frühestens in {n} Tagen", wait1: "Nächste Stufe frühestens ab morgen" },
-  ar: { age: "عمر شجرتك {n} يومًا", age1: "زُرعت شجرتك اليوم", wait: "المرحلة التالية بعد {n} يومًا على الأقل", wait1: "المرحلة التالية من الغد على أقرب تقدير" },
+export const AGE_TEXT: Record<string, { age: string; age1: string; wait: string; wait1: string; ageOne?: string }> = {
+  en: { age: "Your tree is {n} days old", ageOne: "Your tree is 1 day old", age1: "Your tree was planted today", wait: "Next stage in at least {n} days", wait1: "Next stage from tomorrow at the earliest" },
+  de: { age: "Ihr Baum ist {n} Tage alt", ageOne: "Ihr Baum ist 1 Tag alt", age1: "Ihr Baum wurde heute gepflanzt", wait: "Nächste Stufe frühestens in {n} Tagen", wait1: "Nächste Stufe frühestens ab morgen" },
+  ar: { age: "عمر شجرتك {n} يومًا", ageOne: "عمر شجرتك يوم واحد", age1: "زُرعت شجرتك اليوم", wait: "المرحلة التالية بعد {n} يومًا على الأقل", wait1: "المرحلة التالية من الغد على أقرب تقدير" },
   tr: { age: "Ağacınız {n} günlük", age1: "Ağacınız bugün dikildi", wait: "Sonraki aşama en erken {n} gün sonra", wait1: "Sonraki aşama en erken yarın" },
   ur: { age: "آپ کا درخت {n} دن کا ہے", age1: "آپ کا درخت آج لگایا گیا", wait: "اگلا مرحلہ کم از کم {n} دن بعد", wait1: "اگلا مرحلہ جلد از جلد کل سے" },
   fa: { age: "درخت شما {n} روزه است", age1: "درخت شما امروز کاشته شد", wait: "مرحلهٔ بعد دست‌کم پس از {n} روز", wait1: "مرحلهٔ بعد زودتر از فردا نیست" },
   ps: { age: "ستاسو ونه {n} ورځې عمر لري", age1: "ستاسو ونه نن کرل شوه", wait: "بل پړاو لږ تر لږه {n} ورځې وروسته", wait1: "بل پړاو تر ټولو ژر له سبا څخه" },
-  fr: { age: "Votre arbre a {n} jours", age1: "Votre arbre a été planté aujourd'hui", wait: "Prochaine étape dans {n} jours au plus tôt", wait1: "Prochaine étape demain au plus tôt" },
-  es: { age: "Su árbol tiene {n} días", age1: "Su árbol se plantó hoy", wait: "Siguiente etapa en {n} días como mínimo", wait1: "Siguiente etapa a partir de mañana como pronto" },
+  fr: { age: "Votre arbre a {n} jours", ageOne: "Votre arbre a 1 jour", age1: "Votre arbre a été planté aujourd'hui", wait: "Prochaine étape dans {n} jours au plus tôt", wait1: "Prochaine étape demain au plus tôt" },
+  es: { age: "Su árbol tiene {n} días", ageOne: "Su árbol tiene 1 día", age1: "Su árbol se plantó hoy", wait: "Siguiente etapa en {n} días como mínimo", wait1: "Siguiente etapa a partir de mañana como pronto" },
   id: { age: "Pohon Anda berumur {n} hari", age1: "Pohon Anda ditanam hari ini", wait: "Tahap berikutnya paling cepat {n} hari lagi", wait1: "Tahap berikutnya paling cepat besok" },
   ms: { age: "Pokok anda berusia {n} hari", age1: "Pokok anda ditanam hari ini", wait: "Peringkat seterusnya sekurang-kurangnya {n} hari lagi", wait1: "Peringkat seterusnya paling awal esok" },
   bn: { age: "আপনার গাছের বয়স {n} দিন", age1: "আপনার গাছটি আজ লাগানো হয়েছে", wait: "পরবর্তী ধাপ অন্তত {n} দিন পরে", wait1: "পরবর্তী ধাপ সবচেয়ে আগে আগামীকাল" },
@@ -787,7 +787,8 @@ export const AGE_TEXT: Record<string, { age: string; age1: string; wait: string;
 export function useAgeText(): (age: number, wait: number) => { age: string; wait: string } {
   const { lang } = useLang();
   const t = AGE_TEXT[lang] ?? AGE_TEXT.en;
-  return (age, wait) => ({ age: age <= 0 ? t.age1 : fillG(t.age, { n: age }), wait: wait <= 0 ? "" : wait === 1 ? t.wait1 : fillG(t.wait, { n: wait }) });
+  // one day old in the singular where the language needs it ("1 days old" before, 22.10.2026)
+  return (age, wait) => ({ age: age <= 0 ? t.age1 : age === 1 && t.ageOne ? t.ageOne : fillG(t.age, { n: age }), wait: wait <= 0 ? "" : wait === 1 ? t.wait1 : fillG(t.wait, { n: wait }) });
 }
 
 /** the sky of the garden: over Makkah or the learner's place, and the next prayer (all app languages) */

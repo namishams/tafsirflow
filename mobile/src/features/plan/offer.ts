@@ -16,7 +16,7 @@ export function offerDuration(o: IntroOffer, lang: string): string {
 /** "per month" / "per year" */
 export const planPer = (p: PlanStrings, x: ProPlan) => (x.period === "year" ? p.perYear : p.perMonth);
 
-/** "7 days free, then 4,99 € per month" / "0,99 € for 1 month, then …"; null without an intro offer */
+/** "7 days free, then US$9.99 per month" / "0,99 € for 1 month, then …"; null without an intro offer */
 export function planIntro(p: PlanStrings, x: ProPlan, lang: string): string | null {
   if (!x.intro) return null;
   return x.intro.mode === "free-trial"

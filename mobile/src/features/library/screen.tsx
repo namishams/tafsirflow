@@ -5,6 +5,7 @@ import { StatusBar } from "expo-status-bar";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { stage } from "@/lib/theme";
 import { useIsl } from "./palette";
+import { useProgressiveChildren } from "@/lib/progressive";
 
 // The frame of every library page: no stack header (each hero has its own back button), the marble canvas, and a
 // calm band behind the status bar that fades in once the dark hero has scrolled away (like the website's sticky header).
@@ -41,6 +42,8 @@ export function IslScreen({ children, overlay, onScrollY }: { children: ReactNod
   }), [scrollY, insets.top, onScrollY]);
   const value = useMemo(() => ({ scrollY, setHeroHeight, scrollTo, viewport: height, topInset: insets.top }), [scrollY, setHeroHeight, scrollTo, height, insets.top]);
   const start = Math.max(1, heroH - insets.top - 24);
+  // the sections below the first screen are built over the next frames (lib/progressive.ts)
+  const sections = useProgressiveChildren(children);
   return (
     <Ctx.Provider value={value}>
       <View style={{ flex: 1, backgroundColor: isl.paper2 }}>
@@ -49,7 +52,7 @@ export function IslScreen({ children, overlay, onScrollY }: { children: ReactNod
         <Animated.ScrollView ref={ref} style={{ flex: 1 }} onScroll={onScroll} scrollEventThrottle={16} contentInsetAdjustmentBehavior="never">
           {/* pulling down past the top shows the stage, not the marble */}
           <View pointerEvents="none" style={{ position: "absolute", top: -1000, left: 0, right: 0, height: 1000, backgroundColor: stage.bg }} />
-          {children}
+          {sections}
         </Animated.ScrollView>
         <Animated.View pointerEvents="none" style={{ position: "absolute", top: 0, left: 0, right: 0, height: insets.top, backgroundColor: isl.paper, borderBottomWidth: 0.5, borderBottomColor: isl.a("goldSoft", 0.3),
           opacity: heroH ? scrollY.interpolate({ inputRange: [start, start + 24], outputRange: [0, 0.97], extrapolate: "clamp" }) : 0 }} />

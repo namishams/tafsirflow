@@ -17,6 +17,7 @@ import { DefaultAvatar } from "@/features/community/ui";
 import { REPORT_CATEGORIES, T, errCode, type AgeStatus, type Level, type MeInfo, type ReportCategory, type TalentCard } from "./api";
 import { useTT, type TKey } from "./text";
 import { syncPendingProfile } from "./pendingProfile";
+import { useUsernameText } from "./usernameText";
 
 // Building blocks of the Quran Talents screens (Masterclass design): calligraphic avatar, gold verified tick, level
 // badge, list rows, the safety bar (guidelines, report, block), the report sheet and the age step.
@@ -37,7 +38,7 @@ export function useTalentErr() {
 /** avatar: the profile picture or the default silhouette (owner, build 20; also for members under 16); gold rim (thicker for gold and official badges) */
 export function TalentAvatar({ name, size = 52, uri, badge }: { name: string; size?: number; uri?: string | null; badge?: Badge | null }) {
   const [failed, setFailed] = useState(false);
-  const strong = badge === "gold" || badge === "official";
+  const strong = badge === "gold" || badge === "official" || badge === "founder";
   const rim = Math.max(2, size * (strong ? 0.06 : 0.035));
   return (
     <View accessible={false} importantForAccessibility="no-hide-descendants"
@@ -253,8 +254,17 @@ export function useTalentAccess(): Access {
 /** what a network screen shows before its content: sign-in, age step, under-13 notice */
 export function AccessGate({ a, children }: { a: Access; children: ReactNode }) {
   const t = useTheme();
+  const ut = useUsernameText();
   const tt = useTT();
   const tr = useT();
+  // no @username yet: the social features wait for the username step (owner 22.10.2026)
+  if (a.state === "ok" && a.me && !a.me.profile) return (
+    <View style={{ padding: 20, gap: 14 }}>
+      <Text style={{ fontFamily: FONT.regular, fontSize: 15, lineHeight: 22, color: t.ink }}>{ut.needed}</Text>
+      <GoldButton title={ut.title} onPress={() => router.push("/username" as Href)} />
+      <SafetyBar />
+    </View>
+  );
   if (a.state === "ok") return <>{children}</>;
   // while the account and the age load: a spinner, never an empty area under the hero
   if (a.state === "load") return <View style={{ minHeight: 160 }}><Loading /></View>;

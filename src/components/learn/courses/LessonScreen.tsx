@@ -5,6 +5,7 @@
 // a first pass awards website points ("lesson"); the app's XP, tree growth, haptics and Pro locks are left out.
 import { useEffect, useMemo, useRef, useState } from "react";
 import Markdown from "@/components/Markdown";
+import SupportNudge from "@/components/SupportNudge";
 import QuranVerse from "@/components/learn/QuranVerse";
 import { Callout, GoldButton, Kicker, LearnHero, LearnMain, Note, OutlineLink, GoldLink, Pill, Spinner, Ar } from "@/components/learn/ui";
 import { HomeRing } from "@/components/art/HomeOrnaments";
@@ -19,6 +20,7 @@ import { useCT } from "@/lib/learn/courses/texts";
 import type { CQuestion } from "@/lib/learn/courses/types";
 import { CourseBadge, Quiz, TagChips, hadithLabel, shuffle, type RunQ } from "./parts";
 import { useWT } from "./strings";
+import AskTutor from "@/components/tutor/AskTutor";
 
 export default function LessonScreen({ courseId, lessonId }: { courseId: string; lessonId: string }) {
   const c = useCT();
@@ -110,10 +112,11 @@ export default function LessonScreen({ courseId, lessonId }: { courseId: string;
                 </ul>
               </section>
             ) : null}
+            <div><AskTutor kind="lesson" context={{ kind: "lesson", id: courseId, lesson: lessonId, title }} /></div>
             {qs.length > 0 && <GoldButton onClick={() => go("quiz")} className="w-full sm:w-auto">{c("startQuiz")} <ArrowNext /></GoldButton>}
           </div>
         ) : phase === "quiz" ? (
-          <Quiz key={round} qs={qs} onDone={finish} />
+          <Quiz key={round} qs={qs} onDone={finish} ctx={{ kind: "quiz", id: courseId, lesson: lessonId, title }} />
         ) : res ? (
           <Result score={res.score} complete={res.complete} word={course.word}
             onRetry={() => { setRound((r) => r + 1); go("quiz"); }}
@@ -151,6 +154,7 @@ function Result({ score, complete, word, onRetry, nextHref, overviewHref }: {
         {!passed && <GoldButton onClick={onRetry}>{c("retry")}</GoldButton>}
         <OutlineLink href={overviewHref}>{c("overview")}</OutlineLink>
       </div>
+      {passed && <SupportNudge className="mt-4 w-full max-w-md" />}
     </div>
   );
 }

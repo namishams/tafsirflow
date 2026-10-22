@@ -16,40 +16,51 @@ export async function duaCredits(userId: number, pro: boolean): Promise<{ dua: n
   return { dua: Number(c.rows[0]?.dua ?? 0), proDuaLeft: pro ? Math.max(0, PRO_DUAS_PER_MONTH - Number(u.rows[0]?.n ?? 0)) : 0 };
 }
 
-export type Spent = { from: "pro" | "paid" } | null;
+/** where a spent dua came from; a Pro dua remembers its month, so a refund after midnight on the 1st goes to the right month */
+export type Spent = { from: "pro"; month: string } | { from: "paid" } | null;
 
 /** takes one dua credit (Pro allowance first); null when nothing is left */
 export async function spendDua(userId: number, pro: boolean): Promise<Spent> {
   const p = pool();
   if (!p) return null;
-  const c: PoolClient = await p.connect();
+  let c: PoolClient | null = null;
   try {
+    c = await p.connect();
     await c.query("BEGIN");
     if (pro) {
+      const m = month();
       const r = await c.query(
         `INSERT INTO ai_usage (user_id, kind, month, n) VALUES ($1, 'dua', $2, 1)
          ON CONFLICT (user_id, kind, month) DO UPDATE SET n = ai_usage.n + 1 WHERE ai_usage.n < $3 RETURNING n`,
-        [userId, month(), PRO_DUAS_PER_MONTH],
+        [userId, m, PRO_DUAS_PER_MONTH],
       );
-      if (r.rowCount) { await c.query("COMMIT"); return { from: "pro" }; }
+      if (r.rowCount) { await c.query("COMMIT"); return { from: "pro", month: m }; }
     }
     const r = await c.query("UPDATE ai_credits SET dua = dua - 1, updated_at = now() WHERE user_id = $1 AND dua > 0 RETURNING dua", [userId]);
     await c.query(r.rowCount ? "COMMIT" : "ROLLBACK");
     return r.rowCount ? { from: "paid" } : null;
-  } catch {
-    await c.query("ROLLBACK").catch(() => undefined);
+  } catch (e) {
+    await c?.query("ROLLBACK").catch(() => undefined);
+    console.error("[dua] spend failed", userId, e instanceof Error ? e.message : e);
     return null;
   } finally {
-    c.release();
+    c?.release();
   }
 }
 
-/** gives a credit back when the AI call failed */
+/** gives a credit back when the AI call failed; tried three times, a refund that still fails is logged for the admin */
 export async function refundDua(userId: number, spent: Spent) {
   const p = pool();
   if (!p || !spent) return;
-  if (spent.from === "pro") await p.query("UPDATE ai_usage SET n = GREATEST(0, n - 1) WHERE user_id = $1 AND kind = 'dua' AND month = $2", [userId, month()]).catch(() => undefined);
-  else await p.query("INSERT INTO ai_credits (user_id, dua) VALUES ($1, 1) ON CONFLICT (user_id) DO UPDATE SET dua = ai_credits.dua + 1, updated_at = now()", [userId]).catch(() => undefined);
+  const run = () => spent.from === "pro"
+    ? p.query("UPDATE ai_usage SET n = GREATEST(0, n - 1) WHERE user_id = $1 AND kind = 'dua' AND month = $2", [userId, spent.month])
+    : p.query("INSERT INTO ai_credits (user_id, dua) VALUES ($1, 1) ON CONFLICT (user_id) DO UPDATE SET dua = ai_credits.dua + 1, updated_at = now()", [userId]);
+  for (let attempt = 1; attempt <= 3; attempt++) {
+    try { await run(); return; } catch (e) {
+      if (attempt === 3) { console.error("[dua] REFUND FAILED – credit owed", JSON.stringify({ userId, spent, at: new Date().toISOString() }), e instanceof Error ? e.message : e); return; }
+      await new Promise((r) => setTimeout(r, 300 * attempt));
+    }
+  }
 }
 
 export async function addDuaCredits(c: PoolClient, userId: number, n: number) {

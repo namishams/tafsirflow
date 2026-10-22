@@ -17,6 +17,7 @@ import { Bar, Card, GoldLink, LearnHero, LearnMain, OutlineButton, SectionTitle 
 import { StarGlyph } from "@/components/art/HomeOrnaments";
 import { QbankSchoolCard } from "@/components/learn/qbank/Screens";
 import { StudyWisdom } from "./StudyWisdom";
+import { SistersEntryCard } from "@/components/sisters/Sisters";
 
 const pct = (x: number) => Math.round(x * 100);
 /** the app's routes are the website's paths, except the Shams Method of one surah (the reader with ?shams=1) */
@@ -230,6 +231,7 @@ export function SchoolHome() {
           <div className="grid gap-12">
             {/* the study wisdom of the app's Madrasa (Discover): one tip a day */}
             <StudyWisdom />
+            <SistersEntryCard />
             <section>
               <div className="flex flex-wrap items-end justify-between gap-3"><SectionTitle title={st("faculties")} /><Link href="/school/report" className="text-sm font-semibold text-accent hover:underline">{st("w_kashf")}</Link></div>
               <div className="mt-5"><Faculties grades={data.grades} /></div>

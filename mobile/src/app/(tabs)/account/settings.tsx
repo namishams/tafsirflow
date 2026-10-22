@@ -32,6 +32,8 @@ import { ConfirmCode } from "@/features/auth/ConfirmCode";
 import { securityApi } from "@/features/auth/api";
 import { useAuthT } from "@/features/auth/text";
 import { TravelSetting } from "@/features/talents/TravelCard";
+import { IdentitySetting } from "@/features/identity/IdentityStep";
+import { TutorSetting } from "@/features/tutor/Settings";
 
 // /account/settings – everything the Account tab showed before it became the own profile (owner, 21.10.2026: the last tab
 // is the Instagram/TikTok profile; the menu button opens this screen). Unchanged content: Pro, sign-in, confirm the
@@ -168,6 +170,10 @@ export default function AccountSettingsScreen() {
           <View style={{ marginBottom: 16 }}><SharePromptSetting /></View>
           {/* travel mode (owner, 21.10.2026): prayer times for the destination, travel duas, the note on praying while travelling */}
           <TravelSetting />
+          {/* brother/sister and age band of the onboarding, optional (lib/identity.ts) */}
+          <View style={{ marginTop: 16 }}><IdentitySetting /></View>
+          {/* the AI tutor: Dalil, or Hidaya for sisters; consent and conversation (features/tutor) */}
+          <TutorSetting />
 
           <TalentsAccount />
 

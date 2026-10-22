@@ -47,7 +47,10 @@ export type Summary = {
   week: { monday: number; xp: number[]; active: number };
   courses: { done: number; ids: string[]; qaida: number; arabic: number; rp: number; arLevels: string[] };
   goal: { minutes: number; focus: (typeof FOCUSES)[number] };
+  /** the Shams method in use (owner 22.10.2026, shown as a badge with the level section): classic, 2.0, 3.0 */
+  method?: (typeof METHODS)[number] | null;
 };
+export const METHODS = ["classic", "v2", "v3"] as const;
 
 const obj = (v: unknown) => (v && typeof v === "object" && !Array.isArray(v) ? (v as Record<string, unknown>) : {});
 const int = (v: unknown, min: number, max: number) => (typeof v === "number" && Number.isFinite(v) ? Math.max(min, Math.min(max, Math.floor(v))) : min);
@@ -69,7 +72,8 @@ export function cleanSummary(b: unknown): Summary | null {
   const verses = int(mem.verses, 0, 6236);
   return {
     v: 1,
-    level: { xp: int(level.xp, 0, 50_000_000), level: int(level.level, 1, 9999) },
+    // endless levels (owner 22.10.2026): only a sanity bound, no cap a learner can reach
+    level: { xp: int(level.xp, 0, 1_000_000_000_000), level: int(level.level, 1, 10_000_000) },
     rank: { stage: pick(rank.stage, STUDY_STAGES, "ibtidai"), rank: rank.rank === "mutaqaddim" ? "mutaqaddim" : "talib", overall: intOrNull(rank.overall, 0, 100) },
     hifz: { grade: int(hifz.grade, 1, 7), verses: int(hifz.verses, 0, 6236), tests: int(hifz.tests, 0, 100_000), quality: intOrNull(hifz.quality, 0, 100) },
     tree: { type: typeof tree.type === "string" && TREES.includes(tree.type) ? tree.type : "", stage: int(tree.stage, 0, 12), trees: int(tree.trees, 0, 10), fruits: int(tree.fruits, 0, 1_000_000),
@@ -88,6 +92,7 @@ export function cleanSummary(b: unknown): Summary | null {
       arabic: int(courses.arabic, 0, 10_000), rp: int(courses.rp, 0, 10_000), arLevels: strs(courses.arLevels, /^(A1|A2|B1|B2|C1)$/, AR_LEVELS.length),
     },
     goal: { minutes: int(goal.minutes, 0, 600), focus: pick(goal.focus, FOCUSES, "reading") },
+    method: typeof s.method === "string" && (METHODS as readonly string[]).includes(s.method) ? (s.method as (typeof METHODS)[number]) : null,
   };
 }
 
@@ -176,7 +181,7 @@ export type Sijill = {
   updatedAt: string | null;
   privacy?: Privacy;
   leaderboard?: boolean;
-  level?: { xp: number; level: number; talentLevel: string; stage: string; rank: string; overall: number | null };
+  level?: { xp: number; level: number; talentLevel: string; stage: string; rank: string; overall: number | null; method?: string | null };
   badges?: { badge: Badge | null; official: boolean };
   hifz?: Summary["hifz"];
   tree?: Summary["tree"];
@@ -200,7 +205,7 @@ type ProfileRow = {
   user_id: string; achievements: Partial<Summary> | null; achievements_updated_at: string | null; sijill_privacy: unknown; leaderboard_opt_in: boolean;
   level: string; badge: string | null; official: boolean; verified: boolean; shares_total: number;
 };
-export const SIJILL_COLS = "c.user_id, c.achievements, c.achievements_updated_at, c.sijill_privacy, c.leaderboard_opt_in, c.level, c.badge, c.official, c.verified, c.shares_total";
+export const SIJILL_COLS = "c.user_id, c.achievements, c.achievements_updated_at, c.sijill_privacy, c.leaderboard_opt_in, c.level, c.badge, c.official, c.founder, c.verified, c.shares_total";
 
 /** the Sijill of a profile row; `full` = the owner (every section and the privacy settings), otherwise only the sections switched on */
 export async function sijillOf(r: ProfileRow, full: boolean, locale: string): Promise<Sijill> {
@@ -211,7 +216,7 @@ export async function sijillOf(r: ProfileRow, full: boolean, locale: string): Pr
   const has = !!a.v;
   const out: Sijill = { updatedAt: r.achievements_updated_at, reactions: 0, moments: 0, received: 0 };
   if (full) { out.privacy = pv; out.leaderboard = !!r.leaderboard_opt_in; }
-  if (on("level") && has) out.level = { xp: a.level!.xp, level: a.level!.level, talentLevel: r.level ?? "talent", stage: a.rank!.stage, rank: a.rank!.rank, overall: a.rank!.overall };
+  if (on("level") && has) out.level = { xp: a.level!.xp, level: a.level!.level, talentLevel: r.level ?? "talent", stage: a.rank!.stage, rank: a.rank!.rank, overall: a.rank!.overall, method: a.method ?? null };
   if (on("badges")) out.badges = { badge: displayBadge(r), official: !!r.official };
   if (on("hifz") && has) out.hifz = a.hifz;
   if (on("tree") && has && a.tree?.type) out.tree = a.tree;
@@ -274,7 +279,7 @@ export const MOMENT_COLS = `m.id, m.kind, m.ref, m.data, m.created_at, m.reactio
   (SELECT count(*)::int FROM community_moment_reactions x WHERE x.moment_id = m.id AND x.reaction = 'mashallah') AS r_mashallah,
   (SELECT count(*)::int FROM community_moment_reactions x WHERE x.moment_id = m.id AND x.reaction = 'barakallah') AS r_barakallah,
   (SELECT count(*)::int FROM community_moment_reactions x WHERE x.moment_id = m.id AND x.reaction = 'barik') AS r_barik,
-  c.username, c.display_name, c.verified, c.badge, c.official, c.avatar_path, c.avatar_version, (m.user_id = $1) AS own`;
+  c.username, c.display_name, c.verified, c.badge, c.official, c.founder, c.avatar_path, c.avatar_version, (m.user_id = $1) AS own`;
 export function momentJson(x: MomentRow, locale: string) {
   const data = (x.data ?? {}) as Record<string, unknown>;
   return {

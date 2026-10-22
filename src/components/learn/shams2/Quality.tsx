@@ -8,6 +8,9 @@ import { usePageMap } from "@/lib/learn/shams2/pages";
 import { levelOf, pageCells, verseScore, type Cell } from "@/lib/learn/shams2/qualityModel";
 import { useS2 } from "@/lib/learn/shams2/text";
 import { Card, GoldLink, LearnHero, LearnMain } from "@/components/learn/ui";
+import { masteryOf } from "@/lib/learn/shams2/mastery";
+import { useRv } from "@/lib/learn/shams2/review/text";
+import { MasteryCard } from "./review/Mastery";
 import { LevelPill, Live, ScoreDot, Segmented, SmallBtn, SourceNote, Term, onScore, scoreColor, useBack, useNames } from "./ui";
 
 type Mode = "page" | "surah" | "juz";
@@ -24,6 +27,22 @@ function Body({ initialJuz }: { initialJuz?: number }) {
   const cells: Cell[] = mode === "page" ? pageList : mode === "surah" ? m.q.surahs : m.q.juz;
   const cur = sel ? cells[sel - 1] : null;
   const label = (c: Cell) => (mode === "page" ? s("pageN", { n: nf(c.id) }) : mode === "surah" ? `${nf(c.id)}. ${name(c.id)}` : s("juzN", { n: nf(c.id) }));
+  const rv = useRv();
+  // Shams 3.0: the six dimensions of the selected cell (a page: its verses), or of all verses
+  const mcell = useMemo(() => {
+    const mm = m.mastery();
+    if (!cur) return mm.overall;
+    if (mode === "surah") return mm.surahs[cur.id - 1];
+    if (mode === "juz") return mm.juz[cur.id - 1];
+    const keys: string[] = [];
+    for (const [sr, list] of Object.entries(pages)) list.forEach((p, i) => { if (p === cur.id) keys.push(`${sr}:${i + 1}`); });
+    return masteryOf(keys, mm.verses, cur.id);
+  }, [m, cur, mode, pages]);
+  const mAt = useMemo(() => {
+    const k = cur?.weakest[0]?.key ?? (mode === "surah" && cur ? `${cur.id}:1` : [...m.known.keys()][0] ?? "1:1");
+    const [a, b] = k.split(":").map(Number);
+    return { s: a || 1, v: b || 1 };
+  }, [cur, mode, m.known]);
   const parts = useMemo(() => {
     if (!cur) return null;
     const ks = cur.weakest.map((w) => m.known.get(w.key)).filter((k): k is NonNullable<typeof k> => !!k);
@@ -90,6 +109,7 @@ function Body({ initialJuz }: { initialJuz?: number }) {
           {cur.known > 0 && <GoldLink className="w-fit" href={mode === "surah" ? `/shams/weak?s=${cur.id}` : "/shams/weak"}>{s("drillWeak")}</GoldLink>}
         </Card>
       )}
+      <MasteryCard cell={mcell} scope={cur ? label(cur) : rv("mOverall")} at={mAt} />
     </div>
   );
 }

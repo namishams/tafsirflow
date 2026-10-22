@@ -22,6 +22,10 @@ export function alternates(locale: string, path: string) {
 
 const OG_LOCALE: Record<string, string> = { de: "de_DE", en: "en_US", ar: "ar_AR", fr: "fr_FR", es: "es_ES", zh: "zh_CN", id: "id_ID", ms: "ms_MY", fa: "fa_IR", tr: "tr_TR", ru: "ru_RU", ur: "ur_PK", bn: "bn_BD", ps: "ps_AF" };
 
+// the share picture (src/app/[locale]/opengraph-image.tsx). The openGraph / twitter objects below replace those of the
+// layout, and with them the picture of the file convention, so every page names it itself (else previews had no picture)
+const shareImage = (locale: string) => ({ url: abs(`/${locale}/opengraph-image`), width: 1200, height: 630, type: "image/png", alt: "Quran Masterclass" });
+
 export function pageMeta(locale: string, path: string, title: string, description: string, keywords?: string) {
   return {
     title,
@@ -37,7 +41,8 @@ export function pageMeta(locale: string, path: string, title: string, descriptio
       url: abs(`/${locale}${path}`),
       locale: OG_LOCALE[locale] ?? "en_US",
       alternateLocale: routing.locales.filter((l) => l !== locale).map((l) => OG_LOCALE[l]),
+      images: [shareImage(locale)],
     },
-    twitter: { card: "summary_large_image" as const, title, description },
+    twitter: { card: "summary_large_image" as const, title, description, images: [shareImage(locale)] },
   };
 }

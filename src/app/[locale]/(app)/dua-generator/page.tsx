@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import JsonLd from "@/components/JsonLd";
-import DuaGenerator from "@/components/DuaGenerator";
+import DuaJourney from "@/components/dua/DuaJourney";
 import { CalligraphyDraw } from "@/components/Ornaments";
 import { MoreTiles } from "@/components/PosterTiles";
 import { abs, pageMeta } from "@/lib/site";
@@ -18,7 +18,7 @@ export default async function DuaGeneratorPage({ params }: { params: Promise<{ l
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "duagen" });
-  const ld = { "@context": "https://schema.org", "@type": "WebApplication", name: t("metaTitle"), description: t("metaDesc"), url: abs(`/${locale}/dua-generator`), applicationCategory: "LifestyleApplication", operatingSystem: "Any", inLanguage: locale, offers: { "@type": "Offer", price: "0", priceCurrency: "AED" } };
+  const ld = { "@context": "https://schema.org", "@type": "WebApplication", name: t("metaTitle"), description: t("metaDesc"), url: abs(`/${locale}/dua-generator`), applicationCategory: "LifestyleApplication", operatingSystem: "Any", inLanguage: locale };
   return (
     <div>
       <JsonLd data={ld} />
@@ -31,8 +31,8 @@ export default async function DuaGeneratorPage({ params }: { params: Promise<{ l
           <p className="rise font-arabic mt-6 text-2xl text-[rgb(var(--gold))]" dir="rtl" lang="ar" style={{ animationDelay: "360ms" }}>{verseQuote("imlaei", "40:60", 1, 5)} <span className="text-sm text-white/45">(40:60)</span></p>
         </div>
       </section>
-      <div className="mx-auto max-w-4xl px-4 py-10 sm:px-5">
-        <DuaGenerator />
+      <div className="mx-auto max-w-4xl sm:px-5 sm:py-10">
+        <div className="overflow-hidden sm:rounded-2xl sm:border sm:border-[rgb(201_166_94)]/30"><DuaJourney /></div>
       </div>
       <section className="border-y border-line bg-surface">
         <div className="mx-auto grid max-w-4xl gap-10 px-5 py-14 md:grid-cols-2">

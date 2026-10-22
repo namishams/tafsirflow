@@ -12,6 +12,8 @@ import { MedalText, PracticeCelebrate, PracticeMedallion, ROSE, roseA, solidGold
 import { tone } from "../coursekit/audio";
 import { GoldRing, StepIn, useNudge } from "../coursekit/motion";
 import { BigButton } from "../coursekit/ui";
+import { AskTutor } from "@/features/tutor/AskTutor";
+import { useTutor } from "@/features/tutor/hooks";
 import { isArabic } from "../coursekit/Markdown";
 
 // TajweedQuiz.tsx: the short quiz at the end of a tajweed lesson; the best result per lesson is kept in "tf:tajweed"
@@ -69,11 +71,18 @@ export function TajweedQuiz({ id }: { id: string }) {
       {pick !== null ? (
         <StepIn distance={6} style={{ marginTop: 16, borderRadius: R.sm, borderWidth: 1, padding: 16, borderColor: right ? solidGoldA(0.45) : roseA(0.3), backgroundColor: right ? solidGoldA(0.1) : roseA(0.07) }}>
           <Text style={{ fontFamily: FONT.regular, fontSize: 15, lineHeight: 24, color: t.ink, opacity: 0.85 }}>{de ? q.explain_de : q.explain_en}</Text>
+          {!right ? <TutorWhy ctx={{ kind: "quiz", id: `tajweed:${id}`, title: de ? l.title_de : l.title_en, question: de ? q.q_de : q.q_en, chosen: opts[pick], correct: opts[q.answer], explain: de ? q.explain_de : q.explain_en }} /> : null}
           <BigButton title={w("next")} variant={right ? "gold" : "ink"} height={44} radius={R.pill} style={{ marginTop: 12, alignSelf: "flex-start", minWidth: 120 }} onPress={next} />
         </StepIn>
       ) : null}
     </GoldCard>
   );
+}
+
+/** "Why is this wrong?" – the tutor explains it from the tajweed lesson (features/tutor) */
+function TutorWhy({ ctx }: { ctx: import("@/features/tutor/api").TutorContext }) {
+  const { ui } = useTutor();
+  return <AskTutor context={ctx} question={ui.why} label={ui.why} style={{ marginTop: 12 }} />;
 }
 
 function QuizOption({ label, state, onPress, disabled }: { label: string; state: "idle" | "right" | "wrong" | "dim"; onPress: () => void; disabled: boolean }) {

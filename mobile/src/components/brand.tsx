@@ -1,6 +1,7 @@
 import { cloneElement, isValidElement, useId, type ReactElement, type ReactNode } from "react";
-import { ActivityIndicator, Image, Platform, Pressable, StyleSheet, Text, View, useWindowDimensions, type StyleProp, type TextStyle, type ViewStyle } from "react-native";
+import { ActivityIndicator, Image, Platform, Pressable, StyleSheet, Text, View, useWindowDimensions, type StyleProp, type TextStyle, type ViewProps, type ViewStyle } from "react-native";
 import { GlassView, isLiquidGlassAvailable } from "expo-glass-effect";
+import { BlurView } from "expo-blur";
 import { LinearGradient } from "expo-linear-gradient";
 import Svg, { Circle, Defs, G, LinearGradient as SvgLinearGradient, Path, Pattern, RadialGradient, Rect, Stop } from "react-native-svg";
 import { WORDMARK, WORDMARK_FOIL } from "./wordmark-paths";
@@ -8,6 +9,7 @@ import { ARABIC_VARIANT, WORDMARK_FILES, type WordmarkFile } from "./wordmark-fi
 import { isRTL, useLang } from "@/i18n";
 import { ARABIC_FONT, CALLIG_FONT, FONT, R, TONES, goldButton, stage, type, useTheme } from "@/lib/theme";
 import { Icon, type IconName } from "./icons";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 // The visual language of quranmasterclass.com, rebuilt natively: the dark green stage with a lattice of
 // eight-pointed stars and gold hairlines, gold buttons, cards with an inner gold frame, mushaf ornaments.
@@ -67,12 +69,58 @@ export function Display({ children, size = "display", onStage, style, numberOfLi
   return <Text accessibilityRole="header" numberOfLines={numberOfLines} style={[type[size], callig, { color: onStage ? "#ffffff" : t.ink }, style]}>{children}</Text>;
 }
 
+// ── Controls: ONE set for the whole app (mirrored on the web in src/components/ui/Glass.tsx) ─────────────
+// Primary = gold capsule (GoldButton). Secondary = Liquid Glass capsule (GlassButton, alias OutlineButton).
+// Tertiary = text button (TextButton, alias TextLink). Plus GlassChip/Chip, Segmented, GlassCard, GlassDock and
+// round GlassIconButton (player transport). All built like the Shams tab: emerald stage, gold, glass.
+
+/** Liquid Glass on iOS 26+, a blur on older iOS, a translucent fill elsewhere */
+export const LIQUID_GLASS = Platform.OS === "ios" && isLiquidGlassAvailable();
+const GLASS = LIQUID_GLASS;
+/** shared glass radii (web: --glass-r-*) */
+export const GLASS_R = { card: 22, dock: 28, chip: R.pill, button: R.pill };
+
+type GlassTone = "stage" | "light" | "dark";
+function glassTone(onStage: boolean | undefined, dark: boolean): GlassTone {
+  return onStage ? "stage" : dark ? "dark" : "light";
+}
+/** tint, hairline and text colour of the glass on each canvas: emerald wash and a gold hairline, never plain white */
+export function glassColors(tone: GlassTone) {
+  if (tone === "stage") return { tint: "rgba(4,32,24,0.35)", fill: "rgba(255,255,255,0.07)", line: "rgba(255,255,255,0.22)", text: "#ffffff", sub: "rgba(255,255,255,0.7)" };
+  if (tone === "dark") return { tint: "rgba(58,190,146,0.10)", fill: "rgba(22,52,42,0.72)", line: "rgba(214,178,106,0.30)", text: "rgb(236,238,242)", sub: "rgb(140,147,158)" };
+  return { tint: "rgba(6,108,78,0.09)", fill: "rgba(230,242,236,0.92)", line: "rgba(150,116,52,0.32)", text: "rgb(6,108,78)", sub: "rgb(90,103,98)" };
+}
+
+/** the glass material itself: children sit on top; radius and padding come from style */
+export function GlassSurface({ children, style, onStage, interactive, strong, ...rest }: Omit<ViewProps, "style" | "children"> & { children?: ReactNode; style?: StyleProp<ViewStyle>; onStage?: boolean; interactive?: boolean; strong?: boolean }) {
+  const t = useTheme();
+  const c = glassColors(glassTone(onStage, t.dark));
+  const border = { borderWidth: StyleSheet.hairlineWidth, borderColor: c.line, overflow: "hidden" as const };
+  if (GLASS) {
+    return (
+      <GlassView {...rest} glassEffectStyle={onStage || t.dark ? "clear" : "regular"} isInteractive={interactive} tintColor={strong && onStage ? "rgba(5,28,21,0.72)" : c.tint}
+        style={[border, style]}>{children}</GlassView>
+    );
+  }
+  if (Platform.OS === "ios") {
+    return (
+      <View {...rest} style={[border, style]}>
+        <BlurView pointerEvents="none" intensity={onStage || t.dark ? 40 : 60} tint={onStage || t.dark ? "dark" : "light"} style={StyleSheet.absoluteFill} />
+        <View pointerEvents="none" style={[StyleSheet.absoluteFill, { backgroundColor: strong && onStage ? "rgba(5,28,21,0.8)" : onStage ? "rgba(255,255,255,0.06)" : c.tint }]} />
+        {children}
+      </View>
+    );
+  }
+  return <View {...rest} style={[border, { backgroundColor: strong && onStage ? "rgba(5,28,21,0.94)" : c.fill }, style]}>{children}</View>;
+}
+
 /** btn-gold: the main action; full width by default, always the same height */
 export function GoldButton({ title, onPress, busy, disabled, icon, compact, style }: { title: string; onPress: () => void; busy?: boolean; disabled?: boolean; icon?: IconName; compact?: boolean; style?: StyleProp<ViewStyle> }) {
   return (
     <Pressable onPress={onPress} disabled={disabled || busy} accessibilityRole="button" accessibilityLabel={title} accessibilityState={{ disabled: !!(disabled || busy), busy: !!busy }}
-      style={({ pressed }) => [{ opacity: disabled ? 0.45 : 1, transform: [{ scale: pressed ? 0.985 : 1 }] }, compact ? { alignSelf: "flex-start" } : null, style]}>
+      style={({ pressed }) => [s.goldShadow, { opacity: disabled ? 0.45 : 1, transform: [{ scale: pressed ? 0.97 : 1 }] }, compact ? { alignSelf: "flex-start" } : null, style]}>
       <LinearGradient colors={[goldButton.from, goldButton.to]} style={[s.button, compact && s.compact]}>
+        <LinearGradient pointerEvents="none" colors={["rgba(255,255,255,0.38)", "rgba(255,255,255,0)"]} style={s.goldSheen} />
         <View pointerEvents="none" style={s.goldHighlight} />
         {busy ? <ActivityIndicator color={goldButton.text} /> : (
           <View style={s.buttonRow}>
@@ -85,46 +133,91 @@ export function GoldButton({ title, onPress, busy, disabled, icon, compact, styl
   );
 }
 
-/** quiet second action: a Liquid Glass capsule on current iOS (Apple's secondary button), a hairline capsule elsewhere */
-const GLASS = Platform.OS === "ios" && isLiquidGlassAvailable();
-export function OutlineButton({ title, onPress, onStage, disabled, icon, compact, style }: { title: string; onPress: () => void; onStage?: boolean; disabled?: boolean; icon?: IconName; compact?: boolean; style?: StyleProp<ViewStyle> }) {
+/** the secondary action: a Liquid Glass capsule (iOS 26+), blur on older iOS; emerald text and a gold hairline on light canvases */
+export function GlassButton({ title, onPress, onStage, disabled, icon, compact, style }: { title: string; onPress: () => void; onStage?: boolean; disabled?: boolean; icon?: IconName; compact?: boolean; style?: StyleProp<ViewStyle> }) {
   const t = useTheme();
-  const color = onStage ? "#ffffff" : t.ink;
-  const row = (
-    <View style={s.buttonRow}>
-      {icon ? <Icon name={icon} size={16} color={color} /> : null}
-      <Text style={[type.button, { color }]} numberOfLines={1}>{title}</Text>
-    </View>
-  );
-  if (GLASS) {
-    return (
-      <Pressable onPress={onPress} disabled={disabled} accessibilityRole="button" accessibilityLabel={title}
-        style={({ pressed }) => [{ opacity: disabled ? 0.45 : 1, transform: [{ scale: pressed ? 0.97 : 1 }] }, compact ? { alignSelf: "flex-start" } : null, style]}>
-        <GlassView glassEffectStyle={onStage || t.dark ? "clear" : "regular"} isInteractive tintColor={onStage ? "rgba(4,32,24,0.35)" : t.dark ? "rgba(255,255,255,0.04)" : "rgba(255,255,255,0.55)"}
-          style={[s.button, compact && s.compact, { borderWidth: StyleSheet.hairlineWidth, borderColor: onStage ? "rgba(255,255,255,0.22)" : t.line }]}>
-          {row}
-        </GlassView>
-      </Pressable>
-    );
-  }
+  const c = glassColors(glassTone(onStage, t.dark));
   return (
-    <Pressable onPress={onPress} disabled={disabled} accessibilityRole="button" accessibilityLabel={title}
-      style={({ pressed }) => [s.button, compact && s.compact, compact ? { alignSelf: "flex-start" } : null,
-        { borderWidth: 1, borderColor: onStage ? (pressed ? "#ffffff" : "rgba(255,255,255,0.3)") : pressed ? goldButton.line : t.line, backgroundColor: onStage ? "rgba(255,255,255,0.06)" : t.surface, opacity: disabled ? 0.45 : 1 }, style]}>
-      {row}
+    <Pressable onPress={onPress} disabled={disabled} accessibilityRole="button" accessibilityLabel={title} accessibilityState={{ disabled: !!disabled }}
+      style={({ pressed }) => [{ opacity: disabled ? 0.45 : pressed && !GLASS ? 0.8 : 1, transform: [{ scale: pressed ? 0.97 : 1 }] }, compact ? { alignSelf: "flex-start" } : null, style]}>
+      <GlassSurface onStage={onStage} interactive style={[s.button, compact && s.compact]}>
+        <View style={s.buttonRow}>
+          {icon ? <Icon name={icon} size={16} color={onStage ? stage.gold : c.text} /> : null}
+          <Text style={[type.button, { color: c.text }]} numberOfLines={1}>{title}</Text>
+        </View>
+      </GlassSurface>
     </Pressable>
   );
 }
+/** older name of the secondary button; same glass capsule */
+export const OutlineButton = GlassButton;
 
 /** two or three actions side by side (Apple's button row) instead of a stack of full-width buttons */
 export function ActionRow({ children, style }: { children: ReactNode; style?: StyleProp<ViewStyle> }) {
   return <View style={[{ flexDirection: "row", gap: 10 }, style]}>{children}</View>;
 }
 
-/** text link in the accent colour */
+/** the tertiary action: text only, in emerald (gold on the stage), with a 44 pt touch target */
+export function TextButton({ title, onPress, onStage, icon, style, disabled }: { title: string; onPress: () => void; onStage?: boolean; icon?: IconName; style?: StyleProp<ViewStyle>; disabled?: boolean }) {
+  const t = useTheme();
+  const color = onStage ? stage.gold : t.accent;
+  return (
+    <Pressable onPress={onPress} disabled={disabled} accessibilityRole="button" accessibilityLabel={title} hitSlop={6}
+      style={({ pressed }) => [{ minHeight: 44, flexDirection: "row", alignItems: "center", alignSelf: "flex-start", gap: 6, opacity: disabled ? 0.45 : pressed ? 0.55 : 1 }, style]}>
+      {icon ? <Icon name={icon} size={15} color={color} /> : null}
+      <Text style={{ fontFamily: FONT.semibold, fontSize: 15, color }} numberOfLines={1}>{title}</Text>
+    </Pressable>
+  );
+}
+
+/** text link in the accent colour (inline, inside running text) */
 export function TextLink({ title, onPress, onStage, style }: { title: string; onPress: () => void; onStage?: boolean; style?: StyleProp<TextStyle> }) {
   const t = useTheme();
   return <Text onPress={onPress} accessibilityRole="link" style={[{ fontFamily: FONT.semibold, fontSize: 15, color: onStage ? stage.gold : t.accent, paddingVertical: 8 }, style]}>{title}</Text>;
+}
+
+/** round glass button (player transport, close, share); variant "gold" = the one main round action (play) */
+export function GlassIconButton({ icon, onPress, label, size = 52, onStage, variant = "glass", disabled, style, children }: {
+  icon?: IconName; onPress: () => void; label: string; size?: number; onStage?: boolean; variant?: "glass" | "gold"; disabled?: boolean; style?: StyleProp<ViewStyle>; children?: ReactNode;
+}) {
+  const t = useTheme();
+  const c = glassColors(glassTone(onStage, t.dark));
+  const round = { width: size, height: size, borderRadius: size / 2, alignItems: "center" as const, justifyContent: "center" as const };
+  const glyph = Math.round(size * 0.4);
+  return (
+    <Pressable onPress={onPress} disabled={disabled} accessibilityRole="button" accessibilityLabel={label} hitSlop={size < 44 ? (44 - size) / 2 : 0}
+      style={({ pressed }) => [variant === "gold" ? s.goldShadow : null, { borderRadius: size / 2, opacity: disabled ? 0.4 : 1, transform: [{ scale: pressed ? 0.92 : 1 }] }, style]}>
+      {variant === "gold" ? (
+        <LinearGradient colors={[goldButton.from, goldButton.to]} style={round}>
+          <LinearGradient pointerEvents="none" colors={["rgba(255,255,255,0.4)", "rgba(255,255,255,0)"]} style={[StyleSheet.absoluteFill, { borderRadius: size / 2, bottom: size / 2 }]} />
+          {children ?? (icon ? <Icon name={icon} size={glyph} color={goldButton.text} /> : null)}
+        </LinearGradient>
+      ) : (
+        <GlassSurface onStage={onStage} interactive style={round}>
+          {children ?? (icon ? <Icon name={icon} size={glyph} color={c.text} /> : null)}
+        </GlassSurface>
+      )}
+    </Pressable>
+  );
+}
+
+/** glass card: the Liquid Glass panel for floating content (player, overlays, cards on the stage) */
+export function GlassCard({ children, style, onStage, padded = true, onPress, accessibilityLabel }: { children: ReactNode; style?: StyleProp<ViewStyle>; onStage?: boolean; padded?: boolean; onPress?: () => void; accessibilityLabel?: string }) {
+  const body = <GlassSurface onStage={onStage} interactive={!!onPress} style={[{ borderRadius: GLASS_R.card }, padded && { padding: 18 }, style]}>{children}</GlassSurface>;
+  if (!onPress) return body;
+  return <Pressable onPress={onPress} accessibilityRole="button" accessibilityLabel={accessibilityLabel} style={({ pressed }) => ({ transform: [{ scale: pressed ? 0.985 : 1 }] })}>{body}</Pressable>;
+}
+
+/** glass bottom dock: floats above the home indicator (and above the tab bar with tabBar), content never hides behind it.
+ *  Screens that use it add GLASS_DOCK_SPACE (+ safe area) of bottom padding to their scroll content. */
+export const GLASS_DOCK_SPACE = 96;
+export function GlassDock({ children, style, onStage, bottom = 0 }: { children: ReactNode; style?: StyleProp<ViewStyle>; onStage?: boolean; bottom?: number }) {
+  const { bottom: safe } = useSafeAreaInsets();
+  return (
+    <View pointerEvents="box-none" style={{ position: "absolute", left: 0, right: 0, bottom: bottom + Math.max(safe, 12), paddingHorizontal: 12 }}>
+      <GlassSurface onStage={onStage} strong style={[s.dockShadow, { borderRadius: GLASS_R.dock, padding: 8, flexDirection: "row", alignItems: "center", gap: 8 }, style]}>{children}</GlassSurface>
+    </View>
+  );
 }
 
 /** pa-card: surface with a gold border, a finer gold frame inside and a small star on the top edge */
@@ -273,41 +366,66 @@ export function PosterGrid({ children }: { children: ReactNode[] }) {
   );
 }
 
-/** pill chip (pa-chip); selected = gold; disabled = dimmed and not tappable (a setting another one fixes) */
-export function Chip({ label, selected, onPress, onStage, disabled }: { label: string; selected?: boolean; onPress: () => void; onStage?: boolean; disabled?: boolean }) {
+/** glass chip (pa-chip): unselected = glass capsule, selected = gold capsule; disabled = dimmed and not tappable */
+export function Chip({ label, selected, onPress, onStage, disabled, icon, role = "button", small }: {
+  label: string; selected?: boolean; onPress: () => void; onStage?: boolean; disabled?: boolean; icon?: IconName;
+  /** accessibility role: a tab of a filter row, a checkbox of a multiple choice, a radio of a single choice */
+  role?: "button" | "tab" | "checkbox" | "radio"; small?: boolean;
+}) {
   const t = useTheme();
-  if (selected && onStage) {
+  const c = glassColors(glassTone(onStage, t.dark));
+  const checkable = role === "checkbox" || role === "radio";
+  const a11y = { accessibilityRole: role, accessibilityState: checkable ? { checked: !!selected, disabled: !!disabled } : { selected: !!selected, disabled: !!disabled }, accessibilityLabel: label };
+  if (selected) {
     return (
-      <Pressable onPress={onPress} disabled={disabled} accessibilityRole="button" accessibilityState={{ selected: true, disabled: !!disabled }} accessibilityLabel={label} style={disabled ? { opacity: 0.45 } : undefined}>
-        <LinearGradient colors={[goldButton.from, goldButton.to]} style={s.chip}><Text style={[s.chipText, { color: goldButton.text }]}>{label}</Text></LinearGradient>
+      <Pressable onPress={onPress} disabled={disabled} {...a11y} style={({ pressed }) => [{ opacity: disabled ? 0.45 : 1, transform: [{ scale: pressed ? 0.96 : 1 }] }]}>
+        <LinearGradient colors={[goldButton.from, goldButton.to]} style={[s.chip, small && s.chipSmall, { borderColor: "rgba(255,255,255,0.35)" }]}>
+          <View style={s.chipRow}>
+            {icon ? <Icon name={icon} size={13} color={goldButton.text} /> : null}
+            <Text style={[s.chipText, { color: goldButton.text, fontFamily: FONT.bold }]} numberOfLines={1}>{label}</Text>
+          </View>
+        </LinearGradient>
       </Pressable>
     );
   }
   return (
-    <Pressable onPress={onPress} disabled={disabled} accessibilityRole="button" accessibilityState={{ selected: !!selected, disabled: !!disabled }} accessibilityLabel={label}
-      style={[s.chip, disabled ? { opacity: 0.45 } : null, onStage
-        ? { borderColor: "rgba(255,255,255,0.18)", backgroundColor: "rgba(255,255,255,0.04)" }
-        : { borderColor: selected ? goldButton.line : t.line, backgroundColor: selected ? "rgba(201,166,94,0.14)" : t.surface }]}>
-      <Text style={[s.chipText, { color: onStage ? "rgba(255,255,255,0.8)" : selected ? t.ink : t.muted }]}>{label}</Text>
+    <Pressable onPress={onPress} disabled={disabled} {...a11y} style={({ pressed }) => [{ opacity: disabled ? 0.45 : 1, transform: [{ scale: pressed ? 0.96 : 1 }] }]}>
+      <GlassSurface onStage={onStage} interactive style={[s.chip, small && s.chipSmall, { borderWidth: StyleSheet.hairlineWidth }]}>
+        <View style={s.chipRow}>
+          {icon ? <Icon name={icon} size={13} color={onStage ? stage.gold : c.text} /> : null}
+          <Text style={[s.chipText, { color: onStage ? "rgba(255,255,255,0.86)" : t.ink }]} numberOfLines={1}>{label}</Text>
+        </View>
+      </GlassSurface>
     </Pressable>
   );
 }
+/** the same chip under its descriptive name */
+export const GlassChip = Chip;
 
-/** segmented control in the website's style (rounded-full bg-bg p-1, white active pill) */
-export function Segmented<T extends string>({ value, options, onChange }: { value: T | null; options: [T, string][]; onChange: (v: T) => void }) {
+/** segmented control: a glass track with the active segment as a gold capsule */
+export function Segmented<T extends string>({ value, options, onChange, onStage, stretch }: { value: T | null; options: [T, string][]; onChange: (v: T) => void; onStage?: boolean; stretch?: boolean }) {
   const t = useTheme();
   return (
-    <View style={{ flexDirection: "row", alignSelf: "flex-start", backgroundColor: t.bg, borderRadius: R.pill, padding: 4, borderWidth: 1, borderColor: t.line }} accessibilityRole="tablist">
-      {options.map(([v, label]) => {
-        const on = v === value;
-        return (
-          <Pressable key={v} onPress={() => onChange(v)} accessibilityRole="tab" accessibilityState={{ selected: on }} accessibilityLabel={label}
-            style={{ paddingHorizontal: 14, height: 32, justifyContent: "center", borderRadius: R.pill, backgroundColor: on ? t.surface : "transparent", borderWidth: on ? 1 : 0, borderColor: t.line }}>
-            <Text style={{ fontFamily: on ? FONT.bold : FONT.semibold, fontSize: 13, color: on ? t.ink : t.muted }}>{label}</Text>
-          </Pressable>
-        );
-      })}
-    </View>
+    <GlassSurface onStage={onStage} style={{ flexDirection: "row", alignSelf: stretch ? "stretch" : "flex-start", borderRadius: R.pill, padding: 4 }}>
+      <View style={{ flexDirection: "row", flex: stretch ? 1 : undefined }} accessibilityRole="tablist">
+        {options.map(([v, label]) => {
+          const on = v === value;
+          return (
+            <Pressable key={v} onPress={() => onChange(v)} accessibilityRole="tab" accessibilityState={{ selected: on }} accessibilityLabel={label} style={stretch ? { flex: 1 } : undefined}>
+              {on ? (
+                <LinearGradient colors={[goldButton.from, goldButton.to]} style={s.segment}>
+                  <Text style={{ fontFamily: FONT.bold, fontSize: 13, color: goldButton.text }} numberOfLines={1}>{label}</Text>
+                </LinearGradient>
+              ) : (
+                <View style={s.segment}>
+                  <Text style={{ fontFamily: FONT.semibold, fontSize: 13, color: onStage ? "rgba(255,255,255,0.75)" : t.muted }} numberOfLines={1}>{label}</Text>
+                </View>
+              )}
+            </Pressable>
+          );
+        })}
+      </View>
+    </GlassSurface>
   );
 }
 
@@ -412,6 +530,12 @@ const s = StyleSheet.create({
   compact: { height: 44, borderRadius: R.pill, paddingHorizontal: 20 },
   buttonRow: { flexDirection: "row", alignItems: "center", gap: 8 },
   goldHighlight: { position: "absolute", top: 0, left: 0, right: 0, height: 1, backgroundColor: "rgba(255,255,255,0.3)" },
-  chip: { height: 38, paddingHorizontal: 15, borderRadius: R.pill, borderWidth: 1, alignItems: "center", justifyContent: "center" },
+  goldSheen: { position: "absolute", top: 0, left: 0, right: 0, height: "52%" },
+  goldShadow: { shadowColor: "rgb(120,90,30)", shadowOpacity: 0.28, shadowRadius: 12, shadowOffset: { width: 0, height: 5 }, elevation: 4 },
+  dockShadow: { shadowColor: "#000", shadowOpacity: 0.18, shadowRadius: 22, shadowOffset: { width: 0, height: 8 }, elevation: 8 },
+  chip: { height: 38, paddingHorizontal: 15, borderRadius: R.pill, borderWidth: StyleSheet.hairlineWidth, alignItems: "center", justifyContent: "center", overflow: "hidden" },
+  chipSmall: { height: 32, paddingHorizontal: 14 },
+  chipRow: { flexDirection: "row", alignItems: "center", gap: 6 },
+  segment: { paddingHorizontal: 14, height: 32, justifyContent: "center", alignItems: "center", borderRadius: R.pill },
   chipText: { fontFamily: FONT.semibold, fontSize: 14 },
 });

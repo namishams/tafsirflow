@@ -15,7 +15,7 @@ async function load(meId: number, rawId: string) {
   const id = /^\d{1,18}$/.test(rawId) ? rawId : null;
   if (!id) return null;
   const r = await pool()!.query(
-    `SELECT v.id, v.user_a, v.user_b, c.username, c.display_name, c.level, c.verified, c.badge, c.official, c.suspended, c.message_policy,
+    `SELECT v.id, v.user_a, v.user_b, c.username, c.display_name, c.level, c.verified, c.badge, c.official, c.founder, c.suspended, c.message_policy,
             EXISTS (SELECT 1 FROM community_blocks b WHERE (b.blocker_id = v.user_a AND b.blocked_id = v.user_b) OR (b.blocker_id = v.user_b AND b.blocked_id = v.user_a)) AS blocked
        FROM community_conversations v
        JOIN community_profiles c ON c.user_id = CASE WHEN v.user_a = $1 THEN v.user_b ELSE v.user_a END

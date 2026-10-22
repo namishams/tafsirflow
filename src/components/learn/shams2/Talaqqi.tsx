@@ -18,11 +18,13 @@ import { Card, GoldButton, LearnHero, LearnMain, Spinner } from "@/components/le
 import { PromptedWords, SpeechCheck, type CheckResult, type W } from "./recite";
 import { Chip, Live, SmallBtn, SourceNote, Term, useBack, useNames, useWebT } from "./ui";
 import { ContinueNext } from "./Continue";
+import { Rubric } from "./Rubric";
+import { useRec } from "@/lib/learn/shams2/rec/text";
 
-const WAQF = /[ۖ-ۜ]/;
+export const WAQF = /[ۖ-ۜ]/;
 
-type Phrase = { words: W[]; start: number; end: number };
-function phrasesOf(v: Verse): Phrase[] {
+export type Phrase = { words: W[]; start: number; end: number };
+export function phrasesOf(v: Verse): Phrase[] {
   const ws = wordsOf(v);
   const seg = (p: number) => v.segments.find((x) => x.word === p);
   const out: Phrase[] = [];
@@ -44,7 +46,7 @@ function phrasesOf(v: Verse): Phrase[] {
 }
 
 /** one recording at a time: the whole verse, or a phrase (from–to in ms) repeated n times; self-hosted file first */
-function usePhrasePlayer() {
+export function usePhrasePlayer() {
   const el = useRef<HTMLAudioElement | null>(null);
   const range = useRef<{ start: number; end: number; left: number } | null>(null);
   const raf = useRef(0);
@@ -107,10 +109,14 @@ function Body({ surah, from, to }: { surah: number; from: number; to?: number })
     if (!verse) return;
     noteWords(verse.verse_key, allWords.map((x, i) => ({ position: x.position, ok: !!r.ok[i] })));
     noteCheck(verse.verse_key, r.ok.filter(Boolean).length, r.ok.length);
+    setMissed(allWords.filter((_, i) => !r.ok[i]).map((x) => x.position));
     if (r.pass) reward(verse.verse_key);
   };
   const [rated, setRated] = useState<"good" | "slip" | null>(null);
-  useEffect(() => setRated(null), [vi]);
+  // words the verse check did not hear: offered as a word drill (Shams 3.0)
+  const [missed, setMissed] = useState<number[]>([]);
+  useEffect(() => { setRated(null); setMissed([]); }, [vi]);
+  const { r } = useRec();
   // the self-assessment is recorded once per verse (the first answer); a later click only changes what is shown
   const selfRate = (good: boolean) => {
     if (!verse) return;
@@ -164,6 +170,7 @@ function Body({ surah, from, to }: { surah: number; from: number; to?: number })
           <PromptedWords words={allWords} prompt={grade.prompt} />
           <div className="flex flex-wrap gap-2">{audio.playing ? <SmallBtn onClick={audio.stop}>{w.stop}</SmallBtn> : <SmallBtn onClick={() => audio.play(verse)}>{s("listenVerse")}</SmallBtn>}</div>
           <SpeechCheck words={allWords} pass={grade.wordPass} targetMs={verseMs ? verseMs * grade.pace : null} onResult={onVerse} />
+          {missed.length ? <SmallBtn href={`/shams/drill?s=${surah}&v=${vi}&w=${missed.slice(0, 12).join(",")}`}>{r("drillMissed")}</SmallBtn> : null}
           <div className="flex flex-wrap gap-1.5">
             <Chip label={s("selfGood")} on={rated === "good"} onClick={() => selfRate(true)} />
             <Chip label={s("selfSlip")} on={rated === "slip"} onClick={() => selfRate(false)} />
@@ -171,6 +178,7 @@ function Body({ surah, from, to }: { surah: number; from: number; to?: number })
           <hr className="border-line" />
           <p className="text-[14px] font-semibold">{s("abTitle")}</p>
           <RecordCompare verse={verse} />
+          <Rubric verseKey={verse.verse_key} />
           <GoldButton className="w-fit" onClick={nextVerse}>{vi < last ? s("nextVerse") : s("finish")}</GoldButton>
         </Card>
       )}

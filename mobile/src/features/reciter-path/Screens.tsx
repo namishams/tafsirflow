@@ -20,6 +20,7 @@ import { shuffleWith, useExamSession } from "@/features/exam/integrity";
 import { rpRecitePlan } from "@/features/exam/plans";
 import { VerifiedCertLink } from "@/features/exam/Certificates";
 import { MisharyCard } from "@/features/mishary/Home";
+import { Progressive } from "@/lib/progressive";
 
 const unitHref = (id: string) => `/reciter-path/${id}` as Href;
 const examHref = (n: number) => `/reciter-path/exam/${n}` as Href;
@@ -76,6 +77,8 @@ export function PathHome() {
           <Text style={{ fontFamily: FONT.semibold, fontSize: 13, color: stage.textMuted }}>{rt("unitsDone", { d: all.filter((u) => unitDone(p, u.id)).length, n: all.length })}</Text>
         </PageHero>
         <View style={{ paddingHorizontal: 16, marginTop: 24, gap: 26 }}>
+          {/* ten levels with all their units: the first two at once, the rest over the next frames (lib/progressive.tsx) */}
+          <Progressive first={2}>
           {LEVELS.map((l) => {
             const done = l.units.filter((u) => unitDone(p, u.id)).length;
             const examOpen = levelUnitsDone(p, l.n);
@@ -116,6 +119,7 @@ export function PathHome() {
               </View>
             );
           })}
+          </Progressive>
           <MisharyCard />
           <Pressable onPress={() => router.push("/reciter-path/teacher" as Href)} accessibilityRole="button">
             <GoldCard>

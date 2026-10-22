@@ -19,14 +19,16 @@ import { noteCheck, noteWords } from "./store";
 import { useS2 } from "./text";
 import { Btn, Card, SourceNote, Term } from "./ui";
 import { ContinueNext } from "./Continue";
+import { Rubric } from "./Rubric";
+import { useRec } from "./rec/text";
 
 // /shams/talaqqi?s=&v=&to= – talaqqī and mushāfaha with a master reciter: listen phrase by phrase (from the reciter's
 // word timings), then recite the phrase yourself (ʿarḍ), with the prompts and pass mark of your grade; at the end the
 // whole verse, an on-device word check and the A/B comparison with your own recording (reciter path, imported).
 const WAQF = /[ۖ-ۜ]/;
 
-type Phrase = { words: W[]; start: number; end: number } ;
-function phrasesOf(v: Verse): Phrase[] {
+export type Phrase = { words: W[]; start: number; end: number };
+export function phrasesOf(v: Verse): Phrase[] {
   const ws = wordsOf(v);
   const seg = (p: number) => v.segments.find((x) => x.word === p);
   const out: Phrase[] = [];
@@ -86,12 +88,16 @@ export function TalaqqiScreen({ surah, from, to }: { surah: number; from: number
   const rewarded = useRef(new Set<string>());
   const reward = (key: string) => { if (rewarded.current.has(key)) return; rewarded.current.add(key); gEvent({ t: "verse" }); shamsGrow("verse", pro); };
   const [rated, setRated] = useState<"good" | "slip" | null>(null);
-  useEffect(() => setRated(null), [vi]);
+  // words the verse check did not hear: offered as a word drill (Shams 3.0)
+  const [missed, setMissed] = useState<number[]>([]);
+  useEffect(() => { setRated(null); setMissed([]); }, [vi]);
+  const { r } = useRec();
   const onPhrase = (r: CheckResult) => { if (verse && phrase) noteWords(verse.verse_key, phrase.words.map((w, i) => ({ position: w.position, ok: !!r.ok[i] }))); };
   const onVerse = (r: CheckResult) => {
     if (!verse) return;
     noteWords(verse.verse_key, allWords.map((w, i) => ({ position: w.position, ok: !!r.ok[i] })));
     noteCheck(verse.verse_key, r.ok.filter(Boolean).length, r.ok.length);
+    setMissed(allWords.filter((_, i) => !r.ok[i]).map((w) => w.position));
     if (r.pass) reward(verse.verse_key);
   };
   // the self-assessment is recorded once per verse (the first answer); a later tap only changes what is shown
@@ -152,6 +158,7 @@ export function TalaqqiScreen({ surah, from, to }: { surah: number; from: number
                   <PromptedWords words={allWords} prompt={grade.prompt} />
                   <View style={{ flexDirection: "row", gap: 8, flexWrap: "wrap" }}><Btn icon="play" title={s("listenVerse")} onPress={playVerse} /></View>
                   <SpeechCheck words={allWords} pass={grade.wordPass} targetMs={verseMs ? verseMs * grade.pace : null} onResult={onVerse} />
+                  {missed.length ? <Btn icon="repeat" title={r("drillMissed")} onPress={() => router.push(`/shams/drill?s=${surah}&v=${vi}&w=${missed.slice(0, 12).join(",")}` as Href)} /> : null}
                   <View style={{ flexDirection: "row", gap: 6, flexWrap: "wrap" }}>
                     <Chip label={s("selfGood")} selected={rated === "good"} onPress={() => selfRate(true)} />
                     <Chip label={s("selfSlip")} selected={rated === "slip"} onPress={() => selfRate(false)} />
@@ -159,6 +166,7 @@ export function TalaqqiScreen({ surah, from, to }: { surah: number; from: number
                   <View style={{ height: 1, backgroundColor: t.line, marginVertical: 4 }} />
                   <Text style={{ fontFamily: FONT.semibold, fontSize: 13.5, color: t.ink }}>{s("abTitle")}</Text>
                   <RecordCompare verse={verse} />
+                  <Rubric verseKey={verse.verse_key} />
                   <GoldButton title={vi < last ? s("nextVerse") : s("finish")} onPress={nextVerse} />
                 </Card>
               )}

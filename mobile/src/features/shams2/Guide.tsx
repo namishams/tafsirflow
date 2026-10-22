@@ -17,6 +17,7 @@ import { Btn, Card, Glossary, SourceNote, Term } from "./ui";
 import { saveWeekSnapshot, weekReview } from "./week";
 import { weakSpots } from "./weakSpots";
 import { ContinueNext } from "./Continue";
+import { AdabPillarCard } from "./adab/Adab";
 
 // Onboarding (/shams/welcome), the method handbook (/shams/handbook) and the weekly review (/shams/week).
 const ONBOARDED = "qmc.shams2.onboarded.v1";
@@ -103,6 +104,7 @@ export function HandbookScreen() {
           {PRINCIPLES.map((p) => <Row key={p.id} id={`p-${p.id}`} ar={p.ar} title={p.title[cl]} body={p.body[cl]} src={p.src} />)}
           <Text accessibilityRole="header" style={{ fontFamily: FONT.display, fontSize: 21, color: t.ink, textAlign: "left", marginTop: 8 }}>{s("practice")}</Text>
           {HANDBOOK.map((c) => <Row key={c.id} id={`c-${c.id}`} title={c.title[cl]} body={c.body[cl]} src={c.src} />)}
+          <AdabPillarCard />
           <Text accessibilityRole="header" style={{ fontFamily: FONT.display, fontSize: 21, color: t.ink, textAlign: "left", marginTop: 8 }}>{s("darajatTitle")}</Text>
           <Card>
             {GRADES.map((g) => (

@@ -58,10 +58,16 @@ export const XP = { post: 2, verse: 5, word: 4, quiz: 6, share: 10, quest: 25, a
 const POST_XP_PER_DAY = 200;
 /** XP needed to go from level L to L+1: 100, 150, 200 … */
 const step = (l: number) => 100 + 50 * (l - 1);
+/** XP from level 1 to the start of level L: 100 (L-1) + 25 (L-1)(L-2) (the sum of the steps above) */
+const startOf = (l: number) => 100 * (l - 1) + 25 * (l - 1) * (l - 2);
+/** owner 22.10.2026: levels are endless. Same steps as before (identical results up to level 999), no cap any more;
+ *  closed form instead of the loop. Never lowers a level. */
 export function levelOf(xp: number): { level: number; into: number; need: number } {
-  let l = 1, left = xp;
-  while (left >= step(l) && l < 999) { left -= step(l); l++; }
-  return { level: l, into: left, need: step(l) };
+  const x = Math.max(0, Math.floor(Number.isFinite(xp) ? xp : 0));
+  let l = Math.max(1, Math.floor((-25 + Math.sqrt(625 + 100 * x)) / 50) + 1);
+  while (l > 1 && startOf(l) > x) l--;
+  while (startOf(l + 1) <= x) l++;
+  return { level: l, into: x - startOf(l), need: step(l) };
 }
 
 // ---------- celebrations (level up, new sticker, freeze) ----------

@@ -5,7 +5,7 @@ import { useAuth } from "./auth";
 import { useStored, writeJSON } from "./store";
 
 // Free and Pro in the app (the website stays free for everyone; progress syncs through the account).
-// Pro = "Quran Masterclass Pro", an auto-renewable monthly subscription (4,99 €) through the App Store / Google Play.
+// Pro = "Quran Masterclass Pro", an auto-renewable monthly subscription (US$9.99) through the App Store / Google Play.
 // Everything that decides what is free lives in this file.
 export const PRO_PRODUCT = "com.quranmasterclass.app.pro.monthly";
 

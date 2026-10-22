@@ -1,8 +1,10 @@
-import { Text, View } from "react-native";
+import { useState } from "react";
+import { Pressable, Text, View } from "react-native";
 import { router, type Href } from "expo-router";
 import { FONT } from "@/lib/theme";
 import { useLang } from "@/i18n";
-import { ISLAM, readingMinutes } from "@/web/islam";
+import { ISLAM, hubOrder, readingMinutes, tradUi } from "@/web/islam";
+import { useTradition } from "@/lib/tradition";
 import { ArchWindow, Corners, HeroKicker, HeroLead, HeroTitle, IslCard, IslH2, IslHero, IslamNum, Marble, Mosque, useSaw } from "@/features/library/art";
 import { GoldPill } from "@/features/library/ui";
 import { IslScreen } from "@/features/library/screen";
@@ -17,9 +19,14 @@ export default function IslamHub() {
   const isl = useIsl();
   const sw = useSaw();
   const chs = useChapters();
+  const { tradition } = useTradition();
+  const [openOther, setOpenOther] = useState(false);
   if (!u) return <IslScreen><View /></IslScreen>;
-  const rows: number[][] = [];
-  ISLAM.forEach((_, i) => { if (i % 2 === 0) rows.push([]); rows[rows.length - 1].push(i); });
+  // the tradition setting orders the chapters; the other school's chapters wait behind "Andere Rechtsschulen"
+  const order = hubOrder(tradition);
+  const tu = tradUi(lang);
+  const pairs = (list: number[]) => { const out: number[][] = []; list.forEach((i, k) => { if (k % 2 === 0) out.push([]); out[out.length - 1].push(i); }); return out; };
+  const rows: number[][] = [...pairs(order.main), ...(openOther ? pairs(order.other) : [])];
   return (
     <IslScreen>
       <IslHero callig="الإسلام" dome domeTop={-160} fall={560} rainOpacity={0.8}>
@@ -57,6 +64,13 @@ export default function IslamHub() {
               </View>
             ))}
           </View>
+          {order.other.length ? (
+            <Pressable onPress={() => setOpenOther((v) => !v)} accessibilityRole="button" accessibilityState={{ expanded: openOther }}
+              style={({ pressed }) => ({ marginTop: 20, borderRadius: 16, borderWidth: 1, borderColor: isl.a("goldSoft", 0.4), padding: 16, opacity: pressed ? 0.8 : 1 })}>
+              <Text style={{ fontFamily: FONT.semibold, fontSize: 16, color: isl.ink }}>{tu.other} ({order.other.length}) {openOther ? "−" : "+"}</Text>
+              <Text style={{ marginTop: 4, fontFamily: FONT.regular, fontSize: 13, lineHeight: 19, color: isl.muted }}>{tu.otherLead}</Text>
+            </Pressable>
+          ) : null}
         </View>
 
         <View style={{ paddingHorizontal: 20, paddingBottom: 64 }}>

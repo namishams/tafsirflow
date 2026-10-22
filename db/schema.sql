@@ -998,5 +998,296 @@ ALTER TABLE sessions ADD COLUMN IF NOT EXISTS method text;      -- password | co
 ALTER TABLE sessions ADD COLUMN IF NOT EXISTS client text;      -- web | ios | android
 ALTER TABLE sessions ADD COLUMN IF NOT EXISTS user_agent text;
 ALTER TABLE sessions ADD COLUMN IF NOT EXISTS reauth_at timestamptz;
+-- Progress profile and global leaderboards (owner 22.10.2026, additions only): monthly XP and verses, best streak and
+-- passed exams per period in the rankings snapshot (src/lib/rankings.ts build), the month base for verse gains, and
+-- partial indexes for the rank counts of the board (src/lib/careerStats.ts). Only members shown by name are indexed.
+ALTER TABLE ranking_snapshot ADD COLUMN IF NOT EXISTS xp_month      bigint  NOT NULL DEFAULT 0;
+ALTER TABLE ranking_snapshot ADD COLUMN IF NOT EXISTS verses_month  integer NOT NULL DEFAULT 0;
+ALTER TABLE ranking_snapshot ADD COLUMN IF NOT EXISTS best_streak   integer NOT NULL DEFAULT 0;
+ALTER TABLE ranking_snapshot ADD COLUMN IF NOT EXISTS exams_week    integer NOT NULL DEFAULT 0;
+ALTER TABLE ranking_snapshot ADD COLUMN IF NOT EXISTS exams_month   integer NOT NULL DEFAULT 0;
+ALTER TABLE ranking_snapshot ADD COLUMN IF NOT EXISTS exams_total   integer NOT NULL DEFAULT 0;
+CREATE TABLE IF NOT EXISTS ranking_month_base (
+  month_key integer NOT NULL,                      -- year * 100 + month (UTC)
+  user_id   bigint  NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  verses    integer NOT NULL DEFAULT 0,
+  PRIMARY KEY (month_key, user_id)
+);
+CREATE INDEX IF NOT EXISTS ranking_snapshot_xp_week     ON ranking_snapshot(xp_week DESC)     WHERE named;
+CREATE INDEX IF NOT EXISTS ranking_snapshot_xp_month    ON ranking_snapshot(xp_month DESC)    WHERE named;
+CREATE INDEX IF NOT EXISTS ranking_snapshot_xp_total    ON ranking_snapshot(xp_total DESC)    WHERE named;
+CREATE INDEX IF NOT EXISTS ranking_snapshot_verses      ON ranking_snapshot(verses DESC)      WHERE named;
+CREATE INDEX IF NOT EXISTS ranking_snapshot_verses_week ON ranking_snapshot(verses_week DESC) WHERE named;
+CREATE INDEX IF NOT EXISTS ranking_snapshot_verses_mon  ON ranking_snapshot(verses_month DESC) WHERE named;
+CREATE INDEX IF NOT EXISTS ranking_snapshot_streak      ON ranking_snapshot(streak DESC)      WHERE named;
+CREATE INDEX IF NOT EXISTS ranking_snapshot_best_streak ON ranking_snapshot(best_streak DESC) WHERE named;
+CREATE INDEX IF NOT EXISTS ranking_snapshot_exams_week  ON ranking_snapshot(exams_week DESC)  WHERE named;
+CREATE INDEX IF NOT EXISTS ranking_snapshot_exams_month ON ranking_snapshot(exams_month DESC) WHERE named;
+CREATE INDEX IF NOT EXISTS ranking_snapshot_exams_total ON ranking_snapshot(exams_total DESC) WHERE named;
+CREATE INDEX IF NOT EXISTS ranking_snapshot_username    ON ranking_snapshot(username);
+CREATE INDEX IF NOT EXISTS exam_attempts_passed_user    ON exam_attempts(user_id, exam, ref) WHERE passed AND status = 'submitted' AND sig IS NOT NULL;
 GRANT ALL ON ALL TABLES IN SCHEMA public TO tafsirflow;
 GRANT ALL ON ALL SEQUENCES IN SCHEMA public TO tafsirflow;
+
+-- Together (gemeinsam lernen, owner 22.10.2026): friends today, weekly friend league, study circles (halaqa),
+-- challenges between two friends, learn-together invitations, gentle preset nudges, community goals per country.
+-- Every feature is opt-in per member (together_settings), 16+ on both sides; no free text between members
+-- (circle names are checked with moderate()); report and block everywhere. Account deletion cascades.
+CREATE TABLE IF NOT EXISTS together_settings (
+  user_id        bigint PRIMARY KEY REFERENCES users(id) ON DELETE CASCADE,
+  share_activity boolean NOT NULL DEFAULT false,  -- friends see "learned today" and the streak
+  league         boolean NOT NULL DEFAULT false,  -- weekly league among friends
+  circles        boolean NOT NULL DEFAULT false,  -- study circles (set when creating or joining one)
+  challenges     boolean NOT NULL DEFAULT false,  -- friends may send challenges
+  nudges         boolean NOT NULL DEFAULT false,  -- receive preset reminders from friends and circle members
+  community      boolean NOT NULL DEFAULT false,  -- verses count for the country goal (sums only)
+  best_list      boolean NOT NULL DEFAULT false,  -- may appear among the best learners of the month
+  circle_gender  text CHECK (circle_gender IN ('brother','sister')), -- self-declared once, for brothers/sisters circles
+  updated_at     timestamptz NOT NULL DEFAULT now()
+);
+CREATE INDEX IF NOT EXISTS together_settings_community ON together_settings(user_id) WHERE community;
+-- weekly XP, active days and memorised verses as last seen (server week = mondayDay()); verses_start = the week's base
+CREATE TABLE IF NOT EXISTS together_week_xp (
+  week_monday  integer NOT NULL,
+  user_id      bigint  NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  xp           integer NOT NULL DEFAULT 0,
+  active       smallint NOT NULL DEFAULT 0,
+  verses_start integer NOT NULL DEFAULT 0,
+  verses       integer NOT NULL DEFAULT 0,
+  PRIMARY KEY (week_monday, user_id)
+);
+CREATE INDEX IF NOT EXISTS together_week_xp_user ON together_week_xp(user_id, week_monday DESC);
+-- the member's tier in the friend league (1..6), settled lazily once per week
+CREATE TABLE IF NOT EXISTS together_league (
+  user_id     bigint PRIMARY KEY REFERENCES users(id) ON DELETE CASCADE,
+  tier        smallint NOT NULL DEFAULT 1 CHECK (tier BETWEEN 1 AND 6),
+  week_monday integer NOT NULL DEFAULT 0,
+  last_result text NOT NULL DEFAULT '' CHECK (last_result IN ('','up','stay','down')),
+  last_rank   smallint,
+  last_size   smallint,
+  best_tier   smallint NOT NULL DEFAULT 1
+);
+CREATE TABLE IF NOT EXISTS together_circles (
+  id           bigserial PRIMARY KEY,
+  name         text NOT NULL,
+  kind         text NOT NULL CHECK (kind IN ('brothers','sisters','family','teacher')),
+  owner_id     bigint NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  code         text UNIQUE NOT NULL,
+  approval     boolean NOT NULL DEFAULT true,
+  goal_kind    text NOT NULL DEFAULT 'days' CHECK (goal_kind IN ('days','xp','verses')),
+  goal         integer NOT NULL DEFAULT 20 CHECK (goal > 0),
+  max_members  smallint NOT NULL DEFAULT 20,
+  suspended_at timestamptz,
+  created_at   timestamptz NOT NULL DEFAULT now()
+);
+CREATE INDEX IF NOT EXISTS together_circles_owner ON together_circles(owner_id);
+CREATE TABLE IF NOT EXISTS together_circle_members (
+  circle_id bigint NOT NULL REFERENCES together_circles(id) ON DELETE CASCADE,
+  user_id   bigint NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  role      text NOT NULL DEFAULT 'member' CHECK (role IN ('leader','member')),
+  status    text NOT NULL DEFAULT 'member' CHECK (status IN ('pending','member')),
+  joined_at timestamptz NOT NULL DEFAULT now(),
+  PRIMARY KEY (circle_id, user_id)
+);
+CREATE INDEX IF NOT EXISTS together_circle_members_user ON together_circle_members(user_id);
+-- the circle's weekly goal as last seen (group streak = reached weeks in a row)
+CREATE TABLE IF NOT EXISTS together_circle_weeks (
+  circle_id   bigint NOT NULL REFERENCES together_circles(id) ON DELETE CASCADE,
+  week_monday integer NOT NULL,
+  progress    integer NOT NULL DEFAULT 0,
+  goal        integer NOT NULL DEFAULT 0,
+  members     smallint NOT NULL DEFAULT 0,
+  reached     boolean NOT NULL DEFAULT false,
+  PRIMARY KEY (circle_id, week_monday)
+);
+-- challenges between two friends (both can succeed; no stakes, no winner takes all)
+CREATE TABLE IF NOT EXISTS together_challenges (
+  id           bigserial PRIMARY KEY,
+  from_id      bigint NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  to_id        bigint NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  kind         text NOT NULL CHECK (kind IN ('surah','verses','streak')),
+  target       integer NOT NULL CHECK (target > 0),
+  days         smallint NOT NULL CHECK (days BETWEEN 3 AND 60),
+  status       text NOT NULL DEFAULT 'pending' CHECK (status IN ('pending','active','declined','cancelled','ended')),
+  created_at   timestamptz NOT NULL DEFAULT now(),
+  starts_at    timestamptz,
+  ends_at      timestamptz,
+  from_base    integer NOT NULL DEFAULT 0,
+  to_base      integer NOT NULL DEFAULT 0,
+  from_done_at timestamptz,
+  to_done_at   timestamptz
+);
+CREATE INDEX IF NOT EXISTS together_challenges_from ON together_challenges(from_id, created_at DESC);
+CREATE INDEX IF NOT EXISTS together_challenges_to ON together_challenges(to_id, created_at DESC);
+-- "learn together" invitations to one friend or to a circle: a topic and a time, answers yes/no
+CREATE TABLE IF NOT EXISTS together_invites (
+  id         bigserial PRIMARY KEY,
+  from_id    bigint NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  to_id      bigint REFERENCES users(id) ON DELETE CASCADE,
+  circle_id  bigint REFERENCES together_circles(id) ON DELETE CASCADE,
+  topic      text NOT NULL CHECK (topic IN ('surah','review','tafsir','arabic','tajweed')),
+  surah      smallint CHECK (surah BETWEEN 1 AND 114),
+  at         timestamptz NOT NULL,
+  cancelled  boolean NOT NULL DEFAULT false,
+  created_at timestamptz NOT NULL DEFAULT now(),
+  CHECK ((to_id IS NULL) <> (circle_id IS NULL))
+);
+CREATE INDEX IF NOT EXISTS together_invites_from ON together_invites(from_id, at DESC);
+CREATE INDEX IF NOT EXISTS together_invites_to ON together_invites(to_id, at DESC) WHERE to_id IS NOT NULL;
+CREATE INDEX IF NOT EXISTS together_invites_circle ON together_invites(circle_id, at DESC) WHERE circle_id IS NOT NULL;
+CREATE TABLE IF NOT EXISTS together_invite_answers (
+  invite_id  bigint NOT NULL REFERENCES together_invites(id) ON DELETE CASCADE,
+  user_id    bigint NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  answer     text NOT NULL CHECK (answer IN ('yes','no')),
+  created_at timestamptz NOT NULL DEFAULT now(),
+  PRIMARY KEY (invite_id, user_id)
+);
+-- preset nudges only (no free text), rate-limited per pair and per recipient
+CREATE TABLE IF NOT EXISTS together_nudges (
+  id         bigserial PRIMARY KEY,
+  from_id    bigint NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  to_id      bigint NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  kind       text NOT NULL CHECK (kind IN ('miss_you','together_today','dua_ease','well_done','keep_streak')),
+  circle_id  bigint REFERENCES together_circles(id) ON DELETE SET NULL,
+  created_at timestamptz NOT NULL DEFAULT now(),
+  read_at    timestamptz
+);
+CREATE INDEX IF NOT EXISTS together_nudges_to ON together_nudges(to_id, id DESC);
+CREATE INDEX IF NOT EXISTS together_nudges_pair ON together_nudges(from_id, to_id, created_at DESC);
+-- memorised verses at the start of a month (first seen), for the community goals
+CREATE TABLE IF NOT EXISTS together_month_base (
+  month   text   NOT NULL,
+  user_id bigint NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  verses  integer NOT NULL DEFAULT 0,
+  PRIMARY KEY (month, user_id)
+);
+GRANT ALL ON ALL TABLES IN SCHEMA public TO tafsirflow;
+GRANT ALL ON ALL SEQUENCES IN SCHEMA public TO tafsirflow;
+
+-- Together: the member's place on the weekly world XP board as last seen (once a day) for the "rank change" line of
+-- the summary the AI tutor reads (GET /api/together/summary). Only the own numbers; nothing about other members.
+CREATE TABLE IF NOT EXISTS together_rank_seen (
+  user_id   bigint PRIMARY KEY REFERENCES users(id) ON DELETE CASCADE,
+  day       integer NOT NULL,
+  rank      integer,
+  prev_day  integer,
+  prev_rank integer
+);
+GRANT ALL ON ALL TABLES IN SCHEMA public TO tafsirflow;
+
+-- Recordings for a teacher (Shams 3.0, owner 22.10.2026, additions only): over an ACTIVE teacher link (teacher_shares)
+-- the student sends one recording (makhraj coach, talaqqi, recitation from memory, drill; 5 s–5 min, at most 10
+-- waiting per link) with a structured summary (own rating, ear-training answers, words heard – never a pronunciation
+-- score, no free text). Only the student and that teacher can open it; the file lives in MEDIA_DIR/teacher-rec and is
+-- deleted after 60 days (or on withdrawal, report removal, account deletion – the orphan purge in
+-- src/lib/teacherRecitations.ts). The teacher answers once (may correct it): rubric 1–5 per area (optional each),
+-- marked word refs "s:v:p" inside the range, a short text checked with moderate(). Reports go to community_reports
+-- (target_type 'teacher_recitation' / 'teacher_review'), blocks hide both sides (community_blocks).
+CREATE TABLE IF NOT EXISTS teacher_recitations (
+  id          bigserial PRIMARY KEY,
+  share_id    bigint NOT NULL REFERENCES teacher_shares(id) ON DELETE CASCADE,
+  student_id  bigint NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  teacher_id  bigint NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  kind        text NOT NULL CHECK (kind IN ('blind','talaqqi','drill','makhraj')),
+  surah       integer CHECK (surah BETWEEN 1 AND 114),
+  from_verse  integer CHECK (from_verse BETWEEN 1 AND 286),
+  to_verse    integer CHECK (to_verse BETWEEN 1 AND 286),
+  letter      text CHECK (letter IS NULL OR char_length(letter) <= 4),
+  duration_ms integer NOT NULL CHECK (duration_ms BETWEEN 1000 AND 310000),
+  summary     jsonb NOT NULL DEFAULT '{}'::jsonb,
+  media_path  text,                                     -- inside MEDIA_DIR (never a public URL); null once deleted
+  media_mime  text,
+  status      text NOT NULL DEFAULT 'open' CHECK (status IN ('open','reviewed','withdrawn')),
+  created_at  timestamptz NOT NULL DEFAULT now(),
+  expires_at  timestamptz NOT NULL DEFAULT now() + interval '60 days',
+  deleted_at  timestamptz,
+  CHECK (student_id <> teacher_id),
+  CHECK (surah IS NULL OR (from_verse IS NOT NULL AND to_verse IS NOT NULL AND to_verse >= from_verse))
+);
+CREATE INDEX IF NOT EXISTS teacher_recitations_student ON teacher_recitations(student_id, created_at DESC);
+CREATE INDEX IF NOT EXISTS teacher_recitations_teacher ON teacher_recitations(teacher_id, status, created_at DESC);
+CREATE INDEX IF NOT EXISTS teacher_recitations_share ON teacher_recitations(share_id, status);
+CREATE INDEX IF NOT EXISTS teacher_recitations_expiry ON teacher_recitations(expires_at) WHERE media_path IS NOT NULL;
+CREATE TABLE IF NOT EXISTS teacher_recitation_reviews (
+  id             bigserial PRIMARY KEY,
+  recitation_id  bigint NOT NULL UNIQUE REFERENCES teacher_recitations(id) ON DELETE CASCADE,
+  teacher_id     bigint NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  makharij       smallint CHECK (makharij BETWEEN 1 AND 5),
+  tajweed        smallint CHECK (tajweed BETWEEN 1 AND 5),
+  waqf           smallint CHECK (waqf BETWEEN 1 AND 5),
+  pace           smallint CHECK (pace BETWEEN 1 AND 5),
+  marks          jsonb NOT NULL DEFAULT '[]'::jsonb,
+  body           text NOT NULL DEFAULT '' CHECK (char_length(body) <= 600),
+  flagged        text,
+  created_at     timestamptz NOT NULL DEFAULT now(),
+  updated_at     timestamptz NOT NULL DEFAULT now()
+);
+GRANT ALL ON ALL TABLES IN SCHEMA public TO tafsirflow;
+GRANT ALL ON ALL SEQUENCES IN SCHEMA public TO tafsirflow;
+
+-- AI tutor Dalil / Hidaya (src/lib/tutor/store.ts creates these on first use as well): one row per question without
+-- text, user or IP (180 days), and reported answers without user or IP (90 days)
+CREATE TABLE IF NOT EXISTS tutor_log (
+  id         bigserial PRIMARY KEY,
+  day        date NOT NULL DEFAULT CURRENT_DATE,
+  created_at timestamptz NOT NULL DEFAULT now(),
+  source     text NOT NULL,
+  locale     text NOT NULL,
+  context    text,
+  category   text,
+  outcome    text NOT NULL,
+  cached     boolean NOT NULL DEFAULT false,
+  passages   integer NOT NULL DEFAULT 0,
+  tokens_in  integer NOT NULL DEFAULT 0,
+  tokens_out integer NOT NULL DEFAULT 0,
+  ms         integer NOT NULL DEFAULT 0,
+  model      text
+);
+CREATE INDEX IF NOT EXISTS tutor_log_day ON tutor_log (day);
+CREATE TABLE IF NOT EXISTS tutor_reports (
+  id         bigserial PRIMARY KEY,
+  created_at timestamptz NOT NULL DEFAULT now(),
+  answer_id  text NOT NULL,
+  reason     text NOT NULL,
+  note       text,
+  locale     text NOT NULL,
+  question   text,
+  answer     text,
+  sources    text,
+  status     text NOT NULL DEFAULT 'open'
+);
+
+-- Together, review fixes 22.10.2026: circle week rows are written at most every 6 hours (or when the goal is reached);
+-- one nudge per sender, recipient and UTC day (enforced by a unique index; the 20-hour rule and the daily limits are
+-- checked under an advisory lock on the recipient in the same transaction)
+ALTER TABLE together_circle_weeks ADD COLUMN IF NOT EXISTS updated_at timestamptz NOT NULL DEFAULT now();
+ALTER TABLE together_nudges ADD COLUMN IF NOT EXISTS day date NOT NULL DEFAULT ((now() AT TIME ZONE 'UTC')::date);
+CREATE UNIQUE INDEX IF NOT EXISTS together_nudges_pair_day ON together_nudges(from_id, to_id, day);
+CREATE INDEX IF NOT EXISTS together_nudges_created ON together_nudges(created_at);
+GRANT ALL ON ALL TABLES IN SCHEMA public TO tafsirflow;
+
+-- Founder badge (owner 22.10.2026): a gold check for exactly one account, the developer and founder. Only this
+-- migration sets it (never derived from a username); the unique index allows one founder at most. community_profiles
+-- carries a mirror (kept by triggers) so every profile select can show it without a join.
+ALTER TABLE users ADD COLUMN IF NOT EXISTS founder boolean NOT NULL DEFAULT false;
+CREATE UNIQUE INDEX IF NOT EXISTS users_one_founder ON users ((true)) WHERE founder;
+UPDATE users SET founder = true
+ WHERE lower(email) = 'contact@namishams.com' AND email_verified IS TRUE AND NOT founder
+   AND NOT EXISTS (SELECT 1 FROM users f WHERE f.founder);
+ALTER TABLE community_profiles ADD COLUMN IF NOT EXISTS founder boolean NOT NULL DEFAULT false;
+CREATE OR REPLACE FUNCTION community_profiles_founder_sync() RETURNS trigger LANGUAGE plpgsql AS $$
+BEGIN
+  NEW.founder := COALESCE((SELECT u.founder FROM users u WHERE u.id = NEW.user_id), false);
+  RETURN NEW;
+END $$;
+DROP TRIGGER IF EXISTS community_profiles_founder ON community_profiles;
+CREATE TRIGGER community_profiles_founder BEFORE INSERT OR UPDATE ON community_profiles FOR EACH ROW EXECUTE FUNCTION community_profiles_founder_sync();
+CREATE OR REPLACE FUNCTION users_founder_sync() RETURNS trigger LANGUAGE plpgsql AS $$
+BEGIN
+  IF NEW.founder IS DISTINCT FROM OLD.founder THEN UPDATE community_profiles SET founder = NEW.founder WHERE user_id = NEW.id; END IF;
+  RETURN NEW;
+END $$;
+DROP TRIGGER IF EXISTS users_founder ON users;
+CREATE TRIGGER users_founder AFTER UPDATE OF founder ON users FOR EACH ROW EXECUTE FUNCTION users_founder_sync();
+UPDATE community_profiles c SET founder = u.founder FROM users u WHERE u.id = c.user_id AND c.founder IS DISTINCT FROM u.founder;
+GRANT ALL ON ALL TABLES IN SCHEMA public TO tafsirflow;

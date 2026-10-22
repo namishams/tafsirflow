@@ -26,6 +26,7 @@ import { levelOf as pointsLevel, readPoints, streakOf as pointsStreak, totalPoin
 import { buildCtx, earnedIds, hoursOf, stickerById } from "@/lib/stickers";
 import DonateCTA from "./DonateCTA";
 import ConfirmCode from "./auth/ConfirmCode";
+import { clearDeviceOnly } from "@/lib/sisters/state";
 
 const TABS = ["overview", "stats", "badges", "ranking", "learning", "account"] as const;
 type Tab = (typeof TABS)[number];
@@ -86,8 +87,8 @@ export default function ProfileView() {
     flash("pw", r.ok ? t("pwChanged") : e === "current" ? t("pwWrong") : e === "weak" ? t("pwWeak") : t("error"));
     if (r.ok) setPw({ current: "", next: "" });
   };
-  const logoutAll = async () => { await post({ action: "logout-all" }); stopSync(); router.push("/account"); };
-  const logout = async () => { await fetch("/api/auth/logout", { method: "POST" }); stopSync(); router.push("/account"); };
+  const logoutAll = async () => { await post({ action: "logout-all" }); stopSync(); clearDeviceOnly(); router.push("/account"); };
+  const logout = async () => { await fetch("/api/auth/logout", { method: "POST" }); stopSync(); clearDeviceOnly(); router.push("/account"); };
   const deleteAccount = async () => {
     if (!confirm(t("deleteConfirm"))) return;
     const r = await post({ action: "delete", current: del });

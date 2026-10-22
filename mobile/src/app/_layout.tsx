@@ -22,7 +22,10 @@ import { useTheme } from "@/lib/theme";
 import { RewardsHost } from "@/features/progress";
 import { NowPlayingBar } from "@/features/radio/MiniPlayer";
 import { NotificationsBridge } from "@/features/daily/NotificationsBridge";
+import { UsernamePromptBridge } from "@/features/talents/usernamePrompt";
 import { DailyMoment } from "@/features/daily/DailyMoment";
+import { PerfProbe } from "@/lib/perf";
+import { stackFreezeLayout } from "@/lib/freeze";
 
 SplashScreen.preventAutoHideAsync().catch(() => undefined);
 
@@ -33,7 +36,8 @@ function Routes() {
   const t = useT();
   const theme = useTheme();
   return (
-    <Stack screenOptions={stackOptions(theme)}>
+    // screens two or more levels below the top stop re-rendering until they are shown again (lib/freeze.tsx)
+    <Stack screenOptions={stackOptions(theme)} screenLayout={stackFreezeLayout}>
       <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
       <Stack.Screen name="sign-in" options={{ presentation: "modal", headerShown: false, title: t("auth.signInTitle") }} />
       <Stack.Screen name="register" options={{ presentation: "modal", headerShown: false, title: t("auth.registerTitle") }} />
@@ -75,9 +79,10 @@ export default function RootLayout() {
               <SyncBridge />
               <StatusBar style="light" />
               <RewardsHost>
-                <Routes />
+                <PerfProbe><Routes /></PerfProbe>
                 <NowPlayingBar />
                 <NotificationsBridge />
+      <UsernamePromptBridge />
                 <DailyMoment />
                 <SharerCelebration />
                 <GardenCelebrate />

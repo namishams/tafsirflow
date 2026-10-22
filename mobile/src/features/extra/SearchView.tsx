@@ -76,6 +76,20 @@ export function SearchView({ initial }: { initial?: string }) {
   }, [s, ref, chapters]);
 
   const mark = t.dark ? "rgba(214,180,108,0.3)" : "rgba(214,180,108,0.38)";
+  // the verse results (up to 20 with Arabic, translation and highlights) are built once per answer, not again on every
+  // keystroke in the search field
+  const hitTiles = useMemo(() => hits?.map((h) => (
+    <ResultTile key={h.verse_key} onPress={() => openVerse(h.verse_key)} label={`${h.verse_key}. ${h.translation.replace(/<[^>]+>/g, "")}`}>
+      <View style={{ flexDirection: "row", alignItems: "center", gap: 12 }}>
+        <QKey>{h.verse_key}</QKey>
+        <LinearGradient colors={[alpha(GOLD, 0.45), "transparent"]} start={{ x: 0, y: 0 }} end={{ x: 1, y: 0 }} style={{ flex: 1, height: 1 }} />
+      </View>
+      <Text style={{ fontFamily: ARABIC_FONT, fontSize: 24, lineHeight: 48, color: t.ink, writingDirection: "rtl", textAlign: AR_RIGHT, marginTop: 10 }}>
+        <Highlighted html={h.text} mark={mark} />
+      </Text>
+      {h.translation ? <Text style={{ fontFamily: FONT.regular, fontSize: 15, lineHeight: 23, color: t.muted, marginTop: 6 }}><Highlighted html={h.translation} mark={mark} /></Text> : null}
+    </ResultTile>
+  )), [hits, mark, t]);
   return (
     <Page>
       <MarbleHero kicker={wa("name")} title={ws("title")}>
@@ -129,18 +143,7 @@ export function SearchView({ initial }: { initial?: string }) {
         {failed ? <Text style={{ fontFamily: FONT.regular, fontSize: 15, color: t.muted, textAlign: "center", paddingVertical: 24 }}>{x.offline}</Text> : null}
         {hits && hits.length === 0 && !busy ? <Text style={{ fontFamily: FONT.regular, fontSize: 15, color: t.muted, textAlign: "center", paddingVertical: 24 }}>{ws("noResults")}</Text> : null}
         {hits && hits.length > 0 ? <Text style={{ fontFamily: FONT.semibold, fontSize: 11.5, letterSpacing: 1.8, textTransform: "uppercase", color: t.muted, marginTop: 8 }}>{x.search.verses}</Text> : null}
-        {hits?.map((h) => (
-          <ResultTile key={h.verse_key} onPress={() => openVerse(h.verse_key)} label={`${h.verse_key}. ${h.translation.replace(/<[^>]+>/g, "")}`}>
-            <View style={{ flexDirection: "row", alignItems: "center", gap: 12 }}>
-              <QKey>{h.verse_key}</QKey>
-              <LinearGradient colors={[alpha(GOLD, 0.45), "transparent"]} start={{ x: 0, y: 0 }} end={{ x: 1, y: 0 }} style={{ flex: 1, height: 1 }} />
-            </View>
-            <Text style={{ fontFamily: ARABIC_FONT, fontSize: 24, lineHeight: 48, color: t.ink, writingDirection: "rtl", textAlign: AR_RIGHT, marginTop: 10 }}>
-              <Highlighted html={h.text} mark={mark} />
-            </Text>
-            {h.translation ? <Text style={{ fontFamily: FONT.regular, fontSize: 15, lineHeight: 23, color: t.muted, marginTop: 6 }}><Highlighted html={h.translation} mark={mark} /></Text> : null}
-          </ResultTile>
-        ))}
+        {hitTiles}
       </View>
     </Page>
   );

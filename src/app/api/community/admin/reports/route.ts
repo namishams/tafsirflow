@@ -20,7 +20,8 @@ export async function GET(req: NextRequest) {
             (SELECT count(*)::int FROM community_reports x WHERE x.reported_id = r.reported_id) AS reports_total,
             m.body AS message, m.removed_at AS message_removed,
             cm.body AS comment, cm.removed_at AS comment_removed, po.verse_key AS post_verse, po.status AS post_status, (po.media_path IS NOT NULL) AS post_media,
-            mr.body AS review_body, ms.verse_key AS sub_verse, ms.note AS sub_note, (ms.media_path IS NULL) AS sub_removed
+            mr.body AS review_body, ms.verse_key AS sub_verse, ms.note AS sub_note, (ms.media_path IS NULL) AS sub_removed,
+            trv.body AS trev_body, tr.kind AS trec_kind, tr.surah AS trec_surah, tr.from_verse AS trec_from, tr.to_verse AS trec_to, tr.letter AS trec_letter, (tr.media_path IS NULL) AS trec_removed
        FROM community_reports r
        LEFT JOIN community_profiles rp ON rp.user_id = r.reported_id
        LEFT JOIN community_profiles rr ON rr.user_id = r.reporter_id
@@ -29,6 +30,8 @@ export async function GET(req: NextRequest) {
        LEFT JOIN community_posts po ON r.target_type = 'post' AND po.id = r.target_id
        LEFT JOIN mentoring_reviews mr ON r.target_type = 'mentoring_review' AND mr.id = r.target_id
        LEFT JOIN mentoring_submissions ms ON r.target_type = 'mentoring_submission' AND ms.id = r.target_id
+       LEFT JOIN teacher_recitation_reviews trv ON r.target_type = 'teacher_review' AND trv.id = r.target_id
+       LEFT JOIN teacher_recitations tr ON r.target_type = 'teacher_recitation' AND tr.id = r.target_id
       WHERE ${status === "open" ? "r.status = 'open'" : "r.status <> 'open'"}
       ORDER BY r.created_at ${status === "open" ? "ASC" : "DESC"} LIMIT 100`,
   );
@@ -40,7 +43,10 @@ export async function GET(req: NextRequest) {
         : x.target_type === "comment" ? { text: x.comment ?? null, removed: !!x.comment_removed }
         // Mishary mentoring: the review text, or the recording's verse and note (removing deletes the note and the audio)
         : x.target_type === "mentoring_review" ? { text: x.review_body ?? null, removed: !x.review_body }
-        : x.target_type === "mentoring_submission" ? { text: [x.sub_verse, x.sub_note].filter(Boolean).join(" · ") || null, removed: !!x.sub_removed && !x.sub_note } : null,
+        : x.target_type === "mentoring_submission" ? { text: [x.sub_verse, x.sub_note].filter(Boolean).join(" · ") || null, removed: !!x.sub_removed && !x.sub_note }
+        // recordings for a teacher (Shams 3.0): the feedback text, or kind and range of the recording (removing deletes the audio)
+        : x.target_type === "teacher_review" ? { text: x.trev_body ?? null, removed: !x.trev_body }
+        : x.target_type === "teacher_recitation" ? { text: [x.trec_kind, x.trec_surah ? `${x.trec_surah}:${x.trec_from}-${x.trec_to}` : null, x.trec_letter].filter(Boolean).join(" · ") || null, removed: !!x.trec_removed } : null,
       post: x.target_type === "post" ? { id: String(x.target_id), verseKey: x.post_verse, status: x.post_status, media: x.post_media ? `/api/community/media/${x.target_id}` : null } : null,
     })),
   }, 200, NO_STORE);
@@ -69,6 +75,13 @@ export async function POST(req: NextRequest) {
       // the reported recording: note and audio file are deleted, the row stays (like a withdrawal)
       const s = await p.query("SELECT media_path FROM mentoring_submissions WHERE id = $1", [rep.target_id]);
       await p.query("UPDATE mentoring_submissions SET note = '', media_path = NULL, deleted_at = COALESCE(deleted_at, now()) WHERE id = $1", [rep.target_id]);
+      if (s.rows[0]?.media_path) await removeMedia(s.rows[0].media_path);
+    } else if (rep.target_type === "teacher_review") {
+      // the rubric and the marks stay, the reported text goes
+      await p.query("UPDATE teacher_recitation_reviews SET body = '' WHERE id = $1", [rep.target_id]);
+    } else if (rep.target_type === "teacher_recitation") {
+      const s = await p.query("SELECT media_path FROM teacher_recitations WHERE id = $1", [rep.target_id]);
+      await p.query("UPDATE teacher_recitations SET media_path = NULL, deleted_at = COALESCE(deleted_at, now()) WHERE id = $1", [rep.target_id]);
       if (s.rows[0]?.media_path) await removeMedia(s.rows[0].media_path);
     } else return json({ error: "bad_request" }, 400);
   }

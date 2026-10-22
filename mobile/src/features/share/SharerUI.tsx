@@ -65,7 +65,7 @@ export function SharerCelebration() {
   return (
     <View pointerEvents="none" style={{ position: "absolute", left: 0, right: 0, top: insets.top + 12, alignItems: "center", zIndex: 1000 }}>
       <Animated.View accessibilityLiveRegion="assertive" accessible accessibilityLabel={`${fillText(s.tierUp, { n: tier })}. ${s.tierUpLead}`}
-        style={{ opacity: v, transform: [{ scale }], borderRadius: R.card, overflow: "hidden", shadowColor: "#000", shadowOpacity: 0.3, shadowRadius: 14, shadowOffset: { width: 0, height: 8 } }}>
+        style={{ opacity: v, transform: [{ scale }], borderRadius: R.card, overflow: "hidden", backgroundColor: stage.bg, shadowColor: "#000", shadowOpacity: 0.3, shadowRadius: 14, shadowOffset: { width: 0, height: 8 } }}>
         <LinearGradient colors={[stage.bg, stage.deep]} style={{ flexDirection: "row", alignItems: "center", gap: 14, paddingVertical: 14, paddingHorizontal: 18, borderWidth: 1, borderColor: "rgba(233,207,153,0.45)", borderRadius: R.card }}>
           <LinearGradient colors={["#f3e2b6", "#c6a65e"]} style={{ width: 44, height: 44, borderRadius: 22, alignItems: "center", justifyContent: "center" }}>
             <Icon name="send" color="#3a2a08" size={20} />

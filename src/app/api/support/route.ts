@@ -8,7 +8,7 @@ export const dynamic = "force-dynamic";
 // Voluntary support via Ziina (UAE). With ZIINA_API_KEY in the server environment a payment intent is created for the
 // chosen amount and the visitor goes to Ziina's checkout; without it the page shows the personal Ziina payment link
 // (SUPPORT_URL) with a QR code. The key lives only in /srv/tafsirflow/.env.app and never leaves the server.
-// Donations unlock nothing and are not stored here – Ziina is the record.
+// Support payments unlock nothing and are not stored here – Ziina is the record.
 const qrs = new Map<string, Promise<string>>();
 const qrOf = (link: string) => {
   if (!qrs.has(link)) qrs.set(link, QRCode.toString(link, { type: "svg", margin: 1, errorCorrectionLevel: "M", color: { dark: "#0e221b", light: "#ffffff" } }).catch(() => ""));
@@ -46,7 +46,7 @@ export async function POST(req: NextRequest) {
   const page = `${origin}/${loc}/support`;
   const r = await createPaymentIntent({
     amountAed: aed,
-    message: "Quran Masterclass – voluntary support (sadaqa)",
+    message: "Quran Masterclass – voluntary support payment to ICSL FZE",
     successUrl: `${page}?pi={PAYMENT_INTENT_ID}`, // Ziina fills in the id; the page then asks this route for the real status
     cancelUrl: `${page}?payment=cancelled`,
     failureUrl: `${page}?payment=failed`,

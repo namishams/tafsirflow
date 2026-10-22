@@ -1,31 +1,17 @@
-import { Text, View } from "react-native";
-import { Stack } from "expo-router";
-import { Page, PageHero, ProGate } from "@/components/page";
-import { AssistantChat, AssistantSuggestions } from "@/features/extra/AssistantChat";
-import { useX } from "@/features/extra/strings";
-import { usePro } from "@/lib/pro";
-import { FONT, useTheme } from "@/lib/theme";
+import { useMemo } from "react";
+import { Stack, useLocalSearchParams } from "expo-router";
+import { TutorChat } from "@/features/tutor/TutorChat";
+import type { TutorContext } from "@/features/tutor/api";
 
-// Website /assistant. In the app the assistant is part of Pro: free users see what it does and the way to Pro.
+// The tutor (Dalil, or Hidaya for sisters): website /assistant. Free users get a few questions a day, Pro many more
+// (server limits); the consent screen comes before the first question. Entry points pass ?ctx=<json>&q=<question>.
 export default function AssistantScreen() {
-  const x = useX().assistant;
-  const t = useTheme();
-  const { pro } = usePro();
-  const hero = <PageHero back topInset eyebrow={x.kicker} title={x.title} lead={x.lead} />;
+  const p = useLocalSearchParams<{ ctx?: string; q?: string }>();
+  const context = useMemo<TutorContext | null>(() => { try { return p.ctx ? (JSON.parse(String(p.ctx)) as TutorContext) : null; } catch { return null; } }, [p.ctx]);
   return (
     <>
       <Stack.Screen options={{ headerShown: false }} />
-      {pro ? <AssistantChat header={hero} /> : (
-        <Page>
-          {hero}
-          <ProGate feature="general" title={x.proTitle} text={x.proText} />
-          <View style={{ paddingHorizontal: 16, marginTop: 24, gap: 12 }}>
-            <Text style={{ fontFamily: FONT.semibold, fontSize: 11.5, letterSpacing: 1.8, textTransform: "uppercase", color: t.muted }}>{x.examples}</Text>
-            <AssistantSuggestions />
-            <Text style={{ fontFamily: FONT.regular, fontSize: 12.5, lineHeight: 18, color: t.muted, marginTop: 8 }}>{x.note}</Text>
-          </View>
-        </Page>
-      )}
+      <TutorChat context={context} initial={p.q ? String(p.q).slice(0, 800) : undefined} />
     </>
   );
 }

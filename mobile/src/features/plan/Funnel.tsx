@@ -1,8 +1,8 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { AccessibilityInfo, Animated, Easing, Pressable, ScrollView, Text, TextInput, View, type ScrollViewInstance } from "react-native";
+import { AccessibilityInfo, Animated, Easing, Pressable, ScrollView, StyleSheet, Text, TextInput, View, type ScrollViewInstance } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { router, useLocalSearchParams, useNavigation, type Href } from "expo-router";
-import { Display, GoldButton, Stage } from "@/components/brand";
+import { Chip, Display, GlassIconButton, GlassSurface, GoldButton, Stage } from "@/components/brand";
 import { Icon } from "@/components/icons";
 import { LANGS, langLabel, useLang, type Lang } from "@/i18n";
 import { FONT, R, stage } from "@/lib/theme";
@@ -30,6 +30,8 @@ import { useO2 } from "./texts2";
 import { CHALLENGES, GOALS_V2, INTERESTS, primaryGoal, readName, readV2, saveName, saveV2, type Challenge, type GoalV2, type Interest, type V2Answers } from "./v2";
 import { MethodIntro, PathView, PeopleOfQuran, ReplyCard, useGoalLabel } from "./Onboard2";
 import { ProfileSetupStep } from "@/features/talents/ProfileSetup";
+import { IdentityStep } from "@/features/identity/IdentityStep";
+import { TutorPlanStep } from "@/features/tutor/OnboardingStep";
 
 // The first-run funnel (onboarding v2): language, an optional name, then multi-select goals, interests and challenges,
 // and the v1 single-select questions (level, minutes, reciter, tradition, prayer, motivation). After every answer a
@@ -37,9 +39,10 @@ import { ProfileSetupStep } from "@/features/talents/ProfileSetup";
 // + the 30-day plan + courses) → the planting ceremony (only without a tree) → the day-1 paywall → the feed.
 // Answers so far are kept in qmc.quiz.draft, so the reload a right-to-left language needs resumes at the same step.
 // "?personalise=1" (Masterclass tab): the same questions for an existing plan; keeps the plan's start date and tree.
+// "identity": brother/sister and an age band, both optional (lib/identity.ts, features/identity/IdentityStep.tsx).
 // "profile" (owner, build 20): display name, @username and an optional photo for the Talents community (ProfileSetup).
-const Q_ALL = ["lang", "name", "profile", "goals", "interests", "challenges", "level", "minutes", "reciter", "tradition", "prayer", "motivation"] as const;
-type Phase = "quiz" | "story" | "method" | "building" | "plan" | "garden" | "paywall";
+const Q_ALL = ["lang", "name", "identity", "profile", "goals", "interests", "challenges", "level", "minutes", "reciter", "tradition", "prayer", "motivation"] as const;
+type Phase = "quiz" | "story" | "method" | "building" | "plan" | "garden" | "tutor" | "paywall";
 type Draft = QuizDraft & { goals?: GoalV2[]; interests?: Interest[]; challenges?: Challenge[]; v?: 2 };
 
 /** the website's goal (tf:goal, synced with the account) from the quiz answers */
@@ -125,7 +128,10 @@ export function Funnel() {
     return nav.addListener("beforeRemove", () => { if (phaseRef.current === "quiz") forgetRef.current(); });
   }, [navigation]);
   const done = () => { if (pers && router.canGoBack()) goBack(); else router.replace("/" as Href); };
-  const afterPlan = () => {
+  // the optional AI step "Ask Dalil to tailor your plan" (features/tutor/OnboardingStep.tsx) comes after the plan and the
+  // tree; it skips itself when the tutor is off or unreachable, and everything works without it
+  const afterPlan = () => setPhase("tutor");
+  const afterTutor = () => {
     const cfg = remoteConfig()?.monetize?.paywall?.day1;
     if (pro || pers || cfg?.enabled === false) done(); else setPhase("paywall");
   };
@@ -139,13 +145,15 @@ export function Funnel() {
   if (phase === "plan" && plan && v2) return <PathView plan={plan} v2={v2} name={name} hasTree={hasTree} onNext={() => (hasTree ? afterPlan() : setPhase("garden"))} />;
   if (phase === "plan" && plan) return <PlanView plan={plan} onNext={() => (hasTree ? afterPlan() : setPhase("garden"))} />;
   if (phase === "garden") return <PlantFlow minutes={plan?.answers.minutes} onDone={afterPlan} onLater={afterPlan} />;
+  if (phase === "tutor") return <TutorPlanStep plan={plan} onDone={afterTutor} />;
   if (phase === "paywall") return <Day1Paywall plan={plan} onDone={done} />;
 
   const q = Q[step];
   const opt = (key: string, on: boolean, label: string, desc: string | null, onPress: () => void, badge?: string, multi?: boolean) => (
     <Pressable key={key} onPress={onPress} disabled={!!reply} accessibilityRole={multi ? "checkbox" : "button"} accessibilityState={multi ? { checked: on } : { selected: on }} accessibilityLabel={desc ? `${label}. ${desc}` : label}
-      style={({ pressed }) => ({ flexDirection: "row", alignItems: "center", gap: 12, borderRadius: R.md, borderWidth: 1, paddingHorizontal: 16, paddingVertical: 14, minHeight: 56,
-        borderColor: on ? stage.gold : pressed ? alpha(stage.gold, 0.6) : alpha(stage.gold, 0.22), backgroundColor: on ? alpha(stage.gold, 0.12) : pressed ? "rgba(255,255,255,0.06)" : "rgba(6,30,23,0.62)" })}>
+      style={({ pressed }) => ({ transform: [{ scale: pressed ? 0.985 : 1 }] })}>
+      <GlassSurface onStage interactive style={{ flexDirection: "row", alignItems: "center", gap: 12, borderRadius: 18, paddingHorizontal: 16, paddingVertical: 14, minHeight: 56,
+        borderWidth: on ? 1 : StyleSheet.hairlineWidth, borderColor: on ? stage.gold : alpha(stage.gold, 0.28), backgroundColor: on ? alpha(stage.gold, 0.12) : undefined }}>
       <View style={{ flex: 1 }}>
         <Text style={{ fontFamily: FONT.semibold, fontSize: 16, color: "#ffffff" }}>{label}</Text>
         {desc ? <Text style={{ fontFamily: FONT.regular, fontSize: 13, lineHeight: 18, color: stage.textMuted, marginTop: 3 }}>{desc}</Text> : null}
@@ -156,6 +164,7 @@ export function Funnel() {
           {on ? <Icon name="check" color="#1a140a" size={14} /> : null}
         </View>
       ) : on ? <Icon name="checkCircle" color={stage.gold} size={20} /> : null}
+      </GlassSurface>
     </Pressable>
   );
   const title = (s: string) => <Display size="title1" onStage style={{ marginBottom: 16 }}>{s}</Display>;
@@ -168,9 +177,7 @@ export function Funnel() {
     <JourneyStage progress={(step + 1) / Q.length} horizon={0.5}>
       <View style={{ paddingTop: insets.top + 8, paddingHorizontal: 20 }}>
         <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between" }}>
-          <Pressable onPress={back} accessibilityRole="button" accessibilityLabel={p.back} hitSlop={10} style={{ width: 36, height: 36, borderRadius: 18, alignItems: "center", justifyContent: "center", backgroundColor: "rgba(255,255,255,0.08)" }}>
-            <Icon name="chevronLeft" color="#ffffff" size={20} />
-          </Pressable>
+          <GlassIconButton onStage icon="chevronLeft" label={p.back} onPress={back} size={36} />
           <Text style={{ fontFamily: FONT.semibold, fontSize: 11.5, letterSpacing: 2, textTransform: "uppercase", color: stage.gold }}>{p.kicker} · {step + 1}/{Q.length}</Text>
           <Text onPress={leave} accessibilityRole="button" style={{ fontFamily: FONT.medium, fontSize: 14, color: stage.textMuted, paddingVertical: 8 }}>{p.skip}</Text>
         </View>
@@ -206,6 +213,7 @@ export function Funnel() {
             ) : null}
           </>
         ) : null}
+        {q === "identity" ? <IdentityStep disabled={!!reply} onDone={(text) => answer({}, text)} /> : null}
         {q === "profile" ? <ProfileSetupStep name={name} onDone={() => { tick(); save({}, step + 1); setStep(step + 1); }} /> : null}
         {q === "goals" ? (
           <>
@@ -223,12 +231,7 @@ export function Funnel() {
               {INTERESTS.map((i) => {
                 const on = !!draft.interests?.includes(i);
                 return (
-                  <Pressable key={i} disabled={!!reply} onPress={() => pick({ interests: toggle(draft.interests, i) })} accessibilityRole="checkbox" accessibilityState={{ checked: on }} accessibilityLabel={o[`i_${i}`]}
-                    style={({ pressed }) => ({ flexDirection: "row", alignItems: "center", gap: 6, borderRadius: R.pill, borderWidth: 1, paddingHorizontal: 14, paddingVertical: 10, minHeight: 44,
-                      borderColor: on ? stage.gold : alpha(stage.gold, 0.3), backgroundColor: on ? alpha(stage.gold, 0.16) : pressed ? "rgba(255,255,255,0.06)" : "rgba(6,30,23,0.62)" })}>
-                    {on ? <Icon name="check" color={stage.gold} size={14} /> : null}
-                    <Text style={{ fontFamily: FONT.semibold, fontSize: 15, color: "#ffffff" }}>{o[`i_${i}`]}</Text>
-                  </Pressable>
+                  <Chip key={i} onStage role="checkbox" selected={on} icon={on ? "check" : undefined} disabled={!!reply} label={o[`i_${i}`]} onPress={() => pick({ interests: toggle(draft.interests, i) })} />
                 );
               })}
             </View>

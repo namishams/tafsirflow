@@ -4,7 +4,7 @@ import path from "node:path";
 import { spawn } from "node:child_process";
 import type { User } from "@/lib/auth";
 import { pool } from "@/lib/db";
-import { removeMedia } from "@/lib/media";
+import { mediaDir, removeMedia } from "@/lib/media";
 import { NOT_BLOCKED } from "@/lib/talents";
 import { canJudge, cardsFor, isMaster, mentoringDir, memberCard } from "./mentoring";
 
@@ -82,26 +82,27 @@ function run(cmd: string, args: string[], ms: number): Promise<boolean> {
   });
 }
 
-/** stores a recording as mentoring/<random>.m4a (ffmpeg via FFMPEG_PATH, metadata stripped, cut at maxSeconds); without ffmpeg the checked original */
-export async function storeRecording(buf: Buffer, maxSeconds: number): Promise<{ rel: string; mime: string } | { error: string }> {
-  const dir = await mentoringDir();
+/** stores a recording as <sub>/<random>.m4a (ffmpeg via FFMPEG_PATH, metadata stripped, cut at maxSeconds); without ffmpeg the checked original.
+ *  sub: "mentoring" (default) or another private folder inside MEDIA_DIR with its own retention (e.g. "teacher-rec") */
+export async function storeRecording(buf: Buffer, maxSeconds: number, sub = "mentoring"): Promise<{ rel: string; mime: string } | { error: string }> {
+  const dir = sub === "mentoring" ? await mentoringDir() : await mediaDir().then(async (d) => { if (!d) return null; try { await fs.mkdir(path.join(d, sub), { recursive: true }); return d; } catch { return null; } });
   if (!dir) return { error: "media_unavailable" };
   if (buf.length > MAX_AUDIO_BYTES) return { error: "media_too_large" };
   const s = sniffAudio(buf);
   if (!s) return { error: "media_format" };
   const name = crypto.randomBytes(18).toString("hex");
-  const tmp = path.join(dir, "mentoring", `.${name}.${s.ext}`);
+  const tmp = path.join(dir, sub, `.${name}.${s.ext}`);
   await fs.writeFile(tmp, buf, { mode: 0o600 });
-  const out = path.join(dir, "mentoring", `${name}.m4a`);
+  const out = path.join(dir, sub, `${name}.m4a`);
   const ff = process.env.FFMPEG_PATH || "ffmpeg";
   if (await run(ff, ["-y", "-i", tmp, "-t", String(maxSeconds + 1), "-map_metadata", "-1", "-vn", "-c:a", "aac", "-b:a", "96k", "-movflags", "+faststart", out], 90_000)) {
     await fs.rm(tmp, { force: true });
-    return { rel: `mentoring/${name}.m4a`, mime: "audio/mp4" };
+    return { rel: `${sub}/${name}.m4a`, mime: "audio/mp4" };
   }
   await fs.rm(out, { force: true });
-  const keep = path.join(dir, "mentoring", `${name}.${s.ext}`);
+  const keep = path.join(dir, sub, `${name}.${s.ext}`);
   await fs.rename(tmp, keep);
-  return { rel: `mentoring/${name}.${s.ext}`, mime: s.mime };
+  return { rel: `${sub}/${name}.${s.ext}`, mime: s.mime };
 }
 
 export { removeMedia, cardsFor, isMaster, canJudge };

@@ -5,7 +5,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { LinearGradient } from "expo-linear-gradient";
 import Svg, { Circle, Path } from "react-native-svg";
 import { CALLIG_FONT, FONT, goldButton, stage, useTheme } from "@/lib/theme";
-import { Divider, Stage } from "@/components/brand";
+import { Divider, GlassButton, GlassIconButton, GlassSurface, Stage } from "@/components/brand";
 import { Icon } from "@/components/icons";
 import { ErrorState, READ_WIDTH } from "@/components/page";
 import { useTabBarSpace } from "@/components/TabBar";
@@ -171,10 +171,7 @@ export default function QuranIndex() {
         {offlineList ? (
           <View accessibilityRole="alert" style={{ marginBottom: 20, flexDirection: "row", alignItems: "center", gap: 12, borderRadius: 12, borderWidth: 1, borderColor: "rgba(201,166,94,0.45)", backgroundColor: pal.surface, padding: 14 }}>
             <Text style={{ flex: 1, fontFamily: FONT.regular, fontSize: 13.5, lineHeight: 19, color: pal.ink }}>{rt("offlineList")}</Text>
-            <Pressable onPress={load} accessibilityRole="button" accessibilityLabel={ra("tryAgain")} hitSlop={6}
-              style={({ pressed }) => ({ minHeight: 40, justifyContent: "center", paddingHorizontal: 14, borderRadius: 999, borderWidth: 1, borderColor: pressed ? "rgba(201,166,94,0.9)" : "rgba(201,166,94,0.5)" })}>
-              <Text style={{ fontFamily: FONT.semibold, fontSize: 13, color: pal.inkGold }}>{ra("tryAgain")}</Text>
-            </Pressable>
+            <GlassButton compact title={ra("tryAgain")} onPress={load} />
           </View>
         ) : null}
         {topCards ? (
@@ -203,10 +200,12 @@ export default function QuranIndex() {
                 const name = byId.get(Number(s))?.name_simple ?? s;
                 return (
                   <Pressable key={k} onPress={() => router.push(`/quran/${s}?v=${v}` as Href)} accessibilityRole="link" accessibilityLabel={`${name} ${v}`}
-                    style={({ pressed }) => [s_.chip, { height: 34, backgroundColor: pressed ? "rgba(201,166,94,0.07)" : pal.surface, borderColor: pressed ? "rgba(201,166,94,0.8)" : "rgba(201,166,94,0.35)" }]}>
-                    <Ribbon color={pal.gold} />
-                    <Text numberOfLines={1} style={{ flexShrink: 1, fontFamily: FONT.semibold, fontSize: 13, color: pal.ink }}>{name}</Text>
-                    <Text style={{ fontFamily: FONT.semibold, fontSize: 13, color: pal.muted, fontVariant: ["tabular-nums"] }}>{v}</Text>
+                    style={({ pressed }) => ({ maxWidth: "100%", transform: [{ scale: pressed ? 0.96 : 1 }] })}>
+                    <GlassSurface interactive style={[s_.chip, { height: 34, borderWidth: StyleSheet.hairlineWidth }]}>
+                      <Ribbon color={pal.gold} />
+                      <Text numberOfLines={1} style={{ flexShrink: 1, fontFamily: FONT.semibold, fontSize: 13, color: pal.ink }}>{name}</Text>
+                      <Text style={{ fontFamily: FONT.semibold, fontSize: 13, color: pal.muted, fontVariant: ["tabular-nums"] }}>{v}</Text>
+                    </GlassSurface>
                   </Pressable>
                 );
               })}
@@ -224,10 +223,9 @@ export default function QuranIndex() {
           <View style={{ flexDirection: "row", alignItems: "center", gap: 8 }}>
             <QSeg fill pal={pal} compact={width <= 440} label={wh("surahs")} value={mode} onChange={changeMode}
               options={[{ id: "surah", label: wh("surahs") }, { id: "juz", label: wm("juz") }]} />
-            <Pressable onPress={() => router.push("/map" as Href)} accessibilityRole="link" accessibilityLabel={wn("map")} hitSlop={4}
-              style={({ pressed }) => ({ width: 40, height: 40, borderRadius: 20, alignItems: "center", justifyContent: "center", borderWidth: 1, backgroundColor: pressed ? "rgba(201,166,94,0.07)" : pal.surface, borderColor: pressed ? "rgba(201,166,94,0.8)" : "rgba(201,166,94,0.35)" })}>
+            <GlassIconButton label={wn("map")} onPress={() => router.push("/map" as Href)} size={40}>
               <Icon name="map" size={17} color={pal.gold} />
-            </Pressable>
+            </GlassIconButton>
           </View>
           <QSeg fill pal={pal} compact={width <= 440} label={`${wh("makki")} / ${wh("madani")}`} value={place} onChange={setPlace}
             options={[
@@ -382,7 +380,7 @@ function PlayDisc() {
   return (
     <View style={{ width: 60, height: 60, alignItems: "center", justifyContent: "center", marginHorizontal: -6 }}>
       <Svg width={60} height={60} style={StyleSheet.absoluteFill}><Circle cx={30} cy={30} r={29.5} fill="none" stroke="rgba(233,207,153,0.55)" strokeWidth={1} strokeDasharray="3 3" /></Svg>
-      <View style={{ width: 48, height: 48, borderRadius: 24, shadowColor: "rgb(214,180,108)", shadowOffset: { width: 0, height: 6 }, shadowRadius: 9, shadowOpacity: 0.5 }}>
+      <View style={{ width: 48, height: 48, borderRadius: 24, backgroundColor: "#c6a65e", shadowColor: "rgb(214,180,108)", shadowOffset: { width: 0, height: 6 }, shadowRadius: 9, shadowOpacity: 0.5 }}>
         <LinearGradient colors={["#e6cd92", "#c6a65e"]} style={{ width: 48, height: 48, borderRadius: 24, alignItems: "center", justifyContent: "center" }}>
           <Svg width={20} height={20} viewBox="0 0 24 24"><Path d="M8 5.5v13l10.5-6.5z" fill="rgb(8,38,29)" /></Svg>
         </LinearGradient>
@@ -422,7 +420,7 @@ const ReviewCallout = memo(function ReviewCallout({ pal, sm, plain, due, streak,
             <Text style={[kicker(plain), { color: pal.inkGold }]}>{review}</Text>
             <Text style={{ marginTop: 2, fontFamily: FONT.display, fontSize: 20, lineHeight: 27, letterSpacing: plain ? 0 : -0.5, color: pal.ink }}>{dueText}</Text>
           </View>
-          <LinearGradient colors={[goldButton.from, goldButton.to]} style={{ height: 44, borderRadius: 6, paddingHorizontal: 20, flexDirection: "row", alignItems: "center", gap: 8 }}>
+          <LinearGradient colors={[goldButton.from, goldButton.to]} style={{ height: 44, borderRadius: 999, overflow: "hidden", paddingHorizontal: 20, flexDirection: "row", alignItems: "center", gap: 8 }}>
             <Text style={{ fontFamily: FONT.bold, fontSize: 14, color: goldButton.text }}>{start}</Text>
             <Svg width={16} height={16} viewBox="0 0 24 24" fill="none" stroke={goldButton.text} strokeWidth={2.2} strokeLinecap="round" strokeLinejoin="round" style={I18nManager.isRTL ? { transform: [{ scaleX: -1 }] } : undefined}>
               <Path d="M5 12h14M13 6l6 6-6 6" />
@@ -455,15 +453,15 @@ function SearchField({ value, onChange, pal, placeholder }: { value: string; onC
   );
 }
 
-/** .q-seg: segmented control in gold and emerald */
+/** .q-seg: the shared segmented look – a glass track with the active segment as a gold capsule */
 function QSeg<T extends string>({ value, options, onChange, label, pal, compact, fill }: {
   value: T; options: { id: T; label: string; icon?: (color: string) => ReactNode }[]; onChange: (v: T) => void; label: string; pal: QPal; compact: boolean; fill?: boolean;
 }) {
   return (
-    <View accessibilityLabel={label} style={{ flexDirection: "row", maxWidth: "100%", flex: fill ? 1 : undefined, padding: 3, gap: 2, borderRadius: 999, borderWidth: 1, borderColor: "rgba(201,166,94,0.35)", backgroundColor: pal.surface }}>
+    <GlassSurface accessibilityLabel={label} style={{ flexDirection: "row", maxWidth: "100%", flex: fill ? 1 : undefined, padding: 3, gap: 2, borderRadius: 999 }}>
       {options.map((o) => {
         const on = o.id === value;
-        const color = on ? "#f3e2b6" : pal.muted;
+        const color = on ? goldButton.text : pal.muted;
         const inner = (
           <View style={{ height: 32, flexDirection: "row", alignItems: "center", justifyContent: "center", gap: compact ? 4 : 6, paddingHorizontal: (compact ? 9 : 13) - 1 }}>
             {o.icon?.(color)}
@@ -473,11 +471,11 @@ function QSeg<T extends string>({ value, options, onChange, label, pal, compact,
         return (
           <Pressable key={o.id} onPress={() => onChange(o.id)} accessibilityRole="button" accessibilityState={{ selected: on }} accessibilityLabel={o.label}
             style={[{ minWidth: 0, borderRadius: 999, flex: fill ? 1 : undefined }, on && s_.segShadow]}>
-            {on ? <LinearGradient colors={EMERALD} style={s_.segOn}>{inner}</LinearGradient> : <View style={s_.segOff}>{inner}</View>}
+            {on ? <LinearGradient colors={[goldButton.from, goldButton.to]} style={s_.segOn}>{inner}</LinearGradient> : <View style={s_.segOff}>{inner}</View>}
           </Pressable>
         );
       })}
-    </View>
+    </GlassSurface>
   );
 }
 
@@ -616,9 +614,9 @@ const JuzCard = memo(function JuzCard({ j, parts, byId, learned, ar, pal, labels
 
 const s_ = StyleSheet.create({
   chip: { flexDirection: "row", alignItems: "center", gap: 7, maxWidth: "100%", paddingHorizontal: 12, borderRadius: 999, borderWidth: 1 },
-  segOn: { borderRadius: 999, borderWidth: 1, borderColor: "rgba(214,180,108,0.5)", overflow: "hidden" },
+  segOn: { borderRadius: 999, borderWidth: 1, borderColor: "rgba(255,255,255,0.35)", overflow: "hidden" },
   segOff: { borderRadius: 999, borderWidth: 1, borderColor: "transparent" },
-  segShadow: { shadowColor: "rgb(6,36,27)", shadowOffset: { width: 0, height: 6 }, shadowRadius: 6, shadowOpacity: 0.35 },
+  segShadow: { backgroundColor: "rgb(6,36,27)", shadowColor: "rgb(6,36,27)", shadowOffset: { width: 0, height: 6 }, shadowRadius: 6, shadowOpacity: 0.35 },
   tile: { borderRadius: 12, borderWidth: 1 },
   innerRing: { position: "absolute", top: 3, left: 3, right: 3, bottom: 3, borderRadius: 8, borderWidth: 1 },
   hereRing: { position: "absolute", top: -4, left: -4, right: -4, bottom: -4, borderRadius: 15, borderWidth: 3, borderColor: "rgba(201,166,94,0.12)" },

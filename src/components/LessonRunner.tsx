@@ -1,4 +1,5 @@
 "use client";
+import SupportNudge from "@/components/SupportNudge";
 import { ArrowBack } from "./Icons";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
@@ -228,6 +229,7 @@ export default function LessonRunner({ s, from }: { s: number; from: number }) {
             {score >= PASS && nextL && <Link href={`/academy/${nextL.s}/${nextL.from}`} className="btn-gold inline-flex h-11 items-center rounded-full px-5 text-sm font-bold">{t("nextLesson")}</Link>}
             <Link href="/academy" className="inline-flex h-11 items-center rounded-full bg-ink px-5 text-sm font-bold text-bg">{t("overview")}</Link>
           </div>
+          {score >= PASS && <SupportNudge className="mt-6" />}
         </section>
       )}
     </main>

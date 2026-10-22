@@ -17,6 +17,8 @@ import { ISLAM } from "./islam";
 import { TAJWEED_LESSONS } from "./tajweed";
 import { LOCALE_META, type AppLocale } from "@/i18n/locales";
 import { COMPANY } from "./company";
+import { appStoreUrl } from "./appstore";
+import { CATALOG } from "./learn/courses/catalog";
 
 const MSG = { en, de, ar, tr, ur, fa, ps, fr, es, id, bn, ru, zh } as unknown as Record<string, typeof en>;
 const msg = (l: string) => MSG[l] ?? en;
@@ -29,7 +31,7 @@ export function llmsTxt(base: string) {
   const langs = routing.locales.map((l) => `[${LOCALE_META[l as AppLocale].label}](${base}/${l})`).join(" · ");
   return `# Quran Masterclass
 
-> Quran Masterclass is a free, multilingual web app for learning the Quran: verse-by-verse audio from renowned reciters, word-by-word meaning, transliteration in Latin letters, classical tafsir (commentary) next to every verse, and memorization (hifz) with spaced repetition. It supports ${routing.locales.length} languages (German, English, Arabic, Turkish, Urdu, Persian/Dari, Pashto, French, Spanish, Indonesian, Bengali, Russian, Chinese) and has a kids mode.
+> Quran Masterclass helps you become a confident Quran reciter with the Shams Method. It is a free, multilingual website and iOS app for learning the Quran: tajweed (recitation rules), memorization (hifz), tafsir and understanding, with Sunni and Shia content. The website is free forever, with no ads and no selling of user data. Features: verse-by-verse audio from renowned reciters, word-by-word meaning, transliteration in Latin letters, classical tafsir (commentary) next to every verse, and memorization (hifz) with spaced repetition. It supports ${routing.locales.length} languages (German, English, Arabic, Turkish, Urdu, Persian/Dari, Pashto, French, Spanish, Indonesian, Bengali, Russian, Chinese) and has a kids mode. The account is the same on the website and in the app, and progress syncs between them.
 
 Quran Masterclass is built for three goals: memorizing the Quran (hifz), understanding it (fahm) and improving recitation (tilawa, tajweed).
 
@@ -68,7 +70,8 @@ The Shams Method is a way of learning, not a new interpretation: explanations co
 ## Who is behind it
 - Founded by ${COMPANY.founder}, who also developed the Shams Method.
 - Operated by ${COMPANY.legalName}, ${COMPANY.city}, United Arab Emirates. Contact: ${COMPANY.email}. Details: [Imprint](${base}/en/legal/imprint), [About](${base}/en/about).
-- The website is free – no subscription, no ads, no paywall. It is privately funded; voluntary donations (sadaqa jariya) through Ziina are welcome but unlock nothing: [Support](${base}/en/support).
+- The website is free – no subscription, no ads, no paywall. The project may be supported voluntarily (a voluntary support payment to ICSL FZE for running Quran Masterclass, not a charitable donation, no consideration in return); supporting unlocks nothing: [Support the project](${base}/en/support).
+- iOS app: [Quran Masterclass on the App Store](${appStoreUrl()}) – same account as the website.
 - The app for iPhone, iPad and Android offers Quran Masterclass Pro, a monthly subscription that can be cancelled any time in the App Store or on Google Play (Shams Method for all 114 surahs, all reciters (the Quran radio is free for everyone), the complete Arabic and Tajweed courses, Academy tests, statistics, AI assistant and personal duas, surahs offline): [Pro](${base}/en/premium).
 
 ## Content sources and attribution
@@ -90,7 +93,7 @@ ${routing.locales.map((l) => `- [${LOCALE_META[l as AppLocale].label}](${base}/l
 
 type Ch = { id: number; name_simple: string; name_arabic: string; verses_count: number; translated_name: { name: string } };
 
-const PAGES: [string, string][] = [["", "Home"], ["/shams", "The Shams Method – a learning method by Nami Shams"], ["/academy", "Academy – learning path through all 114 surahs"], ["/masterclass", "The Masterclass – curriculum: four school stages (Ibtidaʾi to ʿAli), Reciter Path to the Masterclass recital, Arabic A1–C1, tajweed, hifz"], ["/talents", "Quran Masterclass Talents – verified reciter community"], ["/premium", "Quran Masterclass Pro – free vs Pro"], ["/tajweed", "Tajweed course"], ["/vocab", "Quran vocabulary"], ["/khatm", "Khatm planner"], ["/guides", "Guides"], ["/islam", "Understanding Islam – Islam, the Quran, the Prophet, holy cities, Sunni and Shia, how to pray"], ["/quran", "All surahs"], ["/today", "Today (review plan and streak)"], ["/search", "Search"], ["/prayer", "Prayer times"], ["/radio", "Quran radio"], ["/duas", "Duas from the Quran"], ["/support", "Support"], ["/legal/privacy", "Privacy"], ["/legal/terms", "Terms"], ["/legal/imprint", "Imprint"]];
+const PAGES: [string, string][] = [["", "Home"], ["/shams", "The Shams Method – a learning method by Nami Shams"], ["/academy", "Academy – learning path through all 114 surahs"], ["/masterclass", "The Masterclass – curriculum: four school stages (Ibtidaʾi to ʿAli), Reciter Path to the Masterclass recital, Arabic A1–C1, tajweed, hifz"], ["/talents", "Quran Masterclass Talents – verified reciter community"], ["/premium", "Quran Masterclass Pro – free vs Pro"], ["/tajweed", "Tajweed course"], ["/vocab", "Quran vocabulary"], ["/khatm", "Khatm planner"], ["/guides", "Guides"], ["/islam", "Understanding Islam – Islam, the Quran, the Prophet, holy cities, Sunni and Shia, how to pray"], ["/quran", "All surahs"], ["/today", "Today (review plan and streak)"], ["/search", "Search"], ["/prayer", "Prayer times"], ["/radio", "Quran radio"], ["/duas", "Duas from the Quran"], ["/support", "Support the project (voluntary)"], ["/carousels", "Carousels – short swipeable posts on verses, tajweed and hadith"], ["/app", "The iOS app – same account as the website"], ["/courses", "Courses"], ["/legal/privacy", "Privacy"], ["/legal/terms", "Terms"], ["/legal/imprint", "Imprint"]];
 
 export function llmsFullTxt(base: string, chapters: Ch[]) {
   const list = chapters
@@ -108,6 +111,9 @@ export function llmsFullTxt(base: string, chapters: Ch[]) {
 Each link opens the surah page in English; replace /en with another language code for that language.
 
 ${list}
+
+## Courses
+${CATALOG.map((c) => `- [${c.title.en}](${base}/en/courses/${c.id}) – ${c.lead.en}`).join("\n")}
 
 ## Guides (English / German)
 ${GUIDES.map((g) => `- [${g.title_en}](${base}/en/guides/${g.slug}) – ${g.desc_en} (German: ${base}/de/guides/${g.slug})`).join("\n")}

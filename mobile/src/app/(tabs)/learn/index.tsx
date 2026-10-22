@@ -1,10 +1,11 @@
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { PersonaliseCard } from "@/features/plan/Onboard2";
 import { GardenWidget } from "@/features/garden/widgets";
 import { useEffect, useMemo, useState } from "react";
 import { Pressable, Text, View } from "react-native";
 import { Stack, router, type Href } from "expo-router";
 import { ARABIC_FONT, FONT, R, stage, useTheme } from "@/lib/theme";
-import { Eyebrow, GoldButton, GoldCard, GoldProgress, OutlineButton, Poster, PosterGrid, SectionTitle, Stage, StarNumber, SurahBanner, gradientColors } from "@/components/brand";
+import { Eyebrow, GoldButton, GoldCard, GoldProgress, OutlineButton, Poster, PosterGrid, SectionTitle, Stage, StarNumber, SurahBanner, TextButton, gradientColors } from "@/components/brand";
 import { ShamsModeChooser } from "@/features/shams2/ModeChooser";
 import { continueHref, useShamsMode } from "@/features/shams2/mode";
 import { useModeT } from "@/features/shams2/modeText";
@@ -41,6 +42,7 @@ const PRO_PATH = [67, 36, 18, 55, 56, 32, 2, 12, 19, 25, 24, 49];
 
 export default function Masterclass() {
   const t = useTheme();
+  const insets = useSafeAreaInsets();
   const lt = useLearnT();
   const w = useWebT();
   const { lang } = useLang();
@@ -67,7 +69,7 @@ export default function Masterclass() {
       <Stack.Screen options={{ headerShown: false }} />
       <Page>
         {/* tab 3 is the Shams Method (owner): Shams first; the Madrasa (hero, faculty rails) lives in Discover */}
-        <View style={{ paddingHorizontal: 16, marginTop: 24, gap: 28 }}>
+        <View style={{ paddingHorizontal: 16, marginTop: insets.top + 12, gap: 28 }}>
           {/* the Shams Method (the former page hero) with the Shams Method 2.0 hub */}
           <Stage rounded={R.card} hairlines={false} style={{ borderWidth: 1, borderColor: "rgba(214,180,108,0.45)" }}>
             <View style={{ padding: 20, gap: 12 }}>
@@ -98,7 +100,7 @@ export default function Masterclass() {
             <GoldCard>
               <SurahBanner arabic={nextChapter.name_arabic} onStage={false} />
               <Text style={{ fontFamily: FONT.bold, fontSize: 17, color: t.ink, marginTop: 12, textAlign: "center" }}>{lt("continueAt", { surah: `${nextChapter.id}. ${nextChapter.name_simple}`, verse: next.verse })}</Text>
-              <OutlineButton title={lt("continue")} onPress={() => open(next.surah, next.verse)} style={{ marginTop: 14 }} />
+              <GoldButton title={lt("continue")} onPress={() => open(next.surah, next.verse)} style={{ marginTop: 14 }} />
             </GoldCard>
           ) : null}
 
@@ -112,9 +114,7 @@ export default function Masterclass() {
             <View style={{ borderRadius: R.lg, borderWidth: 1, borderColor: t.line, overflow: "hidden", backgroundColor: t.surface }}>
               {freeShown.map((id, i) => <SurahRow key={id} id={id} chapter={byId.get(id)} p={progress[id - 1]} first={i === 0} onPress={() => open(id)} />)}
             </View>
-            <Pressable onPress={() => setAllFree(!allFree)} accessibilityRole="button" style={{ paddingVertical: 12 }}>
-              <Text style={{ fontFamily: FONT.semibold, fontSize: 14, color: t.accent }}>{allFree ? lt("showLess") : `${lt("showMore")} (${FREE_PATH.length})`}</Text>
-            </Pressable>
+            <TextButton title={allFree ? lt("showLess") : `${lt("showMore")} (${FREE_PATH.length})`} onPress={() => setAllFree(!allFree)} style={{ marginTop: 4 }} />
 
             <PathHeader title={lt("proTitle")} lead={lt("proLead")} pro={!pro} />
             <View style={{ borderRadius: R.lg, borderWidth: 1, borderColor: t.line, overflow: "hidden", backgroundColor: t.surface }}>

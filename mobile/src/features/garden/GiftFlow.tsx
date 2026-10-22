@@ -91,7 +91,7 @@ export function StickerBag({ onPress }: { onPress: () => void }) {
   const room = giftOutlook(s, []).room;
   return (
     <Pressable onPress={() => { tick(); onPress(); }} hitSlop={10} accessibilityRole="button" accessibilityLabel={ready > 0 ? `${gt.bag}. ${fillG(gt.readyN, { n: ready })}` : gt.bag}
-      style={({ pressed }) => ({ width: 46, height: 46, borderRadius: 23, alignItems: "center", justifyContent: "center", backgroundColor: "rgba(8,38,29,0.62)", borderWidth: 1, borderColor: "rgba(233,207,153,0.65)", opacity: pressed ? 0.85 : 1, shadowColor: "#000", shadowOpacity: 0.3, shadowRadius: 6, shadowOffset: { width: 0, height: 2 } })}>
+      style={({ pressed }) => ({ width: 46, height: 46, borderRadius: 23, alignItems: "center", justifyContent: "center", backgroundColor: "rgba(8,38,29,0.62)", borderWidth: 1, borderColor: "rgba(233,207,153,0.65)", opacity: pressed ? 0.85 : 1, boxShadow: "0px 2px 12px rgba(0,0,0,0.3)" })}>
       <BagIcon size={22} color="#f3e2b6" />
       {ready > 0 && room > 0 ? (
         <View style={{ position: "absolute", top: -5, end: -5, minWidth: 20, height: 20, borderRadius: 10, paddingHorizontal: 5, alignItems: "center", justifyContent: "center", backgroundColor: "#e3c98a", borderWidth: 1, borderColor: "#fff4d6" }}>

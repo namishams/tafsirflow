@@ -80,8 +80,15 @@ export async function resolveHadith(id: string, locale: string): Promise<Resolve
   const c = SUNNI[parts[0]], n = Number(parts[1]);
   if (!c || parts.length !== 2 || !Number.isInteger(n) || n < 1) return null;
   const p = PREFIX[locale];
-  const trEd = locale === "ar" ? null : `${p && c.editions.includes(p) ? p : "eng"}-${parts[0]}`;
-  const [ar, tr] = await Promise.all([sunnahDoc(`ara-${parts[0]}`, n), trEd ? sunnahDoc(trEd, n) : Promise.resolve(null)]);
+  let trEd = locale === "ar" ? null : `${p && c.editions.includes(p) ? p : "eng"}-${parts[0]}`;
+  const [ar, local] = await Promise.all([sunnahDoc(`ara-${parts[0]}`, n), trEd ? sunnahDoc(trEd, n) : Promise.resolve(null)]);
+  let tr = local;
+  // the partial translation editions (tur-muslim 879, rus-muslim 4223 …) carry hadiths with an empty text: then the
+  // English edition, as for a language without its own edition (before, the whole post or carousel was dropped)
+  if (trEd && !trEd.startsWith("eng-") && !(tr?.hadiths[0]?.text ?? "").trim()) {
+    trEd = `eng-${parts[0]}`;
+    tr = await sunnahDoc(trEd, n);
+  }
   const a = ar?.hadiths[0], t = tr?.hadiths[0];
   const text = (t?.text ?? "").trim(), arabic = (a?.text ?? "").trim();
   if (!arabic || (locale !== "ar" && !text)) return null;

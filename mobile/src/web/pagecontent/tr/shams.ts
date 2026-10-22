@@ -4,15 +4,15 @@ import type { ShamsPart } from "../../shamsContent";
 const c: ShamsPart = {
   heroKicker: "Quran Masterclass · öğrenme metodu",
   heroTitle: "Shams Metodu",
-  heroLead: "Kur'an'ı kalıcı biçimde öğrenmenin bir yolu: Her ayet dinlenir, okunur, anlaşılır, açıklanır, hafızadan hatırlanır ve hayatınızla bağlantılandırılır – yedi adımda ve yaklaşık dört dakikada. Dil öğrenimi ve hafıza araştırmalarının akılda tutma hakkında bildikleri, Kur'an hocalarının yüzyıllardır öğrettiği yolla birleşir.",
+  heroLead: "Kur'an'ı kalıcı biçimde öğrenmenin bir yolu: Her ayet dinlenir, okunur, anlaşılır, açıklanır, hafızadan hatırlanır ve hayatınızla bağlantılandırılır – yedi adımda ve ayetin uzunluğuna göre yaklaşık iki ila sekiz dakikada. Dil öğrenimi ve hafıza araştırmalarının akılda tutma hakkında bildikleri, Kur'an hocalarının yüzyıllardır öğrettiği yolla birleşir.",
   heroBy: "Nami Shams tarafından Dubai'de geliştirildi",
   heroFacts: [
     { n: "7", l: "her ayet için adım" },
-    { n: "≈ 4", l: "yeni bir ayet için dakika" },
-    { n: "6", l: "üç ayda planlı tekrar" },
+    { n: "2–8", l: "yeni bir ayet için dakika, uzunluğuna göre" },
+    { n: "3–6", l: "üç ayda tekrar, ayet oturmuşsa – sallantıdaysa daha fazla" },
   ],
   stepsTitle: "Yedi adım ayrıntılı olarak",
-  stepsLead: "Her adımın açık bir görevi vardır. Hepsi birlikte ayet başına yaklaşık dört dakika sürer. Platform sizi her birinde yönlendirir – hiçbir hazırlık yapmanız gerekmez.",
+  stepsLead: "Her adımın açık bir görevi vardır. Hepsi birlikte, ayetin uzunluğuna göre ayet başına yaklaşık iki ila sekiz dakika sürer. Platform sizi her birinde yönlendirir – hiçbir hazırlık yapmanız gerekmez.",
   labels: { what: "Ne yaparsınız", why: "Neden işe yarar", platform: "Platform sizin için ne yapar", time: "Süre" },
   steps: [
     { what: "Ayeti arka arkaya üç kez dinler ve Arapça metni takip edersiniz. Henüz çeviri yok, sesli tekrar yok – sadece dinlemek ve bakmak.", time: "yaklaşık 45 saniye" },
@@ -25,7 +25,7 @@ const c: ShamsPart = {
   ],
   demoTitle: "Bir ayet, dört aşama",
   demoStages: ["Ayetin tamamı", "Sondan başa kurmak", "Yalnızca ilk harfler", "Ezberden"],
-  finalTitle: "İlk ayetiniz dört dakika sürer",
+  finalTitle: "İlk ayetiniz yalnızca birkaç dakika sürer",
   finalLead: "Fâtiha ile başlayın. Platform sizi her adımda yönlendirir.",
   finalPoints: ["Hazırlık gerekmez – platform sizi her adımda yönlendirir.", "Okunuş ve anlam her kelimenin altında görünür.", "Ardından hafıza modeli tekrarlarınızı planlar."],
   whyCloseApp: "Shams Metodu bu yüzden var: kimse hayatının en önemli öğrenimini ertelemek zorunda kalmasın diye.",

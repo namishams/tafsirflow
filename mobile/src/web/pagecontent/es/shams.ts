@@ -4,15 +4,15 @@ import type { ShamsPart } from "../../shamsContent";
 const c: ShamsPart = {
   heroKicker: "Quran Masterclass · método de aprendizaje",
   heroTitle: "El Método Shams",
-  heroLead: "Una forma de aprender el Corán para que permanezca: cada aleya se escucha, se pronuncia, se entiende, se explica, se recuerda de memoria y se une a su vida – en siete pasos y unos cuatro minutos. Lo que la investigación sobre el aprendizaje de idiomas y la memoria sabe sobre el recuerdo, unido a la manera en que los maestros del Corán enseñan desde hace siglos.",
+  heroLead: "Una forma de aprender el Corán para que permanezca: cada aleya se escucha, se pronuncia, se entiende, se explica, se recuerda de memoria y se une a su vida – en siete pasos y, según la longitud de la aleya, unos dos a ocho minutos. Lo que la investigación sobre el aprendizaje de idiomas y la memoria sabe sobre el recuerdo, unido a la manera en que los maestros del Corán enseñan desde hace siglos.",
   heroBy: "Desarrollado por Nami Shams en Dubái",
   heroFacts: [
     { n: "7", l: "pasos para cada aleya" },
-    { n: "≈ 4", l: "minutos para una aleya nueva" },
-    { n: "6", l: "repasos planificados en tres meses" },
+    { n: "2–8", l: "minutos por aleya nueva, según su longitud" },
+    { n: "3–6", l: "repasos en tres meses cuando una aleya está bien asentada – más si flaquea" },
   ],
   stepsTitle: "Los siete pasos en detalle",
-  stepsLead: "Cada paso tiene una tarea clara. Juntos duran unos cuatro minutos por aleya. La plataforma le guía a través de cada uno – no necesita preparar nada.",
+  stepsLead: "Cada paso tiene una tarea clara. Juntos duran entre dos y ocho minutos por aleya, según su longitud. La plataforma le guía a través de cada uno – no necesita preparar nada.",
   labels: { what: "Lo que usted hace", why: "Por qué funciona", platform: "Lo que la plataforma hace por usted", time: "Duración" },
   steps: [
     { what: "Escucha la aleya tres veces seguidas mientras sigue el texto árabe. Todavía sin traducción ni repetición en voz alta – solo escuchar y mirar.", time: "unos 45 segundos" },
@@ -25,7 +25,7 @@ const c: ShamsPart = {
   ],
   demoTitle: "Una aleya, cuatro etapas",
   demoStages: ["Aleya completa", "Construir hacia atrás", "Solo las primeras letras", "De memoria"],
-  finalTitle: "Su primera aleya lleva cuatro minutos",
+  finalTitle: "Su primera aleya lleva solo unos minutos",
   finalLead: "Empiece con Al-Fatihah. La plataforma le guía en cada paso.",
   finalPoints: ["Nada que preparar – la plataforma le guía en cada paso.", "La transliteración y el significado aparecen bajo cada palabra.", "Después, el modelo de memoria planifica sus repasos."],
   whyCloseApp: "Por eso existe el Método Shams: para que nadie tenga que aplazar el aprendizaje más importante de su vida.",

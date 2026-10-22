@@ -1,8 +1,9 @@
 import { APP_STORE_ID } from "@/lib/appstore";
 import type { Metadata, Viewport } from "next";
 import { notFound } from "next/navigation";
-import { NextIntlClientProvider, hasLocale } from "next-intl";
-import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
+import { hasLocale } from "next-intl";
+import { getTranslations, setRequestLocale } from "next-intl/server";
+import ClientMessages from "@/i18n/ClientMessages";
 import { routing } from "@/i18n/routing";
 import { localeMeta } from "@/i18n/locales";
 import { SITE } from "@/lib/site";
@@ -24,6 +25,8 @@ import SideCalligraphy from "@/components/SideCalligraphy";
 import Rewards from "@/components/Rewards";
 import StageLight from "@/components/StageLight";
 import Announcement from "@/components/Announcement";
+import PromoBars from "@/components/PromoBars";
+import { appStoreUrl } from "@/lib/appstore";
 import NativeBridge from "@/components/NativeBridge";
 import LocalDigits from "@/components/LocalDigits";
 import "../globals.css";
@@ -46,14 +49,14 @@ export default async function LocaleLayout({ children, params }: { children: Rea
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) notFound();
   setRequestLocale(locale);
-  const messages = await getMessages();
   return (
     <html lang={locale} dir={localeMeta(locale).dir}>
       <head>
         <script dangerouslySetInnerHTML={{ __html: "try{if(localStorage.getItem('tf:kids')==='1')document.documentElement.dataset.kids='1'}catch(e){}" }} />
       </head>
       <body className="min-h-screen">
-        <NextIntlClientProvider messages={messages}><RadioProvider><Announcement />{children}<ScrollReveal /><Pwa /><Rewards /><StageLight /><NativeBridge /><LocalDigits locale={locale} /></RadioProvider></NextIntlClientProvider>
+        {/* the browser gets only the texts its components read; folders with their own layout narrow this further */}
+        <ClientMessages route="@root" locale={locale}><RadioProvider><Announcement /><PromoBars appUrl={appStoreUrl()} />{children}<ScrollReveal /><Pwa /><Rewards /><StageLight /><NativeBridge /><LocalDigits locale={locale} /></RadioProvider></ClientMessages>
         <SideCalligraphy />
       </body>
     </html>

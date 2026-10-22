@@ -11,6 +11,9 @@ import { usePageMap } from "./pages";
 import { levelOf, pageCells, verseScore, type Cell } from "./qualityModel";
 import { useS2 } from "./text";
 import { Btn, Card, LevelPill, SourceNote, Term, onScore, scoreColor } from "./ui";
+import { masteryOf } from "./mastery";
+import { MasteryCard } from "./review/Mastery";
+import { useRv } from "./review/text";
 
 // /shams/quality – hifz quality (itqān) as a heatmap over the 604 pages of the Madani mushaf, the 114 surahs or the
 // 30 ajzāʾ. Tap a cell for its score, how it is made up and its weakest verses.
@@ -35,6 +38,22 @@ export function QualityScreen({ juz: initialJuz }: { juz?: number }) {
   const gap = mode === "page" ? 2 : 4;
   const size = Math.floor((inner - gap * (cols - 1)) / cols);
   const label = (c: Cell) => (mode === "page" ? s("pageN", { n: nf(c.id) }) : mode === "surah" ? `${nf(c.id)}. ${name(c.id)}` : s("juzN", { n: nf(c.id) }));
+  const rv = useRv();
+  // Shams 3.0: the six dimensions of the selected cell (a page: its verses), or of all verses
+  const mcell = useMemo(() => {
+    const mm = m.mastery();
+    if (!cur) return mm.overall;
+    if (mode === "surah") return mm.surahs[cur.id - 1];
+    if (mode === "juz") return mm.juz[cur.id - 1];
+    const keys: string[] = [];
+    for (const [sr, list] of Object.entries(pages)) list.forEach((p, i) => { if (p === cur.id) keys.push(`${sr}:${i + 1}`); });
+    return masteryOf(keys, mm.verses, cur.id);
+  }, [m, cur, mode, pages]);
+  const mAt = useMemo(() => {
+    const k = cur?.weakest[0]?.key ?? (mode === "surah" && cur ? `${cur.id}:1` : [...m.known.keys()][0] ?? "1:1");
+    const [a, b] = k.split(":").map(Number);
+    return { s: a || 1, v: b || 1 };
+  }, [cur, mode, m.known]);
   const parts = useMemo(() => {
     if (!cur) return null;
     const ks = cur.weakest.map((w) => m.known.get(w.key)).filter(Boolean);
@@ -109,6 +128,7 @@ export function QualityScreen({ juz: initialJuz }: { juz?: number }) {
               {cur.known ? <Btn primary title={s("drillWeak")} onPress={() => router.push((mode === "surah" ? `/shams/weak?s=${cur.id}` : "/shams/weak") as Href)} /> : null}
             </Card>
           ) : null}
+          <MasteryCard cell={mcell} scope={cur ? label(cur) : rv("mOverall")} at={mAt} />
           <View style={{ gap: 10 }}><Term id="itqan" /><Term id="juz" /></View>
           <Text style={{ fontFamily: FONT.regular, fontSize: 13, lineHeight: 20, color: t.muted, textAlign: "left" }}>{s("qualityHow")}</Text>
           <SourceNote src={["app", "fsrs", "quranApi"]} review={{ status: "draft" }} />

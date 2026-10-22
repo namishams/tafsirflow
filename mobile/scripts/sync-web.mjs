@@ -66,13 +66,13 @@ const ADAPT = { "tiles.ts": appTileColours };
 
 // Modules without server, database, Next.js or React code
 const FILES = [
-  "aboutContent", "academy", "adhan", "age", "arabic", "arabicQuran", "changelog", "coach", "counts", "countries", "duaGenerator",
-  "duas", "featured", "guides", "hadithNumber", "hijri", "journey", "learning", "listen", "mapContent", "plans", "points", "prayer", "quranIndex",
+  "aboutContent", "academy", "adhan", "age", "arabic", "arabicQuran", "changelog", "coach", "counts", "countries", "duaGenerator", "duaJourney",
+  "duas", "featured", "guides", "hadithNumber", "hijri", "identity", "identityText", "journey", "learning", "listen", "mapContent", "plans", "points", "prayer", "quranIndex",
   "recite", "salah", "session", "shamsContent", "stickers", "sunnahDuas", "sunnahDuas2", "tajweed", "tiles",
-  "verseQuotes", "vocab", "vocabI18n", "vocabStudy", "votd", "wudu",
+  "verseQuotes", "verseTime", "vocab", "vocabI18n", "vocabStudy", "votd", "wudu",
 ];
 // Folders copied whole, with the translations of every language the website speaks
-const DIRS = ["islam", "names", "reciters", "secrets", "pagecontent"];
+const DIRS = ["islam", "names", "reciters", "secrets", "pagecontent", "sisters"];
 const SKIP_DIRS = new Set();
 
 rmSync(out, { recursive: true, force: true });
@@ -144,6 +144,11 @@ for (const d of DIRS) copyDir(join(lib, d), join(out, d));
 // app renders the same words as the website and nothing is typed by hand
 mkdirSync(join(out, "data"), { recursive: true });
 cpSync(join(lib, "data", "verse-quotes.json"), join(out, "data", "verse-quotes.json"));
+// the number of words of every verse (no text), for the time estimate in verseTime.ts (scripts/gen-verse-words.mjs)
+cpSync(join(lib, "data", "verse-words.json"), join(out, "data", "verse-words.json"));
+// the root of every Quran word and its count (no text), for step 2 of the Shams coach (scripts/gen-word-roots.mjs;
+// read by features/shams/roots.ts)
+cpSync(join(lib, "data", "word-roots.json"), join(out, "data", "word-roots.json"));
 
 // UI texts of the website in every language, read by useWebT(), and the list of languages with their direction
 mkdirSync(join(out, "messages"), { recursive: true });

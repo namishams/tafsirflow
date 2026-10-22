@@ -48,6 +48,7 @@ export function PosterGrid({ items, title, more, className = "", tall = true }: 
 }
 
 // The site's courses and tools from lib/tiles.ts
+// intl-namespaces: nav home2 (the texts this reads in the browser, see scripts/intl-namespaces.mjs)
 export default function PosterTiles({ keys, title, more, className = "" }: { keys: string[]; title?: string; more?: { href: string; label: string }; className?: string }) {
   const t = useTranslations();
   const items = keys.map((k) => TILES[k]).filter(Boolean).map((c) => ({ href: c.href, title: t(`nav.${c.key}`), desc: t(`home2.${c.desc}`), badge: t(`home2.badge_${c.badge}`), ar: c.ar, bg: c.bg, cta: t("home2.open") }));

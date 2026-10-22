@@ -1,5 +1,5 @@
 import { memo, useRef, useState } from "react";
-import { Animated, FlatList, Image, Linking, Pressable, Text, View } from "react-native";
+import { Animated, FlatList, Linking, Pressable, Text, View } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { GoldFrame } from "./ornament";
 import { GoldButton, StarLattice } from "@/components/brand";
@@ -17,6 +17,7 @@ import { KnowledgePost, knowItemOf } from "./KnowledgePost";
 import { PostShareButtons, libSpec, useShareCtx } from "@/features/share/feedShare";
 import { PostPanel } from "@/features/share/ShareTemplates";
 import { openDeeplink } from "./remote";
+import { RemoteImage } from "@/components/RemoteImage";
 
 // The posts of the content libraries: image posts (mosques, art, Met objects) with the image credit and licence link
 // always shown, text cards with the Arabic on top (hadith, tafsir, duas, names, words), carousels (scholar timeline,
@@ -68,7 +69,7 @@ function LibImage({ item, w, h, reduce }: { item: ExtraItem; w: number; h: numbe
         <StarLattice opacity={0.05} />
         <GoldFrame inset={7} />
         <Animated.View style={{ flex: 1, opacity: op }}>
-          <Image source={{ uri: item.image }} resizeMode="cover" style={{ flex: 1 }} accessibilityIgnoresInvertColors accessibilityLabel={item.title}
+          <RemoteImage uri={item.image ?? ""} style={{ flex: 1 }} accessibilityLabel={item.title}
             onLoad={() => { if (!reduce) Animated.timing(op, { toValue: 1, duration: 260, useNativeDriver: true }).start(); }} />
         </Animated.View>
       </LinearGradient>

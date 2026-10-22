@@ -5,8 +5,9 @@ import { useLang, pick } from "@/i18n";
 import { ARABIC_FONT, FONT, useTheme, AR_RIGHT, FWD } from "@/lib/theme";
 import { Divider, Eyebrow, GoldCard } from "@/components/brand";
 import WuduTrainer from "@/features/practice/WuduTrainer";
-import { Callout, Hero, PageScroll, LightChip, LinkList, MoreTiles, PStar, go, useGold } from "@/features/practice/art";
+import { Callout, Hero, LightChip, LinkList, MoreTiles, PStar, go, useGold } from "@/features/practice/art";
 import { useVerses, verseEnd } from "@/features/practice/verses";
+import { TrainerScroll } from "@/features/practice/glass";
 import { HEROES } from "@/features/practice/web/heroes";
 import { C, shownVirtues, virtueHadith } from "@/features/practice/web/wuduPage";
 import { sunniHadith } from "@/features/hadith/data";
@@ -39,7 +40,7 @@ export default function WuduScreen() {
   return (
     <>
       <Stack.Screen options={{ headerShown: false }} />
-      <PageScroll>
+      <TrainerScroll>
         <Hero word={HEROES.wudu.word} kicker={c.kicker} title={c.title} lead={c.lead} />
         <View style={{ paddingHorizontal: 16, paddingTop: 32 }}>
           <WuduTrainer />
@@ -101,7 +102,7 @@ export default function WuduScreen() {
           <View style={{ marginTop: 48 }}><LinkList title={c.more} links={c.links} /></View>
         </View>
         <MoreTiles keys={["salah", "prayer", "duas", "islam"]} />
-      </PageScroll>
+      </TrainerScroll>
     </>
   );
 }

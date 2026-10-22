@@ -1,4 +1,5 @@
 import { readJSON } from "./storage";
+import { groupOfBand, readIdentity } from "./identity";
 
 // The Shams Method adapts to the learner's age: children and seniors get slower audio, more listening repetitions,
 // more time per test question and a gentler plan; teens and adults start with the standard track.
@@ -16,5 +17,6 @@ const PROFILES: Record<AgeGroup, AgeProfile> = {
   adult: { group: "adult", track: "standard", listen: 3, speed: 1, testBonus: 2 },
   senior: { group: "senior", track: "steady", listen: 4, speed: 0.85, testBonus: 8 },
 };
-export const ageProfile = (): AgeProfile => PROFILES[groupOf(readJSON<number | null>("tf:age", null)) ?? "adult"];
+// the account's birth year first; without an account the self-declared age band of the onboarding (identity.ts)
+export const ageProfile = (): AgeProfile => PROFILES[groupOf(readJSON<number | null>("tf:age", null)) ?? groupOfBand(readIdentity().age) ?? "adult"];
 export const MIN_YEAR = 1920;

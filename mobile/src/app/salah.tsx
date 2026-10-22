@@ -3,7 +3,8 @@ import { Stack } from "expo-router";
 import { useLang, pick } from "@/i18n";
 import { FONT, useTheme } from "@/lib/theme";
 import PrayerTrainer from "@/features/practice/PrayerTrainer";
-import { Hero, PageScroll, LinkList, MoreTiles, Paper } from "@/features/practice/art";
+import { Hero, LinkList, MoreTiles, Paper } from "@/features/practice/art";
+import { TrainerScroll } from "@/features/practice/glass";
 import { HEROES } from "@/features/practice/web/heroes";
 import { C } from "@/features/practice/web/salahPage";
 
@@ -15,7 +16,7 @@ export default function SalahScreen() {
   return (
     <>
       <Stack.Screen options={{ headerShown: false }} />
-      <PageScroll>
+      <TrainerScroll>
         <Hero art="window" word={HEROES.salah.word} kicker={c.kicker} title={c.title} lead={c.lead} />
         <View style={{ paddingHorizontal: 16, paddingTop: 40, gap: 32 }}>
           <PrayerTrainer />
@@ -26,7 +27,7 @@ export default function SalahScreen() {
           <LinkList title={c.more} links={c.links} />
         </View>
         <MoreTiles keys={["arabic", "duas", "prayer", "islam"]} />
-      </PageScroll>
+      </TrainerScroll>
     </>
   );
 }

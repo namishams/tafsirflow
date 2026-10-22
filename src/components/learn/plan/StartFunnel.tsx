@@ -4,7 +4,7 @@
 // 30-day plan and the planting ceremony (the website's PlantFlow), with the same keys as the app (qmc.quiz, qmc.plan,
 // qmc.quiz.v2, qmc.name, tf:goal), so the path follows the account into the app and back.
 // Web differences: no language step (the page's locale decides), no profile step (the website has Edit profile), no
-// tradition step (the website only reads the app's choice), no day-1 paywall and no Pro marks (the website is free),
+// tradition step (the website only reads the app's choice); the identity step (brother/sister, age band) is the same, no day-1 paywall and no Pro marks (the website is free),
 // and the Shams Method screens are shown on the journey landscape without the app's illustrations.
 // "?personalise=1": the same questions for an existing plan; the plan keeps its start date and the tree stays.
 import { useEffect, useRef, useState } from "react";
@@ -27,8 +27,9 @@ import { JourneyStage } from "@/components/learn/garden/Landscape";
 import { PlantFlow } from "@/components/learn/garden/PlantFlow";
 import { useReducedMotion } from "@/components/learn/garden/Scene";
 import { StarGlyph } from "@/components/art/HomeOrnaments";
+import { IdentityStep } from "@/components/identity/Identity";
 
-const Q = ["name", "goals", "interests", "challenges", "level", "minutes", "reciter", "prayer", "motivation"] as const;
+const Q = ["name", "identity", "goals", "interests", "challenges", "level", "minutes", "reciter", "prayer", "motivation"] as const;
 type Phase = "quiz" | "story" | "method" | "building" | "plan" | "garden";
 type Draft = QuizDraft & { goals?: GoalV2[]; interests?: Interest[]; challenges?: Challenge[]; v?: 2 };
 const GOLD = "rgb(214,180,108)";
@@ -282,6 +283,7 @@ function Funnel() {
             {note(p.reciterD)}
           </>
         ) : null}
+        {q === "identity" ? <IdentityStep disabled={!!reply} onDone={(text) => answer({}, text)} /> : null}
         {q === "prayer" ? (
           <>
             {title(p.qPrayer)}

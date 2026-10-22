@@ -5,6 +5,7 @@ import { tajweedFor } from "@/lib/tajweed";
 import { readJSON, writeJSON } from "@/lib/storage";
 import { award } from "@/lib/points";
 import { PracticeCelebrate, PracticeMedallion } from "./art/PracticeArt";
+import AskTutor from "./tutor/AskTutor";
 
 export default function TajweedQuiz({ id }: { id: string }) {
   const t = useTranslations("tajweed");
@@ -51,6 +52,7 @@ export default function TajweedQuiz({ id }: { id: string }) {
       {pick !== null && (
         <div className={`step-in mt-4 rounded-xl border p-4 ${pick === q.answer ? "border-[rgb(201_166_94)]/45 bg-[rgb(201_166_94)]/10" : "border-[rgb(190_84_104)]/30 bg-[rgb(190_84_104)]/[0.07]"}`}>
           <p className="text-[15px] leading-relaxed text-ink/85">{de ? q.explain_de : q.explain_en}</p>
+          {pick !== q.answer && <div className="mt-3"><AskTutor kind="why" context={{ kind: "quiz", id: `tajweed:${id}`, title: de ? l.title_de : l.title_en, question: de ? q.q_de : q.q_en, chosen: opts[pick], correct: opts[q.answer], explain: de ? q.explain_de : q.explain_en }} /></div>}
           <button onClick={next} className={`mt-3 h-11 rounded-full px-6 text-sm font-bold ${pick === q.answer ? "btn-gold" : "bg-ink text-bg"}`}>{t("next")}</button>
         </div>
       )}

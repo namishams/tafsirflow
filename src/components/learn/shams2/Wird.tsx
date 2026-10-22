@@ -3,13 +3,13 @@
 // term). One tap opens the reader at the right verse (new verses with the Shams method switched on); after reciting, a
 // self-assessment (tathbīt) updates the verse reviews. Settings for time, new verses, manzil cycle and sabqī window.
 import { Link } from "@/i18n/navigation";
-import { rate, stats } from "@/lib/learning";
+import { stats } from "@/lib/learning";
 import { award } from "@/lib/points";
 import { shamsGrow } from "@/lib/learn/garden/garden";
 import { gEvent } from "@/lib/learn/feed/gamify";
 import { useShams2 } from "@/lib/learn/shams2/model";
 import { rangeId, type Range, type WirdBlock } from "@/lib/learn/shams2/plan";
-import { markBlock, rateRange, saveSettings, useLog, wirdStreak, type Block } from "@/lib/learn/shams2/store";
+import { markBlock, saveSettings, useLog, wirdStreak, type Block } from "@/lib/learn/shams2/store";
 import { useS2 } from "@/lib/learn/shams2/text";
 import { Card, GoldButton, LearnHero, LearnMain, Stats } from "@/components/learn/ui";
 import { IconCheckCircle } from "@/components/Icons";
@@ -17,6 +17,10 @@ import { Chip, Live, S2Kicker, SmallBtn, SourceNote, Term, useBack, useNames } f
 import { ContinueNext } from "./Continue";
 import { DueChecks } from "./Darajat";
 import { Briefing } from "./Tadabbur";
+import { markToday, noteLinks, rateVerseToday, readLinks, undoLinksToday } from "@/lib/learn/shams2/store2";
+import { StripToggle, TathbitCard, TodayMinutes, gapMarkId } from "./review/WirdExtras";
+import { AdabTodayCard } from "./Adab";
+import { ListenDaysCard } from "@/components/sisters/Sisters";
 
 const BLOCKS = ["sabaq", "sabqi", "manzil"] as const;
 /** where a portion is recited on the website: new verses with the Shams method, reviews in the reader */
@@ -33,14 +37,23 @@ function BlockCard({ b, done, onDone, ratings, primary }: { b: WirdBlock; done: 
   const { name } = useNames();
   const { known } = useShams2();
   const reviewKind = b.kind !== "sabaq";
+  // once per range and day (markToday, store2.ts): the same mark again does nothing, a changed mark replaces today's
+  // earlier ratings of these verses and transitions instead of adding new ones
   const onRate = (r: Range, g: "fluent" | "hesitant" | "weak") => {
-    for (let v = r.from; v <= r.to; v++) {
-      const key = `${r.s}:${v}`;
-      const k = known.get(key);
-      if (!k) continue;
-      rate(key, g === "fluent" ? "good" : g === "weak" ? "again" : k.recall < 0.6 ? "again" : "good");
-    }
-    rateRange(rangeId(r), g);
+    markToday(rangeId(r), g, (prev) => {
+      for (let v = r.from; v <= r.to; v++) {
+        const key = `${r.s}:${v}`;
+        if (!known.get(key)) continue;
+        // held = Good (3), hesitated = Hard (2), shaky = Again (1)
+        rateVerseToday(key, g === "fluent" ? 3 : g === "hesitant" ? 2 : 1);
+      }
+      // a range recited fluently: every transition inside it held. Only transitions already tracked get a hold (none is
+      // created in bulk), and none the learner marked on its own today (that mark wins); noteLinks counts one result
+      // per transition and day, so a later chip for the same transition replaces this hold instead of adding one.
+      const keys = Array.from({ length: r.to - r.from }, (_, i) => `${r.s}:${r.from + i + 1}`).filter((k) => !ratings[gapMarkId(k)]);
+      if (g === "fluent") { const have = readLinks(); noteLinks(keys.filter((k) => have[k]).map((key) => ({ key, ok: true }))); }
+      else if (prev === "fluent") undoLinksToday(keys);
+    });
   };
   const action = s(b.kind === "sabaq" ? "learn" : "recite");
   return (
@@ -69,6 +82,7 @@ function BlockCard({ b, done, onDone, ratings, primary }: { b: WirdBlock; done: 
                     <Chip key={g} label={s(`rate_${g}` as never)} on={rated === g} onClick={() => onRate(r, g)} />
                   ))}
                 </div>
+                {reviewKind && <StripToggle r={r} known={known} marks={ratings} />}
               </li>
             );
           })}
@@ -82,7 +96,8 @@ function BlockCard({ b, done, onDone, ratings, primary }: { b: WirdBlock; done: 
 
 function Body() {
   const { s, nf } = useS2();
-  const { wird, settings, day, grade } = useShams2();
+  const m = useShams2();
+  const { wird, settings, day, grade } = m;
   const log = useLog();
   const today = log[day] ?? {};
   const streak = Math.max(wirdStreak(log, day), 0);
@@ -105,11 +120,15 @@ function Body() {
   return (
     <div className="grid gap-5">
       <Stats className="!grid-cols-3" items={[{ n: nf(wird.minutes), l: s("minutes") }, { n: `${nf(wird.cycleDay)}/${nf(wird.cycleOf)}`, l: s("manzilCycle") }, { n: nf(Math.max(streak, stats().streak)), l: s("streak") }]} />
+      <TodayMinutes m={m} />
+      <ListenDaysCard />
       <p className="text-[13.5px] font-semibold text-[rgb(var(--hm-gold-d))]">{s("wirdGrade", { g: grade.tr, m: nf(grade.minutesMin), d: nf(settings.manzilDays || grade.manzilDays) })}</p>
       <DueChecks />
       {wird.gated && <p className="text-[14.5px] leading-relaxed text-[rgb(var(--hm-gold-d))]">{s("gatedLead")}</p>}
       {reasonKey && <p className="text-[14.5px] leading-relaxed text-muted">{s(reasonKey)}</p>}
       {BLOCKS.map((k) => <BlockCard key={k} b={wird[k]} done={done(k)} onDone={() => finish(wird[k])} ratings={today.r ?? {}} primary={k === firstOpen} />)}
+      <TathbitCard tb={wird.tathbit} marks={today.r ?? {}} />
+      <AdabTodayCard />
       {allDone && <Card className="grid gap-4"><p className="text-[18px] font-bold">{s("wirdDone")}</p><ContinueNext /></Card>}
       <Card className="grid gap-3.5">
         <h2 className="text-[17px] font-bold">{s("settings")}</h2>

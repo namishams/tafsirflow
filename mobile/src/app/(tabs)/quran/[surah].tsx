@@ -660,6 +660,7 @@ function Reader({ chapter, verses, start, openTafsir, review, startMemo }: { cha
         playing={playing} positionMs={positionMs} durationMs={durationMs} reduce={reduce} speed={prefs.speed} repeat={prefs.repeat} sleepMode={sleep.mode} sleepMin={sleepMin}
         onToggle={toggle} onPrev={() => playAt(Math.max(0, idx - 1))} onNext={() => playAt(Math.min(verses.length - 1, idx + 1))} onSeek={seekTo}
         onSpeed={setSpeed} onRepeat={(n) => setPref({ repeat: n })} onSleep={setSleepMode}
+        onReciter={() => { setNowOpen(false); setTimeout(() => setSettings(true), 350); }}
         error={loadError ? rt("audioError") : null} retryLabel={ra("tryAgain")} onRetry={() => playAt(idx)} />
 
       {/* verse picker of the dock */}

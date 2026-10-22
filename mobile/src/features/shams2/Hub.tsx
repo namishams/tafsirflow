@@ -14,6 +14,10 @@ import { DueChecks, GradeCard } from "./Darajat";
 import { Briefing } from "./Tadabbur";
 import { useOnboarded } from "./Guide";
 import { ShamsModeBar } from "./ModeChooser";
+import { AdabPillarCard, AdabTodayCard } from "./adab/Adab";
+import { useAdabText } from "./adab/text";
+import { ListenDaysCard } from "@/features/sisters/ui";
+import { useSis } from "@/features/sisters/state";
 
 // /shams/method – Shams Method 2.0: the classical hifz system (sabaq, sabqī, manzil, talaqqī, ʿarḍ, mutashābihāt,
 // darajāt) joined with learning science (spaced retrieval, interleaving), never ending. Everything here extends the
@@ -57,6 +61,7 @@ export function HubScreen() {
   const first = m.wird.sabaq.ranges[0];
   const onboarded = useOnboarded();
   const rows: [string, number][] = [["sabaq", m.wird.sabaq.verses], ["sabqi", m.wird.sabqi.verses], ["manzil", m.wird.manzil.verses]];
+  const { a } = useAdabText();
   return (
     <>
       <Stack.Screen options={{ headerShown: false }} />
@@ -66,6 +71,8 @@ export function HubScreen() {
           <ShamsModeBar />
           {!onboarded ? <Tile icon="sun" title={s("onboardCard")} lead={s("welcomeLead")} href="/shams/welcome" /> : null}
           <DueChecks />
+          {/* listening and understanding days (pause mode, features/sisters): the switch, or today's listening plan */}
+          <ListenDaysCard compact />
           <Card gold>
             <Text style={{ fontFamily: FONT.semibold, fontSize: 12, letterSpacing: 1.2, color: t.gold }}>{s("todayWird")}</Text>
             {rows.map(([k, n]) => (
@@ -84,6 +91,8 @@ export function HubScreen() {
             {first ? <Briefing s={first.s} v={first.from} /> : null}
             <GoldButton title={s("openWird", { m: nf(m.wird.minutes) })} onPress={() => router.push("/shams/wird" as Href)} />
           </Card>
+          {/* pillar "Adab des Qurʾān-Trägers" (Shams 3.0): one adab of the day next to today's wird */}
+          <AdabTodayCard />
           <GradeCard compact />
           <Tile icon="grid" title={s("qualityTitle")} lead={s("qualityShort")} href="/shams/quality" right={
             <View style={{ alignItems: "flex-end", gap: 4 }}>
@@ -96,12 +105,16 @@ export function HubScreen() {
           <Tile icon="flag" title={s("weakTitle")} lead={weak ? s("weakCount", { n: nf(weak) }) : s("weakShort")} href="/shams/weak" />
           <Tile icon="trophy" title={s("darajatTitle")} lead={s("darajatShort")} href="/shams/darajat" />
           <Tile icon="calendar" title={s("weekTitle")} lead={s("weekShort")} href="/shams/week" />
+          <Tile icon="hands" title={a("name")} lead={a("tileLead")} href="/shams/adab" />
           <Tile icon="list" title={s("handbookTitle")} lead={s("handbookShort")} href="/shams/handbook" />
           <Tile icon="user" title={s("teacherTitle")} lead={s("teacherShort")} href="/shams/teacher" />
+          <SistersTile />
           <Card><ContinueNext /></Card>
+          <AdabPillarCard />
           <Card>
             <Text accessibilityRole="header" style={{ fontFamily: FONT.bold, fontSize: 16, color: t.ink }}>{s("methodTitle")}</Text>
             {(["m1", "m2", "m3", "m4", "m5"] as const).map((k) => <Text key={k} style={{ fontFamily: FONT.regular, fontSize: 14, lineHeight: 21, color: t.ink, textAlign: "left" }}>{s(k)}</Text>)}
+            <Text style={{ fontFamily: FONT.semibold, fontSize: 14, lineHeight: 21, color: t.ink, textAlign: "left" }}>{a("methodLine")}</Text>
             <SourceNote src={["halaqa", "jazari", "nawawi", "fsrs", "retrieval", "interleave"]} review={{ status: "draft" }} />
           </Card>
           <Glossary />
@@ -109,4 +122,10 @@ export function HubScreen() {
       </Page>
     </>
   );
+}
+
+/** "Für Schwestern" as a quiet link in the Shams flow, for everyone (brothers may look it up for their families) */
+function SistersTile() {
+  const tx = useSis();
+  return <Tile icon="moon" title={tx.entryTitle} lead={tx.entryLead} href="/sisters" />;
 }

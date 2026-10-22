@@ -1,3 +1,5 @@
+import { readShamsMode } from "@/features/shams2/mode";
+import { readFlex } from "@/features/shams2/store2";
 import { readJSON, writeJSON } from "@/lib/store";
 import { readSrs, today } from "@/web/learning";
 import { VERSE_COUNTS } from "@/web/counts";
@@ -16,6 +18,7 @@ import { PASS as QAIDA_PASS } from "@/features/qaida/curriculum";
 import { readProgress as readLang } from "@/features/arabic-lang/progress";
 import { PASS as LANG_PASS } from "@/features/arabic-lang/curriculum";
 import { currentStage, overallGrade, stageState, subjectGrades } from "@/features/school/model";
+import { getToken } from "@/lib/storage";
 import { sijillApi, type Summary } from "./api";
 import { collectReceived } from "./received";
 
@@ -110,7 +113,17 @@ export function buildSummary(pro: boolean): Summary {
     week: { monday: mon, xp: weekXp, active },
     courses: { done: courseIds.length, ids: courseIds.slice(0, 40), qaida, arabic, rp: rpUnits, arLevels: Object.keys(lang.certs ?? {}) },
     goal: { minutes: Math.max(0, Math.min(600, Math.floor(minutes || 0))), focus },
+    method: shamsMethod(),
   };
+}
+
+/** the Shams method in use for the profile badge: 2.0 (madrasa system), else the classic path, which is Shams 3.0 for
+ *  learners on the short tafsir (the 3.0 default) and "classic" for those who kept the detailed tafsir from before 3.0 */
+function shamsMethod(): "classic" | "v2" | "v3" {
+  try {
+    if (readShamsMode() === "v2") return "v2";
+    return readFlex().tafsir === "full" ? "classic" : "v3";
+  } catch { return "classic"; }
 }
 
 // ---------- sending ----------
@@ -122,6 +135,7 @@ export function syncSijill(pro: boolean, force = false): Promise<boolean> {
   void collectReceived(); // encouragements received since last time (throttled inside)
   inflight = (async () => {
     try {
+      if (!(await getToken())) return false; // signed out: nothing to send (the server would answer 401)
       const s = buildSummary(pro);
       const body = JSON.stringify(s);
       const last = readJSON<{ at: number; body: string }>(LAST_KEY, { at: 0, body: "" });
