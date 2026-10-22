@@ -13,11 +13,9 @@ export const PRO_DUAS_PER_MONTH = 5;
 /** a personal name report of the baby-name finder (consumable, 0,99 €; not part of Pro) */
 export const NAMES_PRODUCT = "com.quranmasterclass.app.names";
 
-/** Pro yearly subscription (same subscription group as the monthly one in App Store Connect).
- *  TODO: create "com.quranmasterclass.app.pro.yearly" in App Store Connect / Google Play, let the server accept it
- *  (website src/lib/appleIap.ts PRO_SUBSCRIPTION, /api/iap/apple + notifications, /api/iap/google), then set it here.
- *  While null the paywalls show the monthly plan only. */
-export const PRO_YEARLY_SKU: string | null = null;
+/** Pro yearly subscription (same subscription group as the monthly one in App Store Connect, 99.99 USD);
+ *  the server accepts it as Pro (website src/lib/appleIap.ts PRO_SUBSCRIPTIONS). */
+export const PRO_YEARLY_SKU: string | null = "com.quranmasterclass.app.pro.yearly";
 
 export type AiCredits = { dua: number; proDuaLeft: number; assistantLeft: number | null; names?: number };
 

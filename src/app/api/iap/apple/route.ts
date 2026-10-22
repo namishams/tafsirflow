@@ -2,7 +2,7 @@ import { NextRequest } from "next/server";
 import { currentUser } from "@/lib/auth";
 import { pool } from "@/lib/db";
 import { clientIp, json, rateLimited, sameOrigin } from "@/lib/http";
-import { DUA_PRODUCTS, IOS_BUNDLE_ID, PREMIUM_PRODUCT, PRO_SUBSCRIPTION, verifyAppleTransaction } from "@/lib/appleIap";
+import { DUA_PRODUCTS, IOS_BUNDLE_ID, PREMIUM_PRODUCT, isProSubscription, verifyAppleTransaction } from "@/lib/appleIap";
 import { productKind } from "@/lib/store/catalog";
 import { grant, ownedOf } from "@/lib/store/entitlements";
 import { NAME_PRODUCTS, addDuaCredits, addNameCredits, duaCredits, nameCredits } from "@/lib/aiCredits";
@@ -27,7 +27,7 @@ export async function POST(req: NextRequest) {
   if (typeof b.jws !== "string" || b.jws.length > 20000) return json({ error: "input" }, 400);
   const tx = verifyAppleTransaction(b.jws);
   const store = tx ? await productKind(tx.productId) : null;
-  const known = tx && (!!store || tx.productId === PREMIUM_PRODUCT || tx.productId === PRO_SUBSCRIPTION || tx.productId in DUA_PRODUCTS || tx.productId in NAME_PRODUCTS);
+  const known = tx && (!!store || tx.productId === PREMIUM_PRODUCT || isProSubscription(tx.productId) || tx.productId in DUA_PRODUCTS || tx.productId in NAME_PRODUCTS);
   if (!tx || tx.bundleId !== IOS_BUNDLE_ID || !known) return json({ error: "invalid" }, 400);
   if (tx.revocationDate) {
     if (store) await p.query("UPDATE iap_entitlements SET revoked_at = now() WHERE transaction_id = $1", [tx.originalTransactionId]).catch(() => undefined);
@@ -82,14 +82,14 @@ export async function POST(req: NextRequest) {
   const owner = await p.query("SELECT user_id FROM iap_purchases WHERE original_transaction_id = $1 ORDER BY created_at LIMIT 1", [tx.originalTransactionId]);
   if (owner.rows[0] && Number(owner.rows[0].user_id) !== me.id) return json({ error: "other_account" }, 409);
 
-  const expires = tx.productId === PRO_SUBSCRIPTION ? tx.expiresDate ?? null : null;
+  const expires = isProSubscription(tx.productId) ? tx.expiresDate ?? null : null;
   await p.query(
     `INSERT INTO iap_purchases (original_transaction_id, user_id, product_id, environment, purchased_at, transaction_id, expires_at)
      VALUES ($1, $2, $3, $4, to_timestamp($5 / 1000.0), $6, CASE WHEN $7::bigint IS NULL THEN NULL ELSE to_timestamp($7::bigint / 1000.0) END)
      ON CONFLICT (original_transaction_id, user_id) DO UPDATE SET transaction_id = EXCLUDED.transaction_id, expires_at = GREATEST(iap_purchases.expires_at, EXCLUDED.expires_at), updated_at = now()`,
     [tx.originalTransactionId, me.id, tx.productId, tx.environment, tx.purchaseDate, tx.transactionId, expires],
   );
-  if (tx.productId === PRO_SUBSCRIPTION) {
+  if (isProSubscription(tx.productId)) {
     if (!expires || expires <= Date.now()) return json({ premium: me.plan === "premium", expired: true });
     // a lasting Premium stays lasting; otherwise Pro runs until the subscription's expiry
     await p.query(

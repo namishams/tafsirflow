@@ -256,6 +256,8 @@ const zh: Part = {
 const TABLE: { en: CText } & Record<string, CText | undefined> = { en, de, ar, tr: { ...en, ...tr }, ur: { ...en, ...ur }, fa: { ...en, ...fa }, ps: { ...en, ...ps }, fr: { ...en, ...fr }, es: { ...en, ...es }, id: { ...en, ...id_ }, ms: { ...en, ...ms }, bn: { ...en, ...bn }, ru: { ...en, ...ru }, zh: { ...en, ...zh } };
 export type CKey = keyof CText;
 export function fmt(s: string, p?: Record<string, string | number>) { return p ? s.replace(/\{(\w+)\}/g, (_, x: string) => String(p[x] ?? "")) : s; }
+/** the same texts outside React (feed posts are built without hooks) */
+export const courseText = (lang: string, k: CKey) => moduleText("courses2", TABLE, lang)[k] ?? en[k];
 export function useCT() {
   const { lang } = useLang();
   return useCallback((k: CKey, p?: Record<string, string | number>) => fmt(moduleText("courses2", TABLE, lang)[k] ?? en[k], p), [lang]);

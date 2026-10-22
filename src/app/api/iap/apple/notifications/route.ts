@@ -1,7 +1,7 @@
 import { NextRequest } from "next/server";
 import { pool } from "@/lib/db";
 import { json } from "@/lib/http";
-import { DUA_PRODUCTS, IOS_BUNDLE_ID, PRO_SUBSCRIPTION, verifyAppleJws } from "@/lib/appleIap";
+import { DUA_PRODUCTS, IOS_BUNDLE_ID, isProSubscription, verifyAppleJws } from "@/lib/appleIap";
 import { NAME_PRODUCTS } from "@/lib/aiCredits";
 
 export const dynamic = "force-dynamic";
@@ -39,7 +39,7 @@ export async function POST(req: NextRequest) {
     }
     return json({ ok: true });
   }
-  if (tx.productId !== PRO_SUBSCRIPTION || !tx.originalTransactionId) return json({ ok: true });
+  if (!isProSubscription(tx.productId) || !tx.originalTransactionId) return json({ ok: true });
 
   const owner = await p.query("SELECT user_id FROM iap_purchases WHERE original_transaction_id = $1 ORDER BY created_at LIMIT 1", [tx.originalTransactionId]);
   const userId = owner.rows[0] ? Number(owner.rows[0].user_id) : null;

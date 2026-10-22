@@ -1,6 +1,6 @@
 import { NextRequest } from "next/server";
 import { clientIp, json, rateLimited, sameOrigin } from "@/lib/http";
-import { IOS_BUNDLE_ID, PRO_SUBSCRIPTION, verifyAppleTransaction } from "@/lib/appleIap";
+import { IOS_BUNDLE_ID, isProSubscription, verifyAppleTransaction } from "@/lib/appleIap";
 
 export const dynamic = "force-dynamic";
 
@@ -15,7 +15,7 @@ export async function POST(req: NextRequest) {
   const b = (await req.json().catch(() => ({}))) as { jws?: unknown };
   if (typeof b.jws !== "string" || b.jws.length > 20000) return json({ error: "input" }, 400);
   const tx = verifyAppleTransaction(b.jws);
-  if (!tx || tx.bundleId !== IOS_BUNDLE_ID || tx.productId !== PRO_SUBSCRIPTION) return json({ error: "invalid" }, 400);
+  if (!tx || tx.bundleId !== IOS_BUNDLE_ID || !isProSubscription(tx.productId)) return json({ error: "invalid" }, 400);
   if (tx.revocationDate) return json({ premium: false, revoked: true });
   const until = tx.expiresDate ?? null;
   if (!until || until <= Date.now()) return json({ premium: false, expired: true });

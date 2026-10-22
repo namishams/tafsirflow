@@ -14,6 +14,7 @@ import { useWebT } from "@/i18n/web";
 import { openPro } from "@/lib/pro";
 import { readJSON, writeJSON } from "@/lib/store";
 import { useNamesPrice, useProPrice, withPrice } from "@/lib/purchases";
+import { saveText, yearlyLine, yearlySavePct } from "@/features/plan/offer";
 import { guessTopic } from "@/web/duaGenerator";
 import { LIB } from "./library";
 import { remoteConfig, type FeedMonetize } from "./remote";
@@ -297,16 +298,20 @@ export const PaywallCard = memo(function PaywallCard({ width }: { width: number 
   useEffect(() => { offerImp("paywall"); }, []);
   // a free trial is only mentioned when the store offers one to this buyer (never from the server config alone)
   const [trial, setTrial] = useState(0);
+  // the yearly plan next to the monthly one, its saving computed from the store's own amounts
+  const [yearly, setYearly] = useState<{ price: string; pct: number | null } | null>(null);
   useEffect(() => {
-    if (Platform.OS === "web" || !(cfg().paywall.trialDays > 0)) return;
+    if (Platform.OS === "web") return;
     let live = true;
     import("@/lib/iap").then((m) => m.loadProPlans()).then((l) => {
+      if (live) setYearly(l.find((x) => x.period === "year") ? { price: l.find((x) => x.period === "year")!.price, pct: yearlySavePct(l) } : null);
       const o = l.find((x) => x.period === "month")?.intro;
-      if (live && o?.mode === "free-trial" && (o.unit === "day" || o.unit === "week")) setTrial(o.unit === "week" ? o.count * 7 : o.count);
+      if (live && cfg().paywall.trialDays > 0 && o?.mode === "free-trial" && (o.unit === "day" || o.unit === "week")) setTrial(o.unit === "week" ? o.count * 7 : o.count);
     }).catch(() => undefined);
     return () => { live = false; };
   }, []);
   const priceLine = price ? (trial > 0 ? fillText(tx.paywallTrial, { n: trial, price }) : fillText(tx.paywallPrice, { price })) : null;
+  const yearLine = yearly ? `${yearlyLine(lang, yearly.price)}${yearly.pct ? ` · ${saveText(lang, yearly.pct)}` : ""}` : null;
   const doc = (d: "terms" | "privacy") => void WebBrowser.openBrowserAsync(`${SITE}/${lang}/legal/${d}`);
   const restore = async () => {
     const { restore: r } = await import("@/lib/iap");
@@ -328,6 +333,7 @@ export const PaywallCard = memo(function PaywallCard({ width }: { width: number 
           </View>
         ))}
         {priceLine ? <Text style={{ fontFamily: FONT.semibold, fontSize: 16, color: stage.gold, marginTop: 4 }}>{priceLine}</Text> : null}
+        {priceLine && yearLine ? <Text style={{ fontFamily: FONT.semibold, fontSize: 14, color: stage.gold }}>{yearLine}</Text> : null}
         <Pressable onPress={() => { offerTap("paywall"); openPro("general"); }} accessibilityRole="button"
           style={({ pressed }) => ({ height: 48, borderRadius: R.pill, alignItems: "center", justifyContent: "center", backgroundColor: goldButton.to, borderWidth: 1, borderColor: goldButton.from, opacity: pressed ? 0.85 : 1 })}>
           <Text style={{ fontFamily: FONT.semibold, fontSize: 15, letterSpacing: 0.2, color: goldButton.text }}>{tx.paywallCta}</Text>

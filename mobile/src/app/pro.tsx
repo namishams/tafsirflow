@@ -16,11 +16,11 @@ import { loadProPlans, manageSubscriptions, purchasePro, restore, type ProPlan }
 import { goBack } from "@/components/page";
 import { useDuaPrice } from "@/lib/purchases";
 import { fmt, usePlanT } from "@/features/plan/texts";
-import { planIntro, planPer, planRenew } from "@/features/plan/offer";
+import { planIntro, planPer, planRenew, saveText, yearlySavePct } from "@/features/plan/offer";
 
 // iOS: Pro can be bought without an account (App Review 5.1.1); signing in later binds it to the account.
 const GUEST_PURCHASE = Platform.OS === "ios";
-const STORE = Platform.OS === "ios" ? "App Store" : "Google Play";
+const STORE = Platform.OS === "android" ? "Google Play" : "App Store";
 
 // The Pro sheet: what Pro brings (gold medallions), Free and Pro side by side, and a clear price card with the summary
 // Apple asks for (what, price, term, how to cancel) before Apple's own purchase sheet. Purchases belong to the account.
@@ -204,6 +204,7 @@ export default function ProSheet() {
                         </View>
                         <View style={{ flex: 1 }}>
                           <Text style={{ fontFamily: FONT.bold, fontSize: 15, color: t.ink }}>{x.period === "year" ? pt.yearly : pt.monthly}</Text>
+                          {x.period === "year" && yearlySavePct(plans) ? <Text style={{ fontFamily: FONT.semibold, fontSize: 12.5, color: t.gold, marginTop: 2 }}>{saveText(lang, yearlySavePct(plans) as number)}</Text> : null}
                           {intro ? <Text style={{ fontFamily: FONT.regular, fontSize: 12.5, lineHeight: 17, color: t.accent, marginTop: 2 }}>{intro}</Text> : null}
                         </View>
                         <View style={{ alignItems: "flex-end" }}>

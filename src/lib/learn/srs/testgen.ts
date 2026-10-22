@@ -90,6 +90,6 @@ export function saveResult(r: Omit<TestResult, "id" | "at">, certify: boolean): 
   const pct = r.total ? r.score / r.total : 0;
   const certs = certify && r.kind === "juz" && pct >= PASS && !s.certs.some((c) => c.juz === Number(r.ref))
     ? [...s.certs, { juz: Number(r.ref), at: Date.now(), pct: Math.round(pct * 100) }] : s.certs;
-  writeJSON(TESTS_KEY, { results: [res, ...s.results].slice(0, MAX_RESULTS), certs: certs.slice(0, 30) }); // website: not silent (account sync)
+  writeJSON(TESTS_KEY, { results: [res, ...s.results].slice(0, MAX_RESULTS), certs: certs.slice(0, 30) }, true);
   return res;
 }

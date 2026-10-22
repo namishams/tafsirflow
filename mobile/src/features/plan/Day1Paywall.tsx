@@ -19,7 +19,7 @@ import Svg, { Circle, Defs, RadialGradient, Stop } from "react-native-svg";
 import type { ProPlan } from "@/lib/iap";
 import { STEPS, type Plan } from "./plan";
 import { fmt, usePlanT } from "./texts";
-import { planIntro, planPer, planRenew } from "./offer";
+import { planIntro, planPer, planRenew, saveText, yearlySavePct } from "./offer";
 import { useO2 } from "./texts2";
 import { readName, readV2 } from "./v2";
 import { joinList, useGoalLabel } from "./Onboard2";
@@ -28,7 +28,7 @@ import { joinList, useGoalLabel } from "./Onboard2";
 // price in the buyer's currency, an intro offer only when the store reports one for this buyer, the renewal terms
 // next to the button, restore, terms and privacy, and "Continue for free" that is always visible. No countdowns,
 // no invented discounts. Layout options come from the feed config (monetize.paywall.day1); prices never do.
-const STORE = Platform.OS === "ios" ? "App Store" : "Google Play";
+const STORE = Platform.OS === "android" ? "Google Play" : "App Store";
 // iOS: Pro can be bought without an account (App Review 5.1.1); signing in later binds it to the account.
 const GUEST_PURCHASE = Platform.OS === "ios";
 const COMPARE: [string, string, string][] = [
@@ -73,6 +73,7 @@ export function Day1Paywall({ plan, onDone }: { plan: Plan | null; onDone: () =>
   const chosen = plans?.find((x) => x.sku === sku) ?? null;
   const per = (x: ProPlan) => planPer(p, x);
   const introLine = (x: ProPlan) => planIntro(p, x, lang);
+  const savePct = yearlySavePct(plans);
 
   const benefits = useMemo(() => {
     const out: string[] = [];
@@ -125,6 +126,7 @@ export function Day1Paywall({ plan, onDone }: { plan: Plan | null; onDone: () =>
             </View>
             <View style={{ flex: 1 }}>
               <Text style={{ fontFamily: FONT.bold, fontSize: 16, color: "#ffffff" }}>{x.period === "year" ? p.yearly : p.monthly}</Text>
+              {x.period === "year" && savePct ? <Text style={{ fontFamily: FONT.semibold, fontSize: 12.5, color: stage.gold, marginTop: 2 }}>{saveText(lang, savePct)}</Text> : null}
               {intro ? <Text style={{ fontFamily: FONT.regular, fontSize: 13, lineHeight: 18, color: stage.gold, marginTop: 2 }}>{intro}</Text> : null}
             </View>
             <View style={{ alignItems: "flex-end" }}>

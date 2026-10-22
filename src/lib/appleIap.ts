@@ -8,6 +8,11 @@ export const IOS_BUNDLE_ID = "com.quranmasterclass.app";
 export const PREMIUM_PRODUCT = "com.quranmasterclass.app.premium";
 /** Quran Masterclass Pro: auto-renewable monthly subscription of the app */
 export const PRO_SUBSCRIPTION = "com.quranmasterclass.app.pro.monthly";
+/** Quran Masterclass Pro yearly (same subscription group as the monthly one) */
+export const PRO_SUBSCRIPTION_YEARLY = "com.quranmasterclass.app.pro.yearly";
+/** every auto-renewable Pro product */
+export const PRO_SUBSCRIPTIONS: readonly string[] = [PRO_SUBSCRIPTION, PRO_SUBSCRIPTION_YEARLY];
+export const isProSubscription = (id: string | undefined | null): boolean => !!id && PRO_SUBSCRIPTIONS.includes(id);
 /** personal duas written with AI: consumables, value = number of duas */
 export const DUA_PRODUCTS: Record<string, number> = { "com.quranmasterclass.app.dua": 1, "com.quranmasterclass.app.dua5": 5 };
 

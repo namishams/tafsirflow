@@ -26,3 +26,29 @@ export function planIntro(p: PlanStrings, x: ProPlan, lang: string): string | nu
 
 /** the auto-renewal terms next to the buy button */
 export const planRenew = (p: PlanStrings, x: ProPlan, store: string) => fmt(p.renew, { price: x.price, per: planPer(p, x), store });
+
+/** how much the yearly plan saves against twelve monthly payments, computed only from the store's own amounts
+ *  (same currency, same buyer); null when the store did not report both amounts or there is no real saving */
+export function yearlySavePct(plans: readonly ProPlan[] | null | undefined): number | null {
+  const m = plans?.find((x) => x.period === "month")?.amount;
+  const y = plans?.find((x) => x.period === "year")?.amount;
+  if (!m || !y || m <= 0 || y <= 0) return null;
+  const pct = Math.floor((1 - y / (m * 12)) * 100);
+  return pct >= 1 && pct < 100 ? pct : null;
+}
+
+const SAVE: Record<string, string> = {
+  de: "Spare {pct} %", en: "Save {pct}%", ar: "وفّر {pct}٪", tr: "%{pct} tasarruf", ur: "{pct}% بچت", fa: "{pct}٪ صرفه‌جویی",
+  ps: "{pct}٪ سپما", fr: "Économisez {pct} %", es: "Ahorre un {pct} %", id: "Hemat {pct}%", ms: "Jimat {pct}%",
+  bn: "{pct}% সাশ্রয়", ru: "Экономия {pct}%", zh: "节省 {pct}%",
+};
+/** "Save 17%" in the interface language */
+export const saveText = (lang: string, pct: number) => (SAVE[lang] ?? SAVE.en).replace("{pct}", String(pct));
+
+const YEARLY_LINE: Record<string, string> = {
+  de: "oder {price} pro Jahr", en: "or {price} per year", ar: "أو {price} سنويًا", tr: "veya yıllık {price}", ur: "یا {price} سالانہ",
+  fa: "یا {price} در سال", ps: "یا {price} په کال کې", fr: "ou {price} par an", es: "o {price} al año", id: "atau {price} per tahun",
+  ms: "atau {price} setahun", bn: "অথবা বছরে {price}", ru: "или {price} в год", zh: "或每年 {price}",
+};
+/** "or US$99.99 per year" for short offer cards */
+export const yearlyLine = (lang: string, price: string) => (YEARLY_LINE[lang] ?? YEARLY_LINE.en).replace("{price}", price);
