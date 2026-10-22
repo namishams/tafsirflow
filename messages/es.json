@@ -604,7 +604,8 @@
     "imprintTitle": "Aviso legal",
     "imprintProvider": "Titular",
     "imprintContact": "Contacto",
-    "imprintPending": "Los datos completos del titular se añadirán antes del lanzamiento público."
+    "imprintPending": "Los datos completos del titular se añadirán antes del lanzamiento público.",
+    "analyticsBody": "## Analítica web (Google Analytics y Google Tag Manager)\nSolo cargamos Google Tag Manager y Google Analytics 4 (Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Ireland) si elige «Aceptar» en el aviso de cookies; con ellos medimos de forma agregada qué páginas se usan. Hasta entonces, el modo de consentimiento de Google está en «denegado» y no se carga nada de Google. Se envía: la dirección de la página sin parámetros de búsqueda, su título y datos técnicos del navegador y el dispositivo; según Google, Google Analytics 4 no almacena direcciones IP. Google instala cookies para ello (_ga, hasta 2 años). Nunca enviamos nombres, direcciones de correo ni identificadores de cuenta, ni señales publicitarias, y no medimos las páginas de cuenta, perfil, mensajes ni administración. En la app no hay analítica. Puede haber transferencias a EE. UU. (EU-US Data Privacy Framework). Base jurídica: su consentimiento (art. 6.1.a RGPD). Guardamos su elección 12 meses en la cookie qmc_consent; puede cambiarla o retirarla en cualquier momento en «Configuración de cookies», al pie de cada página, y borrar las cookies en su navegador. Esta sección prevalece sobre la afirmación del apartado 3 de que no usamos servicios de analítica."
   },
   "support": {
     "kicker": "Apoyar el proyecto",
@@ -2596,5 +2597,13 @@
     "privacy": "Privacidad",
     "signOut": "Cerrar sesión",
     "syncTitle": "Sincronización activa"
+  },
+  "consent": {
+    "title": "Cookies",
+    "text": "Con su consentimiento, nos gustaría medir de forma anónima con Google Analytics qué páginas se usan.",
+    "accept": "Aceptar",
+    "necessary": "Solo necesarias",
+    "privacy": "Privacidad",
+    "settings": "Configuración de cookies"
   }
 }

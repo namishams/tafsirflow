@@ -3,6 +3,7 @@ import { Link } from "@/i18n/navigation";
 import { LOCALE_META } from "@/i18n/locales";
 import Wordmark from "./Wordmark";
 import TrustStrip from "./TrustStrip";
+import { CookieSettingsLink } from "./analytics/Analytics";
 import MadeInDubai from "./MadeInDubai";
 import Skyline from "./Skyline";
 
@@ -103,6 +104,7 @@ export default async function SiteFooter() {
             <Link href="/legal/terms" className="hover:text-ink">{t("home2.terms")}</Link>
             <Link href="/legal/imprint" className="hover:text-ink">{t("free.imprint")}</Link>
             <Link href="/islam/mosques" className="hover:text-ink">{t("free.visit")}</Link>
+            <CookieSettingsLink label={t("consent.settings")} />
           </p>
         </div>
       </div>

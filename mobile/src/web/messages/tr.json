@@ -604,7 +604,8 @@
     "imprintTitle": "Künye",
     "imprintProvider": "Hizmet sağlayıcı",
     "imprintContact": "İletişim",
-    "imprintPending": "Hizmet sağlayıcıya ilişkin tam bilgiler, herkese açık lansmandan önce eklenecektir."
+    "imprintPending": "Hizmet sağlayıcıya ilişkin tam bilgiler, herkese açık lansmandan önce eklenecektir.",
+    "analyticsBody": "## Web analizi (Google Analytics ve Google Tag Manager)\nGoogle Tag Manager ve Google Analytics 4'ü (Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Ireland) yalnızca çerez bildiriminde “Kabul et”i seçerseniz yükleriz; bunlarla hangi sayfaların kullanıldığını toplu olarak ölçeriz. O zamana kadar Google İzin Modu “reddedildi” durumundadır ve Google'dan hiçbir şey yüklenmez. Gönderilenler: arama parametreleri olmadan sayfa adresi, sayfa başlığı ve tarayıcı ile cihaza ilişkin teknik bilgiler; Google'a göre Google Analytics 4 IP adreslerini saklamaz. Google bunun için çerezler kullanır (_ga, en fazla 2 yıl). Ad, e-posta adresi veya hesap kimliği ve reklam sinyali göndermeyiz; hesap, profil, mesaj ve yönetim sayfalarını ölçmeyiz. Uygulamada analiz yapılmaz. Veriler ABD'ye aktarılabilir (AB-ABD Veri Gizliliği Çerçevesi). Hukuki dayanak: izniniz (GDPR md. 6(1)(a)). Seçiminizi 12 ay boyunca qmc_consent çerezinde saklarız; her sayfanın altındaki “Çerez ayarları” ile istediğiniz zaman değiştirebilir veya geri alabilir, çerezleri tarayıcınızdan silebilirsiniz. Bu bölüm, 3. bölümdeki analiz hizmeti kullanmadığımız ifadesinden önce gelir."
   },
   "support": {
     "kicker": "Projeye destek olun",
@@ -2596,5 +2597,13 @@
     "privacy": "Gizlilik",
     "signOut": "Çıkış yap",
     "syncTitle": "Senkronizasyon açık"
+  },
+  "consent": {
+    "title": "Çerezler",
+    "text": "İzninizle, hangi sayfaların kullanıldığını Google Analytics ile anonim olarak ölçmek istiyoruz.",
+    "accept": "Kabul et",
+    "necessary": "Yalnızca gerekli",
+    "privacy": "Gizlilik",
+    "settings": "Çerez ayarları"
   }
 }

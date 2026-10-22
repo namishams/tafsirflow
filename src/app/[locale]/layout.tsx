@@ -30,6 +30,7 @@ import AppHandoff from "@/components/apppush/AppHandoff";
 import { appStoreUrl } from "@/lib/appstore";
 import NativeBridge from "@/components/NativeBridge";
 import LocalDigits from "@/components/LocalDigits";
+import Analytics from "@/components/analytics/Analytics";
 import "../globals.css";
 
 // default title/description for pages without their own metadata (account, lessons, profile): in the visitor's language
@@ -57,7 +58,7 @@ export default async function LocaleLayout({ children, params }: { children: Rea
       </head>
       <body className="min-h-screen">
         {/* the browser gets only the texts its components read; folders with their own layout narrow this further */}
-        <ClientMessages route="@root" locale={locale}><RadioProvider><Announcement /><PromoBars appUrl={appStoreUrl()} /><AppHandoff url={appStoreUrl()} />{children}<ScrollReveal /><Pwa /><Rewards /><StageLight /><NativeBridge /><LocalDigits locale={locale} /></RadioProvider></ClientMessages>
+        <ClientMessages route="@root" locale={locale}><RadioProvider><Announcement /><PromoBars appUrl={appStoreUrl()} /><AppHandoff url={appStoreUrl()} />{children}<ScrollReveal /><Pwa /><Rewards /><StageLight /><NativeBridge /><LocalDigits locale={locale} /><Analytics /></RadioProvider></ClientMessages>
         <SideCalligraphy />
       </body>
     </html>

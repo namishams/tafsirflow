@@ -604,7 +604,8 @@
     "imprintTitle": "Info penyedia",
     "imprintProvider": "Penyedia",
     "imprintContact": "Kontak",
-    "imprintPending": "Detail lengkap penyedia akan ditambahkan sebelum peluncuran publik."
+    "imprintPending": "Detail lengkap penyedia akan ditambahkan sebelum peluncuran publik.",
+    "analyticsBody": "## Analitik web (Google Analytics dan Google Tag Manager)\nKami hanya memuat Google Tag Manager dan Google Analytics 4 (Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Ireland) jika Anda memilih “Terima” pada pemberitahuan cookie; dengannya kami mengukur secara agregat halaman mana yang digunakan. Sebelum itu, mode persetujuan Google diatur ke “ditolak” dan tidak ada yang dimuat dari Google. Yang dikirim: alamat halaman tanpa parameter pencarian, judul halaman, dan informasi teknis tentang browser dan perangkat; menurut Google, Google Analytics 4 tidak menyimpan alamat IP. Google memasang cookie untuk ini (_ga, hingga 2 tahun). Kami tidak pernah mengirim nama, alamat email, atau ID akun, maupun sinyal iklan, dan tidak mengukur halaman akun, profil, pesan, dan admin. Tidak ada analitik di aplikasi. Data dapat ditransfer ke AS (EU-US Data Privacy Framework). Dasar hukum: persetujuan Anda (Pasal 6(1)(a) GDPR). Pilihan Anda disimpan 12 bulan dalam cookie qmc_consent; Anda dapat mengubah atau menariknya kapan saja melalui “Pengaturan cookie” di bagian bawah setiap halaman dan menghapus cookie di browser. Bagian ini berlaku di atas pernyataan di bagian 3 bahwa kami tidak menggunakan layanan analitik."
   },
   "support": {
     "kicker": "Dukung proyek ini",
@@ -2596,5 +2597,13 @@
     "privacy": "Privasi",
     "signOut": "Keluar",
     "syncTitle": "Sinkronisasi aktif"
+  },
+  "consent": {
+    "title": "Cookie",
+    "text": "Dengan persetujuan Anda, kami ingin mengukur secara anonim halaman mana yang digunakan dengan Google Analytics.",
+    "accept": "Terima",
+    "necessary": "Hanya yang diperlukan",
+    "privacy": "Privasi",
+    "settings": "Pengaturan cookie"
   }
 }

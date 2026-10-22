@@ -10,19 +10,20 @@ const https = (process.env.SITE_URL ?? "").startsWith("https://");
 
 // Content Security Policy: only our own scripts, styles, fonts and data; audio may also come from Quran.com's CDN.
 // Inline scripts are needed by Next.js itself and by our JSON-LD. The only third party is Google reCAPTCHA (bot protection),
-// which is loaded on protected forms only.
+// which is loaded on protected forms only, and – only after consent – Google Tag Manager / Analytics
+// (src/components/analytics/Analytics.tsx).
 const csp = [
   "default-src 'self'",
-  `script-src 'self' 'unsafe-inline' https://www.google.com/recaptcha/ https://www.gstatic.com/recaptcha/${prod ? "" : " 'unsafe-eval'"}`,
+  `script-src 'self' 'unsafe-inline' https://www.google.com/recaptcha/ https://www.gstatic.com/recaptcha/ https://www.googletagmanager.com https://www.google-analytics.com https://*.analytics.google.com${prod ? "" : " 'unsafe-eval'"}`,
   "frame-src https://www.google.com/recaptcha/ https://recaptcha.google.com/recaptcha/",
   "style-src 'self' 'unsafe-inline'",
-  "img-src 'self' data: blob: https://www.gstatic.com/recaptcha/ https://upload.wikimedia.org",
+  "img-src 'self' data: blob: https://www.gstatic.com/recaptcha/ https://upload.wikimedia.org https://www.googletagmanager.com https://www.google-analytics.com https://*.analytics.google.com",
   "font-src 'self' data:",
   "media-src 'self' blob: https://verses.quran.com https://*.quran.com https://audio.qurancdn.com https://download.quranicaudio.com",
   // the courses fetch Quran.com's word recordings ahead (src/components/learn/media.ts preloadClips) and play them as blob:
   // hadith by number from the published hadith-api (src/lib/learn/journey/hadith.ts: the long path's daily hadith and
   // the story of /start) – only that repository's path on the CDN
-  `connect-src 'self' https://www.google.com/recaptcha/ https://raw.githubusercontent.com https://audio.qurancdn.com https://verses.quran.com https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/${prod ? "" : " ws: wss:"}`,
+  `connect-src 'self' https://www.google.com/recaptcha/ https://raw.githubusercontent.com https://audio.qurancdn.com https://verses.quran.com https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/ https://www.googletagmanager.com https://www.google-analytics.com https://*.analytics.google.com${prod ? "" : " ws: wss:"}`,
   "frame-ancestors 'none'",
   "base-uri 'self'",
   "form-action 'self'",

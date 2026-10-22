@@ -604,7 +604,8 @@
     "imprintTitle": "Maklumat penerbit",
     "imprintProvider": "Penyedia",
     "imprintContact": "Hubungi kami",
-    "imprintPending": "Butiran penuh penyedia akan ditambah sebelum pelancaran awam."
+    "imprintPending": "Butiran penuh penyedia akan ditambah sebelum pelancaran awam.",
+    "analyticsBody": "## Analitik web (Google Analytics dan Google Tag Manager)\nKami hanya memuatkan Google Tag Manager dan Google Analytics 4 (Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Ireland) jika anda memilih “Terima” dalam notis kuki; dengannya kami mengukur secara agregat halaman yang digunakan. Sebelum itu, mod persetujuan Google ditetapkan kepada “ditolak” dan tiada apa-apa dimuatkan daripada Google. Yang dihantar: alamat halaman tanpa parameter carian, tajuk halaman dan maklumat teknikal tentang pelayar dan peranti; menurut Google, Google Analytics 4 tidak menyimpan alamat IP. Google menetapkan kuki untuk ini (_ga, sehingga 2 tahun). Kami tidak pernah menghantar nama, alamat e-mel atau ID akaun, mahupun isyarat iklan, dan tidak mengukur halaman akaun, profil, mesej dan pentadbiran. Tiada analitik dalam aplikasi. Data mungkin dipindahkan ke AS (EU-US Data Privacy Framework). Asas undang-undang: persetujuan anda (Perkara 6(1)(a) GDPR). Pilihan anda disimpan 12 bulan dalam kuki qmc_consent; anda boleh menukar atau menariknya pada bila-bila masa melalui “Tetapan kuki” di bahagian bawah setiap halaman dan memadam kuki dalam pelayar. Bahagian ini mengatasi kenyataan dalam bahagian 3 bahawa kami tidak menggunakan perkhidmatan analitik."
   },
   "support": {
     "kicker": "Sokong projek ini",
@@ -2596,5 +2597,13 @@
     "privacy": "Privasi",
     "signOut": "Log keluar",
     "syncTitle": "Penyegerakan aktif"
+  },
+  "consent": {
+    "title": "Kuki",
+    "text": "Dengan persetujuan anda, kami ingin mengukur secara tanpa nama halaman yang digunakan dengan Google Analytics.",
+    "accept": "Terima",
+    "necessary": "Yang perlu sahaja",
+    "privacy": "Privasi",
+    "settings": "Tetapan kuki"
   }
 }

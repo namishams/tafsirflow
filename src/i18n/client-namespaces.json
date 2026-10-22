@@ -1,6 +1,7 @@
 {
  "core": [
   "account",
+  "consent",
   "language",
   "nav",
   "promo",

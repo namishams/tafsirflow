@@ -604,7 +604,8 @@
     "imprintTitle": "Impressum",
     "imprintProvider": "Anbieter",
     "imprintContact": "Kontakt",
-    "imprintPending": "Die vollständigen Anbieterangaben werden vor dem öffentlichen Start ergänzt."
+    "imprintPending": "Die vollständigen Anbieterangaben werden vor dem öffentlichen Start ergänzt.",
+    "analyticsBody": "## Webanalyse (Google Analytics und Google Tag Manager)\nNur wenn Sie im Cookie-Hinweis „Akzeptieren“ wählen, laden wir Google Tag Manager und Google Analytics 4 (Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Ireland). Damit messen wir zusammengefasst, welche Seiten genutzt werden. Vorher ist der Einwilligungsmodus von Google auf „abgelehnt“ gesetzt und es wird nichts von Google geladen. Übermittelt werden die besuchte Adresse ohne Suchparameter, der Seitentitel und technische Angaben zu Browser und Gerät; Google Analytics 4 speichert nach Angaben von Google keine IP-Adressen. Google setzt dafür Cookies (_ga, bis zu 2 Jahre). Wir senden keine Namen, E-Mail-Adressen oder Konto-Kennungen, keine Werbesignale und messen keine Konto-, Profil-, Nachrichten- und Verwaltungsseiten. In der App findet keine Analyse statt. Eine Übermittlung in die USA ist möglich (EU-US Data Privacy Framework). Rechtsgrundlage: Ihre Einwilligung (Art. 6 Abs. 1 lit. a DSGVO, § 25 Abs. 1 TDDDG). Ihre Wahl speichern wir 12 Monate im Cookie qmc_consent. Sie können sie jederzeit über „Cookie-Einstellungen“ unten auf jeder Seite ändern oder widerrufen und Cookies in Ihrem Browser löschen. Dieser Abschnitt geht der Aussage in Abschnitt 3 vor, dass wir keine Analysedienste nutzen."
   },
   "support": {
     "kicker": "Projekt unterstützen",
@@ -2596,5 +2597,13 @@
     "privacy": "Datenschutz",
     "signOut": "Abmelden",
     "syncTitle": "Synchronisierung aktiv"
+  },
+  "consent": {
+    "title": "Cookies",
+    "text": "Wir möchten mit Google Analytics anonym messen, welche Seiten genutzt werden – nur mit Ihrer Zustimmung.",
+    "accept": "Akzeptieren",
+    "necessary": "Nur notwendige",
+    "privacy": "Datenschutz",
+    "settings": "Cookie-Einstellungen"
   }
 }

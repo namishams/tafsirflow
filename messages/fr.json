@@ -604,7 +604,8 @@
     "imprintTitle": "Mentions légales",
     "imprintProvider": "Éditeur",
     "imprintContact": "Contact",
-    "imprintPending": "Les informations complètes sur l'éditeur seront ajoutées avant le lancement public."
+    "imprintPending": "Les informations complètes sur l'éditeur seront ajoutées avant le lancement public.",
+    "analyticsBody": "## Mesure d'audience (Google Analytics et Google Tag Manager)\nNous ne chargeons Google Tag Manager et Google Analytics 4 (Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Ireland) que si vous choisissez « Accepter » dans le bandeau cookies ; ils nous permettent de mesurer de façon agrégée quelles pages sont utilisées. Auparavant, le mode de consentement de Google est réglé sur « refusé » et rien n'est chargé depuis Google. Sont transmis : l'adresse de la page sans paramètres de recherche, son titre et des informations techniques sur le navigateur et l'appareil ; selon Google, Google Analytics 4 n'enregistre pas les adresses IP. Google dépose pour cela des cookies (_ga, jusqu'à 2 ans). Nous n'envoyons jamais de noms, d'adresses e-mail ni d'identifiants de compte, aucun signal publicitaire, et ne mesurons pas les pages de compte, de profil, de messages et d'administration. L'application ne fait aucune mesure d'audience. Un transfert vers les États-Unis est possible (EU-US Data Privacy Framework). Base légale : votre consentement (art. 6, par. 1, a) RGPD). Nous conservons votre choix 12 mois dans le cookie qmc_consent ; vous pouvez le modifier ou le retirer à tout moment via « Paramètres des cookies » en bas de chaque page et supprimer les cookies dans votre navigateur. Cette section prévaut sur l'indication de la section 3 selon laquelle nous n'utilisons aucun service d'analyse."
   },
   "support": {
     "kicker": "Soutenir le projet",
@@ -2596,5 +2597,13 @@
     "privacy": "Confidentialité",
     "signOut": "Se déconnecter",
     "syncTitle": "Synchronisation active"
+  },
+  "consent": {
+    "title": "Cookies",
+    "text": "Avec votre accord, nous aimerions mesurer de façon anonyme avec Google Analytics quelles pages sont utilisées.",
+    "accept": "Accepter",
+    "necessary": "Nécessaires uniquement",
+    "privacy": "Confidentialité",
+    "settings": "Paramètres des cookies"
   }
 }

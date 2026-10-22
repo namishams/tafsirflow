@@ -604,7 +604,8 @@
     "imprintTitle": "版本信息",
     "imprintProvider": "服务提供者",
     "imprintContact": "联系方式",
-    "imprintPending": "完整的服务提供者信息将在正式上线前补充。"
+    "imprintPending": "完整的服务提供者信息将在正式上线前补充。",
+    "analyticsBody": "## 网站分析（Google Analytics 和 Google Tag Manager）\n只有当您在 Cookie 提示中选择“接受”时，我们才会加载 Google Tag Manager 和 Google Analytics 4（Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Ireland），用于汇总统计哪些页面被使用。在此之前，Google 同意模式设为“拒绝”，不会从 Google 加载任何内容。发送的内容：不含查询参数的页面地址、页面标题以及浏览器和设备的技术信息；据 Google 说明，Google Analytics 4 不存储 IP 地址。Google 为此设置 Cookie（_ga，最长 2 年）。我们从不发送姓名、电子邮件地址或账户标识，也不发送广告信号，并且不统计账户、个人资料、消息和管理页面。应用内不进行任何分析。数据可能被传输到美国（EU-US Data Privacy Framework）。法律依据：您的同意（GDPR 第 6 条第 1 款 a 项）。您的选择会在 Cookie qmc_consent 中保存 12 个月；您可随时通过每个页面底部的“Cookie 设置”更改或撤回，并可在浏览器中删除 Cookie。本节优先于第 3 节中“我们不使用分析服务”的说法。"
   },
   "support": {
     "kicker": "支持本项目",
@@ -2596,5 +2597,13 @@
     "privacy": "隐私",
     "signOut": "退出登录",
     "syncTitle": "同步已开启"
+  },
+  "consent": {
+    "title": "Cookie",
+    "text": "征得您的同意后，我们希望使用 Google Analytics 匿名统计哪些页面被使用。",
+    "accept": "接受",
+    "necessary": "仅必要",
+    "privacy": "隐私",
+    "settings": "Cookie 设置"
   }
 }

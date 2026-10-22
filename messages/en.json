@@ -604,7 +604,8 @@
     "imprintTitle": "Imprint",
     "imprintProvider": "Provider",
     "imprintContact": "Contact",
-    "imprintPending": "Full provider details are added before the public launch."
+    "imprintPending": "Full provider details are added before the public launch.",
+    "analyticsBody": "## Web analytics (Google Analytics and Google Tag Manager)\nOnly if you choose “Accept” in the cookie notice do we load Google Tag Manager and Google Analytics 4 (Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Ireland). We use them to measure, in aggregate, which pages are used. Until then Google Consent Mode is set to “denied” and nothing is loaded from Google. What is sent: the page address without query parameters, the page title and technical details about your browser and device; according to Google, Google Analytics 4 does not store IP addresses. Google sets cookies for this (_ga, up to 2 years). We never send names, email addresses or account identifiers, no advertising signals, and we do not measure account, profile, messages or admin pages. There is no analytics in the app. Data may be transferred to the USA (EU-US Data Privacy Framework). Legal basis: your consent (Art. 6(1)(a) GDPR, § 25(1) TDDDG). We store your choice for 12 months in the cookie qmc_consent. You can change or withdraw it at any time via “Cookie settings” at the bottom of every page and delete cookies in your browser. This section takes precedence over the statement in section 3 that we use no analytics services."
   },
   "support": {
     "kicker": "Support the project",
@@ -2596,5 +2597,13 @@
     "privacy": "Privacy",
     "signOut": "Sign out",
     "syncTitle": "Sync is on"
+  },
+  "consent": {
+    "title": "Cookies",
+    "text": "With your consent we would like to use Google Analytics to measure anonymously which pages are used.",
+    "accept": "Accept",
+    "necessary": "Only necessary",
+    "privacy": "Privacy",
+    "settings": "Cookie settings"
   }
 }

@@ -55,6 +55,8 @@ export default async function LegalPage({ params }: { params: Promise<{ locale: 
             <p className="mt-2 text-sm text-muted">{t("updated")}</p>
             <Body text={t(`${d}Body`)} />
             {/* the messenger's privacy note lives here (owner 22.10.2026), not in the inbox */}
+            {/* Google Analytics / Tag Manager with consent (src/components/analytics/Analytics.tsx) */}
+            {d === "privacy" ? <section id="analytics"><Body text={t("analyticsBody")} /></section> : null}
             {d === "privacy" ? (() => { const m = messengerText(locale); return (
               <section id="messenger"><h2 className="mt-8 text-lg font-bold">{m.title}</h2>{para(m.privacy, "m1")}{para(m.viewOnceHint, "m2")}</section>
             ); })() : null}
