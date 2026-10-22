@@ -6,7 +6,7 @@ import nodemailer from "nodemailer";
 export const mailConfigured = () => !!process.env.SMTP_HOST;
 
 // html (optional): a designed version of the same message; the plain text stays for clients that show only text
-export async function sendMail(to: string, subject: string, text: string, html?: string): Promise<boolean> {
+export async function sendMail(to: string, subject: string, text: string, html?: string, replyTo?: string): Promise<boolean> {
   const host = process.env.SMTP_HOST;
   if (!host) {
     console.warn(`[mail] SMTP not configured – would send to ${to}: ${subject}\n${text}`);
@@ -19,6 +19,6 @@ export async function sendMail(to: string, subject: string, text: string, html?:
     tls: { rejectUnauthorized: process.env.SMTP_INSECURE_TLS !== "1" },
     auth: process.env.SMTP_USER ? { user: process.env.SMTP_USER, pass: process.env.SMTP_PASS } : undefined,
   });
-  await t.sendMail({ from: process.env.MAIL_FROM ?? process.env.SMTP_USER, to, subject, text, ...(html ? { html } : {}) });
+  await t.sendMail({ from: process.env.MAIL_FROM ?? process.env.SMTP_USER, to, subject, text, ...(html ? { html } : {}), ...(replyTo ? { replyTo } : {}) });
   return true;
 }

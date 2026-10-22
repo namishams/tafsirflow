@@ -15,11 +15,13 @@ export default async function FeedbackPage({ params }: { params: Promise<{ local
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations("feedback");
+  const tc = await getTranslations("contactForms");
   return (
     <main className="mx-auto max-w-4xl px-4 pb-24 pt-8">
       <h1 className="font-display text-[40px] leading-[1.05] sm:text-5xl">{t("title")}</h1>
       <p className="mt-4 max-w-2xl text-[17px] leading-relaxed text-muted">{t("lead")}</p>
       <Link href="/changelog" className="mt-3 inline-block text-sm font-bold text-accent hover:underline">{t("changelogLink")} <ArrowNext /></Link>
+      <Link href="/suggestions" className="ms-4 mt-3 inline-block text-sm font-bold text-accent hover:underline">{tc("sug.cta")} <ArrowNext /></Link>
       <FeedbackBoard />
     </main>
   );

@@ -9,7 +9,6 @@
   "rewards"
  ],
  "routes": {
-  "[...rest]": [],
   "@account": [
    "dashboard",
    "free",
@@ -37,6 +36,7 @@
    "social",
    "trust"
   ],
+  "[...rest]": [],
   "about": [
    "founderAbout"
   ],
@@ -167,7 +167,9 @@
   ],
   "reciter-path": [],
   "reciters": [
-   "donate"
+   "contactForms",
+   "donate",
+   "trust"
   ],
   "salah": [],
   "school": [],
@@ -189,6 +191,10 @@
   ],
   "stats": [
    "donate"
+  ],
+  "suggestions": [
+   "contactForms",
+   "trust"
   ],
   "support": [
    "donate",
@@ -215,6 +221,7 @@
    "tajweed"
   ],
   "talents": [
+   "contactForms",
    "founderAbout",
    "premium"
   ],

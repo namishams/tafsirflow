@@ -40,3 +40,28 @@ export async function checkCaptcha(input: CaptchaInput, action: string, ip: stri
     return "ok";
   }
 }
+
+// Strict check for the contact forms (/suggestions, /reciters/apply; owner 22.10.2026): the "I'm not a robot" checkbox
+// is always required and the invisible v3 score is checked as well. Without a v2 key only v3 applies (logged).
+export async function checkCaptchaStrict(input: CaptchaInput, action: string, ip: string): Promise<boolean> {
+  if (!captchaEnabled()) return true;
+  const v2Secret = process.env.RECAPTCHA_V2_SECRET, v2Site = process.env.RECAPTCHA_V2_SITE_KEY;
+  if (!v2Secret || !v2Site) {
+    console.warn(`reCAPTCHA v2 not configured: ${action} falls back to v3 only`);
+    return (await checkCaptcha({ captcha: input.captcha }, action, ip)) === "ok";
+  }
+  const v2 = typeof input.captchaV2 === "string" ? input.captchaV2.slice(0, 4000) : "";
+  const v3 = typeof input.captcha === "string" ? input.captcha.slice(0, 4000) : "";
+  if (!v2) return false;
+  try {
+    const r2 = await siteverify(v2Secret, v2, ip);
+    if (!r2.success) return false;
+    if (!v3) return false;
+    const r3 = await siteverify(process.env.RECAPTCHA_V3_SECRET!, v3, ip);
+    if (!r3.success && r3["error-codes"]?.some((c) => c.includes("secret"))) { console.error("reCAPTCHA: secret rejected", r3["error-codes"]); return true; }
+    return !!r3.success && r3.action === action && (r3.score ?? 0) >= Number(process.env.RECAPTCHA_MIN_SCORE ?? 0.5);
+  } catch (e) {
+    console.error("reCAPTCHA check failed", e);
+    return true;
+  }
+}

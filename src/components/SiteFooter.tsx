@@ -31,7 +31,7 @@ const FOOTER: { title: string; items: { href: string; key: string }[] }[] = [
   ] },
   { title: "groupMore", items: [
     { href: "/how", key: "how" }, { href: "/app", key: "fAppStickers" }, { href: "/premium", key: "premium" }, { href: "/about", key: "about" },
-    { href: "/support", key: "support" }, { href: "/feedback", key: "feedback" }, { href: "/changelog", key: "changelog" },
+    { href: "/support", key: "support" }, { href: "/feedback", key: "feedback" }, { href: "/suggestions", key: "suggestions" }, { href: "/reciters/apply", key: "reciterApply" }, { href: "/changelog", key: "changelog" },
   ] },
 ];
 

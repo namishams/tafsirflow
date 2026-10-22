@@ -1795,3 +1795,16 @@ CREATE TABLE IF NOT EXISTS store_reservations (
 CREATE UNIQUE INDEX IF NOT EXISTS iap_entitlements_unique_owner ON iap_entitlements (product_id) WHERE revoked_at IS NULL AND product_id LIKE '%.unique.%';
 -- opt-in: show one's numbers and one-of-ones on the "Unikate & Nummern" board
 ALTER TABLE community_profiles ADD COLUMN IF NOT EXISTS show_collection boolean NOT NULL DEFAULT false;
+-- messages from the contact forms /suggestions and /reciters/apply (backup of the e-mail to info@; never shared)
+CREATE TABLE IF NOT EXISTS contact_messages (
+  id          bigserial PRIMARY KEY,
+  kind        text NOT NULL,
+  name        text,
+  email       text,
+  category    text,
+  message     text NOT NULL,
+  extra       jsonb NOT NULL DEFAULT '{}',
+  mailed      boolean NOT NULL DEFAULT false,
+  created_at  timestamptz NOT NULL DEFAULT now()
+);
+CREATE INDEX IF NOT EXISTS contact_messages_created ON contact_messages (kind, created_at DESC);

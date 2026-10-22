@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { Link } from "@/i18n/navigation";
+import { useTranslations } from "next-intl";
 import { starText } from "@/lib/starText";
 
 // "Is this you? Take over the profile" (owner 22.10.2026): signed-in members with a Quran Talents profile send the role,
@@ -9,6 +10,7 @@ import { starText } from "@/lib/starText";
 type Err = "" | "signin" | "needProfile" | "badChannel" | "error";
 export default function StarClaimWeb({ locale, username, died }: { locale: string; username: string; died: boolean }) {
   const s = starText(locale);
+  const tc = useTranslations("contactForms");
   const [open, setOpen] = useState(false);
   const [invite, setInvite] = useState("");
   const [invited, setInvited] = useState(false);
@@ -74,6 +76,7 @@ export default function StarClaimWeb({ locale, username, died }: { locale: strin
         </p>
       ) : null}
       <button type="button" disabled={busy || !channel.trim()} onClick={() => void send()} className="btn-gold h-12 w-full rounded-full text-[16px] font-bold disabled:opacity-50">{s.send}</button>
+      <Link href="/reciters/apply" className="text-[14px] font-semibold text-accent hover:underline">{tc("rec.claimHint")}</Link>
     </section>
   );
 }

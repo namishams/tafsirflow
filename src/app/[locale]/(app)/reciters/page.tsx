@@ -1,3 +1,4 @@
+import { getTranslations } from "next-intl/server";
 import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
@@ -71,6 +72,7 @@ export default async function RecitersPage({ params }: { params: Promise<{ local
   const { locale } = await params;
   setRequestLocale(locale);
   const c = content(locale);
+  const tc = await getTranslations("contactForms");
   const more = await loadBioTexts(locale);
   const ld = { "@context": "https://schema.org", "@type": "ItemList", name: c.title, itemListElement: RECITER_BIOS.map((r, i) => ({ "@type": "ListItem", position: i + 1, url: abs(`/${locale}/reciters/${r.slug}`), name: r.name })) };
   return (
@@ -85,6 +87,7 @@ export default async function RecitersPage({ params }: { params: Promise<{ local
           <div className="mt-8 flex flex-wrap gap-3">
             <Link href="/islam/reciter-path" className="btn-gold inline-flex h-12 items-center rounded-md px-6 text-[15px] font-bold">{c.path}</Link>
             <Link href="/radio" className="inline-flex h-12 items-center rounded-md border border-white/30 px-6 text-[15px] font-bold hover:border-white">{c.radio}</Link>
+            <Link href="/reciters/apply" className="inline-flex h-12 items-center rounded-md border border-[rgb(var(--gold))]/60 px-6 text-[15px] font-bold text-[rgb(var(--gold))] hover:border-[rgb(var(--gold))]">{tc("rec.cta")}</Link>
           </div>
         </div>
         <span aria-hidden className="q-arcade opacity-70" />
