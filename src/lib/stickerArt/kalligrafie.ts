@@ -1,6 +1,6 @@
 // Pack "Kalligrafie Gold": phrases of remembrance in gold on emerald, sapphire and night cartouches.
 // The letterforms come from real Arabic fonts (see kalligrafiePfade.ts). No Quran verse text. All pieces are sacred.
-import { L, S, circ, ell, lin, metal, octStar, part, rad, rect, shift, sparkles, sticker, type Part, type StickerPack } from "./kit";
+import { type StickerTier, L, S, circ, ell, lin, metal, octStar, part, rad, rect, shift, sparkles, sticker, type Part, type StickerPack } from "./kit";
 import { CALLI_PATHS, type CalliStyle } from "./kalligrafiePfade";
 
 const P = "kalligrafie";
@@ -15,9 +15,12 @@ const BACK: Record<string, [string, string, string]> = {
   sapphire: ["#2a5fc4", "#123479", "#071a42"],
   night: ["#24485a", "#10293a", "#06131d"],
   ruby: ["#a8213f", "#5e0c22", "#2c0410"],
+  black: ["#3a3a3a", "#141414", "#050505"],
+  wine: ["#7a1020", "#3e0610", "#1a0206"],
 };
 
-function backing(style: CalliStyle, tone: keyof typeof BACK): Part {
+export type CalliTone = keyof typeof BACK;
+export function backing(style: CalliStyle, tone: keyof typeof BACK): Part {
   const [a, b, c] = BACK[tone];
   const grads = [...metal("m"), rad("bg", [[0, a], [0.6, b], [1, c]], "50%", "40%", "70%"), rad("sheen", [[0, "#ffffff", 0.16], [1, "#ffffff", 0]], "40%", "25%", "60%")];
   if (style === "thuluth") {
@@ -53,11 +56,12 @@ function backing(style: CalliStyle, tone: keyof typeof BACK): Part {
   ], grads);
 }
 
-function calli(id: string, tone: keyof typeof BACK) {
-  const c = CALLI_PATHS.find((p) => p.id === id);
-  if (!c) throw new Error(`calligraphy ${id} missing`);
+type CalliPath = { id: string; style: CalliStyle; name: string; d: string };
+
+/** a gold calligraphy cartouche from a generated path */
+export function calliSticker(c: CalliPath, meta: { id: string; pack: string; name?: string; tier?: StickerTier; shimmer?: boolean }, tone: CalliTone) {
   const d = c.d;
-  return sticker({ id: `kalligrafie-${id}`, pack: P, name: c.name, tier: id === "allah" ? "edel" : "common", sacred: true },
+  return sticker({ id: meta.id, pack: meta.pack, name: meta.name ?? c.name, tier: meta.tier ?? "common", sacred: true, ...(meta.shimmer ? { shimmer: true } : {}) },
     backing(c.style, tone),
     part([
       L(shift(d, 1.6, 2.4), "#000000", { op: 0.45 }),
@@ -67,6 +71,12 @@ function calli(id: string, tone: keyof typeof BACK) {
     ], [lin("g", [[0, "#fff4c4"], [0.35, "#f0cf7a"], [0.6, "#c99638"], [1, "#f7dd92"]], 0, 0, 0.3, 1), lin("gl", [[0, "#ffffff", 0.45], [0.4, "#ffffff", 0], [1, "#ffffff", 0]], 0, 0, 0, 1)]),
     sparkles([[40, 56, 5], [162, 146, 4]], "#fff6d8"),
   );
+}
+
+function calli(id: string, tone: CalliTone) {
+  const c = CALLI_PATHS.find((p) => p.id === id);
+  if (!c) throw new Error(`calligraphy ${id} missing`);
+  return calliSticker(c, { id: `kalligrafie-${id}`, pack: P, tier: id === "allah" ? "edel" : "common" }, tone);
 }
 
 export const KALLIGRAFIE: StickerPack = {

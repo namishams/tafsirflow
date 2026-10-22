@@ -8,7 +8,7 @@ const HENNA = "#8a3216";
 const KH = "M100 30C122 30 134 46 134 66C134 80 128 88 124 94C146 104 164 130 170 166Q150 174 130 170Q115 176 100 172Q85 176 70 170Q50 174 30 166C36 130 54 104 76 94C72 88 66 80 66 66C66 46 78 30 100 30Z";
 
 /** a damask rose seen from above: three rings of cupped petals and a spiral heart */
-function rose(cx: number, cy: number, r: number, id: string, pal = ["#5c0a22", "#9c1838", "#d23a5c", "#f27a96", "#ffc4d2"]): Part {
+export function rose(cx: number, cy: number, r: number, id: string, pal = ["#5c0a22", "#9c1838", "#d23a5c", "#f27a96", "#ffc4d2"]): Part {
   const ring = (n: number, dist: number, pr: number, rot: number, col: string, edge: string) =>
     Array.from({ length: n }, (_, i) => { const [x, y] = polar(cx, cy, dist, rot + (i * 360) / n); return L(circ(x, y, pr), col, { stroke: edge, sw: r * 0.025 }); });
   return part([

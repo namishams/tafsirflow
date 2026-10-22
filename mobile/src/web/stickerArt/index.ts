@@ -7,10 +7,12 @@ import { KUNST } from "./kunst";
 import { SCHWESTERN } from "./schwestern";
 import { GARTEN } from "./garten";
 import { RAR } from "./rar";
+import { MUHARRAM } from "./muharram";
+import { ASMA_UL_HUSNA, STRONG_WOMEN } from "./namen";
 
 export type { StickerArt, StickerPack, StickerLayer, StickerGradient, StickerTier } from "./kit";
 
-export const STICKER_PACKS: StickerPack[] = [PERLEN, EDELSTEINE, KALLIGRAFIE, KUNST, SCHWESTERN, GARTEN, RAR];
+export const STICKER_PACKS: StickerPack[] = [PERLEN, EDELSTEINE, KALLIGRAFIE, KUNST, SCHWESTERN, GARTEN, RAR, MUHARRAM, ASMA_UL_HUSNA, STRONG_WOMEN];
 
 export const STICKER_ART: Record<string, StickerArt> = Object.fromEntries(STICKER_PACKS.flatMap((p) => p.stickers.map((s) => [s.id, s])));
 export const stickerArt = (id: string): StickerArt | undefined => STICKER_ART[id];
