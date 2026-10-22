@@ -48,7 +48,7 @@ const kw: Record<string, KeywordSet> = {
   "/calendar": k("calendario islámico de hoy",
     ["calendario islámico", "calendario hégira", "fecha islámica de hoy", "meses islámicos", "fecha hégira", "Ramadán fecha", "Eid fecha", "año hegírico", "calendario musulmán"],
     ["en qué fecha estamos en el calendario islámico", "cuándo empieza el Ramadán", "cuándo es el Eid al-Fitr", "cuándo es el Eid al-Adha", "cuáles son los meses del calendario islámico", "año nuevo islámico cuándo es", "qué día es hoy en el calendario hégira", "cuándo es Ashura", "noches importantes del calendario islámico", "convertir fecha gregoriana a hégira"]),
-  "/names": k("los 99 nombres de Alá",
+  "/islam/names": k("los 99 nombres de Alá",
     ["99 nombres de Alá", "Asma ul-Husna", "nombres de Alá", "nombres de Dios en el islam", "al-Rahman", "al-Rahim", "nombres de Allah con significado"],
     ["los 99 nombres de Alá con su significado", "99 nombres de Alá en árabe y español", "lista de los nombres de Alá", "cómo memorizar los 99 nombres de Alá", "qué significa Ar-Rahman", "qué significa Al-Aziz y Al-Hakim", "los nombres más hermosos de Alá", "audio de los 99 nombres de Alá"]),
   "/duas": k("súplicas del Corán y duas",

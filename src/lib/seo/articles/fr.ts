@@ -142,7 +142,7 @@ const a: Record<string, Article> = {
           "Dans l'enseignement islamique, la guidance se demande. Le croyant invoque Allah pour être guidé dans ses choix, pour que sa compréhension reste droite, pour être aidé à pratiquer ce qu'il sait. La page des invocations réunit des demandes de guidance avec le texte arabe, la translittération, la traduction et la source, à apprendre une par une.",
           "Les noms d'Allah offrent une autre porte. L'un d'eux, Al-Hadi, se traduit souvent par « Celui qui guide ». Apprendre un nom avec son sens rend la demande plus consciente que de simples mots récités par habitude.",
         ],
-        links: [["/duas", "Invocations de guidance"], ["/names", "Les 99 noms d'Allah"]],
+        links: [["/duas", "Invocations de guidance"], ["/islam/names", "Les 99 noms d'Allah"]],
       },
       {
         h2: "Une habitude simple pour une lecture qui guide",
@@ -171,7 +171,7 @@ const a: Record<string, Article> = {
     linksTitle: "Pour continuer",
     links: [
       ["/quran", "Les 114 sourates avec tafsir"], ["/surah/1", "Sourate Al-Fatiha"], ["/surah/12", "Sourate Yusuf"], ["/vocab", "Vocabulaire coranique"],
-      ["/duas", "Invocations"], ["/names", "99 noms d'Allah"], ["/shams", "Méthode Shams"], ["/guides/understanding-the-quran-tafsir", "Comprendre le Coran avec le tafsir"], ["/islam/quran", "Le Coran dans l'islam"],
+      ["/duas", "Invocations"], ["/islam/names", "99 noms d'Allah"], ["/shams", "Méthode Shams"], ["/guides/understanding-the-quran-tafsir", "Comprendre le Coran avec le tafsir"], ["/islam/quran", "Le Coran dans l'islam"],
     ],
     cta: ["/guides/understanding-the-quran-tafsir", "Apprendre à lire avec le tafsir"],
     note: "Ce texte présente un enseignement général. Il ne remplace ni un avis religieux ni l'étude auprès d'une personne qualifiée de l'école que vous suivez, sunnite ou chiite.",
@@ -503,7 +503,7 @@ const a: Record<string, Article> = {
           "Dites bismillah avant de commencer votre travail ou votre repas. Gardez chaque jour un petit passage du Coran. Apprenez un nom d'Allah avec son sens : Ar-Razzaq, Celui qui pourvoit, est l'un des quatre-vingt-dix-neuf noms. Le soir, remerciez pour une chose précise, en le disant à voix haute ou dans une invocation.",
           "Rien de tout cela n'est une garantie. C'est une manière de vivre qui rappelle, jour après jour, que tout bien vient d'Allah, et la reconnaissance est une belle façon de commencer.",
         ],
-        links: [["/names", "Les 99 noms d'Allah"], ["/duas", "Invocations de gratitude"]],
+        links: [["/islam/names", "Les 99 noms d'Allah"], ["/duas", "Invocations de gratitude"]],
       },
     ],
     faqTitle: "Questions sur la baraka et le rizq",
@@ -516,10 +516,10 @@ const a: Record<string, Article> = {
     ],
     linksTitle: "Pour aller plus loin",
     links: [
-      ["/names", "Les 99 noms d'Allah"], ["/duas", "Invocations"], ["/islam/halal-haram", "Licite et illicite"], ["/islam/daily", "La vie quotidienne en islam"],
+      ["/islam/names", "Les 99 noms d'Allah"], ["/duas", "Invocations"], ["/islam/halal-haram", "Licite et illicite"], ["/islam/daily", "La vie quotidienne en islam"],
       ["/prayer", "Horaires de prière"], ["/quran", "Lire le Coran"], ["/guides/daily-quran-routine", "Routine quotidienne"], ["/shams", "Méthode Shams"],
     ],
-    cta: ["/names", "Découvrir les 99 noms d'Allah"],
+    cta: ["/islam/names", "Découvrir les 99 noms d'Allah"],
     note: "La baraka et le rizq sont des notions spirituelles de l'enseignement islamique. Ce texte ne promet ni richesse, ni santé, ni réussite, et ne remplace pas un conseil juridique, financier ou médical.",
   },
 
@@ -654,7 +654,7 @@ const a: Record<string, Article> = {
           "Pour trouver des mots, la page des invocations réunit des demandes de pardon et de miséricorde avec le texte arabe, la translittération et la traduction. Le générateur de dua aide à composer une invocation personnelle. Et les noms d'Allah comme Al-Ghaffar, Celui qui pardonne beaucoup, et At-Tawwab, Celui qui accueille le retour, peuvent servir d'appui quand on ne sait pas quoi dire.",
           "Le moment compte moins que la sincérité. Certains choisissent la fin de la nuit ou l'instant qui suit la prière, dans le calme, mais aucun moment n'est fermé : une demande de pardon faite dans l'ascenseur ou dans la file d'attente a sa place.",
         ],
-        links: [["/duas", "Invocations de pardon"], ["/dua-generator", "Écrire sa dua"], ["/names", "Les 99 noms d'Allah"]],
+        links: [["/duas", "Invocations de pardon"], ["/dua-generator", "Écrire sa dua"], ["/islam/names", "Les 99 noms d'Allah"]],
       },
       {
         h2: "Remplacer plutôt que seulement arrêter",
@@ -691,7 +691,7 @@ const a: Record<string, Article> = {
     ],
     linksTitle: "Pour continuer",
     links: [
-      ["/tawbah", "Guide de la tawba"], ["/duas", "Invocations de pardon"], ["/dua-generator", "Écrire sa dua"], ["/names", "Les 99 noms d'Allah"],
+      ["/tawbah", "Guide de la tawba"], ["/duas", "Invocations de pardon"], ["/dua-generator", "Écrire sa dua"], ["/islam/names", "Les 99 noms d'Allah"],
       ["/surah/39", "Sourate Az-Zumar"], ["/learn-salah", "Apprendre à prier"], ["/wudu", "Ablutions"], ["/prayer", "Horaires de prière"], ["/guides/daily-quran-routine", "Routine quotidienne"],
     ],
     cta: ["/duas", "Parcourir les invocations de pardon"],

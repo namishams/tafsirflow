@@ -48,7 +48,7 @@ const kw: Record<string, KeywordSet> = {
   "/calendar": k("islamic calendar",
     ["islamic calendar", "hijri calendar", "hijri date today", "islamic date today", "islamic months", "ramadan date", "eid date", "islamic holidays", "hijri to gregorian", "muharram", "dhul hijjah"],
     ["what is the islamic date today", "hijri date today", "islamic calendar 2026", "when is ramadan this year", "when is eid al fitr", "when is eid al adha", "islamic new year date", "hijri to gregorian converter", "gregorian to hijri converter", "names of the islamic months in order", "when does muharram start", "important islamic dates and events", "how does the hijri calendar work", "islamic calendar with moon sighting", "how many days in the islamic year", "when is laylat al qadr"]),
-  "/names": k("99 names of allah",
+  "/islam/names": k("99 names of allah",
     ["99 names of allah", "asma ul husna", "names of allah", "99 names of allah with meaning", "asmaul husna", "allah names", "99 names audio", "allah names meaning", "99 names of allah in arabic"],
     ["99 names of allah with meaning and pronunciation", "99 names of allah in english and arabic", "99 names of allah audio", "how to memorize the 99 names of allah", "list of 99 names of allah", "meaning of ar rahman and ar raheem", "benefits of learning the names of allah", "99 names of allah with transliteration", "learn the names of allah for kids", "names of allah to read daily", "difference between al rahman and al raheem", "which name of allah means the forgiving", "asmaul husna with translation", "how to call upon allah by his names", "names of allah in the quran"]),
   "/duas": k("daily duas",

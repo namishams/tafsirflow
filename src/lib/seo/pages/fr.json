@@ -14,7 +14,7 @@
 "/radio": {"title":"Radio Coran en ligne : récitation en continu","desc":"Écoutez la radio Coran en ligne avec une récitation continue. Idéal pour l'écoute de fond, la révision et l'habitude d'écouter chaque jour."},
 "/prayer": {"title":"Horaires de prière aujourd'hui et direction de la qibla","desc":"Consultez les horaires de prière du jour selon votre position, ainsi que la direction de la qibla. Pour ne manquer aucune salat."},
 "/calendar": {"title":"Calendrier islamique : dates hégiriennes et fêtes","desc":"Voyez la date hégirienne du jour et le calendrier islamique avec les mois et les occasions importantes, à côté de la date grégorienne."},
-"/names": {"title":"Les 99 noms d'Allah : sens et prononciation","desc":"Apprenez les 99 noms d'Allah (Asma ul Husna) avec leur sens et leur prononciation, un nom à la fois. Une façon simple de les retenir."},
+"/islam/names": {"title":"Les 99 noms d'Allah : sens et prononciation","desc":"Apprenez les 99 noms d'Allah (Asma ul Husna) avec leur sens et leur prononciation, un nom à la fois. Une façon simple de les retenir."},
 "/duas": {"title":"Invocations du quotidien (duas) en arabe et français","desc":"Trouvez des invocations pour les moments du quotidien, avec texte arabe, translittération et traduction. Une collection simple à consulter."},
 "/nahj": {"title":"Nahj al-Balagha en ligne : lecture et outils d'étude","desc":"Lisez le Nahj al-Balagha en ligne dans une lecture claire avec des outils d'étude. Un texte classique proposé à côté du Coran sur le site."},
 "/shams": {"title":"Méthode Shams : mémoriser et comprendre le Coran","desc":"La méthode Shams guide chaque verset en étapes courtes : écouter, comprendre, répéter et réviser. Pour mémoriser en gardant le sens."},

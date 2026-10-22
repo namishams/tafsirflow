@@ -76,7 +76,7 @@ const kw: Record<string, KeywordSet> = {
     short: ["calendrier islamique", "calendrier hégirien", "date hégirienne aujourd'hui", "calendrier musulman", "mois islamiques", "date du ramadan", "date de l'aïd", "convertisseur hégirien"],
     long: ["quelle est la date hégirienne aujourd'hui", "calendrier musulman avec dates grégoriennes", "les mois du calendrier islamique", "calendrier islamique des fêtes", "quand commence le ramadan cette année", "quand est l'aïd cette année", "convertir une date grégorienne en date hégirienne", "année hégirienne en cours", "dates importantes du calendrier musulman"],
   },
-  "/names": {
+  "/islam/names": {
     focus: "99 noms d'Allah",
     short: ["99 noms d'Allah", "asma ul husna", "noms d'Allah", "noms d'Allah et leur sens", "les beaux noms d'Allah", "apprendre les noms d'Allah", "prononciation noms d'Allah"],
     long: ["les 99 noms d'Allah avec leur signification", "les 99 noms d'Allah en arabe et en français", "comment apprendre les 99 noms d'Allah", "les 99 noms d'Allah prononciation", "liste des 99 noms d'Allah", "que signifie Ar-Rahman et Ar-Rahim", "apprendre les noms d'Allah avec les enfants", "comment mémoriser les noms d'Allah facilement", "audio des 99 noms d'Allah"],

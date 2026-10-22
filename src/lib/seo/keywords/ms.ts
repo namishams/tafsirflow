@@ -53,7 +53,7 @@ const kw: Record<string, KeywordSet> = {
   "/calendar": k("kalendar islam",
     "kalendar islam|kalendar hijrah|tarikh hijrah hari ini|bulan islam|hari penting islam|tarikh ramadan|tarikh aidilfitri|awal muharram",
     "tarikh hijrah hari ini berapa|senarai bulan dalam kalendar hijrah|bila awal ramadan tahun ini|bila hari raya aidilfitri dan aidiladha|hari penting dalam kalendar islam|kalendar islam dengan tarikh masihi|bilakah maulidur rasul|bilakah awal muharram dan maal hijrah|tukar tarikh masihi ke hijrah|bulan-bulan dalam kalendar hijrah dan namanya|tarikh hijrah dan masihi hari ini|bila bulan ramadan bermula|kalendar hijrah tahun ini|berapa hari dalam bulan hijrah|bila puasa sunat ayyamul bidh|apa itu bulan rejab dan syaaban"),
-  "/names": k("99 nama allah",
+  "/islam/names": k("99 nama allah",
     "99 nama allah|asmaul husna|nama-nama allah|asma ul husna|maksud asmaul husna|99 nama allah dan maksud|hafaz asmaul husna|asmaul husna audio",
     "senarai 99 nama allah beserta maksud|cara menghafaz asmaul husna dengan mudah|asmaul husna dengan tulisan arab dan rumi|dengar asmaul husna sebutan yang betul|maksud setiap nama allah dalam bahasa melayu|hafaz satu nama allah setiap hari|asmaul husna untuk kanak-kanak|apakah kelebihan mengenali nama-nama allah|asmaul husna dalam bahasa arab dan terjemahan|maksud asmaul husna dalam bahasa melayu|99 nama allah dengan tulisan jawi dan rumi|cara hafaz 99 nama allah untuk anak|asmaul husna dan penjelasan setiap nama|nama allah ar-rahman dan ar-rahim maksud|dengar bacaan asmaul husna berirama"),
   "/duas": k("doa harian",

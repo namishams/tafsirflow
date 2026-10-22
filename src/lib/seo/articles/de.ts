@@ -942,7 +942,7 @@ const a: Record<string, Article> = {
             "Duas"
           ],
           [
-            "/names",
+            "/islam/names",
             "Die schönen Namen Allahs"
           ]
         ]
@@ -1005,7 +1005,7 @@ const a: Record<string, Article> = {
         "Duas"
       ],
       [
-        "/names",
+        "/islam/names",
         "Namen Allahs"
       ],
       [

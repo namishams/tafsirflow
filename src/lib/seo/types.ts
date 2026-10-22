@@ -11,7 +11,7 @@ export type HubId = (typeof HUB_IDS)[number];
 // existing public routes that get a localized title/description from pages/<locale>.json
 export const PAGE_ROUTES = [
   "", "/how", "/app", "/courses", "/tajweed", "/arabic", "/academy", "/blog", "/guides", "/islam", "/quran", "/reciters",
-  "/radio", "/prayer", "/calendar", "/names", "/duas", "/nahj", "/shams", "/salah", "/wudu", "/khatm", "/vocab", "/dua-generator", "/surah",
+  "/radio", "/prayer", "/calendar", "/islam/names", "/duas", "/nahj", "/shams", "/salah", "/wudu", "/khatm", "/vocab", "/dua-generator", "/surah",
 ] as const;
 export type PageRoute = (typeof PAGE_ROUTES)[number];
 

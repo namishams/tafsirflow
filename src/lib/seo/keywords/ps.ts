@@ -464,7 +464,7 @@ const kw: Record<string, KeywordSet> = {
       "د پښتو ژبې لپاره قرآن اپلیکیشن"
     ]
   },
-  "/names": {
+  "/islam/names": {
     "focus": "د الله ۹۹ نومونه",
     "short": [
       "د الله ۹۹ نومونه",

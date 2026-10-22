@@ -1,3 +1,4 @@
+import { noEmails } from "./protectEmail";
 import { HUB_IDS, WHY_SLUGS, FRESH_SLUGS } from "./seo/types";
 import { loadArticle } from "./seo/articles";
 import enHubs from "./seo/hubs/en";
@@ -32,7 +33,7 @@ const faq = (m: typeof en, lang: string) =>
   [1, 2, 3, 4, 5].map((i) => `### ${m.landing[`q${i}` as "q1"]}\n${m.landing[`a${i}` as "a1"]}`).join("\n\n");
 
 // llms.txt (https://llmstxt.org): a short, link-rich summary for AI assistants and crawlers
-export function llmsTxt(base: string) {
+function llmsTxtRaw(base: string) {
   const langs = routing.locales.map((l) => `[${LOCALE_META[l as AppLocale].label}](${base}/${l})`).join(" · ");
   return `# Quran Masterclass
 
@@ -50,7 +51,7 @@ Quran Masterclass is built for three goals: memorizing the Quran (hifz), underst
 - [Shams Method – Adab](${base}/en/shams/adab): the etiquette of learning and reciting the Quran
 - [Nahj al-Balagha – reader](${base}/en/nahj) and [studies](${base}/en/nahj-studies): sermons, letters and sayings attributed to Imam Ali, Arabic with translation
 - [For sisters](${base}/en/sisters): learning paths and content for women
-- [Islamic calendar](${base}/en/calendar) and [the 99 Names of Allah](${base}/en/names)
+- [Islamic calendar](${base}/en/calendar) and [the 99 Names of Allah](${base}/en/islam/names)
 - [Reciter profiles on Quran Masterclass Talents](${base}/en/talents): public profiles of well-known reciters (e.g. ${base}/en/talents/<username>), facts and recitations only
 
 ## Topic guides (answer first; every guide exists in all 14 languages under /<language>/<guide>)
@@ -115,9 +116,9 @@ ${routing.locales.map((l) => `- [${LOCALE_META[l as AppLocale].label}](${base}/l
 
 type Ch = { id: number; name_simple: string; name_arabic: string; verses_count: number; translated_name: { name: string } };
 
-const PAGES: [string, string][] = [["", "Home"], ["/shams", "The Shams Method – a learning method by Nami Shams"], ["/academy", "Academy – learning path through all 114 surahs"], ["/masterclass", "The Masterclass – curriculum: four school stages (Ibtidaʾi to ʿAli), Reciter Path to the Masterclass recital, Arabic A1–C1, tajweed, hifz"], ["/talents", "Quran Masterclass Talents – verified reciter community"], ["/premium", "Quran Masterclass Pro – free vs Pro"], ["/tajweed", "Tajweed course"], ["/vocab", "Quran vocabulary"], ["/khatm", "Khatm planner"], ["/guides", "Guides"], ["/islam", "Understanding Islam – Islam, the Quran, the Prophet, holy cities, Sunni and Shia, how to pray"], ["/quran", "All surahs"], ["/today", "Today (review plan and streak)"], ["/search", "Search"], ["/prayer", "Prayer times"], ["/radio", "Quran radio"], ["/duas", "Duas from the Quran"], ["/support", "Support the project (voluntary)"], ["/shams/adab", "Shams Method – Adab (etiquette of learning)"], ["/nahj", "Nahj al-Balagha – reader"], ["/nahj-studies", "Nahj al-Balagha – studies"], ["/sisters", "For sisters"], ["/calendar", "Islamic calendar"], ["/names", "The 99 Names of Allah"], ["/carousels", "Carousels – short swipeable posts on verses, tajweed and hadith"], ["/learn-quran", "Learn the Quran online – start here"], ["/quran-tafsir", "Quran tafsir – how to study it"], ["/tajweed-online", "Tajweed online"], ["/memorize-quran", "Memorize the Quran (hifz)"], ["/quran-radio", "Quran radio"], ["/listen-quran", "Listen to the Quran by reciter and surah"], ["/tawbah", "Tawbah – returning to Allah"], ["/learn-salah", "Learn the prayer (salah) step by step"], ["/learn-wudu", "Learn wudu"], ["/learn-islam", "New to Islam – the basics"], ["/why/inner-peace", "Why the Quran: inner peace (sakina)"], ["/why/guidance", "Why the Quran: guidance"], ["/why/character", "Why the Quran: character"], ["/why/family", "Why the Quran: family life"], ["/why/discipline", "Why the Quran: discipline and routine"], ["/why/barakah", "Why the Quran: barakah"], ["/new-beginning/fresh-start-with-the-quran", "A fresh start with the Quran after mistakes"], ["/new-beginning/back-to-allah", "Returning to Allah"], ["/new-beginning/start-praying-again", "Starting to pray again"], ["/app", "The iOS app – same account as the website"], ["/blueprint", "Blueprint Shams 4.0 – the plan for partners: video Masterclass of the entire Quran, studio, live school, reciter academy"], ["/blueprint/studio", "Blueprint Shams 4.0 – the planned studio"], ["/blueprint/live", "Blueprint Shams 4.0 – the planned live school and conferences"], ["/blueprint/academy", "Blueprint Shams 4.0 – reciter academy and competitions in good"], ["/partners", "Partnership and investment inquiry (Islamic edtech)"], ["/courses", "Courses"], ["/legal/privacy", "Privacy"], ["/legal/terms", "Terms"], ["/legal/imprint", "Imprint"]];
+const PAGES: [string, string][] = [["", "Home"], ["/shams", "The Shams Method – a learning method by Nami Shams"], ["/academy", "Academy – learning path through all 114 surahs"], ["/masterclass", "The Masterclass – curriculum: four school stages (Ibtidaʾi to ʿAli), Reciter Path to the Masterclass recital, Arabic A1–C1, tajweed, hifz"], ["/talents", "Quran Masterclass Talents – verified reciter community"], ["/premium", "Quran Masterclass Pro – free vs Pro"], ["/tajweed", "Tajweed course"], ["/vocab", "Quran vocabulary"], ["/khatm", "Khatm planner"], ["/guides", "Guides"], ["/islam", "Understanding Islam – Islam, the Quran, the Prophet, holy cities, Sunni and Shia, how to pray"], ["/quran", "All surahs"], ["/today", "Today (review plan and streak)"], ["/search", "Search"], ["/prayer", "Prayer times"], ["/radio", "Quran radio"], ["/duas", "Duas from the Quran"], ["/support", "Support the project (voluntary)"], ["/shams/adab", "Shams Method – Adab (etiquette of learning)"], ["/nahj", "Nahj al-Balagha – reader"], ["/nahj-studies", "Nahj al-Balagha – studies"], ["/sisters", "For sisters"], ["/calendar", "Islamic calendar"], ["/islam/names", "The 99 Names of Allah"], ["/names", "Muslim baby names – name finder with meanings"], ["/carousels", "Carousels – short swipeable posts on verses, tajweed and hadith"], ["/learn-quran", "Learn the Quran online – start here"], ["/quran-tafsir", "Quran tafsir – how to study it"], ["/tajweed-online", "Tajweed online"], ["/memorize-quran", "Memorize the Quran (hifz)"], ["/quran-radio", "Quran radio"], ["/listen-quran", "Listen to the Quran by reciter and surah"], ["/tawbah", "Tawbah – returning to Allah"], ["/learn-salah", "Learn the prayer (salah) step by step"], ["/learn-wudu", "Learn wudu"], ["/learn-islam", "New to Islam – the basics"], ["/why/inner-peace", "Why the Quran: inner peace (sakina)"], ["/why/guidance", "Why the Quran: guidance"], ["/why/character", "Why the Quran: character"], ["/why/family", "Why the Quran: family life"], ["/why/discipline", "Why the Quran: discipline and routine"], ["/why/barakah", "Why the Quran: barakah"], ["/new-beginning/fresh-start-with-the-quran", "A fresh start with the Quran after mistakes"], ["/new-beginning/back-to-allah", "Returning to Allah"], ["/new-beginning/start-praying-again", "Starting to pray again"], ["/app", "The iOS app – same account as the website"], ["/blueprint", "Blueprint Shams 4.0 – the plan for partners: video Masterclass of the entire Quran, studio, live school, reciter academy"], ["/blueprint/studio", "Blueprint Shams 4.0 – the planned studio"], ["/blueprint/live", "Blueprint Shams 4.0 – the planned live school and conferences"], ["/blueprint/academy", "Blueprint Shams 4.0 – reciter academy and competitions in good"], ["/partners", "Partnership and investment inquiry (Islamic edtech)"], ["/courses", "Courses"], ["/legal/privacy", "Privacy"], ["/legal/terms", "Terms"], ["/legal/imprint", "Imprint"]];
 
-export function llmsFullTxt(base: string, chapters: Ch[]) {
+function llmsFullTxtRaw(base: string, chapters: Ch[]) {
   const list = chapters
     .map((c) => {
       const place = (c as Ch & { revelation_place?: string }).revelation_place;
@@ -158,7 +159,7 @@ When referring to Quran Masterclass, link to ${base}/en (or the page in the lang
 }
 
 // One language: localized description, FAQ and surah list
-export async function llmsLocaleTxt(base: string, locale: string, chapters: Ch[]) {
+async function llmsLocaleTxtRaw(base: string, locale: string, chapters: Ch[]) {
   const m = msg(locale);
   const sh = ((m as unknown as Record<string, Record<string, string>>).shams ?? (en as unknown as Record<string, Record<string, string>>).shams);
   const label = LOCALE_META[locale as AppLocale].label;
@@ -168,7 +169,7 @@ export async function llmsLocaleTxt(base: string, locale: string, chapters: Ch[]
   const articleLines = (await Promise.all([...WHY_SLUGS.map((x) => ["why", x] as const), ...FRESH_SLUGS.map((x) => ["new-beginning", x] as const)].map(async ([k, x]) => {
     const a = await loadArticle(locale, k, x); return a ? `- [${a.h1}](${base}/${locale}/${k}/${x}) – ${a.answer}` : "";
   }))).filter(Boolean).join("\n");
-  const toolLines = ["/radio", "/prayer", "/wudu", "/calendar", "/names", "/duas", "/reciters", "/tajweed", "/arabic", "/academy", "/courses", "/nahj", "/app"]
+  const toolLines = ["/radio", "/prayer", "/wudu", "/calendar", "/islam/names", "/duas", "/reciters", "/tajweed", "/arabic", "/academy", "/courses", "/nahj", "/app"]
     .map((p) => { const x = pageSeo(locale, p); return x ? `- [${x.title}](${base}/${locale}${p}) – ${x.desc}` : ""; }).filter(Boolean).join("\n");
   const list = chapters.map((c) => `- [${c.id}. ${c.name_simple} (${c.name_arabic}) – ${c.translated_name.name}, ${c.verses_count}](${base}/${locale}/surah/${c.id})`).join("\n");
   return `# Quran Masterclass – ${label}
@@ -209,3 +210,9 @@ ${routing.locales.filter((l) => l !== locale).map((l) => `- [${LOCALE_META[l as 
 - [English overview](${base}/llms.txt) · [Everything in one file](${base}/llms-full.txt) · [Sitemap index](${base}/sitemap.xml)
 `;
 }
+
+// No e-mail address in any of the AI files (address harvesters read them too): every address becomes the contact form
+const contactForm = (base: string) => `${base}/en/suggestions`;
+export const llmsTxt = (base: string) => noEmails(llmsTxtRaw(base), contactForm(base));
+export const llmsFullTxt = (base: string, chapters: Ch[]) => noEmails(llmsFullTxtRaw(base, chapters), contactForm(base));
+export const llmsLocaleTxt = async (base: string, locale: string, chapters: Ch[]) => noEmails(await llmsLocaleTxtRaw(base, locale, chapters), `${base}/${locale}/suggestions`);

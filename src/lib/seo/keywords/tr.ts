@@ -48,7 +48,7 @@ const kw: Record<string, KeywordSet> = {
   "/calendar": k("hicri takvim",
     "hicri takvim|islami takvim|hicri tarih|bugün hicri kaç|ramazan ne zaman|kurban bayramı ne zaman|kandil günleri|dini günler|miladi hicri çeviri|ay takvimi",
     "bugün hicri takvimde kaç|hicri tarihi miladiye çevirme|ramazan ne zaman başlıyor|ramazan bayramı ne zaman|kurban bayramı hicri tarihi|dini günler ve kandiller takvimi|hicri yeni yıl ne zaman|hicri takvim nasıl hesaplanır|muharrem ayı ne zaman başlıyor|aşure günü ne zaman|hicri ay isimleri|islami takvim 2026|mevlid kandili ne zaman|hicri takvim ay görme farkı|önemli islami günler listesi"),
-  "/names": k("esmaül hüsna",
+  "/islam/names": k("esmaül hüsna",
     "esmaül hüsna|allah'ın 99 ismi|99 isim|esma ül hüsna anlamları|esmaül hüsna okunuşu|esmaül hüsna ezberleme|allah'ın isimleri|ya rahman ya rahim",
     "esmaül hüsna anlamları nelerdir|allah'ın 99 ismi ve anlamları|esmaül hüsna arapça yazılışı|esmaül hüsna nasıl ezberlenir|esmaül hüsna sırasıyla|esmaül hüsna okunuşu ve anlamı|esmaül hüsna dinle|99 isim hangileridir|esmaül hüsna zikri nasıl yapılır|esmaül hüsna ile dua|esmaül hüsna kartları|çocuklara esmaül hüsna öğretme|er rahman er rahim anlamı|esmaül hüsna listesi türkçe|esmaül hüsna tek tek açıklama"),
   "/duas": k("günlük dualar",

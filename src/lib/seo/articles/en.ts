@@ -372,7 +372,7 @@ const a: Record<string, Article> = {
       { q: "At what age can children start learning the Quran?", a: "Many families begin early with listening and short phrases, then add formal learning when the child is ready. There is no fixed age; keep it gentle and enjoyable." },
       { q: "What if my children resist?", a: "Shorten the sessions, make them playful, let children choose the reciter and avoid pressure. A positive memory matters more than the amount completed." },
       { q: "Do we need a teacher?", a: "A teacher is valuable, especially for correct recitation. This site offers free structured lessons that can complement a teacher but do not replace one." },
-      { q: "Can we use the app as a family?", a: "Yes. You can listen together, follow the translation and use the learning tools. The website and app are free." },
+      { q: "Can we use the app as a family?", a: "Yes. You can listen together, follow the translation and use the learning tools. The website is free, and the iOS app works with the same account." },
       { q: "We follow different schools. Is this a problem?", a: "Not for learning and reading the Quran, which is shared. For specific practices such as the details of prayer, follow your own school and ask your scholar." },
     ],
     linksTitle: "Resources for your family",
@@ -522,7 +522,7 @@ const a: Record<string, Article> = {
           "A central theme is gratitude. Islamic teaching describes gratitude as both a feeling and an action: acknowledging what you have, thanking Allah and using it well. Contentment, called qana'ah, is valued as a form of wealth of the heart.",
           "Reading the Quran regularly can reinforce this outlook by reminding you that your possessions and abilities are on loan. This is a perspective, not a promise of prosperity.",
         ],
-        links: [["/names", "Names of Allah"]],
+        links: [["/islam/names", "Names of Allah"]],
       },
       {
         h2: "Time is part of rizq",
@@ -572,7 +572,7 @@ const a: Record<string, Article> = {
     ],
     linksTitle: "Continue reading",
     links: [
-      ["/islam/quran", "The Quran in Islam"], ["/duas", "Duas"], ["/names", "Names of Allah"], ["/islam/daily", "Daily life in Islam"],
+      ["/islam/quran", "The Quran in Islam"], ["/duas", "Duas"], ["/islam/names", "Names of Allah"], ["/islam/daily", "Daily life in Islam"],
       ["/islam/halal-haram", "Halal and haram"], ["/guides/daily-quran-routine", "Daily Quran routine"], ["/quran", "Quran with translation"], ["/prayer", "Prayer times"],
     ],
     cta: ["/duas", "Learn daily duas"],
@@ -698,7 +698,7 @@ const a: Record<string, Article> = {
           "The theme of mercy appears again and again in Islamic teaching. Allah is described as Forgiving and Merciful, and Muslims are taught that despair of His mercy is itself something to avoid. A person who falls is not finished; a person who returns is honoured.",
           "This is the emotional centre of tawbah: it is not self-hatred, but a turning towards Someone who is merciful. Fear and hope are held together, and hope is meant to be strong enough to get you moving.",
         ],
-        links: [["/tawbah", "Tawbah explained"], ["/names", "Names of Allah"]],
+        links: [["/tawbah", "Tawbah explained"], ["/islam/names", "Names of Allah"]],
       },
       {
         h2: "What tawbah involves",
@@ -780,7 +780,7 @@ const a: Record<string, Article> = {
     linksTitle: "Next steps",
     links: [
       ["/tawbah", "Tawbah"], ["/duas", "Duas"], ["/learn-salah", "Learn the prayer"], ["/prayer", "Prayer times"],
-      ["/surah/93", "Surah Ad-Duha"], ["/surah/94", "Surah Ash-Sharh"], ["/shams", "Shams Method"], ["/names", "Names of Allah"],
+      ["/surah/93", "Surah Ad-Duha"], ["/surah/94", "Surah Ash-Sharh"], ["/shams", "Shams Method"], ["/islam/names", "Names of Allah"],
     ],
     cta: ["/tawbah", "Read about tawbah"],
     note: "This page describes general Islamic teaching only and gives no ruling on any individual situation. For personal questions, please speak with a trustworthy scholar or imam. If you are in crisis, contact a doctor or local emergency services.",

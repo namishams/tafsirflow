@@ -9,7 +9,7 @@
  },
  "/app": {
   "title": "Koran-App für iPhone (iOS) | Quran Masterclass",
-  "desc": "Die kostenlose Koran-App für iOS: gleiches Konto wie auf der Website, Suren hören, lernen und wiederholen – auf dem iPhone und im Browser."
+  "desc": "Die Koran-App für iOS: gleiches Konto wie auf der Website, Suren hören, lernen und wiederholen – auf dem iPhone und im Browser."
  },
  "/courses": {
   "title": "Koran-Kurse online kostenlos | Quran Masterclass",
@@ -59,7 +59,7 @@
   "title": "Islamischer Kalender und Hidschri-Datum | Quran Masterclass",
   "desc": "Islamischer Kalender (Hidschri) mit heutigem Datum und wichtigen Terminen wie Ramadan und Eid – übersichtlich und kostenlos nutzbar."
  },
- "/names": {
+ "/islam/names": {
   "title": "99 Namen Allahs mit Bedeutung | Quran Masterclass",
   "desc": "Die 99 Namen Allahs (Asma ul-Husna) mit Aussprache, Bedeutung und Anhören – Name für Name lernen, kostenlos und in Ihrer Sprache."
  },

@@ -492,7 +492,7 @@ const a: Record<string, Article> = {
           "Islam mengajar bahawa rezeki datang daripada Allah, dan pada masa yang sama menuntut manusia bekerja, merancang dan mencari jalan yang halal. Ikhtiar dan tawakal berjalan bersama; yang satu tidak menggantikan yang lain. Antara 99 Nama Allah ialah ar-Razzaq, Pemberi Rezeki, dan anda boleh mempelajari maknanya di halaman nama-nama Allah.",
           "Rezeki juga merangkumi perkara yang tidak kelihatan, seperti hati yang tenteram dan peluang untuk berbuat baik.",
         ],
-        links: [["/names", "99 Nama Allah"]],
+        links: [["/islam/names", "99 Nama Allah"]],
       },
       {
         h2: "Bagaimana Quran dikaitkan dengan keberkatan",
@@ -554,7 +554,7 @@ const a: Record<string, Article> = {
     ],
     linksTitle: "Bacaan lanjut",
     links: [
-      ["/islam/quran", "Quran dalam Islam"], ["/duas", "Doa"], ["/names", "99 Nama Allah"], ["/islam/daily", "Kehidupan harian dalam Islam"],
+      ["/islam/quran", "Quran dalam Islam"], ["/duas", "Doa"], ["/islam/names", "99 Nama Allah"], ["/islam/daily", "Kehidupan harian dalam Islam"],
       ["/islam/halal-haram", "Halal dan haram"], ["/guides/daily-quran-routine", "Rutin Quran harian"], ["/quran", "Quran dengan terjemahan"], ["/prayer", "Waktu solat"],
     ],
     cta: ["/duas", "Pelajari doa harian"],
@@ -674,7 +674,7 @@ const a: Record<string, Article> = {
           "Inilah pusat emosi taubat: ia bukan benci kepada diri sendiri, tetapi berpaling kepada Yang Maha Penyayang. Takut dan harap dipegang bersama, dan harapan itu dimaksudkan cukup kuat untuk menggerakkan anda. Antara 99 Nama Allah ialah at-Tawwab, Penerima Taubat, dan al-Ghaffar, Yang Sentiasa Mengampuni; anda boleh membaca maknanya di halaman nama-nama Allah.",
           "Pada masa yang sama, ajaran Islam tidak meremehkan kesilapan. Rahmat dan tanggungjawab berjalan bersama: anda diajak mengakui apa yang berlaku dengan jujur, bukan berpura-pura ia tidak penting. Kejujuran itu ialah permulaan pemulihan, dan ia tidak memerlukan anda menghukum diri.",
         ],
-        links: [["/names", "99 Nama Allah"]],
+        links: [["/islam/names", "99 Nama Allah"]],
       },
       {
         h2: "Taubat dalam bahasa yang mudah",
@@ -746,7 +746,7 @@ const a: Record<string, Article> = {
     ],
     linksTitle: "Langkah seterusnya",
     links: [
-      ["/tawbah", "Memahami taubat"], ["/duas", "Doa"], ["/dua-generator", "Penjana doa"], ["/names", "99 Nama Allah"],
+      ["/tawbah", "Memahami taubat"], ["/duas", "Doa"], ["/dua-generator", "Penjana doa"], ["/islam/names", "99 Nama Allah"],
       ["/wudu", "Pelatih wuduk"], ["/salah", "Belajar solat"], ["/shams", "Kaedah Shams"], ["/guides/daily-quran-routine", "Rutin Quran harian"],
     ],
     cta: ["/duas", "Baca doa memohon ampun"],

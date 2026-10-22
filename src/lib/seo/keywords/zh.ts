@@ -490,7 +490,7 @@ const kw: Record<string, KeywordSet> = {
    "今日礼拜时间和朝向"
   ]
  },
- "/names": {
+ "/islam/names": {
   "focus": "真主的99个尊名",
   "short": [
    "真主的99个尊名",

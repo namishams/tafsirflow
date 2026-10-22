@@ -527,7 +527,7 @@ const a: Record<string, Article> = {
           "Esmaül Hüsna içinde Rızık veren anlamına gelen Er-Razzak ve Bağışlayan, çokça veren anlamındaki El-Vehhab gibi isimleri öğrenmek, rızık konusundaki bakışınızı Allah'ın isimleri üzerinden genişletebilir. Karşılaştırma, bereketin sessiz bir düşmanıdır; her akşam elinizdeki üç nimeti not etmek bunu dengelemenin sade bir yoludur.",
           "Şükür yalnızca teşekkür etmek değil, nimeti Allah'ın razı olacağı yolda kullanmak olarak da anlaşılır: sağlığı ibadete, vakti faydalı işlere, bilgiyi paylaşmaya vesile kılmak. Böylece şükür edilgen bir duygu olmaktan çıkıp bir davranışa dönüşür.",
         ],
-        links: [["/surah/55", "Rahman suresi"], ["/names", "Esmaül Hüsna"]],
+        links: [["/surah/55", "Rahman suresi"], ["/islam/names", "Esmaül Hüsna"]],
       },
       {
         h2: "Vaktin bereketi",
@@ -566,7 +566,7 @@ const a: Record<string, Article> = {
     linksTitle: "Okumaya devam edin",
     links: [
       ["/islam/quran", "İslam'da Kuran"], ["/quran", "Kuran meal ile"], ["/surah/38", "Sad suresi"], ["/surah/55", "Rahman suresi"], ["/duas", "Dualar"],
-      ["/names", "Esmaül Hüsna"], ["/islam/halal-haram", "Helal ve haram"], ["/islam/daily", "İslam'da günlük hayat"], ["/guides/daily-quran-routine", "Günlük Kuran rutini"],
+      ["/islam/names", "Esmaül Hüsna"], ["/islam/halal-haram", "Helal ve haram"], ["/islam/daily", "İslam'da günlük hayat"], ["/guides/daily-quran-routine", "Günlük Kuran rutini"],
     ],
     cta: ["/duas", "Günlük dualara göz atın"],
     note: "Bu yazı manevi kavramları anlatır; hiçbir dünyevi sonuç vaat etmez ve mali tavsiye değildir. Kişisel hükümler için izlediğiniz mezhebin güvenilir bir hocasına ya da imama danışın.",
@@ -685,7 +685,7 @@ const a: Record<string, Article> = {
           "Zümer suresi, Allah'ın rahmeti ve bağışlaması teması bakımından sık anılan surelerden biridir. Sureyi mealiyle okuyup bu temanın nasıl işlendiğini ve hangi bağlamda geçtiğini kendiniz görebilirsiniz.",
           "Bu umut sorumluluğu ortadan kaldırmaz; ona güç verir. Umudu olmayan biri düzeltme çabasına girişmez, umudu olan biri küçük bir adımı bile atmaya cesaret eder.",
         ],
-        links: [["/surah/39", "Zümer suresi"], ["/names", "Esmaül Hüsna"]],
+        links: [["/surah/39", "Zümer suresi"], ["/islam/names", "Esmaül Hüsna"]],
       },
       {
         h2: "Tövbe neleri içerir?",
@@ -759,7 +759,7 @@ const a: Record<string, Article> = {
     ],
     linksTitle: "Sıradaki adımlar",
     links: [
-      ["/tawbah", "Tövbe"], ["/duas", "Dualar"], ["/dua-generator", "Dua oluşturucu"], ["/names", "Esmaül Hüsna"], ["/learn-salah", "Namaz öğrenme"],
+      ["/tawbah", "Tövbe"], ["/duas", "Dualar"], ["/dua-generator", "Dua oluşturucu"], ["/islam/names", "Esmaül Hüsna"], ["/learn-salah", "Namaz öğrenme"],
       ["/prayer", "Namaz vakitleri"], ["/surah/39", "Zümer suresi"], ["/surah/94", "İnşirah suresi"], ["/shams", "Shams Yöntemi"],
     ],
     cta: ["/tawbah", "Tövbe sayfasına göz atın"],

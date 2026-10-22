@@ -76,7 +76,7 @@ const kw: Record<string, KeywordSet> = {
     short: ["islamischer Kalender", "Hidschri Kalender", "islamisches Datum heute", "Hidschra Datum", "Ramadan Datum", "Eid Datum", "islamische Feiertage", "Muharram", "Mondkalender islamisch", "islamischer Kalender 2026"],
     long: ["islamisches Datum heute", "wann beginnt der Ramadan", "wann ist das Opferfest", "wann ist das Zuckerfest", "islamische Feiertage Übersicht", "wann ist Aschura", "Hidschri Datum umrechnen", "wie funktioniert der islamische Kalender", "wann ist Mawlid"],
   },
-  "/names": {
+  "/islam/names": {
     focus: "99 Namen Allahs",
     short: ["99 Namen Allahs", "Asma ul Husna", "Namen Allahs", "99 Namen Allahs Bedeutung", "99 Namen Allahs Liste", "99 Namen Allahs Arabisch", "99 Namen Allahs anhören", "Allah Namen lernen"],
     long: ["99 Namen Allahs mit Bedeutung auf Deutsch", "99 Namen Allahs Liste zum Lernen", "99 Namen Allahs anhören und auswendig lernen", "Bedeutung von Ar-Rahman und Ar-Rahim", "Asma ul Husna Aussprache", "99 Namen Allahs Lautschrift", "99 Namen Allahs auswendig lernen"],
