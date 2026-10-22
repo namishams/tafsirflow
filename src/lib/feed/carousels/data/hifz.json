@@ -1,0 +1,3329 @@
+{
+ "series": "hifz",
+ "label": {
+  "en": "Memorising the Quran",
+  "de": "Den Koran auswendig lernen",
+  "ar": "حفظ القرآن الكريم"
+ },
+ "topic": "quran",
+ "tradition": "all",
+ "items": [
+  {
+   "id": "hifz-01-preserved-in-hearts",
+   "tradition": "sunni",
+   "needs_review": true,
+   "palette": "emerald",
+   "cover": {
+    "kicker": {
+     "en": "Memorising the Quran · 1",
+     "de": "Den Koran auswendig lernen · 1",
+     "ar": "حفظ القرآن · ١"
+    },
+    "title": {
+     "en": "A Book kept in hearts",
+     "de": "Ein Buch, bewahrt in Herzen",
+     "ar": "كتابٌ تحفظه القلوب"
+    },
+    "sub": {
+     "en": "Why memorising the Quran is one of the oldest and most beautiful traditions of the Ummah",
+     "de": "Warum das Auswendiglernen des Korans zu den ältesten und schönsten Traditionen der Umma gehört",
+     "ar": "لماذا كان حفظ القرآن من أقدم تقاليد الأمة وأجملها"
+    },
+    "arabic": "حفظ القرآن"
+   },
+   "slides": [
+    {
+     "verse": "15:9",
+     "check": "guardian",
+     "title": {
+      "en": "Guarded by Allah",
+      "de": "Von Allah behütet",
+      "ar": "محفوظ بحفظ الله"
+     },
+     "body": {
+      "en": "Allah Himself promised to guard His Book. The hearts of those who memorise it are one of the ways this promise has been kept.",
+      "de": "Allah selbst hat versprochen, Sein Buch zu bewahren. Die Herzen derer, die es auswendig lernen, sind ein Weg, auf dem sich dieses Versprechen erfüllt.",
+      "ar": "تكفّل الله بحفظ كتابه، وصدورُ الحفّاظ من الطرق التي تحقق بها هذا الوعد."
+     }
+    },
+    {
+     "verse": "29:49",
+     "check": "within the breasts",
+     "title": {
+      "en": "Verses carried in hearts",
+      "de": "Verse, getragen in Herzen",
+      "ar": "آيات تحملها الصدور"
+     },
+     "body": {
+      "en": "The Quran does not live on paper alone. From the first generation onward it was carried in the hearts of people of knowledge.",
+      "de": "Der Koran lebt nicht nur auf Papier. Seit der ersten Generation wird er in den Herzen von Menschen des Wissens getragen.",
+      "ar": "لا يعيش القرآن على الورق وحده، فمنذ الجيل الأول وهو محمول في صدور أهل العلم."
+     }
+    },
+    {
+     "hadith": "bukhari:5003",
+     "check": "collected the Qur'an",
+     "title": {
+      "en": "The first huffaz",
+      "de": "Die ersten Huffaz",
+      "ar": "الحفّاظ الأوائل"
+     },
+     "body": {
+      "en": "The tradition of hifz goes back to the Prophet's own lifetime, to Companions who held the whole Quran by heart.",
+      "de": "Die Tradition des Hifz reicht bis in die Lebenszeit des Propheten zurück, zu Gefährten, die den ganzen Koran im Gedächtnis trugen.",
+      "ar": "يمتد تقليد الحفظ إلى حياة النبي ﷺ نفسها، إلى صحابة جمعوا القرآن كله في صدورهم."
+     }
+    },
+    {
+     "verse": "54:17",
+     "check": "easy for remembrance",
+     "title": {
+      "en": "Made easy",
+      "de": "Leicht gemacht",
+      "ar": "القرآن ميسَّر"
+     },
+     "body": {
+      "en": "Allah describes His Book as easy to remember. That is good news for every learner, whatever their age or background.",
+      "de": "Allah beschreibt Sein Buch als leicht zu merken. Das ist eine gute Nachricht für alle Lernenden, gleich welchen Alters und welcher Herkunft.",
+      "ar": "وصف الله كتابه بأنه ميسَّر للذكر، وهذه بشرى لكل متعلم مهما كان عمره أو خلفيته."
+     }
+    },
+    {
+     "title": {
+      "en": "What hifz means",
+      "de": "Was Hifz bedeutet",
+      "ar": "معنى الحفظ"
+     },
+     "body": {
+      "en": "Hifz means to guard and to keep. A hafiz does not learn the words only once, but keeps them, recites them and tries to live by them for a lifetime.",
+      "de": "Hifz bedeutet behüten und bewahren. Ein Hafiz lernt die Worte nicht nur einmal, sondern bewahrt sie, rezitiert sie und versucht ein Leben lang nach ihnen zu leben.",
+      "ar": "الحفظ صيانةٌ وإمساك؛ فالحافظ لا يتعلم الكلمات مرة واحدة فحسب، بل يحفظها ويتلوها ويسعى إلى العمل بها طوال عمره."
+     },
+     "arabic": "الحافظ"
+    },
+    {
+     "title": {
+      "en": "What this series covers",
+      "de": "Was diese Reihe behandelt",
+      "ar": "ما تتناوله هذه السلسلة"
+     },
+     "list": {
+      "en": [
+       "Intention and the adab of the hafiz",
+       "Daily portions and realistic plans",
+       "Methods: repetition, linking, listening, writing",
+       "Revision, similar verses and prayer",
+       "Teachers, ijazah, children and adults"
+      ],
+      "de": [
+       "Absicht und Anstand des Hafiz",
+       "Tägliche Portionen und realistische Pläne",
+       "Methoden: Wiederholen, Verknüpfen, Hören, Schreiben",
+       "Wiederholung, ähnliche Verse und Gebet",
+       "Lehrer, Idschaza, Kinder und Erwachsene"
+      ],
+      "ar": [
+       "النية وآداب الحافظ",
+       "الورد اليومي والخطط الواقعية",
+       "الطرق: التكرار والربط والسماع والكتابة",
+       "المراجعة والمتشابهات والصلاة",
+       "الشيوخ والإجازة والصغار والكبار"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "hifz-02-intention",
+   "tradition": "sunni",
+   "needs_review": true,
+   "palette": "dawn",
+   "cover": {
+    "kicker": {
+     "en": "Memorising the Quran · 2",
+     "de": "Den Koran auswendig lernen · 2",
+     "ar": "حفظ القرآن · ٢"
+    },
+    "title": {
+     "en": "Begin with a sincere intention",
+     "de": "Beginnen Sie mit aufrichtiger Absicht",
+     "ar": "ابدأ بنيةٍ خالصة"
+    },
+    "sub": {
+     "en": "Why the heart matters before the first verse is memorised",
+     "de": "Warum das Herz zählt, bevor der erste Vers gelernt ist",
+     "ar": "لماذا يسبق إصلاحُ القلب حفظَ أول آية"
+    },
+    "arabic": "إخلاص النية"
+   },
+   "slides": [
+    {
+     "hadith": "bukhari:1",
+     "check": "intentions",
+     "title": {
+      "en": "The heart behind the deed",
+      "de": "Das Herz hinter der Tat",
+      "ar": "النية ميزان العمل"
+     },
+     "body": {
+      "en": "The same hours of memorising can be pure worship or empty effort. The intention decides which.",
+      "de": "Dieselben Stunden des Auswendiglernens können reiner Gottesdienst oder leere Mühe sein. Die Absicht entscheidet.",
+      "ar": "الساعات نفسها في الحفظ قد تكون عبادة خالصة أو جهدًا ضائعًا، والنية هي الفيصل."
+     }
+    },
+    {
+     "verse": "39:2",
+     "check": "sincere to Him in religion",
+     "title": {
+      "en": "For Allah alone",
+      "de": "Allein für Allah",
+      "ar": "لله وحده"
+     },
+     "body": {
+      "en": "The Quran is learned for Allah: not for titles, applause or a place at the front.",
+      "de": "Der Koran wird für Allah gelernt: nicht für Titel, Beifall oder einen Platz in der ersten Reihe.",
+      "ar": "يُتعلَّم القرآن لله، لا للألقاب ولا للتصفيق ولا للتقدّم في المجالس."
+     }
+    },
+    {
+     "title": {
+      "en": "Good intentions for hifz",
+      "de": "Gute Absichten für den Hifz",
+      "ar": "نيات صالحة للحفظ"
+     },
+     "list": {
+      "en": [
+       "To draw closer to Allah through His words",
+       "To recite more of it in your prayers",
+       "To understand it and live by it",
+       "To teach it to your children and others",
+       "To keep the Book alive in your home"
+      ],
+      "de": [
+       "Allah durch Seine Worte näherzukommen",
+       "Mehr davon in Ihren Gebeten zu rezitieren",
+       "Ihn zu verstehen und nach ihm zu leben",
+       "Ihn Ihren Kindern und anderen zu lehren",
+       "Das Buch in Ihrem Zuhause lebendig zu halten"
+      ],
+      "ar": [
+       "التقرب إلى الله بكلامه",
+       "الإكثار من التلاوة في الصلاة",
+       "فهمه والعمل به",
+       "تعليمه للأبناء وغيرهم",
+       "إحياء كتاب الله في البيت"
+      ]
+     }
+    },
+    {
+     "title": {
+      "en": "When praise comes",
+      "de": "Wenn Lob kommt",
+      "ar": "حين يأتي الثناء"
+     },
+     "body": {
+      "en": "People may admire your recitation. Thank them, and turn the praise back to Allah. The gift is His; you are only the one who carries it.",
+      "de": "Menschen bewundern vielleicht Ihre Rezitation. Danken Sie ihnen und geben Sie das Lob an Allah weiter. Die Gabe ist Seine; Sie tragen sie nur.",
+      "ar": "قد يُعجب الناس بتلاوتك، فاشكرهم وردَّ الفضل إلى الله؛ فالنعمة نعمته، وما أنت إلا حاملٌ لها."
+     }
+    },
+    {
+     "dua": "hisn:114:0",
+     "check": "do not call me to account",
+     "title": {
+      "en": "A dua when you are praised",
+      "de": "Ein Bittgebet, wenn man Sie lobt",
+      "ar": "دعاء من زُكّي في وجهه"
+     },
+     "body": {
+      "en": "The Sunnah teaches a short dua for the moment people praise you.",
+      "de": "Die Sunna lehrt ein kurzes Bittgebet für den Moment, in dem man Sie lobt.",
+      "ar": "علّمتنا السنة دعاءً قصيرًا يقال عند ثناء الناس."
+     }
+    },
+    {
+     "title": {
+      "en": "Renew it often",
+      "de": "Erneuern Sie sie oft",
+      "ar": "جدِّدها دائمًا"
+     },
+     "body": {
+      "en": "Intentions drift. Renew yours before each session with a quiet moment: why am I doing this, and for whom? Then begin with Bismillah.",
+      "de": "Absichten verrutschen. Erneuern Sie Ihre vor jeder Einheit in einem stillen Moment: Warum tue ich das, und für wen? Dann beginnen Sie mit Bismillah.",
+      "ar": "النية تميل، فجدِّدها قبل كل جلسة بلحظة هدوء: لماذا أحفظ؟ ولمن؟ ثم ابدأ باسم الله."
+     }
+    }
+   ]
+  },
+  {
+   "id": "hifz-03-adab",
+   "tradition": "sunni",
+   "needs_review": true,
+   "palette": "parchment",
+   "cover": {
+    "kicker": {
+     "en": "Memorising the Quran · 3",
+     "de": "Den Koran auswendig lernen · 3",
+     "ar": "حفظ القرآن · ٣"
+    },
+    "title": {
+     "en": "The adab of the hafiz",
+     "de": "Der Anstand des Hafiz",
+     "ar": "آداب حامل القرآن"
+    },
+    "sub": {
+     "en": "How the bearers of the Quran treat the Book they carry",
+     "de": "Wie die Träger des Korans mit dem Buch umgehen, das sie bewahren",
+     "ar": "كيف يعامل حملةُ القرآن الكتابَ الذي يحملونه"
+    },
+    "arabic": "آداب حملة القرآن"
+   },
+   "slides": [
+    {
+     "title": {
+      "en": "Whole books on adab",
+      "de": "Ganze Bücher über Anstand",
+      "ar": "كتب كاملة في الأدب"
+     },
+     "body": {
+      "en": "Imam al-Nawawi wrote al-Tibyan on the adab of the bearers of the Quran, and al-Ajurri wrote a book on their character. Adab was always part of hifz, never an extra.",
+      "de": "Imam an-Nawawi schrieb at-Tibyan über den Anstand der Träger des Korans, und al-Adschurri ein Buch über ihren Charakter. Adab war immer Teil des Hifz, nie eine Zugabe.",
+      "ar": "صنّف الإمام النووي كتاب «التبيان في آداب حملة القرآن»، وصنّف الآجري كتابًا في أخلاقهم؛ فالأدب جزء من الحفظ، لا زيادة عليه."
+     }
+    },
+    {
+     "title": {
+      "en": "Before you recite",
+      "de": "Bevor Sie rezitieren",
+      "ar": "قبل أن تقرأ"
+     },
+     "list": {
+      "en": [
+       "Be in a state of purity, ideally with wudu",
+       "Clean your mouth, for example with a siwak",
+       "Sit calmly, facing the qibla if you can",
+       "Seek refuge in Allah from Satan first"
+      ],
+      "de": [
+       "Seien Sie in Reinheit, am besten mit Wudu",
+       "Reinigen Sie den Mund, etwa mit einem Siwak",
+       "Sitzen Sie ruhig, wenn möglich in Richtung Qibla",
+       "Suchen Sie zuerst Zuflucht bei Allah vor dem Satan"
+      ],
+      "ar": [
+       "كن على طهارة، ويُستحب الوضوء",
+       "نظّف فمك، كالسواك مثلًا",
+       "اجلس بسكينة، مستقبلًا القبلة إن أمكن",
+       "استعذ بالله من الشيطان أولًا"
+      ]
+     }
+    },
+    {
+     "verse": "16:98",
+     "check": "seek refuge in Allah",
+     "title": {
+      "en": "Seek refuge first",
+      "de": "Zuerst Zuflucht suchen",
+      "ar": "الاستعاذة أولًا"
+     },
+     "body": {
+      "en": "This is why recitation begins with the ta'awwudh.",
+      "de": "Deshalb beginnt die Rezitation mit der Isti'adha.",
+      "ar": "ولهذا تبدأ التلاوة بالاستعاذة."
+     }
+    },
+    {
+     "verse": "2:121",
+     "check": "true recital",
+     "title": {
+      "en": "Reciting it as it deserves",
+      "de": "Ihn rezitieren, wie es ihm gebührt",
+      "ar": "تلاوةٌ واتّباع"
+     },
+     "body": {
+      "en": "Early commentators explained this as following the Book truly: reading with care and acting on what is read.",
+      "de": "Frühe Kommentatoren erklärten dies als wahres Folgen des Buches: sorgfältig lesen und nach dem Gelesenen handeln.",
+      "ar": "فسّرها السلف باتّباع الكتاب حقّ اتباعه: قراءةً متأنية وعملًا بما يُقرأ."
+     }
+    },
+    {
+     "hadith": "nawawi:23",
+     "check": "a proof either for you or against you",
+     "title": {
+      "en": "An honour and a trust",
+      "de": "Ehre und anvertrautes Gut",
+      "ar": "شرفٌ وأمانة"
+     },
+     "body": {
+      "en": "Carrying the Quran is an honour and a trust. Its bearer tries to let it shape speech and conduct.",
+      "de": "Den Koran zu tragen ist Ehre und anvertrautes Gut zugleich. Wer ihn trägt, lässt Rede und Verhalten von ihm prägen.",
+      "ar": "حمل القرآن شرفٌ وأمانة، وحامله يسعى أن يهذّب به قوله وفعله."
+     }
+    },
+    {
+     "title": {
+      "en": "Signs of a hafiz's adab",
+      "de": "Zeichen des Anstands eines Hafiz",
+      "ar": "من علامات أدب الحافظ"
+     },
+     "list": {
+      "en": [
+       "Humble about the gift, never proud",
+       "Gentle in speech and calm in manner",
+       "Careful with the mushaf: clean hands, a raised place",
+       "Uses the Quran for Allah, not for worldly gain"
+      ],
+      "de": [
+       "Demütig über die Gabe, nie hochmütig",
+       "Sanft in der Rede, ruhig im Auftreten",
+       "Achtsam mit dem Mushaf: saubere Hände, ein erhöhter Platz",
+       "Nutzt den Koran für Allah, nicht für weltlichen Gewinn"
+      ],
+      "ar": [
+       "متواضع بالنعمة غير متكبر",
+       "لين الكلام هادئ السمت",
+       "يصون المصحف: يد نظيفة ومكان مرتفع",
+       "يبتغي بالقرآن وجه الله لا عرض الدنيا"
+      ]
+     }
+    }
+   ],
+   "sources": [
+    {
+     "label": "al-Nawawi, al-Tibyan fi Adab Hamalat al-Qur'an"
+    },
+    {
+     "label": "al-Ajurri, Akhlaq Hamalat al-Qur'an"
+    },
+    {
+     "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 2:121", "url": "https://quran.com/2:121/tafsirs/en-tafisr-ibn-kathir"
+    }
+   ]
+  },
+  {
+   "id": "hifz-04-one-mushaf",
+   "needs_review": true,
+   "palette": "marble",
+   "cover": {
+    "kicker": {
+     "en": "Memorising the Quran · 4",
+     "de": "Den Koran auswendig lernen · 4",
+     "ar": "حفظ القرآن · ٤"
+    },
+    "title": {
+     "en": "Choose one mushaf and stay with it",
+     "de": "Wählen Sie einen Mushaf und bleiben Sie dabei",
+     "ar": "اختر مصحفًا واحدًا والزمه"
+    },
+    "sub": {
+     "en": "Your eyes memorise too: why the same pages help the heart remember",
+     "de": "Auch die Augen lernen mit: warum dieselben Seiten dem Herzen beim Erinnern helfen",
+     "ar": "العين تحفظ أيضًا: لماذا تعين الصفحاتُ نفسها القلبَ على التذكر"
+    },
+    "arabic": "مصحف الحفظ"
+   },
+   "slides": [
+    {
+     "title": {
+      "en": "Your eyes remember pages",
+      "de": "Die Augen erinnern sich an Seiten",
+      "ar": "العين تتذكر الصفحات"
+     },
+     "body": {
+      "en": "Many huffaz can see where a verse sits: right or left page, top or bottom line. Changing to another print breaks that picture again and again.",
+      "de": "Viele Huffaz sehen vor sich, wo ein Vers steht: rechte oder linke Seite, obere oder untere Zeile. Ein Wechsel zu einem anderen Druck zerstört dieses Bild immer wieder.",
+      "ar": "كثير من الحفّاظ يرون موضع الآية: في الصفحة اليمنى أو اليسرى، في أعلاها أو أسفلها، وتغيير الطبعة يمحو هذه الصورة مرة بعد مرة."
+     }
+    },
+    {
+     "title": {
+      "en": "The Madinah print",
+      "de": "Der Madina-Druck",
+      "ar": "مصحف المدينة"
+     },
+     "body": {
+      "en": "The widely used Madinah mushaf has 604 pages of 15 lines, and every page ends at the end of a verse. That makes it a popular choice for hifz.",
+      "de": "Der weit verbreitete Madina-Mushaf hat 604 Seiten mit je 15 Zeilen, und jede Seite endet mit dem Ende eines Verses. Deshalb wird er für den Hifz gern gewählt.",
+      "ar": "مصحف المدينة المنتشر يقع في ٦٠٤ صفحات، في كل صفحة خمسة عشر سطرًا، وتنتهي كل صفحة بنهاية آية؛ ولذلك يكثر اختياره للحفظ."
+     }
+    },
+    {
+     "title": {
+      "en": "Other trusted layouts",
+      "de": "Andere bewährte Ausgaben",
+      "ar": "طبعات أخرى موثوقة"
+     },
+     "body": {
+      "en": "South Asian prints use their own script and line counts, and in North and West Africa many read in the riwaya of Warsh. Any reliable print works if you keep to it.",
+      "de": "Südasiatische Drucke haben eine eigene Schrift und eigene Zeilenzahlen, und in Nord- und Westafrika lesen viele in der Überlieferung von Warsch. Jeder verlässliche Druck ist gut, wenn Sie dabei bleiben.",
+      "ar": "للطبعات في جنوب آسيا رسمها وعدد أسطرها، ويقرأ كثيرون في شمال أفريقيا وغربها برواية ورش؛ وكل طبعة موثوقة تصلح إذا لزمتها."
+     }
+    },
+    {
+     "title": {
+      "en": "Before you choose",
+      "de": "Bevor Sie wählen",
+      "ar": "قبل أن تختار"
+     },
+     "list": {
+      "en": [
+       "Match the riwaya of your teacher, usually Hafs or Warsh",
+       "Choose a script you read easily",
+       "Pick a size you can carry every day",
+       "Use the same layout in print and in your app"
+      ],
+      "de": [
+       "Passen Sie die Riwaya Ihrem Lehrer an, meist Hafs oder Warsch",
+       "Wählen Sie eine Schrift, die Sie leicht lesen",
+       "Wählen Sie eine Größe, die Sie täglich mitnehmen können",
+       "Nutzen Sie dasselbe Layout im Druck und in Ihrer App"
+      ],
+      "ar": [
+       "وافِق رواية شيخك، وهي غالبًا حفص أو ورش",
+       "اختر رسمًا تقرؤه بسهولة",
+       "اختر حجمًا تحمله كل يوم",
+       "استعمل الترتيب نفسه في المطبوع وفي التطبيق"
+      ]
+     }
+    },
+    {
+     "verse": "80:13-15",
+     "check": "honored sheets",
+     "title": {
+      "en": "Treat it with honour",
+      "de": "Mit Ehrfurcht behandeln",
+      "ar": "عنايةٌ بالمصحف"
+     },
+     "body": {
+      "en": "The Quran describes its pages with honour. Treat your hifz copy with care: it will be your companion for years.",
+      "de": "Der Koran beschreibt seine Blätter mit Ehrfurcht. Behandeln Sie Ihr Hifz-Exemplar sorgsam: Es wird Sie jahrelang begleiten.",
+      "ar": "يصف القرآن صحفه بالتكريم، فاعتنِ بمصحف حفظك؛ فهو رفيقك سنوات."
+     }
+    },
+    {
+     "title": {
+      "en": "Marks and notes",
+      "de": "Markierungen und Notizen",
+      "ar": "العلامات والملاحظات"
+     },
+     "body": {
+      "en": "Some teachers allow light pencil marks for learning, others prefer a clean copy. A separate notebook for similar verses and weak spots keeps the mushaf clean.",
+      "de": "Manche Lehrer erlauben leichte Bleistiftmarkierungen zum Lernen, andere bevorzugen ein sauberes Exemplar. Ein eigenes Heft für ähnliche Verse und Schwachstellen hält den Mushaf sauber.",
+      "ar": "يأذن بعض الشيوخ بعلامات خفيفة بالقلم الرصاص للتعلم، ويفضّل آخرون مصحفًا نظيفًا؛ ودفترٌ مستقل للمتشابهات ومواضع الضعف يحفظ المصحف نظيفًا."
+     }
+    }
+   ],
+   "sources": [
+    {
+     "label": "King Fahd Glorious Qur'an Printing Complex, Madinah: Mushaf al-Madinah (Hafs)"
+    }
+   ]
+  },
+  {
+   "id": "hifz-05-daily-wird",
+   "tradition": "sunni",
+   "needs_review": true,
+   "palette": "emerald",
+   "cover": {
+    "kicker": {
+     "en": "Memorising the Quran · 5",
+     "de": "Den Koran auswendig lernen · 5",
+     "ar": "حفظ القرآن · ٥"
+    },
+    "title": {
+     "en": "Your daily portion: small and steady",
+     "de": "Ihre tägliche Portion: klein und beständig",
+     "ar": "وِردك اليومي: قليلٌ دائم"
+    },
+    "sub": {
+     "en": "Why a modest wird you keep beats a big plan you drop",
+     "de": "Warum ein bescheidenes Pensum, das Sie halten, mehr bringt als ein großer Plan, den Sie aufgeben",
+     "ar": "لماذا يغلب وِردٌ متواضع تداوم عليه خطةً كبيرة تتركها"
+    },
+    "arabic": "الوِرْد"
+   },
+   "slides": [
+    {
+     "title": {
+      "en": "What a wird is",
+      "de": "Was ein Wird ist",
+      "ar": "ما الورد؟"
+     },
+     "body": {
+      "en": "A wird is the fixed amount you return to every day. In hifz it has three parts: something new, a recent portion and an older portion.",
+      "de": "Ein Wird ist die feste Menge, zu der Sie jeden Tag zurückkehren. Im Hifz hat er drei Teile: etwas Neues, einen kürzlich gelernten Teil und einen älteren Teil.",
+      "ar": "الورد هو المقدار الثابت الذي تعود إليه كل يوم، وله في الحفظ ثلاثة أجزاء: جديد، ومراجعة قريبة، ومراجعة بعيدة."
+     },
+     "arabic": "الوِرْد"
+    },
+    {
+     "hadith": "bukhari:6465",
+     "check": "regular constant deeds",
+     "title": {
+      "en": "Loved by Allah",
+      "de": "Von Allah geliebt",
+      "ar": "المداومة محبوبة"
+     },
+     "body": {
+      "en": "Five lines every day for a year carry you further than a page now and then.",
+      "de": "Fünf Zeilen jeden Tag ein Jahr lang bringen Sie weiter als ab und zu eine Seite.",
+      "ar": "خمسة أسطر كل يوم طوال عام تبلغ بك أبعد من صفحة بين حين وآخر."
+     }
+    },
+    {
+     "verse": "23:62",
+     "check": "within its capacity",
+     "title": {
+      "en": "Within your capacity",
+      "de": "Im Rahmen Ihrer Kraft",
+      "ar": "على قدر الوسع"
+     },
+     "body": {
+      "en": "Allah asks nothing beyond what a soul can bear. A good plan respects your work, family and health.",
+      "de": "Allah verlangt nichts über das hinaus, was eine Seele tragen kann. Ein guter Plan achtet Ihre Arbeit, Familie und Gesundheit.",
+      "ar": "لم يطلب الله من نفسٍ ما لا تطيق، والخطة الحسنة تراعي عملك وأهلك وصحتك."
+     }
+    },
+    {
+     "title": {
+      "en": "How to find your size",
+      "de": "So finden Sie Ihr Maß",
+      "ar": "كيف تعرف مقدارك؟"
+     },
+     "list": {
+      "en": [
+       "Start smaller than you think you can",
+       "Keep it for two weeks before increasing",
+       "Increase only if your review stays strong",
+       "Reduce it in busy seasons rather than stopping"
+      ],
+      "de": [
+       "Beginnen Sie kleiner, als Sie sich zutrauen",
+       "Halten Sie es zwei Wochen, bevor Sie steigern",
+       "Steigern Sie nur, wenn die Wiederholung stabil bleibt",
+       "Verringern Sie es in vollen Zeiten, statt aufzuhören"
+      ],
+      "ar": [
+       "ابدأ بأقل مما تظن أنك تطيق",
+       "داوم عليه أسبوعين قبل الزيادة",
+       "لا تزد إلا إذا بقيت مراجعتك متينة",
+       "خفّفه في أوقات الانشغال بدل أن تتوقف"
+      ]
+     }
+    },
+    {
+     "title": {
+      "en": "When you miss a day",
+      "de": "Wenn Sie einen Tag verpassen",
+      "ar": "إذا فاتك يوم"
+     },
+     "body": {
+      "en": "Do not try to make up a whole week in one evening. Return to your normal wird the next day and keep the review going. Steadiness matters more than catching up.",
+      "de": "Versuchen Sie nicht, eine ganze Woche an einem Abend nachzuholen. Kehren Sie am nächsten Tag zu Ihrem normalen Wird zurück und setzen Sie die Wiederholung fort. Beständigkeit zählt mehr als Aufholen.",
+      "ar": "لا تحاول قضاء أسبوع كامل في ليلة واحدة، بل عُد في اليوم التالي إلى وردك المعتاد، وواصل المراجعة؛ فالمداومة أهم من التعويض."
+     }
+    }
+   ]
+  },
+  {
+   "id": "hifz-06-how-long",
+   "tradition": "sunni",
+   "needs_review": true,
+   "palette": "night",
+   "cover": {
+    "kicker": {
+     "en": "Memorising the Quran · 6",
+     "de": "Den Koran auswendig lernen · 6",
+     "ar": "حفظ القرآن · ٦"
+    },
+    "title": {
+     "en": "How long does hifz take?",
+     "de": "Wie lange dauert der Hifz?",
+     "ar": "كم يستغرق حفظ القرآن؟"
+    },
+    "sub": {
+     "en": "Simple arithmetic with the 604-page mushaf, and why your own plan may differ",
+     "de": "Einfache Rechnung mit dem 604-seitigen Mushaf, und warum Ihr eigener Plan anders aussehen darf",
+     "ar": "حساب بسيط بمصحف الصفحات الست مئة والأربع، ولماذا قد تختلف خطتك"
+    },
+    "arabic": "خطة الحفظ"
+   },
+   "slides": [
+    {
+     "title": {
+      "en": "Start with honest numbers",
+      "de": "Beginnen Sie mit ehrlichen Zahlen",
+      "ar": "ابدأ بأرقام صادقة"
+     },
+     "body": {
+      "en": "In the 604-page Madinah mushaf the arithmetic is simple. It counts new pages only, without review days or breaks, so treat it as the shortest possible time.",
+      "de": "Im 604-seitigen Madina-Mushaf ist die Rechnung einfach. Sie zählt nur neue Seiten, ohne Wiederholungstage oder Pausen; sehen Sie sie also als kürzestmögliche Dauer.",
+      "ar": "في مصحف المدينة ذي الصفحات الـ٦٠٤ الحساب بسيط، لكنه يعدّ الصفحات الجديدة وحدها بلا أيام مراجعة ولا انقطاع، فاعدده أقصر مدة ممكنة."
+     }
+    },
+    {
+     "title": {
+      "en": "New memorisation per day",
+      "de": "Neues Pensum pro Tag",
+      "ar": "مقدار الحفظ الجديد يوميًا"
+     },
+     "list": {
+      "en": [
+       "Two pages a day: about 10 months",
+       "One page a day: about 20 months",
+       "Half a page a day: about 3 years and 4 months",
+       "Five lines a day: about 5 years"
+      ],
+      "de": [
+       "Zwei Seiten am Tag: etwa 10 Monate",
+       "Eine Seite am Tag: etwa 20 Monate",
+       "Eine halbe Seite am Tag: etwa 3 Jahre und 4 Monate",
+       "Fünf Zeilen am Tag: etwa 5 Jahre"
+      ],
+      "ar": [
+       "صفحتان يوميًا: نحو عشرة أشهر",
+       "صفحة يوميًا: نحو عشرين شهرًا",
+       "نصف صفحة يوميًا: نحو ثلاث سنوات وأربعة أشهر",
+       "خمسة أسطر يوميًا: نحو خمس سنوات"
+      ]
+     }
+    },
+    {
+     "title": {
+      "en": "With review days",
+      "de": "Mit Wiederholungstagen",
+      "ar": "مع أيام المراجعة"
+     },
+     "body": {
+      "en": "Many plans add new pages on five days and keep the other days for review. One page on five days a week takes about 121 weeks: roughly two years and four months.",
+      "de": "Viele Pläne lernen an fünf Tagen Neues und nutzen die übrigen Tage zur Wiederholung. Eine Seite an fünf Tagen pro Woche dauert etwa 121 Wochen, also rund zwei Jahre und vier Monate.",
+      "ar": "كثير من الخطط تحفظ جديدًا خمسة أيام وتجعل الباقي للمراجعة؛ وصفحة في خمسة أيام من كل أسبوع تستغرق نحو ١٢١ أسبوعًا، أي قرابة سنتين وأربعة أشهر."
+     }
+    },
+    {
+     "title": {
+      "en": "Speed is not the goal",
+      "de": "Tempo ist nicht das Ziel",
+      "ar": "السرعة ليست الغاية"
+     },
+     "body": {
+      "en": "Some finish quickly, others over many years. Both are honoured. A slower hifz that stays firm is better than a fast one that fades.",
+      "de": "Manche sind schnell fertig, andere brauchen viele Jahre. Beides ist ehrenvoll. Ein langsamer Hifz, der fest bleibt, ist besser als ein schneller, der verblasst.",
+      "ar": "بعضهم يختم سريعًا، وبعضهم في سنين طويلة، وكلاهما على خير؛ وحفظٌ بطيء ثابت خير من سريع يتفلّت."
+     }
+    },
+    {
+     "hadith": "bukhari:5043",
+     "check": "That is very quick",
+     "title": {
+      "en": "Not a race",
+      "de": "Kein Wettrennen",
+      "ar": "ليس سباقًا"
+     },
+     "body": {
+      "en": "Ibn Mas'ud did not praise speed for its own sake. The Quran is recited for the heart, not for a record.",
+      "de": "Ibn Masud lobte Tempo nicht um seiner selbst willen. Der Koran wird für das Herz rezitiert, nicht für einen Rekord.",
+      "ar": "لم يمدح ابن مسعود السرعة لذاتها؛ فالقرآن يُتلى للقلب لا لتحطيم الأرقام."
+     }
+    },
+    {
+     "title": {
+      "en": "Build your plan",
+      "de": "Bauen Sie Ihren Plan",
+      "ar": "ابنِ خطتك"
+     },
+     "list": {
+      "en": [
+       "Pick a time of day you can protect",
+       "Choose a daily amount from the list",
+       "Fix one weekly day for review and testing",
+       "Set a first goal, such as juz' 'Amma"
+      ],
+      "de": [
+       "Wählen Sie eine Tageszeit, die Sie schützen können",
+       "Wählen Sie eine Tagesmenge aus der Liste",
+       "Legen Sie einen Wochentag für Wiederholung und Prüfung fest",
+       "Setzen Sie ein erstes Ziel, etwa Dschuz' Amma"
+      ],
+      "ar": [
+       "اختر وقتًا من اليوم تستطيع حمايته",
+       "اختر مقدارًا يوميًا من القائمة",
+       "خصّص يومًا في الأسبوع للمراجعة والاختبار",
+       "ضع هدفًا أول، كجزء عمّ"
+      ]
+     }
+    }
+   ],
+   "sources": [
+    {
+     "label": "King Fahd Glorious Qur'an Printing Complex, Madinah: Mushaf al-Madinah (Hafs)"
+    }
+   ]
+  },
+  {
+   "id": "hifz-07-a-page-in-6-steps",
+   "needs_review": true,
+   "palette": "dawn",
+   "cover": {
+    "kicker": {
+     "en": "Memorising the Quran · 7",
+     "de": "Den Koran auswendig lernen · 7",
+     "ar": "حفظ القرآن · ٧"
+    },
+    "title": {
+     "en": "Memorise a page in 6 steps",
+     "de": "Eine Seite in 6 Schritten lernen",
+     "ar": "احفظ صفحة في ست خطوات"
+    },
+    "sub": {
+     "en": "A classic routine used in many memorisation circles, from listening to presenting",
+     "de": "Ein klassischer Ablauf aus vielen Hifz-Kreisen, vom Hören bis zum Vortragen",
+     "ar": "طريقة معروفة في كثير من حلقات التحفيظ، من السماع إلى العرض"
+    },
+    "arabic": "خطوات الحفظ"
+   },
+   "slides": [
+    {
+     "verse": "75:16-18",
+     "check": "follow its recitation",
+     "title": {
+      "en": "1. Listen first",
+      "de": "1. Zuerst hören",
+      "ar": "١. استمع أولًا"
+     },
+     "body": {
+      "en": "The Prophet was told to listen fully, then follow. Hear the page from a teacher or reciter before you start.",
+      "de": "Dem Propheten wurde gesagt, erst ganz zuzuhören und dann zu folgen. Hören Sie die Seite von einem Lehrer oder Rezitator, bevor Sie beginnen.",
+      "ar": "أُمر النبي ﷺ أن ينصت ثم يتبع، فاسمع الصفحة من شيخ أو قارئ قبل أن تبدأ."
+     }
+    },
+    {
+     "title": {
+      "en": "2. Understand it",
+      "de": "2. Verstehen",
+      "ar": "٢. افهمها"
+     },
+     "body": {
+      "en": "Read a translation or a short tafsir of the page. Know who is speaking, about what, and where the theme changes. Meaning gives memory a structure.",
+      "de": "Lesen Sie eine Übersetzung oder einen kurzen Tafsir der Seite. Wissen Sie, wer spricht, worüber, und wo das Thema wechselt. Bedeutung gibt dem Gedächtnis ein Gerüst.",
+      "ar": "اقرأ ترجمة الصفحة أو تفسيرًا مختصرًا لها، واعرف من المتكلم، وعمّ يتحدث، وأين ينتقل الموضوع؛ فالمعنى يبني للحفظ هيكلًا."
+     }
+    },
+    {
+     "title": {
+      "en": "3. Verse by verse",
+      "de": "3. Vers für Vers",
+      "ar": "٣. آية آية"
+     },
+     "body": {
+      "en": "Read one verse several times while looking at the mushaf, then recite it from memory. Only when it flows without help, move on to the next.",
+      "de": "Lesen Sie einen Vers mehrmals mit Blick in den Mushaf und rezitieren Sie ihn dann auswendig. Erst wenn er ohne Hilfe fließt, gehen Sie zum nächsten.",
+      "ar": "اقرأ الآية مرات وأنت تنظر في المصحف، ثم اقرأها غيبًا، ولا تنتقل إلى التالية حتى تجري على لسانك بلا عون."
+     }
+    },
+    {
+     "title": {
+      "en": "4. Link as you go",
+      "de": "4. Verknüpfen Sie fortlaufend",
+      "ar": "٤. اربط وأنت تتقدم"
+     },
+     "body": {
+      "en": "After each new verse, recite it together with the ones before it: verse one, then one and two, then one to three, until the page is one chain.",
+      "de": "Rezitieren Sie jeden neuen Vers zusammen mit den vorherigen: Vers eins, dann eins und zwei, dann eins bis drei, bis die Seite eine Kette ist.",
+      "ar": "بعد كل آية جديدة اقرأها مع ما قبلها: الأولى، ثم الأولى والثانية، ثم من الأولى إلى الثالثة، حتى تصير الصفحة سلسلة واحدة."
+     }
+    },
+    {
+     "title": {
+      "en": "5. The whole page from memory",
+      "de": "5. Die ganze Seite auswendig",
+      "ar": "٥. الصفحة كاملة غيبًا"
+     },
+     "body": {
+      "en": "Recite the full page without looking, ideally several times without a mistake. Note every hesitation and fix it straight away.",
+      "de": "Rezitieren Sie die ganze Seite ohne hinzusehen, am besten mehrmals ohne Fehler. Notieren Sie jedes Zögern und beheben Sie es sofort.",
+      "ar": "اقرأ الصفحة كلها غيبًا، ويُحسن أن تكررها مرات بلا خطأ، وسجّل كل تردد وعالجه في الحال."
+     }
+    },
+    {
+     "title": {
+      "en": "6. Present it",
+      "de": "6. Vortragen",
+      "ar": "٦. اعرضها"
+     },
+     "body": {
+      "en": "Recite the page to a teacher, parent or friend who follows in the mushaf. Then recite it again in your next prayer.",
+      "de": "Tragen Sie die Seite einem Lehrer, Elternteil oder Freund vor, der im Mushaf mitliest. Rezitieren Sie sie dann erneut in Ihrem nächsten Gebet.",
+      "ar": "اعرض الصفحة على شيخ أو والد أو صديق يتابعك في المصحف، ثم اقرأها في صلاتك التالية."
+     }
+    }
+   ]
+  },
+  {
+   "id": "hifz-08-repetition",
+   "tradition": "sunni",
+   "needs_review": true,
+   "palette": "night",
+   "cover": {
+    "kicker": {
+     "en": "Memorising the Quran · 8",
+     "de": "Den Koran auswendig lernen · 8",
+     "ar": "حفظ القرآن · ٨"
+    },
+    "title": {
+     "en": "The quiet power of repetition",
+     "de": "Die stille Kraft der Wiederholung",
+     "ar": "قوة التكرار الهادئة"
+    },
+    "sub": {
+     "en": "The Quran is a book meant to be repeated. Here is how to repeat well",
+     "de": "Der Koran ist ein Buch, das wiederholt werden will. So wiederholen Sie gut",
+     "ar": "القرآن كتابٌ يُكرَّر، وهذه طريقة التكرار النافع"
+    },
+    "arabic": "التكرار"
+   },
+   "slides": [
+    {
+     "verse": "15:87",
+     "check": "often repeated",
+     "title": {
+      "en": "A Book made for repeating",
+      "de": "Ein Buch zum Wiederholen",
+      "ar": "كتابٌ يُثنّى ويُكرَّر"
+     },
+     "body": {
+      "en": "In al-Bukhari the Prophet calls al-Fatiha the seven often-repeated verses, recited in every prayer. Some early scholars named the seven long surahs.",
+      "de": "Bei al-Bukhari nennt der Prophet al-Fatiha die sieben oft wiederholten Verse, die in jedem Gebet rezitiert werden. Manche frühen Gelehrten nannten die sieben langen Suren.",
+      "ar": "سمّى النبي ﷺ الفاتحةَ السبعَ المثاني فيما رواه البخاري، وهي تُقرأ في كل صلاة. وفسّرها بعض السلف بالسبع الطوال."
+     }
+    },
+    {
+     "verse": "39:23",
+     "check": "reiteration",
+     "title": {
+      "en": "Reiteration and the heart",
+      "de": "Wiederholung und das Herz",
+      "ar": "التثنية وحضور القلب"
+     },
+     "body": {
+      "en": "Allah describes His Book as one with reiteration. Repeating a passage is not dull while the heart keeps listening.",
+      "de": "Allah beschreibt Sein Buch als eines mit Wiederholungen. Eine Stelle zu wiederholen ist nicht eintönig, solange das Herz zuhört.",
+      "ar": "وصف الله كتابه بأنه مثاني، وتكرار المقطع لا يُمَلّ ما دام القلب حاضرًا."
+     }
+    },
+    {
+     "title": {
+      "en": "Recall beats rereading",
+      "de": "Abrufen schlägt Nachlesen",
+      "ar": "الاستذكار أنفع من إعادة القراءة"
+     },
+     "body": {
+      "en": "Reading the same lines again feels productive, but reciting from memory and then checking builds stronger memory. Learning research calls this the testing effect.",
+      "de": "Dieselben Zeilen erneut zu lesen fühlt sich produktiv an, doch auswendig rezitieren und dann prüfen festigt das Gedächtnis stärker. Die Lernforschung nennt das den Testeffekt.",
+      "ar": "إعادة قراءة الأسطر نفسها تبدو مثمرة، لكن التسميع غيبًا ثم المقابلة بالمصحف أرسخ للحفظ، ويسميه باحثو التعلم أثر الاختبار."
+     }
+    },
+    {
+     "title": {
+      "en": "Spread it out",
+      "de": "Verteilen Sie es",
+      "ar": "وزّع التكرار"
+     },
+     "body": {
+      "en": "Repetitions spread over the day hold better than the same number in one sitting. Repeat in the morning, again at midday and once more before sleep.",
+      "de": "Über den Tag verteilte Wiederholungen halten besser als dieselbe Anzahl in einer Sitzung. Wiederholen Sie morgens, mittags noch einmal und ein weiteres Mal vor dem Schlafen.",
+      "ar": "التكرار الموزع على اليوم أثبت من العدد نفسه في جلسة واحدة؛ كرّر صباحًا، ثم ظهرًا، ثم مرة قبل النوم."
+     }
+    },
+    {
+     "title": {
+      "en": "Repeat with quality",
+      "de": "Wiederholen mit Qualität",
+      "ar": "كرّر بإتقان"
+     },
+     "list": {
+      "en": [
+       "Recite aloud with clear tajwid, never in a rush",
+       "Look less with every round",
+       "Count, so you know when you are done",
+       "Stop when tired and come back later"
+      ],
+      "de": [
+       "Rezitieren Sie laut mit klarem Tadschwid, nie in Eile",
+       "Schauen Sie mit jeder Runde weniger hin",
+       "Zählen Sie, damit Sie wissen, wann Sie fertig sind",
+       "Hören Sie auf, wenn Sie müde sind, und kommen Sie später wieder"
+      ],
+      "ar": [
+       "اقرأ جهرًا بتجويد واضح ولا تستعجل",
+       "قلّل النظر في المصحف مع كل مرة",
+       "عُدّ التكرار لتعرف متى تنتهي",
+       "توقف عند التعب وعُد لاحقًا"
+      ]
+     }
+    },
+    {
+     "hadith": "muslim:1836",
+     "check": "tongue falters",
+     "title": {
+      "en": "When the tongue tires",
+      "de": "Wenn die Zunge müde wird",
+      "ar": "إذا تعب اللسان"
+     },
+     "body": {
+      "en": "Repetition without presence is not the aim. Rest, then return with a fresh mind.",
+      "de": "Wiederholung ohne Gegenwart des Herzens ist nicht das Ziel. Ruhen Sie, dann kehren Sie mit frischem Kopf zurück.",
+      "ar": "ليس المقصود تكرارًا بلا حضور؛ استرح ثم عُد بذهن صافٍ."
+     }
+    }
+   ],
+   "sources": [
+    {
+     "label": "Roediger & Karpicke (2006), Test-enhanced learning, Psychological Science 17(3)"
+    },
+    {
+     "label": "Cepeda et al. (2006), Distributed practice in verbal recall tasks, Psychological Bulletin 132(3)"
+    },
+     { "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 15:87", "url": "https://quran.com/15:87/tafsirs/en-tafisr-ibn-kathir" }
+   ]
+  },
+  {
+   "id": "hifz-09-linking",
+   "needs_review": true,
+   "palette": "parchment",
+   "cover": {
+    "kicker": {
+     "en": "Memorising the Quran · 9",
+     "de": "Den Koran auswendig lernen · 9",
+     "ar": "حفظ القرآن · ٩"
+    },
+    "title": {
+     "en": "Linking verses: building the chain",
+     "de": "Verse verknüpfen: die Kette bauen",
+     "ar": "الربط بين الآيات"
+    },
+    "sub": {
+     "en": "Most hesitations happen between verses, not inside them",
+     "de": "Die meisten Stockungen geschehen zwischen den Versen, nicht in ihnen",
+     "ar": "أكثر التوقف يقع بين الآيات لا في داخلها"
+    },
+    "arabic": "الرَّبط"
+   },
+   "slides": [
+    {
+     "title": {
+      "en": "Where mistakes hide",
+      "de": "Wo Fehler sich verstecken",
+      "ar": "أين تختبئ الأخطاء؟"
+     },
+     "body": {
+      "en": "Many people know each verse, yet stop when moving to the next. The joins between verses, pages and surahs need their own practice.",
+      "de": "Viele kennen jeden einzelnen Vers und stocken doch beim Übergang zum nächsten. Die Übergänge zwischen Versen, Seiten und Suren brauchen eigene Übung.",
+      "ar": "كثيرون يحفظون كل آية بمفردها ثم يتوقفون عند الانتقال إلى ما بعدها؛ فمواضع الوصل بين الآيات والصفحات والسور تحتاج تدريبًا خاصًا."
+     }
+    },
+    {
+     "title": {
+      "en": "The growing chain",
+      "de": "Die wachsende Kette",
+      "ar": "السلسلة المتنامية"
+     },
+     "list": {
+      "en": [
+       "Learn verse 1, then verse 2",
+       "Recite 1 and 2 together",
+       "Learn verse 3, then recite 1 to 3",
+       "Continue until the whole portion flows"
+      ],
+      "de": [
+       "Lernen Sie Vers 1, dann Vers 2",
+       "Rezitieren Sie 1 und 2 zusammen",
+       "Lernen Sie Vers 3, dann rezitieren Sie 1 bis 3",
+       "Fahren Sie fort, bis der ganze Abschnitt fließt"
+      ],
+      "ar": [
+       "احفظ الآية الأولى ثم الثانية",
+       "اقرأ الأولى والثانية معًا",
+       "احفظ الثالثة ثم اقرأ من الأولى إلى الثالثة",
+       "استمر حتى يجري المقطع كله"
+      ]
+     }
+    },
+    {
+     "title": {
+      "en": "Link yesterday with today",
+      "de": "Gestern mit heute verbinden",
+      "ar": "صِل الأمس باليوم"
+     },
+     "body": {
+      "en": "Before you start a new portion, recite the last verses of yesterday and run straight into today's first verse. The seam disappears.",
+      "de": "Bevor Sie einen neuen Abschnitt beginnen, rezitieren Sie die letzten Verse von gestern und gehen direkt in den ersten Vers von heute über. Die Naht verschwindet.",
+      "ar": "قبل أن تبدأ الجديد اقرأ آخر آيات الأمس وادخل مباشرة في أول آية اليوم، فيختفي موضع الانقطاع."
+     }
+    },
+    {
+     "title": {
+      "en": "Page and surah joins",
+      "de": "Seiten- und Surenübergänge",
+      "ar": "وصل الصفحات والسور"
+     },
+     "body": {
+      "en": "Practise the last line of each page with the first line of the next. Also learn which surah follows which, so you never stop at a surah's end.",
+      "de": "Üben Sie die letzte Zeile jeder Seite mit der ersten Zeile der nächsten. Lernen Sie auch, welche Sure auf welche folgt, damit Sie am Ende einer Sure nicht stehen bleiben.",
+      "ar": "درّب نفسك على آخر سطر في كل صفحة مع أول سطر في التي تليها، واحفظ ترتيب السور حتى لا تقف عند خاتمة سورة."
+     }
+    },
+    {
+     "verse": "25:32",
+     "check": "spaced it distinctly",
+     "title": {
+      "en": "Sent down in measured portions",
+      "de": "In abgemessenen Teilen herabgesandt",
+      "ar": "نزل مفرّقًا مرتّلًا"
+     },
+     "body": {
+      "en": "The Quran came in portions the heart could hold. Small portions, well joined, follow that rhythm.",
+      "de": "Der Koran kam in Teilen, die das Herz fassen konnte. Kleine, gut verbundene Abschnitte folgen diesem Rhythmus.",
+      "ar": "نزل القرآن أجزاءً يطيقها القلب، والمقاطع الصغيرة المترابطة تسير على هذا الإيقاع."
+     }
+    },
+    {
+     "title": {
+      "en": "Know the flow of meaning",
+      "de": "Den Fluss der Bedeutung kennen",
+      "ar": "اعرف تسلسل المعنى"
+     },
+     "body": {
+      "en": "Ask what connects two verses: a story continuing, a contrast, a promise after a warning. When you know why the next verse comes, you remember that it comes.",
+      "de": "Fragen Sie, was zwei Verse verbindet: eine Geschichte, die weitergeht, ein Gegensatz, eine Verheißung nach einer Warnung. Wer weiß, warum der nächste Vers kommt, erinnert sich, dass er kommt.",
+      "ar": "اسأل: ما الذي يربط الآيتين؟ قصة تمضي، أو مقابلة، أو وعد بعد وعيد. فإذا عرفت لماذا تأتي الآية التالية تذكرت أنها تأتي."
+     }
+    }
+   ],
+   "sources": [
+    {
+     "label": "al-Biqa'i, Nazm al-Durar fi Tanasub al-Ayat wa-l-Suwar"
+    }
+   ]
+  },
+  {
+   "id": "hifz-10-listening",
+   "tradition": "sunni",
+   "needs_review": true,
+   "palette": "marble",
+   "cover": {
+    "kicker": {
+     "en": "Memorising the Quran · 10",
+     "de": "Den Koran auswendig lernen · 10",
+     "ar": "حفظ القرآن · ١٠"
+    },
+    "title": {
+     "en": "Listen before you recite",
+     "de": "Hören Sie, bevor Sie rezitieren",
+     "ar": "استمع قبل أن تقرأ"
+    },
+    "sub": {
+     "en": "The Quran was received by ear first, and listening is still the safest start",
+     "de": "Der Koran wurde zuerst mit dem Ohr empfangen, und Hören ist bis heute der sicherste Anfang",
+     "ar": "تُلقّي القرآن بالسماع أولًا، وما زال السماع أسلم بداية"
+    },
+    "arabic": "السَّماع"
+   },
+   "slides": [
+    {
+     "verse": "7:204",
+     "check": "listen to it and pay attention",
+     "title": {
+      "en": "Listening is worship",
+      "de": "Zuhören ist Gottesdienst",
+      "ar": "الإنصات عبادة"
+     },
+     "body": {
+      "en": "Attentive listening is itself met with mercy, and it prepares the tongue.",
+      "de": "Aufmerksames Zuhören wird selbst mit Barmherzigkeit beantwortet, und es bereitet die Zunge vor.",
+      "ar": "الإنصات نفسه سبب للرحمة، وهو يهيئ اللسان."
+     }
+    },
+    {
+     "hadith": "bukhari:5049",
+     "check": "hear it from others",
+     "title": {
+      "en": "The Prophet listened too",
+      "de": "Auch der Prophet hörte zu",
+      "ar": "النبي ﷺ يحب السماع"
+     },
+     "body": {
+      "en": "Even the one to whom the Quran was revealed enjoyed listening. Listening is not only for beginners.",
+      "de": "Selbst der, dem der Koran offenbart wurde, hörte gern zu. Zuhören ist nicht nur etwas für Anfänger.",
+      "ar": "حتى من أُنزل عليه القرآن كان يحب السماع، فالسماع ليس للمبتدئين وحدهم."
+     }
+    },
+    {
+     "title": {
+      "en": "Choose one reciter",
+      "de": "Wählen Sie einen Rezitator",
+      "ar": "اختر قارئًا واحدًا"
+     },
+     "body": {
+      "en": "Pick one clear, measured reciter for your hifz and stay with them. Your memory will follow their pauses and rhythm. Check that the riwaya matches your mushaf.",
+      "de": "Wählen Sie für Ihren Hifz einen klaren, ruhigen Rezitator und bleiben Sie bei ihm. Ihr Gedächtnis folgt seinen Pausen und seinem Rhythmus. Achten Sie darauf, dass die Riwaya zu Ihrem Mushaf passt.",
+      "ar": "اختر لحفظك قارئًا واحدًا واضحًا متأنيًا والزمه، فذاكرتك تتبع وقفاته وإيقاعه، وتأكد أن روايته توافق مصحفك."
+     }
+    },
+    {
+     "verse": "73:4",
+     "check": "measured recitation",
+     "title": {
+      "en": "Slow and measured",
+      "de": "Langsam und gemessen",
+      "ar": "تلاوة مرتّلة"
+     },
+     "body": {
+      "en": "For memorising, a calm murattal recitation works better than a fast or elaborate one.",
+      "de": "Zum Auswendiglernen eignet sich eine ruhige Murattal-Rezitation besser als eine schnelle oder kunstvoll verzierte.",
+      "ar": "للحفظ تصلح التلاوة المرتلة الهادئة أكثر من السريعة أو المجوّدة بالمقامات."
+     }
+    },
+    {
+     "title": {
+      "en": "Active listening",
+      "de": "Aktives Zuhören",
+      "ar": "السماع الفاعل"
+     },
+     "list": {
+      "en": [
+       "Follow in the mushaf with your eyes",
+       "Pause and repeat each verse after the reciter",
+       "Listen to tomorrow's portion tonight",
+       "Then recite it without the audio"
+      ],
+      "de": [
+       "Lesen Sie mit den Augen im Mushaf mit",
+       "Halten Sie an und sprechen Sie jeden Vers nach",
+       "Hören Sie den Abschnitt von morgen schon heute Abend",
+       "Rezitieren Sie ihn dann ohne Audio"
+      ],
+      "ar": [
+       "تابع بعينك في المصحف",
+       "أوقف التسجيل وردّد كل آية بعد القارئ",
+       "استمع الليلة إلى حفظ الغد",
+       "ثم اقرأه دون تسجيل"
+      ]
+     }
+    },
+    {
+     "title": {
+      "en": "Listening is not enough",
+      "de": "Zuhören allein reicht nicht",
+      "ar": "السماع وحده لا يكفي"
+     },
+     "body": {
+      "en": "Hearing builds familiarity, but only reciting from memory shows what you really know. And a recording cannot correct you; a teacher can.",
+      "de": "Hören schafft Vertrautheit, aber erst das Rezitieren aus dem Gedächtnis zeigt, was Sie wirklich können. Und eine Aufnahme kann Sie nicht korrigieren, ein Lehrer schon.",
+      "ar": "السماع يورث الألفة، لكن التسميع غيبًا هو الذي يكشف حقيقة حفظك، والتسجيل لا يصحح لك، أما الشيخ فيصحح."
+     }
+    }
+   ]
+  },
+  {
+   "id": "hifz-11-writing",
+   "needs_review": true,
+   "palette": "parchment",
+   "cover": {
+    "kicker": {
+     "en": "Memorising the Quran · 11",
+     "de": "Den Koran auswendig lernen · 11",
+     "ar": "حفظ القرآن · ١١"
+    },
+    "title": {
+     "en": "Memorising with the pen",
+     "de": "Auswendig lernen mit dem Stift",
+     "ar": "الحفظ بالقلم"
+    },
+    "sub": {
+     "en": "From wooden boards in Africa to a simple notebook: writing fixes the words",
+     "de": "Von Holztafeln in Afrika bis zum einfachen Heft: Schreiben festigt die Worte",
+     "ar": "من الألواح الخشبية في أفريقيا إلى دفتر بسيط: الكتابة تثبّت الكلمات"
+    },
+    "arabic": "اللَّوح"
+   },
+   "slides": [
+    {
+     "verse": "96:3-5",
+     "check": "taught by the pen",
+     "title": {
+      "en": "The gift of the pen",
+      "de": "Die Gabe des Schreibrohrs",
+      "ar": "فضل القلم"
+     },
+     "body": {
+      "en": "Among the very first revealed verses is a mention of the pen. Writing has always served learning.",
+      "de": "Unter den allerersten offenbarten Versen wird das Schreibrohr erwähnt. Schreiben hat dem Lernen immer gedient.",
+      "ar": "في أوائل ما نزل ذِكرُ القلم، والكتابة كانت دائمًا خادمة للتعلم."
+     }
+    },
+    {
+     "title": {
+      "en": "The wooden board",
+      "de": "Die Holztafel",
+      "ar": "اللوح الخشبي"
+     },
+     "body": {
+      "en": "In many Quran schools of West and North Africa and in Sudan, students write their daily portion on a wooden board, memorise it, recite it, then wash the board for the next one.",
+      "de": "In vielen Koranschulen West- und Nordafrikas und im Sudan schreiben Schüler ihre Tagesportion auf eine Holztafel, lernen sie, tragen sie vor und waschen die Tafel dann für die nächste ab.",
+      "ar": "في كثير من كتاتيب غرب أفريقيا وشمالها والسودان يكتب الطالب وِرده على لوح خشبي، فيحفظه ويعرضه، ثم يمحوه ليكتب ما بعده."
+     },
+     "arabic": "اللوح"
+    },
+    {
+     "title": {
+      "en": "Why writing helps",
+      "de": "Warum Schreiben hilft",
+      "ar": "لماذا تنفع الكتابة؟"
+     },
+     "body": {
+      "en": "Writing slows you down. You notice each letter, each small word and the spelling of the mushaf. Mistakes you cannot hear often show on paper.",
+      "de": "Schreiben verlangsamt. Sie bemerken jeden Buchstaben, jedes kleine Wort und die Schreibweise des Mushaf. Fehler, die man nicht hört, zeigen sich oft auf dem Papier.",
+      "ar": "الكتابة تُبطئك، فتلحظ كل حرف وكل كلمة صغيرة ورسم المصحف، وكثير من الأخطاء التي لا تُسمع تظهر على الورق."
+     }
+    },
+    {
+     "title": {
+      "en": "A writing method",
+      "de": "Eine Schreibmethode",
+      "ar": "طريقة الكتابة"
+     },
+     "list": {
+      "en": [
+       "Read the portion and recite it from memory",
+       "Write it out from memory, without looking",
+       "Compare it word by word with the mushaf",
+       "Mark every difference and recite it again"
+      ],
+      "de": [
+       "Lesen Sie den Abschnitt und rezitieren Sie ihn auswendig",
+       "Schreiben Sie ihn aus dem Gedächtnis, ohne hinzusehen",
+       "Vergleichen Sie Wort für Wort mit dem Mushaf",
+       "Markieren Sie jeden Unterschied und rezitieren Sie erneut"
+      ],
+      "ar": [
+       "اقرأ المقطع ثم سمّعه غيبًا",
+       "اكتبه من حفظك دون نظر",
+       "قابله كلمةً كلمةً بالمصحف",
+       "علّم كل اختلاف ثم أعد التسميع"
+      ]
+     }
+    },
+    {
+     "title": {
+      "en": "The script of the mushaf",
+      "de": "Die Schrift des Mushaf",
+      "ar": "رسم المصحف"
+     },
+     "body": {
+      "en": "The Uthmani script sometimes spells words differently from modern Arabic. Copying your portion carefully trains your eye to see these spellings.",
+      "de": "Die uthmanische Schrift schreibt manche Wörter anders als das moderne Arabisch. Wer seinen Abschnitt sorgfältig abschreibt, schult das Auge für diese Schreibweisen.",
+      "ar": "الرسم العثماني يكتب بعض الكلمات على غير الإملاء الحديث، ونسخ وِردك بعناية يدرّب عينك على هذا الرسم."
+     },
+     "arabic": "الرسم العثماني"
+    },
+    {
+     "title": {
+      "en": "Start small",
+      "de": "Klein anfangen",
+      "ar": "ابدأ بالقليل"
+     },
+     "body": {
+      "en": "If writing Arabic is still hard for you, start with single words: the first word of each verse, or the words you keep forgetting. Even that strengthens memory.",
+      "de": "Wenn Ihnen das Schreiben auf Arabisch noch schwerfällt, beginnen Sie mit einzelnen Wörtern: dem ersten Wort jedes Verses oder den Wörtern, die Sie immer wieder vergessen. Schon das stärkt das Gedächtnis.",
+      "ar": "إن كانت الكتابة بالعربية صعبة عليك فابدأ بكلمات مفردة: أول كلمة في كل آية، أو الكلمات التي تنساها كثيرًا؛ وهذا وحده يقوّي الحفظ."
+     }
+    }
+   ]
+  },
+  {
+   "id": "hifz-12-new-recent-old",
+   "tradition": "sunni",
+   "needs_review": true,
+   "palette": "emerald",
+   "cover": {
+    "kicker": {
+     "en": "Memorising the Quran · 12",
+     "de": "Den Koran auswendig lernen · 12",
+     "ar": "حفظ القرآن · ١٢"
+    },
+    "title": {
+     "en": "New, recent, old: the three daily parts",
+     "de": "Neu, frisch, alt: die drei Teile des Tages",
+     "ar": "الجديد والقريب والبعيد"
+    },
+    "sub": {
+     "en": "An order that keeps the new from pushing out the old",
+     "de": "Eine Ordnung, die verhindert, dass das Neue das Alte verdrängt",
+     "ar": "ترتيبٌ يمنع الجديد من أن يُذهب القديم"
+    },
+    "arabic": "الجديد والقريب والبعيد"
+   },
+   "slides": [
+    {
+     "hadith": "bukhari:5031",
+     "check": "tied camels",
+     "title": {
+      "en": "Keep it tied",
+      "de": "Gut festgebunden",
+      "ar": "مثلُ العِقال"
+     },
+     "body": {
+      "en": "Memorised Quran stays when it is kept tied through regular recitation. Revision is the rope.",
+      "de": "Auswendig Gelernter bleibt, wenn er durch regelmäßiges Rezitieren festgehalten wird. Die Wiederholung ist das Seil.",
+      "ar": "يبقى المحفوظ ما دام صاحبه يتعاهده بالتلاوة، والمراجعة هي العِقال."
+     }
+    },
+    {
+     "title": {
+      "en": "Three names, one idea",
+      "de": "Drei Namen, eine Idee",
+      "ar": "أسماء مختلفة وفكرة واحدة"
+     },
+     "body": {
+      "en": "South Asian madrasas call the parts sabaq, sabqi and manzil. Arab circles speak of new memorisation, near revision and far revision. The idea is the same.",
+      "de": "Südasiatische Madrasas nennen die Teile Sabaq, Sabqi und Manzil. In arabischen Kreisen spricht man von neuem Pensum, naher und ferner Wiederholung. Die Idee ist dieselbe.",
+      "ar": "تسميها مدارس جنوب آسيا: السبق والسبقي والمنزل، وتسميها الحلقات العربية: الحفظ الجديد والمراجعة القريبة والمراجعة البعيدة، والفكرة واحدة."
+     }
+    },
+    {
+     "title": {
+      "en": "Sabaq: the new",
+      "de": "Sabaq: das Neue",
+      "ar": "السبق: الجديد"
+     },
+     "body": {
+      "en": "The new portion of the day, learned while your mind is fresh. It is small on purpose, so that the other two parts get enough time.",
+      "de": "Der neue Abschnitt des Tages, gelernt mit frischem Kopf. Er ist absichtlich klein, damit die beiden anderen Teile genug Zeit bekommen.",
+      "ar": "حفظ اليوم الجديد، ويكون والذهن صافٍ، وهو صغير عن قصد حتى يبقى للجزأين الآخرين وقت كافٍ."
+     },
+     "arabic": "السَّبَق"
+    },
+    {
+     "title": {
+      "en": "Sabqi: the recent",
+      "de": "Sabqi: das Frische",
+      "ar": "السبقي: القريب"
+     },
+     "body": {
+      "en": "Revision of what you learned in the last days or weeks. New memory is fragile; this is where it becomes firm.",
+      "de": "Wiederholung dessen, was Sie in den letzten Tagen oder Wochen gelernt haben. Neues ist zerbrechlich; hier wird es fest.",
+      "ar": "مراجعة ما حفظته في الأيام أو الأسابيع الأخيرة؛ فالحفظ الجديد هشّ، وهنا يشتدّ ويثبت."
+     },
+     "arabic": "السَّبْقي"
+    },
+    {
+     "title": {
+      "en": "Manzil: the old",
+      "de": "Manzil: das Alte",
+      "ar": "المنزل: البعيد"
+     },
+     "body": {
+      "en": "Everything learned earlier, recited in a fixed cycle. It never ends, not even after the whole Quran is memorised.",
+      "de": "Alles früher Gelernte, rezitiert in einem festen Zyklus. Er endet nie, auch nicht, wenn der ganze Koran auswendig gelernt ist.",
+      "ar": "كل ما حُفظ من قبل، يُقرأ في دورة ثابتة، ولا ينتهي أبدًا حتى بعد ختم الحفظ."
+     },
+     "arabic": "المَنْزِل"
+    },
+    {
+     "title": {
+      "en": "A sensible order",
+      "de": "Eine sinnvolle Reihenfolge",
+      "ar": "ترتيب حكيم"
+     },
+     "list": {
+      "en": [
+       "Sabaq first, while you are fresh",
+       "Then sabqi, to fix the recent pages",
+       "Manzil later, ideally in prayer",
+       "If time is short, cut the new, not the review"
+      ],
+      "de": [
+       "Zuerst Sabaq, solange Sie frisch sind",
+       "Dann Sabqi, um die neuen Seiten zu festigen",
+       "Manzil später, am besten im Gebet",
+       "Wenn die Zeit knapp ist, kürzen Sie das Neue, nicht die Wiederholung"
+      ],
+      "ar": [
+       "السبق أولًا والذهن نشيط",
+       "ثم السبقي لتثبيت الصفحات القريبة",
+       "ثم المنزل، ويحسن أن يكون في الصلاة",
+       "إذا ضاق الوقت فاختصر الجديد لا المراجعة"
+      ]
+     }
+    },
+    {
+     "hadith": "muslim:1844",
+     "check": "Keep refreshing your knowledge of the Qur'an",
+     "title": {
+      "en": "Review is care",
+      "de": "Wiederholung ist Fürsorge",
+      "ar": "المراجعة عناية"
+     },
+     "body": {
+      "en": "Reviewing is not a sign of weakness. It is care for what you carry.",
+      "de": "Wiederholen ist kein Zeichen von Schwäche. Es ist Fürsorge für das, was Sie tragen.",
+      "ar": "المراجعة ليست علامة ضعف، بل عناية بما تحمله."
+     }
+    }
+   ]
+  },
+  {
+   "id": "hifz-13-weekly-cycle",
+   "tradition": "sunni",
+   "needs_review": true,
+   "palette": "night",
+   "cover": {
+    "kicker": {
+     "en": "Memorising the Quran · 13",
+     "de": "Den Koran auswendig lernen · 13",
+     "ar": "حفظ القرآن · ١٣"
+    },
+    "title": {
+     "en": "A weekly cycle for your review",
+     "de": "Ein Wochenzyklus für Ihre Wiederholung",
+     "ar": "دورة أسبوعية للمراجعة"
+    },
+    "sub": {
+     "en": "How a seven-day rhythm keeps everything you hold alive",
+     "de": "Wie ein Siebentage-Rhythmus alles Gelernte lebendig hält",
+     "ar": "كيف يحفظ إيقاعُ الأيام السبعة كلَّ ما تحمله حيًّا"
+    },
+    "arabic": "فمي بشوق"
+   },
+   "slides": [
+    {
+     "hadith": "bukhari:5054",
+     "check": "seven days",
+     "title": {
+      "en": "No less than seven days",
+      "de": "Nicht weniger als sieben Tage",
+      "ar": "لا أقل من سبع"
+     },
+     "body": {
+      "en": "A seven-day rhythm has deep roots. Many huffaz still revise in weekly cycles.",
+      "de": "Ein Siebentage-Rhythmus hat tiefe Wurzeln. Viele Huffaz wiederholen bis heute in Wochenzyklen.",
+      "ar": "لإيقاع الأيام السبعة جذور عميقة، وما زال كثير من الحفّاظ يراجعون في دورات أسبوعية."
+     }
+    },
+    {
+     "title": {
+      "en": "The seven manzils",
+      "de": "Die sieben Manzils",
+      "ar": "المنازل السبعة"
+     },
+     "body": {
+      "en": "A traditional division splits the Quran into seven parts for a weekly recitation, marked in many South Asian mushafs. It is linked to a report about how Companions divided their reading.",
+      "de": "Eine überlieferte Einteilung gliedert den Koran für eine wöchentliche Rezitation in sieben Teile, markiert in vielen südasiatischen Mushafs. Sie geht auf einen Bericht über die Lesepraxis der Gefährten zurück.",
+      "ar": "قسمةٌ مأثورة تجعل القرآن سبعة أحزاب لختمة أسبوعية، وهي معلَّمة في كثير من مصاحف جنوب آسيا، وتُروى في خبر عن تحزيب الصحابة للقرآن."
+     },
+     "arabic": "تحزيب القرآن"
+    },
+    {
+     "title": {
+      "en": "Fami bi shawq",
+      "de": "Fami bi schauq",
+      "ar": "فمي بشوق"
+     },
+     "body": {
+      "en": "The parts begin with al-Fatiha, al-Ma'ida, Yunus, Bani Isra'il (al-Isra), ash-Shu'ara, wa-s-Saffat and Qaf. Their initials spell fami bi shawq: my mouth with longing.",
+      "de": "Die Teile beginnen mit al-Fatiha, al-Maida, Yunus, Bani Israil (al-Isra), asch-Schuara, wa-s-Saffat und Qaf. Ihre Anfangsbuchstaben ergeben fami bi schauq: mein Mund voller Sehnsucht.",
+      "ar": "تبدأ الأحزاب بالفاتحة والمائدة ويونس وبني إسرائيل والشعراء و«والصافات» وق، وأوائل حروفها تجمعها عبارة: فمي بشوق."
+     },
+     "arabic": "ف م ي ب ش و ق"
+    },
+    {
+     "title": {
+      "en": "Fit the cycle to your hifz",
+      "de": "Passen Sie den Zyklus an",
+      "ar": "قدّر الدورة بمحفوظك"
+     },
+     "list": {
+      "en": [
+       "One juz' memorised: a short daily review is enough",
+       "Five ajza': under one juz' a day for a weekly cycle",
+       "Fifteen ajza': about two ajza' a day",
+       "Whole Quran: a little over four ajza' a day"
+      ],
+      "de": [
+       "Ein Dschuz' gelernt: eine kurze tägliche Wiederholung genügt",
+       "Fünf Adschza': unter einem Dschuz' am Tag für eine Woche",
+       "Fünfzehn Adschza': etwa zwei Adschza' am Tag",
+       "Der ganze Koran: etwas mehr als vier Adschza' am Tag"
+      ],
+      "ar": [
+       "جزء واحد: تكفيه مراجعة يومية قصيرة",
+       "خمسة أجزاء: أقل من جزء يوميًا لدورة أسبوعية",
+       "خمسة عشر جزءًا: نحو جزأين يوميًا",
+       "القرآن كله: أكثر من أربعة أجزاء يوميًا بقليل"
+      ]
+     }
+    },
+    {
+     "title": {
+      "en": "Weekly or monthly?",
+      "de": "Wöchentlich oder monatlich?",
+      "ar": "أسبوعيًا أم شهريًا؟"
+     },
+     "body": {
+      "en": "Teachers differ. Some insist on a weekly cycle, others accept two weeks or a month for the whole Quran. The best cycle is the one that keeps every page alive.",
+      "de": "Lehrer sind sich nicht einig. Manche bestehen auf einem Wochenzyklus, andere akzeptieren zwei Wochen oder einen Monat für den ganzen Koran. Der beste Zyklus ist der, der jede Seite lebendig hält.",
+      "ar": "يختلف الشيوخ: منهم من يلزم بدورة أسبوعية، ومنهم من يقبل أسبوعين أو شهرًا للقرآن كله، وخير الدورات ما أبقى كل صفحة حيّة."
+     }
+    },
+    {
+     "title": {
+      "en": "One day for testing",
+      "de": "Ein Tag zum Prüfen",
+      "ar": "يوم للاختبار"
+     },
+     "body": {
+      "en": "Keep one day a week to recite a longer stretch to someone, without the mushaf. It shows which pages need more care next week.",
+      "de": "Reservieren Sie einen Tag pro Woche, um jemandem einen längeren Abschnitt ohne Mushaf vorzutragen. So sehen Sie, welche Seiten nächste Woche mehr Pflege brauchen.",
+      "ar": "خصّص يومًا في الأسبوع تسمّع فيه مقدارًا أطول على أحد دون مصحف، فيتبين لك ما يحتاج عناية في الأسبوع التالي."
+     }
+    }
+   ],
+   "sources": [
+    {
+     "label": "Abu Dawud, Sunan: chapter on dividing the Quran into portions (report of Aws ibn Hudhayfa)"
+    }
+   ]
+  },
+  {
+   "id": "hifz-14-similar-verses",
+   "needs_review": true,
+   "palette": "dawn",
+   "cover": {
+    "kicker": {
+     "en": "Memorising the Quran · 14",
+     "de": "Den Koran auswendig lernen · 14",
+     "ar": "حفظ القرآن · ١٤"
+    },
+    "title": {
+     "en": "Similar verses: how huffaz tell them apart",
+     "de": "Ähnliche Verse: wie Huffaz sie unterscheiden",
+     "ar": "المتشابهات: كيف يميّز الحفّاظ بينها"
+    },
+    "sub": {
+     "en": "The classic stumbling stones of every hafiz, and four ways to master them",
+     "de": "Die klassischen Stolpersteine jedes Hafiz und vier Wege, sie zu meistern",
+     "ar": "عثرات كل حافظ المعروفة، وأربع طرق لضبطها"
+    },
+    "arabic": "متشابه اللفظ"
+   },
+   "slides": [
+    {
+     "title": {
+      "en": "What mutashabihat are",
+      "de": "Was Mutaschabihat sind",
+      "ar": "ما المتشابهات؟"
+     },
+     "body": {
+      "en": "Some verses return with a small change: one word, a different order, an added letter. Scholars such as al-Kirmani wrote whole books to explain these differences.",
+      "de": "Manche Verse kehren mit einer kleinen Änderung wieder: ein Wort, eine andere Reihenfolge, ein zusätzlicher Buchstabe. Gelehrte wie al-Kirmani schrieben ganze Bücher, um diese Unterschiede zu erklären.",
+      "ar": "بعض الآيات تتكرر مع فرق يسير: كلمة، أو ترتيب، أو حرف زائد، وقد ألّف علماء كالكرماني كتبًا كاملة في توجيه هذه الفروق."
+     }
+    },
+    {
+     "pair": [
+      "113:1",
+      "114:1"
+     ],
+     "check": [
+      "daybreak",
+      "mankind"
+     ],
+     "title": {
+      "en": "One word apart",
+      "de": "Ein Wort Unterschied",
+      "ar": "الفرق كلمة"
+     },
+     "body": {
+      "en": "The same opening, then a different word after Lord. Tie each one to the theme of its surah.",
+      "de": "Derselbe Anfang, dann ein anderes Wort nach Herr. Verbinden Sie jedes mit dem Thema seiner Sure.",
+      "ar": "البداية واحدة، ثم تختلف الكلمة بعد «رب»؛ فاربط كلًّا منهما بموضوع سورتها."
+     }
+    },
+    {
+     "pair": [
+      "6:32",
+      "29:64"
+     ],
+     "check": [
+      "amusement and diversion",
+      "diversion and amusement"
+     ],
+     "title": {
+      "en": "The same words, swapped",
+      "de": "Dieselben Wörter, vertauscht",
+      "ar": "الكلمات نفسها بترتيب معكوس"
+     },
+     "body": {
+      "en": "Two nouns change places. Note which surah puts which word first.",
+      "de": "Zwei Nomen tauschen die Plätze. Merken Sie sich, welche Sure welches Wort zuerst nennt.",
+      "ar": "تبادلت كلمتان موضعيهما، فاحفظ أي السورتين تقدّم أيّهما."
+     }
+    },
+    {
+     "pair": [
+      "6:102",
+      "40:62"
+     ],
+     "check": [
+      "Creator of all things, so worship Him",
+      "Creator of all things; there is no deity"
+     ],
+     "title": {
+      "en": "Clauses in a different order",
+      "de": "Satzteile in anderer Reihenfolge",
+      "ar": "تقديم جملة وتأخيرها"
+     },
+     "body": {
+      "en": "In al-An'am the clause of tawhid comes before Creator; in Ghafir it comes after it.",
+      "de": "In al-Anam steht der Satz des Tauhid vor Schöpfer, in Ghafir danach.",
+      "ar": "في الأنعام تتقدم جملة التوحيد على ذكر الخلق، وفي غافر تتأخر عنه."
+     }
+    },
+    {
+     "title": {
+      "en": "Four ways to master them",
+      "de": "Vier Wege, sie zu meistern",
+      "ar": "أربع طرق لضبطها"
+     },
+     "list": {
+      "en": [
+       "Learn both verses together, side by side",
+       "Write the difference in a small notebook",
+       "Look for a reason in the theme of each surah",
+       "Review them mixed, not only in order"
+      ],
+      "de": [
+       "Lernen Sie beide Verse zusammen, nebeneinander",
+       "Schreiben Sie den Unterschied in ein kleines Heft",
+       "Suchen Sie einen Grund im Thema jeder Sure",
+       "Wiederholen Sie sie gemischt, nicht nur der Reihe nach"
+      ],
+      "ar": [
+       "احفظ الآيتين معًا متجاورتين",
+       "دوّن الفرق في دفتر صغير",
+       "ابحث عن علته في موضوع كل سورة",
+       "راجعهما مختلطتين لا بالترتيب وحده"
+      ]
+     }
+    },
+    {
+     "title": {
+      "en": "Ask your teacher",
+      "de": "Fragen Sie Ihren Lehrer",
+      "ar": "اسأل شيخك"
+     },
+     "body": {
+      "en": "Some differences can be explained, others are simply learned by heart. Your teacher can point out the classic pairs in the portion you are memorising.",
+      "de": "Manche Unterschiede lassen sich erklären, andere lernt man einfach auswendig. Ihr Lehrer kann Ihnen die klassischen Paare in Ihrem aktuellen Abschnitt zeigen.",
+      "ar": "بعض الفروق له توجيه، وبعضها يُضبط بالحفظ وحده، وشيخك يدلّك على المتشابهات المشهورة في الجزء الذي تحفظه."
+     }
+    }
+   ],
+   "sources": [
+    {
+     "label": "al-Kirmani, al-Burhan fi Tawjih Mutashabih al-Qur'an"
+    },
+    {
+     "label": "al-Sakhawi, Hidayat al-Murtab fi Mutashabih al-Kitab"
+    }
+   ]
+  },
+  {
+   "id": "hifz-15-in-prayer",
+   "tradition": "sunni",
+   "needs_review": true,
+   "palette": "emerald",
+   "cover": {
+    "kicker": {
+     "en": "Memorising the Quran · 15",
+     "de": "Den Koran auswendig lernen · 15",
+     "ar": "حفظ القرآن · ١٥"
+    },
+    "title": {
+     "en": "Keep it alive in your prayer",
+     "de": "Halten Sie ihn im Gebet lebendig",
+     "ar": "أحيِ حفظك في صلاتك"
+    },
+    "sub": {
+     "en": "Reciting what you memorised in salah is the oldest way to review it",
+     "de": "Das Gelernte im Gebet zu rezitieren ist die älteste Art, es zu wiederholen",
+     "ar": "قراءة المحفوظ في الصلاة أقدم طرق مراجعته"
+    },
+    "arabic": "القيام بالقرآن"
+   },
+   "slides": [
+    {
+     "hadith": "muslim:1872",
+     "check": "Three verses",
+     "title": {
+      "en": "Better than precious camels",
+      "de": "Besser als kostbare Kamele",
+      "ar": "خيرٌ من النوق السمان"
+     },
+     "body": {
+      "en": "Even a few verses recited in prayer are a treasure. Start with the ones you have just learned.",
+      "de": "Schon wenige Verse im Gebet sind ein Schatz. Beginnen Sie mit denen, die Sie gerade gelernt haben.",
+      "ar": "آيات قليلة في الصلاة كنز، فابدأ بما حفظته حديثًا."
+     }
+    },
+    {
+     "verse": "17:78-79",
+     "check": "recitation of dawn",
+     "title": {
+      "en": "Dawn and the night",
+      "de": "Morgendämmerung und Nacht",
+      "ar": "الفجر والليل"
+     },
+     "body": {
+      "en": "The dawn prayer and the night prayer are made for longer recitation, witnessed and blessed.",
+      "de": "Das Morgengebet und das Nachtgebet sind für längere Rezitation geschaffen, bezeugt und gesegnet.",
+      "ar": "صلاة الفجر وقيام الليل موطنان لإطالة القراءة، مشهودان مباركان."
+     }
+    },
+    {
+     "hadith": "bukhari:5025",
+     "check": "recites it during the hours of the night",
+     "title": {
+      "en": "Someone worth envying",
+      "de": "Jemand, den man beneiden darf",
+      "ar": "من يُغبط"
+     },
+     "body": {
+      "en": "Night recitation is among the few things truly worth wishing for. Let your review become part of it.",
+      "de": "Nächtliche Rezitation gehört zu den wenigen Dingen, die man sich wirklich wünschen darf. Machen Sie Ihre Wiederholung zu einem Teil davon.",
+      "ar": "قيام الليل بالقرآن من القليل الذي يستحق أن يُتمنّى، فاجعل مراجعتك جزءًا منه."
+     }
+    },
+    {
+     "title": {
+      "en": "Practical ideas",
+      "de": "Praktische Ideen",
+      "ar": "أفكار عملية"
+     },
+     "list": {
+      "en": [
+       "Recite the day's new portion in your sunnah prayers",
+       "Use a different passage in each rak'a",
+       "Pray two rak'as at night with your review",
+       "Choose your weakest page for a voluntary prayer"
+      ],
+      "de": [
+       "Rezitieren Sie das neue Pensum in Ihren Sunna-Gebeten",
+       "Nehmen Sie in jeder Raka einen anderen Abschnitt",
+       "Beten Sie nachts zwei Rakas mit Ihrer Wiederholung",
+       "Wählen Sie Ihre schwächste Seite für ein freiwilliges Gebet"
+      ],
+      "ar": [
+       "اقرأ حفظ اليوم في السنن الرواتب",
+       "اقرأ في كل ركعة مقطعًا مختلفًا",
+       "صلِّ ركعتين في الليل بمراجعتك",
+       "اختر أضعف صفحاتك لصلاة نافلة"
+      ]
+     }
+    },
+    {
+     "title": {
+      "en": "Prayer is a test",
+      "de": "Das Gebet ist eine Prüfung",
+      "ar": "الصلاة اختبار"
+     },
+     "body": {
+      "en": "In prayer there is no mushaf to glance at. If you stumble there, you have found a weak spot. Note it afterwards and give it extra review.",
+      "de": "Im Gebet gibt es keinen Mushaf zum Hinschauen. Wenn Sie dort stocken, haben Sie eine Schwachstelle gefunden. Notieren Sie sie danach und wiederholen Sie sie gezielt.",
+      "ar": "لا مصحف أمامك في الصلاة، فإن تعثّرت فقد وجدت موضع ضعف؛ دوّنه بعدها وخُصّه بمراجعة زائدة."
+     }
+    },
+    {
+     "title": {
+      "en": "Calm, not rushed",
+      "de": "Ruhig, nicht gehetzt",
+      "ar": "بطمأنينة لا بعجلة"
+     },
+     "body": {
+      "en": "Long recitation is good, but not at the cost of khushu'. Choose a length you can recite with presence of heart and correct tajwid.",
+      "de": "Lange Rezitation ist gut, aber nicht auf Kosten der Andacht. Wählen Sie eine Länge, die Sie mit gegenwärtigem Herzen und korrektem Tadschwid rezitieren können.",
+      "ar": "الإطالة حسنة، لكن لا على حساب الخشوع؛ فاختر قدرًا تقرؤه بحضور قلب وتجويد صحيح."
+     }
+    }
+   ]
+  },
+  {
+   "id": "hifz-16-talaqqi",
+   "tradition": "sunni",
+   "needs_review": true,
+   "palette": "parchment",
+   "cover": {
+    "kicker": {
+     "en": "Memorising the Quran · 16",
+     "de": "Den Koran auswendig lernen · 16",
+     "ar": "حفظ القرآن · ١٦"
+    },
+    "title": {
+     "en": "Learning from a teacher: talaqqi",
+     "de": "Vom Lehrer lernen: Talaqqi",
+     "ar": "التلقي عن الشيوخ"
+    },
+    "sub": {
+     "en": "The Quran has been passed on from mouth to ear, from the Prophet until today",
+     "de": "Der Koran wurde von Mund zu Ohr weitergegeben, vom Propheten bis heute",
+     "ar": "انتقل القرآن من فمٍ إلى أذن، من النبي ﷺ إلى يومنا"
+    },
+    "arabic": "التلقّي والمشافهة"
+   },
+   "slides": [
+    {
+     "hadith": "bukhari:4998",
+     "check": "repeat the recitation",
+     "title": {
+      "en": "Reciting to another",
+      "de": "Einem anderen vortragen",
+      "ar": "العرض على الغير"
+     },
+     "body": {
+      "en": "Reciting to someone who listens is part of the method itself, even at the very highest level.",
+      "de": "Jemandem vorzutragen, der zuhört, gehört zur Methode selbst, sogar auf der allerhöchsten Ebene.",
+      "ar": "العرض على من يسمعك جزء من المنهج نفسه، حتى في أعلى المقامات."
+     }
+    },
+    {
+     "hadith": "bukhari:5000",
+     "check": "seventy Suras",
+     "title": {
+      "en": "Received in person",
+      "de": "Persönlich empfangen",
+      "ar": "مشافهةً من النبي ﷺ"
+     },
+     "body": {
+      "en": "This is talaqqi: receiving the recitation in person, from the teacher's mouth to the student's ear.",
+      "de": "Das ist Talaqqi: die Rezitation persönlich empfangen, vom Mund des Lehrers zum Ohr des Schülers.",
+      "ar": "هذا هو التلقي: أخذ القراءة مشافهةً، من فم الشيخ إلى أذن الطالب."
+     }
+    },
+    {
+     "hadith": "bukhari:4999",
+     "check": "from four",
+     "title": {
+      "en": "Learn from those who know",
+      "de": "Lernen Sie von Kundigen",
+      "ar": "تعلّم من المتقنين"
+     },
+     "body": {
+      "en": "Recitation is learned from people known for it. Choosing a qualified teacher follows this guidance.",
+      "de": "Rezitation lernt man bei Menschen, die dafür bekannt sind. Wer einen qualifizierten Lehrer wählt, folgt dieser Weisung.",
+      "ar": "تؤخذ القراءة عن أهلها المعروفين بها، واختيار شيخ متقن اتباعٌ لهذا الهدي."
+     }
+    },
+    {
+     "title": {
+      "en": "Why a book is not enough",
+      "de": "Warum ein Buch nicht genügt",
+      "ar": "لماذا لا يكفي الكتاب؟"
+     },
+     "body": {
+      "en": "Some details of recitation can only be heard: the length of a vowel, the nasal sound, the exact place of a letter. A teacher hears what you cannot hear in yourself.",
+      "de": "Manche Feinheiten der Rezitation kann man nur hören: die Länge eines Vokals, den Nasallaut, den genauen Ort eines Buchstabens. Ein Lehrer hört, was Sie an sich selbst nicht hören.",
+      "ar": "بعض دقائق التلاوة لا تُدرك إلا بالسماع: مقدار المد، والغنة، ومخرج الحرف بدقة؛ والشيخ يسمع منك ما لا تسمعه من نفسك."
+     }
+    },
+    {
+     "title": {
+      "en": "How to find a teacher",
+      "de": "So finden Sie einen Lehrer",
+      "ar": "كيف تجد شيخًا؟"
+     },
+     "list": {
+      "en": [
+       "Ask at your mosque or a local Quran school",
+       "Look for someone with a known sanad or good reputation",
+       "Online lessons can work, with a camera and patience",
+       "Women can learn from qualified female teachers"
+      ],
+      "de": [
+       "Fragen Sie in Ihrer Moschee oder einer Koranschule",
+       "Suchen Sie jemanden mit bekanntem Sanad oder gutem Ruf",
+       "Online-Unterricht kann gelingen, mit Kamera und Geduld",
+       "Frauen können bei qualifizierten Lehrerinnen lernen"
+      ],
+      "ar": [
+       "اسأل في مسجدك أو في مدرسة تحفيظ قريبة",
+       "ابحث عمّن له سند معروف أو سمعة حسنة",
+       "الدروس عن بُعد تنفع مع الكاميرا والصبر",
+       "تستطيع النساء التعلم على معلمات متقنات"
+      ]
+     }
+    },
+    {
+     "title": {
+      "en": "Making the most of lessons",
+      "de": "Das Beste aus dem Unterricht machen",
+      "ar": "كيف تنتفع بالدرس؟"
+     },
+     "list": {
+      "en": [
+       "Prepare your portion before each lesson",
+       "Accept corrections without arguing",
+       "Write down mistakes that keep returning",
+       "Thank your teacher and pray for them"
+      ],
+      "de": [
+       "Bereiten Sie Ihren Abschnitt vor jeder Stunde vor",
+       "Nehmen Sie Korrekturen an, ohne zu streiten",
+       "Notieren Sie Fehler, die immer wiederkehren",
+       "Danken Sie Ihrem Lehrer und beten Sie für ihn"
+      ],
+      "ar": [
+       "أعدّ وِردك قبل كل درس",
+       "اقبل التصحيح دون جدال",
+       "دوّن الأخطاء التي تتكرر",
+       "اشكر شيخك وادعُ له"
+      ]
+     }
+    }
+   ],
+   "sources": [
+    {
+     "label": "Ibn al-Jazari, al-Nashr fi al-Qira'at al-'Ashr"
+    }
+   ]
+  },
+  {
+   "id": "hifz-17-ijazah",
+   "needs_review": true,
+   "palette": "marble",
+   "cover": {
+    "kicker": {
+     "en": "Memorising the Quran · 17",
+     "de": "Den Koran auswendig lernen · 17",
+     "ar": "حفظ القرآن · ١٧"
+    },
+    "title": {
+     "en": "What is an ijazah?",
+     "de": "Was ist eine Idschaza?",
+     "ar": "ما الإجازة القرآنية؟"
+    },
+    "sub": {
+     "en": "Sanad, ijazah and why the chain of recitation still matters today",
+     "de": "Sanad, Idschaza und warum die Kette der Rezitation bis heute zählt",
+     "ar": "السند والإجازة، ولماذا ما زالت سلسلة القراءة مهمة"
+    },
+    "arabic": "الإجازة والسند"
+   },
+   "slides": [
+    {
+     "title": {
+      "en": "The chain of recitation",
+      "de": "Die Kette der Rezitation",
+      "ar": "سلسلة القراءة"
+     },
+     "body": {
+      "en": "A sanad is a chain of teachers, each of whom recited to the one before, back to the Prophet. Through it the Quran is carried as it was received.",
+      "de": "Ein Sanad ist eine Kette von Lehrern, von denen jeder dem vorherigen vorgetragen hat, zurück bis zum Propheten. Durch sie wird der Koran so getragen, wie er empfangen wurde.",
+      "ar": "السند سلسلة من الشيوخ، قرأ كلٌّ منهم على من قبله، حتى تتصل بالنبي ﷺ، وبه يُحمل القرآن كما تُلُقّي."
+     },
+     "arabic": "السَّنَد"
+    },
+    {
+     "title": {
+      "en": "What an ijazah is",
+      "de": "Was eine Idschaza ist",
+      "ar": "ما الإجازة؟"
+     },
+     "body": {
+      "en": "An ijazah is a teacher's written confirmation that a student has recited to them. It lists the chain and allows the student to teach and pass on that recitation.",
+      "de": "Eine Idschaza ist die schriftliche Bestätigung eines Lehrers, dass ein Schüler ihm vorgetragen hat. Sie nennt die Kette und erlaubt dem Schüler, diese Rezitation zu lehren und weiterzugeben.",
+      "ar": "الإجازة شهادة مكتوبة من الشيخ بأن الطالب قرأ عليه، يُذكر فيها السند، ويؤذن له بها في الإقراء ونقل تلك القراءة."
+     },
+     "arabic": "الإجازة"
+    },
+    {
+     "title": {
+      "en": "How it is usually earned",
+      "de": "Wie man sie meist erwirbt",
+      "ar": "كيف تُنال عادةً؟"
+     },
+     "body": {
+      "en": "Usually the student recites the whole Quran to a teacher with a sanad, from beginning to end, with correct tajwid. Requirements vary between teachers and places.",
+      "de": "Meist trägt der Schüler einem Lehrer mit Sanad den ganzen Koran vom Anfang bis zum Ende mit korrektem Tadschwid vor. Die Anforderungen unterscheiden sich je nach Lehrer und Ort.",
+      "ar": "يقرأ الطالب عادةً القرآن كله على شيخ مسند من أوله إلى آخره بتجويد صحيح، وتختلف الشروط باختلاف الشيوخ والبلدان."
+     }
+    },
+    {
+     "title": {
+      "en": "Different kinds",
+      "de": "Verschiedene Arten",
+      "ar": "أنواع الإجازات"
+     },
+     "list": {
+      "en": [
+       "In one riwaya, most often Hafs from 'Asim",
+       "In several riwayat or in the ten qira'at",
+       "Often from memory; some teachers also grant it for reading"
+      ],
+      "de": [
+       "In einer Riwaya, meist Hafs von Asim",
+       "In mehreren Riwayat oder in den zehn Qiraat",
+       "Meist auswendig; manche Lehrer erteilen sie auch für das Lesen"
+      ],
+      "ar": [
+       "برواية واحدة، وأكثرها حفص عن عاصم",
+       "بعدة روايات أو بالقراءات العشر",
+       "غالبًا غيبًا، ويجيز بعض الشيوخ بالقراءة نظرًا"
+      ]
+     }
+    },
+    {
+     "verse": "62:2",
+     "check": "reciting to them His verses",
+     "title": {
+      "en": "Recitation taught by a person",
+      "de": "Rezitation, gelehrt von Mensch zu Mensch",
+      "ar": "تلاوة تُعلَّم بالمشافهة"
+     },
+     "body": {
+      "en": "Allah sent a Messenger who recited to people and taught them. The sanad keeps that human link alive.",
+      "de": "Allah sandte einen Gesandten, der den Menschen vortrug und sie lehrte. Der Sanad hält diese menschliche Verbindung lebendig.",
+      "ar": "بعث الله رسولًا يتلو على الناس ويعلّمهم، والسند يُبقي هذه الصلة الحية."
+     }
+    },
+    {
+     "title": {
+      "en": "Not a condition for hifz",
+      "de": "Keine Bedingung für den Hifz",
+      "ar": "ليست شرطًا للحفظ"
+     },
+     "body": {
+      "en": "You do not need an ijazah to memorise the Quran, recite it or be rewarded for it. It matters most for those who want to teach and pass on the recitation with a chain.",
+      "de": "Sie brauchen keine Idschaza, um den Koran auswendig zu lernen, ihn zu rezitieren oder dafür belohnt zu werden. Sie ist vor allem für jene wichtig, die die Rezitation mit Kette lehren und weitergeben wollen.",
+      "ar": "لا تحتاج إلى إجازة لتحفظ القرآن أو تتلوه أو تؤجر عليه، وإنما تهمّ أكثر من يريد الإقراء ونقل القراءة بالسند."
+     }
+    }
+   ],
+   "sources": [
+    {
+     "label": "Ibn al-Jazari, al-Nashr fi al-Qira'at al-'Ashr"
+    },
+    {
+     "label": "Ibn al-Jazari, Munjid al-Muqri'in wa Murshid al-Talibin"
+    }
+   ]
+  },
+  {
+   "id": "hifz-18-children",
+   "tradition": "sunni",
+   "needs_review": true,
+   "palette": "dawn",
+   "cover": {
+    "kicker": {
+     "en": "Memorising the Quran · 18",
+     "de": "Den Koran auswendig lernen · 18",
+     "ar": "حفظ القرآن · ١٨"
+    },
+    "title": {
+     "en": "Helping children memorise",
+     "de": "Kindern beim Auswendiglernen helfen",
+     "ar": "كيف نعين أطفالنا على الحفظ"
+    },
+    "sub": {
+     "en": "Love first, then method: how the Quran can become a joy at home",
+     "de": "Erst Liebe, dann Methode: wie der Koran zu Hause zur Freude wird",
+     "ar": "المحبة أولًا ثم الطريقة: كيف يصير القرآن بهجة في البيت"
+    },
+    "arabic": "حفظ الصغار"
+   },
+   "slides": [
+    {
+     "hadith": "bukhari:5035",
+     "check": "a boy of ten years",
+     "title": {
+      "en": "Ibn Abbas as a boy",
+      "de": "Ibn Abbas als Junge",
+      "ar": "ابن عباس صغيرًا"
+     },
+     "body": {
+      "en": "The Mufassal is the last part of the Quran, with its shorter surahs. Childhood is a precious season for memorising it.",
+      "de": "Das Mufassal ist der letzte Teil des Korans mit seinen kürzeren Suren. Die Kindheit ist eine kostbare Zeit, um es zu lernen.",
+      "ar": "المفصّل آخر القرآن، وفيه السور القصار، والطفولة موسم ثمين لحفظه."
+     }
+    },
+    {
+     "verse": "25:74",
+     "check": "comfort to our eyes",
+     "title": {
+      "en": "A parent's dua",
+      "de": "Das Bittgebet der Eltern",
+      "ar": "دعاء الوالدين"
+     },
+     "body": {
+      "en": "Ask Allah for children who are a joy to the eyes, and let them hear you ask.",
+      "de": "Bitten Sie Allah um Kinder, die eine Augenweide sind, und lassen Sie sie Ihre Bitte hören.",
+      "ar": "اسأل الله ذرية تقرّ بها العين، ودعهم يسمعون دعاءك."
+     }
+    },
+    {
+     "title": {
+      "en": "Make it a joy",
+      "de": "Machen Sie es zur Freude",
+      "ar": "اجعله بهجة"
+     },
+     "list": {
+      "en": [
+       "Keep sessions short and regular",
+       "Let them hear a surah many times first",
+       "Praise effort, not only results",
+       "Celebrate each finished surah together"
+      ],
+      "de": [
+       "Halten Sie die Einheiten kurz und regelmäßig",
+       "Lassen Sie sie eine Sure zuerst oft hören",
+       "Loben Sie die Mühe, nicht nur das Ergebnis",
+       "Feiern Sie jede gelernte Sure gemeinsam"
+      ],
+      "ar": [
+       "اجعل الجلسات قصيرة منتظمة",
+       "أسمِعهم السورة مرارًا قبل الحفظ",
+       "امدح الجهد لا النتيجة وحدها",
+       "احتفلوا معًا بكل سورة تُختم"
+      ]
+     }
+    },
+    {
+     "title": {
+      "en": "Listening at home",
+      "de": "Zuhören zu Hause",
+      "ar": "السماع في البيت"
+     },
+     "body": {
+      "en": "Children absorb what they hear. Play a calm recitation in the car or before sleep, and recite their surahs aloud in the prayers where that is the Sunnah.",
+      "de": "Kinder nehmen auf, was sie hören. Spielen Sie im Auto oder vor dem Schlafen eine ruhige Rezitation, und rezitieren Sie ihre Suren in den Gebeten, die laut rezitiert werden.",
+      "ar": "الطفل يتشرّب ما يسمع، فأسمعه تلاوة هادئة في السيارة أو قبل النوم، واقرأ سوره جهرًا في الصلوات الجهرية."
+     }
+    },
+    {
+     "title": {
+      "en": "Start at the end",
+      "de": "Am Ende beginnen",
+      "ar": "ابدأ من الآخر"
+     },
+     "body": {
+      "en": "Many families and schools begin with juz' 'Amma: short surahs, often recited in prayer, easy to finish. A finished surah gives a child a real sense of success.",
+      "de": "Viele Familien und Schulen beginnen mit Dschuz' Amma: kurze Suren, oft im Gebet rezitiert, leicht abzuschließen. Eine fertig gelernte Sure gibt einem Kind ein echtes Erfolgserlebnis.",
+      "ar": "تبدأ أسر ومدارس كثيرة بجزء عمّ: سور قصيرة، كثيرة القراءة في الصلاة، سهلة الختم، وختم سورة يمنح الطفل شعورًا حقيقيًا بالنجاح."
+     }
+    },
+    {
+     "title": {
+      "en": "No harshness",
+      "de": "Keine Härte",
+      "ar": "لا قسوة"
+     },
+     "body": {
+      "en": "Shouting or punishment can turn the Quran into a burden. Patience and warmth keep the love alive, and that love is what brings a child back as an adult.",
+      "de": "Schreien oder Strafen kann den Koran zur Last machen. Geduld und Wärme halten die Liebe lebendig, und diese Liebe bringt ein Kind auch als Erwachsenen zurück.",
+      "ar": "الصراخ والعقاب قد يجعلان القرآن عبئًا، والصبر والدفء يُبقيان المحبة حيّة، وهذه المحبة هي التي تُعيد الطفل إلى القرآن كبيرًا."
+     }
+    },
+    {
+     "title": {
+      "en": "Be the example",
+      "de": "Seien Sie das Vorbild",
+      "ar": "كن القدوة"
+     },
+     "body": {
+      "en": "Children copy what they see. If they see you reciting, reviewing and enjoying the Quran, they will want to join you.",
+      "de": "Kinder ahmen nach, was sie sehen. Wenn sie Sie rezitieren, wiederholen und den Koran genießen sehen, wollen sie mitmachen.",
+      "ar": "الأطفال يقلّدون ما يرون، فإذا رأوك تتلو وتراجع وتأنس بالقرآن أحبّوا أن يشاركوك."
+     }
+    }
+   ]
+  },
+  {
+   "id": "hifz-19-adults",
+   "tradition": "sunni",
+   "needs_review": true,
+   "palette": "night",
+   "cover": {
+    "kicker": {
+     "en": "Memorising the Quran · 19",
+     "de": "Den Koran auswendig lernen · 19",
+     "ar": "حفظ القرآن · ١٩"
+    },
+    "title": {
+     "en": "Never too late: hifz as an adult",
+     "de": "Nie zu spät: Hifz als Erwachsener",
+     "ar": "لم يفت الأوان: الحفظ في الكِبَر"
+    },
+    "sub": {
+     "en": "Work, family, a busy mind, and still a place for the Quran",
+     "de": "Arbeit, Familie, ein voller Kopf, und trotzdem Raum für den Koran",
+     "ar": "عمل وأسرة وذهن مشغول، ويبقى للقرآن مكان"
+    },
+    "arabic": "الحفظ للكبار"
+   },
+   "slides": [
+    {
+     "hadith": "bukhari:4937",
+     "check": "double reward",
+     "title": {
+      "en": "Struggle has its own reward",
+      "de": "Mühe hat ihren eigenen Lohn",
+      "ar": "للمشقة أجرها"
+     },
+     "body": {
+      "en": "If memorising is hard for you, your struggle is not wasted. Difficulty is not a sign to stop.",
+      "de": "Wenn Ihnen das Auswendiglernen schwerfällt, ist Ihre Mühe nicht vergeblich. Schwierigkeit ist kein Zeichen zum Aufhören.",
+      "ar": "إن شقّ عليك الحفظ فجهدك غير ضائع، والصعوبة ليست علامة على التوقف."
+     }
+    },
+    {
+     "title": {
+      "en": "The Companions as adults",
+      "de": "Die Gefährten als Erwachsene",
+      "ar": "الصحابة كبارًا"
+     },
+     "body": {
+      "en": "Most Companions accepted Islam as adults, many with work and families. They still learned the Quran step by step, alongside daily life.",
+      "de": "Die meisten Gefährten nahmen den Islam als Erwachsene an, viele mit Arbeit und Familie. Sie lernten den Koran dennoch Schritt für Schritt, mitten im Alltag.",
+      "ar": "أسلم أكثر الصحابة كبارًا، وكثير منهم ذوو عمل وأسر، ومع ذلك تعلموا القرآن شيئًا فشيئًا في خضم حياتهم."
+     }
+    },
+    {
+     "title": {
+      "en": "Your strengths",
+      "de": "Ihre Stärken",
+      "ar": "نقاط قوتك"
+     },
+     "body": {
+      "en": "Adults often understand meaning, plan their time and know why they learn. Use these strengths: study the meaning first and protect a fixed time each day.",
+      "de": "Erwachsene verstehen oft die Bedeutung, planen ihre Zeit und wissen, warum sie lernen. Nutzen Sie diese Stärken: Erschließen Sie zuerst die Bedeutung und schützen Sie jeden Tag eine feste Zeit.",
+      "ar": "الكبير يفهم المعنى غالبًا، وينظم وقته، ويعرف لماذا يتعلم؛ فاستثمر ذلك: ابدأ بالمعنى، واحمِ وقتًا ثابتًا كل يوم."
+     }
+    },
+    {
+     "title": {
+      "en": "A realistic adult plan",
+      "de": "Ein realistischer Plan für Erwachsene",
+      "ar": "خطة واقعية للكبار"
+     },
+     "list": {
+      "en": [
+       "Five to ten lines a day is a strong start",
+       "Memorise in a fixed slot, such as after Fajr",
+       "Review on your commute or in breaks",
+       "Recite the day's portion in your prayers"
+      ],
+      "de": [
+       "Fünf bis zehn Zeilen am Tag sind ein starker Anfang",
+       "Lernen Sie zu einer festen Zeit, etwa nach dem Fadschr",
+       "Wiederholen Sie auf dem Arbeitsweg oder in Pausen",
+       "Rezitieren Sie das Tagespensum in Ihren Gebeten"
+      ],
+      "ar": [
+       "خمسة إلى عشرة أسطر يوميًا بداية قوية",
+       "احفظ في وقت ثابت كبعد الفجر",
+       "راجع في طريقك أو في الاستراحات",
+       "اقرأ ورد اليوم في صلواتك"
+      ]
+     }
+    },
+    {
+     "verse": "29:69",
+     "check": "We will surely guide them",
+     "title": {
+      "en": "Strive, and you will be guided",
+      "de": "Bemühen Sie sich, und Sie werden geleitet",
+      "ar": "جاهِد تُهدَ"
+     },
+     "body": {
+      "en": "Allah promises guidance to those who strive for Him. Each line you memorise is part of that striving.",
+      "de": "Allah verspricht denen Rechtleitung, die sich für Ihn bemühen. Jede gelernte Zeile ist Teil dieses Bemühens.",
+      "ar": "وعد الله المجاهدين فيه بالهداية، وكل سطر تحفظه من هذا الجهاد."
+     }
+    },
+    {
+     "title": {
+      "en": "Start with what you love",
+      "de": "Beginnen Sie mit dem, was Sie lieben",
+      "ar": "ابدأ بما تحب"
+     },
+     "body": {
+      "en": "Begin with surahs you already recite or love to hear, such as al-Mulk, al-Kahf or juz' 'Amma. Early success builds the habit.",
+      "de": "Beginnen Sie mit Suren, die Sie schon rezitieren oder gern hören, etwa al-Mulk, al-Kahf oder Dschuz' Amma. Frühe Erfolge bauen die Gewohnheit auf.",
+      "ar": "ابدأ بسور تقرؤها أو تحب سماعها، كالملك والكهف وجزء عمّ؛ فالنجاح المبكر يبني العادة."
+     }
+    }
+   ]
+  },
+  {
+   "id": "hifz-20-forgetting",
+   "tradition": "sunni",
+   "needs_review": true,
+   "palette": "marble",
+   "cover": {
+    "kicker": {
+     "en": "Memorising the Quran · 20",
+     "de": "Den Koran auswendig lernen · 20",
+     "ar": "حفظ القرآن · ٢٠"
+    },
+    "title": {
+     "en": "When verses slip away",
+     "de": "Wenn Verse entgleiten",
+     "ar": "حين يتفلّت المحفوظ"
+    },
+    "sub": {
+     "en": "Forgetting is part of being human. What matters is how you return",
+     "de": "Vergessen gehört zum Menschsein. Entscheidend ist, wie Sie zurückkehren",
+     "ar": "النسيان من طبع الإنسان، والمهم كيف تعود"
+    },
+    "arabic": "التفلّت"
+   },
+   "slides": [
+    {
+     "hadith": "bukhari:5033",
+     "check": "more prone to break away",
+     "title": {
+      "en": "Quick to slip away",
+      "de": "Es entgleitet schnell",
+      "ar": "سريع التفلّت"
+     },
+     "body": {
+      "en": "Forgetting is to be expected. The real problem is neglect.",
+      "de": "Vergessen ist zu erwarten. Das eigentliche Problem ist Vernachlässigung.",
+      "ar": "النسيان متوقَّع، وإنما الآفة في الإهمال."
+     }
+    },
+    {
+     "hadith": "bukhari:5032",
+     "check": "caused (by Allah) to forget",
+     "title": {
+      "en": "Choose your words",
+      "de": "Wählen Sie Ihre Worte",
+      "ar": "انتبه لعبارتك"
+     },
+     "body": {
+      "en": "How we speak about forgetting matters. Speak of it with humility, and keep reciting.",
+      "de": "Wie wir über das Vergessen sprechen, ist wichtig. Sprechen Sie demütig darüber und rezitieren Sie weiter.",
+      "ar": "لطريقة حديثنا عن النسيان شأن، فتحدث عنه بتواضع وواصل التلاوة."
+     }
+    },
+    {
+     "hadith": "bukhari:5038",
+     "check": "reminded me",
+     "title": {
+      "en": "Reminded by another",
+      "de": "Erinnert durch einen anderen",
+      "ar": "يذكّرك غيرك"
+     },
+     "body": {
+      "en": "Listening to others recite can revive what has faded in your own memory.",
+      "de": "Anderen beim Rezitieren zuzuhören kann wiederbeleben, was in Ihrem eigenen Gedächtnis verblasst ist.",
+      "ar": "الاستماع إلى غيرك وهو يقرأ قد يحيي ما خبا من حفظك."
+     }
+    },
+    {
+     "verse": "18:24",
+     "check": "remember your Lord when you forget",
+     "title": {
+      "en": "Turn to Allah",
+      "de": "Wenden Sie sich an Allah",
+      "ar": "الالتجاء إلى الله"
+     },
+     "body": {
+      "en": "When something escapes you, turn to Allah first, then return to the work.",
+      "de": "Wenn Ihnen etwas entfällt, wenden Sie sich zuerst an Allah und kehren Sie dann zur Arbeit zurück.",
+      "ar": "إذا غاب عنك شيء فالجأ إلى الله أولًا، ثم عُد إلى العمل."
+     }
+    },
+    {
+     "title": {
+      "en": "A recovery plan",
+      "de": "Ein Plan zur Wiederherstellung",
+      "ar": "خطة الاستدراك"
+     },
+     "list": {
+      "en": [
+       "Do not panic or quit; relearn calmly",
+       "Pause new memorisation for a while",
+       "Recite the weak page to someone daily",
+       "Rebuild old portions surah by surah"
+      ],
+      "de": [
+       "Keine Panik, nicht aufgeben; ruhig neu lernen",
+       "Pausieren Sie das neue Pensum eine Weile",
+       "Tragen Sie die schwache Seite täglich jemandem vor",
+       "Bauen Sie alte Abschnitte Sure für Sure wieder auf"
+      ],
+      "ar": [
+       "لا تجزع ولا تترك، وأعد الحفظ بهدوء",
+       "أوقف الحفظ الجديد مدة",
+       "سمّع الصفحة الضعيفة على أحد كل يوم",
+       "ابنِ المحفوظ القديم سورةً سورة"
+      ]
+     }
+    },
+    {
+     "title": {
+      "en": "Prevention",
+      "de": "Vorbeugung",
+      "ar": "الوقاية"
+     },
+     "body": {
+      "en": "Most forgetting comes from long gaps. A short daily review of the old portions protects years of work better than long sessions now and then.",
+      "de": "Das meiste Vergessen kommt von langen Pausen. Eine kurze tägliche Wiederholung des Alten schützt jahrelange Arbeit besser als lange Einheiten ab und zu.",
+      "ar": "أكثر النسيان يأتي من طول الانقطاع، ومراجعة يومية قصيرة للقديم تحفظ جهد السنين خيرًا من جلسات طويلة متباعدة."
+     }
+    }
+   ],
+   "sources": [
+    {
+     "label": "al-Nawawi, al-Tibyan fi Adab Hamalat al-Qur'an"
+    }
+   ]
+  },
+  {
+   "id": "hifz-21-best-times",
+   "tradition": "sunni",
+   "needs_review": true,
+   "palette": "emerald",
+   "cover": {
+    "kicker": {
+     "en": "Memorising the Quran · 21",
+     "de": "Den Koran auswendig lernen · 21",
+     "ar": "حفظ القرآن · ٢١"
+    },
+    "title": {
+     "en": "The best times to memorise",
+     "de": "Die besten Zeiten zum Auswendiglernen",
+     "ar": "أفضل أوقات الحفظ"
+    },
+    "sub": {
+     "en": "Dawn, night and the quiet hours, when heart and tongue agree",
+     "de": "Morgendämmerung, Nacht und die stillen Stunden, wenn Herz und Zunge übereinstimmen",
+     "ar": "الفجر والليل والساعات الهادئة، حين يتواطأ القلب واللسان"
+    },
+    "arabic": "أوقات الحفظ"
+   },
+   "slides": [
+    {
+     "verse": "73:6",
+     "check": "concurrence",
+     "title": {
+      "en": "The night hours",
+      "de": "Die Stunden der Nacht",
+      "ar": "ساعات الليل"
+     },
+     "body": {
+      "en": "Night recitation brings heart and tongue together. Many huffaz review in the last part of the night.",
+      "de": "Die nächtliche Rezitation bringt Herz und Zunge zusammen. Viele Huffaz wiederholen im letzten Teil der Nacht.",
+      "ar": "تلاوة الليل تجمع القلب واللسان، وكثير من الحفّاظ يراجعون في آخر الليل."
+     }
+    },
+    {
+     "verse": "17:78",
+     "check": "recitation of dawn",
+     "title": {
+      "en": "After Fajr",
+      "de": "Nach dem Fadschr",
+      "ar": "بعد الفجر"
+     },
+     "body": {
+      "en": "The early morning is calm and the mind is rested. It is a favourite time for the new portion.",
+      "de": "Der frühe Morgen ist ruhig und der Geist ausgeruht. Er ist eine beliebte Zeit für das neue Pensum.",
+      "ar": "الصباح الباكر هادئ والذهن مستريح، وهو وقت محبَّب للحفظ الجديد."
+     }
+    },
+    {
+     "hadith": "bukhari:39",
+     "check": "last hours of the nights",
+     "title": {
+      "en": "Morning, afternoon, late night",
+      "de": "Morgen, Nachmittag, späte Nacht",
+      "ar": "الصباح والعشي وآخر الليل"
+     },
+     "body": {
+      "en": "Spread your hifz over the fresh hours of the day instead of one long, tiring session.",
+      "de": "Verteilen Sie Ihren Hifz auf die frischen Stunden des Tages, statt alles in einer langen, ermüdenden Einheit zu tun.",
+      "ar": "وزّع حفظك على ساعات النشاط من اليوم بدل جلسة واحدة طويلة مرهقة."
+     }
+    },
+    {
+     "title": {
+      "en": "Good moments in a normal day",
+      "de": "Gute Momente an einem normalen Tag",
+      "ar": "أوقات طيبة في يوم عادي"
+     },
+     "list": {
+      "en": [
+       "After Fajr, for the new portion",
+       "Around Dhuhr, a short recent review",
+       "Between Maghrib and Isha, for the old portions",
+       "Before sleep, a quiet listen to tomorrow's portion"
+      ],
+      "de": [
+       "Nach dem Fadschr für das neue Pensum",
+       "Um das Mittagsgebet eine kurze Wiederholung des Frischen",
+       "Zwischen Maghrib und Ischa für das Alte",
+       "Vor dem Schlafen das Pensum von morgen in Ruhe hören"
+      ],
+      "ar": [
+       "بعد الفجر للحفظ الجديد",
+       "عند الظهر مراجعة قريبة قصيرة",
+       "بين المغرب والعشاء للمراجعة البعيدة",
+       "قبل النوم استماع هادئ لحفظ الغد"
+      ]
+     }
+    },
+    {
+     "title": {
+      "en": "Your own best time",
+      "de": "Ihre eigene beste Zeit",
+      "ar": "وقتك الأمثل"
+     },
+     "body": {
+      "en": "Some people think most clearly at dawn, others late in the evening. Notice when memorising comes easiest to you for two weeks, then protect that time.",
+      "de": "Manche denken in der Morgendämmerung am klarsten, andere spät am Abend. Beobachten Sie zwei Wochen lang, wann Ihnen das Lernen am leichtesten fällt, und schützen Sie dann diese Zeit.",
+      "ar": "بعض الناس أصفى ذهنًا عند الفجر، وبعضهم في آخر المساء؛ فراقب أسبوعين متى يسهل عليك الحفظ، ثم احمِ ذلك الوقت."
+     }
+    },
+    {
+     "title": {
+      "en": "When not to memorise",
+      "de": "Wann Sie nicht lernen sollten",
+      "ar": "متى لا تحفظ؟"
+     },
+     "body": {
+      "en": "When you are exhausted, hungry or distracted, new memorisation rarely holds. Use those moments for listening or light review instead.",
+      "de": "Wenn Sie erschöpft, hungrig oder abgelenkt sind, hält Neues selten. Nutzen Sie solche Momente lieber zum Zuhören oder für leichte Wiederholung.",
+      "ar": "إذا كنت منهكًا أو جائعًا أو مشتتًا فقلّما يثبت الجديد، فاجعل هذه الأوقات للسماع أو المراجعة الخفيفة."
+     }
+    }
+   ]
+  },
+  {
+   "id": "hifz-22-phone-and-audio",
+   "tradition": "sunni",
+   "needs_review": true,
+   "palette": "parchment",
+   "cover": {
+    "kicker": {
+     "en": "Memorising the Quran · 22",
+     "de": "Den Koran auswendig lernen · 22",
+     "ar": "حفظ القرآن · ٢٢"
+    },
+    "title": {
+     "en": "Your phone as a hifz companion",
+     "de": "Ihr Handy als Hifz-Begleiter",
+     "ar": "هاتفك رفيقًا في الحفظ"
+    },
+    "sub": {
+     "en": "Audio loops, recordings and reminders, without letting the screen take over",
+     "de": "Audio-Schleifen, Aufnahmen und Erinnerungen, ohne dass der Bildschirm die Oberhand gewinnt",
+     "ar": "تكرار صوتي وتسجيلات وتذكيرات، دون أن تستولي الشاشة عليك"
+    },
+    "arabic": "التقنية في خدمة الحفظ"
+   },
+   "slides": [
+    {
+     "title": {
+      "en": "A tool, not a teacher",
+      "de": "Ein Werkzeug, kein Lehrer",
+      "ar": "أداة لا شيخ"
+     },
+     "body": {
+      "en": "Apps can play, repeat and remind. They cannot replace a qualified teacher who hears and corrects you. Use them for practice between lessons.",
+      "de": "Apps können abspielen, wiederholen und erinnern. Einen qualifizierten Lehrer, der Sie hört und korrigiert, ersetzen sie nicht. Nutzen Sie sie zum Üben zwischen den Stunden.",
+      "ar": "التطبيقات تُسمِع وتكرر وتذكّر، لكنها لا تغني عن شيخ متقن يسمعك ويصحح لك؛ فاستعملها للتدريب بين الدروس."
+     }
+    },
+    {
+     "title": {
+      "en": "Useful features",
+      "de": "Nützliche Funktionen",
+      "ar": "خصائص نافعة"
+     },
+     "list": {
+      "en": [
+       "Repeat one verse or a range several times",
+       "Slow down playback for difficult passages",
+       "Download audio for offline review",
+       "Use the same page layout as your printed mushaf"
+      ],
+      "de": [
+       "Einen Vers oder Abschnitt mehrfach wiederholen",
+       "Die Wiedergabe für schwierige Stellen verlangsamen",
+       "Audio für die Wiederholung offline speichern",
+       "Dasselbe Seitenlayout wie Ihr gedruckter Mushaf"
+      ],
+      "ar": [
+       "تكرار آية أو مقطع عدة مرات",
+       "إبطاء التشغيل في المواضع الصعبة",
+       "تنزيل التلاوات للمراجعة دون اتصال",
+       "استعمال ترتيب الصفحات نفسه في مصحفك المطبوع"
+      ]
+     }
+    },
+    {
+     "title": {
+      "en": "Record yourself",
+      "de": "Nehmen Sie sich auf",
+      "ar": "سجّل تلاوتك"
+     },
+     "body": {
+      "en": "Record your recitation from memory, then play it back while following in the mushaf. You will hear skipped words and rushed letters you never noticed.",
+      "de": "Nehmen Sie Ihre Rezitation aus dem Gedächtnis auf und hören Sie sie dann mit Blick in den Mushaf ab. Sie hören ausgelassene Wörter und gehetzte Buchstaben, die Ihnen nie aufgefallen sind.",
+      "ar": "سجّل تلاوتك غيبًا، ثم استمع إليها وأنت تتابع في المصحف، فستسمع كلمات أسقطتها وحروفًا استعجلتها لم تنتبه لها من قبل."
+     }
+    },
+    {
+     "title": {
+      "en": "Guard your focus",
+      "de": "Schützen Sie Ihre Konzentration",
+      "ar": "احمِ تركيزك"
+     },
+     "body": {
+      "en": "Switch on flight mode or a focus mode during a session. One message can break a chain of repetitions you spent ten minutes building.",
+      "de": "Schalten Sie während einer Einheit den Flug- oder Fokusmodus ein. Eine einzige Nachricht kann eine Kette von Wiederholungen zerreißen, an der Sie zehn Minuten gebaut haben.",
+      "ar": "فعّل وضع الطيران أو وضع التركيز أثناء الجلسة؛ فرسالة واحدة قد تقطع سلسلة تكرار بنيتها في عشر دقائق."
+     }
+    },
+    {
+     "dua": "hisn:42:0",
+     "check": "comes between me and my prayer and recitation",
+     "title": {
+      "en": "When your mind wanders",
+      "de": "Wenn die Gedanken abschweifen",
+      "ar": "إذا شرد الذهن"
+     },
+     "body": {
+      "en": "The Sunnah teaches what to do when distraction comes between you and your recitation.",
+      "de": "Die Sunna lehrt, was zu tun ist, wenn Ablenkung zwischen Sie und Ihre Rezitation tritt.",
+      "ar": "علّمتنا السنة ما نصنع إذا حال الشرود بيننا وبين التلاوة."
+     }
+    },
+    {
+     "title": {
+      "en": "A simple daily routine",
+      "de": "Ein einfacher Tagesablauf",
+      "ar": "برنامج يومي بسيط"
+     },
+     "list": {
+      "en": [
+       "Morning: listen, repeat, then recite the new portion",
+       "Daytime: replay yesterday's portion with earphones",
+       "Evening: record yourself reciting your review",
+       "Night: listen once to tomorrow's portion"
+      ],
+      "de": [
+       "Morgens: hören, nachsprechen, dann das Neue rezitieren",
+       "Tagsüber: das Pensum von gestern mit Kopfhörern hören",
+       "Abends: sich beim Wiederholen aufnehmen",
+       "Nachts: das Pensum von morgen einmal hören"
+      ],
+      "ar": [
+       "صباحًا: استمع وردّد ثم سمّع الجديد",
+       "نهارًا: أعد سماع حفظ الأمس بسماعات",
+       "مساءً: سجّل نفسك في المراجعة",
+       "ليلًا: استمع مرة إلى حفظ الغد"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "hifz-23-tracking",
+   "needs_review": true,
+   "palette": "dawn",
+   "cover": {
+    "kicker": {
+     "en": "Memorising the Quran · 23",
+     "de": "Den Koran auswendig lernen · 23",
+     "ar": "حفظ القرآن · ٢٣"
+    },
+    "title": {
+     "en": "Track your progress honestly",
+     "de": "Verfolgen Sie Ihren Fortschritt ehrlich",
+     "ar": "تابع تقدمك بصدق"
+    },
+    "sub": {
+     "en": "A simple log shows where your hifz is strong and where it needs care",
+     "de": "Ein einfaches Protokoll zeigt, wo Ihr Hifz stark ist und wo er Pflege braucht",
+     "ar": "سجلٌّ بسيط يبيّن مواضع القوة في حفظك وما يحتاج إلى عناية"
+    },
+    "arabic": "محاسبة النفس"
+   },
+   "slides": [
+    {
+     "verse": "59:18",
+     "check": "let every soul look to what it has put forth",
+     "title": {
+      "en": "Honest self-review",
+      "de": "Ehrliche Selbstprüfung",
+      "ar": "محاسبة النفس"
+     },
+     "body": {
+      "en": "Looking honestly at oneself is a Quranic habit. In hifz it means knowing what you hold and what is slipping.",
+      "de": "Ehrlich auf sich selbst zu schauen ist eine koranische Gewohnheit. Im Hifz heißt das: wissen, was sitzt und was entgleitet.",
+      "ar": "محاسبة النفس أدب قرآني، وهي في الحفظ أن تعرف بصدق ما ثبت وما يتفلّت."
+     }
+    },
+    {
+     "title": {
+      "en": "What to write down each day",
+      "de": "Was Sie täglich notieren",
+      "ar": "ماذا تدوّن كل يوم؟"
+     },
+     "list": {
+      "en": [
+       "The new portion: surah, verses or page",
+       "What you reviewed, and how it went",
+       "Where you hesitated or made mistakes",
+       "How many minutes you spent"
+      ],
+      "de": [
+       "Das neue Pensum: Sure, Verse oder Seite",
+       "Was Sie wiederholt haben und wie es lief",
+       "Wo Sie gezögert oder Fehler gemacht haben",
+       "Wie viele Minuten Sie gebraucht haben"
+      ],
+      "ar": [
+       "الحفظ الجديد: السورة أو الآيات أو الصفحة",
+       "ما راجعته وكيف كان",
+       "مواضع التردد والخطأ",
+       "كم دقيقة استغرقت"
+      ]
+     }
+    },
+    {
+     "title": {
+      "en": "Three colours",
+      "de": "Drei Farben",
+      "ar": "ثلاثة ألوان"
+     },
+     "body": {
+      "en": "Mark each page or surah: green when it flows, amber when you hesitate, red when you need the mushaf. Review the red first, then the amber.",
+      "de": "Markieren Sie jede Seite oder Sure: grün, wenn sie fließt, gelb, wenn Sie zögern, rot, wenn Sie den Mushaf brauchen. Wiederholen Sie zuerst Rot, dann Gelb.",
+      "ar": "علّم كل صفحة أو سورة: أخضر إذا جرت بسلاسة، وأصفر إذا ترددت، وأحمر إذا احتجت إلى المصحف؛ وراجع الأحمر أولًا ثم الأصفر."
+     }
+    },
+    {
+     "title": {
+      "en": "The weekly check",
+      "de": "Die wöchentliche Prüfung",
+      "ar": "الاختبار الأسبوعي"
+     },
+     "body": {
+      "en": "Once a week, let someone open the mushaf anywhere in your memorised part and read a verse aloud. You continue from there. It shows how firm your hifz really is.",
+      "de": "Lassen Sie einmal pro Woche jemanden den Mushaf irgendwo in Ihrem gelernten Teil öffnen und einen Vers vorlesen. Sie machen von dort weiter. So zeigt sich, wie fest Ihr Hifz wirklich ist.",
+      "ar": "مرة في الأسبوع دع أحدًا يفتح المصحف في أي موضع من محفوظك ويقرأ آية، ثم أكمل أنت؛ فهذا يكشف متانة حفظك حقًّا."
+     }
+    },
+    {
+     "title": {
+      "en": "Celebrate milestones",
+      "de": "Feiern Sie Etappen",
+      "ar": "احتفِ بالمراحل"
+     },
+     "body": {
+      "en": "Finishing a surah or a juz' is a blessing. Thank Allah, tell your teacher or family, perhaps share a meal. Then return to your review.",
+      "de": "Eine Sure oder einen Dschuz' abzuschließen ist ein Segen. Danken Sie Allah, erzählen Sie es Ihrem Lehrer oder Ihrer Familie, teilen Sie vielleicht eine Mahlzeit. Dann kehren Sie zur Wiederholung zurück.",
+      "ar": "ختم سورة أو جزء نعمة، فاحمد الله، وأخبر شيخك أو أهلك، وربما تشاركتم طعامًا، ثم عُد إلى مراجعتك."
+     }
+    },
+    {
+     "title": {
+      "en": "Numbers are servants",
+      "de": "Zahlen sind Diener",
+      "ar": "الأرقام خادمة"
+     },
+     "body": {
+      "en": "Do not chase pages for their own sake. A small portion that is firmly kept and lived is worth more than a big number that fades.",
+      "de": "Jagen Sie nicht Seiten um ihrer selbst willen hinterher. Ein kleiner Teil, der fest sitzt und gelebt wird, ist mehr wert als eine große Zahl, die verblasst.",
+      "ar": "لا تطارد عدد الصفحات لذاته؛ فقليلٌ ثابت معمول به خيرٌ من كثير يتفلّت."
+     }
+    }
+   ]
+  },
+  {
+   "id": "hifz-24-people-of-the-quran",
+   "tradition": "sunni",
+   "needs_review": true,
+   "palette": "emerald",
+   "cover": {
+    "kicker": {
+     "en": "Memorising the Quran · 24",
+     "de": "Den Koran auswendig lernen · 24",
+     "ar": "حفظ القرآن · ٢٤"
+    },
+    "title": {
+     "en": "The honour of the people of the Quran",
+     "de": "Die Ehre der Leute des Korans",
+     "ar": "فضل أهل القرآن"
+    },
+    "sub": {
+     "en": "What the Prophet said about those who learn, recite and live the Quran",
+     "de": "Was der Prophet über jene sagte, die den Koran lernen, rezitieren und leben",
+     "ar": "ما قاله النبي ﷺ فيمن يتعلم القرآن ويتلوه ويعمل به"
+    },
+    "arabic": "أهل القرآن"
+   },
+   "slides": [
+    {
+     "hadith": "bukhari:5027",
+     "check": "learn the Qur'an and teach it",
+     "title": {
+      "en": "Learn and teach",
+      "de": "Lernen und lehren",
+      "ar": "تعلّمٌ وتعليم"
+     },
+     "body": {
+      "en": "Every learner can also be a teacher: share even one surah with someone else.",
+      "de": "Alle, die lernen, können auch lehren: Geben Sie schon eine einzige Sure an jemanden weiter.",
+      "ar": "كل متعلم يمكن أن يكون معلمًا، فعلّم غيرك ولو سورة واحدة."
+     }
+    },
+    {
+     "hadith": "muslim:1874",
+     "check": "intercessor",
+     "title": {
+      "en": "A companion on that Day",
+      "de": "Ein Begleiter an jenem Tag",
+      "ar": "شفاعة القرآن"
+     },
+     "body": {
+      "en": "Every page you keep stays with you. Note the special place of al-Baqara and Al 'Imran.",
+      "de": "Jede Seite, die Sie bewahren, bleibt bei Ihnen. Beachten Sie den besonderen Rang von al-Baqara und Al Imran.",
+      "ar": "كل صفحة تحفظها تبقى معك، ولاحظ مكانة البقرة وآل عمران الخاصة."
+     }
+    },
+    {
+     "hadith": "muslim:1897",
+     "check": "exalt some peoples",
+     "title": {
+      "en": "Raised through the Quran",
+      "de": "Durch den Koran erhoben",
+      "ar": "رفعةٌ بالقرآن"
+     },
+     "body": {
+      "en": "The Quran can raise a person far beyond the status society gives them.",
+      "de": "Der Koran kann einen Menschen weit über den Rang erheben, den die Gesellschaft ihm gibt.",
+      "ar": "قد يرفع القرآن صاحبه فوق كل منزلة يمنحها له الناس."
+     }
+    },
+    {
+     "hadith": "bukhari:5059",
+     "check": "acts on it",
+     "title": {
+      "en": "The citron",
+      "de": "Die Zitronatzitrone",
+      "ar": "الأُترُجّة"
+     },
+     "body": {
+      "en": "Reciting the Quran and living by it belong together: fragrant outside and good within.",
+      "de": "Den Koran rezitieren und nach ihm leben gehören zusammen: außen duftend, innen gut.",
+      "ar": "التلاوة والعمل متلازمان: طيب الريح وطيب الطعم."
+     }
+    },
+    {
+     "verse": "35:29-30",
+     "check": "transaction",
+     "title": {
+      "en": "A trade that never fails",
+      "de": "Ein Handel, der nie verliert",
+      "ar": "ربحٌ لا ينقطع"
+     },
+     "body": {
+      "en": "Those who recite the Book, pray and give are promised a reward that does not perish.",
+      "de": "Denen, die das Buch rezitieren, beten und geben, wird ein Lohn verheißen, der nicht vergeht.",
+      "ar": "من جمع التلاوة والصلاة والإنفاق فله أجر باقٍ لا ينقص."
+     }
+    },
+    {
+     "title": {
+      "en": "An honour with a duty",
+      "de": "Eine Ehre mit Verpflichtung",
+      "ar": "شرفٌ وتكليف"
+     },
+     "body": {
+      "en": "These virtues belong to those who keep the Quran company: who recite it, act on it and treat it with respect. The honour grows together with the responsibility.",
+      "de": "Diese Vorzüge gelten denen, die dem Koran Gesellschaft leisten: die ihn rezitieren, nach ihm handeln und ihn achten. Die Ehre wächst zusammen mit der Verantwortung.",
+      "ar": "هذه الفضائل لمن صحب القرآن: تلاه، وعمل به، وعظّمه؛ والشرف ينمو مع المسؤولية."
+     }
+    }
+   ]
+  },
+  {
+   "id": "hifz-25-duas",
+   "tradition": "sunni",
+   "needs_review": true,
+   "palette": "night",
+   "cover": {
+    "kicker": {
+     "en": "Memorising the Quran · 25",
+     "de": "Den Koran auswendig lernen · 25",
+     "ar": "حفظ القرآن · ٢٥"
+    },
+    "title": {
+     "en": "6 duas for the one memorising",
+     "de": "6 Bittgebete für alle, die den Koran lernen",
+     "ar": "ستة أدعية لحافظ القرآن"
+    },
+    "sub": {
+     "en": "From the Quran and the Sunnah: duas for knowledge, ease and a steady heart",
+     "de": "Aus Koran und Sunna: Bittgebete um Wissen, Leichtigkeit und ein festes Herz",
+     "ar": "من القرآن والسنة: أدعية للعلم والتيسير وثبات القلب"
+    },
+    "arabic": "الدعاء"
+   },
+   "slides": [
+    {
+     "verse": "20:114",
+     "check": "increase me in knowledge",
+     "title": {
+      "en": "For more knowledge",
+      "de": "Um mehr Wissen",
+      "ar": "سؤال الزيادة في العلم"
+     },
+     "body": {
+      "en": "A short dua the Prophet was taught in the very context of receiving the Quran.",
+      "de": "Ein kurzes Bittgebet, das der Prophet gerade im Zusammenhang mit dem Empfang des Korans gelehrt bekam.",
+      "ar": "دعاء قصير عُلّمه النبي ﷺ في سياق تلقي القرآن نفسه."
+     }
+    },
+    {
+     "verse": "20:25-27",
+     "check": "untie the knot",
+     "title": {
+      "en": "For an open chest and a fluent tongue",
+      "de": "Um eine weite Brust und eine leichte Zunge",
+      "ar": "لشرح الصدر وطلاقة اللسان"
+     },
+     "body": {
+      "en": "Musa's dua before his mission: an open chest, an easy task, a free tongue.",
+      "de": "Das Bittgebet Musas vor seinem Auftrag: eine weite Brust, eine leichte Aufgabe, eine gelöste Zunge.",
+      "ar": "دعاء موسى قبل رسالته: صدر منشرح، وأمر ميسّر، ولسان منطلق."
+     }
+    },
+    {
+     "dua": "hisn:43:0",
+     "check": "no ease except",
+     "title": {
+      "en": "When a page feels too hard",
+      "de": "Wenn eine Seite zu schwer scheint",
+      "ar": "إذا استعصت عليك صفحة"
+     },
+     "body": {
+      "en": "For any task that seems difficult, including a stubborn verse.",
+      "de": "Für jede Aufgabe, die schwierig erscheint, auch für einen widerspenstigen Vers.",
+      "ar": "لكل أمر يبدو صعبًا، ولو آية تأبى أن تثبت."
+     }
+    },
+    {
+     "dua": "hisn:25:7",
+     "check": "knowledge which is beneficial",
+     "title": {
+      "en": "For beneficial knowledge",
+      "de": "Um nützliches Wissen",
+      "ar": "سؤال العلم النافع"
+     },
+     "body": {
+      "en": "Said after the Fajr prayer, a good moment to begin your new portion.",
+      "de": "Nach dem Morgengebet gesprochen, ein guter Moment, um mit dem neuen Pensum zu beginnen.",
+      "ar": "يقال بعد صلاة الفجر، وهو وقت حسن للبدء في الحفظ الجديد."
+     }
+    },
+    {
+     "dua": "hisn:34:0",
+     "check": "life of my heart",
+     "title": {
+      "en": "The Quran as spring of the heart",
+      "de": "Der Koran als Frühling des Herzens",
+      "ar": "القرآن ربيع القلب"
+     },
+     "body": {
+      "en": "A dua for worry and grief that asks for the Quran to bring life and light to the heart.",
+      "de": "Ein Bittgebet bei Sorge und Kummer, das darum bittet, dass der Koran dem Herzen Leben und Licht bringt.",
+      "ar": "دعاء الهم والحزن، وفيه سؤال أن يكون القرآن حياةً للقلب ونورًا له."
+     }
+    },
+    {
+     "verse": "3:8",
+     "check": "let not our hearts deviate",
+     "title": {
+      "en": "For a steady heart",
+      "de": "Um ein festes Herz",
+      "ar": "سؤال الثبات"
+     },
+     "body": {
+      "en": "Ask Allah to keep your heart firm after He has guided it to His Book.",
+      "de": "Bitten Sie Allah, Ihr Herz fest zu halten, nachdem Er es zu Seinem Buch geführt hat.",
+      "ar": "اسأل الله أن يثبّت قلبك بعد أن هداه إلى كتابه."
+     }
+    },
+    {
+     "title": {
+      "en": "A note on memory duas",
+      "de": "Ein Hinweis zu Gedächtnis-Bittgebeten",
+      "ar": "تنبيه في أدعية الحفظ"
+     },
+     "body": {
+      "en": "Some duas for memory that are shared online have weak chains. The ones here come from the Quran and Hisnul Muslim. You may also ask Allah in your own words.",
+      "de": "Manche online verbreiteten Bittgebete für das Gedächtnis haben schwache Überlieferungsketten. Die hier genannten stammen aus dem Koran und aus Hisnul Muslim. Sie dürfen Allah auch mit eigenen Worten bitten.",
+      "ar": "بعض أدعية الحفظ المتداولة على الإنترنت أسانيدها ضعيفة، وما هنا من القرآن ومن حصن المسلم، ولك أن تدعو الله بكلماتك أيضًا."
+     }
+    }
+   ]
+  },
+  {
+   "id": "hifz-26-understanding",
+   "needs_review": true,
+   "palette": "marble",
+   "cover": {
+    "kicker": {
+     "en": "Memorising the Quran · 26",
+     "de": "Den Koran auswendig lernen · 26",
+     "ar": "حفظ القرآن · ٢٦"
+    },
+    "title": {
+     "en": "Understand what you memorise",
+     "de": "Verstehen Sie, was Sie auswendig lernen",
+     "ar": "افهم ما تحفظ"
+    },
+    "sub": {
+     "en": "Meaning gives memory a home, and turns hifz into guidance",
+     "de": "Bedeutung gibt dem Gedächtnis ein Zuhause und macht den Hifz zur Rechtleitung",
+     "ar": "المعنى بيتٌ للحفظ، وبه يصير الحفظ هداية"
+    },
+    "arabic": "الحفظ والتدبر"
+   },
+   "slides": [
+    {
+     "verse": "38:29",
+     "check": "reflect upon its verses",
+     "title": {
+      "en": "Sent down for reflection",
+      "de": "Zum Nachdenken herabgesandt",
+      "ar": "أُنزل ليُتدبَّر"
+     },
+     "body": {
+      "en": "The Book was sent down to be pondered, not only to be recited.",
+      "de": "Das Buch wurde herabgesandt, um darüber nachzudenken, nicht nur, um es zu rezitieren.",
+      "ar": "أُنزل الكتاب ليُتدبّر، لا ليُتلى فحسب."
+     }
+    },
+    {
+     "verse": "12:2",
+     "check": "that you might understand",
+     "title": {
+      "en": "Arabic opens the door",
+      "de": "Arabisch öffnet die Tür",
+      "ar": "العربية مفتاح"
+     },
+     "body": {
+      "en": "Even a little Arabic opens a door: frequent words and particles return again and again in your portion.",
+      "de": "Schon ein wenig Arabisch öffnet eine Tür: häufige Wörter und Partikeln kehren in Ihrem Abschnitt immer wieder.",
+      "ar": "قليل من العربية يفتح بابًا، فالكلمات والحروف الشائعة تتكرر في وِردك مرة بعد مرة."
+     }
+    },
+    {
+     "title": {
+      "en": "Before the new portion",
+      "de": "Vor dem neuen Pensum",
+      "ar": "قبل الحفظ الجديد"
+     },
+     "body": {
+      "en": "Read the translation of tomorrow's portion and a short tafsir. Ask what the passage is about and where it changes topic. Memory follows meaning.",
+      "de": "Lesen Sie die Übersetzung des Pensums von morgen und einen kurzen Tafsir. Fragen Sie, worum es in dem Abschnitt geht und wo das Thema wechselt. Das Gedächtnis folgt der Bedeutung.",
+      "ar": "اقرأ ترجمة حفظ الغد وتفسيرًا مختصرًا له، واسأل: عمّ يتحدث المقطع؟ وأين ينتقل؟ فالحفظ يتبع المعنى."
+     }
+    },
+    {
+     "title": {
+      "en": "Simple tools",
+      "de": "Einfache Hilfsmittel",
+      "ar": "أدوات بسيطة"
+     },
+     "list": {
+      "en": [
+       "A word-by-word translation",
+       "A short tafsir, such as that of al-Sa'di",
+       "A list of the most frequent Quranic words",
+       "A heading for each passage in your notebook"
+      ],
+      "de": [
+       "Eine Wort-für-Wort-Übersetzung",
+       "Ein kurzer Tafsir, etwa der von as-Sadi",
+       "Eine Liste der häufigsten Wörter im Koran",
+       "Eine Überschrift für jeden Abschnitt in Ihrem Heft"
+      ],
+      "ar": [
+       "ترجمة كلمة بكلمة",
+       "تفسير مختصر كتفسير السعدي",
+       "قائمة بأكثر الكلمات القرآنية تكرارًا",
+       "عنوان لكل مقطع في دفترك"
+      ]
+     }
+    },
+    {
+     "title": {
+      "en": "Live one verse a day",
+      "de": "Leben Sie einen Vers am Tag",
+      "ar": "اعمل بآية كل يوم"
+     },
+     "body": {
+      "en": "Pick one verse from your portion and act on it: a dua to make, a habit to change, a kindness to show. That verse will stay with you.",
+      "de": "Wählen Sie einen Vers aus Ihrem Pensum und handeln Sie danach: ein Bittgebet sprechen, eine Gewohnheit ändern, eine Freundlichkeit zeigen. Dieser Vers wird bei Ihnen bleiben.",
+      "ar": "اختر من وردك آية واعمل بها: دعاء تدعو به، أو عادة تغيّرها، أو إحسانًا تبذله؛ فتلك الآية ستبقى معك."
+     }
+    },
+    {
+     "verse": "47:24",
+     "check": "locks upon",
+     "title": {
+      "en": "Open hearts",
+      "de": "Offene Herzen",
+      "ar": "قلوب مفتوحة"
+     },
+     "body": {
+      "en": "Reflection unlocks the heart. A memorised verse that is understood becomes a companion for life.",
+      "de": "Nachdenken öffnet das Herz. Ein gelernter Vers, der verstanden wird, wird zum Begleiter fürs Leben.",
+      "ar": "التدبر يفتح القلوب، والآية المحفوظة المفهومة رفيقة العمر."
+     }
+    }
+   ],
+   "sources": [
+    {
+     "label": "al-Sa'di, Taysir al-Karim al-Rahman fi Tafsir Kalam al-Mannan"
+    }
+   ]
+  },
+  {
+   "id": "hifz-27-after-hifz",
+   "tradition": "sunni",
+   "needs_review": true,
+   "palette": "dawn",
+   "cover": {
+    "kicker": {
+     "en": "Memorising the Quran · 27",
+     "de": "Den Koran auswendig lernen · 27",
+     "ar": "حفظ القرآن · ٢٧"
+    },
+    "title": {
+     "en": "After hifz: a companion for life",
+     "de": "Nach dem Hifz: ein Begleiter fürs Leben",
+     "ar": "بعد الختم: صحبة العمر"
+    },
+    "sub": {
+     "en": "Completing the Quran by heart is not the end of the journey but a new beginning",
+     "de": "Den Koran vollständig auswendig zu können ist nicht das Ende des Weges, sondern ein neuer Anfang",
+     "ar": "ختم الحفظ ليس نهاية الطريق، بل بداية جديدة"
+    },
+    "arabic": "صحبة القرآن"
+   },
+   "slides": [
+    {
+     "title": {
+      "en": "A new beginning",
+      "de": "Ein neuer Anfang",
+      "ar": "بداية جديدة"
+     },
+     "body": {
+      "en": "When the last surah is memorised, the lifelong work begins: keeping all of it, living by it and passing it on.",
+      "de": "Wenn die letzte Sure gelernt ist, beginnt die Arbeit eines ganzen Lebens: alles bewahren, danach leben und es weitergeben.",
+      "ar": "إذا حُفظت آخر سورة بدأ عمل العمر: أن تحفظ الكل، وتعمل به، وتورثه غيرك."
+     }
+    },
+    {
+     "hadith": "bukhari:4994",
+     "check": "old property",
+     "title": {
+      "en": "An old treasure",
+      "de": "Ein alter Schatz",
+      "ar": "كنزٌ قديم"
+     },
+     "body": {
+      "en": "The surahs you learned first are your oldest wealth. Keep them as carefully as the newest.",
+      "de": "Die Suren, die Sie zuerst gelernt haben, sind Ihr ältester Besitz. Bewahren Sie sie so sorgfältig wie die neuesten.",
+      "ar": "السور التي حفظتها أولًا أقدم كنوزك، فتعاهدها كما تتعاهد أحدث محفوظك."
+     }
+    },
+    {
+     "title": {
+      "en": "A lifelong rhythm",
+      "de": "Ein Rhythmus fürs Leben",
+      "ar": "إيقاع العمر"
+     },
+     "list": {
+      "en": [
+       "A daily review that is never skipped",
+       "A full recitation from memory every week or month",
+       "Long recitation in the night prayer",
+       "Reciting to a partner regularly"
+      ],
+      "de": [
+       "Eine tägliche Wiederholung, die nie ausfällt",
+       "Eine vollständige Rezitation aus dem Gedächtnis jede Woche oder jeden Monat",
+       "Lange Rezitation im Nachtgebet",
+       "Regelmäßig einem Partner vortragen"
+      ],
+      "ar": [
+       "مراجعة يومية لا تنقطع",
+       "ختمة غيبًا كل أسبوع أو كل شهر",
+       "إطالة القراءة في قيام الليل",
+       "التسميع على رفيق بانتظام"
+      ]
+     }
+    },
+    {
+     "hadith": "muslim:1529",
+     "check": "best versed in the Qur'an",
+     "title": {
+      "en": "Serving the community",
+      "de": "Der Gemeinschaft dienen",
+      "ar": "خدمة الناس"
+     },
+     "body": {
+      "en": "Knowing the Quran well is a way to serve others, for example by leading the prayers in Ramadan.",
+      "de": "Den Koran gut zu kennen ist ein Weg, anderen zu dienen, zum Beispiel als Vorbeter im Ramadan.",
+      "ar": "إتقان القرآن باب لخدمة الناس، كإمامتهم في صلوات رمضان."
+     }
+    },
+    {
+     "title": {
+      "en": "Teach what you learned",
+      "de": "Lehren Sie, was Sie gelernt haben",
+      "ar": "علّم ما تعلّمت"
+     },
+     "body": {
+      "en": "Teaching a child one surah, helping a friend with tajwid, listening to someone's review: all of this keeps your own hifz alive and multiplies the reward.",
+      "de": "Einem Kind eine Sure beibringen, einem Freund beim Tadschwid helfen, jemandem bei der Wiederholung zuhören: All das hält Ihren eigenen Hifz lebendig und vervielfacht den Lohn.",
+      "ar": "أن تعلّم طفلًا سورة، أو تعين صديقًا في التجويد، أو تسمع مراجعة غيرك: كل ذلك يحيي حفظك ويضاعف أجرك."
+     }
+    },
+    {
+     "verse": "20:2-3",
+     "check": "reminder for those who fear",
+     "title": {
+      "en": "A mercy, not a burden",
+      "de": "Eine Barmherzigkeit, keine Last",
+      "ar": "سكينة لا عناء"
+     },
+     "body": {
+      "en": "The Quran is a mercy, not a hardship. Let your hifz be a source of peace, not pressure.",
+      "de": "Der Koran ist Barmherzigkeit, keine Härte. Lassen Sie Ihren Hifz eine Quelle des Friedens sein, nicht des Drucks.",
+      "ar": "القرآن رحمة لا مشقة، فاجعل حفظك مصدر سكينة لا ضغط."
+     }
+    }
+   ]
+  }
+ ]
+}

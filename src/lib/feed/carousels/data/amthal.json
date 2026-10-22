@@ -1,0 +1,1143 @@
+{
+  "series": "amthal",
+  "label": { "en": "Parables of the Quran", "de": "Gleichnisse des Korans", "ar": "أمثال القرآن" },
+  "topic": "tafsir",
+  "tradition": "all",
+  "items": [
+    {
+      "id": "amthal-01-why-parables",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": { "en": "Parables of the Quran · 1", "de": "Gleichnisse des Korans · 1", "ar": "أمثال القرآن · ١" },
+        "title": { "en": "Why the Quran speaks in parables", "de": "Warum der Koran in Gleichnissen spricht", "ar": "لماذا يضرب القرآن الأمثال؟" },
+        "sub": { "en": "A lamp, a spider, a seed: images that bring the unseen close enough to picture", "de": "Eine Lampe, eine Spinne, ein Samenkorn: Bilder, die das Unsichtbare vorstellbar machen", "ar": "مصباح وعنكبوت وحبة: صور تقرّب الغيب حتى يكاد يُرى" },
+        "arabic": "الأَمْثال"
+      },
+      "slides": [
+        {
+          "title": { "en": "What is a mathal?", "de": "Was ist ein Mathal?", "ar": "ما المَثَل؟" },
+          "arabic": "م ث ل",
+          "body": { "en": "Mathal means likeness, example, parable. From the same root comes mithl, 'like'. The noun mathal occurs 88 times in the Quran, and the root m-th-l appears in 169 words.", "de": "Mathal bedeutet Ähnlichkeit, Beispiel, Gleichnis. Aus derselben Wurzel stammt mithl, „gleich wie“. Das Wort mathal kommt im Koran 88-mal vor, die Wurzel m-th-l in 169 Wörtern.", "ar": "المَثَل هو الشبيه والنظير والصورة التي تُضرب للبيان، ومن الجذر نفسه «مِثْل». ترد كلمة «مَثَل» في القرآن ٨٨ مرة، ويرد الجذر في ١٦٩ كلمة." }
+        },
+        {
+          "verse": "39:27",
+          "check": "that they might remember",
+          "title": { "en": "Examples of every kind", "de": "Beispiele jeder Art", "ar": "أمثال من كل نوع" },
+          "body": { "en": "The Quran gives parables so that people remember. An image stays with you long after an argument is forgotten.", "de": "Der Koran gibt Gleichnisse, damit die Menschen sich erinnern. Ein Bild bleibt, lange nachdem ein Argument vergessen ist.", "ar": "يضرب القرآن الأمثال ليتذكر الناس، فالصورة تبقى في الذهن بعد أن يُنسى الجدال." }
+        },
+        {
+          "verse": "29:43",
+          "check": "those of knowledge",
+          "title": { "en": "Not for a quick glance", "de": "Nicht für einen flüchtigen Blick", "ar": "ليست لنظرة عابرة" },
+          "body": { "en": "Parables are easy to hear and deep to understand. Their full meaning opens to those who reflect and learn.", "de": "Gleichnisse sind leicht zu hören und tief zu verstehen. Ihre volle Bedeutung erschließt sich denen, die nachdenken und lernen.", "ar": "الأمثال سهلة السماع عميقة المعنى، ولا ينكشف معناها كاملًا إلا لمن تأمّل وتعلّم." }
+        },
+        {
+          "title": { "en": "When a verse stayed closed", "de": "Wenn ein Vers verschlossen blieb", "ar": "حين يستعصي الفهم" },
+          "body": { "en": "Ibn Kathir reports that the early scholar Amr ibn Murra was saddened whenever he met a verse he did not understand, because of this verse about parables. Not understanding was a reason to keep learning.", "de": "Ibn Kathir berichtet, dass der frühe Gelehrte Amr ibn Murra traurig wurde, wenn er einem Vers begegnete, den er nicht verstand, wegen dieses Verses über die Gleichnisse. Nichtverstehen war für ihn ein Grund, weiterzulernen.", "ar": "ينقل ابن كثير أن التابعي عمرو بن مرة كان يحزن إذا مرّ بآية لا يفهمها، لأجل هذه الآية في الأمثال. فكان عدم الفهم عنده دافعًا إلى مزيد من التعلم." }
+        },
+        {
+          "title": { "en": "To strike a parable", "de": "Ein Gleichnis „schlagen“", "ar": "ضرب المثل" },
+          "arabic": "ضَرَبَ مَثَلًا",
+          "body": { "en": "The Arabic idiom is daraba mathalan, literally 'to strike a parable'. Al-Qurtubi explains the verb as 'to make clear'. Arabic uses the same verb for minting a coin: the image leaves a lasting mark.", "de": "Die arabische Wendung lautet daraba mathalan, wörtlich „ein Gleichnis schlagen“. Al-Qurtubi erklärt das Verb als „deutlich machen“. Dasselbe Verb steht im Arabischen für das Prägen einer Münze: Das Bild hinterlässt einen bleibenden Eindruck.", "ar": "يعبّر القرآن بقوله «ضرب مثلًا»، وفسّر القرطبي «يضرب» بمعنى «يبيّن». والعرب تقول «ضرب الدرهم» إذا سكّه، فتُطبع الصورة وتترك أثرًا باقيًا." }
+        },
+        {
+          "title": { "en": "How to read a parable", "de": "So lesen Sie ein Gleichnis", "ar": "كيف تقرأ المثل؟" },
+          "list": {
+            "en": ["Picture the image first: see it, hear it, feel it", "Ask whom it describes and why", "Read the verses before and after it", "Ask where you yourself stand in the picture"],
+            "de": ["Stellen Sie sich das Bild zuerst vor: sehen, hören, fühlen", "Fragen Sie, wen es beschreibt und warum", "Lesen Sie die Verse davor und danach", "Fragen Sie sich, wo Sie selbst in diesem Bild stehen"],
+            "ar": ["تخيّل الصورة أولًا: انظر واسمع واشعر", "اسأل: من يصف المثل، ولماذا؟", "اقرأ ما قبل الآية وما بعدها", "اسأل نفسك: أين موقعي من هذه الصورة؟"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 29:43", "url": "https://quran.com/29:43/tafsirs/en-tafisr-ibn-kathir" },
+        { "label": "Ibn al-Qayyim, al-Amthal fi al-Qur'an" },
+        { "label": "Quranic Arabic Corpus, root m-th-l", "url": "https://corpus.quran.com/qurandictionary.jsp?q=mvl" },
+        { "label": "al-Qurtubi, al-Jami' li-Ahkam al-Qur'an, on 2:26", "url": "https://quran.com/2:26/tafsirs/ar-tafseer-al-qurtubi" }
+      ]
+    },
+    {
+      "id": "amthal-02-light",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": { "en": "Parables of the Quran · 2", "de": "Gleichnisse des Korans · 2", "ar": "أمثال القرآن · ٢" },
+        "title": { "en": "The verse of light: a lamp in the heart", "de": "Der Lichtvers: eine Lampe im Herzen", "ar": "آية النور: مصباح في القلب" },
+        "sub": { "en": "A niche, a lamp, a glass, a blessed olive tree: one of the best-loved images of the Quran", "de": "Eine Nische, eine Lampe, ein Glas, ein gesegneter Ölbaum: eines der bekanntesten Bilder des Korans", "ar": "مشكاة ومصباح وزجاجة وشجرة زيتون مباركة: من أحبّ صور القرآن إلى القلوب" },
+        "arabic": "المِشْكاة"
+      },
+      "slides": [
+        {
+          "verse": "24:35",
+          "check": "Light upon light",
+          "title": { "en": "Read the image slowly", "de": "Lesen Sie das Bild langsam", "ar": "تأمّل الصورة على مهل" },
+          "body": { "en": "Five elements build one light: niche, lamp, glass, tree and oil. Each one makes the light purer and brighter.", "de": "Fünf Elemente bilden ein Licht: Nische, Lampe, Glas, Baum und Öl. Jedes macht das Licht reiner und heller.", "ar": "خمسة عناصر تصنع نورًا واحدًا: المشكاة والمصباح والزجاجة والشجرة والزيت، وكل منها يزيد النور صفاءً." }
+        },
+        {
+          "title": { "en": "Picture the scene", "de": "Stellen Sie sich die Szene vor", "ar": "تخيّل المشهد" },
+          "body": { "en": "A mishkat is a small recess in a wall that holds a lamp. Its walls gather the light and send it forward. Inside, a flame burns behind clear glass, fed by the finest olive oil.", "de": "Eine Mischkat ist eine kleine Nische in der Wand, in der eine Lampe steht. Ihre Wände sammeln das Licht und werfen es nach vorn. Darin brennt eine Flamme hinter klarem Glas, genährt vom feinsten Olivenöl.", "ar": "المشكاة كوّة صغيرة في الجدار يوضع فيها المصباح، فتجمع جدرانها الضوء وتردّه إلى الأمام. وفي داخلها شعلة خلف زجاج صافٍ، يغذيها أجود زيت الزيتون." }
+        },
+        {
+          "title": { "en": "The light in the believer's heart", "de": "Das Licht im Herzen des Gläubigen", "ar": "نور في قلب المؤمن" },
+          "body": { "en": "Al-Tabari and Ibn Kathir report the reading of the Companion Ubayy ibn Ka'b: the niche is the believer's chest, the glass is his heart, and the lamp is the faith and the Quran within it.", "de": "At-Tabari und Ibn Kathir überliefern die Deutung des Prophetengefährten Ubayy ibn Ka'b: Die Nische ist die Brust des Gläubigen, das Glas sein Herz und die Lampe der Glaube und der Koran darin.", "ar": "ينقل الطبري وابن كثير تفسير الصحابي أُبيّ بن كعب: المشكاة صدر المؤمن، والزجاجة قلبه، والمصباح ما فيه من الإيمان والقرآن." }
+        },
+        {
+          "title": { "en": "Sun from every side", "de": "Sonne von allen Seiten", "ar": "شجرة في وجه الشمس" },
+          "body": { "en": "The olive tree stands in the open, so the sun reaches it all day. Commentators say its oil is the purest. The oil almost shines by itself: a heart ready for truth even before it hears it.", "de": "Der Ölbaum steht frei, sodass ihn die Sonne den ganzen Tag erreicht. Die Kommentatoren sagen, sein Öl sei das reinste. Das Öl leuchtet beinahe von selbst: ein Herz, das für die Wahrheit bereit ist, noch bevor es sie hört.", "ar": "شجرة الزيتون في مكان مكشوف تصيبها الشمس طوال النهار، فيكون زيتها أصفى الزيوت كما يقول المفسرون. ويكاد زيتها يضيء بنفسه: قلب مهيّأ للحق قبل أن يسمعه." }
+        },
+        {
+          "title": { "en": "Two lights meet", "de": "Zwei Lichter treffen sich", "ar": "نوران يجتمعان" },
+          "body": { "en": "As-Suddi, quoted by Ibn Kathir, explains the doubled light as two lights meeting: the light of faith and the light of the Quran, neither shining fully without the other. When guidance reaches a ready heart, it shines twice.", "de": "As-Suddi, von Ibn Kathir zitiert, erklärt das doppelte Licht als zwei Lichter, die sich treffen: das Licht des Glaubens und das Licht des Korans, keines leuchtet ganz ohne das andere. Erreicht die Rechtleitung ein bereites Herz, leuchtet es doppelt.", "ar": "يفسّر السدّي، فيما ينقله ابن كثير، النور المضاعف باجتماع نورين: نور الإيمان ونور القرآن، ولا يكتمل ضوء أحدهما دون الآخر. فإذا وصلت الهداية إلى قلب مستعد أضاء مرتين." }
+        },
+        {
+          "verse": "24:36-37",
+          "check": ["houses", "remembrance of Allah"],
+          "title": { "en": "Where such lamps are lit", "de": "Wo solche Lampen brennen", "ar": "حيث تُوقد هذه المصابيح" },
+          "body": { "en": "The next verses move from the image to real places: houses of worship, filled with people whom trade does not distract from Allah.", "de": "Die folgenden Verse führen vom Bild zu wirklichen Orten: Gebetshäuser, erfüllt von Menschen, die kein Handel von Allah ablenkt.", "ar": "تنتقل الآيات بعدها من الصورة إلى أماكن حقيقية: بيوت العبادة، وفيها رجال لا تصرفهم التجارة عن الله." }
+        },
+        {
+          "title": { "en": "Keeping the lamp lit", "de": "Damit die Lampe brennt", "ar": "ليبقى المصباح مضيئًا" },
+          "list": {
+            "en": ["Keep your heart like clear glass: clean and transparent", "Feed the flame daily with Quran and remembrance", "Seek places and people of prayer", "Ask Allah for light: guidance is His gift"],
+            "de": ["Halten Sie Ihr Herz wie klares Glas: rein und durchsichtig", "Nähren Sie die Flamme täglich mit Koran und Gottesgedenken", "Suchen Sie Orte und Menschen des Gebets auf", "Bitten Sie Allah um Licht: Rechtleitung ist Sein Geschenk"],
+            "ar": ["اجعل قلبك كالزجاجة: نقيًّا صافيًا", "غذِّ الشعلة كل يوم بالقرآن والذكر", "الزم أماكن الصلاة وأهلها", "اسأل الله النور، فالهداية من عطائه"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 24:35-37", "url": "https://quran.com/24:35/tafsirs/en-tafisr-ibn-kathir" },
+        { "label": "al-Tabari, Jami' al-Bayan, on 24:35", "url": "https://quran.com/24:35/tafsirs/ar-tafsir-al-tabari" }
+      ]
+    },
+    {
+      "id": "amthal-03-spider",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": { "en": "Parables of the Quran · 3", "de": "Gleichnisse des Korans · 3", "ar": "أمثال القرآن · ٣" },
+        "title": { "en": "The spider's house: fine threads, no shelter", "de": "Das Haus der Spinne: feine Fäden, kein Schutz", "ar": "بيت العنكبوت: خيوط دقيقة ولا مأوى" },
+        "sub": { "en": "What we lean on besides Allah can look strong and still protect us from nothing", "de": "Was wir neben Allah zur Stütze nehmen, kann stark aussehen und schützt doch vor nichts", "ar": "ما يُتّخذ سندًا من دون الله قد يبدو متينًا ولا يحمي من شيء" },
+        "arabic": "العَنْكَبُوت"
+      },
+      "slides": [
+        {
+          "verse": "29:41",
+          "check": "spider",
+          "title": { "en": "The parable", "de": "Das Gleichnis", "ar": "المثل" },
+          "body": { "en": "The surah takes its name from this image: al-Ankabut, the Spider. The word occurs in this verse only, twice.", "de": "Die Sure trägt den Namen dieses Bildes: al-Ankabut, die Spinne. Das Wort kommt nur in diesem Vers vor, zweimal.", "ar": "سُمّيت السورة بهذه الصورة: العنكبوت. ولا ترد الكلمة في القرآن إلا في هذه الآية، مرتين." }
+        },
+        {
+          "title": { "en": "Look closely at a web", "de": "Betrachten Sie ein Netz genau", "ar": "تأمّل بيت العنكبوت" },
+          "body": { "en": "A web is a marvel of design, but as a home it fails. It keeps out no wind, no rain, no heat and no enemy. A gust of wind or a single hand can tear it down.", "de": "Ein Spinnennetz ist ein Wunder der Gestaltung, doch als Zuhause versagt es. Es hält keinen Wind, keinen Regen, keine Hitze und keinen Feind ab. Ein Windstoß oder eine einzige Hand reißt es nieder.", "ar": "بيت العنكبوت تحفة في الصنعة، لكنه لا يصلح مأوى: لا يردّ ريحًا ولا مطرًا ولا حرًّا ولا عدوًّا، وتهدمه نسمة أو يد واحدة." }
+        },
+        {
+          "title": { "en": "What the commentators say", "de": "Was die Kommentatoren sagen", "ar": "ما يقوله المفسرون" },
+          "body": { "en": "Ibn Kathir explains: those who take protectors besides Allah, hoping for help and provision, are like someone who seeks shelter in a web. What they rely on cannot carry their weight.", "de": "Ibn Kathir erklärt: Wer neben Allah Beschützer nimmt und von ihnen Hilfe und Versorgung erhofft, gleicht jemandem, der in einem Spinnennetz Zuflucht sucht. Worauf er sich stützt, trägt ihn nicht.", "ar": "يبيّن ابن كثير أن من يتخذ حماة سوى الله يرجو نصرهم ورزقهم، كمن يحتمي ببيت العنكبوت؛ فما يعتمد عليه لا يحمل ثقله." }
+        },
+        {
+          "title": { "en": "The real tragedy: not knowing", "de": "Das eigentlich Tragische: nicht zu wissen", "ar": "المأساة في الغفلة" },
+          "body": { "en": "The verse ends with a sigh over their not knowing. From outside, a web looks like a home. Only a storm reveals what it really is.", "de": "Der Vers endet mit einem Seufzer über ihr Nichtwissen. Von außen sieht ein Netz wie ein Zuhause aus. Erst ein Sturm zeigt, was es wirklich ist.", "ar": "تُختم الآية بحسرة على جهلهم. فالبيت يبدو من الخارج مأوى، ولا تكشف حقيقته إلا العاصفة." }
+        },
+        {
+          "title": { "en": "Webs we build today", "de": "Netze, die wir heute bauen", "ar": "بيوت عنكبوت معاصرة" },
+          "body": { "en": "Wealth, status, the approval of people, a single relationship: none of these is wrong in itself. It becomes a web when the heart rests on it instead of on Allah.", "de": "Vermögen, Ansehen, der Beifall der Menschen, eine einzige Beziehung: Nichts davon ist an sich falsch. Zum Netz wird es, wenn das Herz darauf ruht statt auf Allah.", "ar": "المال والجاه ورضا الناس وعلاقة بعينها: ليس شيء منها مذمومًا في ذاته، لكنه يصير بيت عنكبوت حين يركن إليه القلب بدل الله." }
+        },
+        {
+          "title": { "en": "Building a real shelter", "de": "Ein echtes Zuhause bauen", "ar": "لتبني مأوى حقيقيًا" },
+          "list": {
+            "en": ["Use the means, but place your trust in Allah", "Ask: whose loss would break me, and why?", "Turn to Allah first in hardship, not last", "Strengthen what lasts: faith, prayer, good deeds"],
+            "de": ["Nutzen Sie die Mittel, aber vertrauen Sie auf Allah", "Fragen Sie: Wessen Verlust würde mich zerbrechen, und warum?", "Wenden Sie sich in der Not zuerst an Allah, nicht zuletzt", "Stärken Sie, was bleibt: Glaube, Gebet, gute Taten"],
+            "ar": ["خذ بالأسباب، وتوكل على الله", "اسأل نفسك: فقدُ مَن يكسرني، ولماذا؟", "الجأ إلى الله أولًا في الشدة لا آخرًا", "قوِّ ما يبقى: الإيمان والصلاة والعمل الصالح"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 29:41", "url": "https://quran.com/29:41/tafsirs/en-tafisr-ibn-kathir" },
+        { "label": "Quranic Arabic Corpus", "url": "https://corpus.quran.com" }
+      ]
+    },
+    {
+      "id": "amthal-04-good-tree",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": { "en": "Parables of the Quran · 4", "de": "Gleichnisse des Korans · 4", "ar": "أمثال القرآن · ٤" },
+        "title": { "en": "The good word: a tree with deep roots", "de": "Das gute Wort: ein Baum mit tiefen Wurzeln", "ar": "الكلمة الطيبة: شجرة راسخة الجذور" },
+        "sub": { "en": "Rooted in the heart, rising to the sky, bearing fruit in every season", "de": "Im Herzen verwurzelt, zum Himmel aufsteigend, fruchtbar zu jeder Zeit", "ar": "جذور في القلب، وفروع نحو السماء، وثمر في كل موسم" },
+        "arabic": "الكلمة الطيبة"
+      },
+      "slides": [
+        {
+          "verse": "14:24-25",
+          "check": "good tree",
+          "title": { "en": "The image", "de": "Das Bild", "ar": "الصورة" },
+          "body": { "en": "Three parts of one tree: a firm root, branches reaching up, and fruit that never stops coming.", "de": "Drei Teile eines Baumes: eine feste Wurzel, Zweige, die nach oben reichen, und Früchte, die nie ausbleiben.", "ar": "ثلاثة أجزاء لشجرة واحدة: أصل ثابت، وفروع ممتدة إلى العلو، وثمر لا ينقطع." }
+        },
+        {
+          "title": { "en": "What is the good word?", "de": "Was ist das gute Wort?", "ar": "ما الكلمة الطيبة؟" },
+          "body": { "en": "Ibn Abbas and many after him explain it as the testimony that there is no god but Allah. Others include every good word: truth, kindness, a reminder of Allah.", "de": "Ibn Abbas und viele nach ihm deuten es als das Bekenntnis, dass es keinen Gott außer Allah gibt. Andere schließen jedes gute Wort ein: Wahrheit, Freundlichkeit, eine Erinnerung an Allah.", "ar": "فسّرها ابن عباس وكثيرون بعده بشهادة أن لا إله إلا الله، وأدخل غيرهم فيها كل كلمة طيبة: الصدق واللطف والتذكير بالله." }
+        },
+        {
+          "title": { "en": "Root, branch and fruit", "de": "Wurzel, Zweig und Frucht", "ar": "الأصل والفرع والثمر" },
+          "body": { "en": "Commentators read the parts like this: the root is faith settled in the heart, the branches are deeds rising to Allah, and the fruit is the good that keeps coming in every season of life.", "de": "Die Kommentatoren lesen die Teile so: Die Wurzel ist der Glaube, der im Herzen ruht, die Zweige sind Taten, die zu Allah aufsteigen, und die Frucht ist das Gute, das in jeder Lebenszeit weiter wächst.", "ar": "يقرأ المفسرون أجزاءها هكذا: الأصل إيمان مستقر في القلب، والفروع أعمال صاعدة إلى الله، والثمر خير متجدد في كل مواسم العمر." }
+        },
+        {
+          "hadith": "bukhari:72",
+          "check": "date-palm tree",
+          "title": { "en": "The tree that resembles a Muslim", "de": "Der Baum, der einem Muslim gleicht", "ar": "شجرة تشبه المسلم" },
+          "body": { "en": "Ibn Umar was the youngest present and kept quiet. Ibn Kathir cites this hadith when he explains the good tree.", "de": "Ibn Umar war der Jüngste und schwieg. Ibn Kathir führt diesen Hadith bei der Erklärung des guten Baumes an.", "ar": "كان ابن عمر أصغر الحاضرين فسكت. ويورد ابن كثير هذا الحديث في تفسير الشجرة الطيبة." }
+        },
+        {
+          "verse": "14:27",
+          "check": "firm word",
+          "title": { "en": "Firm when it matters most", "de": "Standhaft, wenn es darauf ankommt", "ar": "ثبات عند الشدائد" },
+          "body": { "en": "The tree that stands in the storm is the believer whom Allah keeps steady, in this life and, as a hadith in al-Bukhari explains, in the grave.", "de": "Der Baum, der im Sturm steht, ist der Gläubige, den Allah festigt, in diesem Leben und, wie ein Hadith bei al-Bukhari erklärt, im Grab.", "ar": "الشجرة الثابتة في العاصفة هي المؤمن الذي يثبّته الله في حياته، وفي قبره كما بيّن حديث في صحيح البخاري." }
+        },
+        {
+          "title": { "en": "Growing your own good tree", "de": "Ihren eigenen guten Baum pflanzen", "ar": "ازرع شجرتك الطيبة" },
+          "list": {
+            "en": ["Water the root: renew your faith in quiet moments", "Let deeds grow from it: prayer, honesty, service", "Give fruit to others: a kind word costs nothing", "Be patient: trees grow slowly and last long"],
+            "de": ["Gießen Sie die Wurzel: Erneuern Sie Ihren Glauben in stillen Momenten", "Lassen Sie Taten daraus wachsen: Gebet, Ehrlichkeit, Dienst", "Schenken Sie anderen Früchte: Ein gutes Wort kostet nichts", "Seien Sie geduldig: Bäume wachsen langsam und leben lange"],
+            "ar": ["اسقِ الجذر: جدّد إيمانك في لحظات الخلوة", "دع الأعمال تنمو منه: صلاة وصدق وخدمة", "أطعم الناس من ثمرك: الكلمة الطيبة لا تكلّف شيئًا", "اصبر: الأشجار تنمو ببطء وتعيش طويلًا"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 14:24-27", "url": "https://quran.com/14:24/tafsirs/en-tafisr-ibn-kathir" }
+      ]
+    },
+    {
+      "id": "amthal-05-bad-tree",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": { "en": "Parables of the Quran · 5", "de": "Gleichnisse des Korans · 5", "ar": "أمثال القرآن · ٥" },
+        "title": { "en": "The bad tree: words without roots", "de": "Der schlechte Baum: Worte ohne Wurzeln", "ar": "الشجرة الخبيثة: كلمة بلا جذور" },
+        "sub": { "en": "Why falsehood can spread fast and still never stand", "de": "Warum sich Falsches schnell verbreiten kann und doch nie Bestand hat", "ar": "لماذا ينتشر الباطل سريعًا ثم لا يثبت" },
+        "arabic": "الكلمة الخبيثة"
+      },
+      "slides": [
+        {
+          "verse": "14:26",
+          "check": "bad tree",
+          "title": { "en": "The other tree", "de": "Der andere Baum", "ar": "الشجرة الأخرى" },
+          "body": { "en": "Right after the good tree comes its opposite. The contrast is the lesson: one is rooted deep, the other lies loose on the surface.", "de": "Direkt nach dem guten Baum folgt sein Gegenteil. Der Kontrast ist die Lehre: Der eine wurzelt tief, der andere liegt lose an der Oberfläche.", "ar": "بعد الشجرة الطيبة مباشرة يأتي نقيضها، والمقابلة هي الدرس: هذه راسخة في العمق، وتلك ملقاة على السطح." }
+        },
+        {
+          "title": { "en": "What is the bad word?", "de": "Was ist das schlechte Wort?", "ar": "ما الكلمة الخبيثة؟" },
+          "body": { "en": "Ibn Kathir explains it as the word of disbelief, which has no root and no stability. Its lesson reaches every false and harmful word: lies, slander, mockery, empty promises.", "de": "Ibn Kathir erklärt es als das Wort des Unglaubens, das weder Wurzel noch Halt hat. Die Lehre reicht bis zu jedem falschen und schädlichen Wort: Lügen, Verleumdung, Spott, leere Versprechen.", "ar": "يفسّرها ابن كثير بكلمة الكفر التي لا أصل لها ولا ثبات، وتمتد العبرة إلى كل كلمة باطلة مؤذية: الكذب والبهتان والسخرية والوعود الكاذبة." }
+        },
+        {
+          "title": { "en": "A bitter plant", "de": "Eine bittere Pflanze", "ar": "نبتة مُرّة" },
+          "arabic": "الحَنْظَل",
+          "body": { "en": "The Companion Anas ibn Malik, as Ibn Kathir reports, named the colocynth, a desert vine that creeps along the ground. It looks green and full, but its fruit is bitter.", "de": "Der Prophetengefährte Anas ibn Malik nannte, wie Ibn Kathir berichtet, die Koloquinte, eine Wüstenranke, die am Boden entlangkriecht. Sie wirkt grün und üppig, doch ihre Frucht ist bitter.", "ar": "سمّاها الصحابي أنس بن مالك، فيما ينقله ابن كثير، الحنظل، وهو نبات صحراوي يمتد على وجه الأرض، يبدو أخضر ممتلئًا وثمره مُرّ." }
+        },
+        {
+          "title": { "en": "Fast to spread, quick to fall", "de": "Schnell verbreitet, schnell gefallen", "ar": "سريعة الانتشار، سريعة السقوط" },
+          "body": { "en": "A rumour can travel across the world in an hour. But like a plant pulled out of the topsoil, falsehood has nothing to hold it. Commentators note: no root below, no rise above.", "de": "Ein Gerücht kann in einer Stunde um die Welt gehen. Doch wie eine Pflanze, die aus der obersten Erdschicht gerissen wird, hat das Falsche nichts, das es hält. Die Kommentatoren sagen: keine Wurzel unten, kein Aufstieg oben.", "ar": "قد تطوف الشائعة العالم في ساعة، لكن الباطل كنبتة اقتُلعت من سطح التربة، لا شيء يمسكه. ويقول المفسرون: لا أصل له في الأسفل، ولا صعود له إلى الأعلى." }
+        },
+        {
+          "verse": "17:53",
+          "check": "that which is best",
+          "title": { "en": "Choose the best word", "de": "Wählen Sie das beste Wort", "ar": "اختر أحسن الكلام" },
+          "body": { "en": "Speech can plant either tree. The Quran asks for the best word, because harsh words open a door to discord.", "de": "Rede kann jeden der beiden Bäume pflanzen. Der Koran fordert das beste Wort, denn harte Worte öffnen dem Zwist die Tür.", "ar": "الكلام يغرس إحدى الشجرتين، والقرآن يدعو إلى أحسن القول، لأن الكلمة الجافية تفتح باب الشقاق." }
+        },
+        {
+          "title": { "en": "Before you speak or post", "de": "Bevor Sie sprechen oder posten", "ar": "قبل أن تتكلم أو تنشر" },
+          "list": {
+            "en": ["Is it true, and can I prove it?", "Is it kind, or does it wound?", "Does it need to be said by me, and now?", "Would I be glad to meet it on the Last Day?"],
+            "de": ["Ist es wahr, und kann ich es belegen?", "Ist es freundlich, oder verletzt es?", "Muss gerade ich es sagen, und gerade jetzt?", "Würde ich mich freuen, ihm am Jüngsten Tag wiederzubegegnen?"],
+            "ar": ["هل هو صدق، وهل عندي دليل عليه؟", "هل هو لطيف أم جارح؟", "هل يلزم أن أقوله أنا، والآن؟", "هل يسرّني أن ألقاه يوم القيامة؟"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 14:26", "url": "https://quran.com/14:26/tafsirs/en-tafisr-ibn-kathir" }
+      ]
+    },
+    {
+      "id": "amthal-06-mirage-and-darkness",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": { "en": "Parables of the Quran · 6", "de": "Gleichnisse des Korans · 6", "ar": "أمثال القرآن · ٦" },
+        "title": { "en": "The mirage and the dark sea", "de": "Die Fata Morgana und das dunkle Meer", "ar": "السراب والبحر المظلم" },
+        "sub": { "en": "Two pictures of deeds without faith: water that is not there, and a night without light", "de": "Zwei Bilder für Taten ohne Glauben: Wasser, das nicht da ist, und eine Nacht ohne Licht", "ar": "صورتان لأعمال بلا إيمان: ماء لا وجود له، وليل بلا نور" },
+        "arabic": "السَّراب"
+      },
+      "slides": [
+        {
+          "title": { "en": "Two parables side by side", "de": "Zwei Gleichnisse nebeneinander", "ar": "مثلان متجاوران" },
+          "body": { "en": "A few verses after the verse of light, Surah an-Nur shows what life looks like without that light. One image is set in a burning desert, the other in the depths of the sea.", "de": "Wenige Verse nach dem Lichtvers zeigt Sure an-Nur, wie das Leben ohne dieses Licht aussieht. Ein Bild spielt in einer glühenden Wüste, das andere in der Tiefe des Meeres.", "ar": "بعد آية النور بآيات قليلة تُري سورة النور الحياة بلا ذلك النور: صورة في صحراء لاهبة، وأخرى في أعماق البحر." }
+        },
+        {
+          "verse": "24:39",
+          "check": "mirage",
+          "title": { "en": "The mirage", "de": "Die Fata Morgana", "ar": "السراب" },
+          "body": { "en": "The thirsty traveller runs toward water and finds nothing. Deeds without faith can look full of promise, until the moment they are needed.", "de": "Der durstige Reisende läuft auf Wasser zu und findet nichts. Taten ohne Glauben können vielversprechend wirken, bis zu dem Moment, in dem man sie braucht.", "ar": "يجري العطشان نحو الماء فلا يجد شيئًا. وكذلك الأعمال بلا إيمان، تبدو واعدة حتى ساعة الحاجة إليها." }
+        },
+        {
+          "verse": "24:40",
+          "check": "darknesses",
+          "title": { "en": "The dark sea", "de": "Das dunkle Meer", "ar": "البحر المظلم" },
+          "body": { "en": "Layer upon layer of darkness: the deep, waves, more waves, clouds. A person cannot even make out his own hand.", "de": "Dunkelheit über Dunkelheit: die Tiefe, Wellen, noch mehr Wellen, Wolken. Man kann nicht einmal die eigene Hand erkennen.", "ar": "طبقات من الظلام: عمق البحر، فموج، فموج آخر، فسحاب، حتى تخفى على المرء يده." }
+        },
+        {
+          "title": { "en": "Two kinds of people", "de": "Zwei Arten von Menschen", "ar": "صنفان من الناس" },
+          "body": { "en": "Ibn Kathir reads the first image as someone sure he is right while he is lost, and the second as someone who simply follows others in the dark, unaware. Both lack the same thing: light.", "de": "Ibn Kathir deutet das erste Bild als jemanden, der sich im Recht glaubt, während er in die Irre geht, und das zweite als jemanden, der anderen im Dunkeln einfach folgt, ohne es zu merken. Beiden fehlt dasselbe: Licht.", "ar": "يرى ابن كثير أن الصورة الأولى لمن يظن نفسه على حق وهو ضال، والثانية لمن يتبع غيره في الظلام وهو لا يدري. وكلاهما يفقد الشيء نفسه: النور." }
+        },
+        {
+          "title": { "en": "The source of light", "de": "Die Quelle des Lichts", "ar": "مصدر النور" },
+          "body": { "en": "The passage closes by naming the true source of light: Allah alone. Light is not produced by effort alone. It is a gift to ask for, again and again.", "de": "Der Abschnitt endet, indem er die wahre Quelle des Lichts nennt: Allah allein. Licht entsteht nicht durch Anstrengung allein. Es ist ein Geschenk, um das man immer wieder bittet.", "ar": "يُختم المقطع بذكر المصدر الحق للنور: الله وحده. فالنور لا يصنعه الجهد وحده، بل هو عطاء يُسأل مرة بعد مرة." }
+        },
+        {
+          "title": { "en": "Turning toward the light", "de": "Sich dem Licht zuwenden", "ar": "التوجه إلى النور" },
+          "list": {
+            "en": ["Check your intention: for whom am I doing this?", "Learn before you follow, and ask those who know", "Ask Allah for light in your heart and on your path", "Do not trust appearances, in yourself or in others"],
+            "de": ["Prüfen Sie Ihre Absicht: Für wen tue ich das?", "Lernen Sie, bevor Sie folgen, und fragen Sie die Wissenden", "Bitten Sie Allah um Licht im Herzen und auf Ihrem Weg", "Trauen Sie dem Schein nicht, weder bei sich noch bei anderen"],
+            "ar": ["راجع نيتك: لمن أعمل هذا؟", "تعلّم قبل أن تتبع، واسأل أهل العلم", "اسأل الله نورًا في قلبك وطريقك", "لا تغترّ بالمظاهر، في نفسك ولا في غيرك"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 24:39-40", "url": "https://quran.com/24:39/tafsirs/en-tafisr-ibn-kathir" }
+      ]
+    },
+    {
+      "id": "amthal-07-fire-and-storm",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": { "en": "Parables of the Quran · 7", "de": "Gleichnisse des Korans · 7", "ar": "أمثال القرآن · ٧" },
+        "title": { "en": "The fire and the storm", "de": "Das Feuer und das Unwetter", "ar": "النار والمطر العاصف" },
+        "sub": { "en": "At the start of al-Baqara, two images describe a heart that sees the light and then loses it", "de": "Am Anfang von al-Baqara beschreiben zwei Bilder ein Herz, das das Licht sieht und es dann verliert", "ar": "في أول سورة البقرة صورتان لقلب يرى النور ثم يفقده" },
+        "arabic": "مَثَلُ المنافقين"
+      },
+      "slides": [
+        {
+          "title": { "en": "Who is described here", "de": "Wer hier beschrieben wird", "ar": "من الموصوفون هنا؟" },
+          "body": { "en": "Al-Baqara opens with three groups: the believers, those who reject openly, and the hypocrites, who claim faith without holding it. For the third group the Quran gives two parables.", "de": "Al-Baqara beginnt mit drei Gruppen: den Gläubigen, denen, die offen ablehnen, und den Heuchlern, die Glauben bekunden, ohne ihn zu haben. Für die dritte Gruppe gibt der Koran zwei Gleichnisse.", "ar": "تبدأ سورة البقرة بثلاث فئات: المؤمنين، والجاحدين جهرًا، والمنافقين الذين يُظهرون إيمانًا لا يحملونه. وللفئة الثالثة يضرب القرآن مثلين." }
+        },
+        {
+          "verse": "2:17-18",
+          "check": "kindled a fire",
+          "title": { "en": "The fire that went out", "de": "Das Feuer, das erlosch", "ar": "النار التي انطفأت" },
+          "body": { "en": "He lit a fire and could see for a moment. Then the light was gone, and the darkness felt deeper than before.", "de": "Er entfachte ein Feuer und konnte für einen Augenblick sehen. Dann war das Licht fort, und die Dunkelheit wirkte tiefer als zuvor.", "ar": "أوقد نارًا فأبصر لحظة، ثم ذهب الضوء، فبدت الظلمة أشد مما كانت." }
+        },
+        {
+          "title": { "en": "Light seen, then lost", "de": "Licht gesehen, dann verloren", "ar": "نور رأوه ثم فقدوه" },
+          "body": { "en": "Ibn Kathir explains: these people met the light of faith, at least outwardly, then turned away. The loss is heavier than never having seen, because they knew the way.", "de": "Ibn Kathir erklärt: Diese Menschen begegneten dem Licht des Glaubens, zumindest äußerlich, und wandten sich dann ab. Der Verlust wiegt schwerer, als nie gesehen zu haben, denn sie kannten den Weg.", "ar": "يبيّن ابن كثير أن هؤلاء عرفوا نور الإيمان ولو في الظاهر ثم أعرضوا، فخسارتهم أثقل ممن لم يرَ قط، لأنهم عرفوا الطريق." }
+        },
+        {
+          "verse": "2:19",
+          "check": "thunder and lightning",
+          "title": { "en": "Caught in the storm", "de": "Im Unwetter", "ar": "في قلب العاصفة" },
+          "body": { "en": "A downpour at night: darkness, thunder, lightning. Out of fear they block their ears instead of seeking shelter.", "de": "Ein Regenguss in der Nacht: Dunkelheit, Donner, Blitze. Aus Angst halten sie sich die Ohren zu, statt Schutz zu suchen.", "ar": "مطر غزير في الليل: ظلمة ورعد وبرق، يسدّون آذانهم خوفًا بدل أن يلتمسوا مأوى." }
+        },
+        {
+          "verse": "2:20",
+          "check": "lightning",
+          "title": { "en": "Walking only in the flash", "de": "Nur gehen, wenn es blitzt", "ar": "سير على ضوء البرق وحده" },
+          "body": { "en": "Ibn Kathir reads the darkness as doubt, the thunder as fear and the lightning as flashes of faith. They walk only while it suits them.", "de": "Ibn Kathir deutet die Finsternis als Zweifel, den Donner als Angst und die Blitze als aufleuchtenden Glauben. Sie gehen nur, solange es ihnen passt.", "ar": "يفسّر ابن كثير الظلمات بالشكوك، والرعد بالخوف، والبرق بلمعات الإيمان. وهم لا يسيرون إلا ما دام ذلك يوافقهم." }
+        },
+        {
+          "title": { "en": "A mirror, not a label", "de": "Ein Spiegel, kein Etikett", "ar": "مرآة لا تهمة" },
+          "list": {
+            "en": ["Read these verses about yourself first, not about others", "Keep your faith steady in calm and in storm", "Let warnings lead you to shelter, not to cover your ears", "Ask Allah for a heart that is the same in private and public"],
+            "de": ["Lesen Sie diese Verse zuerst über sich selbst, nicht über andere", "Bleiben Sie im Glauben beständig, bei Ruhe und im Sturm", "Lassen Sie sich von Warnungen zum Schutz führen, statt die Ohren zu verschließen", "Bitten Sie Allah um ein Herz, das im Verborgenen und öffentlich gleich ist"],
+            "ar": ["اقرأ هذه الآيات على نفسك أولًا لا على غيرك", "اثبت على إيمانك في السكون وفي العاصفة", "دع النذير يقودك إلى المأوى لا إلى سدّ أذنيك", "اسأل الله قلبًا واحدًا في السر والعلن"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 2:17-20", "url": "https://quran.com/2:17/tafsirs/en-tafisr-ibn-kathir" }
+      ]
+    },
+    {
+      "id": "amthal-08-mosquito",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": { "en": "Parables of the Quran · 8", "de": "Gleichnisse des Korans · 8", "ar": "أمثال القرآن · ٨" },
+        "title": { "en": "The mosquito: no example is too small", "de": "Die Mücke: Kein Beispiel ist zu klein", "ar": "البعوضة: لا مثل أصغر من أن يُضرب" },
+        "sub": { "en": "Why the Quran speaks of the tiniest creatures, and why one image guides some and not others", "de": "Warum der Koran von den kleinsten Geschöpfen spricht und warum dasselbe Bild die einen leitet und die anderen nicht", "ar": "لماذا يذكر القرآن أصغر المخلوقات، ولماذا يهتدي بالمثل نفسه قوم ويضل آخرون" },
+        "arabic": "البَعُوضة"
+      },
+      "slides": [
+        {
+          "verse": "2:26",
+          "check": "mosquito",
+          "title": { "en": "Not too small for a lesson", "de": "Nicht zu klein für eine Lehre", "ar": "ليست أصغر من أن تُعلّم" },
+          "body": { "en": "The word ba'uda, mosquito, occurs only here in the whole Quran.", "de": "Das Wort ba'uda, Mücke, kommt im ganzen Koran nur hier vor.", "ar": "لا ترد كلمة «بعوضة» في القرآن كله إلا في هذا الموضع." }
+        },
+        {
+          "title": { "en": "The background", "de": "Der Hintergrund", "ar": "خلفية الآية" },
+          "body": { "en": "Early commentators report two backgrounds. Some say people mocked the parables of fire and rain just before it. Others say they mocked the mention of the spider and the fly.", "de": "Frühe Kommentatoren berichten von zwei Hintergründen. Manche sagen, man habe über die Gleichnisse von Feuer und Regen kurz davor gespottet. Andere sagen, über die Erwähnung von Spinne und Fliege.", "ar": "ينقل المفسرون الأوائل سببين: قيل إن بعضهم سخر من مثلَي النار والمطر قبلها، وقيل سخروا من ذكر العنكبوت والذباب." }
+        },
+        {
+          "title": { "en": "Small in size, great as a sign", "de": "Klein an Größe, groß als Zeichen", "ar": "صغيرة الحجم عظيمة الدلالة" },
+          "body": { "en": "A mosquito finds its way, senses warmth, flies and feeds, all in a body you can barely see. To a reflective eye, the smallest creature points to the Creator as clearly as a mountain.", "de": "Eine Mücke findet ihren Weg, spürt Wärme, fliegt und nährt sich, alles in einem Körper, den man kaum sieht. Für ein nachdenkliches Auge weist das kleinste Geschöpf so deutlich auf den Schöpfer wie ein Berg.", "ar": "البعوضة تهتدي إلى طريقها، وتحسّ بالدفء، وتطير وتتغذى، في جسم لا يكاد يُرى. وفي عين المتأمل يدل أصغر مخلوق على الخالق كما يدل الجبل." }
+        },
+        {
+          "title": { "en": "Smaller, or larger?", "de": "Kleiner oder größer?", "ar": "أصغر منها أم أكبر؟" },
+          "body": { "en": "The Arabic speaks of 'what is above it'. Scholars understood this in two ways: something even smaller and more insignificant, or something larger. That is why translations differ here.", "de": "Im Arabischen ist von dem die Rede, „was darüber ist“. Die Gelehrten verstanden das auf zwei Weisen: etwas noch Kleineres und Geringeres oder etwas Größeres. Deshalb unterscheiden sich die Übersetzungen hier.", "ar": "تقول الآية «فما فوقها»، وفهمها العلماء على وجهين: ما هو أصغر منها وأحقر، أو ما هو أكبر منها. ولذلك تختلف الترجمات هنا." }
+        },
+        {
+          "title": { "en": "One parable, two responses", "de": "Ein Gleichnis, zwei Antworten", "ar": "مثل واحد واستجابتان" },
+          "body": { "en": "The same image leads many to guidance and leaves many astray. The difference lies not in the parable but in the heart that hears it: humble and searching, or proud and looking for faults.", "de": "Dasselbe Bild führt viele zur Rechtleitung und lässt viele in die Irre gehen. Der Unterschied liegt nicht im Gleichnis, sondern im Herzen, das es hört: demütig und suchend oder hochmütig und auf Fehlersuche.", "ar": "المثل الواحد يهتدي به كثيرون ويضل به كثيرون، والفرق ليس في المثل بل في القلب السامع: متواضع باحث، أو متكبر يتصيّد العيوب." }
+        },
+        {
+          "title": { "en": "Learning from small things", "de": "Von kleinen Dingen lernen", "ar": "دروس من الصغائر" },
+          "list": {
+            "en": ["Never mock what you do not yet understand", "Look for the lesson before the flaw", "Notice the small signs around you today", "Do not belittle a small good deed"],
+            "de": ["Spotten Sie nie über das, was Sie noch nicht verstehen", "Suchen Sie die Lehre, bevor Sie den Fehler suchen", "Achten Sie heute auf die kleinen Zeichen um Sie herum", "Unterschätzen Sie keine kleine gute Tat"],
+            "ar": ["لا تسخر مما لم تفهمه بعد", "ابحث عن العبرة قبل العيب", "انتبه اليوم للآيات الصغيرة من حولك", "لا تحقرنّ عملًا صالحًا صغيرًا"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 2:26", "url": "https://quran.com/2:26/tafsirs/en-tafisr-ibn-kathir" },
+        { "label": "Quranic Arabic Corpus", "url": "https://corpus.quran.com" }
+      ]
+    },
+    {
+      "id": "amthal-09-donkey-and-books",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": { "en": "Parables of the Quran · 9", "de": "Gleichnisse des Korans · 9", "ar": "أمثال القرآن · ٩" },
+        "title": { "en": "The donkey and the books: knowledge you do not live", "de": "Der Esel und die Bücher: Wissen, das man nicht lebt", "ar": "الحمار والأسفار: علم بلا عمل" },
+        "sub": { "en": "A sharp image for anyone who carries a scripture but not its message, readers of the Quran included", "de": "Ein scharfes Bild für jeden, der eine Schrift trägt, aber nicht ihre Botschaft, auch für Leser des Korans", "ar": "صورة حادة لكل من يحمل كتابًا ولا يحمل رسالته، ومنهم قرّاء القرآن" },
+        "arabic": "الأَسْفار"
+      },
+      "slides": [
+        {
+          "verse": "62:5",
+          "check": "donkey",
+          "title": { "en": "The parable", "de": "Das Gleichnis", "ar": "المثل" },
+          "body": { "en": "A donkey can carry the finest library and gain nothing from it. The load is heavy, the benefit is zero.", "de": "Ein Esel kann die schönste Bibliothek tragen, ohne etwas davon zu haben. Die Last ist schwer, der Nutzen gleich null.", "ar": "قد يحمل الحمار أنفس المكتبات ولا ينتفع منها بشيء: حِمل ثقيل ونفع معدوم." }
+        },
+        {
+          "title": { "en": "Two kinds of carrying", "de": "Zwei Arten zu tragen", "ar": "حملان مختلفان" },
+          "body": { "en": "The verse uses one verb twice: the Torah was given to them to carry, and then they did not carry it. Commentators explain: they held the book, but did not take up its teachings and live by them.", "de": "Der Vers verwendet ein Verb zweimal: Die Tora wurde ihnen zum Tragen gegeben, und dann trugen sie sie nicht. Die Kommentatoren erklären: Sie hielten das Buch, nahmen aber seine Lehren nicht auf und lebten nicht danach.", "ar": "تستعمل الآية فعل الحمل مرتين: أُعطوا التوراة ليحملوها، ثم تركوا حملها. ويشرح المفسرون: أمسكوا الكتاب بأيديهم، ولم يأخذوا بتعاليمه ولم يعملوا بها." }
+        },
+        {
+          "title": { "en": "A warning for every reader", "de": "Eine Mahnung für jeden Leser", "ar": "تحذير لكل قارئ" },
+          "body": { "en": "Al-Qurtubi sees in this verse a reminder for everyone who carries the Book: learn its meanings, so that the same blame does not reach you. Memorising the Quran without living it is not enough.", "de": "Al-Qurtubi sieht in diesem Vers eine Mahnung an jeden, der das Buch trägt: seine Bedeutungen zu lernen, damit ihn nicht derselbe Tadel trifft. Den Koran auswendig zu können, ohne nach ihm zu leben, genügt nicht.", "ar": "يرى القرطبي في الآية تنبيهًا لكل من حمل الكتاب أن يتعلم معانيه، لئلا يلحقه من الذم ما لحق هؤلاء. فحفظ القرآن دون العمل به لا يكفي." }
+        },
+        {
+          "title": { "en": "Respect, not mockery", "de": "Respekt statt Spott", "ar": "اعتبار لا سخرية" },
+          "body": { "en": "The point is not to look down on others. The Quran honours the Torah as guidance and light. The parable criticises a way of treating revelation, a danger for every community that receives one.", "de": "Es geht nicht darum, auf andere herabzusehen. Der Koran ehrt die Tora als Rechtleitung und Licht. Das Gleichnis kritisiert einen Umgang mit der Offenbarung, eine Gefahr für jede Gemeinschaft, die eine empfängt.", "ar": "ليس المقصود الاستعلاء على الآخرين، فالقرآن يكرّم التوراة بوصفها هدى ونورًا. وإنما ينتقد المثل طريقة في التعامل مع الوحي، وهي خطر يهدد كل أمة أوتيت كتابًا." }
+        },
+        {
+          "title": { "en": "From carrying to living", "de": "Vom Tragen zum Leben", "ar": "من الحمل إلى العمل" },
+          "body": { "en": "It is reported that many Companions learned ten verses at a time and moved on only after knowing and acting on them. Knowledge was something to live, not only to store.", "de": "Es wird berichtet, dass viele Prophetengefährten jeweils zehn Verse lernten und erst weitergingen, wenn sie sie verstanden und danach gehandelt hatten. Wissen war etwas zum Leben, nicht nur zum Aufbewahren.", "ar": "رُوي أن كثيرًا من الصحابة كانوا يتعلمون عشر آيات، ولا يتجاوزونها حتى يعلموا ما فيها ويعملوا به. فالعلم عندهم يُعاش ولا يُخزَّن فحسب." }
+        },
+        {
+          "title": { "en": "Carrying the Quran well", "de": "Den Koran gut tragen", "ar": "لتحمل القرآن حقًا" },
+          "list": {
+            "en": ["Read less if needed, but understand what you read", "Choose one verse a week to put into practice", "Let your character show what you have learned", "Ask yourself: what did this verse change in me?"],
+            "de": ["Lesen Sie notfalls weniger, aber verstehen Sie, was Sie lesen", "Wählen Sie jede Woche einen Vers, den Sie umsetzen", "Lassen Sie Ihren Charakter zeigen, was Sie gelernt haben", "Fragen Sie sich: Was hat dieser Vers in mir verändert?"],
+            "ar": ["اقرأ أقل إن لزم، لكن افهم ما تقرأ", "اختر كل أسبوع آية تعمل بها", "دع أخلاقك تُظهر ما تعلّمت", "اسأل نفسك: ماذا غيّرت فيّ هذه الآية؟"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 62:5", "url": "https://quran.com/62:5/tafsirs/en-tafisr-ibn-kathir" },
+        { "label": "Ibn al-Qayyim, al-Amthal fi al-Qur'an" },
+        { "label": "Al-Tabari, Jami' al-Bayan, introduction (learning ten verses at a time)" },
+        { "label": "al-Qurtubi, al-Jami' li-Ahkam al-Qur'an, on 62:5", "url": "https://quran.com/62:5/tafsirs/ar-tafseer-al-qurtubi" }
+      ]
+    },
+    {
+      "id": "amthal-10-seed",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": { "en": "Parables of the Quran · 10", "de": "Gleichnisse des Korans · 10", "ar": "أمثال القرآن · ١٠" },
+        "title": { "en": "One seed, seven hundred grains", "de": "Ein Korn, siebenhundert Körner", "ar": "حبة تُنبت سبعمئة حبة" },
+        "sub": { "en": "The Quran's picture of giving: what you spend for Allah does not shrink, it grows", "de": "Das Bild des Korans vom Geben: Was Sie für Allah ausgeben, schrumpft nicht, es wächst", "ar": "صورة القرآن للإنفاق: ما تنفقه لله لا ينقص بل ينمو" },
+        "arabic": "الحبة والسنابل"
+      },
+      "slides": [
+        {
+          "verse": "2:261",
+          "check": "seven spikes",
+          "title": { "en": "The parable", "de": "Das Gleichnis", "ar": "المثل" },
+          "body": { "en": "Seven ears, each with a hundred grains: seven hundred from one seed. And the verse says Allah multiplies even beyond that for whom He wills.", "de": "Sieben Ähren, jede mit hundert Körnern: siebenhundert aus einem Samen. Und der Vers sagt, dass Allah darüber hinaus vervielfacht, wem Er will.", "ar": "سبع سنابل في كل منها مئة حبة: سبعمئة من حبة واحدة، ويزيد الله فوق ذلك لمن يشاء." }
+        },
+        {
+          "title": { "en": "Why a seed?", "de": "Warum ein Samenkorn?", "ar": "لماذا الحبة؟" },
+          "body": { "en": "A farmer who sows seems to lose his grain: it disappears into the soil. Yet no one calls him a loser. Giving looks like loss in the moment and is in truth a sowing.", "de": "Ein Bauer, der sät, scheint sein Korn zu verlieren: Es verschwindet in der Erde. Doch niemand nennt ihn einen Verlierer. Geben sieht im Moment wie Verlust aus und ist in Wahrheit eine Aussaat.", "ar": "الزارع يبدو كأنه يفقد حبّه حين يدفنه في التراب، ولا يقول أحد إنه خاسر. والإنفاق يبدو خسارة في لحظته، وهو في الحقيقة زرع." }
+        },
+        {
+          "verse": "2:262",
+          "check": "reminders",
+          "title": { "en": "Protecting the harvest", "de": "Die Ernte schützen", "ar": "حفظ الحصاد" },
+          "body": { "en": "The next verse names what can spoil the harvest: reminding people of your gift, or hurting them.", "de": "Der nächste Vers nennt, was die Ernte verderben kann: Menschen an die eigene Gabe zu erinnern oder sie zu kränken.", "ar": "تذكر الآية التالية ما يفسد الحصاد: المنّ على الناس بالعطاء أو إيذاؤهم." }
+        },
+        {
+          "hadith": "bukhari:1410",
+          "check": "date-fruit",
+          "title": { "en": "Even a single date", "de": "Selbst eine einzige Dattel", "ar": "ولو تمرة واحدة" },
+          "body": { "en": "The Prophet described the same growth for a small gift from honest earnings. Its size does not limit what Allah can make of it.", "de": "Der Prophet beschrieb dasselbe Wachstum für eine kleine Gabe aus ehrlichem Verdienst. Ihre Größe begrenzt nicht, was Allah daraus machen kann.", "ar": "وصف النبي ﷺ النماء نفسه لعطية صغيرة من كسب طيب، فصغرها لا يحدّ ما يصنعه الله منها." }
+        },
+        {
+          "title": { "en": "Not only money", "de": "Nicht nur Geld", "ar": "ليس المال وحده" },
+          "body": { "en": "The verse speaks of wealth, yet the same lesson holds for every gift made for Allah's sake: time, knowledge, a skill, patient care. Whatever is given sincerely is a seed.", "de": "Der Vers spricht von Vermögen, doch dieselbe Lehre gilt für jede Gabe um Allahs willen: Zeit, Wissen, ein Können, geduldige Fürsorge. Was aufrichtig gegeben wird, ist ein Samenkorn.", "ar": "تتحدث الآية عن المال، لكن الدرس نفسه يصدق على كل عطاء لوجه الله: الوقت والعلم والمهارة والرعاية الصابرة. فكل ما يُعطى بإخلاص بذرة." }
+        },
+        {
+          "title": { "en": "Sowing today", "de": "Heute säen", "ar": "ازرع اليوم" },
+          "list": {
+            "en": ["Give something small, regularly and quietly", "Give from honest earnings", "Never remind anyone of what you gave", "Let go of the result: the growth belongs to Allah"],
+            "de": ["Geben Sie etwas Kleines, regelmäßig und still", "Geben Sie aus ehrlichem Verdienst", "Erinnern Sie niemanden an das, was Sie gegeben haben", "Lassen Sie das Ergebnis los: Das Wachstum liegt bei Allah"],
+            "ar": ["أعطِ شيئًا صغيرًا بانتظام وفي خفاء", "أنفق من كسب حلال", "لا تذكّر أحدًا بما أعطيته", "اترك النتيجة لله، فالنماء بيده"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 2:261-262", "url": "https://quran.com/2:261/tafsirs/en-tafisr-ibn-kathir" }
+      ]
+    },
+    {
+      "id": "amthal-11-garden-on-a-hill",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": { "en": "Parables of the Quran · 11", "de": "Gleichnisse des Korans · 11", "ar": "أمثال القرآن · ١١" },
+        "title": { "en": "The garden on the hill", "de": "Der Garten auf der Anhöhe", "ar": "البستان على الربوة" },
+        "sub": { "en": "Sincere giving bears fruit in heavy rain and in light drizzle, and a second garden shows how it can be lost", "de": "Aufrichtiges Geben trägt Frucht bei starkem Regen und bei leichtem Niesel, und ein zweiter Garten zeigt, wie es verloren gehen kann", "ar": "العطاء الصادق يثمر في المطر الغزير وفي الرذاذ، وبستان آخر يُري كيف يضيع" },
+        "arabic": "الرَّبْوة"
+      },
+      "slides": [
+        {
+          "verse": "2:265",
+          "check": "garden on high ground",
+          "title": { "en": "The parable", "de": "Das Gleichnis", "ar": "المثل" },
+          "body": { "en": "A garden on raised ground: good soil, open air, full sun. Heavy rain doubles its fruit, and even light rain is enough.", "de": "Ein Garten auf einer Anhöhe: guter Boden, freie Luft, volle Sonne. Starker Regen verdoppelt seine Früchte, und selbst leichter Regen genügt.", "ar": "بستان على مرتفع: تربة طيبة وهواء طلق وشمس وافرة، يضاعف المطر الغزير ثمره، ويكفيه المطر الخفيف." }
+        },
+        {
+          "title": { "en": "Why they give", "de": "Warum sie geben", "ar": "لماذا يعطون" },
+          "body": { "en": "These givers seek Allah's pleasure, with hearts that are firm inside. Commentators explain: they give with certainty that Allah will reward them, not to be seen by people.", "de": "Diese Gebenden suchen Allahs Wohlgefallen, mit Herzen, die innerlich gefestigt sind. Die Kommentatoren erklären: Sie geben in der Gewissheit, dass Allah sie belohnt, nicht um von Menschen gesehen zu werden.", "ar": "يبتغي هؤلاء رضا الله، وقلوبهم ثابتة من داخلها. ويشرح المفسرون: ينفقون موقنين بأن الله يجزيهم، لا ليراهم الناس." }
+        },
+        {
+          "title": { "en": "Heavy rain and light drizzle", "de": "Starker Regen und leichter Niesel", "ar": "الوابل والطلّ" },
+          "arabic": "وابِلٌ وطَلّ",
+          "body": { "en": "Ibn Kathir explains: like this garden, a believer's good deeds never go barren. A large gift is like the heavy rain, a small one like the drizzle. On good ground, both are enough.", "de": "Ibn Kathir erklärt: Wie dieser Garten bleiben die guten Taten eines Gläubigen nie unfruchtbar. Eine große Gabe gleicht dem starken Regen, eine kleine dem Niesel. Auf gutem Boden genügt beides.", "ar": "يبيّن ابن كثير أن عمل المؤمن كهذا البستان لا يبور أبدًا. فالعطاء الكبير كالوابل، والقليل كالطلّ، وعلى الأرض الطيبة يكفي كلاهما." }
+        },
+        {
+          "verse": "2:266",
+          "check": "whirlwind",
+          "title": { "en": "The garden that burned", "de": "Der Garten, der verbrannte", "ar": "البستان الذي احترق" },
+          "body": { "en": "Its opposite follows. In al-Bukhari, Ibn Abbas explains it to Umar: good deeds later undone by sins, lost when they are needed most.", "de": "Es folgt das Gegenteil. Bei al-Bukhari erklärt Ibn Abbas es Umar: gute Taten, später durch Sünden zunichtegemacht, verloren, wenn man sie am meisten braucht.", "ar": "تليها صورة نقيضة، فسّرها ابن عباس لعمر فيما رواه البخاري بأعمال صالحة تمحوها المعاصي بعدها، فتضيع حين تشتد الحاجة إليها." }
+        },
+        {
+          "title": { "en": "What makes the ground good", "de": "Was den Boden gut macht", "ar": "ما الذي يطيّب الأرض؟" },
+          "body": { "en": "The difference between the two gardens is not the rain but the ground, and what happens afterwards. Sincerity is the soil. Patience and protecting your deeds keep the harvest safe.", "de": "Der Unterschied zwischen den beiden Gärten liegt nicht im Regen, sondern im Boden und in dem, was danach geschieht. Aufrichtigkeit ist der Boden. Geduld und der Schutz der eigenen Taten bewahren die Ernte.", "ar": "الفرق بين البستانين ليس في المطر، بل في الأرض وفيما يأتي بعد ذلك: الإخلاص هو التربة، والصبر وحفظ الأعمال يصونان الحصاد." }
+        },
+        {
+          "title": { "en": "Tending your garden", "de": "Ihren Garten pflegen", "ar": "اعتنِ ببستانك" },
+          "list": {
+            "en": ["Give, even when you can only give a little", "Renew your intention before and after giving", "Keep some good deeds secret between you and Allah", "Guard your deeds: do not undo them with harm"],
+            "de": ["Geben Sie, auch wenn Sie nur wenig geben können", "Erneuern Sie Ihre Absicht vor und nach dem Geben", "Halten Sie manche guten Taten geheim zwischen sich und Allah", "Schützen Sie Ihre Taten: Machen Sie sie nicht durch Kränkung zunichte"],
+            "ar": ["أعطِ ولو لم تملك إلا القليل", "جدّد نيتك قبل العطاء وبعده", "اجعل بعض عملك سرًّا بينك وبين الله", "احفظ عملك ولا تُفسده بالأذى"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 2:265-266", "url": "https://quran.com/2:265/tafsirs/en-tafisr-ibn-kathir" },
+        { "label": "Sahih al-Bukhari, Book of Tafsir, on 2:266 (Umar and Ibn Abbas)", "url": "https://sunnah.com/bukhari:4538" }
+      ]
+    },
+    {
+      "id": "amthal-12-smooth-rock",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": { "en": "Parables of the Quran · 12", "de": "Gleichnisse des Korans · 12", "ar": "أمثال القرآن · ١٢" },
+        "title": { "en": "Dust on a smooth rock", "de": "Staub auf glattem Fels", "ar": "تراب على صخرة ملساء" },
+        "sub": { "en": "How a good deed can be washed away: the image for charity spoiled by reminders and showing off", "de": "Wie eine gute Tat weggespült werden kann: das Bild für Gaben, die durch Vorhaltungen und Zurschaustellung verdorben werden", "ar": "كيف تذهب الصدقة هدرًا: صورة العطاء الذي يفسده المنّ والرياء" },
+        "arabic": "الصَّفْوان"
+      },
+      "slides": [
+        {
+          "verse": "2:264",
+          "check": "smooth stone",
+          "title": { "en": "The parable", "de": "Das Gleichnis", "ar": "المثل" },
+          "body": { "en": "Safwan is a smooth, hard rock. The word occurs only here in the Quran.", "de": "Safwan ist ein glatter, harter Fels. Das Wort kommt im Koran nur hier vor.", "ar": "الصفوان حجر أملس صلب، ولا ترد الكلمة في القرآن إلا هنا." }
+        },
+        {
+          "title": { "en": "Picture it", "de": "Stellen Sie es sich vor", "ar": "تخيّل المشهد" },
+          "body": { "en": "A thin layer of soil lies on a rock. From a distance it looks like a field ready for seed. Then heavy rain falls, washes the soil away and leaves the stone bare. Nothing can grow there.", "de": "Eine dünne Erdschicht liegt auf einem Felsen. Von weitem sieht es aus wie ein Feld, bereit für die Saat. Dann fällt starker Regen, spült die Erde fort und lässt den Stein nackt zurück. Nichts kann dort wachsen.", "ar": "طبقة رقيقة من التراب على صخرة، تبدو من بعيد أرضًا صالحة للزرع. ثم ينزل مطر غزير فيجرف التراب ويترك الحجر عاريًا لا ينبت شيئًا." }
+        },
+        {
+          "title": { "en": "Three things that wash it away", "de": "Drei Dinge, die sie wegspülen", "ar": "ثلاثة أمور تُذهبها" },
+          "body": { "en": "The verse names them: reminding people of your gift, hurting them with words or looks, and giving in order to be seen. Underneath, the heart was hard like the rock, with only a thin layer of good on top.", "de": "Der Vers nennt sie: Menschen an die eigene Gabe zu erinnern, sie mit Worten oder Blicken zu verletzen und zu geben, um gesehen zu werden. Darunter war das Herz hart wie der Fels, mit nur einer dünnen Schicht Gutem obenauf.", "ar": "تذكرها الآية: المنّ على الناس بالعطاء، وإيذاؤهم بالقول أو النظرة، والإنفاق رياءً. وتحت ذلك قلب قاسٍ كالصخر، عليه طبقة رقيقة من الخير." }
+        },
+        {
+          "verse": "2:263",
+          "check": "Kind speech",
+          "title": { "en": "When you cannot give", "de": "Wenn Sie nichts geben können", "ar": "حين لا تملك ما تعطي" },
+          "body": { "en": "A kind word and forgiveness are already a good deed. A gift that humiliates loses its worth.", "de": "Ein freundliches Wort und Nachsicht sind bereits eine gute Tat. Eine Gabe, die demütigt, verliert ihren Wert.", "ar": "الكلمة الطيبة والصفح عمل صالح، والعطاء الذي يجرح صاحبه يفقد قيمته." }
+        },
+        {
+          "title": { "en": "The same danger in new forms", "de": "Dieselbe Gefahr in neuer Form", "ar": "الخطر نفسه بصور جديدة" },
+          "body": { "en": "Photos of aid handouts, a favour brought up again in an argument: the old danger has new forms. Giving openly can inspire others, but the receiver's dignity is part of the gift.", "de": "Fotos von Hilfsverteilungen, eine Gefälligkeit, die im Streit wieder hervorgeholt wird: Die alte Gefahr hat neue Formen. Offenes Geben kann andere ermutigen, doch die Würde des Empfängers gehört zur Gabe.", "ar": "صور توزيع المساعدات، ومعروف يُذكَّر به عند الخلاف: الخطر القديم بصور جديدة. والعطاء العلني قد يشجع غيرك، لكن كرامة الآخذ جزء من العطاء." }
+        },
+        {
+          "title": { "en": "Giving that lasts", "de": "Geben, das bleibt", "ar": "عطاء يبقى" },
+          "list": {
+            "en": ["Give, then forget that you gave", "Protect the dignity of the one who receives", "If you cannot give, say a kind word", "Check your heart: would I give if no one saw?"],
+            "de": ["Geben Sie, und vergessen Sie dann, dass Sie gegeben haben", "Schützen Sie die Würde dessen, der empfängt", "Wenn Sie nichts geben können, sagen Sie ein freundliches Wort", "Prüfen Sie Ihr Herz: Würde ich geben, wenn niemand es sähe?"],
+            "ar": ["أعطِ ثم انسَ أنك أعطيت", "صُن كرامة من يأخذ منك", "إن لم تجد ما تعطي فقل كلمة طيبة", "فتّش قلبك: هل كنت سأعطي لو لم يرني أحد؟"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 2:263-264", "url": "https://quran.com/2:263/tafsirs/en-tafisr-ibn-kathir" },
+        { "label": "Quranic Arabic Corpus", "url": "https://corpus.quran.com" }
+      ]
+    },
+    {
+      "id": "amthal-13-panting-dog",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": { "en": "Parables of the Quran · 13", "de": "Gleichnisse des Korans · 13", "ar": "أمثال القرآن · ١٣" },
+        "title": { "en": "The man who clung to the earth", "de": "Der Mann, der sich an die Erde klammerte", "ar": "حين يتخلى العالِم عن علمه" },
+        "sub": { "en": "A parable about knowledge without humility, and a restlessness that never ends", "de": "Ein Gleichnis über Wissen ohne Demut und eine Unruhe, die nie endet", "ar": "مثل للعلم بلا تواضع، ولهاث لا ينقطع" },
+        "arabic": "العلم والهوى"
+      },
+      "slides": [
+        {
+          "verse": "7:175",
+          "check": "Our signs",
+          "title": { "en": "A man who was given signs", "de": "Ein Mann, dem Zeichen gegeben wurden", "ar": "رجل أوتي العلم بالآيات" },
+          "body": { "en": "It begins with a gift: knowledge of Allah's signs. The Arabic verb for his leaving them evokes a snake shedding its skin.", "de": "Es beginnt mit einem Geschenk: Wissen um Allahs Zeichen. Das arabische Verb für sein Abwenden erinnert an eine Schlange, die ihre Haut abstreift.", "ar": "تبدأ القصة بعطاء: العلم بآيات الله. والفعل «انسلخ» يصوّر خروجه منها كما تنسلخ الحية من جلدها." }
+        },
+        {
+          "verse": "7:176",
+          "check": "pants",
+          "title": { "en": "The image of the dog", "de": "Das Bild des Hundes", "ar": "صورة الكلب" },
+          "body": { "en": "Knowledge could have lifted him. He chose the earth and his desires instead, and the image that follows is of restless panting.", "de": "Wissen hätte ihn erheben können. Er wählte stattdessen die Erde und seine Begierden, und das folgende Bild ist ein rastloses Hecheln.", "ar": "كان العلم كفيلًا برفعه، لكنه آثر الأرض وهواه، فجاءت بعد ذلك صورة اللهاث الذي لا يهدأ." }
+        },
+        {
+          "title": { "en": "Panting either way", "de": "Hecheln, so oder so", "ar": "يلهث في الحالين" },
+          "body": { "en": "A dog pants whether you drive it away or leave it alone. Commentators explain: warning such a person or leaving him makes no difference. Desire keeps him breathless and never satisfied.", "de": "Ein Hund hechelt, ob man ihn verjagt oder in Ruhe lässt. Die Kommentatoren erklären: Ob man einen solchen Menschen ermahnt oder sich selbst überlässt, macht keinen Unterschied. Die Begierde hält ihn atemlos und nie zufrieden.", "ar": "الكلب يلهث طُرد أو تُرك. ويشرح المفسرون: سواء وُعظ هذا الإنسان أو تُرك فلا يتغير، فالهوى يتركه لاهثًا لا يشبع." }
+        },
+        {
+          "title": { "en": "Who was he?", "de": "Wer war er?", "ar": "من هو؟" },
+          "body": { "en": "Early commentators differ. Many name Bal'am son of Ba'ura from the time of Moses. Others name Umayya ibn Abi as-Salt, a poet of the Prophet's time. The lesson does not depend on the name.", "de": "Die frühen Kommentatoren sind sich nicht einig. Viele nennen Bal'am, den Sohn Ba'uras, aus der Zeit Moses. Andere nennen Umayya ibn Abi as-Salt, einen Dichter zur Zeit des Propheten. Die Lehre hängt nicht am Namen.", "ar": "اختلف المفسرون الأوائل: فسمّاه كثيرون بلعام بن باعوراء من زمن موسى، وقال آخرون إنه أمية بن أبي الصلت، شاعر في زمن النبي ﷺ. والعبرة لا تتوقف على الاسم." }
+        },
+        {
+          "title": { "en": "A warning for people of knowledge", "de": "Eine Mahnung an die Wissenden", "ar": "تحذير لأهل العلم" },
+          "body": { "en": "Knowledge is not a guarantee. It lifts a person only when it is lived with humility. Al-Qurtubi sees here the example of knowledge that stays on the tongue and never reaches the heart.", "de": "Wissen ist keine Garantie. Es erhebt einen Menschen nur, wenn es mit Demut gelebt wird. Al-Qurtubi sieht hier das Beispiel eines Wissens, das auf der Zunge bleibt und nie das Herz erreicht.", "ar": "العلم ليس ضمانًا، ولا يرفع صاحبه إلا إذا عمل به في تواضع. ويجعل القرطبي هذا مثلًا للعلم الذي يبقى على اللسان ولا يبلغ القلب." }
+        },
+        {
+          "title": { "en": "Staying lifted", "de": "Erhoben bleiben", "ar": "لتبقى مرفوعًا" },
+          "list": {
+            "en": ["Act on what you know, even a little", "Watch the pull of desire and status", "Grow in humility as your knowledge grows", "Ask Allah to keep your heart firm"],
+            "de": ["Handeln Sie nach dem, was Sie wissen, auch wenn es wenig ist", "Achten Sie auf den Sog von Begierde und Ansehen", "Wachsen Sie in Demut, wie Ihr Wissen wächst", "Bitten Sie Allah, Ihr Herz zu festigen"],
+            "ar": ["اعمل بما تعلم ولو كان قليلًا", "احذر جاذبية الهوى والجاه", "ازدد تواضعًا كلما ازددت علمًا", "اسأل الله أن يثبّت قلبك"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 7:175-176", "url": "https://quran.com/7:175/tafsirs/en-tafisr-ibn-kathir" },
+        { "label": "al-Qurtubi, al-Jami' li-Ahkam al-Qur'an, on 7:175", "url": "https://quran.com/7:175/tafsirs/ar-tafseer-al-qurtubi" }
+      ]
+    },
+    {
+      "id": "amthal-14-ashes",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": { "en": "Parables of the Quran · 14", "de": "Gleichnisse des Korans · 14", "ar": "أمثال القرآن · ١٤" },
+        "title": { "en": "Ashes in a storm", "de": "Asche im Sturm", "ar": "رماد في العاصفة" },
+        "sub": { "en": "Three images for deeds that are not built on faith, and what makes a deed last", "de": "Drei Bilder für Taten, die nicht auf Glauben gebaut sind, und was eine Tat bestehen lässt", "ar": "ثلاث صور لأعمال لا تقوم على الإيمان، وما الذي يُبقي العمل" },
+        "arabic": "الرَّماد"
+      },
+      "slides": [
+        {
+          "verse": "14:18",
+          "check": "ashes",
+          "title": { "en": "The parable", "de": "Das Gleichnis", "ar": "المثل" },
+          "body": { "en": "Ramad, ashes, occurs only here in the Quran. Ashes are what is left after a fire: light, grey, and gone with the first strong wind.", "de": "Ramad, Asche, kommt im Koran nur hier vor. Asche ist, was nach einem Feuer bleibt: leicht, grau und mit dem ersten starken Wind verweht.", "ar": "لا ترد كلمة «رماد» في القرآن إلا هنا. والرماد بقية النار: خفيف رمادي تذهب به أول ريح شديدة." }
+        },
+        {
+          "title": { "en": "Deeds without a foundation", "de": "Taten ohne Fundament", "ar": "أعمال بلا أساس" },
+          "body": { "en": "Ibn Kathir explains, in essence: those who reject their Lord may do much, but their deeds rest on no sound foundation. On the Day they need them most, they find nothing in their hands.", "de": "Ibn Kathir erklärt sinngemäß: Wer seinen Herrn ablehnt, mag viel tun, doch seine Taten ruhen auf keinem festen Fundament. An dem Tag, an dem er sie am meisten braucht, findet er nichts in seinen Händen.", "ar": "يبيّن ابن كثير ما معناه: من جحد ربه قد يعمل كثيرًا، لكن أعماله لا تقوم على أساس صحيح، فإذا جاء اليوم الذي يحتاجها فيه أشد الحاجة لم يجد في يده شيئًا." }
+        },
+        {
+          "verse": "3:117",
+          "check": "wind containing frost",
+          "title": { "en": "Frost on the harvest", "de": "Frost auf der Ernte", "ar": "صقيع على الزرع" },
+          "body": { "en": "A similar image in Al Imran: an icy wind ruins a whole harvest. The verse makes clear where the fault lies.", "de": "Ein ähnliches Bild in Al Imran: Ein eisiger Wind vernichtet eine ganze Ernte. Der Vers stellt klar, wo die Schuld liegt.", "ar": "صورة قريبة في سورة آل عمران: ريح باردة تهلك زرعًا كاملًا، والآية تبيّن على من يقع اللوم." }
+        },
+        {
+          "verse": "25:23",
+          "check": "dust dispersed",
+          "title": { "en": "Scattered dust", "de": "Verstreuter Staub", "ar": "غبار متناثر" },
+          "body": { "en": "A third image: deeds turned into floating dust. The Quran returns to this theme several times, because it matters so much.", "de": "Ein drittes Bild: Taten, die zu schwebendem Staub werden. Der Koran kommt mehrmals auf dieses Thema zurück, weil es so wichtig ist.", "ar": "صورة ثالثة: أعمال تصير غبارًا متطايرًا. ويعود القرآن إلى هذا المعنى مرارًا لعِظم شأنه." }
+        },
+        {
+          "title": { "en": "What makes a deed last", "de": "Was eine Tat bestehen lässt", "ar": "ما الذي يُبقي العمل؟" },
+          "body": { "en": "Ibn Kathir, on 18:110, names two conditions: sincerity, doing it for Allah, and correctness, doing it in the way the Prophet taught. Faith is the ground on which both stand.", "de": "Ibn Kathir nennt zu 18:110 zwei Bedingungen: Aufrichtigkeit, also es für Allah zu tun, und Richtigkeit, also es auf die Weise zu tun, die der Prophet gelehrt hat. Der Glaube ist der Boden, auf dem beides steht.", "ar": "يذكر ابن كثير عند آخر آية من سورة الكهف شرطين: الإخلاص بأن يكون العمل لله، والصواب بأن يكون على شريعة النبي. والإيمان هو الأرض التي يقوم عليها الاثنان." }
+        },
+        {
+          "title": { "en": "Deeds that survive the wind", "de": "Taten, die den Wind überstehen", "ar": "أعمال تصمد أمام الريح" },
+          "list": {
+            "en": ["Begin each deed with a clear intention", "Do fewer things, but do them for Allah", "Ask Allah to accept, not only to reward", "Do not let pride turn your deeds to ash"],
+            "de": ["Beginnen Sie jede Tat mit einer klaren Absicht", "Tun Sie weniger, aber tun Sie es für Allah", "Bitten Sie Allah um Annahme, nicht nur um Lohn", "Lassen Sie nicht zu, dass Hochmut Ihre Taten zu Asche macht"],
+            "ar": ["ابدأ كل عمل بنية واضحة", "اعمل أقل، ولكن لله", "اسأل الله القبول لا الأجر وحده", "لا تدع الكِبر يحوّل عملك رمادًا"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 14:18", "url": "https://quran.com/14:18/tafsirs/en-tafisr-ibn-kathir" },
+        { "label": "Quranic Arabic Corpus", "url": "https://corpus.quran.com" },
+        { "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 18:110", "url": "https://quran.com/18:110/tafsirs/en-tafisr-ibn-kathir" }
+      ]
+    },
+    {
+      "id": "amthal-15-fly",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": { "en": "Parables of the Quran · 15", "de": "Gleichnisse des Korans · 15", "ar": "أمثال القرآن · ١٥" },
+        "title": { "en": "The fly: a challenge no one can meet", "de": "Die Fliege: eine Herausforderung, die niemand besteht", "ar": "الذباب: تحدٍّ لا يقدر عليه أحد" },
+        "sub": { "en": "A parable that begins with a call to listen, then shows the weakness of all that is worshipped besides Allah", "de": "Ein Gleichnis, das mit dem Aufruf zum Zuhören beginnt und dann die Schwäche von allem zeigt, was neben Allah angebetet wird", "ar": "مثل يبدأ بالدعوة إلى الاستماع، ثم يكشف ضعف كل ما يُعبد من دون الله" },
+        "arabic": "الذُّباب"
+      },
+      "slides": [
+        {
+          "verse": "22:73-74",
+          "check": "fly",
+          "title": { "en": "Listen closely", "de": "Hören Sie genau hin", "ar": "أنصِت للمثل" },
+          "body": { "en": "This parable opens with a direct command to listen. The word for fly occurs only in this verse, twice.", "de": "Dieses Gleichnis beginnt mit der direkten Aufforderung zuzuhören. Das Wort für Fliege kommt nur in diesem Vers vor, zweimal.", "ar": "يبدأ هذا المثل بأمر صريح بالاستماع. وكلمة «الذباب» لا ترد إلا في هذه الآية، مرتين." }
+        },
+        {
+          "title": { "en": "The first challenge: create", "de": "Die erste Herausforderung: erschaffen", "ar": "التحدي الأول: الخلق" },
+          "body": { "en": "All the idols together could not create one fly. Today we can read its genes and copy its wings in machines, yet no one can bring a single living fly into being from nothing.", "de": "Alle Götzen zusammen könnten nicht eine einzige Fliege erschaffen. Heute kann man ihre Gene entschlüsseln und ihre Flügel in Maschinen nachbauen, doch niemand kann eine lebende Fliege aus dem Nichts hervorbringen.", "ar": "لو اجتمعت الأوثان كلها لما خلقت ذبابة واحدة. واليوم نقرأ جيناتها ونحاكي أجنحتها في الآلات، ولا يستطيع أحد أن يوجد ذبابة حية من العدم." }
+        },
+        {
+          "title": { "en": "The second challenge: take it back", "de": "Die zweite Herausforderung: zurückholen", "ar": "التحدي الثاني: الاسترداد" },
+          "body": { "en": "Al-Qurtubi reports that idols were anointed with saffron or given food, and flies would take from it. If a fly steals even a crumb, no idol can recover it.", "de": "Al-Qurtubi berichtet, dass man Götzen mit Safran bestrich oder ihnen Speisen hinstellte und Fliegen davon nahmen. Stiehlt eine Fliege auch nur einen Krümel, kann kein Götze ihn zurückholen.", "ar": "ينقل القرطبي أنهم كانوا يطلون الأصنام بالزعفران أو يضعون عندها الطعام، فيأخذ منه الذباب. فإذا سلب الذباب شيئًا ولو يسيرًا، عجزت الأصنام عن استرداده." }
+        },
+        {
+          "title": { "en": "Both sides are weak", "de": "Beide Seiten sind schwach", "ar": "ضعف الطرفين" },
+          "body": { "en": "Scholars read the closing words in more than one way: the idol and the fly, or the worshipper and what he worships. Either way, both sides are helpless.", "de": "Die Gelehrten lesen die Schlussworte auf mehr als eine Weise: der Götze und die Fliege, oder der Anbetende und das Angebetete. So oder so sind beide Seiten hilflos.", "ar": "قرأ العلماء ختام الآية على أكثر من وجه: الصنم والذباب، أو العابد والمعبود. وعلى كل وجه فالطرفان عاجزان." }
+        },
+        {
+          "title": { "en": "Beyond statues", "de": "Über Statuen hinaus", "ar": "أبعد من التماثيل" },
+          "body": { "en": "The parable reaches further than statues. Anything we expect to give what only Allah gives, security, meaning, worth, shares the same weakness. It cannot even protect itself.", "de": "Das Gleichnis reicht weiter als Statuen. Alles, wovon wir erwarten, was nur Allah gibt, Sicherheit, Sinn, Wert, teilt dieselbe Schwäche. Es kann sich nicht einmal selbst schützen.", "ar": "يمتد المثل إلى ما هو أبعد من التماثيل: كل ما ننتظر منه ما لا يعطيه إلا الله، من أمان ومعنى وقيمة، يحمل الضعف نفسه، فهو لا يحمي نفسه." }
+        },
+        {
+          "title": { "en": "Seeing true strength", "de": "Wahre Stärke erkennen", "ar": "لترى القوة الحقيقية" },
+          "list": {
+            "en": ["Ask Allah first for what you need", "Notice the wonder of a small creature today", "Do not give created things the place of the Creator", "Let your need make you humble, not anxious"],
+            "de": ["Bitten Sie zuerst Allah um das, was Sie brauchen", "Achten Sie heute auf das Wunder eines kleinen Geschöpfs", "Geben Sie Geschaffenem nicht den Platz des Schöpfers", "Lassen Sie Ihre Bedürftigkeit Sie demütig machen, nicht ängstlich"],
+            "ar": ["اطلب حاجتك من الله أولًا", "تأمّل اليوم عجيبة في مخلوق صغير", "لا تُنزل المخلوق منزلة الخالق", "اجعل حاجتك تواضعًا لا قلقًا"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 22:73-74", "url": "https://quran.com/22:73/tafsirs/en-tafisr-ibn-kathir" },
+        { "label": "Quranic Arabic Corpus", "url": "https://corpus.quran.com" },
+        { "label": "al-Qurtubi, al-Jami' li-Ahkam al-Qur'an, on 22:73", "url": "https://quran.com/22:73/tafsirs/ar-tafseer-al-qurtubi" }
+      ]
+    },
+    {
+      "id": "amthal-16-two-men",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": { "en": "Parables of the Quran · 16", "de": "Gleichnisse des Korans · 16", "ar": "أمثال القرآن · ١٦" },
+        "title": { "en": "Are they equal? Two parables of two men", "de": "Sind sie gleich? Zwei Gleichnisse von zwei Männern", "ar": "هل يتساويان؟ مثلان لرجلين" },
+        "sub": { "en": "Surah an-Nahl asks a simple question twice and lets the listener answer", "de": "Sure an-Nahl stellt zweimal eine einfache Frage und lässt den Hörer antworten", "ar": "تطرح سورة النحل سؤالًا بسيطًا مرتين وتترك الجواب للسامع" },
+        "arabic": "رَجُلان"
+      },
+      "slides": [
+        {
+          "verse": "16:75",
+          "check": "Can they be equal",
+          "title": { "en": "The first parable", "de": "Das erste Gleichnis", "ar": "المثل الأول" },
+          "body": { "en": "One man owns nothing and can do nothing. The other has good provision and gives from it, openly and in secret.", "de": "Der eine besitzt nichts und kann nichts tun. Der andere hat gute Versorgung und gibt davon, offen und im Verborgenen.", "ar": "رجل لا يملك شيئًا ولا يقدر على شيء، وآخر عنده رزق حسن ينفق منه في الخفاء والعلن." }
+        },
+        {
+          "verse": "16:76",
+          "check": "two men",
+          "title": { "en": "The second parable", "de": "Das zweite Gleichnis", "ar": "المثل الثاني" },
+          "body": { "en": "One can neither speak nor act and brings no good wherever he is sent. The other stands for justice and walks a straight path.", "de": "Der eine kann weder sprechen noch handeln und bringt nichts Gutes, wohin man ihn auch schickt. Der andere tritt für Gerechtigkeit ein und geht einen geraden Weg.", "ar": "أحدهما لا ينطق ولا يقدر، ولا يأتي بخير حيثما وُجّه، والآخر يقوم بالعدل ويسير في طريق قويم." }
+        },
+        {
+          "title": { "en": "Two readings", "de": "Zwei Deutungen", "ar": "تفسيران" },
+          "body": { "en": "Commentators offer two readings. Some see the helpless one as a picture of false gods, set against Allah, who gives without end. Others see the disbeliever and the believer.", "de": "Die Kommentatoren bieten zwei Deutungen. Manche sehen im Hilflosen ein Bild der falschen Götter, im Gegensatz zu Allah, der ohne Ende gibt. Andere sehen den Ungläubigen und den Gläubigen.", "ar": "للمفسرين في المثلين قولان: فبعضهم يرى العاجز صورة للآلهة الباطلة في مقابل الله الذي لا ينقطع عطاؤه، وبعضهم يراهما الكافر والمؤمن." }
+        },
+        {
+          "title": { "en": "The question does the work", "de": "Die Frage leistet die Arbeit", "ar": "السؤال يكفي" },
+          "body": { "en": "Both parables end with a question, not a verdict. The Quran trusts the listener's sense: no one honestly thinks the helpless and the generous are the same.", "de": "Beide Gleichnisse enden mit einer Frage, nicht mit einem Urteil. Der Koran vertraut dem Verstand des Hörers: Niemand hält ehrlich den Hilflosen und den Großzügigen für gleich.", "ar": "ينتهي المثلان بسؤال لا بحكم، فالقرآن يثق بعقل السامع: لا أحد ينصف ثم يسوّي بين العاجز والكريم." }
+        },
+        {
+          "title": { "en": "A mirror for ourselves", "de": "Ein Spiegel für uns selbst", "ar": "مرآة لأنفسنا" },
+          "body": { "en": "The second parable also reads like a portrait of people around us: one is a burden wherever he goes, the other brings justice and direction. Which one do others meet in us?", "de": "Das zweite Gleichnis liest sich auch wie ein Porträt der Menschen um uns: Der eine ist überall eine Last, der andere bringt Gerechtigkeit und Richtung. Wem begegnen andere in uns?", "ar": "ويبدو المثل الثاني أيضًا صورة لأناس حولنا: أحدهم عبء أينما حلّ، والآخر يحمل العدل ويهدي إلى الطريق. فأيّهما يلقى الناس فينا؟" }
+        },
+        {
+          "title": { "en": "Becoming the second man", "de": "Der zweite Mann werden", "ar": "لتكون الرجل الثاني" },
+          "list": {
+            "en": ["Bring some good wherever you are sent", "Give from what you have, openly and in private", "Speak up for justice, gently and clearly", "Rely on Allah, whose giving never stops"],
+            "de": ["Bringen Sie Gutes, wohin man Sie auch schickt", "Geben Sie von dem, was Sie haben, offen und im Stillen", "Treten Sie für Gerechtigkeit ein, sanft und klar", "Verlassen Sie sich auf Allah, dessen Geben nie endet"],
+            "ar": ["احمل الخير حيثما ذهبت", "أنفق مما عندك في السر والعلن", "قل كلمة العدل برفق ووضوح", "توكل على الله الذي لا ينقطع عطاؤه"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 16:75-76", "url": "https://quran.com/16:75/tafsirs/en-tafisr-ibn-kathir" }
+      ]
+    },
+    {
+      "id": "amthal-17-many-masters",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": { "en": "Parables of the Quran · 17", "de": "Gleichnisse des Korans · 17", "ar": "أمثال القرآن · ١٧" },
+        "title": { "en": "One master or many", "de": "Ein Herr oder viele", "ar": "سيد واحد أم سادة كثيرون" },
+        "sub": { "en": "A parable about the peace of serving One, and the exhaustion of trying to please everyone", "de": "Ein Gleichnis über den Frieden, Einem zu dienen, und die Erschöpfung, es allen recht machen zu wollen", "ar": "مثل عن طمأنينة عبادة الواحد، وعناء إرضاء الجميع" },
+        "arabic": "التَّوْحيد"
+      },
+      "slides": [
+        {
+          "verse": "39:29",
+          "check": "quarreling partners",
+          "title": { "en": "The parable", "de": "Das Gleichnis", "ar": "المثل" },
+          "body": { "en": "Picture a worker with several bosses who argue with each other. Each gives a different order, and none is ever satisfied.", "de": "Stellen Sie sich einen Arbeiter mit mehreren Chefs vor, die miteinander streiten. Jeder gibt eine andere Anweisung, und keiner ist je zufrieden.", "ar": "تخيّل عاملًا له عدة رؤساء يتنازعون فيما بينهم، كل منهم يأمره بأمر مختلف، ولا يرضى أحد منهم أبدًا." }
+        },
+        {
+          "title": { "en": "What the commentators say", "de": "Was die Kommentatoren sagen", "ar": "ما يقوله المفسرون" },
+          "body": { "en": "Ibn Kathir explains: the first man is like one who worships many gods, the second like one who worships Allah alone, and the two are not equal. One is pulled in every direction; the other has one direction and a heart at peace.", "de": "Ibn Kathir erklärt: Der erste Mann gleicht dem, der viele Götter anbetet, der zweite dem, der Allah allein anbetet, und beide sind nicht gleich. Der eine wird in alle Richtungen gezogen, der andere hat eine Richtung und ein ruhiges Herz.", "ar": "يبيّن ابن كثير أن الأول كمن يعبد آلهة كثيرة، والثاني كمن يعبد الله وحده، ولا مساواة بينهما. فالأول يتجاذبه كلٌّ منها، والثاني له وجهة واحدة وقلب ساكن." }
+        },
+        {
+          "title": { "en": "Quarrelling partners", "de": "Zerstrittene Teilhaber", "ar": "شركاء متنازعون" },
+          "arabic": "مُتَشاكِسون",
+          "body": { "en": "The Arabic word mutashakisun describes partners who are difficult, bad-tempered and at odds. The poor servant cannot please one without angering another.", "de": "Das arabische Wort mutashakisun beschreibt Teilhaber, die schwierig, launisch und zerstritten sind. Der arme Diener kann keinen zufriedenstellen, ohne einen anderen zu verärgern.", "ar": "كلمة «متشاكسون» تصف شركاء عسيري الخلق متنازعين، فلا يرضي العبد أحدهم إلا أغضب الآخر." }
+        },
+        {
+          "title": { "en": "Many masters today", "de": "Viele Herren heute", "ar": "سادة كثيرون اليوم" },
+          "body": { "en": "Followers, trends, the opinions of family, colleagues and strangers: a heart that tries to please them all is torn apart. Serving Allah first does not remove people from your life. It puts them in their place.", "de": "Follower, Trends, die Meinungen von Familie, Kollegen und Fremden: Ein Herz, das alle zufriedenstellen will, wird zerrissen. Allah zuerst zu dienen, entfernt die Menschen nicht aus Ihrem Leben. Es gibt ihnen ihren richtigen Platz.", "ar": "المتابعون والموضات وآراء الأهل والزملاء والغرباء: القلب الذي يحاول إرضاءهم جميعًا يتمزق. وعبادة الله أولًا لا تُخرج الناس من حياتك، بل تضعهم في مكانهم." }
+        },
+        {
+          "verse": "12:39",
+          "check": "separate lords",
+          "title": { "en": "Yusuf's question in prison", "de": "Yusufs Frage im Gefängnis", "ar": "سؤال يوسف في السجن" },
+          "body": { "en": "The same contrast in another surah: many scattered lords, or the One? Yusuf puts it to two men who shared his cell.", "de": "Derselbe Gegensatz in einer anderen Sure: viele verstreute Herren oder der Eine? Yusuf stellt diese Frage zwei Männern, die seine Zelle teilten.", "ar": "المقابلة نفسها في سورة أخرى: أرباب كثيرون متفرقون أم الواحد؟ يطرحها يوسف على رجلين شاركاه السجن." }
+        },
+        {
+          "title": { "en": "Serving One", "de": "Einem dienen", "ar": "لتعبد الواحد" },
+          "list": {
+            "en": ["Ask before deciding: what pleases Allah here?", "Accept that you cannot please everyone", "Let one intention unite your many tasks", "Find rest in serving One Lord"],
+            "de": ["Fragen Sie vor einer Entscheidung: Was gefällt Allah hier?", "Akzeptieren Sie, dass Sie nicht allen gefallen können", "Lassen Sie eine Absicht Ihre vielen Aufgaben verbinden", "Finden Sie Ruhe im Dienst an dem einen Herrn"],
+            "ar": ["اسأل قبل أن تقرر: ما الذي يرضي الله هنا؟", "تقبّل أنك لن ترضي الجميع", "اجعل نية واحدة تجمع أعمالك الكثيرة", "اطمئن في عبادة رب واحد"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 39:29", "url": "https://quran.com/39:29/tafsirs/en-tafisr-ibn-kathir" }
+      ]
+    },
+    {
+      "id": "amthal-18-life-of-this-world",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": { "en": "Parables of the Quran · 18", "de": "Gleichnisse des Korans · 18", "ar": "أمثال القرآن · ١٨" },
+        "title": { "en": "This world: rain, green, then dust", "de": "Diese Welt: Regen, Grün, dann Staub", "ar": "الدنيا: مطر ثم خضرة ثم هشيم" },
+        "sub": { "en": "The Quran paints this picture in several surahs, among them Yunus, al-Kahf and al-Hadid", "de": "Der Koran malt dieses Bild in mehreren Suren, darunter Yunus, al-Kahf und al-Hadid", "ar": "يرسم القرآن هذه الصورة في أكثر من سورة، منها يونس والكهف والحديد" },
+        "arabic": "زينة الدنيا"
+      },
+      "slides": [
+        {
+          "verse": "18:45",
+          "check": "life of this world",
+          "title": { "en": "The parable", "de": "Das Gleichnis", "ar": "المثل" },
+          "body": { "en": "Rain falls, plants spring up and mingle, then they dry and the wind scatters them. A whole season in one verse.", "de": "Regen fällt, Pflanzen sprießen und verflechten sich, dann vertrocknen sie, und der Wind verweht sie. Eine ganze Jahreszeit in einem Vers.", "ar": "ينزل المطر فتنبت الأرض ويختلط نباتها، ثم يجف وتفرّقه الرياح: موسم كامل في آية واحدة." }
+        },
+        {
+          "title": { "en": "The same picture elsewhere", "de": "Dasselbe Bild an anderer Stelle", "ar": "الصورة نفسها في مواضع أخرى" },
+          "body": { "en": "Yunus 10:24 adds people who feel in control of the earth, until it is harvested in a night or a day. Al-Hadid 57:20 lists play, show, boasting and rivalry in wealth, then the yellowing field.", "de": "Yunus 10:24 fügt Menschen hinzu, die meinen, die Erde zu beherrschen, bis sie in einer Nacht oder an einem Tag abgeerntet ist. Al-Hadid 57:20 nennt Spiel, Schein, Prahlerei und Wettstreit um Besitz, dann das gelb werdende Feld.", "ar": "في يونس ١٠:٢٤ أناس يظنون أنهم يملكون الأرض حتى تُحصد في ليلة أو نهار، وفي الحديد ٥٧:٢٠ لعب ومظاهر وتفاخر وتنافس في المال، ثم الزرع يصفرّ." }
+        },
+        {
+          "title": { "en": "Why rain and plants?", "de": "Warum Regen und Pflanzen?", "ar": "لماذا المطر والنبات؟" },
+          "body": { "en": "Everyone has watched a field turn green and then yellow. The image is not gloomy: rain and green are real gifts. It simply reminds us that they do not stay.", "de": "Jeder hat schon gesehen, wie ein Feld grün und dann gelb wird. Das Bild ist nicht düster: Regen und Grün sind echte Gaben. Es erinnert nur daran, dass sie nicht bleiben.", "ar": "كل إنسان رأى حقلًا يخضرّ ثم يصفرّ. والصورة ليست قاتمة، فالمطر والخضرة نعم حقيقية، لكنها تذكّر بأنها لا تدوم." }
+        },
+        {
+          "verse": "18:46",
+          "check": "enduring good deeds",
+          "title": { "en": "What remains", "de": "Was bleibt", "ar": "ما يبقى" },
+          "body": { "en": "Right after the parable, the Quran points to what does not dry up: good deeds that endure.", "de": "Direkt nach dem Gleichnis zeigt der Koran, was nicht vertrocknet: gute Taten, die bleiben.", "ar": "بعد المثل مباشرة يدل القرآن على ما لا يجف: الأعمال الصالحة الباقية." }
+        },
+        {
+          "hadith": "bukhari:6416",
+          "check": "stranger",
+          "title": { "en": "A traveller's view", "de": "Der Blick eines Reisenden", "ar": "نظرة المسافر" },
+          "body": { "en": "The Prophet's advice turns the parable into a way of living: enjoy the rest stop, but remember the road.", "de": "Der Rat des Propheten macht das Gleichnis zu einer Lebensweise: die Rast genießen, aber den Weg nicht vergessen.", "ar": "نصيحة النبي ﷺ تجعل المثل منهج حياة: انعم بالاستراحة ولا تنسَ الطريق." }
+        },
+        {
+          "title": { "en": "Living with the seasons", "de": "Mit den Jahreszeiten leben", "ar": "العيش مع الفصول" },
+          "list": {
+            "en": ["Enjoy blessings, but do not build your heart on them", "Turn passing things into lasting deeds", "Remember the harvest when the field is greenest", "Ask: what of today will still matter later?"],
+            "de": ["Genießen Sie Gaben, aber bauen Sie Ihr Herz nicht darauf", "Machen Sie aus Vergänglichem bleibende Taten", "Denken Sie an die Ernte, wenn das Feld am grünsten ist", "Fragen Sie: Was von heute wird später noch zählen?"],
+            "ar": ["استمتع بالنعم ولا تبنِ قلبك عليها", "حوّل الفاني إلى عمل باقٍ", "تذكّر الحصاد والحقل في أشد خضرته", "اسأل: ما الذي سيبقى له وزن من يومي هذا؟"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 18:45-46", "url": "https://quran.com/18:45/tafsirs/en-tafisr-ibn-kathir" }
+      ]
+    },
+    {
+      "id": "amthal-19-secure-town",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": { "en": "Parables of the Quran · 19", "de": "Gleichnisse des Korans · 19", "ar": "أمثال القرآن · ١٩" },
+        "title": { "en": "The town that was safe", "de": "Die Stadt, die sicher war", "ar": "القرية الآمنة" },
+        "sub": { "en": "Safety and plenty, then ingratitude, then hunger and fear on every side", "de": "Sicherheit und Fülle, dann Undank, dann Hunger und Angst von allen Seiten", "ar": "أمن ورخاء، ثم جحود، ثم جوع وخوف يحيطان من كل جانب" },
+        "arabic": "الأمن والرزق"
+      },
+      "slides": [
+        {
+          "verse": "16:112",
+          "check": "safe and secure",
+          "title": { "en": "The parable", "de": "Das Gleichnis", "ar": "المثل" },
+          "body": { "en": "A town with everything: safety, and provision arriving from every direction. Then its people denied the favours, and both were taken away.", "de": "Eine Stadt, die alles hatte: Sicherheit und Versorgung aus allen Richtungen. Dann leugneten ihre Bewohner die Gaben, und beides wurde genommen.", "ar": "مدينة فيها كل شيء: أمن ورزق يأتيها من كل جهة. ثم جحد أهلها النعم، فذهب الأمران." }
+        },
+        {
+          "title": { "en": "Which town?", "de": "Welche Stadt?", "ar": "أيّ قرية؟" },
+          "body": { "en": "Ibn Kathir says it describes Makkah, which suffered famine and fear after rejecting the Prophet. Al-Qurtubi also mentions a reading as an example for any town. Both carry the same lesson.", "de": "Ibn Kathir sagt, gemeint sei Mekka, das nach der Ablehnung des Propheten Hunger und Angst erlitt. Al-Qurtubi nennt auch die Deutung als Beispiel für jede Stadt. Beide tragen dieselbe Lehre.", "ar": "يقول ابن كثير إنها مكة، وقد أصابها الجوع والخوف بعد أن كذّبت النبي ﷺ، ويذكر القرطبي أيضًا قولًا بأنها مثل لأي قرية. وفي القولين العبرة نفسها." }
+        },
+        {
+          "title": { "en": "Tasting a garment", "de": "Ein Gewand schmecken", "ar": "لباس يُذاق" },
+          "arabic": "الاستعارة",
+          "body": { "en": "The Arabic joins two images: hunger and fear as a garment, and that garment as something tasted. A garment surrounds you from every side, and taste reaches inside. Translations render it in different ways.", "de": "Das Arabische verbindet zwei Bilder: Hunger und Angst als Gewand, und dieses Gewand als etwas, das man schmeckt. Ein Gewand umgibt einen von allen Seiten, und der Geschmack dringt nach innen. Übersetzungen geben es unterschiedlich wieder.", "ar": "تجمع الآية بين صورتين: الجوع والخوف لباسًا، وهذا اللباس شيئًا يُذاق. فاللباس يحيط بالإنسان من كل جهة، والذوق يصل إلى داخله. وقد أطال علماء البلاغة النظر في هذه الاستعارة." }
+        },
+        {
+          "verse": "14:7",
+          "check": "If you are grateful",
+          "title": { "en": "The rule behind the story", "de": "Die Regel hinter der Geschichte", "ar": "السنّة وراء القصة" },
+          "body": { "en": "Gratitude keeps and increases a blessing. Denial puts it at risk. The town makes this rule visible.", "de": "Dankbarkeit bewahrt und mehrt eine Gabe. Leugnung setzt sie aufs Spiel. Die Stadt macht diese Regel sichtbar.", "ar": "الشكر يحفظ النعمة ويزيدها، والجحود يعرّضها للزوال، والقرية صورة حية لهذه السنّة." }
+        },
+        {
+          "title": { "en": "Safety is a blessing too", "de": "Auch Sicherheit ist eine Gabe", "ar": "الأمن نعمة أيضًا" },
+          "body": { "en": "We often thank Allah for food but forget safety: a quiet night, open roads, no fear at the door. The parable names safety first, before provision.", "de": "Wir danken Allah oft für das Essen, vergessen aber die Sicherheit: eine ruhige Nacht, offene Straßen, keine Angst vor der Tür. Das Gleichnis nennt die Sicherheit zuerst, noch vor der Versorgung.", "ar": "كثيرًا ما نشكر الله على الطعام وننسى الأمن: ليلة هادئة، وطرقًا آمنة، وبابًا لا يطرقه خوف. والمثل يقدّم الأمن على الرزق." }
+        },
+        {
+          "title": { "en": "Keeping the blessing", "de": "Die Gabe bewahren", "ar": "لتحفظ النعمة" },
+          "list": {
+            "en": ["Name three blessings of safety in your life today", "Thank with your tongue, your heart and your deeds", "Use plenty to help those who have less", "Pray for places that have lost their safety"],
+            "de": ["Nennen Sie heute drei Gaben der Sicherheit in Ihrem Leben", "Danken Sie mit Zunge, Herz und Taten", "Nutzen Sie Fülle, um denen zu helfen, die weniger haben", "Beten Sie für Orte, die ihre Sicherheit verloren haben"],
+            "ar": ["عُدّ اليوم ثلاث نعم من نعم الأمن في حياتك", "اشكر بلسانك وقلبك وعملك", "اجعل سعتك عونًا لمن هو أقل منك", "ادعُ لبلاد فقدت أمنها"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 16:112", "url": "https://quran.com/16:112/tafsirs/en-tafisr-ibn-kathir" },
+        { "label": "al-Qurtubi, al-Jami' li-Ahkam al-Qur'an, on 16:112", "url": "https://quran.com/16:112/tafsirs/ar-tafseer-al-qurtubi" }
+      ]
+    },
+    {
+      "id": "amthal-20-camel-and-needle",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": { "en": "Parables of the Quran · 20", "de": "Gleichnisse des Korans · 20", "ar": "أمثال القرآن · ٢٠" },
+        "title": { "en": "A camel through the eye of a needle", "de": "Ein Kamel durch ein Nadelöhr", "ar": "الجمل وثقب الإبرة" },
+        "sub": { "en": "An image of the impossible, and what it says about arrogance", "de": "Ein Bild des Unmöglichen und was es über Hochmut sagt", "ar": "صورة للمستحيل، وما تقوله عن الكِبر" },
+        "arabic": "سَمُّ الخِياط"
+      },
+      "slides": [
+        {
+          "verse": "7:40",
+          "check": "eye of a needle",
+          "title": { "en": "The image", "de": "Das Bild", "ar": "الصورة" },
+          "body": { "en": "A large animal and one of the smallest openings people know. The point is plain: not while they remain as they are.", "de": "Ein großes Tier und eine der kleinsten Öffnungen, die Menschen kennen. Die Aussage ist klar: nicht, solange sie bleiben, wie sie sind.", "ar": "حيوان ضخم وواحد من أصغر الثقوب التي يعرفها الناس. والمعنى واضح: لا يكون ذلك ما داموا على حالهم." }
+        },
+        {
+          "title": { "en": "Camel or rope?", "de": "Kamel oder Seil?", "ar": "جمل أم حبل؟" },
+          "body": { "en": "Most read jamal as camel. Some early authorities, among them reports from Ibn Abbas, understood a thick ship's rope, which fits the image of threading a needle. Both point to the same impossibility.", "de": "Die meisten lesen jamal als Kamel. Einige frühe Autoritäten, darunter Berichte von Ibn Abbas, verstanden ein dickes Schiffstau, das zum Bild des Einfädelns passt. Beides weist auf dieselbe Unmöglichkeit.", "ar": "يفهم الجمهور «الجمل» بمعنى البعير، ونُقل عن بعض السلف، ومنهم ابن عباس في بعض الروايات، أنه الحبل الغليظ من حبال السفن، وهو ألصق بصورة الإبرة. وكلاهما يدل على الاستحالة نفسها." }
+        },
+        {
+          "title": { "en": "Why the door stays shut", "de": "Warum die Tür verschlossen bleibt", "ar": "لماذا يبقى الباب مغلقًا" },
+          "body": { "en": "The verse names two causes: denying Allah's signs and being arrogant toward them. Arrogance makes a person too big, in his own eyes, to pass through the narrow door of humility.", "de": "Der Vers nennt zwei Ursachen: Allahs Zeichen zu leugnen und sich ihnen gegenüber hochmütig zu verhalten. Hochmut macht einen Menschen in seinen eigenen Augen zu groß für die schmale Tür der Demut.", "ar": "تذكر الآية سببين: التكذيب بآيات الله والاستكبار عنها. فالكِبر يجعل الإنسان في عين نفسه أكبر من أن يدخل من باب التواضع الضيق." }
+        },
+        {
+          "title": { "en": "The gates of heaven", "de": "Die Tore des Himmels", "ar": "أبواب السماء" },
+          "body": { "en": "Commentators explain that the gates of heaven are not opened for such people: their deeds and prayers do not rise, and, according to reports they cite, neither do their souls after death.", "de": "Die Kommentatoren erklären, dass sich die Tore des Himmels für solche Menschen nicht öffnen: Ihre Taten und Gebete steigen nicht auf und, nach Berichten, die sie anführen, auch nicht ihre Seelen nach dem Tod.", "ar": "يشرح المفسرون أن أبواب السماء لا تُفتح لهؤلاء: فلا تصعد أعمالهم ولا دعاؤهم، ولا أرواحهم بعد الموت بحسب روايات يوردونها." }
+        },
+        {
+          "title": { "en": "A familiar image", "de": "Ein bekanntes Bild", "ar": "صورة مألوفة" },
+          "body": { "en": "A similar image of a camel and a needle appears in the Gospels, in a saying about the rich. Here the Quran applies it to those who deny Allah's signs and are arrogant toward them.", "de": "Ein ähnliches Bild von Kamel und Nadelöhr findet sich in den Evangelien, in einem Wort über die Reichen. Hier wendet der Koran es auf diejenigen an, die Allahs Zeichen leugnen und sich über sie erheben.", "ar": "ترد في الأناجيل صورة قريبة للجمل وثقب الإبرة في قول عن الأغنياء، ويستعملها القرآن هنا فيمن يكذّب بآيات الله ويستكبر عنها." }
+        },
+        {
+          "title": { "en": "Making the self smaller", "de": "Das eigene Ich kleiner machen", "ar": "لتصغر الأنا" },
+          "list": {
+            "en": ["Accept the truth, even from someone younger", "Say 'I was wrong' when you were", "Remember your beginning and your end", "Prostrate in prayer: humility lives in the body too"],
+            "de": ["Nehmen Sie die Wahrheit an, auch von Jüngeren", "Sagen Sie „Ich habe mich geirrt“, wenn es so war", "Denken Sie an Ihren Anfang und Ihr Ende", "Werfen Sie sich im Gebet nieder: Demut wohnt auch im Körper"],
+            "ar": ["اقبل الحق ولو جاء ممن هو أصغر منك", "قل «أخطأت» إذا أخطأت", "تذكّر أصلك ومصيرك", "اسجد في صلاتك، فالتواضع يسكن الجسد أيضًا"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 7:40", "url": "https://quran.com/7:40/tafsirs/en-tafisr-ibn-kathir" }
+      ]
+    },
+    {
+      "id": "amthal-21-flood-and-foam",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": { "en": "Parables of the Quran · 21", "de": "Gleichnisse des Korans · 21", "ar": "أمثال القرآن · ٢١" },
+        "title": { "en": "The flood and the foam: truth stays, falsehood fades", "de": "Die Flut und der Schaum: Die Wahrheit bleibt, das Falsche vergeht", "ar": "السيل والزبد: الحق يبقى والباطل يذهب" },
+        "sub": { "en": "Two scenes in one verse: a torrent in the valleys and metal in the fire", "de": "Zwei Szenen in einem Vers: ein Sturzbach in den Tälern und Metall im Feuer", "ar": "مشهدان في آية واحدة: سيل في الأودية ومعدن في النار" },
+        "arabic": "الزَّبَد"
+      },
+      "slides": [
+        {
+          "verse": "13:17",
+          "check": "foam",
+          "title": { "en": "Two scenes", "de": "Zwei Szenen", "ar": "مشهدان" },
+          "body": { "en": "Rain floods the valleys, and foam rides on top. Metal melts in the fire, and scum rises. Both times the foam goes and the useful stays.", "de": "Regen überflutet die Täler, und Schaum treibt obenauf. Metall schmilzt im Feuer, und Schlacke steigt auf. Beide Male vergeht der Schaum, und das Nützliche bleibt.", "ar": "مطر يملأ الأودية فيعلوه الزبد، ومعدن يُذاب في النار فيطفو خبثه. وفي الحالين يذهب الزبد ويبقى النافع." }
+        },
+        {
+          "title": { "en": "Valleys of different sizes", "de": "Täler verschiedener Größe", "ar": "أودية تتسع بقدر" },
+          "body": { "en": "Ibn Kathir reports from Ibn Abbas: as valleys take in rain, hearts take in knowledge from Allah, each by its capacity, with certainty or with doubt.", "de": "Ibn Kathir überliefert von Ibn Abbas: Wie die Täler den Regen aufnehmen, nehmen die Herzen Wissen von Allah auf, jedes nach seiner Weite, mit Gewissheit oder mit Zweifel.", "ar": "ينقل ابن كثير عن ابن عباس أن القلوب تحمل العلم من الله كما تحمل الأودية المطر، كلٌّ بقدر سعته، يقينًا أو شكًّا." }
+        },
+        {
+          "title": { "en": "The foam is loud", "de": "Der Schaum ist laut", "ar": "الزبد صاخب" },
+          "body": { "en": "Foam rises to the top, is the first thing you see and seems to cover everything. Falsehood can look like that: visible, noisy, everywhere. But it has no weight.", "de": "Schaum steigt nach oben, ist das Erste, was man sieht, und scheint alles zu bedecken. So kann das Falsche aussehen: sichtbar, laut, überall. Doch es hat kein Gewicht.", "ar": "الزبد يطفو إلى الأعلى، وهو أول ما تراه، ويبدو كأنه يغطي كل شيء. وكذلك قد يبدو الباطل: ظاهرًا صاخبًا في كل مكان، لكنه بلا وزن." }
+        },
+        {
+          "title": { "en": "What benefits stays", "de": "Was nützt, bleibt", "ar": "النافع يبقى" },
+          "body": { "en": "Water sinks into the soil and brings life. Gold and iron remain after the fire. Truth works the same way: quietly, beneath the surface, over a long time.", "de": "Wasser sickert in den Boden und bringt Leben. Gold und Eisen bleiben nach dem Feuer zurück. Die Wahrheit wirkt ebenso: still, unter der Oberfläche, über lange Zeit.", "ar": "الماء يتغلغل في الأرض فيحييها، والذهب والحديد يبقيان بعد النار. وكذلك الحق: يعمل بهدوء تحت السطح زمنًا طويلًا." }
+        },
+        {
+          "title": { "en": "Through the fire", "de": "Durch das Feuer", "ar": "عبر النار" },
+          "body": { "en": "The second scene adds a lesson: metal becomes pure only through heat. In the same report, Ibn Abbas likens it to certainty that remains while doubt is cast off. Hardship, too, can show what is real in us.", "de": "Die zweite Szene fügt eine Lehre hinzu: Metall wird nur durch Hitze rein. Im selben Bericht vergleicht Ibn Abbas dies mit der Gewissheit, die bleibt, während der Zweifel abfällt. Auch Prüfungen können zeigen, was in uns echt ist.", "ar": "يضيف المشهد الثاني درسًا: المعدن لا يصفو إلا بالنار. وفي الرواية نفسها يشبّه ابن عباس ذلك باليقين الذي يبقى والشك الذي يُطرح. والشدائد أيضًا قد تُظهر ما هو حقيقي فينا." }
+        },
+        {
+          "title": { "en": "Living by the parable", "de": "Nach dem Gleichnis leben", "ar": "العيش بهذا المثل" },
+          "list": {
+            "en": ["Do not judge truth by its volume", "Widen the valley of your heart: learn and reflect", "Invest in what truly benefits people", "See hardship as a fire that can purify"],
+            "de": ["Messen Sie die Wahrheit nicht an ihrer Lautstärke", "Weiten Sie das Tal Ihres Herzens: lernen und nachdenken", "Investieren Sie in das, was Menschen wirklich nützt", "Sehen Sie Härte als Feuer, das läutern kann"],
+            "ar": ["لا تقِس الحق بعلوّ صوته", "وسّع وادي قلبك بالتعلم والتأمل", "استثمر فيما ينفع الناس حقًا", "انظر إلى الشدة نارًا قد تُصفّي"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 13:17", "url": "https://quran.com/13:17/tafsirs/en-tafisr-ibn-kathir" }
+      ]
+    },
+    {
+      "id": "amthal-22-unravelled-thread",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": { "en": "Parables of the Quran · 22", "de": "Gleichnisse des Korans · 22", "ar": "أمثال القرآن · ٢٢" },
+        "title": { "en": "The woman who unravelled her thread", "de": "Die Frau, die ihr Garn wieder auflöste", "ar": "نقض الغزل بعد إحكامه" },
+        "sub": { "en": "A parable about broken promises, and about undoing your own good work", "de": "Ein Gleichnis über gebrochene Versprechen und darüber, das eigene gute Werk zunichtezumachen", "ar": "مثل عن نقض العهود، وعن هدم ما بنيته بيدك" },
+        "arabic": "الغَزْل"
+      },
+      "slides": [
+        {
+          "verse": "16:91",
+          "check": "fulfill the covenant",
+          "title": { "en": "First, the command", "de": "Zuerst das Gebot", "ar": "الأمر أولًا" },
+          "body": { "en": "The parable that follows illustrates this command: keep your promises once they are made.", "de": "Das folgende Gleichnis veranschaulicht dieses Gebot: Halten Sie Ihre Versprechen, wenn Sie sie gegeben haben.", "ar": "يوضّح المثل التالي هذا الأمر: الوفاء بالعهد بعد إبرامه." }
+        },
+        {
+          "verse": "16:92",
+          "check": "spun thread",
+          "title": { "en": "Then, the image", "de": "Dann das Bild", "ar": "ثم الصورة" },
+          "body": { "en": "Spinning takes hours of patient work. Imagine spinning a strong thread, then pulling it apart strand by strand. The word ghazl occurs only here.", "de": "Garn zu spinnen kostet Stunden geduldiger Arbeit. Stellen Sie sich vor, es fest zu spinnen und dann Faden für Faden wieder aufzulösen. Das Wort ghazl, Gesponnenes, kommt nur hier vor.", "ar": "الغزل ساعات من العمل الصبور. تخيّل أن تغزل خيطًا متينًا ثم تنقضه خيطًا خيطًا. ولا ترد كلمة «غزل» في القرآن إلا هنا." }
+        },
+        {
+          "title": { "en": "Was she real?", "de": "Gab es sie wirklich?", "ar": "أكانت امرأة حقيقية؟" },
+          "body": { "en": "Some early reports mention a woman in Makkah known for doing exactly this. Other commentators take it simply as an image. Either way, everyone who heard it understood at once.", "de": "Einige frühe Berichte erwähnen eine Frau in Mekka, die genau dies zu tun pflegte. Andere Kommentatoren verstehen es einfach als Bild. So oder so verstand jeder, der es hörte, sofort.", "ar": "تذكر بعض الروايات القديمة امرأة في مكة عُرفت بذلك، ويراه مفسرون آخرون صورة مضروبة فحسب. وعلى الحالين فهمه كل من سمعه في الحال." }
+        },
+        {
+          "title": { "en": "Oaths as a tool of deceit", "de": "Eide als Mittel der Täuschung", "ar": "الأيمان أداة للخداع" },
+          "body": { "en": "The verse warns against using oaths and agreements to cheat, switching sides because another group seems richer or stronger. Broken trust is like that thread: hard to spin again.", "de": "Der Vers warnt davor, Eide und Abmachungen zum Betrug zu nutzen und die Seite zu wechseln, weil eine andere Gruppe reicher oder stärker scheint. Gebrochenes Vertrauen ist wie dieser Faden: schwer neu zu spinnen.", "ar": "تحذّر الآية من اتخاذ الأيمان والعهود وسيلة للغش، والتحول إلى جماعة أخرى لأنها تبدو أغنى أو أقوى. والثقة المنقوضة كذلك الخيط: يصعب غزلها من جديد." }
+        },
+        {
+          "title": { "en": "Undoing our own work", "de": "Das eigene Werk auflösen", "ar": "هدم ما نبنيه" },
+          "body": { "en": "The image reaches further: years of prayer, patience or good character can be undone by one betrayal, one outburst, one return to an old habit. Build, then protect what you built.", "de": "Das Bild reicht weiter: Jahre des Gebets, der Geduld oder des guten Charakters können durch einen Verrat, einen Wutausbruch, einen Rückfall in eine alte Gewohnheit aufgelöst werden. Bauen Sie, und schützen Sie dann, was Sie gebaut haben.", "ar": "وتمتد الصورة أبعد: سنوات من الصلاة والصبر وحسن الخلق قد تنقضها خيانة واحدة، أو ثورة غضب، أو عودة إلى عادة قديمة. فابنِ، ثم احفظ ما بنيت." }
+        },
+        {
+          "title": { "en": "Keeping the thread strong", "de": "Den Faden stark halten", "ar": "ليبقى الخيط متينًا" },
+          "list": {
+            "en": ["Make fewer promises, and keep them", "Protect the good habits you have built", "Do not let anger undo years of kindness", "If you start to unravel, return quickly"],
+            "de": ["Geben Sie weniger Versprechen, und halten Sie sie", "Schützen Sie die guten Gewohnheiten, die Sie aufgebaut haben", "Lassen Sie nicht zu, dass Zorn Jahre der Güte zunichtemacht", "Wenn Sie sich aufzulösen beginnen, kehren Sie schnell um"],
+            "ar": ["أقلل من الوعود، وأوفِ بما وعدت", "احفظ العادات الصالحة التي بنيتها", "لا تدع الغضب يهدم سنوات من الإحسان", "إن بدأ خيطك ينحلّ فعُد سريعًا"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 16:91-92", "url": "https://quran.com/16:91/tafsirs/en-tafisr-ibn-kathir" },
+        { "label": "Quranic Arabic Corpus", "url": "https://corpus.quran.com" }
+      ]
+    },
+    {
+      "id": "amthal-23-humbled-mountain",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": { "en": "Parables of the Quran · 23", "de": "Gleichnisse des Korans · 23", "ar": "أمثال القرآن · ٢٣" },
+        "title": { "en": "If the Quran came down on a mountain", "de": "Wenn der Koran auf einen Berg herabgekommen wäre", "ar": "لو نزل القرآن على جبل" },
+        "sub": { "en": "A thought experiment of the Quran itself, and a question for the human heart", "de": "Ein Gedankenexperiment des Korans selbst und eine Frage an das menschliche Herz", "ar": "تجربة ذهنية يعرضها القرآن نفسه، وسؤال للقلب الإنساني" },
+        "arabic": "الجبل الخاشع"
+      },
+      "slides": [
+        {
+          "verse": "59:21",
+          "check": "mountain",
+          "title": { "en": "The image", "de": "Das Bild", "ar": "الصورة" },
+          "body": { "en": "A mountain, the very picture of firmness, humbled and splitting apart. The verse itself calls this a parable.", "de": "Ein Berg, das Sinnbild der Festigkeit, demütig und zerspringend. Der Vers selbst nennt dies ein Gleichnis.", "ar": "الجبل، رمز الصلابة، خاشع متصدع. والآية نفسها تسمي ذلك مثلًا." }
+        },
+        {
+          "title": { "en": "A parable by supposition", "de": "Ein Gleichnis als Annahme", "ar": "مثل على سبيل الفرض" },
+          "body": { "en": "Ibn Kathir reads it as a 'what if'. Mountains were not given understanding and responsibility as people were. If they had been, the weight of the Quran would make them tremble.", "de": "Ibn Kathir versteht es als ein „Was wäre, wenn“. Berge erhielten nicht Verstand und Verantwortung wie die Menschen. Hätten sie sie erhalten, ließe das Gewicht des Korans sie erzittern.", "ar": "يفهمه ابن كثير على سبيل الفرض: فالجبال لم تُعطَ الفهم والتكليف كما أُعطيهما الإنسان، ولو أُعطيتهما لاهتزت من ثقل القرآن." }
+        },
+        {
+          "verse": "33:72",
+          "check": "the mountains",
+          "title": { "en": "The trust the mountains feared", "de": "Das anvertraute Gut, das die Berge fürchteten", "ar": "الأمانة التي أشفقت منها الجبال" },
+          "body": { "en": "Read beside it, this verse deepens the image: people took on a responsibility that mountains feared to carry.", "de": "Neben ihm gelesen, vertieft dieser Vers das Bild: Der Mensch übernahm eine Verantwortung, vor der die Berge zurückschreckten.", "ar": "إذا قُرئت هذه الآية بجوار تلك اتضحت الصورة أكثر: حمل الإنسان مسؤولية خافت الجبال من حملها." }
+        },
+        {
+          "title": { "en": "And the human heart?", "de": "Und das menschliche Herz?", "ar": "وقلب الإنسان؟" },
+          "body": { "en": "Ibn Kathir draws the lesson: if a mountain would be humbled by the Quran, how can a human heart, which understands it, stay hard and unmoved?", "de": "Ibn Kathir zieht die Lehre: Wenn ein Berg sich vor dem Koran demütigen würde, wie kann ein menschliches Herz, das ihn versteht, hart und ungerührt bleiben?", "ar": "يستخلص ابن كثير العبرة: إذا كان الجبل يخشع لو نزل عليه القرآن، فكيف يبقى قلب الإنسان الذي يفهمه قاسيًا لا يتأثر؟" }
+        },
+        {
+          "verse": "2:74",
+          "check": "like stones",
+          "title": { "en": "Harder than stone", "de": "Härter als Stein", "ar": "أقسى من الحجر" },
+          "body": { "en": "Another verse says some hearts become like stone, or harder, then reminds us that even stones can split and let water out.", "de": "Ein anderer Vers sagt, manche Herzen würden wie Stein oder noch härter, und erinnert dann daran, dass selbst Steine aufbrechen und Wasser freigeben können.", "ar": "تقول آية أخرى إن بعض القلوب تصير كالحجارة أو أشد، ثم تذكّر بأن الحجارة نفسها قد تتشقق فيخرج منها الماء." }
+        },
+        {
+          "title": { "en": "Softening the heart", "de": "Das Herz erweichen", "ar": "لتلين القلوب" },
+          "list": {
+            "en": ["Read a few verses slowly, with presence", "Listen to a recitation you love, and pause", "Let a verse reach you before you move on", "Ask Allah for a soft and humble heart"],
+            "de": ["Lesen Sie einige Verse langsam und mit ganzer Aufmerksamkeit", "Hören Sie eine Rezitation, die Sie lieben, und halten Sie inne", "Lassen Sie einen Vers Sie erreichen, bevor Sie weiterlesen", "Bitten Sie Allah um ein weiches und demütiges Herz"],
+            "ar": ["اقرأ آيات قليلة على مهل وبحضور قلب", "استمع إلى تلاوة تحبها، وتوقف", "دع الآية تصل إليك قبل أن تمضي", "اسأل الله قلبًا لينًا خاشعًا"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 59:21", "url": "https://quran.com/59:21/tafsirs/en-tafisr-ibn-kathir" }
+      ]
+    }
+  ]
+}

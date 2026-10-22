@@ -321,6 +321,730 @@
           }
         }
       ]
+    },
+    {
+      "id": "duas-quran-forgiveness",
+      "tradition": "all",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": { "en": "Duas from the Quran · 7", "de": "Bittgebete aus dem Koran · 7", "ar": "أدعية من القرآن · ٧" },
+        "title": { "en": "Duas for forgiveness", "de": "Bittgebete um Vergebung", "ar": "أدعية الاستغفار" },
+        "sub": { "en": "How prophets and believers in the Quran asked Allah to forgive them", "de": "Wie Propheten und Gläubige im Koran Allah um Vergebung baten", "ar": "كيف سأل الأنبياء والمؤمنون في القرآن ربهم المغفرة" },
+        "arabic": "الاسْتِغْفَار"
+      },
+      "slides": [
+        {
+          "verse": "28:16",
+          "check": "wronged myself, so forgive me",
+          "title": { "en": "Musa: owning the mistake", "de": "Musa: zum Fehler stehen", "ar": "موسى يعترف بخطئه" },
+          "body": { "en": "After his blow cost a man his life, Musa made no excuses. He admitted the wrong and asked, and the same verse tells of his forgiveness.", "de": "Nachdem sein Schlag einen Mann das Leben gekostet hatte, suchte Musa keine Ausreden. Er gestand das Unrecht und bat, und derselbe Vers berichtet von seiner Vergebung.", "ar": "لما أودت ضربته بحياة رجل لم يلتمس موسى الأعذار، بل اعترف وسأل، وفي الآية نفسها خبر المغفرة له." }
+        },
+        {
+          "verse": "3:16",
+          "check": "forgive us our sins",
+          "title": { "en": "Faith first, then the request", "de": "Erst der Glaube, dann die Bitte", "ar": "الإيمان أولًا ثم السؤال" },
+          "body": { "en": "The believers mention their faith first, then ask for forgiveness and safety from the Fire. Faith is the ground the dua stands on.", "de": "Die Gläubigen nennen zuerst ihren Glauben, dann bitten sie um Vergebung und Schutz vor dem Feuer. Der Glaube ist der Boden, auf dem das Bittgebet steht.", "ar": "يقدّم المؤمنون ذكر إيمانهم ثم يسألون المغفرة والوقاية من النار، فالإيمان أرضٌ يقوم عليها الدعاء." }
+        },
+        {
+          "verse": "7:151",
+          "check": "forgive me and my brother",
+          "title": { "en": "Musa: for himself and his brother", "de": "Musa: für sich und seinen Bruder", "ar": "موسى لنفسه ولأخيه" },
+          "body": { "en": "Right after a moment of anger with Harun, Musa prays for both of them. A dua can mend a relationship.", "de": "Gleich nach einem Moment des Zorns auf Harun betet Musa für sie beide. Ein Bittgebet kann eine Beziehung heilen.", "ar": "بعد لحظة غضب على هارون دعا موسى لهما معًا، فالدعاء قد يرمّم العلاقة." }
+        },
+        {
+          "pair": ["23:109", "23:118"],
+          "check": ["the best of the merciful", "the best of the merciful"],
+          "title": { "en": "Two verses, one ending", "de": "Zwei Verse, ein Ende", "ar": "آيتان وختامٌ واحد" },
+          "body": { "en": "One describes believers who prayed this way; the other teaches the Prophet to pray the same. Both end with Allah's mercy.", "de": "Der eine beschreibt Gläubige, die so beteten; der andere lehrt den Propheten dasselbe Gebet. Beide enden mit Allahs Barmherzigkeit.", "ar": "الأولى تصف مؤمنين دعوا بهذا، والثانية تعلّم النبي ﷺ الدعاء نفسه، وكلتاهما تُختم برحمة الله." }
+        },
+        {
+          "verse": "66:8",
+          "check": "perfect for us our light",
+          "title": { "en": "On the Day of light", "de": "Am Tag des Lichts", "ar": "يوم النور" },
+          "body": { "en": "On the Day of Judgement the believers' light runs ahead of them, and still they ask for it to be completed and for forgiveness.", "de": "Am Tag des Gerichts eilt den Gläubigen ihr Licht voraus, und dennoch bitten sie um seine Vollendung und um Vergebung.", "ar": "يوم القيامة يضيء نور المؤمنين طريقهم، ومع ذلك يسألون إتمامه والمغفرة." }
+        },
+        {
+          "title": { "en": "Making istighfar a habit", "de": "Istighfar zur Gewohnheit machen", "ar": "اجعل الاستغفار عادة" },
+          "list": {
+            "en": ["Say astaghfirullah after every prayer", "Name your mistake honestly, as Musa did", "Include others in your request", "Follow a slip with a good deed"],
+            "de": ["Sagen Sie nach jedem Gebet Astaghfirullah", "Benennen Sie Ihren Fehler ehrlich, wie Musa", "Schließen Sie andere in Ihre Bitte ein", "Lassen Sie auf einen Fehltritt eine gute Tat folgen"],
+            "ar": ["قل أستغفر الله بعد كل صلاة", "سمِّ خطأك بصدق كما فعل موسى", "اجعل غيرك معك في الدعاء", "أتبِع الزلة بعمل صالح"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "duas-quran-guidance",
+      "tradition": "all",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": { "en": "Duas from the Quran · 8", "de": "Bittgebete aus dem Koran · 8", "ar": "أدعية من القرآن · ٨" },
+        "title": { "en": "5 Quranic words for finding your way", "de": "5 Worte aus dem Koran, um den Weg zu finden", "ar": "خمس كلمات قرآنية لمن يطلب الطريق" },
+        "sub": { "en": "When the road ahead is unclear: how prophets turned to Allah for guidance", "de": "Wenn der Weg unklar ist: wie Propheten sich Allah um Rechtleitung zuwandten", "ar": "حين لا يتضح الطريق: كيف لجأ الأنبياء إلى الله يطلبون الهداية" },
+        "arabic": "الهِدَايَة"
+      },
+      "slides": [
+        {
+          "verse": "28:22",
+          "check": "guide me to the sound way",
+          "title": { "en": "Musa at the crossroads", "de": "Musa am Scheideweg", "ar": "موسى على مفترق الطرق" },
+          "body": { "en": "Alone and heading for an unknown land, Musa did not know the road. He turned toward Madyan and put his hope in Allah.", "de": "Allein und auf dem Weg in ein fremdes Land kannte Musa den Weg nicht. Er wandte sich nach Madyan und setzte seine Hoffnung auf Allah.", "ar": "وحيدًا متجهًا إلى أرض لا يعرفها، لم يكن موسى يعرف الطريق، فتوجّه نحو مدين وعلّق رجاءه بالله." }
+        },
+        {
+          "verse": "18:24",
+          "check": "nearer than this to right conduct",
+          "title": { "en": "Guide me to something better", "de": "Führe mich zu Besserem", "ar": "إلى ما هو أقرب للصواب" },
+          "body": { "en": "Taught right after the lesson of saying in sha Allah: a hope that each next step will be closer to what is right.", "de": "Gelehrt direkt nach der Lektion über in scha Allah: die Hoffnung, dass jeder nächste Schritt dem Richtigen näher ist.", "ar": "جاء بعد الأمر بقول «إن شاء الله»: رجاء أن تكون كل خطوة تالية أقرب إلى الصواب." }
+        },
+        {
+          "verse": "37:99",
+          "check": "He will guide me",
+          "title": { "en": "Ibrahim sets out", "de": "Ibrahim bricht auf", "ar": "إبراهيم يرحل" },
+          "body": { "en": "Leaving his people behind, Ibrahim spoke with certainty: his Lord would show him the way.", "de": "Als er sein Volk verließ, sprach Ibrahim mit Gewissheit: Sein Herr werde ihm den Weg zeigen.", "ar": "حين ترك قومه تكلّم إبراهيم بيقين: ربه سيدلّه على الطريق." }
+        },
+        {
+          "verse": "26:62",
+          "check": "with me is my Lord",
+          "title": { "en": "Musa at the sea", "de": "Musa am Meer", "ar": "موسى عند البحر" },
+          "body": { "en": "The sea ahead, Pharaoh's army behind. When his people despaired, Musa answered with trust in his Lord's guidance.", "de": "Vor ihnen das Meer, hinter ihnen Pharaos Heer. Als sein Volk verzweifelte, antwortete Musa mit Vertrauen auf die Führung seines Herrn.", "ar": "البحر أمامهم وجيش فرعون خلفهم، فلما يئس قومه أجاب موسى بثقته في هداية ربه." }
+        },
+        {
+          "verse": "7:43",
+          "check": "who has guided us to this",
+          "title": { "en": "Thanks at the end of the road", "de": "Dank am Ende des Weges", "ar": "الحمد في آخر الطريق" },
+          "body": { "en": "The people of Paradise praise Allah for their guidance, admitting they would never have found it on their own.", "de": "Die Bewohner des Paradieses preisen Allah für ihre Rechtleitung und bekennen, dass sie sie allein nie gefunden hätten.", "ar": "يحمد أهل الجنة الله على هدايتهم، ويقرّون بأنهم ما كانوا ليجدوها بأنفسهم." }
+        },
+        {
+          "title": { "en": "Seeking guidance", "de": "Rechtleitung suchen", "ar": "طلب الهداية" },
+          "list": {
+            "en": ["Pray for guidance before big decisions", "Ask people of knowledge and experience", "Take the first step, then trust Allah", "Thank Allah for every right turn"],
+            "de": ["Bitten Sie vor großen Entscheidungen um Rechtleitung", "Fragen Sie Menschen mit Wissen und Erfahrung", "Gehen Sie den ersten Schritt und vertrauen Sie dann Allah", "Danken Sie Allah für jede richtige Abzweigung"],
+            "ar": ["اسأل الله الهداية قبل القرارات الكبيرة", "استشر أهل العلم والخبرة", "خُطَّ الخطوة الأولى ثم توكّل على الله", "احمد الله على كل منعطف صائب"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "duas-quran-parents",
+      "tradition": "all",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": { "en": "Duas from the Quran · 9", "de": "Bittgebete aus dem Koran · 9", "ar": "أدعية من القرآن · ٩" },
+        "title": { "en": "3 duas for your parents", "de": "3 Bittgebete für Ihre Eltern", "ar": "ثلاثة أدعية للوالدين" },
+        "sub": { "en": "From Nuh, Sulayman and the verses on kindness: keeping parents in our prayers", "de": "Von Nuh, Sulaiman und den Versen über Güte: die Eltern im Gebet behalten", "ar": "من نوح وسليمان وآيات البرّ: أن يبقى الوالدان في دعائنا" },
+        "arabic": "الدُّعَاءُ لِلْوَالِدَيْن"
+      },
+      "slides": [
+        {
+          "verse": "31:14",
+          "check": "Be grateful to Me and to your parents",
+          "title": { "en": "Gratitude in two directions", "de": "Dankbarkeit in zwei Richtungen", "ar": "شكرٌ في اتجاهين" },
+          "body": { "en": "The Quran links thanks to Allah with thanks to parents, and recalls what a mother carries. Praying for them is part of that thanks.", "de": "Der Koran verbindet den Dank an Allah mit dem Dank an die Eltern und erinnert daran, was eine Mutter trägt. Für sie zu beten, gehört zu diesem Dank.", "ar": "يقرن القرآن شكر الله بشكر الوالدين ويذكّر بما تحمله الأم، والدعاء لهما من هذا الشكر." }
+        },
+        {
+          "verse": "17:24",
+          "check": "as they brought me up",
+          "title": { "en": "Mercy, as they gave it", "de": "Barmherzigkeit, wie sie sie gaben", "ar": "رحمةٌ كما رحمونا" },
+          "body": { "en": "This dua asks Allah to repay them in kind: the mercy they showed when we were small and helpless.", "de": "Dieses Bittgebet bittet Allah, es ihnen gleich zu vergelten: die Barmherzigkeit, die sie zeigten, als wir klein und hilflos waren.", "ar": "يسأل هذا الدعاء الله أن يجزيهما من جنس عملهما: الرحمة التي منحانا ونحن صغار ضعفاء." }
+        },
+        {
+          "verse": "71:28",
+          "check": "forgive me and my parents",
+          "title": { "en": "Nuh's dua across generations", "de": "Nuhs Bittgebet über Generationen", "ar": "دعاء نوح عبر الأجيال" },
+          "body": { "en": "After centuries of calling his people, Nuh prays for himself, his parents, his household and every believer.", "de": "Nach Jahrhunderten des Rufens betet Nuh für sich, seine Eltern, sein Haus und jeden Gläubigen.", "ar": "بعد قرون من الدعوة دعا نوح لنفسه ولوالديه ولأهل بيته ولكل مؤمن." }
+        },
+        {
+          "verse": "27:19",
+          "check": "upon me and upon my parents",
+          "title": { "en": "Thanks for their blessings too", "de": "Dank auch für ihren Segen", "ar": "الشكر على نعمتهما أيضًا" },
+          "body": { "en": "Sulayman thanked Allah for favours on him and on his parents. Their good is part of our own story.", "de": "Sulaiman dankte Allah für die Gaben an ihn und an seine Eltern. Ihr Gutes gehört zu unserer eigenen Geschichte.", "ar": "شكر سليمان الله على نعمه عليه وعلى والديه، فخيرهما جزء من قصتنا." }
+        },
+        {
+          "title": { "en": "After they are gone", "de": "Wenn sie gegangen sind", "ar": "بعد رحيلهما" },
+          "body": { "en": "Muslims of every tradition keep praying for parents who have passed away, and give charity on their behalf. The bond of dua does not end with death.", "de": "Muslime aller Traditionen beten weiter für verstorbene Eltern und spenden in ihrem Namen. Das Band des Bittgebets endet nicht mit dem Tod.", "ar": "يواصل المسلمون في كل مذاهبهم الدعاء لوالديهم بعد موتهم ويتصدقون عنهم، فرابطة الدعاء لا تنقطع بالموت." }
+        },
+        {
+          "title": { "en": "Honouring parents in dua", "de": "Eltern im Bittgebet ehren", "ar": "برّ الوالدين بالدعاء" },
+          "list": {
+            "en": ["Name them in your sujud", "Pray for them where they can hear it, too", "Ask for their faith as well as their health", "Ask them to pray for you"],
+            "de": ["Nennen Sie sie in Ihrer Niederwerfung", "Beten Sie auch so für sie, dass sie es hören", "Bitten Sie um ihren Glauben ebenso wie um ihre Gesundheit", "Bitten Sie sie, für Sie zu beten"],
+            "ar": ["اذكرهما في سجودك", "ادعُ لهما أحيانًا بحيث يسمعان", "اسأل لهما الإيمان مع الصحة", "اطلب منهما أن يدعوا لك"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "duas-quran-spouse-children",
+      "tradition": "all",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": { "en": "Duas from the Quran · 10", "de": "Bittgebete aus dem Koran · 10", "ar": "أدعية من القرآن · ١٠" },
+        "title": { "en": "4 duas for spouse and children", "de": "4 Bittgebete für Ehepartner und Kinder", "ar": "أربعة أدعية للزوج والذرية" },
+        "sub": { "en": "For a home of peace, righteous children and a family reunited in Paradise", "de": "Für ein Zuhause des Friedens, rechtschaffene Kinder und eine im Paradies vereinte Familie", "ar": "لبيتٍ هادئ وذريةٍ صالحة وأسرةٍ تجتمع في الجنة" },
+        "arabic": "الأُسْرَةُ الصَّالِحَة"
+      },
+      "slides": [
+        {
+          "verse": "25:74",
+          "check": "make us a leader",
+          "title": { "en": "A home where eyes find rest", "de": "Ein Zuhause, in dem die Augen Ruhe finden", "ar": "بيتٌ تسكن فيه العين" },
+          "body": { "en": "A home where you look at your spouse and children and feel at peace, and the courage to be an example yourself.", "de": "Ein Zuhause, in dem Sie Ehepartner und Kinder ansehen und Frieden spüren, und der Mut, selbst ein Vorbild zu sein.", "ar": "بيتٌ تنظر فيه إلى زوجك وأولادك فتطمئن، مع همّة أن تكون أنت القدوة." }
+        },
+        {
+          "verse": "37:100",
+          "check": "from among the righteous",
+          "title": { "en": "Ibrahim: a righteous child", "de": "Ibrahim: ein rechtschaffenes Kind", "ar": "إبراهيم يسأل ولدًا صالحًا" },
+          "body": { "en": "Ibrahim asked not simply for a child, but for a righteous one. The next verse brings the good news of a son.", "de": "Ibrahim bat nicht einfach um ein Kind, sondern um ein rechtschaffenes. Der nächste Vers bringt die frohe Botschaft eines Sohnes.", "ar": "لم يسأل إبراهيم ولدًا فحسب، بل ولدًا صالحًا، وفي الآية التالية البشارة بابن." }
+        },
+        {
+          "verse": "7:189",
+          "check": "If You should give us a good",
+          "title": { "en": "Parents-to-be, together", "de": "Werdende Eltern, gemeinsam", "ar": "والدان ينتظران معًا" },
+          "body": { "en": "A couple expecting a child turn to Allah together and promise gratitude. The next verse warns against forgetting that promise.", "de": "Ein Paar, das ein Kind erwartet, wendet sich gemeinsam an Allah und verspricht Dankbarkeit. Der nächste Vers warnt davor, dieses Versprechen zu vergessen.", "ar": "زوجان ينتظران مولودًا يدعوان الله معًا ويعدان بالشكر، والآية التالية تحذّر من نسيان هذا الوعد." }
+        },
+        {
+          "verse": "40:8",
+          "check": "their spouses and their offspring",
+          "title": { "en": "The angels pray for families", "de": "Die Engel beten für Familien", "ar": "الملائكة تدعو للأسر" },
+          "body": { "en": "The angels around the Throne ask that believers enter Paradise together with their righteous parents, spouses and children.", "de": "Die Engel um den Thron bitten darum, dass Gläubige mit ihren rechtschaffenen Eltern, Ehepartnern und Kindern ins Paradies eingehen.", "ar": "تدعو الملائكة حول العرش أن يدخل المؤمنون الجنة ومعهم أهلهم الصالحون: الآباء والأزواج والأبناء." }
+        },
+        {
+          "verse": "52:21",
+          "check": "We will join with them their descendants",
+          "title": { "en": "Together again", "de": "Wieder vereint", "ar": "لقاءٌ من جديد" },
+          "body": { "en": "A promise for believing families: children who followed in faith will be reunited with their parents.", "de": "Ein Versprechen für gläubige Familien: Kinder, die im Glauben folgten, werden mit ihren Eltern wieder vereint.", "ar": "وعدٌ للأسر المؤمنة: الأبناء الذين تبعوا آباءهم في الإيمان يُجمعون بهم." }
+        },
+        {
+          "title": { "en": "A home of dua", "de": "Ein Zuhause des Bittgebets", "ar": "بيتٌ عامرٌ بالدعاء" },
+          "list": {
+            "en": ["Make dua for your spouse by name", "Pray with your children, not only for them", "Thank Allah for small moments at home", "Forgive quickly inside the family"],
+            "de": ["Machen Sie Dua für Ihren Ehepartner mit Namen", "Beten Sie mit Ihren Kindern, nicht nur für sie", "Danken Sie Allah für kleine Momente zu Hause", "Verzeihen Sie in der Familie schnell"],
+            "ar": ["ادعُ لزوجك باسمه", "صلِّ مع أولادك لا لهم فقط", "احمد الله على اللحظات الصغيرة في البيت", "سارع إلى العفو داخل الأسرة"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "duas-quran-steadfast-path",
+      "tradition": "all",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": { "en": "Duas from the Quran · 11", "de": "Bittgebete aus dem Koran · 11", "ar": "أدعية من القرآن · ١١" },
+        "title": { "en": "Staying firm: duas and promises", "de": "Standhaft bleiben: Bittgebete und Verheißungen", "ar": "الثبات: أدعية ووعود" },
+        "sub": { "en": "Words of believers who held on, and what Allah promises those who stay the course", "de": "Worte von Gläubigen, die festhielten, und was Allah denen verspricht, die dranbleiben", "ar": "كلمات مؤمنين ثبتوا، ووعد الله لمن استقام" },
+        "arabic": "الثَّبَاتُ عَلَى الطَّرِيق"
+      },
+      "slides": [
+        {
+          "verse": "2:285",
+          "check": "We hear and we obey",
+          "title": { "en": "Hearing and obeying", "de": "Hören und gehorchen", "ar": "السمع والطاعة" },
+          "body": { "en": "Near the end of al-Baqarah, the believers answer revelation with obedience and then ask for forgiveness. Firmness starts with this attitude.", "de": "Gegen Ende von al-Baqara antworten die Gläubigen der Offenbarung mit Gehorsam und bitten dann um Vergebung. Standhaftigkeit beginnt mit dieser Haltung.", "ar": "في أواخر البقرة يستقبل المؤمنون الوحي بالطاعة ثم يسألون المغفرة، ومن هذا الموقف يبدأ الثبات." }
+        },
+        {
+          "pair": ["3:53", "5:83"],
+          "check": ["register us among the witnesses", "register us among the witnesses"],
+          "title": { "en": "Two prayers, one wish", "de": "Zwei Gebete, ein Wunsch", "ar": "دعاءان وأمنية واحدة" },
+          "body": { "en": "The disciples of 'Isa, and people moved to tears by the Quran, ask for the same thing: to be counted among those who bear witness to the truth.", "de": "Die Jünger 'Isas und Menschen, die beim Koran weinten, bitten um dasselbe: zu denen gezählt zu werden, die die Wahrheit bezeugen.", "ar": "حواريّو عيسى، وقومٌ بكوا عند سماع القرآن، سألوا الشيء نفسه: أن يُحسبوا من الشاهدين بالحق." }
+        },
+        {
+          "verse": "14:27",
+          "check": "keeps firm those who believe",
+          "title": { "en": "Firmness is a gift", "de": "Festigkeit ist ein Geschenk", "ar": "الثبات عطاءٌ من الله" },
+          "body": { "en": "Allah keeps the believers steady, in this life and the next. Ask Him for it rather than relying on yourself.", "de": "Allah gibt den Gläubigen Halt, in diesem Leben und im nächsten. Bitten Sie Ihn darum, statt sich auf sich selbst zu verlassen.", "ar": "الثبات هبةٌ من الله يمنحها أهل الإيمان في حياتهم وبعد موتهم، فاسأله إياها ولا تتكل على نفسك." }
+        },
+        {
+          "verse": "41:30",
+          "check": "remained on a right course",
+          "title": { "en": "Then they stayed on course", "de": "Dann blieben sie auf Kurs", "ar": "الاستقامة بعد الإيمان" },
+          "body": { "en": "Declaring that Allah is our Lord is the beginning. The promise of angels bringing calm is for those who keep going after it.", "de": "Zu bekennen, dass Allah unser Herr ist, ist der Anfang. Die Verheißung von Engeln, die Ruhe bringen, gilt denen, die danach weitergehen.", "ar": "إعلان أن الله ربنا هو البداية، ووعد الملائكة بالطمأنينة لمن مضى على الطريق بعد ذلك." }
+        },
+        {
+          "title": { "en": "Keep the heart firm", "de": "Das Herz fest halten", "ar": "ثبّت قلبك" },
+          "list": {
+            "en": ["Hold on to a few deeds you never drop", "Learn the duas of firmness by heart", "Stay close to people who remind you of Allah", "Return quickly after every slip"],
+            "de": ["Halten Sie an wenigen Taten fest, die Sie nie aufgeben", "Lernen Sie die Bittgebete um Standhaftigkeit auswendig", "Bleiben Sie in der Nähe von Menschen, die an Allah erinnern", "Kehren Sie nach jedem Fehltritt rasch zurück"],
+            "ar": ["داوم على أعمال قليلة لا تتركها", "احفظ أدعية الثبات", "الزم من يذكّرك بالله", "عُد سريعًا بعد كل زلّة"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "duas-quran-ease",
+      "tradition": "all",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": { "en": "Duas from the Quran · 12", "de": "Bittgebete aus dem Koran · 12", "ar": "أدعية من القرآن · ١٢" },
+        "title": { "en": "When things feel heavy", "de": "Wenn alles schwer erscheint", "ar": "حين يثقل الحمل" },
+        "sub": { "en": "Three words of trust and two promises of ease from the Quran", "de": "Drei Worte des Vertrauens und zwei Verheißungen der Erleichterung aus dem Koran", "ar": "ثلاث كلمات توكّل ووعدان باليسر من القرآن" },
+        "arabic": "التَّيْسِير"
+      },
+      "slides": [
+        {
+          "verse": "94:5-6",
+          "check": "with hardship",
+          "title": { "en": "Said twice", "de": "Zweimal gesagt", "ar": "مرتين" },
+          "body": { "en": "The promise of ease is repeated, and ease is placed with hardship, not only after it. Read it slowly when the day is hard.", "de": "Die Verheißung der Erleichterung wird wiederholt, und sie steht neben der Erschwernis, nicht erst danach. Lesen Sie sie langsam an schweren Tagen.", "ar": "تكرّر وعد اليسر، وجُعل مع العسر لا بعده فقط، فاقرأه على مهل في الأيام الصعبة." }
+        },
+        {
+          "verse": "65:7",
+          "check": "after hardship, ease",
+          "title": { "en": "Within your means", "de": "Im Rahmen Ihrer Mittel", "ar": "على قدر الطاقة" },
+          "body": { "en": "In a verse about spending within one's means, Allah promises relief after difficulty. You are only asked for what you can give.", "de": "In einem Vers über das Ausgeben nach den eigenen Mitteln verspricht Allah Erleichterung nach der Schwierigkeit. Von Ihnen wird nur verlangt, was Sie geben können.", "ar": "في آية عن الإنفاق بحسب السعة يعد الله بالفرج بعد الضيق، ولا يُطلب منك إلا ما تقدر عليه." }
+        },
+        {
+          "verse": "40:44",
+          "check": "I entrust my affair to Allāh",
+          "title": { "en": "Handing the matter over", "de": "Die Sache übergeben", "ar": "تفويض الأمر" },
+          "body": { "en": "A believer at Pharaoh's court spoke the truth and then left his affair with Allah. The next verse says Allah protected him.", "de": "Ein Gläubiger am Hof Pharaos sprach die Wahrheit und überließ seine Sache dann Allah. Der nächste Vers sagt, dass Allah ihn schützte.", "ar": "قال مؤمنٌ في بلاط فرعون كلمة الحق ثم ترك أمره لله، وتخبر الآية التالية أن الله حماه." }
+        },
+        {
+          "verse": "9:129",
+          "check": "Sufficient for me is Allāh",
+          "title": { "en": "Allah is enough", "de": "Allah genügt", "ar": "الله كافٍ" },
+          "body": { "en": "When people turn away, the Prophet is taught to declare that Allah is enough for him, and to rely on Him alone.", "de": "Wenn die Menschen sich abwenden, lernt der Prophet zu bekennen, dass Allah ihm genügt, und sich allein auf Ihn zu verlassen.", "ar": "حين يُعرض الناس يتعلّم النبي ﷺ أن يعلن أن الله يكفيه، وأن يتوكل عليه وحده." }
+        },
+        {
+          "verse": "3:173",
+          "check": "Sufficient for us is Allāh",
+          "title": { "en": "When fear is spread", "de": "Wenn Angst verbreitet wird", "ar": "حين يُبثّ الخوف" },
+          "body": { "en": "Told that the enemy had gathered against them, the believers grew in faith and answered with trust in Allah.", "de": "Als man ihnen sagte, der Feind habe sich gegen sie versammelt, wuchs der Glaube der Gläubigen, und sie antworteten mit Vertrauen auf Allah.", "ar": "لما خُوّف المؤمنون بجموع العدو قوي إيمانهم، وأجابوا بالتوكل على الله." }
+        },
+        {
+          "title": { "en": "When it all feels too much", "de": "Wenn alles zu viel wird", "ar": "حين يشتدّ الضغط" },
+          "list": {
+            "en": ["Break the task into small steps", "Repeat one of these words of trust", "Pray two rak'ahs and ask for ease", "Talk to someone you trust"],
+            "de": ["Teilen Sie die Aufgabe in kleine Schritte", "Wiederholen Sie eines dieser Worte des Vertrauens", "Beten Sie zwei Rak'as und bitten Sie um Erleichterung", "Sprechen Sie mit einem Menschen, dem Sie vertrauen"],
+            "ar": ["قسّم المهمة إلى خطوات صغيرة", "ردّد إحدى كلمات التوكل هذه", "صلِّ ركعتين واسأل الله التيسير", "تحدّث إلى من تثق به"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "duas-quran-protection",
+      "tradition": "all",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": { "en": "Duas from the Quran · 13", "de": "Bittgebete aus dem Koran · 13", "ar": "أدعية من القرآن · ١٣" },
+        "title": { "en": "5 duas of protection", "de": "5 Bittgebete um Schutz", "ar": "خمسة أدعية للحماية" },
+        "sub": { "en": "Seeking refuge in Allah: from whispers, threats and temptation", "de": "Zuflucht bei Allah suchen: vor Einflüsterungen, Drohungen und Versuchung", "ar": "الاستعاذة بالله من الوساوس والتهديد والفتنة" },
+        "arabic": "الاسْتِعَاذَة"
+      },
+      "slides": [
+        {
+          "verse": "113:1-3",
+          "check": "Lord of daybreak",
+          "title": { "en": "The Lord of daybreak", "de": "Der Herr des Tagesanbruchs", "ar": "سورة الفلق" },
+          "body": { "en": "Al-Falaq opens by seeking refuge in the Lord who brings the dawn. Many recite it in the morning, the evening and before sleep.", "de": "Al-Falaq beginnt mit der Zuflucht beim Herrn, der die Morgendämmerung bringt. Viele rezitieren sie morgens, abends und vor dem Schlafen.", "ar": "تبدأ سورة الفلق بالاستعاذة بربّ الصبح، ويقرؤها كثيرون صباحًا ومساءً وقبل النوم." }
+        },
+        {
+          "verse": "23:97-98",
+          "check": "incitements of the devils",
+          "title": { "en": "From whispers and their presence", "de": "Vor Einflüsterungen und ihrer Gegenwart", "ar": "من الوساوس ومن قربهم" },
+          "body": { "en": "The Prophet is taught to seek refuge from the prompting of devils, and even from having them near.", "de": "Der Prophet lernt, Zuflucht zu suchen vor dem Anstacheln der Teufel und schon davor, dass sie in seiner Nähe sind.", "ar": "يتعلّم النبي ﷺ الاستعاذة من نزغات الشياطين، بل من مجرد حضورهم." }
+        },
+        {
+          "verse": "40:27",
+          "check": "every arrogant one",
+          "title": { "en": "Musa before a tyrant", "de": "Musa vor einem Tyrannen", "ar": "موسى أمام الطاغية" },
+          "body": { "en": "Facing Pharaoh's threats, Musa took refuge in his Lord, who is also the Lord of his enemies.", "de": "Angesichts der Drohungen Pharaos suchte Musa Zuflucht bei seinem Herrn, der auch der Herr seiner Feinde ist.", "ar": "أمام تهديد فرعون لجأ موسى إلى ربه، وهو ربّ أعدائه أيضًا." }
+        },
+        {
+          "verse": "19:18",
+          "check": "I seek refuge in the Most Merciful",
+          "title": { "en": "Maryam alone", "de": "Maryam allein", "ar": "مريم وحدها" },
+          "body": { "en": "When a stranger appeared to her in seclusion, Maryam's first words sought Allah's protection. Modesty and trust in one sentence.", "de": "Als ihr in der Abgeschiedenheit ein Fremder erschien, suchten Maryams erste Worte Allahs Schutz. Schamhaftigkeit und Vertrauen in einem Satz.", "ar": "لما ظهر لها غريبٌ في خلوتها كانت أول كلماتها استعاذةً بالله، حياءٌ وثقة في جملة واحدة." }
+        },
+        {
+          "verse": "12:33",
+          "check": "avert from me their plan",
+          "title": { "en": "Yusuf under pressure", "de": "Yusuf unter Druck", "ar": "يوسف تحت الضغط" },
+          "body": { "en": "Yusuf asked Allah to turn the temptation away, honest about his own weakness. The next verse says his Lord answered him.", "de": "Yusuf bat Allah, die Versuchung abzuwenden, und war ehrlich über seine eigene Schwäche. Der nächste Vers sagt, dass sein Herr ihn erhörte.", "ar": "سأل يوسف ربه أن يصرف عنه الفتنة معترفًا بضعفه، وتخبر الآية التالية أن ربه استجاب له." }
+        },
+        {
+          "title": { "en": "Daily protection", "de": "Täglicher Schutz", "ar": "حماية كل يوم" },
+          "list": {
+            "en": ["Recite the last three surahs morning and evening", "Seek refuge when anger or temptation rises", "Avoid places and screens that weaken you", "Ask Allah for protection for your family too"],
+            "de": ["Rezitieren Sie die letzten drei Suren morgens und abends", "Suchen Sie Zuflucht, wenn Zorn oder Versuchung aufsteigen", "Meiden Sie Orte und Bildschirme, die Sie schwächen", "Bitten Sie Allah auch für Ihre Familie um Schutz"],
+            "ar": ["اقرأ المعوذات صباحًا ومساءً", "استعذ بالله إذا ثار الغضب أو الإغراء", "تجنّب الأماكن والشاشات التي تُضعفك", "اسأل الله الحفظ لأهلك أيضًا"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "duas-quran-gratitude",
+      "tradition": "all",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": { "en": "Duas from the Quran · 14", "de": "Bittgebete aus dem Koran · 14", "ar": "أدعية من القرآن · ١٤" },
+        "title": { "en": "5 words of thanks from the Quran", "de": "5 Worte des Dankes aus dem Koran", "ar": "خمس كلمات شكر من القرآن" },
+        "sub": { "en": "From al-Fatiha to Paradise: how the Quran teaches us to praise Allah", "de": "Von al-Fatiha bis ins Paradies: wie der Koran uns lehrt, Allah zu preisen", "ar": "من الفاتحة إلى الجنة: كيف يعلّمنا القرآن حمد الله" },
+        "arabic": "الحَمْدُ وَالشُّكْر"
+      },
+      "slides": [
+        {
+          "verse": "1:2",
+          "check": "Lord of the worlds",
+          "title": { "en": "Praise in every prayer", "de": "Lob in jedem Gebet", "ar": "الحمد في كل صلاة" },
+          "body": { "en": "The Quran opens with praise. Every rak'ah begins with gratitude before any request is made.", "de": "Der Koran beginnt mit Lobpreis. Jede Rak'a beginnt mit Dankbarkeit, bevor eine Bitte ausgesprochen wird.", "ar": "يُفتتح القرآن بالحمد، وكل ركعة تبدأ بالثناء قبل أي سؤال." }
+        },
+        {
+          "verse": "27:15",
+          "check": "who has favored us",
+          "title": { "en": "Dawud and Sulayman", "de": "Dawud und Sulaiman", "ar": "داود وسليمان" },
+          "body": { "en": "Given knowledge and kingship, they praised Allah for His favour instead of praising themselves.", "de": "Mit Wissen und Herrschaft beschenkt, priesen sie Allah für Seine Gunst, statt sich selbst zu loben.", "ar": "مع ما أُعطيا من علم وسلطان نسبا الفضل إلى الله ولم يمدحا نفسيهما." }
+        },
+        {
+          "verse": "27:40",
+          "check": "whether I will be grateful or ungrateful",
+          "title": { "en": "Every gift asks a question", "de": "Jede Gabe stellt eine Frage", "ar": "كل نعمة سؤال" },
+          "body": { "en": "Seeing a miracle happen before his eyes, Sulayman read it as a test of his gratitude.", "de": "Als vor seinen Augen ein Wunder geschah, verstand Sulaiman es als Prüfung seiner Dankbarkeit.", "ar": "رأى سليمان معجزة أمام عينيه ففهمها اختبارًا لشكره." }
+        },
+        {
+          "verse": "23:28",
+          "check": "who has saved us from the wrongdoing people",
+          "title": { "en": "After being rescued", "de": "Nach der Rettung", "ar": "بعد النجاة" },
+          "body": { "en": "Nuh is taught to praise Allah once safe on the ark. Gratitude is the first thing to say after being saved.", "de": "Nuh lernt, Allah zu preisen, sobald er sicher auf der Arche ist. Dank ist das Erste, was man nach einer Rettung sagt.", "ar": "تعلّم نوح أن يحمد الله حين استقر في السفينة، فالحمد أول ما يُقال بعد النجاة." }
+        },
+        {
+          "verse": "35:34",
+          "check": "removed from us",
+          "title": { "en": "Thanks that never ends", "de": "Dank, der nie endet", "ar": "حمدٌ لا ينقطع" },
+          "body": { "en": "The people of Paradise praise Allah for taking away all their grief. Gratitude continues even there.", "de": "Die Bewohner des Paradieses preisen Allah dafür, dass Er allen Kummer von ihnen nahm. Dankbarkeit geht selbst dort weiter.", "ar": "يثني أهل الجنة على الله لأنه رفع عنهم الأحزان كلها، فالشكر باقٍ حتى هناك." }
+        },
+        {
+          "title": { "en": "A grateful day", "de": "Ein dankbarer Tag", "ar": "يومٌ شاكر" },
+          "list": {
+            "en": ["Wake up with alhamdulillah", "Thank Allah first, then the people who helped", "Turn a blessing into service for others", "Write down one gift each night"],
+            "de": ["Wachen Sie mit Alhamdulillah auf", "Danken Sie zuerst Allah, dann den Menschen, die halfen", "Machen Sie aus einer Gabe einen Dienst für andere", "Schreiben Sie jeden Abend ein Geschenk des Tages auf"],
+            "ar": ["استيقظ على الحمد لله", "اشكر الله أولًا ثم من أعانك من الناس", "حوّل النعمة إلى خدمة لغيرك", "دوّن كل ليلة نعمة من نعم يومك"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "duas-quran-before-learning",
+      "tradition": "all",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": { "en": "Duas from the Quran · 15", "de": "Bittgebete aus dem Koran · 15", "ar": "أدعية من القرآن · ١٥" },
+        "title": { "en": "Before a lesson: 5 verses to begin with", "de": "Vor dem Lernen: 5 Verse für den Anfang", "ar": "قبل الدرس: خمس آيات للبداية" },
+        "sub": { "en": "Humility, refuge and a request for more: how the Quran opens the door to knowledge", "de": "Demut, Zuflucht und die Bitte um mehr: wie der Koran die Tür zum Wissen öffnet", "ar": "تواضعٌ واستعاذةٌ وسؤالُ الزيادة: كيف يفتح القرآن باب العلم" },
+        "arabic": "طَلَبُ العِلْم"
+      },
+      "slides": [
+        {
+          "verse": "96:1-3",
+          "check": "Recite in the name of your Lord",
+          "title": { "en": "Begin with His name", "de": "Beginnen Sie mit Seinem Namen", "ar": "ابدأ باسمه" },
+          "body": { "en": "The first revelation was a command to read, in the name of the Lord who creates. Learning begins with Bismillah.", "de": "Die erste Offenbarung war ein Befehl zu lesen, im Namen des Herrn, der erschafft. Lernen beginnt mit Bismillah.", "ar": "كان أول ما نزل أمرًا بالقراءة باسم الرب الخالق، فالتعلّم يبدأ بالبسملة." }
+        },
+        {
+          "verse": "2:32",
+          "check": "we have no knowledge except what You have taught us",
+          "title": { "en": "The humility of the angels", "de": "Die Demut der Engel", "ar": "تواضع الملائكة" },
+          "body": { "en": "Asked about what they did not know, the angels admitted it and praised Allah. Admitting a gap is the first step in learning.", "de": "Nach etwas gefragt, das sie nicht wussten, gaben die Engel es zu und priesen Allah. Eine Lücke zuzugeben, ist der erste Schritt beim Lernen.", "ar": "سُئلت الملائكة عما لا تعلم فأقرّت بذلك وسبّحت الله، والاعتراف بالجهل أول خطوة في التعلّم." }
+        },
+        {
+          "verse": "18:66",
+          "check": "teach me",
+          "title": { "en": "Musa asks to learn", "de": "Musa bittet zu lernen", "ar": "موسى يطلب العلم" },
+          "body": { "en": "A great prophet asked politely to follow a teacher. Humble questions open doors to knowledge.", "de": "Ein großer Prophet bat höflich darum, einem Lehrer folgen zu dürfen. Demütige Fragen öffnen Türen zum Wissen.", "ar": "استأذن نبيٌّ عظيم بأدبٍ أن يتبع معلّمًا، والسؤال المتواضع يفتح أبواب العلم." }
+        },
+        {
+          "verse": "16:98",
+          "check": "seek refuge in Allāh from Satan",
+          "title": { "en": "Before reading the Quran", "de": "Vor dem Lesen des Korans", "ar": "قبل تلاوة القرآن" },
+          "body": { "en": "Seeking refuge before recitation clears the heart of distraction for what follows.", "de": "Zuflucht vor der Rezitation zu suchen, befreit das Herz von Ablenkung für das, was folgt.", "ar": "الاستعاذة قبل التلاوة تُفرّغ القلب من الشواغل لما بعدها." }
+        },
+        {
+          "verse": "20:114",
+          "check": "increase me in knowledge",
+          "title": { "en": "Always asking for more", "de": "Immer um mehr bitten", "ar": "طلب الزيادة دائمًا" },
+          "body": { "en": "Scholars note that knowledge is the one thing the Prophet is told in the Quran to ask more of. A short dua for every lesson.", "de": "Gelehrte bemerken, dass Wissen das Einzige ist, um dessen Mehrung der Prophet im Koran bitten soll. Ein kurzes Bittgebet für jede Lektion.", "ar": "نبّه العلماء إلى أن العلم هو ما أُمر النبي ﷺ في القرآن بطلب الزيادة منه، دعاء قصير لكل درس." }
+        },
+        {
+          "title": { "en": "A learner's routine", "de": "Die Routine eines Lernenden", "ar": "عادات طالب العلم" },
+          "list": {
+            "en": ["Renew your intention before each session", "Begin with a short dua", "Write down your questions and ask them", "Teach someone what you learned"],
+            "de": ["Erneuern Sie vor jeder Einheit Ihre Absicht", "Beginnen Sie mit einem kurzen Bittgebet", "Schreiben Sie Ihre Fragen auf und stellen Sie sie", "Bringen Sie jemandem bei, was Sie gelernt haben"],
+            "ar": ["جدّد نيتك قبل كل درس", "ابدأ بدعاء قصير", "دوّن أسئلتك واطرحها", "علّم غيرك ما تعلّمت"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Ibn Hajar al-'Asqalani, Fath al-Bari, Book of Knowledge, on 20:114" }
+      ]
+    },
+    {
+      "id": "duas-quran-ummah",
+      "tradition": "all",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": { "en": "Duas from the Quran · 16", "de": "Bittgebete aus dem Koran · 16", "ar": "أدعية من القرآن · ١٦" },
+        "title": { "en": "3 duas for the whole ummah", "de": "3 Bittgebete für die ganze Umma", "ar": "ثلاثة أدعية للأمة كلها" },
+        "sub": { "en": "Widening our prayers to every believer, near and far", "de": "Unsere Gebete auf jeden Gläubigen ausweiten, nah und fern", "ar": "أن يتسع دعاؤنا لكل مؤمن قريبًا كان أو بعيدًا" },
+        "arabic": "الأُمَّة"
+      },
+      "slides": [
+        {
+          "verse": "47:19",
+          "check": "for the believing men and believing women",
+          "title": { "en": "Include everyone", "de": "Schließen Sie alle ein", "ar": "اجعل الجميع في دعائك" },
+          "body": { "en": "The Prophet is told to ask forgiveness for himself and for all believing men and women. Your dua can be that wide.", "de": "Der Prophet soll um Vergebung für sich und für alle gläubigen Männer und Frauen bitten. Ihr Bittgebet kann ebenso weit sein.", "ar": "أُمر النبي ﷺ أن يستغفر لنفسه ولجميع أهل الإيمان رجالًا ونساءً، ودعاؤك يمكن أن يتسع كذلك." }
+        },
+        {
+          "verse": "40:7",
+          "check": "ask forgiveness for those who have believed",
+          "title": { "en": "Angels who pray for us", "de": "Engel, die für uns beten", "ar": "ملائكةٌ تدعو لنا" },
+          "body": { "en": "Around the Throne, angels ask forgiveness for believers they have never met. We can do the same for one another.", "de": "Um den Thron bitten Engel um Vergebung für Gläubige, denen sie nie begegnet sind. Wir können dasselbe füreinander tun.", "ar": "حول العرش تستغفر الملائكة لمؤمنين لم تلقهم، ونستطيع أن نفعل ذلك بعضنا لبعض." }
+        },
+        {
+          "verse": "60:5",
+          "check": "make us not",
+          "title": { "en": "Not a cause of trial", "de": "Kein Anlass zur Prüfung", "ar": "ألّا نكون فتنة" },
+          "body": { "en": "Ibrahim's followers asked not to become a trial for the deniers. Early commentators: let them not defeat us and take it as proof they are right.", "de": "Ibrahim und die mit ihm baten, nicht zur Prüfung für die Leugner zu werden. Frühe Kommentatoren erklären: Die Leugner sollen sie nicht besiegen und darin einen Beweis sehen, im Recht zu sein.", "ar": "سأل إبراهيم ومن معه ألّا يكونوا فتنة للكافرين، وفسّرها بعض السلف بألّا يُسلَّط عليهم الكفار فيظنوا أنهم على الحق." }
+        },
+        {
+          "verse": "3:103",
+          "check": "hold firmly to the rope of Allāh",
+          "title": { "en": "Hold on together", "de": "Gemeinsam festhalten", "ar": "معًا نتمسّك" },
+          "body": { "en": "Hearts that were once enemies became brothers by His favour. Unity is a blessing to protect, and a dua to keep making.", "de": "Herzen, die einst verfeindet waren, wurden durch Seine Gnade zu Geschwistern. Einheit ist ein Segen, den man schützt, und ein Bittgebet, das man immer wieder spricht.", "ar": "قلوبٌ كانت متعادية صارت بفضله متآخية، والوحدة نعمة تُحفظ ودعاءٌ يتجدّد." }
+        },
+        {
+          "title": { "en": "Praying for the ummah", "de": "Für die Umma beten", "ar": "الدعاء للأمة" },
+          "list": {
+            "en": ["Pray for Muslims in hardship, naming the places", "Ask forgiveness for all believers every day", "Avoid words that divide", "Support one good cause near you"],
+            "de": ["Beten Sie für Muslime in Not und nennen Sie die Orte", "Bitten Sie täglich um Vergebung für alle Gläubigen", "Meiden Sie Worte, die spalten", "Unterstützen Sie ein gutes Anliegen in Ihrer Nähe"],
+            "ar": ["ادعُ للمسلمين في الشدائد وسمِّ أماكنهم", "استغفر للمؤمنين جميعًا كل يوم", "تجنّب الكلام الذي يفرّق", "ادعم عملًا خيريًا قريبًا منك"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 60:5", "url": "https://quran.com/60:5/tafsirs/en-tafisr-ibn-kathir" }
+      ]
+    },
+    {
+      "id": "duas-quran-deceased",
+      "tradition": "all",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": { "en": "Duas from the Quran · 17", "de": "Bittgebete aus dem Koran · 17", "ar": "أدعية من القرآن · ١٧" },
+        "title": { "en": "When someone has died: 3 duas", "de": "Wenn jemand gestorben ist: 3 Bittgebete", "ar": "حين يرحل أحدٌ: ثلاثة أدعية" },
+        "sub": { "en": "Words from the Quran for the moment of loss and for those who went before us", "de": "Worte aus dem Koran für den Moment des Verlusts und für jene, die vor uns gingen", "ar": "كلمات من القرآن للحظة الفقد ولمن سبقونا" },
+        "arabic": "الدُّعَاءُ لِلْأَمْوَات"
+      },
+      "slides": [
+        {
+          "verse": "2:156",
+          "check": "to Him we will return",
+          "title": { "en": "The first words", "de": "Die ersten Worte", "ar": "الكلمات الأولى" },
+          "body": { "en": "When loss strikes, the Quran teaches words that return everything to Allah. Many say them on hearing of a death.", "de": "Wenn ein Verlust trifft, lehrt der Koran Worte, die alles Allah zurückgeben. Viele sprechen sie, wenn sie von einem Todesfall hören.", "ar": "عند المصيبة يعلّمنا القرآن كلمات تردّ الأمر كله إلى الله، ويقولها كثيرون عند سماع خبر الوفاة." }
+        },
+        {
+          "verse": "59:10",
+          "check": "who preceded us in faith",
+          "title": { "en": "For those who went before", "de": "Für die, die vorausgingen", "ar": "لمن سبقونا" },
+          "body": { "en": "A dua for believers of earlier generations and for hearts free of resentment. Many use it for their own departed.", "de": "Ein Bittgebet für die Gläubigen früherer Generationen und für Herzen ohne Groll. Viele sprechen es für ihre eigenen Verstorbenen.", "ar": "دعاءٌ لأهل الإيمان من الأجيال الماضية ولقلوبٍ صافية من الحقد، ويدعو به كثيرون لموتاهم." }
+        },
+        {
+          "verse": "14:41",
+          "check": "the Day the account is established",
+          "title": { "en": "For the Day of reckoning", "de": "Für den Tag der Abrechnung", "ar": "ليوم الحساب" },
+          "body": { "en": "Part of Ibrahim's long dua for Makkah: forgiveness for himself, his parents and all believers on the Day of reckoning.", "de": "Ein Teil von Ibrahims langem Bittgebet für Mekka: Vergebung für sich, seine Eltern und alle Gläubigen am Tag der Abrechnung.", "ar": "من دعاء إبراهيم الطويل لمكة، يطلب فيه العفو لنفسه ولأبويه ولأهل الإيمان حين تُعرض الأعمال." }
+        },
+        {
+          "verse": "3:185",
+          "check": "Every soul will taste death",
+          "title": { "en": "A reminder for the living", "de": "Eine Mahnung für die Lebenden", "ar": "تذكرةٌ للأحياء" },
+          "body": { "en": "Death comes to everyone. The verse redefines success: what counts is where we end up after it.", "de": "Der Tod kommt zu jedem. Der Vers bestimmt Erfolg neu: Es zählt, wo wir danach ankommen.", "ar": "الموت آتٍ على الجميع، والآية تعيد تعريف الفوز: العبرة بالمصير بعده." }
+        },
+        {
+          "title": { "en": "Praying for the dead", "de": "Für die Verstorbenen beten", "ar": "الدعاء للموتى" },
+          "body": { "en": "Muslims of every tradition pray for their dead: in the funeral prayer, at the grave and in personal dua. The detailed funeral supplications come from the Sunnah and the teachings of each school.", "de": "Muslime aller Traditionen beten für ihre Verstorbenen: im Totengebet, am Grab und im persönlichen Bittgebet. Die ausführlichen Totengebete stammen aus der Sunna und den Lehren der jeweiligen Schule.", "ar": "يدعو المسلمون في كل مذاهبهم لموتاهم: في صلاة الجنازة وعند القبر وفي دعائهم الخاص، وأدعية الجنازة المفصّلة مأخوذة من السنة وتعاليم كل مذهب." }
+        },
+        {
+          "title": { "en": "For someone you have lost", "de": "Für jemanden, den Sie verloren haben", "ar": "لمن فقدته" },
+          "list": {
+            "en": ["Make dua for them by name", "Give charity on their behalf", "Keep the ties they used to keep", "Speak of their good deeds"],
+            "de": ["Machen Sie Dua für sie mit Namen", "Spenden Sie in ihrem Namen", "Pflegen Sie die Beziehungen, die sie pflegten", "Erzählen Sie von ihren guten Taten"],
+            "ar": ["ادعُ له باسمه", "تصدّق عنه", "صِل من كان يصلهم", "اذكر محاسنه"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim (Arabic), on 14:35", "url": "https://quran.com/14:35/tafsirs/ar-tafsir-ibn-kathir" }
+      ]
+    },
+    {
+      "id": "duas-quran-justice",
+      "tradition": "all",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": { "en": "Duas from the Quran · 18", "de": "Bittgebete aus dem Koran · 18", "ar": "أدعية من القرآن · ١٨" },
+        "title": { "en": "5 duas for justice", "de": "5 Bittgebete um Gerechtigkeit", "ar": "خمسة أدعية لطلب العدل" },
+        "sub": { "en": "For the oppressed, for truth to prevail, and for never standing with wrong", "de": "Für die Unterdrückten, für den Sieg der Wahrheit und dafür, nie auf der Seite des Unrechts zu stehen", "ar": "للمستضعفين، ولظهور الحق، وألّا نقف مع الظلم أبدًا" },
+        "arabic": "العَدْل"
+      },
+      "slides": [
+        {
+          "verse": "4:75",
+          "check": "take us out of this city of oppressive people",
+          "title": { "en": "The cry of the oppressed", "de": "Der Ruf der Unterdrückten", "ar": "نداء المستضعفين" },
+          "body": { "en": "The Quran gives voice to the dua of oppressed men, women and children, and asks why no one rises to help them.", "de": "Der Koran gibt dem Bittgebet unterdrückter Männer, Frauen und Kinder eine Stimme und fragt, warum niemand ihnen zu Hilfe kommt.", "ar": "يُسمِعنا القرآن دعاء المظلومين رجالًا ونساءً وأطفالًا، ويسأل لماذا لا ينهض أحد لنصرتهم." }
+        },
+        {
+          "verse": "7:89",
+          "check": "decide between us and our people in truth",
+          "title": { "en": "Leaving the judgement to Him", "de": "Das Urteil Ihm überlassen", "ar": "ردّ الحكم إليه" },
+          "body": { "en": "Threatened with expulsion, Shu'ayb and the believers asked Allah to judge with truth between them and their people.", "de": "Mit Vertreibung bedroht, baten Schu'aib und die Gläubigen Allah, mit Wahrheit zwischen ihnen und ihrem Volk zu urteilen.", "ar": "لما هُدّد شعيب والمؤمنون بالإخراج سألوا الله أن يحكم بينهم وبين قومهم بالحق." }
+        },
+        {
+          "verse": "21:112",
+          "check": "judge [between us] in truth",
+          "title": { "en": "Judgement with truth", "de": "Ein Urteil mit Wahrheit", "ar": "حكمٌ بالحق" },
+          "body": { "en": "The surah of the prophets closes with this dua. Allah's judgement is truth, and His help is sought against falsehood.", "de": "Die Sure der Propheten schließt mit diesem Bittgebet. Allahs Urteil ist Wahrheit, und Seine Hilfe wird gegen die Falschheit erbeten.", "ar": "تُختم سورة الأنبياء بهذا الدعاء، فحكم الله حق، وبه يُستعان على الباطل." }
+        },
+        {
+          "verse": "28:17",
+          "check": "I will never be an assistant to the criminals",
+          "title": { "en": "Never on the side of wrong", "de": "Nie auf der Seite des Unrechts", "ar": "لا عون للظالمين" },
+          "body": { "en": "After his own mistake, Musa promised never to support wrongdoers. Justice includes refusing to help injustice.", "de": "Nach seinem eigenen Fehler versprach Musa, nie Übeltäter zu unterstützen. Zur Gerechtigkeit gehört, Unrecht keine Hilfe zu leisten.", "ar": "بعد خطئه عاهد موسى ألّا يعين المجرمين، فمن العدل أن ترفض إعانة الظلم." }
+        },
+        {
+          "verse": "28:21",
+          "check": "save me from the wrongdoing people",
+          "title": { "en": "Leaving to stay safe", "de": "Gehen, um sicher zu sein", "ar": "الخروج طلبًا للنجاة" },
+          "body": { "en": "Warned of a plot, Musa left the city at once with this dua. Sometimes leaving is how you protect yourself from injustice.", "de": "Vor einem Komplott gewarnt, verließ Musa sofort die Stadt mit diesem Bittgebet. Manchmal schützt man sich vor Unrecht, indem man geht.", "ar": "لما حُذّر من المكيدة خرج موسى من المدينة فورًا بهذا الدعاء، وقد يكون الرحيل حمايةً من الظلم." }
+        },
+        {
+          "title": { "en": "Standing for justice", "de": "Für Gerechtigkeit einstehen", "ar": "انصر العدل" },
+          "list": {
+            "en": ["Pray for the oppressed, naming them", "Refuse to share in unfair deals", "Speak up when you are able to", "Be fair in small things at home"],
+            "de": ["Beten Sie für die Unterdrückten und nennen Sie sie", "Machen Sie bei unfairen Geschäften nicht mit", "Erheben Sie Ihre Stimme, wenn Sie können", "Seien Sie zu Hause in kleinen Dingen gerecht"],
+            "ar": ["ادعُ للمظلومين وسمِّهم", "ارفض المشاركة في صفقات ظالمة", "تكلّم حين تستطيع", "كن عادلًا في الصغائر في بيتك"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "duas-quran-patience",
+      "tradition": "all",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": { "en": "Duas from the Quran · 19", "de": "Bittgebete aus dem Koran · 19", "ar": "أدعية من القرآن · ١٩" },
+        "title": { "en": "Words of patience from the Quran", "de": "Worte der Geduld aus dem Koran", "ar": "كلمات الصبر من القرآن" },
+        "sub": { "en": "What Ya'qub, Musa and the Prophet were taught to say and do when waiting was hard", "de": "Was Yaqub, Musa und der Prophet sagen und tun sollten, als das Warten schwerfiel", "ar": "ما قاله يعقوب وموسى وما تعلّمه النبي ﷺ حين شقّ الانتظار" },
+        "arabic": "الصَّبْر"
+      },
+      "slides": [
+        {
+          "pair": ["12:18", "12:83"],
+          "check": ["patience is most fitting", "patience is most fitting"],
+          "title": { "en": "Ya'qub, twice", "de": "Yaqub, zweimal", "ar": "يعقوب مرتين" },
+          "body": { "en": "After losing Yusuf, and years later another son, Ya'qub said the same words. Beautiful patience: grief without complaint against Allah.", "de": "Nach dem Verlust Yusufs und Jahre später eines weiteren Sohnes sprach Yaqub dieselben Worte. Schöne Geduld: Trauer ohne Klage gegen Allah.", "ar": "بعد فقد يوسف، ثم ابنٍ آخر بعد سنين، قال يعقوب الكلمات نفسها: صبرٌ فيه حزن بلا شكوى من الله." }
+        },
+        {
+          "verse": "2:153",
+          "check": "seek help through patience and prayer",
+          "title": { "en": "Patience and prayer", "de": "Geduld und Gebet", "ar": "الصبر والصلاة" },
+          "body": { "en": "Two tools given together. The verse ends by promising Allah's company to those who endure.", "de": "Zwei Hilfen, die zusammen gegeben werden. Der Vers endet mit der Zusage, dass Allah bei denen ist, die ausharren.", "ar": "وسيلتان تُعطيان معًا، وتُختم الآية بوعد معيّة الله لمن يصبر." }
+        },
+        {
+          "verse": "7:128",
+          "check": "Seek help through Allāh and be patient",
+          "title": { "en": "Musa to his people", "de": "Musa zu seinem Volk", "ar": "موسى لقومه" },
+          "body": { "en": "Under Pharaoh's pressure, Musa told his people to seek Allah's help and endure, and to look beyond the present moment.", "de": "Unter dem Druck Pharaos riet Musa seinem Volk, Allahs Hilfe zu suchen, auszuharren und über den Augenblick hinauszuschauen.", "ar": "تحت ضغط فرعون أوصى موسى قومه بالاستعانة بالله والصبر والنظر إلى ما بعد اللحظة الراهنة." }
+        },
+        {
+          "verse": "68:48",
+          "check": "be patient for the decision of your Lord",
+          "title": { "en": "Waiting for His decision", "de": "Auf Seine Entscheidung warten", "ar": "انتظار حكمه" },
+          "body": { "en": "The Prophet is told to wait patiently for Allah's decision, and is reminded of Yunus, who had left his people in anger.", "de": "Der Prophet soll geduldig auf Allahs Entscheidung warten und wird an Yunus erinnert, der sein Volk im Zorn verlassen hatte.", "ar": "يؤمر النبي ﷺ بانتظار حكم ربه صابرًا، ويُذكَّر بيونس الذي فارق قومه غاضبًا." }
+        },
+        {
+          "verse": "3:200",
+          "check": "persevere and endure",
+          "title": { "en": "The last verse of Al 'Imran", "de": "Der letzte Vers von Al 'Imran", "ar": "خاتمة آل عمران" },
+          "body": { "en": "A long surah ends with patience in several forms: enduring, outlasting and holding your post.", "de": "Eine lange Sure endet mit Geduld in mehreren Formen: ausharren, durchhalten und auf dem Posten bleiben.", "ar": "تُختم سورة طويلة بالصبر في صور متعددة: التحمّل والمثابرة والثبات في الموقع." }
+        },
+        {
+          "title": { "en": "Practising patience", "de": "Geduld üben", "ar": "التدرّب على الصبر" },
+          "list": {
+            "en": ["Turn to prayer when the heart is heavy", "Pour out your grief to Allah, not to everyone", "Keep doing the next right thing", "Ask Allah for patience by name in your dua"],
+            "de": ["Wenden Sie sich dem Gebet zu, wenn das Herz schwer ist", "Klagen Sie Ihren Kummer Allah, nicht jedem", "Tun Sie weiter das nächste Richtige", "Bitten Sie Allah in Ihrem Bittgebet ausdrücklich um Geduld"],
+            "ar": ["الجأ إلى الصلاة إذا ثقل قلبك", "اشكُ همّك إلى الله لا إلى كل أحد", "واصل فعل الصواب خطوة خطوة", "اسأل الله الصبر صراحةً في دعائك"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim (Arabic), on 68:48", "url": "https://quran.com/68:48/tafsirs/ar-tafsir-ibn-kathir" }
+      ]
+    },
+    {
+      "id": "duas-quran-good-end",
+      "tradition": "all",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": { "en": "Duas from the Quran · 20", "de": "Bittgebete aus dem Koran · 20", "ar": "أدعية من القرآن · ٢٠" },
+        "title": { "en": "4 duas for a good ending", "de": "4 Bittgebete für ein gutes Ende", "ar": "أربعة أدعية لحسن الخاتمة" },
+        "sub": { "en": "Asking for honour on the Last Day and a home near Allah", "de": "Um Ehre am Letzten Tag und ein Zuhause nahe bei Allah bitten", "ar": "سؤال الكرامة يوم القيامة وبيتٍ عند الله" },
+        "arabic": "حُسْنُ الخَاتِمَة"
+      },
+      "slides": [
+        {
+          "verse": "3:194",
+          "check": "do not disgrace us on the Day of Resurrection",
+          "title": { "en": "Honour on that Day", "de": "Ehre an jenem Tag", "ar": "الكرامة في ذلك اليوم" },
+          "body": { "en": "Those who reflect on creation end their dua asking for what Allah promised through His messengers, and for honour on the Last Day.", "de": "Die über die Schöpfung nachdenken, beschließen ihr Bittgebet mit der Bitte um das, was Allah durch Seine Gesandten verhieß, und um Ehre am Letzten Tag.", "ar": "يختم المتفكرون في الخلق دعاءهم بسؤال ما وعد الله على ألسنة رسله، والكرامة يوم القيامة." }
+        },
+        {
+          "verse": "26:87-89",
+          "check": "sound heart",
+          "title": { "en": "Ibrahim's hope", "de": "Ibrahims Hoffnung", "ar": "رجاء إبراهيم" },
+          "body": { "en": "Even the friend of Allah asked not to be put to shame on the Day of Resurrection, when only a sound heart will count.", "de": "Selbst der Freund Allahs bat, am Tag der Auferstehung nicht beschämt zu werden, wenn nur ein heiles Herz zählt.", "ar": "حتى خليل الله سأل ألّا يُفضح يوم البعث، في يومٍ لا قيمة فيه إلا لسلامة القلب." }
+        },
+        {
+          "verse": "66:11",
+          "check": "build for me near You a house in Paradise",
+          "title": { "en": "Asiyah: a house near Him", "de": "Asiya: ein Haus nahe bei Ihm", "ar": "آسية: جوار الله" },
+          "body": { "en": "The wife of Pharaoh lived in a palace, yet asked for a home near Allah. The Quran makes her an example for all believers.", "de": "Die Frau Pharaos lebte in einem Palast und bat doch um ein Zuhause nahe bei Allah. Der Koran macht sie zum Vorbild für alle Gläubigen.", "ar": "عاشت امرأة فرعون في قصر، ومع ذلك سألت منزلًا قريبًا من الله في الجنة، وجعلها القرآن مثلًا للمؤمنين جميعًا." }
+        },
+        {
+          "verse": "25:65",
+          "check": "avert from us the punishment of Hell",
+          "title": { "en": "Kept far from the Fire", "de": "Fern vom Feuer", "ar": "النجاة من النار" },
+          "body": { "en": "Among the qualities of the servants of the Most Merciful: they ask to be kept far from Hell.", "de": "Zu den Eigenschaften der Diener des Allerbarmers gehört, dass sie bitten, von der Hölle ferngehalten zu werden.", "ar": "من صفات عباد الرحمن أنهم يسألون الله أن يجنّبهم النار." }
+        },
+        {
+          "verse": "89:27-29",
+          "check": "O reassured soul",
+          "title": { "en": "The welcome we hope for", "de": "Der Empfang, den wir erhoffen", "ar": "الاستقبال الذي نرجوه" },
+          "body": { "en": "This is the welcome a soul at peace receives. Every dua for a good ending is a dua for this moment.", "de": "Das ist der Empfang, den eine Seele in Frieden erhält. Jedes Bittgebet um ein gutes Ende ist ein Bittgebet um diesen Augenblick.", "ar": "هذا استقبال النفس المطمئنة، وكل دعاء بحسن الخاتمة دعاءٌ بهذه اللحظة." }
+        },
+        {
+          "title": { "en": "Preparing for a good end", "de": "Sich auf ein gutes Ende vorbereiten", "ar": "الاستعداد لحسن الخاتمة" },
+          "list": {
+            "en": ["Keep one small deed you never drop", "Repent often, not only at the end", "Make peace with people now", "Ask for a good ending in every sujud"],
+            "de": ["Bewahren Sie eine kleine Tat, die Sie nie aufgeben", "Bereuen Sie oft, nicht erst am Ende", "Versöhnen Sie sich jetzt mit den Menschen", "Bitten Sie in jeder Niederwerfung um ein gutes Ende"],
+            "ar": ["داوم على عمل صغير لا تتركه", "أكثر من التوبة ولا تؤخرها", "تصالح مع الناس الآن", "اسأل الله حسن الخاتمة في كل سجود"]
+          }
+        }
+      ]
     }
   ]
 }

@@ -1,0 +1,1317 @@
+{
+  "series": "tazkiyah",
+  "label": { "en": "Purifying the heart", "de": "Läuterung des Herzens", "ar": "تزكية النفس" },
+  "topic": "hadith",
+  "tradition": "all",
+  "items": [
+    {
+      "id": "tazkiyah-01-meaning",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": { "en": "Purifying the heart · 1", "de": "Läuterung des Herzens · 1", "ar": "تزكية النفس · ١" },
+        "title": { "en": "Tazkiyah: what it means to purify the soul", "de": "Tazkiya: was es heißt, die Seele zu läutern", "ar": "التزكية: ما معنى تطهير النفس؟" },
+        "sub": { "en": "Purity and growth in one word, and why everything starts with the heart", "de": "Reinheit und Wachstum in einem Wort, und warum alles beim Herzen beginnt", "ar": "طهارة ونماء في كلمة واحدة، ولماذا يبدأ كل شيء من القلب" },
+        "arabic": "تَزْكِيَةُ النَّفْس"
+      },
+      "slides": [
+        {
+          "title": { "en": "Purity and growth", "de": "Reinheit und Wachstum", "ar": "طهارة ونماء" },
+          "arabic": "ز ك و",
+          "body": { "en": "The root z-k-w joins two ideas: to be pure and to grow. Zakah comes from it too. Tazkiyah removes what harms the heart and helps what is good in it grow. The root occurs 59 times in the Quran.", "de": "Die Wurzel z-k-w verbindet zwei Gedanken: rein sein und wachsen. Auch die Zakat stammt von ihr. Tazkiya entfernt, was dem Herzen schadet, und lässt das Gute in ihm wachsen. Im Koran kommt die Wurzel 59-mal vor.", "ar": "يجمع الجذر ز ك و معنيين: الطهارة والنماء، ومنه الزكاة. فالتزكية تُزيل ما يضرّ القلب، وتُنمّي ما فيه من خير. ويرد هذا الجذر في القرآن ٥٩ مرة." }
+        },
+        {
+          "verse": "91:8-10",
+          "check": "succeeded who purifies",
+          "title": { "en": "Success, as the Quran defines it", "de": "Erfolg, wie der Koran ihn bestimmt", "ar": "الفلاح كما يعرّفه القرآن" },
+          "body": { "en": "After a long series of oaths, Surah ash-Shams names who truly succeeds and who fails.", "de": "Nach einer langen Reihe von Schwüren nennt Sure asch-Schams, wer wirklich Erfolg hat und wer scheitert.", "ar": "بعد سلسلة طويلة من الأقسام، تبيّن سورة الشمس من يفلح حقًّا ومن يخيب." }
+        },
+        {
+          "verse": "62:2",
+          "check": "purifying them",
+          "title": { "en": "Part of the Prophet's mission", "de": "Teil der Sendung des Propheten", "ar": "من مهمة النبي ﷺ" },
+          "body": { "en": "Purification stands between recitation and teaching. Changing hearts was part of why he was sent.", "de": "Die Läuterung steht zwischen Rezitation und Lehre. Herzen zu verändern gehörte zu seinem Auftrag.", "ar": "تأتي التزكية بين التلاوة والتعليم، فإصلاح القلوب من صميم ما بُعث به." }
+        },
+        {
+          "title": { "en": "A map of the heart", "de": "Eine Landkarte des Herzens", "ar": "خريطة للقلب" },
+          "body": { "en": "Al-Ghazali divided the second half of his Ihya' 'Ulum al-Din into two parts: the traits that ruin (al-muhlikat) and the traits that save (al-munjiyat). This series follows that idea in small, practical steps.", "de": "Al-Ghazali teilte die zweite Hälfte seines Ihya' 'Ulum al-Din in zwei Teile: die Eigenschaften, die verderben (al-muhlikat), und die, die retten (al-mundschiyat). Diese Reihe folgt dieser Idee in kleinen, praktischen Schritten.", "ar": "قسّم الغزالي النصف الثاني من كتابه إحياء علوم الدين إلى قسمين: المهلكات والمنجيات. وتسير هذه السلسلة على هذه الفكرة بخطوات صغيرة عملية." }
+        },
+        {
+          "verse": "87:14-15",
+          "check": "purifies himself",
+          "title": { "en": "Two daily tools", "de": "Zwei tägliche Werkzeuge", "ar": "وسيلتان يوميتان" },
+          "body": { "en": "Remembering His name and praying: purification is not only an idea but a daily practice.", "de": "Seines Namens gedenken und beten: Läuterung ist nicht nur eine Idee, sondern tägliche Übung.", "ar": "ذكر اسمه والصلاة: التزكية ليست فكرة فحسب، بل عمل يومي." }
+        },
+        {
+          "title": { "en": "What this series covers", "de": "Worum es in dieser Reihe geht", "ar": "ما تتناوله هذه السلسلة" },
+          "list": { "en": ["Diseases of the heart: pride, greed, grudges, suspicion", "Their cures: gratitude, repentance, remembrance", "Daily practice: self-accountability and watchfulness", "Guarding the tongue, the eyes and your company", "Small, steady steps instead of big resolutions"], "de": ["Krankheiten des Herzens: Hochmut, Gier, Groll, Argwohn", "Ihre Heilmittel: Dankbarkeit, Reue, Gedenken", "Tägliche Übung: Selbstprüfung und Achtsamkeit vor Allah", "Zunge, Blick und Umgang bewahren", "Kleine, beständige Schritte statt großer Vorsätze"], "ar": ["أمراض القلب: الكبر والطمع والحقد وسوء الظن", "علاجها: الشكر والتوبة والذكر", "العمل اليومي: المحاسبة والمراقبة", "حفظ اللسان والبصر والصحبة", "خطوات صغيرة دائمة بدل العزائم الكبيرة"] }
+        }
+      ],
+      "sources": [
+        { "label": "Al-Ghazali, Ihya' 'Ulum al-Din, introduction (the four quarters)", "url": "https://ar.wikisource.org/wiki/%D8%A5%D8%AD%D9%8A%D8%A7%D8%A1_%D8%B9%D9%84%D9%88%D9%85_%D8%A7%D9%84%D8%AF%D9%8A%D9%86" },
+        { "label": "Quranic Arabic Corpus, root z-k-w", "url": "https://corpus.quran.com/qurandictionary.jsp?q=zkw" }
+      ]
+    },
+    {
+      "id": "tazkiyah-02-sound-heart",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": { "en": "Purifying the heart · 2", "de": "Läuterung des Herzens · 2", "ar": "تزكية النفس · ٢" },
+        "title": { "en": "The sound heart: the one thing that counts", "de": "Das heile Herz: das Eine, das zählt", "ar": "القلب السليم: ما ينفع حقًّا" },
+        "sub": { "en": "What Ibrahim hoped to bring to his Lord, and how a heart becomes whole", "de": "Was Ibrahim zu seinem Herrn bringen wollte, und wie ein Herz heil wird", "ar": "ما رجا إبراهيم أن يلقى به ربّه، وكيف يصير القلب سليمًا" },
+        "arabic": "القَلْبُ السَّلِيم"
+      },
+      "slides": [
+        {
+          "verse": "26:88-89",
+          "check": "sound heart",
+          "title": { "en": "What remains on that Day", "de": "Was an jenem Tag bleibt", "ar": "ما يبقى في ذلك اليوم" },
+          "body": { "en": "These words close a dua of Ibrahim. On the Last Day, possessions and family fall away. A sound heart is what remains.", "de": "Diese Worte beschließen ein Bittgebet Ibrahims. Am Letzten Tag fallen Besitz und Familie weg. Ein heiles Herz ist das, was bleibt.", "ar": "بهذه الكلمات يُختم دعاء إبراهيم عليه السلام. في اليوم الآخر يسقط المال والأهل، ويكون القلب السليم هو الزاد." }
+        },
+        {
+          "verse": "37:83-84",
+          "check": "sound heart",
+          "title": { "en": "Ibrahim's own heart", "de": "Ibrahims eigenes Herz", "ar": "قلب إبراهيم" },
+          "body": { "en": "The Quran praises Ibrahim with the very quality he prayed for.", "de": "Der Koran lobt Ibrahim mit genau der Eigenschaft, um die er gebetet hatte.", "ar": "يثني القرآن على إبراهيم بالصفة نفسها التي دعا بها." }
+        },
+        {
+          "title": { "en": "What 'sound' means", "de": "Was „heil“ bedeutet", "ar": "معنى السلامة" },
+          "arabic": "س ل م",
+          "body": { "en": "Ibn al-Qayyim explains the sound heart as one kept safe from every desire that opposes Allah's command and every doubt that contradicts what He has told. Salim comes from s-l-m: safe, whole, at peace.", "de": "Ibn al-Qayyim erklärt das heile Herz als eines, das bewahrt ist vor jeder Begierde, die Allahs Gebot widerspricht, und vor jedem Zweifel an dem, was Er mitgeteilt hat. Salim kommt von s-l-m: sicher, ganz, in Frieden.", "ar": "يفسّر ابن القيم القلب السليم بأنه الذي سلم من كل شهوة تخالف أمر الله، ومن كل شبهة تعارض خبره. والسليم من الجذر س ل م: السالم التام المطمئن." }
+        },
+        {
+          "verse": "8:24",
+          "check": "between a man and his heart",
+          "title": { "en": "The heart is in His hand", "de": "Das Herz ist in Seiner Hand", "ar": "القلب بيد الله" },
+          "body": { "en": "The heart is not fully ours to control. So we answer Allah's call while we can, and ask Him to keep it.", "de": "Das Herz liegt nicht ganz in unserer Hand. Darum folgen wir Allahs Ruf, solange wir können, und bitten Ihn, es zu bewahren.", "ar": "ليس القلب في قبضتنا تمامًا، فنستجيب لله ما دمنا نستطيع، ونسأله أن يحفظه." }
+        },
+        {
+          "verse": "50:33",
+          "check": "heart returning",
+          "title": { "en": "A heart that keeps returning", "de": "Ein Herz, das immer wieder umkehrt", "ar": "قلب يعود دائمًا" },
+          "body": { "en": "Soundness is not perfection. It is a heart that turns back to Allah again and again.", "de": "Heil sein heißt nicht vollkommen sein. Es ist ein Herz, das immer wieder zu Allah zurückkehrt.", "ar": "السلامة ليست العصمة، بل قلب يرجع إلى الله مرة بعد مرة." }
+        },
+        {
+          "verse": "3:8",
+          "check": "let not our hearts deviate",
+          "title": { "en": "A dua for a steady heart", "de": "Ein Bittgebet für ein festes Herz", "ar": "دعاء لثبات القلب" },
+          "body": { "en": "Those firmly grounded in knowledge ask Allah to keep their hearts from turning away after guidance.", "de": "Die im Wissen fest Verwurzelten bitten Allah, ihre Herzen nach der Rechtleitung nicht abirren zu lassen.", "ar": "يسأل الراسخون في العلم ربهم أن يثبّت قلوبهم بعد الهداية." }
+        },
+        {
+          "title": { "en": "Signs of a heart on its way", "de": "Zeichen eines Herzens auf dem Weg", "ar": "علامات قلب يسير إلى الله" },
+          "list": { "en": ["A sin feels heavy, not like nothing", "It finds rest in prayer and remembrance", "It is glad when others receive good", "It returns quickly after a mistake"], "de": ["Eine Sünde fühlt sich schwer an, nicht belanglos", "Es findet Ruhe im Gebet und im Gedenken", "Es freut sich, wenn anderen Gutes zuteilwird", "Es kehrt nach einem Fehler schnell um"], "ar": ["يشعر بثقل الذنب ولا يستخفّ به", "يجد راحته في الصلاة والذكر", "يفرح إذا نال غيره خيرًا", "يرجع سريعًا بعد الخطأ"] }
+        }
+      ],
+      "sources": [
+        { "label": "Ibn al-Qayyim, Ighathat al-Lahfan min Masayid al-Shaytan, chapter 1", "url": "https://ar.wikisource.org/wiki/%D8%A5%D8%BA%D8%A7%D8%AB%D8%A9_%D8%A7%D9%84%D9%84%D9%87%D9%81%D8%A7%D9%86/%D8%A7%D9%84%D8%A8%D8%A7%D8%A8_%D8%A7%D9%84%D8%A3%D9%88%D9%84" }
+      ]
+    },
+    {
+      "id": "tazkiyah-03-sincerity",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": { "en": "Purifying the heart · 3", "de": "Läuterung des Herzens · 3", "ar": "تزكية النفس · ٣" },
+        "title": { "en": "Sincerity: doing it for One", "de": "Aufrichtigkeit: für den Einen handeln", "ar": "الإخلاص: أن تعمل لواحد" },
+        "sub": { "en": "When the eyes of people matter less than the sight of Allah", "de": "Wenn die Blicke der Menschen weniger zählen als Allahs Sehen", "ar": "حين يصغر نظر الناس أمام نظر الله" },
+        "arabic": "الإِخْلَاص"
+      },
+      "slides": [
+        {
+          "title": { "en": "Pure, with nothing mixed in", "de": "Rein, ohne Beimischung", "ar": "صافٍ لا يشوبه شيء" },
+          "arabic": "خ ل ص",
+          "body": { "en": "Ikhlas comes from kh-l-s: to make something pure, free of anything mixed into it. A sincere deed is done for Allah alone, without the wish to be seen or praised. The root occurs 31 times in the Quran.", "de": "Ikhlas kommt von kh-l-s: etwas rein machen, frei von jeder Beimischung. Eine aufrichtige Tat geschieht allein für Allah, ohne den Wunsch, gesehen oder gelobt zu werden. Im Koran kommt die Wurzel 31-mal vor.", "ar": "الإخلاص من الجذر خ ل ص: تصفية الشيء مما يخالطه. والعمل الخالص ما كان لله وحده، بلا رغبة في أن يُرى أو يُمدح. ويرد هذا الجذر في القرآن ٣١ مرة." }
+        },
+        {
+          "verse": "39:2",
+          "check": "sincere to Him in religion",
+          "title": { "en": "The command", "de": "Das Gebot", "ar": "الأمر الإلهي" },
+          "body": { "en": "Worship and sincerity are joined from the start: devotion that belongs to Him alone.", "de": "Gottesdienst und Aufrichtigkeit gehören von Anfang an zusammen: eine Hingabe, die Ihm allein gilt.", "ar": "تقترن العبادة بالإخلاص من البداية: دين خالص له وحده." }
+        },
+        {
+          "hadith": "muslim:7475",
+          "check": "does not stand in need of a partner",
+          "title": { "en": "He accepts no share", "de": "Er nimmt keinen Anteil an", "ar": "لا يقبل الشركة" },
+          "body": { "en": "A hadith qudsi on why a divided intention loses its worth.", "de": "Ein Hadith Qudsi darüber, warum eine geteilte Absicht ihren Wert verliert.", "ar": "حديث قدسي يبيّن لماذا تذهب قيمة العمل إذا انقسمت النية." }
+        },
+        {
+          "hadith": "muslim:6721",
+          "check": "glad tidings",
+          "title": { "en": "When praise comes unasked", "de": "Wenn Lob ungefragt kommt", "ar": "حين يأتي الثناء دون طلب" },
+          "body": { "en": "Being praised for a deed you did for Allah is not showing off. The Prophet called it good news.", "de": "Für eine Tat gelobt zu werden, die Sie für Allah getan haben, ist kein Zurschaustellen. Der Prophet nannte es eine frohe Botschaft.", "ar": "أن تُمدح على عمل عملته لله ليس رياءً، وقد سمّاه النبي ﷺ بشرى." }
+        },
+        {
+          "title": { "en": "Do not stop out of fear", "de": "Hören Sie nicht aus Angst auf", "ar": "لا تترك العمل خوفًا" },
+          "body": { "en": "In al-Adhkar, al-Nawawi quotes al-Fudayl ibn 'Iyad: leaving a deed because of people is showing off, doing it for people is shirk, and sincerity is that Allah frees you from both. So keep doing good.", "de": "In al-Adhkar zitiert al-Nawawi al-Fudail ibn 'Iyad: Eine Tat wegen der Menschen zu lassen ist Zurschaustellen, sie für die Menschen zu tun ist Schirk, und Aufrichtigkeit ist, dass Allah Sie von beidem befreit. Tun Sie also weiter Gutes.", "ar": "ينقل النووي في الأذكار عن الفضيل بن عياض قوله: ترك العمل لأجل الناس رياء، والعمل لأجل الناس شرك، والإخلاص أن يعافيك الله منهما. فلا تترك الخير." }
+        },
+        {
+          "dua": "hisn:92:0",
+          "check": "lest I should commit shirk",
+          "title": { "en": "A dua against hidden shirk", "de": "Ein Bittgebet gegen verborgenen Schirk", "ar": "دعاء من الشرك الخفي" },
+          "body": { "en": "Protection for what we do knowingly, and forgiveness for what slips in unnoticed.", "de": "Schutz vor dem, was wir wissentlich tun, und Vergebung für das, was unbemerkt hineinschlüpft.", "ar": "استعاذة مما نعلمه، واستغفار لما يتسلّل دون أن نشعر." }
+        },
+        {
+          "title": { "en": "Small habits of sincerity", "de": "Kleine Gewohnheiten der Aufrichtigkeit", "ar": "عادات صغيرة للإخلاص" },
+          "list": { "en": ["Renew your intention before you begin", "Keep a few good deeds known only to Allah", "Ask: would I still do this if no one saw?", "Do not drop a good deed for fear of showing off"], "de": ["Erneuern Sie Ihre Absicht, bevor Sie beginnen", "Bewahren Sie einige gute Taten, die nur Allah kennt", "Fragen Sie sich: Täte ich das auch, wenn niemand es sähe?", "Lassen Sie keine gute Tat aus Angst vor Zurschaustellen"], "ar": ["جدّد نيتك قبل أن تبدأ", "احتفظ بأعمال صالحة لا يعلمها إلا الله", "اسأل نفسك: هل أفعل هذا لو لم يرني أحد؟", "لا تترك عملًا صالحًا خوفًا من الرياء"] }
+        }
+      ],
+      "sources": [
+        { "label": "Al-Nawawi, al-Adhkar, introduction (the saying of al-Fudayl ibn 'Iyad)" },
+        { "label": "Quranic Arabic Corpus, root kh-l-s", "url": "https://corpus.quran.com/qurandictionary.jsp?q=xlS" }
+      ]
+    },
+    {
+      "id": "tazkiyah-04-pride",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": { "en": "Purifying the heart · 4", "de": "Läuterung des Herzens · 4", "ar": "تزكية النفس · ٤" },
+        "title": { "en": "Pride and its cure", "de": "Hochmut und seine Heilung", "ar": "الكِبر وعلاجه" },
+        "sub": { "en": "The first sin in the story of creation, and how the scholars treated it", "de": "Die erste Sünde in der Schöpfungsgeschichte, und wie die Gelehrten sie behandelten", "ar": "أول معصية في قصة الخلق، وكيف عالجها العلماء" },
+        "arabic": "الكِبْر"
+      },
+      "slides": [
+        {
+          "title": { "en": "What pride is", "de": "Was Hochmut ist", "ar": "ما الكِبر؟" },
+          "body": { "en": "Pride (kibr) is not good clothes or healthy confidence. It is seeing yourself above others and pushing the truth away when it comes from someone you look down on. It lives in the heart before it shows in behaviour.", "de": "Hochmut (kibr) ist nicht schöne Kleidung oder gesundes Selbstvertrauen. Es heißt, sich über andere zu stellen und die Wahrheit abzuweisen, wenn sie von jemandem kommt, auf den man herabsieht. Er wohnt im Herzen, bevor er sich im Verhalten zeigt.", "ar": "ليس الكِبر حسن الثياب ولا الثقة السليمة بالنفس، بل أن ترى نفسك فوق الناس، وأن تردّ الحق إذا جاء ممن تستصغره. يسكن القلب قبل أن يظهر في السلوك." }
+        },
+        {
+          "verse": "7:12",
+          "check": "I am better than him",
+          "title": { "en": "Where pride began", "de": "Wo Hochmut begann", "ar": "حيث بدأ الكِبر" },
+          "body": { "en": "Iblis refused to bow with an argument about origins. Pride always finds a reason to feel superior.", "de": "Iblis verweigerte die Niederwerfung mit einem Argument über die Herkunft. Hochmut findet immer einen Grund, sich überlegen zu fühlen.", "ar": "رفض إبليس السجود بحجة الأصل، والكِبر يجد دائمًا سببًا ليشعر بالتفوّق." }
+        },
+        {
+          "hadith": "bukhari:6657",
+          "check": "arrogant",
+          "title": { "en": "Two kinds of people", "de": "Zwei Arten von Menschen", "ar": "صنفان من الناس" },
+          "body": { "en": "The humble and overlooked are named among the people of Paradise. Harsh arrogance is named as the opposite.", "de": "Die Demütigen und Übersehenen werden zu den Leuten des Paradieses gezählt. Harter Hochmut wird als das Gegenteil genannt.", "ar": "يُذكر المتواضعون المغمورون في أهل الجنة، ويُذكر التكبّر الغليظ في مقابلهم." }
+        },
+        {
+          "verse": "36:77",
+          "check": "sperm-drop",
+          "title": { "en": "Remember where you came from", "de": "Denken Sie an Ihren Ursprung", "ar": "تذكّر من أين بدأت" },
+          "body": { "en": "The Quran answers pride with a simple reminder of our beginning.", "de": "Der Koran antwortet auf Hochmut mit einer schlichten Erinnerung an unseren Anfang.", "ar": "يعالج القرآن الكِبر بتذكير بسيط ببداية الإنسان." }
+        },
+        {
+          "title": { "en": "Al-Ghazali's two cures", "de": "Al-Ghazalis zwei Heilmittel", "ar": "علاجان عند الغزالي" },
+          "body": { "en": "In the Ihya', al-Ghazali treats pride with knowledge and with practice: know yourself and know your Lord, then act humbly on purpose until the heart follows.", "de": "Im Ihya' behandelt al-Ghazali den Hochmut mit Wissen und mit Übung: sich selbst und seinen Herrn erkennen, dann bewusst demütig handeln, bis das Herz folgt.", "ar": "يعالج الغزالي في الإحياء الكِبر بالعلم والعمل: أن تعرف نفسك وتعرف ربك، ثم تتعمّد أفعال التواضع حتى يتبعها القلب." }
+        },
+        {
+          "verse": "16:23",
+          "check": "does not like the arrogant",
+          "title": { "en": "Seen from within", "de": "Von innen gesehen", "ar": "يعلم ما في الداخل" },
+          "body": { "en": "Pride can hide behind good manners. Allah knows what is concealed as well as what is shown.", "de": "Hochmut kann sich hinter guten Manieren verstecken. Allah kennt das Verborgene ebenso wie das Sichtbare.", "ar": "قد يختبئ الكِبر خلف حسن الأدب، والله يعلم الخفيّ كما يعلم الظاهر." }
+        },
+        {
+          "title": { "en": "Practical cures", "de": "Praktische Heilmittel", "ar": "علاجات عملية" },
+          "list": { "en": ["Accept a correction without defending yourself", "Serve others in tasks no one notices", "Sit with people the world overlooks", "Praise Allah when you succeed, not yourself"], "de": ["Nehmen Sie eine Korrektur an, ohne sich zu verteidigen", "Dienen Sie anderen bei Aufgaben, die niemand bemerkt", "Sitzen Sie mit Menschen, die die Welt übersieht", "Loben Sie bei Erfolg Allah, nicht sich selbst"], "ar": ["اقبل التصحيح دون أن تدافع عن نفسك", "اخدم الآخرين في أعمال لا يلاحظها أحد", "جالس من يغفل عنهم الناس", "احمد الله عند النجاح ولا تمدح نفسك"] }
+        }
+      ],
+      "sources": [
+        { "label": "Al-Ghazali, Ihya' 'Ulum al-Din, Kitab Dhamm al-Kibr wa'l-'Ujb" }
+      ]
+    },
+    {
+      "id": "tazkiyah-05-self-respect",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": { "en": "Purifying the heart · 5", "de": "Läuterung des Herzens · 5", "ar": "تزكية النفس · ٥" },
+        "title": { "en": "Arrogance or self-respect?", "de": "Hochmut oder Selbstachtung?", "ar": "كِبرٌ أم عزّة نفس؟" },
+        "sub": { "en": "Two things that look alike from outside and are opposites inside", "de": "Zwei Dinge, die von außen ähnlich aussehen und innen Gegensätze sind", "ar": "أمران يتشابهان في الظاهر ويتضادّان في الباطن" },
+        "arabic": "عِزَّةُ النَّفْس"
+      },
+      "slides": [
+        {
+          "title": { "en": "Two look-alikes", "de": "Zwei, die sich ähneln", "ar": "متشابهان" },
+          "body": { "en": "Both stand tall. Arrogance (kibr) needs others to be small. Self-respect ('izza) needs no one to be small: it rests on belonging to Allah, so it does not beg, flatter or humiliate.", "de": "Beide stehen aufrecht. Hochmut (kibr) braucht andere, die klein sind. Selbstachtung ('izza) braucht niemanden klein zu machen: Sie ruht darauf, Allah zu gehören, und darum bettelt sie nicht, schmeichelt nicht und demütigt nicht.", "ar": "كلاهما يقف شامخًا. لكن الكِبر يحتاج إلى أن يصغر الآخرون، والعزّة لا تحتاج إلى تصغير أحد، لأنها قائمة على الانتساب إلى الله، فلا تتسوّل ولا تتملّق ولا تُذلّ أحدًا." }
+        },
+        {
+          "verse": "63:8",
+          "check": "and to the believers",
+          "title": { "en": "Where honour belongs", "de": "Wem die Ehre gehört", "ar": "لمن العزّة" },
+          "body": { "en": "The hypocrites thought honour came from power. The Quran places it with Allah, His Messenger and the believers.", "de": "Die Heuchler meinten, Ehre komme aus Macht. Der Koran verortet sie bei Allah, Seinem Gesandten und den Gläubigen.", "ar": "ظنّ المنافقون أن العزّة في القوة، فجعلها القرآن لله ولرسوله وللمؤمنين." }
+        },
+        {
+          "verse": "35:10",
+          "check": "Whoever desires honor",
+          "title": { "en": "How honour is reached", "de": "Wie man Ehre erlangt", "ar": "كيف تُنال العزّة" },
+          "body": { "en": "Honour is not taken from people. It is earned with Allah through what we say and do.", "de": "Ehre nimmt man nicht von Menschen. Man erlangt sie bei Allah durch das, was man sagt und tut.", "ar": "لا تُؤخذ العزّة من الناس، بل تُنال عند الله بالقول والعمل." }
+        },
+        {
+          "hadith": "bukhari:2074",
+          "check": "bundle of wood",
+          "title": { "en": "Dignity in honest work", "de": "Würde in ehrlicher Arbeit", "ar": "كرامة في العمل الشريف" },
+          "body": { "en": "Hard, humble work is preferred over depending on others. Self-respect protects your face.", "de": "Harte, bescheidene Arbeit ist besser, als von anderen abhängig zu sein. Selbstachtung schützt Ihr Gesicht.", "ar": "العمل الشاق المتواضع خير من الاعتماد على الناس، وعزّة النفس تصون ماء الوجه." }
+        },
+        {
+          "verse": "2:273",
+          "check": "self-sufficient",
+          "title": { "en": "Dignity in need", "de": "Würde in der Not", "ar": "عزّة في الحاجة" },
+          "body": { "en": "Some poor people never ask. Their restraint is a form of honour, and believers are asked to notice them.", "de": "Manche Bedürftige bitten nie. Ihre Zurückhaltung ist eine Form der Würde, und die Gläubigen sollen sie bemerken.", "ar": "من الفقراء من لا يسأل أبدًا، وتعفّفه عزّة، والمؤمنون مدعوّون إلى أن ينتبهوا لهم." }
+        },
+        {
+          "title": { "en": "How to tell them apart", "de": "Wie man sie unterscheidet", "ar": "كيف تفرّق بينهما" },
+          "body": { "en": "Ask yourself: can I admit a mistake? Can I accept the truth from someone younger? Can I say no without looking down on anyone? Self-respect can do all three. Arrogance struggles with each.", "de": "Fragen Sie sich: Kann ich einen Fehler zugeben? Kann ich die Wahrheit von einem Jüngeren annehmen? Kann ich Nein sagen, ohne auf jemanden herabzusehen? Selbstachtung kann alle drei. Hochmut tut sich mit jedem schwer.", "ar": "اسأل نفسك: هل أستطيع أن أعترف بخطئي؟ وأن أقبل الحق ممن هو أصغر مني؟ وأن أقول لا دون أن أحتقر أحدًا؟ العزّة تقدر على الثلاث، والكِبر يتعثّر في كل واحدة." }
+        },
+        {
+          "title": { "en": "Living with dignity", "de": "In Würde leben", "ar": "العيش بعزّة" },
+          "list": { "en": ["Say no to humiliation, never to the truth", "Earn your living with honest effort", "Ask Allah first, and people only when you must", "Never build yourself up by putting others down"], "de": ["Sagen Sie Nein zur Demütigung, nie zur Wahrheit", "Verdienen Sie Ihren Unterhalt mit ehrlicher Mühe", "Bitten Sie zuerst Allah, Menschen nur, wenn es sein muss", "Erhöhen Sie sich nie, indem Sie andere klein machen"], "ar": ["ارفض الذلّ، ولا ترفض الحق أبدًا", "اكسب رزقك بجهد شريف", "اسأل الله أولًا، ولا تسأل الناس إلا عند الحاجة", "لا ترفع نفسك بالحطّ من غيرك"] }
+        }
+      ]
+    },
+    {
+      "id": "tazkiyah-06-greed",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": { "en": "Purifying the heart · 6", "de": "Läuterung des Herzens · 6", "ar": "تزكية النفس · ٦" },
+        "title": { "en": "Greed: the hunger that more cannot fill", "de": "Gier: der Hunger, den mehr nicht stillt", "ar": "الطمع: جوع لا يُشبعه المزيد" },
+        "sub": { "en": "Why more never feels like enough, and how the heart learns to say: this is enough", "de": "Warum mehr sich nie wie genug anfühlt, und wie das Herz lernt zu sagen: Es ist genug", "ar": "لماذا لا يكفي المزيد أبدًا، وكيف يتعلّم القلب أن يقول: هذا يكفي" },
+        "arabic": "الحِرْص"
+      },
+      "slides": [
+        {
+          "title": { "en": "A hunger that does not end", "de": "Ein Hunger, der nicht endet", "ar": "جوع لا ينتهي" },
+          "body": { "en": "Greed (hirs) is not wanting good things. It is a restlessness that never arrives: every gain only shows the next gap. Contentment (qana'a) is a heart that can say: this is enough for today.", "de": "Gier (hirs) heißt nicht, gute Dinge zu wollen. Sie ist eine Unruhe, die nie ankommt: Jeder Gewinn zeigt nur die nächste Lücke. Genügsamkeit (qana'a) ist ein Herz, das sagen kann: Für heute ist es genug.", "ar": "ليس الحرص أن تحب الطيبات، بل قلق لا يصل أبدًا: كل مكسب يكشف نقصًا جديدًا. أما القناعة فقلب يستطيع أن يقول: هذا يكفيني اليوم." }
+        },
+        {
+          "verse": "102:1-2",
+          "check": "Competition",
+          "title": { "en": "A race that lasts a lifetime", "de": "Ein Wettlauf, der ein Leben dauert", "ar": "سباق يستغرق العمر" },
+          "body": { "en": "Surah at-Takathur names a race for more that can quietly fill a whole life.", "de": "Sure at-Takathur benennt einen Wettlauf um mehr, der still ein ganzes Leben füllen kann.", "ar": "تكشف سورة التكاثر سباقًا على المزيد قد يملأ العمر كله في صمت." }
+        },
+        {
+          "verse": "89:20",
+          "check": "immense love",
+          "title": { "en": "An honest mirror", "de": "Ein ehrlicher Spiegel", "ar": "مرآة صادقة" },
+          "body": { "en": "The Quran names the love of wealth plainly. Admitting it in yourself is where the cure begins.", "de": "Der Koran benennt die Liebe zum Besitz offen. Sie bei sich selbst einzugestehen ist der Anfang der Heilung.", "ar": "يسمّي القرآن حب المال بوضوح، والاعتراف به في النفس أول العلاج." }
+        },
+        {
+          "hadith": "bukhari:6435",
+          "check": "slave of Dinar",
+          "title": { "en": "Who owns whom?", "de": "Wer besitzt wen?", "ar": "من يملك من؟" },
+          "body": { "en": "A sharp question hides in this hadith: is wealth serving you, or are you serving it?", "de": "In diesem Hadith steckt eine scharfe Frage: Dient der Besitz Ihnen, oder dienen Sie ihm?", "ar": "في هذا الحديث سؤال حادّ: هل المال في خدمتك، أم أنت في خدمته؟" }
+        },
+        {
+          "verse": "64:16",
+          "check": "stinginess of his soul",
+          "title": { "en": "Protected from yourself", "de": "Vor sich selbst bewahrt", "ar": "الوقاية من النفس" },
+          "body": { "en": "Shuhh, the grasping greed of the self, is something to be protected from. The verse ties real success to that protection.", "de": "Schuhh, die festhaltende Gier des Selbst, ist etwas, wovor man bewahrt werden muss. Der Vers verbindet wahren Erfolg mit diesem Schutz.", "ar": "الشحّ حرص النفس القابض، وهو مما يُطلب الوقاية منه، والآية تربط الفلاح الحقيقي بهذه الوقاية." }
+        },
+        {
+          "title": { "en": "Contentment is not laziness", "de": "Genügsamkeit ist keine Trägheit", "ar": "القناعة ليست كسلًا" },
+          "body": { "en": "Qana'a does not mean giving up effort or ambition. You can work hard and plan well, and still accept what Allah gives with a calm heart. It is the anxiety that is let go, not the effort.", "de": "Qana'a bedeutet nicht, Mühe oder Ehrgeiz aufzugeben. Sie können hart arbeiten und gut planen und dennoch mit ruhigem Herzen annehmen, was Allah gibt. Losgelassen wird die Unruhe, nicht die Mühe.", "ar": "القناعة لا تعني ترك السعي ولا الطموح. يمكنك أن تجتهد وتخطط جيدًا، ثم تقبل ما يعطيك الله بقلب مطمئن. الذي يُترك هو القلق، لا العمل." }
+        },
+        {
+          "title": { "en": "Loosening the grip", "de": "Den Griff lockern", "ar": "إرخاء القبضة" },
+          "list": { "en": ["Notice when wanting more is just a habit", "Ask: will I still want this in a month?", "Give away something you no longer need", "Ask Allah for a content heart, not only for more"], "de": ["Bemerken Sie, wann das Mehr-Wollen nur Gewohnheit ist", "Fragen Sie: Will ich das in einem Monat noch?", "Verschenken Sie etwas, das Sie nicht mehr brauchen", "Bitten Sie Allah um ein zufriedenes Herz, nicht nur um mehr"], "ar": ["انتبه حين يصير طلب المزيد مجرد عادة", "اسأل: هل سأظل أريد هذا بعد شهر؟", "تصدّق بشيء لم تعد تحتاجه", "اسأل الله قلبًا قانعًا لا مزيدًا فقط"] }
+        }
+      ]
+    },
+    {
+      "id": "tazkiyah-07-love-of-the-world",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": { "en": "Purifying the heart · 7", "de": "Läuterung des Herzens · 7", "ar": "تزكية النفس · ٧" },
+        "title": { "en": "Love of the world: in your hand, not your heart", "de": "Liebe zur Welt: in der Hand, nicht im Herzen", "ar": "حب الدنيا: في اليد لا في القلب" },
+        "sub": { "en": "The dunya is a place to pass through and use well, not a home for the heart", "de": "Die Dunya ist ein Ort zum Durchreisen und guten Nutzen, kein Zuhause für das Herz", "ar": "الدنيا ممرّ يُحسن الإنسان استعماله، لا موطن يسكنه القلب" },
+        "arabic": "الدُّنْيَا"
+      },
+      "slides": [
+        {
+          "title": { "en": "The world is not the enemy", "de": "Die Welt ist nicht der Feind", "ar": "الدنيا ليست العدو" },
+          "body": { "en": "Islam does not ask you to hate the world. Work, family, food and beauty are gifts. The danger begins when the world moves from your hand into your heart and becomes the measure of everything.", "de": "Der Islam verlangt nicht, die Welt zu hassen. Arbeit, Familie, Essen und Schönheit sind Gaben. Die Gefahr beginnt, wenn die Welt aus Ihrer Hand in Ihr Herz wandert und zum Maß aller Dinge wird.", "ar": "لا يطلب منك الإسلام أن تكره الدنيا؛ فالعمل والأهل والطعام والجمال نِعَم. يبدأ الخطر حين تنتقل الدنيا من يدك إلى قلبك، فتصير ميزان كل شيء." }
+        },
+        {
+          "verse": "18:45",
+          "check": "like rain",
+          "title": { "en": "Green, then gone", "de": "Grün, dann vergangen", "ar": "اخضرار ثم زوال" },
+          "body": { "en": "The Quran pictures worldly life as rain, plants and wind: beautiful, real and short.", "de": "Der Koran zeichnet das diesseitige Leben als Regen, Pflanzen und Wind: schön, wirklich und kurz.", "ar": "يصوّر القرآن الحياة الدنيا بالمطر والنبات والريح: جميلة حقيقية قصيرة." }
+        },
+        {
+          "hadith": "muslim:7197",
+          "check": "dip his finger",
+          "title": { "en": "A finger in the ocean", "de": "Ein Finger im Ozean", "ar": "إصبع في البحر" },
+          "body": { "en": "The Prophet used a simple gesture to show how small the world is next to the Hereafter.", "de": "Der Prophet zeigte mit einer einfachen Geste, wie klein die Welt neben dem Jenseits ist.", "ar": "استعمل النبي ﷺ إشارة بسيطة ليبيّن صِغر الدنيا أمام الآخرة." }
+        },
+        {
+          "hadith": "bukhari:4085",
+          "check": "compete with each other",
+          "title": { "en": "What the Prophet feared", "de": "Was der Prophet fürchtete", "ar": "ما خافه النبي ﷺ" },
+          "body": { "en": "His worry for his community was not a return to idols, but that the world would draw them into rivalry.", "de": "Seine Sorge um seine Gemeinschaft war nicht die Rückkehr zu Götzen, sondern dass die Welt sie in Rivalität hineinzieht.", "ar": "لم يكن خوفه على أمته أن تعود إلى الأصنام، بل أن تجرّها الدنيا إلى التنافس." }
+        },
+        {
+          "verse": "28:77",
+          "check": "do not forget your share of the world",
+          "title": { "en": "Your share, kept in balance", "de": "Ihr Anteil, im Gleichgewicht", "ar": "نصيبك في توازن" },
+          "body": { "en": "Balance, not withdrawal: the Hereafter is the goal, and your lawful share of this life is not forbidden.", "de": "Gleichgewicht statt Rückzug: Das Jenseits ist das Ziel, und Ihr erlaubter Anteil an diesem Leben ist nicht verboten.", "ar": "توازن لا انعزال: الآخرة هي الغاية، ونصيبك الحلال من هذه الحياة ليس محرّمًا." }
+        },
+        {
+          "verse": "87:16-17",
+          "check": "more enduring",
+          "title": { "en": "A question of preference", "de": "Eine Frage des Vorziehens", "ar": "مسألة إيثار" },
+          "body": { "en": "The issue is not having the world but preferring it over what lasts.", "de": "Das Problem ist nicht, die Welt zu besitzen, sondern sie dem Bleibenden vorzuziehen.", "ar": "ليست المشكلة في امتلاك الدنيا، بل في تقديمها على ما يبقى." }
+        },
+        {
+          "title": { "en": "Keeping it in the hand", "de": "Sie in der Hand behalten", "ar": "أن تبقى في اليد" },
+          "list": { "en": ["Use money for good before it uses you", "Give something you love, not only what is left", "Remember death calmly: it puts things in order", "Ask of every plan: will this matter on that Day?"], "de": ["Nutzen Sie Geld für Gutes, bevor es Sie benutzt", "Geben Sie etwas, das Sie lieben, nicht nur Reste", "Denken Sie ruhig an den Tod: Er ordnet die Dinge", "Fragen Sie bei jedem Plan: Zählt das an jenem Tag?"], "ar": ["استعمل المال في الخير قبل أن يستعملك", "أنفق مما تحب لا مما فضل فقط", "تذكّر الموت بهدوء، فهو يرتّب الأولويات", "اسأل عن كل خطة: هل تنفعني يوم القيامة؟"] }
+        }
+      ]
+    },
+    {
+      "id": "tazkiyah-08-heedlessness",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": { "en": "Purifying the heart · 8", "de": "Läuterung des Herzens · 8", "ar": "تزكية النفس · ٨" },
+        "title": { "en": "Heedlessness: living on autopilot", "de": "Achtlosigkeit: Leben im Autopiloten", "ar": "الغفلة: حياة بلا انتباه" },
+        "sub": { "en": "Ghafla is not forgetting a fact. It is forgetting to be present", "de": "Ghafla heißt nicht, eine Tatsache zu vergessen, sondern zu vergessen, gegenwärtig zu sein", "ar": "الغفلة ليست نسيان معلومة، بل نسيان الحضور" },
+        "arabic": "الغَفْلَة"
+      },
+      "slides": [
+        {
+          "title": { "en": "What ghafla is", "de": "Was Ghafla ist", "ar": "ما الغفلة؟" },
+          "arabic": "غ ف ل",
+          "body": { "en": "Ghafla is not ignorance. We know about death, prayer and meeting Allah. Heedlessness is knowing and not noticing: the days pass and the heart is elsewhere. The root occurs 35 times in the Quran.", "de": "Ghafla ist keine Unwissenheit. Wir wissen vom Tod, vom Gebet und von der Begegnung mit Allah. Achtlosigkeit heißt wissen und nicht bemerken: Die Tage vergehen, und das Herz ist woanders. Im Koran kommt die Wurzel 35-mal vor.", "ar": "الغفلة ليست جهلًا؛ فنحن نعلم الموت والصلاة ولقاء الله. الغفلة أن تعلم ولا تنتبه: تمضي الأيام والقلب في مكان آخر. ويرد هذا الجذر في القرآن ٣٥ مرة." }
+        },
+        {
+          "verse": "21:1",
+          "check": "heedlessness",
+          "title": { "en": "Near, yet unnoticed", "de": "Nah und doch unbemerkt", "ar": "قريب ولا يُنتبه له" },
+          "body": { "en": "The reckoning comes closer every day, while attention drifts elsewhere.", "de": "Die Abrechnung kommt jeden Tag näher, während die Aufmerksamkeit woandershin treibt.", "ar": "يقترب الحساب كل يوم، والانتباه منصرف إلى غيره." }
+        },
+        {
+          "verse": "30:7",
+          "check": "unaware",
+          "title": { "en": "Experts in the visible", "de": "Fachleute des Sichtbaren", "ar": "خبراء بالظاهر" },
+          "body": { "en": "It is possible to know a great deal about this world and very little about what comes after.", "de": "Man kann sehr viel über diese Welt wissen und sehr wenig über das, was danach kommt.", "ar": "قد يعرف الإنسان الكثير عن هذه الدنيا، والقليل جدًّا عمّا بعدها." }
+        },
+        {
+          "verse": "59:19",
+          "check": "forget themselves",
+          "title": { "en": "Forgetting Allah, forgetting yourself", "de": "Allah vergessen, sich selbst vergessen", "ar": "نسيان الله ونسيان النفس" },
+          "body": { "en": "Whoever forgets Allah ends up losing sight of their own good.", "de": "Wer Allah vergisst, verliert am Ende sein eigenes Wohl aus den Augen.", "ar": "من نسي الله انتهى به الأمر إلى أن يغفل عن مصلحة نفسه." }
+        },
+        {
+          "title": { "en": "The first station: waking up", "de": "Die erste Station: Aufwachen", "ar": "المنزلة الأولى: اليقظة" },
+          "body": { "en": "In Madarij al-Salikin, Ibn al-Qayyim, following al-Harawi, places awakening (yaqaza) at the very start of the path to Allah: the moment the heart notices where it is going.", "de": "In Madaridsch as-Salikin stellt Ibn al-Qayyim, al-Harawi folgend, das Erwachen (yaqaza) an den Anfang des Weges zu Allah: den Moment, in dem das Herz bemerkt, wohin es geht.", "ar": "يجعل ابن القيم في مدارج السالكين، متابعًا الهروي، اليقظةَ أول منازل الطريق إلى الله: لحظة ينتبه فيها القلب إلى وجهته." }
+        },
+        {
+          "dua": "hisn:129:5",
+          "check": "preoccupied",
+          "title": { "en": "When the heart drifts", "de": "Wenn das Herz abschweift", "ar": "حين يشرد القلب" },
+          "body": { "en": "A gentle remedy the Prophet himself practised: istighfar whenever the heart notices it has wandered.", "de": "Ein sanftes Mittel, das der Prophet selbst übte: Istighfar, sobald das Herz bemerkt, dass es abgeschweift ist.", "ar": "علاج رفيق كان النبي ﷺ نفسه يلازمه: الاستغفار كلما انتبه القلب إلى شروده." }
+        },
+        {
+          "verse": "7:205",
+          "check": "among the heedless",
+          "title": { "en": "Remembering within", "de": "Im Inneren gedenken", "ar": "الذكر في النفس" },
+          "body": { "en": "The cure starts quietly, with a remembrance no one else needs to hear.", "de": "Die Heilung beginnt leise, mit einem Gedenken, das niemand sonst hören muss.", "ar": "يبدأ العلاج بهدوء، بذكر لا يحتاج أحد أن يسمعه." }
+        },
+        {
+          "title": { "en": "Small alarms for the heart", "de": "Kleine Wecker für das Herz", "ar": "منبّهات صغيرة للقلب" },
+          "list": { "en": ["Take one calm breath before each prayer", "Link dhikr to daily moments: waking, eating, leaving home", "Keep the phone away for the first minutes of the day", "End the day with one minute of reflection"], "de": ["Atmen Sie vor jedem Gebet einmal ruhig durch", "Verbinden Sie Dhikr mit Alltagsmomenten: Aufwachen, Essen, Aufbruch", "Lassen Sie das Handy in den ersten Minuten des Tages liegen", "Beenden Sie den Tag mit einer Minute Besinnung"], "ar": ["خذ نفَسًا هادئًا قبل كل صلاة", "اربط الذكر بلحظات يومك: الاستيقاظ والطعام والخروج", "أبعد الهاتف في الدقائق الأولى من يومك", "اختم يومك بدقيقة من التأمل"] }
+        }
+      ],
+      "sources": [
+        { "label": "Ibn al-Qayyim, Madarij al-Salikin" },
+        { "label": "Quranic Arabic Corpus, root gh-f-l", "url": "https://corpus.quran.com/qurandictionary.jsp?q=gfl" }
+      ]
+    },
+    {
+      "id": "tazkiyah-09-hard-heart",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": { "en": "Purifying the heart · 9", "de": "Läuterung des Herzens · 9", "ar": "تزكية النفس · ٩" },
+        "title": { "en": "When the heart feels hard", "de": "Wenn sich das Herz hart anfühlt", "ar": "حين يقسو القلب" },
+        "sub": { "en": "Signs of a hardening heart, and gentle ways to soften it again", "de": "Zeichen eines verhärteten Herzens und sanfte Wege, es wieder weich zu machen", "ar": "علامات قسوة القلب، وطرق رفيقة لتليينه من جديد" },
+        "arabic": "رِقَّةُ القَلْب"
+      },
+      "slides": [
+        {
+          "title": { "en": "Signs of hardness", "de": "Zeichen der Härte", "ar": "علامات القسوة" },
+          "body": { "en": "Verses no longer move you. A sin does not hurt anymore. Other people's pain feels far away. These are signs of a hardening heart, and noticing them is already a sign of life.", "de": "Verse berühren Sie nicht mehr. Eine Sünde schmerzt nicht mehr. Das Leid anderer scheint weit weg. Das sind Zeichen eines verhärtenden Herzens, und sie zu bemerken ist schon ein Lebenszeichen.", "ar": "لم تعد الآيات تحرّكك، ولم يعد الذنب يؤلمك، وصار ألم الناس بعيدًا عنك. هذه علامات قلب يقسو، والانتباه لها علامة حياة." }
+        },
+        {
+          "verse": "57:16",
+          "check": "hearts hardened",
+          "title": { "en": "A gentle question", "de": "Eine sanfte Frage", "ar": "سؤال رفيق" },
+          "body": { "en": "A searching question addressed to believers. Hardness grows slowly, over a long time away from remembrance.", "de": "Eine prüfende Frage an die Gläubigen. Härte wächst langsam, über lange Zeit fern vom Gedenken.", "ar": "سؤال يفتّش قلوب المؤمنين. القسوة تنمو ببطء مع طول البعد عن الذكر." }
+        },
+        {
+          "verse": "2:74",
+          "check": "rivers burst forth",
+          "title": { "en": "Even stones can soften", "de": "Selbst Steine können weich werden", "ar": "حتى الحجارة تلين" },
+          "body": { "en": "The verse itself shows stone giving way to water. If stone can yield, so can a heart.", "de": "Der Vers selbst zeigt Stein, der dem Wasser nachgibt. Wenn Stein nachgeben kann, kann es auch ein Herz.", "ar": "تُظهر الآية نفسها حجرًا يلين للماء، فإن لان الحجر فالقلب أولى." }
+        },
+        {
+          "hadith": "bukhari:5055",
+          "check": "overflowing with tears",
+          "title": { "en": "Tears at the Quran", "de": "Tränen beim Koran", "ar": "دموع عند القرآن" },
+          "body": { "en": "The Prophet asked to hear the Quran from a companion, and wept at a verse about the Day of witnesses.", "de": "Der Prophet bat einen Gefährten, ihm den Koran vorzutragen, und weinte bei einem Vers über den Tag der Zeugen.", "ar": "طلب النبي ﷺ أن يسمع القرآن من صاحب له، فبكى عند آية عن يوم الشهادة." }
+        },
+        {
+          "verse": "22:46",
+          "check": "blinded are the hearts",
+          "title": { "en": "When the heart cannot see", "de": "Wenn das Herz nicht sieht", "ar": "حين لا يبصر القلب" },
+          "body": { "en": "Hardness is a kind of blindness: the eyes see, but the heart does not take it in. Reflection helps it see again.", "de": "Härte ist eine Art Blindheit: Die Augen sehen, aber das Herz nimmt es nicht auf. Nachdenken hilft ihm, wieder zu sehen.", "ar": "القسوة نوع من العمى: تبصر العين ولا يعي القلب، والتفكّر يعيد إليه بصره." }
+        },
+        {
+          "title": { "en": "Melt it with remembrance", "de": "Schmelzen Sie es mit Gedenken", "ar": "أذِبه بالذكر" },
+          "body": { "en": "In al-Wabil al-Sayyib, Ibn al-Qayyim reports that a man complained to al-Hasan al-Basri of a hard heart. His advice: melt it with the remembrance of Allah.", "de": "In al-Wabil as-Sayyib berichtet Ibn al-Qayyim, dass ein Mann sich bei al-Hasan al-Basri über sein hartes Herz beklagte. Sein Rat: Schmelzen Sie es mit dem Gedenken Allahs.", "ar": "ينقل ابن القيم في الوابل الصيب أن رجلًا شكا إلى الحسن البصري قسوة قلبه، فقال له: أذِبه بالذكر." }
+        },
+        {
+          "title": { "en": "Ways to soften the heart", "de": "Wege, das Herz weich zu machen", "ar": "طرق لتليين القلب" },
+          "list": { "en": ["Read a few verses slowly, with their meaning", "Care for an orphan or someone in need", "Visit the sick and remember your own end", "Make dhikr especially when the heart feels cold"], "de": ["Lesen Sie wenige Verse langsam, mit ihrer Bedeutung", "Kümmern Sie sich um eine Waise oder einen Bedürftigen", "Besuchen Sie Kranke und denken Sie an Ihr eigenes Ende", "Gedenken Sie Allahs besonders, wenn das Herz kalt wirkt"], "ar": ["اقرأ آيات قليلة ببطء مع تدبّر معناها", "ارعَ يتيمًا أو محتاجًا", "عُد المريض وتذكّر نهايتك", "أكثر من الذكر حين تشعر ببرود قلبك"] }
+        }
+      ],
+      "sources": [
+        { "label": "Ibn al-Qayyim, al-Wabil al-Sayyib min al-Kalim al-Tayyib (benefits of dhikr)", "url": "https://ar.wikisource.org/wiki/%D9%83%D8%AA%D8%A7%D8%A8_%D8%A7%D9%84%D9%88%D8%A7%D8%A8%D9%84_%D8%A7%D9%84%D8%B5%D9%8A%D8%A8" }
+      ]
+    },
+    {
+      "id": "tazkiyah-10-hope",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": { "en": "Purifying the heart · 10", "de": "Läuterung des Herzens · 10", "ar": "تزكية النفس · ١٠" },
+        "title": { "en": "Between despair and hope", "de": "Zwischen Verzweiflung und Hoffnung", "ar": "بين اليأس والرجاء" },
+        "sub": { "en": "Why giving up on Allah's mercy is never humility, and how hope keeps you moving", "de": "Warum die Aufgabe der Hoffnung auf Allahs Barmherzigkeit nie Demut ist, und wie Hoffnung Sie voranbringt", "ar": "لماذا لا يكون اليأس من رحمة الله تواضعًا، وكيف يدفعك الرجاء إلى الأمام" },
+        "arabic": "الرَّجَاء"
+      },
+      "slides": [
+        {
+          "title": { "en": "Despair is not humility", "de": "Verzweiflung ist keine Demut", "ar": "اليأس ليس تواضعًا" },
+          "body": { "en": "After a mistake, despair can feel like honesty: I am too far gone. But despair measures Allah's mercy by the size of our sins. Hope keeps the eyes on Him.", "de": "Nach einem Fehler kann sich Verzweiflung wie Ehrlichkeit anfühlen: Ich bin zu weit weg. Doch Verzweiflung misst Allahs Barmherzigkeit an der Größe unserer Sünden. Hoffnung hält den Blick auf Ihn gerichtet.", "ar": "بعد الخطأ قد يبدو اليأس صدقًا مع النفس: لقد ابتعدت كثيرًا. لكن اليأس يقيس رحمة الله بحجم ذنوبنا، والرجاء يُبقي النظر متجهًا إليه." }
+        },
+        {
+          "verse": "15:55-56",
+          "check": "despairs of the mercy",
+          "title": { "en": "Ibrahim's answer", "de": "Ibrahims Antwort", "ar": "جواب إبراهيم" },
+          "body": { "en": "Given good news of a son in old age, Ibrahim answered that losing hope in Allah's mercy belongs to those who have lost their way.", "de": "Als Ibrahim im Alter die frohe Botschaft eines Sohnes erhielt, antwortete er: Die Hoffnung auf Allahs Barmherzigkeit aufzugeben ist Sache derer, die vom Weg abgekommen sind.", "ar": "حين بُشّر إبراهيم بولد على كبره، أجاب بأن القنوط من رحمة الله شأن من ضلّ الطريق." }
+        },
+        {
+          "hadith": "bukhari:5999",
+          "check": "more merciful",
+          "title": { "en": "More than a mother", "de": "Mehr als eine Mutter", "ar": "أرحم من الأم" },
+          "body": { "en": "Watching a mother hold her lost child, the Prophet taught how merciful Allah is to His servants.", "de": "Beim Anblick einer Mutter, die ihr verlorenes Kind hielt, lehrte der Prophet, wie barmherzig Allah zu Seinen Dienern ist.", "ar": "رأى النبي ﷺ أمًّا تضمّ طفلها الذي فقدته، فعلّم أصحابه مقدار رحمة الله بعباده." }
+        },
+        {
+          "hadith": "bukhari:6469",
+          "check": "lose hope",
+          "title": { "en": "Both wings in one hadith", "de": "Beide Flügel in einem Hadith", "ar": "الجناحان في حديث واحد" },
+          "body": { "en": "Enough mercy that no one should despair, and enough justice that no one should feel safe.", "de": "So viel Barmherzigkeit, dass niemand verzweifeln sollte, und so viel Gerechtigkeit, dass sich niemand in Sicherheit wiegen sollte.", "ar": "رحمة تكفي ألا ييأس أحد، وعدل يكفي ألا يأمن أحد." }
+        },
+        {
+          "verse": "17:57",
+          "check": "hope for His mercy and fear His punishment",
+          "title": { "en": "Hope and fear together", "de": "Hoffnung und Furcht zusammen", "ar": "رجاء وخوف معًا" },
+          "body": { "en": "Those who seek nearness to Allah do it with both: hoping for mercy and fearing punishment.", "de": "Wer Allahs Nähe sucht, tut es mit beidem: Hoffnung auf Barmherzigkeit und Furcht vor Strafe.", "ar": "من يبتغي القرب من الله يجمع الأمرين: رجاء الرحمة وخوف العذاب." }
+        },
+        {
+          "title": { "en": "Two wings", "de": "Zwei Flügel", "ar": "جناحان" },
+          "body": { "en": "In Madarij al-Salikin, Ibn al-Qayyim compares the heart on its way to Allah to a bird: love is its head, fear and hope are its two wings. With head and wings sound, it flies well; without its wings, any hunter can take it.", "de": "In Madaridsch as-Salikin vergleicht Ibn al-Qayyim das Herz auf seinem Weg zu Allah mit einem Vogel: Die Liebe ist sein Kopf, Furcht und Hoffnung sind seine beiden Flügel. Sind Kopf und Flügel heil, fliegt er gut; ohne seine Flügel wird er zur Beute jedes Jägers.", "ar": "يشبّه ابن القيم في مدارج السالكين القلب في سيره إلى الله بالطائر: المحبة رأسه، والخوف والرجاء جناحاه؛ فإذا سلم الرأس والجناحان أحسن الطيران، وإذا فقد جناحيه صار عرضة لكل صائد." }
+        },
+        {
+          "title": { "en": "When hope feels far", "de": "Wenn Hoffnung fern scheint", "ar": "حين يبعد الرجاء" },
+          "list": { "en": ["Repent now, without waiting to feel worthy", "Read the verses of mercy slowly", "Remember a time Allah carried you through", "Make dua as someone who expects an answer"], "de": ["Kehren Sie jetzt um, ohne zu warten, bis Sie sich würdig fühlen", "Lesen Sie die Verse der Barmherzigkeit langsam", "Erinnern Sie sich an eine Zeit, in der Allah Sie getragen hat", "Bitten Sie wie jemand, der eine Antwort erwartet"], "ar": ["تُب الآن ولا تنتظر أن تشعر بأنك أهل لذلك", "اقرأ آيات الرحمة بتمهّل", "تذكّر وقتًا أعانك الله فيه على الشدة", "ادعُ الله وأنت موقن بالإجابة"] }
+        }
+      ],
+      "sources": [
+        { "label": "Ibn al-Qayyim, Madarij al-Salikin" }
+      ]
+    },
+    {
+      "id": "tazkiyah-11-suspicion",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": { "en": "Purifying the heart · 11", "de": "Läuterung des Herzens · 11", "ar": "تزكية النفس · ١١" },
+        "title": { "en": "Suspicion: the story we tell ourselves", "de": "Argwohn: die Geschichte, die wir uns erzählen", "ar": "سوء الظن: قصة نرويها لأنفسنا" },
+        "sub": { "en": "Where suspicion comes from inside us, and why hearts are left to Allah", "de": "Woher Argwohn in uns kommt, und warum die Herzen Allah überlassen bleiben", "ar": "من أين ينبع سوء الظن في داخلنا، ولماذا تُترك القلوب لله" },
+        "arabic": "سُوءُ الظَّنّ"
+      },
+      "slides": [
+        {
+          "title": { "en": "A quick story in the head", "de": "Eine schnelle Geschichte im Kopf", "ar": "قصة سريعة في الذهن" },
+          "body": { "en": "Someone does not reply, a friend looks away, a colleague is praised. Within seconds the mind writes a story about their bad intentions. Suspicion feels like insight, but it is usually guesswork.", "de": "Jemand antwortet nicht, ein Freund schaut weg, ein Kollege wird gelobt. In Sekunden schreibt der Kopf eine Geschichte über ihre schlechten Absichten. Argwohn fühlt sich wie Einsicht an, ist aber meist Raten.", "ar": "لا يردّ أحدهم، أو يُعرض صديق، أو يُمدح زميل، فيكتب العقل في ثوانٍ قصة عن سوء نياتهم. يبدو سوء الظن فطنة، لكنه في الغالب تخمين." }
+        },
+        {
+          "hadith": "muslim:6536",
+          "check": "gravest lie",
+          "title": { "en": "Named first", "de": "Als Erstes genannt", "ar": "أول ما ذُكر" },
+          "body": { "en": "In a list of habits that poison brotherhood, suspicion comes first. Spying and envy often follow it.", "de": "In einer Reihe von Gewohnheiten, die Geschwisterlichkeit vergiften, steht Argwohn an erster Stelle. Spionieren und Neid folgen ihm oft.", "ar": "في قائمة العادات التي تسمّم الأخوّة يأتي الظن أولًا، وكثيرًا ما يتبعه التجسس والحسد." }
+        },
+        {
+          "title": { "en": "Where it comes from", "de": "Woher er kommt", "ar": "من أين ينبع" },
+          "body": { "en": "Suspicion often says more about us than about others: our fears, our envy, or faults we know in ourselves. Noticing this turns a judgement of others into work on our own heart.", "de": "Argwohn sagt oft mehr über uns als über andere: über unsere Ängste, unseren Neid oder Fehler, die wir von uns selbst kennen. Wer das bemerkt, macht aus einem Urteil über andere Arbeit am eigenen Herzen.", "ar": "كثيرًا ما يكشف سوء الظن عنا أكثر مما يكشف عن غيرنا: مخاوفنا، أو حسدنا، أو عيوبًا نعرفها في أنفسنا. والانتباه لذلك يحوّل الحكم على الآخرين إلى عمل في قلوبنا." }
+        },
+        {
+          "hadith": "bukhari:5305",
+          "check": "heredity",
+          "title": { "en": "A doubt the Prophet dissolved", "de": "Ein Zweifel, den der Prophet auflöste", "ar": "شكّ أزاله النبي ﷺ" },
+          "body": { "en": "A man came close to doubting his wife. The Prophet answered with a calm question about camels.", "de": "Ein Mann war nahe daran, an seiner Frau zu zweifeln. Der Prophet antwortete mit einer ruhigen Frage über Kamele.", "ar": "كاد رجل أن يشكّ في زوجته، فأجابه النبي ﷺ بسؤال هادئ عن الإبل." }
+        },
+        {
+          "hadith": "bukhari:2641",
+          "check": "deeds you practice publicly",
+          "title": { "en": "Hearts belong to Allah", "de": "Die Herzen gehören Allah", "ar": "القلوب لله" },
+          "body": { "en": "'Umar explained the rule: people are dealt with by what they show, and their secrets are left to Allah.", "de": "'Umar erklärte die Regel: Mit Menschen geht man nach dem um, was sie zeigen, und ihr Verborgenes bleibt Allah überlassen.", "ar": "بيّن عمر القاعدة: يُعامَل الناس بما يُظهرون، وتُترك سرائرهم إلى الله." }
+        },
+        {
+          "verse": "10:36",
+          "check": "assumption avails not against the truth",
+          "title": { "en": "Guesses are not facts", "de": "Vermutungen sind keine Tatsachen", "ar": "الظن ليس حقيقة" },
+          "body": { "en": "A principle the Quran states plainly: assumption cannot take the place of truth.", "de": "Ein Grundsatz, den der Koran klar ausspricht: Vermutung kann die Wahrheit nicht ersetzen.", "ar": "قاعدة يقررها القرآن بوضوح: الظن لا يقوم مقام الحق." }
+        },
+        {
+          "title": { "en": "Healing a suspicious heart", "de": "Ein argwöhnisches Herz heilen", "ar": "علاج القلب الظنون" },
+          "list": { "en": ["Notice the story you are telling yourself", "Ask directly and kindly instead of guessing", "Do not search for others' hidden faults", "Leave what you cannot know to Allah"], "de": ["Bemerken Sie die Geschichte, die Sie sich erzählen", "Fragen Sie direkt und freundlich, statt zu raten", "Suchen Sie nicht nach verborgenen Fehlern anderer", "Überlassen Sie Allah, was Sie nicht wissen können"], "ar": ["انتبه للقصة التي ترويها لنفسك", "اسأل بلطف ووضوح بدل التخمين", "لا تفتّش عن عيوب الناس الخفية", "اترك لله ما لا يمكنك معرفته"] }
+        }
+      ]
+    },
+    {
+      "id": "tazkiyah-12-grudges",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": { "en": "Purifying the heart · 12", "de": "Läuterung des Herzens · 12", "ar": "تزكية النفس · ١٢" },
+        "title": { "en": "Letting go of grudges", "de": "Groll loslassen", "ar": "التحرّر من الأحقاد" },
+        "sub": { "en": "Anger passes, a grudge stays. How to free the heart without denying what happened", "de": "Zorn vergeht, Groll bleibt. Wie das Herz frei wird, ohne das Geschehene zu leugnen", "ar": "الغضب يمضي والحقد يبقى. كيف تحرّر قلبك دون أن تنكر ما حدث" },
+        "arabic": "سَلَامَةُ الصَّدْر"
+      },
+      "slides": [
+        {
+          "title": { "en": "Anger passes, grudges stay", "de": "Zorn vergeht, Groll bleibt", "ar": "غضب يمضي وحقد يبقى" },
+          "body": { "en": "Anger is a moment. A grudge (ghill) is anger that has moved in and stayed. It replays old scenes and keeps the heart busy with someone who may have long forgotten them.", "de": "Zorn ist ein Moment. Groll (ghill) ist Zorn, der eingezogen und geblieben ist. Er spielt alte Szenen immer wieder ab und beschäftigt das Herz mit jemandem, der sie vielleicht längst vergessen hat.", "ar": "الغضب لحظة، أما الغِلّ فغضب استقرّ وأقام. يعيد المشاهد القديمة، ويشغل القلب بمن لعله نسيها منذ زمن." }
+        },
+        {
+          "verse": "59:10",
+          "check": "resentment toward those who have believed",
+          "title": { "en": "A dua for a clean chest", "de": "Ein Bittgebet für eine reine Brust", "ar": "دعاء لسلامة الصدر" },
+          "body": { "en": "Later believers pray for those who came before them, and ask that no resentment settle in their hearts.", "de": "Spätere Gläubige beten für die, die vor ihnen kamen, und bitten, dass sich kein Groll in ihren Herzen festsetzt.", "ar": "يدعو المؤمنون اللاحقون لمن سبقهم، ويسألون ألا يستقرّ في قلوبهم غلّ." }
+        },
+        {
+          "verse": "7:199",
+          "check": "turn away from the ignorant",
+          "title": { "en": "Not every hurt needs an answer", "de": "Nicht jede Kränkung braucht eine Antwort", "ar": "ليس كل أذى يحتاج إلى ردّ" },
+          "body": { "en": "Accept what people can give, encourage good, and do not get pulled into their ignorance. Letting go starts here.", "de": "Nehmen Sie an, was Menschen geben können, ermutigen Sie zum Guten und lassen Sie sich nicht in ihre Unwissenheit hineinziehen. Hier beginnt das Loslassen.", "ar": "اقبل من الناس ما تيسّر، وادعُ إلى الخير، ولا تنجرّ إلى جهلهم. من هنا يبدأ التسامح." }
+        },
+        {
+          "hadith": "bukhari:6076",
+          "check": "three nights",
+          "title": { "en": "A limit on silence", "de": "Eine Grenze für das Schweigen", "ar": "حدّ للهجر" },
+          "body": { "en": "Hurt is human, so a short pause is allowed. Long, cold silence between Muslims is not.", "de": "Verletzung ist menschlich, darum ist eine kurze Pause erlaubt. Langes, kaltes Schweigen zwischen Muslimen nicht.", "ar": "الألم طبيعة بشرية، فيُسمح بقطيعة قصيرة، أما الهجر الطويل البارد بين المسلمين فلا." }
+        },
+        {
+          "verse": "41:34",
+          "check": "devoted friend",
+          "title": { "en": "Answering harm with good", "de": "Schaden mit Gutem beantworten", "ar": "مقابلة الإساءة بالإحسان" },
+          "body": { "en": "Answering harm with good can turn enmity into closeness. The next verse admits it takes patience.", "de": "Schaden mit Gutem zu beantworten kann Feindschaft in Nähe verwandeln. Der nächste Vers sagt, dass es Geduld braucht.", "ar": "مقابلة الإساءة بالإحسان قد تقلب العداوة قربًا، والآية التالية تبيّن أن ذلك يحتاج إلى صبر." }
+        },
+        {
+          "verse": "15:47",
+          "check": "resentment",
+          "title": { "en": "A taste of Paradise", "de": "Ein Vorgeschmack des Paradieses", "ar": "شيء من نعيم الجنة" },
+          "body": { "en": "Hearts free of resentment are part of what Paradise is. Letting go now is a small taste of it.", "de": "Herzen ohne Groll gehören zum Wesen des Paradieses. Jetzt loszulassen ist ein kleiner Vorgeschmack darauf.", "ar": "القلوب الخالية من الغلّ جزء من نعيم الجنة، والتسامح اليوم لمحة صغيرة منه." }
+        },
+        {
+          "title": { "en": "Steps to let go", "de": "Schritte zum Loslassen", "ar": "خطوات للتسامح" },
+          "list": { "en": ["Name the hurt honestly, then hand it to Allah", "Make dua for the person, even briefly", "Be the first to say salam", "Forgiving does not mean trusting blindly"], "de": ["Benennen Sie die Verletzung ehrlich und übergeben Sie sie Allah", "Sprechen Sie ein Bittgebet für die Person, sei es auch kurz", "Grüßen Sie als Erster mit dem Salam", "Vergeben heißt nicht, blind zu vertrauen"], "ar": ["سمِّ الجرح بصدق ثم سلّمه لله", "ادعُ لصاحبه ولو بكلمة", "كن البادئ بالسلام", "العفو لا يعني الثقة العمياء"] }
+        }
+      ]
+    },
+    {
+      "id": "tazkiyah-13-laziness",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": { "en": "Purifying the heart · 13", "de": "Läuterung des Herzens · 13", "ar": "تزكية النفس · ١٣" },
+        "title": { "en": "When worship feels heavy", "de": "Wenn der Gottesdienst schwerfällt", "ar": "حين تثقل العبادة" },
+        "sub": { "en": "Laziness, tiredness and the small steps that get you moving again", "de": "Trägheit, Müdigkeit und die kleinen Schritte, die Sie wieder in Bewegung bringen", "ar": "الكسل والتعب، والخطوات الصغيرة التي تعيدك إلى الحركة" },
+        "arabic": "الكَسَل"
+      },
+      "slides": [
+        {
+          "title": { "en": "Tired or lazy?", "de": "Müde oder träge?", "ar": "متعب أم كسول؟" },
+          "body": { "en": "Tiredness needs rest, and Islam allows it. Laziness is different: the body could, but the heart does not want to. It helps to know which one you are facing tonight.", "de": "Müdigkeit braucht Ruhe, und der Islam erlaubt sie. Trägheit ist anders: Der Körper könnte, aber das Herz will nicht. Es hilft zu wissen, mit welchem von beiden Sie es heute zu tun haben.", "ar": "التعب يحتاج إلى راحة، والإسلام يأذن بها. أما الكسل فشيء آخر: الجسد يقدر والقلب لا يريد. ومن المفيد أن تعرف أيهما تواجه الليلة." }
+        },
+        {
+          "hadith": "bukhari:6367",
+          "check": "incapacity and laziness",
+          "title": { "en": "He sought refuge from it", "de": "Er suchte Zuflucht davor", "ar": "كان يستعيذ منه" },
+          "body": { "en": "The Prophet used to ask Allah for protection from laziness, alongside helplessness and cowardice.", "de": "Der Prophet pflegte Allah um Schutz vor Trägheit zu bitten, neben Hilflosigkeit und Feigheit.", "ar": "كان النبي ﷺ يستعيذ بالله من الكسل، مع العجز والجبن." }
+        },
+        {
+          "verse": "2:45-46",
+          "check": "humbly submissive",
+          "title": { "en": "Why prayer feels heavy", "de": "Warum das Gebet schwer wirkt", "ar": "لماذا تثقل الصلاة" },
+          "body": { "en": "The verse ties ease in prayer to humility and to certainty about meeting Allah. The cure is meaning.", "de": "Der Vers verbindet die Leichtigkeit des Gebets mit Demut und der Gewissheit, Allah zu begegnen. Das Heilmittel ist Bedeutung.", "ar": "تربط الآية خفّة الصلاة بالخشوع واليقين بلقاء الله، فالعلاج هو المعنى." }
+        },
+        {
+          "verse": "9:46",
+          "check": "prepared for it",
+          "title": { "en": "Intention shows in preparation", "de": "Absicht zeigt sich in Vorbereitung", "ar": "النية تظهر في الاستعداد" },
+          "body": { "en": "Said about those who stayed behind from an expedition, it holds a lasting principle: real intention prepares.", "de": "Über jene gesagt, die einem Feldzug fernblieben, enthält er einen bleibenden Grundsatz: Echte Absicht bereitet vor.", "ar": "تتحدث الآية عن المتخلّفين عن الغزوة، وفيها قاعدة باقية: النية الصادقة تستعد." }
+        },
+        {
+          "verse": "29:69",
+          "check": "strive for Us",
+          "title": { "en": "The first step is yours", "de": "Der erste Schritt liegt bei Ihnen", "ar": "الخطوة الأولى منك" },
+          "body": { "en": "Effort comes first, and guidance follows. Allah opens ways for those who strive.", "de": "Erst kommt die Mühe, dann folgt die Rechtleitung. Allah öffnet Wege für die, die sich bemühen.", "ar": "يأتي الجهد أولًا ثم تتبعه الهداية، والله يفتح السبل لمن يجاهد." }
+        },
+        {
+          "title": { "en": "Make the start easy", "de": "Machen Sie den Anfang leicht", "ar": "سهّل البداية" },
+          "body": { "en": "Lay out your prayer mat. Make wudu before you feel ready. Read one page, not one juz'. Most laziness breaks after the first small step, and the next one feels lighter.", "de": "Legen Sie Ihren Gebetsteppich aus. Machen Sie Wudu, bevor Sie sich bereit fühlen. Lesen Sie eine Seite, nicht einen Dschuz'. Die meiste Trägheit bricht nach dem ersten kleinen Schritt, und der nächste fällt leichter.", "ar": "افرش سجادتك، وتوضّأ قبل أن تشعر بالاستعداد، واقرأ صفحة لا جزءًا. ينكسر أكثر الكسل بعد الخطوة الصغيرة الأولى، وتخفّ الخطوة التالية." }
+        },
+        {
+          "title": { "en": "Practical help", "de": "Praktische Hilfen", "ar": "عون عملي" },
+          "list": { "en": ["Sleep earlier so you can wake for Fajr", "Pray soon after the adhan, before you get busy", "Keep company with people who encourage you", "Ask Allah for energy; do not only blame yourself"], "de": ["Schlafen Sie früher, um zum Fadschr aufzuwachen", "Beten Sie bald nach dem Adhan, bevor Sie beschäftigt sind", "Umgeben Sie sich mit Menschen, die Sie ermutigen", "Bitten Sie Allah um Kraft, statt sich nur Vorwürfe zu machen"], "ar": ["نَم مبكرًا لتستيقظ للفجر", "صلِّ بعد الأذان مباشرة قبل أن تنشغل", "صاحب من يشجعك", "اسأل الله النشاط ولا تكتفِ بلوم نفسك"] }
+        }
+      ]
+    },
+    {
+      "id": "tazkiyah-14-muhasabah",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": { "en": "Purifying the heart · 14", "de": "Läuterung des Herzens · 14", "ar": "تزكية النفس · ١٤" },
+        "title": { "en": "Muhasaba: holding yourself to account", "de": "Muhasaba: sich selbst Rechenschaft geben", "ar": "المحاسبة: أن تحاسب نفسك" },
+        "sub": { "en": "A daily review that is honest, merciful and short", "de": "Ein täglicher Rückblick: ehrlich, barmherzig und kurz", "ar": "مراجعة يومية صادقة رحيمة قصيرة" },
+        "arabic": "مُحَاسَبَةُ النَّفْس"
+      },
+      "slides": [
+        {
+          "verse": "59:18",
+          "check": "look to what it has put forth for tomorrow",
+          "title": { "en": "Look at your tomorrow", "de": "Schauen Sie auf Ihr Morgen", "ar": "انظر إلى غدك" },
+          "body": { "en": "The Quran asks every soul to check what it is sending ahead. That is muhasaba.", "de": "Der Koran fordert jede Seele auf zu prüfen, was sie vorausschickt. Das ist Muhasaba.", "ar": "يدعو القرآن كل نفس إلى أن تنظر فيما تقدّمه لغدها، وهذه هي المحاسبة." }
+        },
+        {
+          "verse": "75:2",
+          "check": "reproaching soul",
+          "title": { "en": "The soul that blames itself", "de": "Die Seele, die sich selbst tadelt", "ar": "النفس اللوامة" },
+          "body": { "en": "Many commentators see here the believer's conscience, which blames itself after a slip. A living conscience is precious.", "de": "Viele Kommentatoren sehen hier das Gewissen des Gläubigen, das sich nach einem Fehltritt selbst tadelt. Ein lebendiges Gewissen ist kostbar.", "ar": "يرى كثير من المفسرين فيها ضمير المؤمن الذي يلوم نفسه بعد الزلّة، والضمير الحيّ نعمة." }
+        },
+        {
+          "verse": "17:14",
+          "check": "Read your record",
+          "title": { "en": "Before the final account", "de": "Vor der letzten Abrechnung", "ar": "قبل الحساب الأخير" },
+          "body": { "en": "One day each person will read their own record. Reviewing it now is a mercy.", "de": "Eines Tages wird jeder sein eigenes Buch lesen. Es jetzt durchzusehen ist eine Barmherzigkeit.", "ar": "سيقرأ كل إنسان كتابه يومًا ما، ومراجعته اليوم رحمة." }
+        },
+        {
+          "title": { "en": "Al-Ghazali's merchant", "de": "Al-Ghazalis Kaufmann", "ar": "التاجر عند الغزالي" },
+          "body": { "en": "In the Ihya', al-Ghazali compares the intellect to a merchant and the soul to his business partner: agree on terms in the morning, keep watch during the day, check the account in the evening.", "de": "Im Ihya' vergleicht al-Ghazali den Verstand mit einem Kaufmann und die Seele mit seinem Geschäftspartner: morgens Bedingungen vereinbaren, tagsüber wachen, abends die Rechnung prüfen.", "ar": "يشبّه الغزالي في الإحياء العقل بالتاجر والنفس بشريكه: يشارطها في الصباح، ويراقبها في النهار، ويحاسبها في المساء." }
+        },
+        {
+          "title": { "en": "Honest, not harsh", "de": "Ehrlich, nicht hart", "ar": "صدق بلا قسوة" },
+          "body": { "en": "Self-accountability is not self-hatred. It notices, thanks Allah for the good, repents from the bad and plans one small change. Then it rests.", "de": "Selbstprüfung ist kein Selbsthass. Sie bemerkt, dankt Allah für das Gute, bereut das Schlechte und plant eine kleine Änderung. Dann ruht sie.", "ar": "المحاسبة ليست كرهًا للنفس؛ إنها تلاحظ، وتحمد الله على الخير، وتتوب من الشر، وتخطط لتغيير صغير واحد، ثم تستريح." }
+        },
+        {
+          "dua": "hisn:27:13",
+          "check": "do not leave me to myself",
+          "title": { "en": "Not relying on yourself", "de": "Nicht auf sich selbst verlassen", "ar": "الاستعانة بالله لا بالنفس" },
+          "body": { "en": "A morning and evening dua that admits we cannot fix ourselves without His help.", "de": "Ein Bittgebet für Morgen und Abend, das eingesteht: Ohne Seine Hilfe können wir uns nicht bessern.", "ar": "دعاء للصباح والمساء يعترف بأننا لا نُصلح أنفسنا إلا بعونه." }
+        },
+        {
+          "title": { "en": "A three-minute evening review", "de": "Ein Abendrückblick in drei Minuten", "ar": "مراجعة مسائية في ثلاث دقائق" },
+          "list": { "en": ["What did I do today that pleased Allah?", "Where did I fall short, and towards whom?", "What will I do differently tomorrow?", "Close with istighfar and alhamdulillah"], "de": ["Was habe ich heute getan, das Allah gefällt?", "Wo bin ich zurückgeblieben, und wem gegenüber?", "Was mache ich morgen anders?", "Schließen Sie mit Istighfar und alhamdulillah"], "ar": ["ماذا عملت اليوم مما يرضي الله؟", "أين قصّرت، وفي حق من؟", "ماذا سأغيّر غدًا؟", "اختم بالاستغفار والحمد"] }
+        }
+      ],
+      "sources": [
+        { "label": "Al-Ghazali, Ihya' 'Ulum al-Din, Kitab al-Muraqaba wa'l-Muhasaba" },
+        { "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 75:2", "url": "https://quran.com/75:2/tafsirs/en-tafisr-ibn-kathir" }
+      ]
+    },
+    {
+      "id": "tazkiyah-15-muraqabah",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": { "en": "Purifying the heart · 15", "de": "Läuterung des Herzens · 15", "ar": "تزكية النفس · ١٥" },
+        "title": { "en": "Muraqaba: knowing that Allah sees", "de": "Muraqaba: wissen, dass Allah sieht", "ar": "المراقبة: أن تعلم أن الله يراك" },
+        "sub": { "en": "Not a camera that frightens, but a presence that steadies", "de": "Keine Kamera, die Angst macht, sondern eine Gegenwart, die Halt gibt", "ar": "ليست عينًا تُخيف، بل حضورٌ يُثبّت" },
+        "arabic": "المُرَاقَبَة"
+      },
+      "slides": [
+        {
+          "title": { "en": "What muraqaba means", "de": "Was Muraqaba bedeutet", "ar": "معنى المراقبة" },
+          "body": { "en": "In Madarij al-Salikin, Ibn al-Qayyim describes muraqaba as the servant's lasting awareness and certainty that Allah sees both his outward and his inward.", "de": "In Madaridsch as-Salikin beschreibt Ibn al-Qayyim Muraqaba als das beständige Bewusstsein und die Gewissheit des Dieners, dass Allah sein Äußeres und sein Inneres sieht.", "ar": "يصف ابن القيم في مدارج السالكين المراقبة بأنها دوام علم العبد ويقينه باطّلاع الله على ظاهره وباطنه." }
+        },
+        {
+          "verse": "96:14",
+          "check": "Allah sees",
+          "title": { "en": "A short question", "de": "Eine kurze Frage", "ar": "سؤال قصير" },
+          "body": { "en": "A single short question in the Quran that can change a decision in a moment.", "de": "Eine einzige kurze Frage im Koran, die eine Entscheidung in einem Augenblick ändern kann.", "ar": "سؤال قصير واحد في القرآن قد يغيّر قرارًا في لحظة." }
+        },
+        {
+          "verse": "26:218-220",
+          "check": "Who sees you when you arise",
+          "title": { "en": "Seen in prayer", "de": "Gesehen im Gebet", "ar": "مرئيّ في صلاتك" },
+          "body": { "en": "Being seen is also a comfort: every prayer, even one no one else notices, is seen by Him.", "de": "Gesehen zu werden ist auch ein Trost: Jedes Gebet, auch eines, das sonst niemand bemerkt, sieht Er.", "ar": "أن يراك الله سلوى أيضًا: كل صلاة، ولو لم يلحظها أحد، يراها هو." }
+        },
+        {
+          "verse": "40:19",
+          "check": "deceives the eyes",
+          "title": { "en": "Even a glance", "de": "Selbst ein Blick", "ar": "حتى النظرة" },
+          "body": { "en": "Nothing is too small: a stolen look and a hidden thought are both known to Him.", "de": "Nichts ist zu klein: Ein heimlicher Blick und ein verborgener Gedanke sind Ihm beide bekannt.", "ar": "لا شيء يصغر عنه: النظرة المختلسة والخاطرة المستورة كلتاهما معلومة له." }
+        },
+        {
+          "hadith": "bukhari:7501",
+          "check": "intends to do a good deed",
+          "title": { "en": "Watched with generosity", "de": "Mit Großzügigkeit gesehen", "ar": "رقابة كريمة" },
+          "body": { "en": "His watching is generous: even intentions are counted, and in your favour.", "de": "Sein Hinschauen ist großzügig: Selbst Absichten werden gezählt, und zwar zu Ihren Gunsten.", "ar": "رقابته كريمة: حتى النيات تُحسب، ولصالحك." }
+        },
+        {
+          "title": { "en": "Practising muraqaba", "de": "Muraqaba üben", "ar": "تمرين على المراقبة" },
+          "list": { "en": ["Begin tasks with Bismillah, aware that He is present", "Before a choice, ask: would I do this, knowing He sees?", "Slow down one prayer a day and feel His nearness", "Remember He sees the efforts no one else notices"], "de": ["Beginnen Sie Aufgaben mit Bismillah, im Bewusstsein Seiner Gegenwart", "Fragen Sie vor einer Wahl: Täte ich das im Wissen, dass Er sieht?", "Beten Sie ein Gebet am Tag langsamer und spüren Sie Seine Nähe", "Denken Sie daran: Er sieht die Mühe, die sonst niemand bemerkt"], "ar": ["ابدأ أعمالك بالبسملة مستحضرًا حضوره", "اسأل قبل أي اختيار: أأفعل هذا وأنا أعلم أنه يراني؟", "تمهّل في صلاة واحدة كل يوم واستشعر قربه", "تذكّر أنه يرى جهدك الذي لا يلاحظه أحد"] }
+        }
+      ],
+      "sources": [
+        { "label": "Ibn al-Qayyim, Madarij al-Salikin" }
+      ]
+    },
+    {
+      "id": "tazkiyah-16-gratitude",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": { "en": "Purifying the heart · 16", "de": "Läuterung des Herzens · 16", "ar": "تزكية النفس · ١٦" },
+        "title": { "en": "Gratitude as a daily practice", "de": "Dankbarkeit als tägliche Übung", "ar": "الشكر عادة يومية" },
+        "sub": { "en": "Shukr in the heart, on the tongue and in what you do", "de": "Schukr im Herzen, auf der Zunge und im Handeln", "ar": "الشكر بالقلب واللسان والعمل" },
+        "arabic": "الشُّكْر"
+      },
+      "slides": [
+        {
+          "title": { "en": "Three parts of shukr", "de": "Drei Teile des Schukr", "ar": "أركان الشكر الثلاثة" },
+          "body": { "en": "In the Ihya', al-Ghazali describes gratitude as knowledge, a state and action: knowing the blessing is from Allah, feeling joy in the Giver, and using the gift in ways He loves.", "de": "Im Ihya' beschreibt al-Ghazali Dankbarkeit als Wissen, Zustand und Handeln: wissen, dass die Gabe von Allah kommt, Freude am Geber empfinden und die Gabe so nutzen, wie Er es liebt.", "ar": "يصف الغزالي في الإحياء الشكر بأنه علم وحال وعمل: أن تعلم أن النعمة من الله، وأن تفرح بالمنعم، وأن تستعمل النعمة فيما يحبه." }
+        },
+        {
+          "dua": "hisn:27:6",
+          "check": "all thanks",
+          "title": { "en": "Thanks for the whole day", "de": "Dank für den ganzen Tag", "ar": "شكر اليوم كله" },
+          "body": { "en": "A short morning and evening dhikr that returns every blessing to its Source.", "de": "Ein kurzes Gedenken für Morgen und Abend, das jede Gabe ihrem Ursprung zurückgibt.", "ar": "ذكر قصير للصباح والمساء يردّ كل نعمة إلى مصدرها." }
+        },
+        {
+          "verse": "14:34",
+          "check": "could not enumerate them",
+          "title": { "en": "Too many to count", "de": "Zu viele zum Zählen", "ar": "أكثر من أن تُحصى" },
+          "body": { "en": "Counting blessings is not about finishing the list. It is about seeing how long it is.", "de": "Beim Zählen der Gaben geht es nicht darum, die Liste zu beenden, sondern zu sehen, wie lang sie ist.", "ar": "ليس الغرض من عدّ النعم أن تُتمّ القائمة، بل أن ترى طولها." }
+        },
+        {
+          "dua": "hisn:83:0",
+          "check": "saved me",
+          "title": { "en": "Seeing someone in hardship", "de": "Wenn Sie jemanden in Not sehen", "ar": "حين ترى مبتلى" },
+          "body": { "en": "Not pride, not pity, but quiet praise: a reminder that your wellbeing is a gift.", "de": "Kein Stolz, kein Mitleid von oben, sondern stilles Lob: eine Erinnerung, dass Ihr Wohlergehen ein Geschenk ist.", "ar": "لا كِبر ولا شفقة متعالية، بل حمد في السرّ يذكّرك بأن عافيتك هبة." }
+        },
+        {
+          "verse": "7:17",
+          "check": "grateful",
+          "title": { "en": "Satan's target", "de": "Das Ziel des Satans", "ar": "هدف الشيطان" },
+          "body": { "en": "Iblis vowed to come from every side, and named his goal: that most people would not be grateful.", "de": "Iblis schwor, von allen Seiten zu kommen, und nannte sein Ziel: dass die meisten Menschen nicht dankbar sind.", "ar": "أقسم إبليس أن يأتي من كل جهة، وسمّى غايته: ألا يكون أكثر الناس شاكرين." }
+        },
+        {
+          "dua": "hisn:106:0",
+          "check": "in all circumstances",
+          "title": { "en": "Praise in every state", "de": "Lob in jedem Zustand", "ar": "حمدٌ في السراء والضراء" },
+          "body": { "en": "The Prophet had words for good news and for bad: praise in both.", "de": "Der Prophet hatte Worte für gute und für schlechte Nachrichten: Lob in beiden.", "ar": "كان للنبي ﷺ كلمات للخبر السار وللخبر المكروه: حمدٌ في الحالين." }
+        },
+        {
+          "title": { "en": "A gratitude practice", "de": "Eine Übung der Dankbarkeit", "ar": "تمرين على الشكر" },
+          "list": { "en": ["Name three blessings each night", "Thank the people through whom good reaches you", "Use a blessing for good: time, health, money", "Say alhamdulillah when something goes wrong too"], "de": ["Nennen Sie jeden Abend drei Gaben", "Danken Sie den Menschen, durch die Gutes zu Ihnen kommt", "Nutzen Sie eine Gabe für Gutes: Zeit, Gesundheit, Geld", "Sagen Sie alhamdulillah auch, wenn etwas schiefgeht"], "ar": ["سمِّ ثلاث نعم كل ليلة", "اشكر من يصلك الخير على أيديهم", "استعمل النعمة في الخير: الوقت والصحة والمال", "قل الحمد لله حتى حين يسوء أمر"] }
+        }
+      ],
+      "sources": [
+        { "label": "Al-Ghazali, Ihya' 'Ulum al-Din, Kitab al-Sabr wa'l-Shukr" }
+      ]
+    },
+    {
+      "id": "tazkiyah-17-tawakkul",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": { "en": "Purifying the heart · 17", "de": "Läuterung des Herzens · 17", "ar": "تزكية النفس · ١٧" },
+        "title": { "en": "Tawakkul is not passivity", "de": "Tawakkul ist keine Untätigkeit", "ar": "التوكل ليس تواكلًا" },
+        "sub": { "en": "Trust in Allah with the heart, effort with the hands", "de": "Vertrauen auf Allah mit dem Herzen, Mühe mit den Händen", "ar": "ثقة بالله في القلب، وسعي باليدين" },
+        "arabic": "التَّوَكُّل"
+      },
+      "slides": [
+        {
+          "title": { "en": "Heart and hands", "de": "Herz und Hände", "ar": "القلب واليدان" },
+          "body": { "en": "Tawakkul is the heart leaning on Allah, not the hands lying still. Taking the means is obedience; trusting the means alone is the mistake. Al-Ghazali explains that earning a living or seeking a cure does not contradict trust.", "de": "Tawakkul ist das Herz, das sich auf Allah stützt, nicht Hände, die stillliegen. Die Mittel zu nutzen ist Gehorsam; allein den Mitteln zu vertrauen ist der Fehler. Al-Ghazali erklärt, dass Broterwerb oder die Suche nach Heilung dem Vertrauen nicht widersprechen.", "ar": "التوكل اعتماد القلب على الله، لا تعطيل اليدين. الأخذ بالأسباب طاعة، والاعتماد عليها وحدها هو الخطأ. ويبيّن الغزالي أن طلب الرزق والتداوي لا يناقضان التوكل." }
+        },
+        {
+          "verse": "5:23",
+          "check": "Enter upon them through the gate",
+          "title": { "en": "First the step, then trust", "de": "Erst der Schritt, dann Vertrauen", "ar": "الخطوة أولًا ثم التوكل" },
+          "body": { "en": "Two God-fearing men gave this advice: take the step, then put your trust in Allah. The order matters.", "de": "Zwei gottesfürchtige Männer gaben diesen Rat: den Schritt tun, dann auf Allah vertrauen. Die Reihenfolge zählt.", "ar": "نصح رجلان ممن يخافون الله: خذوا بالخطوة، ثم توكلوا على الله. والترتيب مقصود." }
+        },
+        {
+          "verse": "19:25",
+          "check": "shake toward you the trunk",
+          "title": { "en": "Maryam shook the palm", "de": "Maryam schüttelte die Palme", "ar": "مريم تهزّ النخلة" },
+          "body": { "en": "In her hardest hour, she was still asked to make a small effort. The provision came through it.", "de": "In ihrer schwersten Stunde sollte sie dennoch eine kleine Anstrengung machen. Die Versorgung kam durch sie.", "ar": "في أشدّ ساعاتها طُلب منها جهد يسير، فجاء الرزق من خلاله." }
+        },
+        {
+          "hadith": "bukhari:3653",
+          "check": "third of whom is Allah",
+          "title": { "en": "In the cave", "de": "In der Höhle", "ar": "في الغار" },
+          "body": { "en": "They had planned carefully and hidden well. When danger stood at the entrance, the Prophet's heart rested on Allah.", "de": "Sie hatten sorgfältig geplant und sich gut versteckt. Als die Gefahr am Eingang stand, ruhte das Herz des Propheten auf Allah.", "ar": "خطّطا بإحكام واختبآ جيدًا، فلما وقف الخطر عند المدخل كان قلب النبي ﷺ مطمئنًا بالله." }
+        },
+        {
+          "dua": "hisn:46:0",
+          "check": "Allah has decreed",
+          "title": { "en": "After the outcome", "de": "Nach dem Ergebnis", "ar": "بعد النتيجة" },
+          "body": { "en": "When things turn out differently, these words close the door on endless what-ifs.", "de": "Wenn es anders kommt, schließen diese Worte die Tür für endloses „was wäre, wenn“.", "ar": "حين تأتي النتيجة على غير ما تريد، تغلق هذه الكلمات باب «لو» المفتوح بلا نهاية." }
+        },
+        {
+          "title": { "en": "Tawakkul in practice", "de": "Tawakkul im Alltag", "ar": "التوكل في الحياة" },
+          "list": { "en": ["Plan well, then let go of the outcome", "Do your part, then say: Allah is enough for me", "After a setback, stop replaying the what-ifs", "Judge yourself by effort; results are His decree"], "de": ["Planen Sie gut, dann lassen Sie das Ergebnis los", "Tun Sie Ihren Teil, dann sagen Sie: Allah genügt mir", "Spielen Sie nach einem Rückschlag das Was-wäre-wenn nicht weiter durch", "Messen Sie sich an der Mühe; Ergebnisse sind Seine Bestimmung"], "ar": ["خطّط جيدًا ثم اترك النتيجة لله", "أدِّ ما عليك ثم قل: حسبي الله", "بعد الإخفاق لا تكرّر «لو» في ذهنك", "حاسب نفسك على السعي، والنتائج بقدره"] }
+        }
+      ],
+      "sources": [
+        { "label": "Al-Ghazali, Ihya' 'Ulum al-Din, Kitab al-Tawhid wa'l-Tawakkul" }
+      ]
+    },
+    {
+      "id": "tazkiyah-18-repentance",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": { "en": "Purifying the heart · 18", "de": "Läuterung des Herzens · 18", "ar": "تزكية النفس · ١٨" },
+        "title": { "en": "Repentance as a daily habit", "de": "Reue als tägliche Gewohnheit", "ar": "التوبة عادة يومية" },
+        "sub": { "en": "Tawba is not only for big sins. It is how the heart stays clean", "de": "Tawba ist nicht nur für große Sünden. So bleibt das Herz rein", "ar": "التوبة ليست للكبائر وحدها، بل بها يبقى القلب نقيًّا" },
+        "arabic": "التَّوْبَة"
+      },
+      "slides": [
+        {
+          "title": { "en": "First, middle and last", "de": "Erste, mittlere und letzte Station", "ar": "أول المنازل وأوسطها وآخرها" },
+          "body": { "en": "In Madarij al-Salikin, Ibn al-Qayyim calls repentance the first station of the path, its middle and its end. The servant never outgrows it.", "de": "In Madaridsch as-Salikin nennt Ibn al-Qayyim die Reue die erste Station des Weges, seine Mitte und sein Ende. Der Diener wächst nie über sie hinaus.", "ar": "يجعل ابن القيم في مدارج السالكين التوبة أول منازل الطريق وأوسطها وآخرها، فلا يستغني عنها العبد أبدًا." }
+        },
+        {
+          "hadith": "muslim:6989",
+          "check": "Stretches out His Hand",
+          "title": { "en": "Open day and night", "de": "Tag und Nacht offen", "ar": "مفتوح ليلًا ونهارًا" },
+          "body": { "en": "There is no hour when it is too late to return, until the very end of this world.", "de": "Es gibt keine Stunde, in der es zu spät zur Umkehr ist, bis zum Ende dieser Welt.", "ar": "لا توجد ساعة يفوت فيها أوان الرجوع، حتى نهاية هذه الدنيا." }
+        },
+        {
+          "hadith": "bukhari:6309",
+          "check": "more pleased with the repentance",
+          "title": { "en": "Allah's joy", "de": "Allahs Freude", "ar": "فرح الله بالتائب" },
+          "body": { "en": "Picture someone finding what they had given up for lost in the desert. Allah's pleasure at a returning servant is greater.", "de": "Stellen Sie sich jemanden vor, der in der Wüste wiederfindet, was er verloren glaubte. Allahs Freude über einen umkehrenden Diener ist größer.", "ar": "تخيّل من وجد في الصحراء ما ظنّه ضائعًا، ففرح الله بعبده التائب أعظم." }
+        },
+        {
+          "hadith": "muslim:6964",
+          "check": "swept you out of existence",
+          "title": { "en": "Made to return", "de": "Geschaffen, um umzukehren", "ar": "خُلقنا لنرجع" },
+          "body": { "en": "Humans are not angels. What Allah loves is the one who slips and keeps coming back.", "de": "Menschen sind keine Engel. Allah liebt den, der strauchelt und immer wieder zurückkommt.", "ar": "لسنا ملائكة، والله يحب من يزلّ ثم يعود مرة بعد مرة." }
+        },
+        {
+          "verse": "66:8",
+          "check": "sincere repentance",
+          "title": { "en": "Tawba nasuha", "de": "Tawba nasuha", "ar": "التوبة النصوح" },
+          "body": { "en": "Scholars describe sincere repentance as regret, stopping, resolving not to return, and righting wrongs done to people.", "de": "Gelehrte beschreiben aufrichtige Reue als Bedauern, Aufhören, den Entschluss, nicht zurückzukehren, und Wiedergutmachung gegenüber Menschen.", "ar": "يصف العلماء التوبة النصوح بالندم، والإقلاع، والعزم على عدم العود، وردّ الحقوق إلى أهلها." }
+        },
+        {
+          "dua": "hisn:44:0",
+          "check": "two units",
+          "title": { "en": "After a slip", "de": "Nach einem Fehltritt", "ar": "بعد الزلّة" },
+          "body": { "en": "A practical sunnah for the moment right after a mistake.", "de": "Eine praktische Sunna für den Moment direkt nach einem Fehler.", "ar": "سنة عملية للحظة التي تلي الخطأ مباشرة." }
+        },
+        {
+          "title": { "en": "Making it daily", "de": "Es täglich machen", "ar": "اجعلها يومية" },
+          "list": { "en": ["Say astaghfirullah after each prayer", "Repent right away, not later when you feel better", "Make amends with the person you wronged", "Follow a mistake with a good deed"], "de": ["Sagen Sie nach jedem Gebet astaghfirullah", "Kehren Sie sofort um, nicht später, wenn es Ihnen besser geht", "Machen Sie es bei dem Menschen gut, dem Sie Unrecht taten", "Lassen Sie auf einen Fehler eine gute Tat folgen"], "ar": ["قل أستغفر الله بعد كل صلاة", "تُب فورًا، لا حين تتحسّن حالك", "أصلح ما أفسدت مع من ظلمته", "أتبِع الخطأ بعمل صالح"] }
+        }
+      ],
+      "sources": [
+        { "label": "Ibn al-Qayyim, Madarij al-Salikin" }
+      ]
+    },
+    {
+      "id": "tazkiyah-19-tongue",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": { "en": "Purifying the heart · 19", "de": "Läuterung des Herzens · 19", "ar": "تزكية النفس · ١٩" },
+        "title": { "en": "The tongue: small, but heavy", "de": "Die Zunge: klein, aber gewichtig", "ar": "اللسان: صغير الحجم عظيم الأثر" },
+        "sub": { "en": "One word can lift you or bring you down. Guarding the tongue is guarding the heart", "de": "Ein Wort kann Sie erheben oder zu Fall bringen. Die Zunge zu hüten heißt, das Herz zu hüten", "ar": "كلمة قد ترفعك أو تهوي بك، وحفظ اللسان حفظ للقلب" },
+        "arabic": "حِفْظُ اللِّسَان"
+      },
+      "slides": [
+        {
+          "title": { "en": "Small organ, big weight", "de": "Kleines Organ, großes Gewicht", "ar": "عضو صغير وأثر كبير" },
+          "body": { "en": "The tongue costs no effort and works all day. That is why its harms are many: lies, mockery, gossip, complaining, empty talk. Al-Ghazali devotes a whole book of the Ihya' to its dangers.", "de": "Die Zunge kostet keine Mühe und arbeitet den ganzen Tag. Darum sind ihre Schäden zahlreich: Lügen, Spott, Gerede, Klagen, leeres Reden. Al-Ghazali widmet ihren Gefahren ein ganzes Buch des Ihya'.", "ar": "اللسان لا يكلّف جهدًا ويعمل طوال اليوم، ولذلك كثرت آفاته: الكذب والسخرية والنميمة والشكوى والكلام الفارغ. وقد أفرد الغزالي لآفاته كتابًا كاملًا في الإحياء." }
+        },
+        {
+          "hadith": "bukhari:6478",
+          "check": "without giving it much importance",
+          "title": { "en": "One careless word", "de": "Ein unbedachtes Wort", "ar": "كلمة بلا مبالاة" },
+          "body": { "en": "We rarely weigh our words. This hadith shows how much a single sentence can weigh.", "de": "Wir wägen unsere Worte selten ab. Dieser Hadith zeigt, wie viel ein einziger Satz wiegen kann.", "ar": "قلّما نزن كلماتنا، وهذا الحديث يبيّن كم قد تزن جملة واحدة." }
+        },
+        {
+          "hadith": "bukhari:10",
+          "check": "with his tongue and hands",
+          "title": { "en": "Who a Muslim is", "de": "Wer ein Muslim ist", "ar": "من هو المسلم" },
+          "body": { "en": "In the Prophet's description, others being safe from your words comes before many outward acts.", "de": "In der Beschreibung des Propheten steht die Sicherheit anderer vor Ihren Worten noch vor vielen äußeren Taten.", "ar": "في وصف النبي ﷺ تأتي سلامة الناس من لسانك قبل كثير من الأعمال الظاهرة." }
+        },
+        {
+          "verse": "2:83",
+          "check": "speak to people good",
+          "title": { "en": "An old covenant", "de": "Ein alter Bund", "ar": "ميثاق قديم" },
+          "body": { "en": "Speaking well to people was part of the covenant with earlier communities, next to prayer and charity.", "de": "Gut zu den Menschen zu sprechen gehörte zum Bund mit früheren Gemeinschaften, neben Gebet und Abgabe.", "ar": "كان القول الحسن للناس من الميثاق المأخوذ على الأمم السابقة، إلى جانب الصلاة والزكاة." }
+        },
+        {
+          "verse": "23:3",
+          "check": "ill speech",
+          "title": { "en": "A mark of the successful", "de": "Ein Kennzeichen der Erfolgreichen", "ar": "من صفات المفلحين" },
+          "body": { "en": "Among the qualities of the believers who succeed: turning away from empty and hurtful talk.", "de": "Zu den Eigenschaften der erfolgreichen Gläubigen gehört, sich von leerem und verletzendem Gerede abzuwenden.", "ar": "من صفات المؤمنين المفلحين الإعراض عن الكلام الفارغ والجارح." }
+        },
+        {
+          "dua": "hisn:112:0",
+          "check": "whom I have insulted",
+          "title": { "en": "When you have hurt someone", "de": "Wenn Sie jemanden verletzt haben", "ar": "إذا جرحت أحدًا" },
+          "body": { "en": "The Prophet's own way of repairing a harsh word: a dua for the person.", "de": "Die eigene Art des Propheten, ein hartes Wort wiedergutzumachen: ein Bittgebet für den Betroffenen.", "ar": "طريقة النبي ﷺ في إصلاح الكلمة القاسية: دعاء لصاحبها." }
+        },
+        {
+          "title": { "en": "Three filters before speaking", "de": "Drei Filter vor dem Sprechen", "ar": "ثلاثة مرشّحات قبل الكلام" },
+          "list": { "en": ["Is it true?", "Is it needed?", "Is it kind, or at least fair?", "If not, silence is the better choice"], "de": ["Ist es wahr?", "Ist es nötig?", "Ist es freundlich oder wenigstens gerecht?", "Wenn nicht, ist Schweigen die bessere Wahl"], "ar": ["هل هو صدق؟", "هل هو ضروري؟", "هل هو لطيف، أو عادل على الأقل؟", "فإن لم يكن، فالصمت أولى"] }
+        }
+      ],
+      "sources": [
+        { "label": "Al-Ghazali, Ihya' 'Ulum al-Din, Kitab Afat al-Lisan" }
+      ]
+    },
+    {
+      "id": "tazkiyah-20-gaze",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": { "en": "Purifying the heart · 20", "de": "Läuterung des Herzens · 20", "ar": "تزكية النفس · ٢٠" },
+        "title": { "en": "Guarding the gaze", "de": "Den Blick hüten", "ar": "حفظ البصر" },
+        "sub": { "en": "The eyes are a door to the heart. What we look at shapes what we long for", "de": "Die Augen sind eine Tür zum Herzen. Was wir ansehen, formt, wonach wir uns sehnen", "ar": "العين باب القلب، وما ننظر إليه يشكّل ما نشتاق إليه" },
+        "arabic": "غَضُّ البَصَر"
+      },
+      "slides": [
+        {
+          "title": { "en": "A door to the heart", "de": "Eine Tür zum Herzen", "ar": "باب إلى القلب" },
+          "body": { "en": "What the eyes take in stays in the heart: images, desires, comparisons. Lowering the gaze is not only about avoiding the forbidden. It protects the heart's peace and focus.", "de": "Was die Augen aufnehmen, bleibt im Herzen: Bilder, Begierden, Vergleiche. Den Blick zu senken heißt nicht nur, Verbotenes zu meiden. Es schützt den Frieden und die Sammlung des Herzens.", "ar": "ما تلتقطه العين يستقرّ في القلب: صورٌ ورغبات ومقارنات. وغضّ البصر ليس اجتنابًا للحرام فحسب، بل حماية لسكينة القلب وتركيزه." }
+        },
+        {
+          "verse": "24:30",
+          "check": "purer for them",
+          "title": { "en": "Purer for you", "de": "Reiner für Sie", "ar": "أزكى لكم" },
+          "body": { "en": "The command comes with its reason: it is purer. The next verse addresses women in the same way.", "de": "Das Gebot kommt mit seiner Begründung: Es ist reiner. Der nächste Vers richtet sich ebenso an die Frauen.", "ar": "يأتي الأمر مقرونًا بعلّته: إنه أزكى. والآية التالية تخاطب النساء بالمثل." }
+        },
+        {
+          "verse": "17:36",
+          "check": "the hearing, the sight and the heart",
+          "title": { "en": "The eyes will be asked", "de": "Die Augen werden befragt", "ar": "البصر مسؤول" },
+          "body": { "en": "Sight is a trust, and every faculty we were given will be accounted for.", "de": "Das Sehen ist ein anvertrautes Gut, und über jede Fähigkeit, die uns gegeben wurde, wird Rechenschaft verlangt.", "ar": "البصر أمانة، وكل ما أُعطيناه من حواسّ سنُحاسب عليه." }
+        },
+        {
+          "hadith": "muslim:5644",
+          "check": "turn away my eyes",
+          "title": { "en": "The first glance", "de": "Der erste Blick", "ar": "النظرة الأولى" },
+          "body": { "en": "An unintended glance happens. The Prophet's advice was simple: look away.", "de": "Ein unbeabsichtigter Blick passiert. Der Rat des Propheten war einfach: wegschauen.", "ar": "نظرة الفجأة تقع، ونصيحة النبي ﷺ بسيطة: اصرف بصرك." }
+        },
+        {
+          "hadith": "bukhari:6229",
+          "check": "Lowering your gaze",
+          "title": { "en": "A right of the street", "de": "Ein Recht der Straße", "ar": "من حق الطريق" },
+          "body": { "en": "Lowering the gaze is listed among the rights of public spaces, next to returning greetings.", "de": "Den Blick zu senken gehört zu den Rechten öffentlicher Räume, neben dem Erwidern des Grußes.", "ar": "غضّ البصر من حقوق الطريق، إلى جانب ردّ السلام." }
+        },
+        {
+          "verse": "15:88",
+          "check": "Do not extend your eyes",
+          "title": { "en": "Another kind of gaze", "de": "Eine andere Art des Blicks", "ar": "نظر من نوع آخر" },
+          "body": { "en": "The Quran also warns against staring at what others have been given. Discontent enters through the eyes too.", "de": "Der Koran warnt auch davor, auf das zu starren, was anderen gegeben wurde. Auch Unzufriedenheit kommt durch die Augen.", "ar": "يحذّر القرآن أيضًا من مدّ العين إلى ما أُعطيه غيرنا، فالسخط يدخل من العين كذلك." }
+        },
+        {
+          "title": { "en": "Practical steps", "de": "Praktische Schritte", "ar": "خطوات عملية" },
+          "list": { "en": ["Look away at once; do not take the second look", "Choose your feed as carefully as your company", "Fill your eyes with the Quran and with creation", "Ask Allah for help when the struggle is hard"], "de": ["Schauen Sie sofort weg; werfen Sie keinen zweiten Blick", "Wählen Sie Ihren Feed so sorgfältig wie Ihre Gesellschaft", "Füllen Sie Ihre Augen mit dem Koran und der Schöpfung", "Bitten Sie Allah um Hilfe, wenn der Kampf schwer ist"], "ar": ["اصرف بصرك فورًا ولا تُتبع النظرة النظرة", "اختر ما تتصفّحه كما تختار صحبتك", "املأ عينيك بالقرآن وبآيات الخلق", "استعن بالله حين تشتدّ المجاهدة"] }
+        }
+      ]
+    },
+    {
+      "id": "tazkiyah-21-company",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": { "en": "Purifying the heart · 21", "de": "Läuterung des Herzens · 21", "ar": "تزكية النفس · ٢١" },
+        "title": { "en": "Your company shapes your heart", "de": "Ihre Gesellschaft formt Ihr Herz", "ar": "صحبتك تصنع قلبك" },
+        "sub": { "en": "Hearts that find each other, love for Allah's sake, and how to be a good companion yourself", "de": "Herzen, die sich finden, Liebe um Allahs willen, und wie Sie selbst ein guter Gefährte sind", "ar": "قلوب تتآلف، ومحبة في الله، وكيف تكون أنت صاحبًا صالحًا" },
+        "arabic": "الصُّحْبَة"
+      },
+      "slides": [
+        {
+          "title": { "en": "The heart absorbs", "de": "Das Herz nimmt auf", "ar": "القلب يتشرّب" },
+          "body": { "en": "The heart slowly absorbs the mood, the worries and the hopes of the people around it. That is why the company we keep is part of tazkiyah, not only a social question.", "de": "Das Herz nimmt langsam die Stimmung, die Sorgen und die Hoffnungen der Menschen um es herum auf. Darum gehört die Gesellschaft, die wir pflegen, zur Tazkiya und ist nicht nur eine soziale Frage.", "ar": "يتشرّب القلب ببطء مزاج من حوله وهمومهم وآمالهم، ولذلك كانت الصحبة جزءًا من تزكية النفس، لا مسألة اجتماعية فحسب." }
+        },
+        {
+          "hadith": "bukhari:3336",
+          "check": "recruited troops",
+          "title": { "en": "Souls recognise each other", "de": "Seelen erkennen einander", "ar": "الأرواح تتعارف" },
+          "body": { "en": "We are drawn to people who resemble us inside. So our friendships both reveal and shape who we are.", "de": "Uns zieht es zu Menschen, die uns innerlich ähneln. So zeigen unsere Freundschaften, wer wir sind, und formen es zugleich.", "ar": "ننجذب إلى من يشبهوننا في الداخل، فصداقاتنا تكشف حقيقتنا وتصوغها معًا." }
+        },
+        {
+          "verse": "8:63",
+          "check": "brought together their hearts",
+          "title": { "en": "Hearts joined by Allah", "de": "Herzen, von Allah verbunden", "ar": "قلوب ألّف الله بينها" },
+          "body": { "en": "Real closeness between hearts cannot be bought. The Quran calls it Allah's own work.", "de": "Echte Nähe zwischen Herzen lässt sich nicht kaufen. Der Koran nennt sie Allahs eigenes Werk.", "ar": "لا يُشترى القرب الحقيقي بين القلوب، والقرآن ينسبه إلى صنع الله وحده." }
+        },
+        {
+          "hadith": "muslim:6548",
+          "check": "mutual love for My Glory",
+          "title": { "en": "Love for His sake", "de": "Liebe um Seinetwillen", "ar": "المحبة في الله" },
+          "body": { "en": "On the Last Day, a special shade is promised to those whose friendship was for Allah.", "de": "Am Letzten Tag wird denen, deren Freundschaft Allah galt, ein besonderer Schatten versprochen.", "ar": "يوم القيامة يُوعد المتحابّون في الله بظلّ خاص." }
+        },
+        {
+          "verse": "25:72",
+          "check": "pass by with dignity",
+          "title": { "en": "Passing by with dignity", "de": "In Würde vorübergehen", "ar": "المرور بكرامة" },
+          "body": { "en": "Not every gathering needs to be joined. The servants of the Most Merciful leave empty talk without drama.", "de": "Nicht jeder Runde muss man sich anschließen. Die Diener des Allerbarmers verlassen leeres Gerede ohne Aufhebens.", "ar": "ليس كل مجلس يستحق أن تجلس فيه، وعباد الرحمن يتجاوزون اللغو دون ضجيج." }
+        },
+        {
+          "hadith": "bukhari:6169",
+          "check": "with those whom he loves",
+          "title": { "en": "Love counts", "de": "Liebe zählt", "ar": "المحبة لها وزن" },
+          "body": { "en": "Hope for anyone who loves good people but feels far behind them.", "de": "Hoffnung für jeden, der gute Menschen liebt, sich aber weit hinter ihnen fühlt.", "ar": "رجاء لكل من يحب الصالحين ويشعر أنه متأخر عنهم كثيرًا." }
+        },
+        {
+          "title": { "en": "Choosing and being a good companion", "de": "Gute Gefährten wählen und sein", "ar": "أن تختار الصاحب الصالح وأن تكونه" },
+          "list": { "en": ["Choose friends who remind you of Allah", "Be kind to everyone, close to a few", "Leave gatherings that harden your heart", "Be the friend you are looking for"], "de": ["Wählen Sie Freunde, die Sie an Allah erinnern", "Seien Sie zu allen freundlich, wenigen nah", "Verlassen Sie Runden, die Ihr Herz verhärten", "Seien Sie der Freund, den Sie suchen"], "ar": ["اختر أصدقاء يذكّرونك بالله", "كن لطيفًا مع الجميع، قريبًا من القليل", "اترك المجالس التي تقسّي قلبك", "كن الصديق الذي تبحث عنه"] }
+        }
+      ]
+    },
+    {
+      "id": "tazkiyah-22-small-sins",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": { "en": "Purifying the heart · 22", "de": "Läuterung des Herzens · 22", "ar": "تزكية النفس · ٢٢" },
+        "title": { "en": "Why small sins are not small", "de": "Warum kleine Sünden nicht klein sind", "ar": "لماذا لا تكون الصغائر صغيرة" },
+        "sub": { "en": "Not to frighten, but to stay awake: how little things shape the heart", "de": "Nicht um Angst zu machen, sondern um wach zu bleiben: wie Kleinigkeiten das Herz formen", "ar": "لا للتخويف بل للانتباه: كيف تشكّل الأشياء الصغيرة القلب" },
+        "arabic": "مُحَقَّرَاتُ الذُّنُوب"
+      },
+      "slides": [
+        {
+          "title": { "en": "The problem is not the size", "de": "Das Problem ist nicht die Größe", "ar": "المشكلة ليست في الحجم" },
+          "body": { "en": "A small sin repeated without regret slowly becomes a habit, and a habit becomes character. The danger lies less in the act than in the shrug that follows it.", "de": "Eine kleine Sünde, ohne Reue wiederholt, wird langsam zur Gewohnheit, und Gewohnheit wird zum Charakter. Die Gefahr liegt weniger in der Tat als im Achselzucken danach.", "ar": "الذنب الصغير إذا تكرّر بلا ندم صار عادة، والعادة تصير طبعًا. والخطر في اللامبالاة التي تتبعه أكثر منه في الفعل نفسه." }
+        },
+        {
+          "hadith": "bukhari:6492",
+          "check": "than hair",
+          "title": { "en": "Thinner than a hair", "de": "Dünner als ein Haar", "ar": "أدقّ من الشعر" },
+          "body": { "en": "Anas noticed that people of a later generation took lightly what the Companions had feared.", "de": "Anas bemerkte, dass Menschen einer späteren Generation leichtnahmen, was die Gefährten gefürchtet hatten.", "ar": "لاحظ أنس أن من جاء بعد الصحابة استخفّوا بما كان الصحابة يخافونه." }
+        },
+        {
+          "verse": "24:15",
+          "check": "insignificant",
+          "title": { "en": "Light on the tongue", "de": "Leicht auf der Zunge", "ar": "خفيف على اللسان" },
+          "body": { "en": "Revealed about a slander, this verse shows how something can feel light while being grave with Allah.", "de": "Über eine Verleumdung offenbart, zeigt dieser Vers, wie etwas leicht wirken und bei Allah doch schwer wiegen kann.", "ar": "نزلت في حادثة الإفك، وتبيّن كيف يستخفّ الإنسان بأمر ثقيل في ميزان الله." }
+        },
+        {
+          "verse": "83:14",
+          "check": "stain has covered their hearts",
+          "title": { "en": "Layers on the heart", "de": "Schichten auf dem Herzen", "ar": "طبقات على القلب" },
+          "body": { "en": "Deeds leave traces. Repeated wrong can settle on the heart like a stain.", "de": "Taten hinterlassen Spuren. Wiederholtes Unrecht kann sich wie ein Belag auf das Herz legen.", "ar": "للأعمال آثار، والخطأ المتكرّر قد يستقرّ على القلب كالصدأ." }
+        },
+        {
+          "verse": "99:7-8",
+          "check": "atom's weight",
+          "title": { "en": "Nothing is lost", "de": "Nichts geht verloren", "ar": "لا يضيع شيء" },
+          "body": { "en": "This works both ways: no small evil disappears, and no small good is ever wasted.", "de": "Das gilt in beide Richtungen: Kein kleines Übel verschwindet, und kein kleines Gutes ist je vergeudet.", "ar": "يصدق هذا في الاتجاهين: لا يختفي شرّ صغير، ولا يضيع خير صغير." }
+        },
+        {
+          "title": { "en": "Awareness, not despair", "de": "Wachsamkeit, nicht Verzweiflung", "ar": "انتباه لا يأس" },
+          "body": { "en": "This is not a call to anxiety. By Allah's mercy, small sins are wiped away by wudu, prayer and good deeds. The aim is to stay awake, repent quickly and never make peace with a wrong.", "de": "Das ist kein Aufruf zur Angst. Durch Allahs Barmherzigkeit werden kleine Sünden durch Wudu, Gebet und gute Taten getilgt. Das Ziel ist, wach zu bleiben, schnell umzukehren und nie Frieden mit einem Unrecht zu schließen.", "ar": "ليست هذه دعوة إلى القلق؛ فبرحمة الله تمحو الصغائرَ الوضوءُ والصلاةُ والأعمالُ الصالحة. والمقصود أن تبقى منتبهًا، وأن تتوب سريعًا، وألا تألف الخطأ أبدًا." }
+        },
+        {
+          "title": { "en": "Staying awake", "de": "Wach bleiben", "ar": "أن تبقى منتبهًا" },
+          "list": { "en": ["Notice the small things you no longer notice", "Repent from the 'little' habits too", "Take small good deeds as seriously as small sins", "Ask: would I be glad to see this on that Day?"], "de": ["Bemerken Sie die Kleinigkeiten, die Sie nicht mehr bemerken", "Kehren Sie auch von den „kleinen“ Gewohnheiten um", "Nehmen Sie kleine gute Taten so ernst wie kleine Sünden", "Fragen Sie: Würde ich mich freuen, das an jenem Tag zu sehen?"], "ar": ["انتبه للصغائر التي لم تعد تلاحظها", "تُب من العادات «الصغيرة» أيضًا", "اهتمّ بالحسنات الصغيرة كما تحذر السيئات الصغيرة", "اسأل: هل يسرّني أن أرى هذا يوم القيامة؟"] }
+        }
+      ]
+    },
+    {
+      "id": "tazkiyah-23-consistency",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": { "en": "Purifying the heart · 23", "de": "Läuterung des Herzens · 23", "ar": "تزكية النفس · ٢٣" },
+        "title": { "en": "Steadiness: when the first enthusiasm fades", "de": "Beständigkeit: wenn die erste Begeisterung nachlässt", "ar": "الثبات: حين يخبو الحماس الأول" },
+        "sub": { "en": "The heart is shaped by what you keep doing, not by what you start", "de": "Das Herz wird von dem geformt, was Sie beibehalten, nicht von dem, was Sie beginnen", "ar": "يتشكّل القلب بما تداوم عليه، لا بما تبدؤه" },
+        "arabic": "المُدَاوَمَة"
+      },
+      "slides": [
+        {
+          "title": { "en": "After the honeymoon", "de": "Nach den Flitterwochen", "ar": "بعد فورة البداية" },
+          "body": { "en": "Every new start has its glow. Then motivation fades, and what remains is habit. Tazkiyah lives in that second phase: doing the good thing on an ordinary day, without feeling inspired.", "de": "Jeder Neuanfang hat seinen Glanz. Dann lässt die Motivation nach, und was bleibt, ist Gewohnheit. Tazkiya lebt in dieser zweiten Phase: das Gute an einem gewöhnlichen Tag tun, ohne sich inspiriert zu fühlen.", "ar": "لكل بداية بريقها، ثم يخبو الحماس ولا يبقى إلا العادة. والتزكية تعيش في هذه المرحلة الثانية: أن تعمل الخير في يوم عادي دون أن تشعر بالحماس." }
+        },
+        {
+          "hadith": "bukhari:6462",
+          "check": "continuously and regularly",
+          "title": { "en": "What the Prophet loved", "de": "Was der Prophet liebte", "ar": "ما كان يحبه النبي ﷺ" },
+          "body": { "en": "In his own practice, the deed he loved most was the one kept up.", "de": "In seiner eigenen Praxis war ihm die Tat am liebsten, die beibehalten wurde.", "ar": "في عمله هو ﷺ كان أحبّ العمل إليه ما دام عليه صاحبه." }
+        },
+        {
+          "verse": "19:65",
+          "check": "have patience for His worship",
+          "title": { "en": "Patience in worship", "de": "Geduld im Gottesdienst", "ar": "الصبر على العبادة" },
+          "body": { "en": "Worship itself needs patience: not only in hardship, but in staying with what is good.", "de": "Der Gottesdienst selbst braucht Geduld: nicht nur in der Not, sondern im Dranbleiben am Guten.", "ar": "العبادة نفسها تحتاج إلى صبر: لا في الشدة وحدها، بل في الثبات على الخير." }
+        },
+        {
+          "title": { "en": "Why steadiness wins", "de": "Warum Beständigkeit gewinnt", "ar": "لماذا ينتصر الثبات" },
+          "body": { "en": "A heart is shaped like stone under dripping water: by many small, repeated drops, not by one flood. Big bursts of worship often fade; a small daily habit stays and grows.", "de": "Ein Herz wird geformt wie Stein unter tropfendem Wasser: durch viele kleine, wiederholte Tropfen, nicht durch eine Flut. Große Anläufe im Gottesdienst verblassen oft; eine kleine tägliche Gewohnheit bleibt und wächst.", "ar": "يتشكّل القلب كما يتشكّل الحجر تحت قطرات الماء: بقطرات صغيرة متكرّرة لا بسيل واحد. الاندفاعات الكبيرة في العبادة تخبو غالبًا، والعادة اليومية الصغيرة تبقى وتنمو." }
+        },
+        {
+          "hadith": "bukhari:1150",
+          "check": "feel active",
+          "title": { "en": "The rope in the mosque", "de": "Das Seil in der Moschee", "ar": "الحبل في المسجد" },
+          "body": { "en": "The Prophet had a rope removed that someone used to keep standing in prayer. Worship should not exhaust you.", "de": "Der Prophet ließ ein Seil entfernen, an dem sich jemand im Gebet aufrecht hielt. Gottesdienst soll Sie nicht erschöpfen.", "ar": "أمر النبي ﷺ بحلّ حبل كان يُستعان به على طول القيام، فالعبادة لا ينبغي أن تُنهكك." }
+        },
+        {
+          "verse": "3:200",
+          "check": "persevere and endure",
+          "title": { "en": "Hold your post", "de": "Halten Sie Ihren Posten", "ar": "الزم موقعك" },
+          "body": { "en": "The last verse of Surah Al 'Imran calls for perseverance and steadfastness. The inner struggle needs both too.", "de": "Der letzte Vers der Sure Al 'Imran ruft zu Ausdauer und Standhaftigkeit auf. Auch der innere Kampf braucht beides.", "ar": "تدعو آخر آية في سورة آل عمران إلى الصبر والثبات، والمجاهدة الداخلية تحتاج إليهما كذلك." }
+        },
+        {
+          "title": { "en": "Build a habit that lasts", "de": "Eine Gewohnheit, die bleibt", "ar": "ابنِ عادة تدوم" },
+          "list": { "en": ["Choose a habit so small it feels almost too easy", "Attach it to something you already do daily", "Track it quietly for a month", "Missed a day? Return without drama"], "de": ["Wählen Sie eine Gewohnheit, die fast zu leicht wirkt", "Verknüpfen Sie sie mit etwas, das Sie ohnehin täglich tun", "Halten Sie sie einen Monat lang still fest", "Einen Tag verpasst? Kehren Sie ohne Drama zurück"], "ar": ["اختر عادة صغيرة تبدو سهلة جدًّا", "اربطها بشيء تفعله كل يوم", "تابعها بهدوء شهرًا كاملًا", "فاتك يوم؟ عُد دون تهويل"] }
+        }
+      ]
+    },
+    {
+      "id": "tazkiyah-24-night-prayer",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": { "en": "Purifying the heart · 24", "de": "Läuterung des Herzens · 24", "ar": "تزكية النفس · ٢٤" },
+        "title": { "en": "The night prayer and the heart", "de": "Das Nachtgebet und das Herz", "ar": "قيام الليل والقلب" },
+        "sub": { "en": "Why a few quiet minutes before dawn can change a whole day", "de": "Warum ein paar stille Minuten vor der Morgendämmerung einen ganzen Tag verändern können", "ar": "لماذا تغيّر دقائق هادئة قبل الفجر يومًا كاملًا" },
+        "arabic": "قِيَامُ اللَّيْل"
+      },
+      "slides": [
+        {
+          "title": { "en": "When the noise stops", "de": "Wenn der Lärm aufhört", "ar": "حين يهدأ الضجيج" },
+          "body": { "en": "By day the heart is pulled in many directions. At night the noise stops, and what is left is you and your Lord. Many find that a few minutes then set the tone for the whole day.", "de": "Tagsüber wird das Herz in viele Richtungen gezogen. Nachts hört der Lärm auf, und was bleibt, sind Sie und Ihr Herr. Viele erleben, dass ein paar Minuten dann den Ton für den ganzen Tag setzen.", "ar": "في النهار يتجاذب القلبَ كثيرٌ من الاتجاهات، وفي الليل يهدأ الضجيج ولا يبقى إلا أنت وربك. ويجد كثيرون أن دقائق قليلة حينها تضبط إيقاع اليوم كله." }
+        },
+        {
+          "verse": "39:9",
+          "check": "devoutly obedient during periods of the night",
+          "title": { "en": "Fear and hope at night", "de": "Furcht und Hoffnung in der Nacht", "ar": "خوف ورجاء في الليل" },
+          "body": { "en": "The one who stands at night is described with both fear and hope: the two wings of the heart in a single verse.", "de": "Wer nachts steht, wird mit Furcht und Hoffnung beschrieben: die beiden Flügel des Herzens in einem einzigen Vers.", "ar": "يوصف القائم في الليل بالخوف والرجاء معًا: جناحا القلب في آية واحدة." }
+        },
+        {
+          "verse": "17:79",
+          "check": "additional",
+          "title": { "en": "Something extra", "de": "Etwas Zusätzliches", "ar": "نافلة" },
+          "body": { "en": "Addressed first to the Prophet, this verse speaks of night prayer as an act beyond the obligatory.", "de": "Zuerst an den Propheten gerichtet, spricht dieser Vers vom Nachtgebet als einer Tat über das Pflichtgebet hinaus.", "ar": "تخاطب الآية النبي ﷺ أولًا، وتجعل قيام الليل عملًا زائدًا على الفريضة." }
+        },
+        {
+          "dua": "hisn:129:3",
+          "check": "middle of the night",
+          "title": { "en": "When He is nearest", "de": "Wenn Er am nächsten ist", "ar": "حين يكون أقرب" },
+          "body": { "en": "The depth of the night is a time of special nearness, as the Prophet taught.", "de": "Die Tiefe der Nacht ist eine Zeit besonderer Nähe, wie der Prophet lehrte.", "ar": "جوف الليل وقت قرب خاص كما علّم النبي ﷺ." }
+        },
+        {
+          "verse": "3:17",
+          "check": "seek forgiveness before dawn",
+          "title": { "en": "Before dawn", "de": "Vor der Morgendämmerung", "ar": "في الأسحار" },
+          "body": { "en": "In a list of the qualities of the God-fearing, the hour before dawn has its own place.", "de": "In einer Aufzählung der Eigenschaften der Gottesfürchtigen hat die Stunde vor der Morgendämmerung ihren eigenen Platz.", "ar": "في تعداد صفات المتقين يحتلّ وقت السحر مكانًا خاصًّا." }
+        },
+        {
+          "hadith": "bukhari:1131",
+          "check": "most beloved prayer to Allah",
+          "title": { "en": "The prayer of Dawud", "de": "Das Gebet Dawuds", "ar": "صلاة داود" },
+          "body": { "en": "Sleep, prayer, then sleep again: the night prayer described as most beloved is balanced, not exhausting.", "de": "Schlafen, beten, wieder schlafen: Das als am meisten geliebt beschriebene Nachtgebet ist ausgewogen, nicht erschöpfend.", "ar": "نوم ثم صلاة ثم نوم: قيام الليل الموصوف بأنه أحبّ الصلاة متوازن لا مُنهك." }
+        },
+        {
+          "title": { "en": "Starting small", "de": "Klein anfangen", "ar": "ابدأ صغيرًا" },
+          "list": { "en": ["Make the intention before you sleep", "Prepare everything for wudu the night before", "Begin with two rak'ahs, even once a week", "Use the quiet for istighfar and your own dua"], "de": ["Fassen Sie die Absicht vor dem Schlafen", "Bereiten Sie am Abend alles für die Gebetswaschung vor", "Beginnen Sie mit zwei Rak'a, auch nur einmal pro Woche", "Nutzen Sie die Stille für Istighfar und Ihr eigenes Bittgebet"], "ar": ["انوِ القيام قبل أن تنام", "جهّز ما تحتاجه للوضوء من الليل", "ابدأ بركعتين ولو مرة في الأسبوع", "اغتنم السكون للاستغفار والدعاء الخاص"] }
+        }
+      ]
+    },
+    {
+      "id": "tazkiyah-25-dhikr-and-peace",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": { "en": "Purifying the heart · 25", "de": "Läuterung des Herzens · 25", "ar": "تزكية النفس · ٢٥" },
+        "title": { "en": "Dhikr and the heart's peace", "de": "Dhikr und der Frieden des Herzens", "ar": "الذكر وطمأنينة القلب" },
+        "sub": { "en": "Why remembering Allah brings a calm that nothing else gives", "de": "Warum das Gedenken Allahs eine Ruhe schenkt, die nichts anderes gibt", "ar": "لماذا يمنح ذكر الله سكينة لا يمنحها شيء آخر" },
+        "arabic": "ذِكْرُ الله"
+      },
+      "slides": [
+        {
+          "verse": "13:28",
+          "check": "hearts are assured",
+          "title": { "en": "Where hearts find rest", "de": "Wo Herzen Ruhe finden", "ar": "حيث يجد القلب راحته" },
+          "body": { "en": "Not in having everything, but in remembering the One who has everything.", "de": "Nicht darin, alles zu haben, sondern darin, des Einen zu gedenken, dem alles gehört.", "ar": "لا في امتلاك كل شيء، بل في ذكر من يملك كل شيء." }
+        },
+        {
+          "title": { "en": "Like water for a fish", "de": "Wie Wasser für einen Fisch", "ar": "كالماء للسمك" },
+          "body": { "en": "In al-Wabil al-Sayyib, Ibn al-Qayyim reports that his teacher Ibn Taymiyya said dhikr is to the heart what water is to a fish. Think of a fish taken out of the water.", "de": "In al-Wabil as-Sayyib berichtet Ibn al-Qayyim, sein Lehrer Ibn Taimiyya habe gesagt, Dhikr sei für das Herz, was Wasser für einen Fisch ist. Denken Sie an einen Fisch außerhalb des Wassers.", "ar": "ينقل ابن القيم في الوابل الصيب عن شيخه ابن تيمية أن الذكر للقلب مثل الماء للسمك، فتأمّل حال السمك إذا فارق الماء." }
+        },
+        {
+          "verse": "39:23",
+          "check": "relax at the remembrance",
+          "title": { "en": "From trembling to calm", "de": "Vom Erschauern zur Ruhe", "ar": "من القشعريرة إلى السكينة" },
+          "body": { "en": "The Quran can first shake a believer, then settle the heart in calm.", "de": "Der Koran kann einen Gläubigen zuerst erschüttern und dann das Herz zur Ruhe bringen.", "ar": "قد يهزّ القرآن المؤمن أولًا، ثم يُسكن قلبه." }
+        },
+        {
+          "hadith": "muslim:6855",
+          "check": "tranquillity",
+          "title": { "en": "Gatherings of remembrance", "de": "Versammlungen des Gedenkens", "ar": "مجالس الذكر" },
+          "body": { "en": "Remembering Allah together brings angels, mercy and calm, as the Prophet described.", "de": "Gemeinsames Gedenken Allahs bringt Engel, Barmherzigkeit und Ruhe, wie der Prophet beschrieb.", "ar": "الاجتماع على ذكر الله يجلب الملائكة والرحمة والسكينة كما وصف النبي ﷺ." }
+        },
+        {
+          "verse": "20:124",
+          "check": "depressed",
+          "title": { "en": "A narrow life", "de": "Ein enges Leben", "ar": "ضيق العيش" },
+          "body": { "en": "Turning away from remembrance brings a tightness that wealth cannot fix.", "de": "Die Abkehr vom Gedenken bringt eine Enge, die kein Reichtum lösen kann.", "ar": "الإعراض عن الذكر يورث ضيقًا لا يعالجه المال." }
+        },
+        {
+          "title": { "en": "More than words", "de": "Mehr als Worte", "ar": "أكثر من كلمات" },
+          "arabic": "سُبْحَانَ الله",
+          "body": { "en": "The tongue begins, the heart follows. Saying subhan Allah while noticing a blessing, or astaghfirullah while thinking of a mistake, turns words into presence.", "de": "Die Zunge beginnt, das Herz folgt. Subhan Allah zu sagen, während man eine Gabe bemerkt, oder astaghfirullah, während man an einen Fehler denkt, macht Worte zu Gegenwart.", "ar": "يبدأ اللسان ويتبعه القلب. أن تقول سبحان الله وأنت تلحظ نعمة، أو أستغفر الله وأنت تتذكر خطأ، يحوّل الكلمات إلى حضور." }
+        },
+        {
+          "title": { "en": "A simple daily rhythm", "de": "Ein einfacher täglicher Rhythmus", "ar": "إيقاع يومي بسيط" },
+          "list": { "en": ["The morning and evening adhkar", "Tasbih, tahmid and takbir after each prayer", "Istighfar on the way somewhere", "La ilaha illa Allah before you sleep"], "de": ["Die Adhkar am Morgen und am Abend", "Tasbih, Tahmid und Takbir nach jedem Gebet", "Istighfar auf dem Weg irgendwohin", "La ilaha illa Allah vor dem Schlafen"], "ar": ["أذكار الصباح والمساء", "التسبيح والتحميد والتكبير بعد كل صلاة", "الاستغفار في الطريق", "لا إله إلا الله قبل النوم"] }
+        }
+      ],
+      "sources": [
+        { "label": "Ibn al-Qayyim, al-Wabil al-Sayyib min al-Kalim al-Tayyib (benefits of dhikr)", "url": "https://ar.wikisource.org/wiki/%D9%83%D8%AA%D8%A7%D8%A8_%D8%A7%D9%84%D9%88%D8%A7%D8%A8%D9%84_%D8%A7%D9%84%D8%B5%D9%8A%D8%A8" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,929 @@
+{
+  "series": "hadith-qudsi",
+  "label": {"en": "Hadith Qudsi", "de": "Hadith Qudsi", "ar": "الأحاديث القدسية"},
+  "topic": "hadith",
+  "tradition": "sunni",
+  "items": [
+    {
+      "id": "hadith-qudsi-01-what-is-it",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": {"en": "Hadith Qudsi · 1", "de": "Hadith Qudsi · 1", "ar": "الأحاديث القدسية · ١"},
+        "title": {"en": "What is a hadith qudsi?", "de": "Was ist ein Hadith Qudsi?", "ar": "ما الحديث القدسي؟"},
+        "sub": {"en": "Words the Prophet conveyed from his Lord, and why they are not the Quran", "de": "Worte, die der Prophet von seinem Herrn überlieferte, und warum sie nicht der Koran sind", "ar": "كلام نقله النبي عن ربه، ولماذا لا يُعدّ قرآنًا"},
+        "arabic": "الحديث القدسي"
+      },
+      "slides": [
+        {
+          "title": {"en": "A saying from Allah, told by the Prophet", "de": "Ein Wort Allahs, überliefert vom Propheten", "ar": "قول من الله يرويه النبي"},
+          "arabic": "قُدْسِيّ",
+          "body": {"en": "Most hadith are the Prophet's own sayings. In a hadith qudsi he reports from his Lord what Allah said. Qudsi comes from al-quds, holiness and purity, because the words are traced back to Allah.", "de": "Die meisten Hadithe sind Aussagen des Propheten selbst. In einem Hadith Qudsi berichtet er von seinem Herrn, was Allah gesagt hat. Qudsi kommt von al-quds, Heiligkeit und Reinheit, weil die Worte auf Allah zurückgehen.", "ar": "أكثر الأحاديث من قول النبي نفسه، أما الحديث القدسي فيرويه النبي عن ربه مما قاله الله تعالى. وكلمة قدسي نسبة إلى القُدس، أي الطهارة والتنزيه، لأن الكلام منسوب إلى الله."}
+        },
+        {
+          "title": {"en": "Meaning and wording", "de": "Bedeutung und Wortlaut", "ar": "المعنى واللفظ"},
+          "body": {"en": "Scholars differ here. Some explain that the meaning comes from Allah and the wording from the Prophet; others hold that the wording, too, is from Allah. All agree: a hadith qudsi is not part of the Quran.", "de": "Hier gehen die Meinungen der Gelehrten auseinander. Manche erklären, die Bedeutung stamme von Allah und der Wortlaut vom Propheten; andere meinen, auch der Wortlaut sei von Allah. Einig sind sich alle: Ein Hadith Qudsi gehört nicht zum Koran.", "ar": "اختلف العلماء هنا: فمنهم من يرى أن معناه من الله ولفظه من النبي، ومنهم من يرى أن لفظه أيضًا من الله. وكلهم متفقون على أن الحديث القدسي ليس من القرآن."}
+        },
+        {
+          "title": {"en": "How it differs from the Quran", "de": "Was ihn vom Koran unterscheidet", "ar": "الفرق بينه وبين القرآن"},
+          "list": {
+            "en": ["The Quran is recited in the prayer, a hadith qudsi is not", "Only the Quran is the inimitable miracle and challenge", "Each word of the Quran reached us by mass transmission", "A hadith qudsi has chains that are graded like any hadith"],
+            "de": ["Der Koran wird im Gebet rezitiert, ein Hadith Qudsi nicht", "Nur der Koran ist das unnachahmliche Wunder und die Herausforderung", "Jedes Wort des Korans erreichte uns durch vielfache Überlieferung", "Ein Hadith Qudsi hat Ketten, die wie bei jedem Hadith bewertet werden"],
+            "ar": ["القرآن يُتلى في الصلاة، والحديث القدسي لا يُتلى فيها", "القرآن وحده هو المعجز المتحدّى به", "القرآن نُقل بكل كلماته نقلًا متواترًا", "للحديث القدسي أسانيد يُحكم عليها كسائر الأحاديث"]
+          }
+        },
+        {
+          "title": {"en": "How to recognise one", "de": "Woran man ihn erkennt", "ar": "كيف يُعرف"},
+          "arabic": "فيما يرويه عن ربه",
+          "body": {"en": "The narration names Allah as the speaker: the Prophet says that Allah said, or the narrator says he reported it from his Lord. Then Allah speaks in the first person: My servant, My mercy.", "de": "Die Überlieferung nennt Allah als Sprecher: Der Prophet sagt, dass Allah sprach, oder der Überlieferer sagt, er habe es von seinem Herrn berichtet. Dann spricht Allah in der ersten Person: Mein Diener, Meine Barmherzigkeit.", "ar": "تنسب الرواية الكلام إلى الله: يقول النبي إن الله قال، أو يذكر الراوي أنه رواه عن ربه. ثم يأتي الكلام بصيغة المتكلم: عبدي، رحمتي."}
+        },
+        {
+          "verse": "53:3-4",
+          "check": "revelation revealed",
+          "title": {"en": "Revelation beyond the Quran", "de": "Offenbarung über den Koran hinaus", "ar": "وحي غير القرآن"},
+          "body": {"en": "Ibn Kathir reads these verses broadly: what the Prophet taught of the religion rests on revelation, not on his own wishes.", "de": "Ibn Kathir versteht diese Verse weit: Was der Prophet von der Religion lehrte, beruht auf Offenbarung, nicht auf eigenem Wunsch.", "ar": "يفهم ابن كثير هاتين الآيتين فهمًا واسعًا: ما بلّغه النبي من الدين قائم على الوحي لا على رغبته."}
+        },
+        {
+          "title": {"en": "Authentic and weak", "de": "Authentisch und schwach", "ar": "الصحيح والضعيف"},
+          "body": {"en": "A hadith qudsi is examined like any hadith: some are authentic, some weak, some fabricated. This series uses only narrations recorded by al-Bukhari and Muslim.", "de": "Ein Hadith Qudsi wird wie jeder Hadith geprüft: Manche sind authentisch, manche schwach, manche erfunden. Diese Reihe verwendet nur Überlieferungen aus den Sammlungen von al-Bukhari und Muslim.", "ar": "يُفحص الحديث القدسي كسائر الأحاديث: منه الصحيح ومنه الضعيف ومنه الموضوع. وتعتمد هذه السلسلة على روايات البخاري ومسلم فقط."}
+        },
+        {
+          "title": {"en": "What you will find in this series", "de": "Was Sie in dieser Reihe finden", "ar": "ما تجده في هذه السلسلة"},
+          "list": {
+            "en": ["Mercy, hope and forgiveness", "Sincerity in worship", "Justice and kindness between people", "Patience in loss", "Paradise and the meeting with Allah"],
+            "de": ["Barmherzigkeit, Hoffnung und Vergebung", "Aufrichtigkeit in der Anbetung", "Gerechtigkeit und Güte zwischen Menschen", "Geduld im Verlust", "Das Paradies und die Begegnung mit Allah"],
+            "ar": ["الرحمة والرجاء والمغفرة", "الإخلاص في العبادة", "العدل والإحسان بين الناس", "الصبر عند الفقد", "الجنة ولقاء الله"]
+          }
+        }
+      ],
+      "sources": [
+        {"label": "Forty Hadith Qudsi, selected and translated by Ezzeddin Ibrahim and Denys Johnson-Davies", "url": "https://sunnah.com/qudsi40"},
+        { "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 53:3-4", "url": "https://quran.com/53:3/tafsirs/en-tafisr-ibn-kathir" }
+      ]
+    },
+    {
+      "id": "hadith-qudsi-02-think-well-of-allah",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": {"en": "Hadith Qudsi · 2", "de": "Hadith Qudsi · 2", "ar": "الأحاديث القدسية · ٢"},
+        "title": {"en": "Think well of Allah", "de": "Denken Sie gut über Allah", "ar": "أحسن الظن بالله"},
+        "sub": {"en": "A hadith qudsi on hope, remembrance and a nearness that answers every step", "de": "Ein Hadith Qudsi über Hoffnung, Gedenken und eine Nähe, die jeden Schritt erwidert", "ar": "حديث قدسي في الرجاء والذكر وقربٍ يقابل كل خطوة بأعظم منها"},
+        "arabic": "حسن الظن بالله"
+      },
+      "slides": [
+        {
+          "title": {"en": "What do you expect from Allah?", "de": "Was erwarten Sie von Allah?", "ar": "ماذا تنتظر من الله؟"},
+          "body": {"en": "Before a hard conversation, an exam or a prayer, we carry an expectation. This hadith teaches that the picture we hold of Allah matters, and invites us to make it a beautiful one.", "de": "Vor einem schweren Gespräch, einer Prüfung oder einem Gebet tragen wir eine Erwartung in uns. Dieser Hadith lehrt, dass unser Bild von Allah zählt, und lädt ein, es schön zu machen.", "ar": "قبل حديث صعب أو امتحان أو دعاء نحمل في قلوبنا توقعًا ما. ويعلّمنا هذا الحديث أن الصورة التي نحملها عن الله لها شأن، ويدعونا إلى أن نجعلها جميلة."}
+        },
+        {
+          "hadith": "muslim:6805",
+          "check": "thought of My servant",
+          "title": {"en": "Allah's answer to every step", "de": "Allahs Antwort auf jeden Schritt", "ar": "جواب الله لكل خطوة"},
+          "body": {"en": "Narrated by Abu Huraira and recorded by al-Bukhari and Muslim.", "de": "Überliefert von Abu Huraira, berichtet von al-Bukhari und Muslim.", "ar": "رواه أبو هريرة، وأخرجه البخاري ومسلم."}
+        },
+        {
+          "title": {"en": "Good expectation in practice", "de": "Gute Erwartung in der Praxis", "ar": "حسن الظن في الواقع"},
+          "body": {"en": "Scholars explain it through concrete moments: expect an answer when you make dua, acceptance when you repent, forgiveness when you ask for it, and reward when you do good.", "de": "Gelehrte erklären es an konkreten Momenten: Erwarten Sie Erhörung, wenn Sie ein Bittgebet sprechen, Annahme, wenn Sie bereuen, Vergebung, wenn Sie darum bitten, und Lohn, wenn Sie Gutes tun.", "ar": "يشرح العلماء ذلك في مواقف محددة: أن ترجو الإجابة إذا دعوت، والقبول إذا تبت، والمغفرة إذا استغفرت، والثواب إذا عملت صالحًا."}
+        },
+        {
+          "title": {"en": "Hope that moves you", "de": "Hoffnung, die bewegt", "ar": "رجاء يدفع إلى العمل"},
+          "body": {"en": "Thinking well of Allah is not wishful thinking. True hope pulls a person towards good deeds; hope without any effort is self-deception, as scholars have long warned.", "de": "Gut über Allah zu denken ist kein Wunschdenken. Echte Hoffnung zieht zu guten Taten; Hoffnung ganz ohne Bemühen ist Selbsttäuschung, wovor Gelehrte seit jeher warnen.", "ar": "حسن الظن بالله ليس أمنية فارغة؛ فالرجاء الصادق يدفع صاحبه إلى العمل الصالح، والرجاء بلا عمل غرور كما نبّه العلماء قديمًا."}
+        },
+        {
+          "verse": "2:152",
+          "check": "remember Me",
+          "title": {"en": "Remembrance answered", "de": "Gedenken, das erwidert wird", "ar": "ذكر يقابله ذكر"},
+          "body": {"en": "The hadith echoes this verse and goes further: Allah's response is always greater than our effort.", "de": "Der Hadith knüpft an diesen Vers an und geht weiter: Allahs Antwort ist immer größer als unser Bemühen.", "ar": "يتصل الحديث بهذه الآية ويزيد عليها: جواب الله أعظم دائمًا من سعينا."}
+        },
+        {
+          "title": {"en": "Living it today", "de": "Im Alltag leben", "ar": "العمل به اليوم"},
+          "list": {
+            "en": ["Begin each dua expecting to be answered", "After a mistake, turn back without despair", "Remember Allah alone and in good company", "Take one small step towards Him today"],
+            "de": ["Beginnen Sie jedes Bittgebet in Erwartung der Erhörung", "Kehren Sie nach einem Fehler ohne Verzweiflung um", "Gedenken Sie Allahs allein und in guter Gesellschaft", "Gehen Sie heute einen kleinen Schritt auf Ihn zu"],
+            "ar": ["ابدأ دعاءك راجيًا الإجابة", "ارجع إلى الله بعد الخطأ دون يأس", "اذكر الله في خلوتك ومع الصالحين", "خطوة صغيرة إليه اليوم"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "hadith-qudsi-03-mercy-comes-first",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": {"en": "Hadith Qudsi · 3", "de": "Hadith Qudsi · 3", "ar": "الأحاديث القدسية · ٣"},
+        "title": {"en": "Mercy comes first", "de": "Die Barmherzigkeit kommt zuerst", "ar": "الرحمة أولًا"},
+        "sub": {"en": "A short hadith qudsi that shapes how we see our Lord", "de": "Ein kurzer Hadith Qudsi, der unser Bild von unserem Herrn prägt", "ar": "حديث قدسي قصير يصوغ نظرتنا إلى ربنا"},
+        "arabic": "سعة الرحمة"
+      },
+      "slides": [
+        {
+          "title": {"en": "Two attributes, one order", "de": "Zwei Eigenschaften, eine Rangfolge", "ar": "صفتان وترتيب واحد"},
+          "body": {"en": "Allah is merciful and Allah is just; injustice angers Him. This hadith tells us which of the two has precedence, and that changes how a believer stands before Him.", "de": "Allah ist barmherzig und gerecht; Unrecht ruft Seinen Zorn hervor. Dieser Hadith sagt uns, was von beidem Vorrang hat, und das verändert, wie ein Gläubiger vor Ihm steht.", "ar": "الله رحيم عدل، ويغضب على الظلم. ويخبرنا هذا الحديث أيّهما له السبق، فيتغير بذلك وقوف المؤمن بين يديه."}
+        },
+        {
+          "hadith": "muslim:6970",
+          "check": "excels My wrath",
+          "title": {"en": "The shortest summary of hope", "de": "Die kürzeste Zusammenfassung der Hoffnung", "ar": "أوجز خلاصة للرجاء"},
+          "body": {"en": "Narrated by Abu Huraira, recorded by Muslim and al-Bukhari. Other versions say it is written in a Book with Allah above the Throne.", "de": "Überliefert von Abu Huraira, berichtet von Muslim und al-Bukhari. Andere Fassungen erwähnen, dass es in einem Buch bei Allah über dem Thron geschrieben steht.", "ar": "رواه أبو هريرة، وأخرجه مسلم والبخاري. وفي روايات أخرى أنه مكتوب في كتاب عند الله فوق العرش."}
+        },
+        {
+          "verse": "6:54",
+          "check": "decreed upon Himself mercy",
+          "title": {"en": "Mercy He made binding on Himself", "de": "Barmherzigkeit, die Er Sich vorschrieb", "ar": "رحمة أوجبها على نفسه"},
+          "body": {"en": "The Quran ties this mercy to those who turn back after a wrong and set things right.", "de": "Der Koran verbindet diese Barmherzigkeit mit denen, die nach einem Unrecht umkehren und es wiedergutmachen.", "ar": "يربط القرآن هذه الرحمة بمن رجع بعد الخطأ وأصلح."}
+        },
+        {
+          "title": {"en": "Mercy does not cancel justice", "de": "Barmherzigkeit hebt Gerechtigkeit nicht auf", "ar": "الرحمة لا تلغي العدل"},
+          "body": {"en": "Precedence is not the absence of justice. Scholars explain that Allah's mercy is wider and comes first, while His justice remains. The believer lives between hope and awe.", "de": "Vorrang heißt nicht, dass es keine Gerechtigkeit gibt. Gelehrte erklären: Allahs Barmherzigkeit ist weiter und kommt zuerst, Seine Gerechtigkeit bleibt bestehen. Der Gläubige lebt zwischen Hoffnung und Ehrfurcht.", "ar": "السبق لا يعني غياب العدل. يبيّن العلماء أن رحمة الله أوسع وأسبق، وعدله قائم، فيعيش المؤمن بين الرجاء والخشية."}
+        },
+        {
+          "title": {"en": "Let mercy lead with you too", "de": "Lassen auch Sie die Barmherzigkeit vorangehen", "ar": "اجعل الرحمة تسبق عندك"},
+          "body": {"en": "If mercy comes first with Allah, it should come first with us: in judging others, in raising children, in answering an angry message. Anger may come, but mercy speaks first.", "de": "Wenn bei Allah die Barmherzigkeit zuerst kommt, sollte sie es auch bei uns: im Urteil über andere, in der Erziehung, in der Antwort auf eine zornige Nachricht. Zorn darf kommen, aber die Barmherzigkeit spricht zuerst.", "ar": "إذا كانت الرحمة تسبق عند الله، فلتسبق عندنا أيضًا: في الحكم على الناس، وفي تربية الأبناء، وفي الرد على رسالة غاضبة. قد يأتي الغضب، لكن الرحمة تتكلم أولًا."}
+        },
+        {
+          "title": {"en": "Living it today", "de": "Im Alltag leben", "ar": "العمل به اليوم"},
+          "list": {
+            "en": ["Never give up on Allah after a sin", "Open hard conversations with kindness", "Give people the excuse you hope Allah gives you"],
+            "de": ["Geben Sie nach einer Sünde die Hoffnung auf Allah nie auf", "Beginnen Sie schwierige Gespräche mit Freundlichkeit", "Gewähren Sie anderen die Nachsicht, die Sie von Allah erhoffen"],
+            "ar": ["لا تقطع رجاءك في الله بعد الذنب", "ابدأ الحديث الصعب بلطف", "التمس للناس العذر الذي ترجوه من الله"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "hadith-qudsi-04-fasting",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": {"en": "Hadith Qudsi · 4", "de": "Hadith Qudsi · 4", "ar": "الأحاديث القدسية · ٤"},
+        "title": {"en": "The worship Allah rewards Himself", "de": "Die Anbetung, die Allah selbst belohnt", "ar": "عبادة يتولى الله جزاءها"},
+        "sub": {"en": "Why fasting holds a special place among all good deeds", "de": "Warum das Fasten unter allen guten Taten einen besonderen Platz hat", "ar": "لماذا للصيام مكانة خاصة بين الأعمال الصالحة"},
+        "arabic": "سر الصيام"
+      },
+      "slides": [
+        {
+          "title": {"en": "A deed no one can see", "de": "Eine Tat, die niemand sieht", "ar": "عمل لا يراه أحد"},
+          "body": {"en": "Prayer can be seen, charity can be counted. Fasting happens inside: no one knows whether you have truly held back except Allah. This hadith qudsi honours exactly that.", "de": "Ein Gebet kann man sehen, eine Spende kann man zählen. Das Fasten geschieht im Inneren: Ob Sie wirklich verzichtet haben, weiß niemand außer Allah. Genau das ehrt dieser Hadith Qudsi.", "ar": "الصلاة تُرى والصدقة تُحصى، أما الصيام ففي الباطن: لا يعلم صدق إمساكك إلا الله. وهذا ما يكرّمه هذا الحديث القدسي."}
+        },
+        {
+          "hadith": "muslim:2707",
+          "check": "two occasions of joy",
+          "title": {"en": "Multiplied, and then beyond", "de": "Vervielfacht und noch darüber hinaus", "ar": "مضاعفة وما هو أعظم"},
+          "body": {"en": "Narrated by Abu Huraira and recorded by Muslim; al-Bukhari reports it as well.", "de": "Überliefert von Abu Huraira, berichtet von Muslim; auch al-Bukhari überliefert ihn.", "ar": "رواه أبو هريرة، وأخرجه مسلم، ورواه البخاري أيضًا."}
+        },
+        {
+          "title": {"en": "Why fasting is singled out", "de": "Warum das Fasten hervorgehoben wird", "ar": "لماذا خُصّ الصيام"},
+          "body": {"en": "Scholars give several reasons. Among them: fasting is a hidden act that is hard to show off, and its reward is not bound to a fixed measure but left to Allah's generosity.", "de": "Gelehrte nennen mehrere Gründe. Dazu gehört: Das Fasten ist eine verborgene Tat, mit der man kaum prahlen kann, und sein Lohn ist an kein festes Maß gebunden, sondern Allahs Großzügigkeit überlassen.", "ar": "ذكر العلماء لذلك أسبابًا، منها: أن الصيام عبادة خفية يصعب فيها الرياء، وأن أجره غير محدود بمقدار معين بل موكول إلى كرم الله."}
+        },
+        {
+          "title": {"en": "Two moments of happiness", "de": "Zwei Momente des Glücks", "ar": "لحظتان من السعادة"},
+          "body": {"en": "The hadith promises the fasting person two moments of happiness: one at sunset, day after day, and one on the Day they stand before Allah. The first is a small foretaste of the second.", "de": "Der Hadith verheißt dem Fastenden zwei Momente des Glücks: einen bei Sonnenuntergang, Tag für Tag, und einen am Tag, an dem er vor Allah steht. Der erste ist ein kleiner Vorgeschmack auf den zweiten.", "ar": "يبشّر الحديث الصائم بلحظتين من السعادة: واحدة عند الغروب يومًا بعد يوم، وأخرى يوم يقف بين يدي الله. والأولى لمحة صغيرة من الثانية."}
+        },
+        {
+          "verse": "2:183",
+          "check": "decreed upon you is fasting",
+          "title": {"en": "Fasting and taqwa", "de": "Fasten und Gottesbewusstsein", "ar": "الصيام والتقوى"},
+          "body": {"en": "The Quran names the goal of fasting: a heart that is aware of Allah.", "de": "Der Koran nennt das Ziel des Fastens: ein Herz, das sich Allahs bewusst ist.", "ar": "يذكر القرآن غاية الصيام: قلب يستحضر مراقبة الله."}
+        },
+        {
+          "title": {"en": "Living it today", "de": "Im Alltag leben", "ar": "العمل به اليوم"},
+          "list": {
+            "en": ["Keep your fast free of harsh words and arguments", "Try a voluntary fast, such as on Mondays and Thursdays", "Keep some fasts private, between you and Allah"],
+            "de": ["Halten Sie Ihr Fasten frei von harten Worten und Streit", "Versuchen Sie ein freiwilliges Fasten, etwa montags und donnerstags", "Behalten Sie manches Fasten für sich, zwischen Ihnen und Allah"],
+            "ar": ["صُن صيامك عن الكلام الجارح والجدال", "جرّب صيام التطوع كالاثنين والخميس", "اجعل بعض صيامك سرًّا بينك وبين الله"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "hadith-qudsi-05-beyond-imagination",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": {"en": "Hadith Qudsi · 5", "de": "Hadith Qudsi · 5", "ar": "الأحاديث القدسية · ٥"},
+        "title": {"en": "Beyond everything you can imagine", "de": "Jenseits von allem, was Sie sich vorstellen können", "ar": "فوق كل ما تتخيله"},
+        "sub": {"en": "A hadith qudsi about the reward Allah has prepared, and why it stays hidden", "de": "Ein Hadith Qudsi über den Lohn, den Allah bereitet hat, und warum er verborgen bleibt", "ar": "حديث قدسي عن الجزاء الذي هيّأه الله، ولماذا بقي مستورًا"},
+        "arabic": "نعيم الجنة"
+      },
+      "slides": [
+        {
+          "title": {"en": "Our imagination has limits", "de": "Unsere Vorstellungskraft hat Grenzen", "ar": "للخيال حدود"},
+          "body": {"en": "Everything we picture is built from what we already know. That is why words about Paradise always fall short, and why this hadith qudsi points beyond them.", "de": "Alles, was wir uns ausmalen, besteht aus dem, was wir schon kennen. Darum bleiben Worte über das Paradies immer zurück, und darum weist dieser Hadith Qudsi über sie hinaus.", "ar": "كل ما نتصوره مبني مما نعرفه من قبل؛ لذلك تقصر الكلمات دائمًا عن وصف الجنة، ولهذا يشير هذا الحديث القدسي إلى ما وراءها."}
+        },
+        {
+          "hadith": "bukhari:7498",
+          "check": "no eye has ever seen",
+          "title": {"en": "Prepared for the righteous", "de": "Für die Rechtschaffenen bereitet", "ar": "مهيّأ للصالحين"},
+          "body": {"en": "Narrated by Abu Huraira and recorded by al-Bukhari and Muslim.", "de": "Überliefert von Abu Huraira, berichtet von al-Bukhari und Muslim.", "ar": "رواه أبو هريرة، وأخرجه البخاري ومسلم."}
+        },
+        {
+          "verse": "32:17",
+          "check": "hidden for them",
+          "title": {"en": "The Quran says it too", "de": "Der Koran sagt es ebenso", "ar": "والقرآن يقرر ذلك"},
+          "body": {"en": "In some narrations Abu Huraira recites this verse right after the hadith.", "de": "In manchen Überlieferungen rezitiert Abu Huraira diesen Vers direkt nach dem Hadith.", "ar": "وفي بعض الروايات يقرأ أبو هريرة هذه الآية بعد الحديث."}
+        },
+        {
+          "title": {"en": "A hidden reward for hidden deeds", "de": "Verborgener Lohn für verborgene Taten", "ar": "جزاء خفي لعمل خفي"},
+          "body": {"en": "The verse before it describes people who leave their beds at night to call on their Lord. Ibn Kathir notes the beauty here: they kept their good deeds secret, so Allah keeps their reward secret too.", "de": "Der Vers davor beschreibt Menschen, die nachts ihr Bett verlassen, um ihren Herrn anzurufen. Ibn Kathir betont die Schönheit darin: Sie hielten ihre guten Taten geheim, darum hält Allah auch ihren Lohn geheim.", "ar": "تصف الآية التي قبلها قومًا يتركون فرشهم ليلًا ليدعوا ربهم. ويلفت ابن كثير إلى لطيفة هنا: أسرّوا أعمالهم الصالحة فأسرّ الله جزاءهم."}
+        },
+        {
+          "title": {"en": "Living it today", "de": "Im Alltag leben", "ar": "العمل به اليوم"},
+          "body": {"en": "When the world disappoints, remember that the best is still ahead. Do one thing in secret this week, a prayer at night or a gift no one knows of, and leave its reward to Allah.", "de": "Wenn die Welt enttäuscht, denken Sie daran, dass das Beste noch vor Ihnen liegt. Tun Sie diese Woche etwas im Verborgenen, ein Gebet in der Nacht oder eine Gabe, von der niemand weiß, und überlassen Sie den Lohn Allah.", "ar": "إذا خذلتك الدنيا فتذكّر أن الأجمل لم يأتِ بعد. اعمل هذا الأسبوع عملًا في السر، صلاة في الليل أو عطية لا يعلمها أحد، واترك جزاءها لله."}
+        }
+      ],
+      "sources": [
+        { "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 32:17", "url": "https://quran.com/32:17/tafsirs/en-tafisr-ibn-kathir" }
+      ]
+    },
+    {
+      "id": "hadith-qudsi-06-for-allah-alone",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": {"en": "Hadith Qudsi · 6", "de": "Hadith Qudsi · 6", "ar": "الأحاديث القدسية · ٦"},
+        "title": {"en": "For Allah alone", "de": "Allein für Allah", "ar": "لله وحده"},
+        "sub": {"en": "A hadith qudsi on sincerity and the quiet danger of showing off", "de": "Ein Hadith Qudsi über Aufrichtigkeit und die leise Gefahr der Augendienerei", "ar": "حديث قدسي في الإخلاص وخطر الرياء الخفي"},
+        "arabic": "الإخلاص"
+      },
+      "slides": [
+        {
+          "title": {"en": "Who is the deed for?", "de": "Für wen ist die Tat?", "ar": "لمن العمل؟"},
+          "body": {"en": "A prayer made longer because someone is watching. A donation announced a little too loudly. This hadith qudsi asks a quiet question about every good deed: who was it really for?", "de": "Ein Gebet, das länger wird, weil jemand zusieht. Eine Spende, die etwas zu laut verkündet wird. Dieser Hadith Qudsi stellt jeder guten Tat eine leise Frage: Für wen war sie wirklich?", "ar": "صلاة تطول لأن أحدًا ينظر، وصدقة يُعلن عنها بصوت أعلى قليلًا. يطرح هذا الحديث القدسي على كل عمل صالح سؤالًا هادئًا: لمن كان حقًّا؟"}
+        },
+        {
+          "hadith": "muslim:7475",
+          "check": "need of a partner",
+          "title": {"en": "The One without partners", "de": "Der Eine ohne Teilhaber", "ar": "الواحد بلا شريك"},
+          "body": {"en": "Narrated by Abu Huraira and recorded by Muslim.", "de": "Überliefert von Abu Huraira, berichtet von Muslim.", "ar": "رواه أبو هريرة، وأخرجه مسلم."}
+        },
+        {
+          "title": {"en": "Showing off: a hidden danger", "de": "Augendienerei: eine verborgene Gefahr", "ar": "الرياء: خطر خفي"},
+          "arabic": "الرِّيَاء",
+          "body": {"en": "Scholars call showing off in worship riya' and count it as minor shirk. It does not take a person out of Islam, but it can empty a deed of its reward, because the deed is shared with people's praise.", "de": "Gelehrte nennen das Zurschaustellen in der Anbetung Riyā' und zählen es zur kleinen Beigesellung. Es führt nicht aus dem Islam, kann eine Tat aber ihres Lohnes berauben, weil sie mit dem Lob der Menschen geteilt wird.", "ar": "يسمّي العلماء التظاهر بالعبادة رياءً ويعدّونه من الشرك الأصغر. لا يُخرج من الإسلام، لكنه قد يُذهب أجر العمل لأنه شاركه فيه طلب ثناء الناس."}
+        },
+        {
+          "verse": "18:110",
+          "check": "not associate in the worship",
+          "title": {"en": "Two conditions", "de": "Zwei Bedingungen", "ar": "شرطان"},
+          "body": {"en": "Ibn Kathir draws two conditions from this verse: the deed must follow the way the Prophet taught, and it must be for Allah alone.", "de": "Ibn Kathir leitet aus diesem Vers zwei Bedingungen ab: Die Tat muss dem Weg folgen, den der Prophet lehrte, und sie muss allein für Allah sein.", "ar": "يستنبط ابن كثير من هذه الآية شرطين: أن يكون العمل موافقًا لما شرعه النبي، وأن يكون لله وحده."}
+        },
+        {
+          "title": {"en": "Do not stop doing good", "de": "Hören Sie nicht auf, Gutes zu tun", "ar": "لا تترك الخير"},
+          "body": {"en": "Fear of showing off should not stop you from doing good. Scholars advise correcting the intention rather than abandoning the deed, and renewing it again and again.", "de": "Die Angst vor Augendienerei sollte Sie nicht vom Guten abhalten. Gelehrte raten, die Absicht zu berichtigen, statt die Tat aufzugeben, und sie immer wieder zu erneuern.", "ar": "لا ينبغي أن يمنعك الخوف من الرياء عن فعل الخير. ينصح العلماء بتصحيح النية لا بترك العمل، وبتجديدها مرة بعد مرة."}
+        },
+        {
+          "title": {"en": "Living it today", "de": "Im Alltag leben", "ar": "العمل به اليوم"},
+          "list": {
+            "en": ["Before a deed, ask: for whom am I doing this?", "Keep one good habit known only to Allah", "Do not wait for thanks from people"],
+            "de": ["Fragen Sie vor einer Tat: Für wen tue ich das?", "Pflegen Sie eine gute Gewohnheit, die nur Allah kennt", "Warten Sie nicht auf den Dank der Menschen"],
+            "ar": ["اسأل قبل العمل: لمن أعمله؟", "احتفظ بعادة صالحة لا يعلمها إلا الله", "لا تنتظر شكر الناس"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 18:110", "url": "https://quran.com/18:110/tafsirs/en-tafisr-ibn-kathir" }
+      ]
+    },
+    {
+      "id": "hadith-qudsi-07-blaming-the-days",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": {"en": "Hadith Qudsi · 7", "de": "Hadith Qudsi · 7", "ar": "الأحاديث القدسية · ٧"},
+        "title": {"en": "When we blame the days", "de": "Wenn wir den Tagen die Schuld geben", "ar": "حين نلوم الأيام"},
+        "sub": {"en": "A hadith qudsi about complaining, control and the gift of time", "de": "Ein Hadith Qudsi über Klagen, Kontrolle und das Geschenk der Zeit", "ar": "حديث قدسي عن الشكوى وتدبير الأمور ونعمة الوقت"},
+        "arabic": "الزمن"
+      },
+      "slides": [
+        {
+          "title": {"en": "A bad year, an unlucky day", "de": "Ein schlimmes Jahr, ein Unglückstag", "ar": "عام سيئ ويوم مشؤوم"},
+          "body": {"en": "We often speak of time as if it acted on its own: a cruel year, an unlucky day. The Arabs before Islam blamed time for their misfortunes. This hadith qudsi corrects that habit.", "de": "Wir sprechen oft von der Zeit, als handle sie selbst: ein grausames Jahr, ein Unglückstag. Die Araber vor dem Islam gaben der Zeit die Schuld an ihrem Unglück. Dieser Hadith Qudsi korrigiert diese Gewohnheit.", "ar": "كثيرًا ما نتحدث عن الزمن كأنه يفعل من تلقاء نفسه: عام قاسٍ، ويوم مشؤوم. وكان العرب قبل الإسلام ينسبون مصائبهم إلى الدهر، فجاء هذا الحديث القدسي يصحّح تلك العادة."}
+        },
+        {
+          "hadith": "muslim:5864",
+          "check": "I am the Time",
+          "title": {"en": "The One who turns night and day", "de": "Der, der Nacht und Tag wechseln lässt", "ar": "مقلّب الليل والنهار"},
+          "body": {"en": "Narrated by Abu Huraira and recorded by Muslim; al-Bukhari reports it as well.", "de": "Überliefert von Abu Huraira, berichtet von Muslim; auch al-Bukhari überliefert ihn.", "ar": "رواه أبو هريرة، وأخرجه مسلم، ورواه البخاري أيضًا."}
+        },
+        {
+          "title": {"en": "What the words mean", "de": "Was die Worte bedeuten", "ar": "معنى الكلام"},
+          "body": {"en": "Al-Shafi'i and other scholars, as Ibn Kathir reports, explain: time is not a power of its own. Allah controls it and everything in it. Whoever curses time ends up blaming the One who decrees events.", "de": "Asch-Schafii und andere Gelehrte erklären, wie Ibn Kathir berichtet: Die Zeit ist keine eigene Macht. Allah lenkt sie und alles in ihr. Wer die Zeit verflucht, tadelt am Ende den, der die Ereignisse bestimmt.", "ar": "يبيّن الشافعي وغيره من العلماء، كما ينقل ابن كثير، أن الزمن ليس قوة مستقلة، وأن الله هو المدبّر له ولكل ما فيه. فمن سبّ الدهر انتهى سبّه إلى من يقدّر الأحداث."}
+        },
+        {
+          "verse": "3:190",
+          "check": "alternation of the night and the day",
+          "title": {"en": "A sign, not an enemy", "de": "Ein Zeichen, kein Feind", "ar": "آية لا عدوّ"},
+          "body": {"en": "The Quran presents the passing of days as a sign for reflection, not as something to blame.", "de": "Der Koran stellt den Wechsel der Tage als Zeichen zum Nachdenken dar, nicht als etwas, dem man die Schuld gibt.", "ar": "يعرض القرآن تعاقب الأيام آية للتفكر، لا شيئًا يُلام."}
+        },
+        {
+          "title": {"en": "Honest, not bitter", "de": "Ehrlich, nicht verbittert", "ar": "صدق بلا مرارة"},
+          "body": {"en": "Islam does not ask us to pretend hard times are easy. We may name pain and ask for help. The difference lies in where the complaint goes: to Allah in dua, not against the days He created.", "de": "Der Islam verlangt nicht, schwere Zeiten schönzureden. Wir dürfen Schmerz benennen und um Hilfe bitten. Der Unterschied liegt darin, wohin die Klage geht: im Bittgebet zu Allah, nicht gegen die Tage, die Er erschaffen hat.", "ar": "لا يطلب الإسلام أن نتظاهر بأن الشدائد هيّنة؛ فلنا أن نسمّي الألم ونطلب العون. والفرق في وجهة الشكوى: إلى الله بالدعاء، لا على الأيام التي خلقها."}
+        },
+        {
+          "title": {"en": "Living it today", "de": "Im Alltag leben", "ar": "العمل به اليوم"},
+          "list": {
+            "en": ["Replace curses on the day with a short dua", "Say what went wrong without blaming time", "Use your hours well: time is a trust"],
+            "de": ["Ersetzen Sie Flüche über den Tag durch ein kurzes Bittgebet", "Benennen Sie, was schiefging, ohne der Zeit die Schuld zu geben", "Nutzen Sie Ihre Stunden gut: Zeit ist ein anvertrautes Gut"],
+            "ar": ["استبدل بلعن اليوم دعاءً قصيرًا", "صِف ما أصابك دون أن تلوم الزمن", "اغتنم ساعاتك فالوقت أمانة"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 45:24", "url": "https://quran.com/45:24/tafsirs/en-tafisr-ibn-kathir" }
+      ]
+    },
+    {
+      "id": "hadith-qudsi-08-two-claims-answered",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": {"en": "Hadith Qudsi · 8", "de": "Hadith Qudsi · 8", "ar": "الأحاديث القدسية · ٨"},
+        "title": {"en": "Two claims Allah answers", "de": "Zwei Behauptungen, auf die Allah antwortet", "ar": "دعويان يردّ الله عليهما"},
+        "sub": {"en": "A hadith qudsi on the resurrection and on the oneness of Allah", "de": "Ein Hadith Qudsi über die Auferstehung und die Einheit Allahs", "ar": "حديث قدسي في البعث ووحدانية الله"},
+        "arabic": "الصمد"
+      },
+      "slides": [
+        {
+          "title": {"en": "Words that touch Allah's right", "de": "Worte, die Allahs Recht berühren", "ar": "كلمات تمسّ حق الله"},
+          "body": {"en": "Some statements are not only mistakes about the world, they are about Allah Himself. In this hadith qudsi Allah names two of them and answers each one.", "de": "Manche Aussagen sind nicht nur Irrtümer über die Welt, sondern betreffen Allah selbst. In diesem Hadith Qudsi nennt Allah zwei davon und beantwortet jede einzelne.", "ar": "بعض الأقوال ليست أخطاء في فهم العالم فحسب، بل تتعلق بالله نفسه. وفي هذا الحديث القدسي يذكر الله قولين منها ويردّ على كل واحد."}
+        },
+        {
+          "hadith": "bukhari:4975",
+          "check": "tells a lie against Me",
+          "title": {"en": "A denial and a false claim", "de": "Eine Leugnung und eine falsche Behauptung", "ar": "إنكار ودعوى باطلة"},
+          "body": {"en": "Narrated by Abu Huraira and recorded by al-Bukhari.", "de": "Überliefert von Abu Huraira, berichtet von al-Bukhari.", "ar": "رواه أبو هريرة، وأخرجه البخاري."}
+        },
+        {
+          "title": {"en": "Who began creation can repeat it", "de": "Wer erschuf, kann wiedererschaffen", "ar": "من بدأ الخلق يعيده"},
+          "body": {"en": "The first answer is about the resurrection. Bringing someone back is not harder for Allah than bringing them into being the first time. Our own existence is the clearest argument.", "de": "Die erste Antwort betrifft die Auferstehung. Jemanden zurückzubringen ist für Allah nicht schwerer, als ihn das erste Mal ins Dasein zu rufen. Unser eigenes Dasein ist das deutlichste Argument.", "ar": "الرد الأول عن البعث: إعادة الإنسان ليست على الله أصعب من إيجاده أول مرة، ووجودنا نحن أوضح دليل."}
+        },
+        {
+          "verse": "36:78-79",
+          "check": "first time",
+          "title": {"en": "The same answer in the Quran", "de": "Dieselbe Antwort im Koran", "ar": "الجواب نفسه في القرآن"},
+          "body": {"en": "The Quran answers the doubt about crumbling bones with the first creation.", "de": "Der Koran beantwortet den Zweifel an zerfallenen Knochen mit der ersten Schöpfung.", "ar": "يجيب القرآن عن الشك في إحياء العظام البالية بالخلق الأول."}
+        },
+        {
+          "title": {"en": "One, without offspring", "de": "Einer, ohne Nachkommen", "ar": "واحد بلا ولد"},
+          "body": {"en": "The second answer is about tawhid. Allah is One and as-Samad, the One all creation turns to in its needs. He has no child and no equal: the message summed up in Surah al-Ikhlas.", "de": "Die zweite Antwort betrifft den Tauḥīd. Allah ist Einer und aṣ-Ṣamad, an den sich die ganze Schöpfung in ihrer Not wendet. Er hat kein Kind und niemanden, der Ihm gleicht: die Botschaft, die Sure al-Ikhlāṣ zusammenfasst.", "ar": "الرد الثاني في التوحيد: الله واحد صمد، تقصده الخلائق كلها في حاجاتها، لا ولد له ولا كفء، وهذا ما تجمعه سورة الإخلاص."}
+        },
+        {
+          "title": {"en": "Living it today", "de": "Im Alltag leben", "ar": "العمل به اليوم"},
+          "list": {
+            "en": ["Recite Surah al-Ikhlas with understanding", "Let the first creation calm doubts about the next life", "Speak about Allah only with knowledge and respect"],
+            "de": ["Rezitieren Sie Sure al-Ikhlāṣ mit Verständnis", "Lassen Sie die erste Schöpfung Zweifel am Jenseits beruhigen", "Sprechen Sie über Allah nur mit Wissen und Ehrfurcht"],
+            "ar": ["اقرأ سورة الإخلاص بتدبر", "اجعل الخلق الأول يطمئن قلبك إلى البعث", "لا تتكلم عن الله إلا بعلم وأدب"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "hadith-qudsi-09-generosity",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": {"en": "Hadith Qudsi · 9", "de": "Hadith Qudsi · 9", "ar": "الأحاديث القدسية · ٩"},
+        "title": {"en": "Generosity that comes back", "de": "Großzügigkeit, die zurückkommt", "ar": "كرم يعود إلى صاحبه"},
+        "sub": {"en": "A hadith qudsi on giving, trust and Allah's endless treasures", "de": "Ein Hadith Qudsi über das Geben, Vertrauen und Allahs unerschöpfliche Schätze", "ar": "حديث قدسي في الإنفاق والثقة وخزائن الله التي لا تنفد"},
+        "arabic": "الإنفاق"
+      },
+      "slides": [
+        {
+          "title": {"en": "The fear of having less", "de": "Die Angst, weniger zu haben", "ar": "الخوف من النقص"},
+          "body": {"en": "Giving feels like losing: what leaves my hand is gone. This hadith qudsi turns that calculation around and invites the giver into a relationship with the Most Generous.", "de": "Geben fühlt sich wie Verlieren an: Was meine Hand verlässt, ist weg. Dieser Hadith Qudsi kehrt diese Rechnung um und lädt den Gebenden in eine Beziehung mit dem Allergroßzügigsten ein.", "ar": "يبدو العطاء خسارة: ما خرج من يدي ذهب. ويقلب هذا الحديث القدسي هذا الحساب، ويدعو المعطي إلى صلة بالأكرم."}
+        },
+        {
+          "hadith": "muslim:2308",
+          "check": "I will spend on you",
+          "title": {"en": "An invitation and a promise", "de": "Eine Einladung und ein Versprechen", "ar": "دعوة ووعد"},
+          "body": {"en": "Narrated by Abu Huraira and recorded by Muslim; al-Bukhari has it as well.", "de": "Überliefert von Abu Huraira, berichtet von Muslim; auch al-Bukhari überliefert ihn.", "ar": "رواه أبو هريرة، وأخرجه مسلم، ورواه البخاري أيضًا."}
+        },
+        {
+          "title": {"en": "Nothing is lost with Allah", "de": "Bei Allah geht nichts verloren", "ar": "لا يضيع شيء عند الله"},
+          "body": {"en": "The hadith reminds us that Allah gives without pause and without loss. What we give comes from His provision in the first place, and He is able to replace it.", "de": "Der Hadith erinnert daran, dass Allah ohne Unterlass und ohne Verlust gibt. Was wir geben, stammt ohnehin aus Seiner Versorgung, und Er vermag es zu ersetzen.", "ar": "يذكّرنا الحديث بأن الله يعطي بلا انقطاع ولا نقص، وأن ما نعطيه هو من رزقه أصلًا، وهو قادر على أن يُخلفه."}
+        },
+        {
+          "verse": "34:39",
+          "check": "He will compensate it",
+          "title": {"en": "Replaced by the best Provider", "de": "Ersetzt vom besten Versorger", "ar": "يُخلفه خير الرازقين"},
+          "body": {"en": "The Quran gives the same assurance to everyone who spends.", "de": "Der Koran gibt allen, die ausgeben, dieselbe Zusicherung.", "ar": "يعطي القرآن الطمأنينة نفسها لكل من ينفق."}
+        },
+        {
+          "title": {"en": "Spending is wider than charity", "de": "Geben ist mehr als Spenden", "ar": "الإنفاق أوسع من الصدقة"},
+          "body": {"en": "Spending for Allah's sake includes your family's bread, a meal for a neighbour, a gift to a friend. The Prophet taught that what one spends on one's family, hoping for reward, counts as charity.", "de": "Für Allah ausgeben umfasst das Brot Ihrer Familie, eine Mahlzeit für den Nachbarn, ein Geschenk für einen Freund. Der Prophet lehrte, dass auch das, was man in der Hoffnung auf Lohn für die Familie ausgibt, als Sadaqa zählt.", "ar": "الإنفاق لوجه الله يشمل خبز أهلك، ووجبة لجارك، وهدية لصديقك. وقد علّم النبي أن ما ينفقه المرء على أهله محتسبًا يُكتب له صدقة."}
+        },
+        {
+          "title": {"en": "Living it today", "de": "Im Alltag leben", "ar": "العمل به اليوم"},
+          "list": {
+            "en": ["Set aside a small amount each week to give", "Give before you feel ready", "Count spending on your family as worship"],
+            "de": ["Legen Sie jede Woche einen kleinen Betrag zum Geben beiseite", "Geben Sie, bevor Sie sich bereit fühlen", "Betrachten Sie Ausgaben für Ihre Familie als Anbetung"],
+            "ar": ["خصّص مبلغًا صغيرًا كل أسبوع للعطاء", "أعطِ قبل أن تشعر بالاستعداد", "احتسب نفقتك على أهلك عبادة"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "hadith-qudsi-10-loss-of-sight",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": {"en": "Hadith Qudsi · 10", "de": "Hadith Qudsi · 10", "ar": "الأحاديث القدسية · ١٠"},
+        "title": {"en": "When the eyes no longer see", "de": "Wenn die Augen nicht mehr sehen", "ar": "حين يذهب البصر"},
+        "sub": {"en": "A hadith qudsi for everyone who has lost their sight, and for those who love them", "de": "Ein Hadith Qudsi für alle, die ihr Augenlicht verloren haben, und für die, die sie lieben", "ar": "حديث قدسي لكل من فقد بصره ولمن يحبه"},
+        "arabic": "الصبر والاحتساب"
+      },
+      "slides": [
+        {
+          "title": {"en": "One of the hardest losses", "de": "Einer der schwersten Verluste", "ar": "من أشد الفقد"},
+          "body": {"en": "Losing one's sight changes almost everything: reading, walking, recognising faces. In this hadith qudsi Allah speaks about exactly this loss, and about how precious the eyes are.", "de": "Wer sein Augenlicht verliert, für den ändert sich fast alles: Lesen, Gehen, Gesichter erkennen. In diesem Hadith Qudsi spricht Allah genau über diesen Verlust und darüber, wie kostbar die Augen sind.", "ar": "فقد البصر يغيّر كل شيء تقريبًا: القراءة والمشي ومعرفة الوجوه. وفي هذا الحديث القدسي يتحدث الله عن هذا الفقد بعينه، وعن عظيم قدر العينين."}
+        },
+        {
+          "hadith": "bukhari:5653",
+          "check": "two beloved things",
+          "title": {"en": "A promise for patience", "de": "Ein Versprechen für Geduld", "ar": "وعد للصابر"},
+          "body": {"en": "Narrated by Anas ibn Malik and recorded by al-Bukhari.", "de": "Überliefert von Anas ibn Malik, berichtet von al-Bukhari.", "ar": "رواه أنس بن مالك، وأخرجه البخاري."}
+        },
+        {
+          "title": {"en": "What patience means here", "de": "Was Geduld hier bedeutet", "ar": "معنى الصبر هنا"},
+          "body": {"en": "Patience is not pretending nothing hurts. It means accepting Allah's decree, not turning against Him, and hoping for His reward. Tears, questions and seeking treatment all have their place.", "de": "Geduld heißt nicht, so zu tun, als täte nichts weh. Sie bedeutet, Allahs Bestimmung anzunehmen, sich nicht gegen Ihn zu wenden und auf Seinen Lohn zu hoffen. Tränen, Fragen und die Suche nach Behandlung haben ihren Platz.", "ar": "الصبر ليس أن تتظاهر بأنك لا تتألم، بل أن ترضى بقضاء الله، ولا تعترض عليه، وترجو ثوابه. وللدموع والأسئلة وطلب العلاج مكانها."}
+        },
+        {
+          "verse": "39:10",
+          "check": "without account",
+          "title": {"en": "Reward without measure", "de": "Lohn ohne Maß", "ar": "أجر بغير حساب"},
+          "body": {"en": "The Quran promises the patient a reward that is not counted out.", "de": "Der Koran verheißt den Geduldigen einen Lohn, der nicht abgezählt wird.", "ar": "يعد القرآن الصابرين أجرًا لا يُحصى."}
+        },
+        {
+          "title": {"en": "Dignity, not pity", "de": "Würde, nicht Mitleid", "ar": "كرامة لا شفقة"},
+          "body": {"en": "A person who cannot see has lost nothing of their worth before Allah. Among the Companions, Ibn Umm Maktum was blind, and the Prophet entrusted him with the call to prayer in Madinah.", "de": "Ein Mensch, der nicht sehen kann, hat vor Allah nichts von seinem Wert verloren. Unter den Gefährten war Ibn Umm Maktum blind, und der Prophet vertraute ihm in Medina den Gebetsruf an.", "ar": "من فقد بصره لم يفقد شيئًا من قدره عند الله. وكان ابن أم مكتوم من الصحابة وهو أعمى، وجعله النبي مؤذنًا في المدينة."}
+        },
+        {
+          "title": {"en": "Living it today", "de": "Im Alltag leben", "ar": "العمل به اليوم"},
+          "list": {
+            "en": ["Visit and support those who have lost their sight", "Make spaces and texts accessible", "Thank Allah for your sight by using it well"],
+            "de": ["Besuchen und unterstützen Sie Menschen, die ihr Augenlicht verloren haben", "Gestalten Sie Räume und Texte barrierefrei", "Danken Sie Allah für Ihr Augenlicht, indem Sie es gut nutzen"],
+            "ar": ["زُر من فقد بصره وأعِنه", "اجعل الأماكن والنصوص في متناول الجميع", "اشكر الله على بصرك باستعماله في الخير"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "hadith-qudsi-11-grief",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": {"en": "Hadith Qudsi · 11", "de": "Hadith Qudsi · 11", "ar": "الأحاديث القدسية · ١١"},
+        "title": {"en": "When someone you love is gone", "de": "Wenn ein geliebter Mensch geht", "ar": "حين يرحل من تحب"},
+        "sub": {"en": "A hadith qudsi of comfort for the grieving", "de": "Ein Hadith Qudsi zum Trost für Trauernde", "ar": "حديث قدسي فيه عزاء للمحزونين"},
+        "arabic": "العزاء"
+      },
+      "slides": [
+        {
+          "title": {"en": "Grief is not weakness", "de": "Trauer ist keine Schwäche", "ar": "الحزن ليس ضعفًا"},
+          "body": {"en": "When his little son Ibrahim died, the Prophet wept. He showed that tears and a grieving heart belong to love, not to a lack of faith. This hadith qudsi speaks into that moment.", "de": "Als sein kleiner Sohn Ibrahim starb, weinte der Prophet. Er zeigte, dass Tränen und ein trauerndes Herz zur Liebe gehören und kein Mangel an Glauben sind. Dieser Hadith Qudsi spricht genau in diesen Moment.", "ar": "لما مات ابنه الصغير إبراهيم بكى النبي، فبيّن أن الدموع وحزن القلب من الرحمة لا من ضعف الإيمان. وهذا الحديث القدسي يخاطب تلك اللحظة."}
+        },
+        {
+          "hadith": "bukhari:6424",
+          "check": "nothing to give but Paradise",
+          "title": {"en": "Allah's own promise", "de": "Allahs eigenes Versprechen", "ar": "وعد من الله"},
+          "body": {"en": "Narrated by Abu Huraira and recorded by al-Bukhari.", "de": "Überliefert von Abu Huraira, berichtet von al-Bukhari.", "ar": "رواه أبو هريرة، وأخرجه البخاري."}
+        },
+        {
+          "title": {"en": "Patience with hope", "de": "Geduld mit Hoffnung", "ar": "صبر واحتساب"},
+          "arabic": "الاحتساب",
+          "body": {"en": "The promise is tied to patience and ihtisab: counting the loss with Allah and hoping for His reward. It is a decision of the heart, renewed many times, not a feeling that must arrive at once.", "de": "Das Versprechen ist an Geduld und Iḥtisāb geknüpft: den Verlust bei Allah anzurechnen und auf Seinen Lohn zu hoffen. Es ist eine Entscheidung des Herzens, die sich oft erneuert, kein Gefühl, das sofort da sein muss.", "ar": "الوعد مربوط بالصبر والاحتساب: أن تحتسب فقدك عند الله وترجو ثوابه. وهو قرار في القلب يتجدد مرارًا، لا شعور يجب أن يحضر في الحال."}
+        },
+        {
+          "verse": "2:155-157",
+          "check": "we belong to",
+          "title": {"en": "Words for the moment of loss", "de": "Worte für den Moment des Verlusts", "ar": "كلمات لحظة الفقد"},
+          "body": {"en": "These verses give the believer words for the moment of loss, and promise blessing and mercy to the patient.", "de": "Diese Verse geben dem Gläubigen Worte für den Moment des Verlusts und verheißen den Geduldigen Segen und Barmherzigkeit.", "ar": "تمنح هذه الآيات المؤمن كلمات يقولها عند الفقد، وتعد الصابرين بالصلوات والرحمة."}
+        },
+        {
+          "title": {"en": "Being there for the grieving", "de": "Für Trauernde da sein", "ar": "مواساة المحزون"},
+          "body": {"en": "Comfort is often simple: being present, bringing food, listening without lectures. Do not tell a grieving person how they should feel. Make dua for the one who has passed and for those left behind.", "de": "Trost ist oft einfach: da sein, Essen bringen, zuhören, ohne zu belehren. Sagen Sie einem trauernden Menschen nicht, wie er sich fühlen soll. Sprechen Sie Bittgebete für den Verstorbenen und für die Hinterbliebenen.", "ar": "المواساة كثيرًا ما تكون بسيطة: أن تحضر، وتحمل طعامًا، وتستمع دون وعظ. لا تملِ على المحزون ما ينبغي أن يشعر به، وادعُ للميت ولمن بقي بعده."}
+        }
+      ]
+    },
+    {
+      "id": "hadith-qudsi-12-fajr-and-asr",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": {"en": "Hadith Qudsi · 12", "de": "Hadith Qudsi · 12", "ar": "الأحاديث القدسية · ١٢"},
+        "title": {"en": "What the angels report about you", "de": "Was die Engel über Sie berichten", "ar": "ماذا تقول الملائكة عنك"},
+        "sub": {"en": "A hadith about Fajr and Asr, and the question Allah asks His angels", "de": "Ein Hadith über Fadschr und Asr und die Frage, die Allah Seinen Engeln stellt", "ar": "حديث عن الفجر والعصر وسؤال الله ملائكته"},
+        "arabic": "تعاقب الملائكة"
+      },
+      "slides": [
+        {
+          "title": {"en": "Two moments that weigh more", "de": "Zwei Momente mit mehr Gewicht", "ar": "لحظتان أثقل وزنًا"},
+          "body": {"en": "Some moments of the day carry more weight than others. This hadith points to two of them, and to a conversation in the heavens about the people who pray.", "de": "Manche Momente des Tages haben mehr Gewicht als andere. Dieser Hadith weist auf zwei davon hin und auf ein Gespräch im Himmel über die Menschen, die beten.", "ar": "بعض لحظات اليوم أثقل وزنًا من غيرها. ويشير هذا الحديث إلى لحظتين منها، وإلى حوار في السماء عن المصلّين."}
+        },
+        {
+          "hadith": "muslim:1432",
+          "check": "How did you leave My servants",
+          "title": {"en": "A question Allah already knows the answer to", "de": "Eine Frage, deren Antwort Allah schon kennt", "ar": "سؤال يعلم الله جوابه"},
+          "body": {"en": "Narrated by Abu Huraira and recorded by Muslim; al-Bukhari reports it as well.", "de": "Überliefert von Abu Huraira, berichtet von Muslim; auch al-Bukhari überliefert ihn.", "ar": "رواه أبو هريرة، وأخرجه مسلم، ورواه البخاري أيضًا."}
+        },
+        {
+          "title": {"en": "Why ask, if He knows?", "de": "Warum fragen, wenn Er es weiß?", "ar": "لماذا يسأل وهو أعلم؟"},
+          "body": {"en": "Allah knows everything; the question is not for His information. Scholars explain it as an honour for the believers: their prayer is mentioned before Allah and witnessed by the angels.", "de": "Allah weiß alles; die Frage dient nicht Seiner Kenntnis. Gelehrte erklären sie als Ehre für die Gläubigen: Ihr Gebet wird vor Allah erwähnt und von den Engeln bezeugt.", "ar": "الله يعلم كل شيء، فليس السؤال لطلب العلم. ويفسّره العلماء بأنه تشريف للمؤمنين: تُذكر صلاتهم عند الله وتشهد بها الملائكة."}
+        },
+        {
+          "verse": "17:78",
+          "check": "ever witnessed",
+          "title": {"en": "The dawn prayer is witnessed", "de": "Das Morgengebet wird bezeugt", "ar": "صلاة الفجر مشهودة"},
+          "body": {"en": "In al-Bukhari and Muslim, Abu Huraira links this verse to the angels of night and day meeting at Fajr.", "de": "Bei al-Bukhari und Muslim verbindet Abu Huraira diesen Vers mit den Engeln der Nacht und des Tages, die sich beim Fadschr treffen.", "ar": "وفي البخاري ومسلم يربط أبو هريرة هذه الآية باجتماع ملائكة الليل والنهار في صلاة الفجر."}
+        },
+        {
+          "title": {"en": "Living it today", "de": "Im Alltag leben", "ar": "العمل به اليوم"},
+          "list": {
+            "en": ["Guard Fajr and Asr above all", "Pray Fajr on time, even when it is hard", "Let the angels find you in prayer or doing good"],
+            "de": ["Wahren Sie vor allem Fadschr und Asr", "Beten Sie Fadschr pünktlich, auch wenn es schwerfällt", "Lassen Sie die Engel Sie im Gebet oder bei guten Taten antreffen"],
+            "ar": ["حافظ على الفجر والعصر قبل كل شيء", "صلِّ الفجر في وقته ولو شقّ عليك", "لتجدك الملائكة في صلاة أو عمل صالح"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "hadith-qudsi-13-last-third-of-the-night",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": {"en": "Hadith Qudsi · 13", "de": "Hadith Qudsi · 13", "ar": "الأحاديث القدسية · ١٣"},
+        "title": {"en": "The last third of the night", "de": "Das letzte Drittel der Nacht", "ar": "الثلث الأخير من الليل"},
+        "sub": {"en": "A hadith qudsi about the quietest and most hopeful hour", "de": "Ein Hadith Qudsi über die stillste und hoffnungsvollste Stunde", "ar": "حديث قدسي عن أهدأ ساعة وأرجاها"},
+        "arabic": "قيام الليل"
+      },
+      "slides": [
+        {
+          "title": {"en": "While the world sleeps", "de": "Während die Welt schläft", "ar": "حين ينام الناس"},
+          "body": {"en": "The hours before dawn are quiet: no messages, no noise, no audience. This hadith qudsi reveals that these hours are also a time of special closeness and invitation from Allah.", "de": "Die Stunden vor der Morgendämmerung sind still: keine Nachrichten, kein Lärm, kein Publikum. Dieser Hadith Qudsi zeigt, dass diese Stunden auch eine Zeit besonderer Nähe und Einladung von Allah sind.", "ar": "الساعات التي تسبق الفجر هادئة: لا رسائل ولا ضجيج ولا جمهور. ويكشف هذا الحديث القدسي أنها أيضًا وقت قرب خاص ودعوة من الله."}
+        },
+        {
+          "hadith": "muslim:1772",
+          "check": "lowest heaven",
+          "title": {"en": "An open invitation, every night", "de": "Eine offene Einladung, jede Nacht", "ar": "دعوة مفتوحة كل ليلة"},
+          "body": {"en": "Narrated by Abu Huraira and recorded by Muslim; al-Bukhari reports it as well.", "de": "Überliefert von Abu Huraira, berichtet von Muslim; auch al-Bukhari überliefert ihn.", "ar": "رواه أبو هريرة، وأخرجه مسلم، ورواه البخاري أيضًا."}
+        },
+        {
+          "title": {"en": "How scholars approach the descent", "de": "Wie Gelehrte das Herabsteigen verstehen", "ar": "موقف العلماء من النزول"},
+          "body": {"en": "Sunni scholars affirm the descent as befits Allah's majesty, without likening Him to creation or asking how. Some explained it as the descent of His mercy and command. All agree on the invitation it brings.", "de": "Sunnitische Gelehrte bestätigen das Herabsteigen so, wie es Allahs Erhabenheit geziemt, ohne Ihn mit der Schöpfung zu vergleichen oder nach dem Wie zu fragen. Manche deuteten es als Herabkommen Seiner Barmherzigkeit und Seines Befehls. Über die Einladung sind sich alle einig.", "ar": "يثبت علماء أهل السنة النزول على ما يليق بجلال الله، دون تشبيه بالخلق ولا سؤال عن الكيفية، وأوّله بعضهم بنزول رحمته وأمره. والجميع متفقون على ما فيه من دعوة."}
+        },
+        {
+          "verse": "3:17",
+          "check": "before dawn",
+          "title": {"en": "Those who seek forgiveness at dawn", "de": "Die vor der Morgendämmerung um Vergebung bitten", "ar": "المستغفرون في السحر"},
+          "body": {"en": "The Quran praises those who use these hours to seek forgiveness.", "de": "Der Koran lobt die, die diese Stunden nutzen, um Vergebung zu suchen.", "ar": "يثني القرآن على من يغتنم هذه الساعات بالاستغفار."}
+        },
+        {
+          "title": {"en": "Living it today", "de": "Im Alltag leben", "ar": "العمل به اليوم"},
+          "list": {
+            "en": ["Wake ten minutes before Fajr once a week", "Keep a short list of what you want to ask", "Pray two units of prayer, then make dua", "Seek forgiveness, even with a few words"],
+            "de": ["Stehen Sie einmal pro Woche zehn Minuten vor Fadschr auf", "Führen Sie eine kurze Liste Ihrer Anliegen", "Beten Sie zwei Gebetseinheiten, dann sprechen Sie Bittgebete", "Bitten Sie um Vergebung, auch mit wenigen Worten"],
+            "ar": ["استيقظ قبل الفجر بعشر دقائق مرة في الأسبوع", "دوّن قائمة قصيرة بما تريد أن تسأله", "صلِّ ركعتين ثم ادعُ", "استغفر ولو بكلمات قليلة"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "hadith-qudsi-14-his-pleasure",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": {"en": "Hadith Qudsi · 14", "de": "Hadith Qudsi · 14", "ar": "الأحاديث القدسية · ١٤"},
+        "title": {"en": "The gift greater than Paradise", "de": "Das Geschenk, größer als das Paradies", "ar": "عطاء أعظم من الجنة"},
+        "sub": {"en": "A hadith qudsi about a conversation in Paradise", "de": "Ein Hadith Qudsi über ein Gespräch im Paradies", "ar": "حديث قدسي عن حوار في الجنة"},
+        "arabic": "الرضوان"
+      },
+      "slides": [
+        {
+          "title": {"en": "After every wish is fulfilled", "de": "Wenn jeder Wunsch erfüllt ist", "ar": "بعد أن تتحقق الأماني كلها"},
+          "body": {"en": "Imagine the people of Paradise with everything they ever hoped for. What could still be added? This hadith qudsi describes Allah Himself answering that question.", "de": "Stellen Sie sich die Bewohner des Paradieses vor, die alles haben, was sie je erhofft haben. Was könnte noch hinzukommen? Dieser Hadith Qudsi beschreibt, wie Allah selbst diese Frage beantwortet.", "ar": "تخيّل أهل الجنة وقد نالوا كل ما رجوه. فماذا يمكن أن يُزاد؟ يصف هذا الحديث القدسي جواب الله نفسه عن هذا السؤال."}
+        },
+        {
+          "hadith": "bukhari:6549",
+          "check": "never be angry",
+          "title": {"en": "A conversation in Paradise", "de": "Ein Gespräch im Paradies", "ar": "حوار في الجنة"},
+          "body": {"en": "Narrated by Abu Sa'id al-Khudri and recorded by al-Bukhari.", "de": "Überliefert von Abu Sa'id al-Khudri, berichtet von al-Bukhari.", "ar": "رواه أبو سعيد الخدري، وأخرجه البخاري."}
+        },
+        {
+          "verse": "9:72",
+          "check": "approval from",
+          "title": {"en": "Greater than the gardens", "de": "Größer als die Gärten", "ar": "أكبر من الجنات"},
+          "body": {"en": "The Quran names Allah's good pleasure as greater than every garden and dwelling.", "de": "Der Koran nennt Allahs Wohlgefallen größer als alle Gärten und Wohnstätten.", "ar": "يجعل القرآن رضوان الله أكبر من كل الجنات والمساكن."}
+        },
+        {
+          "title": {"en": "Pleasure that never ends", "de": "Wohlgefallen, das nie endet", "ar": "رضا لا ينقطع"},
+          "body": {"en": "In this world we fear losing what we love. In Paradise that fear is removed: Allah's pleasure is permanent. This security is itself one of the greatest blessings.", "de": "In dieser Welt fürchten wir, zu verlieren, was wir lieben. Im Paradies ist diese Angst genommen: Allahs Wohlgefallen ist beständig. Diese Sicherheit ist selbst eine der größten Gaben.", "ar": "في الدنيا نخاف فقد ما نحب، وفي الجنة يزول هذا الخوف: رضا الله دائم لا يزول. وهذا الأمان نفسه من أعظم النعم."}
+        },
+        {
+          "title": {"en": "Seeking His pleasure now", "de": "Sein Wohlgefallen schon jetzt suchen", "ar": "ابتغاء رضاه الآن"},
+          "body": {"en": "The path to that moment starts here: choosing what pleases Allah when no one sees, being content with His decree, and never pleasing people in ways that displease Him.", "de": "Der Weg zu diesem Moment beginnt hier: das wählen, was Allah gefällt, auch wenn niemand zusieht, mit Seiner Bestimmung zufrieden sein und Menschen nie auf eine Weise gefallen wollen, die Ihm missfällt.", "ar": "الطريق إلى تلك اللحظة يبدأ هنا: أن تختار ما يرضي الله حيث لا يراك أحد، وأن ترضى بقضائه، وألا ترضي الناس بما يسخطه."}
+        }
+      ]
+    },
+    {
+      "id": "hadith-qudsi-15-justice-allah-defends",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": {"en": "Hadith Qudsi · 15", "de": "Hadith Qudsi · 15", "ar": "الأحاديث القدسية · ١٥"},
+        "title": {"en": "Justice Allah Himself defends", "de": "Gerechtigkeit, die Allah selbst verteidigt", "ar": "عدل يتولى الله الدفاع عنه"},
+        "sub": {"en": "A hadith qudsi on broken promises, human dignity and fair wages", "de": "Ein Hadith Qudsi über gebrochene Versprechen, Menschenwürde und gerechten Lohn", "ar": "حديث قدسي في نقض العهد وكرامة الإنسان والأجر العادل"},
+        "arabic": "العدل"
+      },
+      "slides": [
+        {
+          "title": {"en": "When Allah takes a side", "de": "Wenn Allah Partei ergreift", "ar": "حين ينتصر الله للمظلوم"},
+          "body": {"en": "Some wrongs are so serious that Allah Himself declares He will stand against those who commit them. All three in this hadith qudsi concern how we treat people.", "de": "Manches Unrecht ist so schwer, dass Allah selbst erklärt, Er werde denen entgegentreten, die es begehen. Alle drei in diesem Hadith Qudsi betreffen den Umgang mit Menschen.", "ar": "بعض المظالم بلغت من الخطورة أن الله أعلن بنفسه أنه يقف في وجه مرتكبيها. والثلاثة في هذا الحديث القدسي كلها في معاملة الناس."}
+        },
+        {
+          "hadith": "bukhari:2270",
+          "check": "opponent to three",
+          "title": {"en": "Three serious wrongs", "de": "Drei schwere Vergehen", "ar": "ثلاث مظالم كبيرة"},
+          "body": {"en": "Narrated by Abu Huraira and recorded by al-Bukhari.", "de": "Überliefert von Abu Huraira, berichtet von al-Bukhari.", "ar": "رواه أبو هريرة، وأخرجه البخاري."}
+        },
+        {
+          "title": {"en": "Promises made in Allah's name", "de": "Versprechen im Namen Allahs", "ar": "عهد باسم الله"},
+          "body": {"en": "The first is betrayal after giving one's word in Allah's name. Using His name to win trust and then breaking it misuses the most sacred guarantee there is.", "de": "Das Erste ist Verrat, nachdem man sein Wort im Namen Allahs gegeben hat. Wer Seinen Namen nutzt, um Vertrauen zu gewinnen, und es dann bricht, missbraucht die heiligste Bürgschaft, die es gibt.", "ar": "الأول نقض العهد بعد إعطائه باسم الله. فمن استعمل اسمه لينال الثقة ثم خانها فقد عبث بأقدس ضمان."}
+        },
+        {
+          "title": {"en": "Human dignity and fair pay", "de": "Menschenwürde und gerechter Lohn", "ar": "كرامة الإنسان والأجر العادل"},
+          "body": {"en": "The second wrong treats a free person as merchandise. The third takes someone's work and withholds their pay. Both remain painfully relevant, from trafficking to unpaid wages.", "de": "Das zweite Unrecht behandelt einen freien Menschen wie eine Ware. Das dritte nimmt die Arbeit eines Menschen und hält seinen Lohn zurück. Beides ist bis heute schmerzlich aktuell, vom Menschenhandel bis zum vorenthaltenen Lohn.", "ar": "الثاني يعامل الإنسان الحر كأنه سلعة، والثالث يأخذ عمل الإنسان ويمنعه أجره. وكلاهما حاضر اليوم بألم، من الاتجار بالبشر إلى الأجور المحبوسة."}
+        },
+        {
+          "verse": "16:91",
+          "check": "fulfill the covenant",
+          "title": {"en": "Keep your word", "de": "Halten Sie Ihr Wort", "ar": "الوفاء بالعهد"},
+          "body": {"en": "The Quran commands keeping covenants made in Allah's name.", "de": "Der Koran gebietet, Bündnisse im Namen Allahs einzuhalten.", "ar": "يأمر القرآن بالوفاء بالعهود المعقودة باسم الله."}
+        },
+        {
+          "title": {"en": "Living it today", "de": "Im Alltag leben", "ar": "العمل به اليوم"},
+          "list": {
+            "en": ["Pay workers fully and on time", "Do not swear by Allah lightly", "Ask how the things you buy were made"],
+            "de": ["Zahlen Sie Arbeitenden ihren Lohn vollständig und pünktlich", "Schwören Sie nicht leichtfertig bei Allah", "Fragen Sie, unter welchen Bedingungen Ihre Einkäufe hergestellt wurden"],
+            "ar": ["ادفع للعامل حقه كاملًا في وقته", "لا تحلف بالله في كل أمر", "اسأل عن ظروف صنع ما تشتريه"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "hadith-qudsi-16-leniency-with-debtors",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": {"en": "Hadith Qudsi · 16", "de": "Hadith Qudsi · 16", "ar": "الأحاديث القدسية · ١٦"},
+        "title": {"en": "The merchant who was forgiven", "de": "Der Kaufmann, dem vergeben wurde", "ar": "التاجر الذي غُفر له"},
+        "sub": {"en": "A hadith qudsi on leniency with people in debt", "de": "Ein Hadith Qudsi über Nachsicht mit Verschuldeten", "ar": "حديث قدسي في التيسير على المدينين"},
+        "arabic": "السماحة"
+      },
+      "slides": [
+        {
+          "title": {"en": "One habit in a whole life", "de": "Eine Gewohnheit in einem ganzen Leben", "ar": "خصلة واحدة في عمر كامل"},
+          "body": {"en": "The Prophet told of a man from earlier nations who came to the reckoning with almost nothing good to show. One habit in his business life made all the difference.", "de": "Der Prophet erzählte von einem Mann aus früheren Völkern, der fast nichts Gutes zur Abrechnung mitbrachte. Eine Gewohnheit in seinem Geschäftsleben machte den ganzen Unterschied.", "ar": "حدّث النبي عن رجل من الأمم السابقة جاء إلى الحساب ولا يكاد يحمل من الخير شيئًا، فكانت خصلة واحدة في تجارته هي الفارق."}
+        },
+        {
+          "hadith": "muslim:3997",
+          "check": "overlook",
+          "title": {"en": "Allah's answer to his leniency", "de": "Allahs Antwort auf seine Nachsicht", "ar": "جواب الله على سماحته"},
+          "body": {"en": "Narrated by Abu Mas'ud and recorded by Muslim; al-Bukhari has similar reports.", "de": "Überliefert von Abu Mas'ud, berichtet von Muslim; al-Bukhari hat ähnliche Berichte.", "ar": "رواه أبو مسعود، وأخرجه مسلم، وللبخاري روايات بمعناه."}
+        },
+        {
+          "title": {"en": "Generosity answered with generosity", "de": "Großzügigkeit, mit Großzügigkeit beantwortet", "ar": "كرم يقابله كرم"},
+          "body": {"en": "The man eased the burden of people who could not pay. Allah answered with something far greater: He eased the man's own reckoning. The reward matches the deed, and exceeds it.", "de": "Der Mann erleichterte die Last derer, die nicht zahlen konnten. Allah antwortete mit etwas weit Größerem: Er erleichterte seine eigene Abrechnung. Der Lohn entspricht der Tat und übertrifft sie.", "ar": "خفّف الرجل عن المعسرين، فجازاه الله بما هو أعظم: خفّف عنه حسابه. فالجزاء من جنس العمل ويزيد عليه."}
+        },
+        {
+          "verse": "2:280",
+          "check": "postponement",
+          "title": {"en": "Give time to the one in hardship", "de": "Geben Sie dem Bedrängten Zeit", "ar": "إنظار المعسر"},
+          "body": {"en": "The Quran asks creditors to wait, and calls forgiving the debt even better.", "de": "Der Koran bittet Gläubiger zu warten und nennt den Erlass der Schuld noch besser.", "ar": "يأمر القرآن الدائن بالإنظار، ويجعل التصدق بالدين خيرًا له."}
+        },
+        {
+          "title": {"en": "Leniency in everyday dealings", "de": "Nachsicht im Alltag", "ar": "السماحة في المعاملات"},
+          "body": {"en": "Few of us lend large sums, but many deal with others every day: tenants, customers, colleagues, family. Being easy on someone who is struggling is a form of worship that Allah sees.", "de": "Wenige von uns verleihen große Summen, aber viele haben täglich mit anderen zu tun: Mieter, Kunden, Kollegen, Familie. Nachsicht mit jemandem, der zu kämpfen hat, ist eine Form der Anbetung, die Allah sieht.", "ar": "قليل منا يُقرض مبالغ كبيرة، لكن كثيرين يتعاملون مع الناس كل يوم: مستأجرين وعملاء وزملاء وأهلًا. والتيسير على من يمر بضيق عبادة يراها الله."}
+        },
+        {
+          "title": {"en": "Living it today", "de": "Im Alltag leben", "ar": "العمل به اليوم"},
+          "list": {
+            "en": ["Give extra time to someone who cannot pay", "Forgive a small debt if you can", "Be gentle in every deal, large or small"],
+            "de": ["Geben Sie jemandem, der nicht zahlen kann, mehr Zeit", "Erlassen Sie eine kleine Schuld, wenn Sie können", "Seien Sie bei jedem Geschäft entgegenkommend, ob groß oder klein"],
+            "ar": ["أمهِل من لا يستطيع السداد", "اعفُ عن دين صغير إن استطعت", "كن لين الجانب في كل معاملة صغيرة أو كبيرة"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "hadith-qudsi-17-ties-of-kinship",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": {"en": "Hadith Qudsi · 17", "de": "Hadith Qudsi · 17", "ar": "الأحاديث القدسية · ١٧"},
+        "title": {"en": "A bond named after mercy", "de": "Ein Band, benannt nach der Barmherzigkeit", "ar": "رابطة مشتقة من الرحمة"},
+        "sub": {"en": "A hadith qudsi on family ties and the name ar-Rahman", "de": "Ein Hadith Qudsi über Familienbande und den Namen ar-Raḥmān", "ar": "حديث قدسي في صلة الرحم واسم الرحمن"},
+        "arabic": "صلة الرحم"
+      },
+      "slides": [
+        {
+          "title": {"en": "Rahim and Rahman", "de": "Raḥim und Raḥmān", "ar": "الرَّحِم والرحمن"},
+          "arabic": "ر ح م",
+          "body": {"en": "In Arabic, the word for the ties of kinship, rahim, shares its root with ar-Rahman, the Entirely Merciful. This hadith qudsi makes that link explicit and gives it great weight.", "de": "Im Arabischen hat das Wort für die Verwandtschaftsbande, raḥim, dieselbe Wurzel wie ar-Raḥmān, der Allerbarmer. Dieser Hadith Qudsi macht diese Verbindung ausdrücklich und gibt ihr großes Gewicht.", "ar": "في العربية تشترك كلمة الرَّحِم، أي القرابة، في جذرها مع اسم الرحمن. وهذا الحديث القدسي يصرّح بهذه الصلة ويعطيها وزنًا عظيمًا."}
+        },
+        {
+          "hadith": "bukhari:5988",
+          "check": "derives its name from Ar-Rahman",
+          "title": {"en": "Allah's promise to the ties of kinship", "de": "Allahs Zusage an die Verwandtschaftsbande", "ar": "وعد الله للرحم"},
+          "body": {"en": "Narrated by Abu Huraira and recorded by al-Bukhari.", "de": "Überliefert von Abu Huraira, berichtet von al-Bukhari.", "ar": "رواه أبو هريرة، وأخرجه البخاري."}
+        },
+        {
+          "title": {"en": "Keeping ties when it is hard", "de": "Bande pflegen, wenn es schwerfällt", "ar": "الصلة حين تصعب"},
+          "body": {"en": "The Prophet taught that truly keeping ties is more than returning a favour. It means reaching out even to relatives who have cut you off. That is where this promise shines brightest.", "de": "Der Prophet lehrte, dass wahres Pflegen der Bande mehr ist als das Erwidern eines Gefallens. Es bedeutet, auch auf Verwandte zuzugehen, die den Kontakt abgebrochen haben. Dort leuchtet dieses Versprechen am hellsten.", "ar": "علّم النبي أن الصلة الحقيقية أكثر من مكافأة الإحسان بمثله، بل أن تبادر بالوصل حتى مع القريب الذي قطعك. وهناك يتجلى هذا الوعد أوضح ما يكون."}
+        },
+        {
+          "verse": "4:1",
+          "check": "the wombs",
+          "title": {"en": "Named beside the mindfulness of Allah", "de": "Neben der Gottesfurcht genannt", "ar": "مذكورة مع تقوى الله"},
+          "body": {"en": "In this verse the Quran calls for mindfulness of Allah and care for the ties of kinship together.", "de": "In diesem Vers ruft der Koran zugleich zur Gottesfurcht und zur Achtung der Verwandtschaftsbande auf.", "ar": "في هذه الآية يدعو القرآن إلى تقوى الله ومراعاة الأرحام معًا."}
+        },
+        {
+          "title": {"en": "What it can look like", "de": "Wie das aussehen kann", "ar": "كيف تكون الصلة"},
+          "body": {"en": "Keeping ties does not always mean long visits. A call, a message on a special day, help with a bill, a kind word to an aunt you rarely see. What matters is that the bond stays alive.", "de": "Bande zu pflegen heißt nicht immer lange Besuche. Ein Anruf, eine Nachricht an einem besonderen Tag, Hilfe bei einer Rechnung, ein freundliches Wort an eine Tante, die Sie selten sehen. Wichtig ist, dass das Band lebendig bleibt.", "ar": "الصلة لا تعني دائمًا زيارات طويلة: اتصال، أو رسالة في مناسبة، أو مساعدة في فاتورة، أو كلمة طيبة لعمة نادرًا ما تراها. المهم أن تبقى الرابطة حية."}
+        },
+        {
+          "title": {"en": "Living it today", "de": "Im Alltag leben", "ar": "العمل به اليوم"},
+          "list": {
+            "en": ["Call one relative you have not spoken to in a while", "Take the first step after a quarrel", "Remember your relatives first in your charity"],
+            "de": ["Rufen Sie einen Verwandten an, mit dem Sie lange nicht gesprochen haben", "Machen Sie nach einem Streit den ersten Schritt", "Bedenken Sie bei Ihren Spenden zuerst die Verwandten"],
+            "ar": ["اتصل بقريب لم تكلمه منذ مدة", "بادر بالخطوة الأولى بعد الخصام", "قدّم أقاربك في صدقتك"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "hadith-qudsi-18-after-the-rain",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": {"en": "Hadith Qudsi · 18", "de": "Hadith Qudsi · 18", "ar": "الأحاديث القدسية · ١٨"},
+        "title": {"en": "After the rain", "de": "Nach dem Regen", "ar": "بعد المطر"},
+        "sub": {"en": "A hadith qudsi on gratitude and on whom we credit for our blessings", "de": "Ein Hadith Qudsi über Dankbarkeit und darüber, wem wir unsere Gaben zuschreiben", "ar": "حديث قدسي في الشكر وإلى من ننسب النعم"},
+        "arabic": "نسبة النعمة إلى الله"
+      },
+      "slides": [
+        {
+          "title": {"en": "A morning at Hudaybiyah", "de": "Ein Morgen in Hudaibiya", "ar": "صباح في الحديبية"},
+          "body": {"en": "After a rainy night, the Prophet led the dawn prayer, turned to the people and conveyed what Allah had said about that morning.", "de": "Nach einer regnerischen Nacht leitete der Prophet das Morgengebet, wandte sich den Menschen zu und gab weiter, was Allah über diesen Morgen gesagt hatte.", "ar": "بعد ليلة ممطرة صلّى النبي بالناس الفجر، ثم أقبل عليهم وبلّغهم ما قاله الله عن ذلك الصباح."}
+        },
+        {
+          "hadith": "bukhari:846",
+          "check": "remained as true believers",
+          "title": {"en": "Two ways to wake up", "de": "Zwei Arten aufzuwachen", "ar": "صباحان مختلفان"},
+          "body": {"en": "Narrated by Zayd ibn Khalid al-Juhani and recorded by al-Bukhari and Muslim.", "de": "Überliefert von Zaid ibn Khalid al-Juhani, berichtet von al-Bukhari und Muslim.", "ar": "رواه زيد بن خالد الجهني، وأخرجه البخاري ومسلم."}
+        },
+        {
+          "title": {"en": "Science is not the issue", "de": "Wissenschaft ist nicht das Problem", "ar": "ليست المسألة في العلم"},
+          "body": {"en": "Knowing how clouds and seasons work is not the problem. Scholars explain: believing a star sends rain by itself is disbelief; speaking that way while believing that Allah sends it is a phrasing they warned against.", "de": "Zu wissen, wie Wolken und Jahreszeiten entstehen, ist nicht das Problem. Gelehrte erklären: Zu glauben, ein Stern sende den Regen aus eigener Kraft, ist Unglaube; so zu sprechen, obwohl man glaubt, dass Allah ihn sendet, ist eine Ausdrucksweise, vor der sie warnten.", "ar": "معرفة كيف تتكون السحب وتتعاقب الفصول ليست هي المشكلة. يبيّن العلماء أن اعتقاد أن النجم ينزل المطر بذاته كفر، وأن التعبير بذلك مع الإيمان بأن الله هو المنزل لفظ نهوا عنه."}
+        },
+        {
+          "verse": "56:82",
+          "check": "your provision that you deny",
+          "title": {"en": "Thanks turned into denial", "de": "Dank, der zur Leugnung wird", "ar": "شكر يتحول إلى تكذيب"},
+          "body": {"en": "Muslim reports from Ibn Abbas that this passage of Surah al-Waqi'ah was revealed about such words.", "de": "Muslim berichtet von Ibn Abbas, dass dieser Abschnitt der Sure al-Waqi'a wegen solcher Worte offenbart wurde.", "ar": "روى مسلم عن ابن عباس أن هذه الآيات من سورة الواقعة نزلت في مثل هذا القول."}
+        },
+        {
+          "title": {"en": "Living it today", "de": "Im Alltag leben", "ar": "العمل به اليوم"},
+          "list": {
+            "en": ["Thank Allah when rain falls", "Credit every blessing first to the Giver", "Make dua while it rains", "Do not let causes hide the Creator from you"],
+            "de": ["Danken Sie Allah, wenn Regen fällt", "Schreiben Sie jede Gabe zuerst dem Geber zu", "Sprechen Sie Bittgebete, während es regnet", "Lassen Sie Ursachen den Schöpfer nicht verdecken"],
+            "ar": ["اشكر الله إذا نزل المطر", "انسب كل نعمة أولًا إلى المنعم", "ادعُ الله عند نزول المطر", "لا تحجب الأسبابُ عنك الخالق"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "hadith-qudsi-19-meeting-allah",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": {"en": "Hadith Qudsi · 19", "de": "Hadith Qudsi · 19", "ar": "الأحاديث القدسية · ١٩"},
+        "title": {"en": "Longing to meet Allah", "de": "Sehnsucht nach der Begegnung mit Allah", "ar": "الشوق إلى لقاء الله"},
+        "sub": {"en": "A hadith qudsi about death, hope and the love that waits", "de": "Ein Hadith Qudsi über den Tod, die Hoffnung und die Liebe, die wartet", "ar": "حديث قدسي عن الموت والرجاء والمحبة المنتظرة"},
+        "arabic": "لقاء الله"
+      },
+      "slides": [
+        {
+          "title": {"en": "Who does not fear death?", "de": "Wer fürchtet den Tod nicht?", "ar": "من لا يخاف الموت؟"},
+          "body": {"en": "Almost everyone feels uneasy about dying. This hadith qudsi speaks about loving or disliking the meeting with Allah, and the Prophet explained that it does not mean the ordinary fear of death.", "de": "Fast jeder empfindet Unbehagen beim Gedanken an den Tod. Dieser Hadith Qudsi spricht davon, die Begegnung mit Allah zu lieben oder abzulehnen, und der Prophet erklärte, dass damit nicht die gewöhnliche Angst vor dem Tod gemeint ist.", "ar": "يكاد كل إنسان يشعر بالقلق من الموت. ويتحدث هذا الحديث القدسي عن حب لقاء الله أو كراهيته، وقد بيّن النبي أن المقصود ليس الخوف المعتاد من الموت."}
+        },
+        {
+          "hadith": "bukhari:7504",
+          "check": "meeting with Me",
+          "title": {"en": "Love answered with love", "de": "Liebe, mit Liebe beantwortet", "ar": "محبة تقابلها محبة"},
+          "body": {"en": "Narrated by Abu Huraira and recorded by al-Bukhari.", "de": "Überliefert von Abu Huraira, berichtet von al-Bukhari.", "ar": "رواه أبو هريرة، وأخرجه البخاري."}
+        },
+        {
+          "title": {"en": "Aishah's question", "de": "Aischas Frage", "ar": "سؤال عائشة"},
+          "body": {"en": "When Aishah mentioned that people dislike death, the Prophet explained: when death comes, the believer receives good news of Allah's pleasure and then loves to meet Him. Whoever receives bad news dislikes it.", "de": "Als Aischa erwähnte, dass die Menschen den Tod nicht mögen, erklärte der Prophet: Wenn der Tod kommt, erhält der Gläubige die frohe Botschaft von Allahs Wohlgefallen und liebt dann die Begegnung mit Ihm. Wer eine schlimme Nachricht erhält, verabscheut sie.", "ar": "لما ذكرت عائشة كراهية الناس للموت، بيّن النبي أن المؤمن عند حضور أجله يُبشَّر برضوان الله فيحب لقاءه، ومن بُشّر بغير ذلك كره اللقاء."}
+        },
+        {
+          "verse": "29:5",
+          "check": "hope for the meeting",
+          "title": {"en": "The meeting is coming", "de": "Die Begegnung kommt", "ar": "اللقاء آتٍ"},
+          "body": {"en": "The Quran reminds everyone who hopes to meet Allah that the appointed time will surely come.", "de": "Der Koran erinnert alle, die auf die Begegnung mit Allah hoffen, daran, dass die festgesetzte Frist gewiss kommt.", "ar": "يذكّر القرآن كل من يرجو لقاء الله بأن الأجل الذي حدّده آتٍ لا محالة."}
+        },
+        {
+          "title": {"en": "Preparing for a meeting you love", "de": "Vorbereitung auf eine geliebte Begegnung", "ar": "الاستعداد للقاء تحبه"},
+          "body": {"en": "We prepare for meetings that matter. Remembering death in a healthy way is not gloom; it sets priorities. Settle debts, mend relationships, and keep up a deed you would love to meet Allah with.", "de": "Auf wichtige Begegnungen bereiten wir uns vor. Gesundes Gedenken an den Tod ist keine Schwermut; es ordnet die Prioritäten. Begleichen Sie Schulden, heilen Sie Beziehungen und pflegen Sie eine Tat, mit der Sie Allah gern begegnen würden.", "ar": "نستعد للقاءات المهمة. وتذكّر الموت تذكرًا متزنًا ليس كآبة، بل يرتّب الأولويات. اقضِ ديونك، وأصلح علاقاتك، وداوم على عمل تحب أن تلقى الله به."}
+        }
+      ]
+    },
+    {
+      "id": "hadith-qudsi-20-ayyub-and-the-gold",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": {"en": "Hadith Qudsi · 20", "de": "Hadith Qudsi · 20", "ar": "الأحاديث القدسية · ٢٠"},
+        "title": {"en": "Ayyub and the shower of gold", "de": "Ayyub und der Goldregen", "ar": "أيوب والجراد الذهبي"},
+        "sub": {"en": "A conversation between Allah and Prophet Ayyub, reported by our Prophet", "de": "Ein Gespräch zwischen Allah und dem Propheten Ayyub, überliefert von unserem Propheten", "ar": "حوار بين الله ونبيه أيوب يرويه نبينا"},
+        "arabic": "البركة"
+      },
+      "slides": [
+        {
+          "title": {"en": "A prophet known for patience", "de": "Ein Prophet, bekannt für Geduld", "ar": "نبي عُرف بالصبر"},
+          "body": {"en": "Prophet Ayyub is known for his patience through long illness and loss, and Allah restored him. This hadith describes a moment from his life and a short dialogue with his Lord.", "de": "Der Prophet Ayyub ist für seine Geduld in langer Krankheit und Verlust bekannt, und Allah stellte ihn wieder her. Dieser Hadith beschreibt einen Moment aus seinem Leben und ein kurzes Gespräch mit seinem Herrn.", "ar": "عُرف النبي أيوب بصبره على المرض الطويل والفقد، ثم عافاه الله. ويصف هذا الحديث لحظة من حياته وحوارًا قصيرًا مع ربه."}
+        },
+        {
+          "hadith": "bukhari:7493",
+          "check": "dispense with Your Blessings",
+          "title": {"en": "A shower of gold", "de": "Ein Regen aus Gold", "ar": "مطر من ذهب"},
+          "body": {"en": "Narrated by Abu Huraira and recorded by al-Bukhari.", "de": "Überliefert von Abu Huraira, berichtet von al-Bukhari.", "ar": "رواه أبو هريرة، وأخرجه البخاري."}
+        },
+        {
+          "title": {"en": "Gratitude, not greed", "de": "Dankbarkeit, nicht Gier", "ar": "شكر لا طمع"},
+          "body": {"en": "Ayyub gathered the gold not out of greed but because it came from Allah. Scholars draw from this that taking lawful wealth with gratitude is not blameworthy. A blessing from Allah is never too much.", "de": "Ayyub sammelte das Gold nicht aus Gier, sondern weil es von Allah kam. Gelehrte schließen daraus, dass es nicht tadelnswert ist, erlaubten Reichtum mit Dankbarkeit anzunehmen. Ein Segen von Allah ist nie zu viel.", "ar": "جمع أيوب الذهب لا طمعًا، بل لأنه من عند الله. ويستنبط العلماء من ذلك أن أخذ المال الحلال مع الشكر غير مذموم، وأن العبد يبقى محتاجًا إلى فضل ربه مهما أُعطي."}
+        },
+        {
+          "verse": "38:44",
+          "check": "excellent servant",
+          "title": {"en": "An excellent servant", "de": "Ein vortrefflicher Diener", "ar": "نعم العبد"},
+          "body": {"en": "The Quran praises Ayyub for his patience and for always turning back to Allah.", "de": "Der Koran lobt Ayyub für seine Geduld und dafür, dass er sich stets Allah zuwandte.", "ar": "يثني القرآن على أيوب بصبره ورجوعه الدائم إلى الله."}
+        },
+        {
+          "title": {"en": "Living it today", "de": "Im Alltag leben", "ar": "العمل به اليوم"},
+          "list": {
+            "en": ["Receive every blessing as coming from Allah", "Thank Him most when you have plenty", "Never feel you no longer need Him"],
+            "de": ["Nehmen Sie jede Gabe als Geschenk Allahs an", "Danken Sie Ihm am meisten, wenn Sie viel haben", "Glauben Sie nie, Sie bräuchten Ihn nicht mehr"],
+            "ar": ["تلقَّ كل نعمة على أنها من الله", "اشكره أكثر ما تشكره في السعة", "لا تظن يومًا أنك استغنيت عنه"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "hadith-qudsi-21-sins-kept-hidden",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": {"en": "Hadith Qudsi · 21", "de": "Hadith Qudsi · 21", "ar": "الأحاديث القدسية · ٢١"},
+        "title": {"en": "The sins Allah kept hidden", "de": "Die Sünden, die Allah verborgen hielt", "ar": "ذنوب سترها الله"},
+        "sub": {"en": "A hadith qudsi about a private conversation on the Day of Judgement", "de": "Ein Hadith Qudsi über ein vertrauliches Gespräch am Tag des Gerichts", "ar": "حديث قدسي عن مناجاة يوم القيامة"},
+        "arabic": "الستر"
+      },
+      "slides": [
+        {
+          "title": {"en": "What no one else knows", "de": "Was niemand sonst weiß", "ar": "ما لا يعلمه أحد غيرك"},
+          "body": {"en": "Every person carries things only they and Allah know. This hadith describes how Allah will deal with a believer about such matters on the Day of Judgement: privately, and with mercy.", "de": "Jeder Mensch trägt Dinge in sich, die nur er und Allah kennen. Dieser Hadith beschreibt, wie Allah am Tag des Gerichts mit einem Gläubigen darüber umgehen wird: vertraulich und mit Barmherzigkeit.", "ar": "يحمل كل إنسان أمورًا لا يعلمها إلا هو والله. ويصف هذا الحديث كيف يعامل الله المؤمن فيها يوم القيامة: سرًّا وبرحمة."}
+        },
+        {
+          "hadith": "bukhari:7514",
+          "check": "I screened your sins",
+          "title": {"en": "A private conversation", "de": "Ein vertrauliches Gespräch", "ar": "مناجاة خاصة"},
+          "body": {"en": "Narrated by Ibn Umar and recorded by al-Bukhari and Muslim.", "de": "Überliefert von Ibn Umar, berichtet von al-Bukhari und Muslim.", "ar": "رواه ابن عمر، وأخرجه البخاري ومسلم."}
+        },
+        {
+          "title": {"en": "Two gifts in one", "de": "Zwei Gaben in einer", "ar": "نعمتان في نعمة"},
+          "body": {"en": "Two gifts meet here: Allah covered the believer's faults during life, and pardons them in the Hereafter. Scholars connect this with another hadith that warns against publicising one's own sins.", "de": "Hier treffen zwei Gaben zusammen: Allah verhüllte die Fehler des Gläubigen im Leben und vergibt sie im Jenseits. Gelehrte verbinden dies mit einem anderen Hadith, der davor warnt, die eigenen Sünden öffentlich zu machen.", "ar": "تجتمع هنا نعمتان: ستر الله عيوب المؤمن في حياته، ثم عفوه عنها في الآخرة. ويربط العلماء ذلك بحديث آخر يحذّر من المجاهرة بالذنوب."}
+        },
+        {
+          "verse": "4:110",
+          "check": "seeks forgiveness",
+          "title": {"en": "The door is open now", "de": "Die Tür ist jetzt offen", "ar": "الباب مفتوح الآن"},
+          "body": {"en": "The Quran invites us not to wait for that Day: seeking forgiveness begins today.", "de": "Der Koran lädt ein, nicht auf jenen Tag zu warten: Die Bitte um Vergebung beginnt heute.", "ar": "يدعونا القرآن ألا ننتظر ذلك اليوم: الاستغفار يبدأ من الآن."}
+        },
+        {
+          "title": {"en": "Cover as you are covered", "de": "Verhüllen Sie, wie Sie verhüllt werden", "ar": "استر كما سُترت"},
+          "body": {"en": "If Allah covers us, we can cover others: not spreading someone's mistake, not passing on a private message, correcting gently and in private. Protecting people's dignity is part of faith.", "de": "Wenn Allah uns verhüllt, können wir andere verhüllen: den Fehler eines Menschen nicht verbreiten, keine privaten Nachrichten weitergeben, sanft und unter vier Augen korrigieren. Die Würde der Menschen zu schützen ist Teil des Glaubens.", "ar": "إذا كان الله يسترنا فلنستر غيرنا: لا ننشر خطأ أحد، ولا نتداول رسالة خاصة، وننصح برفق وفي السر. وصون كرامة الناس من الإيمان."}
+        },
+        {
+          "title": {"en": "Living it today", "de": "Im Alltag leben", "ar": "العمل به اليوم"},
+          "list": {
+            "en": ["Repent quietly, between you and Allah", "Do not tell others about sins Allah has covered", "Keep the secrets people trust you with"],
+            "de": ["Bereuen Sie still, zwischen Ihnen und Allah", "Erzählen Sie anderen nicht von Sünden, die Allah verhüllt hat", "Bewahren Sie die Geheimnisse, die man Ihnen anvertraut"],
+            "ar": ["تُب سرًّا بينك وبين الله", "لا تحدّث الناس بذنوب سترها الله", "احفظ الأسرار التي يأتمنك الناس عليها"]
+          }
+        }
+      ]
+    }
+  ]
+}

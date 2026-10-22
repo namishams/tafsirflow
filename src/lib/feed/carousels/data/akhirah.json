@@ -1,0 +1,1614 @@
+{
+  "series": "akhirah",
+  "label": { "en": "The journey of the soul", "de": "Die Reise der Seele", "ar": "رحلة الروح" },
+  "topic": "holy",
+  "tradition": "all",
+  "items": [
+    {
+      "id": "akhirah-01-remembering-death",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": { "en": "The journey of the soul · 1", "de": "Die Reise der Seele · 1", "ar": "رحلة الروح · ١" },
+        "title": { "en": "Remembering death without fear", "de": "An den Tod denken, ohne Angst", "ar": "تذكُّر الموت بلا هلع" },
+        "sub": { "en": "A healthy remembrance that makes life lighter, not darker", "de": "Ein gesundes Erinnern, das das Leben leichter macht, nicht dunkler", "ar": "تذكّر صحي يجعل الحياة أخفّ لا أثقل" },
+        "arabic": "ذكر الموت"
+      },
+      "slides": [
+        {
+          "verse": "62:8",
+          "check": "the death from which you flee",
+          "title": { "en": "The meeting no one can avoid", "de": "Die Begegnung, der niemand ausweicht", "ar": "لقاء لا مفرّ منه" },
+          "body": { "en": "The Quran does not hide death from us. It names it calmly, then points beyond it: to the One who knows us fully.", "de": "Der Koran verschweigt den Tod nicht. Er nennt ihn ruhig und weist über ihn hinaus: auf Den, Der uns ganz kennt.", "ar": "لا يخفي القرآن الموت عنا، بل يذكره بهدوء ثم يشير إلى ما بعده: إلى من يعلمنا تمام العلم." }
+        },
+        {
+          "verse": "21:35",
+          "check": "Every soul will taste death",
+          "title": { "en": "Life as a test, not a trap", "de": "Das Leben als Prüfung, nicht als Falle", "ar": "الحياة ابتلاء لا فخّ" },
+          "body": { "en": "Good days and hard days are both part of the test. Remembering the end helps us read both wisely.", "de": "Gute und schwere Tage gehören beide zur Prüfung. Wer an das Ende denkt, versteht beide mit Weisheit.", "ar": "الأيام الطيبة والصعبة كلتاهما من الابتلاء، وتذكّر النهاية يعين على فهمهما بحكمة." }
+        },
+        {
+          "hadith": "bukhari:6416",
+          "check": "stranger or a traveler",
+          "title": { "en": "A traveller's heart", "de": "Das Herz eines Reisenden", "ar": "قلب المسافر" },
+          "body": { "en": "A traveller enjoys the road but does not settle on it. That is the balance the Prophet taught Ibn Umar.", "de": "Ein Reisender genießt den Weg, lässt sich aber nicht auf ihm nieder. Dieses Gleichgewicht lehrte der Prophet Ibn Umar.", "ar": "المسافر يستمتع بالطريق ولا يستقرّ فيه، وهذا هو التوازن الذي علّمه النبي ﷺ لابن عمر." }
+        },
+        {
+          "hadith": "bukhari:5671",
+          "check": "wish for death",
+          "title": { "en": "Remembering is not longing", "de": "Erinnern ist kein Herbeisehnen", "ar": "التذكّر ليس تمنّيًا" },
+          "body": { "en": "Thinking of death is not wishing for it. For hard times the Prophet taught a dua that leaves the choice to Allah's wisdom.", "de": "An den Tod zu denken heißt nicht, ihn herbeizusehnen. Für schwere Zeiten lehrte der Prophet ein Bittgebet, das die Wahl Allahs Weisheit überlässt.", "ar": "التفكير في الموت ليس تمنيًا له، وقد علّم النبي ﷺ في الشدة دعاءً يترك الاختيار لحكمة الله." }
+        },
+        {
+          "title": { "en": "Healthy and unhealthy remembrance", "de": "Gesundes und ungesundes Erinnern", "ar": "تذكّر صحي وتذكّر مُرهِق" },
+          "body": { "en": "Healthy remembrance makes you kinder, more honest and more grateful today. If thoughts of death bring panic or despair, that is not piety: talk to someone you trust, and seek medical help if it persists.", "de": "Gesundes Erinnern macht heute freundlicher, ehrlicher und dankbarer. Bringen Gedanken an den Tod Panik oder Verzweiflung, ist das keine Frömmigkeit: Sprechen Sie mit einer Vertrauensperson und suchen Sie ärztliche Hilfe, wenn es anhält.", "ar": "التذكّر الصحي يجعلك اليوم ألطف وأصدق وأشكر. أما إذا جلب التفكير في الموت هلعًا أو يأسًا فليس ذلك من التقوى: تحدّث إلى من تثق به، واطلب مساعدة طبية إن استمر." }
+        },
+        {
+          "dua": "hisn:60:0",
+          "check": "inhabitants of the graves",
+          "title": { "en": "Visiting the graves", "de": "Gräber besuchen", "ar": "زيارة القبور" },
+          "body": { "en": "A visit to the graves softens the heart. This greeting offers the dead peace and gives the living hope.", "de": "Ein Besuch an den Gräbern macht das Herz weich. Dieser Gruß schenkt den Toten Frieden und den Lebenden Hoffnung.", "ar": "زيارة القبور ترقّق القلب، وهذا السلام يحمل للموتى سلامًا وللأحياء رجاءً." }
+        },
+        {
+          "title": { "en": "Remembering, the healthy way", "de": "Gesund erinnern", "ar": "تذكّر بطريقة صحية" },
+          "list": {
+            "en": ["Let the thought lead to one good deed today", "Mend a broken tie while there is time", "Write down what you want to leave behind", "Pair every thought of death with hope in Allah"],
+            "de": ["Lassen Sie den Gedanken zu einer guten Tat heute führen", "Kitten Sie eine zerbrochene Beziehung, solange Zeit ist", "Schreiben Sie auf, was Sie hinterlassen möchten", "Verbinden Sie jeden Gedanken an den Tod mit Hoffnung auf Allah"],
+            "ar": ["اجعل الفكرة تقودك إلى عمل صالح اليوم", "أصلح علاقة مقطوعة ما دام في الوقت متسع", "اكتب ما تحب أن تتركه بعدك", "اقرن كل تذكّر للموت بالرجاء في الله"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "akhirah-02-meeting-allah-with-hope",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": { "en": "The journey of the soul · 2", "de": "Die Reise der Seele · 2", "ar": "رحلة الروح · ٢" },
+        "title": { "en": "Meeting Allah with hope", "de": "Allah mit Hoffnung begegnen", "ar": "لقاء الله بالرجاء" },
+        "sub": { "en": "How the Prophet taught us to think of the end", "de": "Wie der Prophet uns lehrte, an das Ende zu denken", "ar": "كيف علّمنا النبي ﷺ أن ننظر إلى النهاية" },
+        "arabic": "حسن الظن بالله"
+      },
+      "slides": [
+        {
+          "verse": "18:110",
+          "check": "hope for the meeting with his Lord",
+          "title": { "en": "A meeting to hope for", "de": "Eine Begegnung, auf die man hofft", "ar": "لقاء يُرجى" },
+          "body": { "en": "The Quran speaks of meeting Allah as something to hope for. The way there is simple: sincere worship and good deeds.", "de": "Der Koran spricht von der Begegnung mit Allah als etwas, worauf man hofft. Der Weg dorthin ist schlicht: aufrichtige Anbetung und gute Taten.", "ar": "يتحدث القرآن عن لقاء الله بوصفه أمرًا يُرجى، والطريق إليه واضح: عبادة خالصة وعمل صالح." }
+        },
+        {
+          "hadith": "bukhari:7505",
+          "check": "as he thinks of Me",
+          "title": { "en": "As you think of Him", "de": "Wie Sie von Ihm denken", "ar": "كما تظن بربك" },
+          "body": { "en": "How we think of Allah matters. A believer expects mercy, forgiveness and generosity from Him.", "de": "Wie wir über Allah denken, ist wichtig. Ein Gläubiger erwartet von Ihm Barmherzigkeit, Vergebung und Großzügigkeit.", "ar": "ظنّنا بالله له أثر، والمؤمن يرجو منه الرحمة والمغفرة والكرم." }
+        },
+        {
+          "hadith": "muslim:7231",
+          "check": "hoping only good from Allah",
+          "title": { "en": "Three days before he passed away", "de": "Drei Tage vor seinem Tod", "ar": "قبل وفاته بثلاثة أيام" },
+          "body": { "en": "Among his last teachings: leave this world with good expectations of your Lord.", "de": "Zu seinen letzten Lehren gehörte: diese Welt mit guten Erwartungen an den Herrn zu verlassen.", "ar": "من آخر وصاياه ﷺ: أن يفارق المرء الدنيا وهو يحسن الظن بربه." }
+        },
+        {
+          "hadith": "bukhari:6508",
+          "check": "loves to meet Allah",
+          "title": { "en": "Love that meets love", "de": "Liebe, die Liebe begegnet", "ar": "محبة تقابلها محبة" },
+          "body": { "en": "In a longer narration he explains that at death the believer is given glad tidings, so meeting Allah becomes what he loves most.", "de": "In einer längeren Überlieferung erklärt er, dass der Gläubige beim Tod frohe Botschaft erhält, sodass die Begegnung mit Allah ihm das Liebste wird.", "ar": "يبيّن في رواية أطول أن المؤمن يُبشَّر عند موته، فيصير لقاء الله أحبّ شيء إليه." }
+        },
+        {
+          "verse": "33:44",
+          "check": "Their greeting the Day they meet Him",
+          "title": { "en": "Greeted with peace", "de": "Mit Frieden begrüßt", "ar": "لقاء يبدأ بالسلام" },
+          "body": { "en": "The first word of that meeting is peace. Keep this image with you when you think of the end.", "de": "Das erste Wort dieser Begegnung ist Frieden. Behalten Sie dieses Bild, wenn Sie an das Ende denken.", "ar": "أول كلمة في ذلك اللقاء هي السلام، فاستحضر هذه الصورة كلما تذكرت النهاية." }
+        },
+        {
+          "dua": "hisn:51:0",
+          "check": "highest companions",
+          "title": { "en": "From his final days", "de": "Aus seinen letzten Tagen", "ar": "من أيامه الأخيرة" },
+          "body": { "en": "In his final illness the Prophet turned to his Lord with this dua: forgiveness, mercy and the highest company.", "de": "In seiner letzten Krankheit wandte sich der Prophet mit diesem Bittgebet an seinen Herrn: Vergebung, Barmherzigkeit und die höchste Gemeinschaft.", "ar": "في مرضه الأخير توجّه النبي ﷺ إلى ربه بهذا الدعاء: مغفرة ورحمة وصحبة عليا." }
+        },
+        {
+          "title": { "en": "Growing good expectations", "de": "Gute Erwartungen an Allah pflegen", "ar": "تنمية حسن الظن" },
+          "list": {
+            "en": ["Read the verses of mercy often", "Learn the names of Allah and their meaning", "Remember the times He carried you through", "Pair hope with effort, never with carelessness"],
+            "de": ["Lesen Sie oft die Verse der Barmherzigkeit", "Lernen Sie die Namen Allahs und ihre Bedeutung", "Erinnern Sie sich, wie Er Sie durch schwere Zeiten trug", "Verbinden Sie Hoffnung mit Bemühen, nie mit Nachlässigkeit"],
+            "ar": ["أكثر من قراءة آيات الرحمة", "تعلّم أسماء الله ومعانيها", "تذكّر المواقف التي أعانك فيها", "اقرن الرجاء بالعمل لا بالتفريط"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "akhirah-03-the-soul-at-death",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": { "en": "The journey of the soul · 3", "de": "Die Reise der Seele · 3", "ar": "رحلة الروح · ٣" },
+        "title": { "en": "The soul at the moment of death", "de": "Die Seele im Augenblick des Todes", "ar": "الروح عند الموت" },
+        "sub": { "en": "What the Quran tells us about the last breath, gently and honestly", "de": "Was der Koran über den letzten Atemzug sagt, behutsam und ehrlich", "ar": "ما يخبرنا به القرآن عن اللحظة الأخيرة، برفق وصدق" },
+        "arabic": "الروح"
+      },
+      "slides": [
+        {
+          "verse": "56:83-85",
+          "check": "nearer to him than you",
+          "title": { "en": "Nearer than those around the bed", "de": "Näher als die Menschen am Bett", "ar": "أقرب من الحاضرين" },
+          "body": { "en": "Family sits by the bed and cannot help. Yet the dying person is not alone: Allah's angels are nearer than anyone in the room.", "de": "Die Familie sitzt am Bett und kann nicht helfen. Doch der Sterbende ist nicht allein: Allahs Engel sind näher als jeder im Raum.", "ar": "يجلس الأهل حول السرير ولا يملكون شيئًا، لكن المحتضر ليس وحده، فملائكة الله أقرب إليه من كل من في الغرفة." }
+        },
+        {
+          "verse": "32:11",
+          "check": "angel of death",
+          "title": { "en": "Entrusted with each soul", "de": "Mit jeder Seele betraut", "ar": "مَلَك موكَّل بكل نفس" },
+          "body": { "en": "The angel of death does not act by chance. He is entrusted with each soul and returns it to its Lord.", "de": "Der Todesengel handelt nicht zufällig. Er ist mit jeder Seele betraut und bringt sie zu ihrem Herrn zurück.", "ar": "ملك الموت لا يعمل اعتباطًا، بل هو مكلَّف بكل نفس يردّها إلى ربها." }
+        },
+        {
+          "verse": "39:42",
+          "check": "during their sleep",
+          "title": { "en": "Every night, a small rehearsal", "de": "Jede Nacht eine kleine Probe", "ar": "كل ليلة تمرين صغير" },
+          "body": { "en": "In sleep, too, Allah takes the soul and sends it back. Each morning is a gift renewed.", "de": "Auch im Schlaf nimmt Allah die Seele und schickt sie zurück. Jeder Morgen ist ein erneuertes Geschenk.", "ar": "في النوم أيضًا يأخذ الله الروح ثم يعيدها، فكل صباح هبة متجددة." }
+        },
+        {
+          "verse": "16:32",
+          "check": "Peace be upon you",
+          "title": { "en": "Taken in a good state", "de": "In gutem Zustand heimgeholt", "ar": "رحيل في حال طيبة" },
+          "body": { "en": "For those who lived well, the angels arrive with a greeting of peace and good news.", "de": "Zu denen, die gut gelebt haben, kommen die Engel mit einem Friedensgruß und froher Botschaft.", "ar": "من عاش طيبًا تأتيه الملائكة بالسلام والبشرى." }
+        },
+        {
+          "verse": "41:30",
+          "check": "Do not fear and do not grieve",
+          "title": { "en": "No fear, no grief", "de": "Keine Furcht, keine Trauer", "ar": "طمأنينة عند الرحيل" },
+          "body": { "en": "Many commentators place this descent of angels at the moment of death. Fear of what comes and grief for what is left are both lifted.", "de": "Viele Kommentatoren verorten dieses Herabkommen der Engel im Augenblick des Todes. Die Angst vor dem Kommenden und die Trauer um das Zurückgelassene werden genommen.", "ar": "يرى كثير من المفسرين أن نزول الملائكة هذا يكون عند الموت، فيُرفع الخوف مما هو آت والحزن على ما تُرك." }
+        },
+        {
+          "verse": "56:88-89",
+          "check": "rest and bounty",
+          "title": { "en": "Rest after the journey", "de": "Ruhe nach der Reise", "ar": "راحة بعد الرحلة" },
+          "body": { "en": "For those brought near to Allah, death opens onto rest, provision and a garden of delight.", "de": "Für die Allah Nahegebrachten öffnet sich der Tod zu Ruhe, Versorgung und einem Garten der Wonne.", "ar": "للمقرّبين يكون الموت بابًا إلى راحة ورزق ونعيم." }
+        },
+        {
+          "title": { "en": "What we can do for the dying", "de": "Was wir für Sterbende tun können", "ar": "ما نقدّمه للمحتضر" },
+          "body": { "en": "Sit close, speak softly, remind them of Allah's mercy and gently help them say the testimony of faith. Your calm presence is itself a kindness.", "de": "Setzen Sie sich nah, sprechen Sie leise, erinnern Sie an Allahs Barmherzigkeit und helfen Sie behutsam, das Glaubensbekenntnis zu sprechen. Ihre ruhige Gegenwart ist selbst eine Güte.", "ar": "اقترب منه، وتحدّث بهدوء، وذكّره برحمة الله، وأعنه برفق على النطق بالشهادة، فحضورك الهادئ إحسان في ذاته." }
+        }
+      ],
+      "sources": [
+        { "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 41:30", "url": "https://quran.com/41:30/tafsirs/en-tafisr-ibn-kathir" },
+        { "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 56:83-85", "url": "https://quran.com/56:83/tafsirs/en-tafisr-ibn-kathir" }
+      ]
+    },
+    {
+      "id": "akhirah-04-the-grave",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": { "en": "The journey of the soul · 4", "de": "Die Reise der Seele · 4", "ar": "رحلة الروح · ٤" },
+        "title": { "en": "In the grave: what the Sunnah adds", "de": "Im Grab: was die Sunna ergänzt", "ar": "في القبر: ما تضيفه السنة" },
+        "sub": { "en": "The questioning, the view of one's place, and the one companion who stays", "de": "Die Befragung, der Blick auf den eigenen Platz und der eine Begleiter, der bleibt", "ar": "السؤال، ورؤية المقعد، والرفيق الوحيد الذي يبقى" },
+        "arabic": "فتنة القبر"
+      },
+      "slides": [
+        {
+          "hadith": "bukhari:6514",
+          "check": "deeds remain with him",
+          "title": { "en": "Three walk behind, one stays", "de": "Drei folgen, einer bleibt", "ar": "يتبعه ثلاثة ويبقى واحد" },
+          "body": { "en": "Family and wealth turn back at the graveside. Only our deeds go further with us.", "de": "Familie und Besitz kehren am Grab um. Nur unsere Taten gehen mit uns weiter.", "ar": "يعود الأهل والمال عند القبر، ولا يمضي معنا إلا العمل." }
+        },
+        {
+          "hadith": "bukhari:4699",
+          "check": "questioned in his grave",
+          "title": { "en": "The question in the grave", "de": "Die Frage im Grab", "ar": "السؤال في القبر" },
+          "body": { "en": "The Prophet linked the answer in the grave to Surah Ibrahim 14:27: Allah keeps the believers firm.", "de": "Der Prophet verband die Antwort im Grab mit Sure Ibrahim 14:27: Allah hält die Gläubigen standhaft.", "ar": "ربط النبي ﷺ الجواب في القبر بآية سورة إبراهيم (١٤: ٢٧) في تثبيت المؤمنين." }
+        },
+        {
+          "title": { "en": "Two angels, three questions", "de": "Zwei Engel, drei Fragen", "ar": "ملكان وثلاثة أسئلة" },
+          "body": { "en": "Narrations describe two angels asking about one's Lord, religion and Prophet; a narration in at-Tirmidhi names them Munkar and Nakir. Shia narrations also mention the Imam. The answers are lived, not memorised.", "de": "Überlieferungen beschreiben zwei Engel, die nach dem Herrn, der Religion und dem Propheten fragen; eine Überlieferung bei at-Tirmidhi nennt sie Munkar und Nakir. Schiitische Überlieferungen nennen auch den Imam. Die Antworten werden gelebt, nicht auswendig gelernt.", "ar": "تصف الروايات ملكين يسألان عن الرب والدين والنبي، وتسمّيهما رواية عند الترمذي منكرًا ونكيرًا، وتذكر روايات الشيعة الإمام أيضًا. والجواب يُعاش ولا يُحفظ فحسب." }
+        },
+        {
+          "hadith": "bukhari:1379",
+          "check": "morning and in the evening",
+          "title": { "en": "A window onto one's place", "de": "Ein Fenster zum eigenen Platz", "ar": "نافذة على المقعد" },
+          "body": { "en": "The barzakh is a waiting place with a view. Each morning and evening the deceased is shown the place that awaits.", "de": "Der Barzach ist ein Ort des Wartens mit Ausblick. Jeden Morgen und Abend wird dem Verstorbenen der Platz gezeigt, der ihn erwartet.", "ar": "البرزخ مكان انتظار له إطلالة، يُعرض فيه على الميت كل صباح ومساء مقعده الذي ينتظره." }
+        },
+        {
+          "hadith": "bukhari:1377",
+          "check": "punishment in the grave",
+          "title": { "en": "A refuge sought in every prayer", "de": "Eine Zuflucht in jedem Gebet", "ar": "استعاذة في كل صلاة" },
+          "body": { "en": "The Prophet regularly sought Allah's protection from the trial of the grave. Many Muslims say these words before ending each prayer.", "de": "Der Prophet suchte regelmäßig Allahs Schutz vor der Prüfung des Grabes. Viele Muslime sprechen diese Worte vor dem Ende jedes Gebets.", "ar": "كان النبي ﷺ يستعيذ بالله من فتنة القبر، ويقول كثير من المسلمين هذه الكلمات قبل السلام في كل صلاة." }
+        },
+        {
+          "title": { "en": "Not only a place of fear", "de": "Nicht nur ein Ort der Furcht", "ar": "ليس مكان خوف فحسب" },
+          "body": { "en": "For the believer, the grave can be spacious and full of light, as several narrations describe. It is a resting place on the way home.", "de": "Für den Gläubigen kann das Grab weit und voller Licht sein, wie mehrere Überlieferungen beschreiben. Es ist eine Rast auf dem Heimweg.", "ar": "قد يكون القبر للمؤمن فسيحًا منيرًا كما تصفه روايات عدة، فهو محطة استراحة في طريق العودة." }
+        },
+        {
+          "title": { "en": "Preparing quietly", "de": "Leise vorbereiten", "ar": "استعداد هادئ" },
+          "list": {
+            "en": ["Live what you would want to answer", "Keep the prayer, especially when it is hard", "Guard your tongue from tale-bearing", "Ask Allah often for a firm heart"],
+            "de": ["Leben Sie, was Sie antworten möchten", "Halten Sie am Gebet fest, gerade wenn es schwerfällt", "Bewahren Sie Ihre Zunge vor übler Nachrede", "Bitten Sie Allah oft um ein standhaftes Herz"],
+            "ar": ["عش بما تحب أن تجيب به", "حافظ على الصلاة ولا سيما حين تشقّ عليك", "احفظ لسانك من النميمة", "أكثر من سؤال الله قلبًا ثابتًا"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Jami' at-Tirmidhi 1071, Book of Funerals (the two angels named Munkar and Nakir)" },
+        { "label": "al-Kulayni, al-Kafi, Book of Funerals, chapter on the questioning in the grave (the question about one's Imam)" }
+      ]
+    },
+    {
+      "id": "akhirah-05-grief-and-hope",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": { "en": "The journey of the soul · 5", "de": "Die Reise der Seele · 5", "ar": "رحلة الروح · ٥" },
+        "title": { "en": "When someone you love dies", "de": "Wenn ein geliebter Mensch stirbt", "ar": "حين يرحل من تحب" },
+        "sub": { "en": "Tears, patience and the hope of meeting again", "de": "Tränen, Geduld und die Hoffnung auf ein Wiedersehen", "ar": "دموع وصبر ورجاء اللقاء" },
+        "arabic": "الصبر والرجاء"
+      },
+      "slides": [
+        {
+          "hadith": "bukhari:1303",
+          "check": "this is mercy",
+          "title": { "en": "The Prophet wept too", "de": "Auch der Prophet weinte", "ar": "بكى النبي ﷺ أيضًا" },
+          "body": { "en": "Grief is not weak faith. When his son Ibrahim was dying, the Prophet wept and called his tears mercy.", "de": "Trauer ist kein schwacher Glaube. Als sein Sohn Ibrahim im Sterben lag, weinte der Prophet und nannte seine Tränen Barmherzigkeit.", "ar": "الحزن ليس ضعفًا في الإيمان، فقد بكى النبي ﷺ وابنه إبراهيم يحتضر، وسمّى دمعه رحمة." }
+        },
+        {
+          "dua": "hisn:53:0",
+          "check": "To Allah we belong",
+          "title": { "en": "Words for the first moment", "de": "Worte für den ersten Moment", "ar": "كلمات للحظة الأولى" },
+          "body": { "en": "These words place the loss where it belongs: with the One who gave and who takes. Then they ask Him for something better.", "de": "Diese Worte legen den Verlust dorthin, wohin er gehört: zu Dem, Der gibt und nimmt. Dann bitten sie Ihn um etwas Besseres.", "ar": "تضع هذه الكلمات المصيبة في موضعها عند من أعطى وأخذ، ثم تسأله العوض بخير منها." }
+        },
+        {
+          "hadith": "bukhari:6424",
+          "check": "nothing to give but Paradise",
+          "title": { "en": "Patience has a reward", "de": "Geduld wird belohnt", "ar": "للصبر جزاء" },
+          "body": { "en": "Patience does not mean feeling nothing. It means holding on to Allah while the heart hurts.", "de": "Geduld heißt nicht, nichts zu fühlen. Sie heißt, sich an Allah zu halten, während das Herz schmerzt.", "ar": "ليس الصبر ألا تشعر بشيء، بل أن تتمسك بالله والقلب موجوع." }
+        },
+        {
+          "hadith": "bukhari:1382",
+          "check": "wet-nurse",
+          "title": { "en": "Cared for in Paradise", "de": "Im Paradies umsorgt", "ar": "رعاية في الجنة" },
+          "body": { "en": "Of his infant son the Prophet said he is cared for in Paradise. Most scholars hold that believers' children who die young are in Paradise.", "de": "Über seinen kleinen Sohn sagte der Prophet, er werde im Paradies umsorgt. Die meisten Gelehrten sehen Kinder von Gläubigen, die jung sterben, im Paradies.", "ar": "أخبر النبي ﷺ أن ابنه الرضيع يُرعى في الجنة، ويرى جمهور العلماء أن أطفال المؤمنين الذين يموتون صغارًا في الجنة." }
+        },
+        {
+          "dua": "hisn:57:0",
+          "check": "appointed time",
+          "title": { "en": "Comforting the bereaved", "de": "Trauernde trösten", "ar": "تعزية أهل الميت" },
+          "body": { "en": "The Prophet sent these words to his grieving daughter. Short, true and gentle: often that is all a mourner needs.", "de": "Diese Worte sandte der Prophet seiner trauernden Tochter. Kurz, wahr und sanft: Oft braucht ein Trauernder nicht mehr.", "ar": "بهذه الكلمات عزّى النبي ﷺ ابنته في مصابها، كلمات قصيرة صادقة لطيفة، وكثيرًا ما يكفي ذلك المحزون." }
+        },
+        {
+          "title": { "en": "Being there for those who grieve", "de": "Für Trauernde da sein", "ar": "كن بجانب المحزونين" },
+          "list": {
+            "en": ["Bring food and practical help", "Listen more than you speak", "Do not rush to say it was for the best", "Keep visiting after the first week", "Pray for the one who passed, by name"],
+            "de": ["Bringen Sie Essen und praktische Hilfe", "Hören Sie mehr zu, als Sie sprechen", "Sagen Sie nicht vorschnell, es sei das Beste gewesen", "Besuchen Sie auch nach der ersten Woche", "Beten Sie namentlich für den Verstorbenen"],
+            "ar": ["قدّم طعامًا وعونًا عمليًا", "استمع أكثر مما تتكلم", "لا تستعجل بقول إن في ذلك خيرًا", "واصل الزيارة بعد الأسبوع الأول", "ادعُ للميت باسمه"]
+          }
+        },
+        {
+          "title": { "en": "Until we meet again", "de": "Bis zum Wiedersehen", "ar": "إلى أن نلتقي" },
+          "body": { "en": "Believers part in hope. The Quran promises that Allah reunites the righteous with their families in Paradise, and the bond of love does not end at the grave.", "de": "Gläubige trennen sich in Hoffnung. Der Koran verheißt, dass Allah die Rechtschaffenen im Paradies mit ihren Familien vereint; das Band der Liebe endet nicht am Grab.", "ar": "يفترق المؤمنون على رجاء، فقد وعد القرآن بأن يجمع الله الصالحين بأهلهم في الجنة، ولا تنقطع رابطة المحبة عند القبر." }
+        }
+      ]
+    },
+    {
+      "id": "akhirah-06-helping-the-dead",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": { "en": "The journey of the soul · 6", "de": "Die Reise der Seele · 6", "ar": "رحلة الروح · ٦" },
+        "title": { "en": "What still reaches those who have passed", "de": "Was die Verstorbenen noch erreicht", "ar": "ما يصل إلى من رحلوا" },
+        "sub": { "en": "Dua, charity and kindness: the bridge between the living and the dead", "de": "Bittgebet, Spende und Güte: die Brücke zwischen Lebenden und Toten", "ar": "الدعاء والصدقة والبر: جسر بين الأحياء والأموات" },
+        "arabic": "الدعاء للميت"
+      },
+      "slides": [
+        {
+          "verse": "59:10",
+          "check": "brothers who preceded us in faith",
+          "title": { "en": "A dua across generations", "de": "Ein Bittgebet über Generationen", "ar": "دعاء عبر الأجيال" },
+          "body": { "en": "The Quran teaches the living to pray for those who went before them in faith.", "de": "Der Koran lehrt die Lebenden, für jene zu beten, die ihnen im Glauben vorausgegangen sind.", "ar": "يعلّم القرآن الأحياء أن يدعوا لمن مضى قبلهم من أهل الإيمان." }
+        },
+        {
+          "dua": "hisn:55:1",
+          "check": "forgive our living and our dead",
+          "title": { "en": "From the funeral prayer", "de": "Aus dem Totengebet", "ar": "من صلاة الجنازة" },
+          "body": { "en": "This dua joins the living and the dead, the young and the old, in one request for forgiveness.", "de": "Dieses Bittgebet verbindet Lebende und Tote, Junge und Alte in einer Bitte um Vergebung.", "ar": "يجمع هذا الدعاء الأحياء والأموات والصغار والكبار في سؤال واحد للمغفرة." }
+        },
+        {
+          "hadith": "muslim:2199",
+          "check": "forty men",
+          "title": { "en": "Many hearts praying together", "de": "Viele Herzen beten gemeinsam", "ar": "قلوب كثيرة تدعو معًا" },
+          "body": { "en": "Attending a funeral prayer is a gift to the deceased. The prayers of believers become an intercession for them.", "de": "Die Teilnahme am Totengebet ist ein Geschenk an den Verstorbenen. Die Gebete der Gläubigen werden zur Fürsprache für ihn.", "ar": "شهود صلاة الجنازة هدية للميت، فدعاء المؤمنين له شفاعة." }
+        },
+        {
+          "hadith": "muslim:2326",
+          "check": "Sadaqa on her behalf",
+          "title": { "en": "Charity in their name", "de": "Spenden in ihrem Namen", "ar": "صدقة عنهم" },
+          "body": { "en": "A man asked about giving charity for his mother, who had died suddenly. The answer was a clear yes.", "de": "Ein Mann fragte, ob er für seine plötzlich verstorbene Mutter spenden könne. Die Antwort war ein klares Ja.", "ar": "سأل رجل عن الصدقة عن أمه التي ماتت فجأة، فكان الجواب: نعم." }
+        },
+        {
+          "title": { "en": "Where scholars agree and differ", "de": "Worin Gelehrte übereinstimmen und abweichen", "ar": "مواضع الاتفاق والخلاف" },
+          "body": { "en": "Scholars agree that dua, seeking forgiveness and charity benefit the dead. On the reward of Quran recitation they differ: Ahmad and others hold that it reaches; the well-known Shafi'i view is that it does not.", "de": "Gelehrte sind sich einig, dass Bittgebet, Bitte um Vergebung und Spenden den Toten nützen. Über den Lohn der Koranrezitation sind sie uneins: Nach Ahmad und anderen erreicht er sie, nach der bekannten schafiitischen Ansicht nicht.", "ar": "اتفق العلماء على أن الدعاء والاستغفار والصدقة تنفع الميت، واختلفوا في ثواب قراءة القرآن: فذهب أحمد وجماعة إلى أنه يصل، والمشهور من مذهب الشافعي أنه لا يصل." }
+        },
+        {
+          "verse": "14:41",
+          "check": "forgive me and my parents",
+          "title": { "en": "Never stop praying for your parents", "de": "Hören Sie nie auf, für Ihre Eltern zu beten", "ar": "لا تنقطع عن الدعاء لوالديك" },
+          "body": { "en": "Ibrahim's dua includes his parents and all believers. It fits every prayer, long after parents have passed.", "de": "Ibrahims Bittgebet schließt seine Eltern und alle Gläubigen ein. Es passt in jedes Gebet, lange nachdem die Eltern gegangen sind.", "ar": "يشمل دعاء إبراهيم والديه والمؤمنين جميعًا، ويصلح لكل صلاة وإن رحل الوالدان منذ زمن." }
+        },
+        {
+          "title": { "en": "Small gifts for the departed", "de": "Kleine Geschenke für die Verstorbenen", "ar": "هدايا صغيرة للراحلين" },
+          "list": {
+            "en": ["Mention them in your dua after each prayer", "Give a regular charity in their name", "Settle any debts they left behind", "Keep up the ties they kept", "Forgive them anything between you"],
+            "de": ["Nennen Sie sie im Bittgebet nach jedem Gebet", "Geben Sie regelmäßig eine Spende in ihrem Namen", "Begleichen Sie Schulden, die sie hinterlassen haben", "Pflegen Sie die Beziehungen, die sie pflegten", "Vergeben Sie ihnen alles, was zwischen Ihnen stand"],
+            "ar": ["اذكرهم في دعائك بعد كل صلاة", "تصدّق عنهم صدقة منتظمة", "اقضِ ما تركوا من ديون", "صِل من كانوا يصلونهم", "سامحهم في كل ما كان بينكم"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "an-Nawawi, al-Adhkar, chapter on what benefits the dead" }
+      ]
+    },
+    {
+      "id": "akhirah-07-deeds-that-continue",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": { "en": "The journey of the soul · 7", "de": "Die Reise der Seele · 7", "ar": "رحلة الروح · ٧" },
+        "title": { "en": "Deeds that outlive you", "de": "Taten, die Sie überdauern", "ar": "أعمال تبقى بعدك" },
+        "sub": { "en": "When the record closes, some pages keep being written", "de": "Wenn das Buch der Taten sich schließt, werden manche Seiten weitergeschrieben", "ar": "حين يُطوى السجل تبقى صفحات تُكتب" },
+        "arabic": "الصدقة الجارية"
+      },
+      "slides": [
+        {
+          "hadith": "muslim:4223",
+          "check": "recurring charity",
+          "title": { "en": "Three doors that stay open", "de": "Drei Türen, die offen bleiben", "ar": "ثلاثة أبواب تبقى مفتوحة" },
+          "body": { "en": "Death closes the record, yet three doors stay open. Each of them can be opened today.", "de": "Der Tod schließt das Buch der Taten, doch drei Türen bleiben offen. Jede von ihnen lässt sich heute öffnen.", "ar": "الموت يطوي السجل، غير أن ثلاثة أبواب تبقى مفتوحة، ويمكن أن نفتح كلًّا منها اليوم." }
+        },
+        {
+          "verse": "36:12",
+          "check": "what they left behind",
+          "title": { "en": "Footprints are recorded too", "de": "Auch Spuren werden aufgezeichnet", "ar": "الآثار تُكتب أيضًا" },
+          "body": { "en": "Not only our deeds are written, but also their traces: what others keep doing because of us.", "de": "Nicht nur unsere Taten werden aufgeschrieben, sondern auch ihre Spuren: was andere unseretwegen weiter tun.", "ar": "لا تُكتب أعمالنا وحدها، بل آثارها أيضًا: ما يظل الناس يعملونه بسببنا." }
+        },
+        {
+          "hadith": "muslim:6804",
+          "check": "righteousness",
+          "title": { "en": "Guidance multiplies", "de": "Rechtleitung vervielfacht sich", "ar": "الدلالة على الخير تتضاعف" },
+          "body": { "en": "Whoever leads someone to good shares in the reward, without taking anything from the one who does it.", "de": "Wer jemanden zum Guten führt, hat Anteil am Lohn, ohne dem Handelnden etwas zu nehmen.", "ar": "من أرشد أحدًا إلى الخير نال مثل أجره، ولا ينقص ذلك من أجر العامل." }
+        },
+        {
+          "hadith": "muslim:3973",
+          "check": "plant trees",
+          "title": { "en": "A tree that keeps giving", "de": "Ein Baum, der weiter gibt", "ar": "شجرة لا تتوقف عن العطاء" },
+          "body": { "en": "Every bird or person who eats from what you planted becomes charity in your name. Care for the earth and worship meet here.", "de": "Jeder Vogel und jeder Mensch, der von Ihrer Pflanzung isst, wird zur Spende in Ihrem Namen. Hier begegnen sich Sorge um die Erde und Gottesdienst.", "ar": "كل طائر أو إنسان يأكل مما غرست يصير صدقة لك، وهنا يلتقي الإحسان إلى الأرض بالعبادة." }
+        },
+        {
+          "title": { "en": "Knowledge that benefits", "de": "Wissen, das nützt", "ar": "علم يُنتفع به" },
+          "body": { "en": "It need not be a book. A child you taught al-Fatiha, a skill you passed on, a good habit you modelled: each keeps working after you.", "de": "Es muss kein Buch sein. Ein Kind, dem Sie al-Fatiha beigebracht haben, eine weitergegebene Fähigkeit, eine vorgelebte gute Gewohnheit: Alles wirkt nach Ihnen weiter.", "ar": "ليس شرطًا أن يكون كتابًا: طفل علّمته الفاتحة، أو مهارة نقلتها، أو عادة حسنة كنت قدوة فيها، كل ذلك يعمل بعدك." }
+        },
+        {
+          "title": { "en": "Children who pray for you", "de": "Kinder, die für Sie beten", "ar": "دعاء الأبناء" },
+          "body": { "en": "Raising children with love and faith is itself a lasting gift. Their prayers for you become part of your record.", "de": "Kinder mit Liebe und Glauben zu erziehen ist selbst eine bleibende Gabe. Ihre Gebete für Sie werden Teil Ihres Buches.", "ar": "تربية الأبناء بالحب والإيمان عطاء باقٍ، ودعاؤهم لك يُضاف إلى صحيفتك." }
+        },
+        {
+          "title": { "en": "Start one this week", "de": "Beginnen Sie diese Woche mit einem", "ar": "ابدأ واحدًا هذا الأسبوع" },
+          "list": {
+            "en": ["Contribute to a well, a school or a clinic", "Teach someone a surah or a dua", "Plant a tree or support one", "Share a beneficial book or course", "Begin a small monthly charity"],
+            "de": ["Unterstützen Sie einen Brunnen, eine Schule oder eine Klinik", "Bringen Sie jemandem eine Sure oder ein Bittgebet bei", "Pflanzen Sie einen Baum oder unterstützen Sie eine Pflanzung", "Teilen Sie ein nützliches Buch oder einen Kurs", "Beginnen Sie eine kleine monatliche Spende"],
+            "ar": ["ساهم في بئر أو مدرسة أو مستوصف", "علّم أحدًا سورة أو دعاءً", "اغرس شجرة أو ادعم غرسها", "انشر كتابًا أو دورة نافعة", "ابدأ صدقة شهرية صغيرة"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "akhirah-08-the-horn",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": { "en": "The journey of the soul · 8", "de": "Die Reise der Seele · 8", "ar": "رحلة الروح · ٨" },
+        "title": { "en": "The blowing of the Horn", "de": "Der Stoß ins Horn", "ar": "النفخ في الصور" },
+        "sub": { "en": "The moment this world ends and the next begins", "de": "Der Augenblick, in dem diese Welt endet und die nächste beginnt", "ar": "اللحظة التي تنتهي فيها هذه الدنيا وتبدأ الآخرة" },
+        "arabic": "الصُّور"
+      },
+      "slides": [
+        {
+          "verse": "27:87",
+          "check": "terrified",
+          "title": { "en": "The first sound", "de": "Der erste Klang", "ar": "الصوت الأول" },
+          "body": { "en": "The Horn marks the end of the world as we know it. The Quran describes a terror that grips the heavens and the earth.", "de": "Das Horn markiert das Ende der Welt, wie wir sie kennen. Der Koran beschreibt einen Schrecken, der Himmel und Erde erfasst.", "ar": "يعلن الصور نهاية العالم الذي نعرفه، ويصف القرآن فزعًا يعمّ أهل السماوات والأرض." }
+        },
+        {
+          "verse": "39:68",
+          "check": "blown again",
+          "title": { "en": "Two blasts", "de": "Zwei Stöße", "ar": "نفختان" },
+          "body": { "en": "One blast brings death to all living things. The next brings everyone back to life, standing and watching.", "de": "Ein Stoß bringt allem Lebenden den Tod. Der nächste holt alle zurück ins Leben, stehend und schauend.", "ar": "نفخة يموت بها كل حي، وأخرى يعود بها الجميع أحياء واقفين ينظرون." }
+        },
+        {
+          "title": { "en": "Two blasts or three?", "de": "Zwei Stöße oder drei?", "ar": "نفختان أم ثلاث؟" },
+          "body": { "en": "Some scholars count three: terror, swooning and resurrection. Others see the terror and the swooning as one blast. Both readings agree on what matters: the dead will rise.", "de": "Manche Gelehrte zählen drei: Schrecken, Ohnmacht und Auferstehung. Andere sehen Schrecken und Ohnmacht als einen Stoß. Beide Lesarten stimmen im Wesentlichen überein: Die Toten werden auferstehen.", "ar": "عدّها بعض العلماء ثلاثًا: نفخة الفزع والصعق والبعث، ورأى آخرون أن الفزع والصعق نفخة واحدة. ويتفق القولان على الأهم: أن الموتى سيُبعثون." }
+        },
+        {
+          "hadith": "bukhari:4814",
+          "check": "forty",
+          "title": { "en": "Forty what?", "de": "Vierzig was?", "ar": "أربعون ماذا؟" },
+          "body": { "en": "Abu Huraira refused to guess what he had not been told. A beautiful lesson in honest knowledge.", "de": "Abu Huraira weigerte sich zu raten, was ihm nicht gesagt worden war. Eine schöne Lehre über ehrliches Wissen.", "ar": "أبى أبو هريرة أن يخمّن ما لم يُخبَر به، وهذا درس جميل في الأمانة العلمية." }
+        },
+        {
+          "hadith": "bukhari:6518",
+          "check": "Moses",
+          "title": { "en": "Musa at the Throne", "de": "Musa am Thron", "ar": "موسى عند العرش" },
+          "body": { "en": "The Prophet described rising first and finding Musa already holding the Throne. Even he claimed no knowledge beyond what he was given.", "de": "Der Prophet beschrieb, wie er als Erster aufsteht und Musa schon am Thron findet. Selbst er beanspruchte kein Wissen über das Gegebene hinaus.", "ar": "وصف النبي ﷺ أنه أول من يفيق فيجد موسى ممسكًا بالعرش، ولم يدّعِ علمًا فوق ما أُعطي." }
+        },
+        {
+          "title": { "en": "The angel of the Horn", "de": "Der Engel des Horns", "ar": "ملك الصور" },
+          "body": { "en": "Scholars commonly name him Israfil. The Quran does not mention his name; it comes from narrations. What the Quran stresses is the command: one word from Allah, and it happens.", "de": "Gelehrte nennen ihn gewöhnlich Israfil. Der Koran nennt seinen Namen nicht; er stammt aus Überlieferungen. Der Koran betont den Befehl: ein Wort Allahs, und es geschieht.", "ar": "يسمّيه العلماء عادةً إسرافيل، ولم يرد اسمه في القرآن بل في الروايات. وما يؤكده القرآن هو الأمر الإلهي: كلمة من الله فيقع ما أراد." }
+        },
+        {
+          "title": { "en": "Living before the Horn", "de": "Leben vor dem Horn", "ar": "حياة قبل النفخ" },
+          "list": {
+            "en": ["Let the thought humble you, not paralyse you", "Keep your dealings with people clean", "Make dhikr part of every day", "Leave the timing to Allah"],
+            "de": ["Lassen Sie sich vom Gedanken demütig machen, nicht lähmen", "Halten Sie Ihren Umgang mit Menschen sauber", "Machen Sie das Gedenken Allahs zum Teil jedes Tages", "Überlassen Sie den Zeitpunkt Allah"],
+            "ar": ["ليجعلك هذا التفكير متواضعًا لا عاجزًا", "اجعل معاملتك للناس نقية", "اجعل الذكر جزءًا من كل يوم", "دع موعد ذلك لله"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 27:87 (three blasts)", "url": "https://quran.com/27:87/tafsirs/en-tafisr-ibn-kathir" },
+        { "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 39:68", "url": "https://quran.com/39:68/tafsirs/en-tafisr-ibn-kathir" },
+        { "label": "al-Qurtubi, al-Jami' li-Ahkam al-Qur'an, on 27:87 (two blasts)", "url": "https://quran.com/27:87/tafsirs/ar-tafseer-al-qurtubi" },
+        { "label": "al-Qurtubi, at-Tadhkira fi Ahwal al-Mawta wa Umur al-Akhira" }
+      ]
+    },
+    {
+      "id": "akhirah-09-resurrection",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": { "en": "The journey of the soul · 9", "de": "Die Reise der Seele · 9", "ar": "رحلة الروح · ٩" },
+        "title": { "en": "Raised again: how the Quran argues for it", "de": "Wieder erweckt: wie der Koran es begründet", "ar": "البعث: كيف يستدل القرآن عليه" },
+        "sub": { "en": "Rain on dead earth, the first creation and the fingertips", "de": "Regen auf toter Erde, die erste Schöpfung und die Fingerspitzen", "ar": "المطر على الأرض الميتة، والخلق الأول، والبنان" },
+        "arabic": "البعث"
+      },
+      "slides": [
+        {
+          "verse": "30:27",
+          "check": "begins creation",
+          "title": { "en": "Easier than the first time", "de": "Leichter als beim ersten Mal", "ar": "الإعادة أيسر" },
+          "body": { "en": "If creating from nothing was possible, creating again is even easier, speaking in human terms.", "de": "Wenn Erschaffen aus dem Nichts möglich war, ist erneutes Erschaffen, menschlich gesprochen, noch leichter.", "ar": "إذا كان الخلق من العدم ممكنًا، فالإعادة بمقاييس البشر أيسر." }
+        },
+        {
+          "verse": "41:39",
+          "check": "Giver of Life to the dead",
+          "title": { "en": "Every spring is a sign", "de": "Jeder Frühling ist ein Zeichen", "ar": "كل ربيع آية" },
+          "body": { "en": "Barren ground turns green after rain. The Quran asks us to see resurrection rehearsed in nature every year.", "de": "Kahle Erde wird nach dem Regen grün. Der Koran lädt ein, die Auferstehung jedes Jahr in der Natur geprobt zu sehen.", "ar": "تخضرّ الأرض الهامدة بعد المطر، ويدعونا القرآن إلى أن نرى البعث يتكرر في الطبيعة كل عام." }
+        },
+        {
+          "hadith": "bukhari:4935",
+          "check": "coccyx",
+          "title": { "en": "Like plants from the soil", "de": "Wie Pflanzen aus dem Boden", "ar": "كما ينبت الزرع" },
+          "body": { "en": "This narration links resurrection with rain and growth, and names one small bone as the seed of the new body.", "de": "Diese Überlieferung verbindet die Auferstehung mit Regen und Wachstum und nennt einen kleinen Knochen als Keim des neuen Körpers.", "ar": "تربط هذه الرواية البعث بالمطر والإنبات، وتذكر عظمًا صغيرًا بذرةً للجسد الجديد." }
+        },
+        {
+          "verse": "75:3-4",
+          "check": "fingertips",
+          "title": { "en": "Down to the fingertips", "de": "Bis in die Fingerspitzen", "ar": "حتى أطراف الأصابع" },
+          "body": { "en": "The Quran answers doubt with precision: not only the bones, but the finest details of each person.", "de": "Der Koran antwortet dem Zweifel mit Genauigkeit: nicht nur die Knochen, sondern die feinsten Einzelheiten jedes Menschen.", "ar": "يرد القرآن على الشك بدقة: لا العظام فحسب، بل أدق تفاصيل كل إنسان." }
+        },
+        {
+          "verse": "31:28",
+          "check": "single soul",
+          "title": { "en": "All of us, like one", "de": "Wir alle, wie ein Einziger", "ar": "الجميع كنفس واحدة" },
+          "body": { "en": "Billions of people are no burden to Allah. Raising all of humanity is like raising one person.", "de": "Milliarden Menschen sind für Allah keine Last. Die ganze Menschheit aufzuerwecken ist wie einen einzigen Menschen aufzuerwecken.", "ar": "مليارات البشر ليسوا عبئًا على الله، وإحياء البشرية كلها كإحياء إنسان واحد." }
+        },
+        {
+          "title": { "en": "Body and soul together", "de": "Leib und Seele zusammen", "ar": "الجسد والروح معًا" },
+          "body": { "en": "Sunni and Shia theologians alike teach a bodily resurrection: the whole person returns, not only the soul. Our bodies matter, and so does how we use them.", "de": "Sunnitische wie schiitische Theologen lehren eine leibliche Auferstehung: Der ganze Mensch kehrt zurück, nicht nur die Seele. Unser Körper zählt, und ebenso, wie wir ihn gebrauchen.", "ar": "يقرر متكلمو السنة والشيعة معًا أن البعث جسماني: يعود الإنسان كله لا الروح وحدها، فللجسد قيمة، وكذلك طريقة استعمالنا له." }
+        },
+        {
+          "title": { "en": "Living as someone who will rise", "de": "Leben als jemand, der auferstehen wird", "ar": "عيش من سيُبعث" },
+          "list": {
+            "en": ["Treat your body as a trust", "Look at nature as a daily reminder", "Answer doubts with reflection, not fear", "Ask: what do I want to rise with?"],
+            "de": ["Behandeln Sie Ihren Körper als anvertrautes Gut", "Sehen Sie die Natur als tägliche Erinnerung", "Begegnen Sie Zweifeln mit Nachdenken, nicht mit Angst", "Fragen Sie sich: Womit möchte ich auferstehen?"],
+            "ar": ["عامل جسدك أمانة", "انظر إلى الطبيعة تذكرةً يومية", "واجه الشكوك بالتفكر لا بالخوف", "اسأل نفسك: بماذا أحب أن أُبعث؟"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "akhirah-10-the-gathering",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": { "en": "The journey of the soul · 10", "de": "Die Reise der Seele · 10", "ar": "رحلة الروح · ١٠" },
+        "title": { "en": "The Gathering: everyone in one place", "de": "Die Versammlung: alle an einem Ort", "ar": "الحشر: الخلائق في مكان واحد" },
+        "sub": { "en": "No one missing, no one hidden, everyone as they were first created", "de": "Niemand fehlt, niemand ist verborgen, alle wie bei der ersten Erschaffung", "ar": "لا يغيب أحد ولا يختفي أحد، والجميع كما خُلقوا أول مرة" },
+        "arabic": "الحشر"
+      },
+      "slides": [
+        {
+          "verse": "18:47-48",
+          "check": "presented before your Lord in rows",
+          "title": { "en": "No one left behind", "de": "Niemand bleibt zurück", "ar": "لا يُترك أحد" },
+          "body": { "en": "Mountains removed, the earth laid bare, and every human being brought forward in rows, as they were at the beginning.", "de": "Die Berge entfernt, die Erde offen, und jeder Mensch in Reihen herbeigebracht, so wie er am Anfang war.", "ar": "تزول الجبال وتبرز الأرض، ويُعرض كل إنسان في صفوف كما كان في البدء." }
+        },
+        {
+          "verse": "19:93-95",
+          "check": "alone",
+          "title": { "en": "Each one, alone", "de": "Jeder für sich", "ar": "كلٌّ يأتي وحده" },
+          "body": { "en": "Every creature comes as a servant, counted and known, and each one arrives alone.", "de": "Jedes Geschöpf kommt als Diener, gezählt und gekannt, und jedes kommt allein.", "ar": "كل مخلوق يأتي عبدًا، معدودًا معلومًا، ويأتي كلٌّ وحده." }
+        },
+        {
+          "hadith": "bukhari:6527",
+          "check": "barefooted",
+          "title": { "en": "As we came into the world", "de": "Wie wir in die Welt kamen", "ar": "كما جئنا إلى الدنيا" },
+          "body": { "en": "Aisha asked a very human question. The answer shows how great that Day is: no one will think of anything else.", "de": "Aischa stellte eine sehr menschliche Frage. Die Antwort zeigt, wie gewaltig jener Tag ist: Niemand wird an etwas anderes denken.", "ar": "سألت عائشة سؤالًا إنسانيًا، فبيّن الجواب عِظم ذلك اليوم: لن يلتفت أحد إلى شيء آخر." }
+        },
+        {
+          "verse": "20:108",
+          "check": "voices will be stilled",
+          "title": { "en": "A great silence", "de": "Eine große Stille", "ar": "سكون مهيب" },
+          "body": { "en": "All voices fall silent before the Most Merciful. Notice the name used here: even in that silence, He is ar-Rahman.", "de": "Alle Stimmen verstummen vor dem Allerbarmer. Beachten Sie den Namen: Selbst in dieser Stille ist Er ar-Rahman.", "ar": "تسكن الأصوات كلها أمام الرحمن، وتأمل الاسم المذكور: حتى في ذلك الصمت هو الرحمن." }
+        },
+        {
+          "verse": "80:34-36",
+          "check": "flee from his brother",
+          "title": { "en": "When people flee from each other", "de": "Wenn Menschen voreinander fliehen", "ar": "حين يفرّ المرء من أقرب الناس" },
+          "body": { "en": "Brother, parents, spouse, children: even the closest ties step back that Day, as each person faces their own account.", "de": "Bruder, Eltern, Ehepartner, Kinder: Selbst die engsten Bindungen treten an jenem Tag zurück, denn jeder steht vor der eigenen Rechenschaft.", "ar": "الأخ والوالدان والزوج والأبناء: تتراجع أقرب الروابط في ذلك اليوم، إذ يواجه كل امرئ حسابه." }
+        },
+        {
+          "title": { "en": "Yet not without shelter", "de": "Und doch nicht ohne Schutz", "ar": "ومع ذلك فثمّة ملاذ" },
+          "body": { "en": "The same Day holds shade, light and intercession for many. The hadith speak of people shaded by Allah, and the Quran of believers whose light goes ahead of them.", "de": "Derselbe Tag kennt Schatten, Licht und Fürsprache für viele. Die Hadithe sprechen von Menschen im Schatten Allahs, der Koran von Gläubigen, deren Licht ihnen vorausgeht.", "ar": "في ذلك اليوم نفسه ظلّ ونور وشفاعة لكثيرين، فالأحاديث تذكر من يظلهم الله، والقرآن يذكر مؤمنين يتقدمهم نورهم." }
+        },
+        {
+          "title": { "en": "Preparing for the Gathering", "de": "Sich auf die Versammlung vorbereiten", "ar": "الاستعداد ليوم الحشر" },
+          "list": {
+            "en": ["Live today as you wish to stand then", "Do not carry anyone's rights with you", "Love people for Allah's sake", "Ask Allah for ease on that Day"],
+            "de": ["Leben Sie heute so, wie Sie dann stehen möchten", "Nehmen Sie keine Rechte anderer mit sich", "Lieben Sie Menschen um Allahs willen", "Bitten Sie Allah um Leichtigkeit an jenem Tag"],
+            "ar": ["عش اليوم كما تحب أن تقف حينها", "لا تحمل معك حقًّا لأحد", "أحبّ الناس في الله", "سل الله التيسير في ذلك اليوم"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "akhirah-11-how-long-did-we-stay",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": { "en": "The journey of the soul · 11", "de": "Die Reise der Seele · 11", "ar": "رحلة الروح · ١١" },
+        "title": { "en": "How long did we stay?", "de": "Wie lange sind wir geblieben?", "ar": "كم كانت إقامتنا في الدنيا؟" },
+        "sub": { "en": "Five Quran passages on how short this life will feel when we look back", "de": "Fünf Koranstellen darüber, wie kurz sich dieses Leben im Rückblick anfühlen wird", "ar": "خمسة مواضع من القرآن عن قِصَر هذه الحياة حين ننظر إليها من هناك" },
+        "arabic": "قِصَر الدنيا"
+      },
+      "slides": [
+        {
+          "verse": "23:112-114",
+          "check": "How long did you remain",
+          "title": { "en": "The question of that Day", "de": "Die Frage jenes Tages", "ar": "سؤال ذلك اليوم" },
+          "body": { "en": "A whole lifetime, and it will feel like barely a day.", "de": "Ein ganzes Leben, und es wird sich wie kaum ein Tag anfühlen.", "ar": "عمر كامل، وسيبدو كأنه لم يتجاوز يومًا." }
+        },
+        {
+          "verse": "20:103-104",
+          "check": "remained not but ten",
+          "title": { "en": "Ten days, or one", "de": "Zehn Tage oder einer", "ar": "عشرة أيام أو يوم" },
+          "body": { "en": "People will guess and whisper. The wisest among them will name the shortest time.", "de": "Die Menschen werden raten und flüstern. Die Klügsten unter ihnen nennen die kürzeste Zeit.", "ar": "سيتهامس الناس ويقدّرون، وأعقلهم يذكر أقصر مدة." }
+        },
+        {
+          "verse": "79:46",
+          "check": "afternoon or a morning",
+          "title": { "en": "Decades become hours", "de": "Jahrzehnte werden zu Stunden", "ar": "العقود تصير ساعات" },
+          "body": { "en": "Decades of worry and ambition shrink into a few hours.", "de": "Jahrzehnte voller Sorgen und Ehrgeiz schrumpfen auf wenige Stunden.", "ar": "عقود من الهموم والطموحات تتقلص إلى ساعات قليلة." }
+        },
+        {
+          "verse": "10:45",
+          "check": "they will know each other",
+          "title": { "en": "Familiar faces", "de": "Vertraute Gesichter", "ar": "وجوه مألوفة" },
+          "body": { "en": "They will recognise one another, as if they had parted only a moment ago.", "de": "Sie werden einander erkennen, als hätten sie sich eben erst getrennt.", "ar": "سيعرف بعضهم بعضًا كأنهم افترقوا قبل قليل." }
+        },
+        {
+          "verse": "17:52",
+          "check": "respond with praise",
+          "title": { "en": "Answering with praise", "de": "Mit Lobpreis antworten", "ar": "استجابة بالحمد" },
+          "body": { "en": "When the call comes, people answer it praising Allah, and the life behind them seems brief.", "de": "Wenn der Ruf ergeht, antworten die Menschen mit dem Lob Allahs, und das Leben hinter ihnen erscheint kurz.", "ar": "حين يأتي النداء يستجيب الناس حامدين، ويبدو ما خلفهم من عمر قصيرًا." }
+        },
+        {
+          "title": { "en": "Short is not meaningless", "de": "Kurz heißt nicht bedeutungslos", "ar": "القِصَر لا يعني اللاجدوى" },
+          "body": { "en": "A short life is not a wasted one. Because the time is brief, every hour of kindness, prayer and patience carries great weight.", "de": "Ein kurzes Leben ist kein vergeudetes. Weil die Zeit knapp ist, hat jede Stunde der Güte, des Gebets und der Geduld großes Gewicht.", "ar": "قِصر العمر لا يعني ضياعه، فلأن الوقت قصير كان لكل ساعة من الإحسان والصلاة والصبر وزن عظيم." }
+        },
+        {
+          "title": { "en": "Making the short time count", "de": "Die kurze Zeit nutzen", "ar": "اغتنام الوقت القصير" },
+          "list": {
+            "en": ["Ask what will matter in a hundred years", "Forgive quickly: life is too short for grudges", "Do the good deed now, not someday", "Spend less time on what you will not miss"],
+            "de": ["Fragen Sie, was in hundert Jahren zählt", "Vergeben Sie schnell: Das Leben ist zu kurz für Groll", "Tun Sie das Gute jetzt, nicht irgendwann", "Verbringen Sie weniger Zeit mit dem, was Sie nicht vermissen werden"],
+            "ar": ["اسأل: ما الذي سيهمّ بعد مئة عام؟", "سامح سريعًا، فالعمر أقصر من الضغائن", "اعمل الخير الآن لا يومًا ما", "قلّل وقتك فيما لن تفتقده"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "akhirah-12-the-book-of-deeds",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": { "en": "The journey of the soul · 12", "de": "Die Reise der Seele · 12", "ar": "رحلة الروح · ١٢" },
+        "title": { "en": "The book of deeds", "de": "Das Buch der Taten", "ar": "كتاب الأعمال" },
+        "sub": { "en": "Written by noble angels, handed over on that Day", "de": "Geschrieben von edlen Engeln, übergeben an jenem Tag", "ar": "تكتبه ملائكة كرام ويُسلَّم في ذلك اليوم" },
+        "arabic": "صحيفة الأعمال"
+      },
+      "slides": [
+        {
+          "verse": "50:17-18",
+          "check": "two receivers",
+          "title": { "en": "Two who never forget", "de": "Zwei, die nichts vergessen", "ar": "اثنان لا ينسيان" },
+          "body": { "en": "Two angels record, one on each side. Not a single word escapes them.", "de": "Zwei Engel schreiben auf, an jeder Seite einer. Nicht ein einziges Wort entgeht ihnen.", "ar": "ملكان يكتبان، كل واحد في جانب، ولا تفوتهما كلمة واحدة." }
+        },
+        {
+          "verse": "18:49",
+          "check": "leaves nothing small or great",
+          "title": { "en": "Everything counted", "de": "Alles gezählt", "ar": "كل شيء محصى" },
+          "body": { "en": "People will be astonished at how complete it is. Forgotten moments will be there, exactly as they happened.", "de": "Die Menschen werden staunen, wie vollständig es ist. Vergessene Augenblicke stehen dort, genau wie sie geschahen.", "ar": "سيعجب الناس من دقته، فاللحظات المنسية حاضرة فيه كما وقعت." }
+        },
+        {
+          "verse": "17:13-14",
+          "check": "Read your record",
+          "title": { "en": "You will read it yourself", "de": "Sie werden es selbst lesen", "ar": "تقرؤه بنفسك" },
+          "body": { "en": "No one needs to read it out. Each person reads their own book and knows that it is true.", "de": "Niemand muss es vorlesen. Jeder liest sein eigenes Buch und weiß, dass es wahr ist.", "ar": "لا حاجة إلى من يقرؤه عليه، فكل امرئ يقرأ كتابه ويعلم أنه حق." }
+        },
+        {
+          "verse": "69:19-20",
+          "check": "right hand",
+          "title": { "en": "The joy of the right hand", "de": "Die Freude der rechten Hand", "ar": "فرحة أصحاب اليمين" },
+          "body": { "en": "Whoever receives the book in the right hand wants everyone to read it. Certainty about the reckoning made the difference.", "de": "Wer das Buch in die rechte Hand erhält, möchte, dass alle es lesen. Die Gewissheit über die Abrechnung machte den Unterschied.", "ar": "من أُعطي كتابه بيمينه أحبّ أن يقرأه الجميع، وكان يقينه بالحساب هو الفارق." }
+        },
+        {
+          "hadith": "bukhari:6536",
+          "check": "presentation",
+          "title": { "en": "An easy reckoning", "de": "Eine leichte Abrechnung", "ar": "الحساب اليسير" },
+          "body": { "en": "Aisha asked about a verse of Surah al-Inshiqaq. The Prophet explained: the easy account means the deeds are shown, not examined in detail.", "de": "Aischa fragte nach einem Vers der Sure al-Inschiqaq. Der Prophet erklärte: Die leichte Abrechnung bedeutet, dass die Taten gezeigt, nicht im Einzelnen geprüft werden.", "ar": "سألت عائشة عن آية في سورة الانشقاق، فبيّن النبي ﷺ أن الحساب اليسير هو عرض الأعمال لا المناقشة فيها." }
+        },
+        {
+          "title": { "en": "Pages you can still write", "de": "Seiten, die Sie noch schreiben können", "ar": "صفحات ما زال بإمكانك كتابتها" },
+          "body": { "en": "The book is still open. Repentance can erase a page, and the Quran teaches that good deeds remove bad ones. Every new day is a blank line.", "de": "Das Buch ist noch offen. Reue kann eine Seite löschen, und der Koran lehrt, dass gute Taten schlechte tilgen. Jeder neue Tag ist eine leere Zeile.", "ar": "الكتاب ما زال مفتوحًا، والتوبة تمحو الصفحة، ويعلّمنا القرآن أن العمل الصالح يمحو السيئ. وكل يوم جديد سطر أبيض." }
+        },
+        {
+          "title": { "en": "Writing a good book", "de": "Ein gutes Buch schreiben", "ar": "كتابة صحيفة طيبة" },
+          "list": {
+            "en": ["Begin each day with an intention", "Guard your words: they are written", "Follow a mistake with a good deed", "End each day with istighfar"],
+            "de": ["Beginnen Sie jeden Tag mit einer Absicht", "Hüten Sie Ihre Worte: Sie werden aufgeschrieben", "Lassen Sie auf einen Fehler eine gute Tat folgen", "Beenden Sie jeden Tag mit der Bitte um Vergebung"],
+            "ar": ["ابدأ يومك بنية صالحة", "احفظ كلامك فهو مكتوب", "أتبع الخطأ عملًا صالحًا", "اختم يومك بالاستغفار"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "akhirah-13-the-private-conversation",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": { "en": "The journey of the soul · 13", "de": "Die Reise der Seele · 13", "ar": "رحلة الروح · ١٣" },
+        "title": { "en": "A private conversation with Allah", "de": "Ein vertrauliches Gespräch mit Allah", "ar": "حديث خاص بين العبد وربه" },
+        "sub": { "en": "On a Day of open records, a believer's faults can stay covered", "de": "An einem Tag offener Bücher können die Fehler eines Gläubigen verhüllt bleiben", "ar": "في يوم تُنشر فيه الصحف قد تبقى عيوب المؤمن مستورة" },
+        "arabic": "الستر"
+      },
+      "slides": [
+        {
+          "hadith": "bukhari:7443",
+          "check": "interpreter",
+          "title": { "en": "No one in between", "de": "Niemand dazwischen", "ar": "حديث مباشر" },
+          "body": { "en": "Every person will be spoken to by Allah directly. That conversation is the most important one we will ever have.", "de": "Jeder Mensch wird von Allah unmittelbar angesprochen. Dieses Gespräch ist das wichtigste, das wir je führen werden.", "ar": "سيكلّم الله كل إنسان مباشرة، وهو أهم حديث سنعيشه على الإطلاق." }
+        },
+        {
+          "hadith": "bukhari:7514",
+          "check": "screened your sins",
+          "title": { "en": "Covered, then forgiven", "de": "Verhüllt, dann vergeben", "ar": "ستر ثم مغفرة" },
+          "body": { "en": "The believer admits each sin and fears the worst. Then comes the reply every heart hopes for.", "de": "Der Gläubige gesteht jede Sünde und fürchtet das Schlimmste. Dann kommt die Antwort, auf die jedes Herz hofft.", "ar": "يقرّ المؤمن بذنوبه ويخشى الهلاك، ثم يأتيه الجواب الذي يرجوه كل قلب." }
+        },
+        {
+          "title": { "en": "Why covering matters", "de": "Warum Verhüllen wichtig ist", "ar": "لماذا الستر مهم" },
+          "body": { "en": "Allah sees every fault, yet often chooses to hide it. Someone who has been covered learns to cover others too, instead of exposing them.", "de": "Allah sieht jeden Fehler und wählt doch oft, ihn zu verbergen. Wer selbst verhüllt wurde, lernt, auch andere zu verhüllen, statt sie bloßzustellen.", "ar": "يرى الله كل عيب ثم يختار كثيرًا أن يستره، ومن ستره الله تعلّم أن يستر غيره بدل أن يفضحه." }
+        },
+        {
+          "hadith": "muslim:6595",
+          "check": "conceal",
+          "title": { "en": "Cover others, and be covered", "de": "Andere verhüllen und selbst verhüllt werden", "ar": "استر غيرك تُستر" },
+          "body": { "en": "A promise worth living for: protect people's dignity, and Allah protects yours on that Day.", "de": "Ein Versprechen, für das es sich zu leben lohnt: Schützen Sie die Würde der Menschen, und Allah schützt Ihre an jenem Tag.", "ar": "وعد يستحق أن نعيش له: احفظ كرامة الناس يحفظ الله كرامتك في ذلك اليوم." }
+        },
+        {
+          "verse": "42:25",
+          "check": "accepts repentance",
+          "title": { "en": "The conversation starts now", "de": "Das Gespräch beginnt jetzt", "ar": "المناجاة تبدأ الآن" },
+          "body": { "en": "The private conversation begins long before that Day. Every sincere repentance now is already part of it.", "de": "Das vertrauliche Gespräch beginnt lange vor jenem Tag. Jede aufrichtige Reue jetzt ist schon ein Teil davon.", "ar": "تبدأ المناجاة قبل ذلك اليوم بزمن طويل، وكل توبة صادقة اليوم جزء منها." }
+        },
+        {
+          "hadith": "bukhari:6069",
+          "check": "Mujahirin",
+          "title": { "en": "Not a licence to sin", "de": "Kein Freibrief zur Sünde", "ar": "ليس إذنًا بالمعصية" },
+          "body": { "en": "Allah's covering is a gift. Exposing one's own hidden sins, or boasting of them, throws that gift away.", "de": "Allahs Verhüllung ist ein Geschenk. Wer eigene verborgene Sünden offenlegt oder sich ihrer rühmt, wirft dieses Geschenk weg.", "ar": "ستر الله هبة، ومن كشف ذنوبه المستورة أو تفاخر بها فقد ضيّع هذه الهبة." }
+        },
+        {
+          "title": { "en": "Living under His cover", "de": "Unter Seiner Verhüllung leben", "ar": "العيش في ستر الله" },
+          "list": {
+            "en": ["Do not publicise your own past sins", "Do not spread the mistakes of others", "Give advice in private, not in public", "Thank Allah for what He has hidden"],
+            "de": ["Machen Sie Ihre eigenen früheren Sünden nicht öffentlich", "Verbreiten Sie nicht die Fehler anderer", "Raten Sie unter vier Augen, nicht öffentlich", "Danken Sie Allah für das, was Er verborgen hat"],
+            "ar": ["لا تُشهر ذنوبك الماضية", "لا تنشر أخطاء الآخرين", "انصح سرًّا لا علانية", "اشكر الله على ما ستر"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "akhirah-14-the-scales",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": { "en": "The journey of the soul · 14", "de": "Die Reise der Seele · 14", "ar": "رحلة الروح · ١٤" },
+        "title": { "en": "The Scales: where nothing is lost", "de": "Die Waage: wo nichts verloren geht", "ar": "الميزان: حيث لا يضيع شيء" },
+        "sub": { "en": "What the Quran and Sunnah say about the weighing of deeds", "de": "Was Koran und Sunna über das Wiegen der Taten sagen", "ar": "ما يقوله القرآن والسنة عن وزن الأعمال" },
+        "arabic": "الميزان"
+      },
+      "slides": [
+        {
+          "verse": "7:8-9",
+          "check": "scales are heavy",
+          "title": { "en": "A weighing that is pure truth", "de": "Ein Wiegen, das reine Wahrheit ist", "ar": "وزن بالحق" },
+          "body": { "en": "The Quran calls this weighing pure truth. Its outcome decides between success and loss.", "de": "Der Koran nennt dieses Wiegen reine Wahrheit. Sein Ergebnis entscheidet zwischen Erfolg und Verlust.", "ar": "يصف القرآن هذا الوزن بأنه حق خالص، وبنتيجته يكون الفلاح أو الخسران." }
+        },
+        {
+          "title": { "en": "What is weighed?", "de": "Was wird gewogen?", "ar": "ما الذي يوزن؟" },
+          "body": { "en": "Ibn Kathir mentions three views: the deeds themselves, the records of deeds, or the person. He suggests that all three may happen. Allah knows best how.", "de": "Ibn Kathir nennt drei Ansichten: die Taten selbst, die Bücher der Taten oder der Mensch. Er hält es für möglich, dass alle drei zutreffen. Allah weiß am besten, wie.", "ar": "يذكر ابن كثير ثلاثة أقوال: توزن الأعمال نفسها، أو صحائفها، أو صاحبها، ويرى إمكان الجمع بينها بأن يكون ذلك كله، والله أعلم بالكيفية." }
+        },
+        {
+          "title": { "en": "A real scale or perfect justice?", "de": "Eine wirkliche Waage oder vollkommene Gerechtigkeit?", "ar": "ميزان حقيقي أم عدل تام؟" },
+          "body": { "en": "Most Sunni scholars affirm a real Scale whose nature only Allah knows. Some theologians, among them Shia scholars such as al-Mufid, understand it as perfect justice; Tabatabai, as the measure of truth in each deed. All agree that no one is wronged.", "de": "Die meisten sunnitischen Gelehrten bekräftigen eine wirkliche Waage, deren Wesen nur Allah kennt. Manche Theologen, darunter schiitische Gelehrte wie al-Mufid, verstehen sie als vollkommene Gerechtigkeit; Tabatabai als Maß der Wahrheit in jeder Tat. Alle sind sich einig: Niemandem geschieht Unrecht.", "ar": "يثبت أكثر علماء السنة ميزانًا حقيقيًا لا يعلم كنهه إلا الله، ويفهمه بعض المتكلمين، ومنهم من علماء الشيعة الشيخ المفيد، بمعنى العدل التام، ويفسّره الطباطبائي بمقدار ما في العمل من الحق. ويتفق الجميع على أنه لا يُظلم أحد." }
+        },
+        {
+          "hadith": "bukhari:6406",
+          "check": "heavy in the balance",
+          "title": { "en": "Easy to say, heavy to weigh", "de": "Leicht gesagt, schwer gewogen", "ar": "يسيرة القول ثقيلة الوزن" },
+          "body": { "en": "Two short phrases of praise carry great weight. Imam al-Bukhari chose a version of this hadith to close his Sahih.", "de": "Zwei kurze Lobpreisungen haben großes Gewicht. Imam al-Buchari wählte eine Fassung dieses Hadith als Abschluss seines Sahih.", "ar": "عبارتان قصيرتان من التسبيح لهما وزن عظيم، وقد ختم الإمام البخاري صحيحه بإحدى روايات هذا الحديث." }
+        },
+        {
+          "hadith": "muslim:534",
+          "check": "fills the scale",
+          "title": { "en": "Gratitude has weight", "de": "Dankbarkeit hat Gewicht", "ar": "للشكر وزن" },
+          "body": { "en": "A single sincere word of praise carries real weight. Gratitude is never small.", "de": "Ein einziges aufrichtiges Wort des Lobes hat echtes Gewicht. Dankbarkeit ist nie gering.", "ar": "كلمة حمد صادقة لها وزن حقيقي، فالشكر لا يكون صغيرًا أبدًا." }
+        },
+        {
+          "verse": "4:40",
+          "check": "He multiplies it",
+          "title": { "en": "Good deeds multiplied", "de": "Gute Taten vervielfacht", "ar": "حسنات مضاعفة" },
+          "body": { "en": "No one is wronged by even the smallest amount, and every good deed is multiplied by Allah's generosity.", "de": "Niemandem geschieht auch nur das geringste Unrecht, und jede gute Tat wird durch Allahs Großzügigkeit vervielfacht.", "ar": "لا يُظلم أحد مثقال ذرة، وكل حسنة يضاعفها الله بكرمه." }
+        },
+        {
+          "title": { "en": "Making the scale heavy", "de": "Die Waage schwer machen", "ar": "ما يُثقل الميزان" },
+          "list": {
+            "en": ["Glorify Allah in spare moments", "Treat people with good character", "Give charity, even a little", "Be patient when it is hard", "Keep your intention sincere"],
+            "de": ["Preisen Sie Allah in freien Momenten", "Begegnen Sie Menschen mit gutem Charakter", "Spenden Sie, auch wenig", "Seien Sie geduldig, wenn es schwer ist", "Halten Sie Ihre Absicht aufrichtig"],
+            "ar": ["سبّح الله في أوقات الفراغ", "عامل الناس بخلق حسن", "تصدّق ولو بالقليل", "اصبر حين يشتد الأمر", "أخلص نيتك"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 7:8-9", "url": "https://quran.com/7:8/tafsirs/en-tafisr-ibn-kathir" },
+        { "label": "Tabatabai, al-Mizan fi Tafsir al-Qur'an, on 7:8-9" },
+        { "label": "ash-Shaykh al-Mufid, Tashih I'tiqadat al-Imamiyya (on the scales)" }
+      ]
+    },
+    {
+      "id": "akhirah-15-the-bridge",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": { "en": "The journey of the soul · 15", "de": "Die Reise der Seele · 15", "ar": "رحلة الروح · ١٥" },
+        "title": { "en": "The Bridge: crossing by the light of our deeds", "de": "Die Brücke: hinüber im Licht unserer Taten", "ar": "الصراط: عبور بنور الأعمال" },
+        "sub": { "en": "As-Sirat, the path over Jahannam that every soul approaches", "de": "As-Sirat, der Weg über die Hölle, dem sich jede Seele nähert", "ar": "الصراط المنصوب على جهنم، يرده كل إنسان" },
+        "arabic": "الصراط"
+      },
+      "slides": [
+        {
+          "verse": "19:71-72",
+          "check": "none of you except he will come to it",
+          "title": { "en": "Everyone comes to it", "de": "Jeder kommt zu ihr", "ar": "الجميع يرِدها" },
+          "body": { "en": "Many scholars explain this coming as passing over the Sirat. Then Allah rescues the God-conscious.", "de": "Viele Gelehrte deuten dieses Herankommen als Überqueren des Sirat. Dann rettet Allah die Gottesfürchtigen.", "ar": "يفسّر كثير من العلماء هذا الورود بالمرور على الصراط، ثم ينجّي الله المتقين." }
+        },
+        {
+          "hadith": "muslim:7056",
+          "check": "Sirat",
+          "title": { "en": "Where people will stand", "de": "Wo die Menschen stehen werden", "ar": "أين يكون الناس" },
+          "body": { "en": "Aisha asked where people will be when earth and heavens are changed. The answer names the Bridge.", "de": "Aischa fragte, wo die Menschen sein werden, wenn Erde und Himmel verwandelt werden. Die Antwort nennt die Brücke.", "ar": "سألت عائشة عن مكان الناس حين تُبدَّل الأرض والسماوات، فجاء الجواب بذكر الصراط." }
+        },
+        {
+          "title": { "en": "Speeds as different as deeds", "de": "So unterschiedlich schnell wie die Taten", "ar": "سرعات بقدر الأعمال" },
+          "body": { "en": "A long narration in Sahih al-Bukhari describes believers crossing at different speeds: some in a blink, some like lightning or wind, others slowly. Deeds set the pace.", "de": "Eine lange Überlieferung im Sahih al-Buchari beschreibt Gläubige, die unterschiedlich schnell hinübergehen: manche im Nu, manche wie Blitz oder Wind, andere langsam. Die Taten bestimmen das Tempo.", "ar": "تصف رواية طويلة في صحيح البخاري عبور المؤمنين بسرعات مختلفة: بعضهم في لمح البصر، وبعضهم كالبرق أو الريح، وآخرون ببطء، والأعمال تحدد السرعة." }
+        },
+        {
+          "verse": "57:12",
+          "check": "light proceeding before them",
+          "title": { "en": "Light for the way", "de": "Licht für den Weg", "ar": "نور للطريق" },
+          "body": { "en": "Believing men and women walk in their own light. What we do today becomes the light we carry then.", "de": "Gläubige Männer und Frauen gehen in ihrem eigenen Licht. Was wir heute tun, wird das Licht, das wir dann tragen.", "ar": "يمشي المؤمنون والمؤمنات في نورهم، وما نعمله اليوم يصير النور الذي نحمله غدًا." }
+        },
+        {
+          "verse": "66:8",
+          "check": "perfect for us our light",
+          "title": { "en": "A dua for that crossing", "de": "Ein Bittgebet für jenen Übergang", "ar": "دعاء لذلك العبور" },
+          "body": { "en": "Learn this dua of the believers now: a request for complete light and forgiveness.", "de": "Lernen Sie dieses Bittgebet der Gläubigen schon jetzt: eine Bitte um vollkommenes Licht und Vergebung.", "ar": "تعلّم دعاء المؤمنين هذا من الآن: سؤال تمام النور والمغفرة." }
+        },
+        {
+          "hadith": "bukhari:6535",
+          "check": "purified",
+          "title": { "en": "Hearts cleared before Paradise", "de": "Herzen geklärt vor dem Paradies", "ar": "تصفية القلوب قبل الجنة" },
+          "body": { "en": "Even after the crossing, wrongs between believers are settled. No one enters Paradise carrying a grievance.", "de": "Selbst nach dem Übergang wird Unrecht unter Gläubigen ausgeglichen. Niemand betritt das Paradies mit einem Groll.", "ar": "حتى بعد العبور تُقضى المظالم بين المؤمنين، فلا يدخل أحد الجنة وفي قلبه مظلمة." }
+        },
+        {
+          "title": { "en": "Preparing for the crossing", "de": "Sich auf den Übergang vorbereiten", "ar": "الاستعداد للعبور" },
+          "list": {
+            "en": ["Stay steady on the straight path in daily life", "Settle debts and wrongs with people now", "Pray at night: prayer is light", "Ask Allah for firm steps on that Day"],
+            "de": ["Bleiben Sie im Alltag standhaft auf dem geraden Weg", "Begleichen Sie Schulden und Unrecht schon jetzt", "Beten Sie nachts: Das Gebet ist Licht", "Bitten Sie Allah um feste Schritte an jenem Tag"],
+            "ar": ["اثبت على الصراط المستقيم في حياتك اليومية", "أدِّ الديون والمظالم إلى أهلها الآن", "صلِّ بالليل فالصلاة نور", "سل الله ثبات القدم في ذلك اليوم"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Sahih al-Bukhari 7439 (the long narration about the crossing)" },
+        { "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 19:71", "url": "https://quran.com/19:71/tafsirs/en-tafisr-ibn-kathir" }
+      ]
+    },
+    {
+      "id": "akhirah-16-the-pond",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": { "en": "The journey of the soul · 16", "de": "Die Reise der Seele · 16", "ar": "رحلة الروح · ١٦" },
+        "title": { "en": "The Pond of the Prophet", "de": "Das Becken des Propheten", "ar": "حوض النبي ﷺ" },
+        "sub": { "en": "Al-Hawd: where the Prophet waits for his community", "de": "Al-Haud: wo der Prophet seine Gemeinschaft erwartet", "ar": "الحوض: حيث ينتظر النبي ﷺ أمته" },
+        "arabic": "الحوض المورود"
+      },
+      "slides": [
+        {
+          "hadith": "bukhari:6589",
+          "check": "predecessor",
+          "title": { "en": "He goes ahead of us", "de": "Er geht uns voraus", "ar": "يسبقنا إليه" },
+          "body": { "en": "The Prophet described himself as the one who arrives first and waits for his community at the Pond.", "de": "Der Prophet beschrieb sich als den, der zuerst ankommt und am Becken auf seine Gemeinschaft wartet.", "ar": "وصف النبي ﷺ نفسه بأنه يسبق أمته إلى الحوض وينتظرها هناك." }
+        },
+        {
+          "hadith": "bukhari:6579",
+          "check": "whiter than milk",
+          "title": { "en": "What the Pond is like", "de": "Wie das Becken ist", "ar": "صفة الحوض" },
+          "body": { "en": "Vast, pure and fragrant beyond comparison. Every detail speaks of generosity and relief.", "de": "Weit, rein und duftend über jeden Vergleich hinaus. Jedes Detail spricht von Großzügigkeit und Erleichterung.", "ar": "واسع صافٍ طيب الرائحة، وكل وصف له يدل على الكرم والراحة." }
+        },
+        {
+          "verse": "108:1",
+          "check": "Kawthar",
+          "title": { "en": "Al-Kawthar and the Pond", "de": "Al-Kauthar und das Becken", "ar": "الكوثر والحوض" },
+          "body": { "en": "Many narrations describe al-Kawthar as a river in Paradise. Many scholars explain that the Pond on the Day of Judgement is fed from it.", "de": "Viele Überlieferungen beschreiben al-Kauthar als Fluss im Paradies. Viele Gelehrte erklären, dass das Becken am Tag des Gerichts aus ihm gespeist wird.", "ar": "تصف روايات كثيرة الكوثر بأنه نهر في الجنة، ويبيّن كثير من العلماء أن الحوض يوم القيامة يُمدّ منه." }
+        },
+        {
+          "hadith": "bukhari:3793",
+          "check": "Tank",
+          "title": { "en": "A promised meeting place", "de": "Ein versprochener Treffpunkt", "ar": "موعد اللقاء" },
+          "body": { "en": "To the Ansar, who would face hard times after him, he gave an appointment: patience now, and we meet at the Pond.", "de": "Den Ansar, denen nach ihm schwere Zeiten bevorstanden, gab er eine Verabredung: jetzt Geduld, und wir treffen uns am Becken.", "ar": "وعد الأنصار، وقد علم ما سيلقونه بعده، بموعد: الصبر الآن، واللقاء عند الحوض." }
+        },
+        {
+          "title": { "en": "Affirmed by both traditions", "de": "In beiden Traditionen bekräftigt", "ar": "تُقرّه المدرستان" },
+          "body": { "en": "Belief in the Pond is shared by Sunni and Shia Muslims, based on many narrations. Shia tradition also honours Imam Ali as the one who gives drink there.", "de": "Der Glaube an das Becken wird von Sunniten und Schiiten geteilt und stützt sich auf zahlreiche Überlieferungen. Die schiitische Tradition ehrt zudem Imam Ali als den, der dort zu trinken gibt.", "ar": "الإيمان بالحوض مشترك بين السنة والشيعة استنادًا إلى روايات كثيرة، وتُجلّ الرواية الشيعية الإمام عليًّا بوصفه ساقي الحوض." }
+        },
+        {
+          "title": { "en": "The way to the Pond", "de": "Der Weg zum Becken", "ar": "الطريق إلى الحوض" },
+          "body": { "en": "The narrations link reaching the Pond with staying faithful to the Prophet's way. Love for him shows in following him: in prayer, mercy, honesty and patience.", "de": "Die Überlieferungen verbinden das Erreichen des Beckens mit der Treue zum Weg des Propheten. Liebe zu ihm zeigt sich im Folgen: in Gebet, Barmherzigkeit, Ehrlichkeit und Geduld.", "ar": "تربط الروايات الورود على الحوض بالثبات على طريق النبي ﷺ، ومحبته تظهر في اتباعه: في الصلاة والرحمة والصدق والصبر." }
+        },
+        {
+          "title": { "en": "Hoping to drink from it", "de": "In der Hoffnung, davon zu trinken", "ar": "رجاء الشرب منه" },
+          "list": {
+            "en": ["Send blessings on the Prophet often", "Learn one Sunnah and live it", "Stay patient when life is unfair", "Do not bend the religion to suit desires"],
+            "de": ["Sprechen Sie oft Segenswünsche für den Propheten", "Lernen Sie eine Sunna und leben Sie sie", "Bleiben Sie geduldig, wenn das Leben ungerecht ist", "Beugen Sie die Religion nicht nach Ihren Wünschen"],
+            "ar": ["أكثر من الصلاة على النبي ﷺ", "تعلّم سنة واعمل بها", "اصبر حين تقسو عليك الحياة", "لا تطوّع الدين للهوى"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 108:1", "url": "https://quran.com/108:1/tafsirs/en-tafisr-ibn-kathir" },
+        { "label": "Sahih Muslim, the hadith of Abu Dharr on the Pond (two channels from Paradise)" },
+        { "label": "ash-Shaykh as-Saduq, al-Amali (Imam Ali gives drink at the Pond)" }
+      ]
+    },
+    {
+      "id": "akhirah-17-intercession-in-the-quran",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": { "en": "The journey of the soul · 17", "de": "Die Reise der Seele · 17", "ar": "رحلة الروح · ١٧" },
+        "title": { "en": "Intercession in the Quran", "de": "Fürsprache im Koran", "ar": "الشفاعة في القرآن" },
+        "sub": { "en": "Only by His permission, only for those He is pleased with", "de": "Nur mit Seiner Erlaubnis, nur für die, an denen Er Wohlgefallen hat", "ar": "بإذنه وحده، ولمن يرضاه" },
+        "arabic": "الشفاعة"
+      },
+      "slides": [
+        {
+          "verse": "39:44",
+          "check": "intercession entirely",
+          "title": { "en": "It all belongs to Allah", "de": "Sie gehört ganz Allah", "ar": "الشفاعة بيد الله" },
+          "body": { "en": "Intercession is not a favour anyone can claim. It is Allah's to grant, entirely.", "de": "Fürsprache ist kein Recht, das jemand beanspruchen kann. Sie zu gewähren liegt ganz bei Allah.", "ar": "ليست الشفاعة حقًّا يدّعيه أحد، بل منحها لله وحده." }
+        },
+        {
+          "verse": "20:109",
+          "check": "has given permission",
+          "title": { "en": "Two conditions", "de": "Zwei Bedingungen", "ar": "شرطان" },
+          "body": { "en": "Intercession helps only when Allah permits the intercessor and accepts what is said.", "de": "Fürsprache hilft nur, wenn Allah dem Fürsprecher erlaubt und das Gesagte annimmt.", "ar": "الشفاعة النافعة مشروطة بإذن الله للشافع وبرضاه عن قوله." }
+        },
+        {
+          "verse": "21:28",
+          "check": "whom He approves",
+          "title": { "en": "For those He is pleased with", "de": "Für die, an denen Er Wohlgefallen hat", "ar": "لمن يرضاه" },
+          "body": { "en": "Even the angels intercede only for those Allah approves, and they do so in awe of Him.", "de": "Selbst die Engel treten nur für jene ein, an denen Allah Wohlgefallen hat, und sie tun es in Ehrfurcht vor Ihm.", "ar": "حتى الملائكة لا يشفعون إلا لمن يرضاه الله، ويفعلون ذلك في غاية الخشية له." }
+        },
+        {
+          "verse": "17:79",
+          "check": "praised station",
+          "title": { "en": "The praised station", "de": "Die gepriesene Stellung", "ar": "المقام المحمود" },
+          "body": { "en": "Sunni and Shia commentators widely explain this station as the Prophet's great intercession on the Day of Judgement.", "de": "Sunnitische und schiitische Kommentatoren deuten diese Stellung weithin als die große Fürsprache des Propheten am Tag des Gerichts.", "ar": "يفسر كثير من مفسري السنة والشيعة هذا المقام بالشفاعة العظمى للنبي ﷺ يوم القيامة." }
+        },
+        {
+          "verse": "74:48",
+          "check": "intercessors",
+          "title": { "en": "When intercession does not help", "de": "Wenn Fürsprache nicht hilft", "ar": "حين لا تنفع الشفاعة" },
+          "body": { "en": "The context speaks of those who denied the Day itself. Intercession is mercy for believers, not a shield for denial.", "de": "Der Zusammenhang spricht von denen, die den Tag selbst leugneten. Fürsprache ist Barmherzigkeit für Gläubige, kein Schutzschild für Leugnung.", "ar": "السياق عن الذين كذّبوا بيوم الدين، فالشفاعة رحمة للمؤمنين لا درع للتكذيب." }
+        },
+        {
+          "title": { "en": "Where the traditions meet and differ", "de": "Wo die Traditionen sich treffen und unterscheiden", "ar": "مواضع الاتفاق والاختلاف" },
+          "body": { "en": "Sunni and Shia Muslims both affirm the Prophet's intercession by Allah's permission. Both also speak of others who intercede by His leave, such as angels and righteous believers; Shia teaching especially emphasises Lady Fatima and the Imams.", "de": "Sunniten und Schiiten bekräftigen beide die Fürsprache des Propheten mit Allahs Erlaubnis. Beide kennen auch andere Fürsprecher mit Seiner Erlaubnis, etwa Engel und rechtschaffene Gläubige; die schiitische Lehre betont besonders Fatima und die Imame.", "ar": "يثبت السنة والشيعة جميعًا شفاعة النبي ﷺ بإذن الله، ويذكر الفريقان شفعاء آخرين بإذنه كالملائكة والصالحين من المؤمنين، ويؤكد الشيعة خاصةً شفاعة السيدة فاطمة والأئمة." }
+        },
+        {
+          "title": { "en": "Hoping for intercession", "de": "Auf Fürsprache hoffen", "ar": "رجاء الشفاعة" },
+          "list": {
+            "en": ["Keep tawhid pure: it comes first", "Love the Prophet and follow his way", "Pray for others: believers pray for each other", "Rely on Allah's mercy, not on names alone"],
+            "de": ["Halten Sie den Tauhid rein: Er steht an erster Stelle", "Lieben Sie den Propheten und folgen Sie seinem Weg", "Beten Sie für andere: Gläubige beten füreinander", "Vertrauen Sie auf Allahs Barmherzigkeit, nicht nur auf Namen"],
+            "ar": ["أخلص التوحيد فهو الأساس", "أحبّ النبي ﷺ واتبع طريقه", "ادعُ لغيرك فالمؤمنون يدعو بعضهم لبعض", "اعتمد على رحمة الله لا على الأسماء وحدها"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 17:79", "url": "https://quran.com/17:79/tafsirs/en-tafisr-ibn-kathir" },
+        { "label": "Tabatabai, al-Mizan fi Tafsir al-Qur'an, on 2:48 (discussion of intercession)" },
+        { "label": "Tabatabai, al-Mizan fi Tafsir al-Qur'an, on 17:79 (the station of the great intercession)" },
+        { "label": "at-Tabrisi, Majma' al-Bayan, on 17:79" }
+      ]
+    },
+    {
+      "id": "akhirah-18-intercession-in-the-hadith",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": { "en": "The journey of the soul · 18", "de": "Die Reise der Seele · 18", "ar": "رحلة الروح · ١٨" },
+        "title": { "en": "The Prophet's intercession in the hadith", "de": "Die Fürsprache des Propheten in den Hadithen", "ar": "شفاعة النبي ﷺ في الحديث" },
+        "sub": { "en": "A prayer he saved for us, and those who will be closest to it", "de": "Ein Gebet, das er für uns aufsparte, und wer ihm am nächsten sein wird", "ar": "دعوة ادّخرها لنا، ومن هم أقرب الناس إليها" },
+        "arabic": "الشفاعة العظمى"
+      },
+      "slides": [
+        {
+          "hadith": "bukhari:7474",
+          "check": "intercession for my followers",
+          "title": { "en": "A prayer he saved", "de": "Ein aufgespartes Gebet", "ar": "دعوة مدّخرة" },
+          "body": { "en": "Of all the prayers he could have used in this life, he kept one for us, for the Day we need it most.", "de": "Von allen Gebeten, die er in diesem Leben hätte nutzen können, bewahrte er eines für uns auf, für den Tag, an dem wir es am meisten brauchen.", "ar": "من بين الدعوات التي كان يمكن أن يتعجلها في الدنيا، ادّخر النبي ﷺ واحدة لنا ليوم نكون فيه أحوج ما نكون." }
+        },
+        {
+          "hadith": "bukhari:4718",
+          "check": "Al-Maqam",
+          "title": { "en": "When every nation looks for help", "de": "Wenn jedes Volk Hilfe sucht", "ar": "حين تبحث الأمم عن شفيع" },
+          "body": { "en": "People go from prophet to prophet until the intercession reaches Muhammad. This is the praised station.", "de": "Die Menschen gehen von Prophet zu Prophet, bis die Fürsprache Muhammad erreicht. Das ist die gepriesene Stellung.", "ar": "يتنقل الناس من نبي إلى نبي حتى تنتهي الشفاعة إلى محمد ﷺ، وذلك هو المقام المحمود." }
+        },
+        {
+          "hadith": "bukhari:99",
+          "check": "luckiest",
+          "title": { "en": "Who is closest to it?", "de": "Wer ist ihr am nächsten?", "ar": "الأقرب إلى الشفاعة" },
+          "body": { "en": "Abu Huraira's eagerness to learn brought us this answer: sincere tawhid from the heart.", "de": "Abu Hurairas Wissbegier schenkte uns diese Antwort: aufrichtiger Tauhid aus dem Herzen.", "ar": "حرص أبي هريرة على العلم أهدانا هذا الجواب: توحيد خالص من القلب." }
+        },
+        {
+          "hadith": "bukhari:4719",
+          "check": "Al-Wasila",
+          "title": { "en": "A dua after every adhan", "de": "Ein Bittgebet nach jedem Gebetsruf", "ar": "دعاء بعد كل أذان" },
+          "body": { "en": "Five times a day there is a chance to pray for him, and the promise of his intercession comes with it.", "de": "Fünfmal am Tag gibt es die Gelegenheit, für ihn zu beten, und damit die Verheißung seiner Fürsprache.", "ar": "خمس مرات في اليوم فرصة للدعاء له ﷺ، ومعها وعد بشفاعته." }
+        },
+        {
+          "hadith": "muslim:1874",
+          "check": "intercessor for those who recite",
+          "title": { "en": "The Quran will speak for you", "de": "Der Koran wird für Sie sprechen", "ar": "القرآن يحاجّ عن صاحبه" },
+          "body": { "en": "Intercession is not only from people. The Quran itself, and Surahs al-Baqarah and Al Imran, will plead for those who lived with them.", "de": "Fürsprache kommt nicht nur von Menschen. Der Koran selbst und die Suren al-Baqara und Al Imran werden für jene eintreten, die mit ihnen lebten.", "ar": "ليست الشفاعة من البشر وحدهم، فالقرآن نفسه يحاجّ عمن عاش معه، وكذلك سورتا البقرة وآل عمران." }
+        },
+        {
+          "hadith": "bukhari:7509",
+          "check": "mustard seed",
+          "title": { "en": "Even the smallest faith", "de": "Selbst der kleinste Glaube", "ar": "حتى أدنى الإيمان" },
+          "body": { "en": "His intercession reaches even those with the smallest trace of faith. Never belittle the faith in any heart, including your own.", "de": "Seine Fürsprache erreicht selbst jene mit der kleinsten Spur von Glauben. Unterschätzen Sie nie den Glauben in einem Herzen, auch nicht in Ihrem eigenen.", "ar": "تبلغ شفاعته ﷺ حتى من في قلبه أدنى أثر من إيمان، فلا تستهن بالإيمان في أي قلب، ولا في قلبك." }
+        },
+        {
+          "title": { "en": "Drawing near to his intercession", "de": "Seiner Fürsprache näherkommen", "ar": "التقرب من شفاعته ﷺ" },
+          "list": {
+            "en": ["Say the shahada with a present heart", "Ask Allah for al-Wasila for him after the adhan", "Recite the Quran and live by it", "Send blessings on him often"],
+            "de": ["Sprechen Sie die Schahada mit wachem Herzen", "Bitten Sie nach dem Gebetsruf für ihn um al-Wasila", "Rezitieren Sie den Koran und leben Sie danach", "Sprechen Sie oft Segenswünsche für ihn"],
+            "ar": ["انطق بالشهادة بقلب حاضر", "سل الله له الوسيلة بعد الأذان", "اقرأ القرآن واعمل به", "أكثر من الصلاة عليه"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "akhirah-19-mercy-on-that-day",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": { "en": "The journey of the soul · 19", "de": "Die Reise der Seele · 19", "ar": "رحلة الروح · ١٩" },
+        "title": { "en": "Mercy on the Day of Judgement", "de": "Barmherzigkeit am Tag des Gerichts", "ar": "الرحمة يوم الدين" },
+        "sub": { "en": "Why believers approach that Day with hope as well as awe", "de": "Warum Gläubige jenem Tag mit Hoffnung und Ehrfurcht begegnen", "ar": "لماذا يستقبل المؤمنون ذلك اليوم بالرجاء مع الخشية" },
+        "arabic": "رحمة الله"
+      },
+      "slides": [
+        {
+          "hadith": "muslim:6975",
+          "check": "ninety-nine reserved",
+          "title": { "en": "Ninety-nine parts kept for that Day", "de": "Neunundneunzig Teile für jenen Tag", "ar": "تسعة وتسعون جزءًا لذلك اليوم" },
+          "body": { "en": "All the love we see in this world comes from one part of mercy. The rest is kept for the Day of Judgement.", "de": "Alle Liebe, die wir in dieser Welt sehen, stammt aus einem einzigen Teil der Barmherzigkeit. Der Rest ist für den Tag des Gerichts aufbewahrt.", "ar": "كل محبة نراها في الدنيا من جزء واحد من الرحمة، والباقي مدّخر ليوم القيامة." }
+        },
+        {
+          "hadith": "bukhari:7553",
+          "check": "My Mercy has preceded",
+          "title": { "en": "Mercy comes first", "de": "Barmherzigkeit kommt zuerst", "ar": "الرحمة أسبق" },
+          "body": { "en": "This was written before creation began. It frames everything that happens on the Day of Judgement.", "de": "Dies wurde geschrieben, bevor die Schöpfung begann. Es rahmt alles ein, was am Tag des Gerichts geschieht.", "ar": "كُتب هذا قبل أن يبدأ الخلق، وهو الإطار لكل ما يجري يوم القيامة." }
+        },
+        {
+          "hadith": "bukhari:5999",
+          "check": "more merciful",
+          "title": { "en": "More than a mother", "de": "Mehr als eine Mutter", "ar": "أرحم من الأم" },
+          "body": { "en": "A mother searching for her child among the captives became a lesson for all time.", "de": "Eine Mutter, die unter den Gefangenen ihr Kind suchte, wurde zur Lehre für alle Zeit.", "ar": "أمّ تبحث عن طفلها بين السبي صارت درسًا على مر الزمان." }
+        },
+        {
+          "verse": "7:156",
+          "check": "My mercy encompasses all things",
+          "title": { "en": "Wide enough for everything", "de": "Weit genug für alles", "ar": "رحمة تسع الوجود" },
+          "body": { "en": "Allah's mercy has no edge. The verse also names who will receive it most: the God-conscious who give and believe.", "de": "Allahs Barmherzigkeit hat keinen Rand. Der Vers nennt auch, wer sie besonders erhält: die Gottesfürchtigen, die geben und glauben.", "ar": "لا حدّ لرحمة الله، وتذكر الآية أخصّ الناس بها: أهل التقوى والعطاء والإيمان." }
+        },
+        {
+          "hadith": "bukhari:7511",
+          "check": "Ten times",
+          "title": { "en": "The last to enter", "de": "Der Letzte, der eintritt", "ar": "آخر من يدخل الجنة" },
+          "body": { "en": "Even the last person to leave the Fire is given far more than this whole world. If that is the least, what is the most?", "de": "Selbst der Letzte, der das Feuer verlässt, erhält weit mehr als diese ganze Welt. Wenn das das Geringste ist, was ist dann das Höchste?", "ar": "حتى آخر من يخرج من النار يُعطى أضعاف الدنيا كلها، فإذا كان هذا أدنى العطاء فكيف بأعلاه؟" }
+        },
+        {
+          "title": { "en": "Hope and awe, together", "de": "Hoffnung und Ehrfurcht zugleich", "ar": "الرجاء والخشية معًا" },
+          "body": { "en": "Ibn al-Qayyim compares the heart to a bird: love is its head, fear and hope its two wings. Mercy is not a reason to stop striving; it is the reason we can keep going after we fall.", "de": "Ibn al-Qayyim vergleicht das Herz mit einem Vogel: Die Liebe ist sein Kopf, Furcht und Hoffnung sind seine zwei Flügel. Barmherzigkeit ist kein Grund, das Bemühen einzustellen, sondern der Grund, nach einem Fall weiterzugehen.", "ar": "يشبّه ابن القيم القلب في سيره إلى الله بالطائر: المحبة رأسه، والخوف والرجاء جناحاه. فالرحمة ليست سببًا لترك العمل، بل سبب للنهوض بعد كل سقوط." }
+        },
+        {
+          "title": { "en": "Living by His mercy", "de": "Aus Seiner Barmherzigkeit leben", "ar": "العيش برحمته" },
+          "list": {
+            "en": ["Show mercy, and you draw mercy near", "Never call anyone beyond Allah's mercy", "Return to Him after every fall", "Call on Him by His name ar-Rahman"],
+            "de": ["Zeigen Sie Barmherzigkeit, und Sie ziehen Barmherzigkeit an", "Erklären Sie niemanden für unerreichbar für Allahs Barmherzigkeit", "Kehren Sie nach jedem Fall zu Ihm zurück", "Rufen Sie Ihn bei Seinem Namen ar-Rahman an"],
+            "ar": ["كن رحيمًا تقترب من الرحمة", "لا تحكم على أحد بأنه بعيد عن رحمة الله", "عد إليه بعد كل سقطة", "ادعه باسمه الرحمن"]
+          }
+        }
+      ],
+      "sources": [{ "label": "Ibn al-Qayyim, Madarij as-Salikin, the station of fear (manzilat al-khawf)" }]
+    },
+    {
+      "id": "akhirah-20-the-shade",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": { "en": "The journey of the soul · 20", "de": "Die Reise der Seele · 20", "ar": "رحلة الروح · ٢٠" },
+        "title": { "en": "Shaded on the Day of Judgement", "de": "Im Schatten am Tag des Gerichts", "ar": "في الظل يوم القيامة" },
+        "sub": { "en": "Who will be shaded when the heat is greatest, as the hadith describe", "de": "Wer im Schatten sein wird, wenn die Hitze am größten ist, nach den Hadithen", "ar": "من يظلهم الله حين يشتد الموقف، كما تصفهم الأحاديث" },
+        "arabic": "ظل العرش"
+      },
+      "slides": [
+        {
+          "title": { "en": "His shade", "de": "Sein Schatten", "ar": "ظله" },
+          "body": { "en": "The hadith speak of \"His shade\" on a Day without any other shade. Scholars such as Ibn Hajar explain it as the shade of His Throne, as some narrations state, without likening Allah to His creation.", "de": "Die Hadithe sprechen von „Seinem Schatten“ an einem Tag ohne jeden anderen Schatten. Gelehrte wie Ibn Hadschar erklären ihn als Schatten Seines Throns, wie manche Überlieferungen sagen, ohne Allah mit Seiner Schöpfung zu vergleichen.", "ar": "تذكر الأحاديث «ظله» في يوم لا ظل فيه سواه، ويفسره علماء كابن حجر بظل العرش كما ورد في بعض الروايات، من غير تشبيه لله بخلقه." }
+        },
+        {
+          "hadith": "bukhari:6479",
+          "check": "eyes are then flooded with tears",
+          "title": { "en": "Tears in solitude", "de": "Tränen in der Einsamkeit", "ar": "دموع في الخلوة" },
+          "body": { "en": "One of the seven: someone who remembers Allah alone and weeps. No audience, only sincerity.", "de": "Einer der Sieben: jemand, der allein Allahs gedenkt und weint. Kein Publikum, nur Aufrichtigkeit.", "ar": "من السبعة: عبد يذكر ربه في خلوته فيبكي، بلا جمهور، بإخلاص خالص." }
+        },
+        {
+          "hadith": "muslim:6548",
+          "check": "Glory's sake",
+          "title": { "en": "Love for His sake", "de": "Liebe um Seinetwillen", "ar": "المحبة في الله" },
+          "body": { "en": "Friendships built for Allah's sake are honoured with His shade. Who are the friends you would want beside you there?", "de": "Freundschaften um Allahs willen werden mit Seinem Schatten geehrt. Welche Freunde möchten Sie dort an Ihrer Seite?", "ar": "الصداقات القائمة لله تُكرَم بظله، فمن الأصدقاء الذين تحب أن يكونوا معك هناك؟" }
+        },
+        {
+          "title": { "en": "The other five of the seven", "de": "Die übrigen fünf der Sieben", "ar": "بقية السبعة" },
+          "list": {
+            "en": ["A leader who rules with justice", "A young person whose youth is spent in worship", "Someone whose heart stays connected to the mosque", "Someone who refuses an invitation to sin out of fear of Allah", "Someone who gives in secret, unseen by anyone"],
+            "de": ["Eine Führungsperson, die gerecht regiert", "Ein junger Mensch, dessen Jugend der Anbetung gehört", "Jemand, dessen Herz mit der Moschee verbunden bleibt", "Jemand, der eine Verführung zur Sünde aus Gottesfurcht ablehnt", "Jemand, der im Verborgenen gibt, von niemandem gesehen"],
+            "ar": ["حاكم يعدل بين الناس", "شابّ قضى شبابه في طاعة الله", "من بقي قلبه موصولًا ببيوت الله", "من ردّ دعوة إلى الحرام خوفًا من الله", "من أخفى صدقته حتى لا يعلم بها أحد"]
+          },
+          "body": { "en": "From the full narration in Sahih al-Bukhari (660). Ibn Hajar notes that women share these virtues too, with few exceptions.", "de": "Aus der vollständigen Überlieferung im Sahih al-Buchari (660). Ibn Hadschar betont, dass auch Frauen an diesen Tugenden teilhaben, mit wenigen Ausnahmen.", "ar": "من الرواية الكاملة في صحيح البخاري (٦٦٠)، وينبّه ابن حجر إلى أن النساء يشاركن الرجال في هذه الفضائل إلا قليلًا." }
+        },
+        {
+          "title": { "en": "Others shaded on that Day", "de": "Weitere im Schatten jenes Tages", "ar": "آخرون في الظل" },
+          "body": { "en": "Another narration, in Sahih Muslim, adds those who give a struggling debtor more time or cancel the debt. Mercy to people in hardship is answered with shade.", "de": "Eine weitere Überlieferung in Sahih Muslim nennt jene, die einem bedrängten Schuldner Aufschub gewähren oder die Schuld erlassen. Barmherzigkeit mit Menschen in Not wird mit Schatten beantwortet.", "ar": "وتضيف رواية في صحيح مسلم من أمهل مدينًا عاجزًا أو أسقط عنه دينه، فالرحمة بأهل الضيق تُجزى بالظل." }
+        },
+        {
+          "title": { "en": "Seeking the shade today", "de": "Den Schatten schon heute suchen", "ar": "التماس الظل من اليوم" },
+          "list": {
+            "en": ["Be fair in every role of authority you hold", "Keep a quiet charity no one knows about", "Make a habit of dhikr when alone", "Choose friends who bring you closer to Allah", "Give a struggling debtor more time"],
+            "de": ["Seien Sie gerecht in jeder Verantwortung, die Sie tragen", "Pflegen Sie eine stille Spende, von der niemand weiß", "Gewöhnen Sie sich an das Gedenken Allahs, wenn Sie allein sind", "Wählen Sie Freunde, die Sie Allah näherbringen", "Gewähren Sie einem bedrängten Schuldner Aufschub"],
+            "ar": ["اعدل في كل مسؤولية تتولاها", "اجعل لك صدقة خفية لا يعلمها أحد", "اعتد ذكر الله في خلوتك", "اختر أصدقاء يقرّبونك من الله", "أمهل المدين المعسر"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Sahih al-Bukhari 660 (the seven shaded by Allah)", "url": "https://sunnah.com/bukhari:660" },
+        { "label": "Ibn Hajar, Fath al-Bari, on Sahih al-Bukhari 660 (the shade of the Throne; women share these virtues)" },
+        { "label": "Sahih Muslim, Book of Zuhd (the narration of Abu al-Yasar about the debtor)" }
+      ]
+    },
+    {
+      "id": "akhirah-21-the-people-of-al-araf",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": { "en": "The journey of the soul · 21", "de": "Die Reise der Seele · 21", "ar": "رحلة الروح · ٢١" },
+        "title": { "en": "The people of al-A'raf", "de": "Die Leute von al-Aʿraf", "ar": "أصحاب الأعراف" },
+        "sub": { "en": "Between Paradise and the Fire: what Surah al-A'raf describes, and how scholars read it", "de": "Zwischen Paradies und Feuer: was Sure al-Aʿraf beschreibt und wie Gelehrte es lesen", "ar": "بين الجنة والنار: ما تصفه سورة الأعراف وكيف فهمه العلماء" },
+        "arabic": "الأعراف"
+      },
+      "slides": [
+        {
+          "verse": "7:46",
+          "check": "elevations",
+          "title": { "en": "A partition with heights", "de": "Eine Trennwand mit Höhen", "ar": "حجاب له أعالٍ" },
+          "body": { "en": "The Quran describes a partition between the two abodes, with heights from which some people see both sides.", "de": "Der Koran beschreibt eine Trennwand zwischen den beiden Wohnstätten, mit Höhen, von denen aus manche Menschen beide Seiten sehen.", "ar": "يصف القرآن حجابًا بين الدارين، له أعالٍ يرى منها قوم الجانبين." }
+        },
+        {
+          "verse": "7:47",
+          "check": "do not place us with the wrongdoing people",
+          "title": { "en": "Their dua", "de": "Ihr Bittgebet", "ar": "دعاؤهم" },
+          "body": { "en": "Looking toward the Fire, their first words are a prayer for protection. Humility, not pride, fills their hearts.", "de": "Mit dem Blick zum Feuer sind ihre ersten Worte ein Gebet um Schutz. Demut, nicht Stolz, erfüllt ihre Herzen.", "ar": "حين تتجه أبصارهم إلى النار تكون أول كلماتهم دعاءً بالنجاة، فقلوبهم ممتلئة تواضعًا لا كبرًا." }
+        },
+        {
+          "verse": "7:48-49",
+          "check": "No fear will there be concerning you",
+          "title": { "en": "Called into mercy", "de": "In die Barmherzigkeit gerufen", "ar": "دعوة إلى الرحمة" },
+          "body": { "en": "The passage ends with an invitation into Paradise. Commentators differ on who speaks and who is addressed, but its message is mercy.", "de": "Der Abschnitt endet mit einer Einladung ins Paradies. Kommentatoren sind uneins, wer spricht und wer angesprochen wird, doch die Botschaft ist Barmherzigkeit.", "ar": "ينتهي المقطع بدعوة إلى الجنة، ويختلف المفسرون في المتكلم والمخاطَب، لكن رسالته الرحمة." }
+        },
+        {
+          "title": { "en": "Who are they? The best-known Sunni view", "de": "Wer sind sie? Die bekannteste sunnitische Ansicht", "ar": "من هم؟ القول الأشهر عند أهل السنة" },
+          "body": { "en": "Many Sunni commentators, such as at-Tabari and Ibn Kathir, report from Companions that they are people whose good and bad deeds were equal. They wait in hope until Allah's mercy admits them.", "de": "Viele sunnitische Kommentatoren wie at-Tabari und Ibn Kathir überliefern von Prophetengefährten, dass es Menschen sind, deren gute und schlechte Taten gleich wogen. Sie warten hoffend, bis Allahs Barmherzigkeit sie einlässt.", "ar": "ينقل كثير من مفسري السنة كالطبري وابن كثير عن الصحابة أنهم قوم استوت حسناتهم وسيئاتهم، فينتظرون راجين حتى تدخلهم رحمة الله." }
+        },
+        {
+          "title": { "en": "Other readings", "de": "Weitere Deutungen", "ar": "أقوال أخرى" },
+          "body": { "en": "Other early views saw them as scholars, martyrs or angels. In Tabatabai's al-Mizan they are sincere servants of the highest rank, and the Shia narrations he cites identify them with the Imams, who know every soul by its marks.", "de": "Andere frühe Ansichten sahen in ihnen Gelehrte, Märtyrer oder Engel. In Tabatabais al-Mizan sind sie aufrichtige Diener höchsten Ranges, und die schiitischen Überlieferungen, die er anführt, sehen in ihnen die Imame, die jede Seele an ihren Merkmalen erkennen.", "ar": "ورأت أقوال مبكرة أخرى أنهم علماء أو شهداء أو ملائكة. وهم في «الميزان» للطباطبائي جمعٌ من عباد الله المخلصين أرفع منزلة من سائر الناس، وتذكر روايات الشيعة التي يوردها أنهم الأئمة الذين يعرفون كل نفس بعلامتها." }
+        },
+        {
+          "title": { "en": "A lesson for us", "de": "Eine Lehre für uns", "ar": "درس لنا" },
+          "body": { "en": "Whatever their exact identity, the scene teaches that the scale can be close, that hope is real, and that no small good deed should be neglected.", "de": "Wer auch immer sie genau sind: Die Szene lehrt, dass die Waage knapp sein kann, dass Hoffnung echt ist und dass keine kleine gute Tat vernachlässigt werden sollte.", "ar": "أيًّا كانت هويتهم، فالمشهد يعلّمنا أن الميزان قد يكون متقاربًا، وأن الرجاء حقيقي، وألا نستهين بعمل صالح مهما صغر." }
+        },
+        {
+          "title": { "en": "What al-A'raf teaches", "de": "Was al-Aʿraf lehrt", "ar": "ما تعلّمنا إياه الأعراف" },
+          "list": {
+            "en": ["Never underestimate one good deed", "Pair hope with humility", "Make their dua your own", "Leave final judgements to Allah"],
+            "de": ["Unterschätzen Sie nie eine einzige gute Tat", "Verbinden Sie Hoffnung mit Demut", "Machen Sie ihr Bittgebet zu Ihrem eigenen", "Überlassen Sie das endgültige Urteil Allah"],
+            "ar": ["لا تستهن بعمل صالح واحد", "اقرن الرجاء بالتواضع", "اجعل دعاءهم دعاءك", "دع الحكم الأخير لله"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "at-Tabari, Jami' al-Bayan, on 7:46", "url": "https://quran.com/7:46/tafsirs/ar-tafsir-al-tabari" },
+        { "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 7:46-49", "url": "https://quran.com/7:46/tafsirs/en-tafisr-ibn-kathir" },
+        { "label": "al-Qurtubi, al-Jami' li-Ahkam al-Qur'an, on 7:46 (the different views)", "url": "https://quran.com/7:46/tafsirs/ar-tafseer-al-qurtubi" },
+        { "label": "Tabatabai, al-Mizan fi Tafsir al-Qur'an, on 7:46-49" }
+      ]
+    },
+    {
+      "id": "akhirah-22-levels-of-paradise",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": { "en": "The journey of the soul · 22", "de": "Die Reise der Seele · 22", "ar": "رحلة الروح · ٢٢" },
+        "title": { "en": "The levels of Paradise", "de": "Die Stufen des Paradieses", "ar": "درجات الجنة" },
+        "sub": { "en": "One Paradise, many ranks, and an open invitation to rise", "de": "Ein Paradies, viele Ränge und eine offene Einladung, aufzusteigen", "ar": "جنة واحدة ودرجات كثيرة ودعوة مفتوحة للارتقاء" },
+        "arabic": "الفردوس الأعلى"
+      },
+      "slides": [
+        {
+          "verse": "17:21",
+          "check": "greater in degrees",
+          "title": { "en": "Greater differences there", "de": "Größere Unterschiede dort", "ar": "تفاضل أكبر" },
+          "body": { "en": "Differences in this world are small compared to the ranks of the Hereafter. That is where ambition belongs.", "de": "Die Unterschiede dieser Welt sind klein im Vergleich zu den Rängen des Jenseits. Dorthin gehört der Ehrgeiz.", "ar": "فوارق الدنيا صغيرة أمام درجات الآخرة، وهناك ينبغي أن يكون الطموح." }
+        },
+        {
+          "verse": "6:132",
+          "check": "degrees",
+          "title": { "en": "Ranks grow out of deeds", "de": "Ränge wachsen aus Taten", "ar": "درجات من الأعمال" },
+          "body": { "en": "Each rank grows out of what people did. Nothing is random and nothing is overlooked.", "de": "Jeder Rang erwächst aus dem, was Menschen taten. Nichts ist zufällig und nichts wird übersehen.", "ar": "كل درجة تنشأ مما عمله الناس، فلا شيء عشوائي ولا شيء مُغفَل." }
+        },
+        {
+          "hadith": "bukhari:6555",
+          "check": "Ghuraf",
+          "title": { "en": "Like stars on the horizon", "de": "Wie Sterne am Horizont", "ar": "كالكواكب في الأفق" },
+          "body": { "en": "The people of Paradise look up at higher dwellings as we look at the stars. Another narration says they are for believers who trusted the messengers.", "de": "Die Bewohner des Paradieses blicken zu höheren Wohnstätten auf wie wir zu den Sternen. Eine andere Überlieferung sagt, sie sind für Gläubige, die den Gesandten vertrauten.", "ar": "ينظر أهل الجنة إلى المنازل العالية كما ننظر إلى النجوم، وفي رواية أخرى أنها لمن آمن بالرسل وصدّقهم." }
+        },
+        {
+          "hadith": "bukhari:2809",
+          "check": "Firdaus",
+          "title": { "en": "A mother's question", "de": "Die Frage einer Mutter", "ar": "سؤال أم" },
+          "body": { "en": "A grieving mother asked about her son, killed at Badr. The answer opened a wide horizon: Paradise is not a single level.", "de": "Eine trauernde Mutter fragte nach ihrem Sohn, der bei Badr gefallen war. Die Antwort öffnete einen weiten Horizont: Das Paradies ist keine einzige Stufe.", "ar": "سألت أمّ مكلومة عن ابنها الذي استُشهد يوم بدر، ففتح الجواب أفقًا واسعًا: الجنة ليست درجة واحدة." }
+        },
+        {
+          "title": { "en": "Aim for al-Firdaus", "de": "Zielen Sie auf al-Firdaus", "ar": "اطمح إلى الفردوس" },
+          "body": { "en": "A hadith in al-Bukhari (2790) mentions one hundred levels and encourages believers to ask Allah for al-Firdaus, the highest. Aim high: His generosity has no limit.", "de": "Ein Hadith bei al-Buchari (2790) erwähnt hundert Stufen und ermutigt die Gläubigen, Allah um al-Firdaus zu bitten, die höchste. Zielen Sie hoch: Seine Großzügigkeit kennt keine Grenze.", "ar": "يذكر حديث في صحيح البخاري (٢٧٩٠) مئة درجة، ويحثّ المؤمنين على سؤال الله الفردوس الأعلى، فارفع همتك فكرمه لا حدود له." }
+        },
+        {
+          "verse": "20:75-76",
+          "check": "highest degrees",
+          "title": { "en": "The way to the highest ranks", "de": "Der Weg zu den höchsten Rängen", "ar": "الطريق إلى أعلى المنازل" },
+          "body": { "en": "Faith joined with righteous deeds and a purified self: this is the path the Quran names.", "de": "Glaube, verbunden mit guten Taten und einer geläuterten Seele: Das ist der Weg, den der Koran nennt.", "ar": "إيمان مقرون بعمل صالح ونفس مزكّاة: هذا هو الطريق الذي يذكره القرآن." }
+        },
+        {
+          "title": { "en": "Climbing step by step", "de": "Stufe um Stufe aufsteigen", "ar": "الارتقاء درجة درجة" },
+          "list": {
+            "en": ["Recite the Quran and live by it", "Guard the obligatory prayers, then add more", "Seek knowledge that leads to action", "Ask for al-Firdaus in your dua"],
+            "de": ["Rezitieren Sie den Koran und leben Sie danach", "Bewahren Sie die Pflichtgebete und fügen Sie mehr hinzu", "Suchen Sie Wissen, das zum Handeln führt", "Bitten Sie in Ihrem Bittgebet um al-Firdaus"],
+            "ar": ["اقرأ القرآن واعمل به", "حافظ على الفرائض ثم زد عليها", "اطلب علمًا يقود إلى العمل", "سل الله الفردوس في دعائك"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Sahih al-Bukhari 2790 (one hundred levels, al-Firdaus)" },
+        { "label": "Sahih al-Bukhari 3256 (the lofty dwellings and those who believed the messengers)" }
+      ]
+    },
+    {
+      "id": "akhirah-23-gates-of-paradise",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": { "en": "The journey of the soul · 23", "de": "Die Reise der Seele · 23", "ar": "رحلة الروح · ٢٣" },
+        "title": { "en": "The gates of Paradise", "de": "Die Tore des Paradieses", "ar": "أبواب الجنة" },
+        "sub": { "en": "Eight gates, each with its people, and a welcome of peace", "de": "Acht Tore, jedes mit seinen Leuten, und ein Willkommen in Frieden", "ar": "ثمانية أبواب، لكل باب أهله، واستقبال بالسلام" },
+        "arabic": "باب الريان"
+      },
+      "slides": [
+        {
+          "hadith": "bukhari:3257",
+          "check": "eight gates",
+          "title": { "en": "Eight gates", "de": "Acht Tore", "ar": "ثمانية أبواب" },
+          "body": { "en": "Paradise has eight gates. One is called ar-Rayyan, a name that speaks of thirst quenched.", "de": "Das Paradies hat acht Tore. Eines heißt ar-Rayyan, ein Name, der von gestilltem Durst spricht.", "ar": "للجنة ثمانية أبواب، منها باب الريان، واسمه يوحي بالري بعد العطش." }
+        },
+        {
+          "hadith": "bukhari:1896",
+          "check": "Ar-Raiyan",
+          "title": { "en": "A gate for those who fasted", "de": "Ein Tor für die Fastenden", "ar": "باب للصائمين" },
+          "body": { "en": "Those who fasted are called to their own gate. Every hungry day for Allah is remembered.", "de": "Die Fastenden werden zu ihrem eigenen Tor gerufen. Jeder Tag des Hungers um Allahs willen bleibt in Erinnerung.", "ar": "يُنادى الصائمون إلى بابهم الخاص، فكل يوم جوع لله محفوظ." }
+        },
+        {
+          "title": { "en": "A gate for each strength", "de": "Ein Tor für jede Stärke", "ar": "لكل قوة باب" },
+          "body": { "en": "Another narration in al-Bukhari names gates of prayer, striving, fasting and charity. People are called from the gate of the deed they excelled in.", "de": "Eine weitere Überlieferung bei al-Buchari nennt Tore des Gebets, des Einsatzes, des Fastens und der Spende. Menschen werden durch das Tor der Tat gerufen, in der sie herausragten.", "ar": "تذكر رواية أخرى في البخاري أبواب الصلاة والجهاد والصيام والصدقة، ويُدعى كل امرئ من باب العمل الذي برع فيه." }
+        },
+        {
+          "hadith": "bukhari:2841",
+          "check": "gate-keepers",
+          "title": { "en": "Called by the gatekeepers", "de": "Von den Torwächtern gerufen", "ar": "تناديه خزنة الجنة" },
+          "body": { "en": "Abu Bakr responded at once, and the Prophet told him he hoped he would be among them.", "de": "Abu Bakr reagierte sofort, und der Prophet sagte ihm, er hoffe, dass er dazugehöre.", "ar": "وعلّق أبو بكر على هذه البشرى، فأخبره النبي ﷺ أنه يرجو أن يكون منهم." }
+        },
+        {
+          "hadith": "bukhari:3435",
+          "check": "eight gates",
+          "title": { "en": "Faith opens every gate", "de": "Glaube öffnet jedes Tor", "ar": "الإيمان يفتح الأبواب" },
+          "body": { "en": "Sincere faith opens all eight gates. Faith comes first; deeds then show at which gate a person shines.", "de": "Aufrichtiger Glaube öffnet alle acht Tore. Der Glaube kommt zuerst; die Taten zeigen dann, an welchem Tor ein Mensch leuchtet.", "ar": "الإيمان الصادق يفتح الأبواب الثمانية، فالإيمان أولًا، ثم تُظهر الأعمال الباب الذي يتألق فيه المرء." }
+        },
+        {
+          "verse": "39:73",
+          "check": "its gates have been opened",
+          "title": { "en": "Welcomed with peace", "de": "Mit Frieden empfangen", "ar": "استقبال بالسلام" },
+          "body": { "en": "The keepers greet the arrivals with peace. The journey that began at death ends in a welcome.", "de": "Die Wächter begrüßen die Ankommenden mit Frieden. Die Reise, die mit dem Tod begann, endet in einem Willkommen.", "ar": "تستقبل الخزنة القادمين بالسلام، فالرحلة التي بدأت بالموت تنتهي بترحيب." }
+        },
+        {
+          "title": { "en": "Which gate are you building?", "de": "An welchem Tor bauen Sie?", "ar": "أي باب تبني؟" },
+          "list": {
+            "en": ["Prayer: guard it on time", "Fasting: add voluntary days", "Charity: give regularly, even a little", "Striving: work hard for what is right", "Choose one and make it your strength"],
+            "de": ["Gebet: Bewahren Sie es pünktlich", "Fasten: Fügen Sie freiwillige Tage hinzu", "Spende: Geben Sie regelmäßig, auch wenig", "Einsatz: Mühen Sie sich für das Rechte", "Wählen Sie eines und machen Sie es zu Ihrer Stärke"],
+            "ar": ["الصلاة: حافظ عليها في وقتها", "الصيام: زد أيامًا تطوعًا", "الصدقة: أعطِ بانتظام ولو قليلًا", "الجهاد: اجتهد في نصرة الحق", "اختر بابًا واجعله قوتك"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Sahih al-Bukhari 1897 (the gates of prayer, jihad, fasting and charity)" }
+      ]
+    },
+    {
+      "id": "akhirah-24-together-again",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": { "en": "The journey of the soul · 24", "de": "Die Reise der Seele · 24", "ar": "رحلة الروح · ٢٤" },
+        "title": { "en": "Together again in Paradise", "de": "Wieder vereint im Paradies", "ar": "لقاء الأحبة في الجنة" },
+        "sub": { "en": "Families joined, friendships restored, hearts free of every grudge", "de": "Familien vereint, Freundschaften erneuert, Herzen frei von jedem Groll", "ar": "أسر تجتمع، وصداقات تعود، وقلوب خالية من كل ضغينة" },
+        "arabic": "لقاء الأحبة"
+      },
+      "slides": [
+        {
+          "verse": "52:21",
+          "check": "We will join with them their descendants",
+          "title": { "en": "Families joined", "de": "Familien vereint", "ar": "أسر مجتمعة" },
+          "body": { "en": "Allah raises believing children to the rank of their parents without lowering anyone's reward. Love in faith is not lost.", "de": "Allah erhebt gläubige Kinder zum Rang ihrer Eltern, ohne jemandes Lohn zu mindern. Liebe im Glauben geht nicht verloren.", "ar": "يرفع الله الذرية المؤمنة إلى درجة آبائهم دون أن ينقص من أجر أحد، فالمحبة في الإيمان لا تضيع." }
+        },
+        {
+          "hadith": "bukhari:6169",
+          "check": "with those whom he loves",
+          "title": { "en": "With those you love", "de": "Bei denen, die Sie lieben", "ar": "رفقة الأحبة" },
+          "body": { "en": "A man worried that his deeds fell short of those he loved. The answer was full of hope.", "de": "Ein Mann sorgte sich, dass seine Taten hinter denen zurückblieben, die er liebte. Die Antwort war voller Hoffnung.", "ar": "خشي رجل أن تقصر أعماله عن أعمال من يحبهم، فجاءه جواب مملوء بالرجاء." }
+        },
+        {
+          "verse": "43:67",
+          "check": "except for the righteous",
+          "title": { "en": "Friendships that last", "de": "Freundschaften, die bleiben", "ar": "صداقات تدوم" },
+          "body": { "en": "Many friendships turn to blame that Day. Those built on God-consciousness continue.", "de": "Viele Freundschaften schlagen an jenem Tag in Vorwurf um. Die auf Gottesfurcht gebauten bestehen fort.", "ar": "كثير من الصداقات تنقلب يومئذ خصومة، أما القائمة على التقوى فتدوم." }
+        },
+        {
+          "verse": "52:25-26",
+          "check": "inquiring of each other",
+          "title": { "en": "Conversations in Paradise", "de": "Gespräche im Paradies", "ar": "أحاديث في الجنة" },
+          "body": { "en": "The people of Paradise turn to each other and talk about the past: how they lived with care before their Lord.", "de": "Die Bewohner des Paradieses wenden sich einander zu und sprechen über die Vergangenheit: wie sie in Achtsamkeit vor ihrem Herrn lebten.", "ar": "يُقبل أهل الجنة بعضهم على بعض يتحدثون عن الماضي: كيف عاشوا خائفين من ربهم." }
+        },
+        {
+          "verse": "7:43",
+          "check": "resentment",
+          "title": { "en": "No grudge survives", "de": "Kein Groll überdauert", "ar": "لا تبقى ضغينة" },
+          "body": { "en": "Whatever hurt existed between people is removed. They meet with clean hearts, grateful for being guided.", "de": "Was es an Verletzungen zwischen Menschen gab, wird entfernt. Sie begegnen sich mit reinen Herzen, dankbar für die Rechtleitung.", "ar": "يُنزع ما كان بين الناس من أذى، فيلتقون بقلوب نقية شاكرين للهداية." }
+        },
+        {
+          "title": { "en": "Hope for every broken bond", "de": "Hoffnung für jede zerbrochene Bindung", "ar": "رجاء لكل رابطة انقطعت" },
+          "body": { "en": "Parents who lost a child, spouses separated by death, friends who drifted apart: the promise of Paradise includes healing what this world could not.", "de": "Eltern, die ein Kind verloren, Ehepartner, die der Tod trennte, Freunde, die sich aus den Augen verloren: Die Verheißung des Paradieses schließt die Heilung dessen ein, was diese Welt nicht heilen konnte.", "ar": "والدان فقدا طفلًا، وزوجان فرّق بينهما الموت، وأصدقاء تباعدوا: وعد الجنة يشمل شفاء ما عجزت عنه الدنيا." }
+        },
+        {
+          "title": { "en": "Building bonds that last", "de": "Bindungen bauen, die bleiben", "ar": "بناء روابط باقية" },
+          "list": {
+            "en": ["Pray for your family by name", "Help each other toward good", "Forgive before the Day of reckoning", "Love people for the good in them"],
+            "de": ["Beten Sie namentlich für Ihre Familie", "Helfen Sie einander zum Guten", "Vergeben Sie vor dem Tag der Abrechnung", "Lieben Sie Menschen für das Gute in ihnen"],
+            "ar": ["ادعُ لأهلك بأسمائهم", "تعاونوا على الخير", "سامح قبل يوم الحساب", "أحبّ الناس لما فيهم من خير"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 52:21", "url": "https://quran.com/52:21/tafsirs/en-tafisr-ibn-kathir" }
+      ]
+    },
+    {
+      "id": "akhirah-25-seeing-allah",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": { "en": "The journey of the soul · 25", "de": "Die Reise der Seele · 25", "ar": "رحلة الروح · ٢٥" },
+        "title": { "en": "Seeing Allah: the hope of the believers", "de": "Allah schauen: die Hoffnung der Gläubigen", "ar": "رؤية الله: رجاء المؤمنين" },
+        "sub": { "en": "What the Quran says, and how Muslim schools have understood it", "de": "Was der Koran sagt und wie muslimische Schulen es verstanden haben", "ar": "ما يقوله القرآن، وكيف فهمته المدارس الإسلامية" },
+        "arabic": "لقاء الله"
+      },
+      "slides": [
+        {
+          "verse": "75:22-23",
+          "check": "Looking at their Lord",
+          "title": { "en": "Radiant faces", "de": "Strahlende Gesichter", "ar": "وجوه مشرقة" },
+          "body": { "en": "The Quran describes faces shining with joy on that Day, turned toward their Lord.", "de": "Der Koran beschreibt Gesichter, die an jenem Tag vor Freude strahlen, ihrem Herrn zugewandt.", "ar": "يصف القرآن وجوهًا مستبشرة في ذلك اليوم متجهة إلى ربها." }
+        },
+        {
+          "verse": "10:26",
+          "check": "and extra",
+          "title": { "en": "The best, and more", "de": "Das Beste und mehr", "ar": "الحسنى والمزيد" },
+          "body": { "en": "Beyond the best reward there is something extra. A narration in Sahih Muslim explains it as seeing Allah.", "de": "Über den besten Lohn hinaus gibt es ein „Mehr“. Eine Überlieferung in Sahih Muslim erklärt es als das Schauen Allahs.", "ar": "فوق الجزاء الأحسن «زيادة»، وتفسرها رواية في صحيح مسلم بالنظر إلى الله." }
+        },
+        {
+          "verse": "50:35",
+          "check": "with Us is more",
+          "title": { "en": "A gift without limit", "de": "Ein Geschenk ohne Grenze", "ar": "عطاء بلا حد" },
+          "body": { "en": "Sunni commentators such as Ibn Kathir read this \"more\" in the same way: a gift greater than every other joy.", "de": "Sunnitische Kommentatoren wie Ibn Kathir lesen dieses „Mehr“ ebenso: ein Geschenk, größer als jede andere Freude.", "ar": "ويفهم مفسرو السنة كابن كثير هذا المزيد بالمعنى نفسه: عطاء أعظم من كل نعيم." }
+        },
+        {
+          "title": { "en": "The Sunni understanding", "de": "Das sunnitische Verständnis", "ar": "فهم أهل السنة" },
+          "body": { "en": "Sunni schools, Ash'ari, Maturidi and Athari alike, hold that believers will truly see Allah in the Hereafter, without likeness, without encompassing Him and without asking how.", "de": "Die sunnitischen Schulen, ob Aschʿari, Maturidi oder Athari, lehren, dass die Gläubigen Allah im Jenseits wahrhaft schauen werden, ohne Vergleich, ohne Ihn zu erfassen und ohne nach dem Wie zu fragen.", "ar": "تقرر مدارس أهل السنة، الأشاعرة والماتريدية وأهل الأثر، أن المؤمنين يرون الله في الآخرة حقًّا، بلا تشبيه ولا إحاطة ولا تكييف." }
+        },
+        {
+          "verse": "6:103",
+          "check": "Vision perceives Him not",
+          "title": { "en": "No vision encompasses Him", "de": "Kein Blick erfasst Ihn", "ar": "تنزيه عن الإحاطة" },
+          "body": { "en": "Those who hold that Allah is not seen with the eyes cite this verse. Sunni scholars read it as denying encompassing, not seeing.", "de": "Wer meint, Allah werde nicht mit den Augen gesehen, beruft sich auf diesen Vers. Sunnitische Gelehrte lesen ihn als Verneinung des Erfassens, nicht des Sehens.", "ar": "يستدل بهذه الآية من ينفي رؤية الله بالأبصار، ويفهمها علماء السنة على نفي الإحاطة لا نفي الرؤية." }
+        },
+        {
+          "title": { "en": "The Shia and other understandings", "de": "Das schiitische und weitere Verständnisse", "ar": "فهم الشيعة وغيرهم" },
+          "body": { "en": "Twelver Shia, Zaydi and Mu'tazili theologians hold that Allah is not seen with the eyes, in this world or the next. They read \"looking\" as awaiting His mercy, or as a vision of the heart: certain, direct knowledge.", "de": "Zwölfer-schiitische, zaiditische und muʿtazilitische Theologen lehren, dass Allah weder im Diesseits noch im Jenseits mit den Augen gesehen wird. „Schauen“ verstehen sie als Erwarten Seiner Barmherzigkeit oder als Schau des Herzens: gewisse, unmittelbare Erkenntnis.", "ar": "يرى متكلمو الشيعة الإمامية والزيدية والمعتزلة أن الله لا يُرى بالأبصار في الدنيا ولا في الآخرة، ويفهمون النظر بمعنى انتظار رحمته، أو رؤية القلب: معرفة يقينية مباشرة." }
+        },
+        {
+          "title": { "en": "Common ground", "de": "Gemeinsamer Boden", "ar": "ما يتفق عليه الجميع" },
+          "body": { "en": "All agree that Allah is unlike His creation, that no eye can encompass Him, and that nearness to Him and His good pleasure are the greatest joy of Paradise. Ask Him for that joy.", "de": "Alle sind sich einig, dass Allah Seiner Schöpfung nicht gleicht, dass kein Auge Ihn erfasst und dass Seine Nähe und Sein Wohlgefallen die größte Freude des Paradieses sind. Bitten Sie Ihn um diese Freude.", "ar": "يتفق الجميع على أن الله لا يشبه خلقه، وأن الأبصار لا تحيط به، وأن القرب منه ورضاه أعظم نعيم الجنة، فاسأله هذا النعيم." }
+        }
+      ],
+      "sources": [
+        { "label": "Sahih Muslim, Book of Faith (the hadith of Suhayb on 10:26)" },
+        { "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 50:35", "url": "https://quran.com/50:35/tafsirs/en-tafisr-ibn-kathir" },
+        { "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 6:103", "url": "https://quran.com/6:103/tafsirs/en-tafisr-ibn-kathir" },
+        { "label": "Tabatabai, al-Mizan fi Tafsir al-Qur'an, on 6:103 and 75:22-23" }
+      ]
+    },
+    {
+      "id": "akhirah-26-jahannam-a-warning",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": { "en": "The journey of the soul · 26", "de": "Die Reise der Seele · 26", "ar": "رحلة الروح · ٢٦" },
+        "title": { "en": "Jahannam: a warning sent out of mercy", "de": "Die Hölle: eine Warnung aus Barmherzigkeit", "ar": "جهنم: نذير من رحمة" },
+        "sub": { "en": "Why the Quran speaks of the Fire, and how to protect yourself and those you love", "de": "Warum der Koran vom Feuer spricht und wie Sie sich und Ihre Lieben schützen", "ar": "لماذا يذكر القرآن النار، وكيف تقي نفسك ومن تحب" },
+        "arabic": "الوقاية من النار"
+      },
+      "slides": [
+        {
+          "verse": "3:131-133",
+          "check": "hasten to forgiveness",
+          "title": { "en": "Warned, then invited", "de": "Gewarnt, dann eingeladen", "ar": "تحذير ثم دعوة" },
+          "body": { "en": "The warning is followed at once by an invitation to hurry toward forgiveness. The Quran warns in order to save.", "de": "Auf die Warnung folgt sofort die Einladung, zur Vergebung zu eilen. Der Koran warnt, um zu retten.", "ar": "يتبع التحذيرَ مباشرة دعوةٌ إلى المسارعة إلى المغفرة، فالقرآن يحذّر لينقذ." }
+        },
+        {
+          "verse": "4:147",
+          "check": "What would Allah do with",
+          "title": { "en": "He gains nothing from punishment", "de": "Er gewinnt nichts durch Strafe", "ar": "لا حاجة لله بعذاب أحد" },
+          "body": { "en": "Allah gains nothing from anyone's punishment. Gratitude and faith are what He asks of us.", "de": "Allah gewinnt nichts durch die Strafe eines Menschen. Dankbarkeit und Glaube sind es, was Er von uns erwartet.", "ar": "لا ينتفع الله بعذاب أحد، وإنما يطلب منا الشكر والإيمان." }
+        },
+        {
+          "verse": "67:10-11",
+          "check": "listening or reasoning",
+          "title": { "en": "The regret of not listening", "de": "Die Reue, nicht zugehört zu haben", "ar": "ندم من لم يسمع" },
+          "body": { "en": "The deepest regret there is simple: they had the message and did not think about it. Listening and reflecting are already protection.", "de": "Die tiefste Reue dort ist einfach: Sie hatten die Botschaft und dachten nicht über sie nach. Zuhören und Nachdenken sind schon Schutz.", "ar": "أعمق ندم هناك بسيط: جاءتهم الرسالة فلم يتدبروها، فالاستماع والتفكر وقاية بذاتها." }
+        },
+        {
+          "hadith": "bukhari:6563",
+          "check": "half of a date",
+          "title": { "en": "Even half a date", "de": "Selbst eine halbe Dattel", "ar": "نصف تمرة" },
+          "body": { "en": "Protection is within everyone's reach: a small charity, or simply a good word.", "de": "Schutz liegt in jedermanns Reichweite: eine kleine Spende oder einfach ein gutes Wort.", "ar": "الوقاية في متناول كل أحد: صدقة صغيرة، أو كلمة طيبة." }
+        },
+        {
+          "hadith": "bukhari:6488",
+          "check": "nearer",
+          "title": { "en": "Both are close", "de": "Beide sind nah", "ar": "كلاهما قريب" },
+          "body": { "en": "Paradise and the Fire are both very near to each of us. Small choices carry great weight.", "de": "Paradies und Feuer sind beide jedem von uns sehr nah. Kleine Entscheidungen haben großes Gewicht.", "ar": "الجنة والنار قريبتان جدًّا من كل منا، فالاختيارات الصغيرة لها وزن كبير." }
+        },
+        {
+          "verse": "25:65-66",
+          "check": "avert from us the punishment",
+          "title": { "en": "A dua of the servants of ar-Rahman", "de": "Ein Bittgebet der Diener des Allerbarmers", "ar": "دعاء عباد الرحمن" },
+          "body": { "en": "The Quran praises those who ask for protection while living humbly and praying at night. Make their dua yours.", "de": "Der Koran lobt jene, die um Schutz bitten, während sie demütig leben und nachts beten. Machen Sie ihr Bittgebet zu Ihrem.", "ar": "يثني القرآن على من يسألون الوقاية وهم يعيشون بتواضع ويقومون الليل، فاجعل دعاءهم دعاءك." }
+        },
+        {
+          "title": { "en": "Speaking about the Fire wisely", "de": "Weise über das Feuer sprechen", "ar": "الحديث عن النار بحكمة" },
+          "body": { "en": "The Quran never speaks of the Fire to drive people into despair. Speak of it to children and seekers with mercy, and always together with Allah's forgiveness and Paradise.", "de": "Der Koran spricht nie vom Feuer, um Menschen in Verzweiflung zu stürzen. Sprechen Sie mit Kindern und Suchenden barmherzig davon, stets zusammen mit Allahs Vergebung und dem Paradies.", "ar": "لا يذكر القرآن النار ليوقع الناس في اليأس، فتحدّث عنها مع الأطفال والباحثين برحمة، ومع ذكر مغفرة الله والجنة دائمًا." }
+        }
+      ]
+    },
+    {
+      "id": "akhirah-27-repent-while-the-door-is-open",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": { "en": "The journey of the soul · 27", "de": "Die Reise der Seele · 27", "ar": "رحلة الروح · ٢٧" },
+        "title": { "en": "Repent while the door is open", "de": "Bereuen Sie, solange die Tür offen ist", "ar": "تُب ما دام الباب مفتوحًا" },
+        "sub": { "en": "Repentance has a season: this life, before the last breath", "de": "Die Reue hat ihre Zeit: dieses Leben, vor dem letzten Atemzug", "ar": "للتوبة موسم: هذه الحياة قبل النفس الأخير" },
+        "arabic": "التوبة"
+      },
+      "slides": [
+        {
+          "verse": "4:17",
+          "check": "repent soon",
+          "title": { "en": "Soon, not someday", "de": "Bald, nicht irgendwann", "ar": "قريبًا لا يومًا ما" },
+          "body": { "en": "The verse praises turning back soon after a mistake. Delay only makes the heart harder.", "de": "Der Vers lobt die baldige Umkehr nach einem Fehler. Aufschub macht das Herz nur härter.", "ar": "تمدح الآية الرجوع القريب بعد الخطأ، أما التسويف فلا يزيد القلب إلا قسوة." }
+        },
+        {
+          "verse": "4:18",
+          "check": "I have repented now",
+          "title": { "en": "When it is too late", "de": "Wenn es zu spät ist", "ar": "حين يفوت الأوان" },
+          "body": { "en": "Repentance announced only when death arrives is not accepted. Until that moment, scholars teach, the door stays open.", "de": "Eine Reue, die erst angekündigt wird, wenn der Tod kommt, wird nicht angenommen. Bis zu diesem Augenblick, so lehren Gelehrte, bleibt die Tür offen.", "ar": "التوبة التي لا تُعلن إلا عند حضور الموت لا تُقبل، وإلى تلك اللحظة يبقى الباب مفتوحًا كما يقرر العلماء." }
+        },
+        {
+          "hadith": "muslim:6990",
+          "check": "Stretches out His Hand",
+          "title": { "en": "Night and day, an open invitation", "de": "Tag und Nacht eine offene Einladung", "ar": "دعوة مفتوحة ليلًا ونهارًا" },
+          "body": { "en": "Whatever happened today, tonight is an invitation. Whatever happened tonight, tomorrow is another.", "de": "Was heute auch geschah, die Nacht ist eine Einladung. Was nachts auch geschah, der Morgen ist eine weitere.", "ar": "مهما حدث اليوم فالليل دعوة، ومهما حدث في الليل فالنهار دعوة أخرى." }
+        },
+        {
+          "hadith": "muslim:6861",
+          "check": "rising of the sun from the west",
+          "title": { "en": "Two deadlines, both unknown", "de": "Zwei Fristen, beide unbekannt", "ar": "موعدان مجهولان" },
+          "body": { "en": "For humanity, the door closes when the sun rises from the west; for each of us, at death. Both times are unknown, so now is the time.", "de": "Für die Menschheit schließt sich die Tür, wenn die Sonne im Westen aufgeht; für jeden von uns mit dem Tod. Beides ist unbekannt, also ist jetzt die Zeit.", "ar": "يُغلق الباب على البشرية بطلوع الشمس من مغربها، وعلى كل واحد منا بموته، وكلاهما مجهول الموعد، فالآن هو الوقت." }
+        },
+        {
+          "verse": "63:10",
+          "check": "before death approaches",
+          "title": { "en": "The wish to give a little more", "de": "Der Wunsch, noch etwas zu geben", "ar": "أمنية العطاء" },
+          "body": { "en": "The dying person wishes for a short delay, just to give charity. We still have that delay today.", "de": "Der Sterbende wünscht sich einen kurzen Aufschub, nur um zu spenden. Wir haben diesen Aufschub heute noch.", "ar": "يتمنى المحتضر مهلة قصيرة ليتصدق، ونحن ما زلنا نملك هذه المهلة اليوم." }
+        },
+        {
+          "verse": "25:70",
+          "check": "replace their evil deeds with good",
+          "title": { "en": "More than erased", "de": "Mehr als gelöscht", "ar": "أكثر من محو" },
+          "body": { "en": "Sincere repentance does not only wipe out the past. Allah can turn it into good.", "de": "Aufrichtige Reue löscht nicht nur die Vergangenheit. Allah kann sie in Gutes verwandeln.", "ar": "التوبة الصادقة لا تمحو الماضي فحسب، بل قد يحوّله الله إلى خير." }
+        },
+        {
+          "title": { "en": "Steps of a sincere repentance", "de": "Schritte einer aufrichtigen Reue", "ar": "خطوات التوبة الصادقة" },
+          "list": {
+            "en": ["Stop the wrong now", "Feel honest regret", "Resolve not to return to it", "Give back what you owe to people", "Follow it with a good deed"],
+            "de": ["Hören Sie jetzt mit dem Unrecht auf", "Empfinden Sie ehrliche Reue", "Fassen Sie den Entschluss, nicht dahin zurückzukehren", "Geben Sie Menschen zurück, was Sie ihnen schulden", "Lassen Sie eine gute Tat folgen"],
+            "ar": ["أقلع عن الذنب الآن", "اندم ندمًا صادقًا", "اعزم ألا تعود إليه", "ردّ الحقوق إلى أصحابها", "أتبعه بعمل صالح"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "akhirah-28-provision-for-the-journey",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": { "en": "The journey of the soul · 28", "de": "Die Reise der Seele · 28", "ar": "رحلة الروح · ٢٨" },
+        "title": { "en": "Packing for the journey of the soul", "de": "Gepäck für die Reise der Seele", "ar": "زاد رحلة الروح" },
+        "sub": { "en": "Six Quran passages on what to take with you, and what to leave behind", "de": "Sechs Koranstellen darüber, was Sie mitnehmen und was Sie zurücklassen", "ar": "ستة مواضع من القرآن عمّا تأخذه معك وما تتركه خلفك" },
+        "arabic": "خير الزاد"
+      },
+      "slides": [
+        {
+          "verse": "2:197",
+          "check": "the best provision",
+          "title": { "en": "The best provision", "de": "Der beste Proviant", "ar": "أفضل الزاد" },
+          "body": { "en": "Revealed about Hajj, this line speaks to every journey: no supply is better than awareness of Allah.", "de": "Im Zusammenhang mit der Hadsch offenbart, spricht dieser Satz für jede Reise: Kein Vorrat ist besser als das Bewusstsein für Allah.", "ar": "نزلت في الحج، لكنها تصلح لكل رحلة: لا زاد خير من تقوى الله." }
+        },
+        {
+          "verse": "59:18",
+          "check": "what it has put forth for tomorrow",
+          "title": { "en": "Check your luggage", "de": "Prüfen Sie Ihr Gepäck", "ar": "راجع حقيبتك" },
+          "body": { "en": "The Quran calls the Hereafter \"tomorrow\". A regular look at what we are sending ahead is part of faith.", "de": "Der Koran nennt das Jenseits „morgen“. Ein regelmäßiger Blick auf das, was wir vorausschicken, gehört zum Glauben.", "ar": "يسمّي القرآن الآخرة «غدًا»، والنظر المنتظم فيما نقدّمه جزء من الإيمان." }
+        },
+        {
+          "verse": "28:77",
+          "check": "do not forget your share of the world",
+          "title": { "en": "Not a journey out of life", "de": "Keine Flucht aus dem Leben", "ar": "ليست هروبًا من الحياة" },
+          "body": { "en": "Seeking the Hereafter does not mean abandoning this world. Use what you have been given, and let Allah's kindness to you flow on to others.", "de": "Das Jenseits zu suchen heißt nicht, diese Welt aufzugeben. Nutzen Sie, was Ihnen gegeben wurde, und lassen Sie Allahs Güte zu Ihnen an andere weiterfließen.", "ar": "طلب الآخرة لا يعني ترك الدنيا، فاستعمل ما أُعطيت، واجعل فضل الله عليك يفيض على غيرك." }
+        },
+        {
+          "verse": "87:16-17",
+          "check": "better and more enduring",
+          "title": { "en": "What lasts", "de": "Was bleibt", "ar": "ما يبقى" },
+          "body": { "en": "The short and the lasting compete for our attention every day. The Quran gently reminds us which is which.", "de": "Das Kurze und das Bleibende ringen jeden Tag um unsere Aufmerksamkeit. Der Koran erinnert sanft daran, was was ist.", "ar": "يتنافس العابر والباقي على انتباهنا كل يوم، والقرآن يذكّرنا برفق بالفرق بينهما." }
+        },
+        {
+          "verse": "26:88-89",
+          "check": "sound heart",
+          "title": { "en": "The one thing that counts", "de": "Das Eine, das zählt", "ar": "الشيء الذي ينفع" },
+          "body": { "en": "Wealth and children stay behind. What arrives with us is the state of the heart: sound, sincere and at peace with Allah.", "de": "Besitz und Kinder bleiben zurück. Was mit uns ankommt, ist der Zustand des Herzens: heil, aufrichtig und im Frieden mit Allah.", "ar": "يبقى المال والبنون خلفنا، وما يصل معنا هو حال القلب: سليمًا صادقًا مطمئنًا بالله." }
+        },
+        {
+          "verse": "89:24",
+          "check": "I wish I had sent ahead",
+          "title": { "en": "A wish we can still fulfil", "de": "Ein Wunsch, den wir noch erfüllen können", "ar": "أمنية ما زال تحقيقها ممكنًا" },
+          "body": { "en": "One day this will be someone's regret. Today it can still be our plan.", "de": "Eines Tages wird dies jemandes Reue sein. Heute kann es noch unser Plan sein.", "ar": "سيكون هذا يومًا ما ندم أحدهم، واليوم ما زال يمكن أن يكون خطتنا." }
+        },
+        {
+          "title": { "en": "A packing list for the soul", "de": "Eine Packliste für die Seele", "ar": "قائمة زاد للروح" },
+          "list": {
+            "en": ["A prayer you never miss", "A charity that keeps running", "A relationship you have mended", "A habit of daily dhikr", "A heart free of grudges"],
+            "de": ["Ein Gebet, das Sie nie auslassen", "Eine Spende, die weiterwirkt", "Eine Beziehung, die Sie geheilt haben", "Eine tägliche Gewohnheit des Gedenkens", "Ein Herz ohne Groll"],
+            "ar": ["صلاة لا تفوتك", "صدقة جارية", "علاقة أصلحتها", "عادة ذكر يومية", "قلب خالٍ من الضغائن"]
+          }
+        }
+      ]
+    }
+  ]
+}

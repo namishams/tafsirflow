@@ -1,0 +1,1097 @@
+{
+  "series": "shamail",
+  "label": { "en": "The Prophet's character", "de": "Der Charakter des Propheten", "ar": "شمائل النبي ﷺ" },
+  "topic": "seerah",
+  "tradition": "all",
+  "items": [
+    {
+      "id": "shamail-01-a-great-character",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": { "en": "The Prophet's character · 1", "de": "Charakter des Propheten · 1", "ar": "شمائل النبي ﷺ · ١" },
+        "title": { "en": "A character Allah called great", "de": "Ein Charakter, den Allah groß nannte", "ar": "خُلُقٌ وصفه الله بالعظمة" },
+        "sub": { "en": "Where the study of his character begins: with the Quran's own description of him", "de": "Wo das Studium seines Charakters beginnt: bei der Beschreibung, die der Koran selbst gibt", "ar": "من هنا تبدأ دراسة شمائله: من وصف القرآن نفسه له" },
+        "arabic": "الشمائل المحمدية"
+      },
+      "slides": [
+        {
+          "verse": "68:4",
+          "check": "great moral character",
+          "title": { "en": "Described by Allah", "de": "Von Allah beschrieben", "ar": "وصفٌ من الله" },
+          "body": { "en": "Before any person praised him, Allah Himself described the character of His Messenger in Surah al-Qalam.", "de": "Bevor ihn ein Mensch lobte, beschrieb Allah selbst in Sure al-Qalam den Charakter Seines Gesandten.", "ar": "قبل أن يمدحه أحد من الناس، وصف الله سبحانه خُلُق رسوله في سورة القلم." }
+        },
+        {
+          "title": { "en": "The word khuluq", "de": "Das Wort chuluq", "ar": "كلمة الخُلُق" },
+          "arabic": "خُلُق",
+          "body": { "en": "Khuluq shares its root with khalq, creation. Character is the inner shape of a person: how they react, give, speak and forgive when no one is watching.", "de": "Chuluq teilt die Wurzel mit chalq, Schöpfung. Charakter ist die innere Gestalt eines Menschen: wie er reagiert, gibt, spricht und vergibt, wenn niemand zusieht.", "ar": "يشترك الخُلُق والخَلْق في الجذر نفسه؛ فالخُلُق صورة الإنسان الباطنة: كيف يتصرف ويعطي ويتكلم ويعفو حين لا يراه أحد." }
+        },
+        {
+          "title": { "en": "'A'isha's answer", "de": "Die Antwort von ʿĀʾischa", "ar": "جواب عائشة" },
+          "body": { "en": "Asked about his character, 'A'isha pointed to the Quran, as Sahih Muslim reports. What it asks of believers, he lived first. What it warns against, he avoided most.", "de": "Nach seinem Charakter gefragt, verwies ʿĀʾischa auf den Koran, wie Sahīh Muslim berichtet. Was er von den Gläubigen verlangt, lebte er zuerst. Wovor er warnt, mied er am meisten.", "ar": "لما سُئلت عائشة رضي الله عنها عن خُلُقه أحالت السائل إلى القرآن، كما في صحيح مسلم: ما يأمر به المؤمنين كان أولهم عملًا به، وما يحذّر منه كان أشدهم بعدًا عنه." }
+        },
+        {
+          "hadith": "bukhari:3559",
+          "check": "best manners and character",
+          "title": { "en": "Never a harsh tongue", "de": "Nie eine verletzende Zunge", "ar": "لسانٌ لا يفحش" },
+          "body": { "en": "'Abdullah ibn 'Amr describes his speech, and the standard he set for everyone else.", "de": "ʿAbdullāh ibn ʿAmr beschreibt seine Sprache und den Maßstab, den er allen anderen setzte.", "ar": "يصف عبد الله بن عمرو كلامه، والميزان الذي وضعه للناس." }
+        },
+        {
+          "hadith": "muslim:6017",
+          "check": "best amongst people in disposition",
+          "title": { "en": "In the eyes of the boy who served him", "de": "In den Augen des Jungen, der ihm diente", "ar": "في عين الغلام الذي خدمه" },
+          "body": { "en": "Anas served him from the age of ten. His verdict fits in a single sentence.", "de": "Anas diente ihm seit seinem zehnten Lebensjahr. Sein Urteil passt in einen einzigen Satz.", "ar": "خدمه أنسٌ منذ كان في العاشرة، وحكمه عليه جملة واحدة." }
+        },
+        {
+          "verse": "3:31",
+          "check": "follow me",
+          "title": { "en": "Love that becomes imitation", "de": "Liebe, die zur Nachfolge wird", "ar": "محبةٌ تصير اتباعًا" },
+          "body": { "en": "Love for Allah shows in following His Messenger, and that includes his manners, not only his acts of worship.", "de": "Die Liebe zu Allah zeigt sich in der Nachfolge Seines Gesandten, und dazu gehören seine Umgangsformen, nicht nur seine Gottesdienste.", "ar": "تظهر محبة الله في اتباع رسوله، ويدخل في ذلك خُلُقه ومعاملته، لا عباداته وحدها." }
+        },
+        {
+          "title": { "en": "Following him today", "de": "Ihm heute folgen", "ar": "كيف نقتدي به اليوم" },
+          "list": {
+            "en": ["Read one report about his character each day", "Choose one of his traits and practise it for a week", "Before replying in anger, ask how he would have answered", "Send blessings on him often"],
+            "de": ["Lesen Sie täglich einen Bericht über seinen Charakter", "Wählen Sie eine seiner Eigenschaften und üben Sie sie eine Woche lang", "Fragen Sie sich vor einer zornigen Antwort, wie er geantwortet hätte", "Sprechen Sie oft Segenswünsche über ihn"],
+            "ar": ["اقرأ كل يوم خبرًا عن أخلاقه", "اختر خُلُقًا من أخلاقه وتمرّن عليه أسبوعًا", "قبل أن تردّ غاضبًا اسأل نفسك: كيف كان سيجيب؟", "أكثِر من الصلاة والسلام عليه"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "at-Tirmidhi, ash-Shama'il al-Muhammadiyya" },
+        { "label": "Sahih Muslim, the hadith of Sa'd ibn Hisham ('A'isha on his character)" },
+        { "label": "Sahih al-Bukhari 5166 (Anas, ten years old when the Prophet came to Madinah)" }
+      ]
+    },
+    {
+      "id": "shamail-02-mercy-to-children",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": { "en": "The Prophet's character · 2", "de": "Charakter des Propheten · 2", "ar": "شمائل النبي ﷺ · ٢" },
+        "title": { "en": "His mercy to children", "de": "Seine Barmherzigkeit mit Kindern", "ar": "رحمته بالأطفال" },
+        "sub": { "en": "A granddaughter on his shoulder, a new dress for a little girl, a hand on every cheek", "de": "Eine Enkelin auf seiner Schulter, ein neues Kleid für ein kleines Mädchen, eine Hand für jede Wange", "ar": "حفيدة على عاتقه، وثوب جديد لطفلة صغيرة، ويدٌ تمسح كل خدّ" },
+        "arabic": "الرحمة بالصغار"
+      },
+      "slides": [
+        {
+          "hadith": "bukhari:5996",
+          "check": "carrying Umamah",
+          "title": { "en": "A granddaughter in prayer", "de": "Eine Enkelin im Gebet", "ar": "حفيدته في الصلاة" },
+          "body": { "en": "Umamah, the daughter of his daughter Zaynab, stayed on his shoulder while he prayed.", "de": "Umāma, die Tochter seiner Tochter Zainab, blieb auf seiner Schulter, während er betete.", "ar": "كانت أمامة بنت ابنته زينب على عاتقه وهو يصلي." }
+        },
+        {
+          "hadith": "bukhari:5823",
+          "check": "Um Khalid",
+          "title": { "en": "A dress for a little girl", "de": "Ein Kleid für ein kleines Mädchen", "ar": "ثوبٌ لطفلة صغيرة" },
+          "body": { "en": "Of all the people present, he chose a small girl for the new garment, then admired its pattern with her.", "de": "Von allen Anwesenden wählte er ein kleines Mädchen für das neue Gewand und bewunderte dann mit ihr das Muster.", "ar": "من بين الحاضرين جميعًا اختار طفلة صغيرة للثوب الجديد، ثم شاركها الإعجاب بنقشه." }
+        },
+        {
+          "hadith": "muslim:6052",
+          "check": "pat the cheeks",
+          "title": { "en": "A hand for every cheek", "de": "Eine Hand für jede Wange", "ar": "يمسح خدّ كل طفل" },
+          "body": { "en": "On his way home after prayer he stopped for the children he met, one by one. Jabir ibn Samurah remembered the touch of his hand.", "de": "Auf dem Heimweg nach dem Gebet blieb er bei den Kindern stehen, bei jedem einzeln. Jābir ibn Samura erinnerte sich an die Berührung seiner Hand.", "ar": "في طريقه إلى أهله بعد الصلاة وقف للأطفال واحدًا واحدًا، وبقي جابر بن سمرة يذكر لمسة يده." }
+        },
+        {
+          "hadith": "muslim:6027",
+          "check": "kiss your children",
+          "title": { "en": "Tenderness is not weakness", "de": "Zärtlichkeit ist keine Schwäche", "ar": "الحنان ليس ضعفًا" },
+          "body": { "en": "Some Bedouins thought kissing children was beneath them. His answer tied tenderness to mercy itself.", "de": "Einige Beduinen hielten es für unter ihrer Würde, Kinder zu küssen. Seine Antwort verband Zärtlichkeit mit der Barmherzigkeit selbst.", "ar": "رأى بعض الأعراب تقبيل الأطفال أمرًا لا يليق بهم، فربط جوابه الحنان بالرحمة نفسها." }
+        },
+        {
+          "title": { "en": "Following him today", "de": "Ihm heute folgen", "ar": "كيف نقتدي به اليوم" },
+          "list": {
+            "en": ["Greet children first and call them by name", "Give children gifts and share their delight", "Kiss and hug your children without embarrassment", "Make room for families with small children in the mosque"],
+            "de": ["Grüßen Sie Kinder zuerst und nennen Sie sie beim Namen", "Beschenken Sie Kinder und teilen Sie ihre Freude", "Küssen und umarmen Sie Ihre Kinder ohne Scheu", "Machen Sie Familien mit kleinen Kindern in der Moschee Platz"],
+            "ar": ["ابدأ الأطفال بالسلام وادعُهم بأسمائهم", "أهدِ الأطفال وشاركهم فرحتهم", "قبّل أولادك واحضنهم بلا حرج", "أفسح في المسجد للأسر ذات الأطفال الصغار"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "shamail-03-mercy-to-animals",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": { "en": "The Prophet's character · 3", "de": "Charakter des Propheten · 3", "ar": "شمائل النبي ﷺ · ٣" },
+        "title": { "en": "Mercy for every creature", "de": "Barmherzigkeit für jedes Geschöpf", "ar": "رحمة بكل مخلوق" },
+        "sub": { "en": "A thirsty dog, a starved cat, tired camels: his mercy reached those who cannot speak", "de": "Ein durstiger Hund, eine verhungerte Katze, müde Kamele: Seine Barmherzigkeit erreichte die, die nicht sprechen können", "ar": "كلب عطشان، وقطة جائعة، وإبل متعبة: رحمته بلغت من لا ينطق" },
+        "arabic": "الرفق بالحيوان"
+      },
+      "slides": [
+        {
+          "verse": "21:107",
+          "check": "mercy to the worlds",
+          "title": { "en": "Mercy to all the worlds", "de": "Barmherzigkeit für die Welten", "ar": "رحمة للعالمين" },
+          "body": { "en": "The worlds include more than people. His mercy reached animals too, as the next slides show.", "de": "Die Welten umfassen mehr als Menschen. Seine Barmherzigkeit erreichte auch Tiere, wie die folgenden Seiten zeigen.", "ar": "العالمون أوسع من البشر، وقد بلغت رحمته الحيوان أيضًا كما تبيّن الشرائح التالية." }
+        },
+        {
+          "verse": "6:38",
+          "check": "communities like you",
+          "title": { "en": "Communities of their own", "de": "Eigene Gemeinschaften", "ar": "أممٌ لها شأنها" },
+          "body": { "en": "Animals and birds are called communities. Each has its own life before its Lord.", "de": "Tiere und Vögel werden Gemeinschaften genannt. Jedes hat vor seinem Herrn ein eigenes Leben.", "ar": "تسمّي الآية الدوابَّ والطير أممًا، لكلٍّ منها حياته عند ربه." }
+        },
+        {
+          "hadith": "bukhari:2363",
+          "check": "reward for serving any animate",
+          "title": { "en": "Water for a thirsty dog", "de": "Wasser für einen durstigen Hund", "ar": "سقيا كلب عطشان" },
+          "body": { "en": "He told of a man whom Allah forgave for one act of kindness, and answered the question his companions asked next.", "de": "Er erzählte von einem Mann, dem Allah wegen einer einzigen guten Tat vergab, und beantwortete die Frage, die seine Gefährten darauf stellten.", "ar": "حدّث عن رجل غفر الله له بعمل رحيم واحد، ثم أجاب عن سؤال الصحابة بعده." }
+        },
+        {
+          "hadith": "bukhari:3482",
+          "check": "cat",
+          "title": { "en": "A cat locked away", "de": "Eine eingesperrte Katze", "ar": "قطة محبوسة" },
+          "body": { "en": "The other side of the same truth: cruelty to an animal is never a small matter.", "de": "Die andere Seite derselben Wahrheit: Grausamkeit gegen ein Tier ist nie eine Kleinigkeit.", "ar": "الوجه الآخر للحقيقة نفسها: القسوة على الحيوان ليست أمرًا هيّنًا أبدًا." }
+        },
+        {
+          "hadith": "muslim:4960",
+          "check": "give the camels a chance",
+          "title": { "en": "Rest for the camels", "de": "Rast für die Kamele", "ar": "حق الإبل في السفر" },
+          "body": { "en": "Even the pace of a journey had to take the animals into account.", "de": "Selbst das Tempo einer Reise sollte die Tiere berücksichtigen.", "ar": "حتى سرعة السير في السفر كان عليها أن تراعي حال الدواب." }
+        },
+        {
+          "hadith": "bukhari:5515",
+          "check": "Muthla",
+          "title": { "en": "Not a target", "de": "Keine Zielscheibe", "ar": "ليست غرضًا للرمي" },
+          "body": { "en": "Ibn 'Umar saw young men using a hen for target practice, and reminded them of the Prophet's words.", "de": "Ibn ʿUmar sah junge Männer, die ein Huhn als Zielscheibe benutzten, und erinnerte sie an die Worte des Propheten.", "ar": "رأى ابن عمر فتيانًا اتخذوا دجاجة غرضًا يرمونها، فذكّرهم بقول النبي ﷺ." }
+        },
+        {
+          "title": { "en": "Following him today", "de": "Ihm heute folgen", "ar": "كيف نقتدي به اليوم" },
+          "list": {
+            "en": ["Put out water for birds and stray animals in the heat", "Never hit or overload an animal that works for you", "Teach children to be gentle with pets", "Care for the animals in your home as a trust"],
+            "de": ["Stellen Sie bei Hitze Wasser für Vögel und streunende Tiere hin", "Schlagen oder überladen Sie nie ein Tier, das für Sie arbeitet", "Lehren Sie Kinder, sanft mit Haustieren umzugehen", "Sorgen Sie für die Tiere in Ihrem Haus als anvertrautes Gut"],
+            "ar": ["ضع الماء للطيور والحيوانات الشاردة في الحر", "لا تضرب دابة تعمل لك ولا تحمّلها فوق طاقتها", "علّم الأطفال الرفق بالحيوانات الأليفة", "اعتنِ بحيوانات بيتك فهي أمانة عندك"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "shamail-04-those-who-served-him",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": { "en": "The Prophet's character · 4", "de": "Charakter des Propheten · 4", "ar": "شمائل النبي ﷺ · ٤" },
+        "title": { "en": "How he treated those who served", "de": "Wie er die behandelte, die dienten", "ar": "معاملته لمن يخدم" },
+        "sub": { "en": "A whip that fell to the ground, a share for the cook, and a cleaner no one else missed", "de": "Eine Peitsche, die zu Boden fiel, ein Anteil für den Koch und eine Reinigungskraft, die sonst niemand vermisste", "ar": "سوطٌ سقط على الأرض، ونصيبٌ للطاهي، وعاملٌ لم يفتقده أحد سواه" },
+        "arabic": "الإحسان إلى الخدم"
+      },
+      "slides": [
+        {
+          "hadith": "muslim:6050",
+          "check": "neither a woman nor a servant",
+          "title": { "en": "He never raised his hand", "de": "Er erhob nie die Hand", "ar": "لم يضرب بيده" },
+          "body": { "en": "'A'isha, who knew his home best, describes how he treated the weakest members of a household.", "de": "ʿĀʾischa, die sein Zuhause am besten kannte, beschreibt, wie er die Schwächsten eines Hauses behandelte.", "ar": "تصف عائشة، وهي أعلم الناس ببيته، معاملته لأضعف من في البيت." }
+        },
+        {
+          "hadith": "muslim:4306",
+          "check": "more dominance upon you",
+          "title": { "en": "The whip that fell", "de": "Die Peitsche, die fiel", "ar": "السوط الذي سقط" },
+          "body": { "en": "Abu Mas'ud was beating his servant in anger. A voice from behind him changed him for good.", "de": "Abū Masʿūd schlug im Zorn seinen Diener. Eine Stimme hinter ihm veränderte ihn für immer.", "ar": "كان أبو مسعود يضرب غلامه غاضبًا، فغيّره صوتٌ من خلفه إلى الأبد." }
+        },
+        {
+          "hadith": "bukhari:5460",
+          "check": "suffered from its heat",
+          "title": { "en": "The cook deserves a share", "de": "Wer kocht, verdient einen Anteil", "ar": "لمن صنع الطعام نصيب" },
+          "body": { "en": "He noticed the heat and effort behind every meal, and gave the one who prepared it a right to it.", "de": "Er sah die Hitze und Mühe hinter jeder Mahlzeit und gab dem, der sie zubereitet hatte, ein Anrecht darauf.", "ar": "رأى الحرّ والتعب وراء كل طعام، فجعل لمن صنعه حقًا فيه." }
+        },
+        {
+          "hadith": "muslim:6042",
+          "check": "servants of Medina",
+          "title": { "en": "Cold mornings, open hands", "de": "Kalte Morgen, offene Hände", "ar": "صباحات باردة ويد ممدودة" },
+          "body": { "en": "After the dawn prayer, servants brought him vessels of water. He turned none of them away, not even on cold mornings.", "de": "Nach dem Morgengebet brachten ihm Diener Gefäße mit Wasser. Er wies keinen von ihnen ab, auch nicht an kalten Morgen.", "ar": "كان الخدم يأتونه بآنية الماء بعد صلاة الفجر، فلم يردّ أحدًا منهم ولو في صباح بارد." }
+        },
+        {
+          "hadith": "bukhari:458",
+          "check": "sweep the mosque",
+          "title": { "en": "The one who swept the mosque", "de": "Wer die Moschee fegte", "ar": "من كان يكنس المسجد" },
+          "body": { "en": "No one thought to tell him when the person who cleaned the mosque died. He asked, and went to the grave to pray.", "de": "Niemand dachte daran, ihm Bescheid zu geben, als die Person starb, die die Moschee reinigte. Er fragte nach und ging zum Grab, um zu beten.", "ar": "لم يخطر لأحد أن يخبره بموت من كان ينظّف المسجد، فسأل عنه وذهب إلى قبره يصلي عليه." }
+        },
+        {
+          "title": { "en": "Following him today", "de": "Ihm heute folgen", "ar": "كيف نقتدي به اليوم" },
+          "list": {
+            "en": ["Thank cleaners, cooks and drivers by name", "Never shout at someone who works for you", "Share your food with those who prepared it", "Notice when the quiet helpers are missing"],
+            "de": ["Danken Sie Reinigungskräften, Köchen und Fahrern mit Namen", "Schreien Sie nie jemanden an, der für Sie arbeitet", "Teilen Sie Ihr Essen mit denen, die es zubereitet haben", "Bemerken Sie es, wenn die stillen Helfer fehlen"],
+            "ar": ["اشكر عمال النظافة والطهاة والسائقين بأسمائهم", "لا ترفع صوتك على من يعمل لك", "شارك طعامك مع من صنعه", "انتبه إذا غاب من يخدمون بصمت"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "shamail-05-humility",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": { "en": "The Prophet's character · 5", "de": "Charakter des Propheten · 5", "ar": "شمائل النبي ﷺ · ٥" },
+        "title": { "en": "The humility of the Messenger", "de": "Die Demut des Gesandten", "ar": "تواضع الرسول ﷺ" },
+        "sub": { "en": "He worked at home, accepted the smallest invitation and asked not to be overpraised", "de": "Er arbeitete zu Hause mit, nahm die kleinste Einladung an und bat, nicht übermäßig gelobt zu werden", "ar": "يعمل في بيته، ويجيب أبسط دعوة، وينهى عن الغلوّ في مدحه" },
+        "arabic": "التواضع"
+      },
+      "slides": [
+        {
+          "hadith": "bukhari:5363",
+          "check": "work for his family",
+          "title": { "en": "At home", "de": "Zu Hause", "ar": "في بيته" },
+          "body": { "en": "Al-Aswad asked 'A'isha what he did at home. Her answer: ordinary household work, until it was time to pray.", "de": "Al-Aswad fragte ʿĀʾischa, was er zu Hause tat. Ihre Antwort: gewöhnliche Hausarbeit, bis es Zeit zum Gebet war.", "ar": "سأل الأسود عائشة عمّا كان يصنع في بيته، فكان جوابها: عمل البيت المعتاد حتى يحين وقت الصلاة." }
+        },
+        {
+          "hadith": "bukhari:3445",
+          "check": "Do not exaggerate in praising me",
+          "title": { "en": "Servant first", "de": "Zuerst Diener", "ar": "مقام العبودية" },
+          "body": { "en": "The most honoured of creation chose the title of servant for himself, and warned against raising him above it.", "de": "Der Geehrteste der Schöpfung wählte für sich den Titel Diener und warnte davor, ihn darüber zu erheben.", "ar": "اختار أكرمُ الخلق لنفسه وصف العبودية، وحذّر من رفعه فوق منزلته." }
+        },
+        {
+          "hadith": "bukhari:2568",
+          "check": "sheep's trotter",
+          "title": { "en": "No invitation too small", "de": "Keine Einladung zu gering", "ar": "لا يستصغر دعوة" },
+          "body": { "en": "A trotter is among the cheapest parts of a sheep. He would still accept the invitation and the gift.", "de": "Ein Schafsfuß gehört zum Billigsten am Schaf. Er nahm die Einladung und das Geschenk trotzdem an.", "ar": "الكُراع من أرخص ما في الشاة، ومع ذلك كان يجيب الدعوة ويقبل الهدية." }
+        },
+        {
+          "hadith": "bukhari:2987",
+          "check": "Usama ride behind him",
+          "title": { "en": "Room on the donkey", "de": "Platz auf dem Esel", "ar": "أردفه خلفه" },
+          "body": { "en": "He rode a donkey, and made room behind him for young Usama ibn Zayd.", "de": "Er ritt auf einem Esel und machte hinter sich Platz für den jungen Usāma ibn Zaid.", "ar": "ركب حمارًا، وأفسح خلفه للشاب أسامة بن زيد." }
+        },
+        {
+          "hadith": "muslim:6044",
+          "check": "stood aside with her",
+          "title": { "en": "Time for a troubled woman", "de": "Zeit für eine verwirrte Frau", "ar": "وقتٌ لامرأة مضطربة" },
+          "body": { "en": "A woman whose mind was unsettled asked for his help. The leader of Madinah stopped in the street until her need was met.", "de": "Eine Frau, deren Geist verwirrt war, bat ihn um Hilfe. Das Oberhaupt Medinas blieb auf der Straße stehen, bis ihr Anliegen erledigt war.", "ar": "طلبت حاجتها امرأة في عقلها اضطراب، فوقف قائد المدينة معها في الطريق حتى قضى حاجتها." }
+        },
+        {
+          "title": { "en": "Humility is not self-contempt", "de": "Demut ist keine Selbstverachtung", "ar": "التواضع ليس احتقارًا للنفس" },
+          "body": { "en": "He knew his rank and never denied it. His humility meant something else: never using that rank against anyone, and serving where others expected to be served.", "de": "Er kannte seinen Rang und leugnete ihn nie. Seine Demut bedeutete etwas anderes: diesen Rang nie gegen jemanden zu benutzen und zu dienen, wo andere bedient werden wollten.", "ar": "كان يعرف منزلته ولم ينكرها، لكن تواضعه أنه لم يستعملها على أحد قط، وأنه كان يخدم حيث ينتظر غيره أن يُخدَم." }
+        },
+        {
+          "title": { "en": "Following him today", "de": "Ihm heute folgen", "ar": "كيف نقتدي به اليوم" },
+          "list": {
+            "en": ["Do a share of the housework without being asked", "Accept simple invitations from simple people", "Give your full attention to people others overlook", "Speak of him with love, not exaggeration"],
+            "de": ["Übernehmen Sie einen Teil der Hausarbeit, ohne gebeten zu werden", "Nehmen Sie einfache Einladungen einfacher Menschen an", "Schenken Sie Menschen, die andere übersehen, Ihre volle Aufmerksamkeit", "Sprechen Sie mit Liebe über ihn, ohne Übertreibung"],
+            "ar": ["شارك في أعمال البيت دون أن يُطلب منك", "أجب الدعوات البسيطة من الناس البسطاء", "امنح انتباهك كاملًا لمن يغفل عنهم الناس", "تحدّث عنه بمحبة لا بغلوّ"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "shamail-06-his-smile",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": { "en": "The Prophet's character · 6", "de": "Charakter des Propheten · 6", "ar": "شمائل النبي ﷺ · ٦" },
+        "title": { "en": "His smile", "de": "Sein Lächeln", "ar": "تبسّمه ﷺ" },
+        "sub": { "en": "His companions remembered his face: a smile for every visitor, and a smile on his last morning", "de": "Die Gefährten erinnerten sich an sein Gesicht: ein Lächeln für jeden Besucher und ein Lächeln an seinem letzten Morgen", "ar": "تذكّر الصحابة وجهه: بسمة لكل زائر، وبسمة في صباحه الأخير" },
+        "arabic": "البشاشة"
+      },
+      "slides": [
+        {
+          "title": { "en": "A face people remembered", "de": "Ein Gesicht, das man nicht vergaß", "ar": "وجهٌ لا يُنسى" },
+          "body": { "en": "Many reports about him describe not his words but his face. The companions noticed when it lit up and when something troubled him. His smile was part of how he taught.", "de": "Viele Berichte über ihn beschreiben nicht seine Worte, sondern sein Gesicht. Die Gefährten bemerkten, wann es aufleuchtete und wann ihn etwas bedrückte. Sein Lächeln gehörte zu seiner Art zu lehren.", "ar": "كثير من الأخبار عنه لا تصف كلامه بل وجهه؛ فقد لاحظ الصحابة متى يتهلل ومتى يهمّه أمر، وكانت بسمته جزءًا من تعليمه." }
+        },
+        {
+          "hadith": "muslim:4605",
+          "check": "smiling",
+          "title": { "en": "Caught in the act", "de": "Auf frischer Tat ertappt", "ar": "ضُبط متلبّسًا" },
+          "body": { "en": "'Abdullah ibn Mughaffal grabbed a bag of food and declared it his. Then he turned around and saw who was watching.", "de": "ʿAbdullāh ibn Mughaffal griff nach einem Beutel Essen und erklärte ihn für sich. Dann drehte er sich um und sah, wer zuschaute.", "ar": "أمسك عبد الله بن مغفّل جرابًا من طعام وأعلن أنه له، ثم التفت فرأى من كان ينظر إليه." }
+        },
+        {
+          "hadith": "bukhari:6092",
+          "check": "smile only",
+          "title": { "en": "A smile, not loud laughter", "de": "Ein Lächeln, kein lautes Lachen", "ar": "تبسّمٌ لا قهقهة" },
+          "body": { "en": "'A'isha describes his joy: warm and visible, yet always dignified.", "de": "ʿĀʾischa beschreibt seine Freude: warm und sichtbar, doch immer würdevoll.", "ar": "تصف عائشة فرحه: دافئًا ظاهرًا، مع وقار لا يفارقه." }
+        },
+        {
+          "hadith": "muslim:1525",
+          "check": "only smiled",
+          "title": { "en": "Listening to old stories", "de": "Beim Zuhören alter Geschichten", "ar": "يستمع إلى أخبار الماضي" },
+          "body": { "en": "After the dawn prayer his companions talked and laughed about their past. He sat with them and shared their mood.", "de": "Nach dem Morgengebet sprachen und lachten seine Gefährten über ihre Vergangenheit. Er saß bei ihnen und teilte ihre Stimmung.", "ar": "بعد صلاة الفجر كان أصحابه يتحدثون عن ماضيهم ويضحكون، فيجلس معهم ويشاركهم أنسهم." }
+        },
+        {
+          "hadith": "bukhari:754",
+          "check": "smiled with pleasure",
+          "title": { "en": "A smile on his last day", "de": "Ein Lächeln an seinem letzten Tag", "ar": "بسمة في يومه الأخير" },
+          "body": { "en": "Too ill to lead the prayer, he looked out at his community standing in rows. Anas describes his face.", "de": "Zu krank, um das Gebet zu leiten, blickte er auf seine Gemeinschaft in den Reihen. Anas beschreibt sein Gesicht.", "ar": "وهو مريض لا يقدر على الإمامة، نظر إلى أمته صفوفًا في الصلاة، ويصف أنس وجهه." }
+        },
+        {
+          "title": { "en": "Joy in its proper place", "de": "Freude am richtigen Ort", "ar": "الفرح في موضعه" },
+          "body": { "en": "His smile never meant that nothing mattered. The same face showed concern when a storm cloud rose or when he saw wrong. Cheerfulness and seriousness lived side by side in him.", "de": "Sein Lächeln bedeutete nie, dass nichts wichtig war. Dasselbe Gesicht zeigte Sorge, wenn eine Sturmwolke aufzog oder er Unrecht sah. Heiterkeit und Ernst lebten in ihm nebeneinander.", "ar": "لم تكن بسمته تعني أن شيئًا لا يهم؛ فالوجه نفسه كان يظهر عليه القلق إذا رأى غيمًا مقبلًا أو رأى منكرًا. اجتمع فيه البِشر والجدّ معًا." }
+        },
+        {
+          "title": { "en": "Following him today", "de": "Ihm heute folgen", "ar": "كيف نقتدي به اليوم" },
+          "list": {
+            "en": ["Greet people with a smile before any words", "Let your family see your joy, not only your tiredness", "Laugh with your friends, never at someone's expense", "Smile at those who rarely receive one"],
+            "de": ["Begrüßen Sie Menschen mit einem Lächeln, noch vor jedem Wort", "Lassen Sie Ihre Familie Ihre Freude sehen, nicht nur Ihre Müdigkeit", "Lachen Sie mit Freunden, nie auf Kosten anderer", "Lächeln Sie die an, die selten ein Lächeln bekommen"],
+            "ar": ["استقبل الناس ببسمة قبل أي كلمة", "دع أهلك يرون فرحك لا تعبك وحده", "اضحك مع أصحابك، ولا تسخر من أحد", "ابتسم لمن قلّما يبتسم له أحد"]
+          }
+        }
+      ],
+      "sources": [{ "label": "Sahih al-Bukhari 4828 ('A'isha on his smile and the storm clouds)" }]
+    },
+    {
+      "id": "shamail-07-how-he-spoke",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": { "en": "The Prophet's character · 7", "de": "Charakter des Propheten · 7", "ar": "شمائل النبي ﷺ · ٧" },
+        "title": { "en": "How he spoke", "de": "Wie er sprach", "ar": "كيف كان يتكلم" },
+        "sub": { "en": "Few words with wide meaning, never coarse, careful even with names", "de": "Wenige Worte mit weiter Bedeutung, nie derb, achtsam selbst mit Namen", "ar": "كلام قليل واسع المعنى، لا فحش فيه، يعتني حتى بالأسماء" },
+        "arabic": "حُسن المنطق"
+      },
+      "slides": [
+        {
+          "hadith": "bukhari:2977",
+          "check": "shortest expressions",
+          "title": { "en": "Few words, wide meaning", "de": "Wenige Worte, weite Bedeutung", "ar": "كلماتٌ قليلة ومعانٍ واسعة" },
+          "body": { "en": "Among the gifts he was given: speech that says much in little. Many of his sayings fit in a single breath.", "de": "Zu den Gaben, die ihm gegeben wurden, gehört eine Sprache, die mit wenig viel sagt. Viele seiner Worte passen in einen einzigen Atemzug.", "ar": "من العطايا التي أُعطيها كلامٌ قليل اللفظ كثير المعنى، وكثير من أقواله يُقال في نفَس واحد." }
+        },
+        {
+          "hadith": "bukhari:6031",
+          "check": "forehead be dusted",
+          "title": { "en": "Even his rebuke was mild", "de": "Selbst sein Tadel war mild", "ar": "حتى عتابه كان رفيقًا" },
+          "body": { "en": "He did not curse or insult. When he had to correct someone, his strongest words were a gentle Arabic expression.", "de": "Er fluchte nicht und beleidigte nicht. Musste er jemanden zurechtweisen, war sein schärfstes Wort ein milder arabischer Ausdruck.", "ar": "خلا لسانه من الشتم واللعن، وإذا اضطر إلى العتاب كانت أشد كلماته عبارة عربية لطيفة." }
+        },
+        {
+          "hadith": "muslim:5604",
+          "check": "Jamila",
+          "title": { "en": "Even names matter", "de": "Selbst Namen zählen", "ar": "حتى الأسماء لها شأن" },
+          "body": { "en": "He did not let a person carry a name with a harsh meaning. Words shape how people see themselves.", "de": "Er ließ niemanden einen Namen mit harter Bedeutung tragen. Worte prägen, wie Menschen sich selbst sehen.", "ar": "لم يكن يرضى أن يحمل أحد اسمًا قبيح المعنى، فالكلمات تصوغ نظرة الإنسان إلى نفسه." }
+        },
+        {
+          "verse": "17:53",
+          "check": "say that which is best",
+          "title": { "en": "The best of words", "de": "Die besten Worte", "ar": "أحسن القول" },
+          "body": { "en": "Believers are told to choose the best words, because harsh speech opens a door for Satan between people.", "de": "Die Gläubigen sollen die besten Worte wählen, denn harte Rede öffnet dem Satan eine Tür zwischen den Menschen.", "ar": "يؤمر المؤمنون باختيار أحسن الكلام، لأن الكلمة القاسية تفتح للشيطان بابًا بين الناس." }
+        },
+        {
+          "title": { "en": "Following him today", "de": "Ihm heute folgen", "ar": "كيف نقتدي به اليوم" },
+          "list": {
+            "en": ["Say less, and say it well", "Remove curses and insults from your speech, even in jest", "Call people by names and titles they love", "Before speaking, ask: is it true, kind and needed?"],
+            "de": ["Sagen Sie weniger, und sagen Sie es gut", "Verbannen Sie Flüche und Beleidigungen aus Ihrer Sprache, auch im Scherz", "Rufen Sie Menschen mit Namen und Anreden, die sie mögen", "Fragen Sie vor dem Sprechen: Ist es wahr, freundlich und nötig?"],
+            "ar": ["قلّل كلامك وأحسِنه", "طهّر كلامك من السبّ واللعن ولو مازحًا", "نادِ الناس بأحب الأسماء إليهم", "قبل أن تتكلم اسأل: أهو صدق ولطيف وضروري؟"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "shamail-08-generosity",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": { "en": "The Prophet's character · 8", "de": "Charakter des Propheten · 8", "ar": "شمائل النبي ﷺ · ٨" },
+        "title": { "en": "His open hand", "de": "Seine offene Hand", "ar": "يده المبسوطة" },
+        "sub": { "en": "Gifts given freely, gold sent out before nightfall, and no request turned down", "de": "Großzügige Gaben, Gold, das noch vor der Nacht verteilt wurde, und keine abgewiesene Bitte", "ar": "عطايا بلا حساب، وذهب يُوزَّع قبل الليل، ولا سائل يُردّ" },
+        "arabic": "الجود"
+      },
+      "slides": [
+        {
+          "hadith": "muslim:6018",
+          "check": "he said: No",
+          "title": { "en": "Never a refusal", "de": "Nie eine Absage", "ar": "لم يردّ سائلًا" },
+          "body": { "en": "Jabir sums up a lifetime of requests in a single line.", "de": "Jābir fasst ein Leben voller Bitten in einer einzigen Zeile zusammen.", "ar": "يلخّص جابر عمرًا من الطلبات في سطر واحد." }
+        },
+        {
+          "hadith": "muslim:6020",
+          "check": "fear of want",
+          "title": { "en": "A gift that opened a heart", "de": "Ein Geschenk, das ein Herz öffnete", "ar": "عطاءٌ فتح قلبًا" },
+          "body": { "en": "A man went home with a whole flock, and told his people what kind of man the Prophet was.", "de": "Ein Mann kehrte mit einer ganzen Herde heim und erzählte seinem Volk, was für ein Mensch der Prophet war.", "ar": "عاد رجل إلى قومه بقطيع كامل، وأخبرهم أيّ رجل هو النبي ﷺ." }
+        },
+        {
+          "hadith": "bukhari:1430",
+          "check": "piece of gold",
+          "title": { "en": "Not one night", "de": "Nicht eine Nacht", "ar": "ولا ليلة واحدة" },
+          "body": { "en": "After the 'Asr prayer he hurried home and came straight back. The companions wondered why, until he explained.", "de": "Nach dem ʿAsr-Gebet eilte er nach Hause und kam sofort zurück. Die Gefährten wunderten sich, bis er es erklärte.", "ar": "أسرع إلى بيته بعد صلاة العصر ثم عاد على الفور، فتعجب الصحابة حتى بيّن لهم السبب." }
+        },
+        {
+          "hadith": "bukhari:2585",
+          "check": "give something in return",
+          "title": { "en": "Gifts answered with gifts", "de": "Geschenke mit Geschenken beantwortet", "ar": "يكافئ على الهدية" },
+          "body": { "en": "Generosity also means receiving graciously, and then giving back.", "de": "Großzügigkeit heißt auch, freundlich anzunehmen und dann zurückzugeben.", "ar": "ومن الكرم أن تقبل الهدية بلطف ثم تكافئ عليها." }
+        },
+        {
+          "hadith": "bukhari:1432",
+          "check": "Help and recommend him",
+          "title": { "en": "Generous with his influence", "de": "Großzügig mit seinem Einfluss", "ar": "الكرم بالجاه" },
+          "body": { "en": "When someone in need came, he invited his companions to speak up for him too. A word on someone's behalf is also a gift.", "de": "Kam jemand in Not, lud er auch seine Gefährten ein, sich für ihn einzusetzen. Ein Wort für einen anderen ist ebenfalls eine Gabe.", "ar": "إذا جاءه محتاج دعا أصحابه إلى أن يشفعوا له؛ فالكلمة تقولها لغيرك عطاءٌ أيضًا." }
+        },
+        {
+          "verse": "93:10",
+          "check": "petitioner",
+          "title": { "en": "The one who asks", "de": "Wer bittet", "ar": "السائل" },
+          "body": { "en": "A command first given to him in Makkah, which he lived by for the rest of his life.", "de": "Ein Gebot, das zuerst in Mekka an ihn erging und nach dem er sein Leben lang handelte.", "ar": "أمرٌ وُجّه إليه أولًا بمكة، فعاش به بقية حياته." }
+        },
+        {
+          "title": { "en": "Following him today", "de": "Ihm heute folgen", "ar": "كيف نقتدي به اليوم" },
+          "list": {
+            "en": ["Give something every day, however small", "Pass on money meant for others without delay", "Accept gifts warmly and return the kindness", "Use your name and contacts to help someone in need"],
+            "de": ["Geben Sie jeden Tag etwas, so klein es auch sei", "Geben Sie Geld, das für andere bestimmt ist, ohne Verzögerung weiter", "Nehmen Sie Geschenke herzlich an und erwidern Sie die Freundlichkeit", "Setzen Sie Ihren Namen und Ihre Kontakte für Bedürftige ein"],
+            "ar": ["أعطِ كل يوم شيئًا ولو قليلًا", "أوصل المال الذي لغيرك دون تأخير", "اقبل الهدية بفرح وكافئ عليها", "استعمل جاهك ومعارفك في عون المحتاج"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "shamail-09-patience-with-ignorance",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": { "en": "The Prophet's character · 9", "de": "Charakter des Propheten · 9", "ar": "شمائل النبي ﷺ · ٩" },
+        "title": { "en": "Patient with those who did not know", "de": "Geduldig mit denen, die es nicht wussten", "ar": "حِلمه مع من جهل" },
+        "sub": { "en": "A Bedouin in the mosque, a rough pull on his cloak, a creditor's harsh words: he answered with calm", "de": "Ein Beduine in der Moschee, ein grober Ruck am Umhang, die harten Worte eines Gläubigers: Er antwortete mit Ruhe", "ar": "أعرابي في المسجد، وجذبة عنيفة لردائه، وغريم غليظ القول: فأجاب بالحلم" },
+        "arabic": "الحِلم"
+      },
+      "slides": [
+        {
+          "title": { "en": "What hilm means", "de": "Was ḥilm bedeutet", "ar": "معنى الحِلم" },
+          "arabic": "حِلم",
+          "body": { "en": "Hilm is the strength to stay calm when provoked. It is not weakness: the one who has it could react, and chooses not to, because the other person needs teaching more than punishment.", "de": "Ḥilm ist die Kraft, ruhig zu bleiben, wenn man gereizt wird. Es ist keine Schwäche: Wer es besitzt, könnte reagieren und tut es nicht, weil der andere Belehrung mehr braucht als Strafe.", "ar": "الحِلم قوة تضبط النفس عند الاستفزاز، وليس ضعفًا؛ فصاحبه قادر على الردّ لكنه يمسك، لأن الآخر يحتاج إلى التعليم أكثر من العقوبة." }
+        },
+        {
+          "verse": "7:199",
+          "check": "turn away from the ignorant",
+          "title": { "en": "A whole method in one verse", "de": "Eine ganze Methode in einem Vers", "ar": "منهجٌ في آية" },
+          "body": { "en": "Al-Qurtubi cites Ja'far as-Sadiq: no verse of the Quran gathers noble character more fully.", "de": "Al-Qurtubī zitiert Jaʿfar as-Sādiq: Kein Vers des Korans fasst edlen Charakter vollständiger zusammen.", "ar": "ينقل القرطبي عن جعفر الصادق أنه ليس في القرآن آية أجمع لمكارم الأخلاق منها." }
+        },
+        {
+          "hadith": "muslim:661",
+          "check": "remembrance of Allah",
+          "title": { "en": "A Bedouin in the mosque", "de": "Ein Beduine in der Moschee", "ar": "أعرابي في المسجد" },
+          "body": { "en": "The companions rushed to stop him. The Prophet stopped them instead, and then taught the man kindly.", "de": "Die Gefährten wollten ihn sofort aufhalten. Der Prophet hielt stattdessen sie zurück und belehrte den Mann dann freundlich.", "ar": "هبّ الصحابة لزجره، فمنعهم النبي ﷺ، ثم علّم الرجل برفق." }
+        },
+        {
+          "hadith": "bukhari:3149",
+          "check": "smiled",
+          "title": { "en": "A rough pull on his cloak", "de": "Ein grober Ruck am Umhang", "ar": "جذبةٌ عنيفة" },
+          "body": { "en": "The pull left a mark on his shoulder. Anas, walking beside him, saw how he responded.", "de": "Der Ruck hinterließ eine Spur auf seiner Schulter. Anas, der neben ihm ging, sah, wie er reagierte.", "ar": "ترك الجذب أثرًا على عاتقه، وكان أنس يمشي معه فرأى كيف ردّ." }
+        },
+        {
+          "hadith": "bukhari:2306",
+          "check": "the creditor",
+          "title": { "en": "A creditor's harsh words", "de": "Die harten Worte eines Gläubigers", "ar": "غريمٌ غليظ القول" },
+          "body": { "en": "A man came to claim a debt and spoke to him rudely. The Prophet defended the man's right, then repaid him with something better.", "de": "Ein Mann forderte grob eine Schuld ein. Der Prophet verteidigte sein Recht und zahlte ihm dann etwas Besseres zurück.", "ar": "جاءه رجل يطالبه بدَين فأغلظ له، فدافع النبي ﷺ عن حقه ثم قضاه خيرًا مما له." }
+        },
+        {
+          "title": { "en": "Following him today", "de": "Ihm heute folgen", "ar": "كيف نقتدي به اليوم" },
+          "list": {
+            "en": ["Correct mistakes in private and with a smile", "Ask yourself whether the person simply did not know", "Let others finish before you respond", "Pay back what you owe generously, even to rude people"],
+            "de": ["Korrigieren Sie Fehler unter vier Augen und mit einem Lächeln", "Fragen Sie sich, ob die Person es einfach nicht wusste", "Lassen Sie andere ausreden, bevor Sie antworten", "Zahlen Sie Schulden großzügig zurück, auch an unhöfliche Menschen"],
+            "ar": ["صحّح الخطأ سرًّا وبابتسامة", "اسأل نفسك: لعل صاحبه لم يكن يعلم", "دع غيرك يُتمّ كلامه قبل أن تردّ", "اقضِ دَينك بإحسان ولو لمن أساء القول"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "al-Qurtubi, al-Jami' li-Ahkam al-Qur'an, on 7:199", "url": "https://quran.com/7:199/tafsirs/ar-tafseer-al-qurtubi" },
+        { "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 7:199", "url": "https://quran.com/7:199/tafsirs/en-tafisr-ibn-kathir" }
+      ]
+    },
+    {
+      "id": "shamail-10-forgiveness",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": { "en": "The Prophet's character · 10", "de": "Charakter des Propheten · 10", "ar": "شمائل النبي ﷺ · ١٠" },
+        "title": { "en": "He forgave when he could have punished", "de": "Er vergab, wo er hätte strafen können", "ar": "عفا وهو قادر" },
+        "sub": { "en": "Ta'if, Makkah, a drawn sword and a poisoned meal: forgiveness from a position of strength", "de": "Taif, Mekka, ein gezogenes Schwert und vergiftetes Fleisch: Vergebung aus einer Position der Stärke", "ar": "الطائف ومكة وسيف مسلول وطعام مسموم: عفوٌ عن قدرة" },
+        "arabic": "العفو عند المقدرة"
+      },
+      "slides": [
+        {
+          "title": { "en": "Harder than Uhud", "de": "Schwerer als Uḥud", "ar": "أشدّ من أُحد" },
+          "body": { "en": "'A'isha asked whether any day had been harder for him than Uhud. He named the day he was rejected around Ta'if. Sahih al-Bukhari reports that he then declined an angel's offer to destroy them, hoping for their descendants.", "de": "ʿĀʾischa fragte, ob er je einen schwereren Tag als Uhud erlebt habe. Er nannte den Tag, an dem man ihn bei Taif abwies. Laut Sahīh al-Buchārī lehnte er danach das Angebot eines Engels ab, sie zu vernichten, in Hoffnung auf ihre Nachkommen.", "ar": "سألته عائشة إن كان قد لقي يومًا أشد من يوم أحد، فذكر يوم رُدّ عند الطائف. ويروي صحيح البخاري أنه أبى بعدها عرض ملَك أن يُهلكهم، رجاءً في ذرياتهم." }
+        },
+        {
+          "hadith": "muslim:6613",
+          "check": "invoker of curse",
+          "title": { "en": "Sent as mercy", "de": "Als Barmherzigkeit gesandt", "ar": "بُعث رحمة" },
+          "body": { "en": "Asked to curse those who fought him, he refused and explained why.", "de": "Gebeten, seine Gegner zu verfluchen, lehnte er ab und erklärte, warum.", "ar": "طُلب منه أن يدعو على من حاربوه، فأبى وبيّن السبب." }
+        },
+        {
+          "title": { "en": "Makkah: the day of pardon", "de": "Mekka: der Tag der Vergebung", "ar": "مكة: يوم العفو" },
+          "body": { "en": "Years later he returned to Makkah in strength, and those who had driven him out awaited his judgement. A general pardon is well known; its famous wording comes from the sira works, whose chains scholars discuss.", "de": "Jahre später kehrte er in Stärke nach Mekka zurück, und die, die ihn vertrieben hatten, erwarteten sein Urteil. Die allgemeine Vergebung ist bekannt; ihr berühmter Wortlaut stammt aus den Sīra-Werken, deren Überlieferung Gelehrte diskutieren.", "ar": "بعد سنين عاد إلى مكة قويًّا، وانتظر الذين أخرجوه حكمه فيهم. والعفو العام مشهور، أما لفظه المشهور فمن كتب السيرة، وللعلماء كلام في إسناده." }
+        },
+        {
+          "hadith": "muslim:6045",
+          "check": "personal grievance",
+          "title": { "en": "Never for himself", "de": "Nie für sich selbst", "ar": "لا ثأر للنفس" },
+          "body": { "en": "'A'isha draws the line: he could be firm for Allah's sake, but a wrong done to him personally he let go.", "de": "ʿĀʾischa zieht die Grenze: Für Allah konnte er entschieden sein, doch ein Unrecht gegen ihn selbst ließ er los.", "ar": "ترسم عائشة الحدّ: كان يغضب لله، أما ما أصابه في نفسه فكان يتركه." }
+        },
+        {
+          "hadith": "bukhari:2913",
+          "check": "Who will save you from me",
+          "title": { "en": "A sword over a sleeping man", "de": "Ein Schwert über einem Schlafenden", "ar": "سيفٌ فوق نائم" },
+          "body": { "en": "A man took his sword while he rested under a tree. Notice how the story ends.", "de": "Ein Mann nahm sein Schwert, während er unter einem Baum ruhte. Achten Sie darauf, wie die Geschichte endet.", "ar": "أخذ رجل سيفه وهو نائم تحت شجرة، فانظر كيف انتهت القصة." }
+        },
+        {
+          "hadith": "muslim:5705",
+          "check": "poisoned mutton",
+          "title": { "en": "The poisoned meal", "de": "Das vergiftete Mahl", "ar": "الشاة المسمومة" },
+          "body": { "en": "A woman admitted that she had tried to poison him. His companions asked for permission to kill her.", "de": "Eine Frau gab zu, dass sie ihn vergiften wollte. Seine Gefährten baten um Erlaubnis, sie zu töten.", "ar": "اعترفت امرأة بأنها أرادت قتله بالسم، فاستأذن الصحابة في قتلها." }
+        },
+        {
+          "verse": "15:85",
+          "check": "gracious forgiveness",
+          "title": { "en": "Forgiveness with grace", "de": "Vergebung mit Würde", "ar": "الصفح الجميل" },
+          "body": { "en": "A command revealed to him in Makkah, when he had no power. He carried it out when he finally held it.", "de": "Ein Gebot, das ihm in Mekka offenbart wurde, als er keine Macht hatte. Er setzte es um, als er sie schließlich besaß.", "ar": "أمرٌ نزل عليه بمكة وهو لا يملك قوة، فعمل به حين صارت له القوة." }
+        },
+        {
+          "title": { "en": "Following him today", "de": "Ihm heute folgen", "ar": "كيف نقتدي به اليوم" },
+          "list": {
+            "en": ["Forgive one old hurt this week, for Allah's sake", "Pray for those who wronged you instead of cursing them", "Separate wrongs against you from wrongs against others", "When you gain the upper hand, choose mercy"],
+            "de": ["Vergeben Sie diese Woche eine alte Kränkung, um Allahs willen", "Beten Sie für die, die Ihnen Unrecht taten, statt sie zu verfluchen", "Unterscheiden Sie Unrecht gegen Sie von Unrecht gegen andere", "Wählen Sie Barmherzigkeit, wenn Sie die Oberhand gewinnen"],
+            "ar": ["اعفُ هذا الأسبوع عن جرح قديم لوجه الله", "ادعُ لمن ظلمك بدل أن تدعو عليه", "فرّق بين ظلم وقع عليك وظلم وقع على غيرك", "إذا قدرت فاختر الرحمة"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Sahih al-Bukhari 3231 (a day harder than Uhud)" },
+        { "label": "Ibn Hisham, as-Sira an-Nabawiyya (the opening of Makkah)" }
+      ]
+    },
+    {
+      "id": "shamail-11-with-his-family",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": { "en": "The Prophet's character · 11", "de": "Charakter des Propheten · 11", "ar": "شمائل النبي ﷺ · ١١" },
+        "title": { "en": "With his family", "de": "Mit seiner Familie", "ar": "مع أهل بيته" },
+        "sub": { "en": "Loyalty to Khadijah, an eye for his wife's moods, a grandson in his arms", "de": "Treue zu Chadīdscha, ein Blick für die Stimmung seiner Frau, ein Enkel in seinen Armen", "ar": "وفاءٌ لخديجة، وانتباهٌ لمشاعر زوجته، وسبطٌ بين ذراعيه" },
+        "arabic": "الرحمة بالأهل"
+      },
+      "slides": [
+        {
+          "hadith": "muslim:6278",
+          "check": "nurtured in my heart",
+          "title": { "en": "Faithful to Khadijah", "de": "Treu zu Chadīdscha", "ar": "وفاؤه لخديجة" },
+          "body": { "en": "Years after her death he still honoured Khadijah by caring for her friends.", "de": "Jahre nach ihrem Tod ehrte er Chadīdscha noch, indem er für ihre Freundinnen sorgte.", "ar": "بعد وفاتها بسنين ظل يكرم خديجة بالإحسان إلى صديقاتها." }
+        },
+        {
+          "hadith": "bukhari:5228",
+          "check": "Lord of Abraham",
+          "title": { "en": "He knew her moods", "de": "Er kannte ihre Stimmungen", "ar": "عينٌ على مشاعرها" },
+          "body": { "en": "He paid such attention to 'A'isha that he noticed even which oath she chose when upset. Her answer shows the love between them.", "de": "Er achtete so sehr auf ʿĀʾischa, dass ihm sogar auffiel, welchen Schwur sie wählte, wenn sie verstimmt war. Ihre Antwort zeigt die Liebe zwischen ihnen.", "ar": "كان شديد الانتباه لعائشة حتى لاحظ أيَّ يمينٍ تختار إذا غضبت، وجوابها يكشف ما بينهما من محبة." }
+        },
+        {
+          "hadith": "muslim:6026",
+          "check": "kind to one's family",
+          "title": { "en": "Visits to little Ibrahim", "de": "Besuche beim kleinen Ibrāhīm", "ar": "زياراته لابنه إبراهيم" },
+          "body": { "en": "Anas, who served him for ten years, gives his verdict, then describes the visits to his infant son Ibrahim.", "de": "Anas, der ihm zehn Jahre diente, fällt sein Urteil und beschreibt dann die Besuche bei seinem kleinen Sohn Ibrāhīm.", "ar": "يُدلي أنسٌ، وقد خدمه عشر سنين، بشهادته، ثم يصف زياراته لابنه الرضيع إبراهيم." }
+        },
+        {
+          "hadith": "bukhari:5884",
+          "check": "Al-Hasan",
+          "title": { "en": "A hug in the market", "de": "Eine Umarmung auf dem Markt", "ar": "عناقٌ في السوق" },
+          "body": { "en": "In the middle of a busy market he called for his little grandson and opened his arms. Abu Hurayrah tells what it meant to him.", "de": "Mitten auf einem belebten Markt rief er nach seinem kleinen Enkel und öffnete die Arme. Abū Huraira erzählt, was es ihm bedeutete.", "ar": "في وسط سوق مزدحم نادى سبطه الصغير وبسط له ذراعيه، ويروي أبو هريرة ما تركه ذلك في نفسه." }
+        },
+        {
+          "hadith": "muslim:6041",
+          "check": "vessels of glass",
+          "title": { "en": "Gentle with the women", "de": "Behutsam mit den Frauen", "ar": "رفقٌ بالنساء" },
+          "body": { "en": "On a journey he asked the camel driver to slow down for the women riding, with a comparison no one forgot.", "de": "Auf einer Reise bat er den Kameltreiber, für die reitenden Frauen langsamer zu werden, mit einem unvergesslichen Vergleich.", "ar": "في سفرٍ طلب من الحادي أن يتمهّل لأجل النساء الراكبات، بتشبيه لم يُنسَ." }
+        },
+        {
+          "title": { "en": "Following him today", "de": "Ihm heute folgen", "ar": "كيف نقتدي به اليوم" },
+          "list": {
+            "en": ["Help at home and notice your family's moods", "Make time for your spouse's joys, not only for duties", "Show your love for your children and grandchildren openly", "Stay loyal to the friends of loved ones who have passed away"],
+            "de": ["Helfen Sie zu Hause und achten Sie auf die Stimmungen Ihrer Familie", "Nehmen Sie sich Zeit für die Freuden Ihres Ehepartners, nicht nur für Pflichten", "Zeigen Sie Ihre Liebe zu Kindern und Enkeln offen", "Bleiben Sie den Freunden verstorbener Angehöriger treu"],
+            "ar": ["ساعد في البيت وانتبه لأحوال أهلك", "خصّص وقتًا لما يُفرح زوجك لا للواجبات وحدها", "أظهر حبك لأولادك وأحفادك علانية", "احفظ الودّ لأصدقاء أحبتك الراحلين"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "shamail-12-his-nights",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": { "en": "The Prophet's character · 12", "de": "Charakter des Propheten · 12", "ar": "شمائل النبي ﷺ · ١٢" },
+        "title": { "en": "His nights of prayer", "de": "Seine Nächte im Gebet", "ar": "لياليه في الصلاة" },
+        "sub": { "en": "Early sleep, long prostrations, a companion who could not keep up, a boy who stayed to watch", "de": "Früher Schlaf, lange Niederwerfungen, ein Gefährte, der nicht mithielt, ein Junge, der zusehen wollte", "ar": "نومٌ مبكر، وسجود طويل، وصاحبٌ لم يُطق، وغلامٌ بات ليرى" },
+        "arabic": "قيام الليل"
+      },
+      "slides": [
+        {
+          "verse": "73:1-3",
+          "check": "Arise",
+          "title": { "en": "The first call to the night", "de": "Der erste Ruf in die Nacht", "ar": "النداء الأول إلى الليل" },
+          "body": { "en": "Early in Makkah, the night prayer was given to him as preparation for a heavy mission.", "de": "Früh in Mekka wurde ihm das Nachtgebet als Vorbereitung auf eine schwere Aufgabe gegeben.", "ar": "في أوائل العهد المكي أُمر بقيام الليل إعدادًا لرسالة ثقيلة." }
+        },
+        {
+          "hadith": "bukhari:1146",
+          "check": "last part to pray",
+          "title": { "en": "The rhythm of his night", "de": "Der Rhythmus seiner Nacht", "ar": "إيقاع ليله" },
+          "body": { "en": "Al-Aswad asked 'A'isha how he spent his nights. Her answer gives a pattern anyone can learn from.", "de": "Al-Aswad fragte ʿĀʾischa, wie er seine Nächte verbrachte. Ihre Antwort zeigt ein Muster, von dem jeder lernen kann.", "ar": "سأل الأسود عائشة كيف كان ليله، فجاء جوابها نظامًا يستطيع كل أحد أن يتعلم منه." }
+        },
+        {
+          "hadith": "bukhari:1147",
+          "check": "beauty and length",
+          "title": { "en": "Beyond description", "de": "Unbeschreiblich", "ar": "يعجز عنه الوصف" },
+          "body": { "en": "'A'isha counted his rak'ahs, but did not try to describe them.", "de": "ʿĀʾischa zählte seine Rakʿas, versuchte aber nicht, sie zu beschreiben.", "ar": "عدّت عائشة ركعاته، لكنها لم تحاول وصفها." }
+        },
+        {
+          "hadith": "bukhari:1123",
+          "check": "fifty verses",
+          "title": { "en": "Long prostrations", "de": "Lange Niederwerfungen", "ar": "سجودٌ طويل" },
+          "body": { "en": "Measure it yourself: how long does it take you to recite fifty verses?", "de": "Messen Sie selbst: Wie lange brauchen Sie, um fünfzig Verse zu rezitieren?", "ar": "قِسه بنفسك: كم تحتاج لتقرأ خمسين آية؟" }
+        },
+        {
+          "hadith": "bukhari:1135",
+          "check": "ill-thought",
+          "title": { "en": "Ibn Mas'ud could not keep up", "de": "Ibn Masʿūd kam nicht mit", "ar": "ابن مسعود لم يُطق" },
+          "body": { "en": "One of the most devoted companions joined him one night, and was tempted to sit down.", "de": "Einer der eifrigsten Gefährten betete eine Nacht mit ihm und war versucht, sich zu setzen.", "ar": "صلى معه ليلةً أحد أشد الصحابة عبادة، فهمّ أن يجلس." }
+        },
+        {
+          "hadith": "muslim:1792",
+          "check": "earlobe",
+          "title": { "en": "A boy beside him", "de": "Ein Junge an seiner Seite", "ar": "غلامٌ إلى جانبه" },
+          "body": { "en": "Young Ibn 'Abbas stayed the night to watch him pray. Notice how gently he was guided.", "de": "Der junge Ibn ʿAbbās blieb über Nacht, um ihn beten zu sehen. Achten Sie darauf, wie sanft er geleitet wurde.", "ar": "بات ابن عباس الصغير ليرى صلاته، فانظر كيف وجّهه برفق." }
+        },
+        {
+          "title": { "en": "Following him today", "de": "Ihm heute folgen", "ar": "كيف نقتدي به اليوم" },
+          "list": {
+            "en": ["Pray two rak'ahs before you sleep or before dawn", "Lengthen one prostration and speak to Allah in it", "Sleep early so that you can wake for the last part of the night", "Invite your family gently, as he guided Ibn 'Abbas"],
+            "de": ["Beten Sie zwei Rakʿas vor dem Schlafen oder vor der Morgendämmerung", "Verlängern Sie eine Niederwerfung und sprechen Sie darin mit Allah", "Schlafen Sie früh, damit Sie im letzten Teil der Nacht aufstehen können", "Laden Sie Ihre Familie sanft ein, wie er Ibn ʿAbbās anleitete"],
+            "ar": ["صلّ ركعتين قبل النوم أو قبل الفجر", "أطِل سجدة واحدة وناجِ الله فيها", "نَم مبكرًا لتقوم في آخر الليل", "ادعُ أهلك برفق كما وجّه ابن عباس"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "shamail-13-a-simple-life",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": { "en": "The Prophet's character · 13", "de": "Charakter des Propheten · 13", "ar": "شمائل النبي ﷺ · ١٣" },
+        "title": { "en": "A simple life", "de": "Ein einfaches Leben", "ar": "عيشٌ بسيط" },
+        "sub": { "en": "A leather mattress, months without a cooking fire, and armour pledged for barley", "de": "Eine Matratze aus Leder, Monate ohne Kochfeuer und eine für Gerste verpfändete Rüstung", "ar": "فراشٌ من أدم، وشهور بلا نار للطبخ، ودرعٌ مرهونة بشعير" },
+        "arabic": "الزهد"
+      },
+      "slides": [
+        {
+          "hadith": "bukhari:6456",
+          "check": "palm fibres",
+          "title": { "en": "His bed", "de": "Sein Bett", "ar": "فراشه" },
+          "body": { "en": "The leader of a growing community slept on this.", "de": "Das Oberhaupt einer wachsenden Gemeinschaft schlief darauf.", "ar": "على هذا كان ينام قائد أمة ناشئة." }
+        },
+        {
+          "hadith": "bukhari:6459",
+          "check": "two black things",
+          "title": { "en": "Three new moons", "de": "Drei Neumonde", "ar": "ثلاثة أهلّة" },
+          "body": { "en": "'A'isha tells her nephew 'Urwa what life in the Prophet's houses was like, and who helped them.", "de": "ʿĀʾischa erzählt ihrem Neffen ʿUrwa, wie das Leben in den Häusern des Propheten war und wer ihnen half.", "ar": "تحدّث عائشة ابن أختها عروة عن العيش في بيوت النبي ﷺ، ومن كان يعينهم." }
+        },
+        {
+          "hadith": "bukhari:5416",
+          "check": "wheat bread",
+          "title": { "en": "Rarely full", "de": "Selten satt", "ar": "قلّما شبعوا" },
+          "body": { "en": "Great wealth passed through his hands in his last years. He gave it away, and his own household lived like this.", "de": "In seinen letzten Jahren ging viel Reichtum durch seine Hände. Er gab ihn weg, und sein eigener Haushalt lebte so.", "ar": "مرّت بين يديه أموال كثيرة في سنواته الأخيرة، فأنفقها، وعاش أهل بيته هكذا." }
+        },
+        {
+          "hadith": "bukhari:2916",
+          "check": "mortgaged to a Jew",
+          "title": { "en": "Armour pledged for barley", "de": "Eine Rüstung, verpfändet für Gerste", "ar": "درعٌ مرهونة" },
+          "body": { "en": "At his death his armour was still pledged for his family's food. He traded fairly with a man of another faith.", "de": "Bei seinem Tod war seine Rüstung noch für das Essen seiner Familie verpfändet. Er handelte fair mit einem Mann anderen Glaubens.", "ar": "توفي ودرعه مرهونة في طعام أهله، وقد تعامل بالعدل مع رجل من غير دينه." }
+        },
+        {
+          "hadith": "bukhari:3108",
+          "check": "patched woollen garment",
+          "title": { "en": "The clothes he died in", "de": "Die Kleidung, in der er starb", "ar": "الثوب الذي قُبض فيه" },
+          "body": { "en": "Years later, 'A'isha still kept them and showed them to visitors.", "de": "Jahre später bewahrte ʿĀʾischa sie noch auf und zeigte sie Besuchern.", "ar": "بعد سنين كانت عائشة لا تزال تحتفظ بها وتُريها الزائرين." }
+        },
+        {
+          "verse": "20:131",
+          "check": "splendor of worldly life",
+          "title": { "en": "Eyes not fixed on glitter", "de": "Augen, die nicht am Glanz hängen", "ar": "عينٌ لا تتعلق بالزينة" },
+          "body": { "en": "His contentment grew from guidance like this: worldly splendour is a test, not a goal.", "de": "Seine Genügsamkeit wuchs aus solcher Rechtleitung: Weltlicher Glanz ist eine Prüfung, kein Ziel.", "ar": "نبتت قناعته من هداية كهذه: زينة الدنيا ابتلاء لا غاية." }
+        },
+        {
+          "title": { "en": "Following him today", "de": "Ihm heute folgen", "ar": "كيف نقتدي به اليوم" },
+          "list": {
+            "en": ["Keep your home simple and your door open", "Before buying something, ask whether you need it", "Be content with what you have, and generous with it", "Pay your debts and deal fairly with everyone"],
+            "de": ["Halten Sie Ihr Zuhause einfach und Ihre Tür offen", "Fragen Sie sich vor einem Kauf, ob Sie es brauchen", "Seien Sie zufrieden mit dem, was Sie haben, und großzügig damit", "Begleichen Sie Ihre Schulden und handeln Sie mit allen fair"],
+            "ar": ["اجعل بيتك بسيطًا وبابك مفتوحًا", "قبل أن تشتري اسأل: هل أحتاجه؟", "اقنع بما عندك وجُد منه", "اقضِ دَينك وعامل الجميع بالعدل"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "shamail-14-people-of-other-faiths",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": { "en": "The Prophet's character · 14", "de": "Charakter des Propheten · 14", "ar": "شمائل النبي ﷺ · ١٤" },
+        "title": { "en": "How he treated people of other faiths", "de": "Wie er Andersgläubige behandelte", "ar": "معاملته لغير المسلمين" },
+        "sub": { "en": "He stood for a funeral, visited a sick boy and honoured a man who had once protected him", "de": "Er stand für einen Trauerzug auf, besuchte einen kranken Jungen und ehrte einen Mann, der ihn einst beschützt hatte", "ar": "قام لجنازة، وعاد غلامًا مريضًا، وحفظ الجميل لرجل أجاره يومًا" },
+        "arabic": "البرّ والقسط"
+      },
+      "slides": [
+        {
+          "verse": "60:8",
+          "check": "righteous toward them",
+          "title": { "en": "Kindness and justice", "de": "Güte und Gerechtigkeit", "ar": "البرّ والقسط" },
+          "body": { "en": "The Quran's principle towards those who do not fight Muslims because of their religion.", "de": "Der Grundsatz des Korans gegenüber denen, die Muslime nicht wegen ihrer Religion bekämpfen.", "ar": "قاعدة القرآن فيمن لا يقاتل المسلمين في الدين." }
+        },
+        {
+          "hadith": "bukhari:1312",
+          "check": "living being",
+          "title": { "en": "He stood for a funeral", "de": "Er stand für einen Trauerzug auf", "ar": "قام لجنازة" },
+          "body": { "en": "Told that the dead man was Jewish, he gave a reason that applies to every human being.", "de": "Als man ihm sagte, der Verstorbene sei Jude, nannte er einen Grund, der für jeden Menschen gilt.", "ar": "لما قيل له إن الميت يهودي، ذكر سببًا يشمل كل إنسان." }
+        },
+        {
+          "hadith": "bukhari:1356",
+          "check": "Jewish boy",
+          "title": { "en": "At a sick boy's bedside", "de": "Am Bett eines kranken Jungen", "ar": "عند فراش غلام مريض" },
+          "body": { "en": "Illness calls for a visit, whatever the patient's faith. He went to a boy who used to help him.", "de": "Krankheit verlangt einen Besuch, gleich welchen Glaubens der Kranke ist. Er ging zu einem Jungen, der ihm geholfen hatte.", "ar": "المرض يستدعي الزيارة أيًّا كان دين المريض، وقد زار ﷺ غلامًا كان يعينه." }
+        },
+        {
+          "hadith": "bukhari:3139",
+          "check": "interceded with me",
+          "title": { "en": "He did not forget a favour", "de": "Er vergaß keine Wohltat", "ar": "حفظ الجميل" },
+          "body": { "en": "Al-Mut'im ibn 'Adi never became Muslim, yet he once protected the Prophet. Years later, speaking of the prisoners of Badr, the Prophet remembered him.", "de": "Al-Muṭʿim ibn ʿAdī wurde nie Muslim, schützte den Propheten aber einst. Jahre später, als es um die Gefangenen von Badr ging, erinnerte sich der Prophet an ihn.", "ar": "لم يُسلم المطعم بن عدي، لكنه أجار النبي ﷺ يومًا، فذكره النبي ﷺ بعد سنين حين تكلم في أسرى بدر." }
+        },
+        {
+          "hadith": "bukhari:3166",
+          "check": "having a treaty",
+          "title": { "en": "Protected lives", "de": "Geschützte Leben", "ar": "دماءٌ معصومة" },
+          "body": { "en": "Non-Muslims who live under a covenant with Muslims are protected. He warned in the strongest terms against harming them.", "de": "Nichtmuslime, die unter einem Schutzvertrag mit Muslimen leben, sind geschützt. Er warnte aufs Schärfste davor, ihnen zu schaden.", "ar": "غير المسلمين الذين بينهم وبين المسلمين عهد معصومون، وقد حذّر أشد التحذير من الاعتداء عليهم." }
+        },
+        {
+          "hadith": "bukhari:462",
+          "check": "Thumama",
+          "title": { "en": "A captive set free", "de": "Ein Gefangener, freigelassen", "ar": "أسيرٌ أُطلق سراحه" },
+          "body": { "en": "Thumamah ibn Uthal, a powerful chief, was brought to Madinah as a captive. The Prophet ordered his release. See what Thumamah did next.", "de": "Thumāma ibn Uthāl, ein mächtiges Stammesoberhaupt, wurde als Gefangener nach Medina gebracht. Der Prophet ließ ihn frei. Sehen Sie, was Thumāma danach tat.", "ar": "جيء بثمامة بن أثال، وكان سيدًا في قومه، أسيرًا إلى المدينة، فأمر النبي ﷺ بإطلاقه. فانظر ماذا صنع ثمامة بعدها." }
+        },
+        {
+          "title": { "en": "Following him today", "de": "Ihm heute folgen", "ar": "كيف نقتدي به اليوم" },
+          "list": {
+            "en": ["Visit sick neighbours and colleagues of every faith", "Thank people for their kindness, whoever they are", "Keep every agreement, with Muslims and others alike", "Treat even your opponents with dignity"],
+            "de": ["Besuchen Sie kranke Nachbarn und Kollegen jedes Glaubens", "Danken Sie Menschen für ihre Güte, wer sie auch sind", "Halten Sie jede Vereinbarung, mit Muslimen wie mit anderen", "Behandeln Sie auch Ihre Gegner mit Würde"],
+            "ar": ["زُر المرضى من جيرانك وزملائك على اختلاف أديانهم", "اشكر الناس على معروفهم أيًّا كانوا", "أوفِ بكل عهد مع المسلمين وغيرهم", "عامل خصومك أيضًا بكرامة"]
+          }
+        }
+      ],
+      "sources": [{ "label": "Ibn Hisham, as-Sira an-Nabawiyya (al-Mut'im ibn 'Adi's protection after Ta'if)" }]
+    },
+    {
+      "id": "shamail-15-love-for-his-ummah",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": { "en": "The Prophet's character · 15", "de": "Charakter des Propheten · 15", "ar": "شمائل النبي ﷺ · ١٥" },
+        "title": { "en": "His love for his ummah", "de": "Seine Liebe zu seiner Umma", "ar": "حبّه لأمته" },
+        "sub": { "en": "A prayer saved for the Day of Judgement, and a hand holding people back from the fire", "de": "Ein Bittgebet, aufbewahrt für den Tag des Gerichts, und eine Hand, die Menschen vom Feuer zurückhält", "ar": "دعوة ادّخرها ليوم القيامة، ويدٌ تمسك الناس عن النار" },
+        "arabic": "حرصٌ ورأفة"
+      },
+      "slides": [
+        {
+          "verse": "9:128",
+          "check": "Grievous to him",
+          "title": { "en": "Concerned for every one of you", "de": "Besorgt um jeden Einzelnen", "ar": "يحمل همّكم" },
+          "body": { "en": "Allah describes His Messenger through his feelings for his people, with two qualities that are also names of Allah.", "de": "Allah beschreibt Seinen Gesandten durch seine Gefühle für seine Gemeinschaft, mit zwei Eigenschaften, die auch Namen Allahs sind.", "ar": "يصف الله رسوله بما في قلبه لأمته، بوصفين هما أيضًا من أسماء الله: الرؤوف والرحيم." }
+        },
+        {
+          "hadith": "muslim:492",
+          "check": "reserved my prayer",
+          "title": { "en": "The prayer he saved", "de": "Das aufbewahrte Bittgebet", "ar": "الدعوة المدّخرة" },
+          "body": { "en": "Every prophet was granted one special prayer. He kept his for us.", "de": "Jedem Propheten wurde ein besonderes Bittgebet gewährt. Er bewahrte seines für uns auf.", "ar": "لكل نبي دعوة خاصة، وقد ادّخر دعوته لنا." }
+        },
+        {
+          "hadith": "muslim:5955",
+          "check": "moths",
+          "title": { "en": "Holding us back", "de": "Er hält uns zurück", "ar": "يمسك بنا" },
+          "body": { "en": "A picture he painted in words: people rushing towards harm, and someone trying with all his strength to stop them.", "de": "Ein Bild, das er mit Worten malte: Menschen, die ins Verderben stürzen, und einer, der sie mit aller Kraft aufhalten will.", "ar": "صورة رسمها بالكلمات: ناس يندفعون نحو الهلاك، ومن يحاول بكل قوته ردّهم." }
+        },
+        {
+          "hadith": "bukhari:7239",
+          "check": "hard for my followers",
+          "title": { "en": "Not too heavy for them", "de": "Nicht zu schwer für sie", "ar": "رحمةً بهم" },
+          "body": { "en": "He would have preferred a later 'Isha prayer, but did not make it a rule. Every command was weighed against what his people could bear.", "de": "Er hätte ein späteres ʿIschāʾ-Gebet vorgezogen, machte es aber nicht zur Pflicht. Jedes Gebot wog er gegen das ab, was seine Gemeinschaft tragen konnte.", "ar": "كان يودّ تأخير صلاة العشاء لكنه لم يفرضه، وكان يزن كل أمر بما تطيقه أمته." }
+        },
+        {
+          "title": { "en": "He wept for us", "de": "Er weinte um uns", "ar": "بكى لأمته" },
+          "body": { "en": "Sahih Muslim reports that he once raised his hands, prayed for his ummah and wept, and that Allah answered him with a promise of comfort concerning them.", "de": "Sahīh Muslim berichtet, dass er einmal die Hände hob, für seine Umma betete und weinte, und dass Allah ihm mit einem tröstenden Versprechen für sie antwortete.", "ar": "يروي صحيح مسلم أنه رفع يديه مرة يدعو لأمته وبكى، فأجابه الله بوعد يطمئنه فيها." }
+        },
+        {
+          "title": { "en": "Following him today", "de": "Ihm heute folgen", "ar": "كيف نقتدي به اليوم" },
+          "list": {
+            "en": ["Send blessings on him often, especially on Fridays", "Learn his life story with your family", "Make things easy for others, as he did for us", "Pray for the whole ummah, not only for yourself"],
+            "de": ["Sprechen Sie oft Segenswünsche über ihn, besonders freitags", "Lernen Sie seine Lebensgeschichte mit Ihrer Familie", "Machen Sie es anderen leicht, wie er es uns leicht machte", "Beten Sie für die ganze Umma, nicht nur für sich selbst"],
+            "ar": ["أكثر من الصلاة عليه ولا سيما يوم الجمعة", "تعلّم سيرته مع أهلك", "يسّر على الناس كما يسّر علينا", "ادعُ للأمة كلها لا لنفسك وحدها"]
+          }
+        }
+      ],
+      "sources": [{ "label": "Sahih Muslim, Book of Faith (his prayer and tears for his ummah)" }]
+    },
+    {
+      "id": "shamail-16-al-amin",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": { "en": "The Prophet's character · 16", "de": "Charakter des Propheten · 16", "ar": "شمائل النبي ﷺ · ١٦" },
+        "title": { "en": "Al-Amin: trusted before the revelation", "de": "Al-Amīn: vertrauenswürdig vor der Offenbarung", "ar": "الأمين قبل البعثة" },
+        "sub": { "en": "Forty years of honesty in Makkah became the Quran's own argument for his truthfulness", "de": "Vierzig Jahre Ehrlichkeit in Mekka wurden zum Argument des Korans für seine Wahrhaftigkeit", "ar": "أربعون سنة من الصدق في مكة صارت حجة القرآن على صدقه" },
+        "arabic": "الصادق الأمين"
+      },
+      "slides": [
+        {
+          "title": { "en": "A name from the root of trust", "de": "Ein Name aus der Wurzel des Vertrauens", "ar": "اسمٌ من جذر الأمانة" },
+          "arabic": "أ م ن",
+          "body": { "en": "Al-Amin comes from the root a-m-n, which also gives amanah, trust, and iman, faith. The sira works report that Makkah called him by it long before the revelation.", "de": "Al-Amīn stammt von der Wurzel a-m-n, aus der auch amāna, das anvertraute Gut, und īmān, der Glaube, kommen. Die Sīra-Werke berichten, dass Mekka ihn lange vor der Offenbarung so nannte.", "ar": "الأمين من الجذر أ م ن، ومنه الأمانة والإيمان. وتروي كتب السيرة أن أهل مكة لقّبوه به قبل البعثة بزمن طويل." }
+        },
+        {
+          "verse": "10:16",
+          "check": "lifetime before it",
+          "title": { "en": "A lifetime as evidence", "de": "Ein Leben als Beweis", "ar": "عمرٌ شاهد" },
+          "body": { "en": "At-Tabari explains this lifetime as the forty years he spent among them. They knew his honesty before he recited a single verse.", "de": "At-Tabarī deutet diese Lebenszeit als die vierzig Jahre, die er unter ihnen verbrachte. Sie kannten seine Ehrlichkeit, bevor er einen einzigen Vers vortrug.", "ar": "يفسّر الطبري هذا العمر بالأربعين سنة التي قضاها بينهم؛ فقد عرفوا صدقه قبل أن يتلو عليهم آية واحدة." }
+        },
+        {
+          "verse": "6:33",
+          "check": "do not call you untruthful",
+          "title": { "en": "The message, not the man", "de": "Die Botschaft, nicht der Mensch", "ar": "الخلاف لم يكن في صدقه" },
+          "body": { "en": "His opponents found it hard to call him a liar. What they rejected was the message, not his honesty.", "de": "Seinen Gegnern fiel es schwer, ihn einen Lügner zu nennen. Was sie ablehnten, war die Botschaft, nicht seine Ehrlichkeit.", "ar": "صعب على خصومه أن يرموه بالكذب، وإنما ردّوا الرسالة لا صدقه." }
+        },
+        {
+          "verse": "23:69",
+          "check": "did they not know their Messenger",
+          "title": { "en": "A man they knew", "de": "Ein Mann, den sie kannten", "ar": "رجلٌ يعرفونه" },
+          "body": { "en": "He was no stranger. They had watched him grow up, trade, marry and keep his word.", "de": "Er war kein Fremder. Sie hatten gesehen, wie er aufwuchs, Handel trieb, heiratete und sein Wort hielt.", "ar": "لم يكن غريبًا عنهم؛ رأوه ينشأ ويتاجر ويتزوج ويفي بوعده." }
+        },
+        {
+          "title": { "en": "An opponent's testimony", "de": "Das Zeugnis eines Gegners", "ar": "شهادة خصم" },
+          "body": { "en": "Before the Byzantine emperor Heraclius, Abu Sufyan, then still his enemy, was questioned about Muhammad's past. Even he could not name a single lie (Sahih al-Bukhari).", "de": "Vor dem byzantinischen Kaiser Heraklios wurde Abū Sufyān, damals noch sein Feind, über Muhammads Vergangenheit befragt. Selbst er konnte keine einzige Lüge nennen (Sahīh al-Buchārī).", "ar": "سأل هرقلُ ملك الروم أبا سفيان، وكان يومئذ عدوًّا له، عن ماضي النبي ﷺ، فلم يستطع أن يذكر له كذبة واحدة (صحيح البخاري)." }
+        },
+        {
+          "title": { "en": "Trusts returned on the night he left", "de": "Anvertrautes, zurückgegeben in der Nacht des Aufbruchs", "ar": "ردّ الأمانات ليلة الهجرة" },
+          "body": { "en": "The sira works report that on the night of the Hijrah, while his enemies plotted against him, he left 'Ali behind to return the valuables people had deposited with him.", "de": "Die Sīra-Werke berichten, dass er in der Nacht der Hidschra, während seine Feinde gegen ihn planten, ʿAlī zurückließ, um die Wertsachen zurückzugeben, die man ihm anvertraut hatte.", "ar": "تروي كتب السيرة أنه ليلة الهجرة، وأعداؤه يأتمرون به، خلّف عليًّا ليردّ إلى الناس ودائعهم التي كانت عنده." }
+        },
+        {
+          "verse": "53:3-4",
+          "check": "inclination",
+          "title": { "en": "Trusted in the greatest thing", "de": "Vertrauenswürdig im Größten", "ar": "أمينٌ على الوحي" },
+          "body": { "en": "The man who was honest in small things was trusted with the greatest thing: the revelation he conveyed.", "de": "Der Mann, der im Kleinen ehrlich war, wurde mit dem Größten betraut: der Offenbarung, die er überbrachte.", "ar": "من كان صادقًا في الصغير اؤتمن على أعظم شيء: الوحي الذي بلّغه." }
+        },
+        {
+          "title": { "en": "Following him today", "de": "Ihm heute folgen", "ar": "كيف نقتدي به اليوم" },
+          "list": {
+            "en": ["Be known for your word before your opinions", "Return what is entrusted to you, even to those who oppose you", "Never hide a defect when you sell something", "Keep your promises to children too"],
+            "de": ["Seien Sie für Ihr Wort bekannt, bevor man Ihre Meinungen kennt", "Geben Sie Anvertrautes zurück, auch an die, die gegen Sie sind", "Verschweigen Sie beim Verkauf nie einen Mangel", "Halten Sie Ihre Versprechen auch Kindern gegenüber"],
+            "ar": ["ليُعرَف صدقك قبل أن تُعرف آراؤك", "أدِّ الأمانة ولو لمن يخالفك", "لا تكتم عيبًا فيما تبيع", "أوفِ بوعدك حتى للأطفال"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Ibn Hisham, as-Sira an-Nabawiyya" },
+        { "label": "Sahih al-Bukhari 7 (Abu Sufyan before Heraclius)" },
+        { "label": "at-Tabari, Jami' al-Bayan, on 10:16", "url": "https://quran.com/10:16/tafsirs/ar-tafsir-al-tabari" }
+      ]
+    },
+    {
+      "id": "shamail-17-how-he-taught",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": { "en": "The Prophet's character · 17", "de": "Charakter des Propheten · 17", "ar": "شمائل النبي ﷺ · ١٧" },
+        "title": { "en": "How he taught", "de": "Wie er lehrte", "ar": "كيف كان يعلّم" },
+        "sub": { "en": "Questions, a drawing, gestures and gentleness: the methods of the best of teachers", "de": "Fragen, eine Zeichnung, Gesten und Sanftheit: die Methoden des besten Lehrers", "ar": "أسئلة ورسمٌ وإشارات ورفق: أساليب خير معلّم" },
+        "arabic": "المعلّم"
+      },
+      "slides": [
+        {
+          "verse": "2:151",
+          "check": "teaching you that which you did not know",
+          "title": { "en": "Sent as a teacher", "de": "Als Lehrer gesandt", "ar": "بُعث معلّمًا" },
+          "body": { "en": "Teaching is named among the core tasks of his mission.", "de": "Das Lehren wird zu den Kernaufgaben seiner Sendung gezählt.", "ar": "يُذكر التعليم في صميم مهام رسالته." }
+        },
+        {
+          "hadith": "bukhari:62",
+          "check": "date-palm",
+          "title": { "en": "Teaching with a riddle", "de": "Lehren mit einem Rätsel", "ar": "التعليم بالسؤال" },
+          "body": { "en": "Instead of simply stating a lesson, he asked a question and let everyone think first.", "de": "Statt eine Lehre einfach zu verkünden, stellte er eine Frage und ließ alle zuerst nachdenken.", "ar": "بدل أن يلقي الدرس مباشرة طرح سؤالًا وترك الجميع يفكرون أولًا." }
+        },
+        {
+          "hadith": "bukhari:6417",
+          "check": "drew a square",
+          "title": { "en": "A lesson you can see", "de": "Eine Lehre zum Anschauen", "ar": "درسٌ يُرى" },
+          "body": { "en": "To explain life, hope and hardship, he drew a simple diagram.", "de": "Um Leben, Hoffnung und Prüfungen zu erklären, zeichnete er ein einfaches Schaubild.", "ar": "ليشرح الأجل والأمل والمصائب رسم شكلًا بسيطًا." }
+        },
+        {
+          "hadith": "bukhari:2446",
+          "check": "fingers interlaced",
+          "title": { "en": "Words with gestures", "de": "Worte mit Gesten", "ar": "الكلمة والإشارة" },
+          "body": { "en": "His hands made the meaning stay: believers hold each other up.", "de": "Seine Hände prägten die Bedeutung ein: Gläubige stützen einander.", "ar": "رسّخت يداه المعنى: المؤمنون سندٌ لبعضهم." }
+        },
+        {
+          "hadith": "bukhari:3038",
+          "check": "Treat the people with ease",
+          "title": { "en": "Advice for two teachers", "de": "Rat für zwei Lehrer", "ar": "وصية لمعلّمَين" },
+          "body": { "en": "Sending Mu'adh and Abu Musa to Yemen, he gave them a short method for every teacher who would follow.", "de": "Als er Muʿādh und Abū Mūsā in den Jemen sandte, gab er ihnen eine kurze Methode für jeden späteren Lehrer mit.", "ar": "حين بعث معاذًا وأبا موسى إلى اليمن زوّدهما بمنهج قصير لكل معلّم يأتي بعدهما." }
+        },
+        {
+          "title": { "en": "A teacher who did not scold", "de": "Ein Lehrer, der nicht schalt", "ar": "معلّمٌ لم يعنّف" },
+          "body": { "en": "Mu'awiya ibn al-Hakam as-Sulami once spoke during prayer, not knowing it was wrong. Sahih Muslim reports that the Prophet did not scold him but explained gently, and Mu'awiya said he never met a finer teacher.", "de": "Muʿāwiya ibn al-Ḥakam as-Sulamī sprach einmal im Gebet, ohne zu wissen, dass es falsch war. Laut Sahīh Muslim schalt ihn der Prophet nicht, sondern erklärte es sanft, und Muʿāwiya sagte, er habe nie einen besseren Lehrer erlebt.", "ar": "تكلّم معاوية بن الحكم السلمي في الصلاة وهو لا يعلم، فيروي صحيح مسلم أن النبي ﷺ لم يعنّفه بل بيّن له برفق، فقال معاوية إنه لم يرَ معلّمًا أحسن منه." }
+        },
+        {
+          "title": { "en": "Following him today", "de": "Ihm heute folgen", "ar": "كيف نقتدي به اليوم" },
+          "list": {
+            "en": ["Ask questions before giving answers", "Use pictures and gestures to make ideas clear", "Correct mistakes gently and in private", "Make the religion easy to love, not hard to bear"],
+            "de": ["Stellen Sie Fragen, bevor Sie Antworten geben", "Nutzen Sie Bilder und Gesten, um Gedanken klar zu machen", "Korrigieren Sie Fehler sanft und unter vier Augen", "Machen Sie die Religion leicht zu lieben, nicht schwer zu tragen"],
+            "ar": ["اسأل قبل أن تجيب", "استعن بالرسم والإشارة لتوضيح الفكرة", "صحّح الخطأ برفق وفي السرّ", "اجعل الدين محبوبًا لا عبئًا ثقيلًا"]
+          }
+        }
+      ],
+      "sources": [{ "label": "Sahih Muslim, the hadith of Mu'awiya ibn al-Hakam as-Sulami (speaking in prayer)" }]
+    },
+    {
+      "id": "shamail-18-gentleness",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": { "en": "The Prophet's character · 18", "de": "Charakter des Propheten · 18", "ar": "شمائل النبي ﷺ · ١٨" },
+        "title": { "en": "Gentle, never harsh", "de": "Sanft, nie hart", "ar": "رفيقٌ لا قاسٍ" },
+        "sub": { "en": "Why people gathered around him: gentleness, kind words and consultation", "de": "Warum sich Menschen um ihn sammelten: Sanftheit, freundliche Worte und Beratung", "ar": "لماذا اجتمع الناس حوله: الرفق والكلمة الطيبة والشورى" },
+        "arabic": "الرِّفق"
+      },
+      "slides": [
+        {
+          "verse": "3:159",
+          "check": "lenient with them",
+          "title": { "en": "The secret of his circle", "de": "Das Geheimnis seines Kreises", "ar": "سرّ التفاف الناس حوله" },
+          "body": { "en": "Revealed in the passage about Uhud, after costly mistakes. Allah names gentleness as the reason people stayed with him.", "de": "Offenbart im Abschnitt über Uḥud, nach folgenschweren Fehlern. Allah nennt Sanftheit als Grund, warum die Menschen bei ihm blieben.", "ar": "نزلت في سياق غزوة أحد بعد أخطاء موجعة، وجعلت الرفق سبب بقاء الناس حوله." }
+        },
+        {
+          "title": { "en": "The word rifq", "de": "Das Wort rifq", "ar": "كلمة الرِّفق" },
+          "arabic": "رِفق",
+          "body": { "en": "Rifq is gentleness in word and action: choosing the softer way to reach the same goal. The word appears in several of his sayings, and his life gives it its meaning.", "de": "Rifq ist Sanftheit in Wort und Tat: den weicheren Weg zum selben Ziel zu wählen. Das Wort kommt in mehreren seiner Aussprüche vor, und sein Leben gibt ihm seine Bedeutung.", "ar": "الرِّفق لينٌ في القول والفعل، واختيار الطريق الألين إلى الغاية نفسها. وقد ورد في عدد من أحاديثه، وحياته هي التي تشرح معناه." }
+        },
+        {
+          "hadith": "muslim:6596",
+          "check": "used kind words for him",
+          "title": { "en": "Kind words for a difficult man", "de": "Freundliche Worte für einen schwierigen Mann", "ar": "كلمة طيبة لرجل صعب" },
+          "body": { "en": "He knew the man's reputation, yet spoke to him kindly. 'A'isha asked why, and his answer is a warning to every harsh tongue.", "de": "Er kannte den Ruf des Mannes und sprach dennoch freundlich mit ihm. ʿĀʾischa fragte nach dem Grund, und seine Antwort warnt jede harte Zunge.", "ar": "كان يعرف حال الرجل، ومع ذلك ألان له القول، فسألته عائشة، وجوابه تحذير لكل لسان فاحش." }
+        },
+        {
+          "title": { "en": "He asked for their opinion", "de": "Er fragte nach ihrer Meinung", "ar": "كان يستشيرهم" },
+          "body": { "en": "Although he received revelation, he consulted his companions on many matters, as the sira works report before Badr and Uhud. The verse on the first slide commands this too.", "de": "Obwohl er Offenbarung empfing, beriet er sich in vielen Fragen mit seinen Gefährten, wie die Sīra-Werke vor Badr und Uḥud berichten. Der Vers auf der ersten Seite gebietet es ebenfalls.", "ar": "مع أنه يوحى إليه كان يشاور أصحابه في أمور كثيرة، كما تروي كتب السيرة قبل بدر وأحد، والآية في الشريحة الأولى تأمر بذلك أيضًا." }
+        },
+        {
+          "title": { "en": "Following him today", "de": "Ihm heute folgen", "ar": "كيف نقتدي به اليوم" },
+          "list": {
+            "en": ["Lower your voice when a conversation gets heated", "Speak kindly even to people you find difficult", "Ask your family and colleagues for their views before deciding", "Choose the gentle option whenever it is permitted"],
+            "de": ["Senken Sie die Stimme, wenn ein Gespräch hitzig wird", "Sprechen Sie freundlich, auch mit schwierigen Menschen", "Fragen Sie Familie und Kollegen nach ihrer Meinung, bevor Sie entscheiden", "Wählen Sie den sanften Weg, wann immer er erlaubt ist"],
+            "ar": ["اخفض صوتك إذا احتدّ النقاش", "ألِن القول حتى لمن يصعب التعامل معهم", "استشر أهلك وزملاءك قبل أن تقرر", "اختر الأرفق ما دام مباحًا"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 3:159 (consultation before Badr and Uhud)", "url": "https://quran.com/3:159/tafsirs/en-tafisr-ibn-kathir" },
+        { "label": "Ibn Hisham, as-Sira an-Nabawiyya (consultation before Badr and Uhud)" }
+      ]
+    },
+    {
+      "id": "shamail-19-modest-and-brave",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": { "en": "The Prophet's character · 19", "de": "Charakter des Propheten · 19", "ar": "شمائل النبي ﷺ · ١٩" },
+        "title": { "en": "Modest and brave", "de": "Schamhaft und mutig", "ar": "حييٌّ شجاع" },
+        "sub": { "en": "Deeply modest, yet unshaken when others fled at Hunayn", "de": "Zutiefst schamhaft und doch unerschütterlich, als andere bei Ḥunain flohen", "ar": "حياءٌ عظيم، وثباتٌ يوم فرّ الناس في حُنين" },
+        "arabic": "الحياء والشجاعة"
+      },
+      "slides": [
+        {
+          "title": { "en": "What haya means", "de": "Was ḥayāʾ bedeutet", "ar": "معنى الحياء" },
+          "arabic": "حياء",
+          "body": { "en": "Haya is often translated as shyness, but it is more: a living sense of dignity that keeps a person from what is shameful. It shares its root with hayah, life.", "de": "Ḥayāʾ wird oft mit Scheu übersetzt, ist aber mehr: ein lebendiges Gefühl für Würde, das einen Menschen vom Schändlichen abhält. Es teilt die Wurzel mit ḥayāh, Leben.", "ar": "يُترجم الحياء غالبًا بالخجل، وهو أوسع من ذلك: شعور حيّ بالكرامة يحجز صاحبه عن القبيح، ويشترك في جذره مع الحياة." }
+        },
+        {
+          "hadith": "muslim:6032",
+          "check": "more modest than the virgin",
+          "title": { "en": "Modesty you could see", "de": "Schamhaftigkeit, die man sah", "ar": "حياءٌ يُرى" },
+          "body": { "en": "Abu Sa'id adds a detail: his face showed his feelings even when he said nothing.", "de": "Abū Saʿīd fügt ein Detail hinzu: Sein Gesicht zeigte seine Gefühle, auch wenn er schwieg.", "ar": "يضيف أبو سعيد تفصيلًا: كان وجهه يُظهر ما في نفسه وإن سكت." }
+        },
+        {
+          "title": { "en": "Modesty is not weakness", "de": "Schamhaftigkeit ist keine Schwäche", "ar": "الحياء ليس ضعفًا" },
+          "body": { "en": "The same man who lowered his gaze and spoke softly stood firm in the hardest moments. The next report shows it.", "de": "Derselbe Mann, der den Blick senkte und leise sprach, stand in den schwersten Momenten fest. Der nächste Bericht zeigt es.", "ar": "الرجل نفسه الذي يغضّ بصره ويخفض صوته كان ثابتًا في أشد المواقف، كما يُظهر الخبر التالي." }
+        },
+        {
+          "hadith": "bukhari:3042",
+          "check": "braver than the Prophet",
+          "title": { "en": "The day of Hunayn", "de": "Der Tag von Ḥunain", "ar": "يوم حُنين" },
+          "body": { "en": "When many fled under a storm of arrows, he did not retreat. Al-Bara' ibn 'Azib describes what he saw.", "de": "Als viele unter einem Hagel von Pfeilen flohen, wich er nicht zurück. Al-Barāʾ ibn ʿĀzib beschreibt, was er sah.", "ar": "حين فرّ كثيرون تحت وابل السهام لم يتراجع، ويصف البراء بن عازب ما رأى." }
+        },
+        {
+          "title": { "en": "Following him today", "de": "Ihm heute folgen", "ar": "كيف نقتدي به اليوم" },
+          "list": {
+            "en": ["Guard your gaze and your words, online as well", "Let modesty shape your clothes, jokes and posts", "Stand up for what is right, even when you are afraid", "Be the first to help when something goes wrong"],
+            "de": ["Hüten Sie Blick und Worte, auch im Internet", "Lassen Sie Schamhaftigkeit Kleidung, Scherze und Beiträge prägen", "Treten Sie für das Richtige ein, auch wenn Sie Angst haben", "Seien Sie der Erste, der hilft, wenn etwas schiefgeht"],
+            "ar": ["احفظ بصرك وكلامك على الإنترنت أيضًا", "اجعل الحياء يضبط لباسك ومزاحك ومنشوراتك", "انصر الحق ولو كنت خائفًا", "كن أول من يعين إذا وقع مكروه"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "shamail-20-as-they-saw-him",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": { "en": "The Prophet's character · 20", "de": "Charakter des Propheten · 20", "ar": "شمائل النبي ﷺ · ٢٠" },
+        "title": { "en": "As his companions saw him", "de": "Wie seine Gefährten ihn sahen", "ar": "كما رآه أصحابه" },
+        "sub": { "en": "His face, his figure, his fragrance: why the companions described him, and why it matters to us", "de": "Sein Gesicht, seine Gestalt, sein Duft: warum die Gefährten ihn beschrieben und warum es uns wichtig ist", "ar": "وجهه وقامته وطيب ريحه: لماذا وصفه الصحابة، ولماذا يهمّنا ذلك" },
+        "arabic": "الشمائل"
+      },
+      "slides": [
+        {
+          "title": { "en": "Why describe him at all?", "de": "Warum ihn überhaupt beschreiben?", "ar": "لماذا وصفوه؟" },
+          "body": { "en": "The companions loved him and knew later generations would never see him. So they described his face, his walk and his manners. Scholars gathered these reports in books of shama'il, such as that of at-Tirmidhi.", "de": "Die Gefährten liebten ihn und wussten, dass spätere Generationen ihn nie sehen würden. Also beschrieben sie sein Gesicht, seinen Gang und sein Verhalten. Gelehrte sammelten diese Berichte in Büchern der Schamāʾil, etwa dem von at-Tirmidhī.", "ar": "أحبه الصحابة وعلموا أن الأجيال بعدهم لن تراه، فوصفوا وجهه ومشيته وأخلاقه، وجمع العلماء هذه الأخبار في كتب الشمائل ككتاب الترمذي." }
+        },
+        {
+          "hadith": "muslim:6066",
+          "check": "most handsome face",
+          "title": { "en": "Beauty inside and out", "de": "Schönheit innen und außen", "ar": "جمال الخَلق والخُلُق" },
+          "body": { "en": "Al-Bara' ibn 'Azib joins his appearance and his character in a single sentence.", "de": "Al-Barāʾ ibn ʿĀzib verbindet sein Äußeres und seinen Charakter in einem einzigen Satz.", "ar": "يجمع البراء بن عازب بين صورته وخُلُقه في جملة واحدة." }
+        },
+        {
+          "hadith": "muslim:6064",
+          "check": "broad shoulders",
+          "title": { "en": "In a red cloak", "de": "In einem roten Umhang", "ar": "في حُلّة حمراء" },
+          "body": { "en": "Al-Bara' remembered one moment in particular, and the details of his figure and hair.", "de": "Al-Barāʾ erinnerte sich besonders an einen Moment und an Einzelheiten seiner Gestalt und seines Haares.", "ar": "تذكّر البراء لحظة بعينها، وتفاصيل قامته وشعره." }
+        },
+        {
+          "hadith": "muslim:6053",
+          "check": "ambergris or musk",
+          "title": { "en": "What Anas remembered", "de": "Woran Anas sich erinnerte", "ar": "ما بقي في ذاكرة أنس" },
+          "body": { "en": "Long after his death, Anas still remembered the touch of his hand and his fragrance.", "de": "Lange nach seinem Tod erinnerte sich Anas noch an die Berührung seiner Hand und an seinen Duft.", "ar": "بعد وفاته بزمن طويل ظل أنس يذكر لين يده وطيب ريحه." }
+        },
+        {
+          "verse": "33:21",
+          "check": "excellent pattern",
+          "title": { "en": "Not only to admire", "de": "Nicht nur zum Bewundern", "ar": "لا للإعجاب وحده" },
+          "body": { "en": "We cannot see his face, but we can follow his example. That is the purpose of knowing him.", "de": "Wir können sein Gesicht nicht sehen, aber seinem Vorbild folgen. Dafür lernen wir ihn kennen.", "ar": "لا نستطيع أن نرى وجهه، لكننا نستطيع أن نقتدي به، ولهذا نتعرّف إليه." }
+        },
+        {
+          "title": { "en": "Following him today", "de": "Ihm heute folgen", "ar": "كيف نقتدي به اليوم" },
+          "list": {
+            "en": ["Read a book of shama'il, one page at a time", "Picture him when you read his sayings", "Teach children to love him through his character", "Let his example, not trends, shape your manners"],
+            "de": ["Lesen Sie ein Buch der Schamāʾil, Seite für Seite", "Stellen Sie ihn sich vor, wenn Sie seine Worte lesen", "Lehren Sie Kinder, ihn durch seinen Charakter zu lieben", "Lassen Sie sein Vorbild, nicht Trends, Ihr Verhalten prägen"],
+            "ar": ["اقرأ كتابًا في الشمائل صفحة صفحة", "استحضر صورته حين تقرأ أحاديثه", "علّم الأطفال حبه من خلال أخلاقه", "اجعل قدوتك سيرته لا الموضة"]
+          }
+        }
+      ],
+      "sources": [{ "label": "at-Tirmidhi, ash-Shama'il al-Muhammadiyya" }]
+    }
+  ]
+}

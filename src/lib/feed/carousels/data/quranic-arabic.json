@@ -1,0 +1,4419 @@
+{
+  "series": "quranic-arabic",
+  "label": {
+    "en": "Arabic of the Quran",
+    "de": "Arabisch des Korans",
+    "ar": "عربية القرآن"
+  },
+  "topic": "quran",
+  "tradition": "all",
+  "items": [
+    {
+      "id": "quranic-arabic-01-three-word-types",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": {
+          "en": "Arabic of the Quran · 1",
+          "de": "Arabisch des Korans · 1",
+          "ar": "عربية القرآن · ١"
+        },
+        "title": {
+          "en": "Three kinds of words",
+          "de": "Drei Arten von Wörtern",
+          "ar": "أقسام الكلمة الثلاثة"
+        },
+        "sub": {
+          "en": "Every word of the Quran is a noun, a verb or a particle. This is where it all begins.",
+          "de": "Jedes Wort des Korans ist ein Nomen, ein Verb oder eine Partikel. Hier beginnt alles.",
+          "ar": "كل كلمة في القرآن اسم أو فعل أو حرف، ومن هنا يبدأ كل شيء."
+        },
+        "arabic": "اسم · فعل · حرف"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "One language, three building blocks",
+            "de": "Eine Sprache, drei Bausteine",
+            "ar": "لغة واحدة وثلاث لبنات"
+          },
+          "arabic": "الكلمة: اسم وفعل وحرف",
+          "body": {
+            "en": "The classical grammarians sorted every Arabic word into three kinds: ism, fi'l and harf. Once you can tell them apart, you begin to see how each verse is built.",
+            "de": "Die klassischen Grammatiker ordneten jedes arabische Wort einer von drei Arten zu: ism, fi'l und harf. Wer sie unterscheiden kann, sieht allmählich, wie jeder Vers gebaut ist.",
+            "ar": "قسّم النحاة الكلمة العربية ثلاثة أقسام: اسم وفعل وحرف. ومن عرف الفرق بينها بدأ يرى كيف تُبنى كل آية."
+          }
+        },
+        {
+          "title": {
+            "en": "Ism: the word that names",
+            "de": "Ism: das Wort, das benennt",
+            "ar": "الاسم: كلمة تُسمّي"
+          },
+          "arabic": "اسم",
+          "body": {
+            "en": "An ism names a person, a thing, a place, a quality or an idea, without any sense of time. Allah, kitab (book), rahma (mercy) and even huwa (he) are all ism.",
+            "de": "Ein ism benennt eine Person, eine Sache, einen Ort, eine Eigenschaft oder eine Idee, ohne Bezug zur Zeit. Allah, kitab (Buch), rahma (Barmherzigkeit) und sogar huwa (er) sind ism.",
+            "ar": "الاسم ما دلّ على ذات أو شيء أو مكان أو صفة أو معنى من غير زمن، مثل: الله، كتاب، رحمة، وحتى الضمير «هو»."
+          }
+        },
+        {
+          "title": {
+            "en": "Fi'l: an action in time",
+            "de": "Fi'l: eine Handlung in der Zeit",
+            "ar": "الفعل: حدث في زمن"
+          },
+          "arabic": "كَتَبَ · يَكْتُبُ · اُكْتُبْ",
+          "body": {
+            "en": "A fi'l tells of an action or an event and carries time within it. Kataba: he wrote. Yaktubu: he writes, or will write. Uktub: the command to write. One root, three moments.",
+            "de": "Ein fi'l berichtet von einer Handlung oder einem Geschehen und trägt die Zeit in sich. Kataba: er schrieb. Yaktubu: er schreibt oder wird schreiben. Uktub: der Befehl zu schreiben. Eine Wurzel, drei Momente.",
+            "ar": "الفعل ما دلّ على حدث مقترن بزمن: «كَتَبَ» في الماضي، و«يَكْتُبُ» في الحال أو الاستقبال، و«اُكْتُبْ» للأمر. جذر واحد وثلاثة أزمنة."
+          }
+        },
+        {
+          "title": {
+            "en": "Harf: meaning only in company",
+            "de": "Harf: Bedeutung nur im Zusammenhang",
+            "ar": "الحرف: معنى في غيره"
+          },
+          "arabic": "فِي · مِنْ · وَ · لَمْ",
+          "body": {
+            "en": "A harf has no complete meaning on its own. It links and shapes the words around it: fi (in), min (from), wa (and), lam (not). Small words, yet whole verses turn on them.",
+            "de": "Ein harf hat allein keine vollständige Bedeutung. Er verbindet und formt die Wörter um sich herum: fi (in), min (von), wa (und), lam (nicht). Kleine Wörter, und doch hängen ganze Verse an ihnen.",
+            "ar": "الحرف ما دلّ على معنى في غيره، فلا يتم معناه إلا مع ما حوله، مثل: في، مِن، الواو، لم. كلمات صغيرة، لكن معاني الآيات تدور عليها."
+          }
+        },
+        {
+          "verse": "112:1",
+          "check": "He is Allah",
+          "title": {
+            "en": "Two kinds in one verse",
+            "de": "Zwei Arten in einem Vers",
+            "ar": "قسمان في آية"
+          },
+          "body": {
+            "en": "Qul (say) is a fi'l, a command. Huwa, Allah and ahad are each an ism. There is no harf in this verse at all.",
+            "de": "Qul, der Auftrag zu sagen, ist ein fi'l. Huwa, Allah und ahad sind jeweils ein ism. Ein harf kommt in diesem Vers nicht vor.",
+            "ar": "«قُلْ» فعل أمر، و«هو» و«الله» و«أحد» أسماء، ولا حرف في هذه الآية."
+          }
+        },
+        {
+          "verse": "112:4",
+          "check": "equivalent",
+          "title": {
+            "en": "All three together",
+            "de": "Alle drei zusammen",
+            "ar": "الأقسام الثلاثة معًا"
+          },
+          "body": {
+            "en": "Wa and lam are particles, yakun is a verb, kufuwan and ahad are nouns. In lahu, the particle li meets the pronoun hu, an ism.",
+            "de": "Wa und lam sind Partikeln, yakun ist ein Verb, kufuwan und ahad sind Nomen. In lahu trifft die Partikel li auf das Pronomen hu, ein ism.",
+            "ar": "الواو و«لم» حرفان، و«يكن» فعل، و«كفوًا» و«أحد» اسمان. وفي «له» حرف جر اتصل به ضمير، والضمير اسم."
+          }
+        },
+        {
+          "title": {
+            "en": "A quick test",
+            "de": "Ein schneller Test",
+            "ar": "اختبار سريع"
+          },
+          "list": {
+            "en": [
+              "Can it take al- or tanween? Then it is an ism",
+              "Does it change for past, present and command? Then it is a fi'l",
+              "Neither of the two? Then it is most likely a harf"
+            ],
+            "de": [
+              "Kann es al- oder Tanwin tragen? Dann ist es ein ism",
+              "Bildet es Vergangenheit, Gegenwart und Befehl? Dann ist es ein fi'l",
+              "Weder noch? Dann ist es meist ein harf"
+            ],
+            "ar": [
+              "يقبل «ال» أو التنوين؟ فهو اسم",
+              "يتصرف إلى ماضٍ ومضارع وأمر؟ فهو فعل",
+              "لا يقبل علامات الاسم ولا الفعل؟ فهو حرف غالبًا"
+            ]
+          },
+          "body": {
+            "en": "A rule of thumb for the start. Pronouns take neither al- nor tanween, yet they are still ism.",
+            "de": "Eine Faustregel für den Anfang. Pronomen tragen weder al- noch Tanwin und sind doch ism.",
+            "ar": "قاعدة تقريبية للمبتدئ؛ فالضمائر لا تقبل «ال» ولا التنوين وهي أسماء."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Ibn Ajurrum, al-Muqaddima al-Ajurrumiyya"
+        },
+        {
+          "label": "Quranic Arabic Corpus",
+          "url": "https://corpus.quran.com"
+        }
+      ]
+    },
+    {
+      "id": "quranic-arabic-02-definite-article",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": {
+          "en": "Arabic of the Quran · 2",
+          "de": "Arabisch des Korans · 2",
+          "ar": "عربية القرآن · ٢"
+        },
+        "title": {
+          "en": "Al-: how a word becomes definite",
+          "de": "Al-: wie ein Wort bestimmt wird",
+          "ar": "«ال»: كيف تصير الكلمة معرفة"
+        },
+        "sub": {
+          "en": "A book or the book: tanween, the article al- and the sun letters that swallow its lam",
+          "de": "Ein Buch oder das Buch: Tanwin, der Artikel al- und die Sonnenbuchstaben, die sein Lam verschlucken",
+          "ar": "كتابٌ أم الكتاب: التنوين و«ال» والحروف الشمسية"
+        },
+        "arabic": "نَكِرَة · مَعْرِفَة"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "A book or the book",
+            "de": "Ein Buch oder das Buch",
+            "ar": "كتابٌ أم الكتاب؟"
+          },
+          "arabic": "كِتَابٌ ← الْكِتَابُ",
+          "body": {
+            "en": "Arabic has no word for 'a'. An indefinite noun (nakira) usually ends in tanween: kitabun, a book. Add al- and it becomes definite (ma'rifa): al-kitabu, the book.",
+            "de": "Das Arabische hat kein Wort für „ein“. Ein unbestimmtes Nomen (nakira) endet meist auf Tanwin: kitabun, ein Buch. Mit al- wird es bestimmt (ma'rifa): al-kitabu, das Buch.",
+            "ar": "ليس في العربية أداة للتنكير؛ فالنكرة تُعرف غالبًا بالتنوين: «كتابٌ»، فإذا دخلت عليها «ال» صارت معرفة: «الكتابُ»."
+          }
+        },
+        {
+          "title": {
+            "en": "Never both at once",
+            "de": "Nie beides zugleich",
+            "ar": "لا يجتمعان"
+          },
+          "body": {
+            "en": "Tanween and al- never sit on the same word. When al- arrives, the tanween leaves: rahmatun becomes ar-rahmatu. It is one of the first things your eye learns to check.",
+            "de": "Tanwin und al- stehen nie auf demselben Wort. Kommt al-, verschwindet das Tanwin: aus rahmatun wird ar-rahmatu. Das ist eines der ersten Dinge, die Ihr Auge prüfen lernt.",
+            "ar": "لا يجتمع التنوين و«ال» في كلمة واحدة؛ فإذا دخلت «ال» حُذف التنوين: «رحمةٌ» تصير «الرحمةُ». وهذا من أول ما تتعوّد العين على ملاحظته."
+          }
+        },
+        {
+          "verse": "73:15-16",
+          "check": "Pharaoh disobeyed the messenger",
+          "title": {
+            "en": "A messenger, then the messenger",
+            "de": "Ein Gesandter, dann der Gesandte",
+            "ar": "رسولًا ثم الرسول"
+          },
+          "body": {
+            "en": "First rasulan, indefinite: a messenger. Then ar-rasul, with al-: the one just mentioned. The article points back to someone already known.",
+            "de": "Zuerst rasulan, unbestimmt: ein Gesandter. Dann ar-rasul mit al-: der eben genannte. Der Artikel verweist auf jemanden, der schon bekannt ist.",
+            "ar": "جاءت «رسولًا» نكرة أولًا، ثم «الرسول» معرفة بـ«ال»، أي الرسول المذكور قبلُ؛ فـ«ال» هنا للعهد."
+          }
+        },
+        {
+          "verse": "94:5-6",
+          "check": "with hardship",
+          "title": {
+            "en": "One hardship, two eases",
+            "de": "Eine Not, zwei Erleichterungen",
+            "ar": "عسر واحد ويسران"
+          },
+          "body": {
+            "en": "Al-'usr comes twice with al-: many commentators read it as the same hardship. Yusran comes twice without al-: two different eases.",
+            "de": "Al-'usr steht zweimal mit al-: viele Kommentatoren lesen es als dieselbe Not. Yusran steht zweimal ohne al-: zwei verschiedene Erleichterungen.",
+            "ar": "تكرّر «العسر» معرّفًا فهو عند كثير من المفسرين عسر واحد، وتكرّر «يسرًا» منكّرًا فهما يسران."
+          }
+        },
+        {
+          "title": {
+            "en": "Always written, not always heard",
+            "de": "Immer geschrieben, nicht immer gehört",
+            "ar": "تُكتب دائمًا ولا تُنطق دائمًا"
+          },
+          "arabic": "الْقَمَر · الشَّمْس",
+          "body": {
+            "en": "The lam of al- is heard before moon letters, as in al-qamar, and merges into sun letters, as in ash-shams. The sound changes, the grammar does not: both words are definite.",
+            "de": "Das Lam von al- ist vor Mondbuchstaben hörbar, wie in al-qamar, und verschmilzt mit Sonnenbuchstaben, wie in ash-shams. Der Klang ändert sich, die Grammatik nicht: beide Wörter sind bestimmt.",
+            "ar": "تُنطق لام «ال» قبل الحروف القمرية كما في «القمر»، وتُدغم في الحروف الشمسية كما في «الشمس». يتغير النطق ولا يتغير الحكم: كلتا الكلمتين معرفة."
+          }
+        },
+        {
+          "title": {
+            "en": "Other ways to be definite",
+            "de": "Weitere Wege zur Bestimmtheit",
+            "ar": "معارف أخرى"
+          },
+          "list": {
+            "en": [
+              "Proper names: Allah, Musa, Makka",
+              "Pronouns: huwa, anta, nahnu",
+              "Pointing words: hadha, dhalika",
+              "Relative words: alladhi, allati",
+              "A noun joined to a definite one: kitabu Allahi"
+            ],
+            "de": [
+              "Eigennamen: Allah, Musa, Makka",
+              "Pronomen: huwa, anta, nahnu",
+              "Hinweiswörter: hadha, dhalika",
+              "Relativwörter: alladhi, allati",
+              "Ein Nomen, verbunden mit einem bestimmten: kitabu Allahi"
+            ],
+            "ar": [
+              "العَلَم: الله، موسى، مكة",
+              "الضمير: هو، أنت، نحن",
+              "اسم الإشارة: هذا، ذلك",
+              "الاسم الموصول: الذي، التي",
+              "المضاف إلى معرفة: كتابُ الله"
+            ]
+          },
+          "body": {
+            "en": "Al- is only one way. These words are definite without it.",
+            "de": "Al- ist nur ein Weg. Diese Wörter sind auch ohne es bestimmt.",
+            "ar": "«ال» طريق واحد من طرق التعريف، وهذه معارف بغيرها."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Ibn Hisham, Qatr an-Nada wa Ball as-Sada"
+        },
+        {
+          "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 94:5-6",
+          "url": "https://quran.com/94:5/tafsirs/ar-tafsir-ibn-kathir"
+        }
+      ]
+    },
+    {
+      "id": "quranic-arabic-03-gender",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": {
+          "en": "Arabic of the Quran · 3",
+          "de": "Arabisch des Korans · 3",
+          "ar": "عربية القرآن · ٣"
+        },
+        "title": {
+          "en": "Masculine and feminine",
+          "de": "Männlich und weiblich",
+          "ar": "المذكر والمؤنث"
+        },
+        "sub": {
+          "en": "Every Arabic noun has a gender, and the words around it follow",
+          "de": "Jedes arabische Nomen hat ein Genus, und die Wörter um es herum folgen ihm",
+          "ar": "لكل اسم في العربية جنس، وما حوله يتبعه"
+        },
+        "arabic": "مُذَكَّر · مُؤَنَّث"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "Only two genders",
+            "de": "Nur zwei Genera",
+            "ar": "جنسان فقط"
+          },
+          "body": {
+            "en": "Arabic has no neuter. Every noun is either mudhakkar (masculine) or mu'annath (feminine), even a book, a door or the sun. Verbs, adjectives and pronouns then agree with it.",
+            "de": "Das Arabische kennt kein Neutrum. Jedes Nomen ist mudhakkar (männlich) oder mu'annath (weiblich), auch ein Buch, eine Tür oder die Sonne. Verben, Adjektive und Pronomen richten sich danach.",
+            "ar": "لا محايد في العربية؛ فكل اسم إما مذكر وإما مؤنث، حتى الكتاب والباب والشمس. ثم يطابقه الفعل والنعت والضمير."
+          }
+        },
+        {
+          "title": {
+            "en": "The round ta",
+            "de": "Das runde Ta",
+            "ar": "التاء المربوطة"
+          },
+          "arabic": "ة",
+          "body": {
+            "en": "The most common sign of the feminine is ta marbuta, the round ta at the end: rahma (mercy), janna (garden), salah (prayer). In a pause it sounds like h, in connection like t.",
+            "de": "Das häufigste Zeichen des Femininums ist ta marbuta, das runde Ta am Ende: rahma (Barmherzigkeit), janna (Garten), salah (Gebet). In der Pause klingt es wie h, in der Verbindung wie t.",
+            "ar": "أشهر علامات التأنيث التاء المربوطة في آخر الاسم: رحمة، جنة، صلاة. وتُنطق هاءً عند الوقف وتاءً عند الوصل."
+          }
+        },
+        {
+          "title": {
+            "en": "Other feminine signs",
+            "de": "Weitere weibliche Kennzeichen",
+            "ar": "علامات أخرى للتأنيث"
+          },
+          "list": {
+            "en": [
+              "Alif maqsura at the end: dunya (this world), husna (most beautiful)",
+              "Alif and hamza at the end: sahra' (desert), bayda' (white)",
+              "Feminine by usage, with no sign: shams (sun), ard (earth), sama' (sky)"
+            ],
+            "de": [
+              "Alif maqsura am Ende: dunya (diesseitige Welt), husna (die schönste)",
+              "Alif und Hamza am Ende: sahra' (Wüste), bayda' (weiß)",
+              "Weiblich durch Gebrauch, ohne Zeichen: shams (Sonne), ard (Erde), sama' (Himmel)"
+            ],
+            "ar": [
+              "الألف المقصورة: الدنيا، الحسنى",
+              "الألف الممدودة: صحراء، بيضاء",
+              "مؤنث سماعي بلا علامة: الشمس، الأرض، السماء"
+            ]
+          },
+          "body": {
+            "en": "Gender belongs to the word, not to the thing: learn it with each noun.",
+            "de": "Das Genus gehört zum Wort, nicht zur Sache: lernen Sie es mit jedem Nomen.",
+            "ar": "الجنس صفة للكلمة لا للشيء، فاحفظه مع كل اسم."
+          }
+        },
+        {
+          "verse": "81:1",
+          "check": "the sun is wrapped up",
+          "title": {
+            "en": "The verb follows the noun",
+            "de": "Das Verb folgt dem Nomen",
+            "ar": "الفعل يتبع الاسم"
+          },
+          "body": {
+            "en": "Ash-shams (the sun) is feminine, so its verb kuwwirat carries the feminine ending -at.",
+            "de": "Ash-shams (die Sonne) ist weiblich, darum trägt ihr Verb kuwwirat die weibliche Endung -at.",
+            "ar": "«الشمس» مؤنثة، فجاء فعلها «كُوِّرَتْ» بتاء التأنيث الساكنة."
+          }
+        },
+        {
+          "verse": "3:42",
+          "check": "O Mary",
+          "title": {
+            "en": "Speaking to a woman",
+            "de": "Eine Frau ansprechen",
+            "ar": "خطاب المؤنث"
+          },
+          "body": {
+            "en": "In istafaki (He chose you), -ki is the feminine 'you'. The verb qalat is feminine too: it agrees with the plural mala'ika (angels).",
+            "de": "In istafaki steht -ki für die angesprochene Frau. Auch das Verb qalat ist weiblich: es richtet sich nach dem Plural mala'ika (Engel).",
+            "ar": "في «اصطفاكِ» كاف الخطاب المكسورة للمؤنث، وفي «قالت» تاء التأنيث لأن الفاعل «الملائكة» جمع تكسير."
+          }
+        },
+        {
+          "title": {
+            "en": "Why it matters",
+            "de": "Warum das wichtig ist",
+            "ar": "لماذا يهمّ هذا"
+          },
+          "body": {
+            "en": "Gender endings tell you who is meant, even when no name is given. A single letter can show whether a verse speaks to a man or a woman, to one person or to many.",
+            "de": "Die Genusendungen zeigen, wer gemeint ist, auch ohne Namen. Ein einziger Buchstabe kann zeigen, ob ein Vers einen Mann oder eine Frau anspricht, eine Person oder viele.",
+            "ar": "علامات التذكير والتأنيث تدلّ على المقصود وإن لم يُذكر اسمه؛ فحرف واحد قد يبيّن أن الخطاب لرجل أو لامرأة، لواحد أو لجماعة."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "W. Wright, A Grammar of the Arabic Language"
+        },
+        {
+          "label": "Quranic Arabic Corpus",
+          "url": "https://corpus.quran.com"
+        }
+      ]
+    },
+    {
+      "id": "quranic-arabic-04-dual",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": {
+          "en": "Arabic of the Quran · 4",
+          "de": "Arabisch des Korans · 4",
+          "ar": "عربية القرآن · ٤"
+        },
+        "title": {
+          "en": "The dual: exactly two",
+          "de": "Der Dual: genau zwei",
+          "ar": "المثنى: اثنان بالضبط"
+        },
+        "sub": {
+          "en": "Arabic has its own form for two, and the Quran uses it with great beauty",
+          "de": "Das Arabische hat eine eigene Form für zwei, und der Koran nutzt sie kunstvoll",
+          "ar": "للعربية صيغة خاصة بالاثنين، والقرآن يستعملها ببلاغة"
+        },
+        "arabic": "مُثَنًّى"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "One, two, many",
+            "de": "Eins, zwei, viele",
+            "ar": "مفرد ومثنى وجمع"
+          },
+          "arabic": "كِتَابَانِ · كِتَابَيْنِ",
+          "body": {
+            "en": "English counts one or many. Arabic has a third number for exactly two: the dual (muthanna). It is formed by adding -ani or -ayni to the singular.",
+            "de": "Das Deutsche kennt Einzahl und Mehrzahl. Das Arabische hat eine dritte Zahl für genau zwei: den Dual (muthanna). Er entsteht durch -ani oder -ayni am Singular.",
+            "ar": "في العربية عدد ثالث بين المفرد والجمع هو المثنى، ويدل على اثنين، ويُصاغ بزيادة ألف ونون أو ياء ونون على المفرد."
+          }
+        },
+        {
+          "title": {
+            "en": "-ani or -ayni?",
+            "de": "-ani oder -ayni?",
+            "ar": "بالألف أم بالياء؟"
+          },
+          "body": {
+            "en": "As subject or predicate, the dual ends in -ani: kitabani. As object or after a preposition, it ends in -ayni: kitabayni. The ending itself shows the role.",
+            "de": "Als Subjekt oder Prädikat endet der Dual auf -ani: kitabani. Als Objekt oder nach einer Präposition endet er auf -ayni: kitabayni. Die Endung selbst zeigt die Rolle.",
+            "ar": "يُرفع المثنى بالألف: «كتابانِ»، ويُنصب ويُجر بالياء: «كتابَيْنِ». فالعلامة نفسها تدل على موقع الكلمة."
+          }
+        },
+        {
+          "verse": "55:17",
+          "check": "two sunrises",
+          "title": {
+            "en": "Two easts, two wests",
+            "de": "Zwei Osten, zwei Westen",
+            "ar": "المشرقان والمغربان"
+          },
+          "body": {
+            "en": "Al-mashriqayni and al-maghribayni are duals in -ayni. Many commentators explain them as the sunrise and sunset points of summer and winter.",
+            "de": "Al-mashriqayni und al-maghribayni sind Duale auf -ayni. Viele Kommentatoren deuten sie als Auf- und Untergangspunkte der Sonne im Sommer und im Winter.",
+            "ar": "«المشرقين» و«المغربين» مثنيان مجروران بالياء، وفسّرهما كثير من المفسرين بمشرقي الشتاء والصيف ومغربيهما."
+          }
+        },
+        {
+          "verse": "55:19",
+          "check": "two seas",
+          "title": {
+            "en": "A verb for two",
+            "de": "Ein Verb für zwei",
+            "ar": "فعل للاثنين"
+          },
+          "body": {
+            "en": "Al-bahrayni (the two seas) is the object, so it takes -ayni. The verb yaltaqiyani, 'the two meet', is dual as well.",
+            "de": "Al-bahrayni (die zwei Meere) ist Objekt und trägt darum -ayni. Auch das Verb yaltaqiyani, „die beiden treffen sich“, steht im Dual.",
+            "ar": "«البحرين» مفعول به منصوب بالياء، و«يلتقيان» فعل مضارع مسند إلى ألف الاثنين؛ فللأفعال أيضًا صيغة للمثنى."
+          }
+        },
+        {
+          "verse": "55:13",
+          "check": "which of the favors",
+          "title": {
+            "en": "Speaking to two",
+            "de": "Zwei werden angesprochen",
+            "ar": "خطاب للاثنين"
+          },
+          "body": {
+            "en": "Rabbikuma and tukadhdhibani are dual forms of 'you': exactly two are addressed. The commentators name them: humans and jinn.",
+            "de": "Rabbikuma und tukadhdhibani sind Dualformen der 2. Person: genau zwei werden angesprochen. Die Kommentatoren nennen sie: Menschen und Dschinn.",
+            "ar": "«ربكما» و«تكذبان» بصيغة المثنى، والخطاب عند المفسرين للثقلين: الإنس والجن."
+          }
+        },
+        {
+          "verse": "111:1",
+          "check": "hands of Abu Lahab",
+          "title": {
+            "en": "Where the nun goes",
+            "de": "Wohin das Nun verschwindet",
+            "ar": "حذف النون"
+          },
+          "body": {
+            "en": "Yada means 'two hands'. The full dual would be yadani, but the nun drops when the word is joined to the next noun, here abi lahab.",
+            "de": "Yada bedeutet „zwei Hände“. Der volle Dual wäre yadani, doch das Nun fällt weg, wenn das Wort mit dem nächsten Nomen verbunden ist, hier abi lahab.",
+            "ar": "«يدا» مثنى «يد»، وأصلها «يدانِ»، فحُذفت النون للإضافة إلى «أبي لهب»."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 55:13 (humans and jinn)",
+          "url": "https://quran.com/55:13/tafsirs/en-tafisr-ibn-kathir"
+        },
+        {
+          "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 55:17 (summer and winter)",
+          "url": "https://quran.com/55:17/tafsirs/en-tafisr-ibn-kathir"
+        },
+        {
+          "label": "Ibn Ajurrum, al-Muqaddima al-Ajurrumiyya"
+        }
+      ]
+    },
+    {
+      "id": "quranic-arabic-05-sound-plurals",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": {
+          "en": "Arabic of the Quran · 5",
+          "de": "Arabisch des Korans · 5",
+          "ar": "عربية القرآن · ٥"
+        },
+        "title": {
+          "en": "Sound plurals: adding an ending",
+          "de": "Gesunde Plurale: eine Endung anfügen",
+          "ar": "الجمع السالم"
+        },
+        "sub": {
+          "en": "Believers, doers of good, righteous deeds: plurals that keep the word whole",
+          "de": "Gläubige, Gutes Tuende, gute Taten: Plurale, die das Wort unversehrt lassen",
+          "ar": "جمع يسلم فيه بناء المفرد"
+        },
+        "arabic": "مُؤْمِنُونَ · مُؤْمِنَات"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "Plural means three or more",
+            "de": "Plural heißt drei oder mehr",
+            "ar": "الجمع: ثلاثة فأكثر"
+          },
+          "body": {
+            "en": "After the dual comes the plural. The 'sound' plural keeps the singular whole and only adds an ending. Once you know the endings, it is easy to recognise.",
+            "de": "Nach dem Dual kommt der Plural. Der „gesunde“ Plural lässt den Singular unversehrt und fügt nur eine Endung an. Kennt man die Endungen, erkennt man ihn leicht.",
+            "ar": "الجمع ما دلّ على ثلاثة فأكثر. والجمع السالم يسلم فيه بناء المفرد وتُزاد عليه علامة في آخره، فيسهل تمييزه لمن عرف علاماته."
+          }
+        },
+        {
+          "title": {
+            "en": "The endings",
+            "de": "Die Endungen",
+            "ar": "العلامات"
+          },
+          "list": {
+            "en": [
+              "Masculine, as subject: -una, mu'minuna",
+              "Masculine, as object or after a preposition: -ina, mu'minina",
+              "Feminine, as subject: -atun, mu'minatun",
+              "Feminine, as object or after a preposition: -atin, mu'minatin"
+            ],
+            "de": [
+              "Männlich, als Subjekt: -una, mu'minuna",
+              "Männlich, als Objekt oder nach Präposition: -ina, mu'minina",
+              "Weiblich, als Subjekt: -atun, mu'minatun",
+              "Weiblich, als Objekt oder nach Präposition: -atin, mu'minatin"
+            ],
+            "ar": [
+              "المذكر في الرفع بالواو: مؤمنون",
+              "المذكر في النصب والجر بالياء: مؤمنين",
+              "المؤنث في الرفع بالضمة: مؤمناتٌ",
+              "المؤنث في النصب والجر بالكسرة: مؤمناتٍ"
+            ]
+          }
+        },
+        {
+          "verse": "23:1",
+          "check": "believers",
+          "title": {
+            "en": "-una: the ones who act",
+            "de": "-una: die Handelnden",
+            "ar": "الرفع بالواو"
+          },
+          "body": {
+            "en": "Al-mu'minuna is the subject of aflaha, so it ends in -una. The surah takes its name from this word: al-Mu'minun.",
+            "de": "Al-mu'minuna ist das Subjekt von aflaha und endet darum auf -una. Die Sure trägt ihren Namen nach diesem Wort: al-Mu'minun.",
+            "ar": "«المؤمنون» فاعل «أفلح» مرفوع بالواو لأنه جمع مذكر سالم، وبه سُمّيت السورة."
+          }
+        },
+        {
+          "verse": "2:195",
+          "check": "doers of good",
+          "title": {
+            "en": "-ina: the ones who are loved",
+            "de": "-ina: die Geliebten",
+            "ar": "النصب بالياء"
+          },
+          "body": {
+            "en": "Al-muhsinina is the object of yuhibbu (He loves), so it ends in -ina. The same ending appears after prepositions.",
+            "de": "Al-muhsinina ist das Objekt von yuhibbu (Er liebt) und endet darum auf -ina. Dieselbe Endung steht nach Präpositionen.",
+            "ar": "«المحسنين» مفعول به منصوب بالياء، وبالياء نفسها يُجر جمع المذكر السالم بعد حروف الجر."
+          }
+        },
+        {
+          "verse": "103:3",
+          "check": "righteous deeds",
+          "title": {
+            "en": "A surprise in the object",
+            "de": "Eine Überraschung beim Objekt",
+            "ar": "نصب بالكسرة"
+          },
+          "body": {
+            "en": "As-salihati is the object of 'amilu, yet it ends in -i, not -a. The feminine sound plural uses kasra for the object too.",
+            "de": "As-salihati ist das Objekt von 'amilu und endet doch auf -i, nicht auf -a. Der weibliche gesunde Plural nimmt auch als Objekt die Kasra.",
+            "ar": "«الصالحات» مفعول به منصوب، وعلامة نصبه الكسرة لا الفتحة، لأنه جمع مؤنث سالم."
+          }
+        },
+        {
+          "title": {
+            "en": "Not only for women",
+            "de": "Nicht nur für Frauen",
+            "ar": "ليس للنساء وحدهن"
+          },
+          "arabic": "آيَات · سَمَاوَات",
+          "body": {
+            "en": "The -at plural is not limited to female persons. Many things and ideas take it too: ayat (signs, verses), samawat (heavens), salawat (prayers).",
+            "de": "Der Plural auf -at ist nicht auf Frauen beschränkt. Viele Dinge und Begriffe bilden ihn ebenfalls: ayat (Zeichen, Verse), samawat (Himmel), salawat (Gebete).",
+            "ar": "لا يختص جمع المؤنث السالم بالإناث، بل يُجمع به كثير من الأشياء والمعاني: آيات، سماوات، صلوات."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Ibn Ajurrum, al-Muqaddima al-Ajurrumiyya"
+        },
+        {
+          "label": "Quranic Arabic Corpus",
+          "url": "https://corpus.quran.com"
+        }
+      ]
+    },
+    {
+      "id": "quranic-arabic-06-broken-plurals",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": {
+          "en": "Arabic of the Quran · 6",
+          "de": "Arabisch des Korans · 6",
+          "ar": "عربية القرآن · ٦"
+        },
+        "title": {
+          "en": "Broken plurals: the word changes inside",
+          "de": "Gebrochene Plurale: das Wort ändert sich innen",
+          "ar": "جمع التكسير"
+        },
+        "sub": {
+          "en": "Qalb becomes qulub, kitab becomes kutub: plurals with a melody of their own",
+          "de": "Aus qalb wird qulub, aus kitab wird kutub: Plurale mit eigener Melodie",
+          "ar": "قلب وقلوب، كتاب وكتب: جموع لها أوزانها"
+        },
+        "arabic": "قَلْب ← قُلُوب"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "Breaking the singular",
+            "de": "Den Singular aufbrechen",
+            "ar": "تغيير بناء المفرد"
+          },
+          "body": {
+            "en": "Many Arabic plurals are not made with an ending. The vowels inside the word change, and sometimes letters are added: qalb (heart) becomes qulub, rasul (messenger) becomes rusul.",
+            "de": "Viele arabische Plurale entstehen nicht durch eine Endung. Die Vokale im Wort ändern sich, manchmal kommen Buchstaben hinzu: aus qalb (Herz) wird qulub, aus rasul (Gesandter) wird rusul.",
+            "ar": "كثير من الجموع لا يُصاغ بزيادة علامة في الآخر، بل يتغير بناء المفرد بتغيير الحركات أو زيادة حروف: قلب وقلوب، رسول ورُسُل."
+          }
+        },
+        {
+          "title": {
+            "en": "Common patterns",
+            "de": "Häufige Muster",
+            "ar": "أوزان شائعة"
+          },
+          "list": {
+            "en": [
+              "qalb → qulub: hearts",
+              "kitab → kutub: books",
+              "nahr → anhar: rivers",
+              "jabal → jibal: mountains",
+              "'alim → 'ulama': scholars",
+              "masjid → masajid: mosques"
+            ],
+            "de": [
+              "qalb → qulub: Herzen",
+              "kitab → kutub: Bücher",
+              "nahr → anhar: Flüsse",
+              "jabal → jibal: Berge",
+              "'alim → 'ulama': Gelehrte",
+              "masjid → masajid: Moscheen"
+            ],
+            "ar": [
+              "فُعُول: قَلْب ← قُلُوب",
+              "فُعُل: كِتَاب ← كُتُب",
+              "أَفْعَال: نَهْر ← أَنْهَار",
+              "فِعَال: جَبَل ← جِبَال",
+              "فُعَلَاء: عَالِم ← عُلَمَاء",
+              "مَفَاعِل: مَسْجِد ← مَسَاجِد"
+            ]
+          },
+          "body": {
+            "en": "There are dozens of patterns. Learn them through the words you meet most.",
+            "de": "Es gibt Dutzende Muster. Lernen Sie sie an den Wörtern, denen Sie am häufigsten begegnen.",
+            "ar": "أوزان جموع التكسير كثيرة، وأيسر طريق لحفظها الكلمات الأكثر ورودًا."
+          }
+        },
+        {
+          "title": {
+            "en": "Learn the plural with the word",
+            "de": "Den Plural mit dem Wort lernen",
+            "ar": "احفظ الجمع مع مفرده"
+          },
+          "body": {
+            "en": "You cannot always predict a broken plural from the singular. That is why dictionaries list it next to the word, and why it helps to learn both together.",
+            "de": "Einen gebrochenen Plural kann man nicht immer aus dem Singular ableiten. Darum führen Wörterbücher ihn neben dem Wort auf, und darum lohnt es sich, beide zusammen zu lernen.",
+            "ar": "لا يمكن دائمًا معرفة جمع التكسير من المفرد بالقياس، ولذلك تذكره المعاجم مع الكلمة، ومن المفيد حفظهما معًا."
+          }
+        },
+        {
+          "verse": "98:3",
+          "check": "correct writings",
+          "title": {
+            "en": "Books, described as one",
+            "de": "Bücher, beschrieben wie eines",
+            "ar": "جمع يوصف بمفرد مؤنث"
+          },
+          "body": {
+            "en": "Kutub (books) is a broken plural. Its adjective qayyima is feminine singular: the usual rule for plurals of things that are not persons.",
+            "de": "Kutub (Bücher) ist ein gebrochener Plural. Sein Adjektiv qayyima steht im weiblichen Singular: die übliche Regel für Plurale von Dingen, die keine Personen sind.",
+            "ar": "«كتب» جمع تكسير، ونعته «قيّمة» مفرد مؤنث، وهذا كثير في جمع غير العاقل."
+          }
+        },
+        {
+          "verse": "88:13-15",
+          "check": "couches raised high",
+          "title": {
+            "en": "Three plurals in a row",
+            "de": "Drei Plurale hintereinander",
+            "ar": "ثلاثة جموع متتالية"
+          },
+          "body": {
+            "en": "Sururun (couches), akwabun (cups) and namariqu (cushions) are broken plurals. Each adjective after them ends in the feminine -a.",
+            "de": "Sururun (Ruhebetten), akwabun (Becher) und namariqu (Kissen) sind gebrochene Plurale. Jedes Adjektiv danach endet auf das weibliche -a.",
+            "ar": "«سرر» و«أكواب» و«نمارق» جموع تكسير، وجاءت نعوتها كلها مفردة مؤنثة."
+          }
+        },
+        {
+          "verse": "2:31",
+          "check": "the names",
+          "title": {
+            "en": "The names, all of them",
+            "de": "Die Namen, alle",
+            "ar": "الأسماء كلها"
+          },
+          "body": {
+            "en": "Al-asma' is the broken plural of ism. The pronoun in kullaha (all of them) is -ha, a feminine singular form, as the same rule predicts.",
+            "de": "Al-asma' ist der gebrochene Plural von ism. Das Pronomen in kullaha (sie alle) ist -ha, eine weibliche Singularform, wie es dieselbe Regel erwarten lässt.",
+            "ar": "«الأسماء» جمع تكسير لـ«اسم»، والضمير في «كلها» مفرد مؤنث، على القاعدة نفسها."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "W. Wright, A Grammar of the Arabic Language"
+        },
+        {
+          "label": "Quranic Arabic Corpus",
+          "url": "https://corpus.quran.com"
+        }
+      ]
+    },
+    {
+      "id": "quranic-arabic-07-nominal-sentence",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": {
+          "en": "Arabic of the Quran · 7",
+          "de": "Arabisch des Korans · 7",
+          "ar": "عربية القرآن · ٧"
+        },
+        "title": {
+          "en": "The nominal sentence: no 'is' needed",
+          "de": "Der Nominalsatz: ganz ohne „ist“",
+          "ar": "الجملة الاسمية"
+        },
+        "sub": {
+          "en": "Mubtada' and khabar: how Arabic makes a statement without a verb",
+          "de": "Mubtada' und khabar: wie das Arabische eine Aussage ohne Verb bildet",
+          "ar": "المبتدأ والخبر: إخبار بلا فعل"
+        },
+        "arabic": "مُبْتَدَأ + خَبَر"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "Two nouns, one statement",
+            "de": "Zwei Nomen, eine Aussage",
+            "ar": "اسمان يكوّنان جملة"
+          },
+          "arabic": "الْبَيْتُ كَبِيرٌ",
+          "body": {
+            "en": "A nominal sentence starts with a noun. The first part is the mubtada' (the topic), the second the khabar (what is said about it). Arabic needs no word for 'is': al-baytu kabirun, the house is big.",
+            "de": "Ein Nominalsatz beginnt mit einem Nomen. Der erste Teil ist der mubtada' (das Thema), der zweite der khabar (die Aussage darüber). Ein Wort für „ist“ braucht das Arabische nicht: al-baytu kabirun, das Haus ist groß.",
+            "ar": "الجملة الاسمية تبدأ باسم: الأول مبتدأ يُتحدث عنه، والثاني خبر يُخبر به عنه، ولا تحتاج العربية إلى فعل للربط بينهما: «البيتُ كبيرٌ»."
+          }
+        },
+        {
+          "title": {
+            "en": "Both in raf'",
+            "de": "Beide im raf'",
+            "ar": "كلاهما مرفوع"
+          },
+          "body": {
+            "en": "In the basic form, the mubtada' and the khabar both end in -u or -un. The mubtada' is usually definite, the khabar often indefinite: that contrast tells you where the 'is' belongs.",
+            "de": "In der Grundform enden mubtada' und khabar beide auf -u oder -un. Der mubtada' ist meist bestimmt, der khabar oft unbestimmt: dieser Gegensatz zeigt, wo das „ist“ hingehört.",
+            "ar": "الأصل أن يُرفع المبتدأ والخبر، والغالب أن يكون المبتدأ معرفة والخبر نكرة، وبهذا الفرق تعرف موضع الإخبار."
+          }
+        },
+        {
+          "verse": "112:2",
+          "check": "Eternal Refuge",
+          "title": {
+            "en": "A sentence of two words",
+            "de": "Ein Satz aus zwei Wörtern",
+            "ar": "جملة من كلمتين"
+          },
+          "body": {
+            "en": "Allahu is the mubtada', as-samadu the khabar. Two words, both ending in -u, form a complete sentence.",
+            "de": "Allahu ist der mubtada', as-samadu der khabar. Zwei Wörter, beide auf -u, bilden einen vollständigen Satz.",
+            "ar": "لفظ الجلالة مبتدأ مرفوع، و«الصمد» خبر مرفوع؛ كلمتان تتم بهما جملة."
+          }
+        },
+        {
+          "verse": "1:2",
+          "check": "praise",
+          "title": {
+            "en": "A khabar made of a phrase",
+            "de": "Ein khabar aus einer Wortgruppe",
+            "ar": "الخبر شبه جملة"
+          },
+          "body": {
+            "en": "Al-hamdu is the mubtada'. The khabar is lillahi, a preposition with its noun: a short phrase can carry the whole statement.",
+            "de": "Al-hamdu ist der mubtada'. Der khabar ist lillahi, eine Präposition mit ihrem Nomen: eine kurze Wortgruppe kann die ganze Aussage tragen.",
+            "ar": "«الحمدُ» مبتدأ، و«لله» جار ومجرور متعلق بمحذوف خبر، فقد يأتي الخبر شبه جملة."
+          }
+        },
+        {
+          "verse": "67:1",
+          "check": "in whose hand is dominion",
+          "title": {
+            "en": "When the khabar comes first",
+            "de": "Wenn der khabar zuerst kommt",
+            "ar": "تقديم الخبر"
+          },
+          "body": {
+            "en": "Bi-yadihi (in His hand) is the khabar and stands before the mubtada' al-mulku. Putting it first gives emphasis: dominion is in His hand alone.",
+            "de": "Bi-yadihi (in Seiner Hand) ist der khabar und steht vor dem mubtada' al-mulku. Die Voranstellung betont: die Herrschaft liegt allein in Seiner Hand.",
+            "ar": "«بيده» خبر مقدّم، و«الملكُ» مبتدأ مؤخر، وفي التقديم معنى الاختصاص: الملك بيده وحده."
+          }
+        },
+        {
+          "title": {
+            "en": "Three kinds of khabar",
+            "de": "Drei Arten von khabar",
+            "ar": "أنواع الخبر"
+          },
+          "list": {
+            "en": [
+              "One word: al-baytu kabirun, the house is big",
+              "A phrase: al-kitabu 'ala al-maktabi, the book is on the desk",
+              "A sentence: al-waladu yaqra'u, the boy is reading"
+            ],
+            "de": [
+              "Ein Wort: al-baytu kabirun, das Haus ist groß",
+              "Eine Wortgruppe: al-kitabu 'ala al-maktabi, das Buch liegt auf dem Tisch",
+              "Ein Satz: al-waladu yaqra'u, der Junge liest"
+            ],
+            "ar": [
+              "مفرد: البيتُ كبيرٌ",
+              "شبه جملة: الكتابُ على المكتبِ",
+              "جملة: الولدُ يقرأُ"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Ibn Ajurrum, al-Muqaddima al-Ajurrumiyya"
+        },
+        {
+          "label": "Ibn Hisham, Qatr an-Nada wa Ball as-Sada"
+        }
+      ]
+    },
+    {
+      "id": "quranic-arabic-08-verbal-sentence",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": {
+          "en": "Arabic of the Quran · 8",
+          "de": "Arabisch des Korans · 8",
+          "ar": "عربية القرآن · ٨"
+        },
+        "title": {
+          "en": "The verbal sentence: the action comes first",
+          "de": "Der Verbalsatz: die Handlung zuerst",
+          "ar": "الجملة الفعلية"
+        },
+        "sub": {
+          "en": "Verb, doer, object: the order behind countless verses",
+          "de": "Verb, Handelnder, Objekt: die Ordnung hinter unzähligen Versen",
+          "ar": "فعل وفاعل ومفعول به: ترتيب يتكرر في آيات كثيرة"
+        },
+        "arabic": "فِعْل + فَاعِل + مَفْعُول بِهِ"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "Verb first",
+            "de": "Zuerst das Verb",
+            "ar": "الفعل أولًا"
+          },
+          "arabic": "كَتَبَ الطَّالِبُ الدَّرْسَ",
+          "body": {
+            "en": "A verbal sentence begins with a verb. Then comes the fa'il, the doer, ending in -u. An object (maf'ul bihi), if there is one, ends in -a. Verb, doer, object: a different order from English.",
+            "de": "Ein Verbalsatz beginnt mit einem Verb. Dann folgt der fa'il, der Handelnde, mit der Endung -u. Ein Objekt (maf'ul bihi), falls vorhanden, endet auf -a. Verb, Handelnder, Objekt: eine andere Ordnung als im Deutschen.",
+            "ar": "الجملة الفعلية تبدأ بفعل، يليه الفاعل مرفوعًا، ثم المفعول به منصوبًا إن وُجد: «كتب الطالبُ الدرسَ»."
+          }
+        },
+        {
+          "verse": "27:16",
+          "check": "Solomon inherited David",
+          "title": {
+            "en": "Doer and object, side by side",
+            "de": "Handelnder und Objekt nebeneinander",
+            "ar": "فاعل ومفعول متجاوران"
+          },
+          "body": {
+            "en": "Waritha (inherited) is the verb. Sulaymanu ends in -u: he is the fa'il. Dawuda ends in -a: he is the object. The endings say who inherited from whom.",
+            "de": "Waritha (erbte) ist das Verb. Sulaymanu endet auf -u: er ist der fa'il. Dawuda endet auf -a: er ist das Objekt. Die Endungen sagen, wer wen beerbte.",
+            "ar": "«ورث» فعل ماضٍ، و«سليمانُ» فاعل مرفوع، و«داودَ» مفعول به منصوب؛ والحركات تبيّن الوارث من الموروث."
+          }
+        },
+        {
+          "verse": "55:3",
+          "check": "Created man",
+          "title": {
+            "en": "A hidden doer",
+            "de": "Ein verborgener Handelnder",
+            "ar": "فاعل مستتر"
+          },
+          "body": {
+            "en": "Khalaqa (He created) has no visible fa'il. The doer is hidden in the verb: huwa, referring back to ar-Rahman. Al-insana is the object.",
+            "de": "Khalaqa (Er erschuf) hat keinen sichtbaren fa'il. Der Handelnde steckt im Verb: huwa, bezogen auf ar-Rahman. Al-insana ist das Objekt.",
+            "ar": "فاعل «خلق» ضمير مستتر تقديره «هو» يعود على الرحمن، و«الإنسانَ» مفعول به منصوب."
+          }
+        },
+        {
+          "verse": "2:124",
+          "check": "Abraham was tried by his Lord",
+          "title": {
+            "en": "When the object comes first",
+            "de": "Wenn das Objekt zuerst kommt",
+            "ar": "تقديم المفعول على الفاعل"
+          },
+          "body": {
+            "en": "Ibrahima ends in -a and comes before rabbuhu, which ends in -u. So Ibrahim is the one tested and his Lord the one testing, whatever the order.",
+            "de": "Ibrahima endet auf -a und steht vor rabbuhu, das auf -u endet. Also ist Ibrahim der Geprüfte und sein Herr der Prüfende, gleich in welcher Reihenfolge.",
+            "ar": "تقدّم المفعول به «إبراهيمَ» منصوبًا على الفاعل «ربُّه» المرفوع، فالحركة لا الترتيب تبيّن المبتلي والمبتلى."
+          }
+        },
+        {
+          "title": {
+            "en": "The verb stays singular",
+            "de": "Das Verb bleibt im Singular",
+            "ar": "الفعل يبقى مفردًا"
+          },
+          "body": {
+            "en": "When the verb comes before a plural doer, it usually stays singular: qala ar-rijalu, the men said. Only when the noun comes first does the verb show the plural: ar-rijalu qalu.",
+            "de": "Steht das Verb vor einem Handelnden im Plural, bleibt es in der Regel im Singular: qala ar-rijalu, die Männer sagten. Erst wenn das Nomen vorangeht, zeigt das Verb den Plural: ar-rijalu qalu.",
+            "ar": "إذا تقدّم الفعل على فاعل مثنى أو مجموع بقي غالبًا مفردًا: «قال الرجالُ»، فإن تقدّم الاسم طابقه الفعل: «الرجالُ قالوا»."
+          }
+        },
+        {
+          "title": {
+            "en": "Find the three parts",
+            "de": "Die drei Teile finden",
+            "ar": "استخرج الأركان الثلاثة"
+          },
+          "body": {
+            "en": "Kataba at-talibu ad-darsa: the student wrote the lesson.",
+            "de": "Kataba at-talibu ad-darsa: der Student schrieb die Lektion.",
+            "ar": "في جملة «كتب الطالبُ الدرسَ»:"
+          },
+          "list": {
+            "en": [
+              "The verb: kataba",
+              "The fa'il, ending in -u: at-talibu",
+              "The object, ending in -a: ad-darsa"
+            ],
+            "de": [
+              "Das Verb: kataba",
+              "Der fa'il auf -u: at-talibu",
+              "Das Objekt auf -a: ad-darsa"
+            ],
+            "ar": [
+              "الفعل: كَتَبَ",
+              "الفاعل المرفوع: الطالبُ",
+              "المفعول به المنصوب: الدرسَ"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Ibn Ajurrum, al-Muqaddima al-Ajurrumiyya"
+        }
+      ]
+    },
+    {
+      "id": "quranic-arabic-09-irab",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": {
+          "en": "Arabic of the Quran · 9",
+          "de": "Arabisch des Korans · 9",
+          "ar": "عربية القرآن · ٩"
+        },
+        "title": {
+          "en": "I'rab: what the last vowel tells you",
+          "de": "I'rab: was der letzte Vokal verrät",
+          "ar": "الإعراب: ماذا تقول الحركة الأخيرة"
+        },
+        "sub": {
+          "en": "Raf', nasb, jarr and jazm: four states that show each word's role",
+          "de": "Raf', nasb, jarr und jazm: vier Zustände, die die Rolle jedes Wortes zeigen",
+          "ar": "الرفع والنصب والجر والجزم: أحوال تكشف موقع الكلمة"
+        },
+        "arabic": "رَفْع · نَصْب · جَرّ · جَزْم"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "The ending changes",
+            "de": "Die Endung wechselt",
+            "ar": "تتغير الحركة الأخيرة"
+          },
+          "body": {
+            "en": "In Arabic the last vowel of many words changes with their role in the sentence. This is called i'rab. It lets the listener know who does what, even when the word order changes.",
+            "de": "Im Arabischen wechselt der letzte Vokal vieler Wörter je nach ihrer Rolle im Satz. Das nennt man i'rab. So erkennt der Hörer, wer was tut, auch wenn sich die Wortstellung ändert.",
+            "ar": "الإعراب تغيّر أواخر الكلمات بحسب موقعها في الجملة، وبه يعرف السامع الفاعل من المفعول وإن تغيّر الترتيب."
+          }
+        },
+        {
+          "title": {
+            "en": "Four states",
+            "de": "Vier Zustände",
+            "ar": "أربعة أحوال"
+          },
+          "list": {
+            "en": [
+              "Raf': mainly -u, for the subject and the predicate",
+              "Nasb: mainly -a, for the object and more",
+              "Jarr: mainly -i, after prepositions and in idafa",
+              "Jazm: no vowel, for some present-tense verbs"
+            ],
+            "de": [
+              "Raf': meist -u, für Subjekt und Prädikat",
+              "Nasb: meist -a, für das Objekt und mehr",
+              "Jarr: meist -i, nach Präpositionen und in der Idafa",
+              "Jazm: kein Vokal, bei manchen Präsensverben"
+            ],
+            "ar": [
+              "الرفع وعلامته الأصلية الضمة",
+              "النصب وعلامته الأصلية الفتحة",
+              "الجر وعلامته الأصلية الكسرة، ويختص بالأسماء",
+              "الجزم وعلامته الأصلية السكون، ويختص بالأفعال"
+            ]
+          },
+          "body": {
+            "en": "Nouns take the first three. Present-tense verbs take raf', nasb and jazm.",
+            "de": "Nomen kennen die ersten drei. Präsensverben kennen raf', nasb und jazm.",
+            "ar": "ويشترك الاسم والفعل المضارع في الرفع والنصب."
+          }
+        },
+        {
+          "verse": "20:8",
+          "check": "best names",
+          "title": {
+            "en": "Allahu: raf'",
+            "de": "Allahu: raf'",
+            "ar": "«اللهُ» مرفوعًا"
+          },
+          "body": {
+            "en": "At the start of this verse the name of Allah ends in -u. It is the mubtada', the topic of the sentence, so it is in raf'.",
+            "de": "Am Anfang dieses Verses endet der Name Allahs auf -u. Er ist der mubtada', das Thema des Satzes, und steht darum im raf'.",
+            "ar": "لفظ الجلالة في أول الآية مبتدأ مرفوع وعلامة رفعه الضمة."
+          }
+        },
+        {
+          "verse": "3:200",
+          "check": "fear Allah",
+          "title": {
+            "en": "Allaha: nasb",
+            "de": "Allaha: nasb",
+            "ar": "«اللهَ» منصوبًا"
+          },
+          "body": {
+            "en": "After the verb ittaqu, the name ends in -a. It is the object of the verb, so it is in nasb.",
+            "de": "Nach dem Verb ittaqu endet der Name auf -a. Er ist das Objekt des Verbs und steht darum im nasb.",
+            "ar": "لفظ الجلالة بعد «اتقوا» مفعول به منصوب وعلامة نصبه الفتحة."
+          }
+        },
+        {
+          "verse": "1:1",
+          "check": "In the name of",
+          "title": {
+            "en": "Allahi: jarr",
+            "de": "Allahi: jarr",
+            "ar": "«اللهِ» مجرورًا"
+          },
+          "body": {
+            "en": "In bismi Allahi the name ends in -i. It is the second part of an idafa, 'the name of Allah', so it is in jarr.",
+            "de": "In bismi Allahi endet der Name auf -i. Er ist der zweite Teil einer Idafa, „der Name Allahs“, und steht darum im jarr.",
+            "ar": "لفظ الجلالة في البسملة مضاف إليه مجرور وعلامة جره الكسرة."
+          }
+        },
+        {
+          "verse": "35:28",
+          "check": "Only those fear Allah",
+          "title": {
+            "en": "One vowel, a different meaning",
+            "de": "Ein Vokal, ein anderer Sinn",
+            "ar": "حركة تغيّر المعنى"
+          },
+          "body": {
+            "en": "Allaha ends in -a: the object. Al-'ulama'u ends in -u: the doer. The scholars are the ones in awe. Swap the vowels and the meaning breaks.",
+            "de": "Allaha endet auf -a: das Objekt. Al-'ulama'u endet auf -u: der Handelnde. Die Gelehrten sind es, die Ehrfurcht haben. Vertauschte Vokale zerstören den Sinn.",
+            "ar": "لفظ الجلالة مفعول به مقدّم منصوب، و«العلماءُ» فاعل مؤخر مرفوع؛ ولو تبادلت الحركتان لفسد المعنى."
+          }
+        },
+        {
+          "verse": "112:3",
+          "check": "neither begets",
+          "title": {
+            "en": "Jazm: the silent ending",
+            "de": "Jazm: die stumme Endung",
+            "ar": "الجزم: السكون"
+          },
+          "body": {
+            "en": "After lam, the present-tense verbs yalid and yulad lose their final vowel. This silent ending is jazm, found only in verbs.",
+            "de": "Nach lam verlieren die Präsensverben yalid und yulad ihren Endvokal. Diese stumme Endung heißt jazm und kommt nur bei Verben vor.",
+            "ar": "«يلدْ» و«يولدْ» فعلان مضارعان مجزومان بـ«لم» وعلامة جزمهما السكون، والجزم خاص بالأفعال."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Ibn Ajurrum, al-Muqaddima al-Ajurrumiyya"
+        },
+        {
+          "label": "Muhyi d-Din ad-Darwish, I'rab al-Qur'an al-Karim wa Bayanuh"
+        }
+      ]
+    },
+    {
+      "id": "quranic-arabic-10-raf",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": {
+          "en": "Arabic of the Quran · 10",
+          "de": "Arabisch des Korans · 10",
+          "ar": "عربية القرآن · ١٠"
+        },
+        "title": {
+          "en": "Raf': the case of doer and topic",
+          "de": "Raf': der Fall von Handelndem und Thema",
+          "ar": "الرفع: حالة الفاعل والمبتدأ"
+        },
+        "sub": {
+          "en": "Where you hear -u, look for the doer, the topic or what is said about it",
+          "de": "Wo Sie -u hören, suchen Sie den Handelnden, das Thema oder die Aussage darüber",
+          "ar": "حيث تسمع الضمة فابحث عن الفاعل أو المبتدأ أو الخبر"
+        },
+        "arabic": "الضَّمَّة"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "Who takes raf'?",
+            "de": "Wer steht im raf'?",
+            "ar": "المرفوعات"
+          },
+          "list": {
+            "en": [
+              "The fa'il: the doer of an active verb",
+              "The na'ib al-fa'il: the subject of a passive verb",
+              "The mubtada' and its khabar",
+              "The noun after kana, the predicate after inna",
+              "A present-tense verb with nothing acting on it"
+            ],
+            "de": [
+              "Der fa'il: der Handelnde eines aktiven Verbs",
+              "Der na'ib al-fa'il: das Subjekt eines passiven Verbs",
+              "Der mubtada' und sein khabar",
+              "Das Nomen nach kana, das Prädikat nach inna",
+              "Ein Präsensverb, auf das nichts einwirkt"
+            ],
+            "ar": [
+              "الفاعل",
+              "نائب الفاعل",
+              "المبتدأ والخبر",
+              "اسم كان وأخواتها وخبر إنّ وأخواتها",
+              "الفعل المضارع إذا لم يسبقه ناصب ولا جازم"
+            ]
+          }
+        },
+        {
+          "verse": "110:1",
+          "check": "victory of Allah",
+          "title": {
+            "en": "The doer",
+            "de": "Der Handelnde",
+            "ar": "الفاعل"
+          },
+          "body": {
+            "en": "Nasru (help, victory) is the fa'il of ja'a (has come), so it ends in -u. Al-fathu follows it with the same ending.",
+            "de": "Nasru (Hilfe, Sieg) ist der fa'il von ja'a (ist gekommen) und endet darum auf -u. Al-fathu folgt ihm mit derselben Endung.",
+            "ar": "«نصرُ» فاعل مرفوع، و«الفتحُ» معطوف عليه مرفوع مثله."
+          }
+        },
+        {
+          "verse": "99:1",
+          "check": "earth is shaken",
+          "title": {
+            "en": "The subject of a passive verb",
+            "de": "Das Subjekt eines Passivs",
+            "ar": "نائب الفاعل"
+          },
+          "body": {
+            "en": "Zulzilat (was shaken) is passive: the one who shakes is not named. Al-ardu takes the doer's place and its -u. Grammarians call it na'ib al-fa'il.",
+            "de": "Zulzilat (wurde erschüttert) ist passiv: wer erschüttert, wird nicht genannt. Al-ardu tritt an die Stelle des Handelnden und erhält sein -u. Die Grammatiker nennen es na'ib al-fa'il.",
+            "ar": "«زُلزلت» فعل مبني للمجهول، و«الأرضُ» نائب فاعل مرفوع."
+          }
+        },
+        {
+          "verse": "57:3",
+          "check": "the First and the Last",
+          "title": {
+            "en": "Topic and predicate",
+            "de": "Thema und Aussage",
+            "ar": "المبتدأ والخبر"
+          },
+          "body": {
+            "en": "Huwa is the mubtada'. Al-awwalu is its khabar, and the three names after it share its -u, joined to it by wa (and).",
+            "de": "Huwa ist der mubtada'. Al-awwalu ist sein khabar, und die drei Namen danach teilen sein -u, mit ihm verbunden durch wa (und).",
+            "ar": "«هو» ضمير مبني في محل رفع مبتدأ، و«الأولُ» خبر مرفوع، وما بعده معطوف عليه مرفوع."
+          }
+        },
+        {
+          "verse": "12:94",
+          "check": "their father said",
+          "title": {
+            "en": "Raf' with a long u",
+            "de": "Raf' mit langem u",
+            "ar": "الرفع بالواو"
+          },
+          "body": {
+            "en": "Abuhum (their father) is the fa'il of qala. A few nouns, such as ab (father) and akh (brother), show raf' with a long u: abu.",
+            "de": "Abuhum (ihr Vater) ist der fa'il von qala. Einige Nomen wie ab (Vater) und akh (Bruder) zeigen den raf' mit langem u: abu.",
+            "ar": "«أبوهم» فاعل مرفوع وعلامة رفعه الواو لأنه من الأسماء الخمسة."
+          }
+        },
+        {
+          "verse": "1:5",
+          "check": "You we worship",
+          "title": {
+            "en": "A verb in raf'",
+            "de": "Ein Verb im raf'",
+            "ar": "مضارع مرفوع"
+          },
+          "body": {
+            "en": "Na'budu (we worship) and nasta'inu (we ask for help) end in -u. Nothing before them changes their state, so they stay in raf'.",
+            "de": "Na'budu (wir dienen) und nasta'inu (wir bitten um Hilfe) enden auf -u. Nichts davor verändert ihren Zustand, darum bleiben sie im raf'.",
+            "ar": "«نعبدُ» و«نستعينُ» فعلان مضارعان مرفوعان لتجردهما من الناصب والجازم."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Ibn Ajurrum, al-Muqaddima al-Ajurrumiyya"
+        },
+        {
+          "label": "Ibn Hisham, Qatr an-Nada wa Ball as-Sada"
+        }
+      ]
+    },
+    {
+      "id": "quranic-arabic-11-nasb",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": {
+          "en": "Arabic of the Quran · 11",
+          "de": "Arabisch des Korans · 11",
+          "ar": "عربية القرآن · ١١"
+        },
+        "title": {
+          "en": "Nasb: the case of the object, and more",
+          "de": "Nasb: der Fall des Objekts und mehr",
+          "ar": "النصب: المفعول به وأخواته"
+        },
+        "sub": {
+          "en": "Object, state, emphasis, specification, time: where you hear -a",
+          "de": "Objekt, Zustand, Betonung, Präzisierung, Zeit: wo Sie -a hören",
+          "ar": "المفعول به والحال والمفعول المطلق والتمييز والظرف"
+        },
+        "arabic": "الْفَتْحَة"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "More than the object",
+            "de": "Mehr als das Objekt",
+            "ar": "أكثر من المفعول به"
+          },
+          "body": {
+            "en": "Nasb marks the object, but not only the object. A noun ending in -a may also describe a state, strengthen a verb, specify a measure, or tell you when or where something happened.",
+            "de": "Nasb markiert das Objekt, aber nicht nur das Objekt. Ein Nomen auf -a kann auch einen Zustand beschreiben, ein Verb verstärken, eine Größe präzisieren oder sagen, wann oder wo etwas geschah.",
+            "ar": "النصب علامة المفعول به وغيره؛ فالاسم المنصوب قد يكون حالًا، أو مفعولًا مطلقًا، أو تمييزًا، أو ظرف زمان أو مكان."
+          }
+        },
+        {
+          "verse": "1:6",
+          "check": "straight path",
+          "title": {
+            "en": "Maf'ul bihi: the object",
+            "de": "Maf'ul bihi: das Objekt",
+            "ar": "المفعول به"
+          },
+          "body": {
+            "en": "The verb ihdi (guide) takes two objects here: -na (us), attached to the verb, and as-sirata (the path), ending in -a.",
+            "de": "Das Verb ihdi (rechtleiten) hat hier zwei Objekte: -na (uns), am Verb angehängt, und as-sirata (den Weg) mit der Endung -a.",
+            "ar": "«اهدِ» فعل دعاء نصب مفعولين: الضمير «نا» المتصل به، و«الصراطَ» المنصوب بالفتحة."
+          }
+        },
+        {
+          "verse": "4:28",
+          "check": "created weak",
+          "title": {
+            "en": "Hal: the state",
+            "de": "Hal: der Zustand",
+            "ar": "الحال"
+          },
+          "body": {
+            "en": "Da'ifan (weak) ends in -an and describes the state of al-insanu (the human being) at creation. This is a hal.",
+            "de": "Da'ifan (schwach) endet auf -an und beschreibt den Zustand von al-insanu (dem Menschen) bei seiner Erschaffung. Das ist ein hal.",
+            "ar": "«ضعيفًا» حال منصوبة تبيّن هيئة الإنسان حين خُلق."
+          }
+        },
+        {
+          "verse": "73:4",
+          "check": "measured recitation",
+          "title": {
+            "en": "Maf'ul mutlaq: emphasis",
+            "de": "Maf'ul mutlaq: Betonung",
+            "ar": "المفعول المطلق"
+          },
+          "body": {
+            "en": "Rattil (recite in measure) is followed by tartilan, the verbal noun of the same root. Repeating the root in nasb strengthens the command.",
+            "de": "Auf rattil (gemessen vortragen) folgt tartilan, das Verbalnomen derselben Wurzel. Die Wiederholung der Wurzel im nasb verstärkt den Befehl.",
+            "ar": "«ترتيلًا» مفعول مطلق منصوب من لفظ الفعل «رتّل» يؤكده."
+          }
+        },
+        {
+          "verse": "19:4",
+          "check": "my head has filled with white",
+          "title": {
+            "en": "Tamyiz: specifying",
+            "de": "Tamyiz: Präzisierung",
+            "ar": "التمييز"
+          },
+          "body": {
+            "en": "Ar-ra'su (the head) blazes, and shayban (with white hair) says with what. Az-Zajjaj calls it a tamyiz; al-Akhfash reads it as a verbal noun.",
+            "de": "Ar-ra'su (der Kopf) entflammt, und shayban (mit weißem Haar) sagt, womit. Az-Zajjādsch nennt es tamyiz; al-Achfasch liest es als Verbalnomen.",
+            "ar": "«شيبًا» عند الزجاج تمييز منصوب يرفع الإبهام، وجعله الأخفش مصدرًا لأن «اشتعل» هنا بمعنى «شاب»."
+          }
+        },
+        {
+          "verse": "76:25",
+          "check": "morning and evening",
+          "title": {
+            "en": "Zarf: time",
+            "de": "Zarf: die Zeit",
+            "ar": "ظرف الزمان"
+          },
+          "body": {
+            "en": "Bukratan (in the morning) and asilan (in the evening) end in -an. They tell you when, so they are adverbs of time in nasb.",
+            "de": "Bukratan (am Morgen) und asilan (am Abend) enden auf -an. Sie sagen, wann, und sind darum Zeitangaben im nasb.",
+            "ar": "«بكرةً» و«أصيلًا» ظرفا زمان منصوبان."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Ibn Ajurrum, al-Muqaddima al-Ajurrumiyya"
+        },
+        {
+          "label": "Muhyi d-Din ad-Darwish, I'rab al-Qur'an al-Karim wa Bayanuh"
+        },
+        {
+          "label": "al-Qurtubi, al-Jami' li-Ahkam al-Qur'an, on 19:4 (the two analyses of shayban)",
+          "url": "https://quran.com/19:4/tafsirs/ar-tafseer-al-qurtubi"
+        }
+      ]
+    },
+    {
+      "id": "quranic-arabic-12-jarr",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": {
+          "en": "Arabic of the Quran · 12",
+          "de": "Arabisch des Korans · 12",
+          "ar": "عربية القرآن · ١٢"
+        },
+        "title": {
+          "en": "Jarr: the case after prepositions",
+          "de": "Jarr: der Fall nach Präpositionen",
+          "ar": "الجر: حالة الأسماء المجرورة"
+        },
+        "sub": {
+          "en": "Two doors lead to -i: a preposition before the noun, or a noun it belongs to",
+          "de": "Zwei Wege führen zu -i: eine Präposition davor oder ein Nomen, zu dem es gehört",
+          "ar": "يُجر الاسم بحرف الجر أو بالإضافة أو بالتبعية"
+        },
+        "arabic": "الْكَسْرَة"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "Only for nouns",
+            "de": "Nur für Nomen",
+            "ar": "خاص بالأسماء"
+          },
+          "body": {
+            "en": "Jarr belongs to nouns alone. A noun is in jarr after a preposition, as the second part of an idafa, or when it follows such a noun as its adjective or partner.",
+            "de": "Jarr gibt es nur bei Nomen. Ein Nomen steht im jarr nach einer Präposition, als zweiter Teil einer Idafa oder wenn es einem solchen Nomen als Adjektiv oder Partner folgt.",
+            "ar": "الجر خاص بالأسماء، ويكون بحرف الجر، أو بالإضافة، أو بالتبعية لمجرور كالنعت والمعطوف."
+          }
+        },
+        {
+          "verse": "113:1",
+          "check": "refuge in the Lord of daybreak",
+          "title": {
+            "en": "After a preposition",
+            "de": "Nach einer Präposition",
+            "ar": "بحرف الجر"
+          },
+          "body": {
+            "en": "In bi-rabbi (in the Lord), the preposition bi puts rabbi in jarr. Al-falaqi then follows in jarr as the second part of an idafa.",
+            "de": "In bi-rabbi (beim Herrn) setzt die Präposition bi das Wort rabbi in den jarr. Al-falaqi folgt im jarr als zweiter Teil einer Idafa.",
+            "ar": "«ربِّ» مجرور بالباء، و«الفلقِ» مضاف إليه مجرور."
+          }
+        },
+        {
+          "verse": "1:4",
+          "check": "Day of Recompense",
+          "title": {
+            "en": "In an idafa",
+            "de": "In einer Idafa",
+            "ar": "بالإضافة"
+          },
+          "body": {
+            "en": "Yawmi and ad-dini both end in -i: each is the second part of an idafa. Maliki is in jarr because it follows the name of Allah from verse 2.",
+            "de": "Yawmi und ad-dini enden beide auf -i: jedes ist zweiter Teil einer Idafa. Maliki steht im jarr, weil es dem Namen Allahs aus Vers 2 folgt.",
+            "ar": "«يومِ» و«الدينِ» مضاف إليهما مجروران، و«مالكِ» نعت للفظ الجلالة في الآية الثانية مجرور تبعًا له."
+          }
+        },
+        {
+          "verse": "62:1",
+          "check": "the Sovereign, the Pure",
+          "title": {
+            "en": "Following a noun in jarr",
+            "de": "Einem Nomen im jarr folgen",
+            "ar": "الجر بالتبعية"
+          },
+          "body": {
+            "en": "The four names at the end of the verse all end in -i. They describe Allah in lillahi and follow His name into jarr.",
+            "de": "Die vier Namen am Ende des Verses enden alle auf -i. Sie beschreiben Allah im Wort lillahi und folgen Seinem Namen in den jarr.",
+            "ar": "الأسماء الأربعة في آخر الآية نعوت للفظ الجلالة المجرور باللام، فجُرّت تبعًا له."
+          }
+        },
+        {
+          "verse": "37:109",
+          "check": "Peace upon Abraham",
+          "title": {
+            "en": "Jarr with -a",
+            "de": "Jarr mit -a",
+            "ar": "الجر بالفتحة"
+          },
+          "body": {
+            "en": "Ibrahima comes after the preposition 'ala, yet ends in -a. Many foreign names take neither -i nor tanween, so they show jarr with -a.",
+            "de": "Ibrahima steht nach der Präposition 'ala und endet doch auf -a. Viele fremde Namen nehmen weder -i noch Tanwin an und zeigen den jarr mit -a.",
+            "ar": "«إبراهيمَ» مجرور بـ«على» وعلامة جره الفتحة نيابة عن الكسرة، لأنه ممنوع من الصرف للعلمية والعجمة."
+          }
+        },
+        {
+          "title": {
+            "en": "The signs of jarr",
+            "de": "Die Zeichen des jarr",
+            "ar": "علامات الجر"
+          },
+          "list": {
+            "en": [
+              "-i or -in: most singular nouns",
+              "-ina and -ayni: masculine plurals and duals",
+              "-atin: feminine sound plurals",
+              "-a: names and patterns without tanween",
+              "A long i: abi, akhi (father, brother)"
+            ],
+            "de": [
+              "-i oder -in: die meisten Nomen im Singular",
+              "-ina und -ayni: männliche Plurale und Duale",
+              "-atin: weibliche gesunde Plurale",
+              "-a: Namen und Muster ohne Tanwin",
+              "Ein langes i: abi, akhi (Vater, Bruder)"
+            ],
+            "ar": [
+              "الكسرة: في المفرد وجمع التكسير غالبًا",
+              "الياء: في المثنى وجمع المذكر السالم",
+              "الكسرة: في جمع المؤنث السالم",
+              "الفتحة: في الممنوع من الصرف",
+              "الياء: في الأسماء الخمسة كأبي وأخي"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Ibn Ajurrum, al-Muqaddima al-Ajurrumiyya"
+        },
+        {
+          "label": "Ibn Hisham, Qatr an-Nada wa Ball as-Sada"
+        }
+      ]
+    },
+    {
+      "id": "quranic-arabic-13-prepositions",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": {
+          "en": "Arabic of the Quran · 13",
+          "de": "Arabisch des Korans · 13",
+          "ar": "عربية القرآن · ١٣"
+        },
+        "title": {
+          "en": "Small words, big meanings: prepositions",
+          "de": "Kleine Wörter, große Bedeutung: Präpositionen",
+          "ar": "حروف الجر: صغيرة بمعانٍ كبيرة"
+        },
+        "sub": {
+          "en": "Min, ila, 'an, 'ala, fi, bi, li, ka: particles you will meet again and again",
+          "de": "Min, ila, 'an, 'ala, fi, bi, li, ka: Partikeln, denen Sie immer wieder begegnen",
+          "ar": "مِن وإلى وعن وعلى وفي والباء واللام والكاف: حروف تلقاها كثيرًا"
+        },
+        "arabic": "مِنْ · إِلَى · عَنْ · عَلَى"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "The most common prepositions",
+            "de": "Die häufigsten Präpositionen",
+            "ar": "أشهر حروف الجر"
+          },
+          "list": {
+            "en": [
+              "min: from, of · ila: to, toward",
+              "'an: away from, about · 'ala: on, upon",
+              "fi: in · bi: with, by, in",
+              "li: for, to, belonging to · ka: like"
+            ],
+            "de": [
+              "min: von, aus · ila: zu, hin",
+              "'an: weg von, über · 'ala: auf, über",
+              "fi: in · bi: mit, durch, bei",
+              "li: für, zu, gehörend · ka: wie"
+            ],
+            "ar": [
+              "مِن لابتداء الغاية · إلى لانتهائها",
+              "عن للمجاوزة · على للاستعلاء",
+              "في للظرفية · الباء للإلصاق والاستعانة",
+              "اللام للملك والاختصاص · الكاف للتشبيه"
+            ]
+          },
+          "body": {
+            "en": "Each one puts the noun after it in jarr.",
+            "de": "Jede setzt das folgende Nomen in den jarr.",
+            "ar": "وكلها تجر الاسم بعدها."
+          }
+        },
+        {
+          "verse": "97:5",
+          "check": "until the emergence of dawn",
+          "title": {
+            "en": "Hatta: until",
+            "de": "Hatta: bis",
+            "ar": "حتى: لانتهاء الغاية"
+          },
+          "body": {
+            "en": "Hatta marks the end point: the peace of that night lasts until dawn rises. Matla'i, after it, ends in -i.",
+            "de": "Hatta markiert den Endpunkt: der Frieden jener Nacht währt bis zum Anbruch der Morgendämmerung. Matla'i danach endet auf -i.",
+            "ar": "«حتى» حرف جر لانتهاء الغاية، و«مطلعِ» مجرور بها."
+          }
+        },
+        {
+          "verse": "95:4",
+          "check": "best of stature",
+          "title": {
+            "en": "Fi: in",
+            "de": "Fi: in",
+            "ar": "في: للظرفية"
+          },
+          "body": {
+            "en": "Fi puts ahsani (the best) in jarr, and taqwimin (form) follows it as the second part of an idafa, also in jarr.",
+            "de": "Fi setzt ahsani (die beste) in den jarr, und taqwimin (Gestalt) folgt als zweiter Teil einer Idafa, ebenfalls im jarr.",
+            "ar": "«أحسنِ» مجرور بـ«في»، و«تقويمٍ» مضاف إليه مجرور."
+          }
+        },
+        {
+          "verse": "53:3",
+          "check": "inclination",
+          "title": {
+            "en": "'An: away from",
+            "de": "'An: weg von",
+            "ar": "عن: للمجاوزة"
+          },
+          "body": {
+            "en": "'An carries the idea of distance or source. Al-hawa (desire) is in jarr, though its final alif cannot show the -i.",
+            "de": "'An trägt die Idee von Entfernung oder Herkunft. Al-hawa (Neigung) steht im jarr, auch wenn sein Alif am Ende das -i nicht zeigen kann.",
+            "ar": "«عن» تفيد المجاوزة، و«الهوى» اسم مجرور بكسرة مقدّرة على الألف للتعذر."
+          }
+        },
+        {
+          "verse": "2:5",
+          "check": "guidance from their Lord",
+          "title": {
+            "en": "'Ala and min together",
+            "de": "'Ala und min zusammen",
+            "ar": "على ومن معًا"
+          },
+          "body": {
+            "en": "'Ala (upon) before hudan (guidance) suggests standing firmly on it. Min (from) names its source: their Lord.",
+            "de": "'Ala (auf) vor hudan (Rechtleitung) deutet an, dass sie fest darauf stehen. Min (von) nennt ihre Quelle: ihren Herrn.",
+            "ar": "«على» تفيد الاستعلاء والتمكّن من الهدى، و«مِن» لابتداء الغاية تبيّن مصدره."
+          }
+        },
+        {
+          "verse": "42:11",
+          "check": "nothing like unto Him",
+          "title": {
+            "en": "Ka: like",
+            "de": "Ka: wie",
+            "ar": "الكاف: للتشبيه"
+          },
+          "body": {
+            "en": "Ka (like) stands before mithl (likeness). Many grammarians see this ka as added for emphasis: nothing at all is like Him. Others differ.",
+            "de": "Ka (wie) steht vor mithl (Gleiches). Viele Grammatiker sehen dieses ka als verstärkenden Zusatz: nichts ist Ihm gleich. Andere erklären es anders.",
+            "ar": "الكاف عند كثير من النحاة زائدة لتوكيد نفي المماثلة، ولغيرهم في الآية أقوال أخرى."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Ibn Hisham, Mughni al-Labib 'an Kutub al-A'arib"
+        },
+        {
+          "label": "al-Qurtubi, al-Jami' li-Ahkam al-Qur'an, on 42:11",
+          "url": "https://quran.com/42:11/tafsirs/ar-tafseer-al-qurtubi"
+        }
+      ]
+    },
+    {
+      "id": "quranic-arabic-14-detached-pronouns",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": {
+          "en": "Arabic of the Quran · 14",
+          "de": "Arabisch des Korans · 14",
+          "ar": "عربية القرآن · ١٤"
+        },
+        "title": {
+          "en": "Ana, anta, huwa: the standalone pronouns",
+          "de": "Ana, anta, huwa: die freistehenden Pronomen",
+          "ar": "الضمائر المنفصلة"
+        },
+        "sub": {
+          "en": "Pronouns that stand on their own, and why iyyaka comes first in al-Fatiha",
+          "de": "Pronomen, die allein stehen, und warum iyyaka in al-Fatiha vorne steht",
+          "ar": "ضمائر تستقل بنفسها، وسرّ تقديم «إياك» في الفاتحة"
+        },
+        "arabic": "أَنَا · أَنْتَ · هُوَ"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "Speaker and listener",
+            "de": "Sprecher und Angesprochene",
+            "ar": "المتكلم والمخاطب"
+          },
+          "list": {
+            "en": [
+              "ana: I · nahnu: we",
+              "anta: you, one man · anti: you, one woman",
+              "antuma: you two",
+              "antum: you, men or mixed · antunna: you, women"
+            ],
+            "de": [
+              "ana: ich · nahnu: wir",
+              "anta: Sie, ein Mann · anti: Sie, eine Frau",
+              "antuma: Sie beide",
+              "antum: Sie, Männer oder gemischt · antunna: Sie, Frauen"
+            ],
+            "ar": [
+              "أنا للمتكلم · نحن للمتكلمين",
+              "أنتَ للمخاطب · أنتِ للمخاطبة",
+              "أنتما للمثنى",
+              "أنتم لجمع الذكور · أنتنّ لجمع الإناث"
+            ]
+          },
+          "body": {
+            "en": "Arabic distinguishes man and woman, one, two and many, even in 'you'.",
+            "de": "Das Arabische unterscheidet auch bei der Anrede Mann und Frau, einen, zwei und viele.",
+            "ar": "تفرّق العربية في الخطاب بين المذكر والمؤنث والمفرد والمثنى والجمع."
+          }
+        },
+        {
+          "title": {
+            "en": "Those spoken about",
+            "de": "Über wen gesprochen wird",
+            "ar": "الغائب"
+          },
+          "list": {
+            "en": [
+              "huwa: he · hiya: she",
+              "huma: the two of them",
+              "hum: they, men or mixed · hunna: they, women"
+            ],
+            "de": [
+              "huwa: er · hiya: sie (Singular)",
+              "huma: die beiden",
+              "hum: sie, Männer oder gemischt · hunna: sie, Frauen"
+            ],
+            "ar": [
+              "هو للغائب · هي للغائبة",
+              "هما للمثنى",
+              "هم لجمع الذكور · هنّ لجمع الإناث"
+            ]
+          },
+          "body": {
+            "en": "There is no 'it': things are huwa or hiya, according to their gender.",
+            "de": "Ein „es“ gibt es nicht: Dinge sind huwa oder hiya, je nach Genus.",
+            "ar": "ولا ضمير للمحايد، فالأشياء يُعبّر عنها بـ«هو» أو «هي» بحسب جنسها."
+          }
+        },
+        {
+          "verse": "20:14",
+          "check": "I am Allah",
+          "title": {
+            "en": "Ana: I",
+            "de": "Ana: ich",
+            "ar": "أنا: ضمير المتكلم"
+          },
+          "body": {
+            "en": "Ana appears twice: right after innani, where grammarians differ on its exact role, and after illa (except). Allah speaks here of Himself.",
+            "de": "Ana kommt zweimal vor: direkt nach innani, wo die Grammatiker über seine genaue Funktion uneins sind, und nach illa (außer). Allah spricht hier von Sich selbst.",
+            "ar": "جاء «أنا» مرتين: بعد «إنني» مباشرة، واختلف النحاة في إعرابه هناك، ثم بعد «إلا». والمتكلم هنا هو الله سبحانه."
+          }
+        },
+        {
+          "verse": "56:59",
+          "check": "or are We the Creator",
+          "title": {
+            "en": "Antum and nahnu",
+            "de": "Antum und nahnu",
+            "ar": "أنتم ونحن"
+          },
+          "body": {
+            "en": "Antum (you) and nahnu (We) face each other in one question. When Allah says nahnu, scholars explain it as the plural of majesty, not of number.",
+            "de": "Antum (Sie, die Angesprochenen) und nahnu (Wir) stehen einander in einer Frage gegenüber. Sagt Allah nahnu, erklären die Gelehrten es als Plural der Majestät, nicht der Zahl.",
+            "ar": "تقابل «أنتم» و«نحن» في سؤال واحد. و«نحن» إذا جاءت من الله فهي للتعظيم لا للتعدد."
+          }
+        },
+        {
+          "verse": "1:5",
+          "check": "worship",
+          "title": {
+            "en": "Iyyaka: the object that stands alone",
+            "de": "Iyyaka: das freistehende Objekt",
+            "ar": "إياك: ضمير نصب منفصل"
+          },
+          "body": {
+            "en": "Iyya- carries object pronouns when they do not attach to the verb. Placed before na'budu, iyyaka gives the sense: You alone.",
+            "de": "Iyya- trägt Objektpronomen, wenn sie nicht am Verb hängen. Vor na'budu gestellt, gibt iyyaka den Sinn der Ausschließlichkeit: Anbetung gilt allein Allah.",
+            "ar": "«إيّا» ضمير نصب منفصل، وتقديم «إياك» على «نعبد» يفيد الحصر والاختصاص."
+          }
+        },
+        {
+          "title": {
+            "en": "Why use them at all?",
+            "de": "Wozu überhaupt?",
+            "ar": "لماذا يُذكر الضمير المنفصل؟"
+          },
+          "body": {
+            "en": "The verb already contains its subject: na'budu means 'we worship'. A standalone pronoun is added for stress or contrast, or to open a nominal sentence.",
+            "de": "Das Verb enthält sein Subjekt schon: na'budu heißt „wir dienen“. Ein freistehendes Pronomen kommt hinzu, um zu betonen, gegenüberzustellen oder einen Nominalsatz zu eröffnen.",
+            "ar": "الفعل يحمل فاعله في صيغته، فـ«نعبد» تعني: نحن نعبد. ويُذكر الضمير المنفصل للتوكيد أو المقابلة أو ليكون مبتدأ في جملة اسمية."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "az-Zamakhshari, al-Kashshaf, on al-Fatiha 1:5"
+        },
+        {
+          "label": "W. Wright, A Grammar of the Arabic Language"
+        }
+      ]
+    },
+    {
+      "id": "quranic-arabic-15-attached-pronouns",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": {
+          "en": "Arabic of the Quran · 15",
+          "de": "Arabisch des Korans · 15",
+          "ar": "عربية القرآن · ١٥"
+        },
+        "title": {
+          "en": "-ka, -hu, -na: the attached pronouns",
+          "de": "-ka, -hu, -na: die angehängten Pronomen",
+          "ar": "الضمائر المتصلة"
+        },
+        "sub": {
+          "en": "Tiny endings for my, your, his and our, on nouns, verbs and particles",
+          "de": "Kleine Endungen für mein, Ihr, sein und unser, an Nomen, Verben und Partikeln",
+          "ar": "لواحق صغيرة تتصل بالأسماء والأفعال والحروف"
+        },
+        "arabic": "رَبُّكَ · رَبُّنَا · رَبِّي"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "The endings",
+            "de": "Die Endungen",
+            "ar": "أشهر الضمائر المتصلة"
+          },
+          "list": {
+            "en": [
+              "-i or -ni: me, my",
+              "-na: us, our",
+              "-ka and -ki: you, your, to a man and to a woman",
+              "-kum: you, your, to many",
+              "-hu and -ha: him, his and her",
+              "-hum and -hunna: them, their"
+            ],
+            "de": [
+              "-i oder -ni: mich, mein",
+              "-na: uns, unser",
+              "-ka und -ki: Sie, Ihr, an einen Mann und an eine Frau",
+              "-kum: Sie, Ihr, an mehrere",
+              "-hu und -ha: ihn, sein und sie, ihr",
+              "-hum und -hunna: sie, ihr (Plural)"
+            ],
+            "ar": [
+              "ياء المتكلم: ربّي، علّمني",
+              "نا: ربّنا",
+              "كاف الخطاب: ربّكَ، ربّكِ",
+              "كم: ربّكم",
+              "هاء الغائب: ربّه، ربّها",
+              "هم وهنّ: ربّهم، ربّهنّ"
+            ]
+          }
+        },
+        {
+          "title": {
+            "en": "Three places to attach",
+            "de": "Drei Orte zum Anhängen",
+            "ar": "ثلاثة مواضع"
+          },
+          "arabic": "رَبُّكَ · عَلَّمَكَ · لَكَ",
+          "body": {
+            "en": "On a noun the pronoun shows belonging: rabbuka, your Lord. On a verb it is the doer or the object: 'allamaka, He taught you. On a particle it completes it: laka, for you.",
+            "de": "Am Nomen zeigt das Pronomen Zugehörigkeit: rabbuka, Ihr Herr. Am Verb ist es Handelnder oder Objekt: 'allamaka, Er hat Sie gelehrt. An einer Partikel vervollständigt es sie: laka, für Sie.",
+            "ar": "يتصل الضمير بالاسم فيدل على الملك أو النسبة: «ربُّك»، وبالفعل فيكون فاعلًا أو مفعولًا: «علّمك»، وبالحرف فيتم معناه: «لك»."
+          }
+        },
+        {
+          "verse": "108:1",
+          "check": "We have granted you",
+          "title": {
+            "en": "Two pronouns on one verb",
+            "de": "Zwei Pronomen an einem Verb",
+            "ar": "ضميران في فعل واحد"
+          },
+          "body": {
+            "en": "In a'taynaka, -na (We) is the doer and -ka (you) the one who receives. Inna before it carries -na as well.",
+            "de": "In a'taynaka ist -na (Wir) der Handelnde und -ka der Empfänger, der Prophet. Auch inna davor trägt -na.",
+            "ar": "في «أعطيناك» «نا» فاعل والكاف مفعول به أول، و«إنّا» أصلها «إنّنا»."
+          }
+        },
+        {
+          "verse": "94:1",
+          "check": "expand for you",
+          "title": {
+            "en": "On a particle and on a noun",
+            "de": "An Partikel und Nomen",
+            "ar": "على الحرف وعلى الاسم"
+          },
+          "body": {
+            "en": "Laka (for you) is the particle li with -ka. Sadraka (your chest) is a noun with -ka. One ending, two different jobs.",
+            "de": "Laka ist die Partikel li mit -ka. Sadraka ist ein Nomen mit -ka: die Brust des Angesprochenen. Eine Endung, zwei verschiedene Aufgaben.",
+            "ar": "«لك» حرف جر اتصلت به كاف الخطاب، و«صدرك» اسم أضيف إليها؛ لاحقة واحدة بوظيفتين."
+          }
+        },
+        {
+          "verse": "20:25-26",
+          "check": "ease for me my task",
+          "title": {
+            "en": "The quiet -i",
+            "de": "Das leise -i",
+            "ar": "ياء المتكلم"
+          },
+          "body": {
+            "en": "Rabbi (my Lord), li (for me), sadri (my chest), amri (my task): each carries the -i of the speaker. Musa's dua is full of 'me' and 'my'.",
+            "de": "Rabbi (mein Herr), li (für mich), sadri (meine Brust), amri (meine Aufgabe): jedes trägt das -i des Sprechers. Das Bittgebet von Musa ist voller „mir“ und „mein“.",
+            "ar": "«ربِّ» و«لي» و«صدري» و«أمري»: في كل منها ياء المتكلم، فدعاء موسى عليه السلام كله حديث عن حاجته."
+          }
+        },
+        {
+          "verse": "93:3",
+          "check": "taken leave of you",
+          "title": {
+            "en": "Object and owner",
+            "de": "Objekt und Besitzer",
+            "ar": "مفعول به ومضاف إليه"
+          },
+          "body": {
+            "en": "In wadda'aka, -ka is the object. In rabbuka, -ka is the second part of an idafa: your Lord. Rabbu is the doer, ending in -u.",
+            "de": "In wadda'aka ist -ka das Objekt. In rabbuka ist -ka zweiter Teil einer Idafa: der Herr des Angesprochenen. Rabbu ist der Handelnde und endet auf -u.",
+            "ar": "الكاف في «ودّعك» مفعول به، وفي «ربُّك» مضاف إليه، و«ربُّ» فاعل مرفوع."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "W. Wright, A Grammar of the Arabic Language"
+        },
+        {
+          "label": "Quranic Arabic Corpus",
+          "url": "https://corpus.quran.com"
+        }
+      ]
+    },
+    {
+      "id": "quranic-arabic-16-idafa",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": {
+          "en": "Arabic of the Quran · 16",
+          "de": "Arabisch des Korans · 16",
+          "ar": "عربية القرآن · ١٦"
+        },
+        "title": {
+          "en": "Idafa: when two nouns belong together",
+          "de": "Idafa: wenn zwei Nomen zusammengehören",
+          "ar": "الإضافة: اسمان متلازمان"
+        },
+        "sub": {
+          "en": "Lord of the worlds, Day of Judgement: how Arabic says 'of' without a word for it",
+          "de": "Herr der Welten, Tag des Gerichts: wie das Arabische „von“ ohne eigenes Wort ausdrückt",
+          "ar": "نسبة اسم إلى اسم بلا حرف بينهما"
+        },
+        "arabic": "مُضَاف + مُضَاف إِلَيْهِ"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "Two nouns, one idea",
+            "de": "Zwei Nomen, ein Gedanke",
+            "ar": "اسمان لمعنى واحد"
+          },
+          "arabic": "كِتَابُ اللهِ",
+          "body": {
+            "en": "Idafa joins two nouns so that the first belongs to the second: kitabu Allahi, the Book of Allah. The first is the mudaf, the second the mudaf ilayhi.",
+            "de": "Die Idafa verbindet zwei Nomen, sodass das erste zum zweiten gehört: kitabu Allahi, das Buch Allahs. Das erste heißt mudaf, das zweite mudaf ilayhi.",
+            "ar": "الإضافة نسبة اسم إلى اسم: «كتابُ اللهِ». الأول مضاف، والثاني مضاف إليه."
+          }
+        },
+        {
+          "title": {
+            "en": "Three rules",
+            "de": "Drei Regeln",
+            "ar": "ثلاث قواعد"
+          },
+          "list": {
+            "en": [
+              "The first noun has no al- and no tanween",
+              "The second noun is always in jarr",
+              "The first takes whatever case its role demands"
+            ],
+            "de": [
+              "Das erste Nomen hat kein al- und kein Tanwin",
+              "Das zweite Nomen steht immer im jarr",
+              "Das erste trägt den Fall, den seine Rolle verlangt"
+            ],
+            "ar": [
+              "المضاف لا تدخله «ال» غالبًا ولا ينوّن",
+              "المضاف إليه مجرور دائمًا",
+              "المضاف يُعرب بحسب موقعه في الجملة"
+            ]
+          }
+        },
+        {
+          "verse": "1:2",
+          "check": "Lord of the worlds",
+          "title": {
+            "en": "Rabbi: the first part",
+            "de": "Rabbi: der erste Teil",
+            "ar": "«ربِّ» مضافًا"
+          },
+          "body": {
+            "en": "Rabbi has neither al- nor tanween: it is the mudaf. Al-'alamina is the mudaf ilayhi, in jarr with -ina.",
+            "de": "Rabbi hat weder al- noch Tanwin: es ist der mudaf. Al-'alamina ist der mudaf ilayhi, im jarr mit -ina.",
+            "ar": "«ربِّ» مضاف لا «ال» فيه ولا تنوين، و«العالمين» مضاف إليه مجرور بالياء."
+          }
+        },
+        {
+          "verse": "106:3",
+          "check": "Lord of this House",
+          "title": {
+            "en": "The first part in nasb",
+            "de": "Der erste Teil im nasb",
+            "ar": "مضاف منصوب"
+          },
+          "body": {
+            "en": "Rabba ends in -a because it is the object of the verb. Its case comes from its role, while hadha after it stands in the place of jarr.",
+            "de": "Rabba endet auf -a, weil es das Objekt des Verbs ist. Sein Fall kommt aus seiner Rolle, während hadha danach an der Stelle des jarr steht.",
+            "ar": "«ربَّ» مفعول به منصوب وهو مضاف، و«هذا» اسم إشارة مبني في محل جر مضاف إليه."
+          }
+        },
+        {
+          "verse": "87:1",
+          "check": "name of your Lord",
+          "title": {
+            "en": "A chain of three",
+            "de": "Eine Kette aus dreien",
+            "ar": "سلسلة إضافة"
+          },
+          "body": {
+            "en": "Isma (the name) is joined to rabbi (Lord), and rabbi to -ka (you). One word is mudaf ilayhi and mudaf at the same time.",
+            "de": "Isma (der Name) ist mit rabbi (Herr) verbunden und rabbi mit -ka. Ein Wort ist zugleich mudaf ilayhi und mudaf.",
+            "ar": "«اسمَ» مضاف إلى «ربِّ»، و«ربِّ» مضاف إلى الكاف؛ فهو مضاف إليه ومضاف في آن واحد."
+          }
+        },
+        {
+          "title": {
+            "en": "Definite without al-",
+            "de": "Bestimmt ohne al-",
+            "ar": "تعريف بلا «ال»"
+          },
+          "body": {
+            "en": "When the second noun is definite, the first becomes definite too: kitabu Allahi is 'the Book of Allah', not 'a book'. That is why the first part needs no al-.",
+            "de": "Ist das zweite Nomen bestimmt, wird auch das erste bestimmt: kitabu Allahi heißt „das Buch Allahs“, nicht „ein Buch“. Darum braucht der erste Teil kein al-.",
+            "ar": "إذا كان المضاف إليه معرفة اكتسب المضاف منه التعريف، فـ«كتاب الله» معرفة، ولذلك لا يحتاج المضاف إلى «ال»."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Ibn Ajurrum, al-Muqaddima al-Ajurrumiyya"
+        },
+        {
+          "label": "Ibn Hisham, Qatr an-Nada wa Ball as-Sada"
+        }
+      ]
+    },
+    {
+      "id": "quranic-arabic-17-adjectives",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": {
+          "en": "Arabic of the Quran · 17",
+          "de": "Arabisch des Korans · 17",
+          "ar": "عربية القرآن · ١٧"
+        },
+        "title": {
+          "en": "Adjectives: four ways to agree",
+          "de": "Adjektive: vierfache Übereinstimmung",
+          "ar": "النعت: يتبع منعوته"
+        },
+        "sub": {
+          "en": "Case, gender, number, definiteness: the adjective follows its noun in all four",
+          "de": "Fall, Genus, Zahl, Bestimmtheit: das Adjektiv folgt seinem Nomen in allen vieren",
+          "ar": "يتبع النعت منعوته في الإعراب والجنس والعدد والتعريف والتنكير"
+        },
+        "arabic": "نَعْت · مَنْعُوت"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "After the noun, not before",
+            "de": "Nach dem Nomen, nicht davor",
+            "ar": "يأتي بعد المنعوت"
+          },
+          "arabic": "كِتَابٌ عَظِيمٌ",
+          "body": {
+            "en": "An Arabic adjective (na't) comes after the noun it describes: kitabun 'azimun, a great book. It then copies the noun in case, gender, number and definiteness.",
+            "de": "Ein arabisches Adjektiv (na't) steht nach dem Nomen, das es beschreibt: kitabun 'azimun, ein großartiges Buch. Es übernimmt dann Fall, Genus, Zahl und Bestimmtheit des Nomens.",
+            "ar": "يأتي النعت بعد المنعوت: «كتابٌ عظيمٌ»، ويتبعه في الإعراب والتذكير والتأنيث والعدد والتعريف والتنكير."
+          }
+        },
+        {
+          "verse": "1:6",
+          "check": "straight path",
+          "title": {
+            "en": "Definite and in nasb",
+            "de": "Bestimmt und im nasb",
+            "ar": "معرفة منصوبة"
+          },
+          "body": {
+            "en": "Al-mustaqima copies as-sirata in all four: definite, masculine, singular, and ending in -a.",
+            "de": "Al-mustaqima übernimmt von as-sirata alle vier: bestimmt, männlich, Singular und mit der Endung -a.",
+            "ar": "«المستقيمَ» نعت لـ«الصراطَ» يطابقه في التعريف والتذكير والإفراد والنصب."
+          }
+        },
+        {
+          "verse": "8:4",
+          "check": "noble provision",
+          "title": {
+            "en": "Indefinite and in raf'",
+            "de": "Unbestimmt und im raf'",
+            "ar": "نكرة مرفوعة"
+          },
+          "body": {
+            "en": "Karimun (noble) follows rizqun (provision): no al-, tanween on both, and both in raf'.",
+            "de": "Karimun (edel) folgt rizqun (Versorgung): kein al-, Tanwin bei beiden, und beide im raf'.",
+            "ar": "«كريمٌ» نعت لـ«رزقٌ» مرفوع منكّر مثله."
+          }
+        },
+        {
+          "verse": "12:1",
+          "check": "clear Book",
+          "title": {
+            "en": "Definite and in jarr",
+            "de": "Bestimmt und im jarr",
+            "ar": "معرفة مجرورة"
+          },
+          "body": {
+            "en": "Al-kitabi is in jarr as the second part of an idafa. Its adjective al-mubini follows it: definite, masculine and ending in -i.",
+            "de": "Al-kitabi steht im jarr als zweiter Teil einer Idafa. Sein Adjektiv al-mubini folgt ihm: bestimmt, männlich und mit der Endung -i.",
+            "ar": "«الكتابِ» مضاف إليه مجرور، و«المبينِ» نعت له مجرور معرّف مثله."
+          }
+        },
+        {
+          "verse": "101:7",
+          "check": "pleasant life",
+          "title": {
+            "en": "A feminine pair",
+            "de": "Ein weibliches Paar",
+            "ar": "نعت مؤنث"
+          },
+          "body": {
+            "en": "Radiyatin (pleasing) follows 'ishatin (life): both feminine with the round ta, both indefinite, both in jarr after fi.",
+            "de": "Radiyatin (wohlgefällig) folgt 'ishatin (Leben): beide weiblich mit rundem Ta, beide unbestimmt, beide im jarr nach fi.",
+            "ar": "«راضيةٍ» نعت لـ«عيشةٍ» يطابقها في التأنيث والتنكير والجر."
+          }
+        },
+        {
+          "title": {
+            "en": "Phrase or sentence?",
+            "de": "Wortgruppe oder Satz?",
+            "ar": "مركّب أم جملة؟"
+          },
+          "arabic": "الْبَيْتُ الْكَبِيرُ · الْبَيْتُ كَبِيرٌ",
+          "body": {
+            "en": "Al-baytu al-kabiru means 'the big house': a phrase. Al-baytu kabirun means 'the house is big': a sentence. The only difference is the al- on the second word.",
+            "de": "Al-baytu al-kabiru heißt „das große Haus“: eine Wortgruppe. Al-baytu kabirun heißt „das Haus ist groß“: ein Satz. Der einzige Unterschied ist das al- am zweiten Wort.",
+            "ar": "«البيتُ الكبيرُ» مركّب وصفي، و«البيتُ كبيرٌ» جملة تامة. والفرق كله في «ال» على الكلمة الثانية."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Ibn Ajurrum, al-Muqaddima al-Ajurrumiyya"
+        }
+      ]
+    },
+    {
+      "id": "quranic-arabic-18-past-verb",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": {
+          "en": "Arabic of the Quran · 18",
+          "de": "Arabisch des Korans · 18",
+          "ar": "عربية القرآن · ١٨"
+        },
+        "title": {
+          "en": "The past verb: what has happened",
+          "de": "Das Perfekt: was geschehen ist",
+          "ar": "الفعل الماضي"
+        },
+        "sub": {
+          "en": "Kataba, katabtu, katabu: one stem, and the endings that tell you who acted",
+          "de": "Kataba, katabtu, katabu: ein Stamm und die Endungen, die zeigen, wer handelte",
+          "ar": "كتب وكتبتُ وكتبوا: جذع واحد ولواحق تدل على الفاعل"
+        },
+        "arabic": "فَعَلَ"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "The dictionary form",
+            "de": "Die Wörterbuchform",
+            "ar": "صيغة المعجم"
+          },
+          "body": {
+            "en": "The past verb (madi) describes a completed action. Its simplest form means 'he did': kataba, he wrote. Arabic dictionaries list verbs under this form, not under an infinitive.",
+            "de": "Das Perfekt (madi) beschreibt eine abgeschlossene Handlung. Seine einfachste Form bedeutet „er tat“: kataba, er schrieb. Arabische Wörterbücher führen Verben unter dieser Form, nicht unter einem Infinitiv.",
+            "ar": "الفعل الماضي يدل على حدث انقضى، وأبسط صيغه صيغة الغائب المفرد: «كَتَبَ». وبها تُذكر الأفعال في المعاجم."
+          }
+        },
+        {
+          "title": {
+            "en": "Who did it? Look at the end",
+            "de": "Wer war es? Schauen Sie aufs Ende",
+            "ar": "انظر إلى آخر الفعل"
+          },
+          "list": {
+            "en": [
+              "kataba: he wrote · katabat: she wrote",
+              "katabta: you wrote, to a man · katabti: to a woman",
+              "katabtu: I wrote",
+              "katabna: we wrote",
+              "katabtum: you wrote, to many · katabu: they wrote"
+            ],
+            "de": [
+              "kataba: er schrieb · katabat: sie schrieb",
+              "katabta: Sie schrieben, ein Mann · katabti: eine Frau",
+              "katabtu: ich schrieb",
+              "katabna: wir schrieben",
+              "katabtum: Sie schrieben, mehrere · katabu: sie schrieben"
+            ],
+            "ar": [
+              "كَتَبَ للغائب · كَتَبَتْ للغائبة",
+              "كَتَبْتَ للمخاطب · كَتَبْتِ للمخاطبة",
+              "كَتَبْتُ للمتكلم",
+              "كَتَبْنَا للمتكلمين",
+              "كَتَبْتُمْ للمخاطبين · كَتَبُوا للغائبين"
+            ]
+          }
+        },
+        {
+          "verse": "20:13",
+          "check": "I have chosen you",
+          "title": {
+            "en": "-tu: I",
+            "de": "-tu: ich",
+            "ar": "تاء المتكلم"
+          },
+          "body": {
+            "en": "In ikhtartuka, -tu is 'I' and -ka is the one addressed. Allah speaks to Musa in the first person.",
+            "de": "In ikhtartuka ist -tu das „ich“ und -ka der Angesprochene. Allah spricht zu Musa in der ersten Person.",
+            "ar": "في «اخترتك» التاء فاعل للمتكلم والكاف مفعول به، والخطاب لموسى عليه السلام."
+          }
+        },
+        {
+          "verse": "2:34",
+          "check": "so they prostrated",
+          "title": {
+            "en": "-na: We, -u: they",
+            "de": "-na: Wir, -u: sie",
+            "ar": "نا الفاعلين وواو الجماعة"
+          },
+          "body": {
+            "en": "Qulna: We said, with -na. Sajadu: they prostrated, with -u. Two endings on two verbs tell the whole scene.",
+            "de": "Qulna: Wir sagten, mit -na. Sajadu: sie warfen sich nieder, mit -u. Zwei Endungen an zwei Verben erzählen die ganze Szene.",
+            "ar": "«قلنا» فيها «نا» الفاعلين، و«سجدوا» فيها واو الجماعة؛ لاحقتان ترسمان المشهد."
+          }
+        },
+        {
+          "verse": "16:1",
+          "check": "command of Allah",
+          "title": {
+            "en": "A past form for the future",
+            "de": "Eine Vergangenheitsform für die Zukunft",
+            "ar": "الماضي بمعنى المستقبل"
+          },
+          "body": {
+            "en": "Ata is a past form, yet it speaks of what is still to come. Commentators explain: Allah's decree is as certain as something already done.",
+            "de": "Ata ist eine Vergangenheitsform und spricht doch von Kommendem. Die Kommentatoren erklären: Allahs Beschluss ist so sicher, als wäre er schon geschehen.",
+            "ar": "«أتى» فعل ماضٍ والمراد به المستقبل، تنبيهًا على تحقق وقوعه حتى كأنه وقع."
+          }
+        },
+        {
+          "title": {
+            "en": "Qala: 1,618 times",
+            "de": "Qala: 1.618-mal",
+            "ar": "«قال»: ١٦١٨ مرة"
+          },
+          "arabic": "قَالَ · قَالَتْ · قَالُوا",
+          "body": {
+            "en": "Forms of the verb qala, 'to say', occur 1,618 times in the Quran, according to the Quranic Arabic Corpus. Know its past forms well and you will follow the dialogues of the Quran more easily.",
+            "de": "Formen des Verbs qala, „sagen“, kommen laut dem Quranic Arabic Corpus 1.618-mal im Koran vor. Wer seine Vergangenheitsformen gut kennt, folgt den Gesprächen im Koran leichter.",
+            "ar": "ترد صيغ الفعل «قال» في القرآن ١٦١٨ مرة بحسب مدوّنة القرآن العربية (Quranic Arabic Corpus)، فإتقان تصريفه في الماضي ييسّر فهم حوارات القرآن."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Quranic Arabic Corpus, root q-w-l",
+          "url": "https://corpus.quran.com/qurandictionary.jsp?q=qwl"
+        },
+        {
+          "label": "W. Wright, A Grammar of the Arabic Language"
+        },
+        {
+          "label": "al-Qurtubi, al-Jami' li-Ahkam al-Qur'an, on 16:1",
+          "url": "https://quran.com/16:1/tafsirs/ar-tafseer-al-qurtubi"
+        }
+      ]
+    },
+    {
+      "id": "quranic-arabic-19-present-verb",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": {
+          "en": "Arabic of the Quran · 19",
+          "de": "Arabisch des Korans · 19",
+          "ar": "عربية القرآن · ١٩"
+        },
+        "title": {
+          "en": "The present verb: now and next",
+          "de": "Das Imperfekt: jetzt und gleich",
+          "ar": "الفعل المضارع"
+        },
+        "sub": {
+          "en": "Four prefixes, three moods, and the small words that point to the future",
+          "de": "Vier Präfixe, drei Modi und die kleinen Wörter, die in die Zukunft weisen",
+          "ar": "أحرف المضارعة وأحواله الثلاثة وأدوات الاستقبال"
+        },
+        "arabic": "يَفْعَلُ"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "Present and future in one form",
+            "de": "Gegenwart und Zukunft in einer Form",
+            "ar": "حال واستقبال"
+          },
+          "arabic": "يَكْتُبُ",
+          "body": {
+            "en": "The mudari' describes what is happening now or will happen. It is built by adding a prefix to the stem: yaktubu, he writes, or he will write.",
+            "de": "Das mudari' beschreibt, was gerade geschieht oder geschehen wird. Es entsteht durch ein Präfix am Stamm: yaktubu, er schreibt oder wird schreiben.",
+            "ar": "المضارع يدل على حدث في الحال أو الاستقبال، ويُصاغ بزيادة حرف في أوله: «يكتبُ»."
+          }
+        },
+        {
+          "title": {
+            "en": "Four prefixes",
+            "de": "Vier Präfixe",
+            "ar": "أحرف المضارعة"
+          },
+          "list": {
+            "en": [
+              "a-: I, aktubu",
+              "na-: we, naktubu",
+              "ta-: you, and she, taktubu",
+              "ya-: he, and they, yaktubu, yaktubuna"
+            ],
+            "de": [
+              "a-: ich, aktubu",
+              "na-: wir, naktubu",
+              "ta-: Sie (angesprochen) und sie (Singular), taktubu",
+              "ya-: er und sie (Plural), yaktubu, yaktubuna"
+            ],
+            "ar": [
+              "الهمزة للمتكلم: أكتبُ",
+              "النون للمتكلمين: نكتبُ",
+              "التاء للمخاطب والغائبة: تكتبُ",
+              "الياء للغائب: يكتبُ"
+            ]
+          },
+          "body": {
+            "en": "Grammarians gather them in the memory word anaytu.",
+            "de": "Die Grammatiker fassen sie im Merkwort anaytu zusammen.",
+            "ar": "ويجمعها النحاة في قولهم «أنيت»."
+          }
+        },
+        {
+          "verse": "64:1",
+          "check": "exalting",
+          "title": {
+            "en": "An action that keeps going",
+            "de": "Eine Handlung, die andauert",
+            "ar": "حدث متجدد"
+          },
+          "body": {
+            "en": "Yusabbihu is in the present tense: the glorification never stops. The mudari' often carries this sense of an action that keeps renewing itself.",
+            "de": "Yusabbihu steht im Präsens: der Lobpreis hört nie auf. Das mudari' trägt oft diesen Sinn einer Handlung, die sich ständig erneuert.",
+            "ar": "«يسبّح» مضارع يدل على التجدد والاستمرار، فالتسبيح لا ينقطع."
+          }
+        },
+        {
+          "verse": "93:5",
+          "check": "going to give you",
+          "title": {
+            "en": "Sawfa: a promise ahead",
+            "de": "Sawfa: ein Versprechen voraus",
+            "ar": "سوف: للاستقبال"
+          },
+          "body": {
+            "en": "Sawfa before yu'tika points ahead: He will give. Sa- and sawfa both mark the future; many grammarians say sawfa reaches further.",
+            "de": "Sawfa vor yu'tika weist nach vorn: Er wird geben. Sa- und sawfa markieren beide die Zukunft; viele Grammatiker sagen, sawfa reiche weiter.",
+            "ar": "«سوف» حرف استقبال دخل على «يعطيك»، ويرى كثير من النحاة أنها أوسع زمنًا من السين."
+          }
+        },
+        {
+          "title": {
+            "en": "Three moods",
+            "de": "Drei Modi",
+            "ar": "أحوال المضارع"
+          },
+          "list": {
+            "en": [
+              "Marfu', with -u: yaktubu, the normal form",
+              "Mansub, with -a: after lan, an, kay and li",
+              "Majzum, with no vowel: after lam, the la that forbids, and in conditions"
+            ],
+            "de": [
+              "Marfu', mit -u: yaktubu, die Normalform",
+              "Mansub, mit -a: nach lan, an, kay und li",
+              "Majzum, ohne Vokal: nach lam, dem verbietenden la und in Bedingungen"
+            ],
+            "ar": [
+              "مرفوع بالضمة إذا تجرّد: يكتبُ",
+              "منصوب بالفتحة بعد لن وأن وكي ولام التعليل",
+              "مجزوم بالسكون بعد لم ولا الناهية وأدوات الشرط"
+            ]
+          }
+        },
+        {
+          "verse": "3:92",
+          "check": "Never will you attain",
+          "title": {
+            "en": "Nasb after lan",
+            "de": "Nasb nach lan",
+            "ar": "النصب بعد «لن»"
+          },
+          "body": {
+            "en": "After lan, tanalu is mansub: the -na of its plural ending drops away. After hatta, tunfiqu drops it too.",
+            "de": "Nach lan steht tanalu im nasb: das -na seiner Pluralendung fällt weg. Nach hatta verliert auch tunfiqu sein -na.",
+            "ar": "«تنالوا» منصوب بـ«لن» وعلامة نصبه حذف النون، وكذلك «تنفقوا» بعد «حتى»."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Ibn Ajurrum, al-Muqaddima al-Ajurrumiyya"
+        },
+        {
+          "label": "Ibn Hisham, Mughni al-Labib 'an Kutub al-A'arib"
+        }
+      ]
+    },
+    {
+      "id": "quranic-arabic-20-imperative",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": {
+          "en": "Arabic of the Quran · 20",
+          "de": "Arabisch des Korans · 20",
+          "ar": "عربية القرآن · ٢٠"
+        },
+        "title": {
+          "en": "The imperative: qul, iqra', qum",
+          "de": "Der Imperativ: qul, iqra', qum",
+          "ar": "فعل الأمر"
+        },
+        "sub": {
+          "en": "How Arabic gives a command, and when a command is really a prayer",
+          "de": "Wie das Arabische befiehlt, und wann ein Befehl in Wahrheit ein Gebet ist",
+          "ar": "كيف يُصاغ الأمر، ومتى يكون الأمر دعاءً"
+        },
+        "arabic": "اِفْعَلْ"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "Built from the present",
+            "de": "Aus dem Präsens gebaut",
+            "ar": "يُصاغ من المضارع"
+          },
+          "arabic": "تَكْتُبُ ← اُكْتُبْ",
+          "body": {
+            "en": "Take the present 'you' form, drop the prefix and let the end fall silent: taktubu becomes uktub. If the first remaining letter has no vowel, a helping vowel is placed in front, as in uktub or ijlis.",
+            "de": "Nehmen Sie die Präsensform der 2. Person, streichen Sie das Präfix und lassen Sie das Ende verstummen: aus taktubu wird uktub. Hat der erste verbleibende Buchstabe keinen Vokal, kommt ein Hilfsvokal davor, wie in uktub oder ijlis.",
+            "ar": "يُصاغ الأمر من المضارع بحذف حرف المضارعة وتسكين الآخر: «تكتبُ» ← «اكتبْ»، فإن سكن أول ما بقي زيدت همزة وصل."
+          }
+        },
+        {
+          "verse": "114:1",
+          "check": "Lord of mankind",
+          "title": {
+            "en": "Qul: the command to say",
+            "de": "Qul: der Auftrag zu sagen",
+            "ar": "قُلْ"
+          },
+          "body": {
+            "en": "Qul comes from taqulu. When the end falls silent, the long u shortens: qul. The last three surahs of the Quran all open with this word.",
+            "de": "Qul kommt von taqulu. Wenn das Ende verstummt, verkürzt sich das lange u: qul. Die letzten drei Suren des Korans beginnen alle mit diesem Wort.",
+            "ar": "«قُلْ» من «تقولُ»، حُذفت الواو لالتقاء الساكنين. وبهذه الكلمة تبدأ السور الثلاث الأخيرة من القرآن."
+          }
+        },
+        {
+          "verse": "74:1-3",
+          "check": "Arise and warn",
+          "title": {
+            "en": "Three commands in a row",
+            "de": "Drei Befehle hintereinander",
+            "ar": "ثلاثة أوامر متتالية"
+          },
+          "body": {
+            "en": "Qum (rise), andhir (warn) and kabbir (magnify) are commands to one man. Each ends without a vowel, the sign of the imperative.",
+            "de": "Qum (aufstehen), andhir (warnen) und kabbir (groß preisen) sind Befehle an einen Mann. Jeder endet ohne Vokal, dem Zeichen des Imperativs.",
+            "ar": "«قم» و«أنذر» و«كبّر» أفعال أمر للمفرد المذكر، مبنية على السكون."
+          }
+        },
+        {
+          "verse": "2:43",
+          "check": "establish prayer",
+          "title": {
+            "en": "Commands to many",
+            "de": "Befehle an viele",
+            "ar": "الأمر للجماعة"
+          },
+          "body": {
+            "en": "Aqimu, atu and irka'u end in -u: the plural of the command. The long u is the waw of the group, the same ending as in the past tense.",
+            "de": "Aqimu, atu und irka'u enden auf -u: der Plural des Befehls. Das lange u ist das Waw der Gruppe, dieselbe Endung wie im Perfekt.",
+            "ar": "«أقيموا» و«آتوا» و«اركعوا» أوامر للجماعة، اتصلت بها واو الجماعة."
+          }
+        },
+        {
+          "verse": "23:118",
+          "check": "forgive and have mercy",
+          "title": {
+            "en": "A command that is a prayer",
+            "de": "Ein Befehl, der ein Gebet ist",
+            "ar": "أمر بمعنى الدعاء"
+          },
+          "body": {
+            "en": "Ighfir (forgive) and irham (have mercy) have the form of a command. Addressed to Allah, grammarians call it du'a: a request, not an order.",
+            "de": "Ighfir (vergeben) und irham (sich erbarmen) haben die Form eines Befehls. An Allah gerichtet, nennen die Grammatiker es dua: eine Bitte, kein Befehl.",
+            "ar": "«اغفر» و«ارحم» صيغتا أمر خرجتا إلى معنى الدعاء، لأنهما من العبد إلى ربه."
+          }
+        },
+        {
+          "verse": "31:13",
+          "check": "do not associate",
+          "title": {
+            "en": "La: the negative command",
+            "de": "La: der verneinte Befehl",
+            "ar": "لا الناهية"
+          },
+          "body": {
+            "en": "To forbid, Arabic puts la before a present verb in jazm: tushrik loses its final vowel. Luqman's advice to his son uses this form.",
+            "de": "Zum Verbieten setzt das Arabische la vor ein Präsensverb im jazm: tushrik verliert seinen Endvokal. Luqmans Rat an seinen Sohn nutzt diese Form.",
+            "ar": "«لا» ناهية جازمة، و«تشركْ» مضارع مجزوم بها وعلامة جزمه السكون."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Ibn Ajurrum, al-Muqaddima al-Ajurrumiyya"
+        },
+        {
+          "label": "W. Wright, A Grammar of the Arabic Language"
+        }
+      ]
+    },
+    {
+      "id": "quranic-arabic-21-ten-verb-forms",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": {
+          "en": "Arabic of the Quran · 21",
+          "de": "Arabisch des Korans · 21",
+          "ar": "عربية القرآن · ٢١"
+        },
+        "title": {
+          "en": "Ten verb forms from one root",
+          "de": "Zehn Verbstämme aus einer Wurzel",
+          "ar": "أوزان الفعل: من الجذر إلى المعنى"
+        },
+        "sub": {
+          "en": "How a few added letters turn 'to know' into 'to teach' and 'to learn'",
+          "de": "Wie wenige zusätzliche Buchstaben aus „wissen“ „lehren“ und „lernen“ machen",
+          "ar": "كيف تحوّل حروف قليلة «علِم» إلى «علّم» و«تعلّم»"
+        },
+        "arabic": "فَعَلَ · فَعَّلَ · فَاعَلَ"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "Root plus pattern",
+            "de": "Wurzel plus Muster",
+            "ar": "جذر ووزن"
+          },
+          "body": {
+            "en": "Most Arabic verbs rest on three root letters, which grammarians measure with f-'-l. Adding letters in fixed patterns gives new verbs with related meanings. Western grammars number these patterns I to X.",
+            "de": "Die meisten arabischen Verben ruhen auf drei Wurzelbuchstaben, die die Grammatiker mit f-'-l messen. Zusätzliche Buchstaben in festen Mustern ergeben neue Verben mit verwandter Bedeutung. Westliche Grammatiken zählen diese Muster von I bis X.",
+            "ar": "تقوم أكثر الأفعال العربية على ثلاثة أحرف أصلية يزنها الصرفيون بـ«فعل»، وبزيادة حروف على أوزان معلومة تتولد أفعال بمعانٍ متقاربة، ويرقّمها النحاة الغربيون من الأول إلى العاشر."
+          }
+        },
+        {
+          "title": {
+            "en": "Forms I to V",
+            "de": "Stämme I bis V",
+            "ar": "الأوزان من الأول إلى الخامس"
+          },
+          "list": {
+            "en": [
+              "I fa'ala, fa'ila, fa'ula: 'alima, to know",
+              "II fa''ala: 'allama, to teach",
+              "III fā'ala: jāhada, to strive",
+              "IV af'ala: anzala, to send down",
+              "V tafa''ala: ta'allama, to learn"
+            ],
+            "de": [
+              "I fa'ala, fa'ila, fa'ula: 'alima, wissen",
+              "II fa''ala: 'allama, lehren",
+              "III fā'ala: jāhada, sich abmühen",
+              "IV af'ala: anzala, herabsenden",
+              "V tafa''ala: ta'allama, lernen"
+            ],
+            "ar": [
+              "فَعَلَ وفَعِلَ وفَعُلَ: عَلِمَ",
+              "فَعَّلَ: عَلَّمَ",
+              "فَاعَلَ: جَاهَدَ",
+              "أَفْعَلَ: أَنْزَلَ",
+              "تَفَعَّلَ: تَعَلَّمَ"
+            ]
+          }
+        },
+        {
+          "title": {
+            "en": "Forms VI to X",
+            "de": "Stämme VI bis X",
+            "ar": "الأوزان من السادس إلى العاشر"
+          },
+          "list": {
+            "en": [
+              "VI tafā'ala: tasā'ala, to ask one another",
+              "VII infa'ala: inshaqqa, to split open",
+              "VIII ifta'ala: ihtadā, to be guided",
+              "IX if'alla: iswadda, to turn black",
+              "X istaf'ala: istaghfara, to ask forgiveness"
+            ],
+            "de": [
+              "VI tafā'ala: tasā'ala, einander fragen",
+              "VII infa'ala: inshaqqa, sich spalten",
+              "VIII ifta'ala: ihtadā, rechtgeleitet sein",
+              "IX if'alla: iswadda, schwarz werden",
+              "X istaf'ala: istaghfara, um Vergebung bitten"
+            ],
+            "ar": [
+              "تَفَاعَلَ: تَسَاءَلَ",
+              "اِنْفَعَلَ: اِنْشَقَّ",
+              "اِفْتَعَلَ: اِهْتَدَى",
+              "اِفْعَلَّ: اِسْوَدَّ",
+              "اِسْتَفْعَلَ: اِسْتَغْفَرَ"
+            ]
+          },
+          "body": {
+            "en": "Form IX is used for colours and is rare in the Quran.",
+            "de": "Stamm IX steht für Farben und ist im Koran selten.",
+            "ar": "ويختص «افعلّ» بالألوان والعيوب غالبًا، وهو قليل في القرآن."
+          }
+        },
+        {
+          "verse": "26:193",
+          "check": "brought it down",
+          "title": {
+            "en": "Form I: nazala",
+            "de": "Stamm I: nazala",
+            "ar": "الوزن الأول: نزل"
+          },
+          "body": {
+            "en": "Nazala, form I, simply means 'to come down'. Its doer here is ar-rūh al-amīn, whom the commentators identify as Jibrīl.",
+            "de": "Nazala, Stamm I, bedeutet schlicht „herabkommen“. Der Handelnde ist hier ar-rūh al-amīn, den die Kommentatoren als Jibrīl erklären.",
+            "ar": "«نزل» على الوزن الأول بمعنى الهبوط، وفاعله «الروح الأمين»، وهو جبريل عليه السلام عند المفسرين."
+          }
+        },
+        {
+          "verse": "3:3",
+          "check": "sent down upon you",
+          "title": {
+            "en": "Forms II and IV in one verse",
+            "de": "Stamm II und IV in einem Vers",
+            "ar": "الوزنان الثاني والرابع في آية"
+          },
+          "body": {
+            "en": "Nazzala (II) is used for the Quran, anzala (IV) for the Torah and the Gospel. Many see revelation in stages in nazzala; others do not.",
+            "de": "Nazzala (II) steht beim Koran, anzala (IV) bei Tora und Evangelium. Viele sehen in nazzala die Offenbarung in Etappen; andere betonen den Unterschied nicht.",
+            "ar": "جاء «نزّل» مع القرآن و«أنزل» مع التوراة والإنجيل؛ ورأى كثيرون في التضعيف إشارة إلى النزول المنجّم، ولم يلتزم آخرون هذا الفرق."
+          }
+        },
+        {
+          "title": {
+            "en": "How often each one appears",
+            "de": "Wie oft jeder vorkommt",
+            "ar": "كم مرة يرد كل وزن"
+          },
+          "arabic": "نَزَلَ · نَزَّلَ · أَنْزَلَ",
+          "body": {
+            "en": "In the Quranic Arabic Corpus, anzala (IV) occurs 183 times, nazzala (II) 62 times and nazala (I) only 6 times. The pattern a verb takes is part of its meaning.",
+            "de": "Laut dem Quranic Arabic Corpus kommt anzala (IV) 183-mal vor, nazzala (II) 62-mal und nazala (I) nur 6-mal. Das Muster, das ein Verb annimmt, gehört zu seiner Bedeutung.",
+            "ar": "بحسب مدوّنة القرآن العربية ورد «أنزل» ١٨٣ مرة، و«نزّل» ٦٢ مرة، و«نزل» ٦ مرات فقط؛ فالوزن جزء من المعنى."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Quranic Arabic Corpus, root n-z-l",
+          "url": "https://corpus.quran.com/qurandictionary.jsp?q=nzl"
+        },
+        {
+          "label": "az-Zamakhshari, al-Kashshaf, on Al 'Imran 3:3"
+        },
+        {
+          "label": "al-Qurtubi, al-Jami' li-Ahkam al-Qur'an, on 3:3",
+          "url": "https://quran.com/3:3/tafsirs/ar-tafseer-al-qurtubi"
+        }
+      ]
+    },
+    {
+      "id": "quranic-arabic-22-form-2",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": {
+          "en": "Arabic of the Quran · 22",
+          "de": "Arabisch des Korans · 22",
+          "ar": "عربية القرآن · ٢٢"
+        },
+        "title": {
+          "en": "Form II: fa''ala, the doubled middle",
+          "de": "Stamm II: fa''ala, die verdoppelte Mitte",
+          "ar": "وزن «فعّل»: تضعيف العين"
+        },
+        "sub": {
+          "en": "Teaching, glorifying, purifying: what the shadda adds to a verb",
+          "de": "Lehren, preisen, reinigen: was die Schadda einem Verb hinzufügt",
+          "ar": "التعليم والتسبيح والتزكية: ماذا تضيف الشدة إلى الفعل"
+        },
+        "arabic": "فَعَّلَ · يُفَعِّلُ · تَفْعِيل"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "A shadda in the middle",
+            "de": "Eine Schadda in der Mitte",
+            "ar": "شدة على العين"
+          },
+          "body": {
+            "en": "Form II doubles the middle root letter. This often makes a verb causative or more intense: 'alima, to know, becomes 'allama, to make someone know, to teach.",
+            "de": "Stamm II verdoppelt den mittleren Wurzelbuchstaben. Oft wird ein Verb dadurch veranlassend oder verstärkt: aus 'alima, wissen, wird 'allama, wissen lassen, lehren.",
+            "ar": "وزن «فعّل» يضعّف عين الفعل، فيفيد غالبًا التعدية أو التكثير: «علِم» ← «علّم»."
+          }
+        },
+        {
+          "verse": "55:2",
+          "check": "Taught",
+          "title": {
+            "en": "'Allama: to teach",
+            "de": "'Allama: lehren",
+            "ar": "علّم: جعل غيره يعلم"
+          },
+          "body": {
+            "en": "'Allama, form II of '-l-m, occurs 41 times in the Quran. The doubled lām turns knowing into teaching.",
+            "de": "'Allama, Stamm II von '-l-m, kommt 41-mal im Koran vor. Das verdoppelte Lām macht aus Wissen Lehren.",
+            "ar": "«علّم» من الجذر ع ل م على وزن «فعّل»، وورد في القرآن ٤١ مرة؛ والتضعيف ينقل العلم إلى التعليم."
+          }
+        },
+        {
+          "verse": "74:3",
+          "check": "your Lord glorify",
+          "title": {
+            "en": "Kabbara: to declare great",
+            "de": "Kabbara: als groß erklären",
+            "ar": "كبّر: عظّم"
+          },
+          "body": {
+            "en": "Kabbir comes from kabura, to be great. Form II can mean declaring something to be so: proclaiming Allah great. Its verbal noun is takbīr.",
+            "de": "Kabbir kommt von kabura, groß sein. Stamm II kann bedeuten, etwas als solches zu erklären: Allah als groß verkünden. Sein Verbalnomen ist takbīr.",
+            "ar": "«كبّر» من «كبُر»، ومن معاني «فعّل» النسبة، أي عظّمه ونسبه إلى الكبرياء. ومصدره «التكبير»."
+          }
+        },
+        {
+          "verse": "56:74",
+          "check": "exalt the name of your Lord",
+          "title": {
+            "en": "Sabbaha: to declare free of all fault",
+            "de": "Sabbaha: frei von jedem Makel erklären",
+            "ar": "سبّح: نزّه"
+          },
+          "body": {
+            "en": "Sabbih is form II, and its verbal noun tasbīh names the dhikr subhān Allāh: declaring Allah free of every flaw. Sabbaha occurs 42 times.",
+            "de": "Sabbih ist Stamm II, und sein Verbalnomen tasbīh benennt das Gedenken subhān Allāh: Allah als frei von jedem Makel erklären. Sabbaha kommt 42-mal vor.",
+            "ar": "«سبّح» على وزن «فعّل»، ومصدره «التسبيح»، وهو تنزيه الله عن كل نقص. وورد «سبّح» في القرآن ٤٢ مرة."
+          }
+        },
+        {
+          "verse": "91:9-10",
+          "check": "who purifies it",
+          "title": {
+            "en": "Zakkā and dassā",
+            "de": "Zakkā und dassā",
+            "ar": "زكّى ودسّى"
+          },
+          "body": {
+            "en": "Two form II verbs face each other: zakkā (to purify, to make grow) and dassā (to bury, to corrupt). Both describe what one does to one's own soul.",
+            "de": "Zwei Verben im Stamm II stehen einander gegenüber: zakkā (reinigen, wachsen lassen) und dassā (vergraben, verderben). Beide beschreiben, was ein Mensch mit seiner eigenen Seele tut.",
+            "ar": "فعلان على وزن «فعّل» متقابلان: «زكّاها» أي طهّرها ونمّاها، و«دسّاها» أي أخفاها وأفسدها."
+          }
+        },
+        {
+          "title": {
+            "en": "Verbal nouns of form II",
+            "de": "Verbalnomen von Stamm II",
+            "ar": "مصادر «فعّل»"
+          },
+          "list": {
+            "en": [
+              "tasbīh: glorification, from sabbaha",
+              "takbīr: proclaiming greatness, from kabbara",
+              "ta'līm: teaching, from 'allama",
+              "tanzīl: sending down, from nazzala",
+              "tartīl: measured recitation, from rattala"
+            ],
+            "de": [
+              "tasbīh: Lobpreis, von sabbaha",
+              "takbīr: Allah groß preisen, von kabbara",
+              "ta'līm: Unterweisung, von 'allama",
+              "tanzīl: Herabsendung, von nazzala",
+              "tartīl: gemessener Vortrag, von rattala"
+            ],
+            "ar": [
+              "التسبيح من سبّح",
+              "التكبير من كبّر",
+              "التعليم من علّم",
+              "التنزيل من نزّل",
+              "الترتيل من رتّل"
+            ]
+          },
+          "body": {
+            "en": "The verbal noun usually follows the pattern taf'īl.",
+            "de": "Das Verbalnomen folgt meist dem Muster taf'īl.",
+            "ar": "ومصدره القياسي على وزن «تفعيل»."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Quranic Arabic Corpus",
+          "url": "https://corpus.quran.com"
+        },
+        {
+          "label": "W. Wright, A Grammar of the Arabic Language"
+        }
+      ]
+    },
+    {
+      "id": "quranic-arabic-23-form-3",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": {
+          "en": "Arabic of the Quran · 23",
+          "de": "Arabisch des Korans · 23",
+          "ar": "عربية القرآن · ٢٣"
+        },
+        "title": {
+          "en": "Form III: fā'ala, reaching toward another",
+          "de": "Stamm III: fā'ala, sich dem anderen zuwenden",
+          "ar": "وزن «فاعَل»: المشاركة والمحاولة"
+        },
+        "sub": {
+          "en": "Calling out, striving, blessing: verbs that point at someone else",
+          "de": "Rufen, sich mühen, segnen: Verben, die auf jemand anderen zielen",
+          "ar": "النداء والجهاد والمباركة: أفعال تتجه إلى الغير"
+        },
+        "arabic": "فَاعَلَ · يُفَاعِلُ · مُفَاعَلَة"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "A long ā after the first letter",
+            "de": "Ein langes ā nach dem ersten Buchstaben",
+            "ar": "ألف بعد الفاء"
+          },
+          "body": {
+            "en": "Form III lengthens the vowel after the first root letter: fā'ala. It often describes an action aimed at someone, done together with someone, or an effort to reach them.",
+            "de": "Stamm III dehnt den Vokal nach dem ersten Wurzelbuchstaben: fā'ala. Oft beschreibt er eine Handlung, die sich an jemanden richtet, mit jemandem geschieht oder ihn zu erreichen sucht.",
+            "ar": "وزن «فاعَل» بزيادة ألف بعد الفاء، ومن معانيه المشاركة، وتوجيه الفعل إلى الغير، والمحاولة."
+          }
+        },
+        {
+          "verse": "19:3",
+          "check": "called to his Lord",
+          "title": {
+            "en": "Nādā: calling out to",
+            "de": "Nādā: jemanden anrufen",
+            "ar": "نادى: دعا غيره"
+          },
+          "body": {
+            "en": "Nādā (form III) is a call aimed at someone: here Zakariyyā to his Lord. The verbal noun nidā' then says what kind of call. Nādā occurs 44 times.",
+            "de": "Nādā (Stamm III) ist ein Ruf an jemanden: hier von Zakariyyā an seinen Herrn. Das Verbalnomen nidā' sagt dann, welche Art Ruf. Nādā kommt 44-mal vor.",
+            "ar": "«نادى» على وزن «فاعَل» نداء موجّه إلى الغير، و«نداءً» مصدره مفعول مطلق مبيّن لنوعه بوصفه «خفيًّا». وورد «نادى» في القرآن ٤٤ مرة."
+          }
+        },
+        {
+          "verse": "29:69",
+          "check": "those who strive for Us",
+          "title": {
+            "en": "Jāhada: striving against resistance",
+            "de": "Jāhada: sich gegen Widerstand mühen",
+            "ar": "جاهد: بذل الجهد"
+          },
+          "body": {
+            "en": "Jāhadū is form III of j-h-d (effort): striving against something. Jāhada occurs 27 times; its verbal nouns are jihād and mujāhada.",
+            "de": "Jāhadū ist Stamm III von j-h-d (Anstrengung): sich gegen etwas mühen. Jāhada kommt 27-mal vor; seine Verbalnomen sind jihād und mujāhada.",
+            "ar": "«جاهدوا» من «جهد» على وزن «فاعَل»: بذل الجهد في مواجهة غيره. وورد ٢٧ مرة، ومصدره «الجهاد» و«المجاهدة»."
+          }
+        },
+        {
+          "verse": "2:9",
+          "check": "deceive Allah",
+          "title": {
+            "en": "Yukhādi'ūna: trying, not succeeding",
+            "de": "Yukhādi'ūna: versuchen, nicht gelingen",
+            "ar": "يخادعون: المحاولة"
+          },
+          "body": {
+            "en": "Many read yukhādi'ūna (III) as an attempt to deceive. In the reading of Hafs, yakhda'ūna (I) follows: the deception reaches only themselves.",
+            "de": "Viele verstehen yukhādi'ūna (III) als Versuch zu täuschen. In der Lesart von Hafs folgt yakhda'ūna (I): Die Täuschung trifft nur sie selbst.",
+            "ar": "يفهم كثيرون «يخادعون» على «يفاعلون» بمعنى المحاولة، ثم جاء في رواية حفص «يخدعون» على المجرد: فالخداع لا يقع إلا على أنفسهم."
+          }
+        },
+        {
+          "verse": "21:71",
+          "check": "We had blessed",
+          "title": {
+            "en": "Bāraka: to bless",
+            "de": "Bāraka: segnen",
+            "ar": "بارك: أنزل البركة"
+          },
+          "body": {
+            "en": "Bāraknā (We blessed) is form III of b-r-k. The blessing reaches something outside the doer: here the land. Its participle is mubārak, blessed.",
+            "de": "Bāraknā (Wir segneten) ist Stamm III von b-r-k. Der Segen erreicht etwas außerhalb des Handelnden: hier das Land. Sein Partizip ist mubārak, gesegnet.",
+            "ar": "«باركنا» على وزن «فاعَل» من «برك»، والبركة واقعة على غير الفاعل: الأرض. واسم المفعول منه «مبارك»."
+          }
+        },
+        {
+          "title": {
+            "en": "Verbal nouns of form III",
+            "de": "Verbalnomen von Stamm III",
+            "ar": "مصدرا «فاعَل»"
+          },
+          "list": {
+            "en": [
+              "jāhada: mujāhada and jihād",
+              "qātala: muqātala and qitāl",
+              "nādā: munādāh and nidā'",
+              "hājara: muhājara, emigration"
+            ],
+            "de": [
+              "jāhada: mujāhada und jihād",
+              "qātala: muqātala und qitāl",
+              "nādā: munādāh und nidā'",
+              "hājara: muhājara, Auswanderung"
+            ],
+            "ar": [
+              "جاهد: مجاهدة وجهاد",
+              "قاتل: مقاتلة وقتال",
+              "نادى: مناداة ونداء",
+              "هاجر: مهاجرة"
+            ]
+          },
+          "body": {
+            "en": "Form III has two verbal-noun patterns: mufā'ala and fi'āl.",
+            "de": "Stamm III hat zwei Muster für das Verbalnomen: mufā'ala und fi'āl.",
+            "ar": "لـ«فاعَل» مصدران قياسيان: «مفاعَلة» و«فِعال»."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Quranic Arabic Corpus",
+          "url": "https://corpus.quran.com"
+        },
+        {
+          "label": "az-Zamakhshari, al-Kashshaf, on al-Baqara 2:9"
+        },
+        {
+          "label": "al-Qurtubi, al-Jami' li-Ahkam al-Qur'an, on 2:9 (meaning and readings)",
+          "url": "https://quran.com/2:9/tafsirs/ar-tafseer-al-qurtubi"
+        }
+      ]
+    },
+    {
+      "id": "quranic-arabic-24-form-4",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": {
+          "en": "Arabic of the Quran · 24",
+          "de": "Arabisch des Korans · 24",
+          "ar": "عربية القرآن · ٢٤"
+        },
+        "title": {
+          "en": "Form IV: af'ala, making something happen",
+          "de": "Stamm IV: af'ala, etwas bewirken",
+          "ar": "وزن «أفعَل»: التعدية"
+        },
+        "sub": {
+          "en": "Anzala, aqāma, aslama: the hamza in front that turns doing into causing",
+          "de": "Anzala, aqāma, aslama: das Hamza vorn, das Tun in Bewirken verwandelt",
+          "ar": "أنزل وأقام وأسلم: همزة تنقل الفعل إلى غيره"
+        },
+        "arabic": "أَفْعَلَ · يُفْعِلُ · إِفْعَال"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "A hamza at the front",
+            "de": "Ein Hamza am Anfang",
+            "ar": "همزة في أوله"
+          },
+          "body": {
+            "en": "Form IV puts a hamza before the root: af'ala. Its main sense is causing: nazala, to come down, becomes anzala, to send down. Qāma, to stand, becomes aqāma, to set up.",
+            "de": "Stamm IV setzt ein Hamza vor die Wurzel: af'ala. Sein Hauptsinn ist das Bewirken: aus nazala, herabkommen, wird anzala, herabsenden. Aus qāma, stehen, wird aqāma, aufrichten.",
+            "ar": "وزن «أفعَل» بزيادة همزة في أوله، وأشهر معانيه التعدية: «نزل» ← «أنزل»، و«قام» ← «أقام»."
+          }
+        },
+        {
+          "verse": "97:1",
+          "check": "sent it",
+          "title": {
+            "en": "Anzala: to send down",
+            "de": "Anzala: herabsenden",
+            "ar": "أنزل"
+          },
+          "body": {
+            "en": "Anzalnāhu: We sent it down. The hamza of form IV is always pronounced, even in the middle of reading: it is a hamzat al-qat'.",
+            "de": "Anzalnāhu: Wir sandten ihn herab. Das Hamza von Stamm IV wird immer gesprochen, auch mitten im Lesen: es ist ein hamzat al-qat'.",
+            "ar": "«أنزلناه» على وزن «أفعل»، وهمزته همزة قطع تُنطق في الابتداء والوصل."
+          }
+        },
+        {
+          "verse": "2:3",
+          "check": "establish prayer",
+          "title": {
+            "en": "Three form IV verbs in one verse",
+            "de": "Drei Verben von Stamm IV in einem Vers",
+            "ar": "ثلاثة أفعال على «أفعل»"
+          },
+          "body": {
+            "en": "Yu'minūna (believe), yuqīmūna (establish) and yunfiqūna (spend) are all form IV. In the present tense this pattern begins with yu-.",
+            "de": "Yu'minūna (glauben), yuqīmūna (aufrichten) und yunfiqūna (ausgeben) sind alle Stamm IV. Im Präsens beginnt dieses Muster mit yu-.",
+            "ar": "«يؤمنون» و«يقيمون» و«ينفقون» كلها من «أفعل»، ومضارعه يبدأ بياء مضمومة."
+          }
+        },
+        {
+          "verse": "4:125",
+          "check": "submits himself to Allah",
+          "title": {
+            "en": "Aslama and muhsin",
+            "de": "Aslama und muhsin",
+            "ar": "أسلم ومحسن"
+          },
+          "body": {
+            "en": "Aslama (to submit) and muhsin (one who does good, from ahsana) are both form IV. Islām and ihsān are their verbal nouns, on the pattern if'āl.",
+            "de": "Aslama (sich hingeben) und muhsin (wer Gutes tut, von ahsana) gehören beide zu Stamm IV. Islām und ihsān sind ihre Verbalnomen, nach dem Muster if'āl.",
+            "ar": "«أسلم» و«محسن» (اسم فاعل من «أحسن») من وزن «أفعل»، ومصدراهما «إسلام» و«إحسان» على وزن «إفعال»."
+          }
+        },
+        {
+          "title": {
+            "en": "Form IV words you already know",
+            "de": "Wörter von Stamm IV, die Sie schon kennen",
+            "ar": "كلمات تعرفها من «أفعل»"
+          },
+          "list": {
+            "en": [
+              "islām, from aslama: surrender",
+              "īmān, from āmana: faith",
+              "ihsān, from ahsana: excellence",
+              "inzāl, from anzala: sending down",
+              "iqāma, from aqāma: establishing, also the call before prayer"
+            ],
+            "de": [
+              "islām, von aslama: Hingabe",
+              "īmān, von āmana: Glaube",
+              "ihsān, von ahsana: Vortrefflichkeit",
+              "inzāl, von anzala: Herabsendung",
+              "iqāma, von aqāma: Aufrichten, auch der Ruf vor dem Gebet"
+            ],
+            "ar": [
+              "الإسلام من أسلم",
+              "الإيمان من آمن",
+              "الإحسان من أحسن",
+              "الإنزال من أنزل",
+              "الإقامة من أقام"
+            ]
+          }
+        },
+        {
+          "title": {
+            "en": "Form IV or form I?",
+            "de": "Stamm IV oder Stamm I?",
+            "ar": "مزيد أم مجرد؟"
+          },
+          "body": {
+            "en": "Look at the present tense. Form I usually has ya- (yanzilu), form IV has yu- (yunzilu). One small vowel tells you whether something comes down or is sent down.",
+            "de": "Achten Sie auf das Präsens. Stamm I hat meist ya- (yanzilu), Stamm IV yu- (yunzilu). Ein kleiner Vokal zeigt, ob etwas herabkommt oder herabgesandt wird.",
+            "ar": "انظر إلى المضارع: المجرد يُفتح أوله غالبًا «يَنزِل»، والمزيد بالهمزة يُضم أوله «يُنزِل». حركة واحدة تفرّق بين النزول والإنزال."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Quranic Arabic Corpus",
+          "url": "https://corpus.quran.com"
+        },
+        {
+          "label": "W. Wright, A Grammar of the Arabic Language"
+        }
+      ]
+    },
+    {
+      "id": "quranic-arabic-25-forms-5-6",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": {
+          "en": "Arabic of the Quran · 25",
+          "de": "Arabisch des Korans · 25",
+          "ar": "عربية القرآن · ٢٥"
+        },
+        "title": {
+          "en": "Forms V and VI: ta- turns the action back",
+          "de": "Stämme V und VI: ta- wendet die Handlung zurück",
+          "ar": "«تفعّل» و«تفاعَل»"
+        },
+        "sub": {
+          "en": "Reflecting, purifying oneself, asking one another: verbs that turn inward or between people",
+          "de": "Nachsinnen, sich reinigen, einander fragen: Verben, die nach innen oder zwischen Menschen wirken",
+          "ar": "التدبّر والتزكّي والتساؤل: أفعال ترجع إلى الفاعل أو تقع بين اثنين"
+        },
+        "arabic": "تَفَعَّلَ · تَفَاعَلَ"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "Ta- in front",
+            "de": "Ta- davor",
+            "ar": "تاء في أولهما"
+          },
+          "body": {
+            "en": "Form V adds ta- to form II: 'allama, to teach, becomes ta'allama, to learn. Form VI adds ta- to form III and often means doing something with each other.",
+            "de": "Stamm V setzt ta- vor Stamm II: aus 'allama, lehren, wird ta'allama, lernen. Stamm VI setzt ta- vor Stamm III und bedeutet oft, etwas miteinander zu tun.",
+            "ar": "«تفعّل» مطاوع «فعّل»: علّمته فتعلّم. و«تفاعَل» يدل غالبًا على المشاركة بين اثنين فأكثر."
+          }
+        },
+        {
+          "verse": "47:24",
+          "check": "reflect upon",
+          "title": {
+            "en": "Tadabbur: reflection",
+            "de": "Tadabbur: Nachsinnen",
+            "ar": "التدبّر"
+          },
+          "body": {
+            "en": "Yatadabbarūna is form V of d-b-r, a root linked to the back, the end of things. To reflect is to think a matter through to where it leads.",
+            "de": "Yatadabbarūna ist Stamm V von d-b-r, einer Wurzel, die mit der Rückseite, dem Ende der Dinge, zu tun hat. Nachsinnen heißt, eine Sache bis zu ihrem Ausgang durchdenken.",
+            "ar": "«يتدبرون» على وزن «يتفعّلون» من «دبر»، وأصل التدبّر النظر في أدبار الأمور وعواقبها."
+          }
+        },
+        {
+          "verse": "87:14",
+          "check": "purifies himself",
+          "title": {
+            "en": "Tazakkā: purifying oneself",
+            "de": "Tazakkā: sich selbst reinigen",
+            "ar": "تزكّى"
+          },
+          "body": {
+            "en": "Tazakkā is form V of z-k-w. Compare zakkā (form II) in Surah ash-Shams: there one purifies the soul, here one purifies oneself.",
+            "de": "Tazakkā ist Stamm V von z-k-w. Vergleichen Sie zakkā (Stamm II) in Sure ash-Shams: dort reinigt man die Seele, hier reinigt man sich selbst.",
+            "ar": "«تزكّى» مطاوع «زكّى»؛ ففي سورة الشمس «زكّاها» يقع الفعل على النفس، وهنا يرجع إلى الفاعل نفسه."
+          }
+        },
+        {
+          "title": {
+            "en": "Tawakkul and tadhakkur",
+            "de": "Tawakkul und tadhakkur",
+            "ar": "التوكّل والتذكّر"
+          },
+          "arabic": "تَوَكَّلَ · تَذَكَّرَ",
+          "body": {
+            "en": "Two form V verbs shape a believer's day: tawakkala, to rely on, and tadhakkara, to take heed. In the Quranic Arabic Corpus, tadhakkara occurs 51 times and tawakkala 40 times.",
+            "de": "Zwei Verben von Stamm V prägen den Alltag der Gläubigen: tawakkala, sich verlassen auf, und tadhakkara, sich besinnen. Laut dem Quranic Arabic Corpus kommt tadhakkara 51-mal vor, tawakkala 40-mal.",
+            "ar": "فعلان من «تفعّل» يرافقان المؤمن: «توكّل» و«تذكّر». وبحسب مدوّنة القرآن العربية ورد «تذكّر» ٥١ مرة و«توكّل» ٤٠ مرة."
+          }
+        },
+        {
+          "verse": "78:1",
+          "check": "asking one another",
+          "title": {
+            "en": "Tasā'ala: asking one another",
+            "de": "Tasā'ala: einander fragen",
+            "ar": "تساءل: سأل بعضهم بعضًا"
+          },
+          "body": {
+            "en": "Yatasā'alūna is form VI of s-'-l: not simply asking, but asking one another. Surah an-Naba' opens with this mutual questioning.",
+            "de": "Yatasā'alūna ist Stamm VI von s-'-l: nicht bloß fragen, sondern einander fragen. Sure an-Naba' beginnt mit diesem gegenseitigen Fragen.",
+            "ar": "«يتساءلون» على وزن «يتفاعلون»: يسأل بعضهم بعضًا، وبهذا التساؤل تبدأ سورة النبأ."
+          }
+        },
+        {
+          "verse": "102:1",
+          "check": "Competition",
+          "title": {
+            "en": "Takāthur: outdoing one another",
+            "de": "Takāthur: einander überbieten",
+            "ar": "التكاثر: المغالبة في الكثرة"
+          },
+          "body": {
+            "en": "At-takāthur is the verbal noun of form VI from k-th-r (much, many). The pattern adds rivalry: each trying to have more than the other.",
+            "de": "At-takāthur ist das Verbalnomen von Stamm VI aus k-th-r (viel). Das Muster fügt Wetteifer hinzu: jeder will mehr haben als der andere.",
+            "ar": "«التكاثر» مصدر «تكاثر» على وزن «تفاعَل»، وفيه معنى المغالبة: كلٌّ يريد أن يكون أكثر من غيره."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "ar-Raghib al-Isfahani, al-Mufradat fi Gharib al-Qur'an"
+        },
+        {
+          "label": "Quranic Arabic Corpus",
+          "url": "https://corpus.quran.com"
+        }
+      ]
+    },
+    {
+      "id": "quranic-arabic-26-forms-7-8",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": {
+          "en": "Arabic of the Quran · 26",
+          "de": "Arabisch des Korans · 26",
+          "ar": "عربية القرآن · ٢٦"
+        },
+        "title": {
+          "en": "Forms VII and VIII: in- and -ta-",
+          "de": "Stämme VII und VIII: in- und -ta-",
+          "ar": "«انفعل» و«افتعل»"
+        },
+        "sub": {
+          "en": "The sky splits, the Hour draws near, the mindful take care: two patterns behind many verses",
+          "de": "Der Himmel spaltet sich, die Stunde naht, die Achtsamen hüten sich: zwei Muster hinter vielen Versen",
+          "ar": "انشقاق واقتراب واتقاء: وزنان وراء آيات كثيرة"
+        },
+        "arabic": "اِنْفَعَلَ · اِفْتَعَلَ"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "Two patterns with a joining hamza",
+            "de": "Zwei Muster mit verbindendem Hamza",
+            "ar": "وزنان بهمزة وصل"
+          },
+          "body": {
+            "en": "Form VII puts in- before the root: shaqqa, to split, becomes inshaqqa, to be split. Form VIII slips a t in after the first root letter: qaruba, to be near, becomes iqtaraba, to draw near.",
+            "de": "Stamm VII setzt in- vor die Wurzel: aus shaqqa, spalten, wird inshaqqa, sich spalten. Stamm VIII schiebt ein t nach dem ersten Wurzelbuchstaben ein: aus qaruba, nahe sein, wird iqtaraba, sich nähern.",
+            "ar": "«انفعل» بزيادة همزة الوصل والنون: «شقّ» ← «انشقّ». و«افتعل» بزيادة همزة الوصل والتاء بعد الفاء: «قرُب» ← «اقترب»."
+          }
+        },
+        {
+          "verse": "54:1",
+          "check": "the moon has split",
+          "title": {
+            "en": "Both forms in one verse",
+            "de": "Beide Stämme in einem Vers",
+            "ar": "الوزنان في آية واحدة"
+          },
+          "body": {
+            "en": "Iqtarabat is form VIII, inshaqqa form VII. Form VII usually describes something that happens to its subject, with no doer named.",
+            "de": "Iqtarabat ist Stamm VIII, inshaqqa Stamm VII. Stamm VII beschreibt meist etwas, das seinem Subjekt widerfährt, ohne dass ein Handelnder genannt wird.",
+            "ar": "«اقتربت» على «افتعل»، و«انشقّ» على «انفعل»، وهو للمطاوعة غالبًا: يقع الفعل على صاحبه دون ذكر فاعل."
+          }
+        },
+        {
+          "verse": "84:1",
+          "check": "sky has split",
+          "title": {
+            "en": "Inshaqqat: the sky splits",
+            "de": "Inshaqqat: der Himmel spaltet sich",
+            "ar": "انشقّت السماء"
+          },
+          "body": {
+            "en": "The same form VII verb, now with the feminine -at, because as-samā' (the sky) is feminine. Surah al-Inshiqāq takes its name from it.",
+            "de": "Dasselbe Verb von Stamm VII, nun mit dem weiblichen -at, weil as-samā' (der Himmel) weiblich ist. Sure al-Inshiqāq ist danach benannt.",
+            "ar": "الفعل نفسه على «انفعل» متصلًا بتاء التأنيث لأن السماء مؤنثة، ومنه اسم سورة الانشقاق."
+          }
+        },
+        {
+          "verse": "3:102",
+          "check": "fear Allah as He should be feared",
+          "title": {
+            "en": "Ittaqā: taking protection",
+            "de": "Ittaqā: sich schützen",
+            "ar": "اتّقى: اتخذ وقاية"
+          },
+          "body": {
+            "en": "Ittaqū is form VIII of w-q-y, to guard: the w merges into the t. From it come taqwā and muttaqī. Ittaqā occurs 166 times.",
+            "de": "Ittaqū ist Stamm VIII von w-q-y, schützen: das w verschmilzt mit dem t. Daraus kommen taqwā und muttaqī. Ittaqā kommt 166-mal vor.",
+            "ar": "«اتقوا» من «وقى» على وزن «افتعل»، قُلبت الواو تاء وأُدغمت. ومنه «التقوى» و«المتقي». وورد «اتقى» ١٦٦ مرة."
+          }
+        },
+        {
+          "verse": "54:17",
+          "check": "is there any who will remember",
+          "title": {
+            "en": "Muddakir: a hidden form VIII",
+            "de": "Muddakir: ein versteckter Stamm VIII",
+            "ar": "«مدّكر»: افتعل متخفّيًا"
+          },
+          "body": {
+            "en": "Muddakir comes from dh-k-r. In form VIII the t meets the dh, and both become dd: mudhtakir becomes muddakir. Surah al-Qamar repeats this verse.",
+            "de": "Muddakir kommt von dh-k-r. In Stamm VIII trifft das t auf das dh, und beide werden zu einem doppelten d: aus mudhtakir wird muddakir. Sure al-Qamar wiederholt diesen Vers.",
+            "ar": "«مدّكر» أصلها «مذتكر» من «ذكر» على «مفتعل»، قُلبت التاء دالًا وأُدغمت الذال فيها. وتتكرر هذه الآية في سورة القمر."
+          }
+        },
+        {
+          "title": {
+            "en": "Form VIII words you know",
+            "de": "Wörter von Stamm VIII, die Sie kennen",
+            "ar": "كلمات من «افتعل»"
+          },
+          "list": {
+            "en": [
+              "ihtadā: to be guided, from h-d-y",
+              "ittaqā: to be mindful, from w-q-y",
+              "ikhtalafa: to differ, from kh-l-f",
+              "ijtanaba: to keep away from, from j-n-b",
+              "ikhtāra: to choose, from kh-y-r"
+            ],
+            "de": [
+              "ihtadā: rechtgeleitet sein, von h-d-y",
+              "ittaqā: achtsam sein, von w-q-y",
+              "ikhtalafa: uneins sein, von kh-l-f",
+              "ijtanaba: sich fernhalten, von j-n-b",
+              "ikhtāra: wählen, von kh-y-r"
+            ],
+            "ar": [
+              "اهتدى من هدي",
+              "اتقى من وقي",
+              "اختلف من خلف",
+              "اجتنب من جنب",
+              "اختار من خير"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Quranic Arabic Corpus",
+          "url": "https://corpus.quran.com"
+        },
+        {
+          "label": "W. Wright, A Grammar of the Arabic Language"
+        }
+      ]
+    },
+    {
+      "id": "quranic-arabic-27-form-10",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": {
+          "en": "Arabic of the Quran · 27",
+          "de": "Arabisch des Korans · 27",
+          "ar": "عربية القرآن · ٢٧"
+        },
+        "title": {
+          "en": "Form X: istaf'ala, the verb of seeking",
+          "de": "Stamm X: istaf'ala, das Verb des Suchens",
+          "ar": "وزن «استفعل»: الطلب"
+        },
+        "sub": {
+          "en": "Istaghfara, ista'āna, istaqāma: three letters in front that mean 'seeking'",
+          "de": "Istaghfara, ista'āna, istaqāma: drei Buchstaben vorn, die „suchen“ bedeuten",
+          "ar": "استغفر واستعان واستقام: زيادة تدل على الطلب"
+        },
+        "arabic": "اِسْتَفْعَلَ · يَسْتَفْعِلُ · اِسْتِفْعَال"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "Ista-: to seek",
+            "de": "Ista-: suchen",
+            "ar": "الهمزة والسين والتاء"
+          },
+          "body": {
+            "en": "Form X puts ista- before the root. Its best-known sense is seeking something: ghafara, to forgive, becomes istaghfara, to ask for forgiveness. It can also mean regarding something as being so.",
+            "de": "Stamm X setzt ista- vor die Wurzel. Sein bekanntester Sinn ist das Suchen: aus ghafara, vergeben, wird istaghfara, um Vergebung bitten. Er kann auch bedeuten, etwas für etwas zu halten.",
+            "ar": "وزن «استفعل» بزيادة الهمزة والسين والتاء، وأشهر معانيه الطلب: «غفر» ← «استغفر»، ومن معانيه أيضًا الاعتقاد والوجدان."
+          }
+        },
+        {
+          "verse": "1:5",
+          "check": "ask for help",
+          "title": {
+            "en": "Nasta'īn: we seek help",
+            "de": "Nasta'īn: wir suchen Hilfe",
+            "ar": "نستعين: نطلب العون"
+          },
+          "body": {
+            "en": "Nasta'īnu is form X of '-w-n (help): not just receiving help, but asking for it. Every recitation of al-Fātiha contains this request.",
+            "de": "Nasta'īnu ist Stamm X von '-w-n (Hilfe): nicht bloß Hilfe erhalten, sondern um sie bitten. Jede Rezitation von al-Fātiha enthält diese Bitte.",
+            "ar": "«نستعين» من «عون» على وزن «نستفعل»، أي نطلب العون، وهذا الطلب في كل قراءة للفاتحة."
+          }
+        },
+        {
+          "verse": "40:60",
+          "check": "Call upon Me",
+          "title": {
+            "en": "Astajib and yastakbirūna",
+            "de": "Astajib und yastakbirūna",
+            "ar": "«أستجب» و«يستكبرون»"
+          },
+          "body": {
+            "en": "Two form X verbs: astajib (I will answer) and yastakbirūna (they deem themselves too great). The second means regarding oneself as something.",
+            "de": "Zwei Verben von Stamm X: astajib (Ich werde antworten) und yastakbirūna (sie halten sich für zu groß). Das zweite zeigt den anderen Sinn: sich für etwas halten.",
+            "ar": "«أستجب» و«يستكبرون» من «استفعل»، والثاني من معنى الاعتقاد: يرون أنفسهم كبارًا. وورد «استكبر» ٤٠ مرة."
+          }
+        },
+        {
+          "verse": "11:112",
+          "check": "remain on a right course",
+          "title": {
+            "en": "Istaqāma: standing straight",
+            "de": "Istaqāma: geradestehen",
+            "ar": "استقام: اعتدل"
+          },
+          "body": {
+            "en": "Istaqim is form X of q-w-m. Here the pattern means becoming fully upright and staying so. The participle mustaqīm describes the path in al-Fātiha.",
+            "de": "Istaqim ist Stamm X von q-w-m. Hier bedeutet das Muster, ganz aufrecht zu werden und es zu bleiben. Das Partizip mustaqīm beschreibt den Weg in al-Fātiha.",
+            "ar": "«استقم» من «قوم» على وزن «استفعل» بمعنى الاعتدال والثبات عليه، ومنه «المستقيم» وصفًا للصراط في الفاتحة."
+          }
+        },
+        {
+          "title": {
+            "en": "Form X words",
+            "de": "Wörter von Stamm X",
+            "ar": "كلمات من «استفعل»"
+          },
+          "list": {
+            "en": [
+              "istighfār: asking forgiveness",
+              "isti'āna: seeking help",
+              "istiqāma: uprightness",
+              "istijāba: answering",
+              "istikbār: arrogance"
+            ],
+            "de": [
+              "istighfār: Bitte um Vergebung",
+              "isti'āna: Hilfesuche",
+              "istiqāma: Standhaftigkeit, Geradheit",
+              "istijāba: Erhörung",
+              "istikbār: Hochmut"
+            ],
+            "ar": [
+              "الاستغفار",
+              "الاستعانة",
+              "الاستقامة",
+              "الاستجابة",
+              "الاستكبار"
+            ]
+          },
+          "body": {
+            "en": "The verbal noun follows istif'āl. Istaghfara alone occurs 40 times in the Quran.",
+            "de": "Das Verbalnomen folgt dem Muster istif'āl. Istaghfara allein kommt 40-mal im Koran vor.",
+            "ar": "ومصدره على «استفعال»، وورد «استغفر» في القرآن ٤٠ مرة."
+          }
+        },
+        {
+          "title": {
+            "en": "From asking to living",
+            "de": "Vom Bitten zum Leben",
+            "ar": "من الطلب إلى العمل"
+          },
+          "body": {
+            "en": "Many words of a believer's inner life are form X: seeking forgiveness, seeking help, standing upright. Each time you say astaghfirullāh, you use this pattern.",
+            "de": "Viele Wörter des inneren Lebens der Gläubigen sind Stamm X: Vergebung suchen, Hilfe suchen, aufrecht stehen. Jedes Mal, wenn Sie astaghfirullāh sagen, nutzen Sie dieses Muster.",
+            "ar": "كثير من ألفاظ الحياة الإيمانية على «استفعل»: الاستغفار والاستعانة والاستقامة. وكلما قلت «أستغفر الله» استعملت هذا الوزن."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Quranic Arabic Corpus",
+          "url": "https://corpus.quran.com"
+        },
+        {
+          "label": "W. Wright, A Grammar of the Arabic Language"
+        }
+      ]
+    },
+    {
+      "id": "quranic-arabic-28-negation",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": {
+          "en": "Arabic of the Quran · 28",
+          "de": "Arabisch des Korans · 28",
+          "ar": "عربية القرآن · ٢٨"
+        },
+        "title": {
+          "en": "Saying no: la, ma, lam, lan, laysa",
+          "de": "Nein sagen: la, ma, lam, lan, laysa",
+          "ar": "أدوات النفي"
+        },
+        "sub": {
+          "en": "The ways the Quran negates, and the time each one points to",
+          "de": "Die Arten der Verneinung im Koran und die Zeit, auf die jede weist",
+          "ar": "أدوات النفي في القرآن، ولكل منها زمن"
+        },
+        "arabic": "لَا · مَا · لَمْ · لَنْ · لَيْسَ"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "Five words at a glance",
+            "de": "Fünf Wörter auf einen Blick",
+            "ar": "الأدوات في لمحة"
+          },
+          "list": {
+            "en": [
+              "la + present: not, now or in general",
+              "ma + past: did not",
+              "lam + jussive: did not, with a present-form verb",
+              "lan + subjunctive: will never",
+              "laysa: is not"
+            ],
+            "de": [
+              "la + Präsens: nicht, jetzt oder allgemein",
+              "ma + Perfekt: tat nicht",
+              "lam + Jussiv: tat nicht, mit Präsensform",
+              "lan + Subjunktiv: wird nie",
+              "laysa: ist nicht"
+            ],
+            "ar": [
+              "لا: تنفي المضارع غالبًا",
+              "ما: تنفي الماضي والحال",
+              "لم: تجزم المضارع وتقلب معناه إلى الماضي",
+              "لن: تنصب المضارع وتنفيه في المستقبل",
+              "ليس: فعل جامد لنفي الحال غالبًا"
+            ]
+          }
+        },
+        {
+          "verse": "109:2",
+          "check": "I do not worship",
+          "title": {
+            "en": "La: not, as a rule",
+            "de": "La: nicht, grundsätzlich",
+            "ar": "لا النافية"
+          },
+          "body": {
+            "en": "La before a'budu leaves the verb's normal -u unchanged. Grammarians differ whether it negates the present here or the future.",
+            "de": "La vor a'budu lässt das normale -u des Verbs unverändert. Die Grammatiker sind uneins, ob es hier die Gegenwart oder die Zukunft verneint.",
+            "ar": "«لا» نافية لا عمل لها، و«أعبدُ» مضارع مرفوع، واختلف النحاة: أهي هنا لنفي الحال أم لنفي الاستقبال؟"
+          }
+        },
+        {
+          "verse": "53:2",
+          "check": "has not strayed",
+          "title": {
+            "en": "Ma: did not",
+            "de": "Ma: tat nicht",
+            "ar": "ما النافية"
+          },
+          "body": {
+            "en": "Ma before the past verbs dalla and ghawa denies that something happened. Ma also stands before the present and in nominal sentences.",
+            "de": "Ma vor den Perfektformen dalla und ghawa verneint, dass etwas geschah. Ma steht auch vor dem Präsens und in Nominalsätzen.",
+            "ar": "«ما» نافية دخلت على الماضي «ضلّ» و«غوى»، وتدخل أيضًا على المضارع والجملة الاسمية."
+          }
+        },
+        {
+          "verse": "2:24",
+          "check": "you will never be able to",
+          "title": {
+            "en": "Lam and lan side by side",
+            "de": "Lam und lan nebeneinander",
+            "ar": "لم ولن متجاورتان"
+          },
+          "body": {
+            "en": "First lam, then lan, before the same verb taf'alu. After in (if), lam taf'alu means 'you do not'. Lan looks ahead: you never will.",
+            "de": "Erst lam, dann lan, vor demselben Verb taf'alu. Nach in (wenn) bedeutet lam taf'alu: Sie tun es nicht. Lan blickt nach vorn: Sie werden es nie tun.",
+            "ar": "دخلت «لم» ثم «لن» على الفعل نفسه: «لم» تنفي وتجزم، وبعد «إن» الشرطية صار معناها للمستقبل، و«لن» تنفي المستقبل وتنصب."
+          }
+        },
+        {
+          "verse": "74:25",
+          "check": "This is not but the word",
+          "title": {
+            "en": "In: a rare negative",
+            "de": "In: eine seltene Verneinung",
+            "ar": "إنْ النافية"
+          },
+          "body": {
+            "en": "These are a denier's words, quoted by the Quran. Here in does not mean 'if': followed by illa, it means 'nothing but'.",
+            "de": "Das sind die Worte eines Leugners, die der Koran wiedergibt. Hier bedeutet in nicht „wenn“: gefolgt von illa heißt es „nichts als“.",
+            "ar": "الآية حكاية لقول أحد المكذبين، و«إنْ» فيها نافية بمعنى «ما»، واقترانها بـ«إلا» يفيد الحصر."
+          }
+        },
+        {
+          "verse": "53:39",
+          "check": "there is not for man",
+          "title": {
+            "en": "Laysa: a verb that negates",
+            "de": "Laysa: ein Verb, das verneint",
+            "ar": "ليس: فعل للنفي"
+          },
+          "body": {
+            "en": "Laysa looks like a past verb but negates the present: there is not. It works like kana, which has its own lesson. It occurs 89 times.",
+            "de": "Laysa sieht aus wie ein Perfekt, verneint aber die Gegenwart: es gibt nicht. Es wirkt wie kana, das eine eigene Lektion hat. Es kommt 89-mal vor.",
+            "ar": "«ليس» فعل ماضٍ جامد ينفي الحال غالبًا، ويعمل عمل «كان». وورد في القرآن ٨٩ مرة."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Ibn Hisham, Mughni al-Labib 'an Kutub al-A'arib"
+        },
+        {
+          "label": "Quranic Arabic Corpus, laysa",
+          "url": "https://corpus.quran.com/qurandictionary.jsp?q=lys"
+        },
+        {
+          "label": "al-Qurtubi, al-Jami' li-Ahkam al-Qur'an, on 109:2",
+          "url": "https://quran.com/109:2/tafsirs/ar-tafseer-al-qurtubi"
+        },
+        {
+          "label": "az-Zamakhshari, al-Kashshaf, on 109:2 (la with a future sense)"
+        }
+      ]
+    },
+    {
+      "id": "quranic-arabic-29-inna",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": {
+          "en": "Arabic of the Quran · 29",
+          "de": "Arabisch des Korans · 29",
+          "ar": "عربية القرآن · ٢٩"
+        },
+        "title": {
+          "en": "Inna and her sisters",
+          "de": "Inna und ihre Schwestern",
+          "ar": "إنّ وأخواتها"
+        },
+        "sub": {
+          "en": "Six particles that open a sentence and turn its first noun to -a",
+          "de": "Sechs Partikeln, die einen Satz eröffnen und sein erstes Nomen auf -a setzen",
+          "ar": "ستة أحرف تنصب المبتدأ وترفع الخبر"
+        },
+        "arabic": "إنّ · أنّ · كأنّ · لكنّ · ليت · لعلّ"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "What inna does",
+            "de": "Was inna bewirkt",
+            "ar": "عمل «إنّ»"
+          },
+          "arabic": "إِنَّ الْبَيْتَ كَبِيرٌ",
+          "body": {
+            "en": "Inna enters a nominal sentence. The mubtada' becomes its ism and turns to -a; the khabar stays in raf'. Al-baytu kabirun becomes inna al-bayta kabirun: truly, the house is big.",
+            "de": "Inna tritt vor einen Nominalsatz. Der mubtada' wird zu ihrem ism und erhält -a; der khabar bleibt im raf'. Aus al-baytu kabirun wird inna al-bayta kabirun: wahrlich, das Haus ist groß.",
+            "ar": "تدخل «إنّ» على الجملة الاسمية فتنصب المبتدأ ويسمى اسمها، وترفع الخبر ويسمى خبرها: «إنّ البيتَ كبيرٌ»."
+          }
+        },
+        {
+          "title": {
+            "en": "The six sisters",
+            "de": "Die sechs Schwestern",
+            "ar": "الأخوات الست"
+          },
+          "list": {
+            "en": [
+              "inna: indeed, truly",
+              "anna: that",
+              "ka'anna: as if",
+              "lakinna: but",
+              "layta: if only",
+              "la'alla: perhaps, so that"
+            ],
+            "de": [
+              "inna: wahrlich",
+              "anna: dass",
+              "ka'anna: als ob",
+              "lakinna: aber",
+              "layta: wenn doch",
+              "la'alla: vielleicht, damit"
+            ],
+            "ar": [
+              "إنّ: للتوكيد",
+              "أنّ: للتوكيد",
+              "كأنّ: للتشبيه",
+              "لكنّ: للاستدراك",
+              "ليت: للتمني",
+              "لعلّ: للترجي"
+            ]
+          }
+        },
+        {
+          "verse": "103:2",
+          "check": "mankind is in loss",
+          "title": {
+            "en": "Inna: certainty",
+            "de": "Inna: Gewissheit",
+            "ar": "إنّ للتوكيد"
+          },
+          "body": {
+            "en": "Al-insana ends in -a: it is the ism of inna. The khabar is the phrase with fi (in) and khusr (loss), strengthened by the la before it.",
+            "de": "Al-insana endet auf -a: es ist der ism von inna. Der khabar ist die Wendung mit fi (in) und khusr (Verlust), verstärkt durch das la davor.",
+            "ar": "«الإنسانَ» اسم «إنّ» منصوب، وشبه الجملة بعده خبرها، واللام الداخلة عليه للتوكيد."
+          }
+        },
+        {
+          "verse": "10:44",
+          "check": "but it is the people",
+          "title": {
+            "en": "Lakinna: but",
+            "de": "Lakinna: aber",
+            "ar": "لكنّ للاستدراك"
+          },
+          "body": {
+            "en": "Inna and lakinna in one verse. Allaha is the ism of inna, an-nasa the ism of lakinna: both end in -a, and the contrast rests on lakinna.",
+            "de": "Inna und lakinna in einem Vers. Allaha ist der ism von inna, an-nasa der ism von lakinna: beide enden auf -a, und der Gegensatz ruht auf lakinna.",
+            "ar": "لفظ الجلالة اسم «إنّ»، و«الناسَ» اسم «لكنّ»، وكلاهما منصوب، وبـ«لكنّ» يقوم الاستدراك."
+          }
+        },
+        {
+          "verse": "2:21",
+          "check": "that you may become righteous",
+          "title": {
+            "en": "La'alla: so that, perhaps",
+            "de": "La'alla: damit, vielleicht",
+            "ar": "لعلّ للترجي"
+          },
+          "body": {
+            "en": "In la'allakum, the attached -kum is the ism and the verb tattaqun the khabar. Commentators read la'alla here as hope or as purpose: so that.",
+            "de": "In la'allakum ist das angehängte -kum der ism und das Verb tattaqun der khabar. Die Kommentatoren lesen la'alla hier als Hoffnung oder als Zweck: damit.",
+            "ar": "الكاف والميم في «لعلكم» اسم «لعلّ»، وجملة «تتقون» خبرها، واختلف المفسرون هنا: أهي للرجاء أم للتعليل بمعنى «كي»؟"
+          }
+        },
+        {
+          "verse": "89:24",
+          "check": "I wish I had sent",
+          "title": {
+            "en": "Layta: if only",
+            "de": "Layta: wenn doch",
+            "ar": "ليت للتمني"
+          },
+          "body": {
+            "en": "In laytani, the -i (after a protective n) is the ism of layta. Layta wishes for what can no longer be: here a cry of regret on the Last Day.",
+            "de": "In laytani ist das -i (nach einem schützenden n) der ism von layta. Layta wünscht, was nicht mehr sein kann: hier ein Ruf der Reue am Letzten Tag.",
+            "ar": "الياء في «ليتني» اسم «ليت»، وجملة «قدّمت» خبرها، والتمني هنا حسرة يوم القيامة."
+          }
+        },
+        {
+          "verse": "55:58",
+          "check": "As if they were rubies",
+          "title": {
+            "en": "Ka'anna: as if",
+            "de": "Ka'anna: als ob",
+            "ar": "كأنّ للتشبيه"
+          },
+          "body": {
+            "en": "In ka'annahunna, the -hunna is the ism and al-yaqutu (rubies) the khabar in raf'. Ka'anna paints a comparison in one word.",
+            "de": "In ka'annahunna ist das -hunna der ism und al-yaqutu (Rubine) der khabar im raf'. Ka'anna malt einen Vergleich in einem Wort.",
+            "ar": "«هنّ» اسم «كأنّ»، و«الياقوتُ» خبرها مرفوع، و«كأنّ» تفيد التشبيه."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Ibn Ajurrum, al-Muqaddima al-Ajurrumiyya"
+        },
+        {
+          "label": "Muhyi d-Din ad-Darwish, I'rab al-Qur'an al-Karim wa Bayanuh"
+        },
+        {
+          "label": "al-Qurtubi, al-Jami' li-Ahkam al-Qur'an, on 2:21 (three readings of la'alla)",
+          "url": "https://quran.com/2:21/tafsirs/ar-tafseer-al-qurtubi"
+        }
+      ]
+    },
+    {
+      "id": "quranic-arabic-30-kana",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": {
+          "en": "Arabic of the Quran · 30",
+          "de": "Arabisch des Korans · 30",
+          "ar": "عربية القرآن · ٣٠"
+        },
+        "title": {
+          "en": "Kana and her sisters",
+          "de": "Kana und ihre Schwestern",
+          "ar": "كان وأخواتها"
+        },
+        "sub": {
+          "en": "Verbs that set a sentence in time and turn its predicate to -a",
+          "de": "Verben, die einen Satz in die Zeit stellen und sein Prädikat auf -a setzen",
+          "ar": "أفعال ناقصة ترفع الاسم وتنصب الخبر"
+        },
+        "arabic": "كَانَ · أَصْبَحَ · ظَلَّ · لَيْسَ"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "The mirror image of inna",
+            "de": "Das Spiegelbild von inna",
+            "ar": "عكس «إنّ»"
+          },
+          "arabic": "كَانَ الْبَيْتُ كَبِيرًا",
+          "body": {
+            "en": "Kana also enters a nominal sentence, but the other way round: the mubtada' stays in raf' as its ism, and the khabar turns to -a. Al-baytu kabirun becomes kana al-baytu kabiran: the house was big.",
+            "de": "Auch kana tritt vor einen Nominalsatz, aber umgekehrt: der mubtada' bleibt als sein ism im raf', der khabar erhält -a. Aus al-baytu kabirun wird kana al-baytu kabiran: das Haus war groß.",
+            "ar": "تدخل «كان» على الجملة الاسمية فترفع المبتدأ ويسمى اسمها، وتنصب الخبر ويسمى خبرها: «كان البيتُ كبيرًا»."
+          }
+        },
+        {
+          "title": {
+            "en": "The sisters and their sense",
+            "de": "Die Schwestern und ihr Sinn",
+            "ar": "الأخوات ومعانيها"
+          },
+          "list": {
+            "en": [
+              "kana: was · sara: became",
+              "asbaha: became, or was in the morning",
+              "amsa: became, or was in the evening",
+              "zalla: kept on, through the day",
+              "laysa: is not · ma zala: still is"
+            ],
+            "de": [
+              "kana: war · sara: wurde",
+              "asbaha: wurde, oder war am Morgen",
+              "amsa: wurde, oder war am Abend",
+              "zalla: blieb, den Tag über",
+              "laysa: ist nicht · ma zala: ist noch immer"
+            ],
+            "ar": [
+              "كان · صار: للتحوّل",
+              "أصبح: للصباح أو بمعنى صار",
+              "أمسى: للمساء أو بمعنى صار",
+              "ظلّ: للنهار أو بمعنى دام",
+              "ليس: للنفي · ما زال: للاستمرار"
+            ]
+          }
+        },
+        {
+          "verse": "4:96",
+          "check": "ever Forgiving and Merciful",
+          "title": {
+            "en": "Kana with Allah's names",
+            "de": "Kana mit Allahs Namen",
+            "ar": "«كان» مع أسماء الله"
+          },
+          "body": {
+            "en": "Allahu is the ism of kana, ghafuran and rahiman its khabar in nasb. Commentators explain: this kana means He always was so, and still is.",
+            "de": "Allahu ist der ism von kana, ghafuran und rahiman sind sein khabar im nasb. Die Kommentatoren erklären: dieses kana heißt, Er war immer so und ist es noch.",
+            "ar": "لفظ الجلالة اسم «كان» مرفوع، و«غفورًا» خبرها منصوب، و«رحيمًا» خبر ثانٍ. و«كان» هنا للدوام لا للانقطاع."
+          }
+        },
+        {
+          "title": {
+            "en": "A very common verb",
+            "de": "Ein sehr häufiges Verb",
+            "ar": "فعل كثير الورود"
+          },
+          "body": {
+            "en": "Forms of kana occur 1,358 times in the Quran, according to the Quranic Arabic Corpus. It sets a sentence in time: the past with kana, the present or future with yakunu.",
+            "de": "Formen von kana kommen laut dem Quranic Arabic Corpus 1.358-mal im Koran vor. Kana stellt einen Satz in die Zeit: die Vergangenheit mit kana, Gegenwart oder Zukunft mit yakunu.",
+            "ar": "وردت صيغ «كان» في القرآن ١٣٥٨ مرة بحسب مدوّنة القرآن العربية، وهي تضع الجملة في زمنها: الماضي بـ«كان» والحال أو الاستقبال بـ«يكون»."
+          }
+        },
+        {
+          "verse": "28:10",
+          "check": "became empty",
+          "title": {
+            "en": "Asbaha: it became",
+            "de": "Asbaha: es wurde",
+            "ar": "أصبح"
+          },
+          "body": {
+            "en": "Fu'adu (the heart) is the ism of asbaha, in raf'. Farighan (empty) is its khabar, in nasb. Asbaha here marks a change of state.",
+            "de": "Fu'adu (das Herz) ist der ism von asbaha, im raf'. Farighan (leer) ist sein khabar, im nasb. Asbaha zeigt hier einen Wechsel des Zustands.",
+            "ar": "«فؤادُ» اسم «أصبح» مرفوع، و«فارغًا» خبرها منصوب، و«أصبح» هنا بمعنى صار."
+          }
+        },
+        {
+          "verse": "16:58",
+          "check": "his face becomes dark",
+          "title": {
+            "en": "Zalla: it stayed",
+            "de": "Zalla: es blieb",
+            "ar": "ظلّ"
+          },
+          "body": {
+            "en": "Wajhuhu (his face) is the ism of zalla, muswaddan (darkened) its khabar. The Quran describes this reaction in order to condemn it.",
+            "de": "Wajhuhu (sein Gesicht) ist der ism von zalla, muswaddan (verdunkelt) sein khabar. Der Koran schildert diese Reaktion, um sie zu verurteilen.",
+            "ar": "«وجهُه» اسم «ظلّ»، و«مسودًّا» خبرها، والآية تذكر هذه الحال على سبيل الذم."
+          }
+        },
+        {
+          "verse": "11:118",
+          "check": "will not cease to differ",
+          "title": {
+            "en": "Ma zala: never ceasing",
+            "de": "Ma zala: nie aufhören",
+            "ar": "ما زال"
+          },
+          "body": {
+            "en": "With la, yazaluna is the present of ma zala: they continue. Its ism is the plural u, its khabar mukhtalifina, ending in -ina.",
+            "de": "Mit la ist yazaluna das Präsens von ma zala: sie hören nicht auf. Sein ism ist das Plural-u, sein khabar mukhtalifina mit der Endung -ina.",
+            "ar": "«لا يزالون» من أخوات «كان»، وواو الجماعة اسمها، و«مختلفين» خبرها منصوب بالياء."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Ibn Ajurrum, al-Muqaddima al-Ajurrumiyya"
+        },
+        {
+          "label": "Quranic Arabic Corpus, root k-w-n",
+          "url": "https://corpus.quran.com/qurandictionary.jsp?q=kwn"
+        },
+        {
+          "label": "at-Tabari, Jami' al-Bayan, on 4:96",
+          "url": "https://quran.com/4:96/tafsirs/ar-tafsir-al-tabari"
+        }
+      ]
+    },
+    {
+      "id": "quranic-arabic-31-vocative",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": {
+          "en": "Arabic of the Quran · 31",
+          "de": "Arabisch des Korans · 31",
+          "ar": "عربية القرآن · ٣١"
+        },
+        "title": {
+          "en": "Ya ayyuha: how the Quran calls out",
+          "de": "Ya ayyuha: wie der Koran ruft",
+          "ar": "«يا أيها»: النداء في القرآن"
+        },
+        "sub": {
+          "en": "Who is called, and why ayyuha stands between ya and the name",
+          "de": "Wer gerufen wird und warum ayyuha zwischen ya und dem Namen steht",
+          "ar": "كيف يُنادى المخاطَب، ولماذا تأتي «أيّها» قبل المعرّف بـ«ال»"
+        },
+        "arabic": "يَا أَيُّهَا"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "Ya: the calling word",
+            "de": "Ya: das Rufwort",
+            "ar": "«يا» حرف النداء"
+          },
+          "body": {
+            "en": "Ya calls someone: ya Musa, O Musa. The one called is the munada. A single name after ya ends in -u without tanween: ya Adamu, ya Maryamu.",
+            "de": "Ya ruft jemanden: ya Musa, o Musa. Der Gerufene heißt munada. Ein einzelner Name nach ya endet auf -u ohne Tanwin: ya Adamu, ya Maryamu.",
+            "ar": "«يا» حرف نداء، والمنادى إذا كان علمًا مفردًا بُني على الضم: «يا آدمُ»، «يا مريمُ»."
+          }
+        },
+        {
+          "verse": "2:33",
+          "check": "O Adam",
+          "title": {
+            "en": "Ya Adamu",
+            "de": "Ya Adamu",
+            "ar": "يا آدمُ"
+          },
+          "body": {
+            "en": "Adamu ends in -u with no tanween: a single name being called. Right after the call comes a command, as so often in the Quran.",
+            "de": "Adamu endet auf -u ohne Tanwin: ein einzelner Name wird gerufen. Direkt nach dem Ruf folgt ein Befehl, wie so oft im Koran.",
+            "ar": "«آدمُ» منادى علم مفرد مبني على الضم، ويتلوه أمر، كما يكثر في القرآن."
+          }
+        },
+        {
+          "title": {
+            "en": "Why ayyuha?",
+            "de": "Warum ayyuha?",
+            "ar": "لماذا «أيّها»؟"
+          },
+          "arabic": "يَا أَيُّهَا الطَّالِبُ",
+          "body": {
+            "en": "Ya does not stand directly before a word with al-. So Arabic places ayyu between them, with ha to draw attention: ya ayyuha at-talibu, O student. For a woman: ya ayyatuha.",
+            "de": "Ya steht nicht direkt vor einem Wort mit al-. Darum setzt das Arabische ayyu dazwischen, mit ha als Weckruf: ya ayyuha at-talibu, o Student. Für eine Frau: ya ayyatuha.",
+            "ar": "لا يُنادى المعرّف بـ«ال» مباشرة في الغالب، فيُؤتى بـ«أيّ» ومعها «ها» التنبيه: «يا أيها الطالبُ»، وللمؤنث «يا أيتها»."
+          }
+        },
+        {
+          "verse": "2:21",
+          "check": "O mankind",
+          "title": {
+            "en": "Calling all people",
+            "de": "Alle Menschen rufen",
+            "ar": "نداء الناس جميعًا"
+          },
+          "body": {
+            "en": "An-nasu ends in -u: it describes ayyu and follows its vowel. The call reaches all people, and a command follows.",
+            "de": "An-nasu endet auf -u: es beschreibt ayyu und folgt seinem Vokal. Der Ruf gilt allen Menschen, und ein Befehl folgt.",
+            "ar": "«أيُّ» منادى مبني على الضم، و«الناسُ» نعت له مرفوع على لفظه، والنداء عامّ للناس كلهم."
+          }
+        },
+        {
+          "verse": "61:2",
+          "check": "why do you say",
+          "title": {
+            "en": "Calling the believers",
+            "de": "Die Gläubigen rufen",
+            "ar": "نداء المؤمنين"
+          },
+          "body": {
+            "en": "Here ayyu is followed by alladhina (those who) and a sentence: amanu, they believed. The call names people by what they have done.",
+            "de": "Hier folgt auf ayyu das Wort alladhina (die, welche) und ein Satz: amanu, sie glaubten. Der Ruf benennt Menschen nach dem, was sie getan haben.",
+            "ar": "«الذين» اسم موصول نعت لـ«أيّ»، وجملة «آمنوا» صلته؛ فالنداء يصف المخاطَبين بعملهم."
+          }
+        },
+        {
+          "verse": "7:31",
+          "check": "O children of Adam",
+          "title": {
+            "en": "A called noun in idafa",
+            "de": "Ein gerufenes Nomen in der Idafa",
+            "ar": "المنادى المضاف"
+          },
+          "body": {
+            "en": "Bani is the first part of an idafa. A called noun in idafa takes nasb: here the plural sign -i, with its n dropped.",
+            "de": "Bani ist der erste Teil einer Idafa. Ein gerufenes Nomen in der Idafa steht im nasb: hier mit dem Pluralzeichen -i, dessen n wegfällt.",
+            "ar": "«بني» منادى مضاف منصوب بالياء لأنه ملحق بجمع المذكر السالم، وحُذفت نونه للإضافة."
+          }
+        },
+        {
+          "verse": "7:23",
+          "check": "Our Lord",
+          "title": {
+            "en": "A call without ya",
+            "de": "Ein Ruf ohne ya",
+            "ar": "نداء بلا «يا»"
+          },
+          "body": {
+            "en": "Rabbana (our Lord) is a called noun with no ya before it. In the duas of the Quran, the ya before rabb is usually left out.",
+            "de": "Rabbana (unser Herr) ist ein gerufenes Nomen ohne ya davor. In den Bittgebeten des Korans fehlt das ya vor rabb meistens.",
+            "ar": "«ربَّنا» منادى مضاف منصوب حُذف منه حرف النداء، وهو الغالب في أدعية القرآن."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Ibn Ajurrum, al-Muqaddima al-Ajurrumiyya"
+        },
+        {
+          "label": "Ibn Hisham, Qatr an-Nada wa Ball as-Sada"
+        }
+      ]
+    },
+    {
+      "id": "quranic-arabic-32-oath",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": {
+          "en": "Arabic of the Quran · 32",
+          "de": "Arabisch des Korans · 32",
+          "ar": "عربية القرآن · ٣٢"
+        },
+        "title": {
+          "en": "Wa-: the grammar of the oath",
+          "de": "Wa-: die Grammatik des Schwurs",
+          "ar": "الواو: نحو القسم"
+        },
+        "sub": {
+          "en": "By the sun, by time: how an oath is built and where its answer lies",
+          "de": "Bei der Sonne, bei der Zeit: wie ein Schwur gebaut ist und wo seine Antwort liegt",
+          "ar": "كيف يُبنى القسم وأين جوابه"
+        },
+        "arabic": "وَ · تَ · بِ"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "Three parts of an oath",
+            "de": "Drei Teile eines Schwurs",
+            "ar": "أركان القسم"
+          },
+          "body": {
+            "en": "An oath has three parts: the particle (wa, ta or bi), the thing sworn by (muqsam bihi) in jarr, and the answer (jawab al-qasam): the statement the oath is made for.",
+            "de": "Ein Schwur hat drei Teile: die Partikel (wa, ta oder bi), das, wobei geschworen wird (muqsam bihi), im jarr, und die Antwort (jawab al-qasam): die Aussage, um derentwillen geschworen wird.",
+            "ar": "للقسم ثلاثة أركان: حرف القسم (الواو أو التاء أو الباء)، والمقسَم به مجرورًا، وجواب القسم وهو الكلام المقصود بالتوكيد."
+          }
+        },
+        {
+          "verse": "103:1-2",
+          "check": "By time",
+          "title": {
+            "en": "Wa: by",
+            "de": "Wa: bei",
+            "ar": "واو القسم"
+          },
+          "body": {
+            "en": "Wa before al-'asri swears by time; al-'asri is in jarr. The answer follows at once, made doubly firm by inna and la.",
+            "de": "Wa vor al-'asri schwört bei der Zeit; al-'asri steht im jarr. Die Antwort folgt sofort, doppelt bekräftigt durch inna und la.",
+            "ar": "الواو حرف قسم وجر، و«العصرِ» مقسم به مجرور، وجواب القسم في الآية التالية مؤكد بـ«إنّ» واللام."
+          }
+        },
+        {
+          "verse": "91:1-3",
+          "check": "By the sun",
+          "title": {
+            "en": "A chain of oaths",
+            "de": "Eine Kette von Schwüren",
+            "ar": "أقسام متتابعة"
+          },
+          "body": {
+            "en": "Surah ash-Shams opens with oath after oath, each with wa and a noun in jarr. Many find the answer in verse 9 (qad aflaha); others take it as implied.",
+            "de": "Sure ash-Shams beginnt mit Schwur auf Schwur, jeder mit wa und einem Nomen im jarr. Viele sehen die Antwort in Vers 9, bei qad aflaha; andere halten sie für ausgelassen.",
+            "ar": "تتتابع الأقسام في أول سورة الشمس، كلٌّ بالواو ومجرور بعدها، والجواب عند كثير من المفسرين في الآية التاسعة، ويرى آخرون أنه محذوف."
+          }
+        },
+        {
+          "verse": "95:1-3",
+          "check": "By the fig",
+          "title": {
+            "en": "An answer with laqad",
+            "de": "Eine Antwort mit laqad",
+            "ar": "الجواب بـ«لقد»"
+          },
+          "body": {
+            "en": "Three verses of oaths. The answer opens verse 4 with laqad, la and qad together: a frequent start for the answer to an oath.",
+            "de": "Drei Verse voller Schwüre. Die Antwort beginnt Vers 4 mit laqad, la und qad zusammen: ein häufiger Auftakt für die Antwort eines Schwurs.",
+            "ar": "ثلاث آيات من الأقسام، وجوابها في الآية الرابعة مفتتح بـ«لقد»: اللام الواقعة في جواب القسم و«قد»."
+          }
+        },
+        {
+          "verse": "21:57",
+          "check": "plan against your idols",
+          "title": {
+            "en": "Ta: an oath by Allah",
+            "de": "Ta: ein Schwur bei Allah",
+            "ar": "تاء القسم"
+          },
+          "body": {
+            "en": "In tallahi, the particle ta is used almost only with the name Allah. Here Ibrahim swears, and the answer uses la with a strong nun of emphasis.",
+            "de": "In tallahi steht die Partikel ta fast nur vor dem Namen Allah. Hier schwört Ibrahim, und die Antwort nutzt la mit einem starken Nun der Betonung.",
+            "ar": "التاء حرف قسم لا يدخل في الغالب إلا على لفظ الجلالة، والقائل إبراهيم عليه السلام، وجواب القسم باللام ونون التوكيد الثقيلة."
+          }
+        },
+        {
+          "verse": "75:1",
+          "check": "I swear by the Day of Resurrection",
+          "title": {
+            "en": "La uqsimu: a puzzling la",
+            "de": "La uqsimu: ein rätselhaftes la",
+            "ar": "«لا أقسم»"
+          },
+          "body": {
+            "en": "La uqsimu is translated 'I swear', not 'I do not swear'. Scholars differ on the la: added for emphasis, or a rejection of what the deniers said.",
+            "de": "La uqsimu wird mit „ich schwöre“ übersetzt, nicht mit „ich schwöre nicht“. Die Gelehrten sind uneins über das la: ein verstärkendes Zusatzwort oder eine Zurückweisung dessen, was die Leugner sagten.",
+            "ar": "تُفسَّر «لا أقسم» بمعنى القسم، واختلف العلماء في «لا»: فقيل زائدة للتوكيد، وقيل نافية لكلام المنكرين قبلها."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Ibn al-Qayyim, at-Tibyan fi Aqsam al-Qur'an"
+        },
+        {
+          "label": "Ibn Hisham, Mughni al-Labib 'an Kutub al-A'arib"
+        },
+        {
+          "label": "al-Qurtubi, al-Jami' li-Ahkam al-Qur'an, on 91:9 (the answer of the oath)",
+          "url": "https://quran.com/91:9/tafsirs/ar-tafseer-al-qurtubi"
+        },
+        {
+          "label": "al-Qurtubi, al-Jami' li-Ahkam al-Qur'an, on 75:1 (the la of la uqsimu)",
+          "url": "https://quran.com/75:1/tafsirs/ar-tafseer-al-qurtubi"
+        }
+      ]
+    },
+    {
+      "id": "quranic-arabic-33-questions",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": {
+          "en": "Arabic of the Quran · 33",
+          "de": "Arabisch des Korans · 33",
+          "ar": "عربية القرآن · ٣٣"
+        },
+        "title": {
+          "en": "Asking in Arabic: hal, a-, ma, kayfa, ayna",
+          "de": "Fragen auf Arabisch: hal, a-, ma, kayfa, ayna",
+          "ar": "أدوات الاستفهام في القرآن"
+        },
+        "sub": {
+          "en": "The question words, and why many questions in the Quran are not waiting for an answer",
+          "de": "Die Fragewörter und warum viele Fragen im Koran nicht auf eine Antwort warten",
+          "ar": "أدوات الاستفهام، ولماذا لا ينتظر كثير من أسئلة القرآن جوابًا"
+        },
+        "arabic": "هَلْ · أَ · مَا · كَيْفَ · أَيْنَ"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "The question words",
+            "de": "Die Fragewörter",
+            "ar": "أدوات الاستفهام"
+          },
+          "list": {
+            "en": [
+              "hal and a-: yes or no?",
+              "man: who? · ma: what?",
+              "kayfa: how? · ayna: where?",
+              "mata: when? · ayy: which?",
+              "kam: how many? · lima: why?"
+            ],
+            "de": [
+              "hal und a-: ja oder nein?",
+              "man: wer? · ma: was?",
+              "kayfa: wie? · ayna: wo, wohin?",
+              "mata: wann? · ayy: welcher?",
+              "kam: wie viele? · lima: warum?"
+            ],
+            "ar": [
+              "هل والهمزة: يُجاب عنهما بنعم أو لا غالبًا",
+              "مَن: للعاقل · ما: لغير العاقل",
+              "كيف: للحال · أين: للمكان",
+              "متى: للزمان · أيّ: للتعيين",
+              "كم: للعدد · لِمَ: للسبب"
+            ]
+          }
+        },
+        {
+          "verse": "88:1",
+          "check": "Has there reached you",
+          "title": {
+            "en": "Hal: a question that draws you in",
+            "de": "Hal: eine Frage, die hineinzieht",
+            "ar": "هل: سؤال يشدّ الانتباه"
+          },
+          "body": {
+            "en": "Hal asks a yes-or-no question. Here it does not expect an answer: it awakens attention before the report begins.",
+            "de": "Hal stellt eine Ja-Nein-Frage. Hier erwartet es keine Antwort: es weckt Aufmerksamkeit, bevor der Bericht beginnt.",
+            "ar": "«هل» للاستفهام، وخرجت هنا إلى التشويق وإثارة الانتباه قبل الخبر."
+          }
+        },
+        {
+          "verse": "105:1",
+          "check": "Have you not considered",
+          "title": {
+            "en": "A- with lam: of course",
+            "de": "A- mit lam: aber gewiss",
+            "ar": "الهمزة مع «لم»: للتقرير"
+          },
+          "body": {
+            "en": "A-lam (have ... not?) asks in order to confirm: of course you have. Then kayfa (how) points to the manner of what happened.",
+            "de": "A-lam (hat ... nicht?) fragt, um zu bestätigen: aber gewiss. Dann weist kayfa (wie) auf die Art des Geschehens.",
+            "ar": "الهمزة مع «لم» للتقرير، و«كيف» تسأل عن الحال والهيئة."
+          }
+        },
+        {
+          "verse": "101:1-3",
+          "check": "Striking Calamity",
+          "title": {
+            "en": "Ma: a question of awe",
+            "de": "Ma: eine Frage der Ehrfurcht",
+            "ar": "ما: استفهام للتهويل"
+          },
+          "body": {
+            "en": "Ma asks 'what?', but the surah does not wait for a reply. The repeated question builds awe: the event is greater than any description.",
+            "de": "Ma fragt „was?“, doch die Sure wartet nicht auf eine Antwort. Die wiederholte Frage erzeugt Ehrfurcht: das Ereignis übersteigt jede Beschreibung.",
+            "ar": "«ما» استفهام خرج إلى التهويل والتعظيم، وتكراره يدل على أن الأمر فوق الوصف."
+          }
+        },
+        {
+          "verse": "55:60",
+          "check": "reward for good",
+          "title": {
+            "en": "Hal with the force of 'no'",
+            "de": "Hal mit der Kraft eines „nein“",
+            "ar": "«هل» بمعنى النفي"
+          },
+          "body": {
+            "en": "Followed by illa, hal works like a negative: the question carries a firm statement. Al-ihsan appears twice, once in the question, once in the answer.",
+            "de": "Gefolgt von illa wirkt hal wie eine Verneinung: die Frage trägt eine feste Aussage. Al-ihsan steht zweimal, einmal in der Frage, einmal in der Antwort.",
+            "ar": "«هل» هنا بمعنى النفي لمجيء «إلا» بعدها، والسؤال يحمل خبرًا مؤكدًا."
+          }
+        },
+        {
+          "verse": "81:26",
+          "check": "where are you going",
+          "title": {
+            "en": "Ayna: where to?",
+            "de": "Ayna: wohin?",
+            "ar": "أين"
+          },
+          "body": {
+            "en": "Ayna asks about place, here joined to fa: so where? Commentators read it as a wake-up call to those who turn away from the Quran.",
+            "de": "Ayna fragt nach dem Ort, hier verbunden mit fa: wohin also? Die Kommentatoren lesen es als Weckruf an alle, die sich vom Koran abwenden.",
+            "ar": "«أين» للسؤال عن المكان، والاستفهام هنا للتنبيه والتعجب من الإعراض عن القرآن."
+          }
+        },
+        {
+          "verse": "67:25",
+          "check": "When is this promise",
+          "title": {
+            "en": "Mata: when?",
+            "de": "Mata: wann?",
+            "ar": "متى"
+          },
+          "body": {
+            "en": "Mata asks about time. Here the deniers ask it in mockery; the following verse answers that this knowledge belongs to Allah alone.",
+            "de": "Mata fragt nach der Zeit. Hier fragen die Leugner spöttisch; der folgende Vers antwortet, dass dieses Wissen allein bei Allah liegt.",
+            "ar": "«متى» للسؤال عن الزمان، والسؤال هنا من المكذبين استهزاءً، وتردّ الآية التالية علم ذلك إلى الله وحده."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Ibn Hisham, Mughni al-Labib 'an Kutub al-A'arib"
+        },
+        {
+          "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 81:26",
+          "url": "https://quran.com/81:26/tafsirs/en-tafisr-ibn-kathir"
+        }
+      ]
+    }
+  ]
+}

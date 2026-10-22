@@ -1,0 +1,1075 @@
+{
+  "series": "khushu",
+  "label": { "en": "Presence in prayer", "de": "Andacht im Gebet", "ar": "الخشوع في الصلاة" },
+  "topic": "prayer",
+  "tradition": "all",
+  "items": [
+    {
+      "id": "khushu-01-what-is-khushu",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": { "en": "Presence in prayer · 1", "de": "Andacht im Gebet · 1", "ar": "الخشوع في الصلاة · ١" },
+        "title": { "en": "What khushu' really is", "de": "Was Khushūʿ wirklich ist", "ar": "ما الخشوع حقًّا؟" },
+        "sub": { "en": "Stillness of the body, presence of the heart: the soul of every prayer", "de": "Ruhe des Körpers, Gegenwart des Herzens: die Seele jedes Gebets", "ar": "سكون الجوارح وحضور القلب: روح كل صلاة" },
+        "arabic": "الخُشُوع"
+      },
+      "slides": [
+        {
+          "title": { "en": "A word of stillness", "de": "Ein Wort der Stille", "ar": "كلمة تدل على السكون" },
+          "arabic": "خ ش ع",
+          "body": { "en": "The root kh-sh-' speaks of lowering, stillness and humility. Khushu' in prayer means a body at rest and a heart that knows before whom it stands. In the Quran the root appears in 17 words.", "de": "Die Wurzel kh-sh-ʿ spricht von Senken, Stille und Demut. Khushūʿ im Gebet bedeutet: ein ruhiger Körper und ein Herz, das weiß, vor wem es steht. Im Koran kommt die Wurzel in 17 Wörtern vor.", "ar": "يدل الجذر خ ش ع على الانخفاض والسكون والتذلل. والخشوع في الصلاة جسد ساكن وقلب يعلم بين يدي من يقف. ويرد هذا الجذر في القرآن في ١٧ كلمة." }
+        },
+        {
+          "verse": "23:1-2",
+          "check": "humbly intent",
+          "title": { "en": "The first mark of success", "de": "Das erste Zeichen des Erfolgs", "ar": "أول صفات المفلحين" },
+          "body": { "en": "Surah al-Mu'minun lists the qualities of the successful. The very first is not how much they pray, but how they stand in it.", "de": "Sure al-Muʾminūn zählt die Eigenschaften der Erfolgreichen auf. Die erste ist nicht, wie viel sie beten, sondern wie sie im Gebet stehen.", "ar": "تعدّد سورة المؤمنون صفات المفلحين، وأولها ليس كثرة الصلاة، بل حال القلب فيها." }
+        },
+        {
+          "verse": "41:39",
+          "check": "earth stilled",
+          "title": { "en": "Like earth waiting for rain", "de": "Wie Erde, die auf Regen wartet", "ar": "كالأرض تنتظر المطر" },
+          "body": { "en": "The same root describes the earth lying still before the rain. A humble heart is like that soil: quiet, open, ready to come alive.", "de": "Dieselbe Wurzel beschreibt die Erde, die still daliegt, bevor der Regen kommt. Ein demütiges Herz gleicht diesem Boden: ruhig, offen, bereit aufzuleben.", "ar": "يصف الجذر نفسه الأرض الساكنة قبل نزول المطر. والقلب الخاشع كتلك الأرض: هادئ منفتح مستعد للحياة." }
+        },
+        {
+          "verse": "59:21",
+          "check": "humbled and splitting",
+          "title": { "en": "What these words would do to a mountain", "de": "Was diese Worte mit einem Berg täten", "ar": "لو نزل على جبل" },
+          "body": { "en": "If a mountain would be humbled by these words, the heart that hears them in prayer is invited to soften.", "de": "Würde ein Berg sich vor diesen Worten demütigen, so ist das Herz, das sie im Gebet hört, eingeladen, weich zu werden.", "ar": "إذا كان الجبل يخشع لهذا الكلام، فالقلب الذي يسمعه في الصلاة مدعوّ إلى أن يلين." }
+        },
+        {
+          "title": { "en": "Heart first, then body", "de": "Erst das Herz, dann der Körper", "ar": "القلب أولًا ثم الجوارح" },
+          "body": { "en": "Scholars describe khushu' as something that lives in the heart and shows in the limbs: no restless hands, no wandering eyes, calm in every position. Outer calm helps inner calm, and the other way round.", "de": "Gelehrte beschreiben Khushūʿ als etwas, das im Herzen wohnt und sich in den Gliedern zeigt: keine unruhigen Hände, keine umherschweifenden Blicke, Ruhe in jeder Haltung. Äußere Ruhe hilft der inneren, und umgekehrt.", "ar": "يصف العلماء الخشوع بأنه يسكن القلب ويظهر على الجوارح: لا عبث باليدين، ولا تلفّت بالعينين، وطمأنينة في كل ركن. والسكون الظاهر يعين على السكون الباطن، والعكس." }
+        },
+        {
+          "title": { "en": "Not a mood you force", "de": "Keine Stimmung, die man erzwingt", "ar": "ليس شعورًا يُصطنع" },
+          "body": { "en": "Khushu' is not tears on demand or a special feeling. It is attention and humility, and it grows step by step: by knowing whom you address and what you are saying. That is what this series is about.", "de": "Khushūʿ sind keine Tränen auf Knopfdruck und kein besonderes Gefühl. Es ist Aufmerksamkeit und Demut, und es wächst Schritt für Schritt: indem Sie wissen, zu wem Sie sprechen und was Sie sagen. Darum geht es in dieser Reihe.", "ar": "ليس الخشوع دموعًا تُستدعى ولا شعورًا خاصًّا، بل انتباه وتواضع ينموان خطوة بعد خطوة: بأن تعرف من تخاطب وماذا تقول. وهذا موضوع هذه السلسلة." }
+        }
+      ],
+      "sources": [
+        { "label": "Quranic Arabic Corpus, root kh-sh-'", "url": "https://corpus.quran.com/qurandictionary.jsp?q=x%24E" },
+        { "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 23:1-2", "url": "https://quran.com/23:2/tafsirs/en-tafisr-ibn-kathir" }
+      ]
+    },
+    {
+      "id": "khushu-02-a-living-prayer",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": { "en": "Presence in prayer · 2", "de": "Andacht im Gebet · 2", "ar": "الخشوع في الصلاة · ٢" },
+        "title": { "en": "A prayer that is alive", "de": "Ein Gebet, das lebt", "ar": "صلاة حيّة" },
+        "sub": { "en": "Why the Quran cares not only that we pray, but how", "de": "Warum der Koran nicht nur fragt, ob wir beten, sondern wie", "ar": "لماذا يهتم القرآن بكيفية الصلاة لا بأدائها فقط" },
+        "arabic": "حضور القلب"
+      },
+      "slides": [
+        {
+          "verse": "20:14",
+          "check": "for My remembrance",
+          "title": { "en": "Prayer was made for remembrance", "de": "Das Gebet ist zum Gedenken da", "ar": "الصلاة لذكر الله" },
+          "body": { "en": "Said to Musa at the very start of his mission: the purpose of prayer is to remember Allah.", "de": "Zu Mūsā am Anfang seiner Sendung gesagt: Der Sinn des Gebets ist das Gedenken Allahs.", "ar": "قيل لموسى في بداية رسالته: غاية الصلاة ذكر الله." }
+        },
+        {
+          "verse": "107:4-5",
+          "check": "heedless of their prayer",
+          "title": { "en": "A warning to people who pray", "de": "Eine Warnung an Betende", "ar": "تحذير للمصلين" },
+          "body": { "en": "Strikingly, it is addressed to people who pray. Commentators explain the heedlessness as neglect: delaying it, rushing it, praying without care.", "de": "Bemerkenswert: Sie richtet sich an Menschen, die beten. Kommentatoren erklären die Achtlosigkeit als Vernachlässigung: aufschieben, hetzen, ohne Sorgfalt beten.", "ar": "اللافت أنها موجّهة إلى من يصلّون. ويفسّر المفسرون السهو هنا بالتهاون: تأخيرها، أو العجلة فيها، أو أداؤها بلا اهتمام." }
+        },
+        {
+          "verse": "29:45",
+          "check": "prohibits immorality",
+          "title": { "en": "A prayer that reaches the day", "de": "Ein Gebet, das in den Tag reicht", "ar": "صلاة يمتد أثرها في اليوم" },
+          "body": { "en": "Its effect is meant to reach your words and deeds after the salam. The more present the prayer, the further its light reaches.", "de": "Seine Wirkung soll nach dem Salām in Worte und Taten reichen. Je gegenwärtiger das Gebet, desto weiter reicht sein Licht.", "ar": "أثرها يمتد بعد السلام إلى القول والعمل، وكلما حضر القلب فيها امتدّ نورها أبعد." }
+        },
+        {
+          "verse": "26:217-219",
+          "check": "those who prostrate",
+          "title": { "en": "Seen when you stand", "de": "Gesehen, wenn Sie stehen", "ar": "يراك حين تقوم" },
+          "body": { "en": "Allah sees you when you rise to pray and as you move among those in sujud. Khushu' begins with knowing you are seen.", "de": "Allah sieht Sie, wenn Sie sich zum Gebet erheben und sich unter den Niederwerfenden bewegen. Khushūʿ beginnt mit diesem Wissen.", "ar": "الله يراك حين تقوم إلى الصلاة، ويرى حركتك بين الساجدين. والخشوع يبدأ من هذا اليقين." }
+        },
+        {
+          "title": { "en": "Khushu' and ihsan", "de": "Khushūʿ und Iḥsān", "ar": "الخشوع والإحسان" },
+          "body": { "en": "Scholars link khushu' to ihsan, the highest level of faith: worship with a living awareness of Allah. It is not reached in a day, but every prayer is a step towards it.", "de": "Gelehrte verbinden Khushūʿ mit Iḥsān, der höchsten Stufe des Glaubens: Anbetung im lebendigen Bewusstsein Allahs. Man erreicht sie nicht an einem Tag, doch jedes Gebet ist ein Schritt dorthin.", "ar": "يربط العلماء الخشوع بالإحسان، أعلى مراتب الدين: عبادة مع استحضار حيّ لله. لا يُبلغ في يوم، لكن كل صلاة خطوة إليه." }
+        },
+        {
+          "title": { "en": "What presence changes", "de": "Was Gegenwart verändert", "ar": "ما يغيّره حضور القلب" },
+          "list": {
+            "en": ["Words you say become words you mean", "Minutes of duty become minutes of rest", "Your day carries the calm of the prayer"],
+            "de": ["Gesprochene Worte werden gemeinte Worte", "Minuten der Pflicht werden Minuten der Ruhe", "Ihr Tag trägt die Ruhe des Gebets weiter"],
+            "ar": ["تصير الكلمات المنطوقة كلمات مقصودة", "تصير دقائق الواجب دقائق راحة", "يحمل يومك سكينة الصلاة"]
+          }
+        }
+      ],
+      "sources": [{ "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 107:4-5", "url": "https://quran.com/107:4/tafsirs/en-tafisr-ibn-kathir" }]
+    },
+    {
+      "id": "khushu-03-wudu",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": { "en": "Presence in prayer · 3", "de": "Andacht im Gebet · 3", "ar": "الخشوع في الصلاة · ٣" },
+        "title": { "en": "Wudu: where presence begins", "de": "Wuḍūʾ: wo die Gegenwart beginnt", "ar": "الوضوء: بداية الحضور" },
+        "sub": { "en": "The prayer starts before the first takbir: at the water", "de": "Das Gebet beginnt vor dem ersten Takbīr: am Wasser", "ar": "تبدأ الصلاة قبل تكبيرة الإحرام: عند الماء" },
+        "arabic": "الوُضُوء"
+      },
+      "slides": [
+        {
+          "title": { "en": "A doorway, not a chore", "de": "Eine Schwelle, keine Pflichtübung", "ar": "عتبة لا عادة" },
+          "body": { "en": "Wudu moves you from the noise of the day to the stillness of prayer. Do it slowly, without talking or scrolling, and let each washing tell your heart: something important is coming.", "de": "Die Gebetswaschung führt Sie vom Lärm des Tages in die Stille des Gebets. Vollziehen Sie sie langsam, ohne Gespräch und ohne Bildschirm, und lassen Sie jede Waschung Ihrem Herzen sagen: Gleich kommt etwas Wichtiges.", "ar": "ينقلك الوضوء من ضجيج اليوم إلى سكون الصلاة. توضّأ بتأنٍّ، بلا حديث ولا تصفّح للهاتف، ودع كل غسلة تقول لقلبك: أمر عظيم قادم." }
+        },
+        {
+          "hadith": "bukhari:1934",
+          "check": "does not think of worldly things",
+          "title": { "en": "Two rak'at with a present heart", "de": "Zwei Rakʿa mit gegenwärtigem Herzen", "ar": "ركعتان بقلب حاضر" },
+          "body": { "en": "Uthman showed the Prophet's wudu, then passed on a promise for the prayer that follows it, when the mind stays with Allah.", "de": "ʿUthmān zeigte die Waschung des Propheten und gab eine Verheißung für das Gebet danach weiter, wenn der Geist bei Allah bleibt.", "ar": "أرى عثمانُ الناسَ وضوءَ النبي، ثم نقل بشارة لمن صلّى بعده وقلبه مع الله." }
+        },
+        {
+          "verse": "87:14-15",
+          "check": "purifies himself",
+          "title": { "en": "Purify, remember, pray", "de": "Reinigen, gedenken, beten", "ar": "طهارة ثم ذكر ثم صلاة" },
+          "body": { "en": "Two short verses trace the path to success: purification, remembering His name, then prayer. Your wudu walks that path every day.", "de": "Zwei kurze Verse zeichnen den Weg zum Erfolg: Reinigung, Gedenken Seines Namens, dann das Gebet. Ihre Waschung geht diesen Weg jeden Tag.", "ar": "آيتان قصيرتان ترسمان طريق الفلاح: طهارة، ثم ذكر اسمه، ثم صلاة. ووضوؤك يسلك هذا الطريق كل يوم." }
+        },
+        {
+          "dua": "hisn:9:1",
+          "check": "remain clean and pure",
+          "title": { "en": "Ask for the inner washing too", "de": "Bitten Sie auch um die innere Reinigung", "ar": "اسأل الطهارة الباطنة أيضًا" },
+          "body": { "en": "After wudu, Hisnul Muslim lists this short dua: water cleans the limbs, repentance cleans the heart.", "de": "Nach der Waschung nennt Ḥiṣn al-Muslim dieses kurze Bittgebet: Wasser reinigt die Glieder, Reue reinigt das Herz.", "ar": "بعد الوضوء يذكر حصن المسلم هذا الدعاء القصير: الماء يطهّر الأعضاء، والتوبة تطهّر القلب." }
+        },
+        {
+          "title": { "en": "Small habits, big difference", "de": "Kleine Gewohnheiten, große Wirkung", "ar": "عادات صغيرة وأثر كبير" },
+          "list": {
+            "en": ["Silence your phone before you start, not after", "Begin with Bismillah and slow your breathing", "Let each limb remind you of what it did today", "Walk to your prayer place without hurry"],
+            "de": ["Schalten Sie das Telefon vorher stumm, nicht danach", "Beginnen Sie mit Bismillāh und atmen Sie ruhiger", "Lassen Sie jedes Glied Sie an seinen Tag erinnern", "Gehen Sie ohne Eile zu Ihrem Gebetsplatz"],
+            "ar": ["أسكِت هاتفك قبل أن تبدأ لا بعده", "ابدأ بالبسملة وهدّئ أنفاسك", "دع كل عضو يذكّرك بما عمل اليوم", "امشِ إلى مصلّاك بلا عجلة"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "khushu-04-adhan-to-takbir",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": { "en": "Presence in prayer · 4", "de": "Andacht im Gebet · 4", "ar": "الخشوع في الصلاة · ٤" },
+        "title": { "en": "From the adhan to the first takbir", "de": "Vom Adhān bis zum ersten Takbīr", "ar": "من الأذان إلى تكبيرة الإحرام" },
+        "sub": { "en": "How the minutes before prayer prepare the heart", "de": "Wie die Minuten vor dem Gebet das Herz vorbereiten", "ar": "كيف تهيّئ الدقائق التي تسبق الصلاة القلب" },
+        "arabic": "الأذان"
+      },
+      "slides": [
+        {
+          "dua": "hisn:15:0",
+          "check": "repeats just as the mu-aththin",
+          "title": { "en": "Answer the call", "de": "Antworten Sie auf den Ruf", "ar": "أجِب النداء" },
+          "body": { "en": "Repeating the adhan turns you from listener into participant. Your heart starts walking to the prayer before your feet do.", "de": "Wer den Adhān nachspricht, wird vom Zuhörer zum Teilnehmer. Das Herz macht sich auf den Weg zum Gebet, bevor die Füße es tun.", "ar": "ترديد الأذان ينقلك من سامع إلى مشارك، فيسير قلبك إلى الصلاة قبل قدميك." }
+        },
+        {
+          "dua": "hisn:15:4",
+          "check": "not rejected",
+          "title": { "en": "A window for your dua", "de": "Ein Fenster für Ihr Bittgebet", "ar": "وقت للدعاء" },
+          "body": { "en": "Between the adhan and the iqama lies a time of answered dua. Spend it asking, not scrolling.", "de": "Zwischen Adhān und Iqāma liegt eine Zeit der erhörten Bitte. Verbringen Sie sie mit Bitten, nicht mit dem Bildschirm.", "ar": "بين الأذان والإقامة وقت يُرجى فيه قبول الدعاء، فاجعله للسؤال لا للهاتف." }
+        },
+        {
+          "hadith": "bukhari:636",
+          "check": "calmness and solemnity",
+          "title": { "en": "Walk, do not run", "de": "Gehen Sie, statt zu rennen", "ar": "امشِ ولا تسرع" },
+          "body": { "en": "Even when the iqama has begun, the Prophet asked for calm steps. A breathless arrival often means a scattered heart.", "de": "Selbst wenn die Iqāma schon begonnen hat, verlangte der Prophet ruhige Schritte. Wer außer Atem ankommt, betet oft mit zerstreutem Herzen.", "ar": "حتى إذا أُقيمت الصلاة أمر النبي بالمشي بسكينة، فمن وصل لاهثًا صلّى غالبًا بقلب مشتّت." }
+        },
+        {
+          "hadith": "bukhari:659",
+          "check": "waiting for the prayer",
+          "title": { "en": "Waiting is already worship", "de": "Warten ist schon Anbetung", "ar": "الانتظار عبادة" },
+          "body": { "en": "Come a few minutes early. The time you spend waiting for the prayer already counts, and the angels pray for you while you sit.", "de": "Kommen Sie ein paar Minuten früher. Die Zeit des Wartens zählt bereits, und die Engel bitten für Sie, während Sie sitzen.", "ar": "تعال قبل الصلاة بدقائق؛ فوقت الانتظار محسوب لك، والملائكة تدعو لك وأنت جالس." }
+        },
+        {
+          "title": { "en": "Arrive inside before you begin", "de": "Kommen Sie innerlich an, bevor Sie beginnen", "ar": "احضر بقلبك قبل أن تبدأ" },
+          "body": { "en": "Before the first takbir, take one quiet moment. Remember whom you are about to stand before, set one worry aside, and decide to be here for these few minutes.", "de": "Nehmen Sie sich vor dem ersten Takbīr einen stillen Moment. Erinnern Sie sich, vor wem Sie gleich stehen, legen Sie eine Sorge beiseite und entscheiden Sie sich, für diese wenigen Minuten ganz da zu sein.", "ar": "قبل تكبيرة الإحرام خذ لحظة هادئة: تذكّر بين يدي من ستقف، وضع همًّا واحدًا جانبًا، واعزم أن تكون حاضرًا في هذه الدقائق." }
+        }
+      ]
+    },
+    {
+      "id": "khushu-05-allahu-akbar",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": { "en": "Presence in prayer · 5", "de": "Andacht im Gebet · 5", "ar": "الخشوع في الصلاة · ٥" },
+        "title": { "en": "What you say with Allahu akbar", "de": "Was Sie mit Allāhu akbar sagen", "ar": "ماذا تقول حين تكبّر؟" },
+        "sub": { "en": "Two words that open the prayer and return at every movement", "de": "Zwei Worte, die das Gebet eröffnen und bei jeder Bewegung wiederkehren", "ar": "كلمتان تفتتحان الصلاة وتعودان مع كل حركة" },
+        "arabic": "اللهُ أَكْبَر"
+      },
+      "slides": [
+        {
+          "title": { "en": "Greater than anything", "de": "Größer als alles", "ar": "أكبر من كل شيء" },
+          "arabic": "أَكْبَر",
+          "body": { "en": "Akbar is a form of comparison: greater. Greater than what? It is left open on purpose. Greater than your worry, your plans, your phone, and anything your mind can picture.", "de": "Akbar ist eine Steigerungsform: größer. Größer als was? Das bleibt bewusst offen. Größer als Ihre Sorge, Ihre Pläne, Ihr Telefon und alles, was sich Ihr Verstand vorstellen kann.", "ar": "أكبر صيغة تفضيل، ولم يُذكر المفضَّل عليه قصدًا: فالله أكبر من همّك وخططك وهاتفك، ومن كل ما يتصوره عقلك." }
+        },
+        {
+          "title": { "en": "The takbir that closes a door", "de": "Der Takbīr, der eine Tür schließt", "ar": "تكبيرة تغلق بابًا" },
+          "body": { "en": "The first one is called takbirat al-ihram, the takbir of sanctity. With it, eating, talking and everyday business are set aside until the salam. You step out of the world and into a meeting.", "de": "Der erste heißt Takbīrat al-Iḥrām, der Takbīr der Weihe. Mit ihm sind Essen, Reden und Alltägliches bis zum Salām untersagt. Sie treten aus der Welt heraus und in eine Begegnung hinein.", "ar": "التكبيرة الأولى تسمّى تكبيرة الإحرام؛ بها يحرم الأكل والكلام وشؤون الدنيا حتى السلام. تخرج بها من الدنيا وتدخل في لقاء." }
+        },
+        {
+          "verse": "74:3",
+          "check": "your Lord glorify",
+          "title": { "en": "An early command", "de": "Ein früher Auftrag", "ar": "من أوائل الأوامر" },
+          "body": { "en": "In the opening verses of Surah al-Muddaththir, the Prophet is told to magnify his Lord. The takbir is that command, spoken.", "de": "In den ersten Versen der Sure al-Muddaththir wird dem Propheten aufgetragen, seinen Herrn groß zu preisen. Der Takbīr ist dieser Auftrag, ausgesprochen.", "ar": "في مطلع سورة المدثر أُمر النبي بتكبير ربه، والتكبير في الصلاة امتثال لهذا الأمر." }
+        },
+        {
+          "verse": "17:111",
+          "check": "glorify Him",
+          "title": { "en": "How Surah al-Isra ends", "de": "Wie Sure al-Isrāʾ endet", "ar": "خاتمة سورة الإسراء" },
+          "body": { "en": "Surah al-Isra closes with praise and with a call to magnify Allah fully. Every takbir in prayer echoes it.", "de": "Sure al-Isrāʾ schließt mit Lob und mit dem Ruf, Allah vollkommen groß zu preisen. Jeder Takbīr im Gebet ist ein Echo davon.", "ar": "تُختم سورة الإسراء بالحمد والأمر بتعظيم الله تعظيمًا تامًّا، وكل تكبيرة في الصلاة صدى لذلك." }
+        },
+        {
+          "title": { "en": "A fresh start at every movement", "de": "Ein Neuanfang bei jeder Bewegung", "ar": "بداية جديدة مع كل حركة" },
+          "body": { "en": "The takbir returns as you bow, prostrate and rise. If your mind has drifted, each one is a chance to come back. Say it as a meaning, not as a signal to move.", "de": "Der Takbīr kehrt wieder, wenn Sie sich verneigen, niederwerfen und aufrichten. Ist der Geist abgeschweift, ist jeder eine Gelegenheit zur Rückkehr. Sprechen Sie ihn als Bedeutung, nicht als Signal zur Bewegung.", "ar": "يتكرر التكبير عند الركوع والسجود والقيام، فإن شرد ذهنك فكل تكبيرة فرصة للعودة. قلها معنىً لا إشارةً للانتقال." }
+        },
+        {
+          "title": { "en": "Before your next takbir", "de": "Vor Ihrem nächsten Takbīr", "ar": "قبل تكبيرتك القادمة" },
+          "list": {
+            "en": ["Name one worry, then set it down", "Tell yourself: Allah is greater than this", "Mean the words, do not only pronounce them"],
+            "de": ["Benennen Sie eine Sorge und legen Sie sie ab", "Sagen Sie sich: Allah ist größer als das", "Meinen Sie die Worte, statt sie nur auszusprechen"],
+            "ar": ["سمِّ همًّا واحدًا ثم ضعه جانبًا", "قل لنفسك: الله أكبر من هذا", "اقصد الكلمة ولا تكتفِ بنطقها"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "khushu-06-opening-dua",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": { "en": "Presence in prayer · 6", "de": "Andacht im Gebet · 6", "ar": "الخشوع في الصلاة · ٦" },
+        "title": { "en": "The opening dua: three pictures for the heart", "de": "Das Eröffnungsgebet: drei Bilder für das Herz", "ar": "دعاء الاستفتاح: ثلاث صور للقلب" },
+        "sub": { "en": "A quiet supplication between the first takbir and al-Fatiha", "de": "Ein leises Bittgebet zwischen dem ersten Takbīr und al-Fātiḥa", "ar": "دعاء خافت بين تكبيرة الإحرام والفاتحة" },
+        "arabic": "دعاء الاستفتاح"
+      },
+      "slides": [
+        {
+          "title": { "en": "A pause before the recitation", "de": "Ein Innehalten vor der Rezitation", "ar": "وقفة قبل القراءة" },
+          "body": { "en": "After the first takbir, the Prophet would pause quietly before reciting, and in that pause he asked to be cleansed. Before you speak to Allah with His words, you ask to be made ready.", "de": "Nach dem ersten Takbīr hielt der Prophet still inne, bevor er rezitierte, und bat in dieser Pause um Reinigung. Bevor Sie mit Allahs Worten zu Ihm sprechen, bitten Sie darum, bereit gemacht zu werden.", "ar": "بعد التكبيرة الأولى كان النبي يسكت سكتة قبل القراءة، يسأل فيها التطهير. فقبل أن تناجي الله بكلامه تسأله أن يهيّئك." }
+        },
+        {
+          "dua": "hisn:16:0",
+          "check": "distance me from my sins",
+          "title": { "en": "The dua itself", "de": "Das Bittgebet selbst", "ar": "الدعاء" },
+          "body": { "en": "Read its meaning slowly once. Then notice the three pictures it paints.", "de": "Lesen Sie die Bedeutung einmal langsam. Achten Sie dann auf die drei Bilder, die es malt.", "ar": "اقرأ معناه مرة بتأنٍّ، ثم تأمّل الصور الثلاث فيه." }
+        },
+        {
+          "title": { "en": "Picture one: a distance", "de": "Erstes Bild: eine Entfernung", "ar": "الصورة الأولى: المسافة" },
+          "body": { "en": "You ask for a gap between you and your sins as wide as the horizons are apart. Not only forgiveness for the past, but distance from repeating it.", "de": "Sie bitten um einen Abstand zu Ihren Sünden, so weit wie die Horizonte voneinander entfernt sind. Nicht nur Vergebung für Vergangenes, sondern Abstand davor, es zu wiederholen.", "ar": "تسأل أن يكون بينك وبين ذنوبك بُعد كما بين الأفقين: لا مغفرة ما مضى فحسب، بل البعد عن العودة إليه." }
+        },
+        {
+          "title": { "en": "Picture two: a white garment", "de": "Zweites Bild: ein weißes Gewand", "ar": "الصورة الثانية: الثوب الأبيض" },
+          "body": { "en": "On white cloth every stain shows. Asking to be cleaned like it means asking for a heart that notices even small faults, and is washed of them.", "de": "Auf weißem Stoff sieht man jeden Fleck. Wer bittet, so gereinigt zu werden, bittet um ein Herz, das auch kleine Fehler bemerkt und von ihnen gewaschen wird.", "ar": "على الثوب الأبيض يظهر كل أثر. فمن سأل أن يُنقّى كذلك سأل قلبًا يلحظ صغير الذنوب ويُغسل منها." }
+        },
+        {
+          "title": { "en": "Picture three: water that cools", "de": "Drittes Bild: Wasser, das kühlt", "ar": "الصورة الثالثة: ماء يبرّد" },
+          "body": { "en": "Water, snow and ice do more than clean: they cool. One way to read the picture: the heat of guilt, soothed by forgiveness.", "de": "Wasser, Schnee und Eis reinigen nicht nur, sie kühlen auch. Eine Lesart des Bildes: die Hitze der Schuld, gelindert durch Vergebung.", "ar": "الماء والثلج والبرد لا تنظّف فحسب، بل تبرّد أيضًا. ومن معاني الصورة: حرارة الذنب تُطفئها المغفرة." }
+        },
+        {
+          "title": { "en": "Making it yours", "de": "Es zu Ihrem eigenen machen", "ar": "ليكون دعاءك أنت" },
+          "list": {
+            "en": ["Hisnul Muslim lists several openings: learn one with its meaning", "Say it quietly and without hurry", "Keep one sin in mind you want distance from"],
+            "de": ["Ḥiṣn al-Muslim nennt mehrere Eröffnungen: Lernen Sie eine mit Bedeutung", "Sprechen Sie es leise und ohne Eile", "Denken Sie an eine Sünde, von der Sie Abstand wünschen"],
+            "ar": ["في حصن المسلم أدعية استفتاح عدة: احفظ واحدًا بمعناه", "قله بصوت خافت وبلا عجلة", "استحضر ذنبًا تريد البعد عنه"]
+          }
+        }
+      ],
+      "sources": [{ "label": "Sahih al-Bukhari 744: Abu Hurayra asks about the silent pause after the takbir", "url": "https://sunnah.com/bukhari:744" }]
+    },
+    {
+      "id": "khushu-07-fatiha-bismillah-and-praise",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": { "en": "Presence in prayer · 7", "de": "Andacht im Gebet · 7", "ar": "الخشوع في الصلاة · ٧" },
+        "title": { "en": "Al-Fatiha, verse by verse: Bismillah and praise", "de": "Al-Fātiḥa Vers für Vers: Basmala und Lob", "ar": "الفاتحة آية آية: البسملة والحمد" },
+        "sub": { "en": "Part 1 of 4: what you say each time you begin", "de": "Teil 1 von 4: was Sie bei jedem Beginn sagen", "ar": "الجزء ١ من ٤: ما تقوله في كل بداية" },
+        "arabic": "الفاتحة"
+      },
+      "slides": [
+        {
+          "title": { "en": "The surah you know best", "de": "Die Sure, die Sie am besten kennen", "ar": "السورة التي تحفظها أكثر من غيرها" },
+          "body": { "en": "You recite al-Fatiha in every prayer, many times a day. That is exactly why it can slip by unnoticed. These four posts slow it down, two or three verses at a time.", "de": "Sie rezitieren al-Fātiḥa in jedem Gebet, viele Male am Tag. Gerade deshalb rauscht sie leicht vorbei. Diese vier Beiträge verlangsamen sie, zwei bis drei Verse auf einmal.", "ar": "تقرأ الفاتحة في كل صلاة مرات كثيرة في اليوم، ولهذا بالذات قد تمرّ دون انتباه. هذه المنشورات الأربعة تتمهّل معها آيتين أو ثلاثًا في كل مرة." }
+        },
+        {
+          "verse": "1:1",
+          "check": "In the name of",
+          "title": { "en": "Begin with His name", "de": "Beginnen Sie mit Seinem Namen", "ar": "ابدأ باسمه" },
+          "body": { "en": "You do not start on your own strength. You start with His name, and the two names that follow are both mercy.", "de": "Sie beginnen nicht aus eigener Kraft, sondern mit Seinem Namen. Und die beiden Namen, die folgen, sind beide Barmherzigkeit.", "ar": "لا تبدأ بقوتك، بل باسمه. والاسمان اللذان يليانه كلاهما رحمة." }
+        },
+        {
+          "title": { "en": "Allah: the name above names", "de": "Allah: der Name über allen Namen", "ar": "الله: الاسم الجامع" },
+          "arabic": "الله",
+          "body": { "en": "Allah is His own name, the one all His other names describe. The name Allah occurs 2,699 times in the Quran. When you say it in prayer, you are naming the One you stand before.", "de": "Allah ist Sein Eigenname, den alle anderen Namen beschreiben. Der Name Allah kommt im Koran 2.699-mal vor. Wenn Sie ihn im Gebet aussprechen, nennen Sie Den, vor Dem Sie stehen.", "ar": "الله اسمه العَلَم الذي تعود إليه سائر أسمائه، ويرد في القرآن ٢٦٩٩ مرة. وحين تقوله في صلاتك فأنت تسمّي من تقف بين يديه." }
+        },
+        {
+          "verse": "1:2",
+          "check": "Lord of the worlds",
+          "title": { "en": "Praise, not only thanks", "de": "Lob, nicht nur Dank", "ar": "حمد لا شكر فقط" },
+          "body": { "en": "Hamd is praise out of love: for who He is, not only for what He gives. That is why it can be said on a hard day too.", "de": "Ḥamd ist Lob aus Liebe: für das, was Er ist, nicht nur für das, was Er gibt. Darum kann man es auch an einem schweren Tag sagen.", "ar": "الحمد ثناء مع محبة: على ذاته وصفاته لا على عطائه فحسب، ولذلك يقال في يوم الشدة أيضًا." }
+        },
+        {
+          "title": { "en": "Rabb: the Lord who nurtures", "de": "Rabb: der Herr, der umsorgt", "ar": "الربّ: المالك المربّي" },
+          "arabic": "ر ب ب",
+          "body": { "en": "Rabb is the master and owner who also provides, cares and brings each thing to completion, step by step. The root appears in 980 words of the Quran. You are not addressing a distant ruler, but the Lord who raised you.", "de": "Rabb ist der Herr und Besitzer, der zugleich versorgt, umsorgt und jedes Ding Schritt für Schritt zur Vollendung führt. Die Wurzel kommt in 980 Wörtern des Korans vor. Sie sprechen nicht zu einem fernen Herrscher, sondern zu dem Herrn, der Sie großgezogen hat.", "ar": "الربّ هو السيد المالك الذي يرزق ويرعى ويبلغ بكل شيء كماله شيئًا فشيئًا. ويرد جذره في القرآن في ٩٨٠ كلمة. أنت لا تخاطب حاكمًا بعيدًا، بل ربّك الذي ربّاك." }
+        },
+        {
+          "title": { "en": "Try this in your next prayer", "de": "Versuchen Sie es im nächsten Gebet", "ar": "جرّب هذا في صلاتك القادمة" },
+          "list": {
+            "en": ["Pause briefly at the end of each verse", "Say the praise with one blessing of today in mind", "Remember that 'the worlds' includes your small world"],
+            "de": ["Halten Sie am Ende jedes Verses kurz inne", "Sprechen Sie das Lob mit einer Gabe von heute im Sinn", "Denken Sie daran: „die Welten“ umfassen auch Ihre kleine Welt"],
+            "ar": ["قف وقفة قصيرة عند نهاية كل آية", "احمد الله وفي ذهنك نعمة من نعم اليوم", "تذكّر أن العالمين يشمل عالمك الصغير"]
+          }
+        }
+      ],
+      "sources": [{ "label": "Quranic Arabic Corpus, root r-b-b", "url": "https://corpus.quran.com/qurandictionary.jsp?q=rbb" }]
+    },
+    {
+      "id": "khushu-08-fatiha-mercy-and-the-day",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": { "en": "Presence in prayer · 8", "de": "Andacht im Gebet · 8", "ar": "الخشوع في الصلاة · ٨" },
+        "title": { "en": "Al-Fatiha, verse by verse: mercy and the Day", "de": "Al-Fātiḥa Vers für Vers: Barmherzigkeit und der Tag", "ar": "الفاتحة آية آية: الرحمة ويوم الدين" },
+        "sub": { "en": "Part 2 of 4: hope and awe, the two wings of the heart", "de": "Teil 2 von 4: Hoffnung und Ehrfurcht, die beiden Flügel des Herzens", "ar": "الجزء ٢ من ٤: الرجاء والخشية جناحا القلب" },
+        "arabic": "الرجاء والخشية"
+      },
+      "slides": [
+        {
+          "verse": "1:3",
+          "check": "Especially Merciful",
+          "title": { "en": "Mercy, once more", "de": "Noch einmal Barmherzigkeit", "ar": "الرحمة مرة أخرى" },
+          "body": { "en": "Right after naming Him Lord of all worlds, the surah returns to mercy. His lordship is not cold power. It is care.", "de": "Gleich nachdem Er Herr aller Welten genannt wurde, kehrt die Sure zur Barmherzigkeit zurück. Seine Herrschaft ist keine kalte Macht, sondern Fürsorge.", "ar": "بعد ذكر ربوبيته للعالمين تعود السورة إلى الرحمة: فربوبيته ليست قوة باردة بل رعاية." }
+        },
+        {
+          "verse": "1:4",
+          "check": "Day of Recompense",
+          "title": { "en": "Then the Day of Recompense", "de": "Dann der Tag des Gerichts", "ar": "ثم يوم الدين" },
+          "body": { "en": "Mercy is followed by accountability. A heart that only hopes grows careless; one that only fears loses hope. Al-Fatiha holds both.", "de": "Auf die Barmherzigkeit folgt die Verantwortung. Ein Herz, das nur hofft, wird nachlässig; eines, das nur fürchtet, verzweifelt. Al-Fātiḥa hält beides.", "ar": "بعد الرحمة تأتي المحاسبة. القلب الذي يرجو فقط يتهاون، والذي يخاف فقط ييأس، والفاتحة تجمع الأمرين." }
+        },
+        {
+          "title": { "en": "Owner and King", "de": "Besitzer und König", "ar": "مالك ومَلِك" },
+          "arabic": "مَالِك · مَلِك",
+          "body": { "en": "Verse four has two well-known canonical readings: Maalik, the Owner, and Malik, the King. Both are true. On that Day no one owns anything and no one rules except Him.", "de": "Vers vier hat zwei bekannte kanonische Lesarten: Mālik, der Besitzer, und Malik, der König. Beide sind wahr. An jenem Tag besitzt niemand etwas und herrscht niemand außer Ihm.", "ar": "في الآية الرابعة قراءتان متواترتان مشهورتان: مالِك ومَلِك، وكلتاهما حق؛ ففي ذلك اليوم لا يملك أحد شيئًا ولا يحكم إلا هو." }
+        },
+        {
+          "hadith": "muslim:879",
+          "check": "divided into two halves",
+          "title": { "en": "Every verse is answered", "de": "Jeder Vers wird beantwortet", "ar": "كل آية لها جواب" },
+          "body": { "en": "Allah calls al-Fatiha a prayer shared between Him and His servant. A longer narration in Muslim gives His reply to each verse.", "de": "Allah nennt al-Fātiḥa ein Gebet, das zwischen Ihm und Seinem Diener geteilt ist. Eine längere Überlieferung bei Muslim nennt Seine Antwort auf jeden Vers.", "ar": "يجعل الله الفاتحة صلاة مقسومة بينه وبين عبده، وفي رواية أطول عند مسلم جوابه بعد كل آية." }
+        },
+        {
+          "title": { "en": "Leave room for the answer", "de": "Lassen Sie Raum für die Antwort", "ar": "اترك مكانًا للجواب" },
+          "body": { "en": "If Allah answers each verse, then rushing is like talking over someone who replies. Pause after the praise, after the mercy, after the Day. Let the conversation breathe.", "de": "Wenn Allah jeden Vers beantwortet, dann ist Hast, als würde man jemandem ins Wort fallen. Halten Sie nach dem Lob, nach der Barmherzigkeit, nach dem Tag kurz inne. Lassen Sie das Gespräch atmen.", "ar": "إذا كان الله يجيب كل آية، فالعجلة كمن يقاطع محدّثه. قف بعد الحمد، وبعد الرحمة، وبعد ذكر يوم الدين، ودع الحوار يتنفس." }
+        },
+        {
+          "title": { "en": "Hope and awe in practice", "de": "Hoffnung und Ehrfurcht in der Praxis", "ar": "الرجاء والخشية عمليًّا" },
+          "list": {
+            "en": ["At the verse of mercy, think of a mistake you hope He forgives", "At the Day, think of one deed you want to bring", "Let both feelings sit together, not take turns"],
+            "de": ["Denken Sie beim Vers der Barmherzigkeit an einen Fehler, den Er vergeben möge", "Denken Sie beim Tag an eine Tat, die Sie mitbringen möchten", "Lassen Sie beide Gefühle nebeneinander bestehen"],
+            "ar": ["عند آية الرحمة تذكّر خطأً ترجو أن يغفره", "عند ذكر يوم الدين تذكّر عملًا تحب أن تلقاه به", "اجمع الشعورين معًا ولا تجعلهما يتناوبان"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim (Arabic), on 1:4: both readings sound and mutawatir", "url": "https://quran.com/1:4/tafsirs/ar-tafsir-ibn-kathir" },
+        { "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 1:4", "url": "https://quran.com/1:4/tafsirs/en-tafisr-ibn-kathir" }
+      ]
+    },
+    {
+      "id": "khushu-09-fatiha-the-heart-of-the-surah",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": { "en": "Presence in prayer · 9", "de": "Andacht im Gebet · 9", "ar": "الخشوع في الصلاة · ٩" },
+        "title": { "en": "Al-Fatiha, verse by verse: the heart of the surah", "de": "Al-Fātiḥa Vers für Vers: das Herz der Sure", "ar": "الفاتحة آية آية: قلب السورة" },
+        "sub": { "en": "Part 3 of 4: a promise and a request in one verse", "de": "Teil 3 von 4: ein Versprechen und eine Bitte in einem Vers", "ar": "الجزء ٣ من ٤: عهد وطلب في آية واحدة" },
+        "arabic": "العبادة والاستعانة"
+      },
+      "slides": [
+        {
+          "verse": "1:5",
+          "check": "You we worship",
+          "title": { "en": "From speaking about Him to speaking to Him", "de": "Vom Sprechen über Ihn zum Sprechen mit Ihm", "ar": "من الحديث عنه إلى خطابه" },
+          "body": { "en": "Until now you spoke about Allah. Here the surah turns to address Him directly. Scholars call this change of address iltifat.", "de": "Bis hierhin sprachen Sie über Allah. Hier wendet sich die Sure unmittelbar an Ihn selbst. Gelehrte nennen diesen Wechsel der Anrede Iltifāt.", "ar": "حتى هنا كنت تتحدث عن الله بصيغة الغائب، ثم تنتقل السورة إلى خطابه مباشرة، ويسمي العلماء هذا الانتقال الالتفات." }
+        },
+        {
+          "title": { "en": "Him alone", "de": "Ihm allein", "ar": "له وحده" },
+          "body": { "en": "In Arabic the object comes before the verb here. This order means: Him and no one else. It happens twice in one verse, once for worship and once for asking help.", "de": "Im Arabischen steht hier das Objekt vor dem Verb. Diese Stellung bedeutet: Ihm und niemandem sonst. Das geschieht zweimal in einem Vers, einmal für die Anbetung und einmal für die Bitte um Hilfe.", "ar": "في العربية قُدّم المفعول على الفعل، وتقديمه يفيد الحصر: له وحده لا لغيره. ويتكرر ذلك مرتين في آية واحدة: مرة للعبادة ومرة للاستعانة." }
+        },
+        {
+          "title": { "en": "We, not I", "de": "Wir, nicht ich", "ar": "نحن لا أنا" },
+          "body": { "en": "Even when you pray alone at night, the verse says 'we'. You stand as one of countless believers who say the same words today, in every land and language.", "de": "Selbst wenn Sie nachts allein beten, sagt der Vers „wir“. Sie stehen als eine oder einer von unzähligen Gläubigen, die heute dieselben Worte sprechen, in jedem Land und jeder Sprache.", "ar": "حتى لو صليت وحدك في الليل فالآية بصيغة الجمع؛ فأنت واحد من مؤمنين لا يُحصَون يقولون الكلمات نفسها اليوم في كل أرض وبكل لسان." }
+        },
+        {
+          "title": { "en": "Worship, then help", "de": "Erst Anbetung, dann Hilfe", "ar": "العبادة ثم الاستعانة" },
+          "body": { "en": "Worship comes first because it is the purpose. Help comes next because even worship needs His help. A present heart prays as someone who knows it could not even stand there without Him.", "de": "Die Anbetung steht zuerst, weil sie der Zweck ist. Die Hilfe folgt, weil selbst die Anbetung Seine Hilfe braucht. Ein gegenwärtiges Herz betet als jemand, der weiß, dass er ohne Ihn nicht einmal dort stehen könnte.", "ar": "قُدّمت العبادة لأنها الغاية، ثم الاستعانة لأن العبادة نفسها تحتاج إلى عونه. والقلب الحاضر يصلي وهو يعلم أنه لا يقف هناك إلا بعونه." }
+        },
+        {
+          "verse": "51:56",
+          "check": "except to worship Me",
+          "title": { "en": "Why worship comes first", "de": "Warum die Anbetung zuerst steht", "ar": "لماذا قُدّمت العبادة" },
+          "body": { "en": "Worship is the reason we were created. With this verse of al-Fatiha you renew that purpose in every prayer.", "de": "Anbetung ist der Grund unserer Erschaffung. Mit diesem Vers der Fātiḥa erneuern Sie diesen Sinn in jedem Gebet.", "ar": "العبادة غاية خلقنا، وبهذه الآية من الفاتحة تجدّد هذه الغاية في كل صلاة." }
+        },
+        {
+          "title": { "en": "Saying it with presence", "de": "Mit Gegenwart sprechen", "ar": "قلها بقلب حاضر" },
+          "list": {
+            "en": ["Mean 'alone': is anything else competing in your heart?", "Bring one real need into the request for help", "Remember everyone you share the 'we' with"],
+            "de": ["Meinen Sie „allein“: Konkurriert etwas anderes in Ihrem Herzen?", "Bringen Sie ein echtes Anliegen in die Bitte um Hilfe", "Denken Sie an alle, mit denen Sie das „wir“ teilen"],
+            "ar": ["استحضر معنى الحصر: هل ينافسه شيء في قلبك؟", "احمل حاجة حقيقية إلى طلب العون", "تذكّر من تشاركهم صيغة الجمع"]
+          }
+        }
+      ],
+      "sources": [{ "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 1:5", "url": "https://quran.com/1:5/tafsirs/en-tafisr-ibn-kathir" }]
+    },
+    {
+      "id": "khushu-10-fatiha-the-one-request",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": { "en": "Presence in prayer · 10", "de": "Andacht im Gebet · 10", "ar": "الخشوع في الصلاة · ١٠" },
+        "title": { "en": "Al-Fatiha, verse by verse: the one request", "de": "Al-Fātiḥa Vers für Vers: die eine Bitte", "ar": "الفاتحة آية آية: الطلب الواحد" },
+        "sub": { "en": "Part 4 of 4: why the guided keep asking for guidance", "de": "Teil 4 von 4: warum Rechtgeleitete weiter um Rechtleitung bitten", "ar": "الجزء ٤ من ٤: لماذا يسأل المهتدون الهداية؟" },
+        "arabic": "الهداية"
+      },
+      "slides": [
+        {
+          "verse": "1:6",
+          "check": "straight path",
+          "title": { "en": "Of all things, guidance", "de": "Von allen Dingen: Rechtleitung", "ar": "من بين كل شيء: الهداية" },
+          "body": { "en": "After praise and promise comes the request. Out of everything you could ask for, al-Fatiha teaches you to ask for this.", "de": "Nach Lob und Versprechen kommt die Bitte. Von allem, worum man bitten könnte, lehrt al-Fātiḥa diese eine.", "ar": "بعد الثناء والعهد يأتي الطلب، ومن بين كل ما يمكن أن يُسأل تعلّمك الفاتحة أن تسأل هذا." }
+        },
+        {
+          "title": { "en": "Why ask if you are already praying?", "de": "Warum bitten, wenn man schon betet?", "ar": "لماذا يسألها من يصلي؟" },
+          "body": { "en": "Guidance is not a door you pass through once. You need it to stay on the path, to go deeper, and to choose rightly in today's decisions. Like bread, it is asked for daily.", "de": "Rechtleitung ist keine Tür, durch die man einmal geht. Man braucht sie, um auf dem Weg zu bleiben, um tiefer zu gehen und um heute richtig zu entscheiden. Wie Brot erbittet man sie täglich.", "ar": "الهداية ليست بابًا يُعبر مرة واحدة، بل تحتاجها للثبات على الطريق، وللازدياد فيه، ولحسن الاختيار في قرارات اليوم. تُطلب كل يوم كالخبز." }
+        },
+        {
+          "verse": "1:7",
+          "check": "bestowed favor",
+          "title": { "en": "A path with people on it", "de": "Ein Weg mit Menschen darauf", "ar": "طريق يسلكه أناس" },
+          "body": { "en": "The path is described by those who walk it. You are asking for company as much as for direction.", "de": "Der Weg wird durch jene beschrieben, die ihn gehen. Sie bitten ebenso um Gemeinschaft wie um Richtung.", "ar": "يُعرَّف الطريق بمن سلكوه، فأنت تسأل الرفقة كما تسأل الوجهة." }
+        },
+        {
+          "verse": "4:69",
+          "check": "the prophets",
+          "title": { "en": "Who walks that path", "de": "Wer diesen Weg geht", "ar": "من سلكوا الطريق" },
+          "body": { "en": "The Quran explains itself: prophets, the truthful, martyrs and the righteous. That is the company you ask for.", "de": "Der Koran erklärt sich selbst: Propheten, Wahrhaftige, Märtyrer und Rechtschaffene. Um diese Gesellschaft bitten Sie.", "ar": "يفسّر القرآن بعضه بعضًا: النبيون والصديقون والشهداء والصالحون، وهذه هي الرفقة التي تسألها." }
+        },
+        {
+          "title": { "en": "Two ways to lose the path", "de": "Zwei Arten, den Weg zu verlieren", "ar": "طريقان للضلال" },
+          "body": { "en": "Classical commentators explain the end of the surah through two dangers: knowing the truth and not living by it, and acting sincerely without knowledge. So ask for both: knowledge and practice.", "de": "Klassische Kommentatoren erklären das Ende der Sure mit zwei Gefahren: die Wahrheit kennen und nicht danach leben, und aufrichtig handeln ohne Wissen. Bitten Sie also um beides: Wissen und Handeln.", "ar": "يفسّر كثير من المفسرين خاتمة السورة بخطرين: معرفة الحق مع ترك العمل به، والعمل بإخلاص على غير علم. فاسأل الله العلم والعمل معًا." }
+        },
+        {
+          "title": { "en": "Asking it with presence", "de": "Mit Gegenwart bitten", "ar": "اسألها بقلب حاضر" },
+          "list": {
+            "en": ["Name one decision you need guidance in today", "Think of a righteous person you hope to be with", "End the surah as someone who really asked"],
+            "de": ["Benennen Sie eine Entscheidung, für die Sie heute Rechtleitung brauchen", "Denken Sie an einen rechtschaffenen Menschen, bei dem Sie sein möchten", "Beenden Sie die Sure als jemand, der wirklich gebeten hat"],
+            "ar": ["سمِّ قرارًا تحتاج فيه إلى الهداية اليوم", "تذكّر صالحًا ترجو أن تكون معه", "اختم السورة اختتام من سأل حقًّا"]
+          }
+        }
+      ],
+      "sources": [{ "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 1:7", "url": "https://quran.com/1:7/tafsirs/en-tafisr-ibn-kathir" }]
+    },
+    {
+      "id": "khushu-11-ruku",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": { "en": "Presence in prayer · 11", "de": "Andacht im Gebet · 11", "ar": "الخشوع في الصلاة · ١١" },
+        "title": { "en": "Ruku': bowing before the Most Great", "de": "Rukūʿ: Verneigung vor dem Gewaltigen", "ar": "الركوع: انحناء للعظيم" },
+        "sub": { "en": "The back bends, and the heart bows with it", "de": "Der Rücken beugt sich, und das Herz verneigt sich mit", "ar": "ينحني الظهر ويخضع القلب معه" },
+        "arabic": "الرُّكُوع"
+      },
+      "slides": [
+        {
+          "verse": "22:77",
+          "check": "bow and prostrate",
+          "title": { "en": "Named in the Quran", "de": "Im Koran genannt", "ar": "مذكور في القرآن" },
+          "body": { "en": "Bowing and prostration are commanded together with worship and good deeds, and linked to success.", "de": "Verneigung und Niederwerfung werden zusammen mit Anbetung und guten Taten geboten und mit Erfolg verbunden.", "ar": "أُمر بالركوع والسجود مع العبادة وفعل الخير، وقُرنا بالفلاح." }
+        },
+        {
+          "hadith": "muslim:1074",
+          "check": "extol in it the Great",
+          "title": { "en": "A position for glorifying", "de": "Eine Haltung zum Rühmen", "ar": "موضع التعظيم" },
+          "body": { "en": "Each position has its own task. In ruku', the work of the heart is to magnify the Lord.", "de": "Jede Haltung hat ihre eigene Aufgabe. Im Rukūʿ besteht die Arbeit des Herzens darin, den Herrn zu rühmen.", "ar": "لكل ركن وظيفة، ووظيفة القلب في الركوع تعظيم الرب." }
+        },
+        {
+          "title": { "en": "The Most Great, said while bowed", "de": "Der Gewaltige, gesagt in gebeugter Haltung", "ar": "العظيم يقال في حال الانحناء" },
+          "arabic": "سُبْحَانَ رَبِّيَ العَظِيم",
+          "body": { "en": "In ruku' you call your Lord the Most Great while your own back is bent. Your body admits what your tongue says: He is great, and I am small before Him.", "de": "Im Rukūʿ nennen Sie Ihren Herrn den Gewaltigen, während Ihr eigener Rücken gebeugt ist. Der Körper bestätigt, was die Zunge sagt: Er ist groß, und ich bin klein vor Ihm.", "ar": "في الركوع تصف ربك بالعظمة وظهرك منحنٍ، فيشهد جسدك بما يقوله لسانك: هو العظيم وأنا الصغير بين يديه." }
+        },
+        {
+          "dua": "hisn:17:3",
+          "check": "humbled before You",
+          "title": { "en": "Khushu' put into words", "de": "Khushūʿ in Worte gefasst", "ar": "الخشوع بلفظه" },
+          "body": { "en": "This ruku' dua names your senses, mind and body one by one as humbled before Allah. It is khushu' itself, spoken inside the prayer.", "de": "Dieses Bittgebet im Rukūʿ nennt Sinne, Verstand und Körper einzeln als demütig vor Allah. Es ist Khushūʿ selbst, ausgesprochen im Gebet.", "ar": "يعدّد هذا الدعاء في الركوع الحواس والعقل والجسد خاشعة لله، فهو الخشوع بلفظه داخل الصلاة." }
+        },
+        {
+          "title": { "en": "Stillness before moving on", "de": "Ruhe, bevor es weitergeht", "ar": "طمأنينة قبل الانتقال" },
+          "body": { "en": "Scholars of all schools stress calm in each position. Let your back settle and your breath slow before you rise. A rushed bow has no room for meaning.", "de": "Gelehrte aller Rechtsschulen betonen die Ruhe in jeder Haltung. Lassen Sie den Rücken zur Ruhe kommen und den Atem langsamer werden, bevor Sie sich aufrichten. In einer gehetzten Verneigung ist kein Platz für Bedeutung.", "ar": "يؤكد علماء المذاهب كلها الطمأنينة في كل ركن. دع ظهرك يستقر وأنفاسك تهدأ قبل أن ترفع، فالركوع المستعجل لا يتسع للمعنى." }
+        },
+        {
+          "title": { "en": "In your next ruku'", "de": "In Ihrem nächsten Rukūʿ", "ar": "في ركوعك القادم" },
+          "list": {
+            "en": ["Wait until your body is completely still", "Think of something you consider big, then of Him", "Learn one more ruku' dhikr with its meaning"],
+            "de": ["Warten Sie, bis Ihr Körper ganz ruhig ist", "Denken Sie an etwas, das Ihnen groß erscheint, dann an Ihn", "Lernen Sie ein weiteres Gedenken für den Rukūʿ mit Bedeutung"],
+            "ar": ["انتظر حتى يسكن جسدك تمامًا", "تذكّر شيئًا تراه كبيرًا، ثم تذكّر عظمته", "احفظ ذكرًا آخر للركوع مع معناه"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "khushu-12-sujud",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": { "en": "Presence in prayer · 12", "de": "Andacht im Gebet · 12", "ar": "الخشوع في الصلاة · ١٢" },
+        "title": { "en": "Sujud: the closest you can be", "de": "Sujūd: so nah wie nirgends sonst", "ar": "السجود: أقرب ما تكون" },
+        "sub": { "en": "Your face on the ground, your heart nearest to its Lord", "de": "Das Gesicht am Boden, das Herz seinem Herrn am nächsten", "ar": "وجهك على الأرض وقلبك أقرب ما يكون إلى ربه" },
+        "arabic": "السُّجُود"
+      },
+      "slides": [
+        {
+          "hadith": "muslim:1083",
+          "check": "nearest a servant comes to his Lord",
+          "title": { "en": "Nearest at the lowest point", "de": "Am nächsten am tiefsten Punkt", "ar": "أقرب ما يكون في أدنى موضع" },
+          "body": { "en": "The moment your face is lowest is the moment you are nearest. The hadith ends with an invitation: ask.", "de": "Der Moment, in dem Ihr Gesicht am tiefsten ist, ist der Moment größter Nähe. Der Hadith endet mit einer Einladung: Bitten Sie.", "ar": "اللحظة التي يكون فيها وجهك في أدنى موضع هي لحظة أعظم القرب، والحديث يُختم بدعوة إلى السؤال." }
+        },
+        {
+          "title": { "en": "The Most High, praised from the ground", "de": "Der Höchste, gepriesen vom Boden aus", "ar": "الأعلى يُسبَّح من موضع السجود" },
+          "arabic": "سُبْحَانَ رَبِّيَ الأَعْلَى",
+          "body": { "en": "In sujud you praise your Lord as the Most High while your forehead touches the floor. The contrast is the lesson: true height belongs to Him, and nearness comes through humility.", "de": "In der Niederwerfung preisen Sie Ihren Herrn als den Höchsten, während Ihre Stirn den Boden berührt. Der Gegensatz ist die Lehre: Wahre Höhe gehört Ihm, und Nähe entsteht durch Demut.", "ar": "في السجود تسبّح ربك الأعلى وجبهتك على الأرض. وفي هذه المقابلة درس: العلوّ الحق له وحده، والقرب يُنال بالتواضع." }
+        },
+        {
+          "dua": "hisn:19:3",
+          "check": "My face has prostrated",
+          "title": { "en": "Your face, returned to its Maker", "de": "Ihr Gesicht, zurück zu seinem Schöpfer", "ar": "وجهك لخالقه" },
+          "body": { "en": "This sujud dua remembers who shaped your face and gave it hearing and sight. The most honoured part of you bows to its Maker.", "de": "Dieses Bittgebet in der Niederwerfung erinnert daran, wer Ihr Gesicht geformt und ihm Hören und Sehen gegeben hat. Der geehrteste Teil von Ihnen verneigt sich vor seinem Schöpfer.", "ar": "يذكّر هذا الدعاء في السجود بمن صوّر وجهك ووهبه السمع والبصر، فيسجد أكرم ما فيك لخالقه." }
+        },
+        {
+          "verse": "17:109",
+          "check": "humble submission",
+          "title": { "en": "Where khushu' grows", "de": "Wo Khushūʿ wächst", "ar": "حيث يزداد الخشوع" },
+          "body": { "en": "The Quran describes people of knowledge in tearful prostration, and their humility deepens. The Arabic word here is khushu'.", "de": "Der Koran beschreibt Menschen des Wissens in tränenreicher Niederwerfung, und ihre Demut vertieft sich. Das arabische Wort hier ist Khushūʿ.", "ar": "يصف القرآن أهل العلم يسجدون باكين، فيزداد خشوعهم. وهنا تظهر كلمة الخشوع نفسها." }
+        },
+        {
+          "title": { "en": "Bring your needs here", "de": "Bringen Sie Ihre Anliegen hierher", "ar": "احمل حاجاتك إلى هنا" },
+          "body": { "en": "Sujud is the place for asking. Prepare before the prayer: one thing for this life, one for the next, one for someone you love. Then say it slowly, as close as you will ever be.", "de": "Die Niederwerfung ist der Ort des Bittens. Bereiten Sie sich vor dem Gebet vor: eine Bitte für dieses Leben, eine für das nächste, eine für einen Menschen, den Sie lieben. Sprechen Sie sie dann langsam, so nah, wie Sie nur sein können.", "ar": "السجود موضع السؤال. هيّئ قبل الصلاة دعوة للدنيا، ودعوة للآخرة، ودعوة لمن تحب، ثم قلها بتأنٍّ وأنت أقرب ما تكون." }
+        }
+      ]
+    },
+    {
+      "id": "khushu-13-tashahhud",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": { "en": "Presence in prayer · 13", "de": "Andacht im Gebet · 13", "ar": "الخشوع في الصلاة · ١٣" },
+        "title": { "en": "The tashahhud: what you say when you sit", "de": "Der Tashahhud: was Sie im Sitzen sagen", "ar": "التشهد: ماذا تقول حين تجلس؟" },
+        "sub": { "en": "Honour for Allah, peace for His Prophet and His righteous servants, then the testimony", "de": "Ehre für Allah, Frieden für Seinen Propheten und Seine rechtschaffenen Diener, dann das Bekenntnis", "ar": "تعظيم لله، وسلام على نبيه وعباده الصالحين، ثم الشهادة" },
+        "arabic": "التَّشَهُّد"
+      },
+      "slides": [
+        {
+          "hadith": "bukhari:6265",
+          "check": "as he taught me a Sura",
+          "title": { "en": "Taught hand in hand", "de": "Hand in Hand gelehrt", "ar": "تعليم واليد في اليد" },
+          "body": { "en": "Ibn Mas'ud learned these words with his hand held by the Prophet, as carefully as a surah. That is how much they matter.", "de": "Ibn Masʿūd lernte diese Worte, während der Prophet seine Hand hielt, so sorgfältig wie eine Sure. So viel bedeuten sie.", "ar": "تعلّم ابن مسعود هذه الكلمات وكفّه بين كفّي النبي، كما يتعلّم السورة، وهذا يدل على قدرها." }
+        },
+        {
+          "title": { "en": "All honour belongs to Allah", "de": "Alle Ehre gebührt Allah", "ar": "التعظيم كله لله" },
+          "body": { "en": "It opens by giving Allah every form of honour, every prayer and every good word. Before you testify or ask, you acknowledge that all reverence in the world is, in the end, His.", "de": "Er beginnt damit, Allah jede Form der Ehre, jedes Gebet und jedes gute Wort zuzusprechen. Bevor Sie bezeugen oder bitten, erkennen Sie an, dass alle Ehrerbietung der Welt letztlich Ihm gebührt.", "ar": "يبدأ بإثبات كل تعظيم وكل صلاة وكل طيّب من القول لله، فقبل أن تشهد أو تسأل تقرّ بأن كل تعظيم في الوجود له في النهاية." }
+        },
+        {
+          "title": { "en": "Peace upon the Prophet", "de": "Friede auf dem Propheten", "ar": "السلام على النبي" },
+          "body": { "en": "Then you greet the one who taught you this prayer. In every prayer, Muslims everywhere send him peace. Let it be a real greeting from you, not a formula.", "de": "Dann grüßen Sie den, der Sie dieses Gebet gelehrt hat. In jedem Gebet senden ihm Muslime überall Frieden. Lassen Sie es einen echten Gruß von Ihnen sein, keine Formel.", "ar": "ثم تسلّم على من علّمك هذه الصلاة. في كل صلاة يرسل إليه المسلمون في كل مكان السلام، فاجعله سلامًا حقيقيًّا منك لا عبارة محفوظة." }
+        },
+        {
+          "title": { "en": "Peace upon us and every righteous servant", "de": "Friede auf uns und allen rechtschaffenen Dienern", "ar": "السلام علينا وعلى العباد الصالحين" },
+          "body": { "en": "The circle widens: yourself, then every righteous servant of Allah, whoever and wherever they are. In a few words you pray for countless people you will never meet.", "de": "Der Kreis wird weiter: Sie selbst, dann jeder rechtschaffene Diener Allahs, wer und wo immer er ist. Mit wenigen Worten beten Sie für unzählige Menschen, denen Sie nie begegnen werden.", "ar": "تتسع الدائرة: نفسك، ثم كل عبد صالح لله أيًّا كان وأينما كان. بكلمات قليلة تدعو لأناس لا يُحصَون لن تلقاهم أبدًا." }
+        },
+        {
+          "title": { "en": "Then the testimony", "de": "Dann das Bekenntnis", "ar": "ثم الشهادة" },
+          "body": { "en": "The sitting ends where Islam begins: bearing witness that there is no god but Allah and that Muhammad is His servant and messenger. Each prayer renews the first step of faith.", "de": "Das Sitzen endet dort, wo der Islam beginnt: mit dem Bezeugen, dass es keinen Gott gibt außer Allah und dass Muhammad Sein Diener und Gesandter ist. Jedes Gebet erneuert den ersten Schritt des Glaubens.", "ar": "ينتهي الجلوس حيث يبدأ الإسلام: بشهادة أن لا إله إلا الله وأن محمدًا عبده ورسوله، وكل صلاة تجدّد الخطوة الأولى في الإيمان." }
+        },
+        {
+          "dua": "hisn:23:1",
+          "check": "send prayers upon Muhammad",
+          "title": { "en": "Blessings on him and his family", "de": "Segen auf ihn und seine Familie", "ar": "الصلاة عليه وعلى آله" },
+          "body": { "en": "After the tashahhud, blessings are sent upon him and his family, joined to the blessings upon Ibrahim.", "de": "Nach dem Tashahhud werden Segenswünsche für ihn und seine Familie gesprochen, verbunden mit dem Segen für Ibrāhīm.", "ar": "بعد التشهد تأتي الصلاة على النبي وآله، مقرونة بالصلاة على إبراهيم." }
+        }
+      ]
+    },
+    {
+      "id": "khushu-14-where-the-mind-wanders",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": { "en": "Presence in prayer · 14", "de": "Andacht im Gebet · 14", "ar": "الخشوع في الصلاة · ١٤" },
+        "title": { "en": "Where the mind wanders, and why", "de": "Wohin der Geist wandert, und warum", "ar": "أين يشرد الذهن ولماذا؟" },
+        "sub": { "en": "Four distractions the Prophet named, and what he did about them", "de": "Vier Ablenkungen, die der Prophet benannte, und was er dagegen tat", "ar": "أربعة مشتّتات ذكرها النبي، وكيف عالجها" },
+        "arabic": "شرود الذهن"
+      },
+      "slides": [
+        {
+          "title": { "en": "Wandering is human", "de": "Abschweifen ist menschlich", "ar": "الشرود طبع بشري" },
+          "body": { "en": "Everyone's mind drifts in prayer. Khushu' is not a mind that never wanders, but one that keeps returning. The return itself is worship.", "de": "Jeder Geist schweift im Gebet ab. Khushūʿ ist kein Geist, der nie wandert, sondern einer, der immer wieder zurückkehrt. Die Rückkehr selbst ist Anbetung.", "ar": "يشرد ذهن كل أحد في الصلاة. والخشوع ليس ذهنًا لا يشرد، بل ذهن يعود كلما شرد، والعودة نفسها عبادة." }
+        },
+        {
+          "hadith": "bukhari:608",
+          "check": "whispers into the heart",
+          "title": { "en": "1. The whisper that brings old thoughts", "de": "1. Das Flüstern, das alte Gedanken weckt", "ar": "١. وسوسة تُذكّر بما نُسي" },
+          "body": { "en": "Things you had forgotten suddenly appear once you stand to pray. The Prophet explained where they come from. Knowing it takes away their power.", "de": "Vergessenes taucht plötzlich auf, sobald Sie zum Gebet stehen. Der Prophet erklärte, woher es kommt. Wer das weiß, nimmt ihm die Macht.", "ar": "تظهر فجأة أمور نسيتها حين تقف للصلاة، وقد بيّن النبي مصدرها، ومعرفة ذلك تُضعف أثرها." }
+        },
+        {
+          "hadith": "bukhari:751",
+          "check": "looking hither and thither",
+          "title": { "en": "2. The wandering eye", "de": "2. Der umherschweifende Blick", "ar": "٢. العين المتلفّتة" },
+          "body": { "en": "Where the eyes go, the heart follows. Glancing around is described as a theft from your prayer.", "de": "Wohin die Augen gehen, folgt das Herz. Das Umherblicken wird als Diebstahl am Gebet beschrieben.", "ar": "حيث تذهب العين يتبعها القلب، والالتفات وُصف بأنه اختلاس من الصلاة." }
+        },
+        {
+          "hadith": "bukhari:373",
+          "check": "diverted my attention",
+          "title": { "en": "3. Patterns in front of you", "de": "3. Muster vor Ihren Augen", "ar": "٣. الزخارف أمامك" },
+          "body": { "en": "Even the Prophet gave away a patterned garment that caught his eye in prayer. Clear your prayer space of what pulls at you.", "de": "Selbst der Prophet gab ein gemustertes Gewand fort, das im Gebet seinen Blick fing. Halten Sie Ihren Gebetsplatz frei von dem, was Sie ablenkt.", "ar": "حتى النبي ردّ ثوبًا ذا أعلام شغل نظره في الصلاة، فأخلِ مكان صلاتك مما يشدّك." }
+        },
+        {
+          "hadith": "bukhari:672",
+          "check": "supper is served",
+          "title": { "en": "4. A body with needs", "de": "4. Ein Körper mit Bedürfnissen", "ar": "٤. حاجات الجسد" },
+          "body": { "en": "Hunger pulls at the heart. When food was ready, the Prophet said to eat first. Care for the body so the heart is free.", "de": "Hunger zieht am Herzen. Wenn das Essen bereitstand, sagte der Prophet, man solle zuerst essen. Sorgen Sie für den Körper, damit das Herz frei ist.", "ar": "الجوع يشغل القلب، وإذا حضر الطعام أمر النبي بالبدء به. أعطِ الجسد حقه ليتفرغ القلب." }
+        },
+        {
+          "title": { "en": "Today's thieves of attention", "de": "Die Aufmerksamkeitsdiebe von heute", "ar": "لصوص الانتباه اليوم" },
+          "list": {
+            "en": ["A phone that buzzes or lights up", "Praying in a rush at the last minute", "Words recited without knowing their meaning", "A screen or a busy window in your line of sight"],
+            "de": ["Ein Telefon, das vibriert oder aufleuchtet", "Ein gehetztes Gebet in letzter Minute", "Worte, deren Bedeutung man nicht kennt", "Ein Bildschirm oder ein belebtes Fenster im Blickfeld"],
+            "ar": ["هاتف يهتز أو تضيء شاشته", "صلاة مستعجلة في آخر الوقت", "كلمات تُقرأ دون معرفة معناها", "شاشة أو نافذة مزدحمة أمام عينيك"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "khushu-15-six-ways-back",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": { "en": "Presence in prayer · 15", "de": "Andacht im Gebet · 15", "ar": "الخشوع في الصلاة · ١٥" },
+        "title": { "en": "6 ways back to a present heart", "de": "6 Wege zurück zu einem gegenwärtigen Herzen", "ar": "٦ طرق للعودة إلى القلب الحاضر" },
+        "sub": { "en": "Practical remedies from the Sunnah and from experience", "de": "Praktische Mittel aus der Sunna und aus Erfahrung", "ar": "علاجات عملية من السنة والتجربة" },
+        "arabic": "علاج الشرود"
+      },
+      "slides": [
+        {
+          "dua": "hisn:42:0",
+          "check": "Khanzab",
+          "title": { "en": "1. Seek refuge", "de": "1. Suchen Sie Zuflucht", "ar": "١. استعذ بالله" },
+          "body": { "en": "A companion complained that his prayer was being disturbed. The Prophet named the cause and gave a simple remedy.", "de": "Ein Gefährte klagte, dass sein Gebet gestört werde. Der Prophet nannte die Ursache und gab ein einfaches Mittel.", "ar": "شكا صحابي أن صلاته تُشوَّش عليه، فسمّى النبي السبب ودلّه على علاج يسير." }
+        },
+        {
+          "hadith": "bukhari:213",
+          "check": "understands what he is saying",
+          "title": { "en": "2. Know what you are saying", "de": "2. Wissen Sie, was Sie sagen", "ar": "٢. اعرف ما تقول" },
+          "body": { "en": "Even sleepiness was reason enough to rest first, because prayer is meant to be understood. Learn the meanings, a little each week.", "de": "Selbst Müdigkeit war Grund genug, sich zuerst auszuruhen, denn das Gebet soll verstanden werden. Lernen Sie die Bedeutungen, jede Woche ein wenig.", "ar": "حتى النعاس كان سببًا كافيًا للراحة أولًا، لأن الصلاة كلام يُفهم. فتعلّم المعاني شيئًا فشيئًا كل أسبوع." }
+        },
+        {
+          "title": { "en": "3. Still your gaze", "de": "3. Beruhigen Sie den Blick", "ar": "٣. ثبّت نظرك" },
+          "body": { "en": "Choose one resting point for your eyes and keep them there, low and calm. Fewer images coming in means fewer thoughts going out.", "de": "Wählen Sie einen Ruhepunkt für Ihre Augen und lassen Sie sie dort, gesenkt und ruhig. Weniger Bilder, die hineinkommen, bedeuten weniger Gedanken, die hinausgehen.", "ar": "اختر موضعًا واحدًا يستقر عليه بصرك منخفضًا هادئًا؛ فكلما قلّت الصور الداخلة قلّت الخواطر الخارجة." }
+        },
+        {
+          "title": { "en": "4. Vary what you recite", "de": "4. Wechseln Sie, was Sie rezitieren", "ar": "٤. نوّع ما تقرأ" },
+          "body": { "en": "The same three short surahs every day can run on autopilot. Learn a new short surah or a few new verses, with their meaning, and bring them into your prayer.", "de": "Dieselben drei kurzen Suren jeden Tag laufen leicht wie von selbst ab. Lernen Sie eine neue kurze Sure oder einige neue Verse mit Bedeutung und bringen Sie sie in Ihr Gebet.", "ar": "تكرار السور القصيرة نفسها كل يوم قد يجعل القراءة آلية. احفظ سورة قصيرة جديدة أو آيات جديدة مع معانيها، واجعلها في صلاتك." }
+        },
+        {
+          "title": { "en": "5. Slow down in every position", "de": "5. Werden Sie in jeder Haltung langsamer", "ar": "٥. تمهّل في كل ركن" },
+          "body": { "en": "Speed is the enemy of presence. Add one breath of stillness to each position. The prayer becomes a minute longer and much deeper.", "de": "Eile ist der Feind der Gegenwart. Fügen Sie jeder Haltung einen Atemzug der Ruhe hinzu. Das Gebet wird eine Minute länger und viel tiefer.", "ar": "العجلة عدوّ الحضور. أضف نفَسًا من السكون إلى كل ركن، فتطول الصلاة دقيقة وتعمق كثيرًا." }
+        },
+        {
+          "hadith": "bukhari:413",
+          "check": "speaking in private to his Lord",
+          "title": { "en": "6. Remember who is listening", "de": "6. Denken Sie daran, wer zuhört", "ar": "٦. تذكّر من يسمعك" },
+          "body": { "en": "Prayer is a private conversation with your Lord. The etiquette in this hadith follows from that: you are standing before Someone.", "de": "Das Gebet ist ein vertrautes Gespräch mit Ihrem Herrn. Die Etikette in diesem Hadith folgt daraus: Sie stehen vor jemandem.", "ar": "الصلاة مناجاة بينك وبين ربك، والأدب المذكور في هذا الحديث نابع من ذلك: أنت واقف بين يدي الله." }
+        }
+      ]
+    },
+    {
+      "id": "khushu-16-as-if-it-were-your-last",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": { "en": "Presence in prayer · 16", "de": "Andacht im Gebet · 16", "ar": "الخشوع في الصلاة · ١٦" },
+        "title": { "en": "Pray as if it were your last", "de": "Beten Sie, als wäre es Ihr letztes Gebet", "ar": "صلِّ كأنها صلاتك الأخيرة" },
+        "sub": { "en": "Not to frighten, but to wake the heart up", "de": "Nicht um Angst zu machen, sondern um das Herz zu wecken", "ar": "لا للتخويف، بل لإيقاظ القلب" },
+        "arabic": "كأنها الأخيرة"
+      },
+      "slides": [
+        {
+          "title": { "en": "A thought experiment", "de": "Ein Gedankenexperiment", "ar": "تجربة ذهنية" },
+          "body": { "en": "Imagine you knew this prayer would be your last. Would you rush the ruku'? Check your phone before the salam? Teachers of the heart have long used this picture to wake up a sleepy prayer.", "de": "Stellen Sie sich vor, Sie wüssten, dass dieses Gebet Ihr letztes ist. Würden Sie den Rukūʿ hetzen? Vor dem Salām aufs Telefon schauen? Lehrer des Herzens nutzen dieses Bild seit langem, um ein schläfriges Gebet zu wecken.", "ar": "تخيّل أنك تعلم أن هذه الصلاة آخر صلاتك: أكنت تستعجل الركوع؟ أو تنظر إلى هاتفك قبل السلام؟ استعمل أهل التزكية هذه الصورة طويلًا لإيقاظ الصلاة الغافلة." }
+        },
+        {
+          "verse": "2:45-46",
+          "check": "humbly submissive",
+          "title": { "en": "The secret of the humble", "de": "Das Geheimnis der Demütigen", "ar": "سرّ الخاشعين" },
+          "body": { "en": "Prayer is heavy, except for the humble. The next verse links their khushu' to one thing: certainty of the meeting with Allah.", "de": "Das Gebet ist schwer, außer für die Demütigen. Der folgende Vers verbindet ihr Khushūʿ mit einer einzigen Sache: der Gewissheit, Allah zu begegnen.", "ar": "الصلاة ثقيلة إلا على الخاشعين، والآية التالية تربط خشوعهم بأمر واحد: اليقين بلقاء الله." }
+        },
+        {
+          "hadith": "bukhari:6416",
+          "check": "stranger or a traveler",
+          "title": { "en": "A traveller's prayer", "de": "Das Gebet eines Reisenden", "ar": "صلاة عابر سبيل" },
+          "body": { "en": "A traveller does not settle in. Ibn 'Umar drew the lesson: do not count on the next morning or evening. That includes the next prayer.", "de": "Ein Reisender richtet sich nicht ein. Ibn ʿUmar zog die Lehre daraus: Rechnen Sie nicht fest mit dem nächsten Morgen oder Abend. Das gilt auch für das nächste Gebet.", "ar": "المسافر لا يستقر، واستخلص ابن عمر الدرس: لا تعوّل على الصباح ولا على المساء، ومثلهما الصلاة القادمة." }
+        },
+        {
+          "verse": "15:99",
+          "check": "the certainty",
+          "title": { "en": "Until the certainty comes", "de": "Bis die Gewissheit kommt", "ar": "حتى يأتي اليقين" },
+          "body": { "en": "Worship has no finish line before death, which the verse calls the certainty. Any prayer could be the one that closes the record.", "de": "Die Anbetung hat vor dem Tod keine Ziellinie; der Vers nennt ihn die Gewissheit. Jedes Gebet könnte das sein, das die Akte schließt.", "ar": "لا خط نهاية للعبادة قبل الموت، وتسمّيه الآية اليقين. وأيّ صلاة قد تكون خاتمة الصحيفة." }
+        },
+        {
+          "title": { "en": "Focus, not fear", "de": "Sammlung, nicht Angst", "ar": "حضور لا خوف" },
+          "body": { "en": "The point is not anxiety, it is attention. A farewell is the moment people say what matters most, fully present. Bring that quality to one prayer today.", "de": "Es geht nicht um Angst, sondern um Aufmerksamkeit. Ein Abschied ist der Moment, in dem Menschen das Wichtigste sagen, ganz gegenwärtig. Bringen Sie diese Haltung heute in ein Gebet.", "ar": "ليس المقصود القلق بل الانتباه. ففي الوداع يقول الناس أهمّ ما عندهم بحضور كامل، فاحمل هذه الروح إلى صلاة واحدة اليوم." }
+        },
+        {
+          "title": { "en": "Before the takbir", "de": "Vor dem Takbīr", "ar": "قبل التكبير" },
+          "list": {
+            "en": ["Tell yourself: this may be my last prayer", "Say goodbye to the world for these few minutes", "Ask in sujud as one who may not ask again"],
+            "de": ["Sagen Sie sich: Dies könnte mein letztes Gebet sein", "Verabschieden Sie sich für diese Minuten von der Welt", "Bitten Sie im Sujūd, als könnten Sie es nicht wieder tun"],
+            "ar": ["قل لنفسك: قد تكون هذه آخر صلاة لي", "ودّع الدنيا في هذه الدقائق", "ادعُ في سجودك دعاء من قد لا يدعو بعدها"]
+          }
+        }
+      ],
+      "sources": [{ "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 15:99 (the certainty is death)", "url": "https://quran.com/15:99/tafsirs/en-tafisr-ibn-kathir" }]
+    },
+    {
+      "id": "khushu-17-night-prayer",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": { "en": "Presence in prayer · 17", "de": "Andacht im Gebet · 17", "ar": "الخشوع في الصلاة · ١٧" },
+        "title": { "en": "The night prayer: where heart and tongue meet", "de": "Das Nachtgebet: wo Herz und Zunge sich treffen", "ar": "قيام الليل: حيث يتوافق القلب واللسان" },
+        "sub": { "en": "Why presence comes more easily in the quiet hours", "de": "Warum Gegenwart in den stillen Stunden leichter fällt", "ar": "لماذا يسهل الحضور في الساعات الهادئة" },
+        "arabic": "قيام الليل"
+      },
+      "slides": [
+        {
+          "verse": "73:6",
+          "check": "concurrence",
+          "title": { "en": "Made for presence", "de": "Wie geschaffen für Gegenwart", "ar": "أوفق للحضور" },
+          "body": { "en": "The night brings heart and tongue together. No calls, no noise, no audience: only you and the One you speak to.", "de": "Die Nacht bringt Herz und Zunge zusammen. Keine Anrufe, kein Lärm, kein Publikum: nur Sie und Der, zu Dem Sie sprechen.", "ar": "الليل يجمع القلب واللسان: لا اتصالات ولا ضجيج ولا جمهور، بل أنت ومن تناجيه." }
+        },
+        {
+          "verse": "51:17-18",
+          "check": "hours before dawn",
+          "title": { "en": "Little sleep, much forgiveness", "de": "Wenig Schlaf, viel Vergebung", "ar": "نوم قليل واستغفار كثير" },
+          "body": { "en": "The people of taqwa are described by their nights: short sleep, and seeking forgiveness before dawn.", "de": "Die Gottesfürchtigen werden durch ihre Nächte beschrieben: wenig Schlaf und die Bitte um Vergebung vor dem Morgengrauen.", "ar": "يوصف المتقون بلياليهم: نوم قليل واستغفار قبيل الفجر." }
+        },
+        {
+          "hadith": "muslim:1811",
+          "check": "got up at night",
+          "title": { "en": "His opening at night", "de": "Seine Eröffnung in der Nacht", "ar": "استفتاحه في الليل" },
+          "body": { "en": "Aisha was asked how he began his prayer at night. Her answer is a dua that asks to be guided where people differ.", "de": "ʿĀʾisha wurde gefragt, wie er sein Gebet in der Nacht begann. Ihre Antwort ist ein Bittgebet um Rechtleitung dort, wo Menschen uneins sind.", "ar": "سُئلت عائشة بمَ كان يفتتح صلاته إذا قام من الليل، فذكرت دعاءً فيه سؤال الهداية فيما اختلف فيه الناس." }
+        },
+        {
+          "verse": "25:64",
+          "check": "prostrating and standing",
+          "title": { "en": "Servants of the Most Merciful", "de": "Diener des Allerbarmers", "ar": "عباد الرحمن" },
+          "body": { "en": "Among the marks of the servants of ar-Rahman: nights spent standing and in sujud, for their Lord alone.", "de": "Zu den Kennzeichen der Diener des Allerbarmers gehören Nächte im Stehen und in der Niederwerfung, allein für ihren Herrn.", "ar": "من صفات عباد الرحمن ليالٍ يقضونها قيامًا وسجودًا لربهم وحده." }
+        },
+        {
+          "hadith": "bukhari:1152",
+          "check": "stopped the night prayer",
+          "title": { "en": "Small, but do not stop", "de": "Klein, aber hören Sie nicht auf", "ar": "قليل لا ينقطع" },
+          "body": { "en": "The Prophet's advice to 'Abdullah ibn 'Amr: do not start and then abandon it. A small habit kept up is worth more than a big one that fades.", "de": "Der Rat des Propheten an ʿAbdullāh ibn ʿAmr: nicht anfangen und dann aufgeben. Eine kleine Gewohnheit, die bleibt, ist mehr wert als eine große, die verblasst.", "ar": "نصيحة النبي لعبد الله بن عمرو: لا تبدأ ثم تترك. والعادة الصغيرة الدائمة خير من كبيرة تنقطع." }
+        },
+        {
+          "title": { "en": "A gentle start", "de": "Ein sanfter Anfang", "ar": "بداية لطيفة" },
+          "list": {
+            "en": ["Set your alarm a little before Fajr, once a week", "Pray two quiet rak'at with verses you understand", "Make one personal dua in your last sujud"],
+            "de": ["Stellen Sie einmal pro Woche den Wecker etwas vor Fajr", "Beten Sie zwei stille Rakʿa mit Versen, die Sie verstehen", "Sprechen Sie im letzten Sujūd ein persönliches Bittgebet"],
+            "ar": ["اضبط منبّهك قبيل الفجر مرة في الأسبوع", "صلِّ ركعتين هادئتين بآيات تفهمها", "ادعُ دعاءً خاصًّا في سجودك الأخير"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "khushu-18-al-ikhlas",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": { "en": "Presence in prayer · 18", "de": "Andacht im Gebet · 18", "ar": "الخشوع في الصلاة · ١٨" },
+        "title": { "en": "Al-Ikhlas: reciting it with understanding", "de": "Al-Ikhlāṣ: mit Verständnis rezitiert", "ar": "الإخلاص: قراءة بفهم" },
+        "sub": { "en": "Four short verses that make clear whom you pray to", "de": "Vier kurze Verse, die klar machen, zu wem Sie beten", "ar": "أربع آيات قصار تبيّن لمن تصلي" },
+        "arabic": "الإخلاص"
+      },
+      "slides": [
+        {
+          "title": { "en": "Why this surah in prayer", "de": "Warum diese Sure im Gebet", "ar": "لماذا هذه السورة في الصلاة" },
+          "body": { "en": "Al-Ikhlas is among the surahs recited most often in prayer. It answers the question every prayer rests on: who is the One I am standing before?", "de": "Al-Ikhlāṣ gehört zu den Suren, die im Gebet am häufigsten rezitiert werden. Sie beantwortet die Frage, auf der jedes Gebet ruht: Wer ist Der, vor Dem ich stehe?", "ar": "سورة الإخلاص من أكثر السور قراءة في الصلاة، وهي تجيب عن السؤال الذي تقوم عليه كل صلاة: من الذي أقف بين يديه؟" }
+        },
+        {
+          "verse": "112:1-2",
+          "check": "Eternal Refuge",
+          "title": { "en": "One, and the Refuge of all", "de": "Einer, und die Zuflucht aller", "ar": "الأحد الصمد" },
+          "body": { "en": "Ahad: utterly one, with nothing beside Him. As-Samad: the One all needs are brought to. While you recite, bring yours.", "de": "Aḥad: vollkommen einer, nichts neben Ihm. Aṣ-Ṣamad: Der, zu Dem alle Anliegen gebracht werden. Bringen Sie beim Rezitieren Ihre eigenen.", "ar": "الأحد: الواحد الذي لا شريك معه. الصمد: الذي تُرفع إليه الحاجات كلها. فإذا قرأت فارفع إليه حاجاتك." }
+        },
+        {
+          "verse": "112:3-4",
+          "check": "equivalent",
+          "title": { "en": "Beyond every comparison", "de": "Jenseits jedes Vergleichs", "ar": "فوق كل مقارنة" },
+          "body": { "en": "Whatever picture your mind makes of Him, He is beyond it. This keeps the heart humble: you worship Him, not your idea of Him.", "de": "Welches Bild sich Ihr Verstand auch von Ihm macht, Er ist darüber erhaben. Das hält das Herz demütig: Sie beten Ihn an, nicht Ihre Vorstellung von Ihm.", "ar": "مهما تصوّر عقلك فالله منزّه عن ذلك، وهذا يحفظ تواضع القلب: تعبد الله لا تصوّرك عنه." }
+        },
+        {
+          "title": { "en": "A declaration, not a habit", "de": "Ein Bekenntnis, keine Gewohnheit", "ar": "إعلان لا عادة" },
+          "body": { "en": "Each verse is something you affirm before Him. Say the first as a testimony, the second as a request, the last two in humility before what you cannot imagine.", "de": "Jeder Vers ist etwas, das Sie vor Ihm bekräftigen. Sprechen Sie den ersten als Bezeugung, den zweiten als Bitte, die letzten beiden in Demut vor dem, was Sie sich nicht vorstellen können.", "ar": "كل آية إقرار بين يديه: اقرأ الأولى شهادةً، والثانية افتقارًا، والأخيرتين تواضعًا أمام ما لا يحيط به تصورك." }
+        },
+        {
+          "dua": "hisn:24:8",
+          "check": "AS-Samad",
+          "title": { "en": "A dua built on these names", "de": "Ein Bittgebet aus diesen Namen", "ar": "دعاء بأسماء السورة" },
+          "body": { "en": "Before the salam you can ask Allah for forgiveness through the very names of al-Ikhlas.", "de": "Vor dem Salām können Sie Allah mit genau den Namen aus al-Ikhlāṣ um Vergebung bitten.", "ar": "قبل السلام يمكنك أن تسأل الله المغفرة متوسلًا بأسماء سورة الإخلاص نفسها." }
+        }
+      ]
+    },
+    {
+      "id": "khushu-19-al-falaq-and-an-nas",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": { "en": "Presence in prayer · 19", "de": "Andacht im Gebet · 19", "ar": "الخشوع في الصلاة · ١٩" },
+        "title": { "en": "Al-Falaq and an-Nas: refuge you can feel", "de": "Al-Falaq und an-Nās: Zuflucht, die man spürt", "ar": "الفلق والناس: استعاذة يحضر فيها القلب" },
+        "sub": { "en": "Reciting the two surahs of refuge as a real request", "de": "Die beiden Schutzsuren als echte Bitte rezitieren", "ar": "قراءة المعوذتين طلبًا حقيقيًّا" },
+        "arabic": "المعوّذتان"
+      },
+      "slides": [
+        {
+          "title": { "en": "Both begin with a command to speak", "de": "Beide beginnen mit einem Auftrag zu sprechen", "ar": "تبدأ كلتاهما بالأمر «قل»" },
+          "body": { "en": "When you recite these two surahs, you are not telling a story. You are doing what you were told to do: seeking refuge, right now, in the middle of your prayer.", "de": "Wenn Sie diese beiden Suren rezitieren, erzählen Sie keine Geschichte. Sie tun, was Ihnen aufgetragen wurde: Sie suchen Zuflucht, jetzt, mitten in Ihrem Gebet.", "ar": "حين تقرأ هاتين السورتين لا تحكي قصة، بل تمتثل الأمر: تستعيذ الآن، في وسط صلاتك." }
+        },
+        {
+          "verse": "113:1-2",
+          "check": "Lord of daybreak",
+          "title": { "en": "The Lord who splits the dark", "de": "Der Herr, der das Dunkel spaltet", "ar": "ربّ الفلق" },
+          "body": { "en": "Al-falaq is the dawn breaking through night. Whatever darkness you carry into prayer, you turn to the One who ends every night.", "de": "Al-Falaq ist das Morgenlicht, das die Nacht durchbricht. Welche Dunkelheit Sie auch ins Gebet mitbringen, Sie wenden sich an Den, der jede Nacht beendet.", "ar": "الفلق انبلاج الصبح من الليل. فأيًّا كانت الظلمة التي تحملها إلى صلاتك، فأنت تلجأ إلى من ينهي كل ليل." }
+        },
+        {
+          "verse": "113:3-5",
+          "check": "envier",
+          "title": { "en": "Harms you cannot see", "de": "Schaden, den Sie nicht sehen", "ar": "شرور لا تُرى" },
+          "body": { "en": "Darkness, hidden harm and envy: things you cannot control. Name them in your heart, then hand them over.", "de": "Dunkelheit, verborgener Schaden und Neid: Dinge, die Sie nicht kontrollieren. Benennen Sie sie im Herzen und übergeben Sie sie Ihm.", "ar": "الظلمة والأذى الخفي والحسد: أمور لا تملكها، فسمِّها في قلبك ثم فوّضها إليه." }
+        },
+        {
+          "verse": "114:1-3",
+          "check": "Sovereign of mankind",
+          "title": { "en": "Lord, King and God", "de": "Herr, König und Gott", "ar": "الربوبية والملك والألوهية" },
+          "body": { "en": "You call on Him in three ways before you name the danger. In prayer, let each name land before moving to the next.", "de": "Sie rufen Ihn auf drei Weisen an, bevor Sie die Gefahr benennen. Lassen Sie im Gebet jeden Namen wirken, bevor Sie weitergehen.", "ar": "تناديه بثلاثة أسماء قبل أن تذكر الخطر، فدع كل اسم يستقر في قلبك قبل أن تنتقل إلى ما بعده." }
+        },
+        {
+          "verse": "114:4-6",
+          "check": "retreating whisperer",
+          "title": { "en": "The whisperer inside the prayer", "de": "Der Einflüsterer im Gebet", "ar": "الوسواس في الصلاة" },
+          "body": { "en": "Commentators explain that the whisperer pulls back when Allah is remembered. Reciting this surah with attention is itself a remedy for distraction.", "de": "Kommentatoren erklären, dass der Einflüsterer zurückweicht, wenn Allahs gedacht wird. Diese Sure aufmerksam zu rezitieren ist selbst ein Mittel gegen Ablenkung.", "ar": "يبيّن المفسرون أن الوسواس يخنس عند ذكر الله، فقراءة هذه السورة بانتباه هي نفسها علاج للشرود." }
+        }
+      ],
+      "sources": [{ "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 114:4", "url": "https://quran.com/114:4/tafsirs/en-tafisr-ibn-kathir" }]
+    },
+    {
+      "id": "khushu-20-al-asr",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": { "en": "Presence in prayer · 20", "de": "Andacht im Gebet · 20", "ar": "الخشوع في الصلاة · ٢٠" },
+        "title": { "en": "Al-'Asr: a surah about these very minutes", "de": "Al-ʿAṣr: eine Sure über genau diese Minuten", "ar": "العصر: سورة عن هذه الدقائق" },
+        "sub": { "en": "Three verses to recite slowly when time feels short", "de": "Drei Verse, die man langsam rezitiert, wenn die Zeit knapp scheint", "ar": "ثلاث آيات تُقرأ بتأنٍّ حين يضيق الوقت" },
+        "arabic": "العصر"
+      },
+      "slides": [
+        {
+          "verse": "103:1-3",
+          "check": "By time",
+          "title": { "en": "An oath, a warning, an exception", "de": "Ein Schwur, eine Warnung, eine Ausnahme", "ar": "قسم وتحذير واستثناء" },
+          "body": { "en": "The whole surah fits on one slide, and yet it describes a whole human life.", "de": "Die ganze Sure passt auf eine Folie, und doch beschreibt sie ein ganzes Menschenleben.", "ar": "السورة كلها في شريحة واحدة، وهي مع ذلك تصف حياة الإنسان كلها." }
+        },
+        {
+          "title": { "en": "The prayer is time too", "de": "Auch das Gebet ist Zeit", "ar": "الصلاة وقت أيضًا" },
+          "body": { "en": "A prayer takes only a few minutes, and those minutes are part of the time Allah swears by. Spent with an absent heart, they simply pass. Spent with presence, they become gain.", "de": "Ein Gebet dauert nur wenige Minuten, und auch sie gehören zu der Zeit, bei der Allah schwört. Mit abwesendem Herzen vergehen sie einfach. Mit Gegenwart werden sie zum Gewinn.", "ar": "الصلاة دقائق معدودة، وهي من الزمن الذي أقسم الله به. تمضي فحسب إن غاب القلب، وتصير ربحًا إن حضر." }
+        },
+        {
+          "title": { "en": "Four ways out of loss", "de": "Vier Wege aus dem Verlust", "ar": "أربعة طرق للنجاة من الخسران" },
+          "list": {
+            "en": ["Faith: knowing whom you pray to", "Good deeds: and prayer is among the greatest", "Urging truth: praying together, reminding gently", "Urging patience: staying constant when it is hard"],
+            "de": ["Glaube: wissen, zu wem Sie beten", "Gute Taten: und das Gebet gehört zu den größten", "Zur Wahrheit raten: gemeinsam beten, sanft erinnern", "Zur Geduld raten: beständig bleiben, wenn es schwer ist"],
+            "ar": ["الإيمان: أن تعرف لمن تصلي", "العمل الصالح: والصلاة من أعظمه", "التواصي بالحق: صلاة الجماعة والتذكير بلطف", "التواصي بالصبر: الثبات حين يشتد الأمر"]
+          }
+        },
+        {
+          "title": { "en": "How to recite it", "de": "Wie man sie rezitiert", "ar": "كيف تقرؤها" },
+          "body": { "en": "Pause after the oath and feel time passing. Pause after the warning and admit it. Then recite the exception slowly, as a plan for the rest of your day.", "de": "Halten Sie nach dem Schwur inne und spüren Sie die vergehende Zeit. Halten Sie nach der Warnung inne und gestehen Sie sie sich ein. Rezitieren Sie dann die Ausnahme langsam, als Plan für den Rest Ihres Tages.", "ar": "قف بعد القسم واستشعر مضيّ الزمن، وقف بعد التحذير وأقرّ به، ثم اقرأ الاستثناء بتأنٍّ كأنه خطة لبقية يومك." }
+        },
+        {
+          "verse": "23:3",
+          "check": "ill speech",
+          "title": { "en": "Guarding time, guarding prayer", "de": "Die Zeit hüten, das Gebet hüten", "ar": "حفظ الوقت وحفظ الصلاة" },
+          "body": { "en": "In Surah al-Mu'minun, turning away from idle talk comes right after khushu'. A heart that guards its time finds it easier to be present.", "de": "In Sure al-Muʾminūn folgt das Abwenden von nichtigem Gerede direkt auf Khushūʿ. Ein Herz, das seine Zeit hütet, ist leichter gegenwärtig.", "ar": "في سورة المؤمنون يأتي الإعراض عن اللغو بعد الخشوع مباشرة، والقلب الذي يحفظ وقته يسهل عليه الحضور." }
+        }
+      ]
+    },
+    {
+      "id": "khushu-21-after-the-salam",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": { "en": "Presence in prayer · 21", "de": "Andacht im Gebet · 21", "ar": "الخشوع في الصلاة · ٢١" },
+        "title": { "en": "After the salam: do not rush away", "de": "Nach dem Salām: Eilen Sie nicht davon", "ar": "بعد السلام: لا تعجل بالقيام" },
+        "sub": { "en": "The last moments of the prayer and the remembrance that follows", "de": "Die letzten Momente des Gebets und das Gedenken danach", "ar": "آخر لحظات الصلاة والذكر بعدها" },
+        "arabic": "أذكار الصلاة"
+      },
+      "slides": [
+        {
+          "dua": "hisn:24:4",
+          "check": "worship You in the best of manners",
+          "title": { "en": "A dua for khushu' itself", "de": "Ein Bittgebet um Khushūʿ selbst", "ar": "دعاء لطلب الخشوع نفسه" },
+          "body": { "en": "Hisnul Muslim places it just before the salam. In it you ask Allah for the very thing this series is about.", "de": "Ḥiṣn al-Muslim nennt es kurz vor dem Salām. Darin bitten Sie Allah um genau das, worum es in dieser Reihe geht.", "ar": "يذكره حصن المسلم قبيل السلام، وفيه تسأل الله ما تدور حوله هذه السلسلة كلها." }
+        },
+        {
+          "dua": "hisn:25:0",
+          "check": "I ask Allah for forgiveness",
+          "title": { "en": "Why forgiveness, right after praying?", "de": "Warum Vergebung, direkt nach dem Gebet?", "ar": "لماذا الاستغفار بعد الصلاة مباشرة؟" },
+          "body": { "en": "No prayer is perfectly present. Seeking forgiveness right after it is humility: you hand over its gaps and ask Allah to accept it anyway.", "de": "Kein Gebet ist vollkommen gegenwärtig. Gleich danach um Vergebung zu bitten ist Demut: Sie übergeben seine Lücken und bitten Allah, es dennoch anzunehmen.", "ar": "لا صلاة يكمل فيها الحضور تمامًا، والاستغفار بعدها تواضع: تسلّم نقصها لله وتسأله أن يقبلها." }
+        },
+        {
+          "verse": "50:40",
+          "check": "after prostration",
+          "title": { "en": "Glorify Him after prostration", "de": "Preisen Sie Ihn nach der Niederwerfung", "ar": "التسبيح بعد السجود" },
+          "body": { "en": "Many commentators understand 'after prostration' as after the prayers. The remembrance continues when the prayer has ended.", "de": "Viele Kommentatoren verstehen „nach der Niederwerfung“ als nach den Gebeten. Das Gedenken geht weiter, wenn das Gebet zu Ende ist.", "ar": "يفسّر كثير من المفسرين أدبار السجود بأعقاب الصلوات، فالذكر يستمر بعد انقضاء الصلاة." }
+        },
+        {
+          "dua": "hisn:25:6",
+          "check": "He gives life and causes death",
+          "title": { "en": "Ten times after Fajr and Maghrib", "de": "Zehnmal nach Fajr und Maghrib", "ar": "عشرًا بعد الفجر والمغرب" },
+          "body": { "en": "A declaration of tawhid for the two prayers at the edges of the day.", "de": "Ein Bekenntnis zur Einheit Allahs für die beiden Gebete an den Rändern des Tages.", "ar": "شهادة بالتوحيد للصلاتين في طرفي النهار." }
+        },
+        {
+          "dua": "hisn:25:7",
+          "check": "knowledge which is beneficial",
+          "title": { "en": "After Fajr: a dua for the day", "de": "Nach Fajr: ein Bittgebet für den Tag", "ar": "بعد الفجر: دعاء لليوم" },
+          "body": { "en": "Three requests to carry from the prayer into the day: knowledge, provision and deeds that are accepted.", "de": "Drei Bitten, die Sie vom Gebet in den Tag tragen: Wissen, Versorgung und Taten, die angenommen werden.", "ar": "ثلاث مسائل تحملها من صلاتك إلى يومك: علم ورزق وعمل مقبول." }
+        },
+        {
+          "verse": "94:7-8",
+          "check": "direct",
+          "title": { "en": "When you have finished", "de": "Wenn Sie fertig sind", "ar": "فإذا فرغت" },
+          "body": { "en": "Some early commentators read it as: when you finish the prayer, give yourself to dua. Either way, the heart's longing stays with your Lord.", "de": "Einige frühe Kommentatoren verstehen es so: Wenn Sie das Gebet beendet haben, widmen Sie sich dem Bittgebet. So oder so bleibt die Sehnsucht des Herzens bei Ihrem Herrn.", "ar": "فسّرها بعض المفسرين من السلف: إذا فرغت من الصلاة فاجتهد في الدعاء. وعلى كل حال تبقى رغبة القلب متجهة إلى ربك." }
+        }
+      ],
+      "sources": [
+        { "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 50:40", "url": "https://quran.com/50:40/tafsirs/en-tafisr-ibn-kathir" },
+        { "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim (Arabic), on 94:7-8 (Ibn Mas'ud, Ibn 'Abbas)", "url": "https://quran.com/94:7/tafsirs/ar-tafsir-ibn-kathir" }
+      ]
+    },
+    {
+      "id": "khushu-22-remembrance-after-prayer",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": { "en": "Presence in prayer · 22", "de": "Andacht im Gebet · 22", "ar": "الخشوع في الصلاة · ٢٢" },
+        "title": { "en": "Remembrance that outlasts the prayer", "de": "Gedenken, das das Gebet überdauert", "ar": "ذكر يمتد بعد الصلاة" },
+        "sub": { "en": "The prayer ends with the salam, the remembrance does not", "de": "Das Gebet endet mit dem Salām, das Gedenken nicht", "ar": "تنتهي الصلاة بالسلام ولا ينتهي الذكر" },
+        "arabic": "الذِّكْر"
+      },
+      "slides": [
+        {
+          "verse": "13:28",
+          "check": "hearts are assured",
+          "title": { "en": "Where hearts find rest", "de": "Wo Herzen Ruhe finden", "ar": "حيث تطمئن القلوب" },
+          "body": { "en": "The calm you felt in a present prayer does not have to end at the salam. Remembrance keeps it alive.", "de": "Die Ruhe eines gegenwärtigen Gebets muss nicht mit dem Salām enden. Das Gedenken hält sie lebendig.", "ar": "السكينة التي وجدتها في الصلاة الحاضرة لا يلزم أن تنتهي بالسلام، فالذكر يبقيها حيّة." }
+        },
+        {
+          "verse": "33:41-42",
+          "check": "much remembrance",
+          "title": { "en": "Much remembrance", "de": "Viel Gedenken", "ar": "ذكر كثير" },
+          "body": { "en": "Not a fixed number, but a direction for the whole day: morning, afternoon and everything in between.", "de": "Keine feste Zahl, sondern eine Richtung für den ganzen Tag: morgens, nachmittags und alles dazwischen.", "ar": "ليس عددًا محددًا، بل وجهة لليوم كله: صباحه وعشيّه وما بينهما." }
+        },
+        {
+          "title": { "en": "Two traditions, one habit", "de": "Zwei Traditionen, eine Gewohnheit", "ar": "تقليدان وعادة واحدة" },
+          "body": { "en": "After the prayer, many Sunni Muslims say subhan Allah, alhamdulillah and Allahu akbar 33 times each. Shia Muslims say the tasbih of Fatima az-Zahra: Allahu akbar 34 times, alhamdulillah 33, subhan Allah 33.", "de": "Nach dem Gebet sprechen viele Sunniten je 33-mal subḥān Allāh, al-ḥamdu lillāh und Allāhu akbar. Schiiten sprechen den Tasbīḥ der Fāṭima az-Zahrāʾ: 34-mal Allāhu akbar, 33-mal al-ḥamdu lillāh, 33-mal subḥān Allāh.", "ar": "بعد الصلاة يقول كثير من أهل السنة: سبحان الله والحمد لله والله أكبر ثلاثًا وثلاثين لكلٍّ منها، ويقول الشيعة تسبيح فاطمة الزهراء: الله أكبر أربعًا وثلاثين، والحمد لله ثلاثًا وثلاثين، وسبحان الله ثلاثًا وثلاثين." }
+        },
+        {
+          "verse": "3:191",
+          "check": "standing or sitting",
+          "title": { "en": "In every posture", "de": "In jeder Haltung", "ar": "في كل الأحوال" },
+          "body": { "en": "People of understanding remember Allah in every posture and reflect on creation. The prayer trains the heart; life gives the occasions.", "de": "Die Verständigen gedenken Allahs in jeder Haltung und denken über die Schöpfung nach. Das Gebet übt das Herz, das Leben bietet die Anlässe.", "ar": "أولو الألباب يذكرون الله في كل أحوالهم ويتفكرون في الخلق. الصلاة تدرّب القلب، والحياة تهيّئ المناسبات." }
+        },
+        {
+          "title": { "en": "Carrying the prayer into the day", "de": "Das Gebet in den Tag tragen", "ar": "احمل صلاتك إلى يومك" },
+          "list": {
+            "en": ["Stay seated for two minutes after the salam", "Count your dhikr slowly on your fingers", "Choose one phrase to repeat until the next prayer"],
+            "de": ["Bleiben Sie nach dem Salām zwei Minuten sitzen", "Zählen Sie Ihren Dhikr langsam an den Fingern", "Wählen Sie einen Satz, den Sie bis zum nächsten Gebet wiederholen"],
+            "ar": ["ابقَ جالسًا دقيقتين بعد السلام", "اعدد أذكارك على أصابعك بتأنٍّ", "اختر ذكرًا تردده حتى الصلاة التالية"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "khushu-23-consistency-over-intensity",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": { "en": "Presence in prayer · 23", "de": "Andacht im Gebet · 23", "ar": "الخشوع في الصلاة · ٢٣" },
+        "title": { "en": "Consistency over intensity", "de": "Beständigkeit vor Intensität", "ar": "الدوام قبل الحماسة" },
+        "sub": { "en": "Khushu' grows like a habit, not like a firework", "de": "Khushūʿ wächst wie eine Gewohnheit, nicht wie ein Feuerwerk", "ar": "الخشوع ينمو كالعادة لا كالألعاب النارية" },
+        "arabic": "المداومة"
+      },
+      "slides": [
+        {
+          "hadith": "bukhari:6465",
+          "check": "most regular constant deeds",
+          "title": { "en": "What Allah loves most", "de": "Was Allah am meisten liebt", "ar": "أحب الأعمال إلى الله" },
+          "body": { "en": "Not the biggest deeds, but the ones that last. Choose a step in your prayer that you can keep.", "de": "Nicht die größten Taten, sondern die beständigen. Wählen Sie einen Schritt in Ihrem Gebet, den Sie halten können.", "ar": "ليست أكبر الأعمال، بل أدومها. فاختر خطوة في صلاتك تقدر على الاستمرار عليها." }
+        },
+        {
+          "verse": "23:9",
+          "check": "carefully maintain their prayers",
+          "title": { "en": "The list begins and ends with prayer", "de": "Die Liste beginnt und endet mit dem Gebet", "ar": "تبدأ الصفات بالصلاة وتنتهي بها" },
+          "body": { "en": "Surah al-Mu'minun opens the qualities of the successful with khushu' and closes them with guarding the prayers. Presence and consistency frame it all.", "de": "Sure al-Muʾminūn eröffnet die Eigenschaften der Erfolgreichen mit Khushūʿ und schließt sie mit dem Bewahren der Gebete. Gegenwart und Beständigkeit umrahmen alles.", "ar": "تفتتح سورة المؤمنون صفات المفلحين بالخشوع وتختمها بالمحافظة على الصلوات؛ فالحضور والمداومة يحيطان بكل شيء." }
+        },
+        {
+          "hadith": "bukhari:43",
+          "check": "within your capacity",
+          "title": { "en": "Do what you can keep up", "de": "Tun Sie, was Sie durchhalten können", "ar": "ما تقدر على دوامه" },
+          "body": { "en": "A woman known for excessive prayer was mentioned to the Prophet. His answer protects you from burning out.", "de": "Dem Propheten wurde eine Frau genannt, die übermäßig viel betete. Seine Antwort schützt vor dem Ausbrennen.", "ar": "ذُكرت للنبي امرأة تكثر من الصلاة، فجاء جوابه حماية من الانقطاع والملل." }
+        },
+        {
+          "verse": "70:23",
+          "check": "constant in their prayer",
+          "title": { "en": "Constant, not occasional", "de": "Beständig, nicht gelegentlich", "ar": "مداومة لا انقطاع" },
+          "body": { "en": "Surah al-Ma'arij names an exception to human restlessness: those who keep to their prayer. Constancy itself calms an anxious heart.", "de": "Sure al-Maʿāriǧ nennt eine Ausnahme von der menschlichen Unruhe: jene, die an ihrem Gebet festhalten. Beständigkeit selbst beruhigt ein unruhiges Herz.", "ar": "تستثني سورة المعارج من هلع الإنسان المداومين على صلاتهم، فالمداومة نفسها تسكّن القلب القلِق." }
+        },
+        {
+          "title": { "en": "One prayer a day, then two", "de": "Ein Gebet am Tag, dann zwei", "ar": "صلاة واحدة يوميًّا ثم اثنتان" },
+          "body": { "en": "Pick one prayer, perhaps Fajr or Isha, and make it your 'present prayer' for a week: arrive early, recite slowly, stay seated after. When it feels natural, add a second.", "de": "Wählen Sie ein Gebet, etwa Fajr oder ʿIshāʾ, und machen Sie es eine Woche lang zu Ihrem „gegenwärtigen Gebet“: früh ankommen, langsam rezitieren, danach sitzen bleiben. Wenn es selbstverständlich wird, nehmen Sie ein zweites hinzu.", "ar": "اختر صلاة واحدة، كالفجر أو العشاء، واجعلها أسبوعًا «صلاتك الحاضرة»: تأتي مبكرًا، وتقرأ بتأنٍّ، وتجلس بعدها. فإذا صار ذلك طبعًا فأضف صلاة ثانية." }
+        },
+        {
+          "title": { "en": "Signs you are growing", "de": "Zeichen, dass Sie wachsen", "ar": "علامات النمو" },
+          "list": {
+            "en": ["You notice sooner when your mind has drifted", "A rushed prayer starts to feel like a loss", "A few verses mean more than they did a month ago"],
+            "de": ["Sie bemerken früher, wenn Ihr Geist abgeschweift ist", "Ein gehetztes Gebet fühlt sich wie ein Verlust an", "Einige Verse bedeuten Ihnen mehr als vor einem Monat"],
+            "ar": ["تنتبه أسرع حين يشرد ذهنك", "تشعر أن الصلاة المستعجلة خسارة", "صارت آيات تعني لك أكثر مما كانت قبل شهر"]
+          }
+        }
+      ]
+    }
+  ]
+}

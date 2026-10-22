@@ -1,0 +1,1532 @@
+{
+  "series": "islamic-history",
+  "label": {"en": "Islamic history", "de": "Islamische Geschichte", "ar": "التاريخ الإسلامي"},
+  "topic": "history",
+  "tradition": "all",
+  "items": [
+    {
+      "id": "islamic-history-01-after-632",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": {"en": "Islamic history · 1", "de": "Islamische Geschichte · 1", "ar": "التاريخ الإسلامي · ١"},
+        "title": {"en": "After 632: one community, two memories", "de": "Nach 632: eine Gemeinschaft, zwei Erinnerungen", "ar": "بعد سنة ٦٣٢م: أمة واحدة وذاكرتان"},
+        "sub": {"en": "How Sunni and Shia Muslims remember the question of who should lead after the Prophet", "de": "Wie sunnitische und schiitische Muslime sich an die Frage erinnern, wer nach dem Propheten führen sollte", "ar": "كيف يتذكر السنة والشيعة سؤال القيادة بعد النبي ﷺ"},
+        "arabic": "الخلافة والإمامة"
+      },
+      "slides": [
+        {
+          "title": {"en": "A community in grief", "de": "Eine Gemeinschaft in Trauer", "ar": "أمة في حزن"},
+          "body": {"en": "The Prophet passed away in Medina in 632 CE (11 AH). His companions faced a question that has shaped Muslim history ever since: who should lead the community after him?", "de": "Der Prophet starb 632 n. Chr. (11 n. H.) in Medina. Seine Gefährten standen vor einer Frage, die die muslimische Geschichte bis heute prägt: Wer soll die Gemeinschaft nach ihm führen?", "ar": "تُوفي النبي ﷺ في المدينة سنة ٦٣٢م (١١هـ)، ووقف أصحابه أمام سؤال طبع تاريخ المسلمين منذ ذلك اليوم: من يقود الأمة من بعده؟"}
+        },
+        {
+          "title": {"en": "The meeting at the Saqifa", "de": "Die Versammlung in der Saqifa", "ar": "اجتماع السقيفة"},
+          "body": {"en": "The sources tell how the Ansar of Medina gathered in the Saqifa, the covered hall of Banu Sa'ida. Abu Bakr, 'Umar and Abu 'Ubayda joined them, and the meeting ended with the pledge to Abu Bakr as caliph.", "de": "Die Quellen berichten, wie sich die Ansar von Medina in der Saqifa versammelten, der überdachten Halle der Banu Sa'ida. Abu Bakr, 'Umar und Abu 'Ubayda kamen hinzu, und am Ende stand der Treueeid für Abu Bakr als Kalifen.", "ar": "تروي المصادر أن الأنصار اجتمعوا في سقيفة بني ساعدة بالمدينة، فلحق بهم أبو بكر وعمر وأبو عبيدة، وانتهى الاجتماع بمبايعة أبي بكر خليفةً."}
+        },
+        {
+          "verse": "42:38",
+          "check": "consultation",
+          "title": {"en": "The Sunni view", "de": "Die sunnitische Sicht", "ar": "الرؤية السنية"},
+          "body": {"en": "Sunni Muslims see in this choice the principle of consultation, shura, which the Quran praises among the believers.", "de": "Sunnitische Muslime sehen in dieser Wahl das Prinzip der Beratung, der Schura, das der Koran an den Gläubigen lobt.", "ar": "يرى المسلمون السنة في هذا الاختيار تطبيقًا لمبدأ الشورى الذي أثنى عليه القرآن في وصف المؤمنين."}
+        },
+        {
+          "title": {"en": "The pool of Khumm", "de": "Der Teich von Khumm", "ar": "غدير خم"},
+          "body": {"en": "On the way back from the Farewell Pilgrimage, the Prophet stopped at Ghadir Khumm and spoke about 'Ali before the pilgrims. Shia Muslims hold that he appointed 'Ali there as his successor and first Imam.", "de": "Auf dem Rückweg von der Abschiedspilgerfahrt hielt der Prophet bei Ghadir Khumm an und sprach vor den Pilgern über 'Ali. Schiitische Muslime sind überzeugt, dass er 'Ali dort zu seinem Nachfolger und ersten Imam bestimmte.", "ar": "في طريق العودة من حجة الوداع توقف النبي ﷺ عند غدير خم وتحدث عن علي أمام الحجاج، ويعتقد المسلمون الشيعة أنه نصّبه هناك خليفةً له وإمامًا أول."}
+        },
+        {
+          "verse": "5:67",
+          "check": "announce",
+          "title": {"en": "The Shia view", "de": "Die schiitische Sicht", "ar": "الرؤية الشيعية"},
+          "body": {"en": "Shia commentators, and some Sunni ones, link this verse to Ghadir Khumm. Most Sunni commentators read it as a command to convey the whole message.", "de": "Schiitische und einige sunnitische Kommentatoren verbinden diesen Vers mit Ghadir Khumm. Die meisten sunnitischen Kommentatoren verstehen ihn als Auftrag, die ganze Botschaft zu verkünden.", "ar": "يربط المفسرون الشيعة وبعض المفسرين السنة هذه الآية بغدير خم، ويفهمها أكثر المفسرين السنة أمرًا بتبليغ الرسالة كاملة."}
+        },
+        {
+          "title": {"en": "One event, two readings", "de": "Ein Ereignis, zwei Lesarten", "ar": "حدث واحد وقراءتان"},
+          "body": {"en": "Sunni scholars also transmit what the Prophet said about 'Ali at Ghadir. They understand it as a call to love and support him, not as an appointment to rule.", "de": "Auch sunnitische Gelehrte überliefern, was der Prophet in Ghadir über 'Ali sagte. Sie verstehen es als Aufruf, ihn zu lieben und zu unterstützen, nicht als Einsetzung in die Herrschaft.", "ar": "ينقل علماء السنة أيضًا ما قاله النبي ﷺ في علي يوم الغدير، لكنهم يفهمونه دعوةً إلى محبته ونصرته، لا تعيينًا للحكم."}
+        },
+        {
+          "title": {"en": "The patience of 'Ali", "de": "Die Geduld 'Alis", "ar": "صبر علي"},
+          "body": {"en": "Sunni hadith collections report that 'Ali gave his pledge to Abu Bakr some months later, after Fatima's death. Sunni Muslims see agreement in this; Shia Muslims see patience for the sake of the community's unity.", "de": "Sunnitische Hadith-Sammlungen berichten, dass 'Ali Abu Bakr einige Monate später, nach dem Tod Fatimas, den Treueeid leistete. Sunnitische Muslime sehen darin Zustimmung, schiitische Muslime Geduld um der Einheit der Gemeinschaft willen.", "ar": "تذكر كتب الحديث عند السنة أن عليًا بايع أبا بكر بعد بضعة أشهر، بعد وفاة فاطمة؛ فيرى فيه السنة موافقةً، ويرى فيه الشيعة صبرًا حفاظًا على وحدة الأمة."}
+        },
+        {
+          "verse": "3:103",
+          "check": "rope",
+          "title": {"en": "What unites", "de": "Was verbindet", "ar": "ما يجمع الأمة"},
+          "body": {"en": "Both pray toward one Kaaba, recite one Quran and love the Prophet's family. The call to hold together is addressed to all.", "de": "Beide beten zur selben Kaaba, rezitieren denselben Koran und lieben die Familie des Propheten. Der Ruf zum Zusammenhalt gilt allen.", "ar": "يصلي الجميع إلى كعبة واحدة، ويتلون قرآنًا واحدًا، ويحبون آل بيت النبي ﷺ، والدعوة إلى الاعتصام موجهة إليهم جميعًا."}
+        }
+      ],
+      "sources": [
+        {"label": "Wilferd Madelung, The Succession to Muhammad (Cambridge University Press, 1997)"},
+        {"label": "Moojan Momen, An Introduction to Shi'i Islam (Yale University Press, 1985)"},
+        {"label": "Encyclopaedia of Islam, Second Edition (Brill), art. Ghadir Khumm"},
+        {"label": "Wikipedia: Saqifa", "url": "https://en.wikipedia.org/wiki/Saqifa"},
+        {"label": "Wikipedia: Ghadir Khumm", "url": "https://en.wikipedia.org/wiki/Ghadir_Khumm"}
+      ]
+    },
+    {
+      "id": "islamic-history-02-first-caliphs",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": {"en": "Islamic history · 2", "de": "Islamische Geschichte · 2", "ar": "التاريخ الإسلامي · ٢"},
+        "title": {"en": "The first caliphs, 632–661", "de": "Die ersten Kalifen, 632–661", "ar": "الخلفاء الأوائل ٦٣٢–٦٦١م"},
+        "sub": {"en": "Abu Bakr, 'Umar, 'Uthman and 'Ali: three decades that shaped the Muslim world", "de": "Abu Bakr, 'Umar, 'Uthman und 'Ali: drei Jahrzehnte, die die muslimische Welt prägten", "ar": "أبو بكر وعمر وعثمان وعلي: ثلاثة عقود صنعت العالم الإسلامي"},
+        "arabic": "الخلفاء الراشدون"
+      },
+      "slides": [
+        {
+          "title": {"en": "Names and honours", "de": "Namen und Ehrentitel", "ar": "أسماء وألقاب"},
+          "body": {"en": "Sunni Muslims call the first four caliphs the Rightly Guided, al-Khulafa' ar-Rashidun. Shia Muslims honour 'Ali as the first Imam and judge the leadership of these years differently.", "de": "Sunnitische Muslime nennen die ersten vier Kalifen die Rechtgeleiteten, al-Khulafa' ar-Rashidun. Schiitische Muslime ehren 'Ali als ersten Imam und beurteilen die Führung dieser Jahre anders.", "ar": "يسمي المسلمون السنة الخلفاء الأربعة الأوائل الخلفاءَ الراشدين، ويُجلّ المسلمون الشيعة عليًا إمامًا أول، ولهم تقييم مختلف لقيادة تلك السنين."}
+        },
+        {
+          "title": {"en": "Four caliphs, four eras", "de": "Vier Kalifen, vier Abschnitte", "ar": "أربعة خلفاء وأربع مراحل"},
+          "list": {
+            "en": ["Abu Bakr: 632–634 (11–13 AH)", "'Umar ibn al-Khattab: 634–644 (13–23 AH)", "'Uthman ibn 'Affan: 644–656 (23–35 AH)", "'Ali ibn Abi Talib: 656–661 (35–40 AH)"],
+            "de": ["Abu Bakr: 632–634 (11–13 n. H.)", "'Umar ibn al-Khattab: 634–644 (13–23 n. H.)", "'Uthman ibn 'Affan: 644–656 (23–35 n. H.)", "'Ali ibn Abi Talib: 656–661 (35–40 n. H.)"],
+            "ar": ["أبو بكر: ٦٣٢–٦٣٤م (١١–١٣هـ)", "عمر بن الخطاب: ٦٣٤–٦٤٤م (١٣–٢٣هـ)", "عثمان بن عفان: ٦٤٤–٦٥٦م (٢٣–٣٥هـ)", "علي بن أبي طالب: ٦٥٦–٦٦١م (٣٥–٤٠هـ)"]
+          }
+        },
+        {
+          "title": {"en": "Holding Arabia together", "de": "Arabien zusammenhalten", "ar": "حفظ وحدة الجزيرة"},
+          "body": {"en": "In about two years Abu Bakr kept Arabia together after many tribes refused the zakah or followed new claimants to prophecy. The first gathering of the Quran into one collection also falls in his time.", "de": "In rund zwei Jahren hielt Abu Bakr Arabien zusammen, nachdem viele Stämme die Zakat verweigert hatten oder neuen Anwärtern auf das Prophetentum gefolgt waren. In seine Zeit fällt auch die erste Sammlung des Korans in einem Band.", "ar": "في نحو عامين حفظ أبو بكر وحدة الجزيرة العربية بعد أن امتنعت قبائل كثيرة عن الزكاة أو اتبعت مدّعي النبوة، وفي عهده جُمع القرآن أول مرة في مصحف واحد."}
+        },
+        {
+          "title": {"en": "A calendar and a register", "de": "Ein Kalender und ein Register", "ar": "تقويم وديوان"},
+          "body": {"en": "Under 'Umar the Hijri calendar was introduced, counted from the Hijrah of 622. He set up the diwan, a register for stipends and the army. Many historians see him as a founder of Muslim administration.", "de": "Unter 'Umar wurde der Hidschra-Kalender eingeführt, gezählt ab der Hidschra von 622. Er schuf den Diwan, ein Register für Zuwendungen und das Heer. Viele Historiker sehen in ihm einen Begründer der muslimischen Verwaltung.", "ar": "في عهد عمر اعتُمد التقويم الهجري مبتدئًا من هجرة سنة ٦٢٢م، وأنشأ الديوان لتسجيل العطاء والجند، ويرى كثير من المؤرخين فيه مؤسسًا للإدارة في الدولة الإسلامية."}
+        },
+        {
+          "title": {"en": "'Umar in Jerusalem", "de": "'Umar in Jerusalem", "ar": "عمر في بيت المقدس"},
+          "body": {"en": "Around 637–638 Jerusalem came under Muslim rule. The 10th-century Christian chronicler Eutychius of Alexandria tells that 'Umar declined to pray inside the Church of the Holy Sepulchre, so that it would not one day be claimed as a mosque.", "de": "Um 637–638 kam Jerusalem unter muslimische Herrschaft. Der christliche Chronist Eutychios von Alexandria (10. Jahrhundert) erzählt, 'Umar habe es abgelehnt, in der Grabeskirche zu beten, damit sie nicht eines Tages als Moschee beansprucht würde.", "ar": "نحو سنة ٦٣٧–٦٣٨م صار بيت المقدس تحت حكم المسلمين، ويروي المؤرخ المسيحي سعيد بن البطريق في القرن العاشر الميلادي أن عمر امتنع عن الصلاة داخل كنيسة القيامة، حتى لا يطالب بها أحد مسجدًا من بعده."}
+        },
+        {
+          "verse": "4:58",
+          "check": "justice",
+          "title": {"en": "Trusts and justice", "de": "Anvertrautes und Gerechtigkeit", "ar": "الأمانة والعدل"},
+          "body": {"en": "Muslims of every school measure their rulers by this verse.", "de": "Muslime aller Rechtsschulen messen ihre Herrscher an diesem Vers.", "ar": "يقيس المسلمون على اختلاف مذاهبهم حكامَهم بهذه الآية."}
+        },
+        {
+          "title": {"en": "'Uthman and the mushaf", "de": "'Uthman und der Mushaf", "ar": "عثمان والمصحف"},
+          "body": {"en": "'Uthman had agreed copies of the Quran sent to the main cities. In 656 (35 AH) he was killed in his house in Medina during a revolt, a deep wound in the memory of the community.", "de": "'Uthman ließ abgestimmte Abschriften des Korans in die wichtigsten Städte senden. 656 (35 n. H.) wurde er während eines Aufstands in seinem Haus in Medina getötet, eine tiefe Wunde im Gedächtnis der Gemeinschaft.", "ar": "أرسل عثمان نسخًا موحدة من المصحف إلى الأمصار الكبرى، وفي سنة ٦٥٦م (٣٥هـ) قُتل في بيته بالمدينة أثناء فتنة، فكان مقتله جرحًا عميقًا في ذاكرة الأمة."}
+        },
+        {
+          "title": {"en": "'Ali in Kufa", "de": "'Ali in Kufa", "ar": "علي في الكوفة"},
+          "body": {"en": "'Ali moved his capital to Kufa. His years were marked by the first civil war, the fitna, which both traditions remember with sorrow. In Ramadan 40 AH (661) he was struck down in the mosque of Kufa.", "de": "'Ali verlegte seine Hauptstadt nach Kufa. Seine Jahre waren vom ersten Bürgerkrieg geprägt, der Fitna, an die beide Traditionen mit Trauer erinnern. Im Ramadan 40 n. H. (661) wurde er in der Moschee von Kufa niedergestreckt.", "ar": "نقل علي عاصمته إلى الكوفة، وشهدت سنواته الفتنة الأولى التي يذكرها الفريقان بأسى، وفي رمضان سنة ٤٠هـ (٦٦١م) ضُرب في مسجد الكوفة فاستُشهد."}
+        }
+      ],
+      "sources": [
+        {"label": "Hugh Kennedy, The Prophet and the Age of the Caliphates (3rd ed., Routledge, 2016)"},
+        {"label": "Wilferd Madelung, The Succession to Muhammad (Cambridge University Press, 1997)"},
+        {"label": "Wikipedia: Rashidun Caliphate", "url": "https://en.wikipedia.org/wiki/Rashidun_Caliphate"},
+        {"label": "Wikipedia: Church of the Holy Sepulchre", "url": "https://en.wikipedia.org/wiki/Church_of_the_Holy_Sepulchre"}
+      ]
+    },
+    {
+      "id": "islamic-history-03-umayyads",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": {"en": "Islamic history · 3", "de": "Islamische Geschichte · 3", "ar": "التاريخ الإسلامي · ٣"},
+        "title": {"en": "The Umayyads of Damascus", "de": "Die Umayyaden von Damaskus", "ar": "الأمويون في دمشق"},
+        "sub": {"en": "661–750: a dynasty, a new Arabic administration and a debate about power that never ended", "de": "661–750: eine Dynastie, eine neue arabische Verwaltung und eine Debatte über Macht, die nie endete", "ar": "٦٦١–٧٥٠م: أسرة حاكمة وإدارة عربية جديدة وجدل حول السلطة لم ينتهِ"},
+        "arabic": "الدولة الأموية"
+      },
+      "slides": [
+        {
+          "title": {"en": "From Kufa to Damascus", "de": "Von Kufa nach Damaskus", "ar": "من الكوفة إلى دمشق"},
+          "body": {"en": "After 'Ali's death, al-Hasan ibn 'Ali was acknowledged in Kufa. In 661 he made peace with Mu'awiya ibn Abi Sufyan, the long-time governor of Syria, sparing further bloodshed. Mu'awiya ruled as caliph from Damascus.", "de": "Nach 'Alis Tod wurde al-Hasan ibn 'Ali in Kufa anerkannt. 661 schloss er Frieden mit Mu'awiya ibn Abi Sufyan, dem langjährigen Statthalter Syriens, und ersparte so weiteres Blutvergießen. Mu'awiya regierte als Kalif von Damaskus aus.", "ar": "بعد وفاة علي بايع أهل الكوفة الحسنَ بن علي، ثم صالح سنة ٦٦١م معاويةَ بن أبي سفيان، والي الشام منذ سنين، حقنًا للدماء، فحكم معاوية خليفةً من دمشق."}
+        },
+        {
+          "title": {"en": "A hereditary office", "de": "Ein erbliches Amt", "ar": "حكم وراثي"},
+          "body": {"en": "Mu'awiya named his son Yazid as his successor. The caliphate became a dynasty, a turning point that Muslim scholars of all schools have debated ever since.", "de": "Mu'awiya bestimmte seinen Sohn Yazid zum Nachfolger. Das Kalifat wurde zur Dynastie, ein Wendepunkt, über den Gelehrte aller Schulen seither diskutieren.", "ar": "عهد معاوية بالخلافة إلى ابنه يزيد، فصارت الخلافة ملكًا وراثيًا، وهو تحول ما زال علماء المسلمين على اختلاف مذاهبهم يتناولونه بالنقاش."}
+        },
+        {
+          "title": {"en": "Karbala, 680", "de": "Kerbela, 680", "ar": "كربلاء سنة ٦٨٠م"},
+          "body": {"en": "In 680 (61 AH) Imam al-Husayn, the Prophet's grandson, was killed at Karbala with members of his family and companions. Sunni and Shia Muslims share this grief; Shia Muslims mourn him each year on Ashura.", "de": "680 (61 n. H.) wurde Imam al-Husayn, der Enkel des Propheten, mit Angehörigen und Gefährten in Kerbela getötet. Sunnitische und schiitische Muslime teilen diese Trauer; Schiiten gedenken seiner jedes Jahr an Aschura.", "ar": "في سنة ٦٨٠م (٦١هـ) استُشهد الإمام الحسين سبط النبي ﷺ في كربلاء مع أهل بيته وأصحابه، ويشترك السنة والشيعة في هذا الحزن، ويحيي الشيعة ذكراه كل عام في عاشوراء."}
+        },
+        {
+          "title": {"en": "Arabic for the state", "de": "Arabisch für den Staat", "ar": "تعريب الدواوين"},
+          "body": {"en": "Under 'Abd al-Malik (685–705) Arabic replaced Greek and Persian in the government offices. In 696–697 his mint issued gold coins without images, bearing only words of faith.", "de": "Unter 'Abd al-Malik (685–705) ersetzte Arabisch das Griechische und Persische in den Behörden. 696–697 ließ er Goldmünzen ohne Bilder prägen, die nur Worte des Glaubens trugen.", "ar": "في عهد عبد الملك بن مروان (٦٨٥–٧٠٥م) حلّت العربية محل اليونانية والفارسية في الدواوين، وفي سنة ٦٩٦–٦٩٧م ضُربت دنانير ذهبية بلا صور، لا تحمل إلا عبارات التوحيد."}
+        },
+        {
+          "verse": "3:26",
+          "check": "sovereignty",
+          "title": {"en": "Power belongs to Allah", "de": "Die Herrschaft gehört Allah", "ar": "الملك لله"},
+          "body": {"en": "Dynasties rise and fall. This verse reminds rulers and ruled alike who truly gives power and takes it away.", "de": "Dynastien steigen auf und vergehen. Dieser Vers erinnert Herrscher und Beherrschte daran, wer Macht wirklich gibt und nimmt.", "ar": "تقوم الدول وتزول، وهذه الآية تذكّر الحاكم والمحكوم بمن يؤتي الملك وينزعه حقًا."}
+        },
+        {
+          "title": {"en": "'Umar ibn 'Abd al-'Aziz", "de": "'Umar ibn 'Abd al-'Aziz", "ar": "عمر بن عبد العزيز"},
+          "body": {"en": "Among the Umayyads, 'Umar II (717–720) stands apart. Many Sunni Muslims call him the fifth rightly guided caliph. Historians report that he ended the cursing of 'Ali in Friday sermons.", "de": "Unter den Umayyaden ragt 'Umar II. (717–720) heraus. Viele sunnitische Muslime nennen ihn den fünften rechtgeleiteten Kalifen. Historiker berichten, dass er die Verfluchung 'Alis in den Freitagspredigten beendete.", "ar": "يتميز عمر بن عبد العزيز (٧١٧–٧٢٠م) بين خلفاء بني أمية، ويعدّه كثير من أهل السنة خامس الخلفاء الراشدين، ويذكر المؤرخون أنه أبطل سبّ علي على المنابر في خطب الجمعة."}
+        },
+        {
+          "title": {"en": "From al-Andalus to Sindh", "de": "Von al-Andalus bis Sindh", "ar": "من الأندلس إلى السند"},
+          "body": {"en": "By the early 8th century the caliphate reached from al-Andalus in the west to Sindh and Central Asia in the east. Most of its people were not yet Muslims; conversion came slowly, over generations.", "de": "Im frühen 8. Jahrhundert reichte das Kalifat von al-Andalus im Westen bis Sindh und Zentralasien im Osten. Die meisten seiner Bewohner waren noch keine Muslime; der Übertritt geschah langsam, über Generationen.", "ar": "مع مطلع القرن الثامن الميلادي امتدت الخلافة من الأندلس غربًا إلى السند وآسيا الوسطى شرقًا، ولم يكن أكثر سكانها مسلمين بعد، فقد جاء دخولهم في الإسلام ببطء عبر أجيال."}
+        },
+        {
+          "title": {"en": "The end in 750", "de": "Das Ende 750", "ar": "النهاية سنة ٧٥٠م"},
+          "body": {"en": "In 750 (132 AH) the Abbasid revolution swept the Umayyads from power, and most of the family was killed. One prince, 'Abd al-Rahman, escaped to al-Andalus and became emir of Cordoba in 756.", "de": "750 (132 n. H.) stürzte die abbasidische Revolution die Umayyaden; die meisten Mitglieder der Familie wurden getötet. Ein Prinz, 'Abd al-Rahman, floh nach al-Andalus und wurde 756 Emir von Córdoba.", "ar": "في سنة ٧٥٠م (١٣٢هـ) أطاحت الثورة العباسية بالأمويين وقُتل أكثر أفراد أسرتهم، ونجا أمير واحد هو عبد الرحمن، ففرّ إلى الأندلس وصار أمير قرطبة سنة ٧٥٦م."}
+        }
+      ],
+      "sources": [
+        {"label": "G. R. Hawting, The First Dynasty of Islam: The Umayyad Caliphate AD 661–750 (2nd ed., Routledge, 2000)"},
+        {"label": "Wikipedia: Umayyad Caliphate", "url": "https://en.wikipedia.org/wiki/Umayyad_Caliphate"},
+        {"label": "Wikipedia: Abd al-Malik ibn Marwan", "url": "https://en.wikipedia.org/wiki/Abd_al-Malik_ibn_Marwan"},
+        {"label": "Wikipedia: Umar ibn Abd al-Aziz", "url": "https://en.wikipedia.org/wiki/Umar_ibn_Abd_al-Aziz"}
+      ]
+    },
+    {
+      "id": "islamic-history-04-abbasids",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": {"en": "Islamic history · 4", "de": "Islamische Geschichte · 4", "ar": "التاريخ الإسلامي · ٤"},
+        "title": {"en": "The Abbasids: Baghdad and beyond", "de": "Die Abbasiden: Bagdad und darüber hinaus", "ar": "العباسيون: بغداد وما بعدها"},
+        "sub": {"en": "750–1258 in Baghdad, then a symbolic caliphate in Cairo until 1517", "de": "750–1258 in Bagdad, danach ein symbolisches Kalifat in Kairo bis 1517", "ar": "من ٧٥٠ إلى ١٢٥٨م في بغداد، ثم خلافة رمزية في القاهرة حتى ١٥١٧م"},
+        "arabic": "الدولة العباسية"
+      },
+      "slides": [
+        {
+          "title": {"en": "The family of al-'Abbas", "de": "Die Familie des al-'Abbas", "ar": "آل العباس"},
+          "body": {"en": "The Abbasids descended from al-'Abbas, an uncle of the Prophet. Their revolution began in Khurasan and won in 750. Many who joined it hoped for a ruler from the Prophet's family.", "de": "Die Abbasiden stammten von al-'Abbas ab, einem Onkel des Propheten. Ihre Revolution begann in Khorasan und siegte 750. Viele, die sich ihr anschlossen, hofften auf einen Herrscher aus der Familie des Propheten.", "ar": "ينتسب العباسيون إلى العباس عمّ النبي ﷺ، وقد انطلقت ثورتهم من خراسان وانتصرت سنة ٧٥٠م، وكان كثير ممن انضموا إليها يرجون حاكمًا من آل بيت النبي."}
+        },
+        {
+          "title": {"en": "A round city on the Tigris", "de": "Eine runde Stadt am Tigris", "ar": "مدينة مدوّرة على دجلة"},
+          "body": {"en": "In 762 (145 AH) the caliph al-Mansur founded Baghdad and named it Madinat al-Salam, the City of Peace. Its first plan was a circle, with the palace and the great mosque at its centre.", "de": "762 (145 n. H.) gründete der Kalif al-Mansur Bagdad und nannte es Madinat as-Salam, die Stadt des Friedens. Ihr erster Grundriss war ein Kreis, mit Palast und großer Moschee in der Mitte.", "ar": "في سنة ٧٦٢م (١٤٥هـ) أسس الخليفة المنصور بغداد وسماها مدينة السلام، وجاء تخطيطها الأول دائريًا يتوسطه القصر والمسجد الجامع."}
+        },
+        {
+          "verse": "49:13",
+          "check": "know one another",
+          "title": {"en": "A city of many peoples", "de": "Eine Stadt vieler Völker", "ar": "مدينة الشعوب"},
+          "body": {"en": "Arabs, Persians, Turks, Christians, Jews and Muslims of many schools lived side by side in Abbasid Baghdad.", "de": "Araber, Perser, Türken, Christen, Juden und Muslime vieler Schulen lebten im abbasidischen Bagdad Seite an Seite.", "ar": "عاش العرب والفرس والترك والنصارى واليهود والمسلمون من مذاهب شتى جنبًا إلى جنب في بغداد العباسية."}
+        },
+        {
+          "title": {"en": "The Imams in Abbasid times", "de": "Die Imame in abbasidischer Zeit", "ar": "الأئمة في العصر العباسي"},
+          "body": {"en": "Shia memory of this era centres on the Imams. Imam Musa al-Kazim died in prison in Baghdad around 799. In 817 al-Ma'mun named Imam 'Ali al-Rida his heir; the Imam died in Tus the next year.", "de": "Die schiitische Erinnerung an diese Zeit kreist um die Imame. Imam Musa al-Kazim starb um 799 in Bagdad im Gefängnis. 817 ernannte al-Ma'mun Imam 'Ali ar-Rida zu seinem Erben; der Imam starb im Jahr darauf in Tus.", "ar": "تتمحور ذاكرة الشيعة عن هذا العصر حول الأئمة: فقد تُوفي الإمام موسى الكاظم في سجنه ببغداد نحو سنة ٧٩٩م، وجعل المأمون الإمام علي الرضا وليًا لعهده سنة ٨١٧م، فتوفي في طوس في العام التالي."}
+        },
+        {
+          "title": {"en": "Samarra and its spiral minaret", "de": "Samarra und sein Spiralminarett", "ar": "سامراء ومئذنتها الملوية"},
+          "body": {"en": "For much of the 9th century the caliphs ruled from Samarra. Its Great Mosque, built 848–851, was then the largest in the world, and its spiral minaret still rises above the plain.", "de": "Einen großen Teil des 9. Jahrhunderts regierten die Kalifen von Samarra aus. Seine Große Moschee, erbaut 848–851, war damals die größte der Welt, und ihr Spiralminarett erhebt sich noch heute über die Ebene.", "ar": "حكم الخلفاء من سامراء معظم القرن التاسع الميلادي، وكان جامعها الكبير الذي بُني بين ٨٤٨ و٨٥١م أكبر مساجد العالم يومئذ، وما زالت مئذنته الملوية تعلو السهل."}
+        },
+        {
+          "title": {"en": "Power slips away", "de": "Die Macht entgleitet", "ar": "انتقال السلطة"},
+          "body": {"en": "From the 10th century real power passed to others: the Buyids, a Shia dynasty, from 945, then the Sunni Seljuks from 1055. The caliph remained a symbol of unity for most Sunni Muslims.", "de": "Ab dem 10. Jahrhundert ging die tatsächliche Macht an andere über: ab 945 an die Buyiden, eine schiitische Dynastie, ab 1055 an die sunnitischen Seldschuken. Für die meisten Sunniten blieb der Kalif ein Symbol der Einheit.", "ar": "منذ القرن العاشر انتقلت السلطة الفعلية إلى غير الخلفاء: إلى البويهيين، وهم أسرة شيعية، منذ ٩٤٥م، ثم إلى السلاجقة السنة منذ ١٠٥٥م، وبقي الخليفة رمزًا للوحدة عند أكثر أهل السنة."}
+        },
+        {
+          "title": {"en": "Baghdad, 1258", "de": "Bagdad, 1258", "ar": "بغداد سنة ١٢٥٨م"},
+          "body": {"en": "In 1258 (656 AH) the Mongols under Hülegü took Baghdad. The caliph al-Musta'sim was killed and much of the city was destroyed. Historians count it among the great catastrophes of Muslim history.", "de": "1258 (656 n. H.) eroberten die Mongolen unter Hülegü Bagdad. Der Kalif al-Musta'sim wurde getötet und große Teile der Stadt zerstört. Historiker zählen dies zu den großen Katastrophen der muslimischen Geschichte.", "ar": "في سنة ١٢٥٨م (٦٥٦هـ) اجتاح المغول بقيادة هولاكو بغداد، فقُتل الخليفة المستعصم ودُمّر كثير من المدينة، ويعد المؤرخون ذلك من أعظم النكبات في تاريخ المسلمين."}
+        },
+        {
+          "title": {"en": "After the storm", "de": "Nach dem Sturm", "ar": "بعد العاصفة"},
+          "body": {"en": "In time many Mongol rulers became Muslims: Berke of the Golden Horde, Ghazan of the Ilkhanate in 1295 and later Özbeg Khan. In Cairo the Mamluks kept a line of Abbasid caliphs until 1517.", "de": "Mit der Zeit wurden viele mongolische Herrscher Muslime: Berke von der Goldenen Horde, Ghazan vom Ilchanat 1295 und später Özbeg Khan. In Kairo hielten die Mamluken eine Reihe abbasidischer Kalifen bis 1517.", "ar": "مع الزمن أسلم كثير من حكام المغول: بركة خان في القبيلة الذهبية، وغازان في الدولة الإلخانية سنة ١٢٩٥م، ثم أوزبك خان، وأبقى المماليك في القاهرة سلسلة من الخلفاء العباسيين حتى ١٥١٧م."}
+        }
+      ],
+      "sources": [
+        {"label": "Hugh Kennedy, When Baghdad Ruled the Muslim World (Da Capo Press, 2005)"},
+        {"label": "Peter Jackson, The Mongols and the Islamic World (Yale University Press, 2017)"},
+        {"label": "Wikipedia: Abbasid Caliphate", "url": "https://en.wikipedia.org/wiki/Abbasid_Caliphate"},
+        {"label": "Wikipedia: Ali al-Rida", "url": "https://en.wikipedia.org/wiki/Ali_al-Rida"},
+        {"label": "Wikipedia: Great Mosque of Samarra", "url": "https://en.wikipedia.org/wiki/Great_Mosque_of_Samarra"}
+      ]
+    },
+    {
+      "id": "islamic-history-05-baghdad-books",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": {"en": "Islamic history · 5", "de": "Islamische Geschichte · 5", "ar": "التاريخ الإسلامي · ٥"},
+        "title": {"en": "Baghdad's books: paper, copyists, libraries", "de": "Bagdads Bücher: Papier, Kopisten, Bibliotheken", "ar": "كتب بغداد: الورق والوراقون والمكتبات"},
+        "sub": {"en": "Beyond the House of Wisdom: how a whole city learned to live with books", "de": "Jenseits des Hauses der Weisheit: wie eine ganze Stadt mit Büchern leben lernte", "ar": "أبعد من بيت الحكمة: كيف عاشت مدينة كاملة مع الكتب"},
+        "arabic": "سوق الوراقين"
+      },
+      "slides": [
+        {
+          "title": {"en": "Paper reaches the caliphate", "de": "Papier erreicht das Kalifat", "ar": "الورق يصل إلى الخلافة"},
+          "body": {"en": "Paper came from China. A later story credits Chinese prisoners taken at Talas in 751, but paper was already in use in Samarkand before then. In Baghdad, paper was being made by the 790s.", "de": "Papier kam aus China. Eine spätere Erzählung schreibt es chinesischen Gefangenen der Schlacht am Talas 751 zu, doch in Samarkand war Papier schon vorher in Gebrauch. In Bagdad wurde spätestens in den 790er-Jahren Papier hergestellt.", "ar": "جاء الورق من الصين، وتنسب رواية متأخرة صناعته إلى أسرى صينيين بعد معركة طلاس سنة ٧٥١م، غير أن الورق كان مستعملًا في سمرقند قبل ذلك، وفي بغداد كان الورق يُصنع منذ تسعينيات القرن الثامن."}
+        },
+        {
+          "title": {"en": "Lighter than parchment", "de": "Leichter als Pergament", "ar": "أخف من الرق"},
+          "body": {"en": "Paper was lighter and cheaper than parchment and less fragile than papyrus. Government offices used it first; soon scholars, poets and students did too. Books became something many could own.", "de": "Papier war leichter und billiger als Pergament und weniger empfindlich als Papyrus. Zuerst nutzten es die Behörden, bald auch Gelehrte, Dichter und Studenten. Bücher wurden etwas, das viele besitzen konnten.", "ar": "كان الورق أخف من الرق وأرخص، وأقل هشاشة من البردي، فاستعملته الدواوين أولًا، ثم العلماء والشعراء والطلاب، وصار الكتاب في متناول كثير من الناس."}
+        },
+        {
+          "title": {"en": "The stationers' market", "de": "Der Markt der Buchhändler", "ar": "سوق الوراقين"},
+          "body": {"en": "In Baghdad the warraqun, copyists and booksellers, had their own market, the Suq al-Warraqin. Students copied texts there, and scholars met in the shops to read and debate.", "de": "In Bagdad hatten die Warraqun, Kopisten und Buchhändler, einen eigenen Markt, den Suq al-Warraqin. Studenten schrieben dort Texte ab, und Gelehrte trafen sich in den Läden zum Lesen und Diskutieren.", "ar": "كان للوراقين في بغداد، وهم النساخ وباعة الكتب، سوق خاص بهم هو سوق الوراقين، ينسخ فيه الطلاب النصوص، ويلتقي العلماء في دكاكينه للقراءة والمناظرة."}
+        },
+        {
+          "title": {"en": "A catalogue of all books", "de": "Ein Katalog aller Bücher", "ar": "فهرس لكل الكتب"},
+          "body": {"en": "In 987 (377 AH) Ibn al-Nadim, son of a Baghdad bookseller, completed al-Fihrist: a catalogue of every book in Arabic he knew, from Quranic sciences and grammar to poetry, law and philosophy.", "de": "987 (377 n. H.) vollendete Ibn an-Nadim, Sohn eines Bagdader Buchhändlers, al-Fihrist: einen Katalog aller arabischen Bücher, die er kannte, von den Koranwissenschaften und der Grammatik bis zu Dichtung, Recht und Philosophie.", "ar": "في سنة ٩٨٧م (٣٧٧هـ) أتم ابن النديم، ابن أحد الوراقين في بغداد، كتاب الفهرست، وجمع فيه كل ما عرفه من كتب العربية: من علوم القرآن والنحو إلى الشعر والفقه والفلسفة."}
+        },
+        {
+          "verse": "20:114",
+          "check": "increase me in knowledge",
+          "title": {"en": "A prayer for more", "de": "Ein Gebet um mehr", "ar": "دعاء بالمزيد"},
+          "body": {"en": "Baghdad's readers and students made this short prayer of the Quran their own.", "de": "Die Leser und Studenten Bagdads machten dieses kurze Gebet des Korans zu ihrem eigenen.", "ar": "جعل قراء بغداد وطلابها هذا الدعاء القرآني القصير دعاءهم."}
+        },
+        {
+          "title": {"en": "Madrasas with libraries", "de": "Madrasas mit Bibliotheken", "ar": "مدارس ومكتبات"},
+          "body": {"en": "Mosques and madrasas kept libraries. In 1065 the vizier Nizam al-Mulk founded the Nizamiyya, and in 1233 the caliph al-Mustansir opened the Mustansiriyya, whose building still stands by the Tigris.", "de": "Moscheen und Madrasas unterhielten Bibliotheken. 1065 gründete der Wesir Nizam al-Mulk die Nizamiyya, und 1233 eröffnete der Kalif al-Mustansir die Mustansiriyya, deren Gebäude noch heute am Tigris steht.", "ar": "كانت للمساجد والمدارس مكتباتها، ففي سنة ١٠٦٥م أسس الوزير نظام الملك المدرسة النظامية، وفي سنة ١٢٣٣م افتتح الخليفة المستنصر المدرسة المستنصرية التي ما زال بناؤها قائمًا على دجلة."}
+        },
+        {
+          "title": {"en": "Books as endowments", "de": "Bücher als Stiftungen", "ar": "الكتب وقفًا"},
+          "body": {"en": "Many books were given as waqf, an endowment for Allah's sake. A note on the first page often named the donor and stated that the book was to be read and lent, but never sold.", "de": "Viele Bücher wurden als Waqf gestiftet, um Allahs willen. Ein Vermerk auf der ersten Seite nannte oft den Stifter und hielt fest, dass das Buch gelesen und verliehen, aber nie verkauft werden durfte.", "ar": "وُقف كثير من الكتب لوجه الله، وكثيرًا ما تحمل الصفحة الأولى قيدَ وقفٍ يذكر الواقف وينص على أن الكتاب يُقرأ ويُعار ولا يُباع."}
+        },
+        {
+          "title": {"en": "What Baghdad's readers teach", "de": "Was Bagdads Leser lehren", "ar": "دروس من قراء بغداد"},
+          "list": {
+            "en": ["Make learning affordable for many", "Honour those who copy and keep texts", "Share your books: lend them and endow them"],
+            "de": ["Machen Sie Wissen für viele erschwinglich", "Ehren Sie die, die Texte abschreiben und bewahren", "Teilen Sie Ihre Bücher: Verleihen und stiften Sie sie"],
+            "ar": ["اجعل العلم في متناول الكثيرين", "أكرم من ينسخ النصوص ويحفظها", "شارك كتبك: أعِرها وأوقفها"]
+          }
+        }
+      ],
+      "sources": [
+        {"label": "Jonathan M. Bloom, Paper Before Print (Yale University Press, 2001)"},
+        {"label": "Wikipedia: History of paper", "url": "https://en.wikipedia.org/wiki/History_of_paper"},
+        {"label": "Wikipedia: Al-Fihrist", "url": "https://en.wikipedia.org/wiki/Al-Fihrist"},
+        {"label": "Wikipedia: Mustansiriyya Madrasa", "url": "https://en.wikipedia.org/wiki/Mustansiriyya_Madrasa"}
+      ]
+    },
+    {
+      "id": "islamic-history-06-persia",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": {"en": "Islamic history · 6", "de": "Islamische Geschichte · 6", "ar": "التاريخ الإسلامي · ٦"},
+        "title": {"en": "Persia: a new faith, an old culture", "de": "Persien: ein neuer Glaube, eine alte Kultur", "ar": "فارس: دين جديد وثقافة عريقة"},
+        "sub": {"en": "How Iran became Muslim slowly, and gave the Muslim world grammarians, hadith scholars and poets", "de": "Wie Iran langsam muslimisch wurde und der muslimischen Welt Grammatiker, Hadithgelehrte und Dichter schenkte", "ar": "كيف دخلت إيران في الإسلام ببطء، وأعطت العالم الإسلامي نحاة ومحدثين وشعراء"},
+        "arabic": "بلاد فارس"
+      },
+      "slides": [
+        {
+          "title": {"en": "The end of an empire", "de": "Das Ende eines Reiches", "ar": "نهاية إمبراطورية"},
+          "body": {"en": "Within about twenty years of the Prophet's death, the Sasanian Empire of Persia had fallen. Its last king, Yazdegerd III, died in 651. Most Persians were then Zoroastrians.", "de": "Rund zwanzig Jahre nach dem Tod des Propheten war das persische Sasanidenreich untergegangen. Sein letzter König, Yazdegerd III., starb 651. Die meisten Perser waren damals Zoroastrier.", "ar": "في نحو عشرين عامًا بعد وفاة النبي ﷺ سقطت الإمبراطورية الساسانية في فارس، وتوفي آخر ملوكها يزدجرد الثالث سنة ٦٥١م، وكان أكثر الفرس يومئذ زرادشتيين."}
+        },
+        {
+          "title": {"en": "A slow conversion", "de": "Ein langsamer Übertritt", "ar": "دخول تدريجي في الإسلام"},
+          "body": {"en": "Conversion took time. Historians such as Richard Bulliet estimate that Muslims became a majority in Iran only in the Abbasid era, probably in the 9th century, some two centuries after the conquest.", "de": "Der Übertritt brauchte Zeit. Historiker wie Richard Bulliet schätzen, dass Muslime in Iran erst in der Abbasidenzeit die Mehrheit stellten, wohl im 9. Jahrhundert, rund zwei Jahrhunderte nach der Eroberung.", "ar": "استغرق دخول الناس في الإسلام وقتًا طويلًا، ويقدّر مؤرخون مثل ريتشارد بولييت أن المسلمين لم يصيروا أغلبية في إيران إلا في العصر العباسي، على الأرجح في القرن التاسع الميلادي، أي بعد نحو قرنين من الفتح."}
+        },
+        {
+          "verse": "14:4",
+          "check": "language of his people",
+          "title": {"en": "Each people's language", "de": "Die Sprache jedes Volkes", "ar": "لغة كل قوم"},
+          "body": {"en": "Iranians took up Islam and kept their own language. The Quran itself honours the tongues of peoples.", "de": "Die Iraner nahmen den Islam an und behielten ihre eigene Sprache. Der Koran selbst würdigt die Sprachen der Völker.", "ar": "اعتنق الإيرانيون الإسلام وحافظوا على لغتهم، والقرآن نفسه يكرم ألسنة الأقوام."}
+        },
+        {
+          "title": {"en": "New Persian is born", "de": "Das Neupersische entsteht", "ar": "ولادة الفارسية الحديثة"},
+          "body": {"en": "From the 9th and 10th centuries, Persian was written in Arabic letters. At the Samanid court the poet Rudaki wrote in it, and in 1010 Ferdowsi completed the Shahnameh, the Book of Kings.", "de": "Ab dem 9. und 10. Jahrhundert wurde Persisch in arabischer Schrift geschrieben. Am Hof der Samaniden dichtete Rudaki in dieser Sprache, und 1010 vollendete Ferdowsi das Schahname, das Buch der Könige.", "ar": "منذ القرنين التاسع والعاشر الميلاديين كُتبت الفارسية بالحروف العربية، ونظم بها الشاعر الرودكي في بلاط السامانيين، وأتم الفردوسي الشاهنامه، كتاب الملوك، سنة ١٠١٠م."}
+        },
+        {
+          "title": {"en": "Teachers of Arabic", "de": "Lehrer des Arabischen", "ar": "معلمو العربية"},
+          "body": {"en": "Sibawayh, whose al-Kitab founded Arabic grammar as a science, was of Persian origin. Persians learned Arabic so deeply that they taught it to the whole Muslim world.", "de": "Sibawayh, dessen al-Kitab die arabische Grammatik als Wissenschaft begründete, war persischer Herkunft. Perser lernten Arabisch so gründlich, dass sie es der ganzen muslimischen Welt lehrten.", "ar": "كان سيبويه، صاحب الكتاب الذي أرسى علم النحو العربي، فارسي الأصل، وقد أتقن الفرس العربية حتى صاروا يعلّمونها للعالم الإسلامي كله."}
+        },
+        {
+          "title": {"en": "Scholars from Iran and Khurasan", "de": "Gelehrte aus Iran und Khorasan", "ar": "علماء من إيران وخراسان"},
+          "list": {
+            "en": ["Muslim ibn al-Hajjaj of Nishapur, compiler of Sahih Muslim", "Al-Nasa'i of Nasa, collector of Sunni hadith", "Al-Kulayni of Rayy, compiler of al-Kafi for the Shia", "Shaykh al-Tusi, author of two of the four Shia hadith books", "Al-Ghazali of Tus, theologian of the heart"],
+            "de": ["Muslim ibn al-Hajjaj aus Nishapur, Sammler des Sahih Muslim", "An-Nasa'i aus Nasa, Sammler sunnitischer Hadithe", "Al-Kulayni aus Rayy, Verfasser von al-Kafi für die Schia", "Shaykh at-Tusi, Autor zweier der vier großen schiitischen Hadithwerke", "Al-Ghazali aus Tus, Theologe des Herzens"],
+            "ar": ["مسلم بن الحجاج النيسابوري صاحب الصحيح", "النسائي صاحب السنن من مدينة نسا", "الكليني من الري صاحب الكافي عند الشيعة", "الشيخ الطوسي صاحب اثنين من الكتب الأربعة عند الشيعة", "أبو حامد الغزالي من طوس، عالم القلوب"]
+          }
+        },
+        {
+          "title": {"en": "The language of poets", "de": "Die Sprache der Dichter", "ar": "لغة الشعراء"},
+          "body": {"en": "Later, Persian became a language of poetry and courts from Anatolia to India. Rumi, Sa'di and Hafiz wrote in it, and Muslims of many lands still read them today.", "de": "Später wurde Persisch zur Sprache der Dichtung und der Höfe von Anatolien bis Indien. Rumi, Saadi und Hafis schrieben in ihr, und Muslime vieler Länder lesen sie bis heute.", "ar": "ثم صارت الفارسية لغة الشعر والبلاطات من الأناضول إلى الهند، وبها كتب جلال الدين الرومي وسعدي وحافظ، وما زال مسلمو بلاد كثيرة يقرؤونهم."}
+        },
+        {
+          "verse": "30:22",
+          "check": "languages",
+          "title": {"en": "A sign in our tongues", "de": "Ein Zeichen in unseren Sprachen", "ar": "آية في ألسنتنا"},
+          "body": {"en": "Arabic and Persian lived side by side for centuries, a living example of this verse.", "de": "Arabisch und Persisch lebten jahrhundertelang Seite an Seite, ein lebendiges Beispiel für diesen Vers.", "ar": "عاشت العربية والفارسية جنبًا إلى جنب قرونًا، مثالًا حيًا على هذه الآية."}
+        }
+      ],
+      "sources": [
+        {"label": "Richard W. Bulliet, Conversion to Islam in the Medieval Period (Harvard University Press, 1979)"},
+        {"label": "Wikipedia: Islamization of Iran", "url": "https://en.wikipedia.org/wiki/Islamization_of_Iran"},
+        {"label": "Wikipedia: Islam in Iran", "url": "https://en.wikipedia.org/wiki/Islam_in_Iran"},
+        {"label": "Wikipedia: Shahnameh", "url": "https://en.wikipedia.org/wiki/Shahnameh"},
+        {"label": "Wikipedia: Sibawayh", "url": "https://en.wikipedia.org/wiki/Sibawayh"}
+      ]
+    },
+    {
+      "id": "islamic-history-07-egypt",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": {"en": "Islamic history · 7", "de": "Islamische Geschichte · 7", "ar": "التاريخ الإسلامي · ٧"},
+        "title": {"en": "Egypt: from Fustat to al-Azhar", "de": "Ägypten: von Fustat bis al-Azhar", "ar": "مصر: من الفسطاط إلى الأزهر"},
+        "sub": {"en": "A camp by the Nile became a capital, and a Fatimid mosque a home of learning for a thousand years", "de": "Ein Lager am Nil wurde zur Hauptstadt, eine fatimidische Moschee für tausend Jahre zu einem Ort des Lernens", "ar": "معسكر على النيل صار عاصمة، ومسجد فاطمي صار دارًا للعلم ألف عام"},
+        "arabic": "الفسطاط والقاهرة"
+      },
+      "slides": [
+        {
+          "verse": "10:87",
+          "check": "Egypt",
+          "title": {"en": "Egypt in the Quran", "de": "Ägypten im Koran", "ar": "مصر في القرآن"},
+          "body": {"en": "Egypt appears again and again in the Quran, in the stories of Yusuf and of Musa and Harun.", "de": "Ägypten erscheint im Koran immer wieder, in den Geschichten von Yusuf sowie von Musa und Harun.", "ar": "تتكرر مصر في القرآن في قصص يوسف وموسى وهارون عليهم السلام."}
+        },
+        {
+          "title": {"en": "A new capital by the Nile", "de": "Eine neue Hauptstadt am Nil", "ar": "عاصمة جديدة على النيل"},
+          "body": {"en": "Around 641–642, under 'Amr ibn al-'As, Muslims founded Fustat beside the Nile. Its mosque, the Mosque of 'Amr, was the first built in Egypt; it has been rebuilt many times since.", "de": "Um 641–642 gründeten Muslime unter 'Amr ibn al-'As am Nil die Stadt Fustat. Ihre Moschee, die Moschee des 'Amr, war die erste in Ägypten; sie wurde seither viele Male neu errichtet.", "ar": "نحو سنة ٦٤١–٦٤٢م أسس المسلمون بقيادة عمرو بن العاص مدينة الفسطاط على النيل، وكان مسجدها، جامع عمرو، أول مسجد بُني في مصر، وقد أعيد بناؤه مرات كثيرة."}
+        },
+        {
+          "title": {"en": "Copts and Arabic", "de": "Kopten und Arabisch", "ar": "الأقباط والعربية"},
+          "body": {"en": "For centuries most Egyptians remained Coptic Christians. Conversion was gradual, and Arabic slowly replaced Coptic in daily life. Coptic lives on in the liturgy of the Coptic Church.", "de": "Jahrhundertelang blieben die meisten Ägypter koptische Christen. Der Übertritt zum Islam geschah allmählich, und Arabisch verdrängte das Koptische langsam aus dem Alltag. In der Liturgie der koptischen Kirche lebt es weiter.", "ar": "ظل أكثر المصريين قرونًا مسيحيين أقباطًا، وكان دخولهم في الإسلام تدريجيًا، وحلّت العربية محل القبطية في الحياة اليومية ببطء، وما زالت القبطية حية في طقوس الكنيسة القبطية."}
+        },
+        {
+          "title": {"en": "The Mosque of Ibn Tulun", "de": "Die Ibn-Tulun-Moschee", "ar": "جامع ابن طولون"},
+          "body": {"en": "Built between 876 and 879, the mosque of Ahmad ibn Tulun is the oldest well-preserved mosque in Egypt. Its design was inspired by the mosques of Samarra in Iraq.", "de": "Die zwischen 876 und 879 erbaute Moschee des Ahmad ibn Tulun ist die älteste gut erhaltene Moschee Ägyptens. Ihre Gestaltung folgt dem Vorbild der Moscheen von Samarra im Irak.", "ar": "بُني جامع أحمد بن طولون بين ٨٧٦ و٨٧٩م، وهو أقدم مسجد في مصر بقي محفوظًا على حاله إلى حد كبير، وقد استُلهم تصميمه من مساجد سامراء في العراق."}
+        },
+        {
+          "title": {"en": "Fatimid Cairo", "de": "Das fatimidische Kairo", "ar": "القاهرة الفاطمية"},
+          "body": {"en": "In 969 the Fatimids, an Isma'ili Shia dynasty, took Egypt and founded al-Qahira, Cairo. Work on al-Azhar began in 970, and the first Friday prayer was held there in 972.", "de": "969 nahmen die Fatimiden, eine ismailitisch-schiitische Dynastie, Ägypten ein und gründeten al-Qahira, Kairo. 970 begann der Bau der Azhar-Moschee, 972 wurde dort das erste Freitagsgebet gehalten.", "ar": "في سنة ٩٦٩م دخل الفاطميون، وهم أسرة شيعية إسماعيلية، مصر وأسسوا القاهرة، وبدأ بناء الجامع الأزهر سنة ٩٧٠م، وأقيمت فيه أول صلاة جمعة سنة ٩٧٢م."}
+        },
+        {
+          "title": {"en": "A thousand years of al-Azhar", "de": "Tausend Jahre al-Azhar", "ar": "ألف عام من الأزهر"},
+          "body": {"en": "After Salah al-Din ended Fatimid rule in 1171, Egypt returned to Sunni teaching. Al-Azhar grew into a leading centre of Sunni learning, while Isma'ili Muslims today still honour the Fatimid heritage.", "de": "Nachdem Salah ad-Din 1171 die Herrschaft der Fatimiden beendet hatte, kehrte Ägypten zur sunnitischen Lehre zurück. Al-Azhar wurde zu einem führenden Zentrum sunnitischer Gelehrsamkeit; ismailitische Muslime ehren das fatimidische Erbe bis heute.", "ar": "بعد أن أنهى صلاح الدين حكم الفاطميين سنة ١١٧١م عادت مصر إلى المذهب السني، ونما الأزهر حتى صار من أبرز مراكز العلم السني، بينما ما زال المسلمون الإسماعيليون يعتزون بالإرث الفاطمي."}
+        },
+        {
+          "verse": "12:99",
+          "check": "Enter Egypt",
+          "title": {"en": "A land of welcome", "de": "Ein Land des Willkommens", "ar": "أرض الأمان"},
+          "body": {"en": "Yusuf welcomed his family into Egypt with words of safety. For centuries Cairo has welcomed students from Indonesia to Senegal.", "de": "Yusuf empfing seine Familie in Ägypten mit Worten der Sicherheit. Seit Jahrhunderten empfängt Kairo Studenten von Indonesien bis Senegal.", "ar": "استقبل يوسف أهله في مصر بكلمات الأمان، ومنذ قرون تستقبل القاهرة طلاب العلم من إندونيسيا إلى السنغال."}
+        }
+      ],
+      "sources": [
+        {"label": "Heinz Halm, The Fatimids and their Traditions of Learning (I.B. Tauris, 1997)"},
+        {"label": "Wikipedia: Amr ibn al-As Mosque", "url": "https://en.wikipedia.org/wiki/Amr_ibn_al-As_Mosque"},
+        {"label": "Wikipedia: Mosque of Ibn Tulun", "url": "https://en.wikipedia.org/wiki/Mosque_of_Ibn_Tulun"},
+        {"label": "Wikipedia: Al-Azhar Mosque", "url": "https://en.wikipedia.org/wiki/Al-Azhar_Mosque"}
+      ]
+    },
+    {
+      "id": "islamic-history-08-maghreb-amazigh",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": {"en": "Islamic history · 8", "de": "Islamische Geschichte · 8", "ar": "التاريخ الإسلامي · ٨"},
+        "title": {"en": "The Maghreb and the Amazigh", "de": "Der Maghreb und die Amazigh", "ar": "المغرب والأمازيغ"},
+        "sub": {"en": "How the peoples of North Africa embraced Islam and carried it further, from Fez to Marrakesh", "de": "Wie die Völker Nordafrikas den Islam annahmen und weitertrugen, von Fès bis Marrakesch", "ar": "كيف اعتنقت شعوب شمال إفريقيا الإسلام وحملته بعيدًا، من فاس إلى مراكش"},
+        "arabic": "بلاد المغرب"
+      },
+      "slides": [
+        {
+          "title": {"en": "The land of the west", "de": "Das Land des Westens", "ar": "بلاد الغرب"},
+          "body": {"en": "Al-Maghrib means the west: today's Morocco, Algeria, Tunisia and Libya. Its first peoples are the Amazigh, often called Berbers. Arab armies reached them from the 640s, and the region saw both resistance and alliance.", "de": "Al-Maghrib bedeutet der Westen: das heutige Marokko, Algerien, Tunesien und Libyen. Seine ersten Völker sind die Amazigh, oft Berber genannt. Arabische Heere erreichten sie ab den 640er-Jahren; die Region erlebte Widerstand wie Bündnisse.", "ar": "المغرب يعني الغرب: المغرب الأقصى والجزائر وتونس وليبيا اليوم، وأهله الأولون هم الأمازيغ الذين يُسمَّون كثيرًا البربر، وقد وصلتهم الجيوش العربية منذ أربعينيات القرن السابع، فعرفت المنطقة المقاومة والتحالف معًا."}
+        },
+        {
+          "title": {"en": "From newcomers to carriers", "de": "Vom Empfangen zum Weitertragen", "ar": "من متلقين إلى حملة"},
+          "body": {"en": "Many Amazigh embraced Islam and carried it further. Tariq ibn Ziyad, who crossed to al-Andalus in 711, was most likely an Amazigh. Gibraltar still bears his name: Jabal Tariq, the mountain of Tariq.", "de": "Viele Amazigh nahmen den Islam an und trugen ihn weiter. Tariq ibn Ziyad, der 711 nach al-Andalus übersetzte, war sehr wahrscheinlich ein Amazigh. Gibraltar trägt noch heute seinen Namen: Jabal Tariq, der Berg des Tariq.", "ar": "اعتنق كثير من الأمازيغ الإسلام وحملوه بعيدًا، ومنهم على الأرجح طارق بن زياد الذي عبر إلى الأندلس سنة ٧١١م، وما زال جبل طارق يحمل اسمه."}
+        },
+        {
+          "title": {"en": "Different currents", "de": "Verschiedene Strömungen", "ar": "تيارات متعددة"},
+          "body": {"en": "The Maghreb knew several currents early on. Ibadi communities still live in the Mzab valley in Algeria and on the island of Djerba in Tunisia, while the Maliki school became the most widespread.", "de": "Der Maghreb kannte früh mehrere Strömungen. Ibaditische Gemeinden leben bis heute im Mzab-Tal in Algerien und auf der Insel Djerba in Tunesien, während die malikitische Rechtsschule die verbreitetste wurde.", "ar": "عرف المغرب مبكرًا تيارات عدة، فما زالت جماعات إباضية تعيش في وادي ميزاب بالجزائر وجزيرة جربة بتونس، بينما صار المذهب المالكي أوسع المذاهب انتشارًا."}
+        },
+        {
+          "title": {"en": "Idris and the founding of Fez", "de": "Idris und die Gründung von Fès", "ar": "إدريس وتأسيس فاس"},
+          "body": {"en": "In 788 Idris ibn 'Abdallah, a descendant of the Prophet through al-Hasan, found refuge with the Awraba tribe. He founded Fez in 789, and his son Idris II made it a capital. Moroccans honour both to this day.", "de": "788 fand Idris ibn 'Abdallah, ein Nachkomme des Propheten über al-Hasan, Zuflucht beim Stamm der Awraba. 789 gründete er Fès, sein Sohn Idris II. machte es zur Hauptstadt. Marokkaner ehren beide bis heute.", "ar": "في سنة ٧٨٨م لجأ إدريس بن عبد الله، من ذرية النبي ﷺ عن طريق الحسن، إلى قبيلة أوربة، وأسس فاس سنة ٧٨٩م، ثم جعلها ابنه إدريس الثاني عاصمة، وما زال المغاربة يجلّونهما إلى اليوم."}
+        },
+        {
+          "title": {"en": "The Almoravids", "de": "Die Almoraviden", "ar": "المرابطون"},
+          "body": {"en": "In the 11th century the Almoravids, a movement born among Saharan tribes, united Morocco under strict Maliki teaching. They founded Marrakesh around 1070 and later ruled al-Andalus too.", "de": "Im 11. Jahrhundert einten die Almoraviden, eine Bewegung aus Stämmen der Sahara, Marokko unter strenger malikitischer Lehre. Um 1070 gründeten sie Marrakesch und herrschten später auch über al-Andalus.", "ar": "في القرن الحادي عشر وحّد المرابطون، وهم حركة نشأت بين قبائل الصحراء، المغربَ على تعاليم المذهب المالكي الصارمة، وأسسوا مراكش نحو سنة ١٠٧٠م، ثم حكموا الأندلس أيضًا."}
+        },
+        {
+          "title": {"en": "The Almohads", "de": "Die Almohaden", "ar": "الموحدون"},
+          "body": {"en": "In the 12th century the Almohads replaced them. Their mosques, like the Kutubiyya in Marrakesh, shaped the art of the Maghreb. The philosopher Ibn Rushd served their court as judge and physician.", "de": "Im 12. Jahrhundert lösten die Almohaden sie ab. Ihre Moscheen, etwa die Kutubiyya in Marrakesch, prägten die Kunst des Maghreb. Der Philosoph Ibn Rushd diente ihrem Hof als Richter und Arzt.", "ar": "في القرن الثاني عشر حلّ الموحدون محلهم، وطبعت مساجدهم، كجامع الكتبية في مراكش، فنَّ المغرب بطابعها، وعمل الفيلسوف ابن رشد في دولتهم قاضيًا وطبيبًا."}
+        },
+        {
+          "verse": "49:13",
+          "check": "peoples and tribes",
+          "title": {"en": "Built together", "de": "Gemeinsam aufgebaut", "ar": "بناء مشترك"},
+          "body": {"en": "Amazigh, Arabs, Andalusians and Africans of the Sahara built the Maghreb together.", "de": "Amazigh, Araber, Andalusier und Afrikaner der Sahara haben den Maghreb gemeinsam aufgebaut.", "ar": "بنى الأمازيغ والعرب والأندلسيون وأهل الصحراء الإفريقية المغربَ معًا."}
+        }
+      ],
+      "sources": [
+        {"label": "Jamil M. Abun-Nasr, A History of the Maghrib in the Islamic Period (Cambridge University Press, 1987)"},
+        {"label": "Wikipedia: Idrisid dynasty", "url": "https://en.wikipedia.org/wiki/Idrisid_dynasty"},
+        {"label": "Wikipedia: Almoravid dynasty", "url": "https://en.wikipedia.org/wiki/Almoravid_dynasty"},
+        {"label": "Wikipedia: Almohad Caliphate", "url": "https://en.wikipedia.org/wiki/Almohad_Caliphate"}
+      ]
+    },
+    {
+      "id": "islamic-history-09-al-andalus",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": {"en": "Islamic history · 9", "de": "Islamische Geschichte · 9", "ar": "التاريخ الإسلامي · ٩"},
+        "title": {"en": "Al-Andalus: from 711 to the caliphate", "de": "Al-Andalus: von 711 bis zum Kalifat", "ar": "الأندلس: من سنة ٧١١م إلى الخلافة"},
+        "sub": {"en": "How a land at the edge of Europe became home to a Muslim civilisation for almost eight centuries", "de": "Wie ein Land am Rand Europas fast acht Jahrhunderte lang Heimat einer muslimischen Zivilisation wurde", "ar": "كيف صارت أرض على طرف أوروبا موطنًا لحضارة إسلامية قرابة ثمانية قرون"},
+        "arabic": "الأندلس"
+      },
+      "slides": [
+        {
+          "title": {"en": "A crossing in 711", "de": "Eine Überfahrt 711", "ar": "عبور سنة ٧١١م"},
+          "body": {"en": "In 711 (92 AH) Tariq ibn Ziyad crossed from North Africa. Within a few years most of the Iberian Peninsula was under Muslim rule. Muslims called it al-Andalus.", "de": "711 (92 n. H.) setzte Tariq ibn Ziyad von Nordafrika über. Innerhalb weniger Jahre stand der größte Teil der Iberischen Halbinsel unter muslimischer Herrschaft. Muslime nannten sie al-Andalus.", "ar": "في سنة ٧١١م (٩٢هـ) عبر طارق بن زياد من شمال إفريقيا، وفي سنوات قليلة صار معظم شبه الجزيرة الإيبيرية تحت حكم المسلمين الذين سمّوها الأندلس."}
+        },
+        {
+          "title": {"en": "An Umayyad refugee", "de": "Ein umayyadischer Flüchtling", "ar": "أموي ناجٍ"},
+          "body": {"en": "In 756 'Abd al-Rahman I, who had escaped the fall of his family in Syria, became emir in Cordoba. His dynasty ruled al-Andalus until 1031, for almost three centuries.", "de": "756 wurde 'Abd al-Rahman I., der dem Untergang seiner Familie in Syrien entkommen war, Emir in Córdoba. Seine Dynastie regierte al-Andalus bis 1031, fast drei Jahrhunderte lang.", "ar": "في سنة ٧٥٦م صار عبد الرحمن الداخل، الذي نجا من سقوط أسرته في الشام، أميرًا في قرطبة، وحكمت أسرته الأندلس حتى سنة ١٠٣١م، أي قرابة ثلاثة قرون."}
+        },
+        {
+          "title": {"en": "A caliph in Cordoba", "de": "Ein Kalif in Córdoba", "ar": "خليفة في قرطبة"},
+          "body": {"en": "In 929 'Abd al-Rahman III took the title of caliph. From about 936 he built Madinat al-Zahra, a palace city west of Cordoba, which Unesco listed as World Heritage in 2018.", "de": "929 nahm 'Abd al-Rahman III. den Titel des Kalifen an. Ab etwa 936 ließ er Madinat az-Zahra errichten, eine Palaststadt westlich von Córdoba, die die Unesco 2018 zum Welterbe erklärte.", "ar": "في سنة ٩٢٩م اتخذ عبد الرحمن الناصر لقب الخليفة، وبدأ منذ نحو سنة ٩٣٦م بناء مدينة الزهراء، مدينة القصور غربي قرطبة، التي أدرجتها اليونسكو في التراث العالمي سنة ٢٠١٨م."}
+        },
+        {
+          "title": {"en": "A city of books", "de": "Eine Stadt der Bücher", "ar": "مدينة الكتب"},
+          "body": {"en": "Cordoba became one of the largest cities in Europe. Later writers credit al-Hakam II with a library of some 400,000 volumes; historians treat such numbers with caution, but not the love of books behind them.", "de": "Córdoba wurde zu einer der größten Städte Europas. Spätere Autoren schreiben al-Hakam II. eine Bibliothek von rund 400.000 Bänden zu; Historiker begegnen solchen Zahlen mit Vorsicht, nicht aber der Liebe zu Büchern dahinter.", "ar": "صارت قرطبة من أكبر مدن أوروبا، وينسب كتّاب متأخرون إلى الحكم المستنصر مكتبة فيها نحو أربعمئة ألف مجلد، ويتعامل المؤرخون مع هذه الأرقام بحذر، لا مع حب الكتب الذي وراءها."}
+        },
+        {
+          "verse": "13:4",
+          "check": "watered with one water",
+          "title": {"en": "Gardens and water", "de": "Gärten und Wasser", "ar": "حدائق وماء"},
+          "body": {"en": "Al-Andalus was famous for its gardens, orchards and irrigation. The Quran sees signs in such fields and gardens.", "de": "Al-Andalus war berühmt für seine Gärten, Obsthaine und Bewässerung. Der Koran sieht in solchen Feldern und Gärten Zeichen.", "ar": "اشتهرت الأندلس بحدائقها وبساتينها وطرق ريّها، والقرآن يرى في الحقول والبساتين آيات."}
+        },
+        {
+          "title": {"en": "The taifa kingdoms", "de": "Die Taifa-Königreiche", "ar": "ملوك الطوائف"},
+          "body": {"en": "In 1031 the caliphate broke apart into rival kingdoms, the taifas. Some were brilliant courts of poetry and science, but their quarrels weakened them. In 1085 Toledo fell to Castile.", "de": "1031 zerfiel das Kalifat in rivalisierende Königreiche, die Taifas. Manche waren glänzende Höfe der Dichtung und Wissenschaft, doch ihre Streitigkeiten schwächten sie. 1085 fiel Toledo an Kastilien.", "ar": "في سنة ١٠٣١م تفككت الخلافة إلى ممالك متنافسة عُرفت بملوك الطوائف، وكان بعضها بلاطات زاهرة بالشعر والعلم، لكن نزاعاتها أضعفتها، وفي سنة ١٠٨٥م سقطت طليطلة في يد قشتالة."}
+        },
+        {
+          "title": {"en": "Scholars of al-Andalus", "de": "Gelehrte aus al-Andalus", "ar": "من علماء الأندلس"},
+          "list": {
+            "en": ["Ibn Hazm of Cordoba, jurist and author of The Ring of the Dove", "Al-Qurtubi of Cordoba, author of a great tafsir", "Al-Shatibi of Xàtiva, whose poem on the qira'at is still memorised", "Ibn 'Arabi of Murcia, mystic and writer", "Ibn Rushd of Cordoba, judge and philosopher"],
+            "de": ["Ibn Hazm aus Córdoba, Jurist und Autor des Halsbands der Taube", "Al-Qurtubi aus Córdoba, Verfasser eines großen Tafsir", "Ash-Shatibi aus Xàtiva, dessen Gedicht über die Qira'at noch auswendig gelernt wird", "Ibn 'Arabi aus Murcia, Mystiker und Schriftsteller", "Ibn Rushd aus Córdoba, Richter und Philosoph"],
+            "ar": ["ابن حزم القرطبي، الفقيه صاحب طوق الحمامة", "القرطبي، صاحب التفسير الجامع لأحكام القرآن", "الشاطبي من شاطبة، صاحب المنظومة المحفوظة في القراءات", "ابن عربي المرسي، المتصوف والكاتب", "ابن رشد القرطبي، القاضي والفيلسوف"]
+          }
+        },
+        {
+          "verse": "28:83",
+          "check": "Hereafter",
+          "title": {"en": "No lasting home here", "de": "Keine bleibende Heimat hier", "ar": "ليست دار البقاء"},
+          "body": {"en": "Al-Andalus reminds us that every power on earth passes. What lasts is what was done for Allah's sake.", "de": "Al-Andalus erinnert daran, dass jede Macht auf Erden vergeht. Was bleibt, ist das, was um Allahs willen getan wurde.", "ar": "تذكّرنا الأندلس بأن كل سلطان في الأرض زائل، وأن الباقي ما عُمل لوجه الله."}
+        }
+      ],
+      "sources": [
+        {"label": "Hugh Kennedy, Muslim Spain and Portugal: A Political History of al-Andalus (Longman, 1996)"},
+        {"label": "Wikipedia: Al-Andalus", "url": "https://en.wikipedia.org/wiki/Al-Andalus"},
+        {"label": "Wikipedia: Umayyad state of Córdoba", "url": "https://en.wikipedia.org/wiki/Umayyad_state_of_C%C3%B3rdoba"},
+        {"label": "Wikipedia: Madinat al-Zahra", "url": "https://en.wikipedia.org/wiki/Madinat_al-Zahra"}
+      ]
+    },
+    {
+      "id": "islamic-history-10-convivencia",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": {"en": "Islamic history · 10", "de": "Islamische Geschichte · 10", "ar": "التاريخ الإسلامي · ١٠"},
+        "title": {"en": "Living together in al-Andalus", "de": "Zusammenleben in al-Andalus", "ar": "العيش المشترك في الأندلس"},
+        "sub": {"en": "Muslims, Jews and Christians shared cities for centuries: what convivencia means, and where its limits were", "de": "Muslime, Juden und Christen teilten jahrhundertelang ihre Städte: was Convivencia bedeutet und wo ihre Grenzen lagen", "ar": "تقاسم المسلمون واليهود والنصارى المدن قرونًا: ما معنى التعايش، وأين كانت حدوده"},
+        "arabic": "التعايش"
+      },
+      "slides": [
+        {
+          "title": {"en": "A word with a history", "de": "Ein Wort mit Geschichte", "ar": "كلمة لها تاريخ"},
+          "body": {"en": "Convivencia, Spanish for living together, is a term of the Spanish historian Américo Castro. He used it for the centuries when Muslims, Christians and Jews shared the cities of Iberia.", "de": "Convivencia, spanisch für Zusammenleben, ist ein Begriff des spanischen Historikers Américo Castro. Er bezeichnete damit die Jahrhunderte, in denen Muslime, Christen und Juden die Städte Iberiens teilten.", "ar": "التعايش، وبالإسبانية كونفيفنسيا، مصطلح صاغه المؤرخ الإسباني أمريكو كاسترو، ووصف به القرون التي تقاسم فيها المسلمون والنصارى واليهود مدن إيبيريا."}
+        },
+        {
+          "title": {"en": "Protected, not equal", "de": "Geschützt, nicht gleich", "ar": "حماية لا مساواة"},
+          "body": {"en": "Under Muslim rule Jews and Christians were dhimmis: protected communities with their own worship, law and leaders, who paid the jizya. They were safe, but not equal in every right.", "de": "Unter muslimischer Herrschaft waren Juden und Christen Dhimmis: geschützte Gemeinschaften mit eigenem Gottesdienst, eigenem Recht und eigenen Oberhäuptern, die die Dschizya zahlten. Sie waren sicher, aber nicht in jedem Recht gleich.", "ar": "كان اليهود والنصارى تحت حكم المسلمين أهلَ ذمة: جماعات محمية لها عبادتها وقضاؤها ورؤساؤها، وتدفع الجزية، فكانوا آمنين، لكنهم لم يتساووا مع المسلمين في كل الحقوق."}
+        },
+        {
+          "verse": "60:8",
+          "check": "justly",
+          "title": {"en": "Kindness and justice", "de": "Güte und Gerechtigkeit", "ar": "البر والعدل"},
+          "body": {"en": "The Quran allows kindness and justice toward those who do not fight Muslims over their religion.", "de": "Der Koran erlaubt Güte und Gerechtigkeit gegenüber denen, die Muslime nicht wegen ihrer Religion bekämpfen.", "ar": "يأذن القرآن بالبر والعدل مع من لا يقاتلون المسلمين بسبب دينهم."}
+        },
+        {
+          "title": {"en": "A Jewish minister in Cordoba", "de": "Ein jüdischer Minister in Córdoba", "ar": "وزير يهودي في قرطبة"},
+          "body": {"en": "Hasdai ibn Shaprut (c. 915–970), a Jewish physician, served 'Abd al-Rahman III as a minister and diplomat. Hebrew poetry and learning flourished in Arabic-speaking al-Andalus.", "de": "Hasdai ibn Shaprut (um 915–970), ein jüdischer Arzt, diente 'Abd al-Rahman III. als Minister und Diplomat. Hebräische Dichtung und Gelehrsamkeit blühten im arabischsprachigen al-Andalus.", "ar": "خدم حسداي بن شبروط (نحو ٩١٥–٩٧٠م)، الطبيب اليهودي، عبدَ الرحمن الناصر وزيرًا ودبلوماسيًا، وازدهر الشعر والعلم العبريان في الأندلس الناطقة بالعربية."}
+        },
+        {
+          "title": {"en": "Not a paradise", "de": "Kein Paradies", "ar": "لم تكن جنة"},
+          "body": {"en": "Historians warn against both a golden myth and a dark one. In 1066 a mob in Granada killed the Jewish vizier and many Jews. Later the Almohads pressed minorities hard, and the family of Maimonides left Cordoba.", "de": "Historiker warnen vor einem goldenen wie vor einem düsteren Mythos. 1066 tötete ein Mob in Granada den jüdischen Wesir und viele Juden. Später setzten die Almohaden Minderheiten stark unter Druck, und die Familie des Maimonides verließ Córdoba.", "ar": "يحذّر المؤرخون من الأسطورة الذهبية ومن الأسطورة السوداء معًا: ففي سنة ١٠٦٦م قتلت جموع غاضبة في غرناطة الوزيرَ اليهودي وكثيرًا من اليهود، ثم ضيّق الموحدون على الأقليات، فغادرت أسرة ابن ميمون قرطبة."}
+        },
+        {
+          "title": {"en": "Maimonides", "de": "Maimonides", "ar": "موسى بن ميمون"},
+          "body": {"en": "Born in Cordoba in 1135 or 1138, Maimonides wrote his great philosophical work, the Guide for the Perplexed, in Arabic. He settled in Fustat in Egypt and served as a physician at the Ayyubid court.", "de": "Maimonides, 1135 oder 1138 in Córdoba geboren, schrieb sein großes philosophisches Werk, den Führer der Unschlüssigen, auf Arabisch. Er ließ sich in Fustat in Ägypten nieder und diente als Arzt am Hof der Ayyubiden.", "ar": "وُلد موسى بن ميمون في قرطبة سنة ١١٣٥ أو ١١٣٨م، وكتب عمله الفلسفي الكبير دلالة الحائرين بالعربية، ثم استقر في الفسطاط بمصر وعمل طبيبًا في البلاط الأيوبي."}
+        },
+        {
+          "title": {"en": "Toledo's translators", "de": "Die Übersetzer von Toledo", "ar": "مترجمو طليطلة"},
+          "body": {"en": "After 1085, in Christian Toledo, scholars translated Arabic books into Latin, often with Jewish and Arabic-speaking Christian helpers. Through them Ibn Sina, Ibn Rushd and al-Khwarizmi reached Europe.", "de": "Nach 1085 übersetzten Gelehrte im christlichen Toledo arabische Bücher ins Lateinische, oft mit jüdischen und arabischsprachigen christlichen Helfern. So erreichten Ibn Sina, Ibn Rushd und al-Khwarizmi Europa.", "ar": "بعد سنة ١٠٨٥م ترجم العلماء في طليطلة النصرانية كتبًا عربية إلى اللاتينية، وكثيرًا ما أعانهم يهود ونصارى ناطقون بالعربية، وعن طريقهم وصل ابن سينا وابن رشد والخوارزمي إلى أوروبا."}
+        },
+        {
+          "title": {"en": "What convivencia can teach", "de": "Was die Convivencia lehren kann", "ar": "ما يعلّمنا إياه التعايش"},
+          "list": {
+            "en": ["Neighbours can differ in faith and still share a city", "Rights on paper need justice in practice", "Tell history honestly, with its light and its shadows"],
+            "de": ["Nachbarn können im Glauben verschieden sein und doch eine Stadt teilen", "Rechte auf dem Papier brauchen Gerechtigkeit in der Praxis", "Erzählen Sie Geschichte ehrlich, mit ihrem Licht und ihren Schatten"],
+            "ar": ["يمكن للجيران أن يختلفوا في الدين ويتقاسموا مدينة واحدة", "الحقوق المكتوبة تحتاج إلى عدل في الواقع", "احكِ التاريخ بصدق، بنوره وظلاله"]
+          }
+        }
+      ],
+      "sources": [
+        {"label": "Maria Rosa Menocal, The Ornament of the World (Little, Brown, 2002)"},
+        {"label": "David Nirenberg, Communities of Violence (Princeton University Press, 1996)"},
+        {"label": "Wikipedia: Convivencia", "url": "https://en.wikipedia.org/wiki/Convivencia"},
+        {"label": "Wikipedia: 1066 Granada massacre", "url": "https://en.wikipedia.org/wiki/1066_Granada_massacre"},
+        {"label": "Wikipedia: Maimonides", "url": "https://en.wikipedia.org/wiki/Maimonides"}
+      ]
+    },
+    {
+      "id": "islamic-history-11-granada",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": {"en": "Islamic history · 11", "de": "Islamische Geschichte · 11", "ar": "التاريخ الإسلامي · ١١"},
+        "title": {"en": "Granada and the end of al-Andalus", "de": "Granada und das Ende von al-Andalus", "ar": "غرناطة ونهاية الأندلس"},
+        "sub": {"en": "The Alhambra, the surrender of 1492 and the long fate of the Moriscos", "de": "Die Alhambra, die Übergabe von 1492 und das lange Schicksal der Morisken", "ar": "الحمراء وتسليم غرناطة سنة ١٤٩٢م ومصير الموريسكيين الطويل"},
+        "arabic": "ولا غالب إلا الله"
+      },
+      "slides": [
+        {
+          "title": {"en": "The last Muslim kingdom", "de": "Das letzte muslimische Königreich", "ar": "آخر مملكة إسلامية"},
+          "body": {"en": "After Cordoba and Seville fell in the 13th century, the Nasrid dynasty held Granada for about 250 years. It was the last Muslim kingdom on the Iberian Peninsula.", "de": "Nachdem Córdoba und Sevilla im 13. Jahrhundert gefallen waren, hielt die Dynastie der Nasriden Granada rund 250 Jahre lang. Es war das letzte muslimische Königreich auf der Iberischen Halbinsel.", "ar": "بعد سقوط قرطبة وإشبيلية في القرن الثالث عشر حكم بنو نصر غرناطة نحو مئتين وخمسين عامًا، فكانت آخر مملكة إسلامية في شبه الجزيرة الإيبيرية."}
+        },
+        {
+          "title": {"en": "The Alhambra", "de": "Die Alhambra", "ar": "قصر الحمراء"},
+          "body": {"en": "On a hill above the city, the Nasrids built the Alhambra, a palace of courtyards, water and carved plaster. Poems by court poets such as Ibn Zamrak still decorate its fountains and halls.", "de": "Auf einem Hügel über der Stadt errichteten die Nasriden die Alhambra, einen Palast aus Höfen, Wasser und geschnitztem Stuck. Gedichte von Hofdichtern wie Ibn Zamrak schmücken noch heute ihre Brunnen und Säle.", "ar": "شيّد بنو نصر على تلة فوق المدينة قصر الحمراء بأفنيته ومياهه وجصّه المنقوش، وما زالت قصائد شعراء البلاط كابن زمرك تزيّن نوافيره وقاعاته."}
+        },
+        {
+          "title": {"en": "No victor but Allah", "de": "Kein Sieger außer Allah", "ar": "لا غالب إلا الله"},
+          "body": {"en": "The Nasrid motto, wa la ghalib illa Allah, there is no victor but Allah, is carved into the Alhambra's walls again and again. A royal house wrote humility on its own palace.", "de": "Der Wahlspruch der Nasriden, wa la ghalib illa Allah, es gibt keinen Sieger außer Allah, ist immer wieder in die Wände der Alhambra gemeißelt. Ein Königshaus schrieb Demut auf seinen eigenen Palast.", "ar": "نُقش شعار بني نصر «ولا غالب إلا الله» على جدران الحمراء مرات كثيرة، فكتب بيت ملكي التواضع على جدران قصره."},
+          "arabic": "ولا غالب إلا الله"
+        },
+        {
+          "title": {"en": "2 January 1492", "de": "2. Januar 1492", "ar": "الثاني من يناير ١٤٩٢م"},
+          "body": {"en": "Under siege, Sultan Muhammad XII, known in Europe as Boabdil, signed the Treaty of Granada in November 1491. On 2 January 1492 (897 AH) he handed the city to Ferdinand and Isabella.", "de": "Unter Belagerung unterzeichnete Sultan Muhammad XII., in Europa Boabdil genannt, im November 1491 den Vertrag von Granada. Am 2. Januar 1492 (897 n. H.) übergab er die Stadt an Ferdinand und Isabella.", "ar": "وقّع السلطان محمد الثاني عشر، المعروف بأبي عبد الله الصغير، معاهدة تسليم غرناطة تحت الحصار في نوفمبر ١٤٩١م، وفي الثاني من يناير ١٤٩٢م (٨٩٧هـ) سلّم المدينة لفرديناند وإيزابيلا."}
+        },
+        {
+          "title": {"en": "Promises broken", "de": "Gebrochene Versprechen", "ar": "عهود منقوضة"},
+          "body": {"en": "The treaty promised Muslims their faith, mosques and law. Within ten years, Muslims in Granada and Castile were forced to choose between baptism and exile. The baptised were called Moriscos.", "de": "Der Vertrag versprach den Muslimen ihren Glauben, ihre Moscheen und ihr Recht. Binnen zehn Jahren mussten Muslime in Granada und Kastilien zwischen Taufe und Exil wählen. Die Getauften nannte man Morisken.", "ar": "وعدت المعاهدة المسلمين بحفظ دينهم ومساجدهم وشريعتهم، لكن في غضون عشر سنوات أُجبر مسلمو غرناطة وقشتالة على الاختيار بين التنصير والنفي، وسُمّي المتنصّرون الموريسكيين."}
+        },
+        {
+          "title": {"en": "The Moriscos", "de": "Die Morisken", "ar": "الموريسكيون"},
+          "body": {"en": "Many Moriscos kept their faith in secret for generations. Some wrote Spanish in Arabic letters, called aljamiado. Between 1609 and 1614 Spain expelled them; estimates often cite around 300,000 people.", "de": "Viele Morisken bewahrten ihren Glauben über Generationen im Verborgenen. Manche schrieben Spanisch in arabischen Buchstaben, Aljamiado genannt. Zwischen 1609 und 1614 vertrieb Spanien sie; oft werden rund 300.000 Menschen genannt.", "ar": "حافظ كثير من الموريسكيين على دينهم سرًا أجيالًا، وكتب بعضهم الإسبانية بحروف عربية فيما عُرف بالألخميادو، وبين ١٦٠٩ و١٦١٤م طردتهم إسبانيا، وكثيرًا ما يُذكر أن عددهم بلغ نحو ثلاثمئة ألف."}
+        },
+        {
+          "verse": "2:155-156",
+          "check": "patient",
+          "title": {"en": "Patience in loss", "de": "Geduld im Verlust", "ar": "الصبر عند المصيبة"},
+          "body": {"en": "Al-Andalus ended in loss and exile. The Quran shows how believers meet such loss: with patience and return to Allah.", "de": "Al-Andalus endete in Verlust und Exil. Der Koran zeigt, wie Gläubige solchem Verlust begegnen: mit Geduld und der Rückkehr zu Allah.", "ar": "انتهت الأندلس بالفقد والمنفى، والقرآن يبيّن كيف يلقى المؤمنون مثل هذا الفقد: بالصبر والرجوع إلى الله."}
+        },
+        {
+          "title": {"en": "Remembering al-Andalus", "de": "An al-Andalus erinnern", "ar": "كيف نتذكر الأندلس"},
+          "list": {
+            "en": ["Learn its history without nostalgia or bitterness", "Honour those who kept their faith in secret", "Visit its monuments with knowledge and respect"],
+            "de": ["Lernen Sie seine Geschichte ohne Nostalgie und ohne Bitterkeit", "Ehren Sie jene, die ihren Glauben im Verborgenen bewahrten", "Besuchen Sie seine Bauwerke mit Wissen und Respekt"],
+            "ar": ["تعلّم تاريخها بلا حنين أعمى ولا مرارة", "أكرم ذكرى من حفظوا دينهم في السر", "زر معالمها بعلم واحترام"]
+          }
+        }
+      ],
+      "sources": [
+        {"label": "L. P. Harvey, Islamic Spain, 1250 to 1500 (University of Chicago Press, 1990)"},
+        {"label": "L. P. Harvey, Muslims in Spain, 1500 to 1614 (University of Chicago Press, 2005)"},
+        {"label": "Wikipedia: Emirate of Granada", "url": "https://en.wikipedia.org/wiki/Emirate_of_Granada"},
+        {"label": "Wikipedia: Expulsion of the Moriscos", "url": "https://en.wikipedia.org/wiki/Expulsion_of_the_Moriscos"},
+        {"label": "Unesco: Alhambra, Generalife and Albayzín, Granada", "url": "https://whc.unesco.org/en/list/314"}
+      ]
+    },
+    {
+      "id": "islamic-history-12-maghreb-schools",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": {"en": "Islamic history · 12", "de": "Islamische Geschichte · 12", "ar": "التاريخ الإسلامي · ١٢"},
+        "title": {"en": "Schools of the Maghreb", "de": "Schulen des Maghreb", "ar": "مدارس المغرب"},
+        "sub": {"en": "From the Zaytuna of Tunis to the madrasas of Fez: how North Africa taught and learned", "de": "Von der Zaytuna in Tunis bis zu den Madrasas von Fès: wie Nordafrika lehrte und lernte", "ar": "من جامع الزيتونة في تونس إلى مدارس فاس: كيف علّم المغرب وتعلّم"},
+        "arabic": "حلقات العلم"
+      },
+      "slides": [
+        {
+          "title": {"en": "Mosques as universities", "de": "Moscheen als Hochschulen", "ar": "مساجد جامعات"},
+          "body": {"en": "In the Maghreb, learning lived in the great mosques. Students sat in circles around a teacher, and an ijaza, a teaching licence, linked them to a chain of scholars. Fez's Qarawiyyin is the best known.", "de": "Im Maghreb lebte das Lernen in den großen Moscheen. Studenten saßen im Kreis um einen Lehrer, und eine Ijaza, eine Lehrerlaubnis, verband sie mit einer Kette von Gelehrten. Die Qarawiyyin in Fès ist die bekannteste dieser Moscheen.", "ar": "عاش العلم في المغرب في المساجد الكبرى، يجلس الطلاب في حلقات حول الشيخ، وتصلهم الإجازة بسلسلة من العلماء، وأشهر هذه المساجد جامع القرويين في فاس."}
+        },
+        {
+          "title": {"en": "The Zaytuna of Tunis", "de": "Die Zaytuna von Tunis", "ar": "جامع الزيتونة"},
+          "body": {"en": "The Zaytuna Mosque in Tunis goes back to the end of the 7th or the early 8th century; historians debate the exact date. Rebuilt in the 9th century and completed in 864–865, it became Tunisia's leading centre of learning.", "de": "Die Zaytuna-Moschee in Tunis reicht ins späte 7. oder frühe 8. Jahrhundert zurück; das genaue Datum ist unter Historikern umstritten. Im 9. Jahrhundert neu gebaut und 864–865 vollendet, wurde sie zum wichtigsten Lernort Tunesiens.", "ar": "يعود جامع الزيتونة في تونس إلى أواخر القرن السابع أو أوائل القرن الثامن الميلادي، ويختلف المؤرخون في تاريخه الدقيق، وقد أُعيد بناؤه في القرن التاسع واكتمل سنة ٨٦٤–٨٦٥م، فصار أهم مراكز العلم في تونس."}
+        },
+        {
+          "title": {"en": "Voices of the Zaytuna", "de": "Stimmen der Zaytuna", "ar": "أعلام الزيتونة"},
+          "body": {"en": "The great Maliki jurist Ibn 'Arafa (1316–1401) taught in Tunis. In the 20th century Shaykh Muhammad al-Tahir ibn 'Ashur, a teacher at the Zaytuna all his life, wrote the tafsir al-Tahrir wa al-Tanwir.", "de": "Der große malikitische Jurist Ibn 'Arafa (1316–1401) lehrte in Tunis. Im 20. Jahrhundert schrieb Shaykh Muhammad at-Tahir ibn 'Ashur, sein Leben lang Lehrer an der Zaytuna, den Tafsir at-Tahrir wa-t-Tanwir.", "ar": "درّس في تونس الفقيه المالكي الكبير ابن عرفة (١٣١٦–١٤٠١م)، وفي القرن العشرين ألّف الشيخ محمد الطاهر بن عاشور، الذي درّس في الزيتونة طوال حياته، تفسيره التحرير والتنوير."}
+        },
+        {
+          "title": {"en": "The madrasas of Fez", "de": "Die Madrasas von Fès", "ar": "مدارس فاس"},
+          "body": {"en": "In the 13th and 14th centuries the Marinid sultans built madrasas in Fez where students lived and studied. Al-'Attarine (1323–1325) and Bou Inania (1350–1355) are masterpieces of carved wood, plaster and tile.", "de": "Im 13. und 14. Jahrhundert bauten die Meriniden-Sultane in Fès Madrasas, in denen Studenten wohnten und lernten. Al-'Attarin (1323–1325) und Bou Inania (1350–1355) sind Meisterwerke aus geschnitztem Holz, Stuck und Fliesen.", "ar": "في القرنين الثالث عشر والرابع عشر بنى سلاطين بني مرين في فاس مدارس يسكنها الطلاب ويدرسون فيها، ومن روائعها مدرسة العطارين (١٣٢٣–١٣٢٥م) والمدرسة البوعنانية (١٣٥٠–١٣٥٥م) بخشبها المنقوش وجصها وزليجها."}
+        },
+        {
+          "title": {"en": "Ibn Khaldun", "de": "Ibn Khaldun", "ar": "ابن خلدون"},
+          "body": {"en": "Born in Tunis in 1332, Ibn Khaldun served courts in Fez and Granada and died a judge in Cairo in 1406. In 1377 he completed a draft of the Muqaddimah, a study of how societies rise and fall.", "de": "Ibn Khaldun, 1332 in Tunis geboren, diente Höfen in Fès und Granada und starb 1406 als Richter in Kairo. 1377 vollendete er einen Entwurf der Muqaddima, einer Studie darüber, wie Gesellschaften aufsteigen und vergehen.", "ar": "وُلد ابن خلدون في تونس سنة ١٣٣٢م، وخدم بلاطات فاس وغرناطة، وتوفي قاضيًا في القاهرة سنة ١٤٠٦م، وفي سنة ١٣٧٧م أتم مسودة المقدمة التي درس فيها نشوء العمران وأفوله."}
+        },
+        {
+          "verse": "58:11",
+          "check": "degrees",
+          "title": {"en": "Raised by knowledge", "de": "Durch Wissen erhoben", "ar": "رفعة بالعلم"},
+          "body": {"en": "Knowledge joined with faith lifts people. The Maghreb's schools trained judges, teachers and reciters for centuries.", "de": "Wissen, verbunden mit Glauben, erhebt den Menschen. Die Schulen des Maghreb bildeten jahrhundertelang Richter, Lehrer und Rezitatoren aus.", "ar": "العلم المقرون بالإيمان يرفع صاحبه، وقد خرّجت مدارس المغرب القضاة والمعلمين والقراء قرونًا."}
+        },
+        {
+          "title": {"en": "From the Maghreb's classrooms", "de": "Aus den Lehrsälen des Maghreb", "ar": "من حلقات المغرب"},
+          "list": {
+            "en": ["Learn from a teacher, not only from books", "Memorise, then understand, then teach", "Give to schools that will outlive you"],
+            "de": ["Lernen Sie bei einem Lehrer, nicht nur aus Büchern", "Lernen Sie auswendig, verstehen Sie, dann lehren Sie", "Geben Sie für Schulen, die Sie überdauern werden"],
+            "ar": ["تعلّم على يد شيخ، لا من الكتب وحدها", "احفظ ثم افهم ثم علّم", "أنفق على مدارس تبقى بعدك"]
+          }
+        }
+      ],
+      "sources": [
+        {"label": "Ibn Khaldun, The Muqaddimah, tr. Franz Rosenthal (Princeton University Press, 1958)"},
+        {"label": "Wikipedia: Al-Zaytuna Mosque", "url": "https://en.wikipedia.org/wiki/Al-Zaytuna_Mosque"},
+        {"label": "Wikipedia: Bou Inania Madrasa", "url": "https://en.wikipedia.org/wiki/Bou_Inania_Madrasa"},
+        {"label": "Wikipedia: Ibn Khaldun", "url": "https://en.wikipedia.org/wiki/Ibn_Khaldun"},
+        {"label": "Unesco: Medina of Fez", "url": "https://whc.unesco.org/en/list/170"}
+      ]
+    },
+    {
+      "id": "islamic-history-13-mali-mansa-musa",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": {"en": "Islamic history · 13", "de": "Islamische Geschichte · 13", "ar": "التاريخ الإسلامي · ١٣"},
+        "title": {"en": "Mali and Mansa Musa", "de": "Mali und Mansa Musa", "ar": "مالي ومنسا موسى"},
+        "sub": {"en": "Gold, salt and scholars: how Islam crossed the Sahara, and how a king's Hajj amazed Cairo in 1324", "de": "Gold, Salz und Gelehrte: wie der Islam die Sahara überquerte und eine Pilgerfahrt 1324 Kairo staunen ließ", "ar": "ذهب وملح وعلماء: كيف عبر الإسلام الصحراء، وكيف أدهش حج ملك القاهرةَ سنة ١٣٢٤م"},
+        "arabic": "منسا موسى"
+      },
+      "slides": [
+        {
+          "title": {"en": "Across the Sahara", "de": "Quer durch die Sahara", "ar": "عبر الصحراء"},
+          "body": {"en": "From the 8th century, camel caravans carried salt south and gold north across the Sahara. With the merchants came Islam: first to the trading towns, then to the royal courts.", "de": "Ab dem 8. Jahrhundert trugen Kamelkarawanen Salz nach Süden und Gold nach Norden durch die Sahara. Mit den Kaufleuten kam der Islam: zuerst in die Handelsstädte, dann an die Königshöfe.", "ar": "منذ القرن الثامن الميلادي حملت قوافل الجمال الملح جنوبًا والذهب شمالًا عبر الصحراء، ومع التجار جاء الإسلام: إلى مدن التجارة أولًا، ثم إلى بلاط الملوك."}
+        },
+        {
+          "title": {"en": "A Muslim town in ancient Ghana", "de": "Eine muslimische Stadt im alten Ghana", "ar": "مدينة المسلمين في غانة القديمة"},
+          "body": {"en": "In 1068 the geographer al-Bakri, writing in Cordoba, described the capital of ancient Ghana: a royal town and a merchants' town with twelve mosques, scholars and jurists.", "de": "1068 beschrieb der Geograf al-Bakri in Córdoba die Hauptstadt des alten Ghana: eine Königsstadt und eine Kaufmannsstadt mit zwölf Moscheen, Gelehrten und Juristen.", "ar": "في سنة ١٠٦٨م وصف الجغرافي البكري، وهو يكتب في قرطبة، عاصمة غانة القديمة: مدينة للملك ومدينة للتجار فيها اثنا عشر مسجدًا وعلماء وفقهاء."}
+        },
+        {
+          "title": {"en": "Sundiata and the Mali Empire", "de": "Sundiata und das Reich Mali", "ar": "سونجاتا وإمبراطورية مالي"},
+          "body": {"en": "Around 1235 Sundiata Keita founded the Mali Empire. His story lives on in the epic sung by the griots. Several later kings of Mali were Muslims who made the Hajj.", "de": "Um 1235 gründete Sundiata Keita das Reich Mali. Seine Geschichte lebt im Epos fort, das die Griots singen. Mehrere spätere Könige Malis waren Muslime und vollzogen die Hadsch.", "ar": "نحو سنة ١٢٣٥م أسس سونجاتا كيتا إمبراطورية مالي، وما زالت سيرته حية في الملحمة التي ينشدها رواة الغريو، وكان عدد من ملوك مالي بعده مسلمين أدّوا فريضة الحج."}
+        },
+        {
+          "title": {"en": "The Hajj of 1324", "de": "Die Pilgerfahrt von 1324", "ar": "حج سنة ١٣٢٤م"},
+          "body": {"en": "In 1324 (724 AH) Mansa Musa travelled to Mecca with a vast caravan. In Cairo he gave so generously that, according to al-'Umari, the value of gold there fell for years.", "de": "1324 (724 n. H.) reiste Mansa Musa mit einer gewaltigen Karawane nach Mekka. In Kairo schenkte er so großzügig, dass nach al-'Umari der Wert des Goldes dort jahrelang sank.", "ar": "في سنة ١٣٢٤م (٧٢٤هـ) سافر منسا موسى إلى مكة في قافلة عظيمة، وأغدق العطايا في القاهرة حتى انخفضت قيمة الذهب فيها سنوات، كما يروي العمري."}
+        },
+        {
+          "verse": "3:97",
+          "check": "pilgrimage",
+          "title": {"en": "A duty fulfilled", "de": "Eine erfüllte Pflicht", "ar": "فريضة مؤداة"},
+          "body": {"en": "Mansa Musa crossed thousands of kilometres of desert to fulfil the duty of Hajj.", "de": "Mansa Musa durchquerte Tausende Kilometer Wüste, um die Pflicht der Hadsch zu erfüllen.", "ar": "قطع منسا موسى آلاف الكيلومترات من الصحراء ليؤدي فريضة الحج."}
+        },
+        {
+          "title": {"en": "Scholars for Mali", "de": "Gelehrte für Mali", "ar": "علماء لمالي"},
+          "body": {"en": "On his way home he invited scholars to Mali, among them the Andalusian poet Abu Ishaq al-Sahili. Timbuktu's Djinguereber Mosque dates from his reign, around 1327.", "de": "Auf dem Heimweg lud er Gelehrte nach Mali ein, darunter den andalusischen Dichter Abu Ishaq as-Sahili. Die Djinguereber-Moschee in Timbuktu stammt aus seiner Regierungszeit, um 1327.", "ar": "في طريق عودته دعا علماء إلى مالي، منهم الشاعر الأندلسي أبو إسحاق الساحلي، ويعود جامع جينغريبر في تمبكتو إلى عهده، نحو سنة ١٣٢٧م."}
+        },
+        {
+          "title": {"en": "On a European map", "de": "Auf einer europäischen Karte", "ar": "على خريطة أوروبية"},
+          "body": {"en": "The Catalan Atlas, usually dated 1375, shows a king of Mali holding a golden disc. Modern lists call Mansa Musa the richest person ever; historians say his wealth cannot really be measured.", "de": "Der Katalanische Atlas, meist auf 1375 datiert, zeigt einen König von Mali mit einer goldenen Scheibe in der Hand. Moderne Listen nennen Mansa Musa den reichsten Menschen aller Zeiten; Historiker sagen, sein Reichtum lasse sich nicht wirklich messen.", "ar": "يُظهر الأطلس الكتالوني، المؤرخ عادةً بسنة ١٣٧٥م، ملكًا من مالي يحمل قرصًا من ذهب، وتصف قوائم حديثة منسا موسى بأنه أغنى إنسان في التاريخ، ويرى المؤرخون أن ثروته لا يمكن قياسها حقًا."}
+        },
+        {
+          "title": {"en": "Lessons from Mali", "de": "Lehren aus Mali", "ar": "دروس من مالي"},
+          "list": {
+            "en": ["Honest trade can carry faith and knowledge", "Wealth is a trust to be shared", "Invest in scholars, not only in buildings"],
+            "de": ["Ehrlicher Handel kann Glauben und Wissen tragen", "Reichtum ist ein anvertrautes Gut zum Teilen", "Investieren Sie in Gelehrte, nicht nur in Gebäude"],
+            "ar": ["التجارة الأمينة تحمل الإيمان والعلم", "المال أمانة تُقتسم", "استثمر في العلماء لا في المباني وحدها"]
+          }
+        }
+      ],
+      "sources": [
+        {"label": "Nehemia Levtzion, Ancient Ghana and Mali (Methuen, 1973)"},
+        {"label": "Michael A. Gomez, African Dominion (Princeton University Press, 2018)"},
+        {"label": "Wikipedia: Mansa Musa", "url": "https://en.wikipedia.org/wiki/Mansa_Musa"},
+        {"label": "Wikipedia: Ghana Empire", "url": "https://en.wikipedia.org/wiki/Ghana_Empire"},
+        {"label": "Wikipedia: Catalan Atlas", "url": "https://en.wikipedia.org/wiki/Catalan_Atlas"}
+      ]
+    },
+    {
+      "id": "islamic-history-14-timbuktu",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": {"en": "Islamic history · 14", "de": "Islamische Geschichte · 14", "ar": "التاريخ الإسلامي · ١٤"},
+        "title": {"en": "Timbuktu: a city of manuscripts", "de": "Timbuktu: eine Stadt der Handschriften", "ar": "تمبكتو: مدينة المخطوطات"},
+        "sub": {"en": "Mosques of earth, families of scholars and the books saved in 2012–2013", "de": "Moscheen aus Lehm, Gelehrtenfamilien und die Bücher, die 2012–2013 gerettet wurden", "ar": "مساجد من طين وأسر من العلماء وكتب أُنقذت في ٢٠١٢–٢٠١٣م"},
+        "arabic": "مخطوطات تمبكتو"
+      },
+      "slides": [
+        {
+          "title": {"en": "Where river meets desert", "de": "Wo Fluss und Wüste sich treffen", "ar": "حيث يلتقي النهر بالصحراء"},
+          "body": {"en": "Tradition dates the founding of Timbuktu to around 1100, near the Niger River, where boats met the camel caravans. It became a meeting place of traders, pilgrims and students.", "de": "Die Überlieferung datiert die Gründung Timbuktus auf etwa 1100, nahe dem Niger, wo Boote auf Kamelkarawanen trafen. Die Stadt wurde zum Treffpunkt von Händlern, Pilgern und Studenten.", "ar": "تؤرخ الرواية تأسيس تمبكتو بنحو سنة ١١٠٠م قرب نهر النيجر، حيث تلتقي القوارب بقوافل الجمال، فصارت ملتقى للتجار والحجاج وطلاب العلم."}
+        },
+        {
+          "title": {"en": "Three great mosques", "de": "Drei große Moscheen", "ar": "ثلاثة مساجد كبرى"},
+          "body": {"en": "Djinguereber, Sankore and Sidi Yahya were the heart of learning. Scholars taught in them and in their homes, a network later called the University of Timbuktu. Unesco listed the city in 1988.", "de": "Djinguereber, Sankore und Sidi Yahya waren das Herz des Lernens. Gelehrte lehrten dort und in ihren Häusern, ein Netz, das man später die Universität von Timbuktu nannte. Die Unesco nahm die Stadt 1988 in die Welterbeliste auf.", "ar": "كانت مساجد جينغريبر وسنكوري وسيدي يحيى قلب الحياة العلمية، يدرّس فيها العلماء وفي بيوتهم، في شبكة سُميت لاحقًا جامعة تمبكتو، وقد أدرجت اليونسكو المدينة في التراث العالمي سنة ١٩٨٨م."}
+        },
+        {
+          "title": {"en": "Ahmad Baba", "de": "Ahmad Baba", "ar": "أحمد بابا التنبكتي"},
+          "body": {"en": "Ahmad Baba (1556–1627) was one of Timbuktu's great jurists and wrote dozens of works. After the Moroccan invasion he was deported to Morocco in 1594 and later returned home. An institute in Timbuktu bears his name.", "de": "Ahmad Baba (1556–1627) war einer der großen Rechtsgelehrten Timbuktus und verfasste Dutzende Werke. Nach der marokkanischen Invasion wurde er 1594 nach Marokko verschleppt und kehrte später heim. Ein Institut in Timbuktu trägt seinen Namen.", "ar": "كان أحمد بابا التنبكتي (١٥٥٦–١٦٢٧م) من كبار فقهاء تمبكتو، وألّف عشرات الكتب، وبعد الغزو المغربي نُفي إلى المغرب سنة ١٥٩٤م ثم عاد إلى بلده، ويحمل اسمه اليوم معهد في تمبكتو."}
+        },
+        {
+          "title": {"en": "What the manuscripts hold", "de": "Was die Handschriften bewahren", "ar": "ما تحفظه المخطوطات"},
+          "body": {"en": "Family libraries kept manuscripts on Quran and hadith, law, grammar, astronomy, medicine and poetry, as well as letters and contracts. Many were copied in Timbuktu itself.", "de": "Familienbibliotheken bewahrten Handschriften zu Koran und Hadith, Recht, Grammatik, Astronomie, Medizin und Dichtung, dazu Briefe und Verträge. Viele wurden in Timbuktu selbst abgeschrieben.", "ar": "حفظت مكتبات الأسر مخطوطات في القرآن والحديث والفقه والنحو والفلك والطب والشعر، إلى جانب الرسائل والعقود، ونُسخ كثير منها في تمبكتو نفسها."}
+        },
+        {
+          "verse": "35:28",
+          "check": "knowledge",
+          "title": {"en": "Knowledge and awe", "de": "Wissen und Ehrfurcht", "ar": "العلم والخشية"},
+          "body": {"en": "Timbuktu's scholars saw knowledge as a path to awe of Allah, not to pride.", "de": "Die Gelehrten Timbuktus sahen Wissen als Weg zur Ehrfurcht vor Allah, nicht zum Hochmut.", "ar": "رأى علماء تمبكتو في العلم طريقًا إلى خشية الله لا إلى الكبر."}
+        },
+        {
+          "title": {"en": "Saved in secret", "de": "Heimlich gerettet", "ar": "إنقاذ في الخفاء"},
+          "body": {"en": "During the conflict of 2012–2013, librarians led by Abdel Kader Haidara smuggled some 350,000 manuscripts to Bamako in metal trunks. Over 4,000 were burned or stolen.", "de": "Während des Konflikts 2012–2013 brachten Bibliothekare unter Abdel Kader Haidara rund 350.000 Handschriften in Metallkisten heimlich nach Bamako. Über 4.000 wurden verbrannt oder gestohlen.", "ar": "خلال نزاع ٢٠١٢–٢٠١٣م هرّب أمناء المكتبات بقيادة عبد القادر حيدرة نحو ثلاثمئة وخمسين ألف مخطوط في صناديق معدنية إلى باماكو، وأُحرق أو سُرق أكثر من أربعة آلاف."}
+        },
+        {
+          "title": {"en": "Rebuilt by its masons", "de": "Von den eigenen Maurern wiederaufgebaut", "ar": "أعاد بناءها بنّاؤوها"},
+          "body": {"en": "Mausoleums in Timbuktu destroyed in 2012 were rebuilt by 2015 by local masons, with Unesco's support and the old techniques of building in earth.", "de": "Die 2012 zerstörten Mausoleen Timbuktus wurden bis 2015 von örtlichen Maurern wiederaufgebaut, mit Unterstützung der Unesco und in den alten Techniken des Lehmbaus.", "ar": "أُعيد بناء أضرحة تمبكتو التي هُدمت سنة ٢٠١٢م على أيدي بنائين محليين بحلول ٢٠١٥م، بدعم من اليونسكو وبتقنيات البناء الطيني القديمة."}
+        },
+        {
+          "title": {"en": "Keeping Timbuktu's legacy", "de": "Das Erbe Timbuktus bewahren", "ar": "حفظ إرث تمبكتو"},
+          "list": {
+            "en": ["Protect books as you protect a people's memory", "Support efforts to digitise and share manuscripts", "Learn the names of Africa's Muslim scholars"],
+            "de": ["Schützen Sie Bücher wie das Gedächtnis eines Volkes", "Unterstützen Sie das Digitalisieren und Teilen von Handschriften", "Lernen Sie die Namen der muslimischen Gelehrten Afrikas"],
+            "ar": ["احمِ الكتب كما تحمي ذاكرة شعب", "ادعم رقمنة المخطوطات ونشرها", "تعرّف على أسماء علماء إفريقيا المسلمين"]
+          }
+        }
+      ],
+      "sources": [
+        {"label": "Shamil Jeppie and Souleymane Bachir Diagne (eds.), The Meanings of Timbuktu (HSRC Press, 2008)"},
+        {"label": "Wikipedia: Timbuktu Manuscripts", "url": "https://en.wikipedia.org/wiki/Timbuktu_Manuscripts"},
+        {"label": "Wikipedia: Ahmad Baba al-Timbukti", "url": "https://en.wikipedia.org/wiki/Ahmad_Baba_al-Timbukti"},
+        {"label": "Unesco: Timbuktu", "url": "https://whc.unesco.org/en/list/119"}
+      ]
+    },
+    {
+      "id": "islamic-history-15-swahili-coast",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": {"en": "Islamic history · 15", "de": "Islamische Geschichte · 15", "ar": "التاريخ الإسلامي · ١٥"},
+        "title": {"en": "The Swahili coast", "de": "Die Swahili-Küste", "ar": "الساحل السواحلي"},
+        "sub": {"en": "Monsoon winds, coral-stone mosques and a language shaped by Africa and Arabia", "de": "Monsunwinde, Moscheen aus Korallenstein und eine Sprache, geprägt von Afrika und Arabien", "ar": "رياح الموسم ومساجد من حجر المرجان ولغة صاغتها إفريقيا وجزيرة العرب"},
+        "arabic": "الساحل السواحلي"
+      },
+      "slides": [
+        {
+          "title": {"en": "Africa met Islam early", "de": "Afrika begegnete dem Islam früh", "ar": "لقاء مبكر"},
+          "body": {"en": "Africa met Islam early: around 615 believers found refuge with the Negus of Abyssinia. On the East African coast, Islam arrived later, by sea, with merchants and sailors.", "de": "Afrika begegnete dem Islam früh: Um 615 fanden Gläubige Zuflucht beim Negus von Abessinien. An die ostafrikanische Küste kam der Islam später, über das Meer, mit Kaufleuten und Seeleuten.", "ar": "عرفت إفريقيا الإسلام مبكرًا، إذ لجأ مؤمنون نحو سنة ٦١٥م إلى النجاشي في الحبشة، أما ساحل شرق إفريقيا فقد وصله الإسلام لاحقًا عبر البحر مع التجار والبحارة."}
+        },
+        {
+          "title": {"en": "Carried by the monsoon", "de": "Vom Monsun getragen", "ar": "على رياح الموسم"},
+          "body": {"en": "Each year the monsoon winds carried ships from Arabia, Persia and India to East Africa and back. Merchants settled, married and prayed in the ports. Even the word monsoon comes from Arabic mawsim, season.", "de": "Jedes Jahr trugen die Monsunwinde Schiffe von Arabien, Persien und Indien nach Ostafrika und zurück. Kaufleute ließen sich in den Häfen nieder, heirateten und beteten dort. Selbst das Wort Monsun stammt vom arabischen mawsim, Jahreszeit.", "ar": "كانت رياح الموسم تحمل السفن كل عام من جزيرة العرب وفارس والهند إلى شرق إفريقيا ثم تعيدها، فاستقر التجار في الموانئ وتزوجوا وصلّوا فيها، بل إن الكلمة الإنجليزية للرياح الموسمية مأخوذة من كلمة الموسم العربية."}
+        },
+        {
+          "verse": "45:12",
+          "check": "ships",
+          "title": {"en": "Ships upon the sea", "de": "Schiffe auf dem Meer", "ar": "سفن في البحر"},
+          "body": {"en": "For the Swahili towns, the sea was the road of trade and of faith.", "de": "Für die Swahili-Städte war das Meer der Weg des Handels und des Glaubens.", "ar": "كان البحر لمدن الساحل السواحلي طريق التجارة والإيمان معًا."}
+        },
+        {
+          "title": {"en": "Mosques from the 8th century", "de": "Moscheen seit dem 8. Jahrhundert", "ar": "مساجد منذ القرن الثامن"},
+          "body": {"en": "Archaeologists have found mosques in Swahili towns from as early as the 8th century. Over time Muslim towns rose along the coast from Somalia to Mozambique: Lamu, Mombasa, Zanzibar and Kilwa.", "de": "Archäologen haben in Swahili-Städten Moscheen gefunden, die bis ins 8. Jahrhundert zurückreichen. Mit der Zeit entstanden entlang der Küste von Somalia bis Mosambik muslimische Städte: Lamu, Mombasa, Sansibar und Kilwa.", "ar": "عثر علماء الآثار في مدن الساحل السواحلي على مساجد تعود إلى القرن الثامن الميلادي، ومع الزمن نشأت على الساحل من الصومال إلى موزمبيق مدن مسلمة مثل لامو وممباسا وزنجبار وكلوة."}
+        },
+        {
+          "title": {"en": "Kilwa", "de": "Kilwa", "ar": "كلوة"},
+          "body": {"en": "The Great Mosque of Kilwa, built of coral stone, goes back to the 11th or 12th century. Ibn Battuta visited in 1331 and counted Kilwa among the most beautiful cities in the world.", "de": "Die Große Moschee von Kilwa aus Korallenstein reicht ins 11. oder 12. Jahrhundert zurück. Ibn Battuta besuchte die Stadt 1331 und zählte Kilwa zu den schönsten Städten der Welt.", "ar": "يعود الجامع الكبير في كلوة، المبني من حجر المرجان، إلى القرن الحادي عشر أو الثاني عشر، وقد زارها ابن بطوطة سنة ١٣٣١م وعدّها من أجمل مدن العالم."}
+        },
+        {
+          "title": {"en": "The language of the coasts", "de": "Die Sprache der Küsten", "ar": "لغة السواحل"},
+          "body": {"en": "Swahili comes from Arabic sawahil, coasts. It is a Bantu language rich in Arabic words, long written in Arabic script. The Utendi wa Tambuka, dated 1728, is one of the oldest known Swahili manuscripts.", "de": "Swahili kommt vom arabischen sawahil, Küsten. Es ist eine Bantusprache voller arabischer Wörter und wurde lange in arabischer Schrift geschrieben. Das Utendi wa Tambuka von 1728 gehört zu den ältesten bekannten Swahili-Handschriften.", "ar": "اسم السواحيلية مأخوذ من كلمة السواحل العربية، وهي لغة بانتوية غنية بالألفاظ العربية، كُتبت طويلًا بالحرف العربي، ومن أقدم مخطوطاتها المعروفة ملحمة أوتيندي وا تامبوكا المؤرخة بسنة ١٧٢٨م."}
+        },
+        {
+          "title": {"en": "Light and shadow", "de": "Licht und Schatten", "ar": "نور وظلال"},
+          "body": {"en": "The coast's history has hard pages too. After the Portuguese arrived in 1498, their fleets sacked Kilwa and Mombasa in 1505. In the 19th century Zanzibar was a centre of the East African slave trade.", "de": "Die Geschichte der Küste hat auch schwere Kapitel. Nach der Ankunft der Portugiesen 1498 plünderten ihre Flotten 1505 Kilwa und Mombasa. Im 19. Jahrhundert war Sansibar ein Zentrum des ostafrikanischen Sklavenhandels.", "ar": "لتاريخ الساحل صفحات قاسية أيضًا: فبعد وصول البرتغاليين سنة ١٤٩٨م نهبت أساطيلهم كلوة وممباسا سنة ١٥٠٥م، وفي القرن التاسع عشر كانت زنجبار مركزًا لتجارة الرقيق في شرق إفريقيا."}
+        },
+        {
+          "verse": "14:4",
+          "check": "language",
+          "title": {"en": "Faith in the people's words", "de": "Glaube in der Sprache des Volkes", "ar": "الإيمان بلغة الناس"},
+          "body": {"en": "On the coast, Islam came to speak Swahili: poems, sermons and stories carried faith in the people's own words.", "de": "An der Küste lernte der Islam Swahili zu sprechen: Gedichte, Predigten und Erzählungen trugen den Glauben in der eigenen Sprache der Menschen.", "ar": "صار الإسلام على الساحل يتكلم السواحيلية، فحملت القصائد والخطب والحكايات الإيمان بلغة الناس أنفسهم."}
+        }
+      ],
+      "sources": [
+        {"label": "Randall L. Pouwels, Horn and Crescent (Cambridge University Press, 1987)"},
+        {"label": "Mark Horton and John Middleton, The Swahili: The Social Landscape of a Mercantile Society (Blackwell, 2000)"},
+        {"label": "Wikipedia: Swahili coast", "url": "https://en.wikipedia.org/wiki/Swahili_coast"},
+        {"label": "Wikipedia: Utendi wa Tambuka", "url": "https://en.wikipedia.org/wiki/Utendi_wa_Tambuka"},
+        {"label": "Unesco: Ruins of Kilwa Kisiwani and Songo Mnara", "url": "https://whc.unesco.org/en/list/144"}
+      ]
+    },
+    {
+      "id": "islamic-history-16-southeast-asia",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": {"en": "Islamic history · 16", "de": "Islamische Geschichte · 16", "ar": "التاريخ الإسلامي · ١٦"},
+        "title": {"en": "How Islam reached Southeast Asia", "de": "Wie der Islam Südostasien erreichte", "ar": "كيف وصل الإسلام إلى جنوب شرق آسيا"},
+        "sub": {"en": "Through traders, scholars and Sufis: the story behind the largest Muslim population of any country", "de": "Durch Händler, Gelehrte und Sufis: die Geschichte hinter dem Land mit den meisten Muslimen der Welt", "ar": "عبر التجار والعلماء والمتصوفة: قصة البلد الذي يضم أكبر عدد من المسلمين في العالم"},
+        "arabic": "جنوب شرق آسيا"
+      },
+      "slides": [
+        {
+          "title": {"en": "Ports of the spice trade", "de": "Häfen des Gewürzhandels", "ar": "موانئ تجارة التوابل"},
+          "body": {"en": "Merchants from Arabia, Persia, Gujarat and China sailed to the ports of Sumatra, Java and the Malay Peninsula. Some settled, married into local families and built small Muslim communities.", "de": "Kaufleute aus Arabien, Persien, Gujarat und China segelten zu den Häfen Sumatras, Javas und der Malaiischen Halbinsel. Manche ließen sich nieder, heirateten in einheimische Familien ein und bildeten kleine muslimische Gemeinschaften.", "ar": "أبحر تجار من جزيرة العرب وفارس والكجرات والصين إلى موانئ سومطرة وجاوة وشبه جزيرة الملايو، فاستقر بعضهم وصاهروا الأسر المحلية وكوّنوا جماعات مسلمة صغيرة."}
+        },
+        {
+          "title": {"en": "Early traces", "de": "Frühe Spuren", "ar": "آثار مبكرة"},
+          "body": {"en": "Marco Polo noted a Muslim town at Perlak in northern Sumatra in 1292. At Samudra Pasai a royal tomb from 1297 bears an inscription entirely in Arabic.", "de": "Marco Polo erwähnte 1292 eine muslimische Stadt in Perlak im Norden Sumatras. In Samudra Pasai trägt ein Königsgrab von 1297 eine Inschrift ganz in arabischer Sprache.", "ar": "ذكر ماركو بولو سنة ١٢٩٢م مدينة مسلمة في بيرلاك شمال سومطرة، وفي سامودرا باساي قبر ملكي يعود إلى سنة ١٢٩٧م نقشه كله بالعربية."}
+        },
+        {
+          "verse": "16:125",
+          "check": "wisdom",
+          "title": {"en": "With wisdom", "de": "Mit Weisheit", "ar": "بالحكمة"},
+          "body": {"en": "Islam spread here mostly through example, trade and teaching, much as this verse describes.", "de": "Der Islam verbreitete sich hier vor allem durch Vorbild, Handel und Unterweisung, ganz wie dieser Vers es beschreibt.", "ar": "انتشر الإسلام هنا في الغالب بالقدوة والتجارة والتعليم، على نحو ما تصفه هذه الآية."}
+        },
+        {
+          "title": {"en": "Malacca", "de": "Malakka", "ar": "ملقا"},
+          "body": {"en": "In the 15th century the rulers of Malacca embraced Islam, and the port became a hub of Muslim trade and learning. Malay, written in Arabic letters called Jawi, became a language of Islamic scholarship.", "de": "Im 15. Jahrhundert nahmen die Herrscher von Malakka den Islam an, und der Hafen wurde zu einem Zentrum muslimischen Handels und Lernens. Malaiisch, geschrieben in der arabischen Jawi-Schrift, wurde zu einer Sprache islamischer Gelehrsamkeit.", "ar": "في القرن الخامس عشر أسلم حكام ملقا، فصار ميناؤها مركزًا لتجارة المسلمين وعلومهم، وغدت الملايوية المكتوبة بالحرف العربي المعروف بالجاوي لغةً للعلم الإسلامي."}
+        },
+        {
+          "title": {"en": "The nine saints of Java", "de": "Die neun Heiligen Javas", "ar": "الأولياء التسعة في جاوة"},
+          "body": {"en": "Javanese tradition remembers the Wali Songo, nine saints of the 15th and 16th centuries who spread Islam on Java. Stories tell that they used local arts such as shadow puppetry and music to teach.", "de": "Die javanische Überlieferung erinnert an die Wali Songo, neun Heilige des 15. und 16. Jahrhunderts, die den Islam auf Java verbreiteten. Erzählungen zufolge nutzten sie einheimische Künste wie das Schattenspiel und Musik zum Lehren.", "ar": "تحفظ الذاكرة الجاوية سيرة والي سونغو، الأولياء التسعة في القرنين الخامس عشر والسادس عشر الذين نشروا الإسلام في جاوة، وتروي الحكايات أنهم استعملوا فنونًا محلية كمسرح الظل والموسيقى في التعليم."}
+        },
+        {
+          "title": {"en": "Schools of the islands", "de": "Schulen der Inseln", "ar": "مدارس الجزر"},
+          "body": {"en": "Islamic boarding schools, called pesantren in Indonesia and pondok in Malaysia, have taught Quran, Arabic and fiqh for generations. Most Muslims of the region follow the Shafi'i school.", "de": "Islamische Internatsschulen, in Indonesien Pesantren und in Malaysia Pondok genannt, lehren seit Generationen Koran, Arabisch und Fiqh. Die meisten Muslime der Region folgen der schafiitischen Rechtsschule.", "ar": "تعلّم المدارس الداخلية الإسلامية، المسماة بيسانترين في إندونيسيا وبوندوك في ماليزيا، القرآن والعربية والفقه منذ أجيال، ويتبع أكثر مسلمي المنطقة المذهب الشافعي."}
+        },
+        {
+          "title": {"en": "Today", "de": "Heute", "ar": "اليوم"},
+          "body": {"en": "Indonesia has the largest Muslim population of any country. Muslims also live in Malaysia, Brunei, Singapore, southern Thailand and the southern Philippines.", "de": "Indonesien hat die größte muslimische Bevölkerung aller Länder. Muslime leben auch in Malaysia, Brunei, Singapur, im Süden Thailands und im Süden der Philippinen.", "ar": "تضم إندونيسيا أكبر عدد من المسلمين بين دول العالم، ويعيش المسلمون كذلك في ماليزيا وبروناي وسنغافورة وجنوب تايلاند وجنوب الفلبين."}
+        },
+        {
+          "title": {"en": "Lessons from the islands", "de": "Lehren von den Inseln", "ar": "دروس من الجزر"},
+          "list": {
+            "en": ["Good character carries a message further than force", "Respect local culture where it does not contradict faith", "Trade honestly: your work can be your invitation"],
+            "de": ["Guter Charakter trägt eine Botschaft weiter als Zwang", "Achten Sie die örtliche Kultur, wo sie dem Glauben nicht widerspricht", "Handeln Sie ehrlich: Ihre Arbeit kann Ihre Einladung sein"],
+            "ar": ["حسن الخلق يحمل الرسالة أبعد مما تحمله القوة", "احترم الثقافة المحلية ما لم تخالف الدين", "تاجر بأمانة، فعملك قد يكون دعوتك"]
+          }
+        }
+      ],
+      "sources": [
+        {"label": "M. C. Ricklefs, A History of Modern Indonesia since c. 1200 (4th ed., Palgrave Macmillan, 2008)"},
+        {"label": "Wikipedia: Spread of Islam in Indonesia", "url": "https://en.wikipedia.org/wiki/Spread_of_Islam_in_Indonesia"},
+        {"label": "Wikipedia: Samudera Pasai Sultanate", "url": "https://en.wikipedia.org/wiki/Samudera_Pasai_Sultanate"},
+        {"label": "Wikipedia: Malacca Sultanate", "url": "https://en.wikipedia.org/wiki/Malacca_Sultanate"},
+        {"label": "Wikipedia: Wali Sanga", "url": "https://en.wikipedia.org/wiki/Wali_Sanga"}
+      ]
+    },
+    {
+      "id": "islamic-history-17-china-hui",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": {"en": "Islamic history · 17", "de": "Islamische Geschichte · 17", "ar": "التاريخ الإسلامي · ١٧"},
+        "title": {"en": "Islam in China and the Hui", "de": "Der Islam in China und die Hui", "ar": "الإسلام في الصين وقومية هوي"},
+        "sub": {"en": "From an embassy in 651 to mosques with curved roofs and women's mosques led by women", "de": "Von einer Gesandtschaft 651 bis zu Moscheen mit geschwungenen Dächern und von Frauen geleiteten Frauenmoscheen", "ar": "من سفارة سنة ٦٥١م إلى مساجد بأسقف منحنية ومساجد للنساء تقودها نساء"},
+        "arabic": "المسلمون في الصين"
+      },
+      "slides": [
+        {
+          "title": {"en": "An embassy in 651", "de": "Eine Gesandtschaft 651", "ar": "سفارة سنة ٦٥١م"},
+          "body": {"en": "Chinese records of the Tang dynasty report an embassy from the Arabs in 651, in the time of the caliph 'Uthman. Chinese Muslim tradition links it to the companion Sa'd ibn Abi Waqqas; historians find no firm evidence that he came.", "de": "Chinesische Quellen der Tang-Dynastie berichten von einer Gesandtschaft der Araber im Jahr 651, zur Zeit des Kalifen 'Uthman. Die Überlieferung chinesischer Muslime verbindet sie mit dem Gefährten Sa'd ibn Abi Waqqas; Historiker finden keinen sicheren Beleg, dass er kam.", "ar": "تذكر سجلات أسرة تانغ الصينية سفارة من العرب سنة ٦٥١م، في عهد الخليفة عثمان، وتربطها رواية مسلمي الصين بالصحابي سعد بن أبي وقاص، ولا يجد المؤرخون دليلًا قاطعًا على قدومه."}
+        },
+        {
+          "title": {"en": "Merchants in the ports", "de": "Kaufleute in den Häfen", "ar": "تجار في الموانئ"},
+          "body": {"en": "Arab and Persian merchants settled in Guangzhou and Quanzhou along the sea routes, and others came by the Silk Road. The Huaisheng Mosque in Guangzhou is traditionally counted among China's oldest.", "de": "Arabische und persische Kaufleute ließen sich entlang der Seewege in Guangzhou und Quanzhou nieder, andere kamen über die Seidenstraße. Die Huaisheng-Moschee in Guangzhou gilt traditionell als eine der ältesten Chinas.", "ar": "استقر تجار عرب وفرس في قوانغتشو وتشيوانتشو على طرق البحر، وجاء آخرون عبر طريق الحرير، ويُعدّ مسجد هوايشنغ في قوانغتشو تقليديًا من أقدم مساجد الصين."}
+        },
+        {
+          "title": {"en": "The Hui", "de": "Die Hui", "ar": "قومية هوي"},
+          "body": {"en": "Over centuries, Muslim newcomers married into Chinese families. Their descendants, the Hui, speak Chinese and live all over China; the 2020 census counted about 11.4 million. Turkic peoples such as the Uyghurs are Muslims too.", "de": "Über Jahrhunderte heirateten muslimische Zuwanderer in chinesische Familien ein. Ihre Nachkommen, die Hui, sprechen Chinesisch und leben überall in China; die Volkszählung 2020 zählte etwa 11,4 Millionen. Auch Turkvölker wie die Uiguren sind Muslime.", "ar": "عبر القرون صاهر المسلمون الوافدون الأسر الصينية، ويتكلم أحفادهم من قومية هوي الصينية ويعيشون في أنحاء الصين، وقد أحصى تعداد ٢٠٢٠م نحو ١١٫٤ مليونًا منهم، ومن مسلمي الصين أيضًا شعوب تركية كالأويغور."}
+        },
+        {
+          "title": {"en": "Mosques with Chinese roofs", "de": "Moscheen mit chinesischen Dächern", "ar": "مساجد بأسقف صينية"},
+          "body": {"en": "Many Chinese mosques look like temples, with courtyards, curved roofs and pagoda-like minarets. The Great Mosque of Xi'an took its present form largely under the Ming dynasty, from 1392.", "de": "Viele chinesische Moscheen sehen aus wie Tempel, mit Höfen, geschwungenen Dächern und pagodenartigen Minaretten. Die Große Moschee von Xi'an erhielt ihre heutige Gestalt weitgehend unter der Ming-Dynastie, ab 1392.", "ar": "يشبه كثير من مساجد الصين المعابد، بأفنيتها وأسقفها المنحنية ومآذنها الشبيهة بالباغودا، وقد اتخذ الجامع الكبير في شيآن شكله الحالي في معظمه في عهد أسرة مينغ منذ سنة ١٣٩٢م."}
+        },
+        {
+          "title": {"en": "Zheng He", "de": "Zheng He", "ar": "تشنغ خه"},
+          "body": {"en": "Zheng He (1371–1433), born Ma He into a Muslim family in Yunnan, commanded seven great voyages for the Ming emperors between 1405 and 1433, reaching Arabia and East Africa.", "de": "Zheng He (1371–1433), als Ma He in eine muslimische Familie in Yunnan geboren, führte zwischen 1405 und 1433 sieben große Seereisen für die Ming-Kaiser an, die bis Arabien und Ostafrika reichten.", "ar": "قاد تشنغ خه (١٣٧١–١٤٣٣م)، المولود باسم ما خه لأسرة مسلمة في يوننان، سبع رحلات بحرية كبرى لأباطرة مينغ بين ١٤٠٥ و١٤٣٣م، بلغت جزيرة العرب وشرق إفريقيا."}
+        },
+        {
+          "title": {"en": "Islam in Chinese words", "de": "Islam in chinesischen Worten", "ar": "الإسلام بالكلمات الصينية"},
+          "body": {"en": "In the 17th and 18th centuries scholars such as Wang Daiyu and Liu Zhi wrote about Islam in classical Chinese, drawing on Confucian language. Their works are known as the Han Kitab.", "de": "Im 17. und 18. Jahrhundert schrieben Gelehrte wie Wang Daiyu und Liu Zhi über den Islam in klassischem Chinesisch und griffen dabei auf konfuzianische Begriffe zurück. Ihre Werke heißen Han Kitab.", "ar": "في القرنين السابع عشر والثامن عشر كتب علماء مثل وانغ دايو وليو تشي عن الإسلام بالصينية الكلاسيكية مستعينين بالمصطلحات الكونفوشية، وتُعرف أعمالهم باسم هان كتاب."}
+        },
+        {
+          "title": {"en": "Women's mosques", "de": "Frauenmoscheen", "ar": "مساجد النساء"},
+          "body": {"en": "In central China, especially in Henan, women's mosques have existed for several hundred years. Women religious teachers, called nü ahong, lead learning and prayer there.", "de": "In Zentralchina, besonders in Henan, gibt es seit mehreren Jahrhunderten Frauenmoscheen. Dort leiten Religionslehrerinnen, nü ahong genannt, das Lernen und das Gebet.", "ar": "في وسط الصين، ولا سيما في خنان، توجد مساجد للنساء منذ قرون عدة، تقود فيها معلمات الدين، المسمّيات نو آخونغ، التعليمَ والصلاة."}
+        },
+        {
+          "verse": "2:115",
+          "check": "east",
+          "title": {"en": "East and west", "de": "Osten und Westen", "ar": "المشرق والمغرب"},
+          "body": {"en": "From Mecca to Xi'an, believers turn to the same Lord. Chinese Islam shows a faith at home in a very different culture.", "de": "Von Mekka bis Xi'an wenden sich Gläubige demselben Herrn zu. Der chinesische Islam zeigt einen Glauben, der in einer ganz anderen Kultur zu Hause ist.", "ar": "من مكة إلى شيآن يتوجه المؤمنون إلى رب واحد، ويُظهر إسلام الصين إيمانًا وجد بيته في ثقافة مختلفة تمامًا."}
+        }
+      ],
+      "sources": [
+        {"label": "Jonathan N. Lipman, Familiar Strangers: A History of Muslims in Northwest China (University of Washington Press, 1997)"},
+        {"label": "Maria Jaschok and Shui Jingjun, The History of Women's Mosques in Chinese Islam (Curzon, 2000)"},
+        {"label": "Wikipedia: Islam during the Tang dynasty", "url": "https://en.wikipedia.org/wiki/Islam_during_the_Tang_dynasty"},
+        {"label": "Wikipedia: Hui people", "url": "https://en.wikipedia.org/wiki/Hui_people"},
+        {"label": "Wikipedia: Zheng He", "url": "https://en.wikipedia.org/wiki/Zheng_He"}
+      ]
+    },
+    {
+      "id": "islamic-history-18-central-asia",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": {"en": "Islamic history · 18", "de": "Islamische Geschichte · 18", "ar": "التاريخ الإسلامي · ١٨"},
+        "title": {"en": "Bukhara and Samarkand", "de": "Buchara und Samarkand", "ar": "بخارى وسمرقند"},
+        "sub": {"en": "Central Asia's cities of scholars, from the Samanids to Ulugh Beg's observatory", "de": "Die Gelehrtenstädte Zentralasiens, von den Samaniden bis zur Sternwarte Ulugh Begs", "ar": "مدن العلماء في آسيا الوسطى، من السامانيين إلى مرصد ألغ بك"},
+        "arabic": "ما وراء النهر"
+      },
+      "slides": [
+        {
+          "title": {"en": "Beyond the river", "de": "Jenseits des Flusses", "ar": "ما وراء النهر"},
+          "body": {"en": "Arab geographers called it Ma wara' al-nahr, the land beyond the river Oxus. From the 8th century Islam spread here among Persian and Turkic peoples along the Silk Road.", "de": "Arabische Geografen nannten es Ma wara' an-nahr, das Land jenseits des Flusses Oxus. Ab dem 8. Jahrhundert verbreitete sich der Islam hier unter persischen und türkischen Völkern entlang der Seidenstraße.", "ar": "سمّى الجغرافيون العرب هذه البلاد ما وراء النهر، أي ما وراء نهر جيحون، ومنذ القرن الثامن الميلادي انتشر فيها الإسلام بين الشعوب الفارسية والتركية على طريق الحرير."}
+        },
+        {
+          "title": {"en": "The Samanids", "de": "Die Samaniden", "ar": "السامانيون"},
+          "body": {"en": "Under the Samanids (819–999), Bukhara became a capital of learning, and Persian literature flourished at their court. The Samanid Mausoleum, built in the 10th century, still stands in the city.", "de": "Unter den Samaniden (819–999) wurde Buchara zu einer Hauptstadt der Gelehrsamkeit, und an ihrem Hof blühte die persische Literatur. Das Samaniden-Mausoleum aus dem 10. Jahrhundert steht noch heute in der Stadt.", "ar": "في عهد السامانيين (٨١٩–٩٩٩م) صارت بخارى عاصمة للعلم، وازدهر الأدب الفارسي في بلاطهم، وما زال ضريح السامانيين الذي بُني في القرن العاشر قائمًا في المدينة."}
+        },
+        {
+          "title": {"en": "Scholars of Central Asia", "de": "Gelehrte Zentralasiens", "ar": "علماء من آسيا الوسطى"},
+          "list": {
+            "en": ["Al-Bukhari of Bukhara, compiler of the Sahih", "Al-Tirmidhi of Termez, collector of hadith", "Al-Maturidi of Samarkand, founder of a school of Sunni theology", "Al-Zamakhshari of Khwarazm, author of the tafsir al-Kashshaf", "Ibn Sina of Bukhara, physician and philosopher", "Baha' al-Din Naqshband, founder of a great Sufi order"],
+            "de": ["Al-Bukhari aus Buchara, Sammler des Sahih", "At-Tirmidhi aus Termez, Sammler von Hadithen", "Al-Maturidi aus Samarkand, Begründer einer sunnitischen Theologieschule", "Az-Zamakhshari aus Choresmien, Verfasser des Tafsir al-Kashshaf", "Ibn Sina aus Buchara, Arzt und Philosoph", "Baha' ad-Din Naqshband, Begründer eines großen Sufi-Ordens"],
+            "ar": ["البخاري من بخارى، صاحب الصحيح", "الترمذي من ترمذ، جامع الحديث", "أبو منصور الماتريدي من سمرقند، إمام مدرسة في العقيدة السنية", "الزمخشري من خوارزم، صاحب تفسير الكشاف", "ابن سينا من بخارى، الطبيب والفيلسوف", "بهاء الدين نقشبند، مؤسس طريقة صوفية كبرى"]
+          }
+        },
+        {
+          "title": {"en": "Timur's capital", "de": "Timurs Hauptstadt", "ar": "عاصمة تيمور"},
+          "body": {"en": "In the late 14th century Timur made Samarkand his capital. His campaigns brought great destruction to many cities; at the same time he brought craftsmen to Samarkand, who raised its blue domes.", "de": "Im späten 14. Jahrhundert machte Timur Samarkand zu seiner Hauptstadt. Seine Feldzüge brachten vielen Städten große Zerstörung; zugleich holte er Handwerker nach Samarkand, die ihre blauen Kuppeln errichteten.", "ar": "في أواخر القرن الرابع عشر اتخذ تيمور سمرقند عاصمة له، وقد جلبت حملاته دمارًا كبيرًا على مدن كثيرة، وفي الوقت نفسه جمع الصناع في سمرقند فشيّدوا قبابها الزرقاء."}
+        },
+        {
+          "title": {"en": "Ulugh Beg the astronomer", "de": "Ulugh Beg, der Astronom", "ar": "ألغ بك الفلكي"},
+          "body": {"en": "Timur's grandson Ulugh Beg (1394–1449) ruled Samarkand and loved the stars. He built a madrasa on the Registan (1417–1420) and, in the 1420s, an observatory whose star catalogue lists about 1,000 stars.", "de": "Timurs Enkel Ulugh Beg (1394–1449) regierte Samarkand und liebte die Sterne. Er baute eine Madrasa am Registan (1417–1420) und in den 1420er-Jahren eine Sternwarte, deren Sternkatalog rund 1.000 Sterne verzeichnet.", "ar": "حكم ألغ بك، حفيد تيمور (١٣٩٤–١٤٤٩م)، سمرقند وأحب النجوم، فبنى مدرسة في ساحة ريجستان (١٤١٧–١٤٢٠م)، وأقام في عشرينيات القرن الخامس عشر مرصدًا يضم فهرسه نحو ألف نجم."}
+        },
+        {
+          "verse": "10:5",
+          "check": "number of years",
+          "title": {"en": "Sun, moon and reckoning", "de": "Sonne, Mond und Zeitrechnung", "ar": "الشمس والقمر والحساب"},
+          "body": {"en": "Ulugh Beg's astronomers measured the heavens to keep time and calendars, the very reckoning this verse names.", "de": "Die Astronomen Ulugh Begs vermaßen den Himmel für Zeit und Kalender, genau die Berechnung, die dieser Vers nennt.", "ar": "رصد فلكيو ألغ بك السماء لضبط الأوقات والتقاويم، وهو الحساب الذي تذكره هذه الآية."}
+        },
+        {
+          "title": {"en": "The Registan", "de": "Der Registan", "ar": "ساحة ريجستان"},
+          "body": {"en": "Three madrasas face each other on Samarkand's Registan: Ulugh Beg (1417–1420), Sher-Dor (1619–1636) and Tilya-Kori (1646–1660). Samarkand and Bukhara are both Unesco World Heritage sites.", "de": "Drei Madrasas stehen einander am Registan in Samarkand gegenüber: Ulugh Beg (1417–1420), Sher-Dor (1619–1636) und Tilla-Kari (1646–1660). Samarkand und Buchara sind beide Unesco-Welterbe.", "ar": "تتقابل في ساحة ريجستان بسمرقند ثلاث مدارس: مدرسة ألغ بك (١٤١٧–١٤٢٠م) وشير دار (١٦١٩–١٦٣٦م) وطلا كاري (١٦٤٦–١٦٦٠م)، وسمرقند وبخارى كلتاهما من مواقع التراث العالمي لليونسكو."}
+        },
+        {
+          "title": {"en": "A living heritage", "de": "Ein lebendiges Erbe", "ar": "إرث حي"},
+          "body": {"en": "Under Soviet rule religious life was suppressed for decades. Since 1991 mosques and madrasas in Uzbekistan have reopened, and pilgrims again visit the tombs of al-Bukhari and Baha' al-Din Naqshband.", "de": "Unter sowjetischer Herrschaft wurde das religiöse Leben jahrzehntelang unterdrückt. Seit 1991 sind in Usbekistan Moscheen und Madrasas wieder geöffnet, und Pilger besuchen erneut die Gräber von al-Bukhari und Baha' ad-Din Naqshband.", "ar": "قُمعت الحياة الدينية عقودًا في ظل الحكم السوفييتي، ومنذ سنة ١٩٩١م أعيد فتح المساجد والمدارس في أوزبكستان، وعاد الزوار إلى قبري البخاري وبهاء الدين نقشبند."}
+        }
+      ],
+      "sources": [
+        {"label": "S. Frederick Starr, Lost Enlightenment: Central Asia's Golden Age (Princeton University Press, 2013)"},
+        {"label": "Wikipedia: Samanid Empire", "url": "https://en.wikipedia.org/wiki/Samanid_Empire"},
+        {"label": "Wikipedia: Ulugh Beg Observatory", "url": "https://en.wikipedia.org/wiki/Ulugh_Beg_Observatory"},
+        {"label": "Unesco: Samarkand, Crossroad of Cultures", "url": "https://whc.unesco.org/en/list/603"},
+        {"label": "Unesco: Historic Centre of Bukhara", "url": "https://whc.unesco.org/en/list/602"}
+      ]
+    },
+    {
+      "id": "islamic-history-19-seljuks",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": {"en": "Islamic history · 19", "de": "Islamische Geschichte · 19", "ar": "التاريخ الإسلامي · ١٩"},
+        "title": {"en": "The Seljuks: sultans, madrasas, caravanserais", "de": "Die Seldschuken: Sultane, Madrasas, Karawansereien", "ar": "السلاجقة: سلاطين ومدارس وخانات"},
+        "sub": {"en": "Turkish rulers who renewed Sunni learning and opened Anatolia to Islam", "de": "Türkische Herrscher, die die sunnitische Gelehrsamkeit erneuerten und Anatolien dem Islam öffneten", "ar": "حكام أتراك جددوا العلم السني وفتحوا الأناضول للإسلام"},
+        "arabic": "السلاجقة"
+      },
+      "slides": [
+        {
+          "title": {"en": "From the steppe to Baghdad", "de": "Von der Steppe nach Bagdad", "ar": "من السهوب إلى بغداد"},
+          "body": {"en": "The Seljuks were Oghuz Turks from Central Asia who embraced Islam in the 10th century. In 1055 Tughril Beg entered Baghdad, and the Abbasid caliph recognised him as sultan.", "de": "Die Seldschuken waren Oghusen-Türken aus Zentralasien, die im 10. Jahrhundert den Islam annahmen. 1055 zog Tughril Beg in Bagdad ein, und der abbasidische Kalif erkannte ihn als Sultan an.", "ar": "كان السلاجقة من أتراك الغز في آسيا الوسطى، وقد اعتنقوا الإسلام في القرن العاشر، وفي سنة ١٠٥٥م دخل طغرل بك بغداد فاعترف به الخليفة العباسي سلطانًا."}
+        },
+        {
+          "title": {"en": "Sultan and caliph", "de": "Sultan und Kalif", "ar": "السلطان والخليفة"},
+          "body": {"en": "A new order took shape: the caliph kept religious dignity, the sultan held military and political power. This sharing of roles shaped Sunni political life for centuries.", "de": "Eine neue Ordnung entstand: Der Kalif behielt die religiöse Würde, der Sultan hielt die militärische und politische Macht. Diese Rollenteilung prägte das sunnitische politische Leben über Jahrhunderte.", "ar": "تشكّل نظام جديد: احتفظ الخليفة بالمكانة الدينية، وتولى السلطان القوة العسكرية والسياسية، وطبع هذا التقاسم الحياة السياسية السنية قرونًا."}
+        },
+        {
+          "title": {"en": "Nizam al-Mulk", "de": "Nizam al-Mulk", "ar": "نظام الملك"},
+          "body": {"en": "The Persian vizier Nizam al-Mulk (1018–1092) served the sultans Alp Arslan and Malik-Shah for three decades. The Siyasatnama, a book of advice to rulers on justice, is traditionally credited to him.", "de": "Der persische Wesir Nizam al-Mulk (1018–1092) diente den Sultanen Alp Arslan und Malik-Shah drei Jahrzehnte lang. Ihm wird traditionell das Siyasatnama zugeschrieben, ein Ratgeber für Herrscher über Gerechtigkeit.", "ar": "خدم الوزير الفارسي نظام الملك (١٠١٨–١٠٩٢م) السلطانين ألب أرسلان وملكشاه ثلاثة عقود، ويُنسب إليه تقليديًا كتاب سياست نامه في نصح الحكام بالعدل."}
+        },
+        {
+          "title": {"en": "The Nizamiyya madrasas", "de": "Die Nizamiyya-Madrasas", "ar": "المدارس النظامية"},
+          "body": {"en": "From 1065 he founded madrasas in Baghdad, Nishapur and other cities, with salaries for teachers and stipends for students. Al-Ghazali taught at the Nizamiyya of Baghdad.", "de": "Ab 1065 gründete er Madrasas in Bagdad, Nishapur und anderen Städten, mit Gehältern für Lehrer und Stipendien für Studenten. Al-Ghazali lehrte an der Nizamiyya von Bagdad.", "ar": "منذ سنة ١٠٦٥م أسس مدارس في بغداد ونيسابور ومدن أخرى، برواتب للمدرسين ومنح للطلاب، ودرّس الغزالي في نظامية بغداد."}
+        },
+        {
+          "verse": "9:122",
+          "check": "understanding in the religion",
+          "title": {"en": "Some to study", "de": "Einige, um zu lernen", "ar": "طائفة للعلم"},
+          "body": {"en": "The Quran asks that some devote themselves to understanding the religion. The madrasa gave that call a home.", "de": "Der Koran verlangt, dass sich einige dem Verständnis der Religion widmen. Die Madrasa gab diesem Ruf ein Zuhause.", "ar": "يدعو القرآن إلى أن يتفرغ بعض الناس لفهم الدين، وقد منحت المدرسةُ هذه الدعوة بيتًا."}
+        },
+        {
+          "title": {"en": "Into Anatolia", "de": "Nach Anatolien", "ar": "إلى الأناضول"},
+          "body": {"en": "After 1071 Turkish groups settled in Anatolia. The Seljuks of Rum ruled from Konya, where the scholar and poet Jalal al-Din Rumi lived and taught until his death in 1273.", "de": "Nach 1071 ließen sich türkische Gruppen in Anatolien nieder. Die Rum-Seldschuken regierten von Konya aus, wo der Gelehrte und Dichter Jalal ad-Din Rumi bis zu seinem Tod 1273 lebte und lehrte.", "ar": "بعد سنة ١٠٧١م استقرت جماعات تركية في الأناضول، وحكم سلاجقة الروم من قونية، حيث عاش العالم والشاعر جلال الدين الرومي ودرّس حتى وفاته سنة ١٢٧٣م."}
+        },
+        {
+          "title": {"en": "Inns on the trade roads", "de": "Herbergen an den Handelsstraßen", "ar": "خانات على طرق التجارة"},
+          "body": {"en": "The Seljuks of Rum built caravanserais along Anatolia's roads, fortified inns where travellers, animals and goods found shelter. Funded by endowments, many offered food and lodging free of charge.", "de": "Die Rum-Seldschuken bauten entlang der Straßen Anatoliens Karawansereien, befestigte Herbergen für Reisende, Tiere und Waren. Viele wurden aus Stiftungen finanziert und boten Essen und Unterkunft kostenlos an.", "ar": "بنى سلاجقة الروم على طرق الأناضول خانات محصنة يأوي إليها المسافرون ودوابهم وبضائعهم، وكان كثير منها يُموَّل من الأوقاف ويقدم الطعام والمبيت مجانًا."}
+        },
+        {
+          "verse": "2:215",
+          "check": "traveler",
+          "title": {"en": "For the traveller", "de": "Für den Reisenden", "ar": "للمسافر"},
+          "body": {"en": "Care for the traveller belongs to the Quran's charity. A caravanserai turned it into stone.", "de": "Die Fürsorge für den Reisenden gehört zur Wohltätigkeit des Korans. Eine Karawanserei machte sie zu Stein.", "ar": "رعاية المسافر من أبواب الإنفاق في القرآن، وقد حوّلها الخان إلى بناء من حجر."}
+        }
+      ],
+      "sources": [
+        {"label": "A. C. S. Peacock, The Great Seljuk Empire (Edinburgh University Press, 2015)"},
+        {"label": "Wikipedia: Seljuk Empire", "url": "https://en.wikipedia.org/wiki/Seljuk_Empire"},
+        {"label": "Wikipedia: Nizam al-Mulk", "url": "https://en.wikipedia.org/wiki/Nizam_al-Mulk"},
+        {"label": "Wikipedia: Sultanate of Rum", "url": "https://en.wikipedia.org/wiki/Sultanate_of_Rum"},
+        {"label": "Wikipedia: Sultan Han", "url": "https://en.wikipedia.org/wiki/Sultan_Han"}
+      ]
+    },
+    {
+      "id": "islamic-history-20-salah-al-din",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": {"en": "Islamic history · 20", "de": "Islamische Geschichte · 20", "ar": "التاريخ الإسلامي · ٢٠"},
+        "title": {"en": "Salah al-Din and Jerusalem", "de": "Salah ad-Din und Jerusalem", "ar": "صلاح الدين وبيت المقدس"},
+        "sub": {"en": "1187: how a sultan entered the holy city, and why friend and foe remembered his conduct", "de": "1187: wie ein Sultan in die heilige Stadt einzog und warum Freund und Feind sich an sein Verhalten erinnerten", "ar": "سنة ١١٨٧م: كيف دخل سلطان المدينة المقدسة، ولماذا ذكر الصديق والعدو سيرته"},
+        "arabic": "صلاح الدين"
+      },
+      "slides": [
+        {
+          "title": {"en": "A Kurdish boy from Tikrit", "de": "Ein kurdischer Junge aus Tikrit", "ar": "فتى كردي من تكريت"},
+          "body": {"en": "Yusuf ibn Ayyub, called Salah al-Din, was born in Tikrit around 1137 into a Kurdish family. He rose in the service of Nur al-Din, the ruler of Syria.", "de": "Yusuf ibn Ayyub, genannt Salah ad-Din, wurde um 1137 in Tikrit in eine kurdische Familie geboren. Er stieg im Dienst Nur ad-Dins auf, des Herrschers über Syrien.", "ar": "وُلد يوسف بن أيوب، الملقب بصلاح الدين، في تكريت نحو سنة ١١٣٧م لأسرة كردية، وتدرّج في خدمة نور الدين محمود حاكم الشام."}
+        },
+        {
+          "title": {"en": "From Cairo to Damascus", "de": "Von Kairo nach Damaskus", "ar": "من القاهرة إلى دمشق"},
+          "body": {"en": "In 1169 he became vizier of Fatimid Egypt. In 1171 he ended the Fatimid caliphate and restored the Abbasid name in the Friday sermon. He founded the Ayyubid dynasty and united Egypt and Syria.", "de": "1169 wurde er Wesir im fatimidischen Ägypten. 1171 beendete er das fatimidische Kalifat und ließ in der Freitagspredigt wieder den abbasidischen Kalifen nennen. Er begründete die Dynastie der Ayyubiden und einte Ägypten und Syrien.", "ar": "في سنة ١١٦٩م صار وزيرًا في مصر الفاطمية، وفي سنة ١١٧١م أنهى الخلافة الفاطمية وأعاد الدعاء للخليفة العباسي في خطبة الجمعة، وأسس الدولة الأيوبية ووحّد مصر والشام."}
+        },
+        {
+          "title": {"en": "Jerusalem in 1099", "de": "Jerusalem 1099", "ar": "بيت المقدس سنة ١٠٩٩م"},
+          "body": {"en": "In 1099 the Crusaders had taken Jerusalem, and chroniclers report that thousands of Muslims and Jews were killed. For 88 years al-Aqsa remained in their hands.", "de": "1099 hatten die Kreuzfahrer Jerusalem erobert; Chronisten berichten, dass Tausende Muslime und Juden getötet wurden. 88 Jahre lang blieb al-Aqsa in ihrer Hand.", "ar": "كان الصليبيون قد استولوا على بيت المقدس سنة ١٠٩٩م، ويروي المؤرخون أن الآلاف من المسلمين واليهود قُتلوا، وبقي المسجد الأقصى في أيديهم ثمانية وثمانين عامًا."}
+        },
+        {
+          "title": {"en": "Hattin and the surrender", "de": "Hattin und die Übergabe", "ar": "حطين والتسليم"},
+          "body": {"en": "On 4 July 1187 he defeated the Crusader army at Hattin. On 2 October 1187 (583 AH) Jerusalem surrendered to him after a short siege, and the city was spared a massacre.", "de": "Am 4. Juli 1187 besiegte er das Kreuzfahrerheer bei Hattin. Am 2. Oktober 1187 (583 n. H.) ergab sich Jerusalem ihm nach kurzer Belagerung, und der Stadt blieb ein Massaker erspart.", "ar": "في الرابع من يوليو ١١٨٧م هزم جيش الصليبيين في حطين، وفي الثاني من أكتوبر ١١٨٧م (٥٨٣هـ) سلّمت القدس له بعد حصار قصير، ونجت المدينة من المذبحة."}
+        },
+        {
+          "verse": "5:8",
+          "check": "hatred of a people",
+          "title": {"en": "Justice even toward enemies", "de": "Gerechtigkeit auch gegenüber Feinden", "ar": "العدل حتى مع الخصوم"},
+          "body": {"en": "His conduct in Jerusalem recalls this verse: enmity must never lead to injustice.", "de": "Sein Verhalten in Jerusalem erinnert an diesen Vers: Feindschaft darf nie zu Unrecht führen.", "ar": "تذكّر سيرته في القدس بهذه الآية: لا ينبغي للعداوة أن تقود إلى الظلم."}
+        },
+        {
+          "title": {"en": "Ransom and mercy", "de": "Lösegeld und Gnade", "ar": "الفداء والرحمة"},
+          "body": {"en": "The inhabitants could leave against a ransom. Chroniclers report that he and his brother freed many poor people without payment; historians also note that thousands who could not pay were enslaved.", "de": "Die Bewohner konnten gegen Lösegeld abziehen. Chronisten berichten, dass er und sein Bruder viele Arme ohne Bezahlung freiließen; Historiker vermerken aber auch, dass Tausende, die nicht zahlen konnten, versklavt wurden.", "ar": "سُمح لسكان المدينة بالخروج مقابل فدية، ويروي المؤرخون أنه أطلق هو وأخوه كثيرًا من الفقراء بلا فداء، كما يذكرون أن آلافًا ممن عجزوا عن الدفع استُرقّوا."}
+        },
+        {
+          "title": {"en": "Churches and the minbar", "de": "Kirchen und die Kanzel", "ar": "الكنائس والمنبر"},
+          "body": {"en": "He left the Church of the Holy Sepulchre in Christian hands. Into al-Aqsa he brought the minbar that Nur al-Din had commissioned; it stood there until an arson attack in 1969.", "de": "Die Grabeskirche beließ er in christlicher Hand. In die al-Aqsa brachte er die Kanzel, die Nur ad-Din in Auftrag gegeben hatte; sie stand dort bis zu einem Brandanschlag 1969.", "ar": "أبقى كنيسة القيامة في أيدي النصارى، وأدخل إلى المسجد الأقصى المنبر الذي أمر نور الدين بصنعه، فبقي فيه حتى أحرقه معتدٍ سنة ١٩٦٩م."}
+        },
+        {
+          "verse": "8:61",
+          "check": "incline to peace",
+          "title": {"en": "Room for peace", "de": "Raum für Frieden", "ar": "متسع للسلام"},
+          "body": {"en": "In 1192 he agreed a truce with Richard of England that kept Jerusalem open to Christian pilgrims. He died in Damascus in 1193.", "de": "1192 schloss er mit Richard von England einen Waffenstillstand, der Jerusalem für christliche Pilger offen hielt. Er starb 1193 in Damaskus.", "ar": "في سنة ١١٩٢م عقد هدنة مع ريتشارد ملك إنجلترا أبقت القدس مفتوحة للحجاج النصارى، وتوفي في دمشق سنة ١١٩٣م."}
+        }
+      ],
+      "sources": [
+        {"label": "Carole Hillenbrand, The Crusades: Islamic Perspectives (Edinburgh University Press, 1999)"},
+        {"label": "Baha' al-Din ibn Shaddad, The Rare and Excellent History of Saladin, tr. D. S. Richards (Ashgate, 2001)"},
+        {"label": "Wikipedia: Saladin", "url": "https://en.wikipedia.org/wiki/Saladin"},
+        {"label": "Wikipedia: Siege of Jerusalem (1187)", "url": "https://en.wikipedia.org/wiki/Siege_of_Jerusalem_(1187)"},
+        {"label": "Wikipedia: Minbar of the al-Aqsa Mosque", "url": "https://en.wikipedia.org/wiki/Minbar_of_the_al-Aqsa_Mosque"}
+      ]
+    },
+    {
+      "id": "islamic-history-21-mamluks",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": {"en": "Islamic history · 21", "de": "Islamische Geschichte · 21", "ar": "التاريخ الإسلامي · ٢١"},
+        "title": {"en": "The Mamluks of Cairo", "de": "Die Mamluken von Kairo", "ar": "المماليك في القاهرة"},
+        "sub": {"en": "1250–1517: soldier-sultans who halted the Mongols and filled Cairo with schools and hospitals", "de": "1250–1517: Soldatensultane, die die Mongolen aufhielten und Kairo mit Schulen und Krankenhäusern füllten", "ar": "١٢٥٠–١٥١٧م: سلاطين جند أوقفوا المغول وملؤوا القاهرة بالمدارس والبيمارستانات"},
+        "arabic": "دولة المماليك"
+      },
+      "slides": [
+        {
+          "title": {"en": "Who were the Mamluks?", "de": "Wer waren die Mamluken?", "ar": "من هم المماليك؟"},
+          "body": {"en": "Mamluk means owned. They were soldiers bought as boys, mostly Turkic and later Circassian, raised as Muslims, trained and freed. In 1250 they took power in Egypt themselves.", "de": "Mamluk bedeutet: im Besitz eines anderen. Sie waren als Jungen gekaufte Soldaten, meist Türken, später Tscherkessen, die als Muslime erzogen, ausgebildet und freigelassen wurden. 1250 übernahmen sie selbst die Macht in Ägypten.", "ar": "المملوك هو من مُلك، وكان المماليك جنودًا اشتُروا صبيانًا، أكثرهم من الترك ثم من الشركس، فنشؤوا على الإسلام ودُرّبوا ثم أُعتقوا، وفي سنة ١٢٥٠م تولوا الحكم في مصر بأنفسهم."}
+        },
+        {
+          "title": {"en": "A woman on the throne", "de": "Eine Frau auf dem Thron", "ar": "امرأة على العرش"},
+          "body": {"en": "In the crisis of 1250, Shajar al-Durr, widow of the Ayyubid sultan al-Salih Ayyub, ruled Egypt for about three months, and coins were struck in her name. Few women in Muslim history held the title of sultan.", "de": "In der Krise von 1250 regierte Shajar ad-Durr, die Witwe des ayyubidischen Sultans as-Salih Ayyub, etwa drei Monate lang Ägypten, und Münzen wurden in ihrem Namen geprägt. Nur wenige Frauen der muslimischen Geschichte trugen den Sultanstitel.", "ar": "في أزمة سنة ١٢٥٠م حكمت شجر الدر، أرملة السلطان الأيوبي الصالح أيوب، مصر نحو ثلاثة أشهر، وضُربت السكة باسمها، وقليلات هن النساء اللواتي حملن لقب السلطان في تاريخ المسلمين."}
+        },
+        {
+          "title": {"en": "Ain Jalut, 1260", "de": "Ain Jalut, 1260", "ar": "عين جالوت سنة ١٢٦٠م"},
+          "body": {"en": "On 3 September 1260 the Mamluks under Qutuz and Baybars defeated a Mongol army at Ain Jalut in Palestine. It was the first major halt to the Mongol advance westward.", "de": "Am 3. September 1260 besiegten die Mamluken unter Qutuz und Baybars ein mongolisches Heer bei Ain Jalut in Palästina. Es war der erste große Halt für den Vormarsch der Mongolen nach Westen.", "ar": "في الثالث من سبتمبر ١٢٦٠م هزم المماليك بقيادة قطز وبيبرس جيشًا مغوليًا في عين جالوت بفلسطين، فكانت أول وقفة كبرى في وجه زحف المغول نحو الغرب."}
+        },
+        {
+          "title": {"en": "A hospital for all", "de": "Ein Krankenhaus für alle", "ar": "بيمارستان للجميع"},
+          "body": {"en": "In 1284–1285 Sultan Qalawun built a complex in Cairo with a hospital, a madrasa and his tomb. Funded by endowments, its hospital treated patients of every station without charge.", "de": "1284–1285 ließ Sultan Qalawun in Kairo einen Komplex mit Krankenhaus, Madrasa und Grabmal errichten. Aus Stiftungen finanziert, behandelte sein Krankenhaus Patienten jeden Standes ohne Bezahlung.", "ar": "في سنتي ١٢٨٤–١٢٨٥م بنى السلطان قلاوون في القاهرة مجمعًا يضم بيمارستانًا ومدرسة وقبته، وكان البيمارستان يُموَّل من الأوقاف ويعالج المرضى من كل الطبقات بلا مقابل."}
+        },
+        {
+          "title": {"en": "Sultan Hasan's mosque", "de": "Die Moschee Sultan Hasans", "ar": "مسجد السلطان حسن"},
+          "body": {"en": "The mosque-madrasa of Sultan Hasan (1356–1363) housed madrasas for all four Sunni schools of law around one great courtyard. Historic Cairo has been a Unesco World Heritage site since 1979.", "de": "Die Moschee-Madrasa des Sultans Hasan (1356–1363) beherbergte Madrasas für alle vier sunnitischen Rechtsschulen um einen großen Hof. Das historische Kairo ist seit 1979 Unesco-Welterbe.", "ar": "ضمّ مسجد ومدرسة السلطان حسن (١٣٥٦–١٣٦٣م) مدارس للمذاهب السنية الأربعة حول صحن واحد كبير، والقاهرة التاريخية من مواقع التراث العالمي لليونسكو منذ سنة ١٩٧٩م."}
+        },
+        {
+          "title": {"en": "Scholars of the Mamluk age", "de": "Gelehrte der Mamlukenzeit", "ar": "علماء العصر المملوكي"},
+          "list": {
+            "en": ["Ibn Hajar al-'Asqalani, author of Fath al-Bari on Sahih al-Bukhari", "Al-Suyuti, author of hundreds of works", "Ibn Kathir of Damascus, author of a famous tafsir", "Al-Maqrizi, historian of Cairo and its buildings"],
+            "de": ["Ibn Hajar al-'Asqalani, Verfasser von Fath al-Bari zu Sahih al-Bukhari", "As-Suyuti, Verfasser Hunderter Werke", "Ibn Kathir aus Damaskus, Verfasser eines berühmten Tafsir", "Al-Maqrizi, Geschichtsschreiber Kairos und seiner Bauten"],
+            "ar": ["ابن حجر العسقلاني صاحب فتح الباري في شرح صحيح البخاري", "جلال الدين السيوطي صاحب مئات المؤلفات", "ابن كثير الدمشقي صاحب التفسير المشهور", "المقريزي مؤرخ القاهرة وخططها"]
+          }
+        },
+        {
+          "verse": "16:90",
+          "check": "justice",
+          "title": {"en": "Justice and good conduct", "de": "Gerechtigkeit und gutes Handeln", "ar": "عدل وبرّ"},
+          "body": {"en": "Mamluk endowments built hospitals, schools and public fountains: good conduct turned into lasting institutions.", "de": "Mamlukische Stiftungen errichteten Krankenhäuser, Schulen und öffentliche Brunnen: gutes Handeln, das zu dauerhaften Einrichtungen wurde.", "ar": "شيّدت أوقاف المماليك البيمارستانات والمدارس والأسبلة، فصار البرّ مؤسسات باقية."}
+        },
+        {
+          "title": {"en": "The end in 1517", "de": "Das Ende 1517", "ar": "النهاية سنة ١٥١٧م"},
+          "body": {"en": "In 1516–1517 the Ottomans defeated the Mamluks and took Syria and Egypt. Mamluk households kept power in Egypt until Muhammad 'Ali broke it in 1811.", "de": "1516–1517 besiegten die Osmanen die Mamluken und nahmen Syrien und Ägypten ein. Mamlukische Häuser behielten in Ägypten Macht, bis Muhammad 'Ali sie 1811 brach.", "ar": "في سنتي ١٥١٦–١٥١٧م هزم العثمانيون المماليك واستولوا على الشام ومصر، وظلت بيوت المماليك ذات نفوذ في مصر حتى قضى عليه محمد علي سنة ١٨١١م."}
+        }
+      ],
+      "sources": [
+        {"label": "Robert Irwin, The Middle East in the Middle Ages: The Early Mamluk Sultanate 1250–1382 (Croom Helm, 1986)"},
+        {"label": "Wikipedia: Mamluk Sultanate", "url": "https://en.wikipedia.org/wiki/Mamluk_Sultanate"},
+        {"label": "Wikipedia: Battle of Ain Jalut", "url": "https://en.wikipedia.org/wiki/Battle_of_Ain_Jalut"},
+        {"label": "Wikipedia: Qalawun complex", "url": "https://en.wikipedia.org/wiki/Qalawun_complex"},
+        {"label": "Unesco: Historic Cairo", "url": "https://whc.unesco.org/en/list/89"}
+      ]
+    },
+    {
+      "id": "islamic-history-22-ottomans",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": {"en": "Islamic history · 22", "de": "Islamische Geschichte · 22", "ar": "التاريخ الإسلامي · ٢٢"},
+        "title": {"en": "The Ottomans: six centuries in brief", "de": "Die Osmanen: sechs Jahrhunderte in Kürze", "ar": "العثمانيون: ستة قرون باختصار"},
+        "sub": {"en": "From a small principality around 1299 to the end of the caliphate in 1924", "de": "Von einem kleinen Fürstentum um 1299 bis zum Ende des Kalifats 1924", "ar": "من إمارة صغيرة نحو سنة ١٢٩٩م إلى نهاية الخلافة سنة ١٩٢٤م"},
+        "arabic": "الدولة العثمانية"
+      },
+      "slides": [
+        {
+          "title": {"en": "A small beginning", "de": "Ein kleiner Anfang", "ar": "بداية صغيرة"},
+          "body": {"en": "Around 1299 Osman, a Turkish leader in northwestern Anatolia, founded a small principality. His descendants, the House of Osman, would rule for more than six centuries.", "de": "Um 1299 gründete Osman, ein türkischer Anführer im Nordwesten Anatoliens, ein kleines Fürstentum. Seine Nachkommen, das Haus Osman, sollten mehr als sechs Jahrhunderte regieren.", "ar": "نحو سنة ١٢٩٩م أسس عثمان، وهو زعيم تركي في شمال غرب الأناضول، إمارة صغيرة، وحكمت ذريته، آل عثمان، أكثر من ستة قرون."}
+        },
+        {
+          "title": {"en": "Istanbul, 1453", "de": "Istanbul, 1453", "ar": "إسطنبول سنة ١٤٥٣م"},
+          "body": {"en": "In 1453 (857 AH) Mehmed II took Constantinople, the Byzantine capital, after a siege of some seven weeks. As Istanbul it became the Ottoman capital, a city of Muslims, Christians and Jews.", "de": "1453 (857 n. H.) eroberte Mehmed II. nach einer Belagerung von etwa sieben Wochen Konstantinopel, die byzantinische Hauptstadt. Als Istanbul wurde sie die osmanische Hauptstadt, eine Stadt von Muslimen, Christen und Juden.", "ar": "في سنة ١٤٥٣م (٨٥٧هـ) دخل محمد الثاني القسطنطينية، عاصمة البيزنطيين، بعد حصار دام نحو سبعة أسابيع، فصارت باسم إسطنبول عاصمة العثمانيين، ومدينة للمسلمين والنصارى واليهود."}
+        },
+        {
+          "title": {"en": "A refuge in 1492", "de": "Eine Zuflucht 1492", "ar": "ملجأ سنة ١٤٩٢م"},
+          "body": {"en": "When Spain expelled its Jews in 1492, Sultan Bayezid II let many of them settle in his lands, especially in Thessaloniki and Istanbul.", "de": "Als Spanien 1492 seine Juden vertrieb, ließ Sultan Bayezid II. viele von ihnen in seinem Reich siedeln, besonders in Thessaloniki und Istanbul.", "ar": "حين طردت إسبانيا يهودها سنة ١٤٩٢م سمح السلطان بايزيد الثاني لكثير منهم بالاستقرار في بلاده، ولا سيما في سالونيك وإسطنبول."}
+        },
+        {
+          "title": {"en": "Servants of the two sanctuaries", "de": "Diener der beiden heiligen Stätten", "ar": "خدام الحرمين"},
+          "body": {"en": "In 1517 the Ottomans took Egypt, and the Hijaz soon accepted their rule. The sultans took the title Servant of the Two Holy Sanctuaries and sent gifts to Mecca and Medina each year with the pilgrim caravan.", "de": "1517 nahmen die Osmanen Ägypten ein, und der Hidschas erkannte bald ihre Herrschaft an. Die Sultane trugen den Titel Diener der beiden heiligen Stätten und schickten jedes Jahr mit der Pilgerkarawane Gaben nach Mekka und Medina.", "ar": "في سنة ١٥١٧م استولى العثمانيون على مصر، وسرعان ما دخل الحجاز في طاعتهم، فحمل السلاطين لقب خادم الحرمين الشريفين، وأرسلوا كل عام مع قافلة الحج هدايا الصرة إلى مكة والمدينة."}
+        },
+        {
+          "title": {"en": "The Lawgiver", "de": "Der Gesetzgeber", "ar": "القانوني"},
+          "body": {"en": "Suleiman (r. 1520–1566) is called Kanuni, the Lawgiver, in Turkish. With the jurist Ebussuud Efendi he sought to bring the sultan's law and the sharia into harmony.", "de": "Süleyman (reg. 1520–1566) heißt auf Türkisch Kanuni, der Gesetzgeber. Mit dem Juristen Ebussuud Efendi suchte er das Recht des Sultans und die Scharia in Einklang zu bringen.", "ar": "يُلقَّب سليمان (حكم ١٥٢٠–١٥٦٦م) بالقانوني، وقد سعى مع شيخ الإسلام أبي السعود أفندي إلى التوفيق بين قانون السلطان والشريعة."}
+        },
+        {
+          "verse": "22:41",
+          "check": "authority",
+          "title": {"en": "A measure for power", "de": "Ein Maßstab für Macht", "ar": "ميزان للسلطة"},
+          "body": {"en": "The Quran describes those given authority by what they do with it. Every empire can be measured by this verse.", "de": "Der Koran beschreibt jene, denen Macht gegeben wird, an dem, was sie daraus machen. Jedes Reich lässt sich an diesem Vers messen.", "ar": "يصف القرآن أصحاب السلطة بما يصنعون بها، وبهذه الآية يمكن أن تُقاس كل دولة."}
+        },
+        {
+          "title": {"en": "A railway for pilgrims", "de": "Eine Eisenbahn für Pilger", "ar": "سكة حديد للحجاج"},
+          "body": {"en": "In 1908 the Hejaz Railway reached Medina from Damascus. Sultan Abdulhamid II had called on Muslims everywhere to donate. A journey of some 40 days became one of about five.", "de": "1908 erreichte die Hedschasbahn von Damaskus aus Medina. Sultan Abdülhamid II. hatte Muslime überall zu Spenden aufgerufen. Aus einer Reise von etwa 40 Tagen wurde eine von rund fünf.", "ar": "في سنة ١٩٠٨م بلغ خط سكة حديد الحجاز المدينة المنورة قادمًا من دمشق، وكان السلطان عبد الحميد الثاني قد دعا المسلمين في كل مكان إلى التبرع له، فصارت رحلة الأربعين يومًا نحو خمسة أيام."}
+        },
+        {
+          "title": {"en": "The end", "de": "Das Ende", "ar": "النهاية"},
+          "body": {"en": "After the First World War the sultanate was abolished in 1922. On 3 March 1924 the Turkish parliament abolished the caliphate, an office that went back to 632.", "de": "Nach dem Ersten Weltkrieg wurde 1922 das Sultanat abgeschafft. Am 3. März 1924 schaffte das türkische Parlament das Kalifat ab, ein Amt, das bis ins Jahr 632 zurückreichte.", "ar": "بعد الحرب العالمية الأولى أُلغيت السلطنة سنة ١٩٢٢م، وفي الثالث من مارس ١٩٢٤م ألغى البرلمان التركي الخلافة، وهي منصب يعود إلى سنة ٦٣٢م."}
+        }
+      ],
+      "sources": [
+        {"label": "Caroline Finkel, Osman's Dream: The Story of the Ottoman Empire 1300–1923 (John Murray, 2005)"},
+        {"label": "Halil İnalcık, The Ottoman Empire: The Classical Age 1300–1600 (Weidenfeld & Nicolson, 1973)"},
+        {"label": "Wikipedia: Ottoman Empire", "url": "https://en.wikipedia.org/wiki/Ottoman_Empire"},
+        {"label": "Wikipedia: Bayezid II", "url": "https://en.wikipedia.org/wiki/Bayezid_II"},
+        {"label": "Wikipedia: Hejaz railway", "url": "https://en.wikipedia.org/wiki/Hejaz_railway"}
+      ]
+    },
+    {
+      "id": "islamic-history-23-safavids",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": {"en": "Islamic history · 23", "de": "Islamische Geschichte · 23", "ar": "التاريخ الإسلامي · ٢٣"},
+        "title": {"en": "The Safavids and Isfahan", "de": "Die Safawiden und Isfahan", "ar": "الصفويون وأصفهان"},
+        "sub": {"en": "1501–1736: a Sufi order became a dynasty, and Iran became a land of Twelver Shia Islam", "de": "1501–1736: Ein Sufi-Orden wurde zur Dynastie, und Iran wurde ein Land des Zwölferschiitentums", "ar": "١٥٠١–١٧٣٦م: طريقة صوفية صارت أسرة حاكمة، وصارت إيران بلدًا للشيعة الاثني عشرية"},
+        "arabic": "الدولة الصفوية"
+      },
+      "slides": [
+        {
+          "title": {"en": "A Sufi family of Ardabil", "de": "Eine Sufi-Familie aus Ardabil", "ar": "أسرة صوفية من أردبيل"},
+          "body": {"en": "The Safavids began as a Sufi order founded by Shaykh Safi al-Din of Ardabil (1252–1334). Over generations the order won devoted followers among Turkmen tribes, the Qizilbash.", "de": "Die Safawiden begannen als Sufi-Orden, den Shaykh Safi ad-Din aus Ardabil (1252–1334) gründete. Über Generationen gewann der Orden ergebene Anhänger unter turkmenischen Stämmen, den Qizilbash.", "ar": "بدأ الصفويون طريقةً صوفية أسسها الشيخ صفي الدين الأردبيلي (١٢٥٢–١٣٣٤م)، وكسبت الطريقة عبر الأجيال أتباعًا مخلصين بين القبائل التركمانية عُرفوا بالقزلباش."}
+        },
+        {
+          "title": {"en": "1501 in Tabriz", "de": "1501 in Täbris", "ar": "تبريز سنة ١٥٠١م"},
+          "body": {"en": "In 1501 the young Isma'il I was crowned shah in Tabriz and declared Twelver Shi'ism the religion of the state. At that time most people of Iran were Sunni.", "de": "1501 wurde der junge Isma'il I. in Täbris zum Schah gekrönt und erklärte das Zwölferschiitentum zur Staatsreligion. Damals waren die meisten Menschen in Iran Sunniten.", "ar": "في سنة ١٥٠١م تُوّج إسماعيل الأول الشاب شاهًا في تبريز، وأعلن المذهب الشيعي الاثني عشري دينًا للدولة، وكان أكثر أهل إيران يومئذ من السنة."}
+        },
+        {
+          "title": {"en": "A long change", "de": "Ein langer Wandel", "ar": "تحول طويل"},
+          "body": {"en": "Over the following two centuries Iran became largely Shia. Historians describe a process shaped by scholars, schools and state policy, at times by force. Sunni communities still live in Iran today.", "de": "In den folgenden zwei Jahrhunderten wurde Iran überwiegend schiitisch. Historiker beschreiben einen Prozess, geprägt von Gelehrten, Schulen und staatlicher Politik, zeitweise auch von Zwang. Sunnitische Gemeinschaften leben bis heute in Iran.", "ar": "خلال القرنين التاليين صارت إيران في غالبيتها شيعية، ويصف المؤرخون مسارًا صنعه العلماء والمدارس وسياسة الدولة، وأحيانًا الإكراه، وما زالت جماعات سنية تعيش في إيران إلى اليوم."}
+        },
+        {
+          "title": {"en": "Scholars from Jabal 'Amil", "de": "Gelehrte aus Jabal 'Amil", "ar": "علماء جبل عامل"},
+          "body": {"en": "The shahs invited Shia scholars from Jabal 'Amil, in today's Lebanon, such as al-Karaki. Later Shaykh Baha'i, Mulla Sadra and Muhammad Baqir al-Majlisi made the Safavid age a high point of Shia learning.", "de": "Die Schahs luden schiitische Gelehrte aus Jabal 'Amil im heutigen Libanon ein, etwa al-Karaki. Später machten Shaykh Baha'i, Mulla Sadra und Muhammad Baqir al-Majlisi die Safawidenzeit zu einem Höhepunkt schiitischer Gelehrsamkeit.", "ar": "دعا الشاهات علماء شيعة من جبل عامل في لبنان اليوم، مثل المحقق الكركي، ثم جعل الشيخ البهائي وملا صدرا ومحمد باقر المجلسي العصر الصفوي ذروة من ذرى العلم الشيعي."}
+        },
+        {
+          "title": {"en": "Isfahan, half the world", "de": "Isfahan, die halbe Welt", "ar": "أصفهان نصف العالم"},
+          "body": {"en": "In 1598 Shah 'Abbas I moved the capital to Isfahan. Around the vast Naqsh-e Jahan Square rose a palace, a bazaar and two great mosques. A Persian saying called the city half the world.", "de": "1598 verlegte Schah 'Abbas I. die Hauptstadt nach Isfahan. Um den weiten Naqsh-e-Jahan-Platz entstanden ein Palast, ein Basar und zwei große Moscheen. Ein persisches Sprichwort nannte die Stadt die halbe Welt.", "ar": "في سنة ١٥٩٨م نقل الشاه عباس الأول العاصمة إلى أصفهان، فارتفع حول ميدان نقش جهان الفسيح قصر وسوق ومسجدان كبيران، وسمّاها مثل فارسي نصف العالم."}
+        },
+        {
+          "verse": "24:36",
+          "check": "raised",
+          "title": {"en": "Houses of remembrance", "de": "Häuser des Gedenkens", "ar": "بيوت الذكر"},
+          "body": {"en": "The tiles of the Shah Mosque (1611–c. 1630) and of the Shaykh Lutfallah Mosque frame worship in colour and light.", "de": "Die Fliesen der Schah-Moschee (1611 bis um 1630) und der Shaykh-Lutfallah-Moschee umrahmen das Gebet mit Farbe und Licht.", "ar": "تحيط زخارف القاشاني في مسجد الشاه (١٦١١–نحو ١٦٣٠م) ومسجد الشيخ لطف الله العبادةَ باللون والنور."}
+        },
+        {
+          "title": {"en": "Neighbours and rivals", "de": "Nachbarn und Rivalen", "ar": "جيران متنافسون"},
+          "body": {"en": "The Safavids and the Ottomans fought long wars, beginning at Chaldiran in 1514. The Treaty of Zuhab in 1639 drew a border between them that still shapes the map of the region.", "de": "Safawiden und Osmanen führten lange Kriege, beginnend bei Chaldiran 1514. Der Vertrag von Zuhab 1639 zog zwischen ihnen eine Grenze, die die Karte der Region bis heute prägt.", "ar": "خاض الصفويون والعثمانيون حروبًا طويلة بدأت في جالديران سنة ١٥١٤م، ورسمت معاهدة زهاب سنة ١٦٣٩م حدودًا بينهما ما زالت تطبع خريطة المنطقة."}
+        },
+        {
+          "title": {"en": "The end and the legacy", "de": "Ende und Erbe", "ar": "النهاية والإرث"},
+          "body": {"en": "In 1722 Afghan forces took Isfahan, and the dynasty formally ended in 1736. Its legacy remains: a largely Shia Iran, Persian art at its height and great works of Shia learning.", "de": "1722 nahmen afghanische Truppen Isfahan ein, 1736 endete die Dynastie auch formal. Ihr Erbe bleibt: ein überwiegend schiitisches Iran, persische Kunst auf ihrem Höhepunkt und große Werke schiitischer Gelehrsamkeit.", "ar": "في سنة ١٧٢٢م استولت قوات أفغانية على أصفهان، وانتهت الأسرة رسميًا سنة ١٧٣٦م، وبقي إرثها: إيران شيعية في غالبيتها، وفن فارسي في أوجه، ومؤلفات كبرى في العلم الشيعي."}
+        }
+      ],
+      "sources": [
+        {"label": "Andrew J. Newman, Safavid Iran: Rebirth of a Persian Empire (I.B. Tauris, 2006)"},
+        {"label": "Rula Jurdi Abisaab, Converting Persia: Religion and Power in the Safavid Empire (I.B. Tauris, 2004)"},
+        {"label": "Wikipedia: Safavid Iran", "url": "https://en.wikipedia.org/wiki/Safavid_Iran"},
+        {"label": "Wikipedia: Treaty of Zuhab", "url": "https://en.wikipedia.org/wiki/Treaty_of_Zuhab"},
+        {"label": "Unesco: Meidan Emam, Esfahan", "url": "https://whc.unesco.org/en/list/115"}
+      ]
+    },
+    {
+      "id": "islamic-history-24-mughals",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": {"en": "Islamic history · 24", "de": "Islamische Geschichte · 24", "ar": "التاريخ الإسلامي · ٢٤"},
+        "title": {"en": "The Mughals of India", "de": "Die Moguln Indiens", "ar": "مغول الهند"},
+        "sub": {"en": "1526–1857: Sufis before them, the Taj Mahal and the Badshahi Mosque, and a great book of Hanafi law", "de": "1526–1857: Sufis vor ihnen, das Taj Mahal und die Badshahi-Moschee und ein großes Werk hanafitischen Rechts", "ar": "١٥٢٦–١٨٥٧م: متصوفة سبقوهم، وتاج محل ومسجد بادشاهي، وكتاب كبير في الفقه الحنفي"},
+        "arabic": "مغول الهند"
+      },
+      "slides": [
+        {
+          "title": {"en": "Before the Mughals", "de": "Vor den Moguln", "ar": "قبل المغول"},
+          "body": {"en": "Muslim traders reached India's coasts early, and the Delhi Sultanate ruled the north from 1206. Sufis of the Chishti order, like Mu'in al-Din Chishti of Ajmer (d. 1236), drew people of every background.", "de": "Muslimische Händler erreichten früh die Küsten Indiens, und das Sultanat von Delhi herrschte ab 1206 über den Norden. Sufis des Chishti-Ordens wie Mu'in ad-Din Chishti aus Ajmer (gest. 1236) zogen Menschen jeder Herkunft an.", "ar": "وصل التجار المسلمون إلى سواحل الهند مبكرًا، وحكمت سلطنة دلهي الشمال منذ سنة ١٢٠٦م، واجتذب متصوفة الطريقة الجشتية، كمعين الدين الجشتي في أجمير (ت ١٢٣٦م)، الناس من كل الخلفيات."}
+        },
+        {
+          "title": {"en": "Babur, 1526", "de": "Babur, 1526", "ar": "بابر سنة ١٥٢٦م"},
+          "body": {"en": "Babur, a prince from Fergana descended from Timur, defeated the sultan of Delhi at Panipat in 1526. His memoir, the Baburnama, written in Chagatai Turkish, is still read today.", "de": "Babur, ein Prinz aus Fergana und Nachfahre Timurs, besiegte 1526 bei Panipat den Sultan von Delhi. Seine Erinnerungen, das Baburnama, auf Tschagataisch geschrieben, werden bis heute gelesen.", "ar": "هزم بابر، الأمير القادم من فرغانة من نسل تيمور، سلطان دلهي في بانيبات سنة ١٥٢٦م، وما زالت مذكراته بابر نامه، المكتوبة بالتركية الجغتائية، تُقرأ إلى اليوم."}
+        },
+        {
+          "title": {"en": "Akbar", "de": "Akbar", "ar": "أكبر"},
+          "body": {"en": "Akbar (r. 1556–1605) built a strong administration and gave Hindus high office. His religious policies remain debated among Muslims and historians alike.", "de": "Akbar (reg. 1556–1605) baute eine starke Verwaltung auf und vergab hohe Ämter auch an Hindus. Seine Religionspolitik ist unter Muslimen wie unter Historikern bis heute umstritten.", "ar": "بنى أكبر (حكم ١٥٥٦–١٦٠٥م) إدارة قوية وأسند مناصب رفيعة إلى الهندوس أيضًا، وما زالت سياسته الدينية موضع جدل بين المسلمين والمؤرخين على السواء."}
+        },
+        {
+          "title": {"en": "Shah Jahan and the Taj Mahal", "de": "Shah Jahan und das Taj Mahal", "ar": "شاه جهان وتاج محل"},
+          "body": {"en": "Shah Jahan built the Taj Mahal in Agra as a tomb for his wife Mumtaz Mahal, who died in 1631. Work began in 1632, and the complex was finished around 1653. Quranic calligraphy frames its arches.", "de": "Shah Jahan ließ in Agra das Taj Mahal als Grabmal für seine Frau Mumtaz Mahal errichten, die 1631 starb. Der Bau begann 1632, um 1653 war die Anlage vollendet. Koranische Kalligrafie umrahmt ihre Bögen.", "ar": "بنى شاه جهان تاج محل في آغرا ضريحًا لزوجته ممتاز محل التي توفيت سنة ١٦٣١م، فبدأ العمل سنة ١٦٣٢م واكتمل المجمع نحو سنة ١٦٥٣م، وتؤطر الخطوط القرآنية أقواسه."}
+        },
+        {
+          "verse": "3:185",
+          "check": "taste death",
+          "title": {"en": "Every life ends", "de": "Jedes Leben endet", "ar": "كل حياة إلى نهاية"},
+          "body": {"en": "The world's most famous tomb is a reminder that every life ends. What remains are the deeds.", "de": "Das berühmteste Grabmal der Welt erinnert daran, dass jedes Leben endet. Was bleibt, sind die Taten.", "ar": "أشهر ضريح في العالم تذكير بأن كل حياة تنتهي، وأن الباقي هو العمل."}
+        },
+        {
+          "title": {"en": "Aurangzeb and the Fatawa 'Alamgiri", "de": "Aurangzeb und die Fatawa 'Alamgiri", "ar": "أورنكزيب والفتاوى العالمكيرية"},
+          "body": {"en": "Aurangzeb (r. 1658–1707) had hundreds of scholars compile the Fatawa 'Alamgiri, a great collection of Hanafi law still consulted today. In Lahore he built the Badshahi Mosque (1671–1673). His rule remains much debated.", "de": "Aurangzeb (reg. 1658–1707) ließ Hunderte Gelehrte die Fatawa 'Alamgiri zusammenstellen, eine große Sammlung hanafitischen Rechts, die bis heute herangezogen wird. In Lahore baute er die Badshahi-Moschee (1671–1673). Seine Herrschaft bleibt umstritten.", "ar": "جمع أورنكزيب (حكم ١٦٥٨–١٧٠٧م) مئات العلماء لتأليف الفتاوى العالمكيرية المعروفة بالهندية، وهي مجموعة كبرى في الفقه الحنفي ما زال يُرجع إليها، وبنى في لاهور مسجد بادشاهي (١٦٧١–١٦٧٣م)، وما زال حكمه موضع جدل."}
+        },
+        {
+          "title": {"en": "Persian and Urdu", "de": "Persisch und Urdu", "ar": "الفارسية والأردية"},
+          "body": {"en": "Persian was the language of the Mughal court. From its meeting with the languages of India grew Urdu, in which poets such as Mirza Ghalib wrote.", "de": "Persisch war die Sprache des Mogulhofes. Aus seiner Begegnung mit den Sprachen Indiens erwuchs Urdu, in dem Dichter wie Mirza Ghalib schrieben.", "ar": "كانت الفارسية لغة البلاط المغولي، ومن لقائها بلغات الهند نشأت الأردية التي كتب بها شعراء مثل ميرزا غالب."}
+        },
+        {
+          "title": {"en": "The end in 1857", "de": "Das Ende 1857", "ar": "النهاية سنة ١٨٥٧م"},
+          "body": {"en": "After the uprising of 1857 the British exiled the last emperor, Bahadur Shah Zafar, to Rangoon. Today hundreds of millions of Muslims live in India, Pakistan and Bangladesh.", "de": "Nach dem Aufstand von 1857 verbannten die Briten den letzten Kaiser, Bahadur Shah Zafar, nach Rangun. Heute leben Hunderte Millionen Muslime in Indien, Pakistan und Bangladesch.", "ar": "بعد انتفاضة سنة ١٨٥٧م نفى البريطانيون آخر الأباطرة، بهادر شاه ظفر، إلى رانغون، ويعيش اليوم مئات الملايين من المسلمين في الهند وباكستان وبنغلاديش."}
+        }
+      ],
+      "sources": [
+        {"label": "John F. Richards, The Mughal Empire (Cambridge University Press, 1993)"},
+        {"label": "Wikipedia: Mughal Empire", "url": "https://en.wikipedia.org/wiki/Mughal_Empire"},
+        {"label": "Wikipedia: Fatawa 'Alamgiri", "url": "https://en.wikipedia.org/wiki/Fatawa_%27Alamgiri"},
+        {"label": "Wikipedia: Mu'in al-Din Chishti", "url": "https://en.wikipedia.org/wiki/Mu%27in_al-Din_Chishti"},
+        {"label": "Unesco: Taj Mahal", "url": "https://whc.unesco.org/en/list/252"}
+      ]
+    },
+    {
+      "id": "islamic-history-25-mushaf-craft",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": {"en": "Islamic history · 25", "de": "Islamische Geschichte · 25", "ar": "التاريخ الإسلامي · ٢٥"},
+        "title": {"en": "The craft of the mushaf", "de": "Die Kunst des Mushaf", "ar": "صناعة المصحف"},
+        "sub": {"en": "Parchment, paper, gold and print: how hands across the centuries copied the Quran", "de": "Pergament, Papier, Gold und Druck: wie Hände durch die Jahrhunderte den Koran abschrieben", "ar": "رق وورق وذهب وطباعة: كيف نسخت الأيدي القرآن عبر القرون"},
+        "arabic": "صناعة المصحف"
+      },
+      "slides": [
+        {
+          "verse": "80:13-15",
+          "check": "honored sheets",
+          "title": {"en": "Pages worthy of honour", "de": "Blätter, die Ehre verdienen", "ar": "صفحات تليق بالوحي"},
+          "body": {"en": "The Quran speaks of its own pages with honour. Generations of copyists tried to make the written mushaf worthy of that.", "de": "Der Koran spricht von seinen eigenen Blättern mit Ehrfurcht. Generationen von Schreibern versuchten, den geschriebenen Mushaf dessen würdig zu machen.", "ar": "يتحدث القرآن عن صحفه بتكريم، وقد سعت أجيال من النساخ إلى أن يكون المصحف المكتوب جديرًا بذلك."}
+        },
+        {
+          "title": {"en": "On parchment", "de": "Auf Pergament", "ar": "على الرق"},
+          "body": {"en": "The earliest mushafs were written on parchment, first in the slanting Hijazi script, then in the broad Kufic hand. Leaves kept in Birmingham were radiocarbon dated in 2015 to between 568 and 645 CE.", "de": "Die frühesten Mushafs wurden auf Pergament geschrieben, zuerst in der schrägen Hijazi-Schrift, dann im breiten Kufi. In Birmingham aufbewahrte Blätter wurden 2015 per Radiokarbonmethode auf 568 bis 645 n. Chr. datiert.", "ar": "كُتبت أقدم المصاحف على الرق، أولًا بالخط الحجازي المائل ثم بالخط الكوفي العريض، وقد أرّخ فحص الكربون المشع سنة ٢٠١٥م أوراقًا محفوظة في برمنغهام بين ٥٦٨ و٦٤٥م."}
+        },
+        {
+          "title": {"en": "Dots and vowels", "de": "Punkte und Vokale", "ar": "النقط والشكل"},
+          "body": {"en": "Early copies had few dots and no vowel signs. Tradition credits Abu al-Aswad al-Du'ali with red dots for the vowels; later al-Khalil ibn Ahmad devised the signs readers use today.", "de": "Frühe Abschriften hatten wenige Punkte und keine Vokalzeichen. Die Überlieferung schreibt Abu l-Aswad ad-Duʾali rote Punkte für die Vokale zu; später entwickelte al-Khalil ibn Ahmad die Zeichen, die Leser heute verwenden.", "ar": "خلت المصاحف الأولى من أكثر النقط ومن علامات الشكل، وتنسب الرواية إلى أبي الأسود الدؤلي نقط الإعراب بالحمرة، ثم وضع الخليل بن أحمد علامات الشكل التي يستعملها القراء اليوم."}
+        },
+        {
+          "title": {"en": "From parchment to paper", "de": "Vom Pergament zum Papier", "ar": "من الرق إلى الورق"},
+          "body": {"en": "From the 10th century paper replaced parchment. The mushaf copied by Ibn al-Bawwab in Baghdad around the year 1000, now in Dublin, is among the earliest Qurans on paper in a rounded script.", "de": "Ab dem 10. Jahrhundert ersetzte Papier das Pergament. Der Mushaf, den Ibn al-Bawwab um das Jahr 1000 in Bagdad abschrieb und der heute in Dublin liegt, gehört zu den frühesten Koranen auf Papier in runder Schrift.", "ar": "منذ القرن العاشر حل الورق محل الرق، ويُعدّ المصحف الذي نسخه ابن البواب في بغداد نحو سنة ١٠٠٠م، والمحفوظ اليوم في دبلن، من أقدم المصاحف الورقية بخط مستدير."}
+        },
+        {
+          "title": {"en": "Gold and colour", "de": "Gold und Farbe", "ar": "ذهب وألوان"},
+          "body": {"en": "Illuminators framed surah titles in gold, marked verse ends with rosettes and filled opening pages with geometric gardens. Binders added leather covers with a protective flap.", "de": "Buchmaler rahmten Surenüberschriften in Gold, markierten Versenden mit Rosetten und füllten die Eröffnungsseiten mit geometrischen Gärten. Buchbinder fügten Ledereinbände mit schützender Klappe hinzu.", "ar": "أطّر المذهّبون عناوين السور بالذهب، وميزوا فواصل الآيات بالوريدات، وملؤوا صفحات الافتتاح بحدائق هندسية، وأضاف المجلدون أغلفة من الجلد بلسان واقٍ."}
+        },
+        {
+          "verse": "15:9",
+          "check": "guardian",
+          "title": {"en": "Kept safe", "de": "Bewahrt", "ar": "محفوظ"},
+          "body": {"en": "Copyists checked every letter, yet Muslims see the Quran's preservation above all in Allah's promise and in the hearts that memorise it.", "de": "Schreiber prüften jeden Buchstaben, doch Muslime sehen die Bewahrung des Korans vor allem in Allahs Versprechen und in den Herzen, die ihn auswendig kennen.", "ar": "دقق النساخ في كل حرف، لكن المسلمين يرون حفظ القرآن قبل كل شيء في وعد الله وفي الصدور التي تحفظه."}
+        },
+        {
+          "title": {"en": "The printed mushaf", "de": "Der gedruckte Mushaf", "ar": "المصحف المطبوع"},
+          "body": {"en": "In 1924 scholars in Cairo printed a carefully checked mushaf in the reading of Hafs. Since 1985 the King Fahd Complex in Medina has printed mushafs written by the Syrian calligrapher 'Uthman Taha.", "de": "1924 druckten Gelehrte in Kairo einen sorgfältig geprüften Mushaf in der Lesart des Hafs. Seit 1985 druckt der König-Fahd-Komplex in Medina Mushafs, die der syrische Kalligraf 'Uthman Taha geschrieben hat.", "ar": "في سنة ١٩٢٤م طبع علماء في القاهرة مصحفًا مدققًا برواية حفص، ومنذ سنة ١٩٨٥م يطبع مجمع الملك فهد في المدينة المنورة مصاحف بخط الخطاط السوري عثمان طه."}
+        },
+        {
+          "title": {"en": "Honouring the mushaf today", "de": "Den Mushaf heute ehren", "ar": "تكريم المصحف اليوم"},
+          "list": {
+            "en": ["Handle it with clean hands and care", "Learn its signs: pause marks, sajda and juz", "Support those who study, restore and digitise manuscripts"],
+            "de": ["Fassen Sie ihn mit sauberen Händen und Sorgfalt an", "Lernen Sie seine Zeichen: Pausenzeichen, Sajda und Juz", "Unterstützen Sie jene, die Handschriften erforschen, restaurieren und digitalisieren"],
+            "ar": ["أمسكه بيدين طاهرتين وبعناية", "تعلّم علاماته: الوقف والسجدة والأجزاء", "ادعم من يدرسون المخطوطات ويرممونها ويرقمنونها"]
+          }
+        }
+      ],
+      "sources": [
+        {"label": "François Déroche, Qur'ans of the Umayyads (Brill, 2014)"},
+        {"label": "Wikipedia: Birmingham Quran manuscript", "url": "https://en.wikipedia.org/wiki/Birmingham_Quran_manuscript"},
+        {"label": "Wikipedia: Ibn al-Bawwab", "url": "https://en.wikipedia.org/wiki/Ibn_al-Bawwab"},
+        {"label": "Wikipedia: Arabic diacritics", "url": "https://en.wikipedia.org/wiki/Arabic_diacritics"},
+        {"label": "Wikipedia: King Fahd Glorious Quran Printing Complex", "url": "https://en.wikipedia.org/wiki/King_Fahd_Glorious_Quran_Printing_Complex"}
+      ]
+    },
+    {
+      "id": "islamic-history-26-calligraphy",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": {"en": "Islamic history · 26", "de": "Islamische Geschichte · 26", "ar": "التاريخ الإسلامي · ٢٦"},
+        "title": {"en": "The art of Islamic calligraphy", "de": "Die Kunst der islamischen Kalligrafie", "ar": "فن الخط العربي"},
+        "sub": {"en": "Reed pens, proportion and patience: from Ibn Muqla to the Ottoman masters", "de": "Rohrfedern, Proportion und Geduld: von Ibn Muqla bis zu den osmanischen Meistern", "ar": "قصب وتناسب وصبر: من ابن مقلة إلى أساتذة الخط العثمانيين"},
+        "arabic": "الخط العربي"
+      },
+      "slides": [
+        {
+          "verse": "68:1",
+          "check": "pen",
+          "title": {"en": "The honour of the pen", "de": "Die Würde der Feder", "ar": "شرف القلم"},
+          "body": {"en": "The Quran swears by the pen. Calligraphers took this as a call to make writing worthy of revelation.", "de": "Der Koran schwört bei der Feder. Kalligrafen verstanden dies als Ruf, die Schrift der Offenbarung würdig zu machen.", "ar": "أقسم القرآن بالقلم، فرأى فيه الخطاطون دعوة إلى أن تكون الكتابة جديرة بالوحي."}
+        },
+        {
+          "title": {"en": "Ibn Muqla's measure", "de": "Ibn Muqlas Maß", "ar": "ميزان ابن مقلة"},
+          "body": {"en": "Ibn Muqla (885/886–940), a vizier in Baghdad, is credited with proportioned script: each letter measured in rhombic dots of the reed pen, with the alif as the standard.", "de": "Ibn Muqla (885/886–940), Wesir in Bagdad, gilt als Begründer der proportionierten Schrift: Jeder Buchstabe wird in rautenförmigen Punkten der Rohrfeder gemessen, mit dem Alif als Maßstab.", "ar": "يُنسب إلى ابن مقلة (٨٨٥/٨٨٦–٩٤٠م)، الوزير في بغداد، الخطُّ المنسوب: يُقاس كل حرف بنقاط معيّنة الشكل يرسمها القلم، ويكون الألف هو المقياس."}
+        },
+        {
+          "title": {"en": "Ibn al-Bawwab and Yaqut", "de": "Ibn al-Bawwab und Yaqut", "ar": "ابن البواب وياقوت"},
+          "body": {"en": "Ibn al-Bawwab (d. c. 1022) refined the rounded scripts. Yaqut al-Musta'simi (d. 1298), secretary of the last Abbasid caliph, perfected them; a story tells that he kept practising in a minaret while Baghdad fell in 1258.", "de": "Ibn al-Bawwab (gest. um 1022) verfeinerte die runden Schriften. Yaqut al-Musta'simi (gest. 1298), Sekretär des letzten abbasidischen Kalifen, vervollkommnete sie; eine Erzählung berichtet, er habe 1258 in einem Minarett weitergeübt, während Bagdad fiel.", "ar": "هذّب ابن البواب (ت نحو ١٠٢٢م) الخطوط المستديرة، وبلغ بها ياقوت المستعصمي (ت ١٢٩٨م)، كاتب آخر الخلفاء العباسيين، الكمال، وتروي حكاية أنه ظل يتمرن في مئذنة بينما كانت بغداد تسقط سنة ١٢٥٨م."}
+        },
+        {
+          "title": {"en": "The six pens", "de": "Die sechs Schriften", "ar": "الأقلام الستة"},
+          "list": {
+            "en": ["Thuluth: large and majestic, for titles and walls", "Naskh: clear and even, the script of most mushafs", "Muhaqqaq: tall and broad, for great Qurans", "Rayhani: its finer companion", "Tawqi': for decrees and documents", "Riqa': a small chancery hand"],
+            "de": ["Thuluth: groß und majestätisch, für Titel und Wände", "Naskh: klar und gleichmäßig, die Schrift der meisten Mushafs", "Muhaqqaq: hoch und breit, für große Korane", "Rayhani: seine feinere Begleiterin", "Tawqi': für Erlasse und Urkunden", "Riqa': eine kleine Kanzleischrift"],
+            "ar": ["الثلث: جليل مهيب للعناوين والجدران", "النسخ: واضح منتظم، خط أكثر المصاحف", "المحقق: ممتد عريض للمصاحف الكبيرة", "الريحاني: رفيقه الأدق", "التوقيع: للمراسيم والوثائق", "الرقاع: خط ديواني صغير"]
+          }
+        },
+        {
+          "title": {"en": "Hands of many lands", "de": "Schriften vieler Länder", "ar": "خطوط البلدان"},
+          "body": {"en": "Each region added its own hand: Maghribi in North Africa and al-Andalus, Nasta'liq in Persia, Diwani at the Ottoman court and Sini in China.", "de": "Jede Region fügte ihre eigene Schrift hinzu: Maghribi in Nordafrika und al-Andalus, Nasta'liq in Persien, Diwani am osmanischen Hof und Sini in China.", "ar": "أضاف كل إقليم خطه الخاص: المغربي في شمال إفريقيا والأندلس، والنستعليق في فارس، والديواني في البلاط العثماني، والصيني في الصين."}
+        },
+        {
+          "title": {"en": "Masters of Istanbul", "de": "Meister Istanbuls", "ar": "أساتذة إسطنبول"},
+          "body": {"en": "Ottoman calligraphers such as Şeyh Hamdullah (d. 1520) and Hafız Osman (d. 1698) were honoured like scholars. Hafız Osman gave the hilye, a panel describing the Prophet, its classic form.", "de": "Osmanische Kalligrafen wie Şeyh Hamdullah (gest. 1520) und Hafız Osman (gest. 1698) wurden wie Gelehrte geehrt. Hafız Osman gab der Hilye, einer Tafel mit der Beschreibung des Propheten, ihre klassische Form.", "ar": "نال خطاطو العثمانيين مثل الشيخ حمد الله (ت ١٥٢٠م) والحافظ عثمان (ت ١٦٩٨م) مكانة العلماء، وقد أعطى الحافظ عثمان الحلية، وهي لوحة في وصف النبي ﷺ، شكلها الكلاسيكي."}
+        },
+        {
+          "title": {"en": "The ijaza of the pen", "de": "Die Ijaza der Feder", "ar": "إجازة الخط"},
+          "body": {"en": "A student copies a master's models for years. When ready, the student receives an ijaza, a licence to sign works, and joins a chain of calligraphers. In 2021 Unesco recognised Arabic calligraphy as intangible heritage.", "de": "Ein Schüler schreibt jahrelang die Vorlagen eines Meisters ab. Ist er bereit, erhält er eine Ijaza, eine Erlaubnis, Werke zu signieren, und tritt in eine Kette von Kalligrafen ein. 2021 erkannte die Unesco die arabische Kalligrafie als immaterielles Kulturerbe an.", "ar": "ينسخ الطالب نماذج أستاذه سنوات، فإذا أتقن نال إجازة تأذن له بتوقيع أعماله، فيدخل في سلسلة من الخطاطين، وفي سنة ٢٠٢١م أدرجت اليونسكو الخط العربي في التراث الثقافي غير المادي."}
+        },
+        {
+          "title": {"en": "Beginning with the pen", "de": "Mit der Feder beginnen", "ar": "البداية مع القلم"},
+          "list": {
+            "en": ["Start with a teacher and simple models", "Practise one letter until it is right", "Let patience become part of the art"],
+            "de": ["Beginnen Sie mit einem Lehrer und einfachen Vorlagen", "Üben Sie einen Buchstaben, bis er stimmt", "Lassen Sie Geduld Teil der Kunst werden"],
+            "ar": ["ابدأ مع أستاذ ونماذج بسيطة", "تمرّن على الحرف الواحد حتى يستقيم", "اجعل الصبر جزءًا من الفن"]
+          }
+        }
+      ],
+      "sources": [
+        {"label": "Sheila S. Blair, Islamic Calligraphy (Edinburgh University Press, 2006)"},
+        {"label": "Wikipedia: Islamic calligraphy", "url": "https://en.wikipedia.org/wiki/Islamic_calligraphy"},
+        {"label": "Wikipedia: Ibn Muqla", "url": "https://en.wikipedia.org/wiki/Ibn_Muqla"},
+        {"label": "Wikipedia: Yaqut al-Musta'simi", "url": "https://en.wikipedia.org/wiki/Yaqut_al-Musta%27simi"},
+        {"label": "Wikipedia: Hilya", "url": "https://en.wikipedia.org/wiki/Hilya"}
+      ]
+    },
+    {
+      "id": "islamic-history-27-europe-today",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": {"en": "Islamic history · 27", "de": "Islamische Geschichte · 27", "ar": "التاريخ الإسلامي · ٢٧"},
+        "title": {"en": "Muslims in Europe today", "de": "Muslime in Europa heute", "ar": "المسلمون في أوروبا اليوم"},
+        "sub": {"en": "Old communities and new neighbours: a short, factual look at Europe's Muslims", "de": "Alte Gemeinschaften und neue Nachbarn: ein kurzer, sachlicher Blick auf Europas Muslime", "ar": "جماعات عريقة وجيران جدد: نظرة قصيرة موضوعية إلى مسلمي أوروبا"},
+        "arabic": "المسلمون في أوروبا"
+      },
+      "slides": [
+        {
+          "title": {"en": "Older than many think", "de": "Älter, als viele denken", "ar": "أقدم مما يظن كثيرون"},
+          "body": {"en": "Islam in Europe is not only recent. Al-Andalus and Sicily had Muslim societies in the Middle Ages, and in 922 the Volga Bulgars adopted Islam; the traveller Ibn Fadlan was there to witness it.", "de": "Der Islam in Europa ist nicht nur jung. Al-Andalus und Sizilien hatten im Mittelalter muslimische Gesellschaften, und 922 nahmen die Wolgabulgaren den Islam an; der Reisende Ibn Fadlan war dabei Zeuge.", "ar": "ليس الإسلام في أوروبا حديثًا فحسب، فقد عرفت الأندلس وصقلية مجتمعات مسلمة في العصور الوسطى، وفي سنة ٩٢٢م اعتنق بلغار الفولغا الإسلام، وشهد ذلك الرحالة ابن فضلان."}
+        },
+        {
+          "title": {"en": "Communities of centuries", "de": "Gemeinschaften seit Jahrhunderten", "ar": "جماعات عمرها قرون"},
+          "body": {"en": "In Bosnia, Albania and Kosovo, Muslims have lived since Ottoman times. Tatar Muslims settled in Lithuania and Poland from the 14th century, and Tatar communities also live in Russia and Finland.", "de": "In Bosnien, Albanien und im Kosovo leben Muslime seit osmanischer Zeit. Tatarische Muslime siedelten ab dem 14. Jahrhundert in Litauen und Polen, und tatarische Gemeinschaften leben auch in Russland und Finnland.", "ar": "يعيش المسلمون في البوسنة وألبانيا وكوسوفو منذ العهد العثماني، واستقر مسلمون تتار في ليتوانيا وبولندا منذ القرن الرابع عشر، وتعيش جماعات تترية كذلك في روسيا وفنلندا."}
+        },
+        {
+          "title": {"en": "Workers and families", "de": "Arbeiter und Familien", "ar": "عمال وأسر"},
+          "body": {"en": "After 1945 Europe's growing economies recruited workers. West Germany signed an agreement with Turkey in 1961; Britain drew many from South Asia, France from the Maghreb. Many stayed and raised families.", "de": "Nach 1945 warben Europas wachsende Volkswirtschaften Arbeitskräfte an. Die Bundesrepublik schloss 1961 ein Abkommen mit der Türkei; nach Großbritannien kamen viele aus Südasien, nach Frankreich aus dem Maghreb. Viele blieben und gründeten Familien.", "ar": "بعد سنة ١٩٤٥م استقدمت اقتصادات أوروبا النامية العمال، فوقّعت ألمانيا الغربية اتفاقًا مع تركيا سنة ١٩٦١م، وجاء كثيرون إلى بريطانيا من جنوب آسيا وإلى فرنسا من المغرب العربي، فبقي كثير منهم وكوّنوا أسرًا."}
+        },
+        {
+          "title": {"en": "How many?", "de": "Wie viele?", "ar": "كم عددهم؟"},
+          "body": {"en": "Pew Research estimated 25.8 million Muslims in the EU, Norway and Switzerland in 2016, about 4.9 percent. For Germany, the federal migration office BAMF estimated 6.6 to 7.0 million with roots in Muslim-majority countries in 2025.", "de": "Das Pew Research Center schätzte 2016 für die EU, Norwegen und die Schweiz 25,8 Millionen Muslime, etwa 4,9 Prozent der Bevölkerung. Das BAMF schätzte die Zahl in Deutschland für 2025 auf 6,6 bis 7,0 Millionen mit Wurzeln in muslimisch geprägten Ländern.", "ar": "قدّر مركز بيو للأبحاث عدد المسلمين سنة ٢٠١٦م في الاتحاد الأوروبي والنرويج وسويسرا بنحو ٢٥٫٨ مليونًا، أي قرابة ٤٫٩٪ من السكان، وقدّر المكتب الاتحادي للهجرة واللاجئين في ألمانيا عددهم فيها سنة ٢٠٢٥م بما بين ٦٫٦ و٧٫٠ ملايين ممن تعود أصولهم إلى بلدان ذات أغلبية مسلمة."}
+        },
+        {
+          "title": {"en": "Mosques and scholarship", "de": "Moscheen und Wissenschaft", "ar": "مساجد وعلم"},
+          "body": {"en": "The Shah Jahan Mosque in Woking, built in 1889, was the first purpose-built mosque in Britain. Since the 2010s several German universities have taught Islamic theology.", "de": "Die Shah-Jahan-Moschee in Woking, 1889 erbaut, war die erste eigens als Moschee errichtete in Großbritannien. Seit den 2010er-Jahren lehren mehrere deutsche Universitäten Islamische Theologie.", "ar": "كان مسجد شاه جهان في ووكينغ، الذي بُني سنة ١٨٨٩م، أول مسجد يُشيَّد لهذا الغرض في بريطانيا، ومنذ العقد الثاني من هذا القرن تدرّس جامعات ألمانية عدة علوم الدين الإسلامي."}
+        },
+        {
+          "verse": "49:13",
+          "check": "know one another",
+          "title": {"en": "Neighbours who know each other", "de": "Nachbarn, die einander kennen", "ar": "جيران يتعارفون"},
+          "body": {"en": "Muslims in Europe live among neighbours of many faiths and of none. This verse invites real acquaintance.", "de": "Muslime in Europa leben unter Nachbarn vieler Religionen und ohne Religion. Dieser Vers lädt zum echten Kennenlernen ein.", "ar": "يعيش مسلمو أوروبا بين جيران من أديان شتى ومن غير دين، وهذه الآية تدعو إلى تعارف حقيقي."}
+        },
+        {
+          "verse": "4:135",
+          "check": "justice",
+          "title": {"en": "Standing for justice", "de": "Für Gerechtigkeit einstehen", "ar": "القيام بالعدل"},
+          "body": {"en": "Muslims in Europe are called to be just citizens and honest witnesses, even when it costs them.", "de": "Muslime in Europa sind aufgerufen, gerechte Bürger und ehrliche Zeugen zu sein, auch wenn es sie etwas kostet.", "ar": "مسلمو أوروبا مدعوون إلى أن يكونوا مواطنين عادلين وشهودًا صادقين ولو كلّفهم ذلك."}
+        },
+        {
+          "title": {"en": "Being a good neighbour", "de": "Ein guter Nachbar sein", "ar": "كن جارًا حسنًا"},
+          "list": {
+            "en": ["Know your faith and explain it calmly", "Take part in the life of your town", "Keep good ties with neighbours of every faith"],
+            "de": ["Kennen Sie Ihren Glauben und erklären Sie ihn ruhig", "Nehmen Sie am Leben Ihrer Stadt teil", "Pflegen Sie gute Beziehungen zu Nachbarn jeden Glaubens"],
+            "ar": ["اعرف دينك واشرحه بهدوء", "شارك في حياة مدينتك", "حافظ على صلة طيبة بجيرانك من كل دين"]
+          }
+        }
+      ],
+      "sources": [
+        {"label": "Pew Research Center, Europe's Growing Muslim Population (2017)", "url": "https://www.pewresearch.org/religion/2017/11/29/europes-growing-muslim-population/"},
+        {"label": "BAMF, Zahl der Musliminnen und Muslime in Deutschland 2025 (Forschungsbericht 55, 2026)", "url": "https://www.bamf.de/SharedDocs/Anlagen/DE/Forschung/Forschungsberichte/fb55-zahl-muslime-2025.pdf"},
+        {"label": "Jørgen S. Nielsen, Muslims in Western Europe (Edinburgh University Press)"},
+        {"label": "Wikipedia: Islam in Europe", "url": "https://en.wikipedia.org/wiki/Islam_in_Europe"},
+        {"label": "Wikipedia: Volga Bulgaria", "url": "https://en.wikipedia.org/wiki/Volga_Bulgaria"}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,3190 @@
+{
+  "series": "modern-life",
+  "label": {
+    "en": "Faith in everyday life",
+    "de": "Glaube im Alltag",
+    "ar": "الإيمان في الحياة اليومية"
+  },
+  "topic": "holy",
+  "tradition": "all",
+  "items": [
+    {
+      "id": "modern-life-01-phone-and-time",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": {
+          "en": "Faith in everyday life · 1",
+          "de": "Glaube im Alltag · 1",
+          "ar": "الإيمان في الحياة اليومية · ١"
+        },
+        "title": {
+          "en": "Your phone and your time",
+          "de": "Ihr Handy und Ihre Zeit",
+          "ar": "هاتفك ووقتك"
+        },
+        "sub": {
+          "en": "What Surah al-Asr teaches about the hours we scroll away",
+          "de": "Was Sure al-Asr über die Stunden lehrt, die wir am Bildschirm verlieren",
+          "ar": "ما تعلّمنا سورة العصر عن الساعات التي تضيع أمام الشاشة"
+        },
+        "arabic": "الوقت أمانة"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "Time is the real currency",
+            "de": "Zeit ist die eigentliche Währung",
+            "ar": "الوقت هو العملة الحقيقية"
+          },
+          "body": {
+            "en": "Many apps are built to hold your attention as long as possible. Your attention is your time, and your time is your life. Islam treats it as a trust, not as something to kill.",
+            "de": "Viele Apps sind darauf ausgelegt, Ihre Aufmerksamkeit möglichst lange zu halten. Ihre Aufmerksamkeit ist Ihre Zeit, und Ihre Zeit ist Ihr Leben. Der Islam sieht sie als anvertrautes Gut, nicht als etwas zum Totschlagen.",
+            "ar": "صُمّمت تطبيقات كثيرة لتستحوذ على انتباهك أطول وقت ممكن. وانتباهك هو وقتك، ووقتك هو عمرك. والإسلام يعدّه أمانة، لا شيئًا يُقتل."
+          }
+        },
+        {
+          "verse": "103:1-3",
+          "check": "By time",
+          "title": {
+            "en": "An oath by time",
+            "de": "Ein Schwur bei der Zeit",
+            "ar": "قسم بالزمن"
+          },
+          "body": {
+            "en": "Allah swears by time, then names four things that protect us from loss: faith, good deeds, truth and patience.",
+            "de": "Allah schwört bei der Zeit und nennt dann vier Dinge, die vor Verlust bewahren: Glaube, gute Taten, Wahrheit und Geduld.",
+            "ar": "يقسم الله بالزمن، ثم يذكر أربعة أمور تنجّي من الخسارة: الإيمان والعمل الصالح والتناصح بالحق والصبر."
+          }
+        },
+        {
+          "hadith": "bukhari:6412",
+          "check": "health and free time",
+          "title": {
+            "en": "Two blessings we overlook",
+            "de": "Zwei Gaben, die wir übersehen",
+            "ar": "نعمتان نغفل عنهما"
+          },
+          "body": {
+            "en": "Free time feels endless until it is gone. Today it often disappears into a screen without us noticing.",
+            "de": "Freie Zeit scheint endlos, bis sie vorbei ist. Heute verschwindet sie oft unbemerkt in einem Bildschirm.",
+            "ar": "يبدو الفراغ بلا نهاية حتى يزول، واليوم كثيرًا ما يتسرّب إلى الشاشة دون أن نشعر."
+          }
+        },
+        {
+          "hadith": "nawawi:12",
+          "check": "does not concern him",
+          "title": {
+            "en": "Most of the feed is not your business",
+            "de": "Das meiste im Feed betrifft Sie nicht",
+            "ar": "أكثر ما في الشاشة لا يخصّك"
+          },
+          "body": {
+            "en": "Celebrity news, strangers' arguments, endless clips: letting them go is not missing out. It is part of a beautiful Islam.",
+            "de": "Promi-Klatsch, Streit unter Fremden, endlose Clips: Wer sie loslässt, verpasst nichts. Es gehört zu einem schönen Islam.",
+            "ar": "أخبار المشاهير وجدال الغرباء والمقاطع التي لا تنتهي: تركها ليس خسارة، بل هو من جمال الإسلام في حياتك."
+          }
+        },
+        {
+          "title": {
+            "en": "Small steps for this week",
+            "de": "Kleine Schritte für diese Woche",
+            "ar": "خطوات صغيرة لهذا الأسبوع"
+          },
+          "list": {
+            "en": [
+              "Look at your screen time once, honestly",
+              "Move social apps off your home screen",
+              "Answer messages at fixed times",
+              "Charge your phone outside the bedroom",
+              "Swap one scroll for one page of Quran"
+            ],
+            "de": [
+              "Schauen Sie einmal ehrlich auf Ihre Bildschirmzeit",
+              "Verschieben Sie soziale Apps vom Startbildschirm",
+              "Beantworten Sie Nachrichten zu festen Zeiten",
+              "Laden Sie das Handy außerhalb des Schlafzimmers",
+              "Tauschen Sie eine Runde Scrollen gegen eine Seite Koran"
+            ],
+            "ar": [
+              "انظر إلى مدة استخدامك للشاشة بصدق مرة واحدة",
+              "أبعد تطبيقات التواصل عن الشاشة الرئيسية",
+              "اجعل للرد على الرسائل أوقاتًا ثابتة",
+              "اشحن هاتفك خارج غرفة النوم",
+              "استبدل جولة تصفّح بصفحة من القرآن"
+            ]
+          }
+        },
+        {
+          "title": {
+            "en": "The tool is not the problem",
+            "de": "Nicht das Gerät ist das Problem",
+            "ar": "المشكلة ليست في الأداة"
+          },
+          "body": {
+            "en": "The same phone can carry the Quran, a lesson or a call to your mother. The question is who leads: you or the feed.",
+            "de": "Dasselbe Handy kann den Koran tragen, eine Lektion oder einen Anruf bei Ihrer Mutter. Die Frage ist, wer führt: Sie oder der Feed.",
+            "ar": "الهاتف نفسه قد يحمل القرآن أو درسًا نافعًا أو مكالمة لأمك. والسؤال: من يقود، أنت أم ما تعرضه الشاشة؟"
+          }
+        }
+      ]
+    },
+    {
+      "id": "modern-life-02-social-media-tongue",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": {
+          "en": "Faith in everyday life · 2",
+          "de": "Glaube im Alltag · 2",
+          "ar": "الإيمان في الحياة اليومية · ٢"
+        },
+        "title": {
+          "en": "Social media and the tongue",
+          "de": "Soziale Medien und die Zunge",
+          "ar": "وسائل التواصل واللسان"
+        },
+        "sub": {
+          "en": "Verses from Surah al-Hujurat for every post, comment and share",
+          "de": "Verse aus Sure al-Hujurat für jeden Beitrag, jeden Kommentar und jedes Teilen",
+          "ar": "آيات من سورة الحجرات لكل منشور وتعليق ومشاركة"
+        },
+        "arabic": "حفظ اللسان"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "Typing is speaking",
+            "de": "Tippen ist Sprechen",
+            "ar": "الكتابة كلام"
+          },
+          "body": {
+            "en": "A comment, a post or a voice note is speech. What the Quran teaches about the tongue applies to the keyboard too, often with a much larger audience.",
+            "de": "Ein Kommentar, ein Beitrag oder eine Sprachnachricht ist Rede. Was der Koran über die Zunge lehrt, gilt auch für die Tastatur, oft vor einem viel größeren Publikum.",
+            "ar": "التعليق والمنشور والرسالة الصوتية كلها كلام. وما يعلّمه القرآن عن اللسان يصدق على لوحة المفاتيح أيضًا، وغالبًا أمام جمهور أكبر بكثير."
+          }
+        },
+        {
+          "verse": "49:6",
+          "check": "investigate",
+          "title": {
+            "en": "Verify before you share",
+            "de": "Prüfen Sie, bevor Sie teilen",
+            "ar": "تثبّت قبل أن تنشر"
+          },
+          "body": {
+            "en": "A screenshot, a rumour, a viral clip: check it first. Haste in sharing can harm people and leave you with regret.",
+            "de": "Ein Screenshot, ein Gerücht, ein virales Video: Prüfen Sie es zuerst. Eiliges Teilen kann Menschen schaden und Reue hinterlassen.",
+            "ar": "لقطة شاشة أو شائعة أو مقطع منتشر: تحقّق منه أولًا، فالعجلة في النشر قد تؤذي الناس وتورث الندم."
+          }
+        },
+        {
+          "verse": "49:11",
+          "check": "ridicule",
+          "title": {
+            "en": "No mockery, no insulting names",
+            "de": "Kein Spott, keine Schimpfnamen",
+            "ar": "لا سخرية ولا ألقاب جارحة"
+          },
+          "body": {
+            "en": "Memes that laugh at people and insulting nicknames in the comments: this verse closes that door.",
+            "de": "Memes, die Menschen verlachen, und beleidigende Spitznamen in Kommentaren: Dieser Vers schließt diese Tür.",
+            "ar": "الصور الساخرة من الناس والألقاب المهينة في التعليقات: هذه الآية تغلق ذلك الباب."
+          }
+        },
+        {
+          "verse": "49:12",
+          "check": "assumption",
+          "title": {
+            "en": "No suspicion, no spying, no backbiting",
+            "de": "Kein Argwohn, kein Ausspähen, keine üble Nachrede",
+            "ar": "لا ظن سيئ ولا تجسس ولا غيبة"
+          },
+          "body": {
+            "en": "Digging through someone's profile, guessing bad motives, talking about them behind their back: all three are named here.",
+            "de": "Profile durchwühlen, schlechte Absichten unterstellen, hinter dem Rücken reden: Alle drei werden hier genannt.",
+            "ar": "تفتيش حسابات الآخرين، وافتراض النوايا السيئة، والحديث عنهم في غيابهم: ثلاثتها مذكورة هنا."
+          }
+        },
+        {
+          "verse": "4:148",
+          "check": "public mention",
+          "title": {
+            "en": "Not everything belongs in public",
+            "de": "Nicht alles gehört an die Öffentlichkeit",
+            "ar": "ليس كل شيء للعلن"
+          },
+          "body": {
+            "en": "Exposing people's faults in public is disliked. The verse still leaves room for those who were wronged to speak.",
+            "de": "Die Fehler anderer öffentlich bloßzustellen ist missbilligt. Der Vers lässt dennoch Raum für jene, denen Unrecht geschah.",
+            "ar": "فضح عيوب الناس علنًا مكروه، ومع ذلك تفسح الآية المجال لمن ظُلم أن يتكلم."
+          }
+        },
+        {
+          "title": {
+            "en": "Before you post, ask",
+            "de": "Fragen Sie sich vor dem Posten",
+            "ar": "قبل أن تنشر، اسأل نفسك"
+          },
+          "list": {
+            "en": [
+              "Is it true?",
+              "Is it kind?",
+              "Is it needed?",
+              "Would I say it to their face?",
+              "Would I want to meet it on the Last Day?"
+            ],
+            "de": [
+              "Ist es wahr?",
+              "Ist es freundlich?",
+              "Ist es nötig?",
+              "Würde ich es der Person ins Gesicht sagen?",
+              "Möchte ich ihm am Jüngsten Tag wieder begegnen?"
+            ],
+            "ar": [
+              "هل هو صحيح؟",
+              "هل هو لطيف؟",
+              "هل هو ضروري؟",
+              "هل أقوله لصاحبه في وجهه؟",
+              "هل أحب أن ألقاه يوم القيامة؟"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "modern-life-03-before-you-forward",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": {
+          "en": "Faith in everyday life · 3",
+          "de": "Glaube im Alltag · 3",
+          "ar": "الإيمان في الحياة اليومية · ٣"
+        },
+        "title": {
+          "en": "Before you forward that message",
+          "de": "Bevor Sie diese Nachricht weiterleiten",
+          "ar": "قبل أن تعيد إرسال تلك الرسالة"
+        },
+        "sub": {
+          "en": "News, rumours and the Quranic way of handling them",
+          "de": "Nachrichten, Gerüchte und der koranische Umgang damit",
+          "ar": "الأخبار والشائعات وكيف يعلّمنا القرآن التعامل معها"
+        },
+        "arabic": "التثبّت"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "The group chat effect",
+            "de": "Der Gruppenchat-Effekt",
+            "ar": "أثر مجموعات الدردشة"
+          },
+          "body": {
+            "en": "A message can reach hundreds of people in minutes, and few of them check it. The Quran described this pattern long before phones existed.",
+            "de": "Eine Nachricht kann in Minuten Hunderte erreichen, und nur wenige prüfen sie. Der Koran beschrieb dieses Muster lange vor dem ersten Handy.",
+            "ar": "قد تصل الرسالة إلى المئات في دقائق، وقليل منهم يتحقق منها. وقد وصف القرآن هذا النمط قبل الهواتف بقرون."
+          }
+        },
+        {
+          "verse": "4:83",
+          "check": "spread it around",
+          "title": {
+            "en": "Spreading fear without knowledge",
+            "de": "Angst verbreiten ohne Wissen",
+            "ar": "نشر الخوف بلا علم"
+          },
+          "body": {
+            "en": "Alarming news travels fast. The verse points to those with knowledge and responsibility first.",
+            "de": "Beunruhigende Nachrichten verbreiten sich schnell. Der Vers verweist zuerst auf die Kundigen und Verantwortlichen.",
+            "ar": "الأخبار المقلقة تنتشر بسرعة، والآية توجّه إلى ردّها أولًا إلى أهل العلم والمسؤولية."
+          }
+        },
+        {
+          "verse": "24:15",
+          "check": "insignificant",
+          "title": {
+            "en": "It felt like nothing",
+            "de": "Es schien belanglos",
+            "ar": "بدا الأمر صغيرًا"
+          },
+          "body": {
+            "en": "Revealed after a false rumour spread in Madinah. What seems like a small forward can weigh heavily with Allah.",
+            "de": "Offenbart, nachdem in Medina ein falsches Gerücht kursierte. Was wie eine kleine Weiterleitung wirkt, kann bei Allah schwer wiegen.",
+            "ar": "نزلت بعد شائعة كاذبة انتشرت في المدينة. فما يبدو مجرد إعادة إرسال قد يكون عند الله أمرًا ثقيلًا."
+          }
+        },
+        {
+          "verse": "17:36",
+          "check": "no knowledge",
+          "title": {
+            "en": "What we hear, see and believe",
+            "de": "Was wir hören, sehen und glauben",
+            "ar": "ما نسمعه ونراه ونعتقده"
+          },
+          "body": {
+            "en": "We will be asked about what we listened to, looked at and believed. That includes what we pass on.",
+            "de": "Wir werden nach dem gefragt, was wir hörten, sahen und glaubten. Dazu gehört auch, was wir weitergeben.",
+            "ar": "سنُسأل عمّا سمعناه ورأيناه واعتقدناه، ويدخل في ذلك ما ننقله إلى غيرنا."
+          }
+        },
+        {
+          "title": {
+            "en": "A quick check",
+            "de": "Eine kurze Prüfung",
+            "ar": "فحص سريع"
+          },
+          "list": {
+            "en": [
+              "Who is the original source?",
+              "Is it recent and complete?",
+              "Do reliable outlets report it?",
+              "Does sharing it help anyone?",
+              "If in doubt, do not forward"
+            ],
+            "de": [
+              "Wer ist die ursprüngliche Quelle?",
+              "Ist es aktuell und vollständig?",
+              "Berichten verlässliche Medien darüber?",
+              "Hilft das Teilen jemandem?",
+              "Im Zweifel nicht weiterleiten"
+            ],
+            "ar": [
+              "من المصدر الأصلي؟",
+              "هل الخبر حديث وكامل؟",
+              "هل تنقله مصادر موثوقة؟",
+              "هل في نشره نفع لأحد؟",
+              "إن شككت فلا تُعِد إرساله"
+            ]
+          }
+        },
+        {
+          "title": {
+            "en": "Silence is also a reply",
+            "de": "Auch Schweigen ist eine Antwort",
+            "ar": "الصمت أيضًا جواب"
+          },
+          "body": {
+            "en": "Not every message needs a reaction. Sometimes the most responsible answer is to delete it and make dua for the people involved.",
+            "de": "Nicht jede Nachricht braucht eine Reaktion. Manchmal ist die verantwortungsvollste Antwort, sie zu löschen und für die Betroffenen zu beten.",
+            "ar": "ليست كل رسالة بحاجة إلى رد. وأحيانًا يكون أكثر الردود مسؤولية أن تحذفها وتدعو لمن تتحدث عنهم."
+          }
+        }
+      ]
+    },
+    {
+      "id": "modern-life-04-comparison",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": {
+          "en": "Faith in everyday life · 4",
+          "de": "Glaube im Alltag · 4",
+          "ar": "الإيمان في الحياة اليومية · ٤"
+        },
+        "title": {
+          "en": "Comparison and contentment",
+          "de": "Vergleichen und Zufriedenheit",
+          "ar": "المقارنة والقناعة"
+        },
+        "sub": {
+          "en": "When other people's lives look better on your screen",
+          "de": "Wenn das Leben anderer auf dem Bildschirm schöner aussieht",
+          "ar": "حين تبدو حياة الآخرين على الشاشة أجمل من حياتك"
+        },
+        "arabic": "القناعة"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "A highlight reel",
+            "de": "Nur die schönsten Momente",
+            "ar": "لقطات منتقاة"
+          },
+          "body": {
+            "en": "Online we see other people's best moments and compare them with our ordinary days. The result is restlessness. Islam teaches another way of looking.",
+            "de": "Online sehen wir die besten Momente anderer und vergleichen sie mit unserem gewöhnlichen Alltag. Das Ergebnis ist Unruhe. Der Islam lehrt einen anderen Blick.",
+            "ar": "نرى على الإنترنت أجمل لحظات الآخرين ونقارنها بأيامنا العادية، فتكون النتيجة قلقًا وعدم رضا. والإسلام يعلّمنا نظرة أخرى."
+          }
+        },
+        {
+          "verse": "20:131",
+          "check": "extend your eyes",
+          "title": {
+            "en": "Where your eyes rest",
+            "de": "Wohin Ihr Blick sich richtet",
+            "ar": "أين يستقر نظرك"
+          },
+          "body": {
+            "en": "The verse calls worldly shine a test and turns the heart toward something more lasting.",
+            "de": "Der Vers nennt den weltlichen Glanz eine Prüfung und lenkt das Herz auf etwas Beständigeres.",
+            "ar": "تصف الآية بريق الدنيا بأنه ابتلاء، وتوجّه القلب إلى ما هو أدوم."
+          }
+        },
+        {
+          "hadith": "bukhari:6490",
+          "check": "inferior",
+          "title": {
+            "en": "Look in both directions",
+            "de": "Schauen Sie in beide Richtungen",
+            "ar": "انظر في الاتجاهين"
+          },
+          "body": {
+            "en": "A simple habit: when you look at someone who has more, also remember those who have less.",
+            "de": "Eine einfache Gewohnheit: Wenn Sie auf jemanden schauen, der mehr hat, denken Sie auch an jene, die weniger haben.",
+            "ar": "عادة بسيطة: إذا نظرت إلى من يملك أكثر، فتذكّر أيضًا من يملك أقل."
+          }
+        },
+        {
+          "hadith": "bukhari:6446",
+          "check": "sufficiency in the soul",
+          "title": {
+            "en": "Where wealth really lives",
+            "de": "Wo Reichtum wirklich wohnt",
+            "ar": "أين يسكن الغنى حقًا"
+          },
+          "body": {
+            "en": "Two people with the same income can feel rich or poor. The difference is inside.",
+            "de": "Zwei Menschen mit demselben Einkommen können sich reich oder arm fühlen. Der Unterschied liegt im Inneren.",
+            "ar": "قد يشعر شخصان بالدخل نفسه أحدهما بالغنى والآخر بالفقر، والفرق في الداخل."
+          }
+        },
+        {
+          "hadith": "muslim:2426",
+          "check": "contented",
+          "title": {
+            "en": "Contentment is a gift",
+            "de": "Zufriedenheit ist ein Geschenk",
+            "ar": "القناعة هبة"
+          },
+          "body": {
+            "en": "Contentment is named among the signs of real success. It is something we can ask Allah for.",
+            "de": "Zufriedenheit wird unter den Zeichen wahren Erfolgs genannt. Wir dürfen Allah darum bitten.",
+            "ar": "ذُكرت القناعة من علامات الفلاح الحقيقي، وهي مما نسأل الله أن يرزقنا إياه."
+          }
+        },
+        {
+          "title": {
+            "en": "Practising contentment",
+            "de": "Genügsamkeit üben",
+            "ar": "تدرّب على القناعة"
+          },
+          "list": {
+            "en": [
+              "Mute accounts that leave you restless",
+              "Name three blessings before you scroll",
+              "Congratulate instead of comparing",
+              "Ask Allah for contentment, not only for more"
+            ],
+            "de": [
+              "Schalten Sie Konten stumm, die Sie unruhig machen",
+              "Nennen Sie drei Gaben, bevor Sie scrollen",
+              "Gratulieren Sie, statt zu vergleichen",
+              "Bitten Sie Allah um Zufriedenheit, nicht nur um mehr"
+            ],
+            "ar": [
+              "اكتم الحسابات التي تثير قلقك",
+              "اذكر ثلاث نعم قبل أن تتصفح",
+              "هنّئ بدل أن تقارن",
+              "اسأل الله القناعة لا الزيادة فقط"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "modern-life-05-anxiety",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": {
+          "en": "Faith in everyday life · 5",
+          "de": "Glaube im Alltag · 5",
+          "ar": "الإيمان في الحياة اليومية · ٥"
+        },
+        "title": {
+          "en": "Anchors for anxious days",
+          "de": "Anker für unruhige Tage",
+          "ar": "مراسٍ للأيام القلقة"
+        },
+        "sub": {
+          "en": "Quranic anchors for stress, alongside the help you may need",
+          "de": "Koranische Anker bei Stress, neben der Hilfe, die Sie vielleicht brauchen",
+          "ar": "مراسٍ قرآنية عند الضغط، إلى جانب العون الذي قد تحتاجه"
+        },
+        "arabic": "طمأنينة"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "Anxiety is human",
+            "de": "Angst ist menschlich",
+            "ar": "القلق شعور إنساني"
+          },
+          "body": {
+            "en": "Prophets also felt fear and sorrow. Feeling anxious is not a lack of faith. The Quran meets us in these moments with words that steady the heart.",
+            "de": "Auch Propheten kannten Furcht und Kummer. Angst ist kein Mangel an Glauben. Der Koran begegnet uns in solchen Momenten mit Worten, die das Herz festigen.",
+            "ar": "عرف الأنبياء أيضًا الخوف والحزن. والقلق ليس نقصًا في الإيمان، والقرآن يلقانا في هذه اللحظات بكلمات تثبّت القلب."
+          }
+        },
+        {
+          "verse": "23:62",
+          "check": "capacity",
+          "title": {
+            "en": "Not more than you can carry",
+            "de": "Nicht mehr, als Sie tragen können",
+            "ar": "لا أكثر مما تطيق"
+          },
+          "body": {
+            "en": "Your responsibilities have a measure. You are not asked to carry the whole world on your shoulders.",
+            "de": "Ihre Verantwortung hat ein Maß. Niemand verlangt von Ihnen, die ganze Welt auf Ihren Schultern zu tragen.",
+            "ar": "لمسؤولياتك قدر محدود، ولم يُطلب منك أن تحمل العالم كله على كتفيك."
+          }
+        },
+        {
+          "verse": "12:86",
+          "check": "my grief",
+          "title": {
+            "en": "Bring it to Allah first",
+            "de": "Bringen Sie es zuerst zu Allah",
+            "ar": "ابدأ بالبوح لله"
+          },
+          "body": {
+            "en": "Prophet Yaqub carried his grief to Allah. Dua is a safe place to say exactly how you feel.",
+            "de": "Der Prophet Yaqub brachte seinen Kummer zu Allah. Das Bittgebet ist ein sicherer Ort, um genau zu sagen, wie es Ihnen geht.",
+            "ar": "حمل النبي يعقوب حزنه إلى الله، والدعاء مكان آمن تقول فيه ما تشعر به تمامًا."
+          }
+        },
+        {
+          "verse": "94:1-3",
+          "check": "expand",
+          "title": {
+            "en": "Burdens can be lifted",
+            "de": "Lasten können genommen werden",
+            "ar": "الأثقال تُرفع"
+          },
+          "body": {
+            "en": "These verses comforted the Prophet in a hard phase. Many readers find in them hope that heavy days do not stay.",
+            "de": "Diese Verse trösteten den Propheten in einer schweren Zeit. Viele finden darin Hoffnung, dass schwere Tage nicht bleiben.",
+            "ar": "واست هذه الآيات النبي في مرحلة صعبة، ويجد فيها كثيرون أملًا بأن الأيام الثقيلة لا تدوم."
+          }
+        },
+        {
+          "hadith": "bukhari:5678",
+          "check": "treatment",
+          "title": {
+            "en": "Seeking help is part of trust",
+            "de": "Hilfe suchen gehört zum Vertrauen",
+            "ar": "طلب العلاج من التوكل"
+          },
+          "body": {
+            "en": "Treatment and tawakkul go together. If anxiety lasts or grows, please speak to a doctor or a therapist.",
+            "de": "Behandlung und Gottvertrauen gehören zusammen. Wenn die Angst bleibt oder wächst, sprechen Sie bitte mit einer Ärztin, einem Arzt oder einer Therapeutin.",
+            "ar": "العلاج والتوكل يجتمعان. وإن استمر القلق أو اشتد، فتحدّث إلى طبيب أو معالج نفسي."
+          }
+        },
+        {
+          "title": {
+            "en": "When it feels heavy",
+            "de": "Wenn es schwer wird",
+            "ar": "حين يثقل الحمل"
+          },
+          "list": {
+            "en": [
+              "Pray, even two short rak'ahs",
+              "Put the worry into words in a dua",
+              "Talk to someone you trust",
+              "Keep regular sleep and meals",
+              "Seek professional help if it persists",
+              "In acute danger, call emergency services"
+            ],
+            "de": [
+              "Beten Sie, und seien es nur zwei kurze Rak'a",
+              "Fassen Sie die Sorge in ein Bittgebet",
+              "Sprechen Sie mit einem vertrauten Menschen",
+              "Achten Sie auf regelmäßigen Schlaf und Mahlzeiten",
+              "Holen Sie sich fachliche Hilfe, wenn es anhält",
+              "Wählen Sie bei akuter Gefahr den Notruf"
+            ],
+            "ar": [
+              "صلِّ ولو ركعتين قصيرتين",
+              "عبّر عن همّك في دعاء",
+              "تحدّث إلى شخص تثق به",
+              "حافظ على نوم ووجبات منتظمة",
+              "اطلب مساعدة مختصة إن استمر الأمر",
+              "في الخطر الداهم اتصل بالطوارئ"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "modern-life-06-night-routine",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": {
+          "en": "Faith in everyday life · 6",
+          "de": "Glaube im Alltag · 6",
+          "ar": "الإيمان في الحياة اليومية · ٦"
+        },
+        "title": {
+          "en": "A night routine with the Sunnah",
+          "de": "Eine Abendroutine mit der Sunna",
+          "ar": "روتين ليلي على هدي السنة"
+        },
+        "sub": {
+          "en": "Rest as a sign of Allah, and a phone that sleeps in another room",
+          "de": "Ruhe als Zeichen Allahs und ein Handy, das in einem anderen Raum schläft",
+          "ar": "النوم آية من آيات الله، والهاتف ينام في غرفة أخرى"
+        },
+        "arabic": "السكينة"
+      },
+      "slides": [
+        {
+          "verse": "25:47",
+          "check": "clothing",
+          "title": {
+            "en": "The night as a covering",
+            "de": "Die Nacht als Hülle",
+            "ar": "الليل ستر وراحة"
+          },
+          "body": {
+            "en": "Night and sleep are described as gifts of rest. Sleep is not wasted time; it is part of Allah's design.",
+            "de": "Nacht und Schlaf werden als Gaben der Ruhe beschrieben. Schlaf ist keine verlorene Zeit, sondern Teil von Allahs Ordnung.",
+            "ar": "يوصف الليل والنوم بأنهما نعمة راحة. فالنوم ليس وقتًا ضائعًا، بل جزء من تدبير الله."
+          }
+        },
+        {
+          "verse": "30:23",
+          "check": "your sleep by night",
+          "title": {
+            "en": "Sleep and work, both signs",
+            "de": "Schlaf und Arbeit, beides Zeichen",
+            "ar": "النوم والسعي كلاهما آية"
+          },
+          "body": {
+            "en": "Rest and effort are named side by side. A good life needs both in balance.",
+            "de": "Ruhe und Mühe werden nebeneinander genannt. Ein gutes Leben braucht beides im Gleichgewicht.",
+            "ar": "يُذكر النوم والسعي جنبًا إلى جنب، والحياة الطيبة تحتاج إلى التوازن بينهما."
+          }
+        },
+        {
+          "hadith": "bukhari:568",
+          "check": "disliked to sleep",
+          "title": {
+            "en": "After Isha, wind down",
+            "de": "Nach dem Isha zur Ruhe kommen",
+            "ar": "بعد العشاء هدّئ يومك"
+          },
+          "body": {
+            "en": "The Prophet disliked long talk after Isha. Endless scrolling at night is today's version of that late chatter.",
+            "de": "Der Prophet mochte langes Reden nach dem Isha-Gebet nicht. Endloses Scrollen in der Nacht ist die heutige Form davon.",
+            "ar": "كان النبي يكره الحديث بعد العشاء، والتصفح الذي لا ينتهي ليلًا هو صورته في زماننا."
+          }
+        },
+        {
+          "title": {
+            "en": "The last hour with the phone",
+            "de": "Die letzte Stunde mit dem Handy",
+            "ar": "الساعة الأخيرة مع الهاتف"
+          },
+          "body": {
+            "en": "News and messages keep the mind busy long after the screen is off. Try ending the day with wudu, a short dua and the phone in another room.",
+            "de": "Nachrichten und Chats beschäftigen den Kopf noch lange nach dem Ausschalten. Beenden Sie den Tag mit der Gebetswaschung, einem kurzen Bittgebet und dem Handy in einem anderen Raum.",
+            "ar": "تبقي الأخبار والرسائل الذهن مشغولًا بعد إطفاء الشاشة بوقت طويل. جرّب أن تختم يومك بالوضوء ودعاء قصير، والهاتف في غرفة أخرى."
+          }
+        },
+        {
+          "dua": "hisn:28:4",
+          "check": "grant me good health",
+          "title": {
+            "en": "A dua before sleep",
+            "de": "Ein Bittgebet vor dem Schlafen",
+            "ar": "دعاء قبل النوم"
+          },
+          "body": {
+            "en": "Sleep reminds us that our souls are in Allah's hand. This dua hands the night over to Him.",
+            "de": "Der Schlaf erinnert daran, dass unsere Seelen in Allahs Hand sind. Dieses Bittgebet vertraut Ihm die Nacht an.",
+            "ar": "النوم تذكير بأن أرواحنا بيد الله، وهذا الدعاء يودِع الليلة عنده."
+          }
+        },
+        {
+          "title": {
+            "en": "A simple night routine",
+            "de": "Eine einfache Abendroutine",
+            "ar": "روتين ليلي بسيط"
+          },
+          "list": {
+            "en": [
+              "Pray Isha, then slow down",
+              "Silence the phone and put it away",
+              "Make wudu before bed",
+              "Recite your evening adhkar or a short surah",
+              "Sleep with the intention to wake for Fajr"
+            ],
+            "de": [
+              "Beten Sie Isha und kommen Sie dann zur Ruhe",
+              "Schalten Sie das Handy stumm und legen Sie es weg",
+              "Nehmen Sie vor dem Schlafen die Gebetswaschung vor",
+              "Sprechen Sie Ihre Abend-Adhkar oder eine kurze Sure",
+              "Schlafen Sie mit der Absicht, zum Fajr aufzuwachen"
+            ],
+            "ar": [
+              "صلِّ العشاء ثم هدّئ إيقاعك",
+              "أسكت هاتفك وضعه بعيدًا",
+              "توضأ قبل النوم",
+              "اقرأ أذكار المساء أو سورة قصيرة",
+              "نم بنية الاستيقاظ لصلاة الفجر"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "modern-life-07-morning-routine",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": {
+          "en": "Faith in everyday life · 7",
+          "de": "Glaube im Alltag · 7",
+          "ar": "الإيمان في الحياة اليومية · ٧"
+        },
+        "title": {
+          "en": "A morning that starts with Fajr",
+          "de": "Ein Morgen, der mit dem Fajr beginnt",
+          "ar": "صباح يبدأ بالفجر"
+        },
+        "sub": {
+          "en": "Give the first minutes of the day to Allah before the phone takes them",
+          "de": "Schenken Sie die ersten Minuten des Tages Allah, bevor das Handy sie nimmt",
+          "ar": "اجعل أول دقائق يومك لله قبل أن يأخذها الهاتف"
+        },
+        "arabic": "بركة الصباح"
+      },
+      "slides": [
+        {
+          "verse": "81:18",
+          "check": "dawn",
+          "title": {
+            "en": "A fresh start every morning",
+            "de": "Jeden Morgen ein neuer Anfang",
+            "ar": "بداية جديدة كل صباح"
+          },
+          "body": {
+            "en": "The Quran describes dawn as if it were breathing. Every morning is a new beginning you have been given.",
+            "de": "Der Koran beschreibt die Morgendämmerung, als würde sie atmen. Jeder Morgen ist ein neuer Anfang, der Ihnen geschenkt wird.",
+            "ar": "يصف القرآن الصبح كأنه يتنفس، وكل صباح بداية جديدة وُهبت لك."
+          }
+        },
+        {
+          "verse": "17:78",
+          "check": "recitation of dawn",
+          "title": {
+            "en": "A recitation at dawn",
+            "de": "Rezitation in der Morgendämmerung",
+            "ar": "قراءة في الفجر"
+          },
+          "body": {
+            "en": "The verse highlights the recitation at dawn. Even a few verses after Fajr can shape the whole day.",
+            "de": "Der Vers hebt die Rezitation in der Morgendämmerung hervor. Schon wenige Verse nach dem Fajr können den ganzen Tag prägen.",
+            "ar": "تبرز الآية قراءة الفجر، وبضع آيات بعد الصلاة قد تصبغ اليوم كله."
+          }
+        },
+        {
+          "dua": "hisn:27:20",
+          "check": "beneficial",
+          "title": {
+            "en": "Three things to ask for",
+            "de": "Drei Bitten für den Tag",
+            "ar": "ثلاثة مطالب لليوم"
+          },
+          "body": {
+            "en": "Knowledge, provision and deeds: a short dua that covers study, work and worship.",
+            "de": "Wissen, Versorgung und Taten: ein kurzes Bittgebet, das Lernen, Arbeit und Anbetung umfasst.",
+            "ar": "علم ورزق وعمل: دعاء قصير يجمع الدراسة والعمل والعبادة."
+          }
+        },
+        {
+          "title": {
+            "en": "Phone last, not first",
+            "de": "Das Handy zuletzt, nicht zuerst",
+            "ar": "الهاتف آخرًا لا أولًا"
+          },
+          "body": {
+            "en": "If the first thing you see is news and messages, others set your agenda. Let the first minutes belong to Allah and to your own intentions.",
+            "de": "Wenn Sie zuerst Nachrichten und Chats sehen, bestimmen andere Ihren Tag. Lassen Sie die ersten Minuten Allah und Ihren eigenen Absichten gehören.",
+            "ar": "إذا كان أول ما تراه الأخبار والرسائل، فغيرك يرسم جدول يومك. اجعل الدقائق الأولى لله ولنيّاتك أنت."
+          }
+        },
+        {
+          "title": {
+            "en": "A gentle morning",
+            "de": "Ein sanfter Morgen",
+            "ar": "صباح هادئ"
+          },
+          "list": {
+            "en": [
+              "Wake for Fajr before checking the phone",
+              "Say the dua for waking up",
+              "Read a few verses or the morning adhkar",
+              "Write down the one task that matters most",
+              "Drink water and get some daylight"
+            ],
+            "de": [
+              "Stehen Sie zum Fajr auf, bevor Sie aufs Handy schauen",
+              "Sprechen Sie das Bittgebet nach dem Aufwachen",
+              "Lesen Sie einige Verse oder die Morgen-Adhkar",
+              "Notieren Sie die eine Aufgabe, die am meisten zählt",
+              "Trinken Sie Wasser und holen Sie sich Tageslicht"
+            ],
+            "ar": [
+              "استيقظ للفجر قبل أن تنظر في هاتفك",
+              "قل دعاء الاستيقاظ",
+              "اقرأ آيات أو أذكار الصباح",
+              "اكتب المهمة الأهم في يومك",
+              "اشرب ماء وتعرّض لضوء النهار"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "modern-life-08-work-with-ihsan",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": {
+          "en": "Faith in everyday life · 8",
+          "de": "Glaube im Alltag · 8",
+          "ar": "الإيمان في الحياة اليومية · ٨"
+        },
+        "title": {
+          "en": "Work with ihsan",
+          "de": "Arbeiten mit Ihsan",
+          "ar": "العمل بإحسان"
+        },
+        "sub": {
+          "en": "Excellence and honesty in the office, the shop and the home office",
+          "de": "Sorgfalt und Ehrlichkeit im Büro, im Laden und im Homeoffice",
+          "ar": "الإتقان والأمانة في المكتب والمتجر والعمل من البيت"
+        },
+        "arabic": "الإحسان"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "What ihsan means at work",
+            "de": "Was Ihsan bei der Arbeit bedeutet",
+            "ar": "معنى الإحسان في العمل"
+          },
+          "body": {
+            "en": "Ihsan means doing something beautifully, aware that Allah sees you. That includes emails, deadlines and the tasks nobody else notices.",
+            "de": "Ihsan bedeutet, etwas schön und gründlich zu tun, im Bewusstsein, dass Allah Sie sieht. Das gilt auch für E-Mails, Fristen und Aufgaben, die niemand bemerkt.",
+            "ar": "الإحسان أن تؤدي العمل على أجمل وجه، مستحضرًا أن الله يراك. ويشمل ذلك الرسائل والمواعيد والمهام التي لا يلاحظها أحد."
+          }
+        },
+        {
+          "hadith": "nawawi:17",
+          "check": "ihsan",
+          "title": {
+            "en": "Excellence in everything",
+            "de": "Vortrefflichkeit in allem",
+            "ar": "الإتقان في كل شيء"
+          },
+          "body": {
+            "en": "If ihsan is asked for even in the hardest tasks, how much more in an ordinary workday.",
+            "de": "Wenn Ihsan selbst bei den schwersten Aufgaben verlangt wird, dann erst recht an einem gewöhnlichen Arbeitstag.",
+            "ar": "إذا طُلب الإحسان حتى في أشق الأعمال، فهو في يوم العمل العادي أولى."
+          }
+        },
+        {
+          "verse": "28:26",
+          "check": "strong and the trustworthy",
+          "title": {
+            "en": "Competence and integrity",
+            "de": "Können und Redlichkeit",
+            "ar": "الكفاءة والنزاهة"
+          },
+          "body": {
+            "en": "A young woman of Madyan described Musa with two qualities every good worker needs.",
+            "de": "Eine junge Frau aus Madyan beschrieb Musa mit zwei Eigenschaften, die jede gute Arbeitskraft braucht.",
+            "ar": "وصفت فتاة من مدين موسى بصفتين يحتاجهما كل عامل."
+          }
+        },
+        {
+          "hadith": "muslim:284",
+          "check": "deceives",
+          "title": {
+            "en": "No hidden defects",
+            "de": "Keine versteckten Mängel",
+            "ar": "لا عيوب مخفية"
+          },
+          "body": {
+            "en": "Honesty at work means not hiding flaws, numbers or mistakes from customers and colleagues.",
+            "de": "Ehrlichkeit bei der Arbeit heißt, Mängel, Zahlen und Fehler nicht vor Kunden und Kollegen zu verbergen.",
+            "ar": "الأمانة في العمل ألّا تُخفي العيوب أو الأرقام أو الأخطاء عن العملاء والزملاء."
+          }
+        },
+        {
+          "verse": "9:105",
+          "check": "see your deeds",
+          "title": {
+            "en": "Your work is seen",
+            "de": "Ihre Arbeit wird gesehen",
+            "ar": "عملك مرئي"
+          },
+          "body": {
+            "en": "Even when nobody in the team notices, Allah sees the effort and the intention behind it.",
+            "de": "Auch wenn es niemand im Team bemerkt, sieht Allah die Mühe und die Absicht dahinter.",
+            "ar": "حتى لو لم يلاحظ أحد في فريقك، فالله يرى الجهد والنية وراءه."
+          }
+        },
+        {
+          "title": {
+            "en": "Ihsan on an ordinary day",
+            "de": "Ihsan an einem gewöhnlichen Tag",
+            "ar": "الإحسان في يوم عادي"
+          },
+          "list": {
+            "en": [
+              "Start on time and finish what you promised",
+              "Record your hours honestly",
+              "Admit mistakes early",
+              "Do the unseen parts well",
+              "Intend your work as provision for your family"
+            ],
+            "de": [
+              "Beginnen Sie pünktlich und beenden Sie, was Sie zugesagt haben",
+              "Erfassen Sie Ihre Stunden ehrlich",
+              "Geben Sie Fehler früh zu",
+              "Machen Sie auch die unsichtbaren Teile gut",
+              "Fassen Sie die Absicht, mit Ihrer Arbeit Ihre Familie zu versorgen"
+            ],
+            "ar": [
+              "ابدأ في موعدك وأتمّ ما وعدت به",
+              "سجّل ساعات عملك بصدق",
+              "اعترف بالخطأ مبكرًا",
+              "أتقن الأجزاء التي لا يراها أحد",
+              "انوِ بعملك النفقة على أهلك"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "modern-life-09-halal-earnings",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": {
+          "en": "Faith in everyday life · 9",
+          "de": "Glaube im Alltag · 9",
+          "ar": "الإيمان في الحياة اليومية · ٩"
+        },
+        "title": {
+          "en": "Earning a halal living",
+          "de": "Halal verdienen",
+          "ar": "الكسب الحلال"
+        },
+        "sub": {
+          "en": "General principles. For specific jobs and contracts, ask a qualified scholar",
+          "de": "Allgemeine Grundsätze. Zu konkreten Berufen und Verträgen fragen Sie einen qualifizierten Gelehrten",
+          "ar": "مبادئ عامة، وفي الوظائف والعقود المحددة اسأل عالمًا مؤهلًا"
+        },
+        "arabic": "الكسب الطيب"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "Why it matters",
+            "de": "Warum es wichtig ist",
+            "ar": "لماذا يهم ذلك"
+          },
+          "body": {
+            "en": "What we earn feeds our families and shapes our hearts. Islam does not reject wealth. It cares about the source of wealth and how it is used.",
+            "de": "Was wir verdienen, ernährt unsere Familien und prägt unsere Herzen. Der Islam lehnt Wohlstand nicht ab. Er achtet darauf, woher er stammt und wie er genutzt wird.",
+            "ar": "ما نكسبه يُطعم أهلنا ويؤثر في قلوبنا. والإسلام لا يرفض المال، لكنه يعتني بمصدره وبوجوه إنفاقه."
+          }
+        },
+        {
+          "verse": "2:168",
+          "check": "lawful and good",
+          "title": {
+            "en": "Permitted and wholesome",
+            "de": "Erlaubt und bekömmlich",
+            "ar": "المباح والطيب"
+          },
+          "body": {
+            "en": "Two qualities belong together: permitted, and also good. Both apply to food and to the way we earn it.",
+            "de": "Zwei Eigenschaften gehören zusammen: erlaubt und zugleich gut. Beides gilt für das Essen und für die Art, wie wir es verdienen.",
+            "ar": "صفتان متلازمتان: مباح وطيب في آن واحد، وتنطبقان على الطعام وعلى طريقة كسبه."
+          }
+        },
+        {
+          "verse": "4:29",
+          "check": "mutual consent",
+          "title": {
+            "en": "Fair dealing",
+            "de": "Faire Geschäfte",
+            "ar": "التعامل العادل"
+          },
+          "body": {
+            "en": "Business is built on consent and fairness, not on deception or exploiting someone's weakness.",
+            "de": "Geschäfte beruhen auf Zustimmung und Fairness, nicht auf Täuschung oder dem Ausnutzen von Schwäche.",
+            "ar": "تقوم التجارة على التراضي والعدل، لا على الخداع أو استغلال ضعف الآخرين."
+          }
+        },
+        {
+          "hadith": "bukhari:2072",
+          "check": "own hands",
+          "title": {
+            "en": "The dignity of every honest job",
+            "de": "Die Würde jeder ehrlichen Arbeit",
+            "ar": "كرامة كل عمل شريف"
+          },
+          "body": {
+            "en": "No honest work is beneath anyone. Even a prophet, Dawud, lived from the work of his hands.",
+            "de": "Keine ehrliche Arbeit ist unter jemandes Würde. Selbst ein Prophet, Dawud, lebte von seiner Hände Arbeit.",
+            "ar": "لا عمل شريف يُنقص من قدر أحد، وحتى نبي الله داود كان يعيش من كسبه بيديه."
+          }
+        },
+        {
+          "title": {
+            "en": "Grey areas",
+            "de": "Graubereiche",
+            "ar": "المناطق الرمادية"
+          },
+          "body": {
+            "en": "Some jobs and contracts raise questions about interest, deception or harmful products. Scholars discuss these in detail and sometimes differ. Ask a qualified scholar about your situation.",
+            "de": "Manche Berufe und Verträge werfen Fragen zu Zinsen, Täuschung oder schädlichen Produkten auf. Gelehrte behandeln sie ausführlich und urteilen manchmal unterschiedlich. Fragen Sie einen qualifizierten Gelehrten zu Ihrer Lage.",
+            "ar": "تثير بعض الوظائف والعقود أسئلة تتعلق بالربا أو الغش أو المنتجات الضارة، ويناقشها العلماء بتفصيل وقد يختلفون فيها. فاسأل عالمًا مؤهلًا عن حالتك."
+          }
+        },
+        {
+          "title": {
+            "en": "Questions worth asking",
+            "de": "Fragen, die sich lohnen",
+            "ar": "أسئلة تستحق الطرح"
+          },
+          "list": {
+            "en": [
+              "Is the product or service itself permitted?",
+              "Are customers told the truth?",
+              "Is everyone paid fairly and on time?",
+              "Does my role involve deceiving or harming people?",
+              "Where unsure, have I asked a qualified scholar?"
+            ],
+            "de": [
+              "Ist das Produkt oder die Leistung selbst erlaubt?",
+              "Erfahren die Kunden die Wahrheit?",
+              "Werden alle fair und pünktlich bezahlt?",
+              "Gehört Täuschung oder Schaden zu meiner Aufgabe?",
+              "Habe ich bei Unsicherheit einen Gelehrten gefragt?"
+            ],
+            "ar": [
+              "هل المنتج أو الخدمة نفسها مباحة؟",
+              "هل يُقال للعملاء الصدق؟",
+              "هل يُدفع للجميع بعدل وفي الوقت؟",
+              "هل في عملي خداع أو إضرار بالناس؟",
+              "إن ترددت، هل سألت عالمًا مؤهلًا؟"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "modern-life-10-debt",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": {
+          "en": "Faith in everyday life · 10",
+          "de": "Glaube im Alltag · 10",
+          "ar": "الإيمان في الحياة اليومية · ١٠"
+        },
+        "title": {
+          "en": "Debt: a weight to take seriously",
+          "de": "Schulden: eine Last, die man ernst nehmen sollte",
+          "ar": "الدَّين: حمل يستحق الاهتمام"
+        },
+        "sub": {
+          "en": "Firmness and mercy from the Quran and Sunnah, without fatwas",
+          "de": "Ernst und Barmherzigkeit aus Koran und Sunna, ohne Fatwas",
+          "ar": "حزم ورحمة من القرآن والسنة، دون فتاوى"
+        },
+        "arabic": "الوفاء بالدين"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "Easy to get, hard to repay",
+            "de": "Leicht aufgenommen, schwer zurückgezahlt",
+            "ar": "سهل الأخذ صعب السداد"
+          },
+          "body": {
+            "en": "Credit cards, buy now pay later and instant loans make debt easy and repayment hard. Islam takes debt seriously and meets it with both firmness and mercy.",
+            "de": "Kreditkarten, Ratenkauf und Sofortkredite machen Schulden leicht und die Rückzahlung schwer. Der Islam nimmt Schulden ernst und begegnet ihnen mit Strenge und Barmherzigkeit zugleich.",
+            "ar": "البطاقات الائتمانية والشراء بالتقسيط والقروض السريعة تجعل الاستدانة سهلة والسداد صعبًا. والإسلام يأخذ الدين بجدية، ويقابله بالحزم والرحمة معًا."
+          }
+        },
+        {
+          "verse": "2:280",
+          "check": "postponement",
+          "title": {
+            "en": "Time for the one in hardship",
+            "de": "Aufschub für Menschen in Not",
+            "ar": "إمهال المعسر"
+          },
+          "body": {
+            "en": "Lenders are asked to give time to those who struggle, and letting a debt go is praised as charity.",
+            "de": "Gläubiger werden gebeten, Menschen in Not Zeit zu geben, und der Erlass einer Schuld wird als Almosen gelobt.",
+            "ar": "يُطلب من الدائن أن يُمهل المتعسّر، ويُمدح إسقاط الدين صدقةً."
+          }
+        },
+        {
+          "hadith": "bukhari:2387",
+          "check": "intention of repaying",
+          "title": {
+            "en": "Borrow with a plan to repay",
+            "de": "Leihen mit dem Plan zurückzuzahlen",
+            "ar": "استدن بنيّة السداد"
+          },
+          "body": {
+            "en": "Intention matters. Whoever borrows sincerely meaning to repay can hope for Allah's help in doing so.",
+            "de": "Die Absicht zählt. Wer aufrichtig mit dem Willen zur Rückzahlung leiht, darf auf Allahs Hilfe dabei hoffen.",
+            "ar": "النية مهمة، فمن استدان صادقًا عازمًا على الوفاء يرجو عون الله على ذلك."
+          }
+        },
+        {
+          "hadith": "bukhari:2287",
+          "check": "Procrastination",
+          "title": {
+            "en": "Pay when you are able",
+            "de": "Zahlen Sie, sobald Sie können",
+            "ar": "أدِّ متى قدرت"
+          },
+          "body": {
+            "en": "Delaying a payment you are able to make is called injustice. A debt is another person's right.",
+            "de": "Eine Zahlung hinauszuzögern, obwohl man zahlen kann, wird Unrecht genannt. Eine Schuld ist das Recht eines anderen Menschen.",
+            "ar": "تأخير السداد مع القدرة عليه يُسمّى ظلمًا، فالدين حق لإنسان آخر."
+          }
+        },
+        {
+          "title": {
+            "en": "Interest and financing",
+            "de": "Zinsen und Finanzierung",
+            "ar": "الربا والتمويل"
+          },
+          "body": {
+            "en": "Questions about interest (riba), mortgages, student loans or Islamic finance products are detailed, and scholars differ on some of them. Please ask a qualified scholar about your situation.",
+            "de": "Fragen zu Zinsen (Riba), Immobilienkrediten, Studienkrediten oder islamischen Finanzprodukten sind vielschichtig, und Gelehrte urteilen teils unterschiedlich. Bitte fragen Sie einen qualifizierten Gelehrten zu Ihrer Lage.",
+            "ar": "مسائل الربا والرهن العقاري وقروض الدراسة ومنتجات التمويل الإسلامي مسائل دقيقة، ويختلف العلماء في بعضها. فاسأل عالمًا مؤهلًا عن حالتك."
+          }
+        },
+        {
+          "title": {
+            "en": "Practical first steps",
+            "de": "Erste praktische Schritte",
+            "ar": "خطوات عملية أولى"
+          },
+          "list": {
+            "en": [
+              "List every debt with its due date",
+              "Avoid new debt for things that can wait",
+              "Talk to your creditor early",
+              "Look for free debt counselling near you",
+              "Ask Allah for relief from debt"
+            ],
+            "de": [
+              "Listen Sie jede Schuld mit Fälligkeit auf",
+              "Vermeiden Sie neue Schulden für Dinge, die warten können",
+              "Sprechen Sie früh mit Ihrem Gläubiger",
+              "Suchen Sie eine kostenlose Schuldnerberatung in Ihrer Nähe",
+              "Bitten Sie Allah um Befreiung von Schulden"
+            ],
+            "ar": [
+              "اكتب كل دين مع موعد استحقاقه",
+              "تجنّب دينًا جديدًا لأمر يحتمل التأجيل",
+              "تحدّث إلى دائنك مبكرًا",
+              "ابحث عن استشارة مجانية للديون قربك",
+              "اسأل الله أن يقضي عنك الدين"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "modern-life-11-studying-and-exams",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": {
+          "en": "Faith in everyday life · 11",
+          "de": "Glaube im Alltag · 11",
+          "ar": "الإيمان في الحياة اليومية · ١١"
+        },
+        "title": {
+          "en": "Studying and exams with tawakkul",
+          "de": "Lernen und Prüfungen mit Gottvertrauen",
+          "ar": "الدراسة والامتحانات بتوكل"
+        },
+        "sub": {
+          "en": "Effort, trust in Allah and a calm heart before the big day",
+          "de": "Einsatz, Vertrauen auf Allah und ein ruhiges Herz vor dem großen Tag",
+          "ar": "اجتهاد وتوكل على الله وقلب مطمئن قبل اليوم الكبير"
+        },
+        "arabic": "التوكل"
+      },
+      "slides": [
+        {
+          "verse": "96:4-5",
+          "check": "pen",
+          "title": {
+            "en": "Learning is honoured",
+            "de": "Lernen ist geehrt",
+            "ar": "العلم مكرَّم"
+          },
+          "body": {
+            "en": "The first revelation speaks of the pen and of learning. With the right intention, your studies can be worship.",
+            "de": "Die erste Offenbarung spricht vom Schreibrohr und vom Lernen. Mit der richtigen Absicht kann Ihr Studium Anbetung sein.",
+            "ar": "تتحدث أول آيات نزلت عن القلم والتعلّم، ومع النية الصالحة تصبح دراستك عبادة."
+          }
+        },
+        {
+          "hadith": "muslim:6774",
+          "check": "strong believer",
+          "title": {
+            "en": "Strive, then trust",
+            "de": "Sich anstrengen, dann vertrauen",
+            "ar": "اجتهد ثم توكّل"
+          },
+          "body": {
+            "en": "Work for what benefits you, ask Allah for help and keep going. Then accept what He decrees.",
+            "de": "Arbeiten Sie für das, was Ihnen nützt, bitten Sie Allah um Hilfe und bleiben Sie dran. Dann nehmen Sie an, was Er bestimmt.",
+            "ar": "ابذل جهدك فيما يفيدك، واطلب العون من الله، ولا تتوقف، ثم ارضَ بما يقدّره."
+          }
+        },
+        {
+          "verse": "20:25-27",
+          "check": "expand",
+          "title": {
+            "en": "The dua of Musa",
+            "de": "Das Bittgebet von Musa",
+            "ar": "دعاء موسى"
+          },
+          "body": {
+            "en": "Many students say these words before an exam, a presentation or a difficult conversation.",
+            "de": "Viele Studierende sprechen diese Worte vor einer Prüfung, einem Vortrag oder einem schwierigen Gespräch.",
+            "ar": "يردد كثير من الطلاب هذا الدعاء قبل امتحان أو عرض أو حديث صعب."
+          }
+        },
+        {
+          "title": {
+            "en": "Study with a method",
+            "de": "Lernen mit Methode",
+            "ar": "ادرس بمنهج"
+          },
+          "body": {
+            "en": "Plan your weeks, review in short sessions, sleep enough and ask for help early. Effort is part of tawakkul, not its opposite.",
+            "de": "Planen Sie Ihre Wochen, wiederholen Sie in kurzen Einheiten, schlafen Sie genug und bitten Sie früh um Hilfe. Einsatz ist Teil des Gottvertrauens, nicht sein Gegenteil.",
+            "ar": "خطّط لأسابيعك، وراجع على فترات قصيرة، ونم كفايتك، واطلب المساعدة مبكرًا. فالسعي جزء من التوكل لا ضده."
+          }
+        },
+        {
+          "title": {
+            "en": "On exam day",
+            "de": "Am Prüfungstag",
+            "ar": "يوم الامتحان"
+          },
+          "list": {
+            "en": [
+              "Pray Fajr and make a short dua",
+              "Begin with Bismillah",
+              "Read each question calmly",
+              "Skip hard questions and come back later",
+              "Leave the result to Allah"
+            ],
+            "de": [
+              "Beten Sie Fajr und sprechen Sie ein kurzes Bittgebet",
+              "Beginnen Sie mit Bismillah",
+              "Lesen Sie jede Frage in Ruhe",
+              "Überspringen Sie schwere Fragen und kehren Sie später zurück",
+              "Überlassen Sie das Ergebnis Allah"
+            ],
+            "ar": [
+              "صلِّ الفجر وادعُ دعاءً قصيرًا",
+              "ابدأ بالبسملة",
+              "اقرأ كل سؤال بهدوء",
+              "تجاوز الأسئلة الصعبة وعد إليها لاحقًا",
+              "فوّض النتيجة إلى الله"
+            ]
+          }
+        },
+        {
+          "title": {
+            "en": "Honesty counts more than a grade",
+            "de": "Ehrlichkeit zählt mehr als eine Note",
+            "ar": "الأمانة أهم من الدرجة"
+          },
+          "body": {
+            "en": "Cheating may pass an exam but fails a bigger test. A grade earned honestly is one you can stand behind.",
+            "de": "Schummeln mag durch eine Prüfung bringen, aber es fällt in einer größeren durch. Zu einer ehrlich erarbeiteten Note können Sie stehen.",
+            "ar": "قد يجتاز الغش امتحانًا، لكنه يرسب في امتحان أكبر. والدرجة التي تنالها بأمانة تستطيع أن تقف وراءها."
+          }
+        }
+      ]
+    },
+    {
+      "id": "modern-life-12-friendships",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": {
+          "en": "Faith in everyday life · 12",
+          "de": "Glaube im Alltag · 12",
+          "ar": "الإيمان في الحياة اليومية · ١٢"
+        },
+        "title": {
+          "en": "Choosing your friends",
+          "de": "Freunde wählen",
+          "ar": "اختيار الأصدقاء"
+        },
+        "sub": {
+          "en": "Friends shape our faith, our habits and who we become",
+          "de": "Freunde prägen unseren Glauben, unsere Gewohnheiten und wer wir werden",
+          "ar": "الأصدقاء يشكّلون إيماننا وعاداتنا ومن نصبح"
+        },
+        "arabic": "الصحبة الصالحة"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "You become your circle",
+            "de": "Man wird wie sein Umfeld",
+            "ar": "تصبح مثل من تصاحب"
+          },
+          "body": {
+            "en": "Friends influence what we watch, how we talk and what we see as normal. That is why the Quran and Sunnah speak about companionship so clearly.",
+            "de": "Freunde beeinflussen, was wir ansehen, wie wir reden und was wir für normal halten. Deshalb sprechen Koran und Sunna so deutlich über Freundschaft.",
+            "ar": "يؤثر الأصدقاء فيما نشاهده وكيف نتكلم وما نعدّه طبيعيًا، ولذلك تحدث القرآن والسنة عن الصحبة بوضوح."
+          }
+        },
+        {
+          "hadith": "bukhari:5534",
+          "check": "musk",
+          "title": {
+            "en": "Perfume or smoke",
+            "de": "Duft oder Rauch",
+            "ar": "عطر أو دخان"
+          },
+          "body": {
+            "en": "A good friend leaves a good trace even when nothing is said. A bad one leaves a mark too.",
+            "de": "Ein guter Freund hinterlässt eine gute Spur, auch ohne Worte. Ein schlechter hinterlässt ebenfalls Spuren.",
+            "ar": "الصديق الصالح يترك أثرًا طيبًا ولو لم يقل شيئًا، والسيئ يترك أثره كذلك."
+          }
+        },
+        {
+          "verse": "18:28",
+          "check": "keep yourself patient",
+          "title": {
+            "en": "Stay with those who remember",
+            "de": "Bleiben Sie bei denen, die gedenken",
+            "ar": "الزم أهل الذكر"
+          },
+          "body": {
+            "en": "The Prophet was told to stay close to people who turn to Allah, even when others seem more impressive.",
+            "de": "Dem Propheten wurde aufgetragen, bei Menschen zu bleiben, die sich Allah zuwenden, auch wenn andere eindrucksvoller wirken.",
+            "ar": "أُمر النبي أن يلزم من يتوجهون إلى الله، وإن بدا غيرهم أكثر بريقًا."
+          }
+        },
+        {
+          "verse": "25:27-29",
+          "check": "as a friend",
+          "title": {
+            "en": "A regret on the Last Day",
+            "de": "Eine Reue am Jüngsten Tag",
+            "ar": "ندم يوم القيامة"
+          },
+          "body": {
+            "en": "One of the most painful regrets in the Quran is about a friend who led someone away from the reminder.",
+            "de": "Eine der schmerzlichsten Reuen im Koran betrifft einen Freund, der jemanden von der Ermahnung abbrachte.",
+            "ar": "من أشد صور الندم في القرآن ندم على صديق صرف صاحبه عن الذكر."
+          }
+        },
+        {
+          "verse": "43:67",
+          "check": "Close friends",
+          "title": {
+            "en": "Friendships that last",
+            "de": "Freundschaften, die bleiben",
+            "ar": "صداقات تبقى"
+          },
+          "body": {
+            "en": "Only friendships built on taqwa remain friendships on that Day.",
+            "de": "Nur Freundschaften, die auf Gottesfurcht gebaut sind, bleiben an jenem Tag Freundschaften.",
+            "ar": "لا تبقى صداقة يوم القيامة إلا ما بُني على التقوى."
+          }
+        },
+        {
+          "title": {
+            "en": "Being a good friend",
+            "de": "Ein guter Freund sein",
+            "ar": "كن صديقًا صالحًا"
+          },
+          "list": {
+            "en": [
+              "Remind gently, never shame",
+              "Keep their secrets",
+              "Call when they are going through a hard time",
+              "Make dua for them by name",
+              "Celebrate their success sincerely"
+            ],
+            "de": [
+              "Erinnern Sie sanft, beschämen Sie nie",
+              "Bewahren Sie ihre Geheimnisse",
+              "Melden Sie sich, wenn es ihnen schlecht geht",
+              "Beten Sie namentlich für sie",
+              "Freuen Sie sich aufrichtig über ihren Erfolg"
+            ],
+            "ar": [
+              "ذكّر برفق ولا تفضح",
+              "احفظ أسرارهم",
+              "اتصل بهم حين يمرون بضيق",
+              "ادعُ لهم بأسمائهم",
+              "افرح بنجاحهم بصدق"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "modern-life-13-kindness-online",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": {
+          "en": "Faith in everyday life · 13",
+          "de": "Glaube im Alltag · 13",
+          "ar": "الإيمان في الحياة اليومية · ١٣"
+        },
+        "title": {
+          "en": "Kindness online",
+          "de": "Freundlichkeit im Netz",
+          "ar": "اللطف على الإنترنت"
+        },
+        "sub": {
+          "en": "Gentleness in comments, group chats and direct messages",
+          "de": "Sanftheit in Kommentaren, Gruppenchats und Direktnachrichten",
+          "ar": "الرفق في التعليقات والمجموعات والرسائل الخاصة"
+        },
+        "arabic": "الرفق"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "Behind every profile",
+            "de": "Hinter jedem Profil",
+            "ar": "خلف كل حساب"
+          },
+          "body": {
+            "en": "Behind every username is a person with a heart, a family and a day you cannot see. The manners of the Sunnah do not end where the screen begins.",
+            "de": "Hinter jedem Nutzernamen steht ein Mensch mit Herz, Familie und einem Tag, den Sie nicht sehen. Die Umgangsformen der Sunna enden nicht am Bildschirm.",
+            "ar": "خلف كل اسم مستخدم إنسان له قلب وأسرة ويوم لا تراه. وآداب السنة لا تنتهي حيث تبدأ الشاشة."
+          }
+        },
+        {
+          "hadith": "bukhari:10",
+          "check": "tongue and hands",
+          "title": {
+            "en": "Safe from your words",
+            "de": "Sicher vor Ihren Worten",
+            "ar": "سلامة الناس من كلماتك"
+          },
+          "body": {
+            "en": "Today the hand also types. A Muslim's posts and messages should leave others safe.",
+            "de": "Heute tippt die Hand auch. Die Beiträge und Nachrichten eines Muslims sollten andere unversehrt lassen.",
+            "ar": "اليوم تكتب اليد أيضًا، فينبغي أن يسلم الناس من منشورات المسلم ورسائله."
+          }
+        },
+        {
+          "hadith": "bukhari:6927",
+          "check": "kind and lenient",
+          "title": {
+            "en": "Gentle, even when provoked",
+            "de": "Sanft, selbst wenn man provoziert wird",
+            "ar": "رفق حتى عند الاستفزاز"
+          },
+          "body": {
+            "en": "Even when insulted, the Prophet chose a calm reply over a harsh one.",
+            "de": "Selbst bei einer Beleidigung wählte der Prophet eine ruhige statt einer harten Antwort.",
+            "ar": "حتى عند الإساءة اختار النبي ردًا هادئًا بدل الرد القاسي."
+          }
+        },
+        {
+          "verse": "41:34",
+          "check": "Repel",
+          "title": {
+            "en": "Answer with something better",
+            "de": "Mit Besserem antworten",
+            "ar": "رُدّ بما هو أجمل"
+          },
+          "body": {
+            "en": "A calm reply can turn hostility into friendship. Online, that often means not answering in the same tone.",
+            "de": "Eine ruhige Antwort kann Feindschaft in Freundschaft verwandeln. Online heißt das oft, nicht im selben Ton zu antworten.",
+            "ar": "قد يحوّل الرد الهادئ العداوة إلى مودة، وعلى الإنترنت يعني ذلك غالبًا ألّا ترد بالنبرة نفسها."
+          }
+        },
+        {
+          "hadith": "bukhari:6064",
+          "check": "do not spy",
+          "title": {
+            "en": "Do not hunt for faults",
+            "de": "Suchen Sie nicht nach Fehlern",
+            "ar": "لا تتبّع العثرات"
+          },
+          "body": {
+            "en": "Digging up someone's old posts to expose them is exactly what this hadith warns against.",
+            "de": "Alte Beiträge von jemandem auszugraben, um ihn bloßzustellen, ist genau das, wovor dieser Hadith warnt.",
+            "ar": "نبش منشورات قديمة لشخص لفضحه هو بالضبط ما يحذّر منه هذا الحديث."
+          }
+        },
+        {
+          "title": {
+            "en": "Online manners",
+            "de": "Umgangsformen im Netz",
+            "ar": "آداب الإنترنت"
+          },
+          "list": {
+            "en": [
+              "Read messages in the best light",
+              "Correct privately, not in public",
+              "Do not reply while angry",
+              "Leave groups that feed hatred",
+              "Praise good content generously"
+            ],
+            "de": [
+              "Lesen Sie Nachrichten wohlwollend",
+              "Korrigieren Sie unter vier Augen, nicht öffentlich",
+              "Antworten Sie nicht im Zorn",
+              "Verlassen Sie Gruppen, die Hass schüren",
+              "Loben Sie gute Inhalte großzügig"
+            ],
+            "ar": [
+              "احمل الرسائل على أحسن الوجوه",
+              "انصح سرًّا لا علنًا",
+              "لا ترد وأنت غاضب",
+              "غادر المجموعات التي تغذي الكراهية",
+              "أثنِ على المحتوى النافع بسخاء"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "modern-life-14-prayer-at-work",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": {
+          "en": "Faith in everyday life · 14",
+          "de": "Glaube im Alltag · 14",
+          "ar": "الإيمان في الحياة اليومية · ١٤"
+        },
+        "title": {
+          "en": "Keeping prayer at work and university",
+          "de": "Das Gebet bei Arbeit und Studium bewahren",
+          "ar": "المحافظة على الصلاة في العمل والجامعة"
+        },
+        "sub": {
+          "en": "Practical ways to guard your salah in a full schedule",
+          "de": "Praktische Wege, Ihr Gebet in einem vollen Kalender zu schützen",
+          "ar": "طرق عملية للمحافظة على صلاتك في جدول مزدحم"
+        },
+        "arabic": "وقت للصلاة"
+      },
+      "slides": [
+        {
+          "verse": "4:103",
+          "check": "specified times",
+          "title": {
+            "en": "Prayer has its times",
+            "de": "Das Gebet hat seine Zeiten",
+            "ar": "للصلاة أوقاتها"
+          },
+          "body": {
+            "en": "Salah is tied to set times. A full calendar is a reason to plan, not a reason to miss it.",
+            "de": "Das Gebet ist an feste Zeiten gebunden. Ein voller Kalender ist ein Grund zu planen, nicht es zu verpassen.",
+            "ar": "الصلاة مرتبطة بأوقات محددة، وازدحام الجدول سبب للتخطيط لا لتفويتها."
+          }
+        },
+        {
+          "verse": "24:37",
+          "check": "neither commerce nor sale",
+          "title": {
+            "en": "Busy, yet not distracted",
+            "de": "Beschäftigt, aber nicht abgelenkt",
+            "ar": "مشغولون غير غافلين"
+          },
+          "body": {
+            "en": "The Quran praises people who trade and work, yet do not let business pull them away from prayer.",
+            "de": "Der Koran lobt Menschen, die handeln und arbeiten und sich dennoch nicht vom Gebet abhalten lassen.",
+            "ar": "يثني القرآن على من يعملون ويتاجرون دون أن تصرفهم الأعمال عن الصلاة."
+          }
+        },
+        {
+          "hadith": "bukhari:3425",
+          "check": "place of worshipping",
+          "title": {
+            "en": "The earth as a place of prayer",
+            "de": "Die Erde als Gebetsort",
+            "ar": "الأرض مكان للصلاة"
+          },
+          "body": {
+            "en": "A clean corner, a quiet office or a park can serve. You do not always need a mosque.",
+            "de": "Eine saubere Ecke, ein ruhiges Büro oder ein Park genügen. Nicht immer braucht es eine Moschee.",
+            "ar": "تكفي زاوية نظيفة أو مكتب هادئ أو حديقة، فلا يلزم المسجد دائمًا."
+          }
+        },
+        {
+          "title": {
+            "en": "Talk to your employer or university",
+            "de": "Sprechen Sie mit Arbeitgeber oder Hochschule",
+            "ar": "تحدّث إلى جهة عملك أو جامعتك"
+          },
+          "body": {
+            "en": "Many employers and universities offer a quiet room or flexible breaks. Ask politely, explain that a prayer takes a few minutes, and offer to make up the time.",
+            "de": "Viele Arbeitgeber und Hochschulen bieten einen Ruheraum oder flexible Pausen. Fragen Sie höflich, erklären Sie, dass ein Gebet wenige Minuten dauert, und bieten Sie an, die Zeit nachzuholen.",
+            "ar": "يوفّر كثير من أماكن العمل والجامعات غرفة هادئة أو استراحات مرنة. اسأل بلطف، ووضّح أن الصلاة تستغرق دقائق قليلة، واعرض تعويض الوقت."
+          }
+        },
+        {
+          "title": {
+            "en": "Practical tips",
+            "de": "Praktische Tipps",
+            "ar": "نصائح عملية"
+          },
+          "list": {
+            "en": [
+              "Check the prayer times for the week",
+              "Block short slots in your calendar",
+              "Carry a small mat or a clean cloth",
+              "Make wudu before leaving home when you can",
+              "Pray together with colleagues or fellow students"
+            ],
+            "de": [
+              "Prüfen Sie die Gebetszeiten der Woche",
+              "Blocken Sie kurze Zeitfenster im Kalender",
+              "Tragen Sie einen kleinen Teppich oder ein sauberes Tuch bei sich",
+              "Nehmen Sie wenn möglich vor dem Aufbruch die Waschung vor",
+              "Beten Sie gemeinsam mit Kollegen oder Kommilitonen"
+            ],
+            "ar": [
+              "اطّلع على مواقيت الصلاة للأسبوع",
+              "احجز فترات قصيرة في تقويمك",
+              "احمل سجادة صغيرة أو قطعة قماش نظيفة",
+              "توضأ قبل الخروج من البيت إن أمكن",
+              "صلِّ جماعة مع الزملاء"
+            ]
+          }
+        },
+        {
+          "title": {
+            "en": "When it really gets difficult",
+            "de": "Wenn es wirklich schwierig wird",
+            "ar": "حين يصعب الأمر حقًا"
+          },
+          "body": {
+            "en": "Questions about combining prayers during long exams, shifts or travel are matters of fiqh, and the schools differ. Ask a qualified scholar instead of simply dropping a prayer.",
+            "de": "Fragen zum Zusammenlegen von Gebeten bei langen Prüfungen, Schichten oder Reisen gehören zur Rechtslehre, und die Rechtsschulen unterscheiden sich. Fragen Sie einen qualifizierten Gelehrten, statt ein Gebet einfach ausfallen zu lassen.",
+            "ar": "مسائل الجمع بين الصلوات في الامتحانات الطويلة أو المناوبات أو السفر مسائل فقهية تختلف فيها المذاهب. فاسأل عالمًا مؤهلًا بدل أن تترك الصلاة."
+          }
+        }
+      ]
+    },
+    {
+      "id": "modern-life-15-travel",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": {
+          "en": "Faith in everyday life · 15",
+          "de": "Glaube im Alltag · 15",
+          "ar": "الإيمان في الحياة اليومية · ١٥"
+        },
+        "title": {
+          "en": "Travelling as a Muslim",
+          "de": "Reisen als Muslim",
+          "ar": "المسلم في سفره"
+        },
+        "sub": {
+          "en": "Holidays and business trips as a chance to reflect",
+          "de": "Urlaub und Geschäftsreisen als Gelegenheit zum Nachdenken",
+          "ar": "الإجازات ورحلات العمل فرصة للتأمل"
+        },
+        "arabic": "السفر"
+      },
+      "slides": [
+        {
+          "verse": "29:20",
+          "check": "Travel through the land",
+          "title": {
+            "en": "Travel with open eyes",
+            "de": "Reisen mit offenen Augen",
+            "ar": "سافر بعينين مفتوحتين"
+          },
+          "body": {
+            "en": "The Quran invites us to travel and to reflect on how creation began. A trip can deepen faith.",
+            "de": "Der Koran lädt ein, zu reisen und darüber nachzudenken, wie die Schöpfung begann. Eine Reise kann den Glauben vertiefen.",
+            "ar": "يدعونا القرآن إلى السير في الأرض والتأمل في بدء الخلق، فقد يعمّق السفر الإيمان."
+          }
+        },
+        {
+          "verse": "67:15",
+          "check": "walk among its slopes",
+          "title": {
+            "en": "An earth made accessible",
+            "de": "Eine Erde, die uns offensteht",
+            "ar": "أرض مُيسَّرة لنا"
+          },
+          "body": {
+            "en": "Mountains, roads and flight routes are part of a world opened up for us. Every journey is a gift.",
+            "de": "Berge, Straßen und Flugrouten gehören zu einer Welt, die uns offensteht. Jede Reise ist eine Gabe.",
+            "ar": "الجبال والطرق ومسارات الطيران جزء من عالم يُسّر لنا، وكل رحلة نعمة."
+          }
+        },
+        {
+          "verse": "4:101",
+          "check": "shortening the prayer",
+          "title": {
+            "en": "Prayer on the road",
+            "de": "Das Gebet unterwegs",
+            "ar": "الصلاة في الطريق"
+          },
+          "body": {
+            "en": "Travel brings ease in prayer. Details such as distance and length of stay differ between the schools.",
+            "de": "Auf Reisen wird das Gebet erleichtert. Einzelheiten wie Entfernung und Aufenthaltsdauer unterscheiden sich zwischen den Rechtsschulen.",
+            "ar": "في السفر تخفيف في الصلاة، وتختلف المذاهب في تفاصيل كالمسافة ومدة الإقامة."
+          }
+        },
+        {
+          "hadith": "bukhari:6416",
+          "check": "stranger or a traveler",
+          "title": {
+            "en": "Life itself is a journey",
+            "de": "Das Leben selbst ist eine Reise",
+            "ar": "الحياة نفسها رحلة"
+          },
+          "body": {
+            "en": "Every trip is a small reminder that this world is a stop on the way, not the destination.",
+            "de": "Jede Reise erinnert daran, dass diese Welt eine Station auf dem Weg ist, nicht das Ziel.",
+            "ar": "كل رحلة تذكير صغير بأن الدنيا محطة في الطريق لا نهايته."
+          }
+        },
+        {
+          "title": {
+            "en": "Travelling with good manners",
+            "de": "Mit gutem Benehmen reisen",
+            "ar": "آداب السفر"
+          },
+          "list": {
+            "en": [
+              "Say the travel dua as you set off",
+              "Plan prayer times into your route",
+              "Respect local people and customs",
+              "Leave places cleaner than you found them",
+              "Come home with gifts and stories, not complaints"
+            ],
+            "de": [
+              "Sprechen Sie beim Aufbruch das Reisegebet",
+              "Planen Sie die Gebetszeiten in Ihre Route ein",
+              "Achten Sie Menschen und Bräuche vor Ort",
+              "Hinterlassen Sie Orte sauberer, als Sie sie vorfanden",
+              "Kehren Sie mit Geschenken und Geschichten heim, nicht mit Klagen"
+            ],
+            "ar": [
+              "قل دعاء السفر عند الانطلاق",
+              "أدرج أوقات الصلاة في خط سيرك",
+              "احترم أهل البلد وعاداتهم",
+              "اترك الأماكن أنظف مما وجدتها",
+              "عد بالهدايا والحكايات لا بالشكوى"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "modern-life-16-body-as-amanah",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": {
+          "en": "Faith in everyday life · 16",
+          "de": "Glaube im Alltag · 16",
+          "ar": "الإيمان في الحياة اليومية · ١٦"
+        },
+        "title": {
+          "en": "Your body is an amanah",
+          "de": "Ihr Körper ist ein anvertrautes Gut",
+          "ar": "جسدك أمانة"
+        },
+        "sub": {
+          "en": "Sport, rest and health as part of a life of faith",
+          "de": "Sport, Ruhe und Gesundheit als Teil eines gläubigen Lebens",
+          "ar": "الرياضة والراحة والصحة جزء من حياة الإيمان"
+        },
+        "arabic": "الأمانة"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "A trust, not a possession",
+            "de": "Anvertraut, nicht Besitz",
+            "ar": "أمانة لا ملك"
+          },
+          "body": {
+            "en": "Our bodies are given to us for a time. Caring for them through movement, good food and rest is a way of thanking the One who gave them.",
+            "de": "Unser Körper ist uns für eine Zeit gegeben. Ihn durch Bewegung, gutes Essen und Ruhe zu pflegen, ist ein Dank an Den, der ihn gab.",
+            "ar": "أجسادنا معطاة لنا إلى أجل. والعناية بها بالحركة والطعام الطيب والراحة شكر لمن وهبها."
+          }
+        },
+        {
+          "verse": "95:4",
+          "check": "best of stature",
+          "title": {
+            "en": "Created in the finest form",
+            "de": "In schönster Gestalt erschaffen",
+            "ar": "خُلقت في أحسن هيئة"
+          },
+          "body": {
+            "en": "The human being is described as created in the finest form. Treating the body well honours that gift.",
+            "de": "Der Mensch wird als in schönster Gestalt erschaffen beschrieben. Den Körper gut zu behandeln, ehrt dieses Geschenk.",
+            "ar": "يوصف الإنسان بأنه خُلق في أكمل صورة، والعناية بالجسد تكريم لهذه النعمة."
+          }
+        },
+        {
+          "hadith": "bukhari:5199",
+          "check": "body has a right",
+          "title": {
+            "en": "Even worship has limits",
+            "de": "Selbst Anbetung hat ein Maß",
+            "ar": "حتى العبادة لها حدّ"
+          },
+          "body": {
+            "en": "The Prophet stopped a companion from exhausting himself. Sleep and rest are part of a balanced life.",
+            "de": "Der Prophet hielt einen Gefährten davon ab, sich zu erschöpfen. Schlaf und Ruhe gehören zu einem ausgewogenen Leben.",
+            "ar": "منع النبي صحابيًا من إرهاق نفسه، فالنوم والراحة جزء من الحياة المتوازنة."
+          }
+        },
+        {
+          "hadith": "bukhari:2899",
+          "check": "archery",
+          "title": {
+            "en": "Sport with the Prophet's encouragement",
+            "de": "Sport mit der Ermutigung des Propheten",
+            "ar": "رياضة بتشجيع النبي"
+          },
+          "body": {
+            "en": "He passed people practising archery and cheered them on. Healthy competition and skill are welcome.",
+            "de": "Er kam an Menschen vorbei, die Bogenschießen übten, und ermutigte sie. Gesunder Wettkampf und Können sind willkommen.",
+            "ar": "مرّ بقوم يتدربون على الرمي فشجّعهم، فالمنافسة الصحية واكتساب المهارة أمر محمود."
+          }
+        },
+        {
+          "verse": "2:195",
+          "check": "destruction",
+          "title": {
+            "en": "Do not harm yourself",
+            "de": "Schaden Sie sich nicht selbst",
+            "ar": "لا تضرّ نفسك"
+          },
+          "body": {
+            "en": "The verse is about spending in Allah's way. Al-Tabari holds that its wording is general: it forbids walking into one's own ruin in any form.",
+            "de": "Der Vers handelt vom Ausgeben auf Allahs Weg. At-Tabari hält seinen Wortlaut für allgemein: Er verbietet, sich in irgendeiner Form selbst ins Verderben zu stürzen.",
+            "ar": "الآية في سياق الإنفاق في سبيل الله، ويرى الطبري أن لفظها عام: فهي تنهى عن السعي إلى الهلاك بأي صورة."
+          }
+        },
+        {
+          "title": {
+            "en": "Small habits",
+            "de": "Kleine Gewohnheiten",
+            "ar": "عادات صغيرة"
+          },
+          "list": {
+            "en": [
+              "Walk to the mosque when you can",
+              "Find a sport you enjoy",
+              "Sleep enough, especially before Fajr",
+              "Eat slowly and stop before you are full",
+              "Go for regular check-ups"
+            ],
+            "de": [
+              "Gehen Sie zu Fuß zur Moschee, wenn möglich",
+              "Finden Sie einen Sport, der Ihnen Freude macht",
+              "Schlafen Sie genug, besonders vor dem Fajr",
+              "Essen Sie langsam und hören Sie vor dem Sattsein auf",
+              "Gehen Sie regelmäßig zur Vorsorge"
+            ],
+            "ar": [
+              "امشِ إلى المسجد إن استطعت",
+              "اختر رياضة تستمتع بها",
+              "نم كفايتك خاصة قبل الفجر",
+              "كل ببطء وتوقف قبل الشبع",
+              "احرص على الفحوص الدورية"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "al-Tabari, Jami' al-Bayan, on 2:195", "url": "https://quran.com/2:195/tafsirs/ar-tafsir-al-tabari" }
+      ]
+    },
+    {
+      "id": "modern-life-17-money-and-charity",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": {
+          "en": "Faith in everyday life · 17",
+          "de": "Glaube im Alltag · 17",
+          "ar": "الإيمان في الحياة اليومية · ١٧"
+        },
+        "title": {
+          "en": "Money and charity",
+          "de": "Geld und Spenden",
+          "ar": "المال والصدقة"
+        },
+        "sub": {
+          "en": "Budgeting and giving with Quranic balance",
+          "de": "Haushalten und Geben mit koranischem Maß",
+          "ar": "تدبير المال والعطاء بميزان القرآن"
+        },
+        "arabic": "الاعتدال"
+      },
+      "slides": [
+        {
+          "verse": "25:67",
+          "check": "moderate",
+          "title": {
+            "en": "The middle way",
+            "de": "Der mittlere Weg",
+            "ar": "الطريق الوسط"
+          },
+          "body": {
+            "en": "Among the qualities of the servants of the Most Merciful: they neither waste nor hold back. A principle for every budget.",
+            "de": "Zu den Eigenschaften der Diener des Allerbarmers gehört, weder zu verschwenden noch zu geizen. Ein Grundsatz für jedes Budget.",
+            "ar": "من صفات عباد الرحمن التوسط بين التبذير والشح، وهذا مبدأ لكل ميزانية."
+          }
+        },
+        {
+          "verse": "17:29",
+          "check": "chained to your neck",
+          "title": {
+            "en": "Neither closed nor careless",
+            "de": "Weder verschlossen noch sorglos",
+            "ar": "لا قبض ولا تبذير"
+          },
+          "body": {
+            "en": "A vivid picture: a hand locked shut and a hand that gives everything away. Both lead to regret.",
+            "de": "Ein starkes Bild: eine fest verschlossene Hand und eine, die alles weggibt. Beides führt zu Reue.",
+            "ar": "صورة بليغة: يد مغلقة تمامًا ويد تعطي كل شيء، وكلاهما يورث الندم."
+          }
+        },
+        {
+          "verse": "57:7",
+          "check": "successive inheritors",
+          "title": {
+            "en": "You are a trustee",
+            "de": "Sie sind Treuhänder",
+            "ar": "أنت مستخلَف"
+          },
+          "body": {
+            "en": "Wealth passes through our hands from one generation to the next. We manage it for a while.",
+            "de": "Vermögen geht von Generation zu Generation durch unsere Hände. Wir verwalten es für eine Weile.",
+            "ar": "يمر المال بأيدينا من جيل إلى جيل، ونحن نديره إلى حين."
+          }
+        },
+        {
+          "verse": "2:274",
+          "check": "secretly and publicly",
+          "title": {
+            "en": "Giving at every hour",
+            "de": "Geben zu jeder Stunde",
+            "ar": "عطاء في كل وقت"
+          },
+          "body": {
+            "en": "Giving is not only for Ramadan or emergencies. A small standing order works quietly, day and night.",
+            "de": "Geben ist nicht nur etwas für Ramadan oder Notfälle. Ein kleiner Dauerauftrag wirkt still, Tag und Nacht.",
+            "ar": "العطاء ليس لرمضان أو الطوارئ فقط، فتبرع شهري صغير يعمل بهدوء ليلًا ونهارًا."
+          }
+        },
+        {
+          "hadith": "bukhari:6021",
+          "check": "Sadaqa",
+          "title": {
+            "en": "More than money",
+            "de": "Mehr als Geld",
+            "ar": "أكثر من المال"
+          },
+          "body": {
+            "en": "Charity is not measured in money alone. Every good act you do can count as sadaqah.",
+            "de": "Wohltätigkeit misst sich nicht nur in Geld. Jede gute Tat kann als Sadaqa zählen.",
+            "ar": "لا تُقاس الصدقة بالمال وحده، فالخير بأنواعه يُحسب صدقة."
+          }
+        },
+        {
+          "title": {
+            "en": "A simple plan",
+            "de": "Ein einfacher Plan",
+            "ar": "خطة بسيطة"
+          },
+          "list": {
+            "en": [
+              "Know your monthly income and costs",
+              "Put savings aside first",
+              "Set a regular amount for sadaqah",
+              "Learn how zakah applies to you or ask a scholar",
+              "Give some of it secretly"
+            ],
+            "de": [
+              "Kennen Sie Ihre monatlichen Einnahmen und Ausgaben",
+              "Legen Sie zuerst etwas zurück",
+              "Legen Sie einen festen Betrag für Sadaqa fest",
+              "Klären Sie Ihre Zakat oder fragen Sie einen Gelehrten",
+              "Geben Sie einen Teil im Verborgenen"
+            ],
+            "ar": [
+              "اعرف دخلك ونفقاتك الشهرية",
+              "ادّخر أولًا",
+              "خصص مبلغًا ثابتًا للصدقة",
+              "تعلّم أحكام زكاتك أو اسأل عالمًا",
+              "أعطِ بعضه سرًّا"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "modern-life-18-food-and-moderation",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": {
+          "en": "Faith in everyday life · 18",
+          "de": "Glaube im Alltag · 18",
+          "ar": "الإيمان في الحياة اليومية · ١٨"
+        },
+        "title": {
+          "en": "Food and moderation",
+          "de": "Essen und Maß",
+          "ar": "الطعام والاعتدال"
+        },
+        "sub": {
+          "en": "Enjoying good food while keeping within limits",
+          "de": "Gutes Essen genießen und dabei Maß halten",
+          "ar": "الاستمتاع بالطعام الطيب مع حفظ الحدود"
+        },
+        "arabic": "التوازن"
+      },
+      "slides": [
+        {
+          "verse": "7:31",
+          "check": "be not excessive",
+          "title": {
+            "en": "Enjoy, but within limits",
+            "de": "Genießen, aber mit Maß",
+            "ar": "استمتاع بلا تجاوز"
+          },
+          "body": {
+            "en": "One short verse holds a whole approach to food: enjoy what is good and stay within limits.",
+            "de": "Ein kurzer Vers enthält eine ganze Haltung zum Essen: Genießen Sie das Gute und bleiben Sie im Maß.",
+            "ar": "آية قصيرة تحمل منهجًا كاملًا في الطعام: تمتّع بالطيبات والتزم الاعتدال."
+          }
+        },
+        {
+          "verse": "20:81",
+          "check": "good things",
+          "title": {
+            "en": "Good food is a provision",
+            "de": "Gutes Essen ist eine Versorgung",
+            "ar": "الطعام الطيب رزق"
+          },
+          "body": {
+            "en": "Good food comes from Allah. Overstepping the limits turns a blessing into harm.",
+            "de": "Gutes Essen kommt von Allah. Wer die Grenzen überschreitet, macht aus einer Gabe einen Schaden.",
+            "ar": "الطعام الطيب من رزق الله، وتجاوز الحد يحوّل النعمة إلى ضرر."
+          }
+        },
+        {
+          "verse": "80:24-26",
+          "check": "look at his food",
+          "title": {
+            "en": "Look at your plate",
+            "de": "Schauen Sie auf Ihren Teller",
+            "ar": "انظر إلى طبقك"
+          },
+          "body": {
+            "en": "The Quran asks us to reflect on where our food comes from: rain, soil and growth.",
+            "de": "Der Koran fordert uns auf, darüber nachzudenken, woher unser Essen kommt: Regen, Erde und Wachstum.",
+            "ar": "يدعونا القرآن إلى التأمل في مصدر طعامنا: المطر والتربة والإنبات."
+          }
+        },
+        {
+          "title": {
+            "en": "Eating with awareness",
+            "de": "Bewusst essen",
+            "ar": "الأكل بوعي"
+          },
+          "body": {
+            "en": "Bismillah at the start and alhamdulillah at the end turn a meal into remembrance. Eating slowly, without a screen, also helps you notice when you have had enough.",
+            "de": "Bismillah am Anfang und Alhamdulillah am Ende machen eine Mahlzeit zum Gedenken. Langsam und ohne Bildschirm zu essen hilft auch zu merken, wann es genug ist.",
+            "ar": "البسملة في البداية والحمد في النهاية تجعلان الطعام ذكرًا. والأكل ببطء بعيدًا عن الشاشة يساعدك على الشعور بالاكتفاء."
+          }
+        },
+        {
+          "title": {
+            "en": "Food waste",
+            "de": "Lebensmittelverschwendung",
+            "ar": "هدر الطعام"
+          },
+          "body": {
+            "en": "Throwing good food away is also a kind of excess. Cook what you need, use leftovers and share what remains with people who need it.",
+            "de": "Gutes Essen wegzuwerfen ist auch eine Form von Übermaß. Kochen Sie, was Sie brauchen, verwerten Sie Reste und teilen Sie Übriges mit Bedürftigen.",
+            "ar": "رمي الطعام الصالح نوع من الإسراف أيضًا. اطبخ قدر حاجتك، واستفد من البقايا، وشارك الفائض مع المحتاجين."
+          }
+        },
+        {
+          "title": {
+            "en": "For this week",
+            "de": "Für diese Woche",
+            "ar": "لهذا الأسبوع"
+          },
+          "list": {
+            "en": [
+              "Begin every meal with Bismillah",
+              "Serve smaller portions first",
+              "Eat together without screens",
+              "Plan meals to waste less",
+              "Share a meal with a neighbour"
+            ],
+            "de": [
+              "Beginnen Sie jede Mahlzeit mit Bismillah",
+              "Nehmen Sie zuerst kleinere Portionen",
+              "Essen Sie gemeinsam ohne Bildschirme",
+              "Planen Sie Mahlzeiten, um weniger wegzuwerfen",
+              "Teilen Sie eine Mahlzeit mit Nachbarn"
+            ],
+            "ar": [
+              "ابدأ كل وجبة بالبسملة",
+              "ابدأ بحصص أصغر",
+              "كلوا معًا بعيدًا عن الشاشات",
+              "خطط لوجباتك لتقليل الهدر",
+              "شارك جارك وجبة"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "modern-life-19-caring-for-the-earth",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": {
+          "en": "Faith in everyday life · 19",
+          "de": "Glaube im Alltag · 19",
+          "ar": "الإيمان في الحياة اليومية · ١٩"
+        },
+        "title": {
+          "en": "Caring for the earth",
+          "de": "Für die Erde sorgen",
+          "ar": "العناية بالأرض"
+        },
+        "sub": {
+          "en": "Less waste, more mercy: the environment in the light of the Quran and Sunnah",
+          "de": "Weniger Verschwendung, mehr Barmherzigkeit: die Umwelt im Licht von Koran und Sunna",
+          "ar": "هدر أقل ورحمة أكثر: البيئة في ضوء القرآن والسنة"
+        },
+        "arabic": "عمارة الأرض"
+      },
+      "slides": [
+        {
+          "verse": "30:41",
+          "check": "Corruption has appeared",
+          "title": {
+            "en": "What human hands have done",
+            "de": "Was Menschenhände angerichtet haben",
+            "ar": "ما صنعته أيدي البشر"
+          },
+          "body": {
+            "en": "The Quran links damage on land and sea to human actions, and hopes that people will turn back.",
+            "de": "Der Koran verbindet Schaden an Land und Meer mit menschlichem Handeln und hofft auf Umkehr.",
+            "ar": "يربط القرآن الفساد في البر والبحر بأفعال البشر، ويرجو أن يعودوا."
+          }
+        },
+        {
+          "verse": "7:56",
+          "check": "cause not corruption",
+          "title": {
+            "en": "Protect the balance",
+            "de": "Schützen Sie das Gleichgewicht",
+            "ar": "حافظ على توازن الأرض"
+          },
+          "body": {
+            "en": "The earth was set in order. Our task is to protect that balance, not to ruin it.",
+            "de": "Die Erde wurde in Ordnung gebracht. Unsere Aufgabe ist, dieses Gleichgewicht zu schützen, nicht es zu zerstören.",
+            "ar": "خُلقت الأرض في نظام متوازن، ومهمتنا أن نحميه لا أن نهدمه."
+          }
+        },
+        {
+          "verse": "17:26-27",
+          "check": "wastefully",
+          "title": {
+            "en": "Waste is not a small thing",
+            "de": "Verschwendung ist keine Kleinigkeit",
+            "ar": "التبذير ليس أمرًا هيّنًا"
+          },
+          "body": {
+            "en": "The Quran speaks strongly about wastefulness. The lesson applies to money, food, water and energy.",
+            "de": "Der Koran spricht deutlich über Verschwendung. Die Lehre gilt für Geld, Essen, Wasser und Energie.",
+            "ar": "يتحدث القرآن بشدة عن التبذير، والدرس يشمل المال والطعام والماء والطاقة."
+          }
+        },
+        {
+          "hadith": "bukhari:2320",
+          "check": "plants a tree",
+          "title": {
+            "en": "Plant something",
+            "de": "Pflanzen Sie etwas",
+            "ar": "ازرع شيئًا"
+          },
+          "body": {
+            "en": "Whatever you plant that later feeds any creature remains a charity for you.",
+            "de": "Was Sie pflanzen und später ein Geschöpf nährt, bleibt eine Sadaqa für Sie.",
+            "ar": "كل ما تغرسه فينتفع به مخلوق يبقى صدقة لك."
+          }
+        },
+        {
+          "hadith": "muslim:737",
+          "check": "Mudd",
+          "title": {
+            "en": "Little water, even for wudu",
+            "de": "Wenig Wasser, selbst für die Waschung",
+            "ar": "ماء قليل حتى في الوضوء"
+          },
+          "body": {
+            "en": "A mudd is about what two cupped hands can hold. Running the tap less follows this example.",
+            "de": "Ein Mudd ist etwa so viel, wie zwei hohle Hände fassen. Den Wasserhahn weniger laufen zu lassen folgt diesem Vorbild.",
+            "ar": "المُدّ نحو ملء الكفّين، وتقليل جريان الماء من الصنبور اقتداء بهذا الهدي."
+          }
+        },
+        {
+          "title": {
+            "en": "Everyday steps",
+            "de": "Schritte im Alltag",
+            "ar": "خطوات يومية"
+          },
+          "list": {
+            "en": [
+              "Turn off the tap during wudu",
+              "Buy less and use things longer",
+              "Avoid single-use plastic where you can",
+              "Plant or care for a plant",
+              "Pick up litter on your way"
+            ],
+            "de": [
+              "Drehen Sie bei der Waschung den Hahn zwischendurch zu",
+              "Kaufen Sie weniger und nutzen Sie Dinge länger",
+              "Meiden Sie Einwegplastik, wo es geht",
+              "Pflanzen oder pflegen Sie eine Pflanze",
+              "Heben Sie unterwegs Müll auf"
+            ],
+            "ar": [
+              "أغلق الصنبور أثناء الوضوء",
+              "اشترِ أقل واستعمل الأشياء مدة أطول",
+              "تجنّب البلاستيك أحادي الاستخدام ما استطعت",
+              "ازرع نبتة أو اعتنِ بها",
+              "التقط النفايات في طريقك"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "modern-life-20-muslim-minority",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": {
+          "en": "Faith in everyday life · 20",
+          "de": "Glaube im Alltag · 20",
+          "ar": "الإيمان في الحياة اليومية · ٢٠"
+        },
+        "title": {
+          "en": "Living as a Muslim minority",
+          "de": "Als muslimische Minderheit leben",
+          "ar": "العيش أقليةً مسلمة"
+        },
+        "sub": {
+          "en": "Dignity, good character and good relations with those around you",
+          "de": "Würde, guter Charakter und gute Beziehungen zu den Menschen um Sie herum",
+          "ar": "كرامة وخلق حسن وعلاقات طيبة مع من حولك"
+        },
+        "arabic": "العزة والخلق"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "Faith in a diverse society",
+            "de": "Glaube in einer vielfältigen Gesellschaft",
+            "ar": "الإيمان في مجتمع متنوع"
+          },
+          "body": {
+            "en": "Many Muslims live where they are a minority. The Quran gives principles for keeping one's faith, living with dignity and treating others with justice.",
+            "de": "Viele Muslime leben dort, wo sie eine Minderheit sind. Der Koran gibt Grundsätze, um den Glauben zu bewahren, in Würde zu leben und andere gerecht zu behandeln.",
+            "ar": "يعيش كثير من المسلمين حيث هم أقلية، والقرآن يقدم مبادئ للثبات على الإيمان والعيش بكرامة ومعاملة الآخرين بالعدل."
+          }
+        },
+        {
+          "verse": "49:13",
+          "check": "know one another",
+          "title": {
+            "en": "Difference with a purpose",
+            "de": "Verschiedenheit mit Sinn",
+            "ar": "اختلاف له حكمة"
+          },
+          "body": {
+            "en": "Peoples and cultures differ so that we get to know each other. True honour lies in taqwa, not in origin.",
+            "de": "Völker und Kulturen sind verschieden, damit wir einander kennenlernen. Wahre Ehre liegt in der Gottesfurcht, nicht in der Herkunft.",
+            "ar": "تختلف الشعوب والثقافات ليعرف بعضها بعضًا، والكرامة الحقيقية في التقوى لا في الأصل."
+          }
+        },
+        {
+          "verse": "60:8",
+          "check": "righteous toward them",
+          "title": {
+            "en": "Kindness and justice to all",
+            "de": "Güte und Gerechtigkeit für alle",
+            "ar": "البر والعدل مع الجميع"
+          },
+          "body": {
+            "en": "Good relations and fairness toward peaceful people of other faiths are clearly permitted, and Allah loves justice.",
+            "de": "Gute Beziehungen und Fairness gegenüber friedlichen Andersgläubigen sind ausdrücklich erlaubt, und Allah liebt Gerechtigkeit.",
+            "ar": "حسن العلاقة والعدل مع المسالمين من أهل الأديان الأخرى مأذون فيهما صراحة، والله يحب العدل."
+          }
+        },
+        {
+          "verse": "29:46",
+          "check": "in a way that is best",
+          "title": {
+            "en": "Talking about faith",
+            "de": "Über den Glauben sprechen",
+            "ar": "الحديث عن الإيمان"
+          },
+          "body": {
+            "en": "When faith is discussed, the Quran asks for the best manner and reminds us of common ground.",
+            "de": "Wenn über den Glauben gesprochen wird, verlangt der Koran die beste Art und erinnert an Gemeinsamkeiten.",
+            "ar": "عند الحوار في الدين يطلب القرآن أحسن الأساليب ويذكّر بالقواسم المشتركة."
+          }
+        },
+        {
+          "verse": "3:139",
+          "check": "do not weaken",
+          "title": {
+            "en": "No need to feel small",
+            "de": "Kein Grund, sich klein zu fühlen",
+            "ar": "لا داعي للشعور بالصغر"
+          },
+          "body": {
+            "en": "Revealed after the hard day of Uhud: faith gives inner strength, whatever the circumstances.",
+            "de": "Offenbart nach dem schweren Tag von Uhud: Der Glaube gibt innere Stärke, wie die Umstände auch sein mögen.",
+            "ar": "نزلت بعد يوم أحد العصيب: الإيمان يمنح قوة داخلية مهما كانت الظروف."
+          }
+        },
+        {
+          "title": {
+            "en": "Living it out",
+            "de": "Im Alltag leben",
+            "ar": "في الحياة اليومية"
+          },
+          "list": {
+            "en": [
+              "Be known for honesty and reliability",
+              "Greet and help your neighbours",
+              "Explain your faith calmly when asked",
+              "Keep your word and your agreements",
+              "Take part in your local community"
+            ],
+            "de": [
+              "Seien Sie für Ehrlichkeit und Verlässlichkeit bekannt",
+              "Grüßen und helfen Sie Ihren Nachbarn",
+              "Erklären Sie Ihren Glauben ruhig, wenn man Sie fragt",
+              "Halten Sie Ihr Wort und Ihre Vereinbarungen",
+              "Bringen Sie sich in Ihre Nachbarschaft ein"
+            ],
+            "ar": [
+              "كن معروفًا بالصدق والموثوقية",
+              "سلّم على جيرانك وساعدهم",
+              "اشرح دينك بهدوء إذا سُئلت",
+              "أوفِ بكلمتك وعهودك",
+              "شارك في مجتمعك المحلي"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "modern-life-21-helping-neighbours",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": {
+          "en": "Faith in everyday life · 21",
+          "de": "Glaube im Alltag · 21",
+          "ar": "الإيمان في الحياة اليومية · ٢١"
+        },
+        "title": {
+          "en": "Helping your neighbours",
+          "de": "Den Nachbarn helfen",
+          "ar": "مساعدة الجيران"
+        },
+        "sub": {
+          "en": "Practical neighbourliness in apartment blocks and busy streets",
+          "de": "Gelebte Nachbarschaft in Wohnblocks und belebten Straßen",
+          "ar": "حسن الجوار عمليًا في العمارات والشوارع المزدحمة"
+        },
+        "arabic": "حق الجار"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "The people next door",
+            "de": "Die Menschen nebenan",
+            "ar": "الناس في الجوار"
+          },
+          "body": {
+            "en": "In cities we often live a few metres from people whose names we do not know. Islam gives neighbours real rights, and a little effort goes a long way.",
+            "de": "In Städten wohnen wir oft wenige Meter von Menschen entfernt, deren Namen wir nicht kennen. Der Islam gibt Nachbarn echte Rechte, und wenig Mühe bewirkt viel.",
+            "ar": "في المدن نعيش غالبًا على بعد أمتار من أناس لا نعرف أسماءهم. والإسلام يجعل للجار حقوقًا حقيقية، وقليل من الجهد يصنع فرقًا كبيرًا."
+          }
+        },
+        {
+          "hadith": "bukhari:6018",
+          "check": "should not harm his neighbor",
+          "title": {
+            "en": "First, do no harm",
+            "de": "Zuerst: keinen Schaden zufügen",
+            "ar": "أولًا: لا تؤذِ"
+          },
+          "body": {
+            "en": "Noise late at night, blocked entrances and rubbish in the stairwell are harm too.",
+            "de": "Lärm spät in der Nacht, zugestellte Eingänge und Müll im Treppenhaus sind auch Schaden.",
+            "ar": "الضجيج في آخر الليل، وسدّ المداخل، والنفايات على الدرج كلها أذى أيضًا."
+          }
+        },
+        {
+          "hadith": "bukhari:2566",
+          "check": "trotters",
+          "title": {
+            "en": "No gift is too small",
+            "de": "Kein Geschenk ist zu klein",
+            "ar": "لا هدية صغيرة"
+          },
+          "body": {
+            "en": "A plate of food or a small gift across the landing builds more than we think.",
+            "de": "Ein Teller Essen oder ein kleines Geschenk über den Flur hinweg bewirkt mehr, als wir denken.",
+            "ar": "طبق طعام أو هدية صغيرة لجارك تبني أكثر مما نظن."
+          }
+        },
+        {
+          "verse": "107:7",
+          "check": "withhold",
+          "title": {
+            "en": "Small help matters",
+            "de": "Kleine Hilfe zählt",
+            "ar": "العون الصغير مهم"
+          },
+          "body": {
+            "en": "Surah al-Ma'un ends by criticising those who refuse even small everyday help. Ibn Kathir reports from Ibn Mas'ud: lending an axe, a pot or a bucket.",
+            "de": "Sure al-Maun endet mit einem Tadel an jene, die selbst kleine Alltagshilfe verweigern. Ibn Kathir überliefert von Ibn Mas'ud: das Verleihen von Axt, Topf oder Eimer.",
+            "ar": "تختم سورة الماعون بذم من يمنع حتى العون اليسير، وينقل ابن كثير عن ابن مسعود أنه ما يتعاوره الناس كالفأس والقدر والدلو."
+          }
+        },
+        {
+          "title": {
+            "en": "Ideas for this month",
+            "de": "Ideen für diesen Monat",
+            "ar": "أفكار لهذا الشهر"
+          },
+          "list": {
+            "en": [
+              "Learn your neighbours' names",
+              "Offer to carry shopping or take in parcels",
+              "Check on elderly neighbours in winter",
+              "Share food on Eid and on ordinary days",
+              "Keep noise and rubbish in check"
+            ],
+            "de": [
+              "Lernen Sie die Namen Ihrer Nachbarn",
+              "Bieten Sie an, Einkäufe zu tragen oder Pakete anzunehmen",
+              "Schauen Sie im Winter nach älteren Nachbarn",
+              "Teilen Sie Essen an Eid und an gewöhnlichen Tagen",
+              "Achten Sie auf Lärm und Müll"
+            ],
+            "ar": [
+              "تعرّف على أسماء جيرانك",
+              "اعرض حمل المشتريات أو استلام الطرود",
+              "تفقّد الجيران المسنّين في الشتاء",
+              "شارك الطعام في العيد وفي الأيام العادية",
+              "انتبه للضجيج والنفايات"
+            ]
+          }
+        },
+        {
+          "title": {
+            "en": "Neighbours of every faith",
+            "de": "Nachbarn jeden Glaubens",
+            "ar": "جيران من كل دين"
+          },
+          "body": {
+            "en": "Classical commentators such as al-Qurtubi counted non-Muslim neighbours among those who have a neighbour's right. A kind Muslim neighbour is often the best introduction to Islam.",
+            "de": "Klassische Kommentatoren wie al-Qurtubi zählten auch nichtmuslimische Nachbarn zu denen, die ein Nachbarrecht haben. Ein freundlicher muslimischer Nachbar ist oft die beste Einführung in den Islam.",
+            "ar": "عدّ المفسرون قديمًا، كالقرطبي، الجار غير المسلم ممن لهم حق الجوار. والجار المسلم اللطيف كثيرًا ما يكون أفضل تعريف بالإسلام."
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 107:7", "url": "https://quran.com/107:7/tafsirs/en-tafisr-ibn-kathir" },
+        { "label": "al-Qurtubi, al-Jami' li-Ahkam al-Qur'an, on 4:36", "url": "https://quran.com/4:36/tafsirs/ar-tafseer-al-qurtubi" }
+      ]
+    },
+    {
+      "id": "modern-life-22-volunteering",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": {
+          "en": "Faith in everyday life · 22",
+          "de": "Glaube im Alltag · 22",
+          "ar": "الإيمان في الحياة اليومية · ٢٢"
+        },
+        "title": {
+          "en": "Volunteering for Allah's sake",
+          "de": "Ehrenamt um Allahs willen",
+          "ar": "التطوع ابتغاء وجه الله"
+        },
+        "sub": {
+          "en": "Giving your time and skills is also charity",
+          "de": "Zeit und Fähigkeiten zu schenken ist auch Sadaqa",
+          "ar": "بذل الوقت والمهارة صدقة أيضًا"
+        },
+        "arabic": "التطوع"
+      },
+      "slides": [
+        {
+          "verse": "2:148",
+          "check": "race to",
+          "title": {
+            "en": "A race worth joining",
+            "de": "Ein Wettlauf, der sich lohnt",
+            "ar": "سباق يستحق المشاركة"
+          },
+          "body": {
+            "en": "The Quran describes doing good as a race. Volunteering is one of the easiest ways to join it.",
+            "de": "Der Koran beschreibt das Gute als Wettlauf. Ehrenamt ist einer der einfachsten Wege, daran teilzunehmen.",
+            "ar": "يصف القرآن فعل الخير بأنه سباق، والتطوع من أيسر الطرق للمشاركة فيه."
+          }
+        },
+        {
+          "hadith": "bukhari:2989",
+          "check": "lifting his luggage",
+          "title": {
+            "en": "Charity of the whole body",
+            "de": "Sadaqa des ganzen Körpers",
+            "ar": "صدقة الجسد كله"
+          },
+          "body": {
+            "en": "Helping with someone's luggage, a good word, clearing a path: many small acts count as charity.",
+            "de": "Beim Gepäck helfen, ein gutes Wort, einen Weg freiräumen: Viele kleine Taten zählen als Sadaqa.",
+            "ar": "المساعدة في حمل متاع أحد، والكلمة الطيبة، وتنظيف الطريق: أعمال صغيرة كثيرة تُعد صدقة."
+          }
+        },
+        {
+          "hadith": "bukhari:5353",
+          "check": "widow",
+          "title": {
+            "en": "Caring for those in need",
+            "de": "Sorge für Bedürftige",
+            "ar": "رعاية المحتاجين"
+          },
+          "body": {
+            "en": "Looking after widows and the poor is compared to the greatest acts of worship.",
+            "de": "Die Sorge für Witwen und Arme wird mit den größten Taten der Anbetung verglichen.",
+            "ar": "رعاية الأرامل والفقراء تُشبَّه بأعظم العبادات."
+          }
+        },
+        {
+          "verse": "99:7-8",
+          "check": "atom's weight",
+          "title": {
+            "en": "Nothing is lost",
+            "de": "Nichts geht verloren",
+            "ar": "لا يضيع شيء"
+          },
+          "body": {
+            "en": "An hour at a food bank or a call to a lonely person is seen and recorded.",
+            "de": "Eine Stunde bei der Tafel oder ein Anruf bei einem einsamen Menschen wird gesehen und aufgezeichnet.",
+            "ar": "ساعة في بنك طعام أو اتصال بشخص وحيد كلها مرئية ومسجلة."
+          }
+        },
+        {
+          "title": {
+            "en": "Where to start",
+            "de": "Wo Sie anfangen können",
+            "ar": "من أين تبدأ"
+          },
+          "list": {
+            "en": [
+              "Help at your local mosque",
+              "Support a food bank or a shelter",
+              "Tutor children or help with homework",
+              "Visit elderly or sick people",
+              "Offer your professional skills for free"
+            ],
+            "de": [
+              "Helfen Sie in Ihrer Moschee",
+              "Unterstützen Sie eine Tafel oder Notunterkunft",
+              "Geben Sie Nachhilfe oder helfen Sie bei Hausaufgaben",
+              "Besuchen Sie ältere oder kranke Menschen",
+              "Bieten Sie Ihr Fachwissen kostenlos an"
+            ],
+            "ar": [
+              "ساعد في مسجد حيّك",
+              "ادعم بنك طعام أو مأوى",
+              "علّم الأطفال أو ساعد في الواجبات",
+              "زُر كبار السن والمرضى",
+              "قدّم خبرتك المهنية مجانًا"
+            ]
+          }
+        },
+        {
+          "title": {
+            "en": "Sincerity first",
+            "de": "Aufrichtigkeit zuerst",
+            "ar": "الإخلاص أولًا"
+          },
+          "body": {
+            "en": "Volunteer for Allah, not for likes. Photos can inspire others, but always protect the dignity of the people you help.",
+            "de": "Engagieren Sie sich für Allah, nicht für Likes. Fotos können andere inspirieren, aber schützen Sie immer die Würde der Menschen, denen Sie helfen.",
+            "ar": "تطوّع لله لا للإعجابات. قد تُلهم الصور غيرك، لكن احفظ دائمًا كرامة من تساعدهم."
+          }
+        }
+      ]
+    },
+    {
+      "id": "modern-life-23-gratitude-journal",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": {
+          "en": "Faith in everyday life · 23",
+          "de": "Glaube im Alltag · 23",
+          "ar": "الإيمان في الحياة اليومية · ٢٣"
+        },
+        "title": {
+          "en": "Gratitude journaling",
+          "de": "Ein Dankbarkeitstagebuch",
+          "ar": "دفتر الامتنان"
+        },
+        "sub": {
+          "en": "A small daily habit rooted in the Quran",
+          "de": "Eine kleine tägliche Gewohnheit mit Wurzeln im Koran",
+          "ar": "عادة يومية صغيرة لها جذور في القرآن"
+        },
+        "arabic": "الشكر"
+      },
+      "slides": [
+        {
+          "verse": "93:11",
+          "check": "favor of your Lord",
+          "title": {
+            "en": "Speak of His blessings",
+            "de": "Sprechen Sie von Seinen Gaben",
+            "ar": "اذكر نعم الله"
+          },
+          "body": {
+            "en": "The Quran asks us to mention the blessings of our Lord. Writing them down is one quiet way to do it.",
+            "de": "Der Koran fordert uns auf, die Gaben unseres Herrn zu erwähnen. Sie aufzuschreiben ist ein stiller Weg dazu.",
+            "ar": "يدعونا القرآن إلى ذكر نعم ربنا، وتدوينها طريقة هادئة لذلك."
+          }
+        },
+        {
+          "verse": "55:13",
+          "check": "favors",
+          "title": {
+            "en": "A question repeated 31 times",
+            "de": "Eine Frage, 31-mal wiederholt",
+            "ar": "سؤال يتكرر ٣١ مرة"
+          },
+          "body": {
+            "en": "Surah ar-Rahman keeps returning to this question. A journal is one way of answering it.",
+            "de": "Sure ar-Rahman kommt immer wieder auf diese Frage zurück. Ein Tagebuch ist eine Art, sie zu beantworten.",
+            "ar": "تعود سورة الرحمن إلى هذا السؤال مرة بعد مرة، والدفتر طريقة للإجابة عنه."
+          }
+        },
+        {
+          "verse": "27:40",
+          "check": "grateful or ungrateful",
+          "title": {
+            "en": "Success is a test too",
+            "de": "Auch Erfolg ist eine Prüfung",
+            "ar": "النجاح ابتلاء أيضًا"
+          },
+          "body": {
+            "en": "Sulayman saw a great achievement as a test of gratitude, not as a reason for pride.",
+            "de": "Sulaiman sah einen großen Erfolg als Prüfung der Dankbarkeit, nicht als Grund zum Stolz.",
+            "ar": "رأى سليمان في الإنجاز العظيم اختبارًا للشكر لا سببًا للفخر."
+          }
+        },
+        {
+          "title": {
+            "en": "How to begin",
+            "de": "So fangen Sie an",
+            "ar": "كيف تبدأ"
+          },
+          "list": {
+            "en": [
+              "Write three blessings each night",
+              "Be specific: a person, a moment, a gift",
+              "Include blessings hidden in hardship",
+              "Thank one person you wrote about",
+              "End with alhamdulillah"
+            ],
+            "de": [
+              "Schreiben Sie jeden Abend drei Gaben auf",
+              "Seien Sie konkret: ein Mensch, ein Moment, ein Geschenk",
+              "Notieren Sie auch Gaben, die in Schwerem verborgen sind",
+              "Danken Sie einem Menschen, über den Sie schrieben",
+              "Schließen Sie mit Alhamdulillah"
+            ],
+            "ar": [
+              "اكتب ثلاث نعم كل ليلة",
+              "كن محددًا: شخص، لحظة، عطية",
+              "اذكر النعم المخبوءة في الشدائد",
+              "اشكر شخصًا كتبت عنه",
+              "اختم بالحمد لله"
+            ]
+          }
+        },
+        {
+          "title": {
+            "en": "Gratitude changes the eye",
+            "de": "Dankbarkeit verändert den Blick",
+            "ar": "الشكر يغيّر النظرة"
+          },
+          "body": {
+            "en": "Counting blessings does not deny problems. It trains the eye to notice what Allah has already given, and that makes hard days lighter.",
+            "de": "Gaben zu zählen leugnet keine Probleme. Es schult den Blick für das, was Allah schon gegeben hat, und macht schwere Tage leichter.",
+            "ar": "عدّ النعم لا ينكر المشكلات، لكنه يدرّب العين على رؤية ما أعطاه الله بالفعل، فتخف الأيام الصعبة."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Quran.com, Surah ar-Rahman",
+          "url": "https://quran.com/55"
+        }
+      ]
+    },
+    {
+      "id": "modern-life-24-digital-detox-dhikr",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": {
+          "en": "Faith in everyday life · 24",
+          "de": "Glaube im Alltag · 24",
+          "ar": "الإيمان في الحياة اليومية · ٢٤"
+        },
+        "title": {
+          "en": "Digital detox and dhikr",
+          "de": "Digitale Pause und Dhikr",
+          "ar": "استراحة رقمية وذكر"
+        },
+        "sub": {
+          "en": "Filling quiet moments with remembrance instead of scrolling",
+          "de": "Stille Momente mit Gedenken füllen statt mit Scrollen",
+          "ar": "املأ لحظات الفراغ بالذكر بدل التصفح"
+        },
+        "arabic": "ذكر الله"
+      },
+      "slides": [
+        {
+          "verse": "102:1-2",
+          "check": "diverts you",
+          "title": {
+            "en": "Distracted by more",
+            "de": "Abgelenkt vom Immer-mehr",
+            "ar": "الانشغال بالمزيد"
+          },
+          "body": {
+            "en": "Surah at-Takathur names the endless chase for more. Feeds, likes and notifications can become part of it.",
+            "de": "Sure at-Takathur benennt die endlose Jagd nach mehr. Feeds, Likes und Benachrichtigungen können Teil davon werden.",
+            "ar": "تسمّي سورة التكاثر اللهاث وراء المزيد، وقد تصبح المنشورات والإعجابات والإشعارات جزءًا منه."
+          }
+        },
+        {
+          "verse": "63:9",
+          "check": "divert you",
+          "title": {
+            "en": "What pulls you away?",
+            "de": "Was zieht Sie weg?",
+            "ar": "ما الذي يشغلك؟"
+          },
+          "body": {
+            "en": "Even good things like wealth and children can distract from Allah. A phone certainly can.",
+            "de": "Selbst gute Dinge wie Besitz und Kinder können von Allah ablenken. Ein Handy kann es erst recht.",
+            "ar": "حتى الأشياء الطيبة كالمال والأولاد قد تشغل عن الله، فكيف بالهاتف."
+          }
+        },
+        {
+          "verse": "7:205",
+          "check": "heedless",
+          "title": {
+            "en": "Remembering quietly",
+            "de": "Still gedenken",
+            "ar": "ذكر في السكون"
+          },
+          "body": {
+            "en": "Dhikr can be quiet, in the heart and on the lips, in the morning and the evening.",
+            "de": "Dhikr kann leise sein, im Herzen und auf den Lippen, morgens und abends.",
+            "ar": "الذكر قد يكون خفيًا في القلب وعلى اللسان، صباحًا ومساءً."
+          }
+        },
+        {
+          "dua": "hisn:130:4",
+          "check": "thousand good deeds",
+          "title": {
+            "en": "A few minutes that count",
+            "de": "Wenige Minuten, die zählen",
+            "ar": "دقائق لها وزن"
+          },
+          "body": {
+            "en": "Waiting for a bus or a download takes about as long as this dhikr.",
+            "de": "Das Warten auf den Bus oder einen Download dauert etwa so lang wie dieser Dhikr.",
+            "ar": "انتظار الحافلة أو تحميل ملف يستغرق نحو مدة هذا الذكر."
+          }
+        },
+        {
+          "title": {
+            "en": "A gentle detox",
+            "de": "Eine sanfte Pause",
+            "ar": "استراحة لطيفة"
+          },
+          "list": {
+            "en": [
+              "One screen-free hour every day",
+              "Turn off non-essential notifications",
+              "Count dhikr on your fingers",
+              "Say a dhikr while waiting in a queue",
+              "One day a week with less social media"
+            ],
+            "de": [
+              "Eine bildschirmfreie Stunde pro Tag",
+              "Schalten Sie unnötige Benachrichtigungen aus",
+              "Zählen Sie den Dhikr an den Fingern",
+              "Sprechen Sie einen Dhikr in der Warteschlange",
+              "Ein Tag pro Woche mit weniger sozialen Medien"
+            ],
+            "ar": [
+              "ساعة يوميًا بلا شاشة",
+              "أطفئ الإشعارات غير الضرورية",
+              "عُدّ الذكر على أصابعك",
+              "اذكر الله وأنت تنتظر في الطابور",
+              "يوم في الأسبوع بأقل قدر من وسائل التواصل"
+            ]
+          }
+        },
+        {
+          "title": {
+            "en": "Replace, do not just remove",
+            "de": "Ersetzen, nicht nur weglassen",
+            "ar": "استبدل ولا تكتفِ بالحذف"
+          },
+          "body": {
+            "en": "An empty moment invites the phone back. Fill it with something light: SubhanAllah, alhamdulillah, Allahu akbar.",
+            "de": "Ein leerer Moment lockt das Handy zurück. Füllen Sie ihn mit etwas Leichtem: SubhanAllah, Alhamdulillah, Allahu akbar.",
+            "ar": "اللحظة الفارغة تستدعي الهاتف من جديد، فاملأها بشيء خفيف: سبحان الله، الحمد لله، الله أكبر."
+          }
+        }
+      ]
+    },
+    {
+      "id": "modern-life-25-starting-again",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": {
+          "en": "Faith in everyday life · 25",
+          "de": "Glaube im Alltag · 25",
+          "ar": "الإيمان في الحياة اليومية · ٢٥"
+        },
+        "title": {
+          "en": "Starting again after failure",
+          "de": "Neu anfangen nach einem Scheitern",
+          "ar": "البداية من جديد بعد الإخفاق"
+        },
+        "sub": {
+          "en": "Failed exams, lost jobs, broken plans: the Quran's way forward",
+          "de": "Nicht bestandene Prüfungen, verlorene Stellen, zerbrochene Pläne: der Weg des Korans nach vorn",
+          "ar": "امتحان لم ينجح، عمل ضاع، خطة انهارت: طريق القرآن إلى الأمام"
+        },
+        "arabic": "بداية جديدة"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "Failure is not the end",
+            "de": "Scheitern ist nicht das Ende",
+            "ar": "الإخفاق ليس النهاية"
+          },
+          "body": {
+            "en": "Everyone fails at something. What matters is what comes next. The Quran and Sunnah are full of new beginnings after hard moments.",
+            "de": "Jeder scheitert an etwas. Entscheidend ist, was danach kommt. Koran und Sunna sind voller Neuanfänge nach schweren Momenten.",
+            "ar": "كل إنسان يخفق في أمر ما، والمهم ما يأتي بعده. والقرآن والسنة مليئان بالبدايات الجديدة بعد اللحظات الصعبة."
+          }
+        },
+        {
+          "verse": "3:140",
+          "check": "alternate",
+          "title": {
+            "en": "Days take turns",
+            "de": "Die Tage wechseln sich ab",
+            "ar": "الأيام تتقلّب"
+          },
+          "body": {
+            "en": "After the loss at Uhud, the believers were reminded that good and hard days take turns.",
+            "de": "Nach dem Verlust bei Uhud wurden die Gläubigen erinnert, dass gute und schwere Tage einander abwechseln.",
+            "ar": "بعد ما أصاب المسلمين في أحد ذُكّروا بأن أيام اليسر والعسر تتعاقب."
+          }
+        },
+        {
+          "hadith": "bukhari:6309",
+          "check": "more pleased",
+          "title": {
+            "en": "Allah welcomes your return",
+            "de": "Allah freut sich über Ihre Umkehr",
+            "ar": "الله يفرح برجوعك"
+          },
+          "body": {
+            "en": "If the failure was a sin, the door of repentance is open, and Allah's joy at your return is greater than you imagine.",
+            "de": "War das Scheitern eine Sünde, steht die Tür der Reue offen, und Allahs Freude über Ihre Umkehr ist größer, als Sie denken.",
+            "ar": "إن كان الإخفاق ذنبًا، فباب التوبة مفتوح، وفرح الله برجوعك أعظم مما تتخيل."
+          }
+        },
+        {
+          "verse": "94:7-8",
+          "check": "finished",
+          "title": {
+            "en": "On to the next effort",
+            "de": "Weiter zur nächsten Anstrengung",
+            "ar": "إلى الجهد التالي"
+          },
+          "body": {
+            "en": "When one chapter closes, the Quran turns us toward new effort and toward our Lord.",
+            "de": "Wenn ein Kapitel endet, richtet der Koran uns auf neue Mühe und auf unseren Herrn aus.",
+            "ar": "حين يُغلق فصل، يوجّهنا القرآن إلى جهد جديد وإلى ربنا."
+          }
+        },
+        {
+          "title": {
+            "en": "Learn, do not dwell",
+            "de": "Lernen statt grübeln",
+            "ar": "تعلّم ولا تجترّ"
+          },
+          "body": {
+            "en": "Look honestly at what went wrong, ask Allah for help and make a small, concrete plan. Then begin, even with a single step.",
+            "de": "Schauen Sie ehrlich hin, was schiefging, bitten Sie Allah um Hilfe und machen Sie einen kleinen, konkreten Plan. Dann beginnen Sie, und sei es mit einem einzigen Schritt.",
+            "ar": "انظر بصدق إلى ما حدث، واستعن بالله، وضع خطة صغيرة محددة، ثم ابدأ ولو بخطوة واحدة."
+          }
+        },
+        {
+          "title": {
+            "en": "Starting again",
+            "de": "Neu beginnen",
+            "ar": "ابدأ من جديد"
+          },
+          "list": {
+            "en": [
+              "Make wudu and pray two rak'ahs",
+              "Write down one lesson you learned",
+              "Ask someone experienced for advice",
+              "Set one small goal for this week",
+              "Thank Allah for what remains"
+            ],
+            "de": [
+              "Nehmen Sie die Waschung vor und beten Sie zwei Rak'a",
+              "Schreiben Sie eine Lehre auf, die Sie gezogen haben",
+              "Fragen Sie einen erfahrenen Menschen um Rat",
+              "Setzen Sie sich ein kleines Ziel für diese Woche",
+              "Danken Sie Allah für das, was geblieben ist"
+            ],
+            "ar": [
+              "توضأ وصلِّ ركعتين",
+              "اكتب درسًا واحدًا تعلمته",
+              "استشر صاحب خبرة",
+              "ضع هدفًا صغيرًا لهذا الأسبوع",
+              "احمد الله على ما بقي"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "modern-life-26-balance-not-burnout",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": {
+          "en": "Faith in everyday life · 26",
+          "de": "Glaube im Alltag · 26",
+          "ar": "الإيمان في الحياة اليومية · ٢٦"
+        },
+        "title": {
+          "en": "Balance instead of burnout",
+          "de": "Gleichgewicht statt Erschöpfung",
+          "ar": "التوازن بدل الإنهاك"
+        },
+        "sub": {
+          "en": "The Sunnah of moderation for overloaded weeks",
+          "de": "Die Sunna des Maßhaltens für überfüllte Wochen",
+          "ar": "سنة الاعتدال للأسابيع المثقلة"
+        },
+        "arabic": "القصد"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "More is not always better",
+            "de": "Mehr ist nicht immer besser",
+            "ar": "الأكثر ليس دائمًا الأفضل"
+          },
+          "body": {
+            "en": "Work, studies, family and community can fill every hour. Islam does not ask for exhaustion. It asks for steady, sincere effort.",
+            "de": "Arbeit, Studium, Familie und Gemeinde können jede Stunde füllen. Der Islam verlangt keine Erschöpfung, sondern beständigen, aufrichtigen Einsatz.",
+            "ar": "قد يملأ العمل والدراسة والأسرة والمجتمع كل ساعة، والإسلام لا يطلب الإنهاك بل جهدًا ثابتًا صادقًا."
+          }
+        },
+        {
+          "hadith": "bukhari:39",
+          "check": "Religion is very easy",
+          "title": {
+            "en": "A religion that does not crush",
+            "de": "Eine Religion, die nicht erdrückt",
+            "ar": "دين لا يُرهق"
+          },
+          "body": {
+            "en": "Overloading yourself is not a sign of strength. It usually ends in giving up.",
+            "de": "Sich zu überlasten ist kein Zeichen von Stärke. Meist endet es im Aufgeben.",
+            "ar": "إثقال النفس ليس علامة قوة، وغالبًا ما ينتهي بالانقطاع."
+          }
+        },
+        {
+          "hadith": "muslim:3403",
+          "check": "prayer and sleep",
+          "title": {
+            "en": "The Prophet's balance",
+            "de": "Das Gleichgewicht des Propheten",
+            "ar": "توازن النبي"
+          },
+          "body": {
+            "en": "Some companions wanted to give up sleep or marriage for worship. The Prophet pointed them to his balanced way.",
+            "de": "Einige Gefährten wollten für die Anbetung auf Schlaf oder Ehe verzichten. Der Prophet verwies sie auf seinen ausgewogenen Weg.",
+            "ar": "أراد بعض الصحابة ترك النوم أو الزواج للعبادة، فأرشدهم النبي إلى طريقه المتوازن."
+          }
+        },
+        {
+          "hadith": "bukhari:6464",
+          "check": "regular and constant",
+          "title": {
+            "en": "Small and steady",
+            "de": "Klein und beständig",
+            "ar": "قليل مستمر"
+          },
+          "body": {
+            "en": "A little every day beats a big effort that burns out after a week. This applies to worship, study and sport.",
+            "de": "Ein wenig jeden Tag ist besser als ein großer Einsatz, der nach einer Woche verpufft. Das gilt für Anbetung, Lernen und Sport.",
+            "ar": "القليل كل يوم خير من جهد كبير ينطفئ بعد أسبوع، في العبادة والدراسة والرياضة."
+          }
+        },
+        {
+          "verse": "7:42",
+          "check": "capacity",
+          "title": {
+            "en": "He knows your limits",
+            "de": "Er kennt Ihre Grenzen",
+            "ar": "يعلم حدود طاقتك"
+          },
+          "body": {
+            "en": "Even in a verse about Paradise, Allah reminds us that He knows what each soul can bear.",
+            "de": "Selbst in einem Vers über das Paradies erinnert Allah daran, dass Er weiß, was jede Seele tragen kann.",
+            "ar": "حتى في آية عن الجنة يذكّرنا الله بأنه يعلم ما تطيقه كل نفس."
+          }
+        },
+        {
+          "title": {
+            "en": "Signs to slow down",
+            "de": "Zeichen, das Tempo zu drosseln",
+            "ar": "علامات تدعوك إلى التمهّل"
+          },
+          "list": {
+            "en": [
+              "You miss prayers because of work",
+              "Your sleep keeps getting shorter",
+              "There is no time left for family",
+              "Small things make you angry",
+              "If exhaustion lasts, see a doctor"
+            ],
+            "de": [
+              "Sie versäumen Gebete wegen der Arbeit",
+              "Ihr Schlaf wird immer kürzer",
+              "Für die Familie bleibt keine Zeit",
+              "Kleinigkeiten machen Sie wütend",
+              "Hält die Erschöpfung an, gehen Sie zum Arzt"
+            ],
+            "ar": [
+              "تفوتك الصلوات بسبب العمل",
+              "ينقص نومك باستمرار",
+              "لا يبقى وقت للأسرة",
+              "تغضبك الأمور الصغيرة",
+              "إن استمر الإرهاق فراجع طبيبًا"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

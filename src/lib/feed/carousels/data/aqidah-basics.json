@@ -474,6 +474,728 @@
           }
         }
       ]
+    },
+    {
+      "id": "aqidah-basics-09-tawhid",
+      "tradition": "all",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": {"en": "Foundations of faith · 9", "de": "Grundlagen des Glaubens · 9", "ar": "أسس الإيمان · ٩"},
+        "title": {"en": "Tawhid: Allah is One", "de": "Tauhid: Allah ist Einer", "ar": "التوحيد"},
+        "sub": {"en": "The heart of Islam, and the ways scholars have explained it", "de": "Das Herz des Islam und die Weisen, wie Gelehrte es erklärt haben", "ar": "قلب الإسلام، وكيف شرحه العلماء"},
+        "arabic": "التَّوْحِيد"
+      },
+      "slides": [
+        {
+          "title": {"en": "The heart of the message", "de": "Das Herz der Botschaft", "ar": "جوهر الرسالة"},
+          "arabic": "لا إله إلا الله",
+          "body": {"en": "Tawhid means affirming that Allah is One: unique in His being, in creating and sustaining, in the right to be worshipped, and in His names and attributes. Every prophet's message centred on it.", "de": "Tauhid bedeutet zu bekennen, dass Allah Einer ist: einzigartig in Seinem Wesen, im Erschaffen und Erhalten, im Anspruch auf Anbetung und in Seinen Namen und Eigenschaften. Jede prophetische Botschaft kreiste darum.", "ar": "التوحيد إفراد الله بذاته وخلقه وتدبيره وعبادته وأسمائه وصفاته، وعليه قامت دعوة كل نبي."}
+        },
+        {
+          "verse": "112:1-3",
+          "check": "He is Allāh",
+          "title": {"en": "One, in every sense", "de": "Einer, in jedem Sinn", "ar": "أحدٌ بكل معنى"},
+          "body": {"en": "A short surah that well-known narrations equate with a third of the Quran. It removes every idea of partners, parents or offspring.", "de": "Eine kurze Sure, die bekannte Überlieferungen einem Drittel des Korans gleichstellen. Sie schließt jede Vorstellung von Teilhabern, Eltern oder Nachkommen aus.", "ar": "سورة قصيرة تذكر روايات مشهورة أنها تعدل ثلث القرآن، تنفي كل شريك ووالد وولد."}
+        },
+        {
+          "title": {"en": "A common classification", "de": "Eine verbreitete Einteilung", "ar": "تقسيمٌ شائع"},
+          "body": {"en": "Many scholars, especially following Ibn Taymiyyah, speak of three aspects: lordship, worship, and names and attributes. Ash'ari, Maturidi and Shia scholars organise it differently, for example as oneness in essence, attributes, acts and worship.", "de": "Viele Gelehrte, besonders in der Nachfolge Ibn Taimiyyas, sprechen von drei Aspekten: Herrschaft, Anbetung sowie Namen und Eigenschaften. Asch'aritische, maturiditische und schiitische Gelehrte ordnen denselben Glauben anders, etwa als Einheit im Wesen, in den Eigenschaften, den Taten und der Anbetung.", "ar": "يتحدث كثير من العلماء، ولا سيما في مدرسة ابن تيمية، عن ثلاثة أقسام: الربوبية والألوهية والأسماء والصفات، ويرتّب الأشاعرة والماتريدية وعلماء الشيعة العقيدة نفسها بطرق أخرى، كالتوحيد في الذات والصفات والأفعال والعبادة."}
+        },
+        {
+          "verse": "10:31",
+          "check": "Who provides for you",
+          "title": {"en": "Lordship", "de": "Herrschaft", "ar": "الربوبية"},
+          "body": {"en": "Even those who worshipped idols admitted that Allah creates and provides. The Quran builds on this to call to worshipping Him alone.", "de": "Selbst Götzendiener gaben zu, dass Allah erschafft und versorgt. Der Koran baut darauf auf, um zur Anbetung Allahs allein aufzurufen.", "ar": "كان عبدة الأصنام أنفسهم يقرّون بأن الله يخلق ويرزق، فيبني القرآن على ذلك دعوته إلى عبادته وحده."}
+        },
+        {
+          "verse": "1:5",
+          "check": "It is You we worship",
+          "title": {"en": "Worship", "de": "Anbetung", "ar": "الألوهية"},
+          "body": {"en": "Prayer, dua, hope and trust belong to Allah alone. Every rak'ah renews this commitment.", "de": "Gebet, Bittgebet, Hoffnung und Vertrauen gebühren Allah allein. Jede Rak'a erneuert dieses Bekenntnis.", "ar": "الصلاة والدعاء والرجاء والتوكل لله وحده، وكل ركعة تجدّد هذا العهد."}
+        },
+        {
+          "verse": "42:11",
+          "check": "There is nothing like unto Him",
+          "title": {"en": "Names and attributes", "de": "Namen und Eigenschaften", "ar": "الأسماء والصفات"},
+          "body": {"en": "Allah describes Himself, and nothing is like Him. Believers affirm what He affirms without likening Him to creation.", "de": "Allah beschreibt sich selbst, und nichts ist Ihm gleich. Gläubige bejahen, was Er bejaht, ohne Ihn mit der Schöpfung zu vergleichen.", "ar": "يصف الله نفسه، ولا شيء يماثله، فيثبت المؤمنون ما أثبته دون تشبيهٍ بخلقه."}
+        },
+        {
+          "title": {"en": "Living tawhid", "de": "Tauhid leben", "ar": "عِش التوحيد"},
+          "list": {
+            "en": ["Turn to Allah first in every need", "Keep worship sincere, not for show", "Learn His names and call on Him by them", "Trust Him more than any means"],
+            "de": ["Wenden Sie sich in jeder Not zuerst an Allah", "Halten Sie die Anbetung aufrichtig, nicht zur Schau", "Lernen Sie Seine Namen und rufen Sie Ihn mit ihnen an", "Vertrauen Sie Ihm mehr als jedem Mittel"],
+            "ar": ["الجأ إلى الله أولًا في كل حاجة", "أخلص عبادتك ولا ترائي", "تعلّم أسماءه وادعه بها", "ثق به أكثر من كل سبب"]
+          }
+        }
+      ],
+      "sources": [
+        {"label": "Ibn Taymiyyah, al-Risalah al-Tadmuriyyah"},
+        {"label": "Abu Ja'far al-Tahawi, al-'Aqidah al-Tahawiyyah"},
+        {"label": "Muhammad Rida al-Muzaffar, 'Aqa'id al-Imamiyyah"},
+        {"label": "Sahih al-Bukhari 5013, on Surat al-Ikhlas and a third of the Quran", "url": "https://sunnah.com/bukhari:5013"}
+      ]
+    },
+    {
+      "id": "aqidah-basics-10-names-and-attributes",
+      "tradition": "all",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": {"en": "Foundations of faith · 10", "de": "Grundlagen des Glaubens · 10", "ar": "أسس الإيمان · ١٠"},
+        "title": {"en": "Knowing Allah by His names", "de": "Allah durch Seine Namen kennen", "ar": "معرفة الله بأسمائه"},
+        "sub": {"en": "Common ground, different approaches, and respect between the schools", "de": "Gemeinsamer Boden, verschiedene Ansätze und Respekt zwischen den Schulen", "ar": "أرضٌ مشتركة، ومناهج مختلفة، واحترامٌ بين المدارس"},
+        "arabic": "الأَسْمَاءُ وَالصِّفَات"
+      },
+      "slides": [
+        {
+          "verse": "7:180",
+          "check": "the best names",
+          "title": {"en": "Call Him by His names", "de": "Rufen Sie Ihn mit Seinen Namen an", "ar": "الدعاء بالأسماء"},
+          "body": {"en": "The names of Allah are not only to be known. They are to be used in dua, each for the need it fits.", "de": "Die Namen Allahs sind nicht nur zum Wissen da. Man ruft Ihn mit ihnen an, jeden für das Anliegen, zu dem er passt.", "ar": "أسماء الله ليست للمعرفة فقط، بل يُدعى بها، كلُّ اسمٍ لما يناسبه من حاجة."}
+        },
+        {
+          "verse": "59:22",
+          "check": "Knower of the unseen and the witnessed",
+          "title": {"en": "A cluster of names", "de": "Eine Reihe von Namen", "ar": "أسماءٌ متتابعة"},
+          "body": {"en": "The end of al-Hashr gathers many names in three verses. This one names His knowledge and His mercy.", "de": "Das Ende von al-Haschr versammelt viele Namen in drei Versen. Dieser nennt Sein Wissen und Seine Barmherzigkeit.", "ar": "تجمع خاتمة سورة الحشر أسماء كثيرة في ثلاث آيات، وهذه تذكر علمه ورحمته."}
+        },
+        {
+          "title": {"en": "Common ground", "de": "Gemeinsamer Boden", "ar": "ما يتفق عليه الجميع"},
+          "body": {"en": "All Muslim schools agree that Allah is perfect and unlike His creation, and that He is described by what He revealed about Himself. They differ in how to understand some of these descriptions.", "de": "Alle muslimischen Schulen stimmen überein, dass Allah vollkommen und Seiner Schöpfung unähnlich ist und dass Er so beschrieben wird, wie Er sich selbst offenbart hat. Sie unterscheiden sich darin, wie manche dieser Beschreibungen zu verstehen sind.", "ar": "تتفق المدارس الإسلامية كلها على كمال الله ومباينته لخلقه، وعلى وصفه بما وصف به نفسه، وتختلف في فهم بعض هذه الأوصاف."}
+        },
+        {
+          "title": {"en": "Main approaches", "de": "Die wichtigsten Ansätze", "ar": "أبرز المناهج"},
+          "body": {"en": "Each aims to honour Allah and avoid likening Him to creation.", "de": "Jeder will Allah ehren und vermeiden, Ihn der Schöpfung gleichzusetzen.", "ar": "يقصد كلٌّ منها تعظيم الله وتنزيهه عن مشابهة خلقه."},
+          "list": {
+            "en": ["Athari: affirm as revealed, without asking how", "Tafwid: affirm the words, and leave their meaning to Allah", "Ta'wil: interpret some in a way that befits Allah", "Shia theology: His essential attributes are one with His essence"],
+            "de": ["Athari: bejahen, wie offenbart, ohne nach dem Wie zu fragen", "Tafwid: den Wortlaut bejahen und die Bedeutung Allah überlassen", "Ta'wil: manches so deuten, wie es Allah gebührt", "Schiitische Theologie: Seine Wesenseigenschaften sind eins mit Seinem Wesen"],
+            "ar": ["الأثرية: الإثبات كما ورد بلا تكييف", "التفويض: إثبات اللفظ مع تفويض معناه إلى الله", "التأويل: حمل بعضها على ما يليق بالله", "الكلام الشيعي: صفات الذات عين الذات"]
+          }
+        },
+        {
+          "verse": "112:4",
+          "check": "any equivalent",
+          "title": {"en": "Nothing equals Him", "de": "Nichts ist Ihm ebenbürtig", "ar": "لا نظير له"},
+          "body": {"en": "Whatever approach a scholar follows, this verse is the boundary: no comparison with anything created.", "de": "Welchem Ansatz ein Gelehrter auch folgt, dieser Vers ist die Grenze: kein Vergleich mit etwas Geschaffenem.", "ar": "أيًّا كان المنهج، فهذه الآية هي الحدّ: لا مقارنة بشيء من المخلوقات."}
+        },
+        {
+          "title": {"en": "Respect across schools", "de": "Respekt zwischen den Schulen", "ar": "الاحترام بين المدارس"},
+          "body": {"en": "These are serious debates among sincere scholars over many centuries. Learn one approach well from qualified teachers, and speak of the others with respect.", "de": "Das sind ernsthafte Debatten aufrichtiger Gelehrter über viele Jahrhunderte. Lernen Sie einen Ansatz gründlich bei qualifizierten Lehrern und sprechen Sie über die anderen mit Respekt.", "ar": "هذه نقاشات جادة بين علماء مخلصين عبر قرون، فتعلّم منهجًا واحدًا جيدًا على أيدي المؤهلين، وتحدّث عن غيره باحترام."}
+        },
+        {
+          "title": {"en": "Living with the names", "de": "Mit den Namen leben", "ar": "الحياة مع الأسماء"},
+          "list": {
+            "en": ["Learn one name a week, with its meaning", "Call on Him with the name that fits your need", "Notice how each name shows in creation", "Leave fine theological disputes to the trained"],
+            "de": ["Lernen Sie jede Woche einen Namen mit seiner Bedeutung", "Rufen Sie Ihn mit dem Namen an, der zu Ihrem Anliegen passt", "Achten Sie darauf, wie sich jeder Name in der Schöpfung zeigt", "Überlassen Sie feine theologische Streitfragen den Fachleuten"],
+            "ar": ["تعلّم اسمًا كل أسبوع مع معناه", "ادعُه بالاسم المناسب لحاجتك", "تأمّل أثر كل اسم في الخلق", "اترك دقائق الخلاف الكلامي لأهل الاختصاص"]
+          }
+        }
+      ],
+      "sources": [
+        {"label": "al-Bayhaqi, al-Asma' wa al-Sifat"},
+        {"label": "al-Ghazali, al-Maqsad al-Asna fi Sharh Asma' Allah al-Husna"},
+        {"label": "al-Shaykh al-Saduq, Kitab al-Tawhid"},
+        {"label": "Ibn Taymiyyah, al-Risalah al-Tadmuriyyah"}
+      ]
+    },
+    {
+      "id": "aqidah-basics-11-the-unseen",
+      "tradition": "all",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": {"en": "Foundations of faith · 11", "de": "Grundlagen des Glaubens · 11", "ar": "أسس الإيمان · ١١"},
+        "title": {"en": "Belief in the unseen", "de": "Der Glaube an das Verborgene", "ar": "الإيمان بالغيب"},
+        "sub": {"en": "What lies beyond our senses, and why only revelation can tell us about it", "de": "Was jenseits unserer Sinne liegt und warum nur die Offenbarung davon berichten kann", "ar": "ما وراء الحواس، ولماذا لا يخبرنا عنه إلا الوحي"},
+        "arabic": "الغَيْب"
+      },
+      "slides": [
+        {
+          "verse": "2:3",
+          "check": "believe in the unseen",
+          "title": {"en": "The first quality", "de": "Die erste Eigenschaft", "ar": "أول الصفات"},
+          "body": {"en": "At the start of al-Baqarah, belief in the unseen is the first quality named for the God-conscious, even before prayer.", "de": "Zu Beginn von al-Baqara ist der Glaube an das Verborgene die erste Eigenschaft der Gottesfürchtigen, noch vor dem Gebet.", "ar": "في مطلع البقرة يأتي الإيمان بالغيب أول صفات المتقين، قبل الصلاة."}
+        },
+        {
+          "verse": "6:59",
+          "check": "keys of the unseen",
+          "title": {"en": "Keys only He holds", "de": "Schlüssel, die nur Er hält", "ar": "مفاتح لا يملكها غيره"},
+          "body": {"en": "Every falling leaf is known to Him. Our knowledge is a small light; His knowledge encompasses everything.", "de": "Jedes fallende Blatt ist Ihm bekannt. Unser Wissen ist ein kleines Licht; Sein Wissen umfasst alles.", "ar": "حتى الأوراق المتساقطة يحيط بها علمه، وعلمنا ضوء صغير، وعلمه محيط بكل شيء."}
+        },
+        {
+          "verse": "31:34",
+          "check": "knowledge of the Hour",
+          "title": {"en": "Five things we cannot know", "de": "Fünf Dinge, die wir nicht wissen können", "ar": "خمسٌ لا نعلمها"},
+          "body": {"en": "The Hour, the rain, the womb, tomorrow's gain and the place of death. Commentators cite the Sunnah calling them the keys of the unseen.", "de": "Die Stunde, der Regen, der Mutterleib, der Gewinn von morgen und der Ort des Todes. Kommentatoren verweisen auf die Sunna, die sie die Schlüssel des Verborgenen nennt.", "ar": "الساعة والمطر والأجنّة في البطون وكسب الغد ومكان الموت، ويذكر المفسرون أن السنة سمّتها مفاتح الغيب."}
+        },
+        {
+          "verse": "72:26-27",
+          "check": "Knower of the unseen",
+          "title": {"en": "Only through messengers", "de": "Nur durch Gesandte", "ar": "عن طريق الرسل وحدهم"},
+          "body": {"en": "What we know of the unseen, Allah has shown through His messengers, and only as much as He willed.", "de": "Was wir vom Verborgenen wissen, hat Allah durch Seine Gesandten gezeigt, und nur so viel, wie Er wollte.", "ar": "ما نعرفه من الغيب أطلع الله عليه رسله، وبالقدر الذي شاءه فقط."}
+        },
+        {
+          "title": {"en": "What belongs to the unseen", "de": "Was zum Verborgenen gehört", "ar": "من أمور الغيب"},
+          "list": {
+            "en": ["Allah, His names and attributes", "The angels and the jinn", "The grave, the resurrection and the Hereafter", "The decree and the future"],
+            "de": ["Allah, Seine Namen und Eigenschaften", "Die Engel und die Dschinn", "Das Grab, die Auferstehung und das Jenseits", "Die Vorherbestimmung und die Zukunft"],
+            "ar": ["الله وأسماؤه وصفاته", "الملائكة والجن", "القبر والبعث والآخرة", "القدر والمستقبل"]
+          }
+        },
+        {
+          "title": {"en": "Faith, not guesswork", "de": "Glaube, kein Raten", "ar": "إيمانٌ لا تخمين"},
+          "body": {"en": "Belief in the unseen rests on revelation, not on rumours or imagination. That is why fortune-telling and horoscopes, which claim knowledge of the unseen, have no place in a believer's life.", "de": "Der Glaube an das Verborgene beruht auf Offenbarung, nicht auf Gerüchten oder Einbildung. Darum haben Wahrsagerei und Horoskope, die Wissen über das Verborgene beanspruchen, im Leben eines Gläubigen keinen Platz.", "ar": "الإيمان بالغيب قائم على الوحي لا على الشائعات والخيال، ولذلك لا مكان في حياة المؤمن للكهانة والأبراج التي تدّعي علم الغيب."}
+        },
+        {
+          "title": {"en": "Living with the unseen", "de": "Mit dem Verborgenen leben", "ar": "الحياة مع الغيب"},
+          "list": {
+            "en": ["Plan for tomorrow and say in sha Allah", "Take only what revelation teaches as certain", "Leave what is hidden to Allah with trust", "Let the unseen make the seen more meaningful"],
+            "de": ["Planen Sie für morgen und sagen Sie in scha Allah", "Halten Sie nur für sicher, was die Offenbarung lehrt", "Überlassen Sie das Verborgene vertrauensvoll Allah", "Lassen Sie das Verborgene dem Sichtbaren Sinn geben"],
+            "ar": ["خطّط للغد وقل إن شاء الله", "لا تجزم إلا بما جاء به الوحي", "فوّض ما غاب عنك إلى الله بثقة", "اجعل الغيب يمنح المشهود معناه"]
+          }
+        }
+      ],
+      "sources": [
+        {"label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 31:34", "url": "https://quran.com/31:34/tafsirs/en-tafisr-ibn-kathir"}
+      ]
+    },
+    {
+      "id": "aqidah-basics-12-angels-in-our-lives",
+      "tradition": "all",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": {"en": "Foundations of faith · 12", "de": "Grundlagen des Glaubens · 12", "ar": "أسس الإيمان · ١٢"},
+        "title": {"en": "Angels in our daily lives", "de": "Engel in unserem Alltag", "ar": "الملائكة في حياتنا"},
+        "sub": {"en": "Recording, praying, descending and welcoming: what the Quran says angels do", "de": "Aufzeichnen, beten, herabsteigen und empfangen: was die Engel laut Koran tun", "ar": "يكتبون ويستغفرون وينزلون ويستقبلون: ما يذكره القرآن من أعمال الملائكة"},
+        "arabic": "المَلَائِكَة"
+      },
+      "slides": [
+        {
+          "verse": "50:17-18",
+          "check": "seated on the right and on the left",
+          "title": {"en": "Every word is written", "de": "Jedes Wort wird geschrieben", "ar": "كل كلمة تُكتب"},
+          "body": {"en": "Two angels record what we say and do. Not to frighten us, but to remind us that words carry weight.", "de": "Zwei Engel zeichnen auf, was wir sagen und tun. Nicht um uns zu ängstigen, sondern um daran zu erinnern, dass Worte Gewicht haben.", "ar": "ملكان يكتبان ما نقول ونفعل، لا لتخويفنا بل لتذكيرنا بأن للكلمة وزنًا."}
+        },
+        {
+          "verse": "42:5",
+          "check": "ask forgiveness for those on earth",
+          "title": {"en": "They pray for us", "de": "Sie beten für uns", "ar": "يستغفرون لنا"},
+          "body": {"en": "While the heavens almost split in awe, the angels glorify Allah and ask forgiveness for the people of the earth.", "de": "Während die Himmel vor Ehrfurcht fast zerbersten, preisen die Engel Allah und bitten um Vergebung für die Menschen auf der Erde.", "ar": "تكاد السماوات تتشقق هيبةً، والملائكة في تسبيحٍ دائم ودعاءٍ بالمغفرة لسكان الأرض."}
+        },
+        {
+          "verse": "97:4",
+          "check": "The angels and the Spirit",
+          "title": {"en": "They descend on a special night", "de": "Sie steigen in einer besonderen Nacht herab", "ar": "ينزلون في ليلة خاصة"},
+          "body": {"en": "On the Night of Decree, the angels and Jibril come down by Allah's permission. Many spend it in prayer for that reason.", "de": "In der Nacht der Bestimmung steigen die Engel und Dschibril mit Allahs Erlaubnis herab. Viele verbringen sie deshalb im Gebet.", "ar": "في ليلة القدر يهبط جبريل والملائكة بأمر الله، ولهذا يحييها كثيرون بالعبادة."}
+        },
+        {
+          "verse": "33:56",
+          "check": "His angels",
+          "title": {"en": "Blessings on the Prophet", "de": "Segen über den Propheten", "ar": "الصلاة على النبي ﷺ"},
+          "body": {"en": "Allah and His angels send blessings on the Prophet, and believers are asked to join in. Every salawat links us with the angels.", "de": "Allah und Seine Engel segnen den Propheten, und die Gläubigen sind aufgerufen, sich anzuschließen. Jede Salawat verbindet uns mit den Engeln.", "ar": "لنبيّنا ﷺ صلاةٌ من الله ودعاءٌ من الملائكة، ويُدعى المؤمنون إلى المشاركة، فكل صلاة عليه تصلنا بالملائكة."}
+        },
+        {
+          "verse": "16:32",
+          "check": "the angels take in death",
+          "title": {"en": "A welcome at the end", "de": "Ein Empfang am Ende", "ar": "استقبالٌ عند الرحيل"},
+          "body": {"en": "For the good, the angels who take the soul come with a greeting of peace and the good news of Paradise.", "de": "Für die Guten kommen die Engel, die die Seele nehmen, mit einem Friedensgruß und der frohen Botschaft des Paradieses.", "ar": "يستقبل الملائكة أرواح الصالحين عند الموت بتحية السلام وبشارة الجنة."}
+        },
+        {
+          "title": {"en": "Living alongside angels", "de": "Mit den Engeln leben", "ar": "العيش مع الملائكة"},
+          "list": {
+            "en": ["Speak as if every word were written, because it is", "Send blessings on the Prophet often", "Seek the Night of Decree in Ramadan", "Keep your home clean and filled with dhikr"],
+            "de": ["Sprechen Sie, als würde jedes Wort aufgeschrieben, denn so ist es", "Sprechen Sie oft Segenswünsche über den Propheten", "Suchen Sie im Ramadan die Nacht der Bestimmung", "Halten Sie Ihr Zuhause rein und voller Gedenken"],
+            "ar": ["تكلّم وكأن كل كلمة تُكتب، فهي كذلك", "أكثر من الصلاة على النبي ﷺ", "التمس ليلة القدر في رمضان", "اجعل بيتك نظيفًا عامرًا بالذكر"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "aqidah-basics-13-revelation",
+      "tradition": "all",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": {"en": "Foundations of faith · 13", "de": "Grundlagen des Glaubens · 13", "ar": "أسس الإيمان · ١٣"},
+        "title": {"en": "Revelation: when Allah speaks", "de": "Offenbarung: wenn Allah spricht", "ar": "الوحي: حين يكلّم الله عباده"},
+        "sub": {"en": "What wahy means, how it came, and why it is the basis of our faith", "de": "Was Wahy bedeutet, wie sie kam und warum sie die Grundlage unseres Glaubens ist", "ar": "معنى الوحي، وكيف نزل، ولماذا هو أساس إيماننا"},
+        "arabic": "الوَحْي"
+      },
+      "slides": [
+        {
+          "title": {"en": "A swift, hidden message", "de": "Eine schnelle, verborgene Botschaft", "ar": "إعلامٌ خفيٌّ سريع"},
+          "arabic": "الوحي",
+          "body": {"en": "In Arabic, wahy means a swift and hidden communication. In belief, it is Allah's word and guidance conveyed to His prophets, which they could not have produced themselves.", "de": "Im Arabischen bedeutet Wahy eine schnelle, verborgene Mitteilung. Im Glauben ist es Allahs Wort und Rechtleitung, die Seinen Propheten übermittelt wurden und die sie nicht selbst hätten hervorbringen können.", "ar": "الوحي في اللغة الإعلام الخفي السريع، وفي العقيدة كلام الله وهدايته إلى أنبيائه مما لا يستطيعون الإتيان به من عند أنفسهم."}
+        },
+        {
+          "verse": "42:51",
+          "check": "from behind a partition",
+          "title": {"en": "Three ways", "de": "Drei Wege", "ar": "ثلاث طرق"},
+          "body": {"en": "Inspiration, speech from behind a veil, or an angel sent with the message: the verse names the ways Allah speaks to humans.", "de": "Eingebung, Rede hinter einem Vorhang oder ein mit der Botschaft gesandter Engel: Der Vers nennt die Wege, auf denen Allah zu Menschen spricht.", "ar": "الإلهام، أو الكلام خلف ستار، أو إرسال ملك بالرسالة: تذكر الآية طرق تكليم الله للبشر."}
+        },
+        {
+          "verse": "16:68",
+          "check": "inspired to the bee",
+          "title": {"en": "A wider meaning of the word", "de": "Eine weitere Bedeutung des Wortes", "ar": "معنى أوسع للكلمة"},
+          "body": {"en": "The same word describes the instinct given to the bee. Scholars distinguish this from the revelation given to prophets.", "de": "Dasselbe Wort beschreibt den Instinkt, der der Biene gegeben wurde. Gelehrte unterscheiden dies von der Offenbarung an Propheten.", "ar": "تُستعمل الكلمة نفسها لما أُلهمته النحلة، ويفرّق العلماء بين هذا وبين وحي النبوة."}
+        },
+        {
+          "verse": "28:7",
+          "check": "inspired to the mother of Moses",
+          "title": {"en": "Guidance placed in a heart", "de": "Ins Herz gelegte Führung", "ar": "هدايةٌ أُلقيت في القلب"},
+          "body": {"en": "Musa's mother was inspired how to save her child. Most scholars do not count her among the prophets; they call this ilham, inspiration.", "de": "Musas Mutter wurde eingegeben, wie sie ihr Kind retten konnte. Die meisten Gelehrten zählen sie nicht zu den Propheten; sie nennen dies Ilham, Eingebung.", "ar": "أُلهمت أم موسى كيف تنجّي طفلها، ولا يعدّها أكثر العلماء من الأنبياء، ويسمّون ذلك إلهامًا."}
+        },
+        {
+          "verse": "53:3-4",
+          "check": "It is not but a revelation revealed",
+          "title": {"en": "Not from his own desire", "de": "Nicht aus eigenem Begehren", "ar": "ليس من عنده"},
+          "body": {"en": "The Quran insists that what the Prophet conveyed did not come from his own wishes. Its source is Allah.", "de": "Der Koran betont, dass das, was der Prophet übermittelte, nicht aus seinen eigenen Wünschen kam. Seine Quelle ist Allah.", "ar": "يؤكد القرآن أن ما بلّغه النبي ﷺ لم يصدر عن رغبته، بل مصدره الله."}
+        },
+        {
+          "verse": "26:193-194",
+          "check": "The Trustworthy Spirit",
+          "title": {"en": "Brought down to the heart", "de": "Ins Herz herabgebracht", "ar": "إلى قلب النبي ﷺ"},
+          "body": {"en": "Jibril, called the trustworthy spirit, brought the Quran to the Prophet's heart. The message was kept safe at every step.", "de": "Dschibril, der vertrauenswürdige Geist genannt, brachte den Koran ins Herz des Propheten. Die Botschaft war auf jeder Stufe geschützt.", "ar": "حمل جبريل الأمين القرآن إلى قلب النبي ﷺ، فحُفظت الرسالة في كل مرحلة."}
+        },
+        {
+          "title": {"en": "Our part", "de": "Unser Teil", "ar": "دورنا"},
+          "list": {
+            "en": ["Read some of the revelation every day", "Learn it from trustworthy teachers", "Act on what you understand", "Thank Allah that He chose to speak to us"],
+            "de": ["Lesen Sie jeden Tag etwas aus der Offenbarung", "Lernen Sie sie bei vertrauenswürdigen Lehrern", "Handeln Sie nach dem, was Sie verstehen", "Danken Sie Allah, dass Er zu uns sprechen wollte"],
+            "ar": ["اقرأ شيئًا من الوحي كل يوم", "تعلّمه على أيدي الثقات", "اعمل بما فهمت", "احمد الله أن خاطبنا بكلامه"]
+          }
+        }
+      ],
+      "sources": [
+        {"label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim (Arabic), on 28:7", "url": "https://quran.com/28:7/tafsirs/ar-tafsir-ibn-kathir"}
+      ]
+    },
+    {
+      "id": "aqidah-basics-14-miracles",
+      "tradition": "all",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": {"en": "Foundations of faith · 14", "de": "Grundlagen des Glaubens · 14", "ar": "أسس الإيمان · ١٤"},
+        "title": {"en": "The miracles of the prophets", "de": "Die Wunder der Propheten", "ar": "معجزات الأنبياء"},
+        "sub": {"en": "Signs that confirmed the messengers, and the one that remains", "de": "Zeichen, die die Gesandten bestätigten, und das eine, das bleibt", "ar": "آياتٌ صدّقت الرسل، وآيةٌ باقية"},
+        "arabic": "المُعْجِزَات"
+      },
+      "slides": [
+        {
+          "title": {"en": "Signs, not magic", "de": "Zeichen, keine Magie", "ar": "آياتٌ لا سحر"},
+          "arabic": "المعجزة",
+          "body": {"en": "Scholars call a prophet's miracle mu'jizah: an extraordinary sign from Allah that confirms a messenger and cannot be matched. The Quran calls them ayat, signs, and always attributes them to Allah.", "de": "Gelehrte nennen das Wunder eines Propheten Mu'dschiza: ein außergewöhnliches Zeichen Allahs, das einen Gesandten bestätigt und nicht nachgeahmt werden kann. Der Koran nennt sie Ayat, Zeichen, und schreibt sie stets Allah zu.", "ar": "يسمي العلماء آية النبي معجزة: أمرٌ خارق من الله يصدّق رسوله ولا يُعارَض، ويسميها القرآن آيات وينسبها دائمًا إلى الله."}
+        },
+        {
+          "verse": "21:69",
+          "check": "be coolness and safety",
+          "title": {"en": "Ibrahim and the fire", "de": "Ibrahim und das Feuer", "ar": "إبراهيم والنار"},
+          "body": {"en": "Fire that should have burned became cool and safe at Allah's command. The created thing obeys its Creator.", "de": "Feuer, das hätte verbrennen sollen, wurde auf Allahs Befehl kühl und sicher. Das Geschaffene gehorcht seinem Schöpfer.", "ar": "صارت النار التي من شأنها الإحراق باردةً آمنة بأمر الله، فالمخلوق يطيع خالقه."}
+        },
+        {
+          "verse": "7:107-108",
+          "check": "serpent",
+          "title": {"en": "Musa's staff and hand", "de": "Musas Stab und Hand", "ar": "عصا موسى ويده"},
+          "body": {"en": "Before Pharaoh's court, full of magicians, Musa was given signs no magic could match.", "de": "Vor Pharaos Hof voller Zauberer erhielt Musa Zeichen, an die keine Zauberei heranreichte.", "ar": "أمام بلاط فرعون المليء بالسحرة أُعطي موسى آياتٍ لا يبلغها سحر."}
+        },
+        {
+          "verse": "19:29-30",
+          "check": "in the cradle",
+          "title": {"en": "'Isa speaks from the cradle", "de": "'Isa spricht aus der Wiege", "ar": "عيسى يتكلم في المهد"},
+          "body": {"en": "When people doubted his mother, the infant 'Isa spoke and declared himself a servant of Allah. His very first words were about worship.", "de": "Als man an seiner Mutter zweifelte, sprach der Säugling 'Isa und erklärte sich zum Diener Allahs. Seine allerersten Worte handelten von Anbetung.", "ar": "لما شكّ الناس في أمه تكلّم عيسى رضيعًا وأعلن أنه عبد الله، فكانت أولى كلماته عن العبودية."}
+        },
+        {
+          "verse": "17:1",
+          "check": "by night from al-Masjid al-Ḥarām",
+          "title": {"en": "The Night Journey", "de": "Die nächtliche Reise", "ar": "الإسراء"},
+          "body": {"en": "Taken by night from Makkah to Jerusalem, the Prophet was shown signs of his Lord. The surah opens by glorifying Allah, not the traveller.", "de": "Nachts von Mekka nach Jerusalem gebracht, wurden dem Propheten Zeichen seines Herrn gezeigt. Die Sure beginnt mit dem Lob Allahs, nicht des Reisenden.", "ar": "انتقل النبي ﷺ في ليلة من مكة إلى بيت المقدس وشاهد عجائب من صنع الله، وتبدأ السورة بتسبيح الله لا بمدح المسافر."}
+        },
+        {
+          "verse": "29:51",
+          "check": "is it not sufficient for them",
+          "title": {"en": "The lasting miracle", "de": "Das bleibende Wunder", "ar": "المعجزة الباقية"},
+          "body": {"en": "Earlier miracles were seen by those present. The Quran remains for every generation to read and examine.", "de": "Frühere Wunder sahen die Anwesenden. Der Koran bleibt für jede Generation zum Lesen und Prüfen.", "ar": "رأى المعجزات السابقة من حضرها، أما القرآن فباقٍ لكل جيل يقرؤه ويتدبره."}
+        },
+        {
+          "title": {"en": "Fitting their time", "de": "Passend zu ihrer Zeit", "ar": "تناسب زمانها"},
+          "body": {"en": "Many scholars note that the miracles matched what each age valued most: Musa among magicians, 'Isa among healers, and Muhammad among masters of language.", "de": "Viele Gelehrte bemerken, dass die Wunder dem entsprachen, was jedes Zeitalter am meisten schätzte: Musa unter Zauberern, 'Isa unter Heilern und Muhammad unter Meistern der Sprache.", "ar": "يلاحظ كثير من العلماء أن المعجزات جاءت بما برع فيه أهل كل زمان: موسى بين السحرة، وعيسى بين الأطباء، ومحمد ﷺ بين أرباب البيان."}
+        },
+        {
+          "title": {"en": "What miracles teach", "de": "Was Wunder lehren", "ar": "ما تعلّمه المعجزات"},
+          "list": {
+            "en": ["Every miracle points to Allah, not to the prophet", "Nature follows its Creator's command", "The Quran is a sign we can still examine", "Faith also grows by reflecting on everyday signs"],
+            "de": ["Jedes Wunder weist auf Allah, nicht auf den Propheten", "Die Natur folgt dem Befehl ihres Schöpfers", "Der Koran ist ein Zeichen, das wir noch prüfen können", "Glaube wächst auch durch Nachdenken über alltägliche Zeichen"],
+            "ar": ["كل معجزة تدل على الله لا على النبي", "الكون يجري بأمر خالقه", "القرآن آية ما زلنا نتدبرها", "الإيمان ينمو أيضًا بالتفكر في الآيات اليومية"]
+          }
+        }
+      ],
+      "sources": [
+        {"label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 3:49", "url": "https://quran.com/3:49/tafsirs/en-tafisr-ibn-kathir"}
+      ]
+    },
+    {
+      "id": "aqidah-basics-15-final-prophet",
+      "tradition": "all",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": {"en": "Foundations of faith · 15", "de": "Grundlagen des Glaubens · 15", "ar": "أسس الإيمان · ١٥"},
+        "title": {"en": "The last of the prophets", "de": "Der letzte der Propheten", "ar": "آخر الأنبياء"},
+        "sub": {"en": "Why prophethood ended with Muhammad, and what that means for us", "de": "Warum das Prophetentum mit Muhammad endete und was das für uns bedeutet", "ar": "لماذا خُتمت النبوة بمحمد ﷺ، وماذا يعني ذلك لنا"},
+        "arabic": "خَتْمُ النُّبُوَّة"
+      },
+      "slides": [
+        {
+          "title": {"en": "A message for all time", "de": "Eine Botschaft für alle Zeit", "ar": "رسالةٌ لكل زمان"},
+          "arabic": "ختم النبوة",
+          "body": {"en": "Muslims believe that prophethood ended with Muhammad. After him comes no new prophet and no new revealed law; the Quran and his teaching remain until the end of time.", "de": "Muslime glauben, dass das Prophetentum mit Muhammad endete. Nach ihm kommt kein neuer Prophet und kein neues offenbartes Gesetz; der Koran und seine Lehre bleiben bis zum Ende der Zeit.", "ar": "يؤمن المسلمون بأن النبوة خُتمت بمحمد ﷺ، فلا نبي بعده ولا شريعة جديدة، ويبقى القرآن وسنته إلى آخر الزمان."}
+        },
+        {
+          "verse": "33:40",
+          "check": "seal",
+          "title": {"en": "The seal of the prophets", "de": "Das Siegel der Propheten", "ar": "ختم الأنبياء"},
+          "body": {"en": "A seal closes and confirms. The verse names Muhammad the Messenger of Allah and the last of the prophets.", "de": "Ein Siegel schließt ab und bestätigt. Der Vers nennt Muhammad den Gesandten Allahs und den letzten der Propheten.", "ar": "الخاتم يُغلق ويُصدّق، والآية تصف محمدًا ﷺ بأنه رسول الله وآخر الأنبياء."}
+        },
+        {
+          "verse": "3:81",
+          "check": "the covenant of the prophets",
+          "title": {"en": "A covenant of the prophets", "de": "Ein Bund der Propheten", "ar": "عهد الأنبياء"},
+          "body": {"en": "Allah took a pledge from the prophets to believe in and support a messenger who would confirm them. Many commentators see Muhammad as its fulfilment.", "de": "Allah nahm den Propheten das Versprechen ab, an einen Gesandten zu glauben und ihn zu unterstützen, der sie bestätigen würde. Viele Kommentatoren sehen in Muhammad dessen Erfüllung.", "ar": "أخذ الله عهدًا على الأنبياء أن يؤمنوا برسولٍ يصدّقهم وأن ينصروه، ويرى كثير من المفسرين أن محمدًا ﷺ هو المقصود."}
+        },
+        {
+          "verse": "61:6",
+          "check": "whose name is",
+          "title": {"en": "Good news from 'Isa", "de": "Frohe Botschaft von 'Isa", "ar": "بشارة عيسى"},
+          "body": {"en": "'Isa announced a messenger to come after him, called Ahmad, a name of the Prophet Muhammad.", "de": "'Isa kündigte einen Gesandten an, der nach ihm kommen und Ahmad heißen würde, ein Name des Propheten Muhammad.", "ar": "بشّر عيسى برسولٍ بعده يُسمّى أحمد، وهو من أسماء النبي محمد ﷺ."}
+        },
+        {
+          "verse": "34:28",
+          "check": "comprehensively to mankind",
+          "title": {"en": "Sent to all people", "de": "Zu allen Menschen gesandt", "ar": "إلى البشر جميعًا"},
+          "body": {"en": "Earlier prophets were sent to their own people. The final Messenger was sent to all humanity.", "de": "Frühere Propheten wurden zu ihrem eigenen Volk gesandt. Der letzte Gesandte wurde zur ganzen Menschheit gesandt.", "ar": "بُعث الأنبياء قبله إلى أقوامهم، وبُعث الرسول الخاتم إلى البشرية كلها."}
+        },
+        {
+          "verse": "7:158",
+          "check": "the Messenger of Allāh to you all",
+          "title": {"en": "To you all", "de": "An alle Menschen", "ar": "رسالةٌ للجميع"},
+          "body": {"en": "The Prophet is told to address all humanity directly, and to invite them to follow him so that they may be guided.", "de": "Der Prophet soll die ganze Menschheit direkt ansprechen und sie einladen, ihm zu folgen, damit sie rechtgeleitet werden.", "ar": "يُؤمر النبي ﷺ أن يخاطب البشرية كلها مباشرة، ويدعوها إلى اتّباعه لتهتدي."}
+        },
+        {
+          "title": {"en": "Agreed across the traditions", "de": "Über die Traditionen hinweg einig", "ar": "محلّ اتفاق"},
+          "body": {"en": "Sunni and Shia Muslims both hold that no prophet comes after Muhammad. Shia belief in the Imams concerns leadership and guidance after him, not new prophethood or revelation.", "de": "Sunnitische und schiitische Muslime vertreten gleichermaßen, dass nach Muhammad kein Prophet kommt. Der schiitische Glaube an die Imame betrifft Führung und Leitung nach ihm, nicht neues Prophetentum oder neue Offenbarung.", "ar": "يتفق المسلمون سنةً وشيعةً على أنه لا نبي بعد محمد ﷺ، وعقيدة الشيعة في الأئمة تتعلق بالإمامة والهداية بعده لا بنبوةٍ أو وحيٍ جديد."}
+        },
+        {
+          "title": {"en": "Living with the final message", "de": "Mit der letzten Botschaft leben", "ar": "الحياة مع الرسالة الخاتمة"},
+          "list": {
+            "en": ["Learn the Sunnah as the living explanation of the Quran", "Be wary of anyone claiming new revelation", "Share the message with care and good manners", "Send blessings on the last Messenger"],
+            "de": ["Lernen Sie die Sunna als lebendige Erklärung des Korans", "Seien Sie vorsichtig bei jedem, der neue Offenbarung beansprucht", "Geben Sie die Botschaft mit Sorgfalt und gutem Benehmen weiter", "Sprechen Sie Segenswünsche über den letzten Gesandten"],
+            "ar": ["تعلّم السنة بيانًا حيًّا للقرآن", "احذر من يدّعي وحيًا جديدًا", "بلّغ الرسالة بحكمة وأدب", "صلِّ على الرسول الخاتم"]
+          }
+        }
+      ],
+      "sources": [
+        {"label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 3:81", "url": "https://quran.com/3:81/tafsirs/en-tafisr-ibn-kathir"}
+      ]
+    },
+    {
+      "id": "aqidah-basics-16-choice-and-responsibility",
+      "tradition": "all",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": {"en": "Foundations of faith · 16", "de": "Grundlagen des Glaubens · 16", "ar": "أسس الإيمان · ١٦"},
+        "title": {"en": "Choice and responsibility", "de": "Wahl und Verantwortung", "ar": "الاختيار والمسؤولية"},
+        "sub": {"en": "How the Quran holds together Allah's will and our free choice", "de": "Wie der Koran Allahs Willen und unsere freie Wahl zusammenhält", "ar": "كيف يجمع القرآن بين مشيئة الله واختيار الإنسان"},
+        "arabic": "المَشِيئَةُ وَالاخْتِيَار"
+      },
+      "slides": [
+        {
+          "title": {"en": "Two truths together", "de": "Zwei Wahrheiten zugleich", "ar": "حقيقتان معًا"},
+          "arabic": "القدر والاختيار",
+          "body": {"en": "Belief in the decree does not cancel human choice. The Quran holds both: Allah's will covers everything, and every person chooses and is responsible for the choice.", "de": "Der Glaube an die Vorherbestimmung hebt die menschliche Wahl nicht auf. Der Koran hält beides fest: Allahs Wille umfasst alles, und jeder Mensch wählt und ist für seine Wahl verantwortlich.", "ar": "الإيمان بالقدر لا يُلغي اختيار الإنسان، والقرآن يجمع الأمرين: مشيئة الله شاملة، وكل إنسان يختار ويُسأل عن اختياره."}
+        },
+        {
+          "verse": "76:3",
+          "check": "be he grateful or be he ungrateful",
+          "title": {"en": "The way is shown", "de": "Der Weg wird gezeigt", "ar": "الطريق مبيَّن"},
+          "body": {"en": "Guidance is offered to every human being. Whether we respond with gratitude or not is our part.", "de": "Rechtleitung wird jedem Menschen angeboten. Ob wir mit Dankbarkeit antworten oder nicht, ist unser Teil.", "ar": "عُرضت الهداية على كل إنسان، وأن نقابلها بالشكر أو بغيره هو دورنا."}
+        },
+        {
+          "verse": "18:29",
+          "check": "whoever wills - let him believe",
+          "title": {"en": "Free to choose", "de": "Frei zu wählen", "ar": "حرية الاختيار"},
+          "body": {"en": "Faith cannot be forced. The truth is made clear, and each person decides, knowing that choices have consequences.", "de": "Glaube lässt sich nicht erzwingen. Die Wahrheit wird klargemacht, und jeder entscheidet, im Wissen, dass Entscheidungen Folgen haben.", "ar": "الإيمان لا يُفرض بالإكراه، يُبيَّن الحق ثم يقرر كل إنسان، عالمًا أن للاختيار عواقبه."}
+        },
+        {
+          "verse": "6:148",
+          "check": "If Allāh had willed, we would not have associated",
+          "title": {"en": "Not an excuse", "de": "Keine Ausrede", "ar": "ليس عذرًا"},
+          "body": {"en": "Those who blamed their idolatry on Allah's will are answered with a question: what knowledge do you have? The decree is no excuse for wrong.", "de": "Wer seinen Götzendienst auf Allahs Willen schob, erhält eine Gegenfrage: Welches Wissen habt ihr? Die Vorherbestimmung ist keine Ausrede für Unrecht.", "ar": "من احتجّوا بمشيئة الله على شركهم طُولبوا بالدليل على دعواهم، فالقدر ليس عذرًا للخطأ."}
+        },
+        {
+          "verse": "4:79",
+          "check": "is from yourself",
+          "title": {"en": "Good from Him, harm from ourselves", "de": "Gutes von Ihm, Schaden von uns", "ar": "الخير منه والسوء من أنفسنا"},
+          "body": {"en": "Commentators explain: every good is a gift from Allah, while the harm we bring on ourselves comes through our own deeds.", "de": "Kommentatoren erklären: Alles Gute ist ein Geschenk Allahs, während der Schaden, den wir uns zuziehen, durch unsere eigenen Taten kommt.", "ar": "يبيّن المفسرون أن كل خير فضلٌ من الله، وأن ما نجلبه على أنفسنا من ضرر سببه أعمالنا."}
+        },
+        {
+          "verse": "37:96",
+          "check": "created you and that which you do",
+          "title": {"en": "A verse theologians discuss", "de": "Ein Vers, den Theologen erörtern", "ar": "آيةٌ يتناولها المتكلمون"},
+          "body": {"en": "Some read it as the idols people carve, others as all human deeds. Ibn Kathir sees both readings as linked; other schools draw other conclusions.", "de": "Manche lesen ihn auf die Götzen bezogen, die Menschen schnitzen, andere auf alle menschlichen Taten. Ibn Kathir hält beide Lesarten für untrennbar; andere Schulen ziehen andere Schlüsse.", "ar": "يحملها بعضهم على الأصنام التي ينحتها الناس، وآخرون على أعمال العباد كلها، ويرى ابن كثير القولين متلازمين، وللمذاهب الأخرى استنتاجات أخرى."}
+        },
+        {
+          "title": {"en": "Why we are still responsible", "de": "Warum wir dennoch verantwortlich sind", "ar": "لماذا نبقى مسؤولين"},
+          "body": {"en": "We do not know what has been decreed until it happens, so we act on what we do know: Allah's commands and the choices in front of us. Using the decree to excuse a sin is rejected by the major schools.", "de": "Was bestimmt ist, wissen wir erst, wenn es geschieht; also handeln wir nach dem, was wir wissen: Allahs Gebote und die Entscheidungen vor uns. Die Vorherbestimmung als Entschuldigung für eine Sünde zu benutzen, lehnen die großen Schulen ab.", "ar": "لا نعلم المقدَّر حتى يقع، فنعمل بما نعلمه: أوامر الله والخيارات التي أمامنا، والاحتجاج بالقدر على المعصية مرفوض عند المذاهب الكبرى."}
+        },
+        {
+          "title": {"en": "In practice", "de": "In der Praxis", "ar": "في التطبيق"},
+          "list": {
+            "en": ["Make your choice, then trust Allah with the result", "Own your mistakes instead of blaming fate", "Thank Allah for every good choice you made", "Ask Him for guidance before decisions"],
+            "de": ["Treffen Sie Ihre Wahl und vertrauen Sie Allah das Ergebnis an", "Stehen Sie zu Fehlern, statt dem Schicksal die Schuld zu geben", "Danken Sie Allah für jede gute Entscheidung", "Bitten Sie Ihn vor Entscheidungen um Rechtleitung"],
+            "ar": ["اختر ثم توكّل على الله في النتيجة", "تحمّل أخطاءك ولا تلُم القدر", "احمد الله على كل اختيار صائب", "اسأله الهداية قبل كل قرار"]
+          }
+        }
+      ],
+      "sources": [
+        {"label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 4:79", "url": "https://quran.com/4:79/tafsirs/en-tafisr-ibn-kathir"},
+        {"label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 37:96", "url": "https://quran.com/37:96/tafsirs/en-tafisr-ibn-kathir"}
+      ]
+    },
+    {
+      "id": "aqidah-basics-17-intercession",
+      "tradition": "all",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": {"en": "Foundations of faith · 17", "de": "Grundlagen des Glaubens · 17", "ar": "أسس الإيمان · ١٧"},
+        "title": {"en": "Intercession on the Last Day", "de": "Fürsprache am Letzten Tag", "ar": "الشفاعة يوم القيامة"},
+        "sub": {"en": "What the Quran affirms, what it rules out, and where the schools differ", "de": "Was der Koran bejaht, was er ausschließt und wo die Schulen sich unterscheiden", "ar": "ما يثبته القرآن، وما ينفيه، وأين تختلف المدارس"},
+        "arabic": "الشَّفَاعَة"
+      },
+      "slides": [
+        {
+          "title": {"en": "What shafa'ah means", "de": "Was Schafa'a bedeutet", "ar": "معنى الشفاعة"},
+          "arabic": "الشفاعة",
+          "body": {"en": "Intercession means asking on behalf of another. Muslims affirm that on the Day of Judgement some will intercede for others, but only by Allah's permission and for those He accepts.", "de": "Fürsprache bedeutet, für einen anderen zu bitten. Muslime bejahen, dass am Tag des Gerichts manche für andere eintreten werden, aber nur mit Allahs Erlaubnis und für die, die Er annimmt.", "ar": "الشفاعة سؤال الخير للغير، ويؤمن المسلمون بأن بعض الناس يشفعون لغيرهم يوم القيامة، لكن بإذن الله ولمن يرضاه فقط."}
+        },
+        {
+          "verse": "39:44",
+          "check": "intercession entirely",
+          "title": {"en": "It all belongs to Allah", "de": "Sie gehört ganz Allah", "ar": "الشفاعة ملكٌ لله"},
+          "body": {"en": "No one owns intercession. It is His alone to grant.", "de": "Niemand besitzt die Fürsprache. Sie zu gewähren, steht allein Ihm zu.", "ar": "لا يملك أحدٌ الشفاعة، فمنحها إليه وحده."}
+        },
+        {
+          "verse": "20:109",
+          "check": "the Most Merciful has given permission",
+          "title": {"en": "Only with permission", "de": "Nur mit Erlaubnis", "ar": "لا تكون إلا بإذن"},
+          "body": {"en": "On that Day, intercession helps only when the Most Merciful permits it and accepts what is said.", "de": "An jenem Tag nützt Fürsprache nur, wenn der Allerbarmer sie erlaubt und das Gesagte annimmt.", "ar": "يوم القيامة لا قيمة لشفاعة لم يأذن بها الرحمن ولم يقبل كلام صاحبها."}
+        },
+        {
+          "verse": "21:28",
+          "check": "except on behalf of one whom He approves",
+          "title": {"en": "Only for those He approves", "de": "Nur für die, die Er annimmt", "ar": "لمن رضي الله عنه"},
+          "body": {"en": "Even the angels intercede only for those Allah is pleased with. Intercession is not a loophole.", "de": "Selbst die Engel treten nur für die ein, mit denen Allah zufrieden ist. Fürsprache ist kein Schlupfloch.", "ar": "حتى الملائكة لا تشفع إلا لمن رضي الله عنه، فالشفاعة ليست ثغرة."}
+        },
+        {
+          "verse": "2:48",
+          "check": "nor will intercession be accepted",
+          "title": {"en": "No substitute for faith", "de": "Kein Ersatz für den Glauben", "ar": "ليست بديلًا عن الإيمان"},
+          "body": {"en": "Without faith and without Allah's permission, no intercession helps. Commentators read this together with the verses that allow it by His leave.", "de": "Ohne Glauben und ohne Allahs Erlaubnis hilft keine Fürsprache. Kommentatoren lesen dies zusammen mit den Versen, die sie mit Seiner Erlaubnis zulassen.", "ar": "بلا إيمان ولا إذن من الله لا تنفع شفاعة، ويقرأ المفسرون هذه الآية مع الآيات التي تثبتها بإذنه."}
+        },
+        {
+          "title": {"en": "Who intercedes?", "de": "Wer tritt ein?", "ar": "من يشفع؟"},
+          "body": {"en": "Muslims widely affirm the intercession of the Prophet on the Day of Judgement. Sunni sources also mention angels, prophets and the righteous; Shia sources give a special place to the Ahl al-Bayt. Schools differ on related questions about this life.", "de": "Muslime bejahen weithin die Fürsprache des Propheten am Tag des Gerichts. Sunnitische Quellen nennen auch Engel, Propheten und Rechtschaffene; schiitische Quellen geben den Ahl al-Bait einen besonderen Platz. Über verwandte Fragen im Diesseits sind die Schulen uneins.", "ar": "يُثبت المسلمون عمومًا شفاعة النبي ﷺ يوم القيامة، وتذكر مصادر أهل السنة شفاعة الملائكة والأنبياء والصالحين، وتولي مصادر الشيعة أهل البيت مكانة خاصة، وتختلف المذاهب في مسائل متصلة بها في الدنيا."}
+        },
+        {
+          "title": {"en": "Hoping for intercession", "de": "Auf Fürsprache hoffen", "ar": "رجاء الشفاعة"},
+          "list": {
+            "en": ["Hold firmly to tawhid", "Send blessings on the Prophet often", "Follow the Sunnah and love his family", "Rely on Allah's mercy, not on shortcuts"],
+            "de": ["Halten Sie fest am Tauhid", "Sprechen Sie oft Segenswünsche über den Propheten", "Folgen Sie der Sunna und lieben Sie seine Familie", "Verlassen Sie sich auf Allahs Barmherzigkeit, nicht auf Abkürzungen"],
+            "ar": ["تمسّك بالتوحيد", "أكثر من الصلاة على النبي ﷺ", "اتبع السنة وأحبّ آل بيته", "اعتمد على رحمة الله لا على الطرق المختصرة"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "aqidah-basics-18-companions-and-ahl-al-bayt",
+      "tradition": "all",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": {"en": "Foundations of faith · 18", "de": "Grundlagen des Glaubens · 18", "ar": "أسس الإيمان · ١٨"},
+        "title": {"en": "The Companions and the Ahl al-Bayt", "de": "Die Gefährten und die Ahl al-Bait", "ar": "الصحابة وأهل البيت"},
+        "sub": {"en": "Two circles around the Prophet, honoured by Muslims of every tradition", "de": "Zwei Kreise um den Propheten, geehrt von Muslimen aller Traditionen", "ar": "دائرتان حول النبي ﷺ يجلّهما المسلمون في كل مذاهبهم"},
+        "arabic": "الصَّحَابَةُ وَأَهْلُ البَيْت"
+      },
+      "slides": [
+        {
+          "title": {"en": "Two circles around the Prophet", "de": "Zwei Kreise um den Propheten", "ar": "دائرتان حول النبي ﷺ"},
+          "arabic": "الصحابة · آل البيت",
+          "body": {"en": "Around the Prophet were his Companions, who believed in him and stood by him, and his household, the Ahl al-Bayt. Muslims of every tradition honour both, while differing in some assessments.", "de": "Um den Propheten standen seine Gefährten, die an ihn glaubten und zu ihm hielten, und seine Familie, die Ahl al-Bait. Muslime aller Traditionen ehren beide, unterscheiden sich aber in manchen Bewertungen.", "ar": "كان حول النبي ﷺ أصحابه الذين آمنوا به ونصروه، وأهل بيته، ويجلّ المسلمون في كل مذاهبهم الفريقين مع اختلافٍ في بعض التقييمات."}
+        },
+        {
+          "verse": "9:100",
+          "check": "the first forerunners",
+          "title": {"en": "The first believers", "de": "Die ersten Gläubigen", "ar": "الأوائل في الإيمان"},
+          "body": {"en": "Emigrants, helpers and those who followed them in excellence are promised Allah's good pleasure. They carried the message to us.", "de": "Auswanderern, Helfern und denen, die ihnen in Vortrefflichkeit folgten, wird Allahs Wohlgefallen verheißen. Sie trugen die Botschaft zu uns.", "ar": "وُعد المهاجرون والأنصار ومن سار على نهجهم في الإحسان برضا الله، وهم الذين حملوا الرسالة إلينا."}
+        },
+        {
+          "verse": "59:8",
+          "check": "the poor emigrants",
+          "title": {"en": "Those who left everything", "de": "Die alles zurückließen", "ar": "الذين تركوا كل شيء"},
+          "body": {"en": "The emigrants lost homes and wealth for Allah and His Messenger. The Quran calls them truthful.", "de": "Die Auswanderer verloren Heim und Besitz für Allah und Seinen Gesandten. Der Koran nennt sie wahrhaftig.", "ar": "فقد المهاجرون ديارهم وأموالهم في سبيل الله ورسوله، ووصفهم القرآن بالصدق."}
+        },
+        {
+          "verse": "33:33",
+          "check": "people of the [Prophet's] household",
+          "title": {"en": "The people of the house", "de": "Die Leute des Hauses", "ar": "أهل البيت"},
+          "body": {"en": "The verse speaks of Allah's will to purify the Prophet's household. Who exactly is meant is discussed between and within the traditions.", "de": "Der Vers spricht von Allahs Willen, die Familie des Propheten zu reinigen. Wer genau gemeint ist, wird zwischen und innerhalb der Traditionen erörtert.", "ar": "تتحدث الآية عن إرادة الله تطهير بيت النبي ﷺ، ومن المقصود تحديدًا محلّ نقاشٍ بين المذاهب وداخلها."}
+        },
+        {
+          "verse": "42:23",
+          "check": "kinship",
+          "title": {"en": "Love for the near kin", "de": "Liebe zu den Nahestehenden", "ar": "محبة ذوي القربى"},
+          "body": {"en": "Commentators differ. Shia commentators, and some early authorities in Sunni works such as Sa'id ibn Jubayr, apply it to love for the Prophet's family.", "de": "Die Kommentatoren deuten den Vers unterschiedlich. Schiitische Kommentatoren und einige frühe Autoritäten in sunnitischen Werken wie Sa'id ibn Dschubair beziehen ihn auf die Liebe zur Familie des Propheten.", "ar": "اختلف المفسرون في معناها، ويحملها مفسرو الشيعة وبعض السلف في كتب أهل السنة كسعيد بن جبير على محبة آل بيت النبي ﷺ."}
+        },
+        {
+          "title": {"en": "Different emphases", "de": "Unterschiedliche Schwerpunkte", "ar": "اختلاف في الإبراز"},
+          "body": {"en": "Sunni Muslims honour the Companions as a generation praised by Allah and love the Prophet's family. Shia Muslims give a special place to the Ahl al-Bayt and the Imams and assess Companions individually. Each can speak of the other with respect.", "de": "Sunnitische Muslime ehren die Gefährten als eine von Allah gelobte Generation und lieben die Familie des Propheten. Schiitische Muslime geben den Ahl al-Bait und den Imamen einen besonderen Platz und bewerten Gefährten einzeln. Beide können respektvoll voneinander sprechen.", "ar": "يُجلّ أهل السنة الصحابة جيلًا أثنى الله عليه ويحبون آل البيت، ويخصّ الشيعة أهل البيت والأئمة بمكانة خاصة ويقيّمون الصحابة فردًا فردًا، ويمكن لكلٍّ أن يتحدث عن الآخر باحترام."}
+        },
+        {
+          "title": {"en": "Speaking with adab", "de": "Mit Adab sprechen", "ar": "الحديث بأدب"},
+          "list": {
+            "en": ["Learn their lives from reliable sources", "Mention them with respect and blessings", "Never insult anyone the Prophet loved", "Focus on what you can learn from them"],
+            "de": ["Lernen Sie ihr Leben aus verlässlichen Quellen", "Erwähnen Sie sie mit Achtung und Segenswünschen", "Beleidigen Sie niemals jemanden, den der Prophet liebte", "Konzentrieren Sie sich darauf, was Sie von ihnen lernen können"],
+            "ar": ["تعلّم سيرهم من مصادر موثوقة", "اذكرهم بالاحترام والترضّي والسلام", "لا تُسِئ إلى أحدٍ أحبّه النبي ﷺ", "ركّز على ما تتعلمه منهم"]
+          }
+        }
+      ],
+      "sources": [
+        {"label": "Sahih Muslim, Book of the Merits of the Companions"},
+        {"label": "Muhammad Husayn al-Tabataba'i, al-Mizan fi Tafsir al-Qur'an, on 33:33 and 42:23"},
+        {"label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 33:33", "url": "https://quran.com/33:33/tafsirs/en-tafisr-ibn-kathir"},
+        {"label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 42:23", "url": "https://quran.com/42:23/tafsirs/en-tafisr-ibn-kathir"}
+      ]
+    },
+    {
+      "id": "aqidah-basics-19-love-of-allah",
+      "tradition": "all",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": {"en": "Foundations of faith · 19", "de": "Grundlagen des Glaubens · 19", "ar": "أسس الإيمان · ١٩"},
+        "title": {"en": "Love of Allah and His Messenger", "de": "Liebe zu Allah und Seinem Gesandten", "ar": "محبة الله ورسوله"},
+        "sub": {"en": "Faith is not only belief and obedience; at its heart is love", "de": "Glaube ist nicht nur Überzeugung und Gehorsam; in seinem Kern ist Liebe", "ar": "ليس الإيمان اعتقادًا وطاعة فحسب، بل في قلبه المحبة"},
+        "arabic": "المَحَبَّة"
+      },
+      "slides": [
+        {
+          "verse": "2:165",
+          "check": "stronger in love for Allāh",
+          "title": {"en": "Stronger in love", "de": "Stärker in der Liebe", "ar": "حبٌّ يعلو كل حب"},
+          "body": {"en": "Believers are described not only by obedience but by love: a love for Allah greater than any other attachment.", "de": "Gläubige werden nicht nur durch Gehorsam beschrieben, sondern durch Liebe: eine Liebe zu Allah, die größer ist als jede andere Bindung.", "ar": "يوصف المؤمنون بالمحبة لا بالطاعة وحدها: حبٌّ لله يفوق كل تعلّق آخر."}
+        },
+        {
+          "verse": "5:54",
+          "check": "who will love Him",
+          "title": {"en": "His love comes first", "de": "Seine Liebe kommt zuerst", "ar": "محبته أولًا"},
+          "body": {"en": "In this verse Allah's love for His servants is mentioned before their love for Him. Our love is an answer.", "de": "In diesem Vers wird Allahs Liebe zu Seinen Dienern vor ihrer Liebe zu Ihm genannt. Unsere Liebe ist eine Antwort.", "ar": "تتقدّم في الآية محبة الله لعباده على محبتهم له، فمحبتنا جواب."}
+        },
+        {
+          "verse": "3:31",
+          "check": "If you should love Allāh, then follow me",
+          "title": {"en": "Love that follows", "de": "Liebe, die folgt", "ar": "محبةٌ تتّبع"},
+          "body": {"en": "Love of Allah shows in following His Messenger, and the reward is His love and forgiveness.", "de": "Liebe zu Allah zeigt sich in der Nachfolge Seines Gesandten, und der Lohn ist Seine Liebe und Vergebung.", "ar": "تظهر محبة الله في اتّباع رسوله، وجزاؤها محبته ومغفرته."}
+        },
+        {
+          "verse": "9:24",
+          "check": "more beloved to you than Allāh and His Messenger",
+          "title": {"en": "Setting priorities", "de": "Prioritäten setzen", "ar": "ترتيب الأولويات"},
+          "body": {"en": "Family, wealth and homes are good things. The verse asks only that they never come before Allah and His Messenger.", "de": "Familie, Besitz und Heim sind gute Dinge. Der Vers verlangt nur, dass sie nie vor Allah und Seinem Gesandten stehen.", "ar": "الأهل والمال والمساكن نِعَم، والآية تطلب فقط ألّا تُقدَّم على الله ورسوله."}
+        },
+        {
+          "verse": "33:6",
+          "check": "more worthy of the believers than themselves",
+          "title": {"en": "Closer than ourselves", "de": "Näher als wir selbst", "ar": "أقرب إلينا من أنفسنا"},
+          "body": {"en": "The believers' bond with the Prophet comes even before their bond with themselves. Love for him answers his care for us.", "de": "Die Bindung der Gläubigen an den Propheten geht sogar ihrer Bindung an sich selbst voran. Die Liebe zu ihm antwortet auf seine Fürsorge für uns.", "ar": "النبي ﷺ أقرب إلى المؤمنين من أنفسهم، ومحبته جوابٌ على رعايته لنا."}
+        },
+        {
+          "title": {"en": "Love in practice", "de": "Liebe im Alltag", "ar": "المحبة في الواقع"},
+          "body": {"en": "Love is not only a feeling. It grows through remembrance, through learning about the beloved and through doing what he loved. Muslims of every tradition express it in salawat and in following the Sunnah.", "de": "Liebe ist nicht nur ein Gefühl. Sie wächst durch Gedenken, durch das Kennenlernen des Geliebten und durch das Tun dessen, was er liebte. Muslime aller Traditionen drücken sie in Salawat und in der Nachfolge der Sunna aus.", "ar": "ليست المحبة شعورًا فقط، بل تنمو بالذكر ومعرفة المحبوب وفعل ما كان يحبه، ويعبّر عنها المسلمون في كل مذاهبهم بالصلاة على النبي ﷺ واتّباع سنته."}
+        },
+        {
+          "title": {"en": "Growing in love", "de": "In der Liebe wachsen", "ar": "لتنمو المحبة"},
+          "list": {
+            "en": ["Read a little of the Seerah each week", "Send blessings on the Prophet daily", "Reflect on Allah's gifts to you", "Love what they loved: prayer, mercy, truth"],
+            "de": ["Lesen Sie jede Woche ein wenig aus der Sira", "Sprechen Sie täglich Segenswünsche über den Propheten", "Denken Sie über Allahs Gaben an Sie nach", "Lieben Sie, was sie liebten: Gebet, Barmherzigkeit, Wahrheit"],
+            "ar": ["اقرأ شيئًا من السيرة كل أسبوع", "صلِّ على النبي ﷺ كل يوم", "تأمّل نِعَم الله عليك", "أحبّ ما يحبّه الله ورسوله: الصلاة والرحمة والصدق"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "aqidah-basics-20-hope-and-fear",
+      "tradition": "all",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": {"en": "Foundations of faith · 20", "de": "Grundlagen des Glaubens · 20", "ar": "أسس الإيمان · ٢٠"},
+        "title": {"en": "Hope and fear: two wings", "de": "Hoffnung und Furcht: zwei Flügel", "ar": "الرجاء والخوف: جناحان"},
+        "sub": {"en": "How a believer's heart stays balanced between mercy and justice", "de": "Wie das Herz eines Gläubigen zwischen Barmherzigkeit und Gerechtigkeit im Gleichgewicht bleibt", "ar": "كيف يتوازن قلب المؤمن بين الرحمة والعدل"},
+        "arabic": "الخَوْفُ وَالرَّجَاء"
+      },
+      "slides": [
+        {
+          "title": {"en": "Two wings of a bird", "de": "Zwei Flügel eines Vogels", "ar": "جناحا طائر"},
+          "arabic": "الخوف والرجاء",
+          "body": {"en": "A believer's heart moves between hope in Allah's mercy and fear of His justice. Ibn al-Qayyim compared them to the two wings of a bird, with love as its head.", "de": "Das Herz eines Gläubigen bewegt sich zwischen Hoffnung auf Allahs Barmherzigkeit und Furcht vor Seiner Gerechtigkeit. Ibn al-Qayyim verglich sie mit den zwei Flügeln eines Vogels, dessen Kopf die Liebe ist.", "ar": "يسير قلب المؤمن بين رجاء رحمة الله وخوف عدله، وشبّههما ابن القيم بجناحي الطائر، ورأسه المحبة."}
+        },
+        {
+          "verse": "15:49-50",
+          "check": "I who am the Forgiving, the Merciful",
+          "title": {"en": "Both in one message", "de": "Beides in einer Botschaft", "ar": "الأمران في رسالة واحدة"},
+          "body": {"en": "The Prophet is told to announce mercy and punishment together, and mercy is mentioned first.", "de": "Der Prophet soll Barmherzigkeit und Strafe zusammen verkünden, und die Barmherzigkeit wird zuerst genannt.", "ar": "يُؤمر النبي ﷺ أن يبلّغ الرحمة والعذاب معًا، وتأتي الرحمة أولًا."}
+        },
+        {
+          "verse": "39:53",
+          "check": "do not despair of the mercy of Allāh",
+          "title": {"en": "Never too late", "de": "Nie zu spät", "ar": "لم يفت الأوان"},
+          "body": {"en": "Addressed to those who have wronged themselves: no sin is greater than Allah's forgiveness for those who return.", "de": "An die gerichtet, die sich selbst Unrecht getan haben: Keine Sünde ist größer als Allahs Vergebung für die, die umkehren.", "ar": "خطابٌ لمن ظلموا أنفسهم: لا ذنب أكبر من مغفرة الله لمن تاب."}
+        },
+        {
+          "verse": "17:57",
+          "check": "hope for His mercy and fear His punishment",
+          "title": {"en": "Even the closest servants", "de": "Selbst die nächsten Diener", "ar": "حتى المقرّبون"},
+          "body": {"en": "Commentators name angels, righteous jinn or 'Isa among those meant here. Even they seek nearness to their Lord with hope and fear.", "de": "Kommentatoren nennen Engel, rechtschaffene Dschinn oder 'Isa unter den hier Gemeinten. Selbst sie suchen die Nähe ihres Herrn, mit Hoffnung und Furcht.", "ar": "يذكر المفسرون أن المراد ملائكة أو جنّ أسلموا أو عيسى، وهم مع ذلك يتقربون إلى ربهم راجين خائفين."}
+        },
+        {
+          "verse": "32:16",
+          "check": "in fear and aspiration",
+          "title": {"en": "Rising at night", "de": "Nachts aufstehen", "ar": "قيام الليل"},
+          "body": {"en": "They leave their beds to call on their Lord with fear and hope, and give from what they have been given.", "de": "Sie verlassen ihre Betten, um ihren Herrn in Furcht und Hoffnung anzurufen, und geben von dem, was ihnen gegeben wurde.", "ar": "يهجرون النوم ليناجوا ربهم بين الخوف والرجاء، وينفقون مما أُعطوا."}
+        },
+        {
+          "title": {"en": "Keeping the balance", "de": "Das Gleichgewicht halten", "ar": "حفظ التوازن"},
+          "body": {"en": "Too much fear can lead to despair; too much hope to carelessness. Many scholars advise leaning toward fear in health and ease, and toward hope in illness and near death.", "de": "Zu viel Furcht kann in Verzweiflung führen, zu viel Hoffnung in Nachlässigkeit. Viele Gelehrte raten, in Gesundheit und Wohlstand mehr zur Furcht zu neigen und in Krankheit und am Lebensende mehr zur Hoffnung.", "ar": "الخوف الزائد قد يقود إلى اليأس، والرجاء الزائد إلى التهاون، وينصح كثير من العلماء بتغليب الخوف في الصحة والرخاء، والرجاء في المرض وعند الموت."}
+        },
+        {
+          "title": {"en": "Daily balance", "de": "Gleichgewicht im Alltag", "ar": "التوازن اليومي"},
+          "list": {
+            "en": ["After a sin: repent at once, hoping to be forgiven", "After a good deed: thank Allah, without pride", "In hardship: expect relief from Him", "Always: call on Him with both fear and hope"],
+            "de": ["Nach einer Sünde: sofort bereuen, in der Hoffnung auf Vergebung", "Nach einer guten Tat: Allah danken, ohne Stolz", "In der Not: Erleichterung von Ihm erwarten", "Immer: Ihn in Furcht und Hoffnung anrufen"],
+            "ar": ["بعد الذنب: تُب فورًا راجيًا المغفرة", "بعد الطاعة: احمد الله بلا عُجب", "في الشدة: ارجُ الفرج منه", "دائمًا: ادعُه خائفًا راجيًا"]
+          }
+        }
+      ],
+      "sources": [
+        {"label": "Ibn al-Qayyim, Madarij al-Salikin"},
+        {"label": "al-Ghazali, Ihya' 'Ulum ad-Din, Book of Fear and Hope"},
+        {"label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim (Arabic), on 17:57", "url": "https://quran.com/17:57/tafsirs/ar-tafsir-ibn-kathir"}
+      ]
     }
   ]
 }

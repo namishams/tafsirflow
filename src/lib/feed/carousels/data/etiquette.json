@@ -1051,6 +1051,1536 @@
           }
         }
       ]
+    },
+    {
+      "id": "etiquette-travel-companions",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": {
+          "en": "Islamic etiquette · 9",
+          "de": "Umgangsformen · 9",
+          "ar": "الآداب الإسلامية · ٩"
+        },
+        "title": {
+          "en": "A good travel companion",
+          "de": "Ein guter Reisegefährte",
+          "ar": "رفيق السفر الصالح"
+        },
+        "sub": {
+          "en": "Sharing, helping and parting well: manners for the road together",
+          "de": "Teilen, helfen und gut Abschied nehmen: Umgangsformen für gemeinsame Wege",
+          "ar": "المشاركة والعون وحسن الوداع: آداب الطريق المشترك"
+        },
+        "arabic": "الصَّاحِبُ فِي السَّفَر"
+      },
+      "slides": [
+        {
+          "verse": "4:36",
+          "check": "the companion at your side",
+          "title": {
+            "en": "The companion at your side",
+            "de": "Der Gefährte an Ihrer Seite",
+            "ar": "الصاحب بالجنب"
+          },
+          "body": {
+            "en": "Among those owed kindness, the Quran names the companion at your side. Many commentators include the fellow traveller.",
+            "de": "Unter denen, denen Güte zusteht, nennt der Koran den Gefährten an Ihrer Seite. Viele Kommentatoren zählen den Reisegefährten dazu.",
+            "ar": "ممن أوصى القرآن بالإحسان إليهم الصاحب بالجنب، ويدخل فيه عند كثير من المفسرين رفيق السفر."
+          }
+        },
+        {
+          "hadith": "muslim:4517",
+          "check": "extra mount",
+          "title": {
+            "en": "Share what you can spare",
+            "de": "Teilen Sie, was Sie entbehren können",
+            "ar": "جُد بما يفيض عنك"
+          },
+          "body": {
+            "en": "On a journey the Prophet urged those with a spare mount or extra provisions to give them to those who had none.",
+            "de": "Auf einer Reise forderte der Prophet dazu auf, ein übriges Reittier oder überschüssigen Proviant denen zu geben, die nichts hatten.",
+            "ar": "حثّ النبي ﷺ في سفرٍ من عنده دابة أو زاد زائد أن يجود به على من لا شيء معه."
+          }
+        },
+        {
+          "hadith": "bukhari:2486",
+          "check": "collect all their remaining food",
+          "title": {
+            "en": "Pooling what you have",
+            "de": "Zusammenlegen, was man hat",
+            "ar": "جمع الزاد وقسمته"
+          },
+          "body": {
+            "en": "When food ran short, the Ash'aris pooled it and shared it equally. The Prophet praised them with words of deep closeness.",
+            "de": "Wenn die Nahrung knapp wurde, legten die Asch'ariten sie zusammen und teilten gleichmäßig. Der Prophet lobte sie mit Worten tiefer Verbundenheit.",
+            "ar": "كان الأشعريون إذا قلّ زادهم جمعوه واقتسموه بالسوية، فأثنى عليهم النبي ﷺ بكلمات تدل على قربهم منه."
+          }
+        },
+        {
+          "hadith": "bukhari:2989",
+          "check": "lifting his luggage",
+          "title": {
+            "en": "Lend a hand with the bags",
+            "de": "Helfen Sie beim Gepäck",
+            "ar": "أعِن في حمل المتاع"
+          },
+          "body": {
+            "en": "Helping someone onto their ride or lifting their luggage counts as charity. Every journey is full of such chances.",
+            "de": "Jemandem aufs Reittier zu helfen oder sein Gepäck zu heben, zählt als Sadaqa. Jede Reise ist voller solcher Gelegenheiten.",
+            "ar": "إعانة المرء على ركوبه أو رفع متاعه صدقة، وكل سفر مليء بمثل هذه الفرص."
+          }
+        },
+        {
+          "dua": "hisn:100:0",
+          "check": "I place you in the trust of Allah",
+          "title": {
+            "en": "Parting words",
+            "de": "Worte zum Abschied",
+            "ar": "كلمة الوداع"
+          },
+          "body": {
+            "en": "When you set out, leave your family and friends in Allah's care with this short farewell.",
+            "de": "Wenn Sie aufbrechen, vertrauen Sie Familie und Freunde mit diesem kurzen Abschiedswort Allahs Obhut an.",
+            "ar": "إذا خرجت مسافرًا فاستودع أهلك وأحبابك الله بهذه الكلمات القصيرة."
+          }
+        },
+        {
+          "title": {
+            "en": "On the road together",
+            "de": "Gemeinsam unterwegs",
+            "ar": "معًا في الطريق"
+          },
+          "list": {
+            "en": [
+              "Share food, chargers and seats",
+              "Agree on plans and respect the group",
+              "Be patient with delays and tired people",
+              "Keep the prayer times together"
+            ],
+            "de": [
+              "Teilen Sie Essen, Ladekabel und Plätze",
+              "Stimmen Sie Pläne ab und achten Sie die Gruppe",
+              "Seien Sie geduldig mit Verspätungen und Müden",
+              "Halten Sie die Gebetszeiten gemeinsam ein"
+            ],
+            "ar": [
+              "شارك الطعام والشاحن والمقعد",
+              "اتفقوا على الخطة واحترم الجماعة",
+              "اصبر على التأخير وتعب الرفاق",
+              "حافظوا على الصلاة في وقتها معًا"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim (Arabic), on 4:36",
+          "url": "https://quran.com/4:36/tafsirs/ar-tafsir-ibn-kathir"
+        }
+      ]
+    },
+    {
+      "id": "etiquette-road",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": {
+          "en": "Islamic etiquette · 10",
+          "de": "Umgangsformen · 10",
+          "ar": "الآداب الإسلامية · ١٠"
+        },
+        "title": {
+          "en": "The rights of the road",
+          "de": "Die Rechte des Weges",
+          "ar": "حق الطريق"
+        },
+        "sub": {
+          "en": "Streets, pavements and car parks are shared spaces with their own manners",
+          "de": "Straßen, Gehwege und Parkplätze sind gemeinsame Räume mit eigenen Umgangsformen",
+          "ar": "الشوارع والأرصفة والمواقف أماكن مشتركة لها آدابها"
+        },
+        "arabic": "حَقُّ الطَّرِيق"
+      },
+      "slides": [
+        {
+          "verse": "25:63",
+          "check": "walk upon the earth easily",
+          "title": {
+            "en": "How believers walk",
+            "de": "Wie Gläubige gehen",
+            "ar": "مشية المؤمنين"
+          },
+          "body": {
+            "en": "The servants of the Most Merciful move with humility, and answer rudeness with words of peace.",
+            "de": "Die Diener des Allerbarmers bewegen sich mit Demut und antworten auf Grobheit mit Worten des Friedens.",
+            "ar": "عباد الرحمن يمشون بتواضع، ويقابلون السفاهة بكلمة سلام."
+          }
+        },
+        {
+          "hadith": "bukhari:6229",
+          "check": "right of the road",
+          "title": {
+            "en": "The road has rights",
+            "de": "Der Weg hat Rechte",
+            "ar": "للطريق حقوق"
+          },
+          "body": {
+            "en": "Sitting by the road brings duties: lower your gaze, harm no one, return greetings and encourage good.",
+            "de": "Wer am Weg sitzt, hat Pflichten: den Blick senken, niemandem schaden, Grüße erwidern und zum Guten ermutigen.",
+            "ar": "الجلوس في الطريق يحمّلك واجبات: غضّ البصر، وكفّ الأذى، وردّ السلام، والدعوة إلى الخير."
+          }
+        },
+        {
+          "hadith": "muslim:6670",
+          "check": "may not do harm to the Muslims",
+          "title": {
+            "en": "Clearing the way",
+            "de": "Den Weg frei machen",
+            "ar": "إماطة الأذى"
+          },
+          "body": {
+            "en": "Removing branches so no one would be hurt led a man to Paradise. Today it might be glass, a fallen sign or a blocked path.",
+            "de": "Äste wegzuräumen, damit niemand zu Schaden kommt, brachte einen Mann ins Paradies. Heute sind es vielleicht Scherben, ein umgefallenes Schild oder ein versperrter Weg.",
+            "ar": "أزاح رجلٌ أغصانًا حتى لا تؤذي أحدًا فدخل الجنة، واليوم قد تكون زجاجًا أو لافتة ساقطة أو طريقًا مسدودًا."
+          }
+        },
+        {
+          "hadith": "bukhari:2891",
+          "check": "guiding somebody on the road",
+          "title": {
+            "en": "Showing the way",
+            "de": "Den Weg zeigen",
+            "ar": "دلالة الطريق"
+          },
+          "body": {
+            "en": "Giving directions to someone who is lost counts as charity. Take a moment, even when you are in a hurry.",
+            "de": "Jemandem, der sich verirrt hat, den Weg zu zeigen, zählt als Sadaqa. Nehmen Sie sich einen Moment, auch in Eile.",
+            "ar": "إرشاد الضالّ إلى طريقه صدقة، فامنحه لحظة ولو كنت مستعجلًا."
+          }
+        },
+        {
+          "verse": "17:37",
+          "check": "exultantly",
+          "title": {
+            "en": "No swagger in the street",
+            "de": "Kein Imponiergehabe auf der Straße",
+            "ar": "لا خيلاء في الطريق"
+          },
+          "body": {
+            "en": "Showing off does not suit the street, on foot or behind the wheel. A modest walk reflects a modest heart.",
+            "de": "Angeberei passt nicht auf die Straße, ob zu Fuß oder am Steuer. Ein bescheidener Gang spiegelt ein bescheidenes Herz.",
+            "ar": "لا يليق التباهي في الطريق ماشيًا أو سائقًا، فالمشية المتواضعة مرآة قلب متواضع."
+          }
+        },
+        {
+          "title": {
+            "en": "Rights of the road today",
+            "de": "Rechte des Weges heute",
+            "ar": "حق الطريق اليوم"
+          },
+          "list": {
+            "en": [
+              "Drive and park without blocking others",
+              "Keep pavements and paths clean",
+              "Give directions patiently",
+              "Greet the neighbours you pass"
+            ],
+            "de": [
+              "Fahren und parken Sie, ohne andere zu behindern",
+              "Halten Sie Gehwege und Wege sauber",
+              "Geben Sie geduldig Auskunft",
+              "Grüßen Sie die Nachbarn, an denen Sie vorbeigehen"
+            ],
+            "ar": [
+              "قُد سيارتك واركنها دون أن تسدّ على أحد",
+              "حافظ على نظافة الأرصفة والممرات",
+              "أرشد السائل بصبر",
+              "سلّم على جيرانك إذا مررت بهم"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "etiquette-guest",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": {
+          "en": "Islamic etiquette · 11",
+          "de": "Umgangsformen · 11",
+          "ar": "الآداب الإسلامية · ١١"
+        },
+        "title": {
+          "en": "How to be a good guest",
+          "de": "Wie man ein guter Gast ist",
+          "ar": "كيف تكون ضيفًا كريمًا"
+        },
+        "sub": {
+          "en": "Accepting invitations, asking first, not overstaying and leaving with a dua",
+          "de": "Einladungen annehmen, vorher fragen, nicht zu lange bleiben und mit einem Bittgebet gehen",
+          "ar": "إجابة الدعوة، والاستئذان، وعدم الإطالة، والوداع بالدعاء"
+        },
+        "arabic": "آدَابُ الضَّيْف"
+      },
+      "slides": [
+        {
+          "hadith": "bukhari:5173",
+          "check": "wedding banquet",
+          "title": {
+            "en": "Accept the invitation",
+            "de": "Nehmen Sie die Einladung an",
+            "ar": "أجِب الدعوة"
+          },
+          "body": {
+            "en": "Responding to an invitation, especially to a wedding, honours the host. Scholars discuss when it is required and what counts as an excuse.",
+            "de": "Einer Einladung zu folgen, besonders zu einer Hochzeit, ehrt den Gastgeber. Gelehrte erörtern, wann sie Pflicht ist und was als Entschuldigung gilt.",
+            "ar": "إجابة الدعوة، ولا سيما وليمة العرس، إكرامٌ للمضيف، ويتكلم العلماء في متى تجب وما يُعدّ عذرًا."
+          }
+        },
+        {
+          "hadith": "bukhari:2081",
+          "check": "if you allow him",
+          "title": {
+            "en": "Ask before bringing someone",
+            "de": "Fragen Sie, bevor Sie jemanden mitbringen",
+            "ar": "استأذن قبل أن تُحضر أحدًا"
+          },
+          "body": {
+            "en": "When an extra person came along, the Prophet asked the host first. Who joins the meal is the host's decision.",
+            "de": "Als eine weitere Person mitkam, fragte der Prophet zuerst den Gastgeber. Wer am Essen teilnimmt, entscheidet der Gastgeber.",
+            "ar": "لما تبعهم رجلٌ لم يُدعَ استأذن النبي ﷺ صاحب الطعام أولًا، فالقرار في ذلك للمضيف."
+          }
+        },
+        {
+          "hadith": "bukhari:6135",
+          "check": "put him in a critical position",
+          "title": {
+            "en": "Do not overstay",
+            "de": "Bleiben Sie nicht zu lange",
+            "ar": "لا تُطِل المقام"
+          },
+          "body": {
+            "en": "Hospitality has a generous measure, and the guest has a duty too: not to stay so long that it becomes a burden.",
+            "de": "Gastfreundschaft hat ein großzügiges Maß, und auch der Gast hat eine Pflicht: nicht so lange zu bleiben, dass es zur Last wird.",
+            "ar": "للضيافة حدٌّ كريم، وعلى الضيف واجبٌ أيضًا: ألّا يطيل حتى يُحرج مضيفه."
+          }
+        },
+        {
+          "dua": "hisn:71:0",
+          "check": "bless for them",
+          "title": {
+            "en": "Leave with a dua",
+            "de": "Gehen Sie mit einem Bittgebet",
+            "ar": "ودّع بالدعاء"
+          },
+          "body": {
+            "en": "Before you leave, thank your hosts with this dua for blessing, forgiveness and mercy.",
+            "de": "Bevor Sie gehen, danken Sie Ihren Gastgebern mit diesem Bittgebet um Segen, Vergebung und Barmherzigkeit.",
+            "ar": "قبل أن تنصرف اشكر مضيفيك بهذا الدعاء بالبركة والمغفرة والرحمة."
+          }
+        },
+        {
+          "title": {
+            "en": "A welcome guest",
+            "de": "Ein willkommener Gast",
+            "ar": "ضيفٌ مرحَّبٌ به"
+          },
+          "list": {
+            "en": [
+              "Arrive on time, or let the host know",
+              "Bring a small gift if you can",
+              "Do not look around the house uninvited",
+              "Offer to help, then follow the host's wishes"
+            ],
+            "de": [
+              "Kommen Sie pünktlich oder sagen Sie Bescheid",
+              "Bringen Sie, wenn möglich, ein kleines Geschenk mit",
+              "Sehen Sie sich nicht ungefragt im Haus um",
+              "Bieten Sie Hilfe an und folgen Sie dann den Wünschen des Gastgebers"
+            ],
+            "ar": [
+              "احضر في الموعد أو أخبر مضيفك",
+              "أحضر هدية صغيرة إن استطعت",
+              "لا تتجوّل في البيت دون إذن",
+              "اعرض المساعدة ثم التزم برغبة المضيف"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "etiquette-hosting",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": {
+          "en": "Islamic etiquette · 12",
+          "de": "Umgangsformen · 12",
+          "ar": "الآداب الإسلامية · ١٢"
+        },
+        "title": {
+          "en": "Honouring your guests",
+          "de": "Gäste ehren",
+          "ar": "إكرام الضيف"
+        },
+        "sub": {
+          "en": "From Ibrahim's table to the Ansari who gave his own supper",
+          "de": "Vom Tisch Ibrahims bis zum Ansari, der sein eigenes Abendessen hergab",
+          "ar": "من مائدة إبراهيم إلى الأنصاري الذي آثر ضيفه بعشائه"
+        },
+        "arabic": "إِكْرَامُ الضَّيْف"
+      },
+      "slides": [
+        {
+          "verse": "51:24-26",
+          "check": "honored guests of Abraham",
+          "title": {
+            "en": "Ibrahim's guests",
+            "de": "Ibrahims Gäste",
+            "ar": "ضيف إبراهيم"
+          },
+          "body": {
+            "en": "Strangers arrived, and Ibrahim greeted them with peace, then quietly went to prepare the best he had.",
+            "de": "Fremde kamen, und Ibrahim grüßte sie mit Frieden; dann ging er still, um das Beste vorzubereiten, was er hatte.",
+            "ar": "جاءه غرباء فحيّاهم بالسلام، ثم مضى في هدوء يُعدّ لهم أفضل ما عنده."
+          }
+        },
+        {
+          "verse": "51:27",
+          "check": "Will you not eat",
+          "title": {
+            "en": "Serve close, invite gently",
+            "de": "Nah servieren, sanft einladen",
+            "ar": "قرّب الطعام وادعُ بلطف"
+          },
+          "body": {
+            "en": "He placed the food near them and invited them with a gentle question. Small gestures put guests at ease.",
+            "de": "Er stellte das Essen nah zu ihnen und lud sie mit einer sanften Frage ein. Kleine Gesten lassen Gäste sich wohlfühlen.",
+            "ar": "قرّب الطعام إليهم ودعاهم بسؤال لطيف، واللفتات الصغيرة تُريح الضيف."
+          }
+        },
+        {
+          "hadith": "bukhari:6136",
+          "check": "serve his guest generously",
+          "title": {
+            "en": "A sign of faith",
+            "de": "Ein Zeichen des Glaubens",
+            "ar": "علامةٌ من علامات الإيمان"
+          },
+          "body": {
+            "en": "Honouring the guest is tied to faith in Allah and the Last Day, together with good speech and kindness to neighbours.",
+            "de": "Den Gast zu ehren, ist mit dem Glauben an Allah und den Jüngsten Tag verbunden, zusammen mit gutem Reden und Güte zu Nachbarn.",
+            "ar": "رُبط إكرام الضيف بالإيمان بالله واليوم الآخر، مع حسن القول والإحسان إلى الجار."
+          }
+        },
+        {
+          "hadith": "muslim:5360",
+          "check": "put out the lamp",
+          "title": {
+            "en": "Giving when you have little",
+            "de": "Geben, wenn man wenig hat",
+            "ar": "العطاء مع القلة"
+          },
+          "body": {
+            "en": "An Ansari couple fed their guest in the dark and went to bed hungry, so that he would not notice they had nothing left.",
+            "de": "Ein Ehepaar der Ansar bewirtete seinen Gast im Dunkeln und ging hungrig zu Bett, damit er nicht merkte, dass für sie nichts blieb.",
+            "ar": "أطعم زوجان من الأنصار ضيفهما في الظلام وباتا جائعين، حتى لا يشعر أنهما لم يبقَ لهما شيء."
+          }
+        },
+        {
+          "hadith": "muslim:5370",
+          "check": "Food for one suffices two",
+          "title": {
+            "en": "There is always enough",
+            "de": "Es reicht immer",
+            "ar": "في القليل بركة"
+          },
+          "body": {
+            "en": "Do not wait for a perfect table. A little, shared with a warm heart, is blessed.",
+            "de": "Warten Sie nicht auf einen perfekten Tisch. Wenig, mit warmem Herzen geteilt, ist gesegnet.",
+            "ar": "لا تنتظر مائدة كاملة، فالقليل المقدَّم بقلب دافئ مبارك."
+          }
+        },
+        {
+          "title": {
+            "en": "Hosting with care",
+            "de": "Gastgeben mit Sorgfalt",
+            "ar": "ضيافة بإحسان"
+          },
+          "list": {
+            "en": [
+              "Greet guests at the door with a smile",
+              "Serve them first, eat after",
+              "Do not pressure guests to eat more",
+              "Walk them to the door when they leave"
+            ],
+            "de": [
+              "Empfangen Sie Gäste mit einem Lächeln an der Tür",
+              "Bedienen Sie zuerst die Gäste, essen Sie danach",
+              "Drängen Sie Gäste nicht, mehr zu essen",
+              "Begleiten Sie sie beim Abschied zur Tür"
+            ],
+            "ar": [
+              "استقبل ضيفك عند الباب مبتسمًا",
+              "قدّم له أولًا ثم كُل",
+              "لا تُلحّ عليه ليأكل أكثر",
+              "شيّعه إلى الباب عند انصرافه"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "etiquette-speaking",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": {
+          "en": "Islamic etiquette · 13",
+          "de": "Umgangsformen · 13",
+          "ar": "الآداب الإسلامية · ١٣"
+        },
+        "title": {
+          "en": "The manners of speaking",
+          "de": "Die Kunst des guten Redens",
+          "ar": "أدب الكلام"
+        },
+        "sub": {
+          "en": "Choosing the best words, speaking clearly, and weighing what we say",
+          "de": "Die besten Worte wählen, klar sprechen und abwägen, was wir sagen",
+          "ar": "اختيار أحسن الكلام، والوضوح، ووزن ما نقول"
+        },
+        "arabic": "أَدَبُ الكَلَام"
+      },
+      "slides": [
+        {
+          "verse": "17:53",
+          "check": "say that which is best",
+          "title": {
+            "en": "Choose the best words",
+            "de": "Wählen Sie die besten Worte",
+            "ar": "اختر أحسن الكلام"
+          },
+          "body": {
+            "en": "Not just true words, but the best ones. The verse warns that careless speech opens the door to discord.",
+            "de": "Nicht nur wahre Worte, sondern die besten. Der Vers warnt, dass unbedachte Rede der Zwietracht die Tür öffnet.",
+            "ar": "لا يكفي أن يكون الكلام صادقًا، بل أحسنه، وتحذّر الآية من أن الكلام الطائش يفتح باب الفرقة."
+          }
+        },
+        {
+          "verse": "33:70",
+          "check": "speak words of appropriate justice",
+          "title": {
+            "en": "Straight, fitting words",
+            "de": "Gerade, treffende Worte",
+            "ar": "القول المستقيم"
+          },
+          "body": {
+            "en": "Words that are true, fair and to the point. God-consciousness shows in how we talk.",
+            "de": "Worte, die wahr, gerecht und treffend sind. Gottesfurcht zeigt sich darin, wie wir reden.",
+            "ar": "كلامٌ صادقٌ عادلٌ في موضعه، فالتقوى تظهر في طريقة حديثنا."
+          }
+        },
+        {
+          "hadith": "bukhari:3567",
+          "check": "talk so clearly",
+          "title": {
+            "en": "Clear, not rushed",
+            "de": "Klar, nicht hastig",
+            "ar": "واضحٌ غير متعجّل"
+          },
+          "body": {
+            "en": "The Prophet spoke so clearly that his words could be counted. Clarity is a kindness to the listener.",
+            "de": "Der Prophet sprach so deutlich, dass man seine Worte zählen konnte. Klarheit ist eine Freundlichkeit gegenüber dem Zuhörer.",
+            "ar": "كان كلام النبي ﷺ واضحًا مفصّلًا يمكن عدّ كلماته، والوضوح رفقٌ بالسامع."
+          }
+        },
+        {
+          "hadith": "bukhari:95",
+          "check": "repeat it thrice",
+          "title": {
+            "en": "Make sure you are understood",
+            "de": "Sorgen Sie dafür, verstanden zu werden",
+            "ar": "تأكّد أنك فُهمت"
+          },
+          "body": {
+            "en": "Repeating an important point is not a weakness. It helps people take it in.",
+            "de": "Einen wichtigen Punkt zu wiederholen, ist keine Schwäche. Es hilft Menschen, ihn aufzunehmen.",
+            "ar": "تكرار المهم ليس ضعفًا، بل يعين الناس على استيعابه."
+          }
+        },
+        {
+          "hadith": "bukhari:6478",
+          "check": "without giving it much importance",
+          "title": {
+            "en": "The weight of one word",
+            "de": "Das Gewicht eines Wortes",
+            "ar": "وزن الكلمة الواحدة"
+          },
+          "body": {
+            "en": "A single word can raise or lower a person. Think before you speak, especially when it seems small.",
+            "de": "Ein einziges Wort kann einen Menschen erheben oder erniedrigen. Denken Sie nach, bevor Sie sprechen, gerade wenn es klein scheint.",
+            "ar": "كلمة واحدة قد ترفع صاحبها أو تهوي به، ففكّر قبل أن تتكلم ولو بدت صغيرة."
+          }
+        },
+        {
+          "title": {
+            "en": "Before you speak",
+            "de": "Bevor Sie sprechen",
+            "ar": "قبل أن تتكلم"
+          },
+          "list": {
+            "en": [
+              "Is it true?",
+              "Is it kind?",
+              "Is it needed now?",
+              "Can it be said more simply?"
+            ],
+            "de": [
+              "Ist es wahr?",
+              "Ist es freundlich?",
+              "Ist es jetzt nötig?",
+              "Lässt es sich einfacher sagen?"
+            ],
+            "ar": [
+              "هل هو صدق؟",
+              "هل هو لطيف؟",
+              "هل يحتاج إليه الآن؟",
+              "هل يمكن قوله ببساطة أكثر؟"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "etiquette-listening",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": {
+          "en": "Islamic etiquette · 14",
+          "de": "Umgangsformen · 14",
+          "ar": "الآداب الإسلامية · ١٤"
+        },
+        "title": {
+          "en": "The art of listening",
+          "de": "Die Kunst des Zuhörens",
+          "ar": "فنّ الإصغاء"
+        },
+        "sub": {
+          "en": "Listening with a present heart, as the Quran describes it",
+          "de": "Mit gegenwärtigem Herzen zuhören, wie der Koran es beschreibt",
+          "ar": "أن تُصغي بقلبٍ حاضر كما يصفه القرآن"
+        },
+        "arabic": "حُسْنُ الاسْتِمَاع"
+      },
+      "slides": [
+        {
+          "verse": "39:18",
+          "check": "listen to speech and follow the best of it",
+          "title": {
+            "en": "Listen, then choose the best",
+            "de": "Zuhören, dann das Beste wählen",
+            "ar": "استمع ثم اختر الأحسن"
+          },
+          "body": {
+            "en": "The guided are described as people who listen fully, then follow what is best in what they hear.",
+            "de": "Die Rechtgeleiteten werden als Menschen beschrieben, die ganz zuhören und dann dem Besten folgen, was sie hören.",
+            "ar": "يوصف المهتدون بأنهم يُصغون إلى آخر الكلام ثم يأخذون بأفضل ما سمعوا."
+          }
+        },
+        {
+          "verse": "50:37",
+          "check": "listens while he is present",
+          "title": {
+            "en": "Present while listening",
+            "de": "Beim Zuhören gegenwärtig",
+            "ar": "حضور القلب"
+          },
+          "body": {
+            "en": "A reminder benefits the one who listens with a present mind. Real listening needs attention, not only ears.",
+            "de": "Eine Ermahnung nützt dem, der mit wachem Geist zuhört. Echtes Zuhören braucht Aufmerksamkeit, nicht nur Ohren.",
+            "ar": "تنفع الذكرى من يستمع بذهن حاضر، فالإصغاء الحقيقي انتباهٌ لا أذنٌ فقط."
+          }
+        },
+        {
+          "verse": "58:1",
+          "check": "heard the speech of the one who argues",
+          "title": {
+            "en": "She was heard",
+            "de": "Sie wurde gehört",
+            "ar": "سُمعت شكواها"
+          },
+          "body": {
+            "en": "A woman pleaded her case about her husband. A whole surah opens by saying that Allah heard her. Being heard is a mercy.",
+            "de": "Eine Frau trug ihr Anliegen wegen ihres Mannes vor. Eine ganze Sure beginnt damit, dass Allah sie gehört hat. Gehört zu werden ist eine Barmherzigkeit.",
+            "ar": "جادلت امرأة في شأن زوجها، فافتُتحت سورة كاملة بأن الله سمعها، وأن تُسمَع رحمة."
+          }
+        },
+        {
+          "hadith": "bukhari:5049",
+          "check": "I like to hear it from others",
+          "title": {
+            "en": "The Prophet listened too",
+            "de": "Auch der Prophet hörte zu",
+            "ar": "النبي ﷺ يستمع"
+          },
+          "body": {
+            "en": "He asked Ibn Mas'ud to recite to him, though the Quran had been revealed to him. Even the best teacher loves to listen.",
+            "de": "Er bat Ibn Mas'ud, ihm vorzutragen, obwohl der Koran ihm offenbart worden war. Selbst der beste Lehrer hört gern zu.",
+            "ar": "طلب من ابن مسعود أن يقرأ عليه مع أن القرآن أُنزل عليه، فخير المعلمين يحب أن يستمع."
+          }
+        },
+        {
+          "verse": "46:29",
+          "check": "Listen attentively",
+          "title": {
+            "en": "Silence that honours",
+            "de": "Schweigen, das ehrt",
+            "ar": "إنصاتٌ يُكرِم"
+          },
+          "body": {
+            "en": "When a group of jinn came upon the Quran, they told one another to be quiet and listen. Silence can be respect.",
+            "de": "Als eine Gruppe von Dschinn den Koran hörte, mahnten sie einander zur Stille. Schweigen kann Achtung sein.",
+            "ar": "لما حضر نفرٌ من الجن القرآن تواصوا بالإنصات، فالصمت قد يكون احترامًا."
+          }
+        },
+        {
+          "title": {
+            "en": "Good listening",
+            "de": "Gutes Zuhören",
+            "ar": "الإصغاء الجيد"
+          },
+          "list": {
+            "en": [
+              "Put the phone away",
+              "Let people finish before you answer",
+              "Ask a question to show you understood",
+              "Do not plan your reply while they speak"
+            ],
+            "de": [
+              "Legen Sie das Handy weg",
+              "Lassen Sie Menschen ausreden, bevor Sie antworten",
+              "Stellen Sie eine Frage, die zeigt, dass Sie verstanden haben",
+              "Planen Sie Ihre Antwort nicht, während der andere spricht"
+            ],
+            "ar": [
+              "ضع الهاتف جانبًا",
+              "دع المتكلم يُكمل قبل أن تجيب",
+              "اسأل سؤالًا يدل على أنك فهمت",
+              "لا تُعِدّ ردّك وهو يتكلم"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "etiquette-advice",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": {
+          "en": "Islamic etiquette · 15",
+          "de": "Umgangsformen · 15",
+          "ar": "الآداب الإسلامية · ١٥"
+        },
+        "title": {
+          "en": "Giving advice with sincerity",
+          "de": "Aufrichtig Rat geben",
+          "ar": "النصيحة بإخلاص"
+        },
+        "sub": {
+          "en": "Nasihah: wanting the best for someone, and saying it well",
+          "de": "Nasiha: das Beste für jemanden wollen und es gut sagen",
+          "ar": "أن تريد الخير لغيرك وتقوله بإحسان"
+        },
+        "arabic": "النَّصِيحَة"
+      },
+      "slides": [
+        {
+          "hadith": "nawawi:7",
+          "check": "naseehah",
+          "title": {
+            "en": "Goodwill at the centre",
+            "de": "Wohlwollen im Mittelpunkt",
+            "ar": "النصح في قلب الدين"
+          },
+          "body": {
+            "en": "Nasihah is sincere goodwill: wanting the best for someone and acting on it. This hadith places it at the heart of the religion.",
+            "de": "Nasiha ist aufrichtiges Wohlwollen: das Beste für jemanden wollen und danach handeln. Dieser Hadith stellt sie ins Zentrum der Religion.",
+            "ar": "النصيحة إرادة الخير للآخر والعمل بها، وهذا الحديث يجعلها في قلب الدين."
+          }
+        },
+        {
+          "hadith": "bukhari:524",
+          "check": "give good advice to every Muslim",
+          "title": {
+            "en": "Part of a pledge",
+            "de": "Teil eines Treueversprechens",
+            "ar": "من بنود البيعة"
+          },
+          "body": {
+            "en": "Jarir pledged to pray, to give zakah, and to advise every Muslim sincerely. Advice stood beside the pillars.",
+            "de": "Dscharir versprach, zu beten, Zakat zu geben und jedem Muslim aufrichtig zu raten. Der Rat stand neben den Säulen.",
+            "ar": "بايع جرير على الصلاة والزكاة والنصح لكل مسلم، فجاءت النصيحة مع الأركان."
+          }
+        },
+        {
+          "verse": "103:1-3",
+          "check": "advised each other to truth",
+          "title": {
+            "en": "Saved from loss",
+            "de": "Vor dem Verlust bewahrt",
+            "ar": "النجاة من الخسران"
+          },
+          "body": {
+            "en": "Those saved from loss do not keep the good to themselves. They remind one another of truth and patience.",
+            "de": "Wer vor dem Verlust bewahrt ist, behält das Gute nicht für sich. Man erinnert einander an Wahrheit und Geduld.",
+            "ar": "الناجون من الخسران لا يحتكرون الخير، بل يذكّر بعضهم بعضًا بالحق والصبر."
+          }
+        },
+        {
+          "verse": "11:88",
+          "check": "I only intend reform",
+          "title": {
+            "en": "The adviser's intention",
+            "de": "Die Absicht des Ratgebers",
+            "ar": "نية الناصح"
+          },
+          "body": {
+            "en": "Shu'ayb told his people he wanted nothing but to set things right, as far as he could. Good advice seeks repair, not victory.",
+            "de": "Schu'aib sagte seinem Volk, er wolle nur in Ordnung bringen, soweit er könne. Guter Rat sucht Besserung, keinen Sieg.",
+            "ar": "بيّن شعيب لقومه أن غايته إصلاح ما يقدر عليه فقط، فالنصيحة الصادقة تطلب الصلاح لا الغلبة."
+          }
+        },
+        {
+          "verse": "28:20",
+          "check": "sincere advisors",
+          "title": {
+            "en": "Advice that saves",
+            "de": "Rat, der rettet",
+            "ar": "نصيحة تنجّي"
+          },
+          "body": {
+            "en": "A man ran from the far end of the city to warn Musa. Sometimes advice means taking a risk for someone.",
+            "de": "Ein Mann lief vom äußersten Ende der Stadt herbei, um Musa zu warnen. Manchmal heißt Rat, für jemanden ein Risiko einzugehen.",
+            "ar": "أقبل رجلٌ مسرعًا من طرف المدينة البعيد ليحذّر موسى، وقد تعني النصيحة أن تخاطر لأجل غيرك."
+          }
+        },
+        {
+          "verse": "7:79",
+          "check": "you do not like advisors",
+          "title": {
+            "en": "When advice is not welcome",
+            "de": "Wenn Rat nicht willkommen ist",
+            "ar": "حين تُكره النصيحة"
+          },
+          "body": {
+            "en": "Salih's people disliked those who advised them. Receiving advice well is a skill of its own.",
+            "de": "Salihs Volk mochte jene nicht, die ihm rieten. Rat gut anzunehmen, ist eine eigene Fähigkeit.",
+            "ar": "كره قوم صالح من ينصحهم، وحسن تلقّي النصيحة مهارة قائمة بذاتها."
+          }
+        },
+        {
+          "title": {
+            "en": "Giving and receiving advice",
+            "de": "Rat geben und annehmen",
+            "ar": "بذل النصيحة وقبولها"
+          },
+          "list": {
+            "en": [
+              "Advise in private, praise in public",
+              "Begin with something good",
+              "Be brief and specific",
+              "Thank the one who advises you, even if it stings"
+            ],
+            "de": [
+              "Raten Sie unter vier Augen, loben Sie öffentlich",
+              "Beginnen Sie mit etwas Gutem",
+              "Fassen Sie sich kurz und konkret",
+              "Danken Sie dem, der Ihnen rät, auch wenn es schmerzt"
+            ],
+            "ar": [
+              "انصح سرًّا وامدح علانية",
+              "ابدأ بذكر شيء حسن",
+              "كن موجزًا ومحددًا",
+              "اشكر من نصحك ولو آلمك"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "etiquette-disagreement",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": {
+          "en": "Islamic etiquette · 16",
+          "de": "Umgangsformen · 16",
+          "ar": "الآداب الإسلامية · ١٦"
+        },
+        "title": {
+          "en": "How to disagree well",
+          "de": "Wie man gut widerspricht",
+          "ar": "أدب الخلاف"
+        },
+        "sub": {
+          "en": "Differences are natural; how we handle them is a matter of adab",
+          "de": "Unterschiede sind natürlich; wie wir mit ihnen umgehen, ist eine Frage des Adab",
+          "ar": "الاختلاف طبيعي، وطريقة التعامل معه أدب"
+        },
+        "arabic": "أَدَبُ الخِلَاف"
+      },
+      "slides": [
+        {
+          "verse": "4:59",
+          "check": "if you disagree over anything",
+          "title": {
+            "en": "Where to take a dispute",
+            "de": "Wohin mit einem Streit",
+            "ar": "إلى أين يُردّ الخلاف"
+          },
+          "body": {
+            "en": "The Quran expects disagreement and gives it a direction: back to Allah and His Messenger.",
+            "de": "Der Koran rechnet mit Meinungsverschiedenheit und gibt ihr eine Richtung: zurück zu Allah und Seinem Gesandten.",
+            "ar": "يتوقّع القرآن الاختلاف ويرسم له وجهة: الرجوع إلى الله ورسوله."
+          }
+        },
+        {
+          "hadith": "bukhari:4119",
+          "check": "did not berate any of the two groups",
+          "title": {
+            "en": "Two readings, no blame",
+            "de": "Zwei Deutungen, kein Tadel",
+            "ar": "فهمان بلا لوم"
+          },
+          "body": {
+            "en": "Companions understood one instruction in two ways. The Prophet blamed neither group: sincere difference can be respected.",
+            "de": "Gefährten verstanden eine Anweisung auf zwei Arten. Der Prophet tadelte keine der Gruppen: aufrichtige Unterschiede verdienen Achtung.",
+            "ar": "فهم الصحابة أمرًا واحدًا على وجهين، فلم يلُم النبي ﷺ أيًّا من الفريقين، فالاختلاف الصادق يُحترم."
+          }
+        },
+        {
+          "hadith": "bukhari:2410",
+          "check": "Both of you are right",
+          "title": {
+            "en": "Variety without quarrel",
+            "de": "Vielfalt ohne Streit",
+            "ar": "تنوّعٌ بلا نزاع"
+          },
+          "body": {
+            "en": "Two men recited a verse differently, and both were right. The warning was against quarrelling, not against the variety.",
+            "de": "Zwei Männer rezitierten einen Vers unterschiedlich, und beide hatten recht. Die Warnung galt dem Streit, nicht der Vielfalt.",
+            "ar": "قرأ رجلان آية بوجهين وكلاهما مصيب، فكان التحذير من النزاع لا من التنوّع."
+          }
+        },
+        {
+          "title": {
+            "en": "The scholars' example",
+            "de": "Das Vorbild der Gelehrten",
+            "ar": "قدوة العلماء"
+          },
+          "body": {
+            "en": "The great imams of fiqh differed on many questions and still honoured one another, and their students learned from more than one teacher. Respectful difference belongs to the Islamic tradition.",
+            "de": "Die großen Imame des Fiqh waren in vielen Fragen verschiedener Meinung und ehrten einander dennoch, und ihre Schüler lernten bei mehr als einem Lehrer. Respektvolle Unterschiede gehören zur islamischen Tradition.",
+            "ar": "اختلف كبار أئمة الفقه في مسائل كثيرة وبقي بعضهم يجلّ بعضًا، وتعلّم طلابهم من أكثر من شيخ، فالاختلاف المهذّب جزء من تراث الإسلام."
+          }
+        },
+        {
+          "verse": "16:125",
+          "check": "argue with them in a way that is best",
+          "title": {
+            "en": "In the best way",
+            "de": "Auf die beste Weise",
+            "ar": "بأحسن أسلوب"
+          },
+          "body": {
+            "en": "Wisdom, good counsel and the finest manner of debate: the Quran's method when views collide.",
+            "de": "Weisheit, gute Ermahnung und die schönste Art der Auseinandersetzung: die Methode des Korans, wenn Ansichten aufeinandertreffen.",
+            "ar": "الحكمة والموعظة الحسنة وأرقى أساليب الحوار: منهج القرآن حين تتعارض الآراء."
+          }
+        },
+        {
+          "verse": "8:46",
+          "check": "lose courage",
+          "title": {
+            "en": "Quarrels drain strength",
+            "de": "Streit raubt Kraft",
+            "ar": "النزاع يُذهب القوة"
+          },
+          "body": {
+            "en": "When disagreement turns into conflict, a community weakens. Patience holds it together.",
+            "de": "Wenn Meinungsverschiedenheit zum Konflikt wird, wird eine Gemeinschaft schwach. Geduld hält sie zusammen.",
+            "ar": "إذا تحوّل الاختلاف إلى صراع ضعفت الجماعة، والصبر يحفظ تماسكها."
+          }
+        },
+        {
+          "title": {
+            "en": "Disagree with adab",
+            "de": "Mit Adab widersprechen",
+            "ar": "اختلف بأدب"
+          },
+          "list": {
+            "en": [
+              "Assume good intentions",
+              "Discuss ideas, not persons",
+              "Present the other view fairly",
+              "Keep the friendship when the topic is closed"
+            ],
+            "de": [
+              "Unterstellen Sie gute Absichten",
+              "Sprechen Sie über Gedanken, nicht über Personen",
+              "Geben Sie die andere Sicht fair wieder",
+              "Bewahren Sie die Freundschaft, wenn das Thema abgeschlossen ist"
+            ],
+            "ar": [
+              "أحسن الظن بالنوايا",
+              "ناقش الفكرة لا الشخص",
+              "اعرض الرأي الآخر بإنصاف",
+              "احفظ الودّ بعد انتهاء النقاش"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "etiquette-workplace",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": {
+          "en": "Islamic etiquette · 17",
+          "de": "Umgangsformen · 17",
+          "ar": "الآداب الإسلامية · ١٧"
+        },
+        "title": {
+          "en": "Adab at work",
+          "de": "Adab bei der Arbeit",
+          "ar": "أخلاق العمل"
+        },
+        "sub": {
+          "en": "Ability, reliability and fairness: work as part of faith",
+          "de": "Können, Verlässlichkeit und Fairness: Arbeit als Teil des Glaubens",
+          "ar": "الكفاءة والأمانة والإنصاف: العمل جزء من الإيمان"
+        },
+        "arabic": "أَخْلَاقُ العَمَل"
+      },
+      "slides": [
+        {
+          "verse": "28:26",
+          "check": "the strong and the trustworthy",
+          "title": {
+            "en": "Strong and trustworthy",
+            "de": "Stark und vertrauenswürdig",
+            "ar": "القوة والأمانة"
+          },
+          "body": {
+            "en": "In Madyan, a young woman recommended Musa for work with two qualities: ability and reliability. Both still count in every job.",
+            "de": "In Madyan empfahl eine junge Frau Musa für eine Arbeit wegen zweier Eigenschaften: Können und Verlässlichkeit. Beide zählen in jedem Beruf.",
+            "ar": "في مدين رشّحت فتاةٌ موسى للعمل بصفتين: الكفاءة والأمانة، وما زالتا معيار كل عمل."
+          }
+        },
+        {
+          "hadith": "bukhari:2072",
+          "check": "working with one's own hands",
+          "title": {
+            "en": "Earning with your own hands",
+            "de": "Mit eigenen Händen verdienen",
+            "ar": "الكسب من عمل اليد"
+          },
+          "body": {
+            "en": "Honest work is honoured, whatever it is. Even Prophet Dawud lived from what he made himself.",
+            "de": "Ehrliche Arbeit wird geehrt, welche es auch sei. Selbst der Prophet Dawud lebte von dem, was er selbst herstellte.",
+            "ar": "العمل الشريف مكرَّم أيًّا كان، وكان داود عليه السلام يكسب قوته بنفسه."
+          }
+        },
+        {
+          "hadith": "bukhari:2227",
+          "check": "does not pay him his wages",
+          "title": {
+            "en": "Pay what is due",
+            "de": "Zahlen Sie, was zusteht",
+            "ar": "أعطِ الأجير حقه"
+          },
+          "body": {
+            "en": "Withholding a worker's wages is so serious that Allah Himself is described as the opponent of the one who does it.",
+            "de": "Einem Arbeiter den Lohn vorzuenthalten, wiegt so schwer, dass Allah selbst als Gegner dessen beschrieben wird, der es tut.",
+            "ar": "منع الأجير أجره أمرٌ عظيم، حتى إن الله يكون خصم من يفعله."
+          }
+        },
+        {
+          "verse": "83:1-3",
+          "check": "give less",
+          "title": {
+            "en": "Full measure, full effort",
+            "de": "Volles Maß, voller Einsatz",
+            "ar": "وفاءٌ في الكيل والجهد"
+          },
+          "body": {
+            "en": "The warning speaks of scales. Al-Qurtubi notes that some applied it to prayer too, and cites Malik: everything has a full and a short measure.",
+            "de": "Die Warnung spricht von Waagen. Al-Qurtubi berichtet, dass manche sie auch auf das Gebet bezogen, und zitiert Malik: Alles hat ein volles und ein verkürztes Maß.",
+            "ar": "يتحدث الوعيد عن الكيل والميزان، وينقل القرطبي أن بعضهم جعل التطفيف في الصلاة أيضًا، وعن مالك: لكل شيء وفاء وتطفيف."
+          }
+        },
+        {
+          "verse": "62:10",
+          "check": "seek from the bounty of Allāh",
+          "title": {
+            "en": "Work and remembrance",
+            "de": "Arbeit und Gedenken",
+            "ar": "العمل والذكر"
+          },
+          "body": {
+            "en": "After the Friday prayer, go out and seek your living, and keep remembering Allah as you do.",
+            "de": "Nach dem Freitagsgebet gehen Sie hinaus und suchen Ihren Lebensunterhalt, und gedenken Sie dabei Allahs.",
+            "ar": "بعد صلاة الجمعة اخرج لطلب رزقك، وابقَ ذاكرًا لله وأنت تعمل."
+          }
+        },
+        {
+          "title": {
+            "en": "At work",
+            "de": "Bei der Arbeit",
+            "ar": "في العمل"
+          },
+          "list": {
+            "en": [
+              "Be on time and finish what you start",
+              "Give credit to others",
+              "Keep company data and confidences safe",
+              "Pray on time, even on busy days"
+            ],
+            "de": [
+              "Seien Sie pünktlich und bringen Sie zu Ende, was Sie beginnen",
+              "Würdigen Sie die Leistung anderer",
+              "Schützen Sie Firmendaten und Vertrauliches",
+              "Beten Sie pünktlich, auch an vollen Tagen"
+            ],
+            "ar": [
+              "التزم بالوقت وأتمّ ما بدأت",
+              "انسب الفضل لأهله",
+              "احفظ بيانات العمل وأسراره",
+              "صلِّ في الوقت ولو في أيام الزحام"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "al-Qurtubi, al-Jami' li-Ahkam al-Qur'an, on 83:1",
+          "url": "https://quran.com/83:1/tafsirs/ar-tafseer-al-qurtubi"
+        }
+      ]
+    },
+    {
+      "id": "etiquette-visiting-graves",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": {
+          "en": "Islamic etiquette · 18",
+          "de": "Umgangsformen · 18",
+          "ar": "الآداب الإسلامية · ١٨"
+        },
+        "title": {
+          "en": "Visiting the graves",
+          "de": "Gräber besuchen",
+          "ar": "زيارة القبور"
+        },
+        "sub": {
+          "en": "A visit that softens the heart and reminds us where we are going",
+          "de": "Ein Besuch, der das Herz erweicht und daran erinnert, wohin wir gehen",
+          "ar": "زيارةٌ تُرقّق القلب وتذكّر بالمصير"
+        },
+        "arabic": "زِيَارَةُ القُبُور"
+      },
+      "slides": [
+        {
+          "hadith": "muslim:2260",
+          "check": "you may now visit them",
+          "title": {
+            "en": "A permission with a purpose",
+            "de": "Eine Erlaubnis mit Zweck",
+            "ar": "إذنٌ له غاية"
+          },
+          "body": {
+            "en": "The Prophet first forbade visiting graves, then allowed it. Other narrations give the reason: it reminds us of death.",
+            "de": "Der Prophet verbot zunächst den Besuch von Gräbern und erlaubte ihn dann. Andere Überlieferungen nennen den Grund: Er erinnert an den Tod.",
+            "ar": "نهى النبي ﷺ عن زيارة القبور ثم أذن فيها، وفي روايات أخرى بيان العلة: أنها تذكّر بالموت."
+          }
+        },
+        {
+          "dua": "hisn:60:0",
+          "check": "inhabitants of the graves",
+          "title": {
+            "en": "Greeting the dead",
+            "de": "Die Verstorbenen grüßen",
+            "ar": "السلام على أهل القبور"
+          },
+          "body": {
+            "en": "The visit begins with a greeting of peace and a dua for the dead and for ourselves.",
+            "de": "Der Besuch beginnt mit einem Friedensgruß und einem Bittgebet für die Verstorbenen und für uns selbst.",
+            "ar": "تبدأ الزيارة بالسلام ودعاءٍ للأموات ولنا."
+          }
+        },
+        {
+          "verse": "102:1-2",
+          "check": "visit the graveyards",
+          "title": {
+            "en": "A visit we will all make",
+            "de": "Ein Besuch, den wir alle machen",
+            "ar": "زيارةٌ لا بد منها"
+          },
+          "body": {
+            "en": "Many commentators read this visit as death itself: the race for more goes on until the grave. Visiting graves reminds us early.",
+            "de": "Viele Kommentatoren deuten diesen Besuch als den Tod selbst: Das Streben nach mehr geht bis ins Grab. Der Gräberbesuch erinnert uns früher daran.",
+            "ar": "يفسّر كثير من المفسرين هذه الزيارة بالموت نفسه: يستمر التنافس على الدنيا إلى أن يدخل المرء قبره، وزيارة القبور تذكّرنا قبل ذلك."
+          }
+        },
+        {
+          "hadith": "bukhari:1247",
+          "check": "went to his grave",
+          "title": {
+            "en": "No one is forgotten",
+            "de": "Niemand wird vergessen",
+            "ar": "لا يُنسى أحد"
+          },
+          "body": {
+            "en": "When a man was buried at night without his knowledge, the Prophet went to his grave to pray for him. Every believer matters.",
+            "de": "Als ein Mann nachts ohne sein Wissen begraben wurde, ging der Prophet zu seinem Grab, um für ihn zu beten. Jeder Gläubige zählt.",
+            "ar": "دُفن رجلٌ ليلًا دون علم النبي ﷺ، فذهب إلى قبره وصلّى عليه، فكل مؤمن له قدره."
+          }
+        },
+        {
+          "hadith": "muslim:2248",
+          "check": "sit on a grave",
+          "title": {
+            "en": "Respect for the place",
+            "de": "Achtung vor dem Ort",
+            "ar": "حرمة المكان"
+          },
+          "body": {
+            "en": "Graves are not seats or paths. The hadith uses a strong image to teach respect for the dead.",
+            "de": "Gräber sind keine Sitzplätze und keine Wege. Der Hadith lehrt mit einem starken Bild Achtung vor den Toten.",
+            "ar": "القبور ليست مقاعد ولا ممرات، والحديث يعلّم احترام الموتى بصورة بليغة."
+          }
+        },
+        {
+          "title": {
+            "en": "Across the traditions",
+            "de": "Über die Traditionen hinweg",
+            "ar": "عند المسلمين جميعًا"
+          },
+          "body": {
+            "en": "Muslims of every tradition visit graves to remember death and to pray for the dead. The schools differ on some details, so follow what your own scholars teach.",
+            "de": "Muslime aller Traditionen besuchen Gräber, um an den Tod zu denken und für die Verstorbenen zu beten. In manchen Einzelheiten unterscheiden sich die Schulen; folgen Sie dem, was Ihre Gelehrten lehren.",
+            "ar": "يزور المسلمون في كل مذاهبهم القبور تذكّرًا للموت ودعاءً للأموات، وتختلف المذاهب في بعض التفاصيل، فاتّبع ما يعلّمه علماؤك."
+          }
+        },
+        {
+          "title": {
+            "en": "When you visit",
+            "de": "Wenn Sie besuchen",
+            "ar": "عند الزيارة"
+          },
+          "list": {
+            "en": [
+              "Greet the dead and make dua for them",
+              "Walk carefully between the graves",
+              "Reflect quietly instead of chatting",
+              "Remember that one day you will join them"
+            ],
+            "de": [
+              "Grüßen Sie die Verstorbenen und machen Sie Dua für sie",
+              "Gehen Sie behutsam zwischen den Gräbern",
+              "Besinnen Sie sich still, statt zu plaudern",
+              "Denken Sie daran, dass Sie eines Tages zu ihnen kommen"
+            ],
+            "ar": [
+              "سلّم على الأموات وادعُ لهم",
+              "امشِ بحذر بين القبور",
+              "تأمّل بصمت ولا تنشغل بالحديث",
+              "تذكّر أنك ستلحق بهم يومًا"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Sahih Muslim, Book of Funerals: visiting graves as a reminder of death"
+        },
+        {
+          "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 102:1",
+          "url": "https://quran.com/102:1/tafsirs/en-tafisr-ibn-kathir"
+        },
+        {
+          "label": "al-Tabari, Jami' al-Bayan, on 102:2",
+          "url": "https://quran.com/102:2/tafsirs/ar-tafsir-al-tabari"
+        }
+      ]
+    },
+    {
+      "id": "etiquette-condolences",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": {
+          "en": "Islamic etiquette · 19",
+          "de": "Umgangsformen · 19",
+          "ar": "الآداب الإسلامية · ١٩"
+        },
+        "title": {
+          "en": "Comforting the bereaved",
+          "de": "Trauernde trösten",
+          "ar": "تعزية أهل المصاب"
+        },
+        "sub": {
+          "en": "What to say, what to do, and how to stay close after a loss",
+          "de": "Was man sagt, was man tut und wie man nach einem Verlust nahe bleibt",
+          "ar": "ماذا تقول وماذا تفعل وكيف تبقى قريبًا بعد الفقد"
+        },
+        "arabic": "التَّعْزِيَة"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "Carrying grief together",
+            "de": "Trauer gemeinsam tragen",
+            "ar": "نحمل الحزن معًا"
+          },
+          "arabic": "التعزية",
+          "body": {
+            "en": "Ta'ziyah means strengthening the bereaved with patience and hope, and standing by them in practical ways. Short words and real presence matter more than long speeches.",
+            "de": "Ta'ziya heißt, Trauernde mit Geduld und Hoffnung zu stärken und ihnen praktisch beizustehen. Kurze Worte und echte Nähe zählen mehr als lange Reden.",
+            "ar": "التعزية تقوية أهل المصاب بالصبر والرجاء، والوقوف معهم عمليًا، والكلمة القصيرة مع الحضور الصادق أبلغ من الخطب الطويلة."
+          }
+        },
+        {
+          "dua": "hisn:57:0",
+          "check": "belongs what He took",
+          "title": {
+            "en": "Words the Prophet sent",
+            "de": "Worte, die der Prophet sandte",
+            "ar": "كلماتٌ أرسلها النبي ﷺ"
+          },
+          "body": {
+            "en": "He sent these words to his grieving daughter. They remind the bereaved that all belongs to Allah and has its appointed time.",
+            "de": "Er sandte diese Worte seiner trauernden Tochter. Sie erinnern Trauernde daran, dass alles Allah gehört und seine festgesetzte Zeit hat.",
+            "ar": "أرسل بهذه الكلمات إلى ابنته المحزونة، وهي تذكّر أهل المصاب بأن كل شيء لله وله وقتٌ محدد."
+          }
+        },
+        {
+          "hadith": "bukhari:1303",
+          "check": "the heart is grieved",
+          "title": {
+            "en": "Tears are not weakness",
+            "de": "Tränen sind keine Schwäche",
+            "ar": "الدمع ليس ضعفًا"
+          },
+          "body": {
+            "en": "The Prophet wept as his little son Ibrahim was dying, and called it mercy. Grief is allowed; our words stay with what pleases Allah.",
+            "de": "Der Prophet weinte, als sein kleiner Sohn Ibrahim im Sterben lag, und nannte es Barmherzigkeit. Trauer ist erlaubt; unsere Worte bleiben bei dem, was Allah gefällt.",
+            "ar": "بكى النبي ﷺ وابنه إبراهيم يحتضر وسمّى ذلك رحمة، فالحزن مباح، والكلام يبقى فيما يرضي الله."
+          }
+        },
+        {
+          "dua": "hisn:53:0",
+          "check": "recompense me for my affliction",
+          "title": {
+            "en": "For the one who has lost",
+            "de": "Für den, der verloren hat",
+            "ar": "لمن فقد عزيزًا"
+          },
+          "body": {
+            "en": "The bereaved can say this dua: returning to Allah, and asking Him for reward and something better.",
+            "de": "Trauernde können dieses Bittgebet sprechen: sich Allah zuwenden und Ihn um Lohn und Besseres bitten.",
+            "ar": "يقول المصاب هذا الدعاء: رجوعٌ إلى الله وسؤاله الأجر والعوض الخير."
+          }
+        },
+        {
+          "hadith": "bukhari:1283",
+          "check": "first stroke of a calamity",
+          "title": {
+            "en": "Patience with the grieving",
+            "de": "Geduld mit Trauernden",
+            "ar": "الرفق بالمحزون"
+          },
+          "body": {
+            "en": "A grieving woman spoke harshly to the Prophet without knowing who he was. He did not take offence. Grief deserves our patience too.",
+            "de": "Eine trauernde Frau sprach den Propheten barsch an, ohne zu wissen, wer er war. Er nahm es ihr nicht übel. Auch wir schulden Trauernden Geduld.",
+            "ar": "خاطبت امرأة محزونة النبي ﷺ بجفاء وهي لا تعرفه، فلم يغضب، والمحزون يستحق صبرنا أيضًا."
+          }
+        },
+        {
+          "title": {
+            "en": "Being there",
+            "de": "Da sein",
+            "ar": "كن حاضرًا"
+          },
+          "list": {
+            "en": [
+              "Visit or call briefly and sincerely",
+              "Bring food or help with practical tasks",
+              "Listen more than you speak",
+              "Remember them in the weeks after, not only the first days"
+            ],
+            "de": [
+              "Besuchen oder rufen Sie kurz und aufrichtig an",
+              "Bringen Sie Essen oder helfen Sie bei Praktischem",
+              "Hören Sie mehr zu, als Sie sprechen",
+              "Denken Sie auch Wochen später an sie, nicht nur in den ersten Tagen"
+            ],
+            "ar": [
+              "زُر أو اتصل باختصار وصدق",
+              "أحضر طعامًا أو ساعد في الشؤون العملية",
+              "استمع أكثر مما تتكلم",
+              "تذكّرهم بعد أسابيع لا في الأيام الأولى فقط"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Sunan Abi Dawud 3132, Book of Funerals: preparing food for the family of Ja'far",
+          "url": "https://sunnah.com/abudawud:3132"
+        }
+      ]
+    },
+    {
+      "id": "etiquette-sharing-news",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": {
+          "en": "Islamic etiquette · 20",
+          "de": "Umgangsformen · 20",
+          "ar": "الآداب الإسلامية · ٢٠"
+        },
+        "title": {
+          "en": "Before you forward it",
+          "de": "Bevor Sie es weiterleiten",
+          "ar": "قبل أن تعيد الإرسال"
+        },
+        "sub": {
+          "en": "The Quran's manners for news, rumours and group chats",
+          "de": "Die Umgangsformen des Korans für Nachrichten, Gerüchte und Gruppen-Chats",
+          "ar": "آداب القرآن مع الأخبار والشائعات والمجموعات"
+        },
+        "arabic": "التَّثَبُّت"
+      },
+      "slides": [
+        {
+          "verse": "49:6",
+          "check": "investigate",
+          "title": {
+            "en": "Check before you share",
+            "de": "Prüfen Sie, bevor Sie teilen",
+            "ar": "تثبّت قبل النشر"
+          },
+          "body": {
+            "en": "When news comes from an unreliable source, verify it. Otherwise you may harm people and regret it.",
+            "de": "Wenn eine Nachricht aus unzuverlässiger Quelle kommt, prüfen Sie sie. Sonst schaden Sie vielleicht Menschen und bereuen es.",
+            "ar": "إذا جاءك خبر من مصدر غير موثوق فتحقّق منه، وإلا ربما آذيت أبرياء ثم ندمت."
+          }
+        },
+        {
+          "verse": "24:15",
+          "check": "received it with your tongues",
+          "title": {
+            "en": "From tongue to tongue",
+            "de": "Von Zunge zu Zunge",
+            "ar": "من لسان إلى لسان"
+          },
+          "body": {
+            "en": "In the slander against 'A'ishah, people passed on what they had not checked and thought it minor. Allah called it grave.",
+            "de": "Bei der Verleumdung gegen 'A'ischa gaben Menschen weiter, was sie nicht geprüft hatten, und hielten es für gering. Allah nannte es gewaltig.",
+            "ar": "في حادثة الإفك تناقل الناس ما لم يتثبّتوا منه وظنّوه أمرًا صغيرًا، وكان عند الله خطيرًا."
+          }
+        },
+        {
+          "verse": "17:36",
+          "check": "the hearing, the sight and the heart",
+          "title": {
+            "en": "Hearing, sight and heart",
+            "de": "Gehör, Blick und Herz",
+            "ar": "ما نسمع ونرى ونعتقد"
+          },
+          "body": {
+            "en": "We will be asked about what we heard, saw and believed. That includes what we read and forward.",
+            "de": "Wir werden gefragt nach dem, was wir hörten, sahen und glaubten. Dazu gehört auch, was wir lesen und weiterleiten.",
+            "ar": "سنُسأل عما سمعنا ورأينا واعتقدنا، ومن ذلك ما نقرؤه ونعيد إرساله."
+          }
+        },
+        {
+          "verse": "4:83",
+          "check": "spread it around",
+          "title": {
+            "en": "Not every report is for everyone",
+            "de": "Nicht jede Meldung ist für alle",
+            "ar": "ليس كل خبر للجميع"
+          },
+          "body": {
+            "en": "News about safety and fear belongs first with those able to judge it, not straight to everyone.",
+            "de": "Nachrichten über Sicherheit und Gefahr gehören zuerst zu denen, die sie beurteilen können, nicht sofort zu allen.",
+            "ar": "الأخبار التي تمسّ سلامة الناس وطمأنينتهم تُعرض أولًا على أهل الخبرة، ولا تُنشر على الجميع."
+          }
+        },
+        {
+          "hadith": "bukhari:5975",
+          "check": "talk too much about others",
+          "title": {
+            "en": "Endless talk",
+            "de": "Endloses Gerede",
+            "ar": "كثرة الكلام عن الناس"
+          },
+          "body": {
+            "en": "Among the things Allah dislikes is talking too much about others. Group chats can turn into exactly that.",
+            "de": "Zu dem, was Allah missfällt, gehört das viele Reden über andere. Gruppen-Chats können genau dazu werden.",
+            "ar": "من الأمور التي يكرهها الله كثرة الحديث عن الناس، وقد تتحوّل المجموعات إلى ذلك تمامًا."
+          }
+        },
+        {
+          "title": {
+            "en": "Before you forward",
+            "de": "Bevor Sie weiterleiten",
+            "ar": "قبل إعادة الإرسال"
+          },
+          "list": {
+            "en": [
+              "Who is the source?",
+              "Is it true, and is it complete?",
+              "Will it help or harm someone?",
+              "Would the person concerned agree?"
+            ],
+            "de": [
+              "Wer ist die Quelle?",
+              "Ist es wahr und vollständig?",
+              "Hilft es jemandem oder schadet es?",
+              "Wäre die betroffene Person einverstanden?"
+            ],
+            "ar": [
+              "من المصدر؟",
+              "هل هو صحيح وكامل؟",
+              "هل ينفع أحدًا أم يضرّه؟",
+              "هل يرضى به المعنيّ بالخبر؟"
+            ]
+          }
+        }
+      ]
     }
   ]
 }

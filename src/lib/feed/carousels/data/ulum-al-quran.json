@@ -1145,6 +1145,1795 @@
           "label": "Jalal al-Din al-Suyuti, al-Itqan fi 'Ulum al-Qur'an"
         }
       ]
+    },
+    {
+      "id": "ulum-al-quran-09-naskh",
+      "tradition": "all",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": {
+          "en": "Sciences of the Quran · 9",
+          "de": "Koranwissenschaften · 9",
+          "ar": "علوم القرآن · ٩"
+        },
+        "title": {
+          "en": "Abrogation: rulings that were replaced",
+          "de": "Abrogation: Bestimmungen, die abgelöst wurden",
+          "ar": "النسخ في القرآن"
+        },
+        "sub": {
+          "en": "What naskh means, a few classic examples, and why scholars differ so much",
+          "de": "Was Naskh bedeutet, einige klassische Beispiele und warum Gelehrte so stark voneinander abweichen",
+          "ar": "معنى النسخ، وأمثلة مشهورة، ولماذا اختلف العلماء فيه كثيرًا"
+        },
+        "arabic": "النَّسْخ"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "What naskh means",
+            "de": "Was Naskh bedeutet",
+            "ar": "ما النسخ"
+          },
+          "arabic": "الناسخ والمنسوخ",
+          "body": {
+            "en": "In the sciences of the Quran, naskh means that a later ruling replaces an earlier one, for a wisdom Allah knows. It concerns rulings, not beliefs or stories, and it could only happen during the time of revelation.",
+            "de": "In den Koranwissenschaften bedeutet Naskh, dass eine spätere Bestimmung eine frühere ablöst, aus einer Weisheit, die Allah kennt. Es betrifft Bestimmungen, nicht Glaubensinhalte oder Erzählungen, und konnte nur zur Zeit der Offenbarung geschehen.",
+            "ar": "النسخ في علوم القرآن رفع حكمٍ سابق بحكمٍ لاحق لحكمةٍ يعلمها الله، ويكون في الأحكام لا في العقائد والأخبار، ولا يقع إلا في زمن نزول الوحي."
+          }
+        },
+        {
+          "verse": "2:106",
+          "check": "We do not abrogate a verse",
+          "title": {
+            "en": "The Quran names it",
+            "de": "Der Koran benennt es",
+            "ar": "القرآن يذكره"
+          },
+          "body": {
+            "en": "The Quran itself speaks of replacing a verse with a better or similar one. Commentators discuss what 'verse' means here.",
+            "de": "Der Koran selbst spricht davon, einen Vers durch einen besseren oder gleichwertigen zu ersetzen. Die Kommentatoren erörtern, was 'Vers' hier bedeutet.",
+            "ar": "يتحدث القرآن نفسه عن استبدال آية بما هو أفضل منها أو مساوٍ لها، ويناقش المفسرون المراد بالآية هنا."
+          }
+        },
+        {
+          "verse": "16:101",
+          "check": "substitute a verse in place of a verse",
+          "title": {
+            "en": "Change is not weakness",
+            "de": "Wandel ist keine Schwäche",
+            "ar": "التبديل ليس ضعفًا"
+          },
+          "body": {
+            "en": "Opponents took change as proof of invention. The Quran answers that Allah knows best what He sends down.",
+            "de": "Gegner sahen im Wandel einen Beweis der Erfindung. Der Koran antwortet, dass Allah am besten weiß, was Er herabsendet.",
+            "ar": "اتخذ المعارضون التبديل دليلًا على الافتراء، فبيّن القرآن أن الله هو العليم بحكمة ما يوحيه."
+          }
+        },
+        {
+          "verse": "58:12",
+          "check": "before your consultation a charity",
+          "title": {
+            "en": "A classic example",
+            "de": "Ein klassisches Beispiel",
+            "ar": "مثالٌ مشهور"
+          },
+          "body": {
+            "en": "Believers were told to give charity before a private talk with the Prophet. Many scholars, Sunni and Shia, cite this as a clear case of naskh.",
+            "de": "Die Gläubigen sollten vor einem vertraulichen Gespräch mit dem Propheten eine Spende geben. Viele Gelehrte, sunnitische wie schiitische, nennen dies einen klaren Fall von Naskh.",
+            "ar": "أُمر المؤمنون بتقديم صدقة قبل مناجاة النبي ﷺ، ويعدّ كثير من العلماء سنةً وشيعةً هذا مثالًا واضحًا للنسخ."
+          }
+        },
+        {
+          "verse": "58:13",
+          "check": "Allāh has forgiven you",
+          "title": {
+            "en": "The lighter ruling",
+            "de": "Die leichtere Bestimmung",
+            "ar": "التخفيف"
+          },
+          "body": {
+            "en": "The next verse lifts the requirement and points to prayer, zakah and obedience instead.",
+            "de": "Der nächste Vers hebt die Pflicht auf und verweist stattdessen auf Gebet, Zakat und Gehorsam.",
+            "ar": "تأتي الآية التالية برفع هذا التكليف، وتوجّه إلى الصلاة والزكاة والطاعة."
+          }
+        },
+        {
+          "title": {
+            "en": "How many cases?",
+            "de": "Wie viele Fälle?",
+            "ar": "كم عدد المنسوخ؟"
+          },
+          "body": {
+            "en": "Scholars differ widely. Al-Suyuti listed around twenty cases, Shah Wali Allah narrowed them to five, and the Shia scholar al-Khu'i accepted only the verse of private consultation. A few are reported to have denied naskh in the Quran altogether.",
+            "de": "Die Gelehrten gehen weit auseinander. As-Suyuti nannte rund zwanzig Fälle, Schah Wali Allah grenzte sie auf fünf ein, und der schiitische Gelehrte al-Khu'i erkannte nur den Vers über das vertrauliche Gespräch an. Einige sollen Naskh im Koran ganz abgelehnt haben.",
+            "ar": "اختلف العلماء كثيرًا: عدّ السيوطي نحو عشرين موضعًا، وقصرها شاه ولي الله على خمسة، ولم يقبل العالم الشيعي الخوئي إلا آية النجوى، ويُنقل عن قلةٍ إنكارُ النسخ في القرآن أصلًا."
+          }
+        },
+        {
+          "title": {
+            "en": "Key points",
+            "de": "Das Wichtigste",
+            "ar": "خلاصة"
+          },
+          "list": {
+            "en": [
+              "Naskh concerns rulings, not beliefs or stories",
+              "It ended with the Prophet's death",
+              "Scholars differ on how many cases exist",
+              "A claim of naskh needs clear evidence"
+            ],
+            "de": [
+              "Naskh betrifft Bestimmungen, nicht Glauben oder Erzählungen",
+              "Es endete mit dem Tod des Propheten",
+              "Über die Zahl der Fälle sind sich die Gelehrten uneinig",
+              "Eine Behauptung von Naskh braucht klare Belege"
+            ],
+            "ar": [
+              "النسخ في الأحكام لا في العقائد والأخبار",
+              "انتهى بوفاة النبي ﷺ",
+              "اختلف العلماء في عدد مواضعه",
+              "لا يُقبل ادعاء النسخ إلا بدليل واضح"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Jalal al-Din al-Suyuti, al-Itqan fi 'Ulum al-Qur'an, chapter on naskh"
+        },
+        {
+          "label": "Shah Wali Allah al-Dihlawi, al-Fawz al-Kabir fi Usul al-Tafsir"
+        },
+        {
+          "label": "Abu al-Qasim al-Khu'i, al-Bayan fi Tafsir al-Qur'an"
+        },
+        {
+          "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 58:12",
+          "url": "https://quran.com/58:12/tafsirs/en-tafisr-ibn-kathir"
+        }
+      ]
+    },
+    {
+      "id": "ulum-al-quran-10-muhkam-mutashabih",
+      "tradition": "all",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": {
+          "en": "Sciences of the Quran · 10",
+          "de": "Koranwissenschaften · 10",
+          "ar": "علوم القرآن · ١٠"
+        },
+        "title": {
+          "en": "Clear and ambiguous verses",
+          "de": "Eindeutige und mehrdeutige Verse",
+          "ar": "المحكم والمتشابه"
+        },
+        "sub": {
+          "en": "Muhkam and mutashabih: three meanings, one famous pause and a method for reading",
+          "de": "Muhkam und Mutaschabih: drei Bedeutungen, eine berühmte Pause und eine Lesemethode",
+          "ar": "ثلاثة معانٍ، ووقفٌ مشهور، ومنهجٌ في القراءة"
+        },
+        "arabic": "المُحْكَم وَالمُتَشَابِه"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "Three ways the Quran uses the words",
+            "de": "Drei Weisen, wie der Koran die Worte gebraucht",
+            "ar": "ثلاثة استعمالات"
+          },
+          "arabic": "إحكام · تشابه",
+          "body": {
+            "en": "The whole Book is called muhkam, precisely made. The whole Book is called mutashabih, consistent in truth and beauty. And in Al 'Imran (3:7) some verses are called muhkam, clear, and others mutashabih, open to more than one meaning.",
+            "de": "Das ganze Buch heißt muhkam, vollkommen gefügt. Das ganze Buch heißt mutaschabih, in Wahrheit und Schönheit einheitlich. Und in Al 'Imran (3:7) heißen manche Verse muhkam, eindeutig, und andere mutaschabih, offen für mehr als eine Bedeutung.",
+            "ar": "وُصف الكتاب كله بالإحكام، أي الإتقان، ووُصف كله بالتشابه، أي التماثل في الحق والحسن، وفي آل عمران (٣:٧) جُعل بعضه محكمًا واضحًا وبعضه متشابهًا يحتمل أكثر من معنى."
+          }
+        },
+        {
+          "verse": "11:1",
+          "check": "verses are perfected",
+          "title": {
+            "en": "The whole Book is precise",
+            "de": "Das ganze Buch ist vollkommen",
+            "ar": "الكتاب كله محكم"
+          },
+          "body": {
+            "en": "Every verse is described as perfected, then explained in detail. In this sense the whole Quran is muhkam.",
+            "de": "Jeder Vers wird als vollkommen gefügt und dann ausführlich erklärt beschrieben. In diesem Sinn ist der ganze Koran muhkam.",
+            "ar": "توصف آياته كلها بالإتقان ثم بالتفصيل والبيان، وبهذا المعنى فالقرآن كله محكم."
+          }
+        },
+        {
+          "verse": "39:23",
+          "check": "a consistent Book",
+          "title": {
+            "en": "The whole Book is consistent",
+            "de": "Das ganze Buch ist einheitlich",
+            "ar": "الكتاب كله متشابه"
+          },
+          "body": {
+            "en": "Here the whole Quran is mutashabih in the sense of consistent: its parts resemble one another in truth and beauty.",
+            "de": "Hier ist der ganze Koran mutaschabih im Sinne von einheitlich: Seine Teile gleichen einander in Wahrheit und Schönheit.",
+            "ar": "هنا يوصف القرآن كله بالتشابه بمعنى التماثل: يشبه بعضه بعضًا في الحق والجمال."
+          }
+        },
+        {
+          "title": {
+            "en": "The clear as a base",
+            "de": "Das Eindeutige als Grundlage",
+            "ar": "المحكم أصلٌ يُرجع إليه"
+          },
+          "body": {
+            "en": "In 3:7 the clear verses are the base to which the rest returns. Verses open to several meanings are read in their light, not against them.",
+            "de": "In 3:7 sind die eindeutigen Verse die Grundlage, auf die alles andere zurückgeführt wird. Mehrdeutige Verse werden in ihrem Licht gelesen, nicht gegen sie.",
+            "ar": "في الآية ٣:٧ المحكمات أصلٌ يُردّ إليه غيرها، فيُقرأ المتشابه في ضوئها لا في معارضتها."
+          }
+        },
+        {
+          "title": {
+            "en": "Where to pause?",
+            "de": "Wo innehalten?",
+            "ar": "أين الوقف؟"
+          },
+          "body": {
+            "en": "Scholars differ on a pause in 3:7. Read one way, only Allah knows the final meaning of these verses; read another, the firmly grounded scholars know it too. Many Shia scholars count the Prophet and the Imams foremost among them.",
+            "de": "Gelehrte sind sich über eine Pause in 3:7 uneinig. Auf die eine Weise gelesen, kennt allein Allah die letzte Bedeutung dieser Verse; auf die andere kennen sie auch die im Wissen Gefestigten. Viele schiitische Gelehrte zählen den Propheten und die Imame zuvorderst dazu.",
+            "ar": "اختلف العلماء في الوقف في الآية ٣:٧: فعلى وجهٍ يكون العلم بحقيقة معناه لله وحده، وعلى وجهٍ آخر يشارك فيه أهل الرسوخ في العلم، ولكلٍّ سلف، ويرى كثير من علماء الشيعة أن النبي ﷺ والأئمة في مقدمة أهل الرسوخ."
+          }
+        },
+        {
+          "title": {
+            "en": "What scholars discuss",
+            "de": "Was Gelehrte erörtern",
+            "ar": "ما يتناوله العلماء"
+          },
+          "list": {
+            "en": [
+              "The disjointed letters at the start of surahs",
+              "Verses about Allah's attributes",
+              "Details of the Hereafter and the unseen",
+              "Words with more than one possible sense"
+            ],
+            "de": [
+              "Die einzelnen Buchstaben am Beginn von Suren",
+              "Verse über Allahs Eigenschaften",
+              "Einzelheiten des Jenseits und des Verborgenen",
+              "Wörter mit mehr als einem möglichen Sinn"
+            ],
+            "ar": [
+              "الحروف المقطعة في أوائل السور",
+              "آيات الصفات",
+              "تفاصيل الآخرة والغيب",
+              "الألفاظ المحتملة لأكثر من معنى"
+            ]
+          }
+        },
+        {
+          "title": {
+            "en": "Reading these verses well",
+            "de": "Diese Verse gut lesen",
+            "ar": "كيف نقرأ المتشابه"
+          },
+          "list": {
+            "en": [
+              "Start from the clear verses",
+              "Read the less clear in their light",
+              "Ask people of knowledge",
+              "Say 'Allah knows best' where knowledge ends"
+            ],
+            "de": [
+              "Beginnen Sie bei den eindeutigen Versen",
+              "Lesen Sie die weniger klaren in ihrem Licht",
+              "Fragen Sie Menschen mit Wissen",
+              "Sagen Sie 'Allah weiß es am besten', wo das Wissen endet"
+            ],
+            "ar": [
+              "ابدأ بالمحكمات",
+              "اقرأ المتشابه في ضوئها",
+              "اسأل أهل العلم",
+              "قل «الله أعلم» حيث ينتهي العلم"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Badr al-Din al-Zarkashi, al-Burhan fi 'Ulum al-Qur'an"
+        },
+        {
+          "label": "Jalal al-Din al-Suyuti, al-Itqan fi 'Ulum al-Qur'an"
+        },
+        {
+          "label": "Muhammad Husayn al-Tabataba'i, al-Mizan fi Tafsir al-Qur'an, on 3:7"
+        },
+        {
+          "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 3:7",
+          "url": "https://quran.com/3:7/tafsirs/en-tafisr-ibn-kathir"
+        },
+        {
+          "label": "al-Kulayni, al-Kafi, Book of the Proof, chapter on those firmly grounded in knowledge",
+          "url": "https://thaqalayn.com/chapter/1/4/22"
+        }
+      ]
+    },
+    {
+      "id": "ulum-al-quran-11-asbab-al-nuzul",
+      "tradition": "all",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": {
+          "en": "Sciences of the Quran · 11",
+          "de": "Koranwissenschaften · 11",
+          "ar": "علوم القرآن · ١١"
+        },
+        "title": {
+          "en": "Occasions of revelation",
+          "de": "Anlässe der Offenbarung",
+          "ar": "أسباب النزول"
+        },
+        "sub": {
+          "en": "How knowing the setting of a verse helps, and why the reports need care",
+          "de": "Wie das Wissen um den Hintergrund eines Verses hilft und warum die Berichte Sorgfalt brauchen",
+          "ar": "كيف تعين معرفة سياق الآية، ولماذا تحتاج الروايات إلى تثبّت"
+        },
+        "arabic": "أَسْبَابُ النُّزُول"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "A field of its own",
+            "de": "Ein eigenes Fachgebiet",
+            "ar": "علمٌ قائم بذاته"
+          },
+          "arabic": "سبب النزول",
+          "body": {
+            "en": "Many passages came down in response to an event or a question. Scholars collected these reports to understand the setting of a verse. Not every verse has one, and the reports differ in strength.",
+            "de": "Viele Abschnitte wurden als Antwort auf ein Ereignis oder eine Frage offenbart. Gelehrte sammelten diese Berichte, um den Hintergrund eines Verses zu verstehen. Nicht jeder Vers hat einen, und die Berichte sind unterschiedlich zuverlässig.",
+            "ar": "نزلت مقاطع كثيرة جوابًا عن حادثة أو سؤال، فجمع العلماء هذه الروايات لفهم سياق الآية، وليس لكل آية سبب، والروايات متفاوتة في القوة."
+          }
+        },
+        {
+          "verse": "2:219",
+          "check": "They ask you about wine and gambling",
+          "title": {
+            "en": "They ask you",
+            "de": "Man fragte nach",
+            "ar": "أسئلة الناس"
+          },
+          "body": {
+            "en": "Several passages open by naming a question people had asked. Real questions from real people shaped the revelation.",
+            "de": "Mehrere Abschnitte beginnen damit, eine Frage zu nennen, die Menschen gestellt hatten. Echte Fragen echter Menschen prägten die Offenbarung.",
+            "ar": "تبدأ مقاطع عدة بذكر سؤالٍ طرحه الناس، فقد كان للأسئلة الحقيقية أثرٌ في نزول الوحي."
+          }
+        },
+        {
+          "verse": "58:1",
+          "check": "concerning her husband",
+          "title": {
+            "en": "A woman's complaint",
+            "de": "Die Klage einer Frau",
+            "ar": "شكوى امرأة"
+          },
+          "body": {
+            "en": "Surat al-Mujadilah opens with a woman who pleaded about her husband. The rulings that follow answered her case.",
+            "de": "Sure al-Mudschadila beginnt mit einer Frau, die wegen ihres Mannes vorsprach. Die folgenden Bestimmungen antworteten auf ihren Fall.",
+            "ar": "تُفتتح سورة المجادلة بامرأة حاورت النبي ﷺ في أمر زوجها، والأحكام التالية جاءت جوابًا عن قضيتها."
+          }
+        },
+        {
+          "title": {
+            "en": "General words, specific cause",
+            "de": "Allgemeiner Wortlaut, besonderer Anlass",
+            "ar": "عموم اللفظ وخصوص السبب"
+          },
+          "arabic": "العبرة بعموم اللفظ",
+          "body": {
+            "en": "Most scholars hold that the lesson of a verse follows its general wording, not only its occasion: a verse revealed about one person speaks to everyone in the same situation.",
+            "de": "Die meisten Gelehrten vertreten, dass die Lehre eines Verses seinem allgemeinen Wortlaut folgt, nicht nur seinem Anlass: Ein Vers, der wegen einer Person offenbart wurde, spricht alle in derselben Lage an.",
+            "ar": "يرى جمهور العلماء أن العبرة بعموم اللفظ لا بخصوص السبب، فالآية النازلة في شخص تخاطب كل من كان في حاله."
+          }
+        },
+        {
+          "verse": "17:85",
+          "check": "about the soul",
+          "title": {
+            "en": "An answer with limits",
+            "de": "Eine Antwort mit Grenzen",
+            "ar": "جوابٌ يرسم الحدود"
+          },
+          "body": {
+            "en": "Some questions receive a short answer that marks the limits of human knowledge. That, too, is guidance.",
+            "de": "Manche Fragen erhalten eine kurze Antwort, die die Grenzen menschlichen Wissens aufzeigt. Auch das ist Rechtleitung.",
+            "ar": "بعض الأسئلة يأتي جوابها موجزًا يبيّن حدود علم الإنسان، وهذا هدى أيضًا."
+          }
+        },
+        {
+          "title": {
+            "en": "Handle reports with care",
+            "de": "Berichte mit Sorgfalt behandeln",
+            "ar": "التثبت في الروايات"
+          },
+          "body": {
+            "en": "Reports about occasions vary: some are sound, some weak, and sometimes several occasions are named for one verse. Scholars weigh them like any other narration. Never attach a story to a verse without a source.",
+            "de": "Berichte über Anlässe sind verschieden: manche gesichert, manche schwach, und manchmal werden für einen Vers mehrere Anlässe genannt. Gelehrte prüfen sie wie jede andere Überlieferung. Verbinden Sie nie eine Geschichte ohne Quelle mit einem Vers.",
+            "ar": "روايات أسباب النزول متفاوتة: منها الصحيح والضعيف، وقد تُذكر للآية الواحدة أسباب متعددة، فيزنها العلماء كسائر الروايات. ولا تنسب قصةً إلى آية بلا مصدر."
+          }
+        },
+        {
+          "title": {
+            "en": "Using asbab an-nuzul",
+            "de": "Asbab an-Nuzul nutzen",
+            "ar": "الإفادة من أسباب النزول"
+          },
+          "list": {
+            "en": [
+              "Check the occasion in a reliable tafsir",
+              "Do not limit a verse to its occasion",
+              "Notice how the Quran answers questions",
+              "Be careful with stories that have no source"
+            ],
+            "de": [
+              "Prüfen Sie den Anlass in einem verlässlichen Tafsir",
+              "Beschränken Sie einen Vers nicht auf seinen Anlass",
+              "Achten Sie darauf, wie der Koran Fragen beantwortet",
+              "Seien Sie vorsichtig mit Geschichten ohne Quelle"
+            ],
+            "ar": [
+              "تحقّق من السبب في تفسير موثوق",
+              "لا تحصر الآية في سببها",
+              "تأمّل كيف يجيب القرآن عن الأسئلة",
+              "احذر القصص التي لا مصدر لها"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Abu al-Hasan al-Wahidi, Asbab al-Nuzul"
+        },
+        {
+          "label": "Jalal al-Din al-Suyuti, Lubab al-Nuqul fi Asbab al-Nuzul"
+        }
+      ]
+    },
+    {
+      "id": "ulum-al-quran-12-basmalah",
+      "tradition": "all",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": {
+          "en": "Sciences of the Quran · 12",
+          "de": "Koranwissenschaften · 12",
+          "ar": "علوم القرآن · ١٢"
+        },
+        "title": {
+          "en": "The Basmalah: in every surah but one",
+          "de": "Die Basmala: in jeder Sure außer einer",
+          "ar": "البسملة في السور"
+        },
+        "sub": {
+          "en": "Where it appears, where it does not, and how the schools count it",
+          "de": "Wo sie steht, wo nicht, und wie die Rechtsschulen sie zählen",
+          "ar": "أين وردت، وأين غابت، وكيف عدّتها المذاهب"
+        },
+        "arabic": "البَسْمَلَة"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "114 times",
+            "de": "114 Mal",
+            "ar": "مئة وأربع عشرة مرة"
+          },
+          "arabic": "البسملة",
+          "body": {
+            "en": "Every surah except al-Tawbah opens with the Basmalah, and in Surat an-Naml it also appears inside a verse. So it occurs 114 times, as many as there are surahs.",
+            "de": "Jede Sure außer at-Tauba beginnt mit der Basmala, und in Sure an-Naml steht sie zusätzlich innerhalb eines Verses. So kommt sie 114 Mal vor, so oft, wie es Suren gibt.",
+            "ar": "تبدأ كل السور بالبسملة إلا سورة التوبة، وترد في سورة النمل داخل آية أيضًا، فتتكرر مئة وأربع عشرة مرة بعدد السور."
+          }
+        },
+        {
+          "verse": "1:1",
+          "check": "In the name of Allāh",
+          "title": {
+            "en": "The first verse of al-Fatiha",
+            "de": "Der erste Vers von al-Fatiha",
+            "ar": "أول آية في الفاتحة"
+          },
+          "body": {
+            "en": "In the Kufan count used in most printed mushafs, the Basmalah is numbered as the first verse of al-Fatiha.",
+            "de": "In der kufischen Zählung, die die meisten gedruckten Mushafs verwenden, ist die Basmala der erste Vers von al-Fatiha.",
+            "ar": "في العدّ الكوفي المعتمد في أكثر المصاحف المطبوعة تُعدّ البسملة الآية الأولى من الفاتحة."
+          }
+        },
+        {
+          "verse": "27:30",
+          "check": "it is from Solomon",
+          "title": {
+            "en": "Inside a letter",
+            "de": "In einem Brief",
+            "ar": "في رسالة"
+          },
+          "body": {
+            "en": "Sulayman's letter to the Queen of Sheba begins with the Basmalah. Here it is part of a verse in every count.",
+            "de": "Sulaimans Brief an die Königin von Saba beginnt mit der Basmala. Hier ist sie in jeder Zählung Teil eines Verses.",
+            "ar": "تبدأ رسالة سليمان إلى ملكة سبأ بالبسملة، وهي هنا جزء من آية باتفاق."
+          }
+        },
+        {
+          "verse": "9:1",
+          "check": "disassociation",
+          "title": {
+            "en": "The one surah without it",
+            "de": "Die eine Sure ohne sie",
+            "ar": "السورة الوحيدة بلا بسملة"
+          },
+          "body": {
+            "en": "Al-Tawbah begins without the Basmalah. Scholars give several explanations, among them its stern opening and its close link to al-Anfal.",
+            "de": "At-Tauba beginnt ohne Basmala. Gelehrte nennen mehrere Erklärungen, darunter ihren ernsten Beginn und ihre enge Verbindung mit al-Anfal.",
+            "ar": "تبدأ سورة التوبة بلا بسملة، وللعلماء في ذلك أقوال، منها شدة مطلعها وصلتها الوثيقة بسورة الأنفال."
+          }
+        },
+        {
+          "title": {
+            "en": "A verse of every surah?",
+            "de": "Ein Vers jeder Sure?",
+            "ar": "هل هي آية من كل سورة؟"
+          },
+          "body": {
+            "en": "Broadly, the Shafi'i school and Shia scholars count it as a verse of every surah except al-Tawbah. Hanafi and many Hanbali scholars see it as a separate verse that marks where surahs begin. The Maliki school counts it only in an-Naml.",
+            "de": "Grob gesagt zählen die schafi'itische Schule und schiitische Gelehrte sie als Vers jeder Sure außer at-Tauba. Hanafiten und viele Hanbaliten sehen sie als eigenen Vers, der den Beginn der Suren markiert. Die malikitische Schule zählt sie nur in an-Naml.",
+            "ar": "على وجه الإجمال يعدّها الشافعية وعلماء الشيعة آيةً من كل سورة سوى التوبة، ويراها الحنفية وكثير من الحنابلة آية مستقلة للفصل بين السور، ولا يعدّها المالكية إلا في سورة النمل."
+          }
+        },
+        {
+          "title": {
+            "en": "Seen in the prayer",
+            "de": "Sichtbar im Gebet",
+            "ar": "أثر ذلك في الصلاة"
+          },
+          "body": {
+            "en": "These views shape practice: some recite the Basmalah aloud in the loud prayers, others quietly, others not at all in the obligatory prayer. Each follows its school's evidence, and all deserve respect.",
+            "de": "Diese Ansichten prägen die Praxis: Manche sprechen die Basmala in den lauten Gebeten laut, andere leise, andere im Pflichtgebet gar nicht. Jeder folgt den Belegen seiner Schule, und alle verdienen Achtung.",
+            "ar": "انعكس هذا على العمل: فمنهم من يجهر بالبسملة في الصلاة الجهرية، ومنهم من يُسرّ بها، ومنهم من لا يقرؤها في الفريضة، وكلٌّ يتبع أدلة مذهبه، والجميع جديرون بالاحترام."
+          }
+        },
+        {
+          "title": {
+            "en": "Living with Bismillah",
+            "de": "Mit Bismillah leben",
+            "ar": "الحياة مع البسملة"
+          },
+          "list": {
+            "en": [
+              "Begin meals, journeys and work with it",
+              "Recite it at the start of each surah except al-Tawbah",
+              "Respect how other schools recite it",
+              "Let it remind you in whose name you act"
+            ],
+            "de": [
+              "Beginnen Sie Mahlzeiten, Reisen und Arbeit mit ihr",
+              "Sprechen Sie sie zu Beginn jeder Sure außer at-Tauba",
+              "Achten Sie, wie andere Schulen sie rezitieren",
+              "Lassen Sie sich erinnern, in wessen Namen Sie handeln"
+            ],
+            "ar": [
+              "ابدأ بها طعامك وسفرك وعملك",
+              "اقرأها في أول كل سورة إلا التوبة",
+              "احترم طريقة المذاهب الأخرى فيها",
+              "تذكّر بها باسم من تعمل"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "al-Qurtubi, al-Jami' li-Ahkam al-Qur'an, on the Basmalah"
+        },
+        {
+          "label": "Ibn Rushd, Bidayat al-Mujtahid, Book of Prayer"
+        },
+        {
+          "label": "Jalal al-Din al-Suyuti, al-Itqan fi 'Ulum al-Qur'an"
+        },
+        {
+          "label": "al-Qurtubi, al-Jami' li-Ahkam al-Qur'an, on 9:1",
+          "url": "https://quran.com/9:1/tafsirs/ar-tafseer-al-qurtubi"
+        },
+        {
+          "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim (Arabic), on 9:1",
+          "url": "https://quran.com/9:1/tafsirs/ar-tafsir-ibn-kathir"
+        }
+      ]
+    },
+    {
+      "id": "ulum-al-quran-13-uthmani-rasm",
+      "tradition": "all",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": {
+          "en": "Sciences of the Quran · 13",
+          "de": "Koranwissenschaften · 13",
+          "ar": "علوم القرآن · ١٣"
+        },
+        "title": {
+          "en": "The 'Uthmani script",
+          "de": "Die 'uthmanische Schreibweise",
+          "ar": "الرسم العثماني"
+        },
+        "sub": {
+          "en": "How the mushaf was written, and how dots and vowel signs came later",
+          "de": "Wie der Mushaf geschrieben wurde und wie Punkte und Vokalzeichen später hinzukamen",
+          "ar": "كيف كُتب المصحف، وكيف أُضيف النقط والشكل لاحقًا"
+        },
+        "arabic": "الرَّسْمُ العُثْمَانِي"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "Letters without dots",
+            "de": "Buchstaben ohne Punkte",
+            "ar": "حروف بلا نقط"
+          },
+          "arabic": "الرسم",
+          "body": {
+            "en": "The copies made under 'Uthman were written in the Arabic script of the time: consonants without dots or vowel signs. Their particular spelling is called ar-rasm al-'Uthmani.",
+            "de": "Die unter 'Uthman angefertigten Abschriften wurden in der arabischen Schrift ihrer Zeit geschrieben: Konsonanten ohne Punkte und Vokalzeichen. Ihre besondere Schreibweise heißt ar-Rasm al-'Uthmani.",
+            "ar": "كُتبت المصاحف في عهد عثمان بالخط العربي في زمانها: حروفٌ بلا نقط ولا شكل، ويُسمّى هجاؤها الخاص الرسم العثماني."
+          }
+        },
+        {
+          "verse": "52:1-3",
+          "check": "a Book inscribed",
+          "title": {
+            "en": "A Book written down",
+            "de": "Ein niedergeschriebenes Buch",
+            "ar": "كتابٌ مكتوب"
+          },
+          "body": {
+            "en": "The Quran swears by a written Book on open parchment. Writing was part of revelation's story from the start.",
+            "de": "Der Koran schwört bei einem geschriebenen Buch auf ausgebreitetem Pergament. Das Schreiben gehörte von Anfang an zur Geschichte der Offenbarung.",
+            "ar": "يُقسم القرآن بكتابٍ مكتوب على صحائف مبسوطة، فقد كانت الكتابة جزءًا من قصة الوحي منذ البداية."
+          }
+        },
+        {
+          "title": {
+            "en": "Dots and vowels came later",
+            "de": "Punkte und Vokale kamen später",
+            "ar": "النقط والشكل لاحقًا"
+          },
+          "arabic": "النقط والشكل",
+          "body": {
+            "en": "As more non-Arabs read the Quran, scholars added marks: first dots for vowels, usually linked to Abu al-Aswad ad-Du'ali, then dots to tell letters apart, then al-Khalil ibn Ahmad's vowel signs. The letters themselves were not changed.",
+            "de": "Als immer mehr Nichtaraber den Koran lasen, fügten Gelehrte Zeichen hinzu: zuerst Punkte für Vokale, meist mit Abu l-Aswad ad-Duali verbunden, dann Punkte zur Unterscheidung der Buchstaben, dann die Vokalzeichen von al-Chalil ibn Ahmad. Die Buchstaben selbst blieben unverändert.",
+            "ar": "لما كثر غير العرب بين قرّاء القرآن أضاف العلماء علامات: نقط الإعراب المنسوب عادةً إلى أبي الأسود الدؤلي، ثم نقط الإعجام للتمييز بين الحروف، ثم شكل الخليل بن أحمد، ولم تتغير الحروف نفسها."
+          }
+        },
+        {
+          "title": {
+            "en": "A spelling of its own",
+            "de": "Eine eigene Schreibweise",
+            "ar": "هجاءٌ خاص"
+          },
+          "body": {
+            "en": "Some words are spelled differently from standard Arabic, such as as-salah written with a waw, or words without a written long alif. Most scholars hold that this spelling should be kept when copying the mushaf.",
+            "de": "Manche Wörter werden anders geschrieben als im Standardarabischen, etwa as-Salah mit einem Waw oder Wörter ohne geschriebenes langes Alif. Die meisten Gelehrten vertreten, dass diese Schreibweise beim Abschreiben des Mushafs zu bewahren ist.",
+            "ar": "تُكتب بعض الكلمات على غير الإملاء المعتاد، كالصلاة بالواو، وكلمات بحذف الألف، ويرى جمهور العلماء وجوب التزام هذا الرسم في كتابة المصحف."
+          }
+        },
+        {
+          "title": {
+            "en": "How many copies?",
+            "de": "Wie viele Abschriften?",
+            "ar": "كم عدد المصاحف؟"
+          },
+          "body": {
+            "en": "Reports differ on how many copies 'Uthman sent out, often naming four, five or seven, to cities such as Makkah, Basra, Kufa and Damascus, with one kept in Madinah.",
+            "de": "Die Berichte unterscheiden sich darin, wie viele Abschriften 'Uthman verschickte, oft werden vier, fünf oder sieben genannt, an Städte wie Mekka, Basra, Kufa und Damaskus, eine blieb in Medina.",
+            "ar": "اختلفت الروايات في عدد المصاحف التي أرسلها عثمان، فقيل أربعة وقيل خمسة وقيل سبعة، إلى أمصار كمكة والبصرة والكوفة ودمشق، وبقي واحد في المدينة."
+          }
+        },
+        {
+          "verse": "56:77-79",
+          "check": "a noble Qur",
+          "title": {
+            "en": "A noble, guarded Book",
+            "de": "Ein edles, gehütetes Buch",
+            "ar": "كتابٌ كريمٌ مصون"
+          },
+          "body": {
+            "en": "Many commentators see the guarded record as the Book in heaven. Others apply the verse to the mushaf, which is why many touch it only in purity.",
+            "de": "Viele Kommentatoren sehen in der gehüteten Schrift das Buch im Himmel. Andere beziehen den Vers auf den Mushaf; darum berühren ihn viele nur im Zustand der Reinheit.",
+            "ar": "يرى كثير من المفسرين أن السجل المحفوظ المذكور هنا هو الكتاب الذي في السماء، ويحمله آخرون على المصحف، ولذلك يحرص كثيرون على الطهارة عند لمسه."
+          }
+        },
+        {
+          "title": {
+            "en": "One mushaf for all",
+            "de": "Ein Mushaf für alle",
+            "ar": "مصحفٌ واحد للجميع"
+          },
+          "body": {
+            "en": "Sunni and Shia Muslims recite from the same mushaf in the same rasm. The printed copies used across the Muslim world go back to these early copies.",
+            "de": "Sunnitische und schiitische Muslime rezitieren aus demselben Mushaf in derselben Schreibweise. Die gedruckten Exemplare in der ganzen muslimischen Welt gehen auf diese frühen Abschriften zurück.",
+            "ar": "يقرأ المسلمون سنةً وشيعةً في المصحف نفسه وبالرسم نفسه، وترجع المصاحف المطبوعة في العالم الإسلامي إلى تلك النسخ الأولى."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Abu 'Amr al-Dani, al-Muqni' fi Rasm Masahif al-Amsar"
+        },
+        {
+          "label": "Abu 'Amr al-Dani, al-Muhkam fi Naqt al-Masahif"
+        },
+        {
+          "label": "Jalal al-Din al-Suyuti, al-Itqan fi 'Ulum al-Qur'an"
+        },
+        {
+          "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim (Arabic), on 56:79",
+          "url": "https://quran.com/56:79/tafsirs/ar-tafsir-ibn-kathir"
+        }
+      ]
+    },
+    {
+      "id": "ulum-al-quran-14-tafsir",
+      "tradition": "all",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": {
+          "en": "Sciences of the Quran · 14",
+          "de": "Koranwissenschaften · 14",
+          "ar": "علوم القرآن · ١٤"
+        },
+        "title": {
+          "en": "The science of tafsir",
+          "de": "Die Wissenschaft des Tafsir",
+          "ar": "علم التفسير"
+        },
+        "sub": {
+          "en": "Its sources, its kinds and the great works of both traditions",
+          "de": "Seine Quellen, seine Arten und die großen Werke beider Traditionen",
+          "ar": "مصادره وأنواعه وأمهات كتبه في التراثين"
+        },
+        "arabic": "التَّفْسِير"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "Explaining the meanings",
+            "de": "Die Bedeutungen erklären",
+            "ar": "بيان المعاني"
+          },
+          "arabic": "التفسير",
+          "body": {
+            "en": "Tafsir means explaining the meanings of the Quran. It grew into a discipline with its own tools: language, context, hadith and the understanding of the early generations.",
+            "de": "Tafsir bedeutet, die Bedeutungen des Korans zu erklären. Daraus wurde eine Disziplin mit eigenen Werkzeugen: Sprache, Zusammenhang, Hadith und das Verständnis der frühen Generationen.",
+            "ar": "التفسير بيان معاني القرآن، وقد صار علمًا له أدواته: اللغة والسياق والحديث وفهم السلف."
+          }
+        },
+        {
+          "verse": "16:44",
+          "check": "make clear to the people",
+          "title": {
+            "en": "The first explainer",
+            "de": "Der erste Erklärer",
+            "ar": "المبيّن الأول"
+          },
+          "body": {
+            "en": "The Prophet was sent to make clear what was revealed. His explanation is the first source of tafsir after the Quran itself.",
+            "de": "Der Prophet wurde gesandt, um zu verdeutlichen, was offenbart wurde. Seine Erklärung ist nach dem Koran selbst die erste Quelle des Tafsir.",
+            "ar": "بُعث النبي ﷺ ليبيّن ما أُنزل، فبيانه أول مصادر التفسير بعد القرآن نفسه."
+          }
+        },
+        {
+          "verse": "75:19",
+          "check": "upon Us is its clarification",
+          "title": {
+            "en": "Explanation is promised",
+            "de": "Die Erklärung ist zugesagt",
+            "ar": "البيان مضمون"
+          },
+          "body": {
+            "en": "Allah promises not only to preserve the Quran, but also to make its meaning clear.",
+            "de": "Allah verspricht nicht nur, den Koran zu bewahren, sondern auch, seine Bedeutung klarzumachen.",
+            "ar": "لم يتكفّل الله بحفظ القرآن فقط، بل ببيان معناه أيضًا."
+          }
+        },
+        {
+          "title": {
+            "en": "Sources of tafsir",
+            "de": "Quellen des Tafsir",
+            "ar": "مصادر التفسير"
+          },
+          "body": {
+            "en": "Many scholars rank them in this order. Shia scholars add the teachings of the Imams of the Ahl al-Bayt.",
+            "de": "Viele Gelehrte ordnen sie in dieser Reihenfolge. Schiitische Gelehrte fügen die Lehren der Imame der Ahl al-Bait hinzu.",
+            "ar": "يرتّبها كثير من العلماء هكذا، ويضيف علماء الشيعة تعاليم أئمة أهل البيت."
+          },
+          "list": {
+            "en": [
+              "The Quran explaining the Quran",
+              "The Sunnah of the Prophet",
+              "The understanding of the Companions and their students",
+              "The Arabic language"
+            ],
+            "de": [
+              "Der Koran erklärt den Koran",
+              "Die Sunna des Propheten",
+              "Das Verständnis der Gefährten und ihrer Schüler",
+              "Die arabische Sprache"
+            ],
+            "ar": [
+              "تفسير القرآن بالقرآن",
+              "السنة النبوية",
+              "فهم الصحابة وتلاميذهم",
+              "اللغة العربية"
+            ]
+          }
+        },
+        {
+          "title": {
+            "en": "Kinds of tafsir",
+            "de": "Arten des Tafsir",
+            "ar": "أنواع التفسير"
+          },
+          "list": {
+            "en": [
+              "By transmission: tafsir bi-l-ma'thur",
+              "By sound reasoning: tafsir bi-r-ra'y",
+              "Legal, linguistic and thematic tafsir",
+              "Spiritual readings, within clear limits"
+            ],
+            "de": [
+              "Durch Überlieferung: Tafsir bi-l-Ma'thur",
+              "Durch begründetes Urteil: Tafsir bi-r-Ra'y",
+              "Rechtlicher, sprachlicher und thematischer Tafsir",
+              "Spirituelle Deutungen, in klaren Grenzen"
+            ],
+            "ar": [
+              "التفسير بالمأثور",
+              "التفسير بالرأي المحمود",
+              "التفسير الفقهي واللغوي والموضوعي",
+              "التفسير الإشاري بضوابطه"
+            ]
+          }
+        },
+        {
+          "title": {
+            "en": "Classic works",
+            "de": "Klassische Werke",
+            "ar": "أمهات كتب التفسير"
+          },
+          "body": {
+            "en": "Among Sunni works: al-Tabari, al-Qurtubi, Ibn Kathir and al-Razi. Among Shia works: al-Tusi's al-Tibyan, al-Tabrisi's Majma' al-Bayan and al-Tabataba'i's al-Mizan.",
+            "de": "Unter den sunnitischen Werken: at-Tabari, al-Qurtubi, Ibn Kathir und ar-Razi. Unter den schiitischen: at-Tusis al-Tibyan, at-Tabrisis Madschma' al-Bayan und at-Tabataba'is al-Mizan.",
+            "ar": "من كتب أهل السنة: الطبري والقرطبي وابن كثير والرازي، ومن كتب الشيعة: التبيان للطوسي ومجمع البيان للطبرسي والميزان للطباطبائي."
+          }
+        },
+        {
+          "verse": "38:29",
+          "check": "reflect upon its verses",
+          "title": {
+            "en": "Tafsir serves reflection",
+            "de": "Tafsir dient dem Nachdenken",
+            "ar": "التفسير خادمٌ للتدبر"
+          },
+          "body": {
+            "en": "Scholarly tafsir is not an end in itself. It helps every reader reflect on the verses.",
+            "de": "Gelehrter Tafsir ist kein Selbstzweck. Er hilft jedem Leser, über die Verse nachzudenken.",
+            "ar": "ليس التفسير غاية في ذاته، بل يعين كل قارئ على التدبر."
+          }
+        },
+        {
+          "title": {
+            "en": "Starting with tafsir",
+            "de": "Mit Tafsir beginnen",
+            "ar": "ابدأ مع التفسير"
+          },
+          "list": {
+            "en": [
+              "Read a short, reliable tafsir with your translation",
+              "Note the context of each passage",
+              "Compare two tafsirs on hard verses",
+              "Ask a teacher before drawing conclusions"
+            ],
+            "de": [
+              "Lesen Sie einen kurzen, verlässlichen Tafsir neben Ihrer Übersetzung",
+              "Achten Sie auf den Zusammenhang jedes Abschnitts",
+              "Vergleichen Sie bei schwierigen Versen zwei Tafsire",
+              "Fragen Sie einen Lehrer, bevor Sie Schlüsse ziehen"
+            ],
+            "ar": [
+              "اقرأ تفسيرًا موجزًا موثوقًا مع الترجمة",
+              "انتبه إلى سياق كل مقطع",
+              "قارن بين تفسيرين في الآيات الصعبة",
+              "اسأل معلّمًا قبل أن تستنتج"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Ibn Taymiyyah, Muqaddimah fi Usul al-Tafsir"
+        },
+        {
+          "label": "Badr al-Din al-Zarkashi, al-Burhan fi 'Ulum al-Qur'an"
+        },
+        {
+          "label": "Muhammad Husayn al-Dhahabi, al-Tafsir wa al-Mufassirun"
+        },
+        {
+          "label": "Muhammad Hadi Ma'rifat, al-Tafsir wa al-Mufassirun fi Thawbihi al-Qashib"
+        }
+      ]
+    },
+    {
+      "id": "ulum-al-quran-15-ijaz-rhetoric",
+      "tradition": "all",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": {
+          "en": "Sciences of the Quran · 15",
+          "de": "Koranwissenschaften · 15",
+          "ar": "علوم القرآن · ١٥"
+        },
+        "title": {
+          "en": "The inimitable language of the Quran",
+          "de": "Die unnachahmliche Sprache des Korans",
+          "ar": "الإعجاز البياني"
+        },
+        "sub": {
+          "en": "What classical scholars meant by i'jaz: composition, word choice and rhythm",
+          "de": "Was klassische Gelehrte mit I'dschaz meinten: Aufbau, Wortwahl und Rhythmus",
+          "ar": "ما قصده العلماء بالإعجاز: النظم والاختيار والإيقاع"
+        },
+        "arabic": "النَّظْم"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "Composition, not only words",
+            "de": "Aufbau, nicht nur Wörter",
+            "ar": "النظم لا المفردات وحدها"
+          },
+          "arabic": "دلائل الإعجاز",
+          "body": {
+            "en": "Classical scholars located the Quran's inimitability above all in its language: the choice of words, their order and the way meaning and sound fit together. 'Abd al-Qahir al-Jurjani called this nazm, composition.",
+            "de": "Klassische Gelehrte sahen die Unnachahmlichkeit des Korans vor allem in seiner Sprache: in der Wortwahl, der Wortfolge und darin, wie Sinn und Klang zusammenpassen. 'Abd al-Qahir al-Dschurdschani nannte dies Nazm, Gefüge.",
+            "ar": "رأى العلماء إعجاز القرآن أولًا في بيانه: اختيار الألفاظ وترتيبها وتلاؤم المعنى مع الصوت، وسمّى عبد القاهر الجرجاني ذلك النظم."
+          }
+        },
+        {
+          "verse": "1:4-5",
+          "check": "It is You we worship",
+          "title": {
+            "en": "A sudden turn",
+            "de": "Eine plötzliche Wendung",
+            "ar": "التفاتٌ مفاجئ"
+          },
+          "body": {
+            "en": "Al-Fatiha speaks about Allah, then suddenly addresses Him directly. Rhetoricians call this shift iltifat: it draws the reader into the conversation.",
+            "de": "Al-Fatiha spricht über Allah und wendet sich dann plötzlich direkt an Ihn. Rhetoriker nennen diesen Wechsel Iltifat: Er zieht den Leser ins Gespräch hinein.",
+            "ar": "تتحدث الفاتحة عن الله ثم تنتقل فجأة إلى خطابه مباشرة، ويسمي البلاغيون ذلك الالتفات، وهو يُدخل القارئ في الحوار."
+          }
+        },
+        {
+          "verse": "41:3",
+          "check": "Arabic",
+          "title": {
+            "en": "For a people who know",
+            "de": "Für Leute, die wissen",
+            "ar": "لأهل العلم باللغة"
+          },
+          "body": {
+            "en": "The Quran ties its Arabic form to understanding. Its eloquence was first felt by those who knew the language best.",
+            "de": "Der Koran verbindet seine arabische Gestalt mit dem Verstehen. Seine Beredsamkeit spürten zuerst jene, die die Sprache am besten kannten.",
+            "ar": "يربط القرآن عربيته بالفهم، وأول من أحسّ ببلاغته أعلم الناس باللغة."
+          }
+        },
+        {
+          "title": {
+            "en": "Every word in its place",
+            "de": "Jedes Wort an seinem Platz",
+            "ar": "كل كلمة في موضعها"
+          },
+          "body": {
+            "en": "Scholars point to near-synonyms used with care. Khawf and khashyah, for example, are both translated 'fear', yet many see khashyah as fear joined with knowledge and awe. Such nuances are often lost in translation.",
+            "de": "Gelehrte verweisen auf sorgfältig gebrauchte Beinahe-Synonyme. Chauf und Chaschya etwa werden beide mit 'Furcht' übersetzt, doch viele sehen in Chaschya eine Furcht, die mit Wissen und Ehrfurcht verbunden ist. Solche Feinheiten gehen in Übersetzungen oft verloren.",
+            "ar": "يشير العلماء إلى ألفاظ متقاربة استُعملت بدقة، فالخوف والخشية تُترجمان معًا بالخوف، ويرى كثيرون أن الخشية خوفٌ مقرون بالعلم والتعظيم، وهذه الفروق تضيع غالبًا في الترجمة."
+          }
+        },
+        {
+          "verse": "69:40-41",
+          "check": "not the word of a poet",
+          "title": {
+            "en": "Not poetry",
+            "de": "Keine Dichtung",
+            "ar": "ليس شعرًا"
+          },
+          "body": {
+            "en": "Its rhythm moved its hearers, yet it is not poetry, and al-Rummani and others also set it apart from rhymed prose, as part of its i'jaz.",
+            "de": "Sein Rhythmus bewegte die Hörer, und doch ist er keine Dichtung; al-Rummani und andere grenzten ihn auch von der Reimprosa ab, als Teil seines I'dschaz.",
+            "ar": "حرّك إيقاع القرآن سامعيه وليس شعرًا، وميّزه الرماني وغيره من السجع أيضًا، وعدّوا ذلك من وجوه إعجازه."
+          }
+        },
+        {
+          "title": {
+            "en": "What i'jaz is not",
+            "de": "Was I'dschaz nicht ist",
+            "ar": "ما ليس من الإعجاز"
+          },
+          "body": {
+            "en": "The classical works speak above all of language, meaning and guidance. Reading modern scientific theories into verses is a different and much-debated project. Theories change; the Quran does not depend on them.",
+            "de": "Die klassischen Werke sprechen vor allem von Sprache, Bedeutung und Rechtleitung. Moderne naturwissenschaftliche Theorien in Verse hineinzulesen, ist ein anderes, stark umstrittenes Vorhaben. Theorien ändern sich; der Koran hängt nicht von ihnen ab.",
+            "ar": "تتحدث الكتب القديمة في المقام الأول عن البيان والمعنى والهداية، أما إسقاط النظريات العلمية الحديثة على الآيات فمشروع آخر كثير الجدل، فالنظريات تتغير والقرآن لا يتوقف عليها."
+          }
+        },
+        {
+          "title": {
+            "en": "Tasting the language",
+            "de": "Die Sprache kosten",
+            "ar": "تذوّق البيان"
+          },
+          "list": {
+            "en": [
+              "Listen to a skilled reciter, slowly",
+              "Learn the meaning of a few key words",
+              "Notice shifts of speaker and address",
+              "Read a classical work on balaghah with a teacher"
+            ],
+            "de": [
+              "Hören Sie einem guten Rezitator langsam zu",
+              "Lernen Sie die Bedeutung einiger Schlüsselwörter",
+              "Achten Sie auf Wechsel von Sprecher und Anrede",
+              "Lesen Sie mit einem Lehrer ein klassisches Werk über Balagha"
+            ],
+            "ar": [
+              "استمع إلى قارئ متقن على مهل",
+              "تعلّم معاني بعض الكلمات المفتاحية",
+              "انتبه إلى تحوّل المتكلم والمخاطَب",
+              "اقرأ كتابًا في البلاغة مع معلّم"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "'Abd al-Qahir al-Jurjani, Dala'il al-I'jaz"
+        },
+        {
+          "label": "al-Rummani, al-Nukat fi I'jaz al-Qur'an"
+        },
+        {
+          "label": "al-Raghib al-Isfahani, al-Mufradat fi Gharib al-Qur'an"
+        }
+      ]
+    },
+    {
+      "id": "ulum-al-quran-16-stories",
+      "tradition": "all",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": {
+          "en": "Sciences of the Quran · 16",
+          "de": "Koranwissenschaften · 16",
+          "ar": "علوم القرآن · ١٦"
+        },
+        "title": {
+          "en": "Stories in the Quran",
+          "de": "Erzählungen im Koran",
+          "ar": "القصص القرآني"
+        },
+        "sub": {
+          "en": "Why the Quran tells stories, and how it tells them differently",
+          "de": "Warum der Koran erzählt und wie er anders erzählt",
+          "ar": "لماذا يقصّ القرآن، وكيف يقصّ بطريقته الخاصة"
+        },
+        "arabic": "القَصَص"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "Stories with a purpose",
+            "de": "Erzählungen mit einem Ziel",
+            "ar": "قصصٌ لها غاية"
+          },
+          "arabic": "العبرة",
+          "body": {
+            "en": "The Quran tells of prophets, nations and ordinary people. It gives no dates and rarely full biographies; it selects what teaches and leaves out the rest.",
+            "de": "Der Koran erzählt von Propheten, Völkern und einfachen Menschen. Er nennt keine Daten und selten ganze Lebensläufe; er wählt aus, was lehrt, und lässt den Rest weg.",
+            "ar": "يقصّ القرآن أخبار الأنبياء والأمم وأناسٍ عاديين، دون تواريخ وقلّما يسرد سيرة كاملة، فيختار ما فيه عبرة ويترك ما سواه."
+          }
+        },
+        {
+          "verse": "12:3",
+          "check": "the best of stories",
+          "title": {
+            "en": "The best of stories",
+            "de": "Die schönste Erzählung",
+            "ar": "خير القصص"
+          },
+          "body": {
+            "en": "Surah Yusuf opens by calling what follows the best of stories, told through revelation to a Prophet who had not known it.",
+            "de": "Sure Yusuf nennt das Folgende gleich zu Beginn die schönste Erzählung, durch Offenbarung einem Propheten erzählt, der sie nicht gekannt hatte.",
+            "ar": "تُفتتح سورة يوسف بوصف ما يأتي بأنه أحسن القصص، يُقصّ وحيًا على نبيٍّ لم يكن يعلمه."
+          }
+        },
+        {
+          "verse": "11:120",
+          "check": "make firm your heart",
+          "title": {
+            "en": "Stories that strengthen",
+            "de": "Erzählungen, die stärken",
+            "ar": "قصصٌ تثبّت"
+          },
+          "body": {
+            "en": "The stories of earlier messengers steadied the Prophet's heart in hard years. They can steady ours too.",
+            "de": "Die Erzählungen früherer Gesandter festigten das Herz des Propheten in schweren Jahren. Sie können auch unseres festigen.",
+            "ar": "ثبّتت أخبار الرسل السابقين قلب النبي ﷺ في السنوات الصعبة، ويمكن أن تثبّت قلوبنا أيضًا."
+          }
+        },
+        {
+          "verse": "12:111",
+          "check": "in their stories a lesson",
+          "title": {
+            "en": "A lesson, not entertainment",
+            "de": "Eine Lehre, keine Unterhaltung",
+            "ar": "عبرةٌ لا تسلية"
+          },
+          "body": {
+            "en": "Surah Yusuf closes by naming the point of its story: a lesson for people of understanding, and not something invented.",
+            "de": "Sure Yusuf nennt am Ende den Sinn ihrer Erzählung: eine Lehre für Verständige und nichts Erfundenes.",
+            "ar": "تُختم سورة يوسف ببيان مقصد قصتها: عبرةٌ لأصحاب العقول، وليست من نسج الخيال."
+          }
+        },
+        {
+          "title": {
+            "en": "Told more than once",
+            "de": "Mehr als einmal erzählt",
+            "ar": "تُروى أكثر من مرة"
+          },
+          "body": {
+            "en": "The story of Musa appears in many surahs, each time from a different angle and for a different lesson. Scholars see this repetition as a method, not redundancy.",
+            "de": "Die Geschichte Musas erscheint in vielen Suren, jedes Mal aus einem anderen Blickwinkel und für eine andere Lehre. Gelehrte sehen in dieser Wiederholung eine Methode, keine Doppelung.",
+            "ar": "ترد قصة موسى في سور كثيرة، كل مرة من زاوية مختلفة ولعبرة مختلفة، ويرى العلماء في هذا التكرار منهجًا لا حشوًا."
+          }
+        },
+        {
+          "verse": "18:13",
+          "check": "their story in truth",
+          "title": {
+            "en": "True stories",
+            "de": "Wahre Erzählungen",
+            "ar": "قصصٌ بالحق"
+          },
+          "body": {
+            "en": "The story of the young people of the cave is introduced as told in truth. Quranic stories are history with meaning, not legend.",
+            "de": "Die Geschichte der jungen Leute der Höhle wird als wahrheitsgemäß erzählt eingeführt. Koranische Erzählungen sind Geschichte mit Bedeutung, keine Legende.",
+            "ar": "تُقدَّم قصة أصحاب الكهف بأنها تُروى بالحق، فقصص القرآن تاريخٌ ذو معنى لا أسطورة."
+          }
+        },
+        {
+          "title": {
+            "en": "Reading Quranic stories",
+            "de": "Koranische Erzählungen lesen",
+            "ar": "كيف نقرأ القصص القرآني"
+          },
+          "list": {
+            "en": [
+              "Ask what the story teaches, not only what happened",
+              "Notice what is left out",
+              "Compare the tellings across surahs",
+              "Find yourself among the characters"
+            ],
+            "de": [
+              "Fragen Sie, was die Erzählung lehrt, nicht nur, was geschah",
+              "Achten Sie darauf, was weggelassen wird",
+              "Vergleichen Sie die Fassungen in verschiedenen Suren",
+              "Finden Sie sich selbst unter den Figuren"
+            ],
+            "ar": [
+              "اسأل ماذا تعلّم القصة لا ماذا حدث فقط",
+              "انتبه إلى ما سُكت عنه",
+              "قارن بين مواضع القصة في السور",
+              "ابحث عن نفسك بين شخصياتها"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "ulum-al-quran-17-oaths",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": {
+          "en": "Sciences of the Quran · 17",
+          "de": "Koranwissenschaften · 17",
+          "ar": "علوم القرآن · ١٧"
+        },
+        "title": {
+          "en": "Oaths in the Quran",
+          "de": "Schwüre im Koran",
+          "ar": "أقسام القرآن"
+        },
+        "sub": {
+          "en": "By the sun, by time, by the dawn: why Allah swears by His creation",
+          "de": "Bei der Sonne, bei der Zeit, bei der Morgendämmerung: warum Allah bei Seiner Schöpfung schwört",
+          "ar": "بالشمس، بالعصر، بالفجر: لماذا يُقسم الله بمخلوقاته"
+        },
+        "arabic": "القَسَم"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "Oaths that open surahs",
+            "de": "Schwüre, die Suren eröffnen",
+            "ar": "أقسامٌ تفتتح السور"
+          },
+          "arabic": "المقسم به · جواب القسم",
+          "body": {
+            "en": "Many surahs open with an oath. Scholars explain that Allah swears by His creation to draw attention to its signs and to the truth that follows, called the answer of the oath.",
+            "de": "Viele Suren beginnen mit einem Schwur. Gelehrte erklären, dass Allah bei Seiner Schöpfung schwört, um auf ihre Zeichen und auf die folgende Wahrheit aufmerksam zu machen, die Antwort des Schwurs genannt.",
+            "ar": "تُفتتح سور كثيرة بالقسم، ويبيّن العلماء أن الله يُقسم بمخلوقاته لينبّه إلى آياتها وإلى الحقيقة التي تليها، وهي جواب القسم."
+          }
+        },
+        {
+          "verse": "91:1-3",
+          "check": "By the sun",
+          "title": {
+            "en": "A chain of oaths",
+            "de": "Eine Kette von Schwüren",
+            "ar": "سلسلة أقسام"
+          },
+          "body": {
+            "en": "Ash-Shams strings together oath after oath: sun, moon, day, night, sky, earth and soul. The answer comes only after them all.",
+            "de": "Asch-Schams reiht Schwur an Schwur: Sonne, Mond, Tag, Nacht, Himmel, Erde und Seele. Die Antwort kommt erst nach ihnen allen.",
+            "ar": "تتوالى الأقسام في سورة الشمس: الشمس والقمر والنهار والليل والسماء والأرض والنفس، ولا يأتي الجواب إلا بعدها كلها."
+          }
+        },
+        {
+          "verse": "103:1-2",
+          "check": "By time",
+          "title": {
+            "en": "By time",
+            "de": "Bei der Zeit",
+            "ar": "بالعصر"
+          },
+          "body": {
+            "en": "A single oath and a stark statement. Time itself is called as a witness to the human condition.",
+            "de": "Ein einziger Schwur und eine ernste Aussage. Die Zeit selbst wird als Zeugin für die Lage des Menschen angerufen.",
+            "ar": "قسمٌ واحد وحكمٌ صارم، فالزمن نفسه يُستشهد به على حال الإنسان."
+          }
+        },
+        {
+          "verse": "56:75-76",
+          "check": "it is an oath",
+          "title": {
+            "en": "A great oath",
+            "de": "Ein gewaltiger Schwur",
+            "ar": "قسمٌ له شأن"
+          },
+          "body": {
+            "en": "Here the Quran pauses to stress the weight of its own oath. The answer that follows concerns the Quran itself.",
+            "de": "Hier hält der Koran inne, um das Gewicht seines eigenen Schwurs zu betonen. Die folgende Antwort betrifft den Koran selbst.",
+            "ar": "يقف القرآن هنا ليؤكد عِظَم قسمه، والجواب الذي يليه يتعلق بالقرآن نفسه."
+          }
+        },
+        {
+          "verse": "75:1-2",
+          "check": "I swear by the Day of Resurrection",
+          "title": {
+            "en": "An oath that begins with 'no'",
+            "de": "Ein Schwur, der mit 'nein' beginnt",
+            "ar": "قسمٌ يبدأ بـ«لا»"
+          },
+          "body": {
+            "en": "In Arabic, several oaths begin with la. Grammarians and commentators discuss whether it strengthens the oath or answers a denial.",
+            "de": "Im Arabischen beginnen mehrere Schwüre mit la. Grammatiker und Kommentatoren erörtern, ob es den Schwur verstärkt oder eine Leugnung zurückweist.",
+            "ar": "تبدأ أقسامٌ عدة بـ«لا»، ويناقش النحاة والمفسرون: أهي لتأكيد القسم أم ردٌّ على إنكار؟"
+          }
+        },
+        {
+          "hadith": "bukhari:2679",
+          "check": "swear by Allah or remain silent",
+          "title": {
+            "en": "For us: only by Allah",
+            "de": "Für uns: nur bei Allah",
+            "ar": "أما نحن فلا نحلف إلا بالله"
+          },
+          "body": {
+            "en": "Allah may swear by what He created. People are taught to swear only by Allah, or to stay silent.",
+            "de": "Allah darf bei dem schwören, was Er erschaffen hat. Den Menschen wird gelehrt, nur bei Allah zu schwören oder zu schweigen.",
+            "ar": "لله أن يُقسم بما شاء من خلقه، أما الناس فقد عُلّموا ألّا يحلفوا إلا بالله."
+          }
+        },
+        {
+          "title": {
+            "en": "Reading the oaths",
+            "de": "Die Schwüre lesen",
+            "ar": "كيف نقرأ الأقسام"
+          },
+          "list": {
+            "en": [
+              "Look at what is sworn by",
+              "Find the answer to the oath",
+              "Reflect on the sign that is named",
+              "Keep your own oaths few and true"
+            ],
+            "de": [
+              "Achten Sie darauf, wobei geschworen wird",
+              "Suchen Sie die Antwort des Schwurs",
+              "Denken Sie über das genannte Zeichen nach",
+              "Schwören Sie selbst selten und wahrhaftig"
+            ],
+            "ar": [
+              "تأمّل ما أُقسم به",
+              "ابحث عن جواب القسم",
+              "تفكّر في الآية المذكورة",
+              "أقلل من الحلف واصدق فيه"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Ibn al-Qayyim, al-Tibyan fi Aqsam al-Qur'an"
+        },
+        {
+          "label": "Jalal al-Din al-Suyuti, al-Itqan fi 'Ulum al-Qur'an"
+        },
+        {
+          "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 75:1",
+          "url": "https://quran.com/75:1/tafsirs/en-tafisr-ibn-kathir"
+        }
+      ]
+    },
+    {
+      "id": "ulum-al-quran-18-parables",
+      "tradition": "all",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": {
+          "en": "Sciences of the Quran · 18",
+          "de": "Koranwissenschaften · 18",
+          "ar": "علوم القرآن · ١٨"
+        },
+        "title": {
+          "en": "Parables in the Quran",
+          "de": "Gleichnisse im Koran",
+          "ar": "أمثال القرآن"
+        },
+        "sub": {
+          "en": "Trees, fire, a spider's web: images that make the unseen understandable",
+          "de": "Bäume, Feuer, ein Spinnennetz: Bilder, die das Verborgene verständlich machen",
+          "ar": "شجرةٌ ونارٌ وبيتُ عنكبوت: صورٌ تقرّب الغيب إلى الفهم"
+        },
+        "arabic": "الأَمْثَال"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "Pictures for the mind",
+            "de": "Bilder für den Verstand",
+            "ar": "صورٌ للعقل"
+          },
+          "arabic": "مثل · أمثال",
+          "body": {
+            "en": "The Quran explains unseen realities with images from daily life. Scholars studied these amthal as a field of their own. In the Quranic Arabic Corpus, the word mathal is counted 88 times.",
+            "de": "Der Koran erklärt verborgene Wirklichkeiten mit Bildern aus dem Alltag. Gelehrte untersuchten diese Amthal als eigenes Fach. Im Quranic Arabic Corpus wird das Wort Mathal 88 Mal gezählt.",
+            "ar": "يشرح القرآن حقائق الغيب بصور من الحياة اليومية، وقد درس العلماء الأمثال علمًا مستقلًا، وتُحصى كلمة «مَثَل» في مدوّنة القرآن العربية ٨٨ مرة."
+          }
+        },
+        {
+          "verse": "14:24-26",
+          "check": "a good word like a good tree",
+          "title": {
+            "en": "Two trees",
+            "de": "Zwei Bäume",
+            "ar": "شجرتان"
+          },
+          "body": {
+            "en": "A good word is rooted and fruitful; a bad word has no hold. One image, two destinies.",
+            "de": "Ein gutes Wort ist verwurzelt und fruchtbar; ein schlechtes hat keinen Halt. Ein Bild, zwei Schicksale.",
+            "ar": "الكلمة الطيبة راسخة مثمرة، والخبيثة بلا ثبات، صورةٌ واحدة ومصيران."
+          }
+        },
+        {
+          "verse": "29:41",
+          "check": "the home of the spider",
+          "title": {
+            "en": "A spider's house",
+            "de": "Das Haus der Spinne",
+            "ar": "خيوط العنكبوت"
+          },
+          "body": {
+            "en": "Relying on anything other than Allah looks like shelter, but is as fragile as a web.",
+            "de": "Sich auf etwas anderes als Allah zu verlassen, sieht wie Schutz aus, ist aber so zerbrechlich wie ein Netz.",
+            "ar": "الاعتماد على غير الله يبدو مأوى، لكنه هشٌّ كخيوط العنكبوت."
+          }
+        },
+        {
+          "verse": "2:17",
+          "check": "kindled a fire",
+          "title": {
+            "en": "Light that disappears",
+            "de": "Licht, das verschwindet",
+            "ar": "نورٌ يذهب"
+          },
+          "body": {
+            "en": "An early parable in al-Baqarah describes hypocrisy as a light that flares up, then leaves people in deeper darkness.",
+            "de": "Ein frühes Gleichnis in al-Baqara beschreibt Heuchelei als ein Licht, das aufflammt und die Menschen dann in tieferer Dunkelheit zurücklässt.",
+            "ar": "يصوّر مثلٌ مبكر في البقرة النفاق نورًا يتوهّج ثم يترك أصحابه في ظلمة أشد."
+          }
+        },
+        {
+          "verse": "2:26",
+          "check": "mosquito",
+          "title": {
+            "en": "Even a mosquito",
+            "de": "Selbst eine Mücke",
+            "ar": "حتى البعوضة"
+          },
+          "body": {
+            "en": "Some mocked small images. The Quran replies that size does not matter when the meaning is true.",
+            "de": "Manche spotteten über kleine Bilder. Der Koran antwortet, dass die Größe nicht zählt, wenn die Bedeutung wahr ist.",
+            "ar": "سخر بعضهم من الأمثال الصغيرة، فبيّن القرآن أن الحجم لا يهم إذا كان المعنى حقًّا."
+          }
+        },
+        {
+          "verse": "29:43",
+          "check": "except those of knowledge",
+          "title": {
+            "en": "Parables need thinking",
+            "de": "Gleichnisse brauchen Nachdenken",
+            "ar": "الأمثال تحتاج إلى عقل"
+          },
+          "body": {
+            "en": "The images are simple; their depth opens to those who reflect and learn.",
+            "de": "Die Bilder sind einfach; ihre Tiefe erschließt sich denen, die nachdenken und lernen.",
+            "ar": "الصور بسيطة، وعمقها ينكشف لمن يتفكّر ويتعلّم."
+          }
+        },
+        {
+          "title": {
+            "en": "Reading a parable",
+            "de": "Ein Gleichnis lesen",
+            "ar": "كيف تقرأ المثل"
+          },
+          "list": {
+            "en": [
+              "Picture the scene before you interpret it",
+              "Ask what is compared with what",
+              "Look for the point of similarity",
+              "Apply it to your own heart"
+            ],
+            "de": [
+              "Stellen Sie sich die Szene vor, bevor Sie deuten",
+              "Fragen Sie, was womit verglichen wird",
+              "Suchen Sie den Punkt der Ähnlichkeit",
+              "Beziehen Sie es auf Ihr eigenes Herz"
+            ],
+            "ar": [
+              "تخيّل المشهد قبل أن تفسّره",
+              "اسأل: ما المشبَّه وما المشبَّه به؟",
+              "ابحث عن وجه الشبه",
+              "طبّقه على قلبك"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Ibn al-Qayyim, al-Amthal fi al-Qur'an"
+        },
+        {
+          "label": "Quranic Arabic Corpus, root m-th-l",
+          "url": "https://corpus.quran.com"
+        }
+      ]
+    },
+    {
+      "id": "ulum-al-quran-19-muqattaat",
+      "tradition": "all",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": {
+          "en": "Sciences of the Quran · 19",
+          "de": "Koranwissenschaften · 19",
+          "ar": "علوم القرآن · ١٩"
+        },
+        "title": {
+          "en": "The disjointed letters",
+          "de": "Die einzelnen Buchstaben",
+          "ar": "الحروف المقطّعة"
+        },
+        "sub": {
+          "en": "Alif lam mim and the other letter openings: what we know and what remains open",
+          "de": "Alif Lam Mim und die anderen Buchstaben-Anfänge: was wir wissen und was offen bleibt",
+          "ar": "«الم» وأخواتها: ما نعرفه وما بقي مفتوحًا"
+        },
+        "arabic": "الحُرُوفُ المُقَطَّعَة"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "Letters read one by one",
+            "de": "Buchstaben, einzeln gelesen",
+            "ar": "حروفٌ تُقرأ مفردة"
+          },
+          "arabic": "فواتح السور",
+          "body": {
+            "en": "Twenty-nine surahs open with single letters, read one by one by their names, such as alif lam mim. Fourteen different letters appear in them, half of the Arabic alphabet.",
+            "de": "Neunundzwanzig Suren beginnen mit einzelnen Buchstaben, die mit ihren Namen gelesen werden, etwa Alif Lam Mim. Vierzehn verschiedene Buchstaben kommen darin vor, die Hälfte des arabischen Alphabets.",
+            "ar": "تُفتتح تسع وعشرون سورة بحروف مفردة تُقرأ بأسمائها، مثل «الم»، وفيها أربعة عشر حرفًا مختلفًا، أي نصف حروف الهجاء."
+          }
+        },
+        {
+          "verse": "19:1",
+          "check": "Kāf",
+          "title": {
+            "en": "Five letters",
+            "de": "Fünf Buchstaben",
+            "ar": "خمسة أحرف"
+          },
+          "body": {
+            "en": "Maryam opens with five letters. Ash-Shura also has five, while Sad, Qaf and al-Qalam open with only one.",
+            "de": "Maryam beginnt mit fünf Buchstaben. Auch asch-Schura hat fünf, während Sad, Qaf und al-Qalam mit nur einem beginnen.",
+            "ar": "تبدأ سورة مريم بخمسة أحرف، وكذلك الشورى، بينما تبدأ ص وق والقلم بحرف واحد."
+          }
+        },
+        {
+          "verse": "42:1-2",
+          "check": "Ḥā, Meem",
+          "title": {
+            "en": "Split over two verses",
+            "de": "Auf zwei Verse verteilt",
+            "ar": "على آيتين"
+          },
+          "body": {
+            "en": "In ash-Shura the letters are divided over two verses in the Kufan count. Even such details were handed down with care.",
+            "de": "In asch-Schura sind die Buchstaben in der kufischen Zählung auf zwei Verse verteilt. Selbst solche Einzelheiten wurden sorgfältig überliefert.",
+            "ar": "في سورة الشورى تتوزع الحروف على آيتين في العدّ الكوفي، وحتى هذه التفاصيل نُقلت بعناية."
+          }
+        },
+        {
+          "verse": "68:1",
+          "check": "By the pen",
+          "title": {
+            "en": "A single letter",
+            "de": "Ein einzelner Buchstabe",
+            "ar": "حرفٌ واحد"
+          },
+          "body": {
+            "en": "Nun stands alone, followed by an oath by the pen and by what people write.",
+            "de": "Nun steht allein, gefolgt von einem Schwur beim Schreibrohr und bei dem, was die Menschen schreiben.",
+            "ar": "يقف حرف النون وحده، ثم يأتي القسم بالقلم وبما يكتب الناس."
+          }
+        },
+        {
+          "verse": "2:1-2",
+          "check": "This is the Book",
+          "title": {
+            "en": "Often followed by the Book",
+            "de": "Oft folgt das Buch",
+            "ar": "يتبعها ذكر الكتاب غالبًا"
+          },
+          "body": {
+            "en": "In most cases these letters are followed directly by a mention of the Book or of revelation, as here at the start of al-Baqarah.",
+            "de": "Meist folgt auf diese Buchstaben unmittelbar eine Erwähnung des Buches oder der Offenbarung, wie hier zu Beginn von al-Baqara.",
+            "ar": "في أغلب المواضع يأتي بعد هذه الحروف ذكر الكتاب أو الوحي، كما هنا في مطلع البقرة."
+          }
+        },
+        {
+          "title": {
+            "en": "What do they mean?",
+            "de": "Was bedeuten sie?",
+            "ar": "ما معناها؟"
+          },
+          "body": {
+            "en": "Scholars differ. Many say their meaning is known to Allah alone. Others see them as a sign that the Quran is made of the very letters the Arabs used, yet none could match it. Others read them as abbreviations.",
+            "de": "Die Gelehrten sind uneins. Viele sagen, ihre Bedeutung kenne allein Allah. Andere sehen in ihnen ein Zeichen, dass der Koran aus genau den Buchstaben besteht, die die Araber benutzten, und doch konnte ihn niemand nachahmen. Wieder andere lesen sie als Abkürzungen.",
+            "ar": "اختلف العلماء: فكثير منهم يقولون الله أعلم بمرادها، ويرى آخرون أنها تنبيه إلى أن القرآن مؤلف من الحروف التي يعرفها العرب ومع ذلك عجزوا عن مثله، ويرى غيرهم أنها اختصارات."
+          }
+        },
+        {
+          "title": {
+            "en": "Reciting them",
+            "de": "Sie rezitieren",
+            "ar": "كيف تُتلى"
+          },
+          "list": {
+            "en": [
+              "Pronounce each letter by its name",
+              "Follow the madd lengths of your riwayah",
+              "Do not read them as ordinary words",
+              "Leave their meaning to Allah where knowledge ends"
+            ],
+            "de": [
+              "Sprechen Sie jeden Buchstaben mit seinem Namen aus",
+              "Folgen Sie den Dehnungslängen Ihrer Riwaya",
+              "Lesen Sie sie nicht wie gewöhnliche Wörter",
+              "Überlassen Sie ihre Bedeutung Allah, wo das Wissen endet"
+            ],
+            "ar": [
+              "انطق كل حرف باسمه",
+              "التزم مقادير المدّ في روايتك",
+              "لا تقرأها ككلمات عادية",
+              "فوّض معناها إلى الله حيث ينتهي العلم"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 2:1",
+          "url": "https://quran.com/2:1/tafsirs/en-tafisr-ibn-kathir"
+        },
+        {
+          "label": "Jalal al-Din al-Suyuti, al-Itqan fi 'Ulum al-Qur'an"
+        }
+      ]
+    },
+    {
+      "id": "ulum-al-quran-20-surah-order",
+      "tradition": "all",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": {
+          "en": "Sciences of the Quran · 20",
+          "de": "Koranwissenschaften · 20",
+          "ar": "علوم القرآن · ٢٠"
+        },
+        "title": {
+          "en": "The order of the surahs",
+          "de": "Die Reihenfolge der Suren",
+          "ar": "ترتيب السور"
+        },
+        "sub": {
+          "en": "Order of revelation and order of the mushaf: why they differ",
+          "de": "Reihenfolge der Offenbarung und Reihenfolge des Mushafs: warum sie sich unterscheiden",
+          "ar": "ترتيب النزول وترتيب المصحف: لماذا يختلفان"
+        },
+        "arabic": "تَرْتِيبُ السُّوَر"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "Two orders",
+            "de": "Zwei Reihenfolgen",
+            "ar": "ترتيبان"
+          },
+          "arabic": "ترتيب النزول · ترتيب المصحف",
+          "body": {
+            "en": "The Quran has two orders: the order in which it was revealed over about 23 years, and the order of the mushaf we recite. They are not the same.",
+            "de": "Der Koran hat zwei Reihenfolgen: die der Offenbarung über etwa 23 Jahre und die des Mushafs, aus dem wir rezitieren. Sie sind nicht dieselben.",
+            "ar": "للقرآن ترتيبان: ترتيب نزوله على مدى نحو ثلاث وعشرين سنة، وترتيب المصحف الذي نتلوه، وهما مختلفان."
+          }
+        },
+        {
+          "verse": "75:17-18",
+          "check": "upon Us is its collection",
+          "title": {
+            "en": "Gathered in the heart",
+            "de": "Im Herzen gesammelt",
+            "ar": "جمعٌ في الصدر"
+          },
+          "body": {
+            "en": "Commentators explain this as gathering the Quran in the Prophet's heart and making its recitation possible.",
+            "de": "Kommentatoren erklären dies als das Sammeln des Korans im Herzen des Propheten und das Ermöglichen seiner Rezitation.",
+            "ar": "يفسّر المفسرون ذلك بحفظ القرآن في صدر النبي ﷺ وتيسير تلاوته عليه."
+          }
+        },
+        {
+          "title": {
+            "en": "Verses: by instruction",
+            "de": "Verse: auf Anweisung",
+            "ar": "ترتيب الآيات توقيفي"
+          },
+          "body": {
+            "en": "Scholars agree that the order of verses within each surah was set by the Prophet, who told the scribes where each new passage belonged.",
+            "de": "Die Gelehrten sind sich einig, dass die Reihenfolge der Verse in jeder Sure vom Propheten festgelegt wurde, der den Schreibern sagte, wohin jeder neue Abschnitt gehörte.",
+            "ar": "اتفق العلماء على أن ترتيب الآيات في كل سورة كان بتوقيف من النبي ﷺ، إذ كان يخبر الكتّاب بموضع كل ما ينزل."
+          }
+        },
+        {
+          "title": {
+            "en": "Surahs: views differ",
+            "de": "Suren: die Ansichten gehen auseinander",
+            "ar": "ترتيب السور: خلاف"
+          },
+          "body": {
+            "en": "On the order of the surahs, scholars differ: many hold it was also taught by the Prophet, others that the Companions arranged all or part of it. Reports describe copies of Ibn Mas'ud, Ubayy and 'Ali in different orders.",
+            "de": "Über die Reihenfolge der Suren sind die Gelehrten uneins: Viele halten sie ebenfalls für vom Propheten gelehrt, andere meinen, die Gefährten hätten sie ganz oder teilweise angeordnet. Berichte beschreiben Abschriften von Ibn Mas'ud, Ubayy und 'Ali in anderer Reihenfolge.",
+            "ar": "اختلف العلماء في ترتيب السور: فكثير منهم يرونه توقيفيًا أيضًا، وآخرون يرون أنه كله أو بعضه باجتهاد الصحابة، وتذكر الروايات مصاحف لابن مسعود وأُبيّ وعلي بترتيب مختلف."
+          }
+        },
+        {
+          "verse": "1:2",
+          "check": "Lord of the worlds",
+          "title": {
+            "en": "It opens with praise",
+            "de": "Er beginnt mit Lobpreis",
+            "ar": "يبدأ بالحمد"
+          },
+          "body": {
+            "en": "The mushaf begins with al-Fatiha, a Makki surah placed first as the opening of the whole Book.",
+            "de": "Der Mushaf beginnt mit al-Fatiha, einer mekkanischen Sure, die als Eröffnung des ganzen Buches an den Anfang gestellt ist.",
+            "ar": "يبدأ المصحف بالفاتحة، وهي سورة مكية جُعلت أولًا فاتحةً للكتاب كله."
+          }
+        },
+        {
+          "verse": "2:2",
+          "check": "guidance for those conscious",
+          "title": {
+            "en": "Then an answer",
+            "de": "Dann eine Antwort",
+            "ar": "ثم الجواب"
+          },
+          "body": {
+            "en": "Al-Fatiha ends by asking for guidance; al-Baqarah opens by presenting the Book as guidance. Scholars of munasabat study such links between surahs.",
+            "de": "Al-Fatiha endet mit der Bitte um Rechtleitung; al-Baqara, eine medinensische Sure, beginnt damit, das Buch als Rechtleitung vorzustellen. Gelehrte der Munasabat untersuchen solche Verbindungen zwischen Suren.",
+            "ar": "تُختم الفاتحة بطلب الهداية، وتبدأ البقرة، وهي مدنية، بتقديم الكتاب هدىً، ويُعنى علماء المناسبات بتأمل مثل هذه الصلات بين السور."
+          }
+        },
+        {
+          "title": {
+            "en": "Reading with both orders in mind",
+            "de": "Mit beiden Reihenfolgen im Blick lesen",
+            "ar": "القراءة بوعي الترتيبين"
+          },
+          "list": {
+            "en": [
+              "Recite in the order of the mushaf",
+              "Check when a surah was revealed",
+              "Look for links between neighbouring surahs",
+              "Read Makki surahs to see how faith was built"
+            ],
+            "de": [
+              "Rezitieren Sie in der Reihenfolge des Mushafs",
+              "Prüfen Sie, wann eine Sure offenbart wurde",
+              "Suchen Sie Verbindungen zwischen benachbarten Suren",
+              "Lesen Sie mekkanische Suren, um zu sehen, wie Glaube aufgebaut wurde"
+            ],
+            "ar": [
+              "اتلُ على ترتيب المصحف",
+              "اعرف متى نزلت السورة",
+              "ابحث عن الصلة بين السور المتجاورة",
+              "اقرأ المكي لترى كيف بُني الإيمان"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Jalal al-Din al-Suyuti, al-Itqan fi 'Ulum al-Qur'an"
+        },
+        {
+          "label": "Badr al-Din al-Zarkashi, al-Burhan fi 'Ulum al-Qur'an"
+        },
+        {
+          "label": "Burhan al-Din al-Biqa'i, Nazm al-Durar fi Tanasub al-Ayat wa al-Suwar"
+        },
+        {
+          "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 75:17",
+          "url": "https://quran.com/75:17/tafsirs/en-tafisr-ibn-kathir"
+        }
+      ]
     }
   ]
 }

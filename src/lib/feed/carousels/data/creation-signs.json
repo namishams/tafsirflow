@@ -1,0 +1,1301 @@
+{
+  "series": "creation-signs",
+  "label": { "en": "Signs in creation", "de": "Zeichen in der Schöpfung", "ar": "آيات في الخلق" },
+  "topic": "quran",
+  "tradition": "all",
+  "items": [
+    {
+      "id": "creation-signs-01-why-look",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": { "en": "Signs in creation · 1", "de": "Zeichen in der Schöpfung · 1", "ar": "آيات في الخلق · ١" },
+        "title": { "en": "Why the Quran asks you to look", "de": "Warum der Koran Sie zum Hinschauen einlädt", "ar": "لماذا يدعوك القرآن إلى النظر" },
+        "sub": { "en": "Tafakkur: reflecting on creation as a way of remembering Allah", "de": "Tafakkur: das Nachdenken über die Schöpfung als ein Weg, Allahs zu gedenken", "ar": "التفكّر في الخلق طريقٌ إلى ذكر الله" },
+        "arabic": "التَّفَكُّر"
+      },
+      "slides": [
+        {
+          "title": { "en": "One word for verse and sign", "de": "Ein Wort für Vers und Zeichen", "ar": "كلمة واحدة للآية والعلامة" },
+          "arabic": "آيَة",
+          "body": { "en": "In Arabic, ayah means both a verse of the Quran and a sign in the world. The word occurs 382 times. The Book and the universe point to the same Author.", "de": "Auf Arabisch bedeutet Aya beides: einen Vers des Korans und ein Zeichen in der Welt. Das Wort kommt 382-mal vor. Buch und Welt weisen auf denselben Urheber.", "ar": "كلمة «آية» تعني في العربية آية القرآن وعلامة الكون معًا، وترد في القرآن ٣٨٢ مرة. فالكتاب والكون يدلّان على خالق واحد." }
+        },
+        {
+          "verse": "3:190-191",
+          "check": "give thought to the creation",
+          "title": { "en": "Those who remember and reflect", "de": "Die gedenken und nachdenken", "ar": "الذاكرون المتفكرون" },
+          "body": { "en": "Here remembrance and reflection go together: the heart remembers, the mind looks, and both end in a prayer.", "de": "Hier gehören Gedenken und Nachdenken zusammen: Das Herz erinnert sich, der Verstand schaut hin, und beides mündet in ein Gebet.", "ar": "يجتمع هنا الذكر والتفكر: القلب يذكر، والعقل ينظر، وينتهي الأمران إلى دعاء." }
+        },
+        {
+          "title": { "en": "The root f-k-r", "de": "Die Wurzel f-k-r", "ar": "الجذر ف ك ر" },
+          "arabic": "ف ك ر",
+          "body": { "en": "Tafakkur comes from the root f-k-r. It appears in 18 words of the Quran, all of them verbs: people who reflect. Reflection is something you do, not a mood you wait for.", "de": "Tafakkur stammt von der Wurzel f-k-r. Sie kommt im Koran in 18 Wörtern vor, alle als Verb: Menschen, die nachdenken. Nachdenken ist etwas, das man tut, keine Stimmung, auf die man wartet.", "ar": "التفكّر من الجذر ف ك ر، ويرد في القرآن في ١٨ كلمة كلها أفعال: قومٌ يتفكرون. فالتفكر عمل يُمارَس، لا مزاج يُنتظَر." }
+        },
+        {
+          "verse": "51:20-21",
+          "check": "in yourselves",
+          "title": { "en": "Signs outside and inside", "de": "Zeichen außen und innen", "ar": "آيات في الآفاق وفي النفس" },
+          "body": { "en": "The search does not stop at the horizon. Your own breath, sight and heartbeat belong to the same book of signs.", "de": "Die Suche endet nicht am Horizont. Ihr eigener Atem, Ihr Sehen und Ihr Herzschlag gehören zum selben Buch der Zeichen.", "ar": "لا يتوقف البحث عند الأفق؛ فأنفاسك وبصرك ونبض قلبك من كتاب الآيات نفسه." }
+        },
+        {
+          "verse": "41:53",
+          "check": "horizons",
+          "title": { "en": "A promise to the seeker", "de": "Eine Zusage an den Suchenden", "ar": "وعدٌ للباحث" },
+          "body": { "en": "Signs in the horizons and in ourselves, shown again and again. Creation is presented as an open invitation, not a closed file.", "de": "Zeichen am Horizont und in uns selbst, immer wieder gezeigt. Die Schöpfung erscheint als offene Einladung, nicht als abgeschlossene Akte.", "ar": "آيات في الآفاق وفي الأنفس تتجدد، فالخلق دعوة مفتوحة لا ملف مغلق." }
+        },
+        {
+          "title": { "en": "How to begin", "de": "So beginnen Sie", "ar": "كيف تبدأ" },
+          "list": {
+            "en": ["Look at the sky for one minute each day, phone away", "Read one creation verse slowly, then step outside", "Name one blessing you noticed today", "Let wonder end in praise: SubhanAllah"],
+            "de": ["Schauen Sie täglich eine Minute in den Himmel, ohne Handy", "Lesen Sie einen Schöpfungsvers langsam, dann gehen Sie hinaus", "Nennen Sie eine Gabe, die Ihnen heute auffiel", "Lassen Sie das Staunen in Lob münden: SubhanAllah"],
+            "ar": ["انظر إلى السماء دقيقة كل يوم بعيدًا عن الهاتف", "اقرأ آية عن الخلق بتمهّل ثم اخرج وتأمّل", "سمِّ نعمة واحدة لاحظتها اليوم", "اجعل الدهشة تسبيحًا: سبحان الله"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Quranic Arabic Corpus, root f-k-r", "url": "https://corpus.quran.com/qurandictionary.jsp?q=fkr" },
+        { "label": "Quranic Arabic Corpus, root a-y-y", "url": "https://corpus.quran.com/qurandictionary.jsp?q=Ayy" }
+      ]
+    },
+    {
+      "id": "creation-signs-02-sky",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": { "en": "Signs in creation · 2", "de": "Zeichen in der Schöpfung · 2", "ar": "آيات في الخلق · ٢" },
+        "title": { "en": "The sky raised without pillars", "de": "Der Himmel ohne Säulen", "ar": "سماءٌ بلا أعمدة" },
+        "sub": { "en": "A ceiling above us, whole and adorned: what the Quran invites us to see", "de": "Ein Dach über uns, unversehrt und geschmückt: wozu der Koran uns einlädt", "ar": "سقفٌ فوقنا محكم مزيّن: ما يدعونا القرآن إلى رؤيته" },
+        "arabic": "السَّمَاء"
+      },
+      "slides": [
+        {
+          "verse": "13:2",
+          "check": "without pillars",
+          "title": { "en": "Nothing holding it up", "de": "Nichts, was ihn trägt", "ar": "لا شيء يحملها" },
+          "body": { "en": "Look up and notice that no visible support holds it. The verse links this sight to certainty about meeting your Lord.", "de": "Schauen Sie hinauf: Nichts Sichtbares trägt ihn. Der Vers verbindet diesen Anblick mit der Gewissheit über die Begegnung mit Ihrem Herrn.", "ar": "انظر إلى الأعلى وتأمّل أنه لا عماد يُرى لها. والآية تربط هذا المشهد باليقين بلقاء الرب." }
+        },
+        {
+          "verse": "50:6",
+          "check": "no rifts",
+          "title": { "en": "Built, adorned, unbroken", "de": "Gebaut, geschmückt, ohne Risse", "ar": "بناءٌ وزينةٌ بلا شقوق" },
+          "body": { "en": "The Quran asks for a simple act: to look. Structure, beauty and wholeness are named in a single sentence.", "de": "Der Koran bittet um etwas Einfaches: hinzuschauen. Aufbau, Schönheit und Unversehrtheit werden in einem einzigen Satz genannt.", "ar": "يطلب القرآن عملًا بسيطًا: أن ننظر. فالبناء والجمال والتمام تُذكر في جملة واحدة." }
+        },
+        {
+          "verse": "67:3-4",
+          "check": "inconsistency",
+          "title": { "en": "Look twice, then again", "de": "Schauen Sie zweimal hin, und noch einmal", "ar": "أعد النظر مرة بعد مرة" },
+          "body": { "en": "Surah al-Mulk invites the eye to search for a flaw. The gaze returns tired, and the heart returns humbled.", "de": "Sure al-Mulk lädt das Auge ein, nach einem Fehler zu suchen. Der Blick kehrt müde zurück, und das Herz demütig.", "ar": "تدعو سورة الملك العين إلى البحث عن خلل، فيعود النظر متعبًا ويعود القلب خاشعًا." }
+        },
+        {
+          "verse": "21:32",
+          "check": "protected ceiling",
+          "title": { "en": "A protected ceiling", "de": "Ein geschütztes Dach", "ar": "سقفٌ محفوظ" },
+          "body": { "en": "We walk under it every day without a thought. The verse names the real danger: not the sky, but turning away from its signs.", "de": "Wir gehen jeden Tag darunter, ohne daran zu denken. Der Vers nennt die eigentliche Gefahr: nicht den Himmel, sondern die Abwendung von seinen Zeichen.", "ar": "نمشي تحتها كل يوم دون أن نلتفت. والآية تسمي الخطر الحقيقي: لا السماء، بل الإعراض عن آياتها." }
+        },
+        {
+          "title": { "en": "The word sama'", "de": "Das Wort Sama", "ar": "كلمة السماء" },
+          "arabic": "س م و",
+          "body": { "en": "Sama', sky, comes from the root s-m-w, which carries the sense of height. The word sama' occurs 310 times in the Quran. The Quranic Arabic Corpus lists ism, name, under the same root.", "de": "Sama, Himmel, stammt von der Wurzel s-m-w, die den Sinn von Höhe trägt. Das Wort Sama kommt im Koran 310-mal vor. Das Quranic Arabic Corpus führt auch Ism, Name, unter derselben Wurzel.", "ar": "السماء من الجذر س م و الدالّ على العلوّ، وترد كلمة «سماء» في القرآن ٣١٠ مرات. ويضع معجم المدوّنة القرآنية كلمة «اسم» تحت الجذر نفسه." }
+        },
+        {
+          "title": { "en": "Under the open sky", "de": "Unter freiem Himmel", "ar": "تحت السماء المفتوحة" },
+          "list": {
+            "en": ["Step outside at night and look up for one minute", "Remember: the same sky covered every prophet", "Notice how small a worry looks beneath it", "End with a word of praise"],
+            "de": ["Gehen Sie nachts hinaus und schauen Sie eine Minute hinauf", "Denken Sie daran: Derselbe Himmel war über allen Propheten", "Bemerken Sie, wie klein eine Sorge darunter wirkt", "Schließen Sie mit einem Wort des Lobes"],
+            "ar": ["اخرج ليلًا وانظر إلى الأعلى دقيقة واحدة", "تذكّر أن السماء نفسها أظلّت كل الأنبياء", "لاحظ كيف يصغر الهمّ تحتها", "اختم بكلمة تسبيح"]
+          }
+        }
+      ],
+      "sources": [{ "label": "Quranic Arabic Corpus, root s-m-w", "url": "https://corpus.quran.com/qurandictionary.jsp?q=smw" }]
+    },
+    {
+      "id": "creation-signs-03-stars",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": { "en": "Signs in creation · 3", "de": "Zeichen in der Schöpfung · 3", "ar": "آيات في الخلق · ٣" },
+        "title": { "en": "The stars: lamps, guides and an oath", "de": "Die Sterne: Lampen, Wegweiser und ein Schwur", "ar": "النجوم: زينة وهداية وقسَم" },
+        "sub": { "en": "Beauty for the eye, direction for the traveller, a question for the heart", "de": "Schönheit für das Auge, Richtung für Reisende, eine Frage an das Herz", "ar": "جمال للعين، وهداية للمسافر، وسؤال للقلب" },
+        "arabic": "النُّجُوم"
+      },
+      "slides": [
+        {
+          "verse": "37:6",
+          "check": "adornment of stars",
+          "title": { "en": "Beauty first", "de": "Zuerst die Schönheit", "ar": "الجمال أولًا" },
+          "body": { "en": "The first thing said about the stars here is that they adorn the sky. Wonder is a fitting response to them.", "de": "Das Erste, was hier über die Sterne gesagt wird: Sie schmücken den Himmel. Staunen ist eine angemessene Antwort.", "ar": "أول ما يُذكر هنا عن النجوم أنها زينة للسماء، والدهشة استجابة لائقة بها." }
+        },
+        {
+          "verse": "6:97",
+          "check": "darknesses of the land and sea",
+          "title": { "en": "Guides in the dark", "de": "Wegweiser im Dunkeln", "ar": "هداةٌ في الظلمات" },
+          "body": { "en": "For centuries travellers crossed deserts and seas by the stars. The verse calls this guidance a gift and a sign for those who know.", "de": "Jahrhundertelang durchquerten Reisende Wüsten und Meere mithilfe der Sterne. Der Vers nennt diese Führung eine Gabe und ein Zeichen für Wissende.", "ar": "عبر المسافرون قرونًا الصحارى والبحار مهتدين بالنجوم، والآية تجعل ذلك نعمة وآية لأهل العلم." }
+        },
+        {
+          "verse": "16:16",
+          "check": "landmarks",
+          "title": { "en": "Signposts on earth and above", "de": "Wegzeichen auf der Erde und darüber", "ar": "علامات في الأرض وفوقها" },
+          "body": { "en": "Two kinds of signposts: the shape of the land and the lights above. Both show the way, and both point beyond themselves.", "de": "Zwei Arten von Wegzeichen: die Gestalt des Landes und die Lichter darüber. Beide zeigen den Weg, und beide weisen über sich hinaus.", "ar": "نوعان من العلامات: معالم الأرض وأنوار السماء، وكلاهما يدل على الطريق ويدل على ما وراءه." }
+        },
+        {
+          "verse": "86:1-3",
+          "check": "piercing star",
+          "title": { "en": "The night visitor", "de": "Der nächtliche Besucher", "ar": "الطارق" },
+          "body": { "en": "Surah at-Tariq opens with a question about a star that pierces the darkness. The Quran awakens curiosity before it answers.", "de": "Sure at-Tariq beginnt mit einer Frage nach einem Stern, der die Dunkelheit durchdringt. Der Koran weckt Neugier, bevor er antwortet.", "ar": "تفتتح سورة الطارق بسؤال عن نجم يخترق الظلام، فيوقظ القرآن الفضول قبل أن يجيب." }
+        },
+        {
+          "verse": "56:75-76",
+          "check": "setting of the stars",
+          "title": { "en": "An oath by their positions", "de": "Ein Schwur bei ihren Stellungen", "ar": "قسمٌ بمواقع النجوم" },
+          "body": { "en": "Allah swears by the places where the stars set and calls this oath great. What He swears by deserves a second look.", "de": "Allah schwört bei den Orten, an denen die Sterne untergehen, und nennt diesen Schwur gewaltig. Was Er zum Schwur wählt, verdient einen zweiten Blick.", "ar": "يقسم الله بمواقع النجوم ويصف القسم بأنه عظيم، وما يقسم به سبحانه جدير بنظرة ثانية." }
+        },
+        {
+          "verse": "6:76",
+          "check": "those that set",
+          "title": { "en": "Ibrahim and the star that set", "de": "Ibrahim und der Stern, der unterging", "ar": "إبراهيم والنجم الآفل" },
+          "body": { "en": "Ibrahim watched a star vanish and drew the lesson for his people: what sets cannot be worshipped. The star pointed beyond itself.", "de": "Ibrahim sah einen Stern verschwinden und zog daraus die Lehre für sein Volk: Was untergeht, kann nicht angebetet werden. Der Stern wies über sich hinaus.", "ar": "رأى إبراهيم نجمًا يغيب فاستخلص لقومه العبرة: ما يأفل لا يستحق العبادة. فدلّ النجم على ما وراءه." }
+        }
+      ],
+      "sources": [{ "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 6:76-79", "url": "https://quran.com/6:76/tafsirs/en-tafisr-ibn-kathir" }]
+    },
+    {
+      "id": "creation-signs-04-sun-moon",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": { "en": "Signs in creation · 4", "de": "Zeichen in der Schöpfung · 4", "ar": "آيات في الخلق · ٤" },
+        "title": { "en": "The sun and the moon, each in its orbit", "de": "Sonne und Mond, jeder in seiner Bahn", "ar": "الشمس والقمر، كلٌّ في مداره" },
+        "sub": { "en": "Two lights, two rhythms, one Creator: reflections on precise measure", "de": "Zwei Lichter, zwei Rhythmen, ein Schöpfer: Gedanken über genaues Maß", "ar": "نوران وإيقاعان وخالق واحد: تأملات في التقدير الدقيق" },
+        "arabic": "الشَّمْس وَالْقَمَر"
+      },
+      "slides": [
+        {
+          "verse": "36:38-40",
+          "check": "swimming",
+          "title": { "en": "Each one swimming", "de": "Jeder schwimmt", "ar": "كلٌّ يسبح" },
+          "body": { "en": "The sun runs toward its resting point, the moon passes through its phases. The Quran pictures them as swimmers, each in its own course.", "de": "Die Sonne läuft auf ihren Ruhepunkt zu, der Mond durchläuft seine Phasen. Der Koran zeichnet sie als Schwimmer, jeder in seiner eigenen Bahn.", "ar": "تجري الشمس نحو مستقرها ويتنقل القمر في منازله، ويصورهما القرآن سابحَين، كلٌّ في مساره." }
+        },
+        {
+          "verse": "10:5",
+          "check": "derived light",
+          "title": { "en": "Two kinds of light", "de": "Zwei Arten von Licht", "ar": "نوعان من الضوء" },
+          "body": { "en": "Arabic uses diya' for the sun and nur for the moon. The moon's phases give us months and years: time itself is a mercy.", "de": "Das Arabische nennt das Sonnenlicht Diya und das Mondlicht Nur. Die Phasen des Mondes schenken uns Monate und Jahre: Die Zeit selbst ist eine Barmherzigkeit.", "ar": "يسمي القرآن نور الشمس ضياءً ونور القمر نورًا، وبمنازل القمر نعرف الشهور والسنين: فالزمن نفسه رحمة." }
+        },
+        {
+          "verse": "55:5",
+          "check": "precise calculation",
+          "title": { "en": "By exact measure", "de": "Nach genauem Maß", "ar": "بحسابٍ دقيق" },
+          "body": { "en": "Sunrise tables, prayer times and calendars rest on this reliability. Order in the sky makes order in our day possible.", "de": "Sonnenaufgangstabellen, Gebetszeiten und Kalender beruhen auf dieser Verlässlichkeit. Ordnung am Himmel ermöglicht Ordnung in unserem Tag.", "ar": "جداول الشروق ومواقيت الصلاة والتقاويم كلها قائمة على هذا الانتظام؛ فنظام السماء يتيح نظام يومنا." }
+        },
+        {
+          "verse": "41:37",
+          "check": "Do not prostrate to the sun",
+          "title": { "en": "Admire them, never worship them", "de": "Bewundern, nicht anbeten", "ar": "تأمّلٌ لا عبادة" },
+          "body": { "en": "Many ancient peoples bowed to the sun and moon. The Quran turns the wonder toward the One who created them.", "de": "Viele alte Völker verneigten sich vor Sonne und Mond. Der Koran lenkt das Staunen auf den, der sie erschaffen hat.", "ar": "سجدت أمم قديمة كثيرة للشمس والقمر، والقرآن يوجّه الدهشة إلى من خلقهما." }
+        },
+        {
+          "verse": "91:1-2",
+          "check": "its brightness",
+          "title": { "en": "An oath by the sun", "de": "Ein Schwur bei der Sonne", "ar": "قسمٌ بالشمس" },
+          "body": { "en": "Surah ash-Shams swears by the sun and the moon that follows it, then turns to the human soul. The sky leads to the self.", "de": "Sure asch-Schams schwört bei der Sonne und dem Mond, der ihr folgt, und wendet sich dann der menschlichen Seele zu. Der Himmel führt zum Selbst.", "ar": "تقسم سورة الشمس بالشمس والقمر التالي لها، ثم تنتقل إلى النفس الإنسانية؛ فالسماء تقود إلى الذات." }
+        },
+        {
+          "title": { "en": "Living with the two lights", "de": "Mit den zwei Lichtern leben", "ar": "العيش مع النيّرين" },
+          "list": {
+            "en": ["Let the sun's path remind you of each prayer time", "Look for the new crescent at the start of a month", "Greet the morning with remembrance", "Remember that every sunset is counted"],
+            "de": ["Lassen Sie den Lauf der Sonne Sie an jede Gebetszeit erinnern", "Halten Sie zu Monatsbeginn Ausschau nach der neuen Mondsichel", "Begrüßen Sie den Morgen mit Gedenken", "Denken Sie daran, dass jeder Sonnenuntergang gezählt ist"],
+            "ar": ["اجعل مسير الشمس يذكّرك بمواقيت الصلاة", "تحرَّ الهلال في أول كل شهر", "استقبل الصباح بالذكر", "تذكّر أن كل غروب محسوب"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "creation-signs-05-night-day",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": { "en": "Signs in creation · 5", "de": "Zeichen in der Schöpfung · 5", "ar": "آيات في الخلق · ٥" },
+        "title": { "en": "Night and day: the gift of alternation", "de": "Nacht und Tag: das Geschenk des Wechsels", "ar": "الليل والنهار: نعمة التعاقب" },
+        "sub": { "en": "Darkness for rest, light for work: why the Quran keeps returning to this rhythm", "de": "Dunkelheit zum Ruhen, Licht zum Arbeiten: warum der Koran immer wieder auf diesen Rhythmus zurückkommt", "ar": "ظلام للسكون ونور للسعي: لماذا يعود القرآن إلى هذا الإيقاع مرارًا" },
+        "arabic": "اللَّيْل وَالنَّهَار"
+      },
+      "slides": [
+        {
+          "verse": "25:62",
+          "check": "in succession",
+          "title": { "en": "A rhythm for remembering", "de": "Ein Rhythmus zum Gedenken", "ar": "إيقاعٌ للتذكّر" },
+          "body": { "en": "Each turn of night and day is an opening: a chance to remember Allah or to thank Him. The verse makes the clock an invitation.", "de": "Jeder Wechsel von Nacht und Tag ist eine Gelegenheit, Allahs zu gedenken oder Ihm zu danken. Der Vers macht die Uhr zur Einladung.", "ar": "كل تعاقب لليل والنهار فرصة لذكر الله أو شكره، فالآية تجعل الساعة دعوة متجددة." }
+        },
+        {
+          "verse": "78:10-11",
+          "check": "night as clothing",
+          "title": { "en": "Night as a garment", "de": "Die Nacht als Gewand", "ar": "الليل سترٌ وغطاء" },
+          "body": { "en": "Night covers us as clothing does: it hides, protects and calms. The day opens for earning a living.", "de": "Die Nacht bedeckt uns wie Kleidung: Sie verbirgt, schützt und beruhigt. Der Tag öffnet sich für den Lebensunterhalt.", "ar": "يغطينا الليل كما يغطينا الثوب: يستر ويحمي ويسكّن، ويُفتح النهار لطلب الرزق." }
+        },
+        {
+          "verse": "28:71",
+          "check": "night continuous",
+          "title": { "en": "Imagine an endless night", "de": "Stellen Sie sich eine endlose Nacht vor", "ar": "تخيّل ليلًا لا ينتهي" },
+          "body": { "en": "A thought experiment from the Quran: no sunrise, ever again. Who could bring back the light?", "de": "Ein Gedankenexperiment aus dem Koran: nie wieder ein Sonnenaufgang. Wer könnte das Licht zurückbringen?", "ar": "تجربة ذهنية من القرآن: لا شروق بعد اليوم أبدًا. فمن يعيد الضياء؟" }
+        },
+        {
+          "verse": "28:72",
+          "check": "day continuous",
+          "title": { "en": "Imagine an endless day", "de": "Stellen Sie sich einen endlosen Tag vor", "ar": "تخيّل نهارًا لا ينتهي" },
+          "body": { "en": "And the reverse: no dusk, no rest, no darkness to sleep in. The verse asks whether we truly see what we have.", "de": "Und umgekehrt: keine Dämmerung, keine Ruhe, keine Dunkelheit zum Schlafen. Der Vers fragt, ob wir wirklich sehen, was wir haben.", "ar": "والعكس: لا غروب ولا راحة ولا ظلام ننام فيه. والآية تسأل: هل نرى حقًّا ما بين أيدينا؟" }
+        },
+        {
+          "verse": "28:73",
+          "check": "out of His mercy",
+          "title": { "en": "Both are mercy", "de": "Beides ist Barmherzigkeit", "ar": "كلاهما رحمة" },
+          "body": { "en": "Rest by night and effort by day are both called mercy, and both are meant to lead to gratitude.", "de": "Ruhe in der Nacht und Mühe am Tag werden beide Barmherzigkeit genannt, und beide sollen zur Dankbarkeit führen.", "ar": "سكون الليل وسعي النهار كلاهما رحمة، وكلاهما طريق إلى الشكر." }
+        },
+        {
+          "title": { "en": "Small habits at each turn", "de": "Kleine Gewohnheiten bei jedem Wechsel", "ar": "عادات صغيرة عند كل تحوّل" },
+          "list": {
+            "en": ["At dawn: begin with Fajr and a word of thanks", "At dusk: pause before the lights come on", "At night: let the darkness bring you to rest", "Before sleep: look back on your day honestly"],
+            "de": ["Im Morgengrauen: mit dem Fajr-Gebet und einem Dank beginnen", "In der Dämmerung: kurz innehalten, bevor das Licht angeht", "In der Nacht: sich von der Dunkelheit zur Ruhe führen lassen", "Vor dem Schlaf: ehrlich auf den Tag zurückblicken"],
+            "ar": ["عند الفجر: ابدأ بالصلاة وكلمة شكر", "عند الغروب: توقّف لحظة قبل إضاءة المصابيح", "في الليل: دع الظلام يقودك إلى السكينة", "قبل النوم: راجع يومك بصدق"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "creation-signs-06-rain",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": { "en": "Signs in creation · 6", "de": "Zeichen in der Schöpfung · 6", "ar": "آيات في الخلق · ٦" },
+        "title": { "en": "Rain: mercy falling from the sky", "de": "Regen: Barmherzigkeit, die vom Himmel fällt", "ar": "المطر: رحمةٌ تنزل من السماء" },
+        "sub": { "en": "From wind to cloud to drop to glass: the journey of water the Quran asks us to notice", "de": "Vom Wind zur Wolke, zum Tropfen, ins Glas: der Weg des Wassers, auf den der Koran uns aufmerksam macht", "ar": "من الريح إلى السحاب إلى القطرة إلى الكأس: رحلة الماء التي يلفت القرآن أنظارنا إليها" },
+        "arabic": "الْغَيْث"
+      },
+      "slides": [
+        {
+          "verse": "30:48",
+          "check": "stir the clouds",
+          "title": { "en": "From wind to cloud to drop", "de": "Vom Wind zur Wolke zum Tropfen", "ar": "من الريح إلى السحاب إلى القطر" },
+          "body": { "en": "The verse follows each step: winds, clouds spread out, broken into pieces, then rain. And at the end, people rejoice.", "de": "Der Vers folgt jedem Schritt: Winde, ausgebreitete Wolken, in Stücke geteilt, dann Regen. Und am Ende freuen sich die Menschen.", "ar": "تتبّع الآية المراحل: رياح، فسحاب منبسط، فقطع متفرقة، ثم مطر، وفي الختام فرحُ الناس." }
+        },
+        {
+          "verse": "24:43",
+          "check": "drives clouds",
+          "title": { "en": "Mountains of cloud", "de": "Wolkenberge", "ar": "جبالٌ من السحاب" },
+          "body": { "en": "Clouds gathered into towers, hail within them, lightning that almost blinds. The sky can comfort, and it can overwhelm.", "de": "Wolken, zu Türmen aufgeschichtet, Hagel darin, Blitze, die fast blenden. Der Himmel kann trösten, und er kann überwältigen.", "ar": "سحب تتراكم كالأبراج، فيها برد، وبرق يكاد يخطف البصر. فالسماء قد تطمئن وقد تُرهب." }
+        },
+        {
+          "verse": "23:18",
+          "check": "measured amount",
+          "title": { "en": "Rain in measure", "de": "Regen nach Maß", "ar": "مطرٌ بقدر" },
+          "body": { "en": "Not too much, not too little, and stored in the earth for later. The verse adds a quiet warning: it could also be taken away.", "de": "Nicht zu viel, nicht zu wenig, und in der Erde für später gespeichert. Der Vers fügt eine leise Mahnung hinzu: Er könnte auch genommen werden.", "ar": "لا كثير يُغرق ولا قليل يُعطش، ويُختزن في الأرض لوقت الحاجة. وتضيف الآية تنبيهًا هادئًا: يمكن أن يُذهب به." }
+        },
+        {
+          "verse": "56:68-70",
+          "check": "water that you drink",
+          "title": { "en": "The glass in your hand", "de": "Das Glas in Ihrer Hand", "ar": "الكأس التي في يدك" },
+          "body": { "en": "Before you drink, ask the question the Quran asks: who sent this water down, and who kept it sweet?", "de": "Bevor Sie trinken, stellen Sie die Frage, die der Koran stellt: Wer hat dieses Wasser herabgesandt, und wer hat es süß gelassen?", "ar": "قبل أن تشرب، اسأل سؤال القرآن: من أنزل هذا الماء، ومن أبقاه عذبًا؟" }
+        },
+        {
+          "verse": "15:22",
+          "check": "you are not its retainers",
+          "title": { "en": "Not in our keeping", "de": "Nicht in unserer Verwahrung", "ar": "لسنا خزنته" },
+          "body": { "en": "We store water in tanks and dams, yet the source is beyond our reach. Every reservoir begins as a gift.", "de": "Wir speichern Wasser in Tanks und Talsperren, doch die Quelle liegt außerhalb unserer Reichweite. Jeder Speicher beginnt als Geschenk.", "ar": "نخزن الماء في الخزانات والسدود، لكن مصدره خارج أيدينا، فكل مخزون يبدأ هبة." }
+        },
+        {
+          "title": { "en": "When it rains", "de": "Wenn es regnet", "ar": "حين ينزل المطر" },
+          "list": {
+            "en": ["Pause and watch it, even for a moment", "Remember those still waiting for rain", "Thank Allah for it, aloud or in your heart", "Use water with care: it is a trust"],
+            "de": ["Halten Sie inne und schauen Sie zu, wenn auch nur kurz", "Denken Sie an die, die noch auf Regen warten", "Danken Sie Allah dafür, laut oder im Herzen", "Gehen Sie sorgsam mit Wasser um: Es ist anvertraut"],
+            "ar": ["توقّف وانظر إليه ولو لحظة", "تذكّر من ما زالوا ينتظرون المطر", "احمد الله عليه بلسانك أو بقلبك", "استعمل الماء بعناية فهو أمانة"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "creation-signs-07-dead-land",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": { "en": "Signs in creation · 7", "de": "Zeichen in der Schöpfung · 7", "ar": "آيات في الخلق · ٧" },
+        "title": { "en": "When dead land comes back to life", "de": "Wenn totes Land wieder lebendig wird", "ar": "حين تعود الحياة إلى الأرض الميتة" },
+        "sub": { "en": "A picture of resurrection the Quran returns to often lies right outside your window", "de": "Ein Bild der Auferstehung, auf das der Koran oft zurückkommt, liegt direkt vor Ihrem Fenster", "ar": "صورةٌ للبعث يكررها القرآن كثيرًا تراها من نافذتك" },
+        "arabic": "إِحْيَاء الْأَرْض"
+      },
+      "slides": [
+        {
+          "verse": "41:39",
+          "check": "quivers and grows",
+          "title": { "en": "Still, then stirring", "de": "Erst still, dann bewegt", "ar": "سكونٌ ثم اهتزاز" },
+          "body": { "en": "Dry, motionless ground receives rain and begins to move. The verse draws a straight line to life after death.", "de": "Trockener, regloser Boden empfängt Regen und beginnt sich zu regen. Der Vers zieht eine gerade Linie zum Leben nach dem Tod.", "ar": "أرض يابسة ساكنة يصيبها المطر فتتحرك، والآية تمدّ خطًّا مستقيمًا إلى الحياة بعد الموت." }
+        },
+        {
+          "verse": "30:50",
+          "check": "effects of the mercy",
+          "title": { "en": "The traces of mercy", "de": "Die Spuren der Barmherzigkeit", "ar": "آثار الرحمة في الأرض" },
+          "body": { "en": "An invitation to observe: green after drought. The One who does this will also bring the dead to life.", "de": "Eine Einladung zum Beobachten: Grün nach der Dürre. Der dies tut, wird auch die Toten lebendig machen.", "ar": "دعوة إلى المشاهدة: خضرة بعد جفاف، والذي يفعل ذلك يحيي الموتى أيضًا." }
+        },
+        {
+          "verse": "36:33",
+          "check": "dead earth",
+          "title": { "en": "A sign you can eat", "de": "Ein Zeichen, das man essen kann", "ar": "آيةٌ تُؤكل" },
+          "body": { "en": "The bread on your table is grain from land that was once lifeless. Reflection can begin at every meal.", "de": "Das Brot auf Ihrem Tisch ist Getreide aus Land, das einst leblos war. Nachdenken kann bei jeder Mahlzeit beginnen.", "ar": "الخبز على مائدتك حبّ من أرض كانت ميتة، فالتفكر يمكن أن يبدأ مع كل وجبة." }
+        },
+        {
+          "verse": "50:9-11",
+          "check": "Thus is the emergence",
+          "title": { "en": "Gardens, grain and tall palms", "de": "Gärten, Getreide und hohe Palmen", "ar": "جناتٌ وحبٌّ ونخلٌ باسق" },
+          "body": { "en": "The verses list the harvest, then end with a short sentence: this is how the coming out of the graves will be.", "de": "Die Verse zählen die Ernte auf und enden mit einem kurzen Satz: So wird das Hervorkommen aus den Gräbern sein.", "ar": "تعدد الآيات الحصاد ثم تختم بجملة قصيرة: هكذا يكون الخروج من القبور." }
+        },
+        {
+          "verse": "35:9",
+          "check": "Thus is the resurrection",
+          "title": { "en": "The same pattern, again and again", "de": "Dasselbe Muster, immer wieder", "ar": "النمط نفسه مرةً بعد مرة" },
+          "body": { "en": "Wind, cloud, dead land, life. The Quran repeats this pattern so that resurrection feels near, not strange.", "de": "Wind, Wolke, totes Land, Leben. Der Koran wiederholt dieses Muster, damit die Auferstehung nah wirkt, nicht fremd.", "ar": "ريح فسحاب فأرض ميتة فحياة. يكرر القرآن هذا النمط ليبدو البعث قريبًا لا غريبًا." }
+        },
+        {
+          "verse": "57:17",
+          "check": "gives life to the earth",
+          "title": { "en": "Hearts can be revived too", "de": "Auch Herzen können aufleben", "ar": "والقلوب تحيا كذلك" },
+          "body": { "en": "This verse follows a warning about hardened hearts. Ibn Kathir reads it as hope: as rain revives soil, remembrance can soften a heart.", "de": "Dieser Vers folgt auf eine Mahnung über verhärtete Herzen. Ibn Kathir liest ihn als Hoffnung: Wie Regen den Boden belebt, kann Gedenken ein Herz erweichen.", "ar": "تأتي هذه الآية بعد التحذير من قسوة القلوب، ويقرؤها ابن كثير رجاءً: كما يحيي المطر التربة يليّن الذكر القلب." }
+        }
+      ],
+      "sources": [{ "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 57:16-17", "url": "https://quran.com/57:16/tafsirs/en-tafisr-ibn-kathir" }]
+    },
+    {
+      "id": "creation-signs-08-sea-ships",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": { "en": "Signs in creation · 8", "de": "Zeichen in der Schöpfung · 8", "ar": "آيات في الخلق · ٨" },
+        "title": { "en": "The sea and the ships", "de": "Das Meer und die Schiffe", "ar": "البحر والسفن" },
+        "sub": { "en": "Food, ornament, travel and trust: what the Quran shows us on the water", "de": "Nahrung, Schmuck, Reisen und Vertrauen: was der Koran uns auf dem Wasser zeigt", "ar": "طعام وزينة وسفر وتوكّل: ما يرينا القرآن على الماء" },
+        "arabic": "الْبَحْر"
+      },
+      "slides": [
+        {
+          "verse": "16:14",
+          "check": "tender meat",
+          "title": { "en": "A sea made to serve", "de": "Ein Meer, das dienstbar gemacht wurde", "ar": "بحرٌ مسخَّر" },
+          "body": { "en": "Fish to eat, pearls to wear, routes to travel. The verse ends with the hope that we will be grateful.", "de": "Fisch zum Essen, Perlen zum Tragen, Wege zum Reisen. Der Vers endet mit der Hoffnung, dass wir dankbar sind.", "ar": "سمك يؤكل، ولؤلؤ يُلبس، وطرق للسفر، وتنتهي الآية برجاء أن نشكر." }
+        },
+        {
+          "verse": "42:32-33",
+          "check": "like mountains",
+          "title": { "en": "Ships like mountains", "de": "Schiffe wie Berge", "ar": "سفنٌ كالجبال" },
+          "body": { "en": "Huge vessels move only while the wind allows. Strength on the water is borrowed, not owned.", "de": "Riesige Schiffe bewegen sich nur, solange der Wind es zulässt. Stärke auf dem Wasser ist geliehen, nicht besessen.", "ar": "سفن عظيمة لا تتحرك إلا ما دامت الريح تسمح، فالقوة على الماء معارة لا مملوكة." }
+        },
+        {
+          "verse": "17:67",
+          "check": "adversity touches you at sea",
+          "title": { "en": "Sincere in the storm", "de": "Aufrichtig im Sturm", "ar": "الإخلاص في العاصفة" },
+          "body": { "en": "On rough water, people call on Allah alone. The verse asks why that sincerity so often fades on dry land.", "de": "Auf stürmischer See rufen Menschen Allah allein an. Der Vers fragt, warum diese Aufrichtigkeit an Land so oft verblasst.", "ar": "في البحر الهائج يدعو الناس الله وحده، والآية تسأل لماذا يخبو هذا الإخلاص كثيرًا على اليابسة." }
+        },
+        {
+          "verse": "31:31",
+          "check": "patient and grateful",
+          "title": { "en": "For the patient and the grateful", "de": "Für die Geduldigen und Dankbaren", "ar": "للصابرين والشاكرين" },
+          "body": { "en": "The same journey asks for both: patience when the sea is rough, gratitude when it is calm.", "de": "Dieselbe Reise verlangt beides: Geduld, wenn das Meer rau ist, Dankbarkeit, wenn es ruhig ist.", "ar": "الرحلة نفسها تطلب الأمرين: صبرًا حين يهيج البحر، وشكرًا حين يهدأ." }
+        },
+        {
+          "verse": "55:24",
+          "check": "elevated in the sea",
+          "title": { "en": "Even the ships are His", "de": "Auch die Schiffe gehören Ihm", "ar": "والسفن له أيضًا" },
+          "body": { "en": "Even what we build with our own hands is counted among His favours in Surah ar-Rahman.", "de": "Selbst was wir mit eigenen Händen bauen, zählt Sure ar-Rahman zu Seinen Gaben.", "ar": "حتى ما نصنعه بأيدينا تعدّه سورة الرحمن من نعمه." }
+        },
+        {
+          "title": { "en": "At the shore", "de": "Am Ufer", "ar": "على الشاطئ" },
+          "list": {
+            "en": ["Notice the horizon: it is wider than your plans", "Remember those who work at sea for your food", "Travel with gratitude, arrive with humility", "Make dua for everyone travelling on the water"],
+            "de": ["Betrachten Sie den Horizont: Er ist weiter als Ihre Pläne", "Denken Sie an die, die auf See für Ihre Nahrung arbeiten", "Reisen Sie mit Dankbarkeit, kommen Sie mit Demut an", "Bitten Sie für alle, die auf dem Wasser unterwegs sind"],
+            "ar": ["تأمّل الأفق فهو أوسع من خططك", "تذكّر من يعملون في البحر لأجل طعامك", "سافر شاكرًا وصِل متواضعًا", "ادعُ لكل مسافر على الماء"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "creation-signs-09-two-seas",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": { "en": "Signs in creation · 9", "de": "Zeichen in der Schöpfung · 9", "ar": "آيات في الخلق · ٩" },
+        "title": { "en": "The two seas and the barrier between them", "de": "Die zwei Meere und die Schranke dazwischen", "ar": "البحران والحاجز بينهما" },
+        "sub": { "en": "Sweet and salt water meet, and each keeps its nature: a sign to contemplate", "de": "Süßes und salziges Wasser begegnen sich, und jedes behält seine Art: ein Zeichen zum Nachdenken", "ar": "يلتقي العذب والمالح ويحتفظ كلٌّ بطبيعته: آية للتأمل" },
+        "arabic": "الْبَحْرَان"
+      },
+      "slides": [
+        {
+          "verse": "25:53",
+          "check": "fresh and sweet",
+          "title": { "en": "Sweet and salty side by side", "de": "Süß und salzig nebeneinander", "ar": "عذبٌ ومالحٌ متجاوران" },
+          "body": { "en": "Two waters released together, one sweet, one salty, with a barrier that keeps each in its place.", "de": "Zwei Gewässer, zusammen freigelassen, eines süß, eines salzig, mit einer Schranke, die jedes an seinem Platz hält.", "ar": "ماءان أُرسلا معًا، أحدهما عذب والآخر مالح، وبينهما حاجز يحفظ كلًّا في موضعه." }
+        },
+        {
+          "verse": "55:19-21",
+          "check": "neither of them transgresses",
+          "title": { "en": "Meeting without overstepping", "de": "Begegnung ohne Grenzüberschreitung", "ar": "لقاءٌ بلا تجاوز" },
+          "body": { "en": "They meet, yet neither crosses its limit. Surah ar-Rahman follows the image at once with its refrain about favours.", "de": "Sie begegnen sich, doch keines überschreitet seine Grenze. Sure ar-Rahman lässt auf das Bild sofort ihren Kehrvers über die Gaben folgen.", "ar": "يلتقيان ولا يتعدى أحدهما حدّه، وتُتبع سورة الرحمن الصورة مباشرة بلازمتها عن النعم." }
+        },
+        {
+          "verse": "35:12",
+          "check": "not alike",
+          "title": { "en": "Different, and both a gift", "de": "Verschieden, und beide ein Geschenk", "ar": "مختلفان وكلاهما نعمة" },
+          "body": { "en": "One water to drink, one bitter, yet from both come food and ornaments. Difference is not a lack.", "de": "Ein Wasser zum Trinken, eines bitter, und doch kommen aus beiden Nahrung und Schmuck. Verschiedenheit ist kein Mangel.", "ar": "ماء يُشرب وآخر مرّ، ومن كليهما طعام وزينة، فالاختلاف ليس نقصًا." }
+        },
+        {
+          "verse": "27:61",
+          "check": "barrier",
+          "title": { "en": "Who placed the barrier?", "de": "Wer hat die Schranke gesetzt?", "ar": "من جعل الحاجز؟" },
+          "body": { "en": "The verse lists the barrier among the works of the One God: a stable earth, rivers, mountains and this unseen line.", "de": "Der Vers zählt die Schranke zu den Werken des Einen Gottes: eine feste Erde, Flüsse, Berge und diese unsichtbare Linie.", "ar": "تذكر الآية الحاجز بين أعمال الإله الواحد: أرض مستقرة وأنهار وجبال وهذا الخط الخفي." }
+        },
+        {
+          "title": { "en": "How the commentators read it", "de": "Wie die Kommentatoren es lasen", "ar": "كيف فهمه المفسرون" },
+          "body": { "en": "Classical commentators offered different readings: some saw rivers and seas kept apart by land, others an unseen barrier where they meet. The Quran asks first for attention, gratitude and humility.", "de": "Klassische Kommentatoren boten verschiedene Deutungen an: Manche sahen Flüsse und Meere, durch Land getrennt, andere eine unsichtbare Schranke dort, wo sie sich treffen. Der Koran verlangt zuerst Aufmerksamkeit, Dankbarkeit und Demut.", "ar": "قدّم المفسرون المتقدمون أقوالًا: فمنهم من رأى أنهارًا وبحارًا يفصل بينها اليابس، ومنهم من رأى حاجزًا خفيًّا حيث يلتقيان. والقرآن يطلب أولًا الانتباه والشكر والتواضع." }
+        },
+        {
+          "verse": "18:60",
+          "check": "junction of the two seas",
+          "title": { "en": "Where Musa went to learn", "de": "Wohin Musa ging, um zu lernen", "ar": "حيث ذهب موسى ليتعلّم" },
+          "body": { "en": "Musa travelled to the meeting point of two seas to find a teacher. Where two waters meet, a prophet learned humility.", "de": "Musa reiste zum Zusammenfluss zweier Meere, um einen Lehrer zu finden. Wo zwei Gewässer sich treffen, lernte ein Prophet Demut.", "ar": "سافر موسى إلى مجمع البحرين ليلقى معلّمًا، وحيث يلتقي الماءان تعلّم نبيٌّ التواضع." }
+        }
+      ],
+      "sources": [
+        { "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 25:53", "url": "https://quran.com/25:53/tafsirs/en-tafisr-ibn-kathir" },
+        { "label": "al-Tabari, Jami' al-Bayan, on 25:53", "url": "https://quran.com/25:53/tafsirs/ar-tafsir-al-tabari" },
+        { "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 55:19-22", "url": "https://quran.com/55:19/tafsirs/en-tafisr-ibn-kathir" }
+      ]
+    },
+    {
+      "id": "creation-signs-10-mountains",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": { "en": "Signs in creation · 10", "de": "Zeichen in der Schöpfung · 10", "ar": "آيات في الخلق · ١٠" },
+        "title": { "en": "Mountains: firm, humble, praising", "de": "Berge: fest, demütig, lobpreisend", "ar": "الجبال: رسوخٌ وخشوعٌ وتسبيح" },
+        "sub": { "en": "What the Quran says about the giants of the earth, and what they teach the heart", "de": "Was der Koran über die Riesen der Erde sagt und was sie das Herz lehren", "ar": "ما يقوله القرآن عن عمالقة الأرض، وما تعلّمه للقلب" },
+        "arabic": "الْجِبَال"
+      },
+      "slides": [
+        {
+          "verse": "78:6-7",
+          "check": "stakes",
+          "title": { "en": "Like tent pegs", "de": "Wie Zeltpflöcke", "ar": "كالأوتاد" },
+          "body": { "en": "A resting place for us, held by mountains like the pegs of a tent. A stability we live on every day without noticing.", "de": "Ein Ruheort für uns, gehalten von Bergen wie von Zeltpflöcken. Eine Festigkeit, auf der wir täglich leben, ohne sie zu bemerken.", "ar": "مهادٌ لنا تثبته الجبال كما تثبت الأوتاد الخيمة، استقرار نعيش عليه كل يوم دون أن نلحظه." }
+        },
+        {
+          "verse": "16:15",
+          "check": "firmly set mountains",
+          "title": { "en": "Steadiness and direction", "de": "Halt und Richtung", "ar": "ثباتٌ وهداية" },
+          "body": { "en": "Mountains, rivers and roads are named together: things that steady us and things that guide us.", "de": "Berge, Flüsse und Wege werden zusammen genannt: Dinge, die uns Halt geben, und Dinge, die uns leiten.", "ar": "تُذكر الجبال والأنهار والسبل معًا: ما يثبّتنا وما يهدينا." }
+        },
+        {
+          "verse": "34:10",
+          "check": "O mountains",
+          "title": { "en": "Mountains that praised with Dawud", "de": "Berge, die mit Dawud lobpriesen", "ar": "جبالٌ سبّحت مع داود" },
+          "body": { "en": "When Dawud glorified Allah, the mountains and the birds joined him. Creation is not silent; it has its own praise.", "de": "Als Dawud Allah lobpries, stimmten die Berge und die Vögel mit ein. Die Schöpfung schweigt nicht, sie hat ihr eigenes Lob.", "ar": "حين سبّح داود الله ردّدت معه الجبال والطير، فالخلق ليس صامتًا، بل له تسبيحه." }
+        },
+        {
+          "verse": "59:21",
+          "check": "humbled and splitting",
+          "title": { "en": "If the Quran came down on a mountain", "de": "Wenn der Koran auf einen Berg herabkäme", "ar": "لو نزل القرآن على جبل" },
+          "body": { "en": "The mountain would be humbled and split. The verse gently asks what this Book does to our hearts.", "de": "Der Berg wäre demütig und spaltete sich. Der Vers fragt sanft, was dieses Buch mit unseren Herzen macht.", "ar": "لخشع الجبل وتصدّع. والآية تسأل برفق: ماذا يفعل هذا الكتاب بقلوبنا؟" }
+        },
+        {
+          "verse": "33:72",
+          "check": "the Trust",
+          "title": { "en": "The trust they declined", "de": "Das anvertraute Gut, das sie ablehnten", "ar": "الأمانة التي أبتها" },
+          "body": { "en": "Heavens, earth and mountains declined the Trust; the human being took it on. Our worth lies in responsibility, not in size.", "de": "Himmel, Erde und Berge lehnten das anvertraute Gut ab, der Mensch nahm es auf sich. Unser Wert liegt in der Verantwortung, nicht in der Größe.", "ar": "أبت السماوات والأرض والجبال حمل الأمانة وحملها الإنسان، فقيمتنا في المسؤولية لا في الحجم." }
+        },
+        {
+          "verse": "20:105-107",
+          "check": "level plain",
+          "title": { "en": "Not forever", "de": "Nicht für immer", "ar": "ليست باقية" },
+          "body": { "en": "Even mountains will one day be scattered. What looks most permanent reminds us that only Allah remains.", "de": "Selbst Berge werden eines Tages zerstreut. Was am dauerhaftesten aussieht, erinnert daran, dass nur Allah bleibt.", "ar": "حتى الجبال ستُنسف يومًا، وما يبدو أدوم الأشياء يذكّرنا بأن الله وحده الباقي." }
+        }
+      ]
+    },
+    {
+      "id": "creation-signs-11-bee",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": { "en": "Signs in creation · 11", "de": "Zeichen in der Schöpfung · 11", "ar": "آيات في الخلق · ١١" },
+        "title": { "en": "The bee: a surah named after a small worker", "de": "Die Biene: eine Sure, benannt nach einer kleinen Arbeiterin", "ar": "النحل: سورةٌ تحمل اسم عاملة صغيرة" },
+        "sub": { "en": "Guided, diligent, and the source of a drink of many colours", "de": "Geleitet, fleißig und Quelle eines Getränks in vielen Farben", "ar": "مهديّة مجتهدة، ومصدر شراب متعدد الألوان" },
+        "arabic": "النَّحْل"
+      },
+      "slides": [
+        {
+          "title": { "en": "One word, one whole surah", "de": "Ein Wort, eine ganze Sure", "ar": "كلمة واحدة وسورة كاملة" },
+          "arabic": "ن ح ل",
+          "body": { "en": "Surah 16 is called an-Nahl, the Bee. The word for bee occurs only once in the Quran, in 16:68, and yet the whole surah carries its name. Small things can carry great meaning.", "de": "Sure 16 heißt an-Nahl, die Biene. Das Wort für Biene kommt im Koran nur einmal vor, in 16:68, und doch trägt die ganze Sure seinen Namen. Kleine Dinge können große Bedeutung tragen.", "ar": "السورة السادسة عشرة اسمها النحل، ولا ترد كلمة «النحل» في القرآن إلا مرة واحدة في الآية ٦٨ منها، ومع ذلك سُمّيت بها السورة كلها. فالصغير قد يحمل معنى كبيرًا." }
+        },
+        {
+          "verse": "16:68-69",
+          "check": "inspired to the bee",
+          "title": { "en": "Guided to build and gather", "de": "Geleitet zu bauen und zu sammeln", "ar": "مهديّة إلى البناء والجمع" },
+          "body": { "en": "The bee is guided to build homes, to gather from every kind of fruit and to follow the paths made easy for her.", "de": "Die Biene wird geleitet, Wohnungen zu bauen, von allerlei Früchten zu sammeln und den Wegen zu folgen, die ihr leicht gemacht wurden.", "ar": "تُهدى النحلة إلى بناء البيوت والجمع من أصناف الثمار وسلوك الطرق الميسّرة لها." }
+        },
+        {
+          "title": { "en": "What wahy means here", "de": "Was Wahy hier bedeutet", "ar": "معنى الوحي هنا" },
+          "arabic": "وَحْي",
+          "body": { "en": "The verb used is the one for revelation. Commentators such as Ibn Kathir explain it here as inspiration and guidance: an instinct placed in the bee by her Lord, not prophethood.", "de": "Das Verb ist dasselbe wie für Offenbarung. Kommentatoren wie Ibn Kathir erklären es hier als Eingebung und Leitung: ein Instinkt, den ihr Herr in die Biene gelegt hat, kein Prophetentum.", "ar": "الفعل المستعمل هو فعل الوحي، ويفسره مفسرون كابن كثير هنا بالإلهام والهداية: غريزة أودعها ربها فيها، لا نبوّة." }
+        },
+        {
+          "title": { "en": "A drink of many colours", "de": "Ein Getränk in vielen Farben", "ar": "شرابٌ متعدد الألوان" },
+          "body": { "en": "In this passage honey is not named; the Quran speaks of a drink of varying colours. The word 'asal, honey, appears only once in the Quran, among the rivers of Paradise in 47:15.", "de": "An dieser Stelle wird Honig nicht beim Namen genannt; der Koran spricht von einem Getränk in verschiedenen Farben. Das Wort Asal, Honig, kommt im Koran nur einmal vor, bei den Flüssen des Paradieses in 47:15.", "ar": "لا يُسمّى العسل في هذا الموضع، بل يُذكر شراب متعدد الألوان. وكلمة «عسل» لا ترد في القرآن إلا مرة واحدة، في وصف أنهار الجنة في سورة محمد." }
+        },
+        {
+          "title": { "en": "Healing, rightly understood", "de": "Heilung, richtig verstanden", "ar": "الشفاء بفهمٍ صحيح" },
+          "body": { "en": "The verse speaks of healing in it for people. Scholars read this as a real benefit, while Islam also teaches us to seek medical treatment. The verse is an invitation to gratitude, not a prescription.", "de": "Der Vers spricht von Heilung darin für die Menschen. Gelehrte verstehen dies als echten Nutzen, zugleich lehrt der Islam, ärztliche Behandlung zu suchen. Der Vers lädt zur Dankbarkeit ein, er ist kein Rezept.", "ar": "تذكر الآية أن فيه شفاءً للناس، ويفهمه العلماء نفعًا حقيقيًا، مع أن الإسلام يعلّمنا أيضًا طلب العلاج. فالآية دعوة إلى الشكر لا وصفة طبية." }
+        },
+        {
+          "title": { "en": "Lessons from the bee", "de": "Lehren von der Biene", "ar": "دروس من النحلة" },
+          "list": {
+            "en": ["Take only what is good, as the bee takes from flowers", "Work steadily, and work together", "Leave behind something that benefits others", "Follow the paths your Lord has made easy for you"],
+            "de": ["Nehmen Sie nur das Gute, wie die Biene von den Blüten", "Arbeiten Sie beständig und gemeinsam", "Hinterlassen Sie etwas, das anderen nützt", "Folgen Sie den Wegen, die Ihr Herr Ihnen leicht gemacht hat"],
+            "ar": ["خذ الطيب وحده كما تأخذ النحلة من الزهر", "اعمل بثبات ومع الجماعة", "اترك وراءك ما ينفع الناس", "اسلك الطرق التي يسّرها لك ربك"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 16:68-69", "url": "https://quran.com/16:68/tafsirs/en-tafisr-ibn-kathir" },
+        { "label": "Quranic Arabic Corpus, root n-h-l", "url": "https://corpus.quran.com/qurandictionary.jsp?q=nHl" },
+        { "label": "Quranic Arabic Corpus, root '-s-l", "url": "https://corpus.quran.com/qurandictionary.jsp?q=Esl" }
+      ]
+    },
+    {
+      "id": "creation-signs-12-ant",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": { "en": "Signs in creation · 12", "de": "Zeichen in der Schöpfung · 12", "ar": "آيات في الخلق · ١٢" },
+        "title": { "en": "The ant who spoke up", "de": "Die Ameise, die ihre Stimme erhob", "ar": "النملة التي نبّهت قومها" },
+        "sub": { "en": "Surah an-Naml and the small voice that made a prophet smile", "de": "Sure an-Naml und die kleine Stimme, die einen Propheten lächeln ließ", "ar": "سورة النمل والصوت الصغير الذي جعل نبيًّا يبتسم" },
+        "arabic": "النَّمْلَة"
+      },
+      "slides": [
+        {
+          "verse": "27:17",
+          "check": "in rows",
+          "title": { "en": "A great army on the march", "de": "Ein großes Heer auf dem Marsch", "ar": "جيشٌ عظيم يسير" },
+          "body": { "en": "Sulayman's hosts of jinn, people and birds advance in ordered ranks. The scene is set for something very small.", "de": "Sulaimans Heerscharen aus Dschinn, Menschen und Vögeln ziehen in geordneten Reihen voran. Die Bühne ist bereitet für etwas sehr Kleines.", "ar": "تسير جنود سليمان من الجن والإنس والطير في صفوف منتظمة، والمشهد يمهّد لشيء صغير جدًّا." }
+        },
+        {
+          "verse": "27:18-19",
+          "check": "smiled",
+          "title": { "en": "A warning, and a smile", "de": "Eine Warnung und ein Lächeln", "ar": "تحذيرٌ وابتسامة" },
+          "body": { "en": "An ant warns her community, and Sulayman smiles. His answer is not pride but a prayer of gratitude.", "de": "Eine Ameise warnt ihre Gemeinschaft, und Sulaiman lächelt. Seine Antwort ist kein Stolz, sondern ein Gebet der Dankbarkeit.", "ar": "تحذّر نملة قومها فيبتسم سليمان، وجوابه ليس فخرًا بل دعاء شكر." }
+        },
+        {
+          "title": { "en": "She thought well of others", "de": "Sie dachte gut von anderen", "ar": "أحسنت الظنّ بغيرها" },
+          "body": { "en": "Notice the end of her warning: the army would not crush them on purpose, only without noticing. Even in danger she assumed no ill will. Thinking well of others is part of good character.", "de": "Achten Sie auf das Ende ihrer Warnung: Das Heer würde sie nicht absichtlich zertreten, nur ohne es zu merken. Selbst in Gefahr unterstellte sie keine böse Absicht. Gut von anderen zu denken gehört zum guten Charakter.", "ar": "تأمّل ختام تحذيرها: الجيش لن يحطمهم عمدًا، بل دون أن يشعر. حتى في الخطر لم تفترض سوء نية، وحسن الظن بالآخرين من حسن الخلق." }
+        },
+        {
+          "title": { "en": "Care for the whole community", "de": "Sorge für die ganze Gemeinschaft", "ar": "حرصٌ على الجماعة كلها" },
+          "body": { "en": "She did not save only herself. She called all the ants to safety. One caring voice can protect many.", "de": "Sie rettete nicht nur sich selbst. Sie rief alle Ameisen in Sicherheit. Eine fürsorgliche Stimme kann viele schützen.", "ar": "لم تنجُ بنفسها وحدها، بل دعت النمل كله إلى الأمان. فصوت واحد حريص قد يحمي الكثيرين." }
+        },
+        {
+          "title": { "en": "Three words in one verse", "de": "Drei Wörter in einem Vers", "ar": "ثلاث كلمات في آية واحدة" },
+          "arabic": "ن م ل",
+          "body": { "en": "Words for ant occur three times in the Quran, all within a single verse, 27:18. Yet the whole surah, an-Naml, carries the name.", "de": "Wörter für Ameise kommen im Koran dreimal vor, alle in einem einzigen Vers, 27:18. Und doch trägt die ganze Sure an-Naml diesen Namen.", "ar": "ترد كلمات النمل في القرآن ثلاث مرات، كلها في آية واحدة هي الآية ١٨ من سورة النمل، ومع ذلك حملت السورة كلها هذا الاسم." }
+        },
+        {
+          "title": { "en": "Take with you", "de": "Zum Mitnehmen", "ar": "خذ معك" },
+          "list": {
+            "en": ["Speak up when others are in danger", "Assume good intentions before you blame", "Let blessings lead to gratitude, not pride", "Ask Allah for deeds that please Him"],
+            "de": ["Erheben Sie Ihre Stimme, wenn andere in Gefahr sind", "Unterstellen Sie gute Absichten, bevor Sie urteilen", "Lassen Sie Gaben zu Dankbarkeit führen, nicht zu Stolz", "Bitten Sie Allah um Taten, die Ihm gefallen"],
+            "ar": ["تكلّم حين يكون غيرك في خطر", "أحسن الظن قبل أن تلوم", "اجعل النعم سبيلًا إلى الشكر لا إلى الكبر", "اسأل الله عملًا يرضاه"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 27:18-19", "url": "https://quran.com/27:18/tafsirs/en-tafisr-ibn-kathir" },
+        { "label": "Quranic Arabic Corpus, root n-m-l", "url": "https://corpus.quran.com/qurandictionary.jsp?q=nml" }
+      ]
+    },
+    {
+      "id": "creation-signs-13-spider",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": { "en": "Signs in creation · 13", "de": "Zeichen in der Schöpfung · 13", "ar": "آيات في الخلق · ١٣" },
+        "title": { "en": "The spider's house", "de": "Das Haus der Spinne", "ar": "بيت العنكبوت" },
+        "sub": { "en": "Why the Quran compares false reliance to the weakest of homes", "de": "Warum der Koran falsches Vertrauen mit dem schwächsten aller Häuser vergleicht", "ar": "لماذا يشبّه القرآن الاعتماد على غير الله بأوهن البيوت" },
+        "arabic": "الْعَنْكَبُوت"
+      },
+      "slides": [
+        {
+          "verse": "29:41",
+          "check": "weakest of homes",
+          "title": { "en": "The weakest of houses", "de": "Das schwächste der Häuser", "ar": "أضعف البيوت" },
+          "body": { "en": "A web is beautiful and finely made, yet it shelters from nothing. So is every support taken in place of Allah.", "de": "Ein Netz ist schön und fein gearbeitet, doch es schützt vor nichts. So ist jede Stütze, die man an Allahs Stelle setzt.", "ar": "الشبكة جميلة متقنة، لكنها لا تقي من شيء، وكذلك كل سند يُتخذ من دون الله." }
+        },
+        {
+          "title": { "en": "Strong for catching, weak for sheltering", "de": "Stark zum Fangen, schwach zum Schützen", "ar": "قوية في الصيد ضعيفة في الإيواء" },
+          "body": { "en": "A web catches what the spider needs, but it offers no protection from wind, rain or a careless hand. The parable is about shelter: where do you run when life gets hard?", "de": "Ein Netz fängt, was die Spinne braucht, doch es bietet keinen Schutz vor Wind, Regen oder einer achtlosen Hand. Das Gleichnis handelt vom Schutz: Wohin flüchten Sie, wenn das Leben schwer wird?", "ar": "تصيد الشبكة ما تحتاجه العنكبوت، لكنها لا تحمي من ريح ولا مطر ولا يد عابرة. والمثل عن المأوى: إلى أين تلجأ حين تشتد الحياة؟" }
+        },
+        {
+          "verse": "29:43",
+          "check": "except those of knowledge",
+          "title": { "en": "Parables need thinking", "de": "Gleichnisse brauchen Nachdenken", "ar": "الأمثال تحتاج إلى تفكّر" },
+          "body": { "en": "Only people of knowledge truly grasp these examples. Understanding grows when we slow down.", "de": "Nur Menschen mit Wissen erfassen diese Beispiele wirklich. Verstehen wächst, wenn wir langsamer werden.", "ar": "لا يدرك هذه الأمثال حقًّا إلا أهل العلم، والفهم ينمو حين نتمهّل." }
+        },
+        {
+          "verse": "2:26",
+          "check": "mosquito",
+          "title": { "en": "Nothing is too small", "de": "Nichts ist zu klein", "ar": "لا شيء أصغر من أن يكون مثلًا" },
+          "body": { "en": "Even a mosquito can serve as an example in the Quran. Small creatures carry large lessons for anyone willing to learn.", "de": "Selbst eine Mücke kann im Koran als Beispiel dienen. Kleine Geschöpfe tragen große Lehren für jeden, der lernen will.", "ar": "حتى البعوضة تصلح مثلًا في القرآن، فالمخلوقات الصغيرة تحمل دروسًا كبيرة لمن أراد أن يتعلم." }
+        },
+        {
+          "verse": "22:73",
+          "check": "a fly",
+          "title": { "en": "Not even a fly", "de": "Nicht einmal eine Fliege", "ar": "ولا ذبابة" },
+          "body": { "en": "All false gods together could not create a fly, nor win back what it steals. The verse lays bare every power set up beside Him.", "de": "Alle falschen Götter zusammen könnten keine Fliege erschaffen, noch zurückholen, was sie raubt. Der Vers entlarvt jede Macht, die man neben Ihm aufstellt.", "ar": "لو اجتمعت الآلهة الباطلة كلها لما خلقت ذبابة، ولا استردت ما تسلبه. والآية تكشف ضعف كل قوة تُتخذ من دونه." }
+        },
+        {
+          "title": { "en": "Surah al-Ankabut", "de": "Sure al-Ankabut", "ar": "سورة العنكبوت" },
+          "body": { "en": "Surah 29 carries the spider's name. The word appears twice, both times in verse 41. The surah opens with the testing of faith and ends with a promise of guidance to those who strive.", "de": "Sure 29 trägt den Namen der Spinne. Das Wort kommt zweimal vor, beide Male in Vers 41. Die Sure beginnt mit der Prüfung des Glaubens und endet mit einer Zusage der Rechtleitung für die, die sich bemühen.", "ar": "تحمل السورة التاسعة والعشرون اسم العنكبوت، وترد الكلمة مرتين كلتاهما في الآية ٤١. تبدأ السورة بابتلاء الإيمان وتختم بوعد الهداية لمن يجتهد في سبيل الله." }
+        }
+      ],
+      "sources": [{ "label": "Quranic Arabic Corpus, root '-n-k-b", "url": "https://corpus.quran.com/qurandictionary.jsp?q=Enkb" }]
+    },
+    {
+      "id": "creation-signs-14-birds",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": { "en": "Signs in creation · 14", "de": "Zeichen in der Schöpfung · 14", "ar": "آيات في الخلق · ١٤" },
+        "title": { "en": "Birds held in the air", "de": "Vögel, in der Luft gehalten", "ar": "طيورٌ معلّقة في السماء" },
+        "sub": { "en": "Wings spread and folded: who keeps them aloft?", "de": "Flügel ausgebreitet und angelegt: Wer hält sie oben?", "ar": "أجنحة تُبسط وتُقبض: من يمسكها في الهواء؟" },
+        "arabic": "الطَّيْر"
+      },
+      "slides": [
+        {
+          "verse": "67:19",
+          "check": "wings outspread",
+          "title": { "en": "Spread, then folded", "de": "Ausgebreitet, dann angelegt", "ar": "بسطٌ ثم قبض" },
+          "body": { "en": "Watch a bird glide, then beat its wings. The verse names who keeps it up: ar-Rahman, the Most Merciful.", "de": "Beobachten Sie einen Vogel, wie er gleitet und dann mit den Flügeln schlägt. Der Vers nennt, wer ihn hält: ar-Rahman, der Allerbarmer.", "ar": "راقب طائرًا ينساب ثم يخفق بجناحيه، والآية تسمّي من يمسكه: الرحمن." }
+        },
+        {
+          "verse": "16:79",
+          "check": "None holds them up",
+          "title": { "en": "Held in the open sky", "de": "Gehalten am offenen Himmel", "ar": "محمولةٌ في السماء المفتوحة" },
+          "body": { "en": "Flight looks effortless. The Quran asks us to see the care behind it, and calls it a sign for those who believe.", "de": "Fliegen sieht mühelos aus. Der Koran bittet uns, die Fürsorge dahinter zu sehen, und nennt es ein Zeichen für die Gläubigen.", "ar": "يبدو الطيران بلا عناء، والقرآن يدعونا إلى رؤية العناية وراءه، ويجعله آية للمؤمنين." }
+        },
+        {
+          "verse": "24:41",
+          "check": "wings spread",
+          "title": { "en": "Each knows its prayer", "de": "Jedes kennt sein Gebet", "ar": "كلٌّ يعرف صلاته" },
+          "body": { "en": "Every creature has its own way of praise. A bird in flight is also a creature in worship.", "de": "Jedes Geschöpf hat seine eigene Weise des Lobpreises. Ein Vogel im Flug ist auch ein Geschöpf im Gottesdienst.", "ar": "لكل مخلوق طريقته في التسبيح، والطائر في طيرانه مخلوق في عبادة." }
+        },
+        {
+          "verse": "6:38",
+          "check": "communities like you",
+          "title": { "en": "Communities like us", "de": "Gemeinschaften wie wir", "ar": "أممٌ مثلنا" },
+          "body": { "en": "Animals and birds live in communities of their own. This view calls for respect and mercy toward them.", "de": "Tiere und Vögel leben in eigenen Gemeinschaften. Diese Sicht verlangt Achtung und Barmherzigkeit ihnen gegenüber.", "ar": "تعيش الدواب والطيور في أمم خاصة بها، وهذه النظرة تدعو إلى احترامها والرحمة بها." }
+        },
+        {
+          "verse": "5:31",
+          "check": "crow",
+          "title": { "en": "Taught by a crow", "de": "Von einem Raben belehrt", "ar": "درسٌ من غراب" },
+          "body": { "en": "After the first killing, a crow showed Adam's son what to do. Sometimes creation teaches us, and humbles us.", "de": "Nach der ersten Tötung zeigte ein Rabe dem Sohn Adams, was zu tun war. Manchmal lehrt uns die Schöpfung und macht uns demütig.", "ar": "بعد أول قتل أرى غرابٌ ابنَ آدم ما يفعل، فقد يعلّمنا الخلق أحيانًا ويكسر كبرنا." }
+        },
+        {
+          "verse": "27:20",
+          "check": "hoopoe",
+          "title": { "en": "One absent bird", "de": "Ein fehlender Vogel", "ar": "طائرٌ واحد غائب" },
+          "body": { "en": "Among all his hosts, Sulayman noticed that a single hoopoe was missing. Good leadership sees every member, even the smallest.", "de": "Unter all seinen Heerscharen bemerkte Sulaiman, dass ein einziger Wiedehopf fehlte. Gute Führung sieht jedes Mitglied, auch das kleinste.", "ar": "بين جنوده كلها لاحظ سليمان غياب هدهد واحد، فالقيادة الحسنة ترى كل فرد ولو كان أصغرهم." }
+        }
+      ]
+    },
+    {
+      "id": "creation-signs-15-cattle-milk",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": { "en": "Signs in creation · 15", "de": "Zeichen in der Schöpfung · 15", "ar": "آيات في الخلق · ١٥" },
+        "title": { "en": "Pure milk from grazing animals", "de": "Reine Milch von Weidetieren", "ar": "لبنٌ صافٍ من الأنعام" },
+        "sub": { "en": "Food, warmth, beauty and a pure drink: the lesson in livestock", "de": "Nahrung, Wärme, Schönheit und ein reines Getränk: die Lehre in den Herdentieren", "ar": "طعام ودفء وجمال وشراب صافٍ: العبرة في الأنعام" },
+        "arabic": "الْأَنْعَام"
+      },
+      "slides": [
+        {
+          "verse": "16:66",
+          "check": "pure milk",
+          "title": { "en": "A lesson in a glass of milk", "de": "Eine Lehre in einem Glas Milch", "ar": "عبرةٌ في كأس لبن" },
+          "body": { "en": "The verse describes milk as pure and pleasant to drink, though it comes from within the animal. Every glass is worth a pause.", "de": "Der Vers beschreibt Milch als rein und angenehm zu trinken, obwohl sie aus dem Inneren des Tieres kommt. Jedes Glas ist ein Innehalten wert.", "ar": "تصف الآية اللبن بالصفاء وطيب المذاق مع أنه يخرج من داخل الحيوان، فكل كأس تستحق وقفة." }
+        },
+        {
+          "title": { "en": "Described, not dissected", "de": "Beschrieben, nicht seziert", "ar": "وصفٌ لا تشريح" },
+          "body": { "en": "The Quran names where milk comes from, between what is digested and blood, and what it becomes: something pure. It does not give a biology lesson; it gives a reason for gratitude.", "de": "Der Koran nennt, woher die Milch kommt, zwischen Verdautem und Blut, und was sie wird: etwas Reines. Er gibt keine Biologiestunde, sondern einen Grund zur Dankbarkeit.", "ar": "يذكر القرآن مخرج اللبن، من بين ما يُهضم والدم، وما يصير إليه: شيئًا صافيًا. فهو لا يقدّم درسًا في الأحياء، بل سببًا للشكر." }
+        },
+        {
+          "verse": "16:5-7",
+          "check": "warmth",
+          "title": { "en": "Warmth, food and beauty", "de": "Wärme, Nahrung und Schönheit", "ar": "دفءٌ وطعامٌ وجمال" },
+          "body": { "en": "Wool for warmth, food to eat, loads carried, and even beauty as the herds come home in the evening.", "de": "Wolle für Wärme, Nahrung zum Essen, getragene Lasten und sogar Schönheit, wenn die Herden am Abend heimkehren.", "ar": "صوف للدفء، وطعام يؤكل، وأثقال تُحمل، بل وجمال حين تعود القطعان مساءً." }
+        },
+        {
+          "verse": "36:71-73",
+          "check": "tamed them",
+          "title": { "en": "Strong, yet tamed", "de": "Stark und doch gezähmt", "ar": "قويةٌ ومذلَّلة" },
+          "body": { "en": "Large, strong animals accept being ridden and cared for. The verses end by asking whether we will be grateful.", "de": "Große, starke Tiere lassen sich reiten und versorgen. Die Verse enden mit der Frage, ob wir dankbar sein werden.", "ar": "حيوانات كبيرة قوية تُركب وتُرعى، وتختم الآيات بسؤال عن شكرنا." }
+        },
+        {
+          "verse": "16:80",
+          "check": "hides",
+          "title": { "en": "Tents and wool", "de": "Zelte und Wolle", "ar": "خيامٌ وصوف" },
+          "body": { "en": "Light tents for travel, furnishings from wool and hair. Life on the move is honoured in the Quran's list of blessings.", "de": "Leichte Zelte für die Reise, Hausrat aus Wolle und Haar. Das Leben unterwegs wird in der Liste der Gaben des Korans gewürdigt.", "ar": "خيام خفيفة للسفر، وأثاث من الصوف والشعر؛ فحياة الترحال حاضرة في قائمة النعم في القرآن." }
+        },
+        {
+          "title": { "en": "Gratitude for animals", "de": "Dankbarkeit für Tiere", "ar": "شكرٌ على الأنعام" },
+          "list": {
+            "en": ["Say Bismillah before you eat and drink", "Treat animals kindly and give them rest", "Do not waste what they give us", "Remember the herders and farmers behind your food"],
+            "de": ["Sprechen Sie Bismillah, bevor Sie essen und trinken", "Behandeln Sie Tiere freundlich und gönnen Sie ihnen Ruhe", "Verschwenden Sie nicht, was sie uns geben", "Denken Sie an Hirten und Bauern hinter Ihrer Nahrung"],
+            "ar": ["سمِّ الله قبل الطعام والشراب", "أحسن إلى الحيوان وأرحه", "لا تهدر ما تعطينا إياه", "تذكّر الرعاة والمزارعين وراء طعامك"]
+          }
+        }
+      ],
+      "sources": [{ "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 16:66", "url": "https://quran.com/16:66/tafsirs/en-tafisr-ibn-kathir" }]
+    },
+    {
+      "id": "creation-signs-16-camel",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": { "en": "Signs in creation · 16", "de": "Zeichen in der Schöpfung · 16", "ar": "آيات في الخلق · ١٦" },
+        "title": { "en": "The camel: where a list of signs begins", "de": "Das Kamel: wo eine Liste der Zeichen beginnt", "ar": "الإبل: حيث تبدأ قائمة الآيات" },
+        "sub": { "en": "Why Surah al-Ghashiyah starts its call to look with this animal", "de": "Warum Sure al-Ghashiya ihren Aufruf zum Hinschauen mit diesem Tier beginnt", "ar": "لماذا تبدأ سورة الغاشية دعوتها إلى النظر بهذا الحيوان" },
+        "arabic": "الْإِبِل"
+      },
+      "slides": [
+        {
+          "verse": "88:17-19",
+          "check": "camels",
+          "title": { "en": "Camel, sky, mountain", "de": "Kamel, Himmel, Berg", "ar": "إبلٌ وسماءٌ وجبال" },
+          "body": { "en": "The first listeners lived with camels every day. The Quran begins with what they knew best, then lifts their eyes upward.", "de": "Die ersten Zuhörer lebten täglich mit Kamelen. Der Koran beginnt mit dem, was sie am besten kannten, und hebt dann ihren Blick nach oben.", "ar": "عاش السامعون الأوائل مع الإبل كل يوم، فبدأ القرآن بما يعرفونه أكثر، ثم رفع أبصارهم إلى الأعلى." }
+        },
+        {
+          "title": { "en": "Made for hard roads", "de": "Geschaffen für harte Wege", "ar": "مخلوقةٌ للطرق الشاقة" },
+          "body": { "en": "The camel carries heavy loads over long distances through heat and thirst. For the desert peoples of Arabia it was transport, food and wealth at once. A sign they rode every day.", "de": "Das Kamel trägt schwere Lasten über weite Strecken durch Hitze und Durst. Für die Wüstenvölker Arabiens war es Transportmittel, Nahrung und Reichtum zugleich. Ein Zeichen, auf dem sie täglich ritten.", "ar": "تحمل الإبل الأثقال مسافات طويلة في الحر والعطش، وكانت لأهل البادية في جزيرة العرب وسيلة نقل وطعامًا ومالًا معًا. آية يركبونها كل يوم." }
+        },
+        {
+          "verse": "16:7",
+          "check": "carry your loads",
+          "title": { "en": "Carrying what we cannot", "de": "Tragen, was wir nicht tragen können", "ar": "تحمل ما لا نطيق" },
+          "body": { "en": "Lands we could reach only with great hardship become reachable. The verse ends with two names: Kind and Merciful.", "de": "Länder, die wir nur unter großer Mühe erreichen könnten, werden erreichbar. Der Vers endet mit zwei Namen: Gütig und Barmherzig.", "ar": "بلاد لا نبلغها إلا بمشقة تصبح قريبة، وتختم الآية باسمين: الرؤوف الرحيم." }
+        },
+        {
+          "verse": "91:13",
+          "check": "she-camel",
+          "title": { "en": "The she-camel of Salih", "de": "Die Kamelstute Salihs", "ar": "ناقة صالح" },
+          "body": { "en": "For the people of Thamud, a camel became a test: would they respect a sign of Allah, or harm it?", "de": "Für das Volk der Thamud wurde eine Kamelstute zur Prüfung: Würden sie ein Zeichen Allahs achten oder ihm schaden?", "ar": "صارت ناقةٌ لقوم ثمود ابتلاءً: أيحترمون آية الله أم يؤذونها؟" }
+        },
+        {
+          "verse": "22:36",
+          "check": "camels and cattle",
+          "title": { "en": "Among the symbols of Allah", "de": "Unter den Kennzeichen Allahs", "ar": "من شعائر الله" },
+          "body": { "en": "In the rites of sacrifice, camels are counted among Allah's symbols, and their meat is shared with those in need.", "de": "Bei den Opferriten zählen Kamele zu den Kennzeichen Allahs, und ihr Fleisch wird mit Bedürftigen geteilt.", "ar": "في شعيرة الهدي والأضحية تُعدّ الإبل من شعائر الله، ويُقسم لحمها مع المحتاجين." }
+        },
+        {
+          "title": { "en": "Two words for one animal", "de": "Zwei Wörter für ein Tier", "ar": "كلمتان لحيوان واحد" },
+          "arabic": "إِبِل · نَاقَة",
+          "body": { "en": "Ibil, the collective word for camels, occurs twice in the Quran, in 6:144 and 88:17. Naqa, the she-camel, appears in the story of Salih. Each word opens a different lesson.", "de": "Ibil, das Sammelwort für Kamele, kommt im Koran zweimal vor, in 6:144 und 88:17. Naqa, die Kamelstute, erscheint in der Geschichte Salihs. Jedes Wort öffnet eine andere Lehre.", "ar": "ترد كلمة «الإبل» في القرآن مرتين، في سورتي الأنعام والغاشية، وتأتي «الناقة» في قصة صالح، ولكل كلمة درسها." }
+        }
+      ],
+      "sources": [{ "label": "Quranic Arabic Corpus, root a-b-l", "url": "https://corpus.quran.com/qurandictionary.jsp?q=Abl" }]
+    },
+    {
+      "id": "creation-signs-17-fruits-colours",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": { "en": "Signs in creation · 17", "de": "Zeichen in der Schöpfung · 17", "ar": "آيات في الخلق · ١٧" },
+        "title": { "en": "One water, many colours", "de": "Ein Wasser, viele Farben", "ar": "ماءٌ واحد وألوانٌ كثيرة" },
+        "sub": { "en": "Fruits, rocks, people and animals: the Quran's palette of diversity", "de": "Früchte, Gestein, Menschen und Tiere: die Farbpalette der Vielfalt im Koran", "ar": "ثمار وصخور وناس ودواب: لوحة التنوع في القرآن" },
+        "arabic": "أَلْوَان"
+      },
+      "slides": [
+        {
+          "verse": "35:27",
+          "check": "varying colors",
+          "title": { "en": "Fruits and mountains in colour", "de": "Früchte und Berge in Farbe", "ar": "ثمارٌ وجبالٌ ملوّنة" },
+          "body": { "en": "One rain, and the result is red, yellow, green and purple. Even the mountains have streaks of white, red and black.", "de": "Ein Regen, und das Ergebnis ist rot, gelb, grün und violett. Selbst die Berge haben Streifen in Weiß, Rot und Schwarz.", "ar": "مطر واحد، والنتيجة أحمر وأصفر وأخضر وبنفسجي، وحتى الجبال فيها خطوط بيض وحمر وسود." }
+        },
+        {
+          "verse": "35:28",
+          "check": "who have knowledge",
+          "title": { "en": "Knowledge that leads to awe", "de": "Wissen, das zur Ehrfurcht führt", "ar": "علمٌ يورث الخشية" },
+          "body": { "en": "After listing colours in people and animals, the verse speaks of knowledge. Looking closely should lead to reverence.", "de": "Nachdem der Vers die Farben bei Menschen und Tieren aufzählt, spricht er vom Wissen. Genaues Hinschauen soll zur Ehrfurcht führen.", "ar": "بعد ذكر الألوان في الناس والدواب تتحدث الآية عن العلم، فالنظر المتأمل ينبغي أن يقود إلى الخشية." }
+        },
+        {
+          "verse": "13:4",
+          "check": "watered with one water",
+          "title": { "en": "Same water, different taste", "de": "Gleiches Wasser, anderer Geschmack", "ar": "ماءٌ واحد وطعمٌ مختلف" },
+          "body": { "en": "Neighbouring plots, the same water, yet one fruit surpasses another. A sign for people who use reason.", "de": "Benachbarte Felder, dasselbe Wasser, und doch übertrifft eine Frucht die andere. Ein Zeichen für Menschen, die ihren Verstand gebrauchen.", "ar": "قطع متجاورة وماء واحد، ومع ذلك يفضل ثمرٌ ثمرًا، وفي ذلك آية لأهل العقول." }
+        },
+        {
+          "verse": "6:99",
+          "check": "similar yet varied",
+          "title": { "en": "Watch the fruit ripen", "de": "Schauen Sie der Frucht beim Reifen zu", "ar": "انظر إلى الثمر حين ينضج" },
+          "body": { "en": "The verse asks us to look at fruit when it appears and as it ripens. Slow attention turns food into reflection.", "de": "Der Vers bittet uns, die Frucht anzuschauen, wenn sie erscheint und während sie reift. Langsame Aufmerksamkeit macht Nahrung zum Nachdenken.", "ar": "تدعونا الآية إلى النظر في الثمر حين يبدو وحين ينضج، فالانتباه المتأني يحوّل الطعام إلى تأمل." }
+        },
+        {
+          "verse": "16:13",
+          "check": "varying colors",
+          "title": { "en": "Colours spread over the earth", "de": "Farben über die Erde verteilt", "ar": "ألوانٌ منثورة في الأرض" },
+          "body": { "en": "Everything spread across the earth in different colours is called a sign for people who remember.", "de": "Alles, was in verschiedenen Farben über die Erde verteilt ist, wird ein Zeichen für Menschen genannt, die sich erinnern lassen.", "ar": "كل ما بُثّ في الأرض بألوانه المختلفة آية لمن يتذكر." }
+        },
+        {
+          "title": { "en": "The word lawn", "de": "Das Wort Lawn", "ar": "كلمة «لون»" },
+          "arabic": "لَوْن",
+          "body": { "en": "Lawn, colour, appears nine times in the Quran: in verses about fruit, honey, mountains, animals and human beings. Colour itself is part of the message.", "de": "Lawn, Farbe, kommt im Koran neunmal vor: in Versen über Früchte, Honig, Berge, Tiere und Menschen. Die Farbe selbst gehört zur Botschaft.", "ar": "ترد كلمة «لون» في القرآن تسع مرات: في آيات عن الثمار والعسل والجبال والدواب والناس، فاللون نفسه جزء من الرسالة." }
+        }
+      ],
+      "sources": [{ "label": "Quranic Arabic Corpus, root l-w-n", "url": "https://corpus.quran.com/qurandictionary.jsp?q=lwn" }]
+    },
+    {
+      "id": "creation-signs-18-human-stages",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": { "en": "Signs in creation · 18", "de": "Zeichen in der Schöpfung · 18", "ar": "آيات في الخلق · ١٨" },
+        "title": { "en": "From clay to another creation", "de": "Vom Lehm zu einer anderen Schöpfung", "ar": "من الطين إلى خلقٍ آخر" },
+        "sub": { "en": "The stages of the human being as the Quran describes them, read with wonder", "de": "Die Stufen des Menschen, wie der Koran sie beschreibt, mit Staunen gelesen", "ar": "أطوار خلق الإنسان كما يصفها القرآن، تُقرأ بدهشة" },
+        "arabic": "أَطْوَار الْخَلْق"
+      },
+      "slides": [
+        {
+          "verse": "23:12-14",
+          "check": "clinging clot",
+          "title": { "en": "Stage after stage", "de": "Stufe um Stufe", "ar": "طورًا بعد طور" },
+          "body": { "en": "Clay, a drop, a clinging form, a lump, bones clothed with flesh, then another creation. The passage ends in praise of Allah.", "de": "Lehm, ein Tropfen, etwas Anhaftendes, ein Klumpen, mit Fleisch bekleidete Knochen, dann eine andere Schöpfung. Der Abschnitt endet mit dem Lob Allahs.", "ar": "طين، فنطفة، فعلقة، فمضغة، فعظام كُسيت لحمًا، ثم خلق آخر، ويختم المقطع بالثناء على الله." }
+        },
+        {
+          "title": { "en": "Described for wonder", "de": "Beschrieben, um zu staunen", "ar": "وصفٌ يبعث الدهشة" },
+          "body": { "en": "The Quran names these stages to awaken gratitude and humility, not to teach a course in embryology. Its question is personal: do you see where you came from, and who shaped you?", "de": "Der Koran nennt diese Stufen, um Dankbarkeit und Demut zu wecken, nicht um einen Kurs in Embryologie zu geben. Seine Frage ist persönlich: Sehen Sie, woher Sie kommen und wer Sie geformt hat?", "ar": "يذكر القرآن هذه الأطوار ليوقظ الشكر والتواضع، لا ليقدّم درسًا في علم الأجنة. وسؤاله شخصي: هل ترى من أين جئت ومن صوّرك؟" }
+        },
+        {
+          "verse": "76:1-2",
+          "check": "not a thing",
+          "title": { "en": "Once not even mentioned", "de": "Einst nicht einmal erwähnt", "ar": "قبل أن نكون" },
+          "body": { "en": "There was a time when none of us existed. Then came hearing and sight, and with them a test.", "de": "Es gab eine Zeit, in der keiner von uns existierte. Dann kamen Hören und Sehen, und mit ihnen eine Prüfung.", "ar": "مرّ زمن لم يكن أحدنا فيه موجودًا، ثم جاء السمع والبصر ومعهما الابتلاء." }
+        },
+        {
+          "verse": "16:78",
+          "check": "not knowing a thing",
+          "title": { "en": "Born knowing nothing", "de": "Geboren, ohne etwas zu wissen", "ar": "وُلدنا بلا علم" },
+          "body": { "en": "We arrived without knowledge, then received hearing, sight and hearts. Every skill we have began as a gift.", "de": "Wir kamen ohne Wissen und erhielten dann Gehör, Augenlicht und Herzen. Jede Fähigkeit, die wir haben, begann als Geschenk.", "ar": "جئنا بلا علم، ثم وُهبنا السمع والبصر والقلوب، فكل مهارة لدينا بدأت هبة." }
+        },
+        {
+          "verse": "95:4",
+          "check": "best of stature",
+          "title": { "en": "In the finest form", "de": "In schönster Gestalt", "ar": "في أحسن صورة" },
+          "body": { "en": "The human being is created in a beautiful, balanced form. Dignity is given before anything is earned.", "de": "Der Mensch ist in einer schönen, ausgewogenen Gestalt erschaffen. Würde wird geschenkt, bevor irgendetwas verdient wird.", "ar": "خُلق الإنسان في صورة جميلة متوازنة، فالكرامة تُمنح قبل أن يُكتسب أي شيء." }
+        },
+        {
+          "verse": "82:6-8",
+          "check": "proportioned you",
+          "title": { "en": "What made you forget?", "de": "Was hat Sie vergessen lassen?", "ar": "ما الذي أنساك؟" },
+          "body": { "en": "The Generous formed you, shaped you in proportion and gave you balance. The verse gently asks why we forget Him so easily.", "de": "Der Großzügige hat Sie geformt, ebenmäßig gestaltet und ausgewogen gemacht. Der Vers fragt sanft, warum wir Ihn so leicht vergessen.", "ar": "صوّرك الكريم وسوّى خلقك وعدّله، والآية تسأل برفق: لماذا ننساه بهذه السهولة؟" }
+        }
+      ],
+      "sources": [{ "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 23:12-14", "url": "https://quran.com/23:12/tafsirs/en-tafisr-ibn-kathir" }]
+    },
+    {
+      "id": "creation-signs-19-languages-colours",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": { "en": "Signs in creation · 19", "de": "Zeichen in der Schöpfung · 19", "ar": "آيات في الخلق · ١٩" },
+        "title": { "en": "Your languages and your colours", "de": "Ihre Sprachen und Ihre Farben", "ar": "اللغات والألوان" },
+        "sub": { "en": "Human diversity as one of Allah's signs", "de": "Menschliche Vielfalt als eines der Zeichen Allahs", "ar": "تنوّع البشر آيةٌ من آيات الله" },
+        "arabic": "اخْتِلَاف الْأَلْسِنَة"
+      },
+      "slides": [
+        {
+          "verse": "30:22",
+          "check": "diversity of your languages",
+          "title": { "en": "As great a sign as the heavens", "de": "Ein Zeichen so groß wie die Himmel", "ar": "آيةٌ بعظمة السماوات" },
+          "body": { "en": "Languages and skin colours are named in the same breath as the heavens and the earth. Diversity is not a problem to fix.", "de": "Sprachen und Hautfarben werden im selben Atemzug genannt wie die Himmel und die Erde. Vielfalt ist kein Problem, das man beheben müsste.", "ar": "تُذكر اللغات والألوان مع خلق السماوات والأرض في سياق واحد، فالتنوع ليس مشكلة تحتاج إلى إصلاح." }
+        },
+        {
+          "verse": "49:13",
+          "check": "know one another",
+          "title": { "en": "Made different in order to meet", "de": "Verschieden gemacht, um einander zu begegnen", "ar": "خُلقنا مختلفين لنلتقي" },
+          "body": { "en": "Peoples and tribes exist so that we come to know each other. Honour is measured by piety, not by origin.", "de": "Völker und Stämme gibt es, damit wir einander kennenlernen. Ehre bemisst sich an der Gottesfurcht, nicht an der Herkunft.", "ar": "الشعوب والقبائل وُجدت ليعرف بعضنا بعضًا، والكرامة تقاس بالتقوى لا بالأصل." }
+        },
+        {
+          "verse": "14:4",
+          "check": "language of his people",
+          "title": { "en": "Every messenger spoke his people's tongue", "de": "Jeder Gesandte sprach die Sprache seines Volkes", "ar": "كل رسول بلغة قومه" },
+          "body": { "en": "Allah addressed people in words they understood. Language is a bridge for guidance.", "de": "Allah sprach die Menschen in Worten an, die sie verstanden. Sprache ist eine Brücke für die Rechtleitung.", "ar": "خاطب الله الناس بكلمات يفهمونها، فاللغة جسر للهداية." }
+        },
+        {
+          "verse": "55:3-4",
+          "check": "eloquence",
+          "title": { "en": "Taught to express", "de": "Gelehrt, sich auszudrücken", "ar": "هبة البيان" },
+          "body": { "en": "Among the first favours in Surah ar-Rahman: the creation of the human being and the gift of clear speech.", "de": "Zu den ersten Gaben in Sure ar-Rahman gehören die Erschaffung des Menschen und die Gabe der klaren Rede.", "ar": "من أوائل النعم في سورة الرحمن خلقُ الإنسان وهبةُ الكلام الواضح." }
+        },
+        {
+          "verse": "30:20-21",
+          "check": "affection and mercy",
+          "title": { "en": "One origin, many paths", "de": "Ein Ursprung, viele Wege", "ar": "أصلٌ واحد ودروبٌ كثيرة" },
+          "body": { "en": "Created from dust, spread across the earth, joined in affection and mercy. Diversity grows from a shared beginning.", "de": "Aus Staub erschaffen, über die Erde verteilt, in Zuneigung und Barmherzigkeit verbunden. Vielfalt wächst aus einem gemeinsamen Anfang.", "ar": "خُلقنا من تراب وانتشرنا في الأرض وجمعتنا المودة والرحمة، فالتنوع ينبت من بداية مشتركة." }
+        },
+        {
+          "title": { "en": "Living this sign", "de": "Dieses Zeichen leben", "ar": "العيش بهذه الآية" },
+          "list": {
+            "en": ["Learn a greeting in a neighbour's language", "Never mock an accent or a skin colour", "Seek friendship with people unlike you", "Judge people by character, not by origin"],
+            "de": ["Lernen Sie einen Gruß in der Sprache eines Nachbarn", "Spotten Sie nie über einen Akzent oder eine Hautfarbe", "Suchen Sie Freundschaft mit Menschen, die anders sind als Sie", "Beurteilen Sie Menschen nach ihrem Charakter, nicht nach ihrer Herkunft"],
+            "ar": ["تعلّم تحية بلغة جارك", "لا تسخر من لهجة أو لون أبدًا", "صادق من يختلف عنك", "زِن الناس بأخلاقهم لا بأصولهم"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "creation-signs-20-sleep",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": { "en": "Signs in creation · 20", "de": "Zeichen in der Schöpfung · 20", "ar": "آيات في الخلق · ٢٠" },
+        "title": { "en": "Sleep: a sign we enter every night", "de": "Schlaf: ein Zeichen, in das wir jede Nacht eintreten", "ar": "النوم: آيةٌ ندخلها كل ليلة" },
+        "sub": { "en": "Each night we let go of control, and each morning we are given back", "de": "Jede Nacht lassen wir los, und jeden Morgen werden wir zurückgegeben", "ar": "كل ليلة نتخلّى عن السيطرة، وكل صباح نُردّ إلى الحياة" },
+        "arabic": "النَّوْم"
+      },
+      "slides": [
+        {
+          "verse": "30:23",
+          "check": "your sleep",
+          "title": { "en": "Among His signs: your sleep", "de": "Unter Seinen Zeichen: Ihr Schlaf", "ar": "نومك من آياته" },
+          "body": { "en": "In the same passage as the heavens and the earth, sleep is named a sign. Something we do every night deserves reflection.", "de": "Im selben Abschnitt wie die Himmel und die Erde wird der Schlaf ein Zeichen genannt. Was wir jede Nacht tun, verdient Nachdenken.", "ar": "في المقطع نفسه الذي يذكر السماوات والأرض يُعدّ النوم آية، فما نفعله كل ليلة جدير بالتأمل." }
+        },
+        {
+          "verse": "78:9",
+          "check": "rest",
+          "title": { "en": "Made for rest", "de": "Zur Ruhe gemacht", "ar": "سُباتٌ وراحة" },
+          "body": { "en": "The Arabic word subat suggests a cutting off: sleep cuts us off from effort so that body and mind can recover.", "de": "Das arabische Wort Subat deutet ein Abschneiden an: Der Schlaf trennt uns von der Mühe, damit Körper und Geist sich erholen.", "ar": "كلمة «سبات» توحي بالقطع: فالنوم يقطعنا عن الجهد ليستعيد الجسد والعقل قوتهما." }
+        },
+        {
+          "verse": "39:42",
+          "check": "during their sleep",
+          "title": { "en": "A small letting go", "de": "Ein kleines Loslassen", "ar": "تخلٍّ صغير" },
+          "body": { "en": "In sleep the soul is taken and, for most of us, sent back. Every waking is a return we did not arrange.", "de": "Im Schlaf wird die Seele genommen und, für die meisten von uns, zurückgeschickt. Jedes Erwachen ist eine Rückkehr, die wir nicht selbst bewirkt haben.", "ar": "في النوم تُقبض النفس ثم تُرسل لأكثرنا، فكل استيقاظ عودة لم نرتّبها نحن." }
+        },
+        {
+          "verse": "25:47",
+          "check": "as clothing",
+          "title": { "en": "Each morning a small rising", "de": "Jeder Morgen ein kleines Auferstehen", "ar": "كل صباح نشورٌ صغير" },
+          "body": { "en": "Night covers, sleep rests, and the day is called a rising. Each morning is a small picture of resurrection.", "de": "Die Nacht bedeckt, der Schlaf gibt Ruhe, und der Tag wird ein Auferstehen genannt. Jeder Morgen ist ein kleines Bild der Auferstehung.", "ar": "الليل ستر، والنوم راحة، والنهار يُسمّى نشورًا، فكل صباح صورة صغيرة للبعث." }
+        },
+        {
+          "title": { "en": "The One who never sleeps", "de": "Der, der niemals schläft", "ar": "الذي لا ينام" },
+          "body": { "en": "Ayat al-Kursi (2:255) affirms that Allah is never touched by tiredness or sleep. We need rest; He does not. That is why we can close our eyes in trust.", "de": "Ayat al-Kursi (2:255) bekräftigt, dass Allah weder Müdigkeit noch Schlaf berührt. Wir brauchen Ruhe, Er nicht. Darum können wir die Augen voller Vertrauen schließen.", "ar": "تؤكد آية الكرسي أن الله لا يعتريه تعب ولا نوم؛ نحن نحتاج إلى الراحة وهو سبحانه لا يحتاج، ولذلك نغمض أعيننا مطمئنين." }
+        },
+        {
+          "title": { "en": "Before you sleep", "de": "Bevor Sie schlafen", "ar": "قبل أن تنام" },
+          "list": {
+            "en": ["Lie down with a calm heart and a clean slate", "Forgive others before you close your eyes", "Recite Ayat al-Kursi and the last two surahs", "When you wake, thank Allah for a new day"],
+            "de": ["Legen Sie sich mit ruhigem Herzen und reinem Gewissen nieder", "Vergeben Sie anderen, bevor Sie die Augen schließen", "Rezitieren Sie Ayat al-Kursi und die letzten beiden Suren", "Danken Sie Allah beim Erwachen für einen neuen Tag"],
+            "ar": ["نَم بقلب هادئ وصفحة نقية", "سامح الناس قبل أن تغمض عينيك", "اقرأ آية الكرسي والمعوذتين", "إذا استيقظت فاحمد الله على يوم جديد"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "creation-signs-21-wind",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": { "en": "Signs in creation · 21", "de": "Zeichen in der Schöpfung · 21", "ar": "آيات في الخلق · ٢١" },
+        "title": { "en": "The wind: a messenger of mercy and warning", "de": "Der Wind: Bote der Barmherzigkeit und der Warnung", "ar": "الريح: رسول رحمةٍ ونذير" },
+        "sub": { "en": "Invisible, yet it carries clouds, ships and warnings", "de": "Unsichtbar, und doch trägt er Wolken, Schiffe und Warnungen", "ar": "لا تُرى، لكنها تحمل السحاب والسفن والنذر" },
+        "arabic": "الرِّيَاح"
+      },
+      "slides": [
+        {
+          "verse": "30:46",
+          "check": "bringers of good tidings",
+          "title": { "en": "Good news before the rain", "de": "Frohe Botschaft vor dem Regen", "ar": "بشرى قبل المطر" },
+          "body": { "en": "Winds announce rain, move ships and open ways to provision. You never see the wind, only what it does.", "de": "Winde kündigen Regen an, bewegen Schiffe und öffnen Wege zur Versorgung. Den Wind sieht man nie, nur was er bewirkt.", "ar": "تبشّر الرياح بالمطر وتجري بها السفن وتفتح أبواب الرزق، ولا نرى الريح بل نرى أثرها." }
+        },
+        {
+          "verse": "7:57",
+          "check": "dead land",
+          "title": { "en": "From wind to harvest", "de": "Vom Wind zur Ernte", "ar": "من الريح إلى الحصاد" },
+          "body": { "en": "Wind carries heavy clouds to dead land, and fruit appears. The verse closes: in the same way the dead will be brought out.", "de": "Der Wind trägt schwere Wolken zu totem Land, und Früchte erscheinen. Der Vers schließt: Ebenso werden die Toten hervorgebracht.", "ar": "تحمل الريح السحب الثقيلة إلى أرض ميتة فتخرج الثمار، وتختم الآية بأن الموتى يُخرجون كذلك." }
+        },
+        {
+          "verse": "45:5",
+          "check": "directing of the winds",
+          "title": { "en": "Directed, not random", "de": "Gelenkt, nicht zufällig", "ar": "مُصرَّفةٌ لا عشوائية" },
+          "body": { "en": "The turning of the winds is counted among signs for people who reason. Even what feels unpredictable has a Director.", "de": "Das Wechseln der Winde zählt zu den Zeichen für Menschen, die nachdenken. Selbst was unberechenbar wirkt, hat einen Lenker.", "ar": "تصريف الرياح من الآيات لأهل العقول، فحتى ما يبدو غير متوقَّع له مدبّر." }
+        },
+        {
+          "verse": "21:81",
+          "check": "wind",
+          "title": { "en": "The wind for Sulayman", "de": "Der Wind für Sulaiman", "ar": "الريح لسليمان" },
+          "body": { "en": "Allah placed the wind in Sulayman's service. What we cannot hold in our hands is fully in His.", "de": "Allah stellte den Wind in Sulaimans Dienst. Was wir nicht mit den Händen halten können, liegt ganz in Seiner Hand.", "ar": "سخّر الله الريح لسليمان، فما لا نقدر على إمساكه بأيدينا هو كله في قبضته سبحانه." }
+        },
+        {
+          "verse": "69:6-7",
+          "check": "violent wind",
+          "title": { "en": "Mercy and warning", "de": "Barmherzigkeit und Warnung", "ar": "رحمةٌ ونذير" },
+          "body": { "en": "The same air that brings rain destroyed the people of 'Ad. Creation can comfort and warn; both lead back to Him.", "de": "Dieselbe Luft, die Regen bringt, vernichtete das Volk der Ad. Die Schöpfung kann trösten und warnen; beides führt zu Ihm zurück.", "ar": "الهواء الذي يأتي بالمطر هو الذي أهلك قوم عاد، فالخلق يواسي وينذر، وكلاهما يعيدنا إليه." }
+        },
+        {
+          "title": { "en": "Rih and riyah", "de": "Rih und Riyah", "ar": "الريح والرياح" },
+          "arabic": "رِيح · رِيَاح",
+          "body": { "en": "Arabic has rih, a single wind, and riyah, winds. Al-Qurtubi notes that in the Quran the plural mostly comes with mercy and the singular with punishment. He names an exception: the good wind of 10:22.", "de": "Das Arabische kennt Rih, einen einzelnen Wind, und Riyah, Winde. Al-Qurtubi bemerkt, dass im Koran der Plural meist mit Barmherzigkeit und der Singular mit Strafe verbunden ist. Als Ausnahme nennt er den guten Wind in 10:22.", "ar": "في العربية «ريح» للمفرد و«رياح» للجمع، ويلاحظ القرطبي أن الجمع جاء في القرآن غالبًا مع الرحمة والمفرد مع العذاب، ويستثني الريح الطيبة في سورة يونس." }
+        }
+      ],
+      "sources": [{ "label": "Quranic Arabic Corpus, root r-w-h", "url": "https://corpus.quran.com/qurandictionary.jsp?q=rwH" },
+        { "label": "al-Qurtubi, al-Jami' li-Ahkam al-Qur'an, on 2:164", "url": "https://quran.com/2:164/tafsirs/ar-tafseer-al-qurtubi" }]
+    },
+    {
+      "id": "creation-signs-22-shade",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": { "en": "Signs in creation · 22", "de": "Zeichen in der Schöpfung · 22", "ar": "آيات في الخلق · ٢٢" },
+        "title": { "en": "Shade and shadow: a quiet sign", "de": "Schatten: ein stilles Zeichen", "ar": "الظلّ: آيةٌ صامتة" },
+        "sub": { "en": "How a moving shadow becomes a lesson about power and care", "de": "Wie ein wandernder Schatten zur Lehre über Macht und Fürsorge wird", "ar": "كيف يصير الظل المتحرك درسًا في القدرة والعناية" },
+        "arabic": "الظِّلّ"
+      },
+      "slides": [
+        {
+          "verse": "25:45-46",
+          "check": "extends the shadow",
+          "title": { "en": "Watch a shadow move", "de": "Sehen Sie einem Schatten zu", "ar": "راقب الظلّ وهو يتحرك" },
+          "body": { "en": "Morning shadows stretch, noon shadows shrink, evening shadows grow again. The Quran asks us to watch this slow motion.", "de": "Morgens dehnen sich die Schatten, mittags schrumpfen sie, abends wachsen sie wieder. Der Koran bittet uns, diese langsame Bewegung zu betrachten.", "ar": "تمتد الظلال صباحًا وتنكمش ظهرًا وتطول مساءً، والقرآن يدعونا إلى مراقبة هذه الحركة البطيئة." }
+        },
+        {
+          "title": { "en": "A shadow that could stand still", "de": "Ein Schatten, der stillstehen könnte", "ar": "ظلٌّ كان يمكن أن يسكن" },
+          "body": { "en": "Nothing obliges the shadow to move. Its daily journey with the sun is a gift of order. Even prayer times such as Zuhr and Asr are still defined by the length of shadows.", "de": "Nichts zwingt den Schatten, sich zu bewegen. Seine tägliche Reise mit der Sonne ist ein Geschenk der Ordnung. Selbst Gebetszeiten wie Zuhr und Asr werden bis heute über die Länge der Schatten bestimmt.", "ar": "لا شيء يُلزم الظل بالحركة، ورحلته اليومية مع الشمس نعمة نظام. وما زالت مواقيت كالظهر والعصر تُحدَّد بطول الظل." }
+        },
+        {
+          "verse": "16:48",
+          "check": "shadows incline",
+          "title": { "en": "Shadows that bow", "de": "Schatten, die sich verneigen", "ar": "ظلالٌ تسجد" },
+          "body": { "en": "Shadows lean right and left as if in prostration. Even shade is pictured as worship.", "de": "Schatten neigen sich nach rechts und links, als würden sie sich niederwerfen. Selbst der Schatten wird als Anbetung gezeigt.", "ar": "تميل الظلال يمينًا وشمالًا كأنها تسجد، فحتى الظل مصوَّر عابدًا." }
+        },
+        {
+          "verse": "13:15",
+          "check": "their shadows",
+          "title": { "en": "Morning and afternoon", "de": "Morgens und nachmittags", "ar": "صباحًا وعصرًا" },
+          "body": { "en": "Everything in the heavens and the earth bows to Allah, and their shadows with them, at the start and the end of the day.", "de": "Alles in den Himmeln und auf der Erde wirft sich vor Allah nieder, und ihre Schatten mit ihnen, am Anfang und am Ende des Tages.", "ar": "كل ما في السماوات والأرض يسجد لله، وظلاله معه، في أول النهار وآخره." }
+        },
+        {
+          "verse": "16:81",
+          "check": "shadows",
+          "title": { "en": "Shade as a favour", "de": "Schatten als Gabe", "ar": "الظلّ نعمة" },
+          "body": { "en": "Shade, shelter in the mountains, clothing against the heat: simple protections named as blessings.", "de": "Schatten, Zuflucht in den Bergen, Kleidung gegen die Hitze: einfache Schutzgaben, als Segnungen genannt.", "ar": "ظلال، وملاجئ في الجبال، وثياب تقي من الحر: وقايات بسيطة تُعدّ نعمًا." }
+        },
+        {
+          "verse": "56:30",
+          "check": "shade extended",
+          "title": { "en": "Shade that never ends", "de": "Schatten, der nie endet", "ar": "ظلٌّ لا ينقطع" },
+          "body": { "en": "Among the descriptions of Paradise is shade that stretches on and on. The shade we enjoy here is a small foretaste.", "de": "Zu den Beschreibungen des Paradieses gehört ein Schatten, der sich immer weiter erstreckt. Der Schatten, den wir hier genießen, ist ein kleiner Vorgeschmack.", "ar": "من أوصاف الجنة ظلٌّ ممتد، والظل الذي ننعم به هنا لمحة صغيرة منه." }
+        }
+      ]
+    },
+    {
+      "id": "creation-signs-23-fig-olive",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": { "en": "Signs in creation · 23", "de": "Zeichen in der Schöpfung · 23", "ar": "آيات في الخلق · ٢٣" },
+        "title": { "en": "The fig and the olive", "de": "Die Feige und die Olive", "ar": "التين والزيتون" },
+        "sub": { "en": "Two blessed trees in the Quran: an oath, a light and daily food", "de": "Zwei gesegnete Bäume im Koran: ein Schwur, ein Licht und tägliche Nahrung", "ar": "شجرتان مباركتان في القرآن: قسمٌ ونورٌ وطعامٌ يومي" },
+        "arabic": "شَجَرَتَانِ مُبَارَكَتَان"
+      },
+      "slides": [
+        {
+          "verse": "95:1-3",
+          "check": "fig and the olive",
+          "title": { "en": "An oath by two trees", "de": "Ein Schwur bei zwei Bäumen", "ar": "قسمٌ بشجرتين" },
+          "body": { "en": "Surah at-Tin opens with an oath by two trees, then by Mount Sinai and by Makkah, the secure city.", "de": "Sure at-Tin beginnt mit einem Schwur bei zwei Bäumen, dann beim Berg Sinai und bei Mekka, der sicheren Stadt.", "ar": "تبدأ سورة التين بالقسم بشجرتين، ثم بجبل الطور، ثم بمكة البلد الآمن." }
+        },
+        {
+          "title": { "en": "Why these four?", "de": "Warum diese vier?", "ar": "لماذا هذه الأربعة؟" },
+          "body": { "en": "Commentators offered several readings. Some linked the fig and the olive to the land of Jerusalem, where Isa was sent, Sinai to Musa and Makkah to the Prophet Muhammad. Others took the trees literally.", "de": "Die Kommentatoren boten mehrere Deutungen an. Manche verbanden Feige und Olive mit dem Land um Jerusalem, wo Isa gesandt wurde, den Sinai mit Musa und Mekka mit dem Propheten Muhammad. Andere verstanden die Bäume wörtlich.", "ar": "للمفسرين أقوال: فمنهم من ربط التين والزيتون بأرض بيت المقدس حيث بُعث عيسى، والطور بموسى، ومكة بالنبي محمد، ومنهم من فهم الشجرتين على ظاهرهما." }
+        },
+        {
+          "verse": "23:20",
+          "check": "Mount Sinai",
+          "title": { "en": "The tree from Sinai", "de": "Der Baum vom Sinai", "ar": "شجرةٌ من طور سيناء" },
+          "body": { "en": "Commentators identify this tree as the olive: oil and food from a single plant, growing near a place of revelation.", "de": "Die Kommentatoren deuten diesen Baum als Olivenbaum: Öl und Nahrung aus einer einzigen Pflanze, gewachsen nahe einem Ort der Offenbarung.", "ar": "يفسر المفسرون هذه الشجرة بالزيتون: زيت وطعام من نبتة واحدة، تنمو قرب موضع وحي." }
+        },
+        {
+          "verse": "80:27-29",
+          "check": "olive",
+          "title": { "en": "Look at your food", "de": "Schauen Sie auf Ihre Nahrung", "ar": "انظر إلى طعامك" },
+          "body": { "en": "Surah 'Abasa first invites us to look at our food, then names grain, grapes, herbs, olives and palms one by one.", "de": "Sure Abasa lädt uns zuerst ein, auf unsere Nahrung zu schauen, und nennt dann Getreide, Trauben, Kräuter, Oliven und Palmen eine nach der anderen.", "ar": "تدعونا سورة عبس أولًا إلى النظر في طعامنا، ثم تعدّد الحب والعنب والبقل والزيتون والنخل واحدًا بعد واحد." }
+        },
+        {
+          "title": { "en": "Oil for the lamp", "de": "Öl für die Lampe", "ar": "زيتٌ للمصباح" },
+          "body": { "en": "In the Verse of Light (24:35), the lamp is fed by the oil of a blessed olive tree. The olive gives food and light, and the Quran uses it to speak about guidance.", "de": "Im Lichtvers (24:35) wird die Lampe vom Öl eines gesegneten Olivenbaums gespeist. Die Olive gibt Nahrung und Licht, und der Koran spricht durch sie über Rechtleitung.", "ar": "في آية النور يُوقَد المصباح من زيت شجرة زيتون مباركة، فالزيتون يعطي الطعام والنور، ويتخذه القرآن مثلًا للهداية." }
+        },
+        {
+          "title": { "en": "Named in the Quran", "de": "Im Koran genannt", "ar": "في ألفاظ القرآن" },
+          "arabic": "ز ي ت",
+          "body": { "en": "The fig, tin, is named once in the Quran. The olive appears as zaytun five times and as zaytuna once, and its oil, zayt, once.", "de": "Die Feige, Tin, wird im Koran einmal genannt. Die Olive erscheint fünfmal als Zaytun und einmal als Zaytuna, ihr Öl, Zayt, einmal.", "ar": "يُذكر التين في القرآن مرة واحدة، ويرد الزيتون بلفظ «زيتون» خمس مرات وبلفظ «زيتونة» مرة، ويرد «الزيت» مرة واحدة." }
+        }
+      ],
+      "sources": [
+        { "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 95:1-3", "url": "https://quran.com/95:1/tafsirs/en-tafisr-ibn-kathir" },
+        { "label": "Quranic Arabic Corpus, root z-y-t", "url": "https://corpus.quran.com/qurandictionary.jsp?q=zyt" },
+        { "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 23:20", "url": "https://quran.com/23:20/tafsirs/en-tafisr-ibn-kathir" }
+      ]
+    },
+    {
+      "id": "creation-signs-24-earth",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": { "en": "Signs in creation · 24", "de": "Zeichen in der Schöpfung · 24", "ar": "آيات في الخلق · ٢٤" },
+        "title": { "en": "The earth, laid out like a bed", "de": "Die Erde, ausgebreitet wie ein Bett", "ar": "الأرض ممهَّدة كالفراش" },
+        "sub": { "en": "Roads, roots and rest: how the Quran describes the ground beneath us", "de": "Wege, Wurzeln und Ruhe: wie der Koran den Boden unter uns beschreibt", "ar": "طرق وجذور وسكينة: كيف يصف القرآن الأرض التي تحتنا" },
+        "arabic": "الْأَرْض"
+      },
+      "slides": [
+        {
+          "verse": "20:53",
+          "check": "earth as a bed",
+          "title": { "en": "A bed made ready", "de": "Ein bereitetes Bett", "ar": "فراشٌ مهيّأ" },
+          "body": { "en": "Roads to travel, rain from above, plants of every kind. The earth is prepared like a bed made ready for a guest.", "de": "Wege zum Reisen, Regen von oben, Pflanzen jeder Art. Die Erde ist bereitet wie ein Bett, das man für einen Gast herrichtet.", "ar": "طرق للسفر، ومطر من السماء، ونبات من كل صنف؛ فالأرض مهيّأة كفراش أُعدّ لضيف." }
+        },
+        {
+          "verse": "67:15",
+          "check": "walk among its slopes",
+          "title": { "en": "Made easy to walk on", "de": "Leicht begehbar gemacht", "ar": "أرضٌ مذلَّلة" },
+          "body": { "en": "Walk its paths and eat from its provision, and remember where everything returns. Work and remembrance belong together.", "de": "Gehen Sie ihre Wege und essen Sie von ihrer Versorgung, und denken Sie daran, wohin alles zurückkehrt. Arbeit und Gedenken gehören zusammen.", "ar": "امشِ في دروبها وكُل من خيراتها، وتذكّر إلى أين يعود كل شيء، فالعمل والذكر متلازمان." }
+        },
+        {
+          "verse": "71:19-20",
+          "check": "roads of passage",
+          "title": { "en": "An expanse for journeys", "de": "Eine Weite für Reisen", "ar": "بساطٌ للأسفار" },
+          "body": { "en": "Nuh reminded his people that the earth is spread wide so they could travel its routes. Movement itself is a gift.", "de": "Nuh erinnerte sein Volk daran, dass die Erde weit ausgebreitet ist, damit sie ihre Wege bereisen. Bewegung selbst ist ein Geschenk.", "ar": "ذكّر نوح قومه بأن الأرض مبسوطة ليسلكوا طرقها، فالحركة نفسها نعمة." }
+        },
+        {
+          "verse": "50:7-8",
+          "check": "every beautiful kind",
+          "title": { "en": "Beauty that brings you back", "de": "Schönheit, die zurückführt", "ar": "جمالٌ يعيدك إلى ربك" },
+          "body": { "en": "Spread out, anchored by mountains, full of lovely growth. The beauty of the earth is meant to open the eyes and turn the heart back to its Lord.", "de": "Ausgebreitet, von Bergen verankert, voll schönen Wachstums. Die Schönheit der Erde soll die Augen öffnen und das Herz zu seinem Herrn zurückführen.", "ar": "مبسوطة، مثبّتة بالجبال، مليئة بالنبات البهيج؛ وجمال الأرض يفتح العين ويعيد القلب إلى ربه." }
+        },
+        {
+          "verse": "51:48",
+          "check": "excellent is the preparer",
+          "title": { "en": "Prepared before we arrived", "de": "Bereitet, bevor wir kamen", "ar": "مهيّأةٌ قبل قدومنا" },
+          "body": { "en": "The earth was spread and made ready long before us. We live in a home that was furnished for us.", "de": "Die Erde wurde ausgebreitet und bereitet, lange vor uns. Wir leben in einem Haus, das für uns eingerichtet wurde.", "ar": "بُسطت الأرض وهُيّئت قبلنا بزمن طويل، فنحن نسكن بيتًا أُعدّ لنا." }
+        },
+        {
+          "verse": "20:55",
+          "check": "into it We will return you",
+          "title": { "en": "Where we began, where we rest", "de": "Wo wir begannen, wo wir ruhen", "ar": "من التراب وإليه" },
+          "body": { "en": "The ground we walk on is where we began and where we will rest, until we are brought out once more. Walk on it gently.", "de": "Der Boden, auf dem wir gehen, ist unser Anfang und unser Ruheort, bis wir noch einmal hervorgebracht werden. Gehen Sie behutsam darauf.", "ar": "الأرض التي نمشي عليها منها بدأنا وفيها نرقد حتى نُخرج مرة أخرى، فامشِ عليها برفق." }
+        }
+      ]
+    },
+    {
+      "id": "creation-signs-25-seeds-pairs",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": { "en": "Signs in creation · 25", "de": "Zeichen in der Schöpfung · 25", "ar": "آيات في الخلق · ٢٥" },
+        "title": { "en": "The seed that splits open", "de": "Der Same, der aufbricht", "ar": "الحبة التي تنفلق" },
+        "sub": { "en": "Grain, date stones and pairs: life hidden in small things", "de": "Körner, Dattelkerne und Paare: Leben, verborgen in kleinen Dingen", "ar": "حبوب ونوى وأزواج: حياة مخبوءة في الأشياء الصغيرة" },
+        "arabic": "الْحَبَّة"
+      },
+      "slides": [
+        {
+          "verse": "6:95",
+          "check": "cleaver of grain",
+          "title": { "en": "He splits the seed", "de": "Er spaltet den Samen", "ar": "يفلق الحبة والنواة" },
+          "body": { "en": "A dry grain and a hard date stone break open, and green life comes out. Life from what seemed dead, every spring again.", "de": "Ein trockenes Korn und ein harter Dattelkern brechen auf, und grünes Leben kommt hervor. Leben aus scheinbar Totem, jeden Frühling neu.", "ar": "حبة يابسة ونواة صلبة تنفلقان فيخرج منهما نبت أخضر، حياة مما بدا ميتًا، في كل ربيع من جديد." }
+        },
+        {
+          "verse": "56:63-64",
+          "check": "you sow",
+          "title": { "en": "Who makes it grow?", "de": "Wer lässt es wachsen?", "ar": "من يُنبته؟" },
+          "body": { "en": "The farmer plants and waters, but growth itself is not in his hands. The effort is ours; the result is His.", "de": "Der Bauer sät und bewässert, doch das Wachsen selbst liegt nicht in seiner Hand. Die Mühe ist unsere, das Ergebnis Seines.", "ar": "يزرع الفلاح ويسقي، لكن الإنبات ليس بيده، فالسعي منا والنتيجة منه سبحانه." }
+        },
+        {
+          "verse": "80:24-26",
+          "check": "look at his food",
+          "title": { "en": "Look at your plate", "de": "Schauen Sie auf Ihren Teller", "ar": "انظر في صحنك" },
+          "body": { "en": "Water poured down, earth split open: the Quran traces your meal back to its very beginning.", "de": "Herabströmendes Wasser, aufgebrochene Erde: Der Koran verfolgt Ihre Mahlzeit bis zu ihrem Anfang zurück.", "ar": "ماء منصبّ، وأرض منشقة: يعود القرآن بوجبتك إلى بدايتها الأولى." }
+        },
+        {
+          "verse": "36:36",
+          "check": "all pairs",
+          "title": { "en": "Pairs in everything", "de": "Paare in allem", "ar": "أزواجٌ في كل شيء" },
+          "body": { "en": "Pairs in plants, in ourselves, and in things we do not yet know. The verse leaves room for discovery and humility.", "de": "Paare in Pflanzen, in uns selbst und in Dingen, die wir noch nicht kennen. Der Vers lässt Raum für Entdeckung und Demut.", "ar": "أزواج في النبات وفي أنفسنا وفيما لا نعلمه بعد، والآية تفسح مجالًا للاكتشاف والتواضع." }
+        },
+        {
+          "verse": "51:49",
+          "check": "two mates",
+          "title": { "en": "Pairs that point to the One", "de": "Paare, die auf den Einen weisen", "ar": "أزواجٌ تدل على الواحد" },
+          "body": { "en": "Day and night, male and female, sweet and salt. Seeing pairs everywhere points to the One who has no partner.", "de": "Tag und Nacht, männlich und weiblich, süß und salzig. Überall Paare zu sehen weist auf den Einen, der keinen Partner hat.", "ar": "ليل ونهار، وذكر وأنثى، وعذب ومالح؛ ورؤية الأزواج في كل مكان تدل على الواحد الذي لا شريك له." }
+        },
+        {
+          "title": { "en": "Lessons from a seed", "de": "Lehren von einem Samen", "ar": "دروسٌ من بذرة" },
+          "list": {
+            "en": ["Small beginnings can hold great growth", "Do your part, then trust the outcome", "Be patient: seeds grow out of sight first", "Thank Allah for every meal"],
+            "de": ["Kleine Anfänge können großes Wachstum bergen", "Tun Sie Ihren Teil und vertrauen Sie auf das Ergebnis", "Seien Sie geduldig: Samen wachsen zuerst im Verborgenen", "Danken Sie Allah für jede Mahlzeit"],
+            "ar": ["البدايات الصغيرة قد تحمل نموًّا عظيمًا", "أدِّ ما عليك ثم توكّل في النتيجة", "اصبر فالبذور تنمو أولًا في الخفاء", "احمد الله على كل وجبة"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "creation-signs-26-gratitude",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": { "en": "Signs in creation · 26", "de": "Zeichen in der Schöpfung · 26", "ar": "آيات في الخلق · ٢٦" },
+        "title": { "en": "Too many to count", "de": "Zu viele, um sie zu zählen", "ar": "أكثر من أن تُحصى" },
+        "sub": { "en": "Where reflection on creation leads: gratitude", "de": "Wohin das Nachdenken über die Schöpfung führt: zur Dankbarkeit", "ar": "إلى أين يقود التفكر في الخلق: إلى الشكر" },
+        "arabic": "الشُّكْر"
+      },
+      "slides": [
+        {
+          "verse": "16:18",
+          "check": "could not enumerate",
+          "title": { "en": "Try counting", "de": "Versuchen Sie zu zählen", "ar": "حاول أن تعدّ" },
+          "body": { "en": "Sky, rain, sleep, milk, language, shade: this series touched only a few. The full list cannot be counted.", "de": "Himmel, Regen, Schlaf, Milch, Sprache, Schatten: Diese Reihe hat nur wenige berührt. Die ganze Liste lässt sich nicht zählen.", "ar": "السماء والمطر والنوم واللبن واللغة والظل: لم تتناول هذه السلسلة إلا قليلًا، والقائمة كلها لا تُحصى." }
+        },
+        {
+          "verse": "55:13",
+          "check": "favors of your Lord",
+          "title": { "en": "The refrain of ar-Rahman", "de": "Der Kehrvers von ar-Rahman", "ar": "لازمة سورة الرحمن" },
+          "body": { "en": "Surah ar-Rahman asks this question 31 times, between scenes of creation and of the Hereafter.", "de": "Sure ar-Rahman stellt diese Frage 31-mal, zwischen Bildern der Schöpfung und des Jenseits.", "ar": "تكرر سورة الرحمن هذا السؤال ٣١ مرة بين مشاهد الخلق ومشاهد الآخرة." }
+        },
+        {
+          "verse": "14:7",
+          "check": "If you are grateful",
+          "title": { "en": "Gratitude increases", "de": "Dankbarkeit vermehrt", "ar": "الشكر يزيد" },
+          "body": { "en": "Thankfulness is not only a response; it is a door. Allah promises more to those who give thanks.", "de": "Dankbarkeit ist nicht nur eine Antwort, sie ist eine Tür. Allah verspricht denen mehr, die danken.", "ar": "الشكر ليس ردّ فعل فحسب، بل باب، وقد وعد الله الشاكرين بالمزيد." }
+        },
+        {
+          "verse": "31:20",
+          "check": "apparent and unapparent",
+          "title": { "en": "Seen and unseen favours", "de": "Sichtbare und verborgene Gaben", "ar": "نعمٌ نراها ونعمٌ لا نراها" },
+          "body": { "en": "Some blessings we see, like food and light. Others stay hidden, like a healthy heartbeat or a harm that never came.", "de": "Manche Gaben sehen wir, wie Nahrung und Licht. Andere bleiben verborgen, wie ein gesunder Herzschlag oder ein Unheil, das nie kam.", "ar": "بعض النعم نراها كالطعام والنور، وبعضها خفيّ كنبض قلب سليم أو بلاء لم يقع." }
+        },
+        {
+          "verse": "90:8-10",
+          "check": "two eyes",
+          "title": { "en": "Your own face is a sign", "de": "Ihr eigenes Gesicht ist ein Zeichen", "ar": "وجهك نفسه آية" },
+          "body": { "en": "Eyes to see, a tongue and lips to speak, and the ability to choose a way. The tools we use every day are gifts too.", "de": "Augen zum Sehen, Zunge und Lippen zum Sprechen und die Fähigkeit, einen Weg zu wählen. Auch unsere alltäglichen Werkzeuge sind Gaben.", "ar": "عينان للنظر، ولسان وشفتان للكلام، وقدرة على اختيار الطريق؛ فأدواتنا اليومية نعم أيضًا." }
+        },
+        {
+          "title": { "en": "From tafakkur to shukr", "de": "Vom Tafakkur zum Shukr", "ar": "من التفكر إلى الشكر" },
+          "arabic": "ش ك ر",
+          "body": { "en": "Reflection that ends in wonder is good; reflection that ends in thanks is complete. The root sh-k-r appears in 75 words of the Quran. Let each sign you notice end in a quiet alhamdulillah.", "de": "Nachdenken, das im Staunen endet, ist gut; Nachdenken, das im Dank endet, ist vollkommen. Die Wurzel sh-k-r kommt im Koran in 75 Wörtern vor. Lassen Sie jedes Zeichen, das Ihnen auffällt, in einem leisen Alhamdulillah enden.", "ar": "التفكر الذي ينتهي بالدهشة حسن، والذي ينتهي بالشكر أتمّ. ويرد الجذر ش ك ر في القرآن في ٧٥ كلمة، فاجعل كل آية تلحظها تنتهي بحمدٍ هادئ." }
+        }
+      ],
+      "sources": [{ "label": "Quranic Arabic Corpus, root sh-k-r", "url": "https://corpus.quran.com/qurandictionary.jsp?q=$kr" }]
+    }
+  ]
+}

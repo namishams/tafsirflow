@@ -1,0 +1,3026 @@
+{
+  "series": "family",
+  "label": {
+    "en": "Family in Islam",
+    "de": "Familie im Islam",
+    "ar": "الأسرة في الإسلام"
+  },
+  "topic": "holy",
+  "tradition": "all",
+  "items": [
+    {
+      "id": "family-01-parents-old-age",
+      "needs_review": true,
+      "tradition": "sunni",
+      "palette": "dawn",
+      "cover": {
+        "kicker": {
+          "en": "Family in Islam · 1",
+          "de": "Familie im Islam · 1",
+          "ar": "الأسرة في الإسلام · ١"
+        },
+        "title": {
+          "en": "When parents grow old",
+          "de": "Wenn die Eltern alt werden",
+          "ar": "حين يكبر الوالدان"
+        },
+        "sub": {
+          "en": "They carried you for years. Now it may be your turn to carry them",
+          "de": "Sie haben Sie jahrelang getragen. Nun sind vielleicht Sie an der Reihe, sie zu tragen",
+          "ar": "حملاك سنين طويلة، وقد جاء دورك لتحملهما"
+        },
+        "arabic": "البِرُّ في الكِبَر"
+      },
+      "slides": [
+        {
+          "verse": "30:54",
+          "check": "weakness and white hair",
+          "title": {
+            "en": "The circle of life",
+            "de": "Der Kreis des Lebens",
+            "ar": "دورة العمر"
+          },
+          "body": {
+            "en": "Weakness, then strength, then weakness again. The parents who once held you up may one day need your arm.",
+            "de": "Schwäche, dann Kraft, dann wieder Schwäche. Die Eltern, die Sie einst gehalten haben, brauchen eines Tages vielleicht Ihren Arm.",
+            "ar": "ضعفٌ ثم قوة ثم ضعفٌ من جديد. والداك اللذان أسنداك صغيرًا قد يحتاجان ذراعك يومًا."
+          }
+        },
+        {
+          "verse": "17:23",
+          "check": "reach old age",
+          "title": {
+            "en": "Not even a sigh",
+            "de": "Nicht einmal ein Seufzer",
+            "ar": "ولا حتى زفرة ضيق"
+          },
+          "body": {
+            "en": "The Quran names old age directly. Even a small sound of impatience is too much; what is asked for is gentle, noble speech.",
+            "de": "Der Koran spricht das Alter direkt an. Schon ein kleiner Laut der Ungeduld ist zu viel; verlangt ist sanfte, edle Rede.",
+            "ar": "يذكر القرآن الكِبَر صراحةً؛ فأدنى صوتٍ من الضجر كثير، والمطلوب كلامٌ ليّنٌ كريم."
+          }
+        },
+        {
+          "verse": "16:70",
+          "check": "decrepit",
+          "title": {
+            "en": "When memory fades",
+            "de": "Wenn das Gedächtnis nachlässt",
+            "ar": "حين تضعف الذاكرة"
+          },
+          "body": {
+            "en": "Some reach an age where knowledge slips away. Answer the same question for the tenth time as kindly as the first.",
+            "de": "Manche erreichen ein Alter, in dem das Wissen entgleitet. Beantworten Sie dieselbe Frage zum zehnten Mal so freundlich wie beim ersten Mal.",
+            "ar": "يبلغ بعض الناس عمرًا يتفلّت فيه ما عرفوه، فأجب عن السؤال نفسه للمرة العاشرة بلطف المرة الأولى."
+          }
+        },
+        {
+          "hadith": "bukhari:5972",
+          "check": "Are your parents living",
+          "title": {
+            "en": "Their care is your striving",
+            "de": "Ihre Pflege ist Ihr Einsatz",
+            "ar": "رعايتهما جهادك"
+          },
+          "body": {
+            "en": "A man wanted to go out and strive in Allah's cause. The Prophet first asked about his parents and pointed him to their service.",
+            "de": "Ein Mann wollte sich auf Allahs Weg einsetzen. Der Prophet fragte zuerst nach seinen Eltern und wies ihn auf den Dienst an ihnen hin.",
+            "ar": "أراد رجلٌ أن يخرج في سبيل الله، فسأله النبي ﷺ أولًا عن والديه ودلّه على خدمتهما."
+          }
+        },
+        {
+          "title": {
+            "en": "Care with dignity",
+            "de": "Pflege mit Würde",
+            "ar": "رعايةٌ تحفظ الكرامة"
+          },
+          "list": {
+            "en": [
+              "Let them decide what they still can",
+              "Visit often, even briefly",
+              "Keep their routines and their place at the table",
+              "Go with them to the doctor and listen together",
+              "Ask for their stories and their dua"
+            ],
+            "de": [
+              "Lassen Sie sie entscheiden, was sie noch können",
+              "Besuchen Sie sie oft, auch nur kurz",
+              "Bewahren Sie ihre Gewohnheiten und ihren Platz am Tisch",
+              "Begleiten Sie sie zum Arzt und hören Sie gemeinsam zu",
+              "Bitten Sie um ihre Geschichten und ihr Bittgebet"
+            ],
+            "ar": [
+              "دعهما يقرّران ما زالا قادرَين عليه",
+              "زُرهما كثيرًا ولو لوقتٍ قصير",
+              "حافظ على عاداتهما ومكانهما على المائدة",
+              "رافقهما إلى الطبيب واستمعا معًا",
+              "اطلب حكاياتهما ودعاءهما"
+            ]
+          }
+        },
+        {
+          "title": {
+            "en": "Care for the carer too",
+            "de": "Denken Sie auch an sich",
+            "ar": "وارحم نفسك أيضًا"
+          },
+          "body": {
+            "en": "Caring for an elderly parent is heavy. Ask siblings to share it, accept help, and rest without guilt. A sincere intention turns tired hours into worship.",
+            "de": "Die Pflege alter Eltern ist schwer. Bitten Sie Geschwister um Mithilfe, nehmen Sie Unterstützung an und ruhen Sie ohne schlechtes Gewissen. Eine aufrichtige Absicht macht müde Stunden zu Gottesdienst.",
+            "ar": "رعاية الوالد المسنّ حملٌ ثقيل. اطلب من إخوتك أن يشاركوك، واقبل العون، واسترح بلا شعورٍ بالذنب؛ فالنية الصادقة تجعل ساعات التعب عبادة."
+          }
+        }
+      ]
+    },
+    {
+      "id": "family-02-mothers",
+      "needs_review": true,
+      "tradition": "sunni",
+      "palette": "parchment",
+      "cover": {
+        "kicker": {
+          "en": "Family in Islam · 2",
+          "de": "Familie im Islam · 2",
+          "ar": "الأسرة في الإسلام · ٢"
+        },
+        "title": {
+          "en": "Mothers: honoured three times",
+          "de": "Mütter: dreifach geehrt",
+          "ar": "الأم: مكرَّمةٌ ثلاثًا"
+        },
+        "sub": {
+          "en": "Pregnancy, birth and sleepless nights: why Islam gives mothers a special place",
+          "de": "Schwangerschaft, Geburt und schlaflose Nächte: warum der Islam Müttern einen besonderen Platz gibt",
+          "ar": "حملٌ وولادةٌ وليالٍ بلا نوم: لماذا خصّ الإسلام الأمّ بمكانةٍ رفيعة"
+        },
+        "arabic": "الأُمّ"
+      },
+      "slides": [
+        {
+          "verse": "31:14",
+          "check": "weakness upon weakness",
+          "title": {
+            "en": "Carried through weakness",
+            "de": "Getragen in Schwäche",
+            "ar": "حملٌ على وهن"
+          },
+          "body": {
+            "en": "The Quran describes pregnancy from the mother's side: strength given away, month after month. Thanks to her stands beside thanks to Allah.",
+            "de": "Der Koran beschreibt die Schwangerschaft aus Sicht der Mutter: Kraft, die sie Monat für Monat hergibt. Der Dank an sie steht neben dem Dank an Allah.",
+            "ar": "يصف القرآن الحمل من جهة الأم: قوةٌ تبذلها شهرًا بعد شهر، وشكرها مقرونٌ بشكر الله."
+          }
+        },
+        {
+          "hadith": "muslim:6501",
+          "check": "Your mother, again your mother",
+          "title": {
+            "en": "Three times, then the father",
+            "de": "Dreimal, dann der Vater",
+            "ar": "ثلاثًا ثم الأب"
+          },
+          "body": {
+            "en": "Asked who deserves the finest treatment, the Prophet named the mother three times, then the father, then the closest relatives.",
+            "de": "Gefragt, wem die beste Behandlung gebührt, nannte der Prophet dreimal die Mutter, dann den Vater, dann die nächsten Verwandten.",
+            "ar": "سُئل النبي ﷺ عن أحقّ الناس بحسن المعاملة، فذكر الأم ثلاثًا، ثم الأب، ثم الأقرب فالأقرب."
+          }
+        },
+        {
+          "verse": "19:32",
+          "check": "dutiful to my mother",
+          "title": {
+            "en": "A prophet's pride",
+            "de": "Der Stolz eines Propheten",
+            "ar": "فخرُ نبيّ"
+          },
+          "body": {
+            "en": "Isa, peace be upon him, spoke as a newborn. Among his first words: Allah made him kind and devoted to his mother.",
+            "de": "Isa, Friede sei mit ihm, sprach als Neugeborenes. Zu seinen ersten Worten gehört, dass Allah ihn gütig und ergeben gegenüber seiner Mutter gemacht hat.",
+            "ar": "تكلّم عيسى عليه السلام في المهد، وكان من أول ما ذكره أن الله جعله بارًّا بأمّه."
+          }
+        },
+        {
+          "hadith": "bukhari:5999",
+          "check": "more merciful",
+          "title": {
+            "en": "A picture of mercy",
+            "de": "Ein Bild der Barmherzigkeit",
+            "ar": "صورةٌ للرحمة"
+          },
+          "body": {
+            "en": "The Prophet pointed to a mother holding the child she had found again. Her love was the picture he chose to explain Allah's mercy.",
+            "de": "Der Prophet zeigte auf eine Mutter, die ihr wiedergefundenes Kind an sich drückte. Ihre Liebe war das Bild, mit dem er Allahs Barmherzigkeit erklärte.",
+            "ar": "أشار النبي ﷺ إلى أمٍّ تضمّ طفلها بعد أن وجدته، فجعل حنانها صورةً يشرح بها رحمة الله."
+          }
+        },
+        {
+          "hadith": "bukhari:5975",
+          "check": "undutiful to your mothers",
+          "title": {
+            "en": "A clear line",
+            "de": "Eine klare Grenze",
+            "ar": "حدٌّ واضح"
+          },
+          "body": {
+            "en": "In this list of things Allah has forbidden, mistreating mothers comes first.",
+            "de": "In dieser Aufzählung dessen, was Allah verboten hat, steht die Kränkung der Mütter an erster Stelle.",
+            "ar": "في هذه القائمة مما حرّمه الله يأتي عقوق الأمهات أولًا."
+          }
+        },
+        {
+          "title": {
+            "en": "Honouring her today",
+            "de": "Sie heute ehren",
+            "ar": "برّها اليوم"
+          },
+          "list": {
+            "en": [
+              "Call her without needing a reason",
+              "Thank her for things she thinks you forgot",
+              "Take over what tires her most",
+              "Ask her to pray for you",
+              "If she has passed: pray for her and give charity for her"
+            ],
+            "de": [
+              "Rufen Sie sie an, auch ohne besonderen Grund",
+              "Danken Sie ihr für Dinge, die Sie scheinbar vergessen haben",
+              "Übernehmen Sie, was sie am meisten ermüdet",
+              "Bitten Sie sie um ihr Bittgebet für Sie",
+              "Ist sie verstorben: Beten Sie für sie und geben Sie Sadaqa für sie"
+            ],
+            "ar": [
+              "اتصل بها ولو بلا سبب",
+              "اشكرها على ما تظنّ أنك نسيته",
+              "تولَّ عنها ما يتعبها أكثر",
+              "اطلب منها أن تدعو لك",
+              "إن كانت قد رحلت: ادعُ لها وتصدّق عنها"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "family-03-fathers",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": {
+          "en": "Family in Islam · 3",
+          "de": "Familie im Islam · 3",
+          "ar": "الأسرة في الإسلام · ٣"
+        },
+        "title": {
+          "en": "Fathers in the Quran",
+          "de": "Väter im Koran",
+          "ar": "الآباء في القرآن"
+        },
+        "sub": {
+          "en": "Worried, respectful, patient and hopeful: what the fathers among the prophets teach",
+          "de": "Besorgt, respektvoll, geduldig und hoffnungsvoll: was die Väter unter den Propheten lehren",
+          "ar": "قلقٌ واحترامٌ وصبرٌ ورجاء: ماذا يعلّمنا الآباء من الأنبياء"
+        },
+        "arabic": "الأُبُوَّة"
+      },
+      "slides": [
+        {
+          "verse": "12:13",
+          "check": "it saddens me",
+          "title": {
+            "en": "A father who worries",
+            "de": "Ein Vater, der sich sorgt",
+            "ar": "أبٌ يقلق"
+          },
+          "body": {
+            "en": "Yaqub says openly that letting his son go saddens him. Fatherly love in the Quran is neither cold nor distant.",
+            "de": "Yaqub sagt offen, dass es ihn traurig macht, seinen Sohn gehen zu lassen. Väterliche Liebe ist im Koran weder kalt noch fern.",
+            "ar": "يقول يعقوب صراحةً إن ذهاب ابنه يحزنه؛ فالأبوّة في القرآن ليست باردةً ولا بعيدة."
+          }
+        },
+        {
+          "verse": "37:102",
+          "check": "see what you think",
+          "title": {
+            "en": "A father who asks",
+            "de": "Ein Vater, der fragt",
+            "ar": "أبٌ يستشير"
+          },
+          "body": {
+            "en": "Even facing the hardest command, Ibrahim asks his son for his view. Respect for a child's voice is part of the story.",
+            "de": "Selbst vor dem schwersten Befehl fragt Ibrahim seinen Sohn nach seiner Sicht. Respekt vor der Stimme des Kindes gehört zu dieser Geschichte.",
+            "ar": "حتى أمام أشدّ الأوامر يسأل إبراهيم ابنه عن رأيه؛ فاحترام صوت الولد جزءٌ من القصة."
+          }
+        },
+        {
+          "verse": "11:42",
+          "check": "Noah called to his son",
+          "title": {
+            "en": "A father who keeps calling",
+            "de": "Ein Vater, der weiter ruft",
+            "ar": "أبٌ لا يكفّ عن النداء"
+          },
+          "body": {
+            "en": "Between waves as high as mountains, Nuh still calls out to his son. A father's call does not end at the first refusal.",
+            "de": "Zwischen berghohen Wellen ruft Nuh noch immer nach seinem Sohn. Der Ruf eines Vaters endet nicht bei der ersten Ablehnung.",
+            "ar": "بين أمواجٍ كالجبال ما زال نوحٌ ينادي ابنه؛ فنداء الأب لا يتوقف عند أول رفض."
+          }
+        },
+        {
+          "verse": "12:86",
+          "check": "my suffering and my grief",
+          "title": {
+            "en": "A father who grieves with faith",
+            "de": "Ein Vater, der gläubig trauert",
+            "ar": "أبٌ يحزن بإيمان"
+          },
+          "body": {
+            "en": "Yaqub's grief for Yusuf was real and long. He carried it to Allah instead of turning it against his family.",
+            "de": "Yaqubs Trauer um Yusuf war echt und lang. Er trug sie zu Allah, statt sie gegen seine Familie zu richten.",
+            "ar": "كان حزن يعقوب على يوسف صادقًا وطويلًا، فرفعه إلى الله ولم يجعله سلاحًا على أهله."
+          }
+        },
+        {
+          "verse": "2:133",
+          "check": "What will you worship after me",
+          "title": {
+            "en": "A father's last question",
+            "de": "Die letzte Frage eines Vaters",
+            "ar": "سؤال الأب الأخير"
+          },
+          "body": {
+            "en": "At the end of his life, Yaqub's concern was not wealth but faith: what will remain in his children's hearts?",
+            "de": "Am Ende seines Lebens galt Yaqubs Sorge nicht dem Besitz, sondern dem Glauben: Was bleibt in den Herzen seiner Kinder?",
+            "ar": "في آخر حياته لم يكن همّ يعقوب المال بل الإيمان: ماذا يبقى في قلوب أبنائه؟"
+          }
+        },
+        {
+          "title": {
+            "en": "Being a father today",
+            "de": "Vater sein heute",
+            "ar": "الأبوّة اليوم"
+          },
+          "list": {
+            "en": [
+              "Show your feelings; children learn love from them",
+              "Ask their opinion before deciding for them",
+              "Keep the door open, even after a hard word",
+              "Speak of Allah's love before you speak of rules"
+            ],
+            "de": [
+              "Zeigen Sie Gefühle; Kinder lernen daran Liebe",
+              "Fragen Sie nach ihrer Meinung, bevor Sie für sie entscheiden",
+              "Halten Sie die Tür offen, auch nach einem harten Wort",
+              "Sprechen Sie von Allahs Liebe, bevor Sie von Regeln sprechen"
+            ],
+            "ar": [
+              "أظهِر مشاعرك، فالأبناء يتعلّمون منها الحب",
+              "اسألهم عن رأيهم قبل أن تقرّر عنهم",
+              "أبقِ الباب مفتوحًا ولو بعد كلمةٍ قاسية",
+              "حدّثهم عن محبة الله قبل أن تحدّثهم عن القواعد"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "family-04-parents-not-muslim",
+      "needs_review": true,
+      "tradition": "sunni",
+      "palette": "marble",
+      "cover": {
+        "kicker": {
+          "en": "Family in Islam · 4",
+          "de": "Familie im Islam · 4",
+          "ar": "الأسرة في الإسلام · ٤"
+        },
+        "title": {
+          "en": "When your parents are not Muslim",
+          "de": "Wenn die Eltern keine Muslime sind",
+          "ar": "حين لا يكون الوالدان مسلمَين"
+        },
+        "sub": {
+          "en": "Faith does not cancel kindness: what the Quran and the Sunnah say",
+          "de": "Glaube hebt Güte nicht auf: was Koran und Sunna sagen",
+          "ar": "الإيمان لا يُلغي البرّ: ماذا يقول القرآن والسنة"
+        },
+        "arabic": "البِرُّ لا ينقطع"
+      },
+      "slides": [
+        {
+          "verse": "31:15",
+          "check": "appropriate kindness",
+          "title": {
+            "en": "Firm in faith, gentle in company",
+            "de": "Fest im Glauben, sanft im Umgang",
+            "ar": "ثباتٌ في الدين ولينٌ في الصحبة"
+          },
+          "body": {
+            "en": "You do not follow your parents against your faith. Yet the same verse asks you to stay beside them in this life with kindness.",
+            "de": "Gegen Ihren Glauben folgen Sie den Eltern nicht. Doch derselbe Vers verlangt, dass Sie ihnen in diesem Leben gütig zur Seite stehen.",
+            "ar": "لا تطيع والديك فيما يخالف دينك، لكنّ الآية نفسها تطلب أن تبقى إلى جانبهما في الدنيا بالمعروف."
+          }
+        },
+        {
+          "verse": "19:42-43",
+          "check": "O my father",
+          "title": {
+            "en": "How Ibrahim spoke to his father",
+            "de": "Wie Ibrahim mit seinem Vater sprach",
+            "ar": "كيف خاطب إبراهيم أباه"
+          },
+          "body": {
+            "en": "Each appeal begins with a tender word for father. Ibrahim disagrees with him completely, yet never speaks down to him.",
+            "de": "Jede Bitte beginnt mit einem zärtlichen Wort für den Vater. Ibrahim widerspricht ihm ganz, spricht aber nie herablassend.",
+            "ar": "يبدأ كل نداءٍ بكلمةٍ حانية للأب؛ يخالفه إبراهيم تمامًا ولا يتعالى عليه أبدًا."
+          }
+        },
+        {
+          "verse": "19:47",
+          "check": "Peace",
+          "title": {
+            "en": "Peace, even when rejected",
+            "de": "Frieden, auch bei Ablehnung",
+            "ar": "سلامٌ رغم الرفض"
+          },
+          "body": {
+            "en": "His father threatened him and sent him away. Ibrahim answered with words of peace and kept his tone gentle.",
+            "de": "Sein Vater drohte ihm und schickte ihn fort. Ibrahim antwortete mit Worten des Friedens und blieb sanft im Ton.",
+            "ar": "هدّده أبوه وطرده، فأجابه إبراهيم بكلمة سلام وبقي ليّن القول."
+          }
+        },
+        {
+          "verse": "60:8",
+          "check": "being righteous toward them",
+          "title": {
+            "en": "Kindness is not forbidden",
+            "de": "Güte ist nicht verboten",
+            "ar": "البرّ ليس ممنوعًا"
+          },
+          "body": {
+            "en": "Allah does not forbid goodness and fairness toward people who live in peace with you. How much more toward your own parents.",
+            "de": "Allah verbietet nicht Güte und Gerechtigkeit gegenüber Menschen, die friedlich mit Ihnen leben. Umso mehr gilt das für die eigenen Eltern.",
+            "ar": "لا يمنع الله البرّ والعدل مع من يسالمك، فكيف بوالديك؟"
+          }
+        },
+        {
+          "hadith": "bukhari:2624",
+          "check": "keep good relation with her",
+          "title": {
+            "en": "Asma and her mother",
+            "de": "Asma und ihre Mutter",
+            "ar": "أسماء وأمّها"
+          },
+          "body": {
+            "en": "Asma's mother came to visit while she was not Muslim. Asma asked whether to treat her well, and the Prophet said yes.",
+            "de": "Asmas Mutter kam zu Besuch, als sie keine Muslimin war. Asma fragte, ob sie ihr Gutes tun solle, und der Prophet bejahte.",
+            "ar": "جاءت أمّ أسماء تزورها وهي على غير الإسلام، فسألت أسماء أتحسن إليها، فقال النبي ﷺ: نعم."
+          }
+        },
+        {
+          "title": {
+            "en": "In everyday life",
+            "de": "Im Alltag",
+            "ar": "في الحياة اليومية"
+          },
+          "list": {
+            "en": [
+              "Visit, call and help as any good child would",
+              "Spend time together and share meals",
+              "Show your faith through character, not pressure",
+              "Ask Allah to guide them"
+            ],
+            "de": [
+              "Besuchen, anrufen, helfen wie jedes gute Kind",
+              "Verbringen Sie Zeit miteinander und essen Sie gemeinsam",
+              "Zeigen Sie Ihren Glauben durch Charakter, nicht durch Druck",
+              "Bitten Sie Allah um ihre Rechtleitung"
+            ],
+            "ar": [
+              "زُرهما واتصل بهما وأعِنهما كأي ولدٍ بارّ",
+              "اقضِ معهما وقتًا وشاركهما الطعام",
+              "اعرض دينك بأخلاقك لا بالضغط",
+              "ادعُ الله أن يهديهما"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "family-05-marriage-tranquillity",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": {
+          "en": "Family in Islam · 5",
+          "de": "Familie im Islam · 5",
+          "ar": "الأسرة في الإسلام · ٥"
+        },
+        "title": {
+          "en": "Marriage: a home for the heart",
+          "de": "Ehe: ein Zuhause für das Herz",
+          "ar": "الزواج: سكنٌ للقلب"
+        },
+        "sub": {
+          "en": "Tranquillity, affection and mercy: how the Quran describes husband and wife",
+          "de": "Ruhe, Zuneigung und Barmherzigkeit: wie der Koran Mann und Frau beschreibt",
+          "ar": "سكينةٌ ومودّةٌ ورحمة: كيف يصف القرآن الزوجين"
+        },
+        "arabic": "سَكَن"
+      },
+      "slides": [
+        {
+          "verse": "30:21",
+          "check": "tranquility",
+          "title": {
+            "en": "Three gifts in one verse",
+            "de": "Drei Geschenke in einem Vers",
+            "ar": "ثلاث هباتٍ في آية"
+          },
+          "body": {
+            "en": "Sakan, a place of rest. Mawadda, love that shows. Rahma, mercy that stays when feelings are tired.",
+            "de": "Sakan, ein Ort der Ruhe. Mawadda, Liebe, die sich zeigt. Rahma, Barmherzigkeit, die bleibt, wenn Gefühle müde sind.",
+            "ar": "سكنٌ يُؤوى إليه، ومودّةٌ تظهر، ورحمةٌ تبقى حين تتعب المشاعر."
+          }
+        },
+        {
+          "title": {
+            "en": "A garment for each other",
+            "de": "Ein Gewand füreinander",
+            "ar": "لباسٌ كلٌّ للآخر"
+          },
+          "arabic": "لِبَاس",
+          "body": {
+            "en": "In Surah al-Baqarah (2:187) the Quran calls spouses a libas for each other: like clothing, they cover, warm and protect, and nothing is closer.",
+            "de": "In Sure al-Baqara (2:187) nennt der Koran die Ehepartner ein Libas füreinander: Wie Kleidung bedecken, wärmen und schützen sie einander, und nichts ist näher.",
+            "ar": "يصف القرآن في سورة البقرة كلَّ زوجٍ بأنه لباسٌ للآخر: يستره ويدفئه ويحميه، ولا شيء أقرب منه."
+          }
+        },
+        {
+          "verse": "9:71",
+          "check": "allies of one another",
+          "title": {
+            "en": "Partners in faith",
+            "de": "Partner im Glauben",
+            "ar": "شريكان في الإيمان"
+          },
+          "body": {
+            "en": "Believing men and women support each other in prayer, charity and doing good. A marriage can be the closest form of that alliance.",
+            "de": "Gläubige Männer und Frauen stützen einander im Gebet, in der Abgabe und im Guten. Eine Ehe kann die engste Form dieses Bundes sein.",
+            "ar": "يتعاون المؤمنون والمؤمنات في الصلاة والزكاة وفعل الخير، والزواج أقرب صور هذه الموالاة."
+          }
+        },
+        {
+          "verse": "4:21",
+          "check": "solemn covenant",
+          "title": {
+            "en": "A weighty promise",
+            "de": "Ein gewichtiges Versprechen",
+            "ar": "عهدٌ ثقيل"
+          },
+          "body": {
+            "en": "The Quran calls the marriage bond a solemn covenant. It is not a deal to drop lightly but a trust before Allah.",
+            "de": "Der Koran nennt das Eheband ein feierliches Abkommen. Es ist kein Geschäft, das man leicht fallen lässt, sondern ein Vertrauen vor Allah.",
+            "ar": "يسمّي القرآن عقد الزواج ميثاقًا غليظًا، فليس صفقةً تُترك بسهولة بل أمانةٌ أمام الله."
+          }
+        },
+        {
+          "title": {
+            "en": "Mercy for the hard days",
+            "de": "Barmherzigkeit für schwere Tage",
+            "ar": "رحمةٌ للأيام الصعبة"
+          },
+          "body": {
+            "en": "Love rises and falls with the seasons of life. Mercy is what carries a marriage through illness, stress and old age.",
+            "de": "Liebe steigt und fällt mit den Zeiten des Lebens. Barmherzigkeit trägt eine Ehe durch Krankheit, Stress und Alter.",
+            "ar": "يعلو الحبّ ويهبط مع مواسم الحياة، والرحمة هي التي تحمل الزواج في المرض والضغط والكِبَر."
+          }
+        },
+        {
+          "title": {
+            "en": "Small daily mercies",
+            "de": "Kleine tägliche Barmherzigkeiten",
+            "ar": "رحماتٌ يوميةٌ صغيرة"
+          },
+          "list": {
+            "en": [
+              "Greet each other warmly when you come home",
+              "Say thank you for ordinary things",
+              "Pray together from time to time",
+              "Speak well of your spouse when they are absent",
+              "Let the last word of the day be a kind one"
+            ],
+            "de": [
+              "Begrüßen Sie einander herzlich, wenn Sie heimkommen",
+              "Bedanken Sie sich für alltägliche Dinge",
+              "Beten Sie von Zeit zu Zeit gemeinsam",
+              "Sprechen Sie gut über Ihren Partner, wenn er nicht da ist",
+              "Lassen Sie das letzte Wort des Tages ein freundliches sein"
+            ],
+            "ar": [
+              "استقبلا بعضكما بحرارة عند العودة إلى البيت",
+              "قولا شكرًا على الأشياء العادية",
+              "صلّيا معًا بين حينٍ وآخر",
+              "اذكر شريكك بخيرٍ في غيابه",
+              "اجعلا آخر كلمةٍ في اليوم كلمةً طيبة"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "family-06-rights-of-spouses",
+      "needs_review": true,
+      "tradition": "sunni",
+      "palette": "emerald",
+      "cover": {
+        "kicker": {
+          "en": "Family in Islam · 6",
+          "de": "Familie im Islam · 6",
+          "ar": "الأسرة في الإسلام · ٦"
+        },
+        "title": {
+          "en": "Rights on both sides",
+          "de": "Rechte auf beiden Seiten",
+          "ar": "حقوقٌ متبادلة"
+        },
+        "sub": {
+          "en": "Islam gives husband and wife rights and duties toward each other, measured by what is fair",
+          "de": "Der Islam gibt Mann und Frau Rechte und Pflichten zueinander, gemessen an dem, was recht und billig ist",
+          "ar": "جعل الإسلام للزوجين حقوقًا وواجباتٍ متبادلة، ميزانها المعروف"
+        },
+        "arabic": "بِالمَعْرُوف"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "Fairness is the measure",
+            "de": "Maßstab ist das Rechte",
+            "ar": "المعروف هو الميزان"
+          },
+          "body": {
+            "en": "Surah al-Baqarah (2:228) speaks of rights owed to wives as well as by them, according to what is fair and customary. Scholars explain that marriage rests on mutual rights, not on one side alone.",
+            "de": "Sure al-Baqara (2:228) spricht von Rechten, die Ehefrauen zustehen, ebenso wie von ihren Pflichten, nach dem, was recht und üblich ist. Gelehrte erklären: Die Ehe ruht auf gegenseitigen Rechten, nicht auf einer Seite allein.",
+            "ar": "تذكر سورة البقرة أن للزوجات حقوقًا كما عليهنّ واجبات، بحسب المعروف. ويبيّن العلماء أن الزواج قائمٌ على حقوقٍ متبادلة لا على طرفٍ واحد."
+          }
+        },
+        {
+          "verse": "4:4",
+          "check": "bridal",
+          "title": {
+            "en": "Her gift, given gladly",
+            "de": "Ihre Gabe, gern gegeben",
+            "ar": "مهرها عن طيب نفس"
+          },
+          "body": {
+            "en": "The mahr belongs to the wife. The verse asks that it be given with a good heart, not as a price.",
+            "de": "Die Brautgabe (Mahr) gehört der Frau. Der Vers verlangt, dass sie mit gutem Herzen gegeben wird, nicht als Kaufpreis.",
+            "ar": "المهر حقٌّ خالصٌ للزوجة، والآية تطلب أن يُعطى بطيب نفس لا كثمن."
+          }
+        },
+        {
+          "hadith": "bukhari:5199",
+          "check": "your wife has a right over you",
+          "title": {
+            "en": "Even worship has limits",
+            "de": "Selbst der Gottesdienst hat Grenzen",
+            "ar": "حتى العبادة لها حدود"
+          },
+          "body": {
+            "en": "A companion fasted every day and prayed all night. The Prophet told him to keep balance: his body, his eyes and his wife had rights as well.",
+            "de": "Ein Gefährte fastete jeden Tag und betete die ganze Nacht. Der Prophet riet ihm zum Maß: Auch sein Körper, seine Augen und seine Frau hatten Rechte.",
+            "ar": "كان أحد الصحابة يصوم كل يوم ويقوم الليل كله، فأمره النبي ﷺ بالاعتدال، فلجسده وعينيه وزوجته حقوقٌ أيضًا."
+          }
+        },
+        {
+          "hadith": "bukhari:5188",
+          "check": "guardian",
+          "title": {
+            "en": "Both are responsible",
+            "de": "Beide tragen Verantwortung",
+            "ar": "كلاهما راعٍ"
+          },
+          "body": {
+            "en": "Husband and wife are each named as a guardian with a trust of their own. Responsibility in the home is shared.",
+            "de": "Mann und Frau werden beide als Hüter mit eigenem anvertrautem Bereich genannt. Die Verantwortung im Haus ist geteilt.",
+            "ar": "ذُكر الزوج والزوجة كلاهما راعيًا له أمانته؛ فالمسؤولية في البيت مشتركة."
+          }
+        },
+        {
+          "hadith": "muslim:3543",
+          "check": "divulge her secret",
+          "title": {
+            "en": "Guard what is private",
+            "de": "Bewahren Sie das Private",
+            "ar": "احفظ ما بينكما"
+          },
+          "body": {
+            "en": "What happens between spouses is a trust. Spreading it to others is described as breaking one of the greatest trusts.",
+            "de": "Was zwischen Eheleuten geschieht, ist anvertraut. Es anderen zu erzählen, wird als Bruch eines der größten anvertrauten Güter beschrieben.",
+            "ar": "ما بين الزوجين أمانة، وإفشاؤه للناس خيانةٌ لأعظم الأمانات."
+          }
+        },
+        {
+          "title": {
+            "en": "What scholars commonly list",
+            "de": "Was Gelehrte häufig nennen",
+            "ar": "ما يذكره العلماء عادةً"
+          },
+          "body": {
+            "en": "Details differ between the schools; ask a scholar you trust.",
+            "de": "Die Einzelheiten unterscheiden sich zwischen den Rechtsschulen; fragen Sie eine Gelehrte oder einen Gelehrten Ihres Vertrauens.",
+            "ar": "تختلف التفاصيل بين المذاهب، فاسأل عالمًا تثق به."
+          },
+          "list": {
+            "en": [
+              "Kind companionship and respect",
+              "Provision and a safe home",
+              "Privacy and keeping each other's secrets",
+              "Consultation in family matters",
+              "Patience with each other's faults"
+            ],
+            "de": [
+              "Freundlicher Umgang und Respekt",
+              "Versorgung und ein sicheres Zuhause",
+              "Privatsphäre und das Wahren von Geheimnissen",
+              "Beratung in Familienangelegenheiten",
+              "Geduld mit den Schwächen des anderen"
+            ],
+            "ar": [
+              "حسن العشرة والاحترام",
+              "النفقة والمسكن الآمن",
+              "الخصوصية وحفظ الأسرار",
+              "التشاور في شؤون الأسرة",
+              "الصبر على عيوب كلٍّ منهما"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "family-07-prophet-as-husband",
+      "needs_review": true,
+      "tradition": "sunni",
+      "palette": "night",
+      "cover": {
+        "kicker": {
+          "en": "Family in Islam · 7",
+          "de": "Familie im Islam · 7",
+          "ar": "الأسرة في الإسلام · ٧"
+        },
+        "title": {
+          "en": "The Prophet as a husband",
+          "de": "Der Prophet als Ehemann",
+          "ar": "النبي ﷺ زوجًا"
+        },
+        "sub": {
+          "en": "Loyal, attentive and warm: four scenes from his home",
+          "de": "Treu, aufmerksam und herzlich: vier Szenen aus seinem Zuhause",
+          "ar": "وفيٌّ ومنتبهٌ ودافئ: أربعة مشاهد من بيته"
+        },
+        "arabic": "في بيت النبوّة"
+      },
+      "slides": [
+        {
+          "hadith": "bukhari:3817",
+          "check": "used to mention her very often",
+          "title": {
+            "en": "Loyal after loss",
+            "de": "Treu über den Tod hinaus",
+            "ar": "وفاءٌ بعد الفقد"
+          },
+          "body": {
+            "en": "Years after Khadija died, he still spoke of her often. Love that remembers is part of faithfulness.",
+            "de": "Jahre nach Khadijas Tod sprach er noch oft von ihr. Liebe, die sich erinnert, gehört zur Treue.",
+            "ar": "بعد سنواتٍ من وفاة خديجة ظلّ يذكرها كثيرًا؛ فالحبّ الذي يتذكّر جزءٌ من الوفاء."
+          }
+        },
+        {
+          "hadith": "bukhari:5228",
+          "check": "pleased with me or angry",
+          "title": {
+            "en": "He noticed her moods",
+            "de": "Er bemerkte ihre Stimmungen",
+            "ar": "كان يلحظ مشاعرها"
+          },
+          "body": {
+            "en": "From one small change in her words he knew whether Aisha was pleased or upset. Paying attention is a form of love.",
+            "de": "An einer kleinen Veränderung in ihren Worten erkannte er, ob Aisha zufrieden oder verärgert war. Aufmerksamkeit ist eine Form der Liebe.",
+            "ar": "كان يعرف من تغيّرٍ صغيرٍ في كلام عائشة أراضيةٌ هي أم غاضبة؛ فالانتباه صورةٌ من صور الحب."
+          }
+        },
+        {
+          "hadith": "bukhari:454",
+          "check": "screening me",
+          "title": {
+            "en": "Time for what she enjoyed",
+            "de": "Zeit für das, was ihr Freude machte",
+            "ar": "وقتٌ لما يسرّها"
+          },
+          "body": {
+            "en": "He stood at the door so Aisha could watch a display she enjoyed, shielding her with his cloak. He gave her his time.",
+            "de": "Er stand an der Tür, damit Aisha eine Vorführung ansehen konnte, die ihr gefiel, und schirmte sie mit seinem Umhang ab. Er schenkte ihr seine Zeit.",
+            "ar": "وقف عند الباب لتشاهد عائشة عرضًا تحبّه، يسترها بردائه؛ لقد منحها وقته."
+          }
+        },
+        {
+          "hadith": "bukhari:1161",
+          "check": "used to talk to me",
+          "title": {
+            "en": "Morning conversations",
+            "de": "Gespräche am Morgen",
+            "ar": "حديث الصباح"
+          },
+          "body": {
+            "en": "Between the sunnah and the obligatory dawn prayer he would talk with Aisha if she was awake. Small daily talks keep a marriage close.",
+            "de": "Zwischen der Sunna und dem Pflichtgebet am Morgen unterhielt er sich mit Aisha, wenn sie wach war. Kleine tägliche Gespräche halten eine Ehe nah.",
+            "ar": "كان بين سنّة الفجر وفريضته يحدّث عائشة إن كانت مستيقظة؛ فالأحاديث اليومية الصغيرة تُبقي الزوجين قريبين."
+          }
+        },
+        {
+          "title": {
+            "en": "What we can take from it",
+            "de": "Was wir daraus mitnehmen",
+            "ar": "ما نتعلّمه"
+          },
+          "list": {
+            "en": [
+              "Speak well of your spouse, even years later",
+              "Notice small signs of joy and of hurt",
+              "Make time for what your spouse enjoys",
+              "Talk every day, even briefly"
+            ],
+            "de": [
+              "Sprechen Sie gut über Ihren Ehepartner, auch nach Jahren",
+              "Achten Sie auf kleine Zeichen von Freude und Kränkung",
+              "Nehmen Sie sich Zeit für das, was Ihrem Partner Freude macht",
+              "Sprechen Sie täglich miteinander, auch nur kurz"
+            ],
+            "ar": [
+              "اذكر شريك حياتك بخير ولو بعد سنين",
+              "انتبه للعلامات الصغيرة للفرح والألم",
+              "خصّص وقتًا لما يحبّه شريكك",
+              "تحدّثا كل يوم ولو قليلًا"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "family-08-gentleness-at-home",
+      "needs_review": true,
+      "tradition": "sunni",
+      "palette": "parchment",
+      "cover": {
+        "kicker": {
+          "en": "Family in Islam · 8",
+          "de": "Familie im Islam · 8",
+          "ar": "الأسرة في الإسلام · ٨"
+        },
+        "title": {
+          "en": "Gentleness at home",
+          "de": "Sanftheit zu Hause",
+          "ar": "الرفق في البيت"
+        },
+        "sub": {
+          "en": "The people closest to us often get our most tired voice. The Sunnah teaches the opposite",
+          "de": "Die Menschen, die uns am nächsten stehen, bekommen oft unsere müdeste Stimme. Die Sunna lehrt das Gegenteil",
+          "ar": "كثيرًا ما ينال أقربُ الناس إلينا أتعبَ أصواتنا، والسنة تعلّمنا العكس"
+        },
+        "arabic": "الرِّفْق"
+      },
+      "slides": [
+        {
+          "hadith": "muslim:6601",
+          "check": "Allah is kind and He loves kindness",
+          "title": {
+            "en": "Allah loves gentleness",
+            "de": "Allah liebt die Sanftheit",
+            "ar": "الله يحب الرفق"
+          },
+          "body": {
+            "en": "Gentleness achieves what harshness cannot. These words were said to Aisha, inside the Prophet's own home.",
+            "de": "Sanftheit erreicht, was Härte nicht erreicht. Diese Worte wurden zu Aisha gesagt, im eigenen Haus des Propheten.",
+            "ar": "الرفق يبلغ ما لا تبلغه الشدّة، وقد قيلت هذه الكلمات لعائشة في بيت النبي ﷺ نفسه."
+          }
+        },
+        {
+          "hadith": "muslim:6602",
+          "check": "adds to its beauty",
+          "title": {
+            "en": "It makes everything beautiful",
+            "de": "Sie macht alles schöner",
+            "ar": "زينةُ كلّ شيء"
+          },
+          "body": {
+            "en": "A request, a correction, a reminder: said gently, it becomes beautiful. Said harshly, something breaks.",
+            "de": "Eine Bitte, eine Korrektur, eine Erinnerung: sanft gesagt, wird sie schön. Hart gesagt, zerbricht etwas.",
+            "ar": "طلبٌ أو تصحيحٌ أو تذكير: إن قيل برفقٍ صار جميلًا، وإن قيل بقسوةٍ انكسر شيء."
+          }
+        },
+        {
+          "hadith": "bukhari:6038",
+          "check": "I served the Prophet",
+          "title": {
+            "en": "Ten years without a harsh word",
+            "de": "Zehn Jahre ohne ein hartes Wort",
+            "ar": "عشر سنين بلا كلمةٍ قاسية"
+          },
+          "body": {
+            "en": "Anas lived in the Prophet's household as a boy. In all those years he never heard a sound of irritation or a word of blame.",
+            "de": "Anas lebte als Junge im Haushalt des Propheten. In all den Jahren hörte er keinen Laut des Ärgers und kein Wort des Vorwurfs.",
+            "ar": "عاش أنسٌ في بيت النبي ﷺ صبيًّا، فلم يسمع في تلك السنين كلمة تضجّرٍ ولا لوم."
+          }
+        },
+        {
+          "hadith": "muslim:6598",
+          "check": "deprived of good",
+          "title": {
+            "en": "Without it, much is lost",
+            "de": "Ohne sie geht viel verloren",
+            "ar": "من فقده فقد كثيرًا"
+          },
+          "body": {
+            "en": "Whoever lacks gentleness misses out on so much good. At home this is felt first.",
+            "de": "Wem die Sanftheit fehlt, dem entgeht viel Gutes. Zu Hause spürt man das zuerst.",
+            "ar": "من حُرم الرفق فاته خيرٌ كثير، وأول من يشعر بذلك أهلُ بيته."
+          }
+        },
+        {
+          "title": {
+            "en": "Gentleness in practice",
+            "de": "Sanftheit im Alltag",
+            "ar": "الرفق في التطبيق"
+          },
+          "list": {
+            "en": [
+              "Lower your voice when you feel it rising",
+              "Correct in private, praise in front of others",
+              "Say please and thank you to your own family",
+              "Assume the best before asking what happened"
+            ],
+            "de": [
+              "Senken Sie die Stimme, wenn Sie merken, dass sie lauter wird",
+              "Korrigieren Sie unter vier Augen, loben Sie vor anderen",
+              "Sagen Sie auch in der eigenen Familie bitte und danke",
+              "Denken Sie das Beste, bevor Sie fragen, was geschehen ist"
+            ],
+            "ar": [
+              "اخفض صوتك حين تشعر أنه يعلو",
+              "صحّح على انفراد وامدح أمام الآخرين",
+              "قل من فضلك وشكرًا لأهل بيتك أيضًا",
+              "أحسن الظنّ قبل أن تسأل عمّا حدث"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "family-09-children-with-love",
+      "needs_review": true,
+      "tradition": "sunni",
+      "palette": "dawn",
+      "cover": {
+        "kicker": {
+          "en": "Family in Islam · 9",
+          "de": "Familie im Islam · 9",
+          "ar": "الأسرة في الإسلام · ٩"
+        },
+        "title": {
+          "en": "Raising children with love",
+          "de": "Kinder mit Liebe erziehen",
+          "ar": "تربية الأبناء بالحب"
+        },
+        "sub": {
+          "en": "He joked with them, greeted them and visited them: how the Prophet was with children",
+          "de": "Er scherzte mit ihnen, grüßte sie und besuchte sie: wie der Prophet mit Kindern umging",
+          "ar": "مازحهم وسلّم عليهم وزارهم: هكذا كان النبي ﷺ مع الأطفال"
+        },
+        "arabic": "الرحمة بالصغار"
+      },
+      "slides": [
+        {
+          "hadith": "bukhari:6129",
+          "check": "Nughair",
+          "title": {
+            "en": "He asked about the little bird",
+            "de": "Er fragte nach dem kleinen Vogel",
+            "ar": "سأل عن الطائر الصغير"
+          },
+          "body": {
+            "en": "Anas's little brother had a pet bird, and the Prophet would ask him about it playfully. Children feel loved when we enter their world.",
+            "de": "Der kleine Bruder von Anas hatte einen Vogel, und der Prophet fragte ihn scherzend danach. Kinder fühlen sich geliebt, wenn wir ihre Welt betreten.",
+            "ar": "كان لأخي أنس الصغير طائرٌ، فكان النبي ﷺ يسأله عنه مداعبًا؛ فالطفل يشعر بالحب حين ندخل عالمه."
+          }
+        },
+        {
+          "hadith": "bukhari:6247",
+          "check": "greeted them",
+          "title": {
+            "en": "He greeted children",
+            "de": "Er grüßte Kinder",
+            "ar": "كان يسلّم على الصبيان"
+          },
+          "body": {
+            "en": "Anas greeted boys he passed and said the Prophet used to do the same. A greeting tells a child: you matter.",
+            "de": "Anas grüßte Jungen, an denen er vorbeiging, und sagte, der Prophet habe es ebenso getan. Ein Gruß zeigt einem Kind, dass es wichtig ist.",
+            "ar": "كان أنسٌ يسلّم على الصبيان إذا مرّ بهم ويقول إن النبي ﷺ كان يفعل ذلك؛ فالسلام يقول للطفل: أنت مهمّ."
+          }
+        },
+        {
+          "hadith": "bukhari:709",
+          "check": "cries of the child",
+          "title": {
+            "en": "He shortened the prayer",
+            "de": "Er kürzte das Gebet",
+            "ar": "كان يخفّف الصلاة"
+          },
+          "body": {
+            "en": "When he heard a baby cry during prayer, he made it shorter for the mother's sake. Mercy for children shaped even his worship.",
+            "de": "Hörte er während des Gebets ein Baby weinen, kürzte er es um der Mutter willen. Barmherzigkeit mit Kindern prägte sogar seinen Gottesdienst.",
+            "ar": "كان إذا سمع بكاء صبيٍّ في الصلاة خفّفها رحمةً بأمّه؛ فالرحمة بالأطفال طبعت حتى عبادته."
+          }
+        },
+        {
+          "hadith": "muslim:6026",
+          "check": "more kind to one's family",
+          "title": {
+            "en": "Visiting his baby son",
+            "de": "Besuch beim kleinen Sohn",
+            "ar": "يزور ابنه الرضيع"
+          },
+          "body": {
+            "en": "Anas never saw anyone kinder to his family. The Prophet would walk to where his baby son Ibrahim was being nursed, just to hold and kiss him.",
+            "de": "Anas sah niemanden, der gütiger zu seiner Familie war. Der Prophet ging zu dem Ort, an dem sein kleiner Sohn Ibrahim gestillt wurde, nur um ihn zu halten und zu küssen.",
+            "ar": "لم يرَ أنسٌ أحدًا أرحم بأهله منه؛ كان يمشي إلى حيث يُرضَع ابنه إبراهيم ليحمله ويقبّله."
+          }
+        },
+        {
+          "title": {
+            "en": "Love they can feel",
+            "de": "Liebe, die Kinder spüren",
+            "ar": "حبٌّ يشعر به الأبناء"
+          },
+          "list": {
+            "en": [
+              "Hug and kiss them, at every age",
+              "Learn the names of their friends and toys",
+              "Play their games for a few minutes a day",
+              "Praise effort, not only results",
+              "Say sorry when you were wrong"
+            ],
+            "de": [
+              "Umarmen und küssen Sie sie, in jedem Alter",
+              "Merken Sie sich die Namen ihrer Freunde und Spielsachen",
+              "Spielen Sie täglich ein paar Minuten ihre Spiele mit",
+              "Loben Sie die Mühe, nicht nur das Ergebnis",
+              "Entschuldigen Sie sich, wenn Sie im Unrecht waren"
+            ],
+            "ar": [
+              "عانقهم وقبّلهم في كل عمر",
+              "تعلّم أسماء أصدقائهم وألعابهم",
+              "شاركهم ألعابهم دقائق كل يوم",
+              "امدح الجهد لا النتيجة وحدها",
+              "اعتذر حين تخطئ"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "family-10-teaching-prayer",
+      "needs_review": true,
+      "tradition": "sunni",
+      "palette": "emerald",
+      "cover": {
+        "kicker": {
+          "en": "Family in Islam · 10",
+          "de": "Familie im Islam · 10",
+          "ar": "الأسرة في الإسلام · ١٠"
+        },
+        "title": {
+          "en": "Teaching children to pray, gently",
+          "de": "Kindern das Gebet sanft beibringen",
+          "ar": "تعليم الأطفال الصلاة برفق"
+        },
+        "sub": {
+          "en": "Patience, example and love come before any rule",
+          "de": "Geduld, Vorbild und Liebe kommen vor jeder Regel",
+          "ar": "الصبر والقدوة والحب قبل أي قاعدة"
+        },
+        "arabic": "الصلاة بالحبّ"
+      },
+      "slides": [
+        {
+          "verse": "20:132",
+          "check": "be steadfast therein",
+          "title": {
+            "en": "Patience is part of the command",
+            "de": "Geduld gehört zum Auftrag",
+            "ar": "الصبر جزءٌ من الأمر"
+          },
+          "body": {
+            "en": "The verse that tells us to call our family to prayer also asks for patience with it. Teaching prayer is a long road.",
+            "de": "Der Vers, der uns aufträgt, die Familie zum Gebet anzuhalten, verlangt auch Geduld dabei. Das Gebet zu lehren ist ein langer Weg.",
+            "ar": "الآية التي تأمرنا بدعوة أهلنا إلى الصلاة تطلب الصبر عليها أيضًا؛ فتعليم الصلاة طريقٌ طويل."
+          }
+        },
+        {
+          "verse": "19:55",
+          "check": "enjoin on his people prayer",
+          "title": {
+            "en": "Ismail at home",
+            "de": "Ismail zu Hause",
+            "ar": "إسماعيل في بيته"
+          },
+          "body": {
+            "en": "Ismail is praised for urging his family to pray. Faith is first learned at home, from the people closest to us.",
+            "de": "Ismail wird gelobt, weil er seine Familie zum Gebet anhielt. Glaube wird zuerst zu Hause gelernt, von den Menschen, die uns am nächsten sind.",
+            "ar": "يُثنى على إسماعيل لأنه كان يأمر أهله بالصلاة؛ فالإيمان يُتعلَّم أولًا في البيت من أقرب الناس إلينا."
+          }
+        },
+        {
+          "verse": "31:17",
+          "check": "establish prayer",
+          "title": {
+            "en": "Luqman's advice to his son",
+            "de": "Luqmans Rat an seinen Sohn",
+            "ar": "وصية لقمان لابنه"
+          },
+          "body": {
+            "en": "Luqman places prayer next to doing good and patience. He teaches it as part of a whole life, not as a lonely rule.",
+            "de": "Luqman stellt das Gebet neben das Gute und die Geduld. Er lehrt es als Teil eines ganzen Lebens, nicht als einsame Regel.",
+            "ar": "يضع لقمان الصلاة إلى جانب فعل الخير والصبر، فيعلّمها جزءًا من حياةٍ كاملة لا قاعدةً منفردة."
+          }
+        },
+        {
+          "hadith": "bukhari:697",
+          "check": "He drew me to his right",
+          "title": {
+            "en": "A boy at the Prophet's side",
+            "de": "Ein Junge an der Seite des Propheten",
+            "ar": "غلامٌ إلى جانب النبي ﷺ"
+          },
+          "body": {
+            "en": "Young Ibn Abbas stood on the wrong side in the night prayer. The Prophet did not scold him; he simply moved him to his right.",
+            "de": "Der junge Ibn Abbas stand beim Nachtgebet auf der falschen Seite. Der Prophet tadelte ihn nicht, sondern zog ihn einfach auf seine rechte Seite.",
+            "ar": "وقف ابن عباس الصغير في صلاة الليل في غير موضعه، فلم يزجره النبي ﷺ بل حوّله إلى يمينه بهدوء."
+          }
+        },
+        {
+          "hadith": "bukhari:75",
+          "check": "embraced me",
+          "title": {
+            "en": "A hug and a dua",
+            "de": "Eine Umarmung und ein Bittgebet",
+            "ar": "ضمّةٌ ودعاء"
+          },
+          "body": {
+            "en": "The Prophet held young Ibn Abbas close and asked Allah to teach him the Book. Children remember how faith felt.",
+            "de": "Der Prophet drückte den jungen Ibn Abbas an sich und bat Allah, ihn das Buch zu lehren. Kinder erinnern sich daran, wie sich Glaube angefühlt hat.",
+            "ar": "ضمّ النبي ﷺ ابن عباس الصغير ودعا الله أن يعلّمه الكتاب؛ فالأطفال يتذكّرون كيف كان شعورهم بالإيمان."
+          }
+        },
+        {
+          "title": {
+            "en": "Gentle steps",
+            "de": "Sanfte Schritte",
+            "ar": "خطواتٌ لطيفة"
+          },
+          "list": {
+            "en": [
+              "Let small children pray beside you, even imperfectly",
+              "Give them their own prayer mat",
+              "Praise every prayer and overlook small mistakes",
+              "Pray together at least once a day",
+              "Scholars often name age seven for regular teaching"
+            ],
+            "de": [
+              "Lassen Sie kleine Kinder neben sich beten, auch unvollkommen",
+              "Schenken Sie ihnen einen eigenen Gebetsteppich",
+              "Loben Sie jedes Gebet und übersehen Sie kleine Fehler",
+              "Beten Sie mindestens einmal am Tag gemeinsam",
+              "Gelehrte nennen oft das Alter von sieben Jahren für regelmäßiges Lehren"
+            ],
+            "ar": [
+              "دع الصغار يصلّون بجانبك ولو بلا إتقان",
+              "اجعل لكل طفلٍ سجادته الخاصة",
+              "امدح كل صلاة وتجاوز الأخطاء الصغيرة",
+              "صلّوا معًا مرةً في اليوم على الأقل",
+              "يذكر العلماء غالبًا سنّ السابعة للتعليم المنتظم"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Sunan Abi Dawud, Book of Prayer: when children are taught to pray"
+        }
+      ]
+    },
+    {
+      "id": "family-11-siblings",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": {
+          "en": "Family in Islam · 11",
+          "de": "Familie im Islam · 11",
+          "ar": "الأسرة في الإسلام · ١١"
+        },
+        "title": {
+          "en": "Brothers and sisters",
+          "de": "Geschwister",
+          "ar": "الإخوة والأخوات"
+        },
+        "sub": {
+          "en": "From Musa and Harun to Yusuf and his brothers: what the Quran shows about siblings",
+          "de": "Von Musa und Harun bis zu Yusuf und seinen Brüdern: was der Koran über Geschwister zeigt",
+          "ar": "من موسى وهارون إلى يوسف وإخوته: ماذا يرينا القرآن عن الإخوة"
+        },
+        "arabic": "الأُخُوَّة"
+      },
+      "slides": [
+        {
+          "verse": "20:29-31",
+          "check": "Aaron, my brother",
+          "title": {
+            "en": "Musa asked for his brother",
+            "de": "Musa bat um seinen Bruder",
+            "ar": "موسى يطلب أخاه"
+          },
+          "body": {
+            "en": "Facing his greatest task, Musa asked Allah for his brother at his side. A sibling can be a source of strength.",
+            "de": "Vor seiner größten Aufgabe bat Musa Allah um seinen Bruder an seiner Seite. Ein Geschwisterteil kann eine Quelle der Kraft sein.",
+            "ar": "أمام أعظم مهمّةٍ طلب موسى من الله أن يكون أخوه إلى جانبه؛ فالأخ قد يكون مصدر قوة."
+          }
+        },
+        {
+          "verse": "28:35",
+          "check": "through your brother",
+          "title": {
+            "en": "Strength through a sibling",
+            "de": "Stärke durch Geschwister",
+            "ar": "قوةٌ بالأخ"
+          },
+          "body": {
+            "en": "Allah answered his request: with his brother he would be stronger. Siblings who support each other carry more than one alone.",
+            "de": "Allah erhörte seine Bitte: Mit seinem Bruder würde er stärker sein. Geschwister, die einander stützen, tragen mehr als einer allein.",
+            "ar": "استجاب الله لطلبه بأن يقوّيه بأخيه؛ والإخوة المتعاضدون يحملون أكثر مما يحمله الواحد."
+          }
+        },
+        {
+          "verse": "12:8",
+          "check": "more beloved to our father",
+          "title": {
+            "en": "Where jealousy begins",
+            "de": "Wo Eifersucht beginnt",
+            "ar": "من أين تبدأ الغيرة"
+          },
+          "body": {
+            "en": "Yusuf's brothers felt their father loved others more. Feeling unseen can grow into resentment, so speak about it early.",
+            "de": "Yusufs Brüder hatten das Gefühl, ihr Vater liebe andere mehr. Sich übersehen zu fühlen kann zu Groll werden; sprechen Sie früh darüber.",
+            "ar": "شعر إخوة يوسف أن أباهم يحبّ غيرهم أكثر، والشعور بالتجاهل قد يصير ضغينة؛ فتكلّموا عنه مبكرًا."
+          }
+        },
+        {
+          "verse": "20:94",
+          "check": "O son of my mother",
+          "title": {
+            "en": "A brother's gentle appeal",
+            "de": "Die sanfte Bitte eines Bruders",
+            "ar": "نداءُ أخٍ برفق"
+          },
+          "body": {
+            "en": "When Musa seized him in anger, Harun appealed to the mother they shared. Shared roots can calm a heated moment.",
+            "de": "Als Musa ihn im Zorn packte, erinnerte Harun an ihre gemeinsame Mutter. Gemeinsame Wurzeln können einen hitzigen Moment beruhigen.",
+            "ar": "حين أمسكه موسى غاضبًا ذكّره هارون بأمّهما؛ فالجذور المشتركة تهدّئ لحظة الغضب."
+          }
+        },
+        {
+          "verse": "7:151",
+          "check": "forgive me and my brother",
+          "title": {
+            "en": "Then a prayer for both",
+            "de": "Dann ein Gebet für beide",
+            "ar": "ثم دعاءٌ لهما معًا"
+          },
+          "body": {
+            "en": "Musa's anger turned into a prayer that included his brother. Let an argument between siblings end in asking Allah's mercy for both.",
+            "de": "Musas Zorn wurde zu einem Gebet, das seinen Bruder einschloss. Lassen Sie einen Streit unter Geschwistern mit der Bitte um Allahs Barmherzigkeit für beide enden.",
+            "ar": "تحوّل غضب موسى إلى دعاءٍ شمل أخاه؛ فليكن ختام الخلاف بين الإخوة طلبَ الرحمة لهما معًا."
+          }
+        },
+        {
+          "title": {
+            "en": "Keeping siblings close",
+            "de": "Geschwister nah halten",
+            "ar": "لتبقى الأخوّة قريبة"
+          },
+          "list": {
+            "en": [
+              "Avoid comparing your children with each other",
+              "Call your siblings without needing anything",
+              "Share the care of your parents fairly",
+              "Settle disputes before they harden"
+            ],
+            "de": [
+              "Vergleichen Sie Ihre Kinder nicht miteinander",
+              "Rufen Sie Ihre Geschwister an, ohne etwas zu brauchen",
+              "Teilen Sie die Pflege der Eltern gerecht auf",
+              "Klären Sie Streit, bevor er sich verhärtet"
+            ],
+            "ar": [
+              "تجنّب المقارنة بين أبنائك",
+              "اتصل بإخوتك دون أن تحتاج شيئًا",
+              "تقاسموا رعاية الوالدين بالعدل",
+              "أصلحوا الخلاف قبل أن يتصلّب"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "family-12-grandparents",
+      "needs_review": true,
+      "tradition": "sunni",
+      "palette": "parchment",
+      "cover": {
+        "kicker": {
+          "en": "Family in Islam · 12",
+          "de": "Familie im Islam · 12",
+          "ar": "الأسرة في الإسلام · ١٢"
+        },
+        "title": {
+          "en": "Grandparents and grandchildren",
+          "de": "Großeltern und Enkel",
+          "ar": "الأجداد والأحفاد"
+        },
+        "sub": {
+          "en": "The Prophet was a loving grandfather. Why the bond across generations matters",
+          "de": "Der Prophet war ein liebevoller Großvater. Warum die Verbindung zwischen den Generationen zählt",
+          "ar": "كان النبي ﷺ جدًّا محبًّا. لماذا تهمّ الصلة بين الأجيال"
+        },
+        "arabic": "صِلَةُ الأجيال"
+      },
+      "slides": [
+        {
+          "hadith": "bukhari:3749",
+          "check": "carrying Al-Hasan on his shoulder",
+          "title": {
+            "en": "Hasan on his shoulder",
+            "de": "Hasan auf seiner Schulter",
+            "ar": "الحسن على عاتقه"
+          },
+          "body": {
+            "en": "The Prophet carried his grandson Hasan on his shoulder and asked Allah openly to love him. A grandparent's love is meant to be seen.",
+            "de": "Der Prophet trug seinen Enkel Hasan auf der Schulter und bat Allah offen, ihn zu lieben. Die Liebe von Großeltern darf man sehen.",
+            "ar": "حمل النبي ﷺ حفيده الحسن على عاتقه ودعا الله علانيةً أن يحبّه؛ فحبّ الأجداد يُرى ولا يُخفى."
+          }
+        },
+        {
+          "hadith": "bukhari:516",
+          "check": "carrying Umama",
+          "title": {
+            "en": "Umama in the prayer",
+            "de": "Umama im Gebet",
+            "ar": "أمامة في الصلاة"
+          },
+          "body": {
+            "en": "He prayed while carrying his granddaughter Umama, putting her down to prostrate and lifting her again. Children were welcome near him.",
+            "de": "Er betete, während er seine Enkelin Umama trug, setzte sie zur Niederwerfung ab und hob sie wieder auf. Kinder waren bei ihm willkommen.",
+            "ar": "صلّى وهو يحمل حفيدته أمامة، يضعها إذا سجد ويرفعها إذا قام؛ فقد كان الأطفال مرحَّبًا بهم عنده."
+          }
+        },
+        {
+          "dua": "hisn:48:0",
+          "check": "Al-Hasan and Al-Husayn",
+          "title": {
+            "en": "A grandfather's protection",
+            "de": "Der Schutz eines Großvaters",
+            "ar": "تعويذ الجدّ لحفيديه"
+          },
+          "body": {
+            "en": "With these words the Prophet placed Hasan and Husayn under Allah's protection. Grandparents can say them for their grandchildren too.",
+            "de": "Mit diesen Worten stellte der Prophet Hasan und Husain unter Allahs Schutz. Auch Großeltern können sie für ihre Enkel sprechen.",
+            "ar": "بهذه الكلمات كان النبي ﷺ يعوّذ الحسن والحسين، ويمكن للأجداد أن يقولوها لأحفادهم أيضًا."
+          }
+        },
+        {
+          "verse": "12:38",
+          "check": "religion of my fathers",
+          "title": {
+            "en": "Faith passed down",
+            "de": "Weitergegebener Glaube",
+            "ar": "إيمانٌ متوارث"
+          },
+          "body": {
+            "en": "Yusuf names his father, grandfather and great-grandfather as the line of his faith. Grandparents are part of a child's story with Allah.",
+            "de": "Yusuf nennt seinen Vater, Großvater und Urgroßvater als die Linie seines Glaubens. Großeltern gehören zur Geschichte eines Kindes mit Allah.",
+            "ar": "يذكر يوسف أباه وجدّه وجدّ أبيه سلسلةً لإيمانه؛ فالأجداد جزءٌ من قصة الطفل مع الله."
+          }
+        },
+        {
+          "title": {
+            "en": "Raised by a grandfather",
+            "de": "Von einem Großvater aufgezogen",
+            "ar": "يتيمٌ في كفالة جدّه"
+          },
+          "body": {
+            "en": "After his mother died, the young Muhammad was cared for by his grandfather Abd al-Muttalib, and later by his uncle Abu Talib. Grandparents can be a child's safe place.",
+            "de": "Nach dem Tod seiner Mutter kümmerte sich sein Großvater Abd al-Muttalib um den jungen Muhammad, später sein Onkel Abu Talib. Großeltern können für ein Kind ein sicherer Ort sein.",
+            "ar": "بعد وفاة أمّه كفل الطفلَ محمدًا جدُّه عبد المطلب ثم عمّه أبو طالب؛ فالأجداد قد يكونون الملاذ الآمن للطفل."
+          }
+        },
+        {
+          "title": {
+            "en": "Building the bond",
+            "de": "Die Verbindung stärken",
+            "ar": "بناء الصلة"
+          },
+          "list": {
+            "en": [
+              "Let grandparents tell their stories",
+              "Call or video-call regularly",
+              "Ask them to teach a dua or a short surah",
+              "Respect their place, even when methods differ"
+            ],
+            "de": [
+              "Lassen Sie die Großeltern ihre Geschichten erzählen",
+              "Rufen Sie regelmäßig an, gern auch per Video",
+              "Bitten Sie sie, ein Bittgebet oder eine kurze Sure zu lehren",
+              "Achten Sie ihren Platz, auch wenn die Methoden sich unterscheiden"
+            ],
+            "ar": [
+              "دع الأجداد يروون حكاياتهم",
+              "اتصلوا بهم بانتظام ولو بالفيديو",
+              "اطلبوا منهم تعليم دعاءٍ أو سورةٍ قصيرة",
+              "احترموا مكانتهم وإن اختلفت الأساليب"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Ibn Hisham, as-Sira an-Nabawiyya"
+        },
+        { "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 93:6", "url": "https://quran.com/93:6/tafsirs/en-tafisr-ibn-kathir" }
+      ]
+    },
+    {
+      "id": "family-13-ties-of-kinship",
+      "needs_review": true,
+      "tradition": "sunni",
+      "palette": "emerald",
+      "cover": {
+        "kicker": {
+          "en": "Family in Islam · 13",
+          "de": "Familie im Islam · 13",
+          "ar": "الأسرة في الإسلام · ١٣"
+        },
+        "title": {
+          "en": "Keeping the ties of kinship",
+          "de": "Verwandtschaftsbande pflegen",
+          "ar": "صلة الرحم"
+        },
+        "sub": {
+          "en": "Silat ar-rahim: why staying connected to relatives carries so much weight in Islam",
+          "de": "Silat ar-Rahim: warum die Verbindung zu Verwandten im Islam so viel Gewicht hat",
+          "ar": "لماذا كان لوصل الأقارب هذا الوزن الكبير في الإسلام"
+        },
+        "arabic": "صِلَةُ الرَّحِم"
+      },
+      "slides": [
+        {
+          "verse": "13:21",
+          "check": "ordered to be joined",
+          "title": {
+            "en": "What Allah wants joined",
+            "de": "Was Allah verbunden sehen will",
+            "ar": "ما أمر الله بوصله"
+          },
+          "body": {
+            "en": "The people of understanding keep connected what Allah wants connected. Commentators name family ties among the first examples.",
+            "de": "Menschen mit Verstand halten verbunden, was Allah verbunden sehen will. Kommentatoren nennen die Verwandtschaftsbande als eines der ersten Beispiele.",
+            "ar": "أولو الألباب يصلون ما يحبّ الله وصله، ويذكر المفسّرون صلة الرحم في مقدّمة ذلك."
+          }
+        },
+        {
+          "verse": "47:22",
+          "check": "relationship",
+          "title": {
+            "en": "A serious warning",
+            "de": "Eine ernste Warnung",
+            "ar": "تحذيرٌ شديد"
+          },
+          "body": {
+            "en": "The Quran places cutting family ties next to spreading corruption on earth. It is never a small matter.",
+            "de": "Der Koran stellt das Zerreißen von Familienbanden neben das Unheilstiften auf der Erde. Es ist nie eine Kleinigkeit.",
+            "ar": "يقرن القرآن قطع الأرحام بالإفساد في الأرض، فليس أمرًا هيّنًا أبدًا."
+          }
+        },
+        {
+          "hadith": "bukhari:5991",
+          "check": "Al-Wasil",
+          "title": {
+            "en": "The one who truly connects",
+            "de": "Wer wirklich verbindet",
+            "ar": "الواصل الحقيقي"
+          },
+          "body": {
+            "en": "Returning a visit is easy. The one who truly keeps ties reaches out to relatives who have cut him off.",
+            "de": "Einen Besuch zu erwidern ist leicht. Wer wirklich verbindet, geht auf Verwandte zu, die den Kontakt abgebrochen haben.",
+            "ar": "ردّ الزيارة سهل، أمّا الواصل حقًّا فهو من يمدّ يده إلى من قطعه من أقاربه."
+          }
+        },
+        {
+          "hadith": "muslim:6525",
+          "check": "hot ashes",
+          "title": {
+            "en": "When relatives are unkind",
+            "de": "Wenn Verwandte unfreundlich sind",
+            "ar": "حين يسيء الأقارب"
+          },
+          "body": {
+            "en": "A man kept being kind to relatives who answered with harshness. The Prophet told him Allah's support would stay with him as long as he continued.",
+            "de": "Ein Mann blieb gütig zu Verwandten, die mit Härte antworteten. Der Prophet sagte ihm, Allahs Beistand bleibe bei ihm, solange er so weitermache.",
+            "ar": "ظلّ رجلٌ يحسن إلى أقاربه وهم يسيئون إليه، فأخبره النبي ﷺ أن عون الله معه ما دام على ذلك."
+          }
+        },
+        {
+          "hadith": "bukhari:5984",
+          "check": "severs the bond of kinship",
+          "title": {
+            "en": "Paradise and broken ties",
+            "de": "Paradies und zerrissene Bande",
+            "ar": "الجنة وقطيعة الرحم"
+          },
+          "body": {
+            "en": "This short warning shows how much family bonds weigh with Allah. Every step back toward a relative counts.",
+            "de": "Diese kurze Warnung zeigt, wie viel Familienbande bei Allah wiegen. Jeder Schritt zurück zu einem Verwandten zählt.",
+            "ar": "هذا التحذير القصير يبيّن وزن الرحم عند الله، وكل خطوةٍ نحو قريبٍ لها قيمتها."
+          }
+        },
+        {
+          "title": {
+            "en": "Ways to reconnect",
+            "de": "Wege, sich wieder zu verbinden",
+            "ar": "طرقٌ للوصل"
+          },
+          "list": {
+            "en": [
+              "A message on a special day",
+              "A visit, even a short one",
+              "Help without being asked",
+              "A dua for them by name",
+              "Letting go of old hurts"
+            ],
+            "de": [
+              "Eine Nachricht an einem besonderen Tag",
+              "Ein Besuch, auch ein kurzer",
+              "Hilfe, ohne gefragt zu werden",
+              "Ein Bittgebet für sie, mit Namen",
+              "Alte Kränkungen loslassen"
+            ],
+            "ar": [
+              "رسالةٌ في يومٍ مميّز",
+              "زيارةٌ ولو قصيرة",
+              "عونٌ دون أن يُطلب",
+              "دعاءٌ لهم بأسمائهم",
+              "التخلّي عن الجراح القديمة"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 13:21", "url": "https://quran.com/13:21/tafsirs/en-tafisr-ibn-kathir"
+        }
+      ]
+    },
+    {
+      "id": "family-14-orphans-in-the-family",
+      "needs_review": true,
+      "tradition": "sunni",
+      "palette": "dawn",
+      "cover": {
+        "kicker": {
+          "en": "Family in Islam · 14",
+          "de": "Familie im Islam · 14",
+          "ar": "الأسرة في الإسلام · ١٤"
+        },
+        "title": {
+          "en": "An orphan in the family",
+          "de": "Ein Waisenkind in der Familie",
+          "ar": "يتيمٌ في العائلة"
+        },
+        "sub": {
+          "en": "When a child loses a parent, the wider family becomes their shelter",
+          "de": "Wenn ein Kind einen Elternteil verliert, wird die größere Familie zu seinem Schutz",
+          "ar": "حين يفقد الطفل أحد والديه تصبح العائلة الكبيرة مأواه"
+        },
+        "arabic": "كَفَالَةُ اليَتِيم"
+      },
+      "slides": [
+        {
+          "verse": "93:6",
+          "check": "orphan",
+          "title": {
+            "en": "He knew this pain",
+            "de": "Er kannte diesen Schmerz",
+            "ar": "عرف هذا الألم"
+          },
+          "body": {
+            "en": "The Prophet lost his father before he was born and his mother as a small child. Allah reminds him that He gave him shelter.",
+            "de": "Der Prophet verlor seinen Vater vor der Geburt und seine Mutter als kleines Kind. Allah erinnert ihn daran, dass Er ihm Zuflucht gab.",
+            "ar": "فقد النبي ﷺ أباه قبل مولده وأمّه وهو صغير، والله يذكّره بأنه آواه."
+          }
+        },
+        {
+          "verse": "2:220",
+          "check": "they are your brothers",
+          "title": {
+            "en": "Part of the household",
+            "de": "Teil des Haushalts",
+            "ar": "جزءٌ من البيت"
+          },
+          "body": {
+            "en": "Living and eating together with orphans is good when it serves their benefit. The Quran calls them your brothers: share the home, guard their rights.",
+            "de": "Mit Waisen zusammenzuleben und zu essen ist gut, wenn es ihrem Wohl dient. Der Koran nennt sie Ihre Brüder: Teilen Sie das Zuhause, schützen Sie ihre Rechte.",
+            "ar": "مخالطة الأيتام في السكن والطعام خيرٌ إن كانت لمصلحتهم، والقرآن يسمّيهم إخوانكم: شاركوهم البيت واحفظوا حقوقهم."
+          }
+        },
+        {
+          "verse": "4:2",
+          "check": "give to the orphans their properties",
+          "title": {
+            "en": "Their money is a trust",
+            "de": "Ihr Vermögen ist anvertraut",
+            "ar": "مالهم أمانة"
+          },
+          "body": {
+            "en": "Relatives who manage an orphan's inheritance must keep it apart from their own and never trade the good for the poor.",
+            "de": "Verwandte, die das Erbe einer Waise verwalten, müssen es von ihrem eigenen trennen und nie Gutes gegen Schlechtes tauschen.",
+            "ar": "على الأقارب الذين يديرون ميراث اليتيم أن يفصلوه عن أموالهم وألا يستبدلوا الرديء بالجيّد."
+          }
+        },
+        {
+          "hadith": "muslim:7469",
+          "check": "whether he is his relative or not",
+          "title": {
+            "en": "Relative or not",
+            "de": "Verwandt oder nicht",
+            "ar": "قريبًا كان أو غريبًا"
+          },
+          "body": {
+            "en": "Caring for an orphan brings you close to the Prophet in Paradise, and this narration includes an aunt, uncle or grandparent raising a relative.",
+            "de": "Wer für eine Waise sorgt, ist im Paradies nah beim Propheten. Diese Überlieferung schließt Tante, Onkel oder Großeltern ein, die ein verwandtes Kind aufziehen.",
+            "ar": "كافل اليتيم قريبٌ من النبي ﷺ في الجنة، وهذه الرواية تشمل العمّة والخال والجدّ الذين يربّون قريبًا لهم."
+          }
+        },
+        {
+          "title": {
+            "en": "Gentle with their grief",
+            "de": "Behutsam mit ihrer Trauer",
+            "ar": "رفقٌ بحزنهم"
+          },
+          "body": {
+            "en": "An orphan carries a loss that does not simply end. Speak about the parent who died, keep their memory warm, and never let the child feel like a guest.",
+            "de": "Eine Waise trägt einen Verlust, der nicht einfach endet. Sprechen Sie über den verstorbenen Elternteil, halten Sie die Erinnerung lebendig und lassen Sie das Kind sich nie wie ein Gast fühlen.",
+            "ar": "يحمل اليتيم فقدًا لا ينتهي ببساطة. تحدّثوا عن الوالد الراحل، وأبقوا ذكراه دافئة، ولا تُشعروا الطفل أبدًا بأنه ضيف."
+          }
+        },
+        {
+          "title": {
+            "en": "Practical care",
+            "de": "Praktische Fürsorge",
+            "ar": "رعايةٌ عملية"
+          },
+          "list": {
+            "en": [
+              "Keep their inheritance separate and documented",
+              "Treat them like your own children in gifts and time",
+              "Let them keep their own family name",
+              "Ask a scholar about guardianship and money matters"
+            ],
+            "de": [
+              "Halten Sie ihr Erbe getrennt und dokumentiert",
+              "Behandeln Sie sie bei Geschenken und Zeit wie eigene Kinder",
+              "Lassen Sie ihnen ihren eigenen Familiennamen",
+              "Fragen Sie Gelehrte zu Vormundschaft und Geldfragen"
+            ],
+            "ar": [
+              "افصلوا ميراثهم ووثّقوه",
+              "عاملوهم كأبنائكم في العطايا والوقت",
+              "أبقوا لهم أسماء عائلاتهم",
+              "اسألوا أهل العلم عن الولاية والشؤون المالية"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 93:6", "url": "https://quran.com/93:6/tafsirs/en-tafisr-ibn-kathir" }
+      ]
+    },
+    {
+      "id": "family-15-home-of-dhikr",
+      "needs_review": true,
+      "tradition": "sunni",
+      "palette": "night",
+      "cover": {
+        "kicker": {
+          "en": "Family in Islam · 15",
+          "de": "Familie im Islam · 15",
+          "ar": "الأسرة في الإسلام · ١٥"
+        },
+        "title": {
+          "en": "A home that remembers Allah",
+          "de": "Ein Zuhause, das Allahs gedenkt",
+          "ar": "بيتٌ يذكر الله"
+        },
+        "sub": {
+          "en": "Prayer, Quran and remembrance turn four walls into a living home",
+          "de": "Gebet, Koran und Gedenken machen aus vier Wänden ein lebendiges Zuhause",
+          "ar": "الصلاة والقرآن والذكر تجعل الجدران الأربعة بيتًا حيًّا"
+        },
+        "arabic": "بيتٌ حيّ"
+      },
+      "slides": [
+        {
+          "verse": "10:87",
+          "check": "make your houses",
+          "title": {
+            "en": "Homes turned toward prayer",
+            "de": "Häuser, die dem Gebet dienen",
+            "ar": "بيوتٌ للصلاة"
+          },
+          "body": {
+            "en": "In hard times, Musa and Harun were told to make their homes places of prayer. A family's home can be its first place of worship.",
+            "de": "In schweren Zeiten wurden Musa und Harun angewiesen, ihre Häuser zu Orten des Gebets zu machen. Das Zuhause kann der erste Gebetsort einer Familie sein.",
+            "ar": "في زمن الشدّة أُمر موسى وهارون أن يجعلا البيوت أماكن للصلاة؛ فالبيت قد يكون أول مصلّى للأسرة."
+          }
+        },
+        {
+          "hadith": "muslim:1823",
+          "check": "living and the dead",
+          "title": {
+            "en": "Alive or lifeless",
+            "de": "Lebendig oder leblos",
+            "ar": "حيٌّ أو ميت"
+          },
+          "body": {
+            "en": "A house where Allah is remembered is alive. The difference between homes is not the furniture.",
+            "de": "Ein Haus, in dem Allahs gedacht wird, ist lebendig. Der Unterschied zwischen Häusern liegt nicht in den Möbeln.",
+            "ar": "البيت الذي يُذكر فيه الله حيّ، والفرق بين البيوت ليس في الأثاث."
+          }
+        },
+        {
+          "hadith": "bukhari:1187",
+          "check": "prayers in your houses",
+          "title": {
+            "en": "Pray at home too",
+            "de": "Beten Sie auch zu Hause",
+            "ar": "صلّوا في بيوتكم"
+          },
+          "body": {
+            "en": "Some voluntary prayers belong at home. Children learn what they see their parents do.",
+            "de": "Manche freiwilligen Gebete gehören nach Hause. Kinder lernen, was sie ihre Eltern tun sehen.",
+            "ar": "بعض النوافل مكانها البيت، والأطفال يتعلّمون ما يرون آباءهم يفعلونه."
+          }
+        },
+        {
+          "hadith": "muslim:1824",
+          "check": "Surah Baqara",
+          "title": {
+            "en": "Surah al-Baqarah at home",
+            "de": "Sure al-Baqara zu Hause",
+            "ar": "سورة البقرة في البيت"
+          },
+          "body": {
+            "en": "Reciting al-Baqarah protects a home. Read it in parts over several days if needed, and let the house be filled with the Quran.",
+            "de": "Das Rezitieren von al-Baqara schützt ein Haus. Lesen Sie sie notfalls in Teilen über mehrere Tage und füllen Sie das Haus mit dem Koran.",
+            "ar": "تلاوة البقرة حصنٌ للبيت؛ اقرؤوها على أجزاءٍ في أيامٍ إن لزم، واملؤوا البيت بالقرآن."
+          }
+        },
+        {
+          "verse": "33:34",
+          "check": "recited in your houses",
+          "title": {
+            "en": "Homes where the Quran is heard",
+            "de": "Häuser, in denen der Koran erklingt",
+            "ar": "بيوتٌ يُتلى فيها القرآن"
+          },
+          "body": {
+            "en": "Addressed to the Prophet's household, this verse ties the home to the verses and wisdom that are recited in it.",
+            "de": "Dieser Vers richtet sich an die Familie des Propheten und verbindet das Zuhause mit den Versen und der Weisheit, die darin vorgetragen werden.",
+            "ar": "تخاطب هذه الآية أهل بيت النبي ﷺ، فتربط البيت بما يُتلى فيه من الآيات والحكمة."
+          }
+        },
+        {
+          "title": {
+            "en": "Simple habits",
+            "de": "Einfache Gewohnheiten",
+            "ar": "عاداتٌ بسيطة"
+          },
+          "list": {
+            "en": [
+              "Say Bismillah when you enter",
+              "Keep a corner for prayer, even a small one",
+              "Morning and evening adhkar together",
+              "Quran playing softly instead of the television",
+              "A short family dua before sleep"
+            ],
+            "de": [
+              "Sagen Sie beim Eintreten Bismillah",
+              "Richten Sie eine Gebetsecke ein, auch eine kleine",
+              "Morgen- und Abendgedenken gemeinsam",
+              "Leise Koranrezitation statt Fernseher",
+              "Ein kurzes Familienbittgebet vor dem Schlafen"
+            ],
+            "ar": [
+              "قولوا بسم الله عند الدخول",
+              "خصّصوا ركنًا للصلاة ولو صغيرًا",
+              "أذكار الصباح والمساء معًا",
+              "تلاوةٌ هادئة بدل التلفاز",
+              "دعاءٌ عائليٌّ قصير قبل النوم"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "family-16-conflict-and-reconciliation",
+      "needs_review": true,
+      "tradition": "sunni",
+      "palette": "marble",
+      "cover": {
+        "kicker": {
+          "en": "Family in Islam · 16",
+          "de": "Familie im Islam · 16",
+          "ar": "الأسرة في الإسلام · ١٦"
+        },
+        "title": {
+          "en": "When there is conflict at home",
+          "de": "Wenn es zu Hause Streit gibt",
+          "ar": "حين يقع الخلاف في البيت"
+        },
+        "sub": {
+          "en": "The Quran's path to reconciliation: listen, involve wise people, keep the door open",
+          "de": "Der Weg des Korans zur Versöhnung: zuhören, weise Menschen einbeziehen, die Tür offen halten",
+          "ar": "طريق القرآن إلى الصلح: الإصغاء، وإشراك الحكماء، وإبقاء الباب مفتوحًا"
+        },
+        "arabic": "الإصْلاح"
+      },
+      "slides": [
+        {
+          "verse": "4:35",
+          "check": "arbitrator from his people",
+          "title": {
+            "en": "One from each family",
+            "de": "Je einer aus jeder Familie",
+            "ar": "حكمان من الأهلين"
+          },
+          "body": {
+            "en": "When a marriage is in crisis, the Quran asks for a wise person from each side. If both truly want to mend things, Allah brings them together.",
+            "de": "Steckt eine Ehe in der Krise, verlangt der Koran je eine weise Person von beiden Seiten. Wollen beide wirklich heilen, führt Allah sie zusammen.",
+            "ar": "إذا تأزّم الزواج طلب القرآن حكيمًا من كل طرف، فإن صدقت إرادة الإصلاح جمع الله بينهما."
+          }
+        },
+        {
+          "verse": "41:34",
+          "check": "which is better",
+          "title": {
+            "en": "Answer with something better",
+            "de": "Antworten Sie mit etwas Besserem",
+            "ar": "الردّ بالأحسن"
+          },
+          "body": {
+            "en": "Meeting a sharp word with a kind one can change the whole atmosphere. The verse promises that even hostility can turn into closeness.",
+            "de": "Ein scharfes Wort mit einem freundlichen zu beantworten, kann die ganze Stimmung ändern. Der Vers verspricht, dass selbst Feindschaft zu Nähe werden kann.",
+            "ar": "مقابلة الكلمة الحادّة بكلمةٍ طيبة قد تغيّر الجوّ كله، والآية تعد بأن العداوة قد تصير قربًا."
+          }
+        },
+        {
+          "verse": "4:114",
+          "check": "conciliation between people",
+          "title": {
+            "en": "Words that heal",
+            "de": "Worte, die heilen",
+            "ar": "كلامٌ يُصلح"
+          },
+          "body": {
+            "en": "Most private talk brings no good, but words that bring people back together are among the best of deeds.",
+            "de": "Die meisten vertraulichen Gespräche bringen nichts Gutes, doch Worte, die Menschen wieder zusammenführen, gehören zu den besten Taten.",
+            "ar": "أكثر الكلام في الخفاء لا خير فيه، أمّا الكلام الذي يعيد الناس إلى بعضهم فمن أفضل الأعمال."
+          }
+        },
+        {
+          "hadith": "bukhari:2692",
+          "check": "makes peace between the people",
+          "title": {
+            "en": "Bridging the gap",
+            "de": "Die Kluft überbrücken",
+            "ar": "رأبُ الصدع"
+          },
+          "body": {
+            "en": "Carrying only good words between two estranged people is praised. Scholars discuss its limits; the aim is peace, not deception.",
+            "de": "Wer zwischen zwei Zerstrittenen nur gute Worte überbringt, wird gelobt. Gelehrte erörtern die Grenzen; Ziel ist Frieden, nicht Täuschung.",
+            "ar": "نقل الكلام الطيب بين المتخاصمَين ممدوح، ويبيّن العلماء حدوده؛ فالغاية الصلح لا الخداع."
+          }
+        },
+        {
+          "hadith": "bukhari:6076",
+          "check": "more than three nights",
+          "title": {
+            "en": "Not longer than three nights",
+            "de": "Nicht länger als drei Nächte",
+            "ar": "لا قطيعة فوق ثلاث"
+          },
+          "body": {
+            "en": "Silence between Muslims has a limit. In a family, end the cold distance early; offering the first greeting is a strength.",
+            "de": "Schweigen zwischen Muslimen hat eine Grenze. Beenden Sie in der Familie die kalte Distanz früh; den ersten Gruß zu sprechen ist eine Stärke.",
+            "ar": "للخصام بين المسلمين حدّ، فأنهوا الجفاء في الأسرة مبكرًا؛ والمبادرة بالسلام قوة."
+          }
+        },
+        {
+          "title": {
+            "en": "When a conflict rises",
+            "de": "Wenn ein Konflikt aufkommt",
+            "ar": "حين يشتدّ الخلاف"
+          },
+          "list": {
+            "en": [
+              "Pause and make wudu before you answer",
+              "Speak about the problem, not the person",
+              "Listen until the other feels heard",
+              "Ask a wise, trusted person to help",
+              "Seek professional help if there is abuse or danger"
+            ],
+            "de": [
+              "Halten Sie inne und machen Sie Wudu, bevor Sie antworten",
+              "Sprechen Sie über das Problem, nicht über die Person",
+              "Hören Sie zu, bis der andere sich gehört fühlt",
+              "Bitten Sie eine weise Vertrauensperson um Hilfe",
+              "Holen Sie sich bei Gewalt oder Gefahr professionelle Hilfe"
+            ],
+            "ar": [
+              "توقّف وتوضّأ قبل أن تردّ",
+              "تحدّث عن المشكلة لا عن الشخص",
+              "استمع حتى يشعر الآخر أنه مسموع",
+              "استعن بحكيمٍ موثوق",
+              "اطلب مساعدةً متخصصة عند الأذى أو الخطر"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "family-17-forgiveness",
+      "needs_review": true,
+      "tradition": "sunni",
+      "palette": "dawn",
+      "cover": {
+        "kicker": {
+          "en": "Family in Islam · 17",
+          "de": "Familie im Islam · 17",
+          "ar": "الأسرة في الإسلام · ١٧"
+        },
+        "title": {
+          "en": "Forgiving within the family",
+          "de": "Vergeben in der Familie",
+          "ar": "العفو داخل الأسرة"
+        },
+        "sub": {
+          "en": "The deepest hurts often come from the closest people. So can the deepest healing",
+          "de": "Die tiefsten Verletzungen kommen oft von den Nächsten. Ebenso die tiefste Heilung",
+          "ar": "أعمق الجراح قد تأتي من أقرب الناس، وكذلك أعمق الشفاء"
+        },
+        "arabic": "العَفْوُ والصَّفْح"
+      },
+      "slides": [
+        {
+          "verse": "24:22",
+          "check": "pardon and overlook",
+          "title": {
+            "en": "Abu Bakr and his relative",
+            "de": "Abu Bakr und sein Verwandter",
+            "ar": "أبو بكر وقريبه"
+          },
+          "body": {
+            "en": "Commentators explain that Abu Bakr had vowed to stop supporting a relative who had wronged his family. After this verse he forgave and kept giving.",
+            "de": "Kommentatoren erklären: Abu Bakr hatte geschworen, einen Verwandten nicht mehr zu unterstützen, der seiner Familie Unrecht getan hatte. Nach diesem Vers vergab er und gab weiter.",
+            "ar": "يذكر المفسّرون أن أبا بكر حلف ألا ينفق على قريبٍ أساء إلى أهله، فلما نزلت الآية عفا وعاد إلى العطاء."
+          }
+        },
+        {
+          "verse": "64:14",
+          "check": "pardon and overlook and forgive",
+          "title": {
+            "en": "Tests close to home",
+            "de": "Prüfungen ganz nah",
+            "ar": "ابتلاءٌ قريب"
+          },
+          "body": {
+            "en": "The Quran admits that spouses and children can sometimes pull us away from what is right. Even then, it points to pardon and forgiveness.",
+            "de": "Der Koran räumt ein, dass Ehepartner und Kinder uns manchmal vom Rechten abbringen können. Selbst dann weist er auf Nachsicht und Vergebung hin.",
+            "ar": "يقرّ القرآن بأن الأزواج والأولاد قد يصرفوننا أحيانًا عن الحق، ومع ذلك يدعو إلى العفو والمغفرة."
+          }
+        },
+        {
+          "verse": "12:97-98",
+          "check": "I will ask forgiveness for you",
+          "title": {
+            "en": "A father forgives",
+            "de": "Ein Vater vergibt",
+            "ar": "أبٌ يعفو"
+          },
+          "body": {
+            "en": "Yaqub's sons had caused him years of grief. When they admitted it, he did not reproach them; he promised to pray for their forgiveness.",
+            "de": "Yaqubs Söhne hatten ihm jahrelangen Kummer bereitet. Als sie es eingestanden, machte er ihnen keine Vorwürfe, sondern versprach, für ihre Vergebung zu beten.",
+            "ar": "سبّب أبناء يعقوب لأبيهم حزن سنين، فلما اعترفوا لم يعاتبهم بل وعدهم أن يستغفر لهم."
+          }
+        },
+        {
+          "dua": "hisn:112:0",
+          "check": "whom I have insulted",
+          "title": {
+            "en": "For someone you hurt",
+            "de": "Für jemanden, den Sie verletzt haben",
+            "ar": "لمن آذيتَه بكلمة"
+          },
+          "body": {
+            "en": "If you said hurtful words to someone in your family, this dua turns your regret into a prayer for them.",
+            "de": "Haben Sie jemandem in Ihrer Familie verletzende Worte gesagt, macht dieses Bittgebet aus Ihrer Reue ein Gebet für ihn.",
+            "ar": "إن قلتَ لأحد أهلك كلمةً جارحة، فهذا الدعاء يحوّل ندمك إلى دعاءٍ له."
+          }
+        },
+        {
+          "title": {
+            "en": "Forgiveness is not ignoring danger",
+            "de": "Vergeben heißt nicht, Gefahr zu übersehen",
+            "ar": "العفو لا يعني تجاهل الخطر"
+          },
+          "body": {
+            "en": "Forgiveness frees the heart. It does not mean accepting abuse. Protecting yourself and your children is also part of your faith.",
+            "de": "Vergebung befreit das Herz. Sie bedeutet nicht, Misshandlung hinzunehmen. Sich selbst und die Kinder zu schützen, gehört ebenfalls zum Glauben.",
+            "ar": "العفو يحرّر القلب، لكنه لا يعني قبول الأذى؛ فحماية نفسك وأبنائك من دينك أيضًا."
+          }
+        },
+        {
+          "title": {
+            "en": "Steps toward forgiveness",
+            "de": "Schritte zur Vergebung",
+            "ar": "خطواتٌ نحو العفو"
+          },
+          "list": {
+            "en": [
+              "Name the hurt honestly, to Allah first",
+              "Remember your own need for His forgiveness",
+              "Forgive in stages if you cannot all at once",
+              "Make dua for the one who hurt you"
+            ],
+            "de": [
+              "Benennen Sie die Verletzung ehrlich, zuerst vor Allah",
+              "Denken Sie daran, wie sehr Sie selbst Seine Vergebung brauchen",
+              "Vergeben Sie in Schritten, wenn es nicht auf einmal geht",
+              "Beten Sie für den Menschen, der Sie verletzt hat"
+            ],
+            "ar": [
+              "سمِّ الجرح بصدق، وأمام الله أولًا",
+              "تذكّر حاجتك أنت إلى مغفرته",
+              "اعفُ على مراحل إن لم تستطع دفعةً واحدة",
+              "ادعُ لمن آذاك"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 24:22", "url": "https://quran.com/24:22/tafsirs/en-tafisr-ibn-kathir"
+        }
+      ]
+    },
+    {
+      "id": "family-18-duas-spouse-children",
+      "needs_review": true,
+      "tradition": "sunni",
+      "palette": "emerald",
+      "cover": {
+        "kicker": {
+          "en": "Family in Islam · 18",
+          "de": "Familie im Islam · 18",
+          "ar": "الأسرة في الإسلام · ١٨"
+        },
+        "title": {
+          "en": "5 duas for your spouse and children",
+          "de": "5 Bittgebete für Ehepartner und Kinder",
+          "ar": "خمسة أدعية للزوج والأبناء"
+        },
+        "sub": {
+          "en": "From the Quran and the Sunnah: words for praying for the people you love most",
+          "de": "Aus Koran und Sunna: Worte, um für die Menschen zu beten, die Sie am meisten lieben",
+          "ar": "من القرآن والسنة: كلماتٌ تدعو بها لأحبّ الناس إليك"
+        },
+        "arabic": "قُرَّةُ العَيْن"
+      },
+      "slides": [
+        {
+          "verse": "25:74",
+          "check": "comfort to our eyes",
+          "title": {
+            "en": "Joy for the eyes",
+            "de": "Freude für die Augen",
+            "ar": "قرّة العين"
+          },
+          "body": {
+            "en": "The servants of the Most Merciful ask for spouses and children who bring joy, and to become an example themselves.",
+            "de": "Die Diener des Allerbarmers bitten um Ehepartner und Kinder, die Freude schenken, und darum, selbst ein Vorbild zu werden.",
+            "ar": "يسأل عباد الرحمن أزواجًا وذريةً تقرّ بهم العين، وأن يكونوا هم قدوةً للصالحين."
+          }
+        },
+        {
+          "verse": "7:189",
+          "check": "If You should give us a good",
+          "title": {
+            "en": "A couple prays together",
+            "de": "Ein Paar betet gemeinsam",
+            "ar": "زوجان يدعوان معًا"
+          },
+          "body": {
+            "en": "Expecting a child, both parents turn to Allah together and promise gratitude. A shared dua for a shared hope.",
+            "de": "In Erwartung eines Kindes wenden sich beide Eltern gemeinsam an Allah und versprechen Dankbarkeit. Ein gemeinsames Gebet für eine gemeinsame Hoffnung.",
+            "ar": "ينتظر الزوجان مولودًا فيتوجّهان إلى الله معًا ويعدان بالشكر؛ دعاءٌ مشترك لرجاءٍ مشترك."
+          }
+        },
+        {
+          "verse": "37:100",
+          "check": "from among the righteous",
+          "title": {
+            "en": "Ibrahim's request",
+            "de": "Ibrahims Bitte",
+            "ar": "سؤال إبراهيم"
+          },
+          "body": {
+            "en": "Ibrahim did not ask only for a child but for a righteous one. Ask for goodness in your children before anything else.",
+            "de": "Ibrahim bat nicht nur um ein Kind, sondern um ein rechtschaffenes. Bitten Sie für Ihre Kinder zuerst um das Gute.",
+            "ar": "لم يسأل إبراهيم ولدًا فحسب بل ولدًا صالحًا؛ فاسأل الصلاح لأبنائك قبل كل شيء."
+          }
+        },
+        {
+          "verse": "19:5-6",
+          "check": "an heir",
+          "title": {
+            "en": "Zakariya's hope",
+            "de": "Zakariyyas Hoffnung",
+            "ar": "رجاء زكريا"
+          },
+          "body": {
+            "en": "Advanced in age, Zakariya still asked for a child who would carry faith forward. Allah hears every longing for a child.",
+            "de": "Trotz seines hohen Alters bat Zakariyya um ein Kind, das den Glauben weiterträgt. Allah hört jede Sehnsucht nach einem Kind.",
+            "ar": "مع كبر سنّه سأل زكريا ولدًا يحمل الإيمان من بعده، والله يسمع كل شوقٍ إلى الولد."
+          }
+        },
+        {
+          "dua": "hisn:79:0",
+          "check": "unite both of you in goodness",
+          "title": {
+            "en": "For a newly married couple",
+            "de": "Für ein frisch verheiratetes Paar",
+            "ar": "للعروسين"
+          },
+          "body": {
+            "en": "The dua the Prophet taught for newlyweds: blessing for each of them, and goodness in their life together.",
+            "de": "Das Bittgebet, das der Prophet für Frischvermählte lehrte: Segen für jeden von beiden und Gutes in ihrem gemeinsamen Leben.",
+            "ar": "الدعاء الذي علّمه النبي ﷺ للمتزوّجين: بركةٌ لكلٍّ منهما وخيرٌ في حياتهما معًا."
+          }
+        },
+        {
+          "title": {
+            "en": "Make it a habit",
+            "de": "Machen Sie es zur Gewohnheit",
+            "ar": "اجعلها عادة"
+          },
+          "body": {
+            "en": "Choose one of these duas each day. Mention your spouse and children by name in sujud, and sometimes let them hear you pray for them.",
+            "de": "Wählen Sie jeden Tag eines dieser Bittgebete. Nennen Sie Ihren Ehepartner und Ihre Kinder in der Niederwerfung beim Namen und lassen Sie sie manchmal hören, dass Sie für sie beten.",
+            "ar": "اختر كل يومٍ دعاءً من هذه الأدعية، واذكر زوجك وأبناءك بأسمائهم في السجود، ودعهم يسمعونك تدعو لهم أحيانًا."
+          }
+        }
+      ]
+    },
+    {
+      "id": "family-19-meals-and-time",
+      "needs_review": true,
+      "tradition": "sunni",
+      "palette": "parchment",
+      "cover": {
+        "kicker": {
+          "en": "Family in Islam · 19",
+          "de": "Familie im Islam · 19",
+          "ar": "الأسرة في الإسلام · ١٩"
+        },
+        "title": {
+          "en": "Family meals, family time",
+          "de": "Familienessen, Familienzeit",
+          "ar": "مائدة الأسرة ووقتها"
+        },
+        "sub": {
+          "en": "Sharing food and attention: simple sunnahs for a busy home",
+          "de": "Essen und Aufmerksamkeit teilen: einfache Sunnas für einen vollen Alltag",
+          "ar": "مشاركة الطعام والاهتمام: سننٌ بسيطة لبيتٍ مشغول"
+        },
+        "arabic": "البَرَكَةُ في الاجتماع"
+      },
+      "slides": [
+        {
+          "hadith": "muslim:5352",
+          "check": "Vinegar is a good condiment",
+          "title": {
+            "en": "Gratitude for what is there",
+            "de": "Dankbarkeit für das, was da ist",
+            "ar": "الرضا بما في البيت"
+          },
+          "body": {
+            "en": "At home, the Prophet asked what there was to eat with his bread. It was only vinegar, and he praised it. The table is a school of gratitude.",
+            "de": "Zu Hause fragte der Prophet, was es zum Brot gebe. Es gab nur Essig, und er lobte ihn. Der Esstisch ist eine Schule der Dankbarkeit.",
+            "ar": "سأل النبي ﷺ أهله عن إدام، فلم يكن عندهم إلا الخل، فأكل منه وأثنى عليه؛ فالمائدة مدرسةٌ للشكر."
+          }
+        },
+        {
+          "hadith": "muslim:5370",
+          "check": "Food for one suffices two",
+          "title": {
+            "en": "Food goes further when shared",
+            "de": "Geteiltes Essen reicht weiter",
+            "ar": "الطعام يكفي حين يُتقاسَم"
+          },
+          "body": {
+            "en": "Food shared at one table stretches further. Blessing comes with eating together.",
+            "de": "Essen, das an einem Tisch geteilt wird, reicht weiter. Segen kommt mit dem gemeinsamen Essen.",
+            "ar": "الطعام المشترك على مائدةٍ واحدة يكفي أكثر، والبركة في الاجتماع عليه."
+          }
+        },
+        {
+          "title": {
+            "en": "Protect the table",
+            "de": "Schützen Sie den Esstisch",
+            "ar": "احموا المائدة"
+          },
+          "list": {
+            "en": [
+              "Eat at least one meal a day together",
+              "Phones away while eating",
+              "Begin with Bismillah together",
+              "Ask everyone about their day",
+              "Let children help to cook and serve"
+            ],
+            "de": [
+              "Essen Sie mindestens einmal am Tag gemeinsam",
+              "Telefone weg während des Essens",
+              "Beginnen Sie gemeinsam mit Bismillah",
+              "Fragen Sie jeden nach seinem Tag",
+              "Lassen Sie Kinder beim Kochen und Auftragen helfen"
+            ],
+            "ar": [
+              "اجتمعوا على وجبةٍ واحدة يوميًّا على الأقل",
+              "أبعدوا الهواتف أثناء الأكل",
+              "ابدؤوا معًا ببسم الله",
+              "اسألوا كل واحدٍ عن يومه",
+              "دعوا الأطفال يساعدون في الطبخ والتقديم"
+            ]
+          }
+        },
+        {
+          "title": {
+            "en": "Presence, not perfection",
+            "de": "Dasein statt Perfektion",
+            "ar": "الحضور لا الكمال"
+          },
+          "body": {
+            "en": "Family time does not need a plan or money. A walk, a shared cup of tea, ten minutes of real listening: these are what children remember.",
+            "de": "Familienzeit braucht weder Plan noch Geld. Ein Spaziergang, eine gemeinsame Tasse Tee, zehn Minuten echtes Zuhören: Daran erinnern sich Kinder.",
+            "ar": "وقت الأسرة لا يحتاج خطةً ولا مالًا: نزهةٌ، أو كوب شايٍ معًا، أو عشر دقائق من الإصغاء الصادق؛ هذا ما يتذكّره الأطفال."
+          }
+        },
+        {
+          "title": {
+            "en": "A weekly family circle",
+            "de": "Ein wöchentlicher Familienkreis",
+            "ar": "مجلسٌ أسبوعيّ للأسرة"
+          },
+          "arabic": "مَجْلِسُ الأُسْرَة",
+          "body": {
+            "en": "Some families keep one evening a week: a short story from the Seerah, one question from each child, a dua together, and something sweet at the end.",
+            "de": "Manche Familien halten sich einen Abend pro Woche frei: eine kurze Geschichte aus der Sira, eine Frage von jedem Kind, ein gemeinsames Bittgebet und zum Schluss etwas Süßes.",
+            "ar": "تخصّص بعض الأسر مساءً في الأسبوع: قصةٌ قصيرة من السيرة، وسؤالٌ من كل طفل، ودعاءٌ مشترك، وشيءٌ حلوٌ في الختام."
+          }
+        }
+      ]
+    },
+    {
+      "id": "family-20-caring-for-the-sick",
+      "needs_review": true,
+      "tradition": "sunni",
+      "palette": "parchment",
+      "cover": {
+        "kicker": {
+          "en": "Family in Islam · 20",
+          "de": "Familie im Islam · 20",
+          "ar": "الأسرة في الإسلام · ٢٠"
+        },
+        "title": {
+          "en": "Caring for the sick in your family",
+          "de": "Kranke in der Familie pflegen",
+          "ar": "رعاية المريض في الأسرة"
+        },
+        "sub": {
+          "en": "Nursing a loved one is worship. Lessons from the Prophet's home",
+          "de": "Einen geliebten Menschen zu pflegen ist Gottesdienst. Lehren aus dem Haus des Propheten",
+          "ar": "تمريض من تحبّ عبادة. دروسٌ من بيت النبي ﷺ"
+        },
+        "arabic": "رِعَايَةٌ ورَحْمَة"
+      },
+      "slides": [
+        {
+          "hadith": "muslim:5714",
+          "check": "members of the household fell ill",
+          "title": {
+            "en": "Recitation at the bedside",
+            "de": "Rezitation am Krankenbett",
+            "ar": "الرقية عند سرير المريض"
+          },
+          "body": {
+            "en": "When someone in his household fell ill, the Prophet recited the two surahs of refuge over them. In his own last illness, Aisha did the same for him.",
+            "de": "Wurde jemand in seinem Haus krank, rezitierte der Prophet die beiden Schutzsuren über ihm. In seiner eigenen letzten Krankheit tat Aisha dasselbe für ihn.",
+            "ar": "كان النبي ﷺ إذا مرض أحدٌ من أهله نفث عليه بالمعوّذتين، وفي مرضه الأخير فعلت عائشة ذلك له."
+          }
+        },
+        {
+          "hadith": "bukhari:3130",
+          "check": "she was ill",
+          "title": {
+            "en": "Staying home to nurse",
+            "de": "Daheimbleiben, um zu pflegen",
+            "ar": "بقي ليمرّضها"
+          },
+          "body": {
+            "en": "Uthman stayed in Madinah to care for his sick wife Ruqayya, the Prophet's daughter, and was promised the reward of those who went to Badr.",
+            "de": "Uthman blieb in Medina, um seine kranke Frau Ruqayya, die Tochter des Propheten, zu pflegen, und ihm wurde der Lohn der Badr-Kämpfer zugesagt.",
+            "ar": "بقي عثمان في المدينة يمرّض زوجته رقية بنت النبي ﷺ، فوُعد بأجر من شهد بدرًا."
+          }
+        },
+        {
+          "hadith": "muslim:6551",
+          "check": "fruit garden of Paradise",
+          "title": {
+            "en": "In the garden of Paradise",
+            "de": "Im Garten des Paradieses",
+            "ar": "في خُرفة الجنة"
+          },
+          "body": {
+            "en": "Visiting the sick is like walking among the fruits of Paradise. The hours at a relative's bedside are not lost time.",
+            "de": "Kranke zu besuchen ist wie ein Gang zwischen den Früchten des Paradieses. Die Stunden am Bett eines Angehörigen sind keine verlorene Zeit.",
+            "ar": "عيادة المريض كالمشي بين ثمار الجنة، والساعات عند سرير القريب ليست وقتًا ضائعًا."
+          }
+        },
+        {
+          "hadith": "muslim:6565",
+          "check": "pricking of a thorn",
+          "title": {
+            "en": "Nothing is wasted",
+            "de": "Nichts geht verloren",
+            "ar": "لا يضيع شيء"
+          },
+          "body": {
+            "en": "Every hardship of a believer, even a small one, wipes away sins. Remind the patient gently, and remember it yourself on tiring days.",
+            "de": "Jede Mühsal eines Gläubigen, selbst eine kleine, tilgt Sünden. Erinnern Sie den Kranken behutsam daran und denken Sie selbst an müden Tagen daran.",
+            "ar": "كل ما يصيب المؤمن من أذى ولو صغيرًا يكفّر عنه، فذكّر المريض بلطف، وتذكّر ذلك أنت في أيام التعب."
+          }
+        },
+        {
+          "title": {
+            "en": "For the one who cares",
+            "de": "Für die Pflegenden",
+            "ar": "لمن يتولّى الرعاية"
+          },
+          "list": {
+            "en": [
+              "Renew your intention: this is for Allah",
+              "Share the duties fairly within the family",
+              "Take breaks and accept outside help",
+              "Follow medical advice; dua and treatment go together"
+            ],
+            "de": [
+              "Erneuern Sie Ihre Absicht: Es geschieht für Allah",
+              "Verteilen Sie die Aufgaben gerecht in der Familie",
+              "Machen Sie Pausen und nehmen Sie Hilfe von außen an",
+              "Folgen Sie ärztlichem Rat; Bittgebet und Behandlung gehören zusammen"
+            ],
+            "ar": [
+              "جدّد نيّتك: هذا لله",
+              "وزّعوا المهامّ بعدلٍ داخل الأسرة",
+              "خذ قسطًا من الراحة واقبل العون من الخارج",
+              "اتبع نصيحة الطبيب، فالدعاء والعلاج متلازمان"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "family-21-inheritance",
+      "needs_review": true,
+      "tradition": "sunni",
+      "palette": "marble",
+      "cover": {
+        "kicker": {
+          "en": "Family in Islam · 21",
+          "de": "Familie im Islam · 21",
+          "ar": "الأسرة في الإسلام · ٢١"
+        },
+        "title": {
+          "en": "Inheritance: shares set by Allah",
+          "de": "Erbe: von Allah festgelegte Anteile",
+          "ar": "الميراث: فرائض من الله"
+        },
+        "sub": {
+          "en": "Why the Quran sets the shares itself, and why every real case needs a qualified scholar",
+          "de": "Warum der Koran die Anteile selbst festlegt und warum jeder echte Fall fachkundigen Rat braucht",
+          "ar": "لماذا حدّد القرآن الأنصبة بنفسه، ولماذا تحتاج كل حالةٍ إلى عالمٍ متخصص"
+        },
+        "arabic": "الفَرَائِض"
+      },
+      "slides": [
+        {
+          "hadith": "bukhari:194",
+          "check": "inheritance",
+          "title": {
+            "en": "A question at a sickbed",
+            "de": "Eine Frage am Krankenbett",
+            "ar": "سؤالٌ عند سرير المرض"
+          },
+          "body": {
+            "en": "Jabir, gravely ill, worried about who would inherit from him. Verses on inheritance were then revealed.",
+            "de": "Jabir, schwer krank, sorgte sich, wer ihn beerben würde. Daraufhin wurden Verse über das Erbe offenbart.",
+            "ar": "قلق جابر وهو في شدّة مرضه على من يرثه، فنزلت آيات الميراث."
+          }
+        },
+        {
+          "verse": "4:7",
+          "check": "obligatory share",
+          "title": {
+            "en": "Men and women both inherit",
+            "de": "Männer und Frauen erben beide",
+            "ar": "للرجال والنساء نصيب"
+          },
+          "body": {
+            "en": "Commentators note that many women and children used to be left out. The Quran gives both men and women a fixed share, small estate or large.",
+            "de": "Kommentatoren betonen, dass früher viele Frauen und Kinder leer ausgingen. Der Koran gibt Männern und Frauen einen festen Anteil, ob der Nachlass klein ist oder groß.",
+            "ar": "يذكر المفسّرون أن كثيرًا من النساء والصغار كانوا يُحرمون، فجعل القرآن للرجال والنساء نصيبًا مفروضًا في القليل والكثير."
+          }
+        },
+        {
+          "title": {
+            "en": "The shares in Surah an-Nisa",
+            "de": "Die Anteile in Sure an-Nisa",
+            "ar": "الأنصبة في سورة النساء"
+          },
+          "body": {
+            "en": "Verses 4:11 and 4:12 set out the shares of children, parents, spouses and siblings. Each real case depends on who survives, on debts and on any bequest. Please ask a qualified scholar instead of calculating alone.",
+            "de": "Die Verse 4:11 und 4:12 legen die Anteile von Kindern, Eltern, Ehepartnern und Geschwistern fest. Jeder echte Fall hängt davon ab, wer hinterbleibt, von Schulden und einem etwaigen Vermächtnis. Bitte fragen Sie fachkundige Gelehrte, statt allein zu rechnen.",
+            "ar": "تبيّن الآيتان ١١ و١٢ من سورة النساء أنصبة الأبناء والوالدين والأزواج والإخوة، وكل حالةٍ تتوقف على الورثة الأحياء والديون والوصية. اسأل عالمًا متخصصًا ولا تحسب وحدك."
+          }
+        },
+        {
+          "verse": "4:8",
+          "check": "words of appropriate kindness",
+          "title": {
+            "en": "Kindness at the division",
+            "de": "Güte bei der Teilung",
+            "ar": "الإحسان عند القسمة"
+          },
+          "body": {
+            "en": "Relatives without a share, orphans and people in need who are there at the division should be given something and spoken to kindly.",
+            "de": "Verwandte ohne Anteil, Waisen und Bedürftige, die bei der Teilung zugegen sind, sollen etwas erhalten und freundlich angesprochen werden.",
+            "ar": "من يحضر القسمة من الأقارب غير الوارثين واليتامى والمحتاجين يُعطَون شيئًا ويُكلَّمون بلطف."
+          }
+        },
+        {
+          "hadith": "muslim:4204",
+          "check": "will written down",
+          "title": {
+            "en": "Write your will",
+            "de": "Schreiben Sie Ihr Testament",
+            "ar": "اكتب وصيّتك"
+          },
+          "body": {
+            "en": "The Prophet urged anyone with something to bequeath not to let two nights pass without writing it down. It spares a family disputes.",
+            "de": "Der Prophet mahnte, wer etwas zu vermachen habe, solle keine zwei Nächte verstreichen lassen, ohne es aufzuschreiben. Das erspart einer Familie Streit.",
+            "ar": "حثّ النبي ﷺ من عنده ما يوصي به ألا تمرّ عليه ليلتان دون أن يكتبه؛ ففي ذلك وقايةٌ للأسرة من النزاع."
+          }
+        },
+        {
+          "title": {
+            "en": "Before it is needed",
+            "de": "Bevor es nötig wird",
+            "ar": "قبل أن تحتاج إليه"
+          },
+          "list": {
+            "en": [
+              "Write down your debts and what others owe you",
+              "Ask a scholar how the shares apply to your family",
+              "Check what the law of your country requires",
+              "Talk openly with your family to prevent conflict"
+            ],
+            "de": [
+              "Schreiben Sie Ihre Schulden und offenen Forderungen auf",
+              "Fragen Sie Gelehrte, wie die Anteile für Ihre Familie gelten",
+              "Prüfen Sie, was das Recht Ihres Landes verlangt",
+              "Sprechen Sie offen mit der Familie, um Streit vorzubeugen"
+            ],
+            "ar": [
+              "اكتب ديونك وما لك عند الآخرين",
+              "اسأل عالمًا كيف تنطبق الأنصبة على أسرتك",
+              "تحقّق مما يشترطه قانون بلدك",
+              "تحدّث مع أسرتك بصراحة لتتجنّبوا الخلاف"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 4:7", "url": "https://quran.com/4:7/tafsirs/en-tafisr-ibn-kathir"
+        }
+      ]
+    },
+    {
+      "id": "family-22-daughters",
+      "needs_review": true,
+      "tradition": "sunni",
+      "palette": "dawn",
+      "cover": {
+        "kicker": {
+          "en": "Family in Islam · 22",
+          "de": "Familie im Islam · 22",
+          "ar": "الأسرة في الإسلام · ٢٢"
+        },
+        "title": {
+          "en": "Daughters: a door of mercy",
+          "de": "Töchter: eine Tür der Barmherzigkeit",
+          "ar": "البنات بابُ رحمة"
+        },
+        "sub": {
+          "en": "The Quran condemned grief at a girl's birth; the Prophet promised reward to those who raise daughters well",
+          "de": "Der Koran verurteilte die Trauer über die Geburt eines Mädchens; der Prophet versprach Lohn für eine gute Erziehung von Töchtern",
+          "ar": "ذمّ القرآن الحزن لولادة البنت، ووعد النبي ﷺ بالأجر لمن أحسن تربية البنات"
+        },
+        "arabic": "البَنَاتُ رَحْمَة"
+      },
+      "slides": [
+        {
+          "verse": "16:58-59",
+          "check": "female",
+          "title": {
+            "en": "Grief at a gift",
+            "de": "Trauer über ein Geschenk",
+            "ar": "حزنٌ على هبة"
+          },
+          "body": {
+            "en": "The Quran describes a man ashamed at the news of a daughter and calls that judgement evil. It is not culture to be kept.",
+            "de": "Der Koran beschreibt einen Mann, der sich der Nachricht von einer Tochter schämt, und nennt dieses Urteil schlecht. Es ist keine Tradition, die man bewahren sollte.",
+            "ar": "يصف القرآن رجلًا يستحيي من خبر ولادة ابنته، ويصف حكمه بالسوء؛ فليس ذلك عُرفًا يُحفظ."
+          }
+        },
+        {
+          "verse": "81:8-9",
+          "check": "buried alive",
+          "title": {
+            "en": "The girl will be heard",
+            "de": "Das Mädchen wird gehört",
+            "ar": "سؤال الموؤودة"
+          },
+          "body": {
+            "en": "On the Day of Judgement the case of the buried girl is raised. Islam gave daughters a voice that cannot be silenced.",
+            "de": "Am Tag des Gerichts wird der Fall des lebendig begrabenen Mädchens aufgerufen. Der Islam gab Töchtern eine Stimme, die niemand zum Schweigen bringt.",
+            "ar": "يوم القيامة تُعرض قضية الموؤودة، وقد منح الإسلام البنات صوتًا لا يُسكَت."
+          }
+        },
+        {
+          "verse": "42:49",
+          "check": "female",
+          "title": {
+            "en": "Daughters named first",
+            "de": "Töchter zuerst genannt",
+            "ar": "ذِكر الإناث أولًا"
+          },
+          "body": {
+            "en": "In this verse the gift of daughters is mentioned before sons. Al-Qurtubi reports that the Companion Wathila ibn al-Asqa' saw a blessing in this order.",
+            "de": "In diesem Vers werden Töchter vor Söhnen als Geschenk genannt. Al-Qurtubi berichtet, dass der Prophetengefährte Wathila ibn al-Asqa' darin einen Segen sah.",
+            "ar": "في هذه الآية ذُكرت هبة الإناث قبل الذكور، وينقل القرطبي عن الصحابي واثلة بن الأسقع أنه رأى في هذا الترتيب يُمنًا وبركة."
+          }
+        },
+        {
+          "hadith": "bukhari:5995",
+          "check": "shield",
+          "title": {
+            "en": "A mother and one date",
+            "de": "Eine Mutter und eine Dattel",
+            "ar": "أمٌّ وتمرةٌ واحدة"
+          },
+          "body": {
+            "en": "A poor mother split the one date she was given between her two girls. The Prophet said caring well for daughters becomes protection from the Fire.",
+            "de": "Eine arme Mutter teilte die eine Dattel, die sie bekommen hatte, zwischen ihren zwei Mädchen. Der Prophet sagte, gute Fürsorge für Töchter werde zum Schutz vor dem Feuer.",
+            "ar": "قسمت أمٌّ فقيرة التمرة الوحيدة التي أُعطيتها بين ابنتيها، فأخبر النبي ﷺ أن الإحسان إلى البنات سترٌ من النار."
+          }
+        },
+        {
+          "hadith": "bukhari:3714",
+          "check": "Fatima is a part of me",
+          "title": {
+            "en": "Fatima, part of him",
+            "de": "Fatima, ein Teil von ihm",
+            "ar": "فاطمة بَضعةٌ منه"
+          },
+          "body": {
+            "en": "The Prophet called his daughter Fatima a part of himself; what upset her upset him. This is how a father may speak of a daughter.",
+            "de": "Der Prophet nannte seine Tochter Fatima einen Teil von sich; was sie verärgerte, verärgerte ihn. So darf ein Vater von seiner Tochter sprechen.",
+            "ar": "جعل النبي ﷺ ابنته فاطمة جزءًا منه، يغضبه ما يغضبها؛ هكذا يتحدّث الأب عن ابنته."
+          }
+        },
+        {
+          "title": {
+            "en": "Honouring daughters today",
+            "de": "Töchter heute ehren",
+            "ar": "إكرام البنات اليوم"
+          },
+          "list": {
+            "en": [
+              "Celebrate a daughter's birth like a son's",
+              "Invest in her education",
+              "Ask for her opinion at home",
+              "Be fair in gifts and attention"
+            ],
+            "de": [
+              "Feiern Sie die Geburt einer Tochter wie die eines Sohnes",
+              "Investieren Sie in ihre Bildung",
+              "Fragen Sie zu Hause nach ihrer Meinung",
+              "Seien Sie gerecht bei Geschenken und Aufmerksamkeit"
+            ],
+            "ar": [
+              "احتفلوا بمولد البنت كما تحتفلون بالولد",
+              "استثمروا في تعليمها",
+              "اسألوها عن رأيها في البيت",
+              "اعدلوا في العطايا والاهتمام"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Ibn al-Qayyim, Tuhfat al-Mawdud bi-Ahkam al-Mawlud"
+        },
+        { "label": "al-Qurtubi, al-Jami' li-Ahkam al-Qur'an, on 42:49", "url": "https://quran.com/42:49/tafsirs/ar-tafseer-al-qurtubi" }
+      ]
+    },
+    {
+      "id": "family-23-providing-for-family",
+      "needs_review": true,
+      "tradition": "sunni",
+      "palette": "emerald",
+      "cover": {
+        "kicker": {
+          "en": "Family in Islam · 23",
+          "de": "Familie im Islam · 23",
+          "ar": "الأسرة في الإسلام · ٢٣"
+        },
+        "title": {
+          "en": "Providing for your family is worship",
+          "de": "Für die Familie sorgen ist Gottesdienst",
+          "ar": "النفقة على الأهل عبادة"
+        },
+        "sub": {
+          "en": "Groceries, rent and school fees can be charity in Allah's sight",
+          "de": "Einkäufe, Miete und Schulgeld können vor Allah eine Sadaqa sein",
+          "ar": "قد يكون الطعام والإيجار ورسوم المدرسة صدقةً عند الله"
+        },
+        "arabic": "النَّفَقَة"
+      },
+      "slides": [
+        {
+          "hadith": "muslim:2311",
+          "check": "spent on your family",
+          "title": {
+            "en": "The greatest reward",
+            "de": "Der größte Lohn",
+            "ar": "أعظم الأجر"
+          },
+          "body": {
+            "en": "Of all the good ways to spend money that are listed here, spending on your family brings the greatest reward.",
+            "de": "Von allen guten Arten, Geld auszugeben, die hier genannt werden, bringt die Ausgabe für die Familie den größten Lohn.",
+            "ar": "من بين وجوه الإنفاق المذكورة هنا، النفقة على الأهل أعظمها أجرًا."
+          }
+        },
+        {
+          "hadith": "bukhari:55",
+          "check": "spends on his family",
+          "title": {
+            "en": "Intention makes it charity",
+            "de": "Die Absicht macht es zur Sadaqa",
+            "ar": "النية تجعلها صدقة"
+          },
+          "body": {
+            "en": "Ordinary spending becomes charity when it is done for Allah's sake. Renew the intention at the checkout.",
+            "de": "Gewöhnliche Ausgaben werden zur Sadaqa, wenn sie um Allahs willen geschehen. Erneuern Sie die Absicht an der Kasse.",
+            "ar": "الإنفاق العادي يصير صدقةً إذا كان لوجه الله، فجدّد النية عند الدفع."
+          }
+        },
+        {
+          "hadith": "bukhari:1426",
+          "check": "dependents",
+          "title": {
+            "en": "Begin with those you support",
+            "de": "Beginnen Sie bei denen, die Sie versorgen",
+            "ar": "ابدأ بمن تعول"
+          },
+          "body": {
+            "en": "Generosity starts at home. Those who depend on you come first, then the wider circle.",
+            "de": "Großzügigkeit beginnt zu Hause. Wer von Ihnen abhängt, kommt zuerst, dann der weitere Kreis.",
+            "ar": "الكرم يبدأ من البيت: من تعولهم أولًا، ثم الدائرة الأوسع."
+          }
+        },
+        {
+          "verse": "25:67",
+          "check": "not excessively or sparingly",
+          "title": {
+            "en": "Neither wasteful nor stingy",
+            "de": "Weder verschwenderisch noch geizig",
+            "ar": "لا إسراف ولا تقتير"
+          },
+          "body": {
+            "en": "The servants of the Most Merciful keep a middle way. A careful family budget can be an act of faith.",
+            "de": "Die Diener des Allerbarmers halten das rechte Maß. Ein umsichtiges Familienbudget kann ein Ausdruck des Glaubens sein.",
+            "ar": "عباد الرحمن يلزمون الوسط، والميزانية المتّزنة للأسرة قد تكون عملًا من الإيمان."
+          }
+        },
+        {
+          "title": {
+            "en": "Every contribution counts",
+            "de": "Jeder Beitrag zählt",
+            "ar": "كل عطاءٍ محسوب"
+          },
+          "body": {
+            "en": "Scholars explain that providing for the household is the husband's duty, while a wife's own money remains hers. When she chooses to help, that too is rewarded as charity.",
+            "de": "Gelehrte erklären, dass der Unterhalt des Haushalts Pflicht des Ehemanns ist, während das eigene Geld der Ehefrau ihr gehört. Hilft sie aus freien Stücken, wird auch das als Sadaqa belohnt.",
+            "ar": "يبيّن العلماء أن النفقة على البيت واجبةٌ على الزوج، وأن مال الزوجة ملكٌ لها، فإن أعانت باختيارها كان لها أجر الصدقة أيضًا."
+          }
+        },
+        {
+          "title": {
+            "en": "Practical blessings",
+            "de": "Praktischer Segen",
+            "ar": "بركةٌ عملية"
+          },
+          "list": {
+            "en": [
+              "Earn in a halal way",
+              "Plan a monthly budget together",
+              "Avoid debt for luxuries",
+              "Set something aside for charity, however small"
+            ],
+            "de": [
+              "Verdienen Sie auf erlaubte Weise",
+              "Planen Sie gemeinsam ein Monatsbudget",
+              "Vermeiden Sie Schulden für Luxus",
+              "Legen Sie etwas für Sadaqa zurück, so klein es auch ist"
+            ],
+            "ar": [
+              "اكسب من حلال",
+              "خطّطوا معًا لميزانيةٍ شهرية",
+              "تجنّب الدَّين من أجل الكماليات",
+              "ادّخر شيئًا للصدقة ولو قليلًا"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "family-24-welcoming-a-newborn",
+      "needs_review": true,
+      "tradition": "sunni",
+      "palette": "dawn",
+      "cover": {
+        "kicker": {
+          "en": "Family in Islam · 24",
+          "de": "Familie im Islam · 24",
+          "ar": "الأسرة في الإسلام · ٢٤"
+        },
+        "title": {
+          "en": "Welcoming a newborn",
+          "de": "Ein Neugeborenes willkommen heißen",
+          "ar": "استقبال المولود"
+        },
+        "sub": {
+          "en": "Congratulations, a good name, tahnik and aqiqa: sunnahs for the first days",
+          "de": "Glückwunsch, ein guter Name, Tahnik und Aqiqa: Sunnas für die ersten Tage",
+          "ar": "التهنئة والاسم الحسن والتحنيك والعقيقة: سننٌ للأيام الأولى"
+        },
+        "arabic": "هِبَةٌ مِنَ الله"
+      },
+      "slides": [
+        {
+          "verse": "16:78",
+          "check": "wombs of your mothers",
+          "title": {
+            "en": "Born knowing nothing",
+            "de": "Geboren ohne Wissen",
+            "ar": "يولد ولا يعلم شيئًا"
+          },
+          "body": {
+            "en": "Every child arrives with hearing, sight and a heart, ready to grow. Parents are entrusted with what will fill them.",
+            "de": "Jedes Kind kommt mit Gehör, Augenlicht und einem Herzen, bereit zu wachsen. Den Eltern ist anvertraut, was sie füllen wird.",
+            "ar": "يأتي كل طفلٍ بسمعٍ وبصرٍ وقلبٍ مستعدٍّ للنموّ، والوالدان مؤتمنان على ما يملؤها."
+          }
+        },
+        {
+          "dua": "hisn:47:0",
+          "check": "May Allah bless you with His gift",
+          "title": {
+            "en": "How to congratulate",
+            "de": "Wie man gratuliert",
+            "ar": "كيف نهنّئ"
+          },
+          "body": {
+            "en": "A beautiful congratulation for new parents, and their reply. It reminds everyone that the child is a gift from Allah.",
+            "de": "Ein schöner Glückwunsch für frischgebackene Eltern und ihre Antwort. Er erinnert alle daran, dass das Kind ein Geschenk Allahs ist.",
+            "ar": "تهنئةٌ جميلة للوالدين وجوابهما، تذكّر الجميع بأن المولود هبةٌ من الله."
+          }
+        },
+        {
+          "hadith": "bukhari:5467",
+          "check": "Tahnik",
+          "title": {
+            "en": "A name, a date and a dua",
+            "de": "Ein Name, eine Dattel, ein Bittgebet",
+            "ar": "اسمٌ وتمرةٌ ودعاء"
+          },
+          "body": {
+            "en": "Abu Musa brought his newborn son. The Prophet chose the name Ibrahim, gave him a first taste of date and prayed for blessing.",
+            "de": "Abu Musa brachte seinen neugeborenen Sohn. Der Prophet wählte den Namen Ibrahim, gab ihm einen ersten Geschmack von Dattel und bat um Segen.",
+            "ar": "جاء أبو موسى بمولوده، فسمّاه النبي ﷺ إبراهيم وحنّكه بتمرةٍ ودعا له بالبركة."
+          }
+        },
+        {
+          "hadith": "bukhari:5472",
+          "check": "Aqiqa",
+          "title": {
+            "en": "The aqiqa",
+            "de": "Die Aqiqa",
+            "ar": "العقيقة"
+          },
+          "body": {
+            "en": "Many scholars count this thank-offering for a child as a sunnah. Its status and details, like the number for boys and girls, differ. Ask a scholar.",
+            "de": "Viele Gelehrte sehen dieses Dankopfer für ein Kind als Sunna. Rang und Einzelheiten, etwa die Anzahl für Jungen und Mädchen, sind umstritten. Fragen Sie Gelehrte.",
+            "ar": "يرى كثير من العلماء هذه الذبيحة شكرًا على المولود سنّةً، ويختلفون في حكمها وتفاصيلها كعددها للذكر والأنثى، فاسأل من تثق بعلمه."
+          }
+        },
+        {
+          "title": {
+            "en": "The first days",
+            "de": "Die ersten Tage",
+            "ar": "الأيام الأولى"
+          },
+          "list": {
+            "en": [
+              "Choose a name with a good meaning",
+              "Make dua for the child and the mother",
+              "Support the mother with rest and meals",
+              "Visit briefly and bring something useful"
+            ],
+            "de": [
+              "Wählen Sie einen Namen mit guter Bedeutung",
+              "Beten Sie für das Kind und die Mutter",
+              "Unterstützen Sie die Mutter mit Ruhe und Mahlzeiten",
+              "Besuchen Sie kurz und bringen Sie etwas Nützliches mit"
+            ],
+            "ar": [
+              "اختر اسمًا حسن المعنى",
+              "ادعُ للمولود ولأمّه",
+              "أعِن الأمّ بالراحة والطعام",
+              "زُر زيارةً قصيرة واحمل معك ما ينفع"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "family-25-reunited-in-paradise",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": {
+          "en": "Family in Islam · 25",
+          "de": "Familie im Islam · 25",
+          "ar": "الأسرة في الإسلام · ٢٥"
+        },
+        "title": {
+          "en": "Families reunited in Paradise",
+          "de": "Familien, im Paradies vereint",
+          "ar": "أُسَرٌ تلتقي في الجنة"
+        },
+        "sub": {
+          "en": "The Quran's hope that faith can keep a family together beyond this world",
+          "de": "Die Hoffnung des Korans, dass der Glaube eine Familie über diese Welt hinaus zusammenhält",
+          "ar": "رجاءٌ في القرآن أن يجمع الإيمانُ الأسرةَ بعد هذه الدنيا"
+        },
+        "arabic": "لَمُّ الشَّمْل"
+      },
+      "slides": [
+        {
+          "verse": "52:21",
+          "check": "We will join with them their descendants",
+          "title": {
+            "en": "Children joined with their parents",
+            "de": "Kinder mit ihren Eltern vereint",
+            "ar": "الذرية تلحق بآبائها"
+          },
+          "body": {
+            "en": "Believing parents will be joined with their believing children, and none of their own deeds will be lost.",
+            "de": "Gläubige Eltern werden mit ihren gläubigen Kindern vereint, und nichts von ihren eigenen Taten geht verloren.",
+            "ar": "يُلحق الله بالآباء المؤمنين ذرّيتهم المؤمنة، ولا يضيع من أعمالهم شيء."
+          }
+        },
+        {
+          "verse": "40:8",
+          "check": "their forefathers, their spouses and their offspring",
+          "title": {
+            "en": "The angels pray for your family",
+            "de": "Die Engel beten für Ihre Familie",
+            "ar": "الملائكة تدعو لأسرتك"
+          },
+          "body": {
+            "en": "The angels who carry the Throne ask Allah to bring believers into Paradise together with their righteous parents, spouses and children.",
+            "de": "Die Engel, die den Thron tragen, bitten Allah, die Gläubigen zusammen mit ihren rechtschaffenen Eltern, Ehepartnern und Kindern ins Paradies zu bringen.",
+            "ar": "تسأل الملائكة حملة العرش أن يُدخل الله المؤمنين الجنة مع الصالحين من آبائهم وأزواجهم وذرياتهم."
+          }
+        },
+        {
+          "verse": "43:70",
+          "check": "your kinds",
+          "title": {
+            "en": "Joy together",
+            "de": "Gemeinsame Freude",
+            "ar": "فرحٌ مشترك"
+          },
+          "body": {
+            "en": "Al-Qurtubi first reads azwaj here as believing spouses from this world; Ibn Kathir as your counterparts in faith. Either way, joy is shared.",
+            "de": "Al-Qurtubi deutet azwaj hier zuerst als die gläubigen Ehepartner aus dieser Welt, Ibn Kathir als Gleichgesinnte im Glauben. So oder so wird die Freude geteilt.",
+            "ar": "أول ما يذكره القرطبي في «أزواجكم» هنا: الزوجات المؤمنات في الدنيا، ويفسّرها ابن كثير بالنظراء في الإيمان. وفي الحالين فرحٌ مشترك."
+          }
+        },
+        {
+          "verse": "36:56",
+          "check": "They and their spouses",
+          "title": {
+            "en": "Side by side in the shade",
+            "de": "Seite an Seite im Schatten",
+            "ar": "جنبًا إلى جنب في الظلال"
+          },
+          "body": {
+            "en": "A quiet picture of rest: the people of Paradise with their spouses, at ease together.",
+            "de": "Ein stilles Bild der Ruhe: die Bewohner des Paradieses mit ihren Ehepartnern, gemeinsam entspannt.",
+            "ar": "صورةٌ هادئة للراحة: أهل الجنة مع أزواجهم في طمأنينة."
+          }
+        },
+        {
+          "verse": "80:34-36",
+          "check": "flee from his brother",
+          "title": {
+            "en": "A sober reminder",
+            "de": "Eine ernste Erinnerung",
+            "ar": "تذكرةٌ جادّة"
+          },
+          "body": {
+            "en": "On that Day everyone is occupied with themselves. Family ties alone save no one; faith and deeds are what reunite.",
+            "de": "An jenem Tag ist jeder mit sich selbst beschäftigt. Familienbande allein retten niemanden; Glaube und Taten sind es, die vereinen.",
+            "ar": "في ذلك اليوم ينشغل كلٌّ بنفسه، فالقرابة وحدها لا تنجي أحدًا، وإنما يجمع الإيمانُ والعمل."
+          }
+        },
+        {
+          "title": {
+            "en": "Build it now",
+            "de": "Bauen Sie es jetzt",
+            "ar": "ابنِها الآن"
+          },
+          "body": {
+            "en": "The family you hope to see in Paradise is shaped in this world: by praying together, forgiving each other and kindness at home. Today's small habits prepare that reunion.",
+            "de": "Die Familie, die Sie im Paradies wiedersehen möchten, entsteht in dieser Welt: durch gemeinsames Beten, gegenseitiges Vergeben und Güte zu Hause. Die kleinen Gewohnheiten von heute bereiten dieses Wiedersehen vor.",
+            "ar": "الأسرة التي ترجو أن تلقاها في الجنة تتشكّل في هذه الدنيا: بالصلاة معًا والتسامح واللطف في البيت؛ وعادات اليوم الصغيرة تمهّد لذلك اللقاء."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 43:70", "url": "https://quran.com/43:70/tafsirs/en-tafisr-ibn-kathir"
+        },
+        { "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 52:21", "url": "https://quran.com/52:21/tafsirs/en-tafisr-ibn-kathir" },
+        { "label": "al-Qurtubi, al-Jami' li-Ahkam al-Qur'an, on 43:70", "url": "https://quran.com/43:70/tafsirs/ar-tafseer-al-qurtubi" }
+      ]
+    }
+  ]
+}

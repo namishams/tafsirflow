@@ -1,0 +1,3972 @@
+{
+  "series": "quran-stories",
+  "label": {
+    "en": "Stories of the Quran",
+    "de": "Geschichten des Korans",
+    "ar": "قصص القرآن"
+  },
+  "topic": "tafsir",
+  "tradition": "all",
+  "items": [
+    {
+      "id": "quran-stories-01-people-of-the-cave",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": {
+          "en": "Stories of the Quran · 1",
+          "de": "Geschichten des Korans · 1",
+          "ar": "قصص القرآن · ١"
+        },
+        "title": {
+          "en": "The People of the Cave: young, firm and protected",
+          "de": "Die Leute der Höhle: jung, standhaft und behütet",
+          "ar": "أصحاب الكهف: فتية ثبتوا فحفظهم الله"
+        },
+        "sub": {
+          "en": "A story from Surah al-Kahf about faith under pressure and a sleep of many years",
+          "de": "Eine Geschichte aus Sure al-Kahf über Glauben unter Druck und einen Schlaf von vielen Jahren",
+          "ar": "قصة من سورة الكهف عن الإيمان تحت الضغط ونوم امتد سنين طويلة"
+        },
+        "arabic": "أصحاب الكهف"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "Young people who stood firm",
+            "de": "Junge Menschen, die standhaft blieben",
+            "ar": "فتية ثبتوا على الحق"
+          },
+          "body": {
+            "en": "A group of young believers lived among a people who worshipped idols. They refused to go along with it. The Quran calls them fitya, youths, and tells us that Allah increased their guidance.",
+            "de": "Eine Gruppe junger Gläubiger lebte unter einem Volk, das Götzen anbetete. Sie machten nicht mit. Der Koran nennt sie fitya, junge Männer, und berichtet, dass Allah ihre Rechtleitung vermehrte.",
+            "ar": "عاشت مجموعة من الشباب المؤمنين بين قوم يعبدون الأصنام، فرفضوا أن يجاروهم. يسمّيهم القرآن فتية، ويخبرنا أن الله زادهم هدى."
+          }
+        },
+        {
+          "verse": "18:13-14",
+          "check": "youths who believed",
+          "title": {
+            "en": "Hearts made firm",
+            "de": "Gestärkte Herzen",
+            "ar": "قلوب ثبّتها الله"
+          },
+          "body": {
+            "en": "They stood up and said the truth openly. Allah strengthened their hearts at the very moment courage was needed.",
+            "de": "Sie standen auf und sprachen die Wahrheit offen aus. Allah stärkte ihre Herzen genau in dem Moment, in dem es Mut brauchte.",
+            "ar": "قاموا وأعلنوا الحق، فثبّت الله قلوبهم في اللحظة التي احتاجوا فيها إلى الشجاعة."
+          }
+        },
+        {
+          "verse": "18:10",
+          "check": "grant us from Yourself mercy",
+          "title": {
+            "en": "A prayer at the entrance",
+            "de": "Ein Gebet am Eingang",
+            "ar": "دعاء عند باب الكهف"
+          },
+          "body": {
+            "en": "With no plan beyond trust, they left their homes for a cave and asked for two things: mercy and right guidance in their affair.",
+            "de": "Ohne einen anderen Plan als ihr Vertrauen verließen sie ihre Häuser und baten um zwei Dinge: Barmherzigkeit und den rechten Weg in ihrer Lage.",
+            "ar": "تركوا بيوتهم إلى الكهف بلا خطة سوى التوكل، وسألوا الله أمرين: رحمة من عنده ورشدًا في شأنهم."
+          }
+        },
+        {
+          "verse": "18:18",
+          "check": "their dog",
+          "title": {
+            "en": "Asleep, yet watched over",
+            "de": "Schlafend und doch behütet",
+            "ar": "نيام في رعاية الله"
+          },
+          "body": {
+            "en": "Allah turned them in their sleep, the sun passed by their cave, and their dog lay stretched out at the entrance.",
+            "de": "Allah wendete sie im Schlaf, die Sonne zog an ihrer Höhle vorbei, und ihr Hund lag ausgestreckt am Eingang.",
+            "ar": "كان الله يقلّبهم في نومهم، وتمرّ الشمس بكهفهم دون أن تصيبهم، وكلبهم يحرس المدخل."
+          }
+        },
+        {
+          "title": {
+            "en": "Waking up into a new world",
+            "de": "Erwachen in einer neuen Welt",
+            "ar": "استيقاظ في عالم جديد"
+          },
+          "body": {
+            "en": "They thought they had slept a day or less. One of them went carefully to the city with an old silver coin to buy food. The commentators mention that the city had changed beyond recognition and that its ruler was now a believer.",
+            "de": "Sie glaubten, einen Tag oder weniger geschlafen zu haben. Einer von ihnen ging vorsichtig mit einer alten Silbermünze in die Stadt, um Essen zu kaufen. Die Kommentatoren berichten, dass die Stadt nicht wiederzuerkennen war und ihr Herrscher nun glaubte.",
+            "ar": "ظنّوا أنهم ناموا يومًا أو أقل، فذهب أحدهم إلى المدينة بحذر ومعه عملة فضية قديمة ليشتري طعامًا. ويذكر المفسرون أن المدينة تغيّرت حتى لم يعرفها، وأن ملكها صار مؤمنًا."
+          }
+        },
+        {
+          "verse": "18:25-26",
+          "check": "three hundred years",
+          "title": {
+            "en": "How long did they sleep?",
+            "de": "Wie lange schliefen sie?",
+            "ar": "كم مكثوا في كهفهم؟"
+          },
+          "body": {
+            "en": "Three hundred years, and nine more. Some commentators explain the nine as the difference between solar and lunar years. Allah alone knows exactly.",
+            "de": "Dreihundert Jahre und neun dazu. Manche Kommentatoren erklären die neun als Unterschied zwischen Sonnen- und Mondjahren. Genau weiß es allein Allah.",
+            "ar": "ثلاثمئة سنة وتسع. ويفسّر بعض المفسرين التسع بالفرق بين السنين الشمسية والقمرية، والله وحده أعلم بالمدة."
+          }
+        },
+        {
+          "verse": "18:23-24",
+          "check": "If Allah wills",
+          "title": {
+            "en": "Say: in sha' Allah",
+            "de": "Sagen Sie: in scha' Allah",
+            "ar": "قل: إن شاء الله"
+          },
+          "body": {
+            "en": "In the middle of the story the Quran pauses to teach a habit: link every plan for tomorrow to the will of Allah.",
+            "de": "Mitten in der Geschichte hält der Koran inne und lehrt eine Gewohnheit: Verbinden Sie jeden Plan für morgen mit dem Willen Allahs.",
+            "ar": "في وسط القصة يتوقف القرآن ليعلّمنا عادة: أن نربط كل خطة للغد بمشيئة الله."
+          }
+        },
+        {
+          "title": {
+            "en": "Lessons from the cave",
+            "de": "Lehren aus der Höhle",
+            "ar": "دروس من الكهف"
+          },
+          "body": {
+            "en": "The Quran does not settle their number or give their names: the lesson matters more.",
+            "de": "Der Koran legt weder ihre Zahl fest noch nennt er ihre Namen: Die Lehre zählt mehr.",
+            "ar": "لم يحسم القرآن عددهم ولم يذكر أسماءهم، فالعبرة أهم."
+          },
+          "list": {
+            "en": [
+              "Young people can carry great faith",
+              "Leaving a harmful place can be an act of faith",
+              "Ask Allah for mercy and right guidance in every affair",
+              "Do not argue about details Allah left unknown",
+              "Tie your plans to the will of Allah"
+            ],
+            "de": [
+              "Auch junge Menschen können großen Glauben tragen",
+              "Einen schädlichen Ort zu verlassen kann ein Akt des Glaubens sein",
+              "Bitten Sie Allah in jeder Lage um Barmherzigkeit und Rechtleitung",
+              "Streiten Sie nicht über Einzelheiten, die Allah offen ließ",
+              "Verbinden Sie Ihre Pläne mit dem Willen Allahs"
+            ],
+            "ar": [
+              "قد يحمل الشباب إيمانًا عظيمًا",
+              "ترك البيئة الضارة قد يكون عملًا من الإيمان",
+              "اسأل الله الرحمة والرشد في كل أمر",
+              "لا تجادل في تفاصيل لم يبيّنها الله",
+              "اربط خططك بمشيئة الله"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 18:21 (the city and the coin)",
+          "url": "https://quran.com/18:21/tafsirs/en-tafisr-ibn-kathir"
+        },
+        {
+          "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 18:25 (solar and lunar years)",
+          "url": "https://quran.com/18:25/tafsirs/en-tafisr-ibn-kathir"
+        }
+      ]
+    },
+    {
+      "id": "quran-stories-02-dhul-qarnayn",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": {
+          "en": "Stories of the Quran · 2",
+          "de": "Geschichten des Korans · 2",
+          "ar": "قصص القرآن · ٢"
+        },
+        "title": {
+          "en": "Dhul-Qarnayn: a ruler who used power well",
+          "de": "Dhul-Qarnain: ein Herrscher, der Macht gut gebrauchte",
+          "ar": "ذو القرنين: حاكم أحسن استعمال القوة"
+        },
+        "sub": {
+          "en": "Three journeys from Surah al-Kahf and what they teach about strength, justice and humility",
+          "de": "Drei Reisen aus Sure al-Kahf und was sie über Stärke, Gerechtigkeit und Demut lehren",
+          "ar": "ثلاث رحلات من سورة الكهف وما تعلّمه عن القوة والعدل والتواضع"
+        },
+        "arabic": "ذو القرنين"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "Who was he?",
+            "de": "Wer war er?",
+            "ar": "من هو؟"
+          },
+          "body": {
+            "en": "The Quran calls him Dhul-Qarnayn, the one of the two horns. Scholars differ about who he was in history, and the Quran does not say. Instead it tells us what he did with his power.",
+            "de": "Der Koran nennt ihn Dhul-Qarnain, den mit den zwei Hörnern. Wer er geschichtlich war, darüber sind die Gelehrten uneins, und der Koran sagt es nicht. Stattdessen erzählt er, was er mit seiner Macht tat.",
+            "ar": "يسمّيه القرآن ذا القرنين. واختلف العلماء في هويته التاريخية، ولم يحددها القرآن، بل أخبرنا بما صنع بقوته."
+          }
+        },
+        {
+          "verse": "18:83-84",
+          "check": "We established him upon the earth",
+          "title": {
+            "en": "Power as a gift",
+            "de": "Macht als Gabe",
+            "ar": "التمكين عطاء من الله"
+          },
+          "body": {
+            "en": "Everything he achieved began with means that Allah gave him. Strength is a trust before it is an achievement.",
+            "de": "Alles, was er erreichte, begann mit Mitteln, die Allah ihm gab. Stärke ist ein anvertrautes Gut, bevor sie eine Leistung ist.",
+            "ar": "كل ما حققه بدأ بأسباب أعطاه الله إياها، فالقوة أمانة قبل أن تكون إنجازًا."
+          }
+        },
+        {
+          "title": {
+            "en": "In the far west: justice",
+            "de": "Im fernen Westen: Gerechtigkeit",
+            "ar": "في أقصى الغرب: العدل"
+          },
+          "body": {
+            "en": "He reached a people where the sun seemed to set in dark water. Given the choice, he chose a just way: consequences for the wrongdoer, kindness and ease for those who believe and do good.",
+            "de": "Er erreichte ein Volk, wo die Sonne in dunklem Wasser unterzugehen schien. Vor die Wahl gestellt, wählte er einen gerechten Weg: Folgen für den Unrechttuenden, Güte und Erleichterung für die, die glauben und Gutes tun.",
+            "ar": "بلغ قومًا حيث بدت الشمس تغرب في ماء داكن، فخُيّر فاختار طريق العدل: جزاء للظالم، وإحسانًا وتيسيرًا لمن آمن وعمل صالحًا."
+          }
+        },
+        {
+          "title": {
+            "en": "In the far east",
+            "de": "Im fernen Osten",
+            "ar": "في أقصى الشرق"
+          },
+          "body": {
+            "en": "There he found a people with no shelter from the sun. The Quran says little more, only that Allah knew everything he had. Not every detail is told; what is told is enough.",
+            "de": "Dort fand er ein Volk ohne Schutz vor der Sonne. Mehr sagt der Koran kaum, nur dass Allah alles kannte, was er besaß. Nicht jede Einzelheit wird erzählt; was erzählt wird, genügt.",
+            "ar": "وجد هناك قومًا لا ساتر لهم من الشمس، ولا يزيد القرآن على ذلك إلا أن الله يعلم كل ما عنده. لم تُذكر كل التفاصيل، وما ذُكر فيه الكفاية."
+          }
+        },
+        {
+          "verse": "18:94-95",
+          "check": "Gog and Magog",
+          "title": {
+            "en": "Help without a price",
+            "de": "Hilfe ohne Preis",
+            "ar": "عون بلا أجر"
+          },
+          "body": {
+            "en": "A people threatened by Gog and Magog offered him payment. He refused the money and asked them to work with him instead.",
+            "de": "Ein Volk, das von Gog und Magog bedroht wurde, bot ihm Bezahlung an. Er lehnte das Geld ab und bat sie stattdessen, mit ihm zu arbeiten.",
+            "ar": "عرض عليه قوم يهددهم يأجوج ومأجوج مالًا، فرفض المال وطلب منهم أن يعملوا معه."
+          }
+        },
+        {
+          "title": {
+            "en": "Iron, fire and copper",
+            "de": "Eisen, Feuer und Kupfer",
+            "ar": "حديد ونار ونحاس"
+          },
+          "body": {
+            "en": "Together they filled the gap between two mountains with blocks of iron, heated them and poured molten copper over them. He did not only build for the people; he built with them.",
+            "de": "Gemeinsam füllten sie die Lücke zwischen zwei Bergen mit Eisenblöcken, erhitzten sie und gossen geschmolzenes Kupfer darüber. Er baute nicht nur für die Menschen, sondern mit ihnen.",
+            "ar": "ملؤوا معًا ما بين الجبلين بقطع الحديد، ثم أحموها وصبّوا عليها النحاس المذاب. لم يبنِ للناس فحسب، بل بنى معهم."
+          }
+        },
+        {
+          "verse": "18:98",
+          "check": "This is a mercy from my Lord",
+          "title": {
+            "en": "Not my achievement",
+            "de": "Nicht mein Verdienst",
+            "ar": "ليس من فضلي"
+          },
+          "body": {
+            "en": "At the height of success he gave the credit to Allah and reminded everyone that even this barrier will one day end.",
+            "de": "Auf dem Höhepunkt des Erfolgs gab er Allah die Ehre und erinnerte alle daran, dass auch dieser Wall eines Tages vergeht.",
+            "ar": "في ذروة النجاح نسب الفضل إلى الله، وذكّر الجميع بأن هذا السد نفسه سيزول يومًا."
+          }
+        },
+        {
+          "title": {
+            "en": "Lessons from Dhul-Qarnayn",
+            "de": "Lehren von Dhul-Qarnain",
+            "ar": "دروس من ذي القرنين"
+          },
+          "list": {
+            "en": [
+              "Power is a trust, given for a purpose",
+              "Be firm with injustice and gentle with the good",
+              "Serve people without asking for their money",
+              "Build with people, not only for them",
+              "Give the credit for success to Allah"
+            ],
+            "de": [
+              "Macht ist ein anvertrautes Gut mit einem Zweck",
+              "Seien Sie fest gegen Unrecht und sanft zu den Guten",
+              "Dienen Sie Menschen, ohne ihr Geld zu verlangen",
+              "Bauen Sie mit den Menschen, nicht nur für sie",
+              "Schreiben Sie den Erfolg Allah zu"
+            ],
+            "ar": [
+              "القوة أمانة تُعطى لغاية",
+              "كن حازمًا مع الظلم رفيقًا بأهل الخير",
+              "اخدم الناس دون أن تطلب أموالهم",
+              "ابنِ مع الناس لا لهم فقط",
+              "انسب فضل النجاح إلى الله"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim (Arabic), on 18:83 (reports about who he was)",
+          "url": "https://quran.com/18:83/tafsirs/ar-tafsir-ibn-kathir"
+        },
+        {
+          "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 18:94-98 (iron and copper)",
+          "url": "https://quran.com/18:96/tafsirs/en-tafisr-ibn-kathir"
+        }
+      ]
+    },
+    {
+      "id": "quran-stories-03-musa-and-al-khidr-journey",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": {
+          "en": "Stories of the Quran · 3",
+          "de": "Geschichten des Korans · 3",
+          "ar": "قصص القرآن · ٣"
+        },
+        "title": {
+          "en": "Musa and al-Khidr: a prophet travels to learn",
+          "de": "Musa und al-Khidr: ein Prophet reist, um zu lernen",
+          "ar": "موسى والخضر: نبي يرحل في طلب العلم"
+        },
+        "sub": {
+          "en": "Part 1: the journey to the meeting of the two seas and the manners of a student",
+          "de": "Teil 1: die Reise zum Zusammenfluss der zwei Meere und die Haltung eines Lernenden",
+          "ar": "الجزء الأول: الرحلة إلى ملتقى البحرين وأدب طالب العلم"
+        },
+        "arabic": "موسى والخضر"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "Why the journey began",
+            "de": "Warum die Reise begann",
+            "ar": "لماذا بدأت الرحلة"
+          },
+          "body": {
+            "en": "A report in Sahih al-Bukhari tells that Musa once considered no one more knowledgeable than himself. Allah taught him otherwise: a servant of His had knowledge that Musa did not have.",
+            "de": "Ein Bericht in Sahih al-Bukhari erzählt, dass Musa einmal meinte, niemand wisse mehr als er. Allah belehrte ihn: Einer Seiner Diener besaß Wissen, das Musa nicht hatte.",
+            "ar": "تذكر رواية في صحيح البخاري أن موسى رأى مرة أنه لا أحد أعلم منه، فعلّمه الله أن له عبدًا عنده علم ليس عند موسى."
+          }
+        },
+        {
+          "verse": "18:60",
+          "check": "junction of the two seas",
+          "title": {
+            "en": "No matter how far",
+            "de": "Wie weit es auch sei",
+            "ar": "مهما طال الطريق"
+          },
+          "body": {
+            "en": "A prophet to whom Allah had spoken set out on a long road to learn from someone else. Seeking knowledge takes effort and humility.",
+            "de": "Ein Prophet, mit dem Allah gesprochen hatte, machte sich auf einen langen Weg, um von einem anderen zu lernen. Wissen zu suchen braucht Mühe und Demut.",
+            "ar": "نبي كلّمه الله يخرج في طريق طويل ليتعلم من غيره، فطلب العلم يحتاج إلى جهد وتواضع."
+          }
+        },
+        {
+          "title": {
+            "en": "A fish as a signpost",
+            "de": "Ein Fisch als Wegweiser",
+            "ar": "حوت يدل على الطريق"
+          },
+          "body": {
+            "en": "The meeting place would be where they lost a fish. At a rock by the sea it slipped into the water, and his young companion forgot to mention it. When they noticed, they went back the way they had come.",
+            "de": "Der Treffpunkt sollte dort sein, wo sie einen Fisch verlieren würden. An einem Felsen am Meer glitt er ins Wasser, und sein junger Begleiter vergaß, es zu erwähnen. Als sie es merkten, gingen sie denselben Weg zurück.",
+            "ar": "كان موضع اللقاء حيث يفقدان الحوت. وعند صخرة على البحر انسلّ الحوت إلى الماء، ونسي الفتى أن يذكر ذلك، فلما انتبها عادا من الطريق الذي جاءا منه."
+          }
+        },
+        {
+          "verse": "18:65-66",
+          "check": "taught him from Us",
+          "title": {
+            "en": "Mercy before knowledge",
+            "de": "Barmherzigkeit vor Wissen",
+            "ar": "الرحمة قبل العلم"
+          },
+          "body": {
+            "en": "Notice the order: Allah first gave him mercy, then knowledge. And Musa asked to follow him with the courtesy of a student.",
+            "de": "Achten Sie auf die Reihenfolge: Allah gab ihm zuerst Barmherzigkeit, dann Wissen. Und Musa bat mit der Höflichkeit eines Schülers darum, ihm folgen zu dürfen.",
+            "ar": "تأمّل الترتيب: أعطاه الله الرحمة أولًا ثم العلم. وطلب موسى أن يتبعه بأدب المتعلم."
+          }
+        },
+        {
+          "hadith": "bukhari:3402",
+          "check": "barren white land",
+          "title": {
+            "en": "Why the name al-Khidr?",
+            "de": "Warum der Name al-Khidr?",
+            "ar": "لماذا سُمّي الخضر؟"
+          },
+          "body": {
+            "en": "Khidr comes from the Arabic word for green. The Quran itself calls him only a servant of Allah.",
+            "de": "Khidr kommt vom arabischen Wort für grün. Der Koran selbst nennt ihn nur einen Diener Allahs.",
+            "ar": "اسم الخضر من الخضرة، والقرآن نفسه لا يسمّيه إلا عبدًا من عباد الله."
+          }
+        },
+        {
+          "title": {
+            "en": "One condition: patience",
+            "de": "Eine Bedingung: Geduld",
+            "ar": "شرط واحد: الصبر"
+          },
+          "body": {
+            "en": "Al-Khidr warned that Musa would not be able to bear what he was about to see. Musa promised patience and added: if Allah wills. The condition was simple: ask nothing until it is explained.",
+            "de": "Al-Khidr warnte, Musa werde nicht ertragen können, was er sehen würde. Musa versprach Geduld und fügte hinzu: so Allah will. Die Bedingung war einfach: nichts fragen, bis es erklärt wird.",
+            "ar": "حذّره الخضر من أنه لن يحتمل ما سيرى، فوعد موسى بالصبر وقال: إن شاء الله. وكان الشرط بسيطًا: لا سؤال حتى يأتي البيان."
+          }
+        },
+        {
+          "title": {
+            "en": "Manners of a student",
+            "de": "Die Haltung eines Lernenden",
+            "ar": "آداب طالب العلم"
+          },
+          "body": {
+            "en": "Part 2 tells the three strange events and their meaning.",
+            "de": "Teil 2 erzählt die drei rätselhaften Ereignisse und ihre Bedeutung.",
+            "ar": "يروي الجزء الثاني الأحداث الثلاثة الغريبة ومعناها."
+          },
+          "list": {
+            "en": [
+              "No one is too great to keep learning",
+              "Travel and effort are part of seeking knowledge",
+              "Ask your teacher with courtesy",
+              "Respect the conditions of the one who teaches you",
+              "Say in sha' Allah when you make a promise"
+            ],
+            "de": [
+              "Niemand ist zu groß, um weiter zu lernen",
+              "Reise und Mühe gehören zur Suche nach Wissen",
+              "Fragen Sie Ihren Lehrer mit Höflichkeit",
+              "Achten Sie die Bedingungen dessen, der Sie lehrt",
+              "Sagen Sie in scha' Allah, wenn Sie etwas versprechen"
+            ],
+            "ar": [
+              "لا أحد أكبر من أن يتعلم",
+              "السفر والتعب من طلب العلم",
+              "اسأل معلمك بأدب",
+              "التزم شروط من يعلّمك",
+              "قل إن شاء الله إذا وعدت"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Sahih al-Bukhari, the hadith of Musa and al-Khidr",
+          "url": "https://sunnah.com/bukhari:122"
+        },
+        {
+          "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on Surah al-Kahf 18:60-70",
+          "url": "https://quran.com/18:60/tafsirs/en-tafisr-ibn-kathir"
+        }
+      ]
+    },
+    {
+      "id": "quran-stories-04-al-khidr-three-events",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": {
+          "en": "Stories of the Quran · 4",
+          "de": "Geschichten des Korans · 4",
+          "ar": "قصص القرآن · ٤"
+        },
+        "title": {
+          "en": "Three strange acts and the mercy behind them",
+          "de": "Drei rätselhafte Taten und die Barmherzigkeit dahinter",
+          "ar": "ثلاثة أفعال غريبة والرحمة وراءها"
+        },
+        "sub": {
+          "en": "Musa and al-Khidr, part 2: what we see, what we do not see, and how to trust Allah",
+          "de": "Musa und al-Khidr, Teil 2: was wir sehen, was wir nicht sehen, und wie wir Allah vertrauen",
+          "ar": "موسى والخضر، الجزء الثاني: ما نراه وما لا نراه، وكيف نثق بالله"
+        },
+        "arabic": "وراء كل قدر حكمة"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "The ship",
+            "de": "Das Schiff",
+            "ar": "السفينة"
+          },
+          "body": {
+            "en": "They boarded a ship, and al-Khidr damaged it. Musa could not stay silent: why harm the people on board? The commentators mention that the sailors had carried them without payment.",
+            "de": "Sie bestiegen ein Schiff, und al-Khidr beschädigte es. Musa konnte nicht schweigen: Warum den Menschen an Bord schaden? Die Kommentatoren erwähnen, dass die Seeleute sie ohne Bezahlung mitgenommen hatten.",
+            "ar": "ركبا سفينة فأحدث الخضر فيها عيبًا، فلم يسكت موسى: لماذا تؤذي أهلها؟ ويذكر المفسرون أن أصحابها حملوهما بلا أجر."
+          }
+        },
+        {
+          "title": {
+            "en": "The boy",
+            "de": "Der Junge",
+            "ar": "الغلام"
+          },
+          "body": {
+            "en": "Next, al-Khidr took the life of a boy. This was the hardest moment for Musa, and his objection was the sharpest of all.",
+            "de": "Danach nahm al-Khidr einem Jungen das Leben. Das war der schwerste Moment für Musa, und sein Einwand war der schärfste von allen.",
+            "ar": "ثم قتل الخضر غلامًا، فكانت أشد لحظة على موسى، وكان اعتراضه فيها أشد اعتراض."
+          }
+        },
+        {
+          "title": {
+            "en": "The wall",
+            "de": "Die Mauer",
+            "ar": "الجدار"
+          },
+          "body": {
+            "en": "In a town that refused them food, al-Khidr repaired a wall about to fall, without asking for anything. Musa felt he should at least have earned a wage. With that, they parted.",
+            "de": "In einem Ort, der ihnen das Essen verweigerte, richtete al-Khidr eine einsturzgefährdete Mauer auf, ohne etwas zu verlangen. Musa meinte, er hätte wenigstens Lohn verdient. Damit trennten sich ihre Wege.",
+            "ar": "في قرية أبت أن تطعمهما أصلح الخضر جدارًا يوشك أن يسقط دون مقابل، فرأى موسى أنه كان يستحق أجرة على عمله. وعندها افترقا."
+          }
+        },
+        {
+          "verse": "18:79",
+          "check": "poor people working at sea",
+          "title": {
+            "en": "A defect that saved the ship",
+            "de": "Ein Schaden, der das Schiff rettete",
+            "ar": "عيب أنقذ السفينة"
+          },
+          "body": {
+            "en": "A king was seizing every good ship. A damaged boat was left alone, and the poor owners kept their living.",
+            "de": "Ein König nahm jedes gute Schiff mit Gewalt. Ein beschädigtes Boot ließ er in Ruhe, und die armen Besitzer behielten ihren Lebensunterhalt.",
+            "ar": "كان ملك ظالم يستولي على كل سفينة سليمة، فتُركت المعيبة، وبقي لأصحابها الفقراء رزقهم."
+          }
+        },
+        {
+          "title": {
+            "en": "The boy and his parents",
+            "de": "Der Junge und seine Eltern",
+            "ar": "الغلام ووالداه"
+          },
+          "body": {
+            "en": "Al-Khidr explained that the boy would have driven his believing parents into rebellion and disbelief, and that Allah would give them a better child. He acted on Allah's command, not on his own judgement.",
+            "de": "Al-Khidr erklärte, der Junge hätte seine gläubigen Eltern in Auflehnung und Unglauben getrieben, und Allah werde ihnen ein besseres Kind schenken. Er handelte auf Allahs Befehl, nicht nach eigenem Urteil.",
+            "ar": "بيّن الخضر أن الغلام كان سيحمل أبويه المؤمنين على الطغيان والكفر، وأن الله سيرزقهما ولدًا أفضل منه. وقد فعل ذلك بأمر الله لا برأيه."
+          }
+        },
+        {
+          "verse": "18:82",
+          "check": "two orphan boys",
+          "title": {
+            "en": "A father's goodness reached his children",
+            "de": "Die Güte eines Vaters erreichte seine Kinder",
+            "ar": "صلاح الأب أدرك أبناءه"
+          },
+          "body": {
+            "en": "The wall guarded a treasure for two orphans. Their father had been righteous, and Allah protected his children after him.",
+            "de": "Die Mauer schützte einen Schatz für zwei Waisen. Ihr Vater war rechtschaffen gewesen, und Allah schützte seine Kinder nach ihm.",
+            "ar": "كان الجدار يحفظ كنزًا ليتيمين، وكان أبوهما صالحًا، فحفظ الله ولديه من بعده."
+          }
+        },
+        {
+          "title": {
+            "en": "Not a rule for anyone to copy",
+            "de": "Keine Regel zum Nachahmen",
+            "ar": "ليس حكمًا يُقتدى به"
+          },
+          "body": {
+            "en": "The scholars stress that al-Khidr acted by a special command from Allah. No one may harm others by claiming hidden knowledge. We judge by what is apparent and leave the unseen to Allah.",
+            "de": "Die Gelehrten betonen, dass al-Khidr auf einen besonderen Befehl Allahs hin handelte. Niemand darf anderen schaden und sich dabei auf verborgenes Wissen berufen. Wir urteilen nach dem Sichtbaren und überlassen das Verborgene Allah.",
+            "ar": "يؤكد العلماء أن الخضر فعل ما فعل بأمر خاص من الله، فلا يجوز لأحد أن يؤذي غيره بدعوى علم خفي. نحن نحكم بالظاهر ونكل الغيب إلى الله."
+          }
+        },
+        {
+          "title": {
+            "en": "Lessons for our own lives",
+            "de": "Lehren für unser eigenes Leben",
+            "ar": "دروس لحياتنا"
+          },
+          "list": {
+            "en": [
+              "A loss can be a hidden protection",
+              "What hurts today may be mercy tomorrow",
+              "The good of parents can reach their children",
+              "Patience means trusting what you cannot yet see",
+              "Our knowledge is small beside Allah's"
+            ],
+            "de": [
+              "Ein Verlust kann ein verborgener Schutz sein",
+              "Was heute schmerzt, kann morgen Barmherzigkeit sein",
+              "Das Gute der Eltern kann ihre Kinder erreichen",
+              "Geduld heißt, dem zu vertrauen, was man noch nicht sieht",
+              "Unser Wissen ist klein neben dem Wissen Allahs"
+            ],
+            "ar": [
+              "قد تكون الخسارة حماية خفية",
+              "ما يؤلمك اليوم قد يكون رحمة غدًا",
+              "صلاح الآباء قد يدرك الأبناء",
+              "الصبر ثقة بما لم تره بعد",
+              "علمنا قليل أمام علم الله"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on Surah al-Kahf 18:71-82",
+          "url": "https://quran.com/18:71/tafsirs/en-tafisr-ibn-kathir"
+        }
+      ]
+    },
+    {
+      "id": "quran-stories-05-luqman",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": {
+          "en": "Stories of the Quran · 5",
+          "de": "Geschichten des Korans · 5",
+          "ar": "قصص القرآن · ٥"
+        },
+        "title": {
+          "en": "Luqman's advice to his son",
+          "de": "Luqmans Rat an seinen Sohn",
+          "ar": "وصايا لقمان لابنه"
+        },
+        "sub": {
+          "en": "A wise father, a few verses, and a whole education in faith and character",
+          "de": "Ein weiser Vater, wenige Verse und eine ganze Erziehung in Glauben und Charakter",
+          "ar": "أب حكيم وآيات قليلة، وفيها تربية كاملة في الإيمان والأخلاق"
+        },
+        "arabic": "لقمان الحكيم"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "Who was Luqman?",
+            "de": "Wer war Luqman?",
+            "ar": "من هو لقمان؟"
+          },
+          "body": {
+            "en": "A surah carries his name. Most scholars hold that he was a righteous, wise man rather than a prophet. What the Quran keeps of him is a father speaking to his son.",
+            "de": "Eine Sure trägt seinen Namen. Die meisten Gelehrten sehen in ihm einen rechtschaffenen, weisen Mann und keinen Propheten. Was der Koran von ihm bewahrt, ist ein Vater, der zu seinem Sohn spricht.",
+            "ar": "سُمّيت باسمه سورة كاملة. ويرى أكثر العلماء أنه كان رجلًا صالحًا حكيمًا لا نبيًّا. وما حفظه القرآن منه هو حديث أب إلى ابنه."
+          }
+        },
+        {
+          "verse": "31:12",
+          "check": "given Luqman wisdom",
+          "title": {
+            "en": "Wisdom begins with gratitude",
+            "de": "Weisheit beginnt mit Dankbarkeit",
+            "ar": "الحكمة تبدأ بالشكر"
+          },
+          "body": {
+            "en": "The first thing said about his wisdom is gratitude to Allah. And gratitude benefits the one who is grateful.",
+            "de": "Das Erste, was über seine Weisheit gesagt wird, ist Dankbarkeit gegenüber Allah. Und Dankbarkeit nützt dem, der dankbar ist.",
+            "ar": "أول ما يُذكر من حكمته شكر الله، والشكر ينفع صاحبه."
+          }
+        },
+        {
+          "title": {
+            "en": "O my dear son",
+            "de": "Mein lieber Sohn",
+            "ar": "يا بُنيّ"
+          },
+          "arabic": "يَا بُنَيَّ",
+          "body": {
+            "en": "He calls him ya bunayya, a tender form of my son. Before any instruction comes love. Advice is heard best when it is spoken with warmth.",
+            "de": "Er nennt ihn ya bunayya, eine zärtliche Form von mein Sohn. Vor jeder Anweisung steht die Liebe. Ein Rat wird am besten gehört, wenn er mit Wärme gesprochen wird.",
+            "ar": "يناديه: يا بُنيّ، بصيغة التحبب. فقبل كل توجيه تأتي المحبة، والنصيحة تُسمع أكثر إذا قيلت بدفء."
+          }
+        },
+        {
+          "title": {
+            "en": "First: Allah alone",
+            "de": "Zuerst: Allah allein",
+            "ar": "أولًا: التوحيد"
+          },
+          "body": {
+            "en": "His first advice is to associate no one with Allah, and he calls doing so a great injustice. Everything else in a person's life is built on this foundation.",
+            "de": "Sein erster Rat ist, Allah niemanden beizugesellen, und er nennt dies ein gewaltiges Unrecht. Alles andere im Leben eines Menschen baut auf diesem Fundament auf.",
+            "ar": "أول وصاياه ألا يشرك بالله، ويصف الشرك بأنه ظلم عظيم. وكل ما في حياة الإنسان يُبنى على هذا الأساس."
+          }
+        },
+        {
+          "title": {
+            "en": "Kindness to parents, even in disagreement",
+            "de": "Güte zu den Eltern, auch im Widerspruch",
+            "ar": "بر الوالدين ولو مع الخلاف"
+          },
+          "body": {
+            "en": "Between his words, Allah adds a command of His own: thank your parents, remember your mother's hardship, and stay kind to them in this world even if they push you away from faith.",
+            "de": "Zwischen seinen Worten fügt Allah ein eigenes Gebot ein: Danken Sie Ihren Eltern, denken Sie an die Mühe Ihrer Mutter und bleiben Sie in dieser Welt gütig zu ihnen, selbst wenn sie Sie vom Glauben abbringen wollen.",
+            "ar": "بين كلماته يضيف الله وصية من عنده: اشكر والديك، واذكر تعب أمك، وأحسن إليهما في الدنيا ولو دعواك إلى ترك الإيمان."
+          }
+        },
+        {
+          "title": {
+            "en": "Nothing is too small for Allah",
+            "de": "Nichts ist zu klein für Allah",
+            "ar": "لا يخفى على الله شيء"
+          },
+          "body": {
+            "en": "Even a deed as light as a mustard seed, hidden inside a rock or in the heavens, Allah will bring out. A child who knows this learns to be honest when no one is watching.",
+            "de": "Selbst eine Tat, so leicht wie ein Senfkorn, verborgen in einem Felsen oder in den Himmeln, bringt Allah hervor. Ein Kind, das dies weiß, lernt ehrlich zu sein, wenn niemand zusieht.",
+            "ar": "حتى العمل الذي يزن حبة خردل، ولو خفي في صخرة أو في السماوات، يُظهره الله. والطفل الذي يعرف هذا يتعلم الصدق حين لا يراه أحد."
+          }
+        },
+        {
+          "verse": "31:18-19",
+          "check": "lower your voice",
+          "title": {
+            "en": "Manners in public",
+            "de": "Benehmen in der Öffentlichkeit",
+            "ar": "أدب المشي والكلام"
+          },
+          "body": {
+            "en": "His advice ends with everyday manners: no arrogance toward people, a calm walk and a gentle voice.",
+            "de": "Sein Rat endet mit Umgangsformen des Alltags: keine Überheblichkeit gegenüber Menschen, ein ruhiger Gang und eine sanfte Stimme.",
+            "ar": "تنتهي وصاياه بآداب يومية: لا تكبّر على الناس، ومشي هادئ، وصوت لين."
+          }
+        },
+        {
+          "title": {
+            "en": "Luqman's advice in brief",
+            "de": "Luqmans Rat in Kürze",
+            "ar": "وصايا لقمان باختصار"
+          },
+          "list": {
+            "en": [
+              "Worship Allah alone",
+              "Be grateful to Allah and to your parents",
+              "Remember that Allah sees every small deed",
+              "Pray, encourage good, discourage wrong, be patient",
+              "Do not be arrogant; walk and speak with calm"
+            ],
+            "de": [
+              "Beten Sie Allah allein an",
+              "Seien Sie Allah und Ihren Eltern dankbar",
+              "Denken Sie daran, dass Allah jede kleine Tat sieht",
+              "Beten Sie, fördern Sie das Gute, wehren Sie dem Unrecht, seien Sie geduldig",
+              "Seien Sie nicht hochmütig; gehen und sprechen Sie ruhig"
+            ],
+            "ar": [
+              "اعبد الله وحده",
+              "اشكر الله ثم والديك",
+              "تذكّر أن الله يرى كل عمل صغير",
+              "حافظ على الصلاة، وادعُ إلى الخير، واصبر على الأذى",
+              "لا تتكبر، وامشِ وتكلم بهدوء"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on Surah Luqman 31:12-19",
+          "url": "https://quran.com/31:12/tafsirs/en-tafisr-ibn-kathir"
+        }
+      ]
+    },
+    {
+      "id": "quran-stories-06-qarun",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": {
+          "en": "Stories of the Quran · 6",
+          "de": "Geschichten des Korans · 6",
+          "ar": "قصص القرآن · ٦"
+        },
+        "title": {
+          "en": "Qarun: when wealth became a wall",
+          "de": "Qarun: als Reichtum zur Mauer wurde",
+          "ar": "قارون: حين صار المال حجابًا"
+        },
+        "sub": {
+          "en": "A rich man from the people of Musa, the advice he ignored, and what the onlookers learned",
+          "de": "Ein reicher Mann aus dem Volk Musas, der Rat, den er überhörte, und was die Zuschauer lernten",
+          "ar": "رجل غني من قوم موسى، ونصيحة أعرض عنها، ودرس تعلّمه الناظرون"
+        },
+        "arabic": "قارون"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "Richer than anyone around him",
+            "de": "Reicher als alle um ihn herum",
+            "ar": "أغنى من كل من حوله"
+          },
+          "body": {
+            "en": "Qarun was from the people of Musa; many commentators say he was a relative of his. His treasures were so great that even the keys weighed on a group of strong men. Yet he oppressed his own people.",
+            "de": "Qarun gehörte zum Volk Musas; viele Kommentatoren sagen, er sei mit ihm verwandt gewesen. Seine Schätze waren so groß, dass schon die Schlüssel eine Gruppe starker Männer schwer belasteten. Doch er unterdrückte sein eigenes Volk.",
+            "ar": "كان قارون من قوم موسى، ويذكر كثير من المفسرين أنه من قرابته. وكانت كنوزه عظيمة حتى إن مفاتيحها تُثقل جماعة من الأقوياء، ومع ذلك ظلم قومه."
+          }
+        },
+        {
+          "verse": "28:77",
+          "check": "do not forget your share of the world",
+          "title": {
+            "en": "Advice he did not want",
+            "de": "Ein Rat, den er nicht wollte",
+            "ar": "نصيحة لم يردها"
+          },
+          "body": {
+            "en": "His people did not ask him to give everything away. They asked for balance: seek the Hereafter, keep your share of this world, and be generous.",
+            "de": "Sein Volk verlangte nicht, dass er alles weggibt. Es bat um Ausgewogenheit: das Jenseits suchen, den eigenen Anteil an dieser Welt behalten und großzügig sein.",
+            "ar": "لم يطلب منه قومه أن يتخلى عن كل شيء، بل دعوه إلى التوازن: أن يطلب الآخرة، ويأخذ نصيبه من الدنيا، ويكون كريمًا."
+          }
+        },
+        {
+          "verse": "28:78",
+          "check": "because of knowledge I have",
+          "title": {
+            "en": "I earned it myself",
+            "de": "Ich habe es selbst verdient",
+            "ar": "هذا من جهدي"
+          },
+          "body": {
+            "en": "His answer was the oldest mistake of the wealthy: to see a gift from Allah as one's own achievement.",
+            "de": "Seine Antwort war der älteste Fehler der Reichen: eine Gabe Allahs als eigene Leistung zu sehen.",
+            "ar": "كان جوابه أقدم أخطاء الأغنياء: أن يرى عطاء الله إنجازًا شخصيًّا."
+          }
+        },
+        {
+          "title": {
+            "en": "A parade of wealth",
+            "de": "Ein Aufzug des Reichtums",
+            "ar": "موكب الزينة"
+          },
+          "body": {
+            "en": "One day he came out before his people in all his finery. Those who wanted this world wished they had the same. Those with knowledge reminded them that what Allah keeps for believers who do good is far better.",
+            "de": "Eines Tages trat er in all seinem Prunk vor sein Volk. Wer diese Welt wollte, wünschte sich dasselbe. Die Wissenden erinnerten daran, dass das, was Allah für Gläubige bereithält, die Gutes tun, weit besser ist.",
+            "ar": "خرج يومًا على قومه في زينته، فتمنى محبّو الدنيا مثل ما عنده. وذكّرهم أهل العلم بأن ما عند الله للمؤمنين العاملين خير بكثير."
+          }
+        },
+        {
+          "title": {
+            "en": "Swallowed by the earth",
+            "de": "Von der Erde verschlungen",
+            "ar": "ابتلعته الأرض"
+          },
+          "body": {
+            "en": "Then the earth swallowed him and his house. No group came to help him, and his wealth could not defend him. Everything that had impressed people disappeared in a moment.",
+            "de": "Dann verschlang die Erde ihn und sein Haus. Keine Schar kam ihm zu Hilfe, und sein Reichtum konnte ihn nicht verteidigen. Alles, was die Menschen beeindruckt hatte, verschwand in einem Augenblick.",
+            "ar": "ثم ابتلعته الأرض هو وداره، فلم ينصره أحد ولم يدفع عنه ماله شيئًا، وزال في لحظة كل ما أبهر الناس."
+          }
+        },
+        {
+          "title": {
+            "en": "The onlookers changed their minds",
+            "de": "Die Zuschauer dachten um",
+            "ar": "تغيّر رأي المتمنّين"
+          },
+          "body": {
+            "en": "The next morning, those who had envied him were relieved. They understood that Allah gives and withholds provision as He wills, and that wealth alone is no sign of His love.",
+            "de": "Am nächsten Morgen waren die, die ihn beneidet hatten, erleichtert. Sie verstanden, dass Allah die Versorgung gibt und zurückhält, wie Er will, und dass Reichtum allein kein Zeichen Seiner Liebe ist.",
+            "ar": "في الصباح ارتاح الذين حسدوه بالأمس، وفهموا أن الله يوسّع الرزق ويضيّقه كما يشاء، وأن المال وحده ليس علامة على محبته."
+          }
+        },
+        {
+          "verse": "28:83",
+          "check": "do not desire exaltedness",
+          "title": {
+            "en": "Who the final home is for",
+            "de": "Für wen die letzte Heimat ist",
+            "ar": "لمن الدار الآخرة؟"
+          },
+          "body": {
+            "en": "The story closes with this verse: the Hereafter belongs to those who seek neither superiority nor corruption.",
+            "de": "Die Geschichte schließt mit diesem Vers: Das Jenseits gehört denen, die weder Überlegenheit noch Unheil suchen.",
+            "ar": "تُختم القصة بهذه الآية: الآخرة لمن لا يطلب التفوق على الناس ولا الإفساد."
+          }
+        },
+        {
+          "title": {
+            "en": "Lessons from Qarun",
+            "de": "Lehren aus der Geschichte Qaruns",
+            "ar": "دروس من قصة قارون"
+          },
+          "list": {
+            "en": [
+              "Wealth is a gift from Allah, not proof of your worth",
+              "Seek the Hereafter and keep your share of this world",
+              "Do good with what you have been given",
+              "Do not envy the parade of others",
+              "Listen to people of knowledge, not to the crowd"
+            ],
+            "de": [
+              "Reichtum ist eine Gabe Allahs, kein Beweis Ihres Wertes",
+              "Suchen Sie das Jenseits, ohne Ihren Anteil an dieser Welt zu vergessen",
+              "Tun Sie Gutes mit dem, was Ihnen gegeben wurde",
+              "Beneiden Sie nicht den Prunk anderer",
+              "Hören Sie auf die Wissenden, nicht auf die Menge"
+            ],
+            "ar": [
+              "المال عطاء من الله لا دليل على قيمتك",
+              "اطلب الآخرة ولا تهمل حظك من الدنيا",
+              "أحسن بما أعطاك الله",
+              "لا تحسد غيرك على زينته",
+              "استمع لأهل العلم لا للجموع"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on Surah al-Qasas 28:76-83",
+          "url": "https://quran.com/28:76/tafsirs/en-tafisr-ibn-kathir"
+        }
+      ]
+    },
+    {
+      "id": "quran-stories-07-owners-of-the-garden",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": {
+          "en": "Stories of the Quran · 7",
+          "de": "Geschichten des Korans · 7",
+          "ar": "قصص القرآن · ٧"
+        },
+        "title": {
+          "en": "The owners of the garden: a harvest gone overnight",
+          "de": "Die Besitzer des Gartens: eine Ernte, über Nacht verloren",
+          "ar": "أصحاب الجنة: حصاد زال في ليلة"
+        },
+        "sub": {
+          "en": "A story from Surah al-Qalam about greed, a forgotten in sha' Allah, and the way back",
+          "de": "Eine Geschichte aus Sure al-Qalam über Geiz, ein vergessenes in scha' Allah und den Weg zurück",
+          "ar": "قصة من سورة القلم عن الشح ونسيان المشيئة وطريق العودة"
+        },
+        "arabic": "أصحاب الجنة"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "A garden and a father's habit",
+            "de": "Ein Garten und die Gewohnheit eines Vaters",
+            "ar": "بستان وعادة أب"
+          },
+          "body": {
+            "en": "The commentators mention a righteous man who owned a fruitful garden and gave the poor their share at every harvest. After his death, his sons decided that this generosity had to stop.",
+            "de": "Die Kommentatoren erwähnen einen rechtschaffenen Mann, der einen fruchtbaren Garten besaß und den Armen bei jeder Ernte ihren Anteil gab. Nach seinem Tod beschlossen seine Söhne, mit dieser Großzügigkeit aufzuhören.",
+            "ar": "يذكر المفسرون رجلًا صالحًا كان له بستان مثمر، وكان يعطي الفقراء حقهم عند كل حصاد. فلما مات قرر أبناؤه أن يوقفوا هذا العطاء."
+          }
+        },
+        {
+          "verse": "68:17-18",
+          "check": "without making exception",
+          "title": {
+            "en": "A plan without in sha' Allah",
+            "de": "Ein Plan ohne in scha' Allah",
+            "ar": "خطة بلا مشيئة"
+          },
+          "body": {
+            "en": "They swore to harvest at dawn, so sure of themselves that they left no room for the will of Allah.",
+            "de": "Sie schworen, bei Tagesanbruch zu ernten, so sicher, dass sie keinen Raum für den Willen Allahs ließen.",
+            "ar": "أقسموا أن يحصدوا مع الفجر، واثقين بأنفسهم حتى لم يتركوا مكانًا لمشيئة الله."
+          }
+        },
+        {
+          "title": {
+            "en": "While they slept",
+            "de": "Während sie schliefen",
+            "ar": "وهم نيام"
+          },
+          "body": {
+            "en": "That night something from their Lord came over the garden. By morning it looked as if it had already been harvested, dark and empty.",
+            "de": "In jener Nacht kam etwas von ihrem Herrn über den Garten. Am Morgen sah er aus, als wäre er längst abgeerntet, dunkel und leer.",
+            "ar": "في تلك الليلة نزل بالبستان أمر من ربهم، فأصبح كأنه قد حُصد، مظلمًا خاليًا."
+          }
+        },
+        {
+          "verse": "68:23-25",
+          "check": "poor person",
+          "title": {
+            "en": "Whispering on the way",
+            "de": "Flüstern auf dem Weg",
+            "ar": "همس في الطريق"
+          },
+          "body": {
+            "en": "They set out quietly so that no poor person would notice. Greed made them secretive.",
+            "de": "Sie brachen leise auf, damit kein Armer es bemerkte. Die Gier machte sie heimlich.",
+            "ar": "خرجوا خفية حتى لا يشعر بهم فقير، فجعلهم الشح يتسترون."
+          }
+        },
+        {
+          "title": {
+            "en": "Lost? No, deprived",
+            "de": "Verirrt? Nein, beraubt",
+            "ar": "أخطأنا الطريق؟ بل حُرمنا"
+          },
+          "body": {
+            "en": "When they saw the garden, they first thought they had taken the wrong road. Then the truth sank in: they were not lost; they had been deprived of what they wanted to keep from others.",
+            "de": "Als sie den Garten sahen, dachten sie zuerst, sie hätten sich im Weg geirrt. Dann wurde ihnen die Wahrheit klar: Sie hatten sich nicht verirrt, ihnen war genommen worden, was sie anderen vorenthalten wollten.",
+            "ar": "لما رأوا البستان ظنوا أولًا أنهم أخطؤوا الطريق، ثم أدركوا الحقيقة: لم يضلّوا، بل حُرموا ما أرادوا أن يمنعوه غيرهم."
+          }
+        },
+        {
+          "verse": "68:28-29",
+          "check": "most moderate of them",
+          "title": {
+            "en": "The voice in the middle",
+            "de": "Die Stimme der Mitte",
+            "ar": "صوت الأعدل"
+          },
+          "body": {
+            "en": "One brother had warned them before. Now they listened, glorified their Lord and admitted their wrong.",
+            "de": "Ein Bruder hatte sie vorher gewarnt. Jetzt hörten sie auf ihn, priesen ihren Herrn und gestanden ihr Unrecht ein.",
+            "ar": "كان أحدهم قد حذّرهم من قبل، فاستمعوا إليه الآن وسبّحوا ربهم واعترفوا بظلمهم."
+          }
+        },
+        {
+          "title": {
+            "en": "From blame to hope",
+            "de": "Vom Vorwurf zur Hoffnung",
+            "ar": "من اللوم إلى الرجاء"
+          },
+          "body": {
+            "en": "At first they blamed one another. Then they turned to Allah, hoping He would give them something better. Their loss became the beginning of their repentance.",
+            "de": "Zuerst machten sie einander Vorwürfe. Dann wandten sie sich an Allah in der Hoffnung, dass Er ihnen etwas Besseres gibt. Der Verlust wurde zum Anfang ihrer Umkehr.",
+            "ar": "في البداية تلاوموا، ثم رجعوا إلى الله يرجون أن يعوّضهم بما هو أفضل، فصار الخسران بداية توبتهم."
+          }
+        },
+        {
+          "title": {
+            "en": "Lessons from the garden",
+            "de": "Lehren aus dem Garten",
+            "ar": "دروس من البستان"
+          },
+          "list": {
+            "en": [
+              "The poor have a share in what Allah gives you",
+              "Say in sha' Allah when you plan",
+              "Greed hides; generosity has nothing to hide",
+              "Listen to the moderate voice before it is too late",
+              "A loss can open the door to repentance"
+            ],
+            "de": [
+              "Die Armen haben einen Anteil an dem, was Allah Ihnen gibt",
+              "Sagen Sie in scha' Allah, wenn Sie planen",
+              "Gier versteckt sich; Großzügigkeit hat nichts zu verbergen",
+              "Hören Sie auf die maßvolle Stimme, bevor es zu spät ist",
+              "Ein Verlust kann die Tür zur Umkehr öffnen"
+            ],
+            "ar": [
+              "للفقراء حق فيما يعطيك الله",
+              "قل إن شاء الله حين تخطط",
+              "الشح يتخفّى، والكرم لا يخفي شيئًا",
+              "استمع للصوت المعتدل قبل فوات الأوان",
+              "قد تفتح الخسارة باب التوبة"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on Surah al-Qalam 68:17-33",
+          "url": "https://quran.com/68:29/tafsirs/en-tafisr-ibn-kathir"
+        }
+      ]
+    },
+    {
+      "id": "quran-stories-08-two-gardens",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": {
+          "en": "Stories of the Quran · 8",
+          "de": "Geschichten des Korans · 8",
+          "ar": "قصص القرآن · ٨"
+        },
+        "title": {
+          "en": "The man with two gardens and the friend who told the truth",
+          "de": "Der Mann mit den zwei Gärten und der Freund, der die Wahrheit sagte",
+          "ar": "صاحب الجنتين وصديق صدقه القول"
+        },
+        "sub": {
+          "en": "A parable from Surah al-Kahf about pride, ma sha' Allah, and what truly lasts",
+          "de": "Ein Gleichnis aus Sure al-Kahf über Stolz, ma scha' Allah und das, was wirklich bleibt",
+          "ar": "مثل من سورة الكهف عن الغرور وقول ما شاء الله وما يبقى حقًّا"
+        },
+        "arabic": "صاحب الجنتين"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "A parable of two men",
+            "de": "Ein Gleichnis von zwei Männern",
+            "ar": "مثل رجلين"
+          },
+          "body": {
+            "en": "The Quran presents this as a parable. One man had two gardens of vines, bordered by palm trees, with crops between them and a river flowing through. Every season they gave their full fruit.",
+            "de": "Der Koran stellt dies als Gleichnis vor. Ein Mann besaß zwei Weingärten, umsäumt von Palmen, mit Feldern dazwischen und einem Fluss, der hindurchfloss. Jede Saison brachten sie ihre volle Frucht.",
+            "ar": "يعرض القرآن هذا مثلًا: رجل له بستانان من عنب تحفّهما النخيل، وبينهما زرع، ويجري فيهما نهر، وكانا يعطيان ثمرهما كاملًا في كل موسم."
+          }
+        },
+        {
+          "verse": "18:34-35",
+          "check": "greater than you in wealth",
+          "title": {
+            "en": "Pride in front of a friend",
+            "de": "Stolz vor einem Freund",
+            "ar": "تفاخر أمام صاحبه"
+          },
+          "body": {
+            "en": "He measured his worth by money and followers, and he looked down on his companion. Then he walked into his garden, wronging his own soul.",
+            "de": "Er maß seinen Wert an Geld und Gefolge und sah auf seinen Gefährten herab. Dann betrat er seinen Garten und tat seiner eigenen Seele Unrecht.",
+            "ar": "قاس قيمته بالمال والأتباع، ونظر إلى صاحبه من علٍ، ثم دخل بستانه ظالمًا لنفسه."
+          }
+        },
+        {
+          "title": {
+            "en": "Three mistakes at once",
+            "de": "Drei Fehler auf einmal",
+            "ar": "ثلاثة أخطاء دفعة واحدة"
+          },
+          "body": {
+            "en": "He thought his garden would never perish. He doubted that the Hour would ever come. And he assumed that, if he returned to his Lord, he would get something even better. Wealth had made him forget Allah.",
+            "de": "Er glaubte, sein Garten werde nie vergehen. Er zweifelte daran, dass die Stunde je kommt. Und er nahm an, er bekäme, falls er zu seinem Herrn zurückkehrt, noch Besseres. Der Reichtum hatte ihn Allah vergessen lassen.",
+            "ar": "ظن أن بستانه لن يفنى أبدًا، وشكّ في قيام الساعة، وزعم أنه إن رُدّ إلى ربه وجد ما هو أفضل. لقد أنساه المال ربه."
+          }
+        },
+        {
+          "title": {
+            "en": "A friend who told the truth",
+            "de": "Ein Freund, der die Wahrheit sagte",
+            "ar": "صديق صدقه القول"
+          },
+          "arabic": "ما شاء الله",
+          "body": {
+            "en": "His poorer companion did not flatter him. He reminded him that Allah had created him from dust, declared his own pure faith, and told him what he should have said on entering his garden.",
+            "de": "Sein ärmerer Gefährte schmeichelte ihm nicht. Er erinnerte ihn daran, dass Allah ihn aus Staub erschaffen hatte, bekannte seinen eigenen reinen Glauben und sagte ihm, was er beim Betreten seines Gartens hätte sagen sollen.",
+            "ar": "لم يتملّقه صاحبه الفقير، بل ذكّره بأن الله خلقه من تراب، وأعلن توحيده الخالص، وبيّن له ما كان ينبغي أن يقوله حين دخل بستانه."
+          }
+        },
+        {
+          "verse": "18:39",
+          "check": "no power except in",
+          "title": {
+            "en": "Two short phrases",
+            "de": "Zwei kurze Sätze",
+            "ar": "كلمتان قصيرتان"
+          },
+          "body": {
+            "en": "Ma sha' Allah, la quwwata illa billah: whatever you admire, you return to Allah's will and Allah's power.",
+            "de": "Ma scha' Allah, la quwwata illa billah: Was immer Sie bewundern, führen Sie damit auf Allahs Willen und Allahs Kraft zurück.",
+            "ar": "قول «ما شاء الله» و«لا قوة إلا بالله» يردّ كل ما يعجبك إلى مشيئة الله وقوته."
+          }
+        },
+        {
+          "verse": "18:42",
+          "check": "turn his hands about",
+          "title": {
+            "en": "Overnight, it was gone",
+            "de": "Über Nacht war alles fort",
+            "ar": "في ليلة ذهب كل شيء"
+          },
+          "body": {
+            "en": "Ruin surrounded his fruit. He wrung his hands over all he had spent and finally understood what his friend had meant.",
+            "de": "Verderben umschloss seine Früchte. Er rang die Hände über alles, was er ausgegeben hatte, und verstand endlich, was sein Freund gemeint hatte.",
+            "ar": "أحاط الهلاك بثمره، فصار يقلّب كفيه حسرة على ما أنفق، وفهم أخيرًا ما قصده صاحبه."
+          }
+        },
+        {
+          "title": {
+            "en": "What remains",
+            "de": "Was bleibt",
+            "ar": "ما يبقى"
+          },
+          "body": {
+            "en": "Right after the parable, the Quran likens this world to plants that turn green after rain and then dry up and blow away. What lasts are the good deeds.",
+            "de": "Direkt nach dem Gleichnis vergleicht der Koran diese Welt mit Pflanzen, die nach dem Regen grünen und dann vertrocknen und verweht werden. Was bleibt, sind die guten Taten.",
+            "ar": "بعد المثل مباشرة يشبّه القرآن الدنيا بنبات يخضرّ بعد المطر ثم ييبس وتذروه الرياح. وما يبقى هو العمل الصالح."
+          }
+        },
+        {
+          "title": {
+            "en": "Lessons from the two gardens",
+            "de": "Lehren aus den zwei Gärten",
+            "ar": "دروس من الجنتين"
+          },
+          "list": {
+            "en": [
+              "Say ma sha' Allah when something pleases you",
+              "Do not measure people by their wealth",
+              "Nothing in this world is permanent",
+              "A true friend tells you the truth kindly",
+              "Invest in deeds that remain"
+            ],
+            "de": [
+              "Sagen Sie ma scha' Allah, wenn Ihnen etwas gefällt",
+              "Messen Sie Menschen nicht an ihrem Besitz",
+              "Nichts in dieser Welt ist von Dauer",
+              "Ein wahrer Freund sagt Ihnen die Wahrheit mit Güte",
+              "Investieren Sie in Taten, die bleiben"
+            ],
+            "ar": [
+              "قل ما شاء الله إذا أعجبك شيء",
+              "لا تقِس الناس بأموالهم",
+              "لا شيء في الدنيا يدوم",
+              "الصديق الحق يصدقك القول برفق",
+              "استثمر في الأعمال الباقية"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on Surah al-Kahf 18:32-46",
+          "url": "https://quran.com/18:32/tafsirs/en-tafisr-ibn-kathir"
+        }
+      ]
+    },
+    {
+      "id": "quran-stories-09-people-of-the-elephant",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": {
+          "en": "Stories of the Quran · 9",
+          "de": "Geschichten des Korans · 9",
+          "ar": "قصص القرآن · ٩"
+        },
+        "title": {
+          "en": "The People of the Elephant: the year Abraha marched on Makkah",
+          "de": "Die Leute des Elefanten: das Jahr, in dem Abraha gegen Mekka zog",
+          "ar": "أصحاب الفيل: عام زحف أبرهة إلى مكة"
+        },
+        "sub": {
+          "en": "Surah al-Fil tells it in five verses. The sira writers add the details.",
+          "de": "Sure al-Fil erzählt es in fünf Versen. Die Sira-Schreiber ergänzen die Einzelheiten.",
+          "ar": "تحكيها سورة الفيل في خمس آيات، ويضيف أهل السيرة التفاصيل."
+        },
+        "arabic": "عام الفيل"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "A church to rival the Ka'bah",
+            "de": "Eine Kirche als Rivalin der Kaaba",
+            "ar": "كنيسة تنافس الكعبة"
+          },
+          "body": {
+            "en": "The sira writers report that Abraha, who ruled Yemen for the king of Abyssinia, built a magnificent church in San'a and wanted the Arabs to make pilgrimage there instead of to Makkah.",
+            "de": "Die Sira-Schreiber berichten, dass Abraha, der den Jemen für den König von Abessinien regierte, in Sanaa eine prächtige Kirche baute und wollte, dass die Araber dorthin pilgern statt nach Mekka.",
+            "ar": "يروي أهل السيرة أن أبرهة، وكان يحكم اليمن باسم ملك الحبشة، بنى كنيسة فخمة في صنعاء، وأراد أن يحجّ العرب إليها بدل مكة."
+          }
+        },
+        {
+          "title": {
+            "en": "An army led by an elephant",
+            "de": "Ein Heer, angeführt von einem Elefanten",
+            "ar": "جيش يتقدمه فيل"
+          },
+          "body": {
+            "en": "When that failed, he marched on Makkah with a large army led by an elephant, determined to destroy the Ka'bah. The reports describe a huge elephant, unlike any seen before.",
+            "de": "Als das scheiterte, zog er mit einem großen Heer gegen Mekka, angeführt von einem Elefanten, entschlossen, die Kaaba zu zerstören. Die Berichte beschreiben einen gewaltigen Elefanten, wie man ihn nie zuvor gesehen hatte.",
+            "ar": "فلما فشل ذلك سار إلى مكة بجيش كبير يتقدمه فيل، عازمًا على هدم الكعبة. وتصف الروايات فيلًا عظيمًا لم يُرَ مثله."
+          }
+        },
+        {
+          "title": {
+            "en": "The House has a Lord",
+            "de": "Das Haus hat einen Herrn",
+            "ar": "للبيت رب يحميه"
+          },
+          "body": {
+            "en": "According to Ibn Ishaq, Abraha's men seized the camels of 'Abd al-Muttalib, the Prophet's grandfather. He asked only for his camels back, explaining that the House had its own Lord who would protect it.",
+            "de": "Nach Ibn Ishaq nahmen Abrahas Männer die Kamele von 'Abd al-Muttalib, dem Großvater des Propheten. Er verlangte nur seine Kamele zurück und erklärte, das Haus habe einen eigenen Herrn, der es schützen werde.",
+            "ar": "يروي ابن إسحاق أن جند أبرهة أخذوا إبل عبد المطلب جد النبي، فلم يطلب إلا إبله، وقال إن للبيت ربًّا يحميه."
+          }
+        },
+        {
+          "verse": "105:1-2",
+          "check": "companions of the elephant",
+          "title": {
+            "en": "Their plan came to nothing",
+            "de": "Ihr Plan lief ins Leere",
+            "ar": "كيد ذهب سدى"
+          },
+          "body": {
+            "en": "The surah opens with a question to the Prophet. The event was so recent that people in Makkah still remembered it.",
+            "de": "Die Sure beginnt mit einer Frage an den Propheten. Das Ereignis lag so kurz zurück, dass sich die Menschen in Mekka noch daran erinnerten.",
+            "ar": "تبدأ السورة بسؤال للنبي، وكانت الحادثة قريبة حتى إن أهل مكة كانوا يذكرونها."
+          }
+        },
+        {
+          "verse": "105:3-5",
+          "check": "birds in flocks",
+          "title": {
+            "en": "Birds against an army",
+            "de": "Vögel gegen ein Heer",
+            "ar": "طير في وجه جيش"
+          },
+          "body": {
+            "en": "No human army defended the Ka'bah. Allah sent flocks of birds, and the mighty army was left like chewed straw.",
+            "de": "Kein menschliches Heer verteidigte die Kaaba. Allah sandte Scharen von Vögeln, und das mächtige Heer blieb zurück wie zerkautes Stroh.",
+            "ar": "لم يدافع عن الكعبة جيش من البشر، فأرسل الله أسرابًا من الطير، وصار الجيش العظيم كالتبن الممضوغ."
+          }
+        },
+        {
+          "title": {
+            "en": "The year of the Prophet's birth",
+            "de": "Das Jahr der Geburt des Propheten",
+            "ar": "عام مولد النبي"
+          },
+          "body": {
+            "en": "The Arabs called that year the Year of the Elephant. According to the best-known view, the Prophet Muhammad was born in that same year in Makkah.",
+            "de": "Die Araber nannten jenes Jahr das Jahr des Elefanten. Nach der bekanntesten Ansicht wurde der Prophet Muhammad im selben Jahr in Mekka geboren.",
+            "ar": "سمّى العرب ذلك العام عام الفيل، وعلى أشهر الأقوال وُلد النبي محمد في العام نفسه بمكة."
+          }
+        },
+        {
+          "verse": "106:3-4",
+          "check": "Lord of this House",
+          "title": {
+            "en": "The next surah: gratitude",
+            "de": "Die nächste Sure: Dankbarkeit",
+            "ar": "السورة التالية: الشكر"
+          },
+          "body": {
+            "en": "Surah Quraysh follows. The House that Allah protected is the reason for their safety and food, so they are called to worship its Lord.",
+            "de": "Danach folgt Sure Quraisch. Das Haus, das Allah schützte, ist der Grund für ihre Sicherheit und Nahrung; darum werden sie gerufen, seinem Herrn zu dienen.",
+            "ar": "تليها سورة قريش: البيت الذي حماه الله سبب أمنهم وطعامهم، فهم مدعوون إلى عبادة ربه."
+          }
+        },
+        {
+          "title": {
+            "en": "Lessons from the Year of the Elephant",
+            "de": "Lehren aus dem Jahr des Elefanten",
+            "ar": "دروس من عام الفيل"
+          },
+          "list": {
+            "en": [
+              "Allah protects what He wills, without our strength",
+              "Arrogant plans end in loss",
+              "Do your part and leave the rest to Allah",
+              "Safety and food are blessings that call for worship"
+            ],
+            "de": [
+              "Allah schützt, was Er will, auch ohne unsere Stärke",
+              "Hochmütige Pläne enden im Verlust",
+              "Tun Sie Ihren Teil und überlassen Sie den Rest Allah",
+              "Sicherheit und Nahrung sind Gaben, die zum Gottesdienst rufen"
+            ],
+            "ar": [
+              "يحمي الله ما يشاء دون حاجة إلى قوتنا",
+              "تنتهي خطط المتكبرين إلى الخسران",
+              "افعل ما عليك ودع الباقي لله",
+              "الأمن والطعام نعمتان تدعوان إلى العبادة"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Ibn Hisham, as-Sira an-Nabawiyya (after Ibn Ishaq), the story of Abraha"
+        },
+        {
+          "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim (Arabic), on Surah al-Fil (the account of Ibn Ishaq)",
+          "url": "https://quran.com/105:1/tafsirs/ar-tafsir-ibn-kathir"
+        }
+      ]
+    },
+    {
+      "id": "quran-stories-10-talut-and-jalut",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": {
+          "en": "Stories of the Quran · 10",
+          "de": "Geschichten des Korans · 10",
+          "ar": "قصص القرآن · ١٠"
+        },
+        "title": {
+          "en": "Talut and Jalut: when the few stood firm",
+          "de": "Talut und Dschalut: als die Wenigen standhielten",
+          "ar": "طالوت وجالوت: حين ثبتت القلة"
+        },
+        "sub": {
+          "en": "A king chosen for knowledge and strength, a river as a test, and a young Dawud",
+          "de": "Ein König, erwählt für Wissen und Kraft, ein Fluss als Prüfung und ein junger Dawud",
+          "ar": "ملك اختير لعلمه وقوته، ونهر للابتلاء، وداود الشاب"
+        },
+        "arabic": "طالوت وجالوت"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "A people asking for a king",
+            "de": "Ein Volk verlangt einen König",
+            "ar": "قوم يطلبون ملكًا"
+          },
+          "body": {
+            "en": "After the time of Musa, the leaders of the Children of Israel asked one of their prophets for a king to lead them in battle. Early commentators such as Mujahid name him Shamwil, Samuel. He warned them they might turn back when the time came.",
+            "de": "Nach der Zeit Musas baten die Führer der Kinder Israils einen ihrer Propheten um einen König, der sie in den Kampf führt. Frühe Kommentatoren wie Mudschahid nennen ihn Schamwil, Samuel. Er warnte sie, dass sie zurückweichen könnten, wenn es so weit sei.",
+            "ar": "بعد زمن موسى طلب وجهاء بني إسرائيل من نبي لهم أن يعيّن ملكًا يقودهم في القتال. ويسمّيه بعض المفسرين المتقدمين كمجاهد شمويل، وقد حذّرهم أن يتراجعوا إذا جاء الأمر."
+          }
+        },
+        {
+          "verse": "2:247",
+          "check": "chosen him over you",
+          "title": {
+            "en": "Chosen, not inherited",
+            "de": "Erwählt, nicht geerbt",
+            "ar": "اختيار لا وراثة"
+          },
+          "body": {
+            "en": "Leadership is not measured by wealth. Talut was chosen for knowledge and strength.",
+            "de": "Führung bemisst sich nicht am Reichtum. Talut wurde für Wissen und Kraft erwählt.",
+            "ar": "القيادة لا تقاس بالمال، فقد اختير طالوت لعلمه وقوته."
+          }
+        },
+        {
+          "title": {
+            "en": "A sign: the Ark returns",
+            "de": "Ein Zeichen: die Lade kehrt zurück",
+            "ar": "آية: عودة التابوت"
+          },
+          "body": {
+            "en": "As a sign of his kingship, the Ark came back to them, carried by angels. It brought tranquillity from Allah and relics from the houses of Musa and Harun.",
+            "de": "Als Zeichen seiner Herrschaft kehrte die Lade zu ihnen zurück, von Engeln getragen. Sie brachte Ruhe von Allah und Überreste aus den Häusern Musas und Haruns.",
+            "ar": "وكانت آية ملكه أن يعود إليهم التابوت تحمله الملائكة، وفيه طمأنينة من الله، وآثار من بيت موسى وهارون."
+          }
+        },
+        {
+          "title": {
+            "en": "The test of the river",
+            "de": "Die Prüfung am Fluss",
+            "ar": "ابتلاء النهر"
+          },
+          "body": {
+            "en": "On the march, Talut told his soldiers that a river would test them: whoever drank from it was not with him, except for a single handful. Most of them drank. Discipline in small things showed who was ready for big ones.",
+            "de": "Auf dem Marsch sagte Talut seinen Soldaten, ein Fluss werde sie prüfen: Wer daraus trinke, gehöre nicht zu ihm, außer einer einzigen Handvoll. Die meisten tranken. Disziplin im Kleinen zeigte, wer für das Große bereit war.",
+            "ar": "في الطريق أخبر طالوت جنوده أن نهرًا سيختبرهم: من شرب منه فليس معه إلا من أخذ حفنة بيده. فشرب أكثرهم، وكشف الانضباط في الصغير من يصلح للكبير."
+          }
+        },
+        {
+          "title": {
+            "en": "Numbers do not decide",
+            "de": "Nicht die Zahl entscheidet",
+            "ar": "العدد لا يحسم"
+          },
+          "body": {
+            "en": "Facing Jalut's army, many lost heart. Those certain of meeting Allah reminded them: numbers do not decide, Allah's permission does, and He stands with those who are patient.",
+            "de": "Angesichts des Heeres Dschaluts verloren viele den Mut. Die, die gewiss waren, Allah zu begegnen, erinnerten sie: Nicht die Zahl entscheidet, sondern Allahs Erlaubnis, und Er steht denen bei, die geduldig sind.",
+            "ar": "أمام جيش جالوت فقد كثيرون شجاعتهم، فذكّرهم الموقنون بلقاء الله أن العدد لا يحسم الأمر، بل إذن الله، وأنه سبحانه مع الصابرين."
+          }
+        },
+        {
+          "verse": "2:250",
+          "check": "pour upon us patience",
+          "title": {
+            "en": "A prayer before battle",
+            "de": "Ein Gebet vor dem Kampf",
+            "ar": "دعاء قبل المعركة"
+          },
+          "body": {
+            "en": "They asked for three things: patience, firm feet and victory. Their strength came from this prayer, not from their numbers.",
+            "de": "Sie baten um drei Dinge: Geduld, festen Stand und Sieg. Ihre Stärke kam aus diesem Gebet, nicht aus ihrer Zahl.",
+            "ar": "سألوا ثلاثة أمور: الصبر وثبات الأقدام والنصر، فكانت قوتهم من دعائهم لا من عددهم."
+          }
+        },
+        {
+          "verse": "2:251",
+          "check": "David killed Goliath",
+          "title": {
+            "en": "A young Dawud",
+            "de": "Ein junger Dawud",
+            "ar": "داود الشاب"
+          },
+          "body": {
+            "en": "The decisive blow came from Dawud, a young shepherd in the reports al-Tabari cites. Allah later gave him kingship, wisdom and prophethood.",
+            "de": "Den entscheidenden Schlag führte Dawud, nach den Berichten bei at-Tabari ein junger Hirte. Später gab Allah ihm Königsherrschaft, Weisheit und Prophetentum.",
+            "ar": "جاءت الضربة الحاسمة من داود، وكان في الروايات التي ساقها الطبري راعيًا شابًّا، ثم آتاه الله الملك والحكمة والنبوة."
+          }
+        },
+        {
+          "title": {
+            "en": "Lessons from Talut's army",
+            "de": "Lehren aus dem Heer Taluts",
+            "ar": "دروس من جيش طالوت"
+          },
+          "list": {
+            "en": [
+              "Leadership needs knowledge and strength, not wealth",
+              "Small tests reveal who is ready for big ones",
+              "Numbers do not decide; Allah's permission does",
+              "Ask for patience and firm feet before you ask for victory",
+              "Allah can raise a hero from among the youngest"
+            ],
+            "de": [
+              "Führung braucht Wissen und Kraft, nicht Reichtum",
+              "Kleine Prüfungen zeigen, wer für große bereit ist",
+              "Nicht die Zahl entscheidet, sondern Allahs Erlaubnis",
+              "Bitten Sie um Geduld und festen Stand, bevor Sie um Sieg bitten",
+              "Allah kann aus den Jüngsten einen Helden hervorbringen"
+            ],
+            "ar": [
+              "القيادة تحتاج علمًا وقوة لا مالًا",
+              "الابتلاءات الصغيرة تكشف المستعدين للكبيرة",
+              "العدد لا يحسم، بل إذن الله",
+              "اسأل الصبر والثبات قبل أن تسأل النصر",
+              "قد يُخرج الله البطل من أصغر القوم"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on Surah al-Baqarah 2:246-251",
+          "url": "https://quran.com/2:246/tafsirs/en-tafisr-ibn-kathir"
+        },
+        {
+          "label": "Al-Tabari, Jami' al-Bayan, on 2:251 (Dawud as a young shepherd)",
+          "url": "https://quran.com/2:251/tafsirs/ar-tafsir-al-tabari"
+        }
+      ]
+    },
+    {
+      "id": "quran-stories-11-the-cow",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": {
+          "en": "Stories of the Quran · 11",
+          "de": "Geschichten des Korans · 11",
+          "ar": "قصص القرآن · ١١"
+        },
+        "title": {
+          "en": "The cow of Bani Isra'il: when questions became excuses",
+          "de": "Die Kuh der Kinder Israils: als Fragen zu Ausreden wurden",
+          "ar": "بقرة بني إسرائيل: حين صارت الأسئلة أعذارًا"
+        },
+        "sub": {
+          "en": "The story that gave Surah al-Baqarah its name, and what it teaches about obedience",
+          "de": "Die Geschichte, die Sure al-Baqara ihren Namen gab, und was sie über Gehorsam lehrt",
+          "ar": "القصة التي سُمّيت بها سورة البقرة، وما تعلّمه عن الطاعة"
+        },
+        "arabic": "البقرة"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "A murder no one confessed",
+            "de": "Ein Mord, den niemand gestand",
+            "ar": "قتيل لا يُعرف قاتله"
+          },
+          "body": {
+            "en": "A man was killed among the Children of Israel, and the groups accused one another. The commentators mention that the killer was a relative who hoped to inherit. Musa was asked to settle the matter.",
+            "de": "Unter den Kindern Israils wurde ein Mann getötet, und die Gruppen beschuldigten einander. Die Kommentatoren erwähnen, dass der Mörder ein Verwandter war, der erben wollte. Musa wurde gebeten, die Sache zu klären.",
+            "ar": "قُتل رجل من بني إسرائيل، فتدافعت الجماعات التهمة. ويذكر المفسرون أن القاتل كان قريبًا له طمع في ميراثه، فرُفع الأمر إلى موسى."
+          }
+        },
+        {
+          "verse": "2:67",
+          "check": "slaughter a cow",
+          "title": {
+            "en": "A simple command",
+            "de": "Ein einfacher Befehl",
+            "ar": "أمر بسيط"
+          },
+          "body": {
+            "en": "They answered with suspicion, as if Musa were joking. He sought refuge in Allah from acting like the ignorant.",
+            "de": "Sie antworteten mit Misstrauen, als scherze Musa. Er nahm Zuflucht bei Allah davor, wie die Unwissenden zu handeln.",
+            "ar": "قابلوه بالريبة كأنه يمزح، فاستعاذ بالله من أن يكون مثل الجاهلين."
+          }
+        },
+        {
+          "title": {
+            "en": "Question after question",
+            "de": "Frage um Frage",
+            "ar": "سؤال بعد سؤال"
+          },
+          "body": {
+            "en": "What age? What colour? What kind? Each answer narrowed the choice and made the cow harder to find. The commentators note that at first any cow would have been enough.",
+            "de": "Welches Alter? Welche Farbe? Welche Art? Jede Antwort engte die Wahl ein und machte die Suche schwerer. Die Kommentatoren bemerken, dass anfangs jede Kuh genügt hätte.",
+            "ar": "ما عمرها؟ ما لونها؟ ما صفتها؟ وكلما جاء جواب ضاق الاختيار وصعب البحث. ويذكر المفسرون أن أي بقرة كانت تكفي في البداية."
+          }
+        },
+        {
+          "verse": "2:71",
+          "check": "they could hardly do it",
+          "title": {
+            "en": "Finally, and reluctantly",
+            "de": "Endlich, und nur widerwillig",
+            "ar": "أخيرًا وعلى كره"
+          },
+          "body": {
+            "en": "When they finally obeyed, they almost did not. Delaying a clear command made it heavier, not lighter.",
+            "de": "Als sie endlich gehorchten, hätten sie es beinahe doch nicht getan. Das Hinauszögern eines klaren Befehls machte ihn schwerer, nicht leichter.",
+            "ar": "حين أطاعوا أخيرًا كادوا ألا يفعلوا، فالتسويف في الأمر الواضح يثقله ولا يخففه."
+          }
+        },
+        {
+          "verse": "2:72-73",
+          "check": "bring the dead to life",
+          "title": {
+            "en": "The dead man speaks",
+            "de": "Der Tote spricht",
+            "ar": "القتيل يتكلم"
+          },
+          "body": {
+            "en": "They struck the dead man with a part of the cow. The commentators mention that he came to life for a moment and named his killer.",
+            "de": "Sie schlugen den Toten mit einem Teil der Kuh. Die Kommentatoren erwähnen, dass er für einen Augenblick lebendig wurde und seinen Mörder nannte.",
+            "ar": "ضربوا القتيل بجزء من البقرة، ويذكر المفسرون أنه عاد إلى الحياة لحظة وسمّى قاتله."
+          }
+        },
+        {
+          "title": {
+            "en": "Hearts harder than stone",
+            "de": "Herzen härter als Stein",
+            "ar": "قلوب أقسى من الصخر"
+          },
+          "body": {
+            "en": "Right after the story, the Quran describes hearts that grew hard even after such signs. Yet even stones split open for water. A heart that hears Allah's signs should soften more than a rock.",
+            "de": "Direkt nach der Geschichte beschreibt der Koran Herzen, die selbst nach solchen Zeichen hart wurden. Doch selbst Steine spalten sich für Wasser. Ein Herz, das Allahs Zeichen hört, sollte weicher werden als ein Fels.",
+            "ar": "بعد القصة مباشرة يصف القرآن قلوبًا قست رغم هذه الآيات، مع أن من الصخر ما يتصدع فيسيل منه الماء. فالقلب الذي يسمع آيات الله أولى أن يلين من الصخر."
+          }
+        },
+        {
+          "title": {
+            "en": "Lessons from the cow",
+            "de": "Lehren aus der Geschichte der Kuh",
+            "ar": "دروس من قصة البقرة"
+          },
+          "list": {
+            "en": [
+              "Obey a clear command without looking for loopholes",
+              "Too many questions can be a way of avoiding action",
+              "Do not make your religion harder than Allah made it",
+              "Allah brings hidden things to light",
+              "He who revived one man will revive all people"
+            ],
+            "de": [
+              "Befolgen Sie einen klaren Befehl, ohne Schlupflöcher zu suchen",
+              "Zu viele Fragen können eine Flucht vor dem Handeln sein",
+              "Machen Sie Ihre Religion nicht schwerer, als Allah sie gemacht hat",
+              "Allah bringt Verborgenes ans Licht",
+              "Wer einen Toten belebte, wird alle Menschen beleben"
+            ],
+            "ar": [
+              "أطع الأمر الواضح دون بحث عن مخارج",
+              "كثرة الأسئلة قد تكون هروبًا من العمل",
+              "لا تشدّد على نفسك فيما يسّره الله",
+              "يُظهر الله ما يُخفى",
+              "من أحيا قتيلًا يحيي الناس جميعًا"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on Surah al-Baqarah 2:67-74",
+          "url": "https://quran.com/2:67/tafsirs/en-tafisr-ibn-kathir"
+        }
+      ]
+    },
+    {
+      "id": "quran-stories-12-two-sons-of-adam",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": {
+          "en": "Stories of the Quran · 12",
+          "de": "Geschichten des Korans · 12",
+          "ar": "قصص القرآن · ١٢"
+        },
+        "title": {
+          "en": "The two sons of Adam: the first crime and the first regret",
+          "de": "Die zwei Söhne Adams: das erste Verbrechen und die erste Reue",
+          "ar": "ابنا آدم: أول جريمة وأول ندم"
+        },
+        "sub": {
+          "en": "Envy, restraint, a crow, and why one life weighs as much as all of humanity",
+          "de": "Neid, Zurückhaltung, ein Rabe und warum ein Leben so viel wiegt wie die ganze Menschheit",
+          "ar": "حسد وكفّ يد وغراب، ولماذا تعدل نفس واحدة الناس جميعًا"
+        },
+        "arabic": "ابنا آدم"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "Two brothers, two offerings",
+            "de": "Zwei Brüder, zwei Opfergaben",
+            "ar": "أخوان وقربانان"
+          },
+          "body": {
+            "en": "The Quran does not name them; the commentators call them Qabil and Habil. Each brought an offering to Allah. One was accepted, the other was not.",
+            "de": "Der Koran nennt sie nicht beim Namen; die Kommentatoren nennen sie Qabil und Habil. Jeder brachte Allah eine Opfergabe dar. Die eine wurde angenommen, die andere nicht.",
+            "ar": "لم يسمّهما القرآن، ويسمّيهما المفسرون قابيل وهابيل. قدّم كل منهما قربانًا لله، فتقبّل الله قربان أحدهما دون الآخر."
+          }
+        },
+        {
+          "verse": "5:27",
+          "check": "only accepts from the righteous",
+          "title": {
+            "en": "What makes a deed accepted",
+            "de": "Was eine Tat annehmbar macht",
+            "ar": "ما يجعل العمل مقبولًا"
+          },
+          "body": {
+            "en": "Instead of looking at his own heart, the rejected brother threatened the other. The answer: acceptance depends on taqwa.",
+            "de": "Statt in sein eigenes Herz zu schauen, bedrohte der abgewiesene Bruder den anderen. Die Antwort: Die Annahme hängt an der Gottesfurcht.",
+            "ar": "بدل أن ينظر في قلبه، هدّد الأخُ المردودُ أخاه، فجاء الجواب: القبول مرتبط بالتقوى."
+          }
+        },
+        {
+          "title": {
+            "en": "A hand held back",
+            "de": "Eine zurückgehaltene Hand",
+            "ar": "يد كفّتها الخشية"
+          },
+          "body": {
+            "en": "The righteous brother refused to answer violence with violence. His fear of Allah held his hand back. That restraint was not weakness; it was faith.",
+            "de": "Der rechtschaffene Bruder weigerte sich, Gewalt mit Gewalt zu beantworten. Seine Ehrfurcht vor Allah hielt seine Hand zurück. Diese Zurückhaltung war keine Schwäche, sondern Glaube.",
+            "ar": "رفض الأخ الصالح أن يقابل العدوان بمثله، فقد كفّت خشيةُ الله يده. ولم يكن ذلك ضعفًا، بل إيمانًا."
+          }
+        },
+        {
+          "title": {
+            "en": "When envy wins",
+            "de": "Wenn der Neid siegt",
+            "ar": "حين ينتصر الحسد"
+          },
+          "body": {
+            "en": "His own soul made the murder seem acceptable to him, and he killed his brother. Envy left unchecked can lead a person to what he once thought impossible.",
+            "de": "Seine eigene Seele ließ ihm den Mord annehmbar erscheinen, und er tötete seinen Bruder. Ungezügelter Neid kann einen Menschen zu dem führen, was er einst für unmöglich hielt.",
+            "ar": "سوّلت له نفسه الجريمة فقتل أخاه. والحسد إذا تُرك بلا علاج قد يقود صاحبه إلى ما كان يظنه مستحيلًا."
+          }
+        },
+        {
+          "verse": "5:31",
+          "check": "sent a crow",
+          "title": {
+            "en": "Taught by a crow",
+            "de": "Belehrt von einem Raben",
+            "ar": "يتعلم من غراب"
+          },
+          "body": {
+            "en": "He did not even know what to do with his brother's body. A bird had to teach him, and regret came too late.",
+            "de": "Er wusste nicht einmal, was er mit dem Leichnam seines Bruders tun sollte. Ein Vogel musste es ihn lehren, und die Reue kam zu spät.",
+            "ar": "لم يعرف حتى ماذا يصنع بجسد أخيه، فعلّمه طائر، وجاء الندم متأخرًا."
+          }
+        },
+        {
+          "verse": "5:32",
+          "check": "saved mankind entirely",
+          "title": {
+            "en": "One life, all of humanity",
+            "de": "Ein Leben, die ganze Menschheit",
+            "ar": "نفس واحدة كالناس جميعًا"
+          },
+          "body": {
+            "en": "From this story comes one of the strongest statements on the value of human life.",
+            "de": "Aus dieser Geschichte folgt eine der stärksten Aussagen über den Wert menschlichen Lebens.",
+            "ar": "من هذه القصة تأتي واحدة من أقوى العبارات في قيمة النفس الإنسانية."
+          }
+        },
+        {
+          "hadith": "bukhari:3335",
+          "check": "first son of Adam",
+          "title": {
+            "en": "The first to begin it",
+            "de": "Der Erste, der damit begann",
+            "ar": "أول من سنّ القتل"
+          },
+          "body": {
+            "en": "Opening the door to a wrong weighs heavily: the one who began it stays tied to every repetition after him.",
+            "de": "Eine Tür zum Unrecht zu öffnen wiegt schwer: Wer damit begann, bleibt mit jeder späteren Wiederholung verbunden.",
+            "ar": "فتحُ باب الظلم أمر جسيم: من بدأه بقي مرتبطًا بكل من كرّره بعده."
+          }
+        },
+        {
+          "title": {
+            "en": "Lessons from the two brothers",
+            "de": "Lehren aus der Geschichte der zwei Brüder",
+            "ar": "دروس من قصة الأخوين"
+          },
+          "list": {
+            "en": [
+              "Look at your own heart before blaming others",
+              "Allah accepts deeds from those who fear Him",
+              "Treat envy early, before it grows",
+              "Restraint in anger is strength",
+              "Every human life is sacred"
+            ],
+            "de": [
+              "Schauen Sie in Ihr eigenes Herz, bevor Sie andere beschuldigen",
+              "Allah nimmt Taten von denen an, die Ihn fürchten",
+              "Behandeln Sie Neid früh, bevor er wächst",
+              "Selbstbeherrschung im Zorn ist Stärke",
+              "Jedes menschliche Leben ist unantastbar"
+            ],
+            "ar": [
+              "انظر في قلبك قبل أن تلوم غيرك",
+              "يتقبل الله العمل من أهل التقوى",
+              "عالج الحسد مبكرًا قبل أن يكبر",
+              "ضبط النفس عند الغضب قوة",
+              "كل نفس إنسانية معصومة"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on Surah al-Ma'idah 5:27-32",
+          "url": "https://quran.com/5:27/tafsirs/en-tafisr-ibn-kathir"
+        }
+      ]
+    },
+    {
+      "id": "quran-stories-13-people-of-the-sabbath",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": {
+          "en": "Stories of the Quran · 13",
+          "de": "Geschichten des Korans · 13",
+          "ar": "قصص القرآن · ١٣"
+        },
+        "title": {
+          "en": "The people of the Sabbath: a clever trick that fooled no one",
+          "de": "Die Leute des Sabbats: eine List, die niemanden täuschte",
+          "ar": "أصحاب السبت: حيلة لم تخدع أحدًا"
+        },
+        "sub": {
+          "en": "A town by the sea, a test with fish, and three kinds of people",
+          "de": "Eine Stadt am Meer, eine Prüfung mit Fischen und drei Arten von Menschen",
+          "ar": "قرية على البحر، وابتلاء بالحيتان، وثلاثة أصناف من الناس"
+        },
+        "arabic": "أصحاب السبت"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "A town by the sea",
+            "de": "Eine Stadt am Meer",
+            "ar": "قرية على البحر"
+          },
+          "body": {
+            "en": "The Sabbath was a day of rest for the Children of Israel, and fishing on it was forbidden. Many commentators place this town on the Red Sea coast and name it Ayla. The Quran leaves it unnamed.",
+            "de": "Der Sabbat war für die Kinder Israils ein Ruhetag, an dem das Fischen verboten war. Viele Kommentatoren verorten diese Stadt an der Küste des Roten Meeres und nennen sie Aila. Der Koran nennt keinen Namen.",
+            "ar": "كان السبت يوم راحة لبني إسرائيل، يحرم فيه الصيد. ويذكر كثير من المفسرين أن القرية كانت على ساحل البحر الأحمر، ويسمّونها أيلة، ولم يسمّها القرآن."
+          }
+        },
+        {
+          "verse": "7:163",
+          "check": "came to them openly",
+          "title": {
+            "en": "A test that looked like an opportunity",
+            "de": "Eine Prüfung, die wie eine Gelegenheit aussah",
+            "ar": "ابتلاء في صورة فرصة"
+          },
+          "body": {
+            "en": "On the Sabbath the fish came right to the surface. On other days they stayed away. The test was patience with an easy temptation.",
+            "de": "Am Sabbat kamen die Fische direkt an die Oberfläche, an anderen Tagen blieben sie fern. Die Prüfung war Geduld gegenüber einer leichten Versuchung.",
+            "ar": "في يوم السبت كانت الحيتان تأتي ظاهرة على سطح الماء، وفي غيره تغيب، فكان الابتلاء صبرًا أمام إغراء سهل."
+          }
+        },
+        {
+          "title": {
+            "en": "A clever trick",
+            "de": "Eine schlaue List",
+            "ar": "حيلة ذكية"
+          },
+          "body": {
+            "en": "The commentators mention that some of them set nets or dug pools before the Sabbath and collected the catch after it ended. They kept the letter of the law and broke its spirit.",
+            "de": "Die Kommentatoren erwähnen, dass einige von ihnen vor dem Sabbat Netze auslegten oder Becken gruben und den Fang einsammelten, als er vorüber war. Sie hielten den Buchstaben des Gesetzes ein und brachen seinen Sinn.",
+            "ar": "يذكر المفسرون أن بعضهم كانوا ينصبون الشباك أو يحفرون الحياض قبل السبت ويجمعون الصيد بعد انقضائه، فحفظوا ظاهر الحكم وهدموا مقصده."
+          }
+        },
+        {
+          "title": {
+            "en": "Three groups",
+            "de": "Drei Gruppen",
+            "ar": "ثلاث فرق"
+          },
+          "body": {
+            "en": "The town split into three: those who broke the command, those who warned them, and those who stayed silent and asked why anyone should still bother.",
+            "de": "Die Stadt teilte sich in drei Gruppen: die, die das Gebot brachen, die, die sie warnten, und die, die schwiegen und fragten, warum man sich überhaupt noch Mühe gebe.",
+            "ar": "انقسم أهل القرية ثلاث فرق: من خالف الأمر، ومن نهاهم، ومن سكت وتساءل: لِمَ ننصحهم أصلًا؟"
+          }
+        },
+        {
+          "verse": "7:164",
+          "check": "To be absolved before your Lord",
+          "title": {
+            "en": "Why keep advising?",
+            "de": "Warum weiter ermahnen?",
+            "ar": "لماذا نستمر في النصح؟"
+          },
+          "body": {
+            "en": "Two reasons: to be free of blame before Allah, and the hope that they might still change. Results are not ours to control.",
+            "de": "Zwei Gründe: vor Allah frei von Schuld zu sein, und die Hoffnung, dass sie sich vielleicht doch ändern. Das Ergebnis liegt nicht in unserer Hand.",
+            "ar": "لسببين: البراءة أمام الله، ورجاء أن يرجعوا. أما النتائج فليست بأيدينا."
+          }
+        },
+        {
+          "verse": "7:165",
+          "check": "We saved those who had forbidden evil",
+          "title": {
+            "en": "Who was saved",
+            "de": "Wer gerettet wurde",
+            "ar": "من نجا"
+          },
+          "body": {
+            "en": "The verse names those who forbade evil as the saved. About the silent group, the commentators differ.",
+            "de": "Der Vers nennt die, die das Unrecht verboten, als die Geretteten. Über die schweigende Gruppe sind die Kommentatoren uneins.",
+            "ar": "تنص الآية على نجاة الذين نهوا عن السوء، واختلف المفسرون في الفرقة الساكتة."
+          }
+        },
+        {
+          "title": {
+            "en": "A lasting warning",
+            "de": "Eine bleibende Warnung",
+            "ar": "عبرة باقية"
+          },
+          "body": {
+            "en": "The Quran says they were turned into apes, a warning for their time and for later generations who fear Allah. Most commentators take this literally. Mujahid read it as a change of their hearts; Ibn Kathir calls that view unusual.",
+            "de": "Der Koran sagt, sie wurden in Affen verwandelt, eine Warnung für ihre Zeit und für alle Späteren, die Allah fürchten. Die meisten Kommentatoren verstehen dies wörtlich. Mudschahid deutete es als Verwandlung ihrer Herzen; Ibn Kathir nennt diese Ansicht ungewöhnlich.",
+            "ar": "يخبر القرآن أنهم مُسخوا قردة، عبرةً لزمانهم ولمن بعدهم من المتقين. وحمله أكثر المفسرين على الحقيقة، وفهمه مجاهد على أنه مسخ للقلوب، ووصف ابن كثير هذا القول بأنه غريب."
+          }
+        },
+        {
+          "title": {
+            "en": "Lessons from the Sabbath",
+            "de": "Lehren aus der Geschichte des Sabbats",
+            "ar": "دروس من قصة السبت"
+          },
+          "list": {
+            "en": [
+              "Loopholes do not deceive Allah",
+              "Tests often come as easy opportunities",
+              "Keep advising, even when few listen",
+              "Silence in the face of wrong is not neutral"
+            ],
+            "de": [
+              "Schlupflöcher täuschen Allah nicht",
+              "Prüfungen kommen oft als leichte Gelegenheiten",
+              "Ermahnen Sie weiter, auch wenn nur wenige zuhören",
+              "Schweigen angesichts von Unrecht ist nicht neutral"
+            ],
+            "ar": [
+              "الحيل لا تخدع الله",
+              "كثيرًا ما يأتي الابتلاء في صورة فرصة سهلة",
+              "استمر في النصح ولو قلّ السامعون",
+              "السكوت عن المنكر ليس حيادًا"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on Surah al-A'raf 7:163-166",
+          "url": "https://quran.com/7:163/tafsirs/en-tafisr-ibn-kathir"
+        },
+        {
+          "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 2:65-66 (the tricks with nets and pools)",
+          "url": "https://quran.com/2:65/tafsirs/en-tafisr-ibn-kathir"
+        },
+        {
+          "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim (Arabic), on 2:65 (the view of Mujahid)",
+          "url": "https://quran.com/2:65/tafsirs/ar-tafsir-ibn-kathir"
+        }
+      ]
+    },
+    {
+      "id": "quran-stories-14-believer-of-pharaohs-family",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": {
+          "en": "Stories of the Quran · 14",
+          "de": "Geschichten des Korans · 14",
+          "ar": "قصص القرآن · ١٤"
+        },
+        "title": {
+          "en": "The believer in Pharaoh's palace: one brave, wise voice",
+          "de": "Der Gläubige im Palast Pharaos: eine mutige, weise Stimme",
+          "ar": "مؤمن آل فرعون: صوت شجاع حكيم"
+        },
+        "sub": {
+          "en": "Surah Ghafir tells of a man who hid his faith until the moment it mattered",
+          "de": "Sure Ghafir erzählt von einem Mann, der seinen Glauben verbarg, bis es darauf ankam",
+          "ar": "تروي سورة غافر خبر رجل كتم إيمانه حتى جاءت اللحظة الحاسمة"
+        },
+        "arabic": "مؤمن آل فرعون"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "A believer inside the palace",
+            "de": "Ein Gläubiger im Palast",
+            "ar": "مؤمن في القصر"
+          },
+          "body": {
+            "en": "He belonged to Pharaoh's own family and kept his faith hidden. The commentators mention different names for him. When Pharaoh planned to kill Musa, he could no longer stay silent.",
+            "de": "Er gehörte zur Familie Pharaos und hielt seinen Glauben verborgen. Die Kommentatoren nennen verschiedene Namen für ihn. Als Pharao plante, Musa zu töten, konnte er nicht länger schweigen.",
+            "ar": "كان من آل فرعون أنفسهم، وكان يخفي إيمانه، ويذكر المفسرون له أسماء مختلفة. فلما عزم فرعون على قتل موسى لم يعد يستطيع السكوت."
+          }
+        },
+        {
+          "verse": "40:28",
+          "check": "concealed his faith",
+          "title": {
+            "en": "He spoke when it mattered",
+            "de": "Er sprach, als es darauf ankam",
+            "ar": "تكلّم حين وجب الكلام"
+          },
+          "body": {
+            "en": "He did not insult anyone. He reasoned step by step and left his people a way to change their minds.",
+            "de": "Er beleidigte niemanden. Er argumentierte Schritt für Schritt und ließ seinem Volk einen Weg, umzudenken.",
+            "ar": "لم يشتم أحدًا، بل حاورهم خطوة خطوة وترك لقومه بابًا للرجوع."
+          }
+        },
+        {
+          "title": {
+            "en": "Reminding them of history",
+            "de": "Er erinnerte an die Geschichte",
+            "ar": "تذكير بالتاريخ"
+          },
+          "body": {
+            "en": "He warned them of the fate of the people of Nuh, 'Ad and Thamud. He reminded them that Yusuf had once come to Egypt with clear signs, and that their forefathers had doubted him too.",
+            "de": "Er warnte sie vor dem Schicksal der Völker Nuhs, 'Ads und Thamuds. Er erinnerte daran, dass Yusuf einst mit klaren Zeichen nach Ägypten gekommen war und dass schon ihre Vorfahren an ihm gezweifelt hatten.",
+            "ar": "حذّرهم مصير قوم نوح وعاد وثمود، وذكّرهم بأن يوسف أتى مصر بآيات واضحة فارتاب فيه أسلافهم."
+          }
+        },
+        {
+          "title": {
+            "en": "Pharaoh's tower",
+            "de": "Pharaos Turm",
+            "ar": "صرح فرعون"
+          },
+          "body": {
+            "en": "Pharaoh mocked the message and told Haman to build a tower so that he could look for the God of Musa. Power that refuses to listen often turns to mockery.",
+            "de": "Pharao verspottete die Botschaft und befahl Haman, einen Turm zu bauen, damit er nach dem Gott Musas Ausschau halten könne. Macht, die nicht zuhören will, flüchtet sich oft in Spott.",
+            "ar": "سخر فرعون من الرسالة، وأمر هامان أن يبني له برجًا عاليًا ليبحث عن إله موسى. والسلطة التي ترفض الإصغاء كثيرًا ما تلجأ إلى السخرية."
+          }
+        },
+        {
+          "verse": "40:38-39",
+          "check": "worldly life",
+          "title": {
+            "en": "This life is short",
+            "de": "Dieses Leben ist kurz",
+            "ar": "الدنيا قصيرة"
+          },
+          "body": {
+            "en": "His call was simple: follow the right way, because this world is a brief enjoyment and the Hereafter is the lasting home.",
+            "de": "Sein Ruf war einfach: dem rechten Weg folgen, denn diese Welt ist ein kurzer Genuss und das Jenseits die bleibende Heimat.",
+            "ar": "كانت دعوته بسيطة: اتباع سبيل الرشد، فالدنيا متاع قصير والآخرة دار البقاء."
+          }
+        },
+        {
+          "verse": "40:44-45",
+          "check": "I entrust my affair to Allah",
+          "title": {
+            "en": "Entrusting everything to Allah",
+            "de": "Alles Allah anvertrauen",
+            "ar": "تفويض الأمر إلى الله"
+          },
+          "body": {
+            "en": "He had done his part. He handed the outcome to Allah, and Allah protected him from their plots.",
+            "de": "Er hatte seinen Teil getan. Den Ausgang überließ er Allah, und Allah schützte ihn vor ihren Ränken.",
+            "ar": "أدّى ما عليه، ثم ترك العاقبة لله، فحماه الله من كيدهم."
+          }
+        },
+        {
+          "title": {
+            "en": "Lessons from the believer",
+            "de": "Lehren von dem Gläubigen",
+            "ar": "دروس من مؤمن آل فرعون"
+          },
+          "list": {
+            "en": [
+              "One honest voice can matter in the halls of power",
+              "Speak the truth with wisdom, not with insults",
+              "Use history as a mirror",
+              "Remember that this world is short",
+              "Do your part, then entrust the outcome to Allah"
+            ],
+            "de": [
+              "Eine ehrliche Stimme kann in den Hallen der Macht zählen",
+              "Sagen Sie die Wahrheit mit Weisheit, nicht mit Beleidigungen",
+              "Nutzen Sie die Geschichte als Spiegel",
+              "Denken Sie daran, dass diese Welt kurz ist",
+              "Tun Sie Ihren Teil und vertrauen Sie den Ausgang Allah an"
+            ],
+            "ar": [
+              "صوت صادق واحد قد يُحدث أثرًا في مجالس السلطة",
+              "قل الحق بحكمة لا بشتيمة",
+              "اجعل التاريخ مرآة",
+              "تذكّر أن الدنيا قصيرة",
+              "أدِّ ما عليك ثم فوّض العاقبة إلى الله"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on Surah Ghafir 40:28-45",
+          "url": "https://quran.com/40:28/tafsirs/en-tafisr-ibn-kathir"
+        },
+        {
+          "label": "Al-Qurtubi, al-Jami' li-Ahkam al-Qur'an, on 40:28 (the names given for him)",
+          "url": "https://quran.com/40:28/tafsirs/ar-tafseer-al-qurtubi"
+        }
+      ]
+    },
+    {
+      "id": "quran-stories-15-the-hoopoe",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": {
+          "en": "Stories of the Quran · 15",
+          "de": "Geschichten des Korans · 15",
+          "ar": "قصص القرآن · ١٥"
+        },
+        "title": {
+          "en": "The hoopoe and Sulayman: a small bird with big news",
+          "de": "Der Wiedehopf und Sulaiman: ein kleiner Vogel mit großer Nachricht",
+          "ar": "الهدهد وسليمان: طائر صغير ونبأ عظيم"
+        },
+        "sub": {
+          "en": "From Surah an-Naml: responsibility, courage and checking the news before acting",
+          "de": "Aus Sure an-Naml: Verantwortung, Mut und das Prüfen einer Nachricht vor dem Handeln",
+          "ar": "من سورة النمل: المسؤولية والشجاعة والتثبت من الخبر قبل العمل"
+        },
+        "arabic": "الهدهد"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "One bird was missing",
+            "de": "Ein Vogel fehlte",
+            "ar": "طائر واحد غائب"
+          },
+          "body": {
+            "en": "Sulayman reviewed the birds of his kingdom and noticed that a single small bird was absent: the hoopoe. A good leader notices even the smallest member of the team.",
+            "de": "Sulaiman musterte die Vögel seines Reiches und bemerkte, dass ein einziger kleiner Vogel fehlte: der Wiedehopf. Eine gute Führung bemerkt selbst das kleinste Mitglied ihres Teams.",
+            "ar": "تفقّد سليمان الطير في مملكته، فلاحظ غياب طائر صغير واحد هو الهدهد. والقائد الجيد ينتبه حتى لأصغر أفراد فريقه."
+          }
+        },
+        {
+          "verse": "27:20-21",
+          "check": "hoopoe",
+          "title": {
+            "en": "Firm, but open to an excuse",
+            "de": "Streng, aber offen für eine Entschuldigung",
+            "ar": "حزم مع قبول العذر"
+          },
+          "body": {
+            "en": "He promised a serious consequence, unless the hoopoe brought a clear reason. Even a king left room for an explanation.",
+            "de": "Er kündigte eine ernste Folge an, es sei denn, der Wiedehopf brächte einen klaren Grund. Selbst ein König ließ Raum für eine Erklärung.",
+            "ar": "توعّده بعقوبة شديدة إلا أن يأتي بعذر واضح، فحتى الملك ترك مجالًا للتفسير."
+          }
+        },
+        {
+          "title": {
+            "en": "A bird with knowledge a king lacked",
+            "de": "Ein Vogel mit Wissen, das dem König fehlte",
+            "ar": "طائر يعلم ما لم يعلمه الملك"
+          },
+          "body": {
+            "en": "The hoopoe soon returned and spoke boldly: it had seen something Sulayman did not know, and it brought certain news from Saba. Knowledge is not tied to rank or size.",
+            "de": "Der Wiedehopf kam bald zurück und sprach mutig: Er habe etwas gesehen, das Sulaiman nicht wusste, und bringe sichere Nachricht aus Saba. Wissen hängt nicht an Rang oder Größe.",
+            "ar": "عاد الهدهد بعد قليل وتكلّم بجرأة: رأى ما لم يعلمه سليمان، وجاء من سبأ بخبر أكيد. فالعلم لا يرتبط بالمنصب ولا بالحجم."
+          }
+        },
+        {
+          "verse": "27:24-26",
+          "check": "prostrating to the sun",
+          "title": {
+            "en": "A bird that cared about tawhid",
+            "de": "Ein Vogel, dem der Tawhid am Herzen lag",
+            "ar": "طائر يغار على التوحيد"
+          },
+          "body": {
+            "en": "What troubled the hoopoe most was not the queen's wealth or throne. It was a people bowing to the sun instead of to Allah.",
+            "de": "Was den Wiedehopf am meisten bewegte, war nicht der Reichtum oder Thron der Königin, sondern ein Volk, das sich vor der Sonne niederwarf statt vor Allah.",
+            "ar": "لم يكن أكثر ما أقلق الهدهد مالَ الملكة ولا عرشها، بل قوم يعبدون الشمس ويتركون عبادة الله."
+          }
+        },
+        {
+          "verse": "27:27-28",
+          "check": "whether you were truthful",
+          "title": {
+            "en": "Check the news first",
+            "de": "Zuerst die Nachricht prüfen",
+            "ar": "التثبت قبل الحكم"
+          },
+          "body": {
+            "en": "Sulayman neither punished the bird nor believed it blindly. He tested the report by sending a letter and waiting for the reply.",
+            "de": "Sulaiman bestrafte den Vogel weder, noch glaubte er ihm blind. Er prüfte den Bericht, indem er einen Brief sandte und auf die Antwort wartete.",
+            "ar": "لم يعاقب سليمان الهدهد ولم يصدّقه تصديقًا أعمى، بل اختبر الخبر بإرسال كتاب وانتظار الرد."
+          }
+        },
+        {
+          "title": {
+            "en": "From one bird, a whole nation",
+            "de": "Durch einen Vogel ein ganzes Volk",
+            "ar": "بطائر واحد اهتدت أمة"
+          },
+          "body": {
+            "en": "That small report started a chain of events that ended with the Queen of Saba submitting to Allah together with Sulayman. Never underestimate a small act done sincerely.",
+            "de": "Dieser kleine Bericht setzte eine Kette von Ereignissen in Gang, an deren Ende sich die Königin von Saba gemeinsam mit Sulaiman Allah ergab. Unterschätzen Sie nie eine kleine, aufrichtige Tat.",
+            "ar": "أطلق هذا الخبر الصغير سلسلة أحداث انتهت بإسلام ملكة سبأ مع سليمان لله. فلا تستهن بعمل صغير خالص."
+          }
+        },
+        {
+          "title": {
+            "en": "Lessons from the hoopoe",
+            "de": "Lehren vom Wiedehopf",
+            "ar": "دروس من الهدهد"
+          },
+          "list": {
+            "en": [
+              "A good leader notices the smallest absence",
+              "Hear the excuse before you judge",
+              "Speak the truth with confidence, whatever your size",
+              "Care about how people worship, not only what they own",
+              "Verify news before acting on it"
+            ],
+            "de": [
+              "Eine gute Führung bemerkt auch das kleinste Fehlen",
+              "Hören Sie die Entschuldigung, bevor Sie urteilen",
+              "Sagen Sie die Wahrheit mit Zuversicht, wie klein Sie auch sind",
+              "Achten Sie darauf, wen Menschen anbeten, nicht nur, was sie besitzen",
+              "Prüfen Sie Nachrichten, bevor Sie danach handeln"
+            ],
+            "ar": [
+              "القائد الجيد يلاحظ أصغر غياب",
+              "اسمع العذر قبل أن تحكم",
+              "قل الحق بثقة مهما كان حجمك",
+              "اهتم بعبادة الناس لا بأموالهم فقط",
+              "تثبّت من الخبر قبل أن تعمل به"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on Surah an-Naml 27:20-28",
+          "url": "https://quran.com/27:20/tafsirs/en-tafisr-ibn-kathir"
+        }
+      ]
+    },
+    {
+      "id": "quran-stories-16-queen-of-saba",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": {
+          "en": "Stories of the Quran · 16",
+          "de": "Geschichten des Korans · 16",
+          "ar": "قصص القرآن · ١٦"
+        },
+        "title": {
+          "en": "Sulayman and the Queen of Saba: two rulers, one truth",
+          "de": "Sulaiman und die Königin von Saba: zwei Herrscher, eine Wahrheit",
+          "ar": "سليمان وملكة سبأ: ملكان وحق واحد"
+        },
+        "sub": {
+          "en": "A letter, a gift, a throne and a palace of glass: what leadership looks like on both sides",
+          "de": "Ein Brief, ein Geschenk, ein Thron und ein Palast aus Glas: wie Führung auf beiden Seiten aussieht",
+          "ar": "كتاب وهدية وعرش وصرح من زجاج: صورة القيادة في الجانبين"
+        },
+        "arabic": "ملكة سبأ"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "A letter that began with Bismillah",
+            "de": "Ein Brief, der mit Bismillah begann",
+            "ar": "كتاب يبدأ بالبسملة"
+          },
+          "body": {
+            "en": "Sulayman's letter to the queen opened with the name of Allah, the Most Merciful. It asked her not to act in pride and to come in submission. It was short, clear and respectful.",
+            "de": "Sulaimans Brief an die Königin begann mit dem Namen Allahs, des Allerbarmers. Er forderte sie auf, nicht hochmütig zu sein und sich zu ergeben. Er war kurz, klar und respektvoll.",
+            "ar": "بدأ كتاب سليمان إلى الملكة باسم الله الرحمن الرحيم، ودعاها إلى ترك الاستعلاء والمجيء مسلمة. كان قصيرًا واضحًا محترمًا."
+          }
+        },
+        {
+          "title": {
+            "en": "A queen who consulted",
+            "de": "Eine Königin, die sich beriet",
+            "ar": "ملكة تستشير"
+          },
+          "body": {
+            "en": "She did not decide alone. She gathered her advisers, and they offered military strength but left the decision to her. She knew that conquering kings often ruin cities, so she chose a wiser path.",
+            "de": "Sie entschied nicht allein. Sie versammelte ihre Ratgeber, die ihr militärische Stärke anboten, die Entscheidung aber ihr überließen. Sie wusste, dass erobernde Könige Städte oft verwüsten, und wählte einen klügeren Weg.",
+            "ar": "لم تنفرد بالقرار، بل جمعت مستشاريها، فعرضوا قوتهم العسكرية وتركوا الأمر لها. وكانت تعلم أن الملوك الغزاة كثيرًا ما يخرّبون المدن، فاختارت طريقًا أحكم."
+          }
+        },
+        {
+          "verse": "27:36",
+          "check": "what Allah has given me is better",
+          "title": {
+            "en": "A gift that could not buy him",
+            "de": "Ein Geschenk, das ihn nicht kaufen konnte",
+            "ar": "هدية لا تشتري الحق"
+          },
+          "body": {
+            "en": "She tested him with a rich gift. He refused it: his message was about faith, not wealth.",
+            "de": "Sie prüfte ihn mit einem reichen Geschenk. Er lehnte es ab: Seine Botschaft ging um Glauben, nicht um Reichtum.",
+            "ar": "اختبرته بهدية ثمينة فردّها، فرسالته رسالة إيمان لا مال."
+          }
+        },
+        {
+          "title": {
+            "en": "The throne arrives",
+            "de": "Der Thron kommt an",
+            "ar": "العرش يحضر"
+          },
+          "body": {
+            "en": "Before she arrived, her throne was brought to Sulayman in the blink of an eye by a man with knowledge of the Scripture. Sulayman's first reaction was gratitude: he saw it as a test of whether he would be thankful.",
+            "de": "Noch vor ihrer Ankunft wurde ihr Thron in einem Augenblick zu Sulaiman gebracht, von einem Mann mit Wissen aus der Schrift. Sulaimans erste Reaktion war Dankbarkeit: Er sah darin eine Prüfung, ob er dankbar sein würde.",
+            "ar": "قبل وصولها أُحضر عرشها إلى سليمان في طرفة عين، أحضره رجل أوتي علمًا من الكتاب. فكان أول ما بدر من سليمان الشكر، إذ رأى فيه ابتلاء: أيشكر أم لا؟"
+          }
+        },
+        {
+          "verse": "27:41",
+          "check": "Disguise for her her throne",
+          "title": {
+            "en": "A test of her insight",
+            "de": "Eine Prüfung ihres Urteilsvermögens",
+            "ar": "اختبار لبصيرتها"
+          },
+          "body": {
+            "en": "Sulayman had the throne altered to see whether she would recognise it and be guided.",
+            "de": "Sulaiman ließ den Thron verändern, um zu sehen, ob sie ihn erkennt und rechtgeleitet wird.",
+            "ar": "أمر سليمان بتغيير العرش ليرى هل تعرفه وتهتدي."
+          }
+        },
+        {
+          "title": {
+            "en": "A careful answer",
+            "de": "Eine vorsichtige Antwort",
+            "ar": "جواب حكيم"
+          },
+          "body": {
+            "en": "Asked whether this was her throne, she neither denied it nor fully confirmed it: it seemed to be the same. Her careful answer showed a sharp and honest mind.",
+            "de": "Gefragt, ob dies ihr Thron sei, verneinte sie nicht und bestätigte nicht ganz: Es scheine derselbe zu sein. Ihre vorsichtige Antwort zeigte einen scharfen und ehrlichen Verstand.",
+            "ar": "سُئلت عن عرشها فلم تنفِ ولم تجزم، بل قالت إنه يشبهه. فدلّ جوابها على عقل حاد صادق."
+          }
+        },
+        {
+          "verse": "27:44",
+          "check": "I submit with Solomon",
+          "title": {
+            "en": "Submission with Sulayman, not to him",
+            "de": "Hingabe mit Sulaiman, nicht an ihn",
+            "ar": "أسلمت مع سليمان لا له"
+          },
+          "body": {
+            "en": "At the glass floor she saw how appearances deceive. Note her words: she submitted with Sulayman to Allah, as an equal before Him.",
+            "de": "Am gläsernen Boden erkannte sie, wie der Schein täuscht. Achten Sie auf ihre Worte: Sie ergab sich mit Sulaiman Allah, gleichrangig vor Ihm.",
+            "ar": "عند الأرضية الزجاجية رأت كيف يخدع الظاهر. وتأمّل كلماتها: أسلمت مع سليمان لله، فالجميع سواء أمامه."
+          }
+        },
+        {
+          "title": {
+            "en": "Lessons on leadership",
+            "de": "Lehren über Führung",
+            "ar": "دروس في القيادة"
+          },
+          "list": {
+            "en": [
+              "Begin with the name of Allah and speak clearly",
+              "Consult before deciding",
+              "Avoid war when wisdom offers another way",
+              "Truth cannot be bought with gifts",
+              "Meet every blessing with gratitude",
+              "Accept the truth when you see it, whoever brings it"
+            ],
+            "de": [
+              "Beginnen Sie mit dem Namen Allahs und sprechen Sie klar",
+              "Beraten Sie sich, bevor Sie entscheiden",
+              "Meiden Sie Krieg, wenn Weisheit einen anderen Weg bietet",
+              "Wahrheit lässt sich nicht mit Geschenken kaufen",
+              "Begegnen Sie jeder Gabe mit Dankbarkeit",
+              "Nehmen Sie die Wahrheit an, wenn Sie sie sehen, gleich wer sie bringt"
+            ],
+            "ar": [
+              "ابدأ باسم الله وتكلم بوضوح",
+              "استشر قبل أن تقرر",
+              "تجنّب الحرب إذا فتحت الحكمة طريقًا آخر",
+              "الحق لا يُشترى بالهدايا",
+              "قابل كل نعمة بالشكر",
+              "اقبل الحق إذا رأيته أيًّا كان حامله"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on Surah an-Naml 27:29-44",
+          "url": "https://quran.com/27:29/tafsirs/en-tafisr-ibn-kathir"
+        }
+      ]
+    },
+    {
+      "id": "quran-stories-17-town-of-ya-sin",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": {
+          "en": "Stories of the Quran · 17",
+          "de": "Geschichten des Korans · 17",
+          "ar": "قصص القرآن · ١٧"
+        },
+        "title": {
+          "en": "The town in Surah Ya-Sin and the man who came running",
+          "de": "Die Stadt in Sure Ya-Sin und der Mann, der herbeigelaufen kam",
+          "ar": "أصحاب القرية والرجل الذي جاء مسرعًا"
+        },
+        "sub": {
+          "en": "Three messengers, a stubborn city, and one believer who cared for his people even after death",
+          "de": "Drei Gesandte, eine starrsinnige Stadt und ein Gläubiger, dem sein Volk noch nach dem Tod am Herzen lag",
+          "ar": "ثلاثة رسل ومدينة معاندة ومؤمن أحب الخير لقومه حتى بعد موته"
+        },
+        "arabic": "أصحاب القرية"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "A city without a name",
+            "de": "Eine Stadt ohne Namen",
+            "ar": "مدينة بلا اسم"
+          },
+          "body": {
+            "en": "The Quran presents the people of a city as an example. Many commentators name it Antioch; others doubt this. The Quran leaves the name out, because the lesson matters more than the place.",
+            "de": "Der Koran stellt die Bewohner einer Stadt als Beispiel vor. Viele Kommentatoren nennen sie Antiochia; andere bezweifeln das. Der Koran lässt den Namen weg, denn die Lehre zählt mehr als der Ort.",
+            "ar": "يضرب القرآن أهل قرية مثلًا. ويسمّيها كثير من المفسرين أنطاكية، ويشكّك آخرون في ذلك. ولم يذكر القرآن اسمها، لأن العبرة أهم من المكان."
+          }
+        },
+        {
+          "verse": "36:13-14",
+          "check": "with a third",
+          "title": {
+            "en": "Two messengers, then a third",
+            "de": "Zwei Gesandte, dann ein dritter",
+            "ar": "رسولان ثم ثالث"
+          },
+          "body": {
+            "en": "When the people rejected two messengers, Allah strengthened them with a third. Truth does not give up after the first refusal.",
+            "de": "Als die Leute zwei Gesandte ablehnten, stärkte Allah sie durch einen dritten. Die Wahrheit gibt nach der ersten Ablehnung nicht auf.",
+            "ar": "لما كذّب القوم الرسولين أيّدهما الله بثالث، فالحق لا يستسلم بعد الرفض الأول."
+          }
+        },
+        {
+          "title": {
+            "en": "The familiar objections",
+            "de": "Die bekannten Einwände",
+            "ar": "اعتراضات مألوفة"
+          },
+          "body": {
+            "en": "They said the messengers were only human, called them a bad omen and threatened to stone them. The messengers stayed calm: their duty was only to deliver the message clearly.",
+            "de": "Sie sagten, die Gesandten seien nur Menschen, nannten sie ein schlechtes Omen und drohten, sie zu steinigen. Die Gesandten blieben ruhig: Ihre Pflicht war nur, die Botschaft deutlich zu übermitteln.",
+            "ar": "قالوا إن الرسل بشر مثلهم، وتشاءموا بهم، وهددوهم بالرجم. فبقي الرسل هادئين: ما عليهم إلا أن يبلّغوا الرسالة بوضوح."
+          }
+        },
+        {
+          "verse": "36:20-21",
+          "check": "farthest end of the city",
+          "title": {
+            "en": "A man came running",
+            "de": "Ein Mann kam herbeigelaufen",
+            "ar": "رجل جاء مسرعًا"
+          },
+          "body": {
+            "en": "He came from the far edge of the city, in a hurry to support the truth. The commentators mention his name as Habib.",
+            "de": "Er kam vom äußersten Rand der Stadt, in Eile, um der Wahrheit beizustehen. Die Kommentatoren nennen seinen Namen Habib.",
+            "ar": "جاء من أطراف المدينة مسرعًا لنصرة الحق، ويذكر المفسرون أن اسمه حبيب."
+          }
+        },
+        {
+          "title": {
+            "en": "An argument from the heart",
+            "de": "Ein Argument aus dem Herzen",
+            "ar": "حجة من القلب"
+          },
+          "body": {
+            "en": "He spoke simply: these messengers wanted nothing from people and they were guided. He would worship only his Creator, to whom everyone returns, because false gods can save no one.",
+            "de": "Er sprach schlicht: Diese Gesandten verlangten nichts von den Menschen und seien rechtgeleitet. Er wolle nur seinem Schöpfer dienen, zu dem alle zurückkehren, denn falsche Götter könnten niemanden retten.",
+            "ar": "تكلّم ببساطة: هؤلاء الرسل لا يطلبون من الناس شيئًا وهم على هدى. وهو لن يعبد إلا خالقه الذي يرجع إليه الجميع، فالآلهة الباطلة لا تنقذ أحدًا."
+          }
+        },
+        {
+          "verse": "36:26-27",
+          "check": "I wish my people could know",
+          "title": {
+            "en": "Wishing good for his people, even then",
+            "de": "Er wünschte seinem Volk Gutes, selbst dann",
+            "ar": "يتمنى الخير لقومه حتى بعدها"
+          },
+          "body": {
+            "en": "The commentators say his people killed him. Even in Paradise, he wished they knew how Allah had honoured him, so that they too would believe.",
+            "de": "Die Kommentatoren sagen, sein Volk habe ihn getötet. Selbst im Paradies wünschte er, sie wüssten, wie Allah ihn geehrt hatte, damit auch sie glauben.",
+            "ar": "يذكر المفسرون أن قومه قتلوه، ومع ذلك تمنّى وهو في الجنة أن يعلموا كيف أكرمه الله، ليؤمنوا هم أيضًا."
+          }
+        },
+        {
+          "title": {
+            "en": "Lessons from the town",
+            "de": "Lehren aus der Stadt",
+            "ar": "دروس من القرية"
+          },
+          "list": {
+            "en": [
+              "Keep calling to good, even after rejection",
+              "One sincere person can make a difference",
+              "Truth does not ask for payment",
+              "Wish good for people, even those who hurt you",
+              "Do not wait to be asked; go and support the truth"
+            ],
+            "de": [
+              "Rufen Sie weiter zum Guten, auch nach Ablehnung",
+              "Ein aufrichtiger Mensch kann etwas bewegen",
+              "Die Wahrheit verlangt keinen Lohn",
+              "Wünschen Sie Menschen Gutes, auch denen, die Sie verletzen",
+              "Warten Sie nicht, bis man Sie ruft; stehen Sie der Wahrheit bei"
+            ],
+            "ar": [
+              "استمر في الدعوة إلى الخير ولو بعد الرفض",
+              "قد يُحدث إنسان صادق واحد فرقًا",
+              "الحق لا يطلب أجرًا",
+              "تمنَّ الخير للناس ولو آذوك",
+              "لا تنتظر أن تُدعى، بادر إلى نصرة الحق"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on Surah Ya-Sin 36:13-29",
+          "url": "https://quran.com/36:13/tafsirs/en-tafisr-ibn-kathir"
+        }
+      ]
+    },
+    {
+      "id": "quran-stories-18-people-of-the-ditch",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": {
+          "en": "Stories of the Quran · 18",
+          "de": "Geschichten des Korans · 18",
+          "ar": "قصص القرآن · ١٨"
+        },
+        "title": {
+          "en": "The people of the ditch: believers who would not turn back",
+          "de": "Die Leute des Grabens: Gläubige, die nicht umkehrten",
+          "ar": "أصحاب الأخدود: مؤمنون لم يتراجعوا"
+        },
+        "sub": {
+          "en": "Surah al-Buruj tells of a fire, a crowd that watched, and a victory that looked like defeat",
+          "de": "Sure al-Buruj erzählt von einem Feuer, einer Menge, die zusah, und einem Sieg, der wie eine Niederlage aussah",
+          "ar": "تحكي سورة البروج خبر نار، وجمع يشاهد، ونصر بدا كأنه هزيمة"
+        },
+        "arabic": "أصحاب الأخدود"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "A ditch of fire",
+            "de": "Ein Graben voller Feuer",
+            "ar": "أخدود من نار"
+          },
+          "body": {
+            "en": "Surah al-Buruj speaks briefly of tyrants who dug a long ditch, lit a great fire in it and sat at its edge, watching what they did to the believers.",
+            "de": "Sure al-Buruj spricht kurz von Tyrannen, die einen langen Graben aushoben, darin ein großes Feuer entfachten und an seinem Rand saßen und zusahen, was sie den Gläubigen antaten.",
+            "ar": "تذكر سورة البروج باختصار طغاة حفروا أخدودًا طويلًا وأوقدوا فيه نارًا عظيمة، وجلسوا على حافته يشهدون ما يفعلون بالمؤمنين."
+          }
+        },
+        {
+          "verse": "85:4-6",
+          "check": "companions of the trench",
+          "title": {
+            "en": "Watching without mercy",
+            "de": "Zuschauen ohne Erbarmen",
+            "ar": "يشهدون بلا رحمة"
+          },
+          "body": {
+            "en": "The verses picture them sitting by the fire, and the next verse adds that they witnessed what they did. Cruelty became a spectacle.",
+            "de": "Die Verse zeigen sie, wie sie am Feuer sitzen, und der nächste Vers fügt hinzu, dass sie bezeugten, was sie taten. Grausamkeit wurde zum Schauspiel.",
+            "ar": "تصوّرهم الآيات قاعدين عند النار، وتضيف الآية التالية أنهم كانوا شهودًا على ما يفعلون، فصارت القسوة مشهدًا يُتفرج عليه."
+          }
+        },
+        {
+          "verse": "85:8-9",
+          "check": "because they believed in Allah",
+          "title": {
+            "en": "Their only crime",
+            "de": "Ihr einziges Vergehen",
+            "ar": "جريمتهم الوحيدة"
+          },
+          "body": {
+            "en": "The believers had harmed no one. They were punished only for believing in Allah, the Mighty, the Praiseworthy.",
+            "de": "Die Gläubigen hatten niemandem geschadet. Sie wurden nur bestraft, weil sie an Allah glaubten, den Mächtigen, den Lobenswerten.",
+            "ar": "لم يؤذِ المؤمنون أحدًا، وإنما عوقبوا على إيمانهم بالله العزيز الحميد."
+          }
+        },
+        {
+          "title": {
+            "en": "Who were they?",
+            "de": "Wer waren sie?",
+            "ar": "من هم؟"
+          },
+          "body": {
+            "en": "The commentators mention different reports. Some link it to Najran in southern Arabia. A well-known hadith in Sahih Muslim tells of a boy whose faith a king could not break, until the crowd believed and the king lit the ditches.",
+            "de": "Die Kommentatoren nennen verschiedene Berichte. Manche verbinden es mit Nadschran im Süden Arabiens. Ein bekannter Hadith in Sahih Muslim erzählt von einem Jungen, dessen Glauben ein König nicht brechen konnte, bis die Menge glaubte und der König die Gräben entzünden ließ.",
+            "ar": "يذكر المفسرون روايات مختلفة، فبعضهم يربطها بنجران في جنوب جزيرة العرب. وفي صحيح مسلم حديث مشهور عن غلام عجز ملك عن كسر إيمانه، حتى آمن الناس فأمر الملك بالأخاديد فأُضرمت فيها النار."
+          }
+        },
+        {
+          "title": {
+            "en": "Faith that did not turn back",
+            "de": "Ein Glaube, der nicht umkehrte",
+            "ar": "إيمان لم يتراجع"
+          },
+          "body": {
+            "en": "They were offered life in exchange for their faith, and they chose faith. The Quran does not describe them as mere victims, but as people whose choice Allah witnessed and honoured.",
+            "de": "Man bot ihnen das Leben im Tausch gegen ihren Glauben, und sie wählten den Glauben. Der Koran beschreibt sie nicht als bloße Opfer, sondern als Menschen, deren Entscheidung Allah bezeugte und ehrte.",
+            "ar": "عُرضت عليهم الحياة مقابل إيمانهم فاختاروا الإيمان. ولا يصفهم القرآن ضحايا فحسب، بل أناسًا شهد الله اختيارهم وأكرمهم."
+          }
+        },
+        {
+          "verse": "85:10-11",
+          "check": "and then have not repented",
+          "title": {
+            "en": "Even for them, the door was open",
+            "de": "Selbst für sie stand die Tür offen",
+            "ar": "حتى لهم كان الباب مفتوحًا"
+          },
+          "body": {
+            "en": "The threat is for those who never repent. Al-Hasan al-Basri marvelled: they killed His friends, and still He called them to repentance.",
+            "de": "Die Drohung gilt denen, die nie bereuen. Al-Hasan al-Basri staunte: Sie töteten Seine Freunde, und dennoch rief Er sie zur Reue.",
+            "ar": "الوعيد لمن لم يتب قط. وقد تعجّب الحسن البصري: قتلوا أولياءه وهو يدعوهم إلى التوبة."
+          }
+        },
+        {
+          "title": {
+            "en": "The great success",
+            "de": "Der große Erfolg",
+            "ar": "الفوز الكبير"
+          },
+          "body": {
+            "en": "The surah calls the believers' reward the great success. On earth it looked like defeat. In truth, those who held on to their faith were the winners.",
+            "de": "Die Sure nennt den Lohn der Gläubigen den großen Erfolg. Auf der Erde sah es wie eine Niederlage aus. In Wahrheit waren die, die an ihrem Glauben festhielten, die Gewinner.",
+            "ar": "تسمّي السورة جزاء المؤمنين الفوز الكبير. بدا في الأرض هزيمة، وفي الحقيقة كان الثابتون على إيمانهم هم الفائزين."
+          }
+        },
+        {
+          "title": {
+            "en": "Lessons from the people of the ditch",
+            "de": "Lehren von den Leuten des Grabens",
+            "ar": "دروس من أصحاب الأخدود"
+          },
+          "list": {
+            "en": [
+              "Allah witnesses every injustice",
+              "Faith can be stronger than fear",
+              "The door of repentance is open even to great sinners",
+              "Success is measured by the end, not by the moment"
+            ],
+            "de": [
+              "Allah ist Zeuge jedes Unrechts",
+              "Glaube kann stärker sein als Angst",
+              "Die Tür der Reue steht selbst großen Sündern offen",
+              "Erfolg misst sich am Ende, nicht am Augenblick"
+            ],
+            "ar": [
+              "الله شاهد على كل ظلم",
+              "قد يكون الإيمان أقوى من الخوف",
+              "باب التوبة مفتوح حتى لكبار المذنبين",
+              "يقاس الفوز بالخاتمة لا باللحظة"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Sahih Muslim, the hadith of the boy and the king",
+          "url": "https://sunnah.com/muslim:3005"
+        },
+        {
+          "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on Surah al-Buruj 85:4-11 (incl. al-Hasan al-Basri)",
+          "url": "https://quran.com/85:10/tafsirs/en-tafisr-ibn-kathir"
+        }
+      ]
+    },
+    {
+      "id": "quran-stories-19-birth-of-maryam",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": {
+          "en": "Stories of the Quran · 19",
+          "de": "Geschichten des Korans · 19",
+          "ar": "قصص القرآن · ١٩"
+        },
+        "title": {
+          "en": "Maryam's birth: a mother's vow that Allah accepted",
+          "de": "Maryams Geburt: ein Gelübde, das Allah annahm",
+          "ar": "مولد مريم: نذر تقبّله الله"
+        },
+        "sub": {
+          "en": "From the wife of 'Imran to the prayer room of Zakariyya, told in Surah Al 'Imran",
+          "de": "Von der Frau 'Imrans bis zum Gebetsraum Zakariyyas, erzählt in Sure Al 'Imran",
+          "ar": "من امرأة عمران إلى محراب زكريا، كما تحكيه سورة آل عمران"
+        },
+        "arabic": "مريم"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "A chosen family",
+            "de": "Eine erwählte Familie",
+            "ar": "آل اصطفاهم الله"
+          },
+          "body": {
+            "en": "Surah Al 'Imran begins this story by naming those Allah chose: Adam, Nuh, the family of Ibrahim and the family of 'Imran. Maryam was born into this line of devotion.",
+            "de": "Sure Al 'Imran beginnt diese Geschichte mit denen, die Allah erwählte: Adam, Nuh, die Familie Ibrahims und die Familie 'Imrans. In diese Linie der Hingabe wurde Maryam geboren.",
+            "ar": "تبدأ سورة آل عمران هذه القصة بذكر من اصطفاهم الله: آدم ونوح وآل إبراهيم وآل عمران. وفي هذا البيت المؤمن وُلدت مريم."
+          }
+        },
+        {
+          "verse": "3:35",
+          "check": "consecrated",
+          "title": {
+            "en": "A gift promised before birth",
+            "de": "Ein Geschenk, versprochen vor der Geburt",
+            "ar": "عطاء نُذر قبل الولادة"
+          },
+          "body": {
+            "en": "The wife of 'Imran vowed the child in her womb to the service of Allah. The commentators mention that she had long hoped for a child.",
+            "de": "Die Frau 'Imrans weihte das Kind in ihrem Leib dem Dienst Allahs. Die Kommentatoren erwähnen, dass sie sich lange ein Kind gewünscht hatte.",
+            "ar": "نذرت امرأة عمران جنينها لخدمة الله، ويذكر المفسرون أنها طالما تمنّت الولد."
+          }
+        },
+        {
+          "title": {
+            "en": "A daughter, and a greater plan",
+            "de": "Eine Tochter und ein größerer Plan",
+            "ar": "أنثى وتدبير أعظم"
+          },
+          "body": {
+            "en": "She did not know whether it would be a son or a daughter. A daughter was born, though service in the house of worship was usually for men. She named her Maryam and asked Allah to protect her and her children from Satan.",
+            "de": "Sie wusste nicht, ob es ein Sohn oder eine Tochter würde. Eine Tochter wurde geboren, obwohl der Dienst im Gotteshaus meist Männern vorbehalten war. Sie nannte sie Maryam und bat Allah, sie und ihre Nachkommen vor Satan zu schützen.",
+            "ar": "لم تكن تعلم أذكرًا تلد أم أنثى، فوُلدت أنثى، مع أن خدمة بيت العبادة كانت للرجال غالبًا. فسمّتها مريم، وسألت الله أن يحفظها ونسلها من الشيطان."
+          }
+        },
+        {
+          "verse": "3:37",
+          "check": "good acceptance",
+          "title": {
+            "en": "Accepted and raised well",
+            "de": "Angenommen und gut aufgezogen",
+            "ar": "قبول حسن ونشأة طيبة"
+          },
+          "body": {
+            "en": "Allah accepted the vow and raised Maryam in goodness under the care of Zakariyya. He would find provision with her that he could not explain.",
+            "de": "Allah nahm das Gelübde an und ließ Maryam im Guten aufwachsen, in der Obhut Zakariyyas. Er fand bei ihr Versorgung, die er sich nicht erklären konnte.",
+            "ar": "تقبّل الله النذر، ونشّأ مريم نشأة طيبة في رعاية زكريا، وكان يجد عندها رزقًا لا يعرف مصدره."
+          }
+        },
+        {
+          "verse": "3:44",
+          "check": "cast their pens",
+          "title": {
+            "en": "Lots for the honour of caring for her",
+            "de": "Das Los um die Ehre ihrer Obhut",
+            "ar": "اقتراع على كفالتها"
+          },
+          "body": {
+            "en": "So many wanted to care for her that the guardians cast their pens to decide. Zakariyya was chosen, a relative of hers by marriage.",
+            "de": "So viele wollten für sie sorgen, dass die Hüter ihre Schreibrohre warfen, um zu entscheiden. Zakariyya wurde gewählt, ein angeheirateter Verwandter von ihr.",
+            "ar": "تنافس كثيرون على كفالتها حتى ألقى السدنة أقلامهم ليقترعوا، فوقعت لزكريا، وكان من أقاربها بالمصاهرة."
+          }
+        },
+        {
+          "title": {
+            "en": "Provision from Allah",
+            "de": "Versorgung von Allah",
+            "ar": "رزق من عند الله"
+          },
+          "body": {
+            "en": "The commentators mention that Zakariyya found summer fruit with her in winter and winter fruit in summer. When he asked, the young Maryam answered that it came from Allah, who provides without measure.",
+            "de": "Die Kommentatoren erwähnen, dass Zakariyya bei ihr im Winter Sommerfrüchte fand und im Sommer Winterfrüchte. Als er fragte, antwortete die junge Maryam, es komme von Allah, der ohne Maß versorgt.",
+            "ar": "يذكر المفسرون أن زكريا كان يجد عندها فاكهة الصيف في الشتاء وفاكهة الشتاء في الصيف، فلما سألها أجابت مريم الصغيرة بأنه من الله الذي يعطي بلا حساب."
+          }
+        },
+        {
+          "title": {
+            "en": "Lessons from Maryam's beginnings",
+            "de": "Lehren aus Maryams Anfängen",
+            "ar": "دروس من نشأة مريم"
+          },
+          "list": {
+            "en": [
+              "Good intentions for a child can begin before birth",
+              "Allah may answer a prayer in a way we did not expect",
+              "A daughter can be the greatest answer to a prayer",
+              "Children are a trust; choose good guardians for them",
+              "Provision comes from Allah, sometimes in unexpected ways"
+            ],
+            "de": [
+              "Gute Absichten für ein Kind können vor der Geburt beginnen",
+              "Allah kann ein Gebet anders erhören, als wir erwarten",
+              "Eine Tochter kann die größte Antwort auf ein Gebet sein",
+              "Kinder sind anvertraut; wählen Sie gute Betreuer für sie",
+              "Versorgung kommt von Allah, manchmal auf unerwartete Weise"
+            ],
+            "ar": [
+              "قد تبدأ النية الصالحة للولد قبل ولادته",
+              "قد يستجيب الله الدعاء على غير ما نتوقع",
+              "قد تكون البنت أعظم استجابة للدعاء",
+              "الأولاد أمانة، فاختر لهم من يحسن رعايتهم",
+              "الرزق من الله، وقد يأتي من حيث لا نتوقع"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 3:35-36 (Hannah's vow)",
+          "url": "https://quran.com/3:35/tafsirs/en-tafisr-ibn-kathir"
+        },
+        {
+          "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 3:37 (Zakariyya and the fruit)",
+          "url": "https://quran.com/3:37/tafsirs/en-tafisr-ibn-kathir"
+        }
+      ]
+    },
+    {
+      "id": "quran-stories-20-yunus-lesson",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": {
+          "en": "Stories of the Quran · 20",
+          "de": "Geschichten des Korans · 20",
+          "ar": "قصص القرآن · ٢٠"
+        },
+        "title": {
+          "en": "Yunus in the whale: a short lesson in patience",
+          "de": "Yunus im Wal: eine kurze Lehre über Geduld",
+          "ar": "يونس في بطن الحوت: درس قصير في الصبر"
+        },
+        "sub": {
+          "en": "What the Prophet was taught from the story of the man of the fish",
+          "de": "Was der Prophet aus der Geschichte des Mannes mit dem Fisch lernen sollte",
+          "ar": "ما تعلّمه النبي من قصة صاحب الحوت"
+        },
+        "arabic": "صاحب الحوت"
+      },
+      "slides": [
+        {
+          "verse": "68:48-50",
+          "check": "companion of the fish",
+          "title": {
+            "en": "A lesson for the Prophet",
+            "de": "Eine Lehre für den Propheten",
+            "ar": "درس للنبي"
+          },
+          "body": {
+            "en": "In hard years in Makkah, Allah told the Prophet to be patient and reminded him of Yunus, who had left his people too soon.",
+            "de": "In schweren Jahren in Mekka rief Allah den Propheten zur Geduld auf und erinnerte ihn an Yunus, der sein Volk zu früh verlassen hatte.",
+            "ar": "في سنوات مكة الصعبة أمر الله نبيه بالصبر، وذكّره بيونس الذي ترك قومه قبل الأوان."
+          }
+        },
+        {
+          "title": {
+            "en": "What happened",
+            "de": "Was geschah",
+            "ar": "ماذا حدث"
+          },
+          "body": {
+            "en": "The commentators explain that Yunus left his people in anger before Allah permitted him to go. He boarded a ship, was cast into the sea and swallowed by a great fish. Even a prophet was corrected, and with mercy.",
+            "de": "Die Kommentatoren erklären, dass Yunus sein Volk im Zorn verließ, bevor Allah es ihm erlaubte. Er bestieg ein Schiff, wurde ins Meer geworfen und von einem großen Fisch verschluckt. Selbst ein Prophet wurde korrigiert, und zwar mit Barmherzigkeit.",
+            "ar": "يبيّن المفسرون أن يونس ترك قومه غاضبًا قبل أن يأذن الله له، فركب سفينة وأُلقي في البحر وابتلعه حوت عظيم. حتى النبي يُقوَّم، ويكون ذلك برحمة."
+          }
+        },
+        {
+          "verse": "37:143-144",
+          "check": "those who exalt Allah",
+          "title": {
+            "en": "What saved him",
+            "de": "Was ihn rettete",
+            "ar": "ما الذي أنجاه"
+          },
+          "body": {
+            "en": "His glorification of Allah, before the trial and inside its darkness, was the reason he was saved.",
+            "de": "Sein Lobpreis Allahs, vor der Prüfung und mitten in ihrer Dunkelheit, war der Grund seiner Rettung.",
+            "ar": "كان تسبيحه لله، قبل الشدة وفي ظلماتها، سبب نجاته."
+          }
+        },
+        {
+          "title": {
+            "en": "Lessons for us",
+            "de": "Lehren für uns",
+            "ar": "دروس لنا"
+          },
+          "body": {
+            "en": "Allah then chose him again and made him one of the righteous.",
+            "de": "Danach erwählte Allah ihn erneut und machte ihn zu einem der Rechtschaffenen.",
+            "ar": "ثم اصطفاه الله من جديد وجعله من عباده الصالحين."
+          },
+          "list": {
+            "en": [
+              "Do not give up on people too quickly",
+              "Patience in calling to good is part of the mission",
+              "Remember Allah in good times; it helps in hard times",
+              "A mistake is not the end; Allah can raise you again"
+            ],
+            "de": [
+              "Geben Sie Menschen nicht zu schnell auf",
+              "Geduld beim Rufen zum Guten gehört zur Aufgabe",
+              "Gedenken Sie Allahs in guten Zeiten; es hilft in schweren",
+              "Ein Fehler ist nicht das Ende; Allah kann Sie wieder erheben"
+            ],
+            "ar": [
+              "لا تيأس من الناس سريعًا",
+              "الصبر في الدعوة جزء من الرسالة",
+              "اذكر الله في الرخاء ينفعك في الشدة",
+              "الخطأ ليس النهاية، فالله قادر أن يرفعك من جديد"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 21:87 (Yunus leaves his people in anger)",
+          "url": "https://quran.com/21:87/tafsirs/en-tafisr-ibn-kathir"
+        },
+        {
+          "label": "Al-Qurtubi, al-Jami' li-Ahkam al-Qur'an, on 37:140 (he left without Allah's command)",
+          "url": "https://quran.com/37:140/tafsirs/ar-tafseer-al-qurtubi"
+        }
+      ]
+    },
+    {
+      "id": "quran-stories-21-people-of-saba",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": {
+          "en": "Stories of the Quran · 21",
+          "de": "Geschichten des Korans · 21",
+          "ar": "قصص القرآن · ٢١"
+        },
+        "title": {
+          "en": "The people of Saba': a flood that ended a paradise",
+          "de": "Das Volk von Saba: eine Flut, die ein Paradies beendete",
+          "ar": "قوم سبأ: سيل أنهى جنتين"
+        },
+        "sub": {
+          "en": "Gardens on the right and the left, safe roads, and what happens when gratitude disappears",
+          "de": "Gärten zur Rechten und zur Linken, sichere Wege und was geschieht, wenn Dankbarkeit verschwindet",
+          "ar": "بساتين عن اليمين والشمال، وطرق آمنة، وما يحدث حين يغيب الشكر"
+        },
+        "arabic": "سيل العرم"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "A rich land in Yemen",
+            "de": "Ein reiches Land im Jemen",
+            "ar": "أرض خصبة في اليمن"
+          },
+          "body": {
+            "en": "Saba' was an ancient kingdom in southern Arabia, in today's Yemen. Its people built a great dam at Ma'rib to store the rain and water their fields.",
+            "de": "Saba war ein altes Königreich im Süden Arabiens, im heutigen Jemen. Seine Bewohner bauten bei Marib einen großen Damm, um das Regenwasser zu speichern und ihre Felder zu bewässern.",
+            "ar": "كانت سبأ مملكة قديمة في جنوب الجزيرة العربية، في اليمن اليوم، وبنى أهلها سدًّا عظيمًا في مأرب يحبس ماء المطر ويسقي حقولهم."
+          }
+        },
+        {
+          "verse": "34:15",
+          "check": "a good land",
+          "title": {
+            "en": "Two gardens and one request",
+            "de": "Zwei Gärten und eine Bitte",
+            "ar": "جنتان وطلب واحد"
+          },
+          "body": {
+            "en": "Gardens stretched on both sides. All that was asked of them was to eat, to be grateful and to remember a forgiving Lord.",
+            "de": "Gärten erstreckten sich zu beiden Seiten. Alles, was man von ihnen verlangte, war, zu essen, dankbar zu sein und an einen vergebenden Herrn zu denken.",
+            "ar": "امتدت البساتين على الجانبين، ولم يُطلب منهم إلا أن يأكلوا ويشكروا ويذكروا ربًّا غفورًا."
+          }
+        },
+        {
+          "verse": "34:16-17",
+          "check": "flood of the dam",
+          "title": {
+            "en": "When they turned away",
+            "de": "Als sie sich abwandten",
+            "ar": "حين أعرضوا"
+          },
+          "body": {
+            "en": "They turned away from gratitude. The dam burst, and their gardens turned into bitter shrubs and a few thorny trees.",
+            "de": "Sie wandten sich von der Dankbarkeit ab. Der Damm brach, und ihre Gärten wurden zu bitterem Gestrüpp und wenigen dornigen Bäumen.",
+            "ar": "أعرضوا عن الشكر، فانهار السد، وتحولت بساتينهم إلى شجيرات مرة وأشجار شائكة قليلة."
+          }
+        },
+        {
+          "title": {
+            "en": "Safe roads between towns",
+            "de": "Sichere Wege zwischen Städten",
+            "ar": "طرق آمنة بين القرى"
+          },
+          "body": {
+            "en": "Before that, Allah had placed towns close to one another along their trade routes, so that travellers were safe by night and by day. Even their journeys were a blessing.",
+            "de": "Zuvor hatte Allah entlang ihrer Handelswege Städte nahe beieinander gesetzt, sodass Reisende bei Tag und Nacht sicher waren. Selbst ihre Reisen waren ein Segen.",
+            "ar": "وقبل ذلك جعل الله القرى متقاربة على طرق تجارتهم، فكان المسافرون آمنين ليلًا ونهارًا، حتى أسفارهم كانت نعمة."
+          }
+        },
+        {
+          "verse": "34:19",
+          "check": "patient and grateful",
+          "title": {
+            "en": "They became stories",
+            "de": "Sie wurden zu Geschichten",
+            "ar": "صاروا حكايات"
+          },
+          "body": {
+            "en": "They grew tired of ease and asked for longer journeys. They were scattered, and their name became a story people tell.",
+            "de": "Sie wurden der Bequemlichkeit überdrüssig und baten um längere Reisen. Sie wurden zerstreut, und ihr Name wurde zu einer Geschichte, die man erzählt.",
+            "ar": "ملّوا النعمة وطلبوا أسفارًا أبعد، فتفرّقوا وصار اسمهم حكاية يتناقلها الناس."
+          }
+        },
+        {
+          "title": {
+            "en": "The secret of lasting blessings",
+            "de": "Das Geheimnis bleibender Gaben",
+            "ar": "سر دوام النعم"
+          },
+          "body": {
+            "en": "Saba' had water, land, trade and safety. What they lost first was gratitude, and the rest followed. The verse ends by naming who benefits from such stories: the patient and the grateful.",
+            "de": "Saba hatte Wasser, Land, Handel und Sicherheit. Zuerst verloren sie die Dankbarkeit, der Rest folgte. Der Vers nennt am Ende, wem solche Geschichten nützen: den Geduldigen und den Dankbaren.",
+            "ar": "كان لسبأ الماء والأرض والتجارة والأمن، فكان أول ما فقدوه الشكر، ثم تبعه الباقي. وتختم الآية بذكر من ينتفع بهذه القصص: الصابرون الشاكرون."
+          }
+        },
+        {
+          "title": {
+            "en": "Lessons from Saba'",
+            "de": "Lehren aus Saba",
+            "ar": "دروس من سبأ"
+          },
+          "list": {
+            "en": [
+              "Gratitude keeps blessings; ingratitude loses them",
+              "Ease is also a test",
+              "Do not wish away the comfort Allah gives",
+              "Even great civilisations can vanish",
+              "Read history to become patient and grateful"
+            ],
+            "de": [
+              "Dankbarkeit bewahrt Gaben, Undank verliert sie",
+              "Auch Wohlstand ist eine Prüfung",
+              "Wünschen Sie die Annehmlichkeit, die Allah gibt, nicht fort",
+              "Selbst große Kulturen können verschwinden",
+              "Lesen Sie Geschichte, um geduldig und dankbar zu werden"
+            ],
+            "ar": [
+              "الشكر يحفظ النعم والجحود يذهبها",
+              "الرخاء ابتلاء أيضًا",
+              "لا تتمنَّ زوال الراحة التي أعطاك الله",
+              "حتى الحضارات العظيمة قد تزول",
+              "اقرأ التاريخ لتكون صابرًا شاكرًا"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on Surah Saba' 34:15-19",
+          "url": "https://quran.com/34:15/tafsirs/en-tafisr-ibn-kathir"
+        },
+        {
+          "label": "Marib Dam (Wikipedia)",
+          "url": "https://en.wikipedia.org/wiki/Marib_Dam"
+        }
+      ]
+    },
+    {
+      "id": "quran-stories-22-magicians-of-pharaoh",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": {
+          "en": "Stories of the Quran · 22",
+          "de": "Geschichten des Korans · 22",
+          "ar": "قصص القرآن · ٢٢"
+        },
+        "title": {
+          "en": "Pharaoh's magicians: from hired performers to firm believers",
+          "de": "Die Zauberer Pharaos: von bezahlten Künstlern zu standhaften Gläubigen",
+          "ar": "سحرة فرعون: من مأجورين إلى مؤمنين ثابتين"
+        },
+        "sub": {
+          "en": "A contest on a festival day, a staff and a moment of truth that changed everything",
+          "de": "Ein Wettstreit an einem Festtag, ein Stab und ein Moment der Wahrheit, der alles veränderte",
+          "ar": "مباراة في يوم عيد، وعصا، ولحظة حق غيّرت كل شيء"
+        },
+        "arabic": "سحرة فرعون"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "Hired to win",
+            "de": "Angeheuert, um zu gewinnen",
+            "ar": "مأجورون للفوز"
+          },
+          "body": {
+            "en": "Pharaoh gathered the best magicians of Egypt for a public contest with Musa on a festival day. Their first question was about payment and status.",
+            "de": "Pharao versammelte die besten Zauberer Ägyptens zu einem öffentlichen Wettstreit mit Musa an einem Festtag. Ihre erste Frage galt Lohn und Ansehen.",
+            "ar": "جمع فرعون أمهر سحرة مصر لمباراة علنية مع موسى في يوم عيد، وكان أول ما سألوا عنه الأجر والمكانة."
+          }
+        },
+        {
+          "verse": "7:113-114",
+          "check": "reward if we are the predominant",
+          "title": {
+            "en": "What they wanted",
+            "de": "Was sie wollten",
+            "ar": "ما كانوا يريدونه"
+          },
+          "body": {
+            "en": "Money and closeness to power. At the start of the day, this world was all they asked for.",
+            "de": "Geld und Nähe zur Macht. Zu Beginn des Tages war diese Welt alles, worum sie baten.",
+            "ar": "المال والقرب من السلطان. في أول النهار كانت الدنيا كل ما يطلبون."
+          }
+        },
+        {
+          "title": {
+            "en": "Ropes, staffs and one staff",
+            "de": "Seile, Stäbe und ein einziger Stab",
+            "ar": "حبال وعصيّ وعصا واحدة"
+          },
+          "body": {
+            "en": "They threw their ropes and staffs, and the crowd saw them move like snakes. Musa felt fear within himself. Then he threw his staff by Allah's command, and it swallowed all they had faked.",
+            "de": "Sie warfen ihre Seile und Stäbe, und die Menge sah sie sich wie Schlangen bewegen. Musa verspürte Furcht in sich. Dann warf er auf Allahs Befehl seinen Stab, und er verschlang alles, was sie vorgetäuscht hatten.",
+            "ar": "ألقوا حبالهم وعصيّهم فرآها الناس تتحرك كالحيات، وأحسّ موسى في نفسه خوفًا. ثم ألقى عصاه بأمر الله فابتلعت كل ما زيّفوه."
+          }
+        },
+        {
+          "verse": "7:120-122",
+          "check": "fell down in prostration",
+          "title": {
+            "en": "Experts recognise the truth",
+            "de": "Fachleute erkennen die Wahrheit",
+            "ar": "أهل الخبرة يعرفون الحق"
+          },
+          "body": {
+            "en": "They knew every trick of their craft, so they knew this was no trick. Their knowledge led them straight to prostration.",
+            "de": "Sie kannten jeden Trick ihres Handwerks, darum wussten sie, dass dies kein Trick war. Ihr Wissen führte sie direkt in die Niederwerfung.",
+            "ar": "عرفوا كل حيل صنعتهم، فأدركوا أن هذا ليس حيلة، فقادهم علمهم إلى السجود مباشرة."
+          }
+        },
+        {
+          "title": {
+            "en": "A tyrant's anger",
+            "de": "Der Zorn eines Tyrannen",
+            "ar": "غضب الطاغية"
+          },
+          "body": {
+            "en": "Pharaoh was furious that they believed without his permission. He accused them of a conspiracy and threatened to cut off their hands and feet and to crucify them.",
+            "de": "Pharao tobte, weil sie ohne seine Erlaubnis geglaubt hatten. Er warf ihnen eine Verschwörung vor und drohte, ihnen Hände und Füße abzuschlagen und sie zu kreuzigen.",
+            "ar": "غضب فرعون لأنهم آمنوا دون إذنه، واتهمهم بالمؤامرة، وتوعدهم بقطع الأيدي والأرجل والصلب."
+          }
+        },
+        {
+          "verse": "20:72-73",
+          "check": "You can only decree for this worldly life",
+          "title": {
+            "en": "An answer of pure certainty",
+            "de": "Eine Antwort voller Gewissheit",
+            "ar": "جواب اليقين"
+          },
+          "body": {
+            "en": "Hours earlier they had asked for a reward. Now they told a king that his power ended with this world.",
+            "de": "Stunden zuvor hatten sie um Lohn gebeten. Jetzt sagten sie einem König, dass seine Macht mit dieser Welt endet.",
+            "ar": "قبل ساعات سألوا الأجر، والآن يقولون لملك إن سلطانه ينتهي بانتهاء الدنيا."
+          }
+        },
+        {
+          "title": {
+            "en": "Magicians at dawn, martyrs by evening",
+            "de": "Am Morgen Zauberer, am Abend Märtyrer",
+            "ar": "سحرة في أول النهار شهداء في آخره"
+          },
+          "body": {
+            "en": "Ibn Kathir reports from Ibn 'Abbas that they began the day as magicians and ended it as martyrs. Their last prayer was for patience and to die in submission to Allah.",
+            "de": "Ibn Kathir überliefert von Ibn 'Abbas, dass sie den Tag als Zauberer begannen und als Märtyrer beendeten. Ihr letztes Gebet war die Bitte um Geduld und darum, Allah ergeben zu sterben.",
+            "ar": "ينقل ابن كثير عن ابن عباس أنهم كانوا في أول النهار سحرة وفي آخره شهداء. وكان آخر دعائهم أن يرزقهم الله الصبر وأن يتوفاهم مسلمين."
+          }
+        },
+        {
+          "title": {
+            "en": "Lessons from the magicians",
+            "de": "Lehren von den Zauberern",
+            "ar": "دروس من السحرة"
+          },
+          "list": {
+            "en": [
+              "A heart can change in a single moment",
+              "True knowledge leads to humility",
+              "Do not sell your faith for a reward",
+              "Worldly power ends with this world",
+              "Ask Allah for patience and a good ending"
+            ],
+            "de": [
+              "Ein Herz kann sich in einem einzigen Augenblick wandeln",
+              "Wahres Wissen führt zur Demut",
+              "Verkaufen Sie Ihren Glauben nicht für einen Lohn",
+              "Weltliche Macht endet mit dieser Welt",
+              "Bitten Sie Allah um Geduld und ein gutes Ende"
+            ],
+            "ar": [
+              "قد يتغير القلب في لحظة واحدة",
+              "العلم الحق يقود إلى التواضع",
+              "لا تبع إيمانك بأجر",
+              "سلطان الدنيا ينتهي بانتهائها",
+              "اسأل الله الصبر وحسن الخاتمة"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on Surah al-A'raf 7:113-126 (incl. Ibn 'Abbas)",
+          "url": "https://quran.com/7:126/tafsirs/en-tafisr-ibn-kathir"
+        }
+      ]
+    },
+    {
+      "id": "quran-stories-23-samiri-and-the-calf",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": {
+          "en": "Stories of the Quran · 23",
+          "de": "Geschichten des Korans · 23",
+          "ar": "قصص القرآن · ٢٣"
+        },
+        "title": {
+          "en": "The Samiri and the golden calf: a test in Musa's absence",
+          "de": "Der Samiri und das goldene Kalb: eine Prüfung in Musas Abwesenheit",
+          "ar": "السامري والعجل: فتنة في غياب موسى"
+        },
+        "sub": {
+          "en": "Jewellery turned into an idol, a warning ignored, and a lesson about self-deception",
+          "de": "Schmuck, der zum Götzen wurde, eine überhörte Warnung und eine Lehre über Selbsttäuschung",
+          "ar": "حليّ صار صنمًا، وتحذير لم يُسمع، ودرس في خداع النفس"
+        },
+        "arabic": "السامري"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "Forty nights away",
+            "de": "Vierzig Nächte fort",
+            "ar": "أربعون ليلة من الغياب"
+          },
+          "body": {
+            "en": "After the sea was crossed, Musa went to the meeting with his Lord for forty nights and left his brother Harun in charge of the people.",
+            "de": "Nach dem Durchzug durch das Meer ging Musa für vierzig Nächte zur Begegnung mit seinem Herrn und übertrug seinem Bruder Harun die Verantwortung für das Volk.",
+            "ar": "بعد عبور البحر ذهب موسى إلى ميقات ربه أربعين ليلة، واستخلف أخاه هارون على القوم."
+          }
+        },
+        {
+          "verse": "20:85",
+          "check": "led them astray",
+          "title": {
+            "en": "A test behind his back",
+            "de": "Eine Prüfung hinter seinem Rücken",
+            "ar": "فتنة في غيابه"
+          },
+          "body": {
+            "en": "While Musa was with his Lord, Allah told him that his people had been tested and that a man called the Samiri had misled them.",
+            "de": "Während Musa bei seinem Herrn war, teilte Allah ihm mit, dass sein Volk geprüft worden war und ein Mann namens Samiri es irregeführt hatte.",
+            "ar": "بينما كان موسى في ميقات ربه أخبره الله أن قومه قد فُتنوا وأن السامري أضلهم."
+          }
+        },
+        {
+          "title": {
+            "en": "Gold that lowed",
+            "de": "Gold, das muhte",
+            "ar": "ذهب له خوار"
+          },
+          "body": {
+            "en": "The people carried gold jewellery from Egypt. The Samiri melted it and shaped a calf that made a lowing sound. Then he and his followers called it their god and claimed that Musa had forgotten it.",
+            "de": "Das Volk trug Goldschmuck aus Ägypten bei sich. Der Samiri schmolz ihn und formte ein Kalb, das einen muhenden Laut von sich gab. Dann nannten er und seine Anhänger es ihren Gott und behaupteten, Musa habe es vergessen.",
+            "ar": "كان مع القوم حليّ من ذهب مصر، فصهره السامري وصنع منه عجلًا له صوت كصوت البقر، ثم قال هو وأتباعه إنه إلههم وإن موسى نسيه."
+          }
+        },
+        {
+          "verse": "20:89",
+          "check": "any harm or benefit",
+          "title": {
+            "en": "A god that cannot answer",
+            "de": "Ein Gott, der nicht antworten kann",
+            "ar": "إله لا يجيب"
+          },
+          "body": {
+            "en": "The Quran asks a simple question: how can something that cannot reply, harm or help be worshipped?",
+            "de": "Der Koran stellt eine einfache Frage: Wie kann etwas angebetet werden, das weder antworten noch schaden noch nützen kann?",
+            "ar": "يطرح القرآن سؤالًا بسيطًا: كيف يُعبد ما لا يجيب ولا ينفع ولا يضر؟"
+          }
+        },
+        {
+          "title": {
+            "en": "Harun's warning",
+            "de": "Haruns Warnung",
+            "ar": "تحذير هارون"
+          },
+          "body": {
+            "en": "Harun told them clearly that this was a test and that their Lord is the Most Merciful. They refused to listen until Musa returned. Harun stayed with them, fearing that the people would split apart.",
+            "de": "Harun sagte ihnen deutlich, dass dies eine Prüfung sei und ihr Herr der Allerbarmer. Sie weigerten sich, zuzuhören, bis Musa zurückkehrte. Harun blieb bei ihnen, aus Sorge, das Volk könnte zerbrechen.",
+            "ar": "قال لهم هارون بوضوح إن هذا ابتلاء وإن ربهم الرحمن، فأبوا أن يسمعوا حتى يرجع موسى. وبقي هارون معهم خشية أن يتفرق القوم."
+          }
+        },
+        {
+          "verse": "20:96",
+          "check": "my soul entice me",
+          "title": {
+            "en": "The voice of self-justification",
+            "de": "Die Stimme der Selbstrechtfertigung",
+            "ar": "صوت تبرير النفس"
+          },
+          "body": {
+            "en": "Asked to explain himself, the Samiri spoke of special insight. In the end he admitted the truth: his own soul had made the deed look good.",
+            "de": "Zur Rede gestellt, sprach der Samiri von besonderer Einsicht. Am Ende gab er die Wahrheit zu: Seine eigene Seele hatte ihm die Tat schöngeredet.",
+            "ar": "لما سُئل تحدث السامري عن بصيرة خاصة، ثم اعترف بالحقيقة: نفسه هي التي زيّنت له فعله."
+          }
+        },
+        {
+          "title": {
+            "en": "The idol burned, the truth restated",
+            "de": "Der Götze verbrannt, die Wahrheit bekräftigt",
+            "ar": "حُرق الصنم وبقي الحق"
+          },
+          "body": {
+            "en": "The commentators explain that the Samiri was condemned to live untouched and avoided. The calf was burned and scattered in the sea, and Musa declared that their God is Allah alone, whose knowledge encompasses everything.",
+            "de": "Die Kommentatoren erklären, dass der Samiri dazu verurteilt wurde, unberührt und gemieden zu leben. Das Kalb wurde verbrannt und ins Meer gestreut, und Musa erklärte, dass ihr Gott allein Allah ist, dessen Wissen alles umfasst.",
+            "ar": "يبيّن المفسرون أن السامري حُكم عليه أن يعيش منبوذًا لا يمسّه أحد، وحُرّق العجل ونُثر في البحر، وأعلن موسى أن إلههم الله وحده الذي أحاط علمه بكل شيء."
+          }
+        },
+        {
+          "title": {
+            "en": "Lessons from the golden calf",
+            "de": "Lehren aus dem goldenen Kalb",
+            "ar": "دروس من قصة العجل"
+          },
+          "list": {
+            "en": [
+              "Faith is tested most when guidance seems absent",
+              "Impressive things are not divine",
+              "Beware of your soul making wrong look right",
+              "Listen to the warning while it can still help",
+              "Remove what pulls your heart away from Allah"
+            ],
+            "de": [
+              "Der Glaube wird am stärksten geprüft, wenn die Führung zu fehlen scheint",
+              "Beeindruckende Dinge sind nicht göttlich",
+              "Hüten Sie sich davor, dass Ihre Seele Unrecht schönredet",
+              "Hören Sie auf die Warnung, solange sie noch helfen kann",
+              "Entfernen Sie, was Ihr Herz von Allah wegzieht"
+            ],
+            "ar": [
+              "يُمتحن الإيمان أشد ما يُمتحن حين يغيب الموجّه",
+              "ما يبهر العين ليس إلهًا",
+              "احذر أن تزيّن لك نفسك الخطأ",
+              "استمع للتحذير ما دام ينفع",
+              "أزل ما يصرف قلبك عن الله"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on Surah Ta-Ha 20:83-98",
+          "url": "https://quran.com/20:97/tafsirs/en-tafisr-ibn-kathir"
+        }
+      ]
+    },
+    {
+      "id": "quran-stories-24-three-stories-of-life-and-death",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": {
+          "en": "Stories of the Quran · 24",
+          "de": "Geschichten des Korans · 24",
+          "ar": "قصص القرآن · ٢٤"
+        },
+        "title": {
+          "en": "Three stories about life and death in Surah al-Baqarah",
+          "de": "Drei Geschichten über Leben und Tod in Sure al-Baqara",
+          "ar": "ثلاث قصص عن الحياة والموت في سورة البقرة"
+        },
+        "sub": {
+          "en": "A king who argued, a man who slept a hundred years, and four birds that returned",
+          "de": "Ein König, der stritt, ein Mann, der hundert Jahre schlief, und vier Vögel, die zurückkehrten",
+          "ar": "ملك جادل، ورجل نام مئة عام، وأربعة طيور عادت"
+        },
+        "arabic": "الحياة بعد الموت"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "Three stories side by side",
+            "de": "Drei Geschichten nebeneinander",
+            "ar": "ثلاث قصص متجاورة"
+          },
+          "body": {
+            "en": "Shortly after Ayat al-Kursi, three short stories follow one another. All three answer the same question: can Allah bring the dead back to life?",
+            "de": "Kurz nach dem Thronvers folgen drei kurze Geschichten aufeinander. Alle drei beantworten dieselbe Frage: Kann Allah die Toten wieder lebendig machen?",
+            "ar": "بعد آية الكرسي بقليل تتوالى ثلاث قصص قصيرة، تجيب كلها عن سؤال واحد: هل يعيد الله الموتى إلى الحياة؟"
+          }
+        },
+        {
+          "verse": "2:258",
+          "check": "argued with Abraham",
+          "title": {
+            "en": "The king who argued",
+            "de": "Der König, der stritt",
+            "ar": "الملك الذي جادل"
+          },
+          "body": {
+            "en": "A king, whom many commentators call Namrud, claimed he too could give life and death. One question about the sunrise left him speechless.",
+            "de": "Ein König, den viele Kommentatoren Namrud nennen, behauptete, auch er könne Leben und Tod geben. Eine Frage über den Sonnenaufgang ließ ihn verstummen.",
+            "ar": "ادّعى ملك، يسمّيه كثير من المفسرين النمرود، أنه هو أيضًا يهب الحياة والموت، فأسكته سؤال عن مطلع الشمس."
+          }
+        },
+        {
+          "title": {
+            "en": "A man and a ruined town",
+            "de": "Ein Mann und eine zerstörte Stadt",
+            "ar": "رجل وقرية خربة"
+          },
+          "body": {
+            "en": "A man passed a town in ruins and wondered how Allah could ever revive it. Allah took his life for a century and then brought him back. The commentators differ about who he was; some name him 'Uzayr.",
+            "de": "Ein Mann kam an einer zerstörten Stadt vorbei und fragte sich, wie Allah sie je wiederbeleben könne. Allah nahm ihm für ein Jahrhundert das Leben und brachte ihn dann zurück. Wer er war, darüber sind die Kommentatoren uneins; manche nennen ihn 'Uzair.",
+            "ar": "مرّ رجل بقرية خربة فتساءل: كيف يعيدها الله إلى الحياة؟ فقبض الله روحه مئة سنة ثم أعاده. واختلف المفسرون في هويته، فسمّاه بعضهم عزيرًا."
+          }
+        },
+        {
+          "title": {
+            "en": "A day, or a hundred years?",
+            "de": "Ein Tag oder hundert Jahre?",
+            "ar": "يوم أم مئة عام؟"
+          },
+          "body": {
+            "en": "He thought he had slept a day or less. His food had not spoiled, yet his donkey was bones. He watched the bones come together and be clothed in flesh, and he confessed that Allah has power over all things.",
+            "de": "Er glaubte, einen Tag oder weniger geschlafen zu haben. Sein Essen war nicht verdorben, doch sein Esel war nur noch Knochen. Er sah zu, wie die Knochen sich fügten und mit Fleisch bekleidet wurden, und bekannte, dass Allah zu allem fähig ist.",
+            "ar": "ظن أنه نام يومًا أو أقل، وكان طعامه لم يتغير، أما حماره فصار عظامًا. فرأى العظام تجتمع وتُكسى لحمًا، فأقرّ بأن قدرة الله لا يعجزها شيء."
+          }
+        },
+        {
+          "verse": "2:260",
+          "check": "that my heart may be satisfied",
+          "title": {
+            "en": "Ibrahim and the four birds",
+            "de": "Ibrahim und die vier Vögel",
+            "ar": "إبراهيم والطيور الأربعة"
+          },
+          "body": {
+            "en": "Ibrahim believed, yet asked to see. Seeing with one's own eyes gives the heart a rest that knowledge alone does not.",
+            "de": "Ibrahim glaubte und bat dennoch darum, zu sehen. Das Sehen mit eigenen Augen schenkt dem Herzen eine Ruhe, die Wissen allein nicht gibt.",
+            "ar": "كان إبراهيم مؤمنًا، ومع ذلك سأل أن يرى، فالمعاينة تمنح القلب طمأنينة لا يمنحها العلم وحده."
+          }
+        },
+        {
+          "title": {
+            "en": "Three ways to the same certainty",
+            "de": "Drei Wege zur selben Gewissheit",
+            "ar": "ثلاث طرق إلى يقين واحد"
+          },
+          "body": {
+            "en": "The first story uses argument, the second experience, the third an answered request. Allah meets each heart where it is: the stubborn, the wondering and the believer seeking more calm.",
+            "de": "Die erste Geschichte nutzt ein Argument, die zweite eine Erfahrung, die dritte eine erhörte Bitte. Allah begegnet jedem Herzen dort, wo es steht: dem sturen, dem fragenden und dem gläubigen, das mehr Ruhe sucht.",
+            "ar": "القصة الأولى بالحجة، والثانية بالتجربة، والثالثة بدعاء مستجاب. والله يخاطب كل قلب حيث هو: المعاند، والمتسائل، والمؤمن الذي يطلب مزيد الطمأنينة."
+          }
+        },
+        {
+          "title": {
+            "en": "Lessons on life and death",
+            "de": "Lehren über Leben und Tod",
+            "ar": "دروس في الحياة والموت"
+          },
+          "list": {
+            "en": [
+              "Only Allah gives life and takes it",
+              "Power does not make a false claim true",
+              "Time is in Allah's hands, a day or a century",
+              "Asking to understand more is not weak faith",
+              "The One who began creation will bring it back"
+            ],
+            "de": [
+              "Nur Allah gibt das Leben und nimmt es",
+              "Macht macht eine falsche Behauptung nicht wahr",
+              "Die Zeit liegt in Allahs Hand, ob ein Tag oder ein Jahrhundert",
+              "Um mehr Verständnis zu bitten, ist kein schwacher Glaube",
+              "Der die Schöpfung begann, wird sie zurückbringen"
+            ],
+            "ar": [
+              "الله وحده يهب الحياة ويأخذها",
+              "السلطة لا تجعل الادعاء الباطل حقًّا",
+              "الزمن بيد الله، يومًا كان أو قرنًا",
+              "طلب الفهم ليس ضعفًا في الإيمان",
+              "الذي بدأ الخلق قادر على إعادته"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on Surah al-Baqarah 2:258-260",
+          "url": "https://quran.com/2:259/tafsirs/en-tafisr-ibn-kathir"
+        }
+      ]
+    },
+    {
+      "id": "quran-stories-25-the-man-who-cast-off-the-signs",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": {
+          "en": "Stories of the Quran · 25",
+          "de": "Geschichten des Korans · 25",
+          "ar": "قصص القرآن · ٢٥"
+        },
+        "title": {
+          "en": "The man who cast off Allah's signs",
+          "de": "Der Mann, der Allahs Zeichen abstreifte",
+          "ar": "الذي انسلخ من آيات الله"
+        },
+        "sub": {
+          "en": "A short parable in Surah al-A'raf about knowledge without action and a heart that clings to the earth",
+          "de": "Ein kurzes Gleichnis in Sure al-A'raf über Wissen ohne Handeln und ein Herz, das an der Erde klebt",
+          "ar": "مثل قصير في سورة الأعراف عن علم بلا عمل وقلب تعلّق بالأرض"
+        },
+        "arabic": "علم بلا عمل"
+      },
+      "slides": [
+        {
+          "verse": "7:175",
+          "check": "detached himself from them",
+          "title": {
+            "en": "Given the signs, then stripped of them",
+            "de": "Die Zeichen erhalten, dann abgestreift",
+            "ar": "أوتي الآيات ثم تخلّى عنها"
+          },
+          "body": {
+            "en": "He was given knowledge of Allah's signs, then pulled away from them as a snake sheds its skin. Satan followed close behind.",
+            "de": "Ihm wurde Wissen um Allahs Zeichen gegeben, dann löste er sich davon, wie eine Schlange ihre Haut abstreift. Satan folgte ihm dicht.",
+            "ar": "أوتي علمًا بآيات الله ثم خرج منها كما تخرج الحية من جلدها، فلحقه الشيطان."
+          }
+        },
+        {
+          "title": {
+            "en": "Who was he?",
+            "de": "Wer war er?",
+            "ar": "من هو؟"
+          },
+          "body": {
+            "en": "The commentators mention different people. Many name Bal'am ibn Ba'ura from the time of Musa; others name Umayya ibn Abi as-Salt, a poet of the Prophet's time. The Quran leaves him unnamed, so that anyone can see the warning.",
+            "de": "Die Kommentatoren nennen verschiedene Personen. Viele nennen Bal'am ibn Ba'ura aus der Zeit Musas; andere Umayya ibn Abi s-Salt, einen Dichter aus der Zeit des Propheten. Der Koran nennt keinen Namen, damit jeder darin die Warnung erkennt.",
+            "ar": "يذكر المفسرون أشخاصًا مختلفين؛ فكثير منهم يسمّيه بلعام بن باعوراء من زمن موسى، ويسمّيه آخرون أمية بن أبي الصلت، الشاعر المعاصر للنبي. ولم يسمّه القرآن ليرى كل أحد فيه العبرة."
+          }
+        },
+        {
+          "verse": "7:176",
+          "check": "followed his own desire",
+          "title": {
+            "en": "The earth or the heights",
+            "de": "Die Erde oder die Höhe",
+            "ar": "الأرض أم الرفعة"
+          },
+          "body": {
+            "en": "Allah could have raised him by that knowledge. He chose to cling to the earth and follow his desires.",
+            "de": "Allah hätte ihn durch dieses Wissen erhöhen können. Er entschied sich, an der Erde zu haften und seinen Begierden zu folgen.",
+            "ar": "كان الله سيرفعه بذلك العلم، لكنه اختار أن يركن إلى الأرض ويتبع شهوته."
+          }
+        },
+        {
+          "title": {
+            "en": "A restless image",
+            "de": "Ein ruheloses Bild",
+            "ar": "صورة لا تهدأ"
+          },
+          "body": {
+            "en": "The Quran compares him to a dog that pants whether it is chased or left alone. Desire that is fed never finds rest; it keeps panting for more.",
+            "de": "Der Koran vergleicht ihn mit einem Hund, der hechelt, ob man ihn verjagt oder in Ruhe lässt. Begierde, die man füttert, findet nie Ruhe; sie hechelt immer nach mehr.",
+            "ar": "يشبّهه القرآن بكلب يلهث سواء طُرد أو تُرك. والهوى إذا أُطعم لا يهدأ، بل يلهث دائمًا طلبًا للمزيد."
+          }
+        },
+        {
+          "title": {
+            "en": "Knowledge is a trust",
+            "de": "Wissen ist ein anvertrautes Gut",
+            "ar": "العلم أمانة"
+          },
+          "body": {
+            "en": "This story is a warning for anyone who learns: knowledge raises a person only when it is lived. The verse ends by telling the Prophet to relate such stories so that people may reflect.",
+            "de": "Diese Geschichte ist eine Warnung für jeden, der lernt: Wissen erhebt einen Menschen nur, wenn er danach lebt. Der Vers endet mit dem Auftrag an den Propheten, solche Geschichten zu erzählen, damit die Menschen nachdenken.",
+            "ar": "هذه القصة تحذير لكل متعلم: العلم لا يرفع صاحبه إلا إذا عمل به. وتُختم الآية بأمر النبي أن يروي هذه القصص ليتفكر الناس."
+          }
+        },
+        {
+          "verse": "3:8",
+          "check": "let not our hearts deviate",
+          "title": {
+            "en": "A prayer against this fate",
+            "de": "Ein Gebet gegen dieses Schicksal",
+            "ar": "دعاء يقي هذا المصير"
+          },
+          "body": {
+            "en": "Those firm in knowledge ask Allah not to let their hearts turn away after He has guided them.",
+            "de": "Die im Wissen Gefestigten bitten Allah, ihre Herzen nach der Rechtleitung nicht abweichen zu lassen.",
+            "ar": "يسأل الراسخون في العلم ربهم أن يحفظ قلوبهم من الانحراف بعد الهداية."
+          }
+        },
+        {
+          "title": {
+            "en": "Lessons from this parable",
+            "de": "Lehren aus diesem Gleichnis",
+            "ar": "دروس من هذا المثل"
+          },
+          "list": {
+            "en": [
+              "Knowledge without action can turn against you",
+              "Desire is never satisfied by giving in to it",
+              "Ask Allah to keep you firm after guidance",
+              "Choose the heights over the comforts of the earth"
+            ],
+            "de": [
+              "Wissen ohne Handeln kann sich gegen Sie wenden",
+              "Begierde wird durch Nachgeben nie gestillt",
+              "Bitten Sie Allah, Sie nach der Rechtleitung standhaft zu halten",
+              "Wählen Sie die Höhe statt der Bequemlichkeit der Erde"
+            ],
+            "ar": [
+              "العلم بلا عمل قد ينقلب على صاحبه",
+              "الهوى لا يشبع بالاستجابة له",
+              "اسأل الله الثبات بعد الهداية",
+              "اختر الرفعة على راحة الأرض"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim (Arabic), on 7:175-176",
+          "url": "https://quran.com/7:175/tafsirs/ar-tafsir-ibn-kathir"
+        }
+      ]
+    },
+    {
+      "id": "quran-stories-26-pharaohs-end",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": {
+          "en": "Stories of the Quran · 26",
+          "de": "Geschichten des Korans · 26",
+          "ar": "قصص القرآن · ٢٦"
+        },
+        "title": {
+          "en": "Pharaoh's last moment: a faith that came too late",
+          "de": "Pharaos letzter Augenblick: ein Glaube, der zu spät kam",
+          "ar": "لحظة فرعون الأخيرة: إيمان جاء متأخرًا"
+        },
+        "sub": {
+          "en": "Signs ignored for years, a sea that closed, and a body kept as a lesson",
+          "de": "Jahrelang missachtete Zeichen, ein Meer, das sich schloss, und ein Körper, der als Lehre bewahrt wurde",
+          "ar": "آيات تُجوهلت سنين، وبحر انطبق، وبدن بقي عبرة"
+        },
+        "arabic": "فرعون"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "A ruler who claimed too much",
+            "de": "Ein Herrscher, der zu viel beanspruchte",
+            "ar": "حاكم ادّعى ما ليس له"
+          },
+          "body": {
+            "en": "Pharaoh ruled Egypt through fear. He enslaved the Children of Israel, killed their sons and finally declared himself the highest lord of his people.",
+            "de": "Pharao beherrschte Ägypten mit Furcht. Er versklavte die Kinder Israils, tötete ihre Söhne und erklärte sich schließlich zum höchsten Herrn seines Volkes.",
+            "ar": "حكم فرعون مصر بالخوف، واستعبد بني إسرائيل وقتل أبناءهم، ثم ادّعى أنه الرب الأعلى لقومه."
+          }
+        },
+        {
+          "title": {
+            "en": "Sign after sign",
+            "de": "Zeichen um Zeichen",
+            "ar": "آية بعد آية"
+          },
+          "body": {
+            "en": "Musa came with clear signs: the staff, the shining hand, then floods, locusts, lice, frogs and blood. Each time Pharaoh promised to believe if the trouble ended, and each time he broke his word.",
+            "de": "Musa kam mit klaren Zeichen: dem Stab, der leuchtenden Hand, dann Flut, Heuschrecken, Läusen, Fröschen und Blut. Jedes Mal versprach Pharao zu glauben, wenn die Plage endete, und jedes Mal brach er sein Wort.",
+            "ar": "جاء موسى بآيات بيّنات: العصا واليد البيضاء، ثم الطوفان والجراد والقمّل والضفادع والدم. وفي كل مرة وعد فرعون بالإيمان إن رُفع البلاء، ثم نكث."
+          }
+        },
+        {
+          "verse": "10:90",
+          "check": "when drowning overtook him",
+          "title": {
+            "en": "Faith at the last breath",
+            "de": "Glaube beim letzten Atemzug",
+            "ar": "إيمان عند آخر نفس"
+          },
+          "body": {
+            "en": "Only when the water closed over him did Pharaoh declare belief, and even then he spoke of the God of the Children of Israel.",
+            "de": "Erst als das Wasser über ihm zusammenschlug, erklärte Pharao seinen Glauben, und selbst dann sprach er vom Gott der Kinder Israils.",
+            "ar": "لم يعلن فرعون إيمانه إلا حين أطبق عليه الماء، وحتى حينها تحدث عن إله بني إسرائيل."
+          }
+        },
+        {
+          "title": {
+            "en": "Too late",
+            "de": "Zu spät",
+            "ar": "بعد فوات الأوان"
+          },
+          "body": {
+            "en": "The Quran answers: now, after a life of disobedience? The scholars explain that faith declared when death has already arrived and the unseen is seen is not accepted. Repentance belongs to the time before that moment.",
+            "de": "Der Koran antwortet: jetzt, nach einem Leben des Ungehorsams? Die Gelehrten erklären, dass ein Glaube, der erst erklärt wird, wenn der Tod schon da ist und das Verborgene sichtbar wird, nicht angenommen wird. Die Reue gehört in die Zeit davor.",
+            "ar": "يجيبه القرآن: الآن، بعد عمر من العصيان؟ ويبيّن العلماء أن الإيمان عند حضور الموت ومعاينة الغيب لا يُقبل، وأن وقت التوبة قبل تلك اللحظة."
+          }
+        },
+        {
+          "verse": "10:91-92",
+          "check": "save you in body",
+          "title": {
+            "en": "A body kept as a sign",
+            "de": "Ein Körper als Zeichen bewahrt",
+            "ar": "بدن بقي آية"
+          },
+          "body": {
+            "en": "His body was brought out of the sea so that later generations would see that the one who claimed lordship was only a man.",
+            "de": "Sein Körper wurde aus dem Meer gebracht, damit spätere Generationen sehen, dass der, der sich Herr nannte, nur ein Mensch war.",
+            "ar": "أُخرج بدنه من البحر ليرى من بعده أن من ادّعى الربوبية لم يكن إلا إنسانًا."
+          }
+        },
+        {
+          "title": {
+            "en": "What we know and what we do not",
+            "de": "Was wir wissen und was nicht",
+            "ar": "ما نعلمه وما لا نعلمه"
+          },
+          "body": {
+            "en": "The commentators mention that some people doubted he had really died, so his body was cast ashore. The Quran does not say which Pharaoh this was. Linking him to a particular mummy remains speculation.",
+            "de": "Die Kommentatoren erwähnen, dass manche zweifelten, ob er wirklich gestorben sei, und sein Körper deshalb ans Ufer geworfen wurde. Der Koran sagt nicht, welcher Pharao es war. Ihn mit einer bestimmten Mumie zu verbinden, bleibt Vermutung.",
+            "ar": "يذكر المفسرون أن بعض الناس شكّوا في موته، فأُلقي بدنه على الشاطئ. ولم يحدد القرآن أي فرعون كان، وربطه بمومياء بعينها يبقى ظنًّا."
+          }
+        },
+        {
+          "title": {
+            "en": "Lessons from Pharaoh's end",
+            "de": "Lehren aus Pharaos Ende",
+            "ar": "دروس من نهاية فرعون"
+          },
+          "list": {
+            "en": [
+              "No power on earth lasts",
+              "Do not delay repentance; its time is now",
+              "Promises made only in hardship rarely hold",
+              "Arrogance blinds a person to clear signs",
+              "History's tyrants become lessons for all"
+            ],
+            "de": [
+              "Keine Macht auf Erden hat Bestand",
+              "Schieben Sie die Reue nicht auf; ihre Zeit ist jetzt",
+              "Versprechen, die nur in der Not gegeben werden, halten selten",
+              "Hochmut macht blind für klare Zeichen",
+              "Die Tyrannen der Geschichte werden zur Lehre für alle"
+            ],
+            "ar": [
+              "لا سلطان في الأرض يدوم",
+              "لا تؤجل التوبة، فوقتها الآن",
+              "وعود الشدة وحدها قلّما تدوم",
+              "الكبر يعمي عن الآيات الواضحة",
+              "طغاة التاريخ يصيرون عبرة للجميع"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on Surah Yunus 10:88-92",
+          "url": "https://quran.com/10:92/tafsirs/en-tafisr-ibn-kathir"
+        }
+      ]
+    },
+    {
+      "id": "quran-stories-27-forty-years-in-the-desert",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": {
+          "en": "Stories of the Quran · 27",
+          "de": "Geschichten des Korans · 27",
+          "ar": "قصص القرآن · ٢٧"
+        },
+        "title": {
+          "en": "Forty years in the desert: when a people said no",
+          "de": "Vierzig Jahre in der Wüste: als ein Volk Nein sagte",
+          "ar": "التيه أربعين سنة: حين قال قوم لا"
+        },
+        "sub": {
+          "en": "Two brave men, a refusal at the gate of the holy land, and a different answer from the Prophet's companions",
+          "de": "Zwei mutige Männer, eine Weigerung am Tor des heiligen Landes und eine andere Antwort der Gefährten des Propheten",
+          "ar": "رجلان شجاعان، ورفض عند باب الأرض المقدسة، وجواب مختلف من أصحاب النبي"
+        },
+        "arabic": "التيه"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "At the gate of the holy land",
+            "de": "Am Tor des heiligen Landes",
+            "ar": "على باب الأرض المقدسة"
+          },
+          "body": {
+            "en": "After their rescue from Pharaoh, Musa reminded his people of Allah's favours and called them to enter the holy land that Allah had assigned to them.",
+            "de": "Nach ihrer Rettung vor Pharao erinnerte Musa sein Volk an Allahs Gaben und rief es auf, das heilige Land zu betreten, das Allah ihm bestimmt hatte.",
+            "ar": "بعد نجاتهم من فرعون ذكّر موسى قومه بنعم الله، ودعاهم إلى دخول الأرض المقدسة التي وعدهم الله بها."
+          }
+        },
+        {
+          "title": {
+            "en": "Afraid of giants",
+            "de": "Angst vor Riesen",
+            "ar": "خوف من الأقوياء"
+          },
+          "body": {
+            "en": "They answered that a mighty people lived there and that they would not enter until those people left. They wanted the victory without the effort.",
+            "de": "Sie antworteten, dort lebe ein gewaltiges Volk, und sie würden nicht hineingehen, bevor es das Land verlassen habe. Sie wollten den Sieg ohne die Mühe.",
+            "ar": "أجابوا بأن في الأرض قومًا أقوياء، وأنهم لن يدخلوها حتى يخرج أولئك منها. أرادوا النصر بلا جهد."
+          }
+        },
+        {
+          "verse": "5:23",
+          "check": "two men",
+          "title": {
+            "en": "Two men who feared Allah",
+            "de": "Zwei Männer, die Allah fürchteten",
+            "ar": "رجلان يخافان الله"
+          },
+          "body": {
+            "en": "Two men urged them to go through the gate and trust Allah. The commentators name them Yusha' (Joshua) and Kalib (Caleb).",
+            "de": "Zwei Männer drängten sie, durch das Tor zu gehen und auf Allah zu vertrauen. Die Kommentatoren nennen sie Yuscha' (Josua) und Kalib (Kaleb).",
+            "ar": "حثّهم رجلان على دخول الباب والتوكل على الله، ويسمّيهما المفسرون يوشع وكالب."
+          }
+        },
+        {
+          "title": {
+            "en": "The harshest refusal",
+            "de": "Die härteste Weigerung",
+            "ar": "أقسى رفض"
+          },
+          "body": {
+            "en": "Their reply has stayed in memory ever since: they told Musa to go and fight together with his Lord, while they stayed where they were.",
+            "de": "Ihre Antwort blieb seither im Gedächtnis: Sie sagten Musa, er solle mit seinem Herrn selbst gehen und kämpfen, während sie blieben, wo sie waren.",
+            "ar": "بقي ردّهم في الذاكرة منذ ذلك اليوم: طلبوا من موسى أن يمضي مع ربه للقتال، وبقوا هم في أماكنهم."
+          }
+        },
+        {
+          "verse": "5:25-26",
+          "check": "forty years",
+          "title": {
+            "en": "A prayer, then forty years",
+            "de": "Ein Gebet, dann vierzig Jahre",
+            "ar": "دعاء ثم أربعون سنة"
+          },
+          "body": {
+            "en": "Musa turned to Allah, with power over no one but himself and his brother. The land was withheld from them for forty years of wandering.",
+            "de": "Musa wandte sich an Allah; er hatte über niemanden Macht außer über sich und seinen Bruder. Das Land blieb ihnen vierzig Jahre der Wanderung verwehrt.",
+            "ar": "توجّه موسى إلى الله وهو لا يملك أمر أحد إلا نفسه وأخاه، فمُنعت عنهم الأرض أربعين سنة يهيمون فيها."
+          }
+        },
+        {
+          "title": {
+            "en": "A new generation",
+            "de": "Eine neue Generation",
+            "ar": "جيل جديد"
+          },
+          "body": {
+            "en": "The commentators explain that during those years the generation that refused passed away, and a new one grew up in the desert. It entered the land later, led by Yusha'.",
+            "de": "Die Kommentatoren erklären, dass in diesen Jahren die Generation, die sich geweigert hatte, dahinging und in der Wüste eine neue heranwuchs. Sie betrat das Land später unter der Führung Yuschas.",
+            "ar": "يبيّن المفسرون أن الجيل الذي رفض انقضى في تلك السنين، ونشأ في الصحراء جيل جديد دخل الأرض بعد ذلك بقيادة يوشع."
+          }
+        },
+        {
+          "hadith": "bukhari:4609",
+          "check": "Al-Miqdad",
+          "title": {
+            "en": "A different answer at Badr",
+            "de": "Eine andere Antwort bei Badr",
+            "ar": "جواب مختلف يوم بدر"
+          },
+          "body": {
+            "en": "Centuries later, a companion of the Prophet recalled this story before Badr and gave the opposite answer. It delighted the Prophet.",
+            "de": "Jahrhunderte später erinnerte ein Gefährte des Propheten vor Badr an diese Geschichte und gab die entgegengesetzte Antwort. Sie erfreute den Propheten.",
+            "ar": "بعد قرون تذكّر أحد الصحابة هذه القصة يوم بدر، فأجاب بعكسها، فسُرّ النبي بقوله."
+          }
+        },
+        {
+          "title": {
+            "en": "Lessons from the wandering",
+            "de": "Lehren aus der Wanderung",
+            "ar": "دروس من التيه"
+          },
+          "list": {
+            "en": [
+              "Blessings bring duties, not only comfort",
+              "Fear can cost what courage would have won",
+              "Two brave voices are worth more than a fearful crowd",
+              "Change sometimes needs a new generation",
+              "Stand by what is right; do not leave others to fight alone"
+            ],
+            "de": [
+              "Gaben bringen Pflichten, nicht nur Bequemlichkeit",
+              "Angst kann kosten, was Mut gewonnen hätte",
+              "Zwei mutige Stimmen wiegen mehr als eine ängstliche Menge",
+              "Wandel braucht manchmal eine neue Generation",
+              "Stehen Sie zum Richtigen; lassen Sie andere nicht allein kämpfen"
+            ],
+            "ar": [
+              "النعم تحمل واجبات لا راحة فقط",
+              "قد يُضيّع الخوف ما كانت الشجاعة ستكسبه",
+              "صوتان شجاعان خير من جمع خائف",
+              "قد يحتاج التغيير إلى جيل جديد",
+              "قف مع الحق ولا تترك غيرك يواجه وحده"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on Surah al-Ma'idah 5:20-26",
+          "url": "https://quran.com/5:23/tafsirs/en-tafisr-ibn-kathir"
+        }
+      ]
+    }
+  ]
+}
