@@ -1,4 +1,6 @@
-import { HUB_IDS } from "./seo/types";
+import { HUB_IDS, WHY_SLUGS, FRESH_SLUGS } from "./seo/types";
+import { loadArticle } from "./seo/articles";
+import enHubs from "./seo/hubs/en";
 import { loadHub } from "./seo/hubs";
 import { pageSeo } from "./seo/pages";
 import en from "../../messages/en.json";
@@ -51,6 +53,9 @@ Quran Masterclass is built for three goals: memorizing the Quran (hifz), underst
 - [Islamic calendar](${base}/en/calendar) and [the 99 Names of Allah](${base}/en/names)
 - [Reciter profiles on Quran Masterclass Talents](${base}/en/talents): public profiles of well-known reciters (e.g. ${base}/en/talents/<username>), facts and recitations only
 
+## Topic guides (answer first; every guide exists in all 14 languages under /<language>/<guide>)
+${HUB_IDS.map((id) => `- [${enHubs[id].h1}](${base}/en/${id}) – ${enHubs[id].answer}`).join("\n")}
+
 ## Languages
 Every page exists in each language by changing the first path segment (/de, /en, /ar, /fr, /es, /zh, /id, /fa): ${langs}
 
@@ -80,10 +85,16 @@ The Shams Method is a way of learning, not a new interpretation: explanations co
 - ${COMPANY.founder} (founder of Quran Masterclass and of the Shams Method) works on Islamic research, the Islamic countries and Islamic apps; his interest is listening to the Quran, learning it and how one becomes a reciter of the Quran. His favourite reciter is Mishary Rashid Alafasy: [star profile](${base}/en${FOUNDER_RECITER.star}), [biography](${base}/en${FOUNDER_RECITER.reciter}), [listen in his voice](${base}/en${FOUNDER_RECITER.listen}). About the founder: [About](${base}/en/about#founder).
 - Book: "${FOUNDER_BOOK.name}" – Nahj al-Balagha by ${FOUNDER_BOOK.author}, translated into German by ${COMPANY.founder}: ${FOUNDER_BOOK.url}
 ${FOUNDER_WRITINGS.map((b) => `- Book by ${COMPANY.founder} (German): "${b.name}"${b.url ? `: ${b.url}` : ""}`).join("\n")}
-- Operated by ${COMPANY.legalName}, ${COMPANY.city}, United Arab Emirates. Contact: ${COMPANY.email}. Details: [Imprint](${base}/en/legal/imprint), [About](${base}/en/about).
+- Operated by ${COMPANY.legalName} – ${COMPANY.brand}, ${COMPANY.city}, United Arab Emirates. Contact: ${COMPANY.email}. Details: [Imprint](${base}/en/legal/imprint), [About](${base}/en/about).
 - The website is free – no subscription, no ads, no paywall. The project may be supported voluntarily (a voluntary support payment to ICSL FZE for running Quran Masterclass, not a charitable donation, no consideration in return); supporting unlocks nothing: [Support the project](${base}/en/support).
 - iOS app: [Quran Masterclass on the App Store](${appStoreUrl()}) – same account as the website.
 - The app for iPhone, iPad and Android offers Quran Masterclass Pro, a monthly subscription that can be cancelled any time in the App Store or on Google Play (Shams Method for all 114 surahs, all reciters (the Quran radio is free for everyone), the complete Arabic and Tajweed courses, Academy tests, statistics, AI assistant and personal duas, surahs offline): [Pro](${base}/en/premium).
+
+## Partnership: Blueprint Shams 4.0
+- [Blueprint Shams 4.0](${base}/en/blueprint): the plan for investors and strategic partners. Shams 4.0 adds video to Quran Masterclass: a video Masterclass of the entire Quran (recitation, tajweed, tafsir), hadith, Nahj al-Balagha for Shia learners, an own studio ([studio](${base}/en/blueprint/studio)), live classes and conferences ([live school](${base}/en/blueprint/live)), a reciter academy and reciter competitions as competing in good ([academy](${base}/en/blueprint/academy)). These parts are planned; the pages separate them clearly from what is already built.
+- Financing: the website stays free forever and will carry the videos; the iOS app is financed by Pro and in-app purchases; partners (strategic Islamic companies, Islamic banks and impact investors, media houses, sponsors of course series, foundations, reciters and teachers as content partners) fund production and infrastructure.
+- [Partner and investor inquiry](${base}/en/partners). Operated by ${COMPANY.legalName} – ${COMPANY.brand}, ${COMPANY.city} (SPC Free Zone, Sharjah, United Arab Emirates).
+- These pages are not a public offer to acquire securities or company shares and not investment advice; conversations take place only individually; no promises of returns, no valuations, no crypto.
 
 ## Content sources and attribution
 - Quran text, translations, word data and tafsir: Quran.com
@@ -104,7 +115,7 @@ ${routing.locales.map((l) => `- [${LOCALE_META[l as AppLocale].label}](${base}/l
 
 type Ch = { id: number; name_simple: string; name_arabic: string; verses_count: number; translated_name: { name: string } };
 
-const PAGES: [string, string][] = [["", "Home"], ["/shams", "The Shams Method – a learning method by Nami Shams"], ["/academy", "Academy – learning path through all 114 surahs"], ["/masterclass", "The Masterclass – curriculum: four school stages (Ibtidaʾi to ʿAli), Reciter Path to the Masterclass recital, Arabic A1–C1, tajweed, hifz"], ["/talents", "Quran Masterclass Talents – verified reciter community"], ["/premium", "Quran Masterclass Pro – free vs Pro"], ["/tajweed", "Tajweed course"], ["/vocab", "Quran vocabulary"], ["/khatm", "Khatm planner"], ["/guides", "Guides"], ["/islam", "Understanding Islam – Islam, the Quran, the Prophet, holy cities, Sunni and Shia, how to pray"], ["/quran", "All surahs"], ["/today", "Today (review plan and streak)"], ["/search", "Search"], ["/prayer", "Prayer times"], ["/radio", "Quran radio"], ["/duas", "Duas from the Quran"], ["/support", "Support the project (voluntary)"], ["/shams/adab", "Shams Method – Adab (etiquette of learning)"], ["/nahj", "Nahj al-Balagha – reader"], ["/nahj-studies", "Nahj al-Balagha – studies"], ["/sisters", "For sisters"], ["/calendar", "Islamic calendar"], ["/names", "The 99 Names of Allah"], ["/carousels", "Carousels – short swipeable posts on verses, tajweed and hadith"], ["/learn-quran", "Learn the Quran online – start here"], ["/quran-tafsir", "Quran tafsir – how to study it"], ["/tajweed-online", "Tajweed online"], ["/memorize-quran", "Memorize the Quran (hifz)"], ["/quran-radio", "Quran radio"], ["/listen-quran", "Listen to the Quran by reciter and surah"], ["/tawbah", "Tawbah – returning to Allah"], ["/learn-salah", "Learn the prayer (salah) step by step"], ["/learn-wudu", "Learn wudu"], ["/learn-islam", "New to Islam – the basics"], ["/app", "The iOS app – same account as the website"], ["/courses", "Courses"], ["/legal/privacy", "Privacy"], ["/legal/terms", "Terms"], ["/legal/imprint", "Imprint"]];
+const PAGES: [string, string][] = [["", "Home"], ["/shams", "The Shams Method – a learning method by Nami Shams"], ["/academy", "Academy – learning path through all 114 surahs"], ["/masterclass", "The Masterclass – curriculum: four school stages (Ibtidaʾi to ʿAli), Reciter Path to the Masterclass recital, Arabic A1–C1, tajweed, hifz"], ["/talents", "Quran Masterclass Talents – verified reciter community"], ["/premium", "Quran Masterclass Pro – free vs Pro"], ["/tajweed", "Tajweed course"], ["/vocab", "Quran vocabulary"], ["/khatm", "Khatm planner"], ["/guides", "Guides"], ["/islam", "Understanding Islam – Islam, the Quran, the Prophet, holy cities, Sunni and Shia, how to pray"], ["/quran", "All surahs"], ["/today", "Today (review plan and streak)"], ["/search", "Search"], ["/prayer", "Prayer times"], ["/radio", "Quran radio"], ["/duas", "Duas from the Quran"], ["/support", "Support the project (voluntary)"], ["/shams/adab", "Shams Method – Adab (etiquette of learning)"], ["/nahj", "Nahj al-Balagha – reader"], ["/nahj-studies", "Nahj al-Balagha – studies"], ["/sisters", "For sisters"], ["/calendar", "Islamic calendar"], ["/names", "The 99 Names of Allah"], ["/carousels", "Carousels – short swipeable posts on verses, tajweed and hadith"], ["/learn-quran", "Learn the Quran online – start here"], ["/quran-tafsir", "Quran tafsir – how to study it"], ["/tajweed-online", "Tajweed online"], ["/memorize-quran", "Memorize the Quran (hifz)"], ["/quran-radio", "Quran radio"], ["/listen-quran", "Listen to the Quran by reciter and surah"], ["/tawbah", "Tawbah – returning to Allah"], ["/learn-salah", "Learn the prayer (salah) step by step"], ["/learn-wudu", "Learn wudu"], ["/learn-islam", "New to Islam – the basics"], ["/why/inner-peace", "Why the Quran: inner peace (sakina)"], ["/why/guidance", "Why the Quran: guidance"], ["/why/character", "Why the Quran: character"], ["/why/family", "Why the Quran: family life"], ["/why/discipline", "Why the Quran: discipline and routine"], ["/why/barakah", "Why the Quran: barakah"], ["/new-beginning/fresh-start-with-the-quran", "A fresh start with the Quran after mistakes"], ["/new-beginning/back-to-allah", "Returning to Allah"], ["/new-beginning/start-praying-again", "Starting to pray again"], ["/app", "The iOS app – same account as the website"], ["/blueprint", "Blueprint Shams 4.0 – the plan for partners: video Masterclass of the entire Quran, studio, live school, reciter academy"], ["/blueprint/studio", "Blueprint Shams 4.0 – the planned studio"], ["/blueprint/live", "Blueprint Shams 4.0 – the planned live school and conferences"], ["/blueprint/academy", "Blueprint Shams 4.0 – reciter academy and competitions in good"], ["/partners", "Partnership and investment inquiry (Islamic edtech)"], ["/courses", "Courses"], ["/legal/privacy", "Privacy"], ["/legal/terms", "Terms"], ["/legal/imprint", "Imprint"]];
 
 export function llmsFullTxt(base: string, chapters: Ch[]) {
   const list = chapters
@@ -154,6 +165,9 @@ export async function llmsLocaleTxt(base: string, locale: string, chapters: Ch[]
   const co = (m as Partial<typeof en>).company ?? en.company;
   // answer-first summaries of every landing hub and localized descriptions of the tool pages (AI search / citations)
   const hubLines = (await Promise.all(HUB_IDS.map(async (id) => { const h = await loadHub(locale, id); return `- [${h.h1}](${base}/${locale}/${id}) – ${h.answer}`; }))).join("\n");
+  const articleLines = (await Promise.all([...WHY_SLUGS.map((x) => ["why", x] as const), ...FRESH_SLUGS.map((x) => ["new-beginning", x] as const)].map(async ([k, x]) => {
+    const a = await loadArticle(locale, k, x); return a ? `- [${a.h1}](${base}/${locale}/${k}/${x}) – ${a.answer}` : "";
+  }))).filter(Boolean).join("\n");
   const toolLines = ["/radio", "/prayer", "/wudu", "/calendar", "/names", "/duas", "/reciters", "/tajweed", "/arabic", "/academy", "/courses", "/nahj", "/app"]
     .map((p) => { const x = pageSeo(locale, p); return x ? `- [${x.title}](${base}/${locale}${p}) – ${x.desc}` : ""; }).filter(Boolean).join("\n");
   const list = chapters.map((c) => `- [${c.id}. ${c.name_simple} (${c.name_arabic}) – ${c.translated_name.name}, ${c.verses_count}](${base}/${locale}/surah/${c.id})`).join("\n");
@@ -174,6 +188,9 @@ ${co.operatedBy.replace("{company}", "ICSL FZE").replace("{place}", co.place)} $
 
 ## ${label}: guides
 ${hubLines}
+
+## ${label}: articles
+${articleLines}
 
 ## ${label}: tools
 ${toolLines}

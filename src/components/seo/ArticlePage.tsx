@@ -4,6 +4,7 @@ import { setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import JsonLd from "@/components/JsonLd";
 import { abs, pageMeta } from "@/lib/site";
+import { organizationLd } from "@/lib/company";
 import { loadArticle } from "@/lib/seo/articles";
 import { loadHub } from "@/lib/seo/hubs";
 import { ARTICLE_AR, articleHub } from "@/lib/seo/related";
@@ -36,6 +37,7 @@ export const articlePage = (kind: ArticleKind) => async function ArticleRoute({ 
     return x ? ([`/${kind}/${s}`, x.h1, x.description] as const) : null;
   }))).filter((x): x is NonNullable<typeof x> => !!x);
   const ld = [
+    { "@context": "https://schema.org", ...organizationLd(abs) },
     { "@context": "https://schema.org", "@type": "Article", "@id": url, mainEntityOfPage: url, headline: a.h1, description: a.description, abstract: a.answer, inLanguage: locale, author: { "@id": abs("/#org") }, publisher: { "@id": abs("/#org") }, isPartOf: { "@id": abs("/#site") } },
     { "@context": "https://schema.org", "@type": "FAQPage", inLanguage: locale, mainEntity: a.faq.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) },
     { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Quran Masterclass", item: abs(`/${locale}`) }, { "@type": "ListItem", position: 2, name: hub.h1, item: abs(`/${locale}/${hubId}`) }, { "@type": "ListItem", position: 3, name: a.h1, item: url }] },

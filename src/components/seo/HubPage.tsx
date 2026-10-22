@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
 import JsonLd from "@/components/JsonLd";
 import { abs, pageMeta } from "@/lib/site";
+import { organizationLd } from "@/lib/company";
 import { loadHub } from "@/lib/seo/hubs";
 import { loadArticle } from "@/lib/seo/articles";
 import { HUB_AR, HUB_ARTICLES } from "@/lib/seo/related";
@@ -28,6 +29,7 @@ export const hubPage = (id: HubId) => async function Hub({ params }: P) {
     return a ? { href: `/${k}`, title: a.h1, desc: a.description, kicker: a.kicker } : null;
   }))).filter((x): x is NonNullable<typeof x> => !!x);
   const ld = [
+    { "@context": "https://schema.org", ...organizationLd(abs) },
     { "@context": "https://schema.org", "@type": "WebPage", "@id": url, url, name: h.title, description: h.description, abstract: h.answer, inLanguage: locale, isPartOf: { "@id": abs("/#site") }, publisher: { "@id": abs("/#org") }, about: h.h1 },
     { "@context": "https://schema.org", "@type": "HowTo", name: h.stepsTitle, description: h.answer, inLanguage: locale, step: h.steps.map((s, i) => ({ "@type": "HowToStep", position: i + 1, name: s.title, text: s.body })) },
     { "@context": "https://schema.org", "@type": "FAQPage", inLanguage: locale, mainEntity: h.faq.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) },
