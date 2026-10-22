@@ -1504,6 +1504,7 @@
     "brandLabel": "品牌"
   },
   "ziina": {
+    "via": "通过 Ziina 支付",
     "title": "通过 Ziina 支持我们",
     "lead": "使用 Apple Pay、Google Pay 或银行卡安全付款——通过 Ziina，一款来自阿联酋的支付应用。",
     "custom": "其他金额",

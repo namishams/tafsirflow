@@ -1504,6 +1504,7 @@
     "captchaFailed": "Die Sicherheitsprüfung hat nicht geklappt. Bitte laden Sie die Seite neu und versuchen Sie es noch einmal."
   },
   "ziina": {
+    "via": "Bezahlung über Ziina",
     "title": "Unterstützen mit Ziina",
     "lead": "Sicher bezahlen mit Apple Pay, Google Pay oder Karte – über Ziina, die Zahlungs-App aus den Emiraten.",
     "custom": "Eigener Betrag",
