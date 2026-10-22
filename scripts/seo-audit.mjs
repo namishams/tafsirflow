@@ -1,8 +1,7 @@
 // SEO audit of the seo data and (optionally) a running server.
-//   node scripts/seo-audit.mjs                 checks src/lib/seo data (lengths, duplicates, link targets, FAQ)
+//   node --experimental-strip-types scripts/seo-audit.mjs   checks src/lib/seo data (lengths, duplicates, link targets, FAQ)
 //   node scripts/seo-audit.mjs http://localhost:3000   also crawls /sitemap.xml: title, description, canonical, hreflang, robots
 import { readFileSync, readdirSync } from "node:fs";
-import { execFileSync } from "node:child_process";
 import { join } from "node:path";
 
 const root = new URL("..", import.meta.url).pathname;
@@ -10,10 +9,10 @@ const locales = ["de", "en", "ar", "tr", "ur", "fa", "ps", "fr", "es", "id", "ms
 let bad = 0;
 const fail = (m) => { bad++; console.log("FAIL " + m); };
 
-// load TS data files through esbuild-free path: strip types with node's built-in loader is not available, use tsx if present
-const load = (f) => JSON.parse(execFileSync("npx", ["--yes", "tsx", "-e", `import d from ${JSON.stringify(f)}; console.log(JSON.stringify(d))`], { cwd: root, encoding: "utf8", maxBuffer: 1 << 28 }));
-const types = readFileSync(join(root, "src/lib/seo/types.ts"), "utf8");
-const targets = new Set(JSON.parse(execFileSync("npx", ["--yes", "tsx", "-e", `import {LINK_TARGETS} from ${JSON.stringify(join(root, "src/lib/seo/types.ts"))}; console.log(JSON.stringify(LINK_TARGETS))`], { cwd: root, encoding: "utf8" })));
+// the data files are plain TypeScript without runtime imports: node strips the types itself
+const load = async (f) => (await import(f)).default;
+const { LINK_TARGETS, WHY_SLUGS, FRESH_SLUGS } = await import(join(root, "src/lib/seo/types.ts"));
+const targets = new Set(LINK_TARGETS);
 const limit = (l) => (l === "zh" ? [36, 90] : [60, 155]);
 
 for (const l of locales) {
@@ -27,7 +26,7 @@ for (const l of locales) {
     if (seen.has(p.title)) fail(`${l} duplicate title ${r} = ${seen.get(p.title)}`); seen.set(p.title, r);
   }
   try {
-    const hubs = load(join(root, `src/lib/seo/hubs/${l}.ts`));
+    const hubs = await load(join(root, `src/lib/seo/hubs/${l}.ts`));
     for (const [id, h] of Object.entries(hubs)) {
       if (h.title.length > tmax) fail(`${l} hub ${id}: title ${h.title.length}`);
       if (h.description.length > dmax) fail(`${l} hub ${id}: description ${h.description.length}`);
@@ -37,7 +36,17 @@ for (const l of locales) {
     const titles = Object.values(hubs).map((h) => h.title); if (new Set(titles).size !== titles.length) fail(`${l} hubs: duplicate titles`);
   } catch (e) { fail(`${l} hubs: ${String(e.message).split("\n")[0]}`); }
   try {
-    const kw = load(join(root, `src/lib/seo/keywords/${l}.ts`));
+    const arts = await load(join(root, `src/lib/seo/articles/${l}.ts`));
+    for (const k of [...WHY_SLUGS.map((x) => `why/${x}`), ...FRESH_SLUGS.map((x) => `new-beginning/${x}`)]) {
+      const a = arts[k];
+      if (!a) { fail(`${l} article ${k}: missing`); continue; }
+      if (a.title.length > tmax) fail(`${l} article ${k}: title ${a.title.length}`);
+      if (a.description.length > dmax) fail(`${l} article ${k}: description ${a.description.length}`);
+      for (const [p] of [...a.links, ...a.sections.flatMap((s) => s.links ?? []), a.cta]) if (!targets.has(p)) fail(`${l} article ${k}: link target ${p}`);
+    }
+  } catch (e) { fail(`${l} articles: ${String(e.message).split("\n")[0]}`); }
+  try {
+    const kw = await load(join(root, `src/lib/seo/keywords/${l}.ts`));
     for (const [r, k] of Object.entries(kw)) if (!k.focus || k.short.length + k.long.length > 100) fail(`${l} keywords ${r}: focus/size`);
   } catch (e) { fail(`${l} keywords: ${String(e.message).split("\n")[0]}`); }
 }
