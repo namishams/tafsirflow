@@ -1,0 +1,585 @@
+import type { Hub, HubId } from "../types";
+
+const hubs: Record<HubId, Hub> = {
+  "learn-quran": {
+    title: "Belajar Quran Dalam Talian Percuma | Quran Masterclass",
+    description: "Belajar Quran dari asas: baca, dengar ayat demi ayat, fahami makna dan hafaz. Laluan percuma untuk pemula dan orang dewasa dalam 14 bahasa.",
+    kicker: "Panduan untuk pemula",
+    h1: "Belajar Quran dari asas, mengikut rentak anda",
+    intro: "Ingin belajar Quran tetapi tidak pasti dari mana hendak bermula? Halaman ini menunjukkan urutan yang mudah: kenal huruf, dengar bacaan, fahami makna, kemudian ulang setiap hari. Semuanya percuma di Quran Masterclass.",
+    answer: "Untuk belajar Quran, mulakan dengan mengenali huruf dan baris Arab, kemudian dengar bacaan ayat demi ayat sambil melihat teks, dan tambah tajwid sedikit demi sedikit. Orang dewasa pun boleh bermula dari kosong; kunci utamanya ialah latihan pendek yang konsisten setiap hari. Quran Masterclass menyediakan 114 surah dengan audio, terjemahan dan tafsir secara percuma.",
+    sections: [
+      {
+        h2: "Mulakan dengan huruf dan bunyi",
+        p: [
+          "Sebelum membaca ayat, kenali huruf Arab, baris, dan cara huruf bersambung. Ini asas yang menjadikan semua langkah seterusnya lebih mudah, terutama bagi dewasa yang tidak pernah belajar mengaji.",
+          "Anda tidak perlu menghafaz semuanya sekali gus. Latihan membaca yang pendek tetapi kerap lebih berkesan daripada sesi panjang yang jarang dilakukan.",
+        ],
+        links: [["/arabic", "Belajar Arab untuk Quran"], ["/arabic/read", "Latihan membaca Arab"]],
+      },
+      {
+        h2: "Dengar dahulu, kemudian baca",
+        p: [
+          "Telinga membantu mata. Dengar satu ayat beberapa kali sambil mengikuti teks Arab, kemudian cuba baca bersama qari. Anda boleh memilih qari yang bacaannya paling jelas bagi anda.",
+          "Dengan cara ini, sebutan dan irama bacaan melekat secara semula jadi, dan kesilapan dapat anda sedari sendiri.",
+        ],
+        links: [["/quran", "Baca dan dengar Quran"], ["/reciters", "Pilih qari"]],
+      },
+      {
+        h2: "Tambah tajwid sedikit demi sedikit",
+        p: [
+          "Tajwid ialah peraturan sebutan yang menjadikan bacaan betul. Jangan cuba menguasai semuanya serentak; ambil satu hukum, latih pada beberapa ayat, kemudian teruskan.",
+          "Pelajaran tajwid di laman ini disertakan latihan supaya anda dapat menguji faham anda.",
+        ],
+        links: [["/tajweed", "Pelajaran tajwid"], ["/tajweed/practice", "Latihan tajwid"]],
+      },
+      {
+        h2: "Fahami apa yang anda baca",
+        p: [
+          "Membaca menjadi lebih bermakna apabila anda tahu maksudnya. Baca terjemahan dan tafsir bagi ayat yang anda pelajari, dan pelajari beberapa perkataan Arab yang kerap berulang.",
+          "Untuk sesuatu persoalan hukum atau tafsiran, rujuklah ulama atau guru yang anda percayai mengikut mazhab yang anda ikuti.",
+        ],
+        links: [["/vocab", "Kosa kata Quran"], ["/quran-tafsir", "Tafsir Quran"]],
+      },
+    ],
+    stepsTitle: "Langkah belajar Quran",
+    steps: [
+      { title: "Kenali huruf dan baris", body: "Luangkan 10 hingga 15 minit sehari untuk huruf, baris dan cara huruf bersambung." },
+      { title: "Dengar satu ayat pendek", body: "Pilih surah pendek, dengar setiap ayat beberapa kali sambil melihat teks Arab." },
+      { title: "Baca bersama qari", body: "Baca perlahan-lahan bersama bacaan, kemudian baca sendiri tanpa audio." },
+      { title: "Tambah satu hukum tajwid", body: "Pelajari satu hukum sahaja, latih pada contoh, kemudian ulang pada hari berikutnya." },
+      { title: "Baca terjemahan", body: "Fahami maksud ayat supaya bacaan anda lebih khusyuk dan mudah diingat." },
+      { title: "Ulang setiap hari", body: "Kekalkan rutin kecil. Sepuluh minit setiap hari mengatasi satu jam setiap bulan." },
+    ],
+    faqTitle: "Soalan lazim tentang belajar Quran",
+    faq: [
+      { q: "Bolehkah orang dewasa belajar Quran dari kosong?", a: "Boleh. Ramai orang dewasa bermula dari mengenali huruf. Yang penting ialah latihan pendek yang konsisten dan kesabaran, bukan umur." },
+      { q: "Bolehkah saya belajar sendiri tanpa guru?", a: "Anda boleh membina asas sendiri dengan mendengar dan berlatih. Namun, guru yang boleh mendengar bacaan anda tetap bernilai, terutama untuk membetulkan sebutan." },
+      { q: "Berapa lama masa yang diperlukan untuk pandai membaca?", a: "Ia berbeza bagi setiap orang kerana bergantung pada masa latihan dan latar belakang. Tiada tempoh tetap yang boleh dijanjikan; tumpukan pada kemajuan kecil setiap hari." },
+      { q: "Adakah saya perlu tahu bahasa Arab terlebih dahulu?", a: "Tidak. Anda boleh membaca dahulu dengan bantuan audio dan terjemahan, kemudian belajar bahasa Arab Quran secara beransur-ansur." },
+      { q: "Adakah semua ini percuma?", a: "Ya, laman web Quran Masterclass percuma digunakan. Aplikasi iOS menggunakan akaun yang sama." },
+      { q: "Bagaimana dengan mualaf atau mereka yang baru memeluk Islam?", a: "Halaman Islam menerangkan asas dengan tenang, dan wuduk serta solat boleh dipelajari langkah demi langkah di laman ini." },
+    ],
+    linksTitle: "Terus belajar",
+    links: [["/quran", "Baca dan dengar Quran"], ["/arabic", "Belajar Arab untuk Quran"], ["/tajweed", "Pelajaran tajwid"], ["/courses", "Kursus"], ["/guides/how-to-learn-the-quran", "Panduan: cara belajar Quran"], ["/guides/learn-to-read-the-quran", "Panduan: belajar membaca Quran"], ["/guides/quran-for-kids", "Panduan: Quran untuk kanak-kanak"], ["/plan", "Pelan harian"]],
+    cta: ["/quran", "Mula belajar sekarang"],
+  },
+  "quran-tafsir": {
+    title: "Tafsir Quran Dalam Talian Ayat Demi Ayat",
+    description: "Fahami makna Quran dengan tafsir dan terjemahan ayat demi ayat. Baca, dengar dan pelajari maksud setiap surah, percuma dalam 14 bahasa.",
+    kicker: "Memahami Quran",
+    h1: "Tafsir Quran: memahami makna ayat demi ayat",
+    intro: "Tafsir Quran membantu anda memahami maksud ayat, bukan sekadar membaca bunyinya. Di sini anda boleh membaca teks, terjemahan dan tafsir bagi setiap surah, dan mendengar bacaan pada masa yang sama.",
+    answer: "Tafsir ialah penjelasan makna dan konteks ayat Quran, manakala terjemahan menukar perkataan kepada bahasa lain. Membaca keduanya bersama membantu anda memahami ayat dengan lebih tepat. Quran Masterclass menyediakan terjemahan dan tafsir bagi 114 surah, dan tafsiran yang diterima berbeza mengikut mazhab yang anda ikuti.",
+    sections: [
+      {
+        h2: "Beza terjemahan dan tafsir",
+        p: [
+          "Terjemahan memberi makna perkataan dalam bahasa anda. Tafsir pula menerangkan latar, kaitan antara ayat dan huraian ulama. Satu ayat boleh kelihatan ringkas dalam terjemahan, tetapi mempunyai huraian yang lebih luas.",
+          "Kerana itu, sebaiknya baca kedua-duanya, terutama untuk ayat yang berkait dengan hukum atau sejarah.",
+        ],
+        links: [["/quran", "Quran dengan terjemahan"], ["/guides/understanding-the-quran-tafsir", "Panduan memahami tafsir"]],
+      },
+      {
+        h2: "Cara membaca tafsir dengan tenang",
+        p: [
+          "Mulakan dengan surah pendek. Baca satu ayat, dengar bacaannya, kemudian baca terjemahan dan tafsir. Catat apa yang anda fahami dan apa yang masih tertanya.",
+          "Jangan tergesa-gesa. Satu atau dua ayat yang difahami dengan baik lebih berfaedah daripada satu halaman yang dibaca sepintas lalu.",
+        ],
+        links: [["/surah/1", "Surah al-Fatihah"], ["/surah/112", "Surah al-Ikhlas"]],
+      },
+      {
+        h2: "Kaitkan makna dengan perkataan Arab",
+        p: [
+          "Mempelajari beberapa perkataan Arab yang kerap berulang membolehkan anda mengenal makna tanpa bergantung sepenuhnya pada terjemahan.",
+          "Ini juga memudahkan hafazan, kerana anda tahu apa yang anda sebut.",
+        ],
+        links: [["/vocab", "Kosa kata Quran"], ["/arabic", "Belajar Arab untuk Quran"]],
+      },
+      {
+        h2: "Mazhab dan pandangan ulama",
+        p: [
+          "Tafsir ditulis oleh ulama daripada pelbagai aliran dan sebahagian huraian berbeza antara Sunni dan Syiah. Laman ini menawarkan kandungan untuk kedua-duanya secara neutral.",
+          "Untuk persoalan hukum, rujuklah ulama atau guru yang anda percayai mengikut mazhab yang anda ikuti.",
+        ],
+        links: [["/islam/madhahib", "Mazhab dalam Islam"]],
+      },
+    ],
+    stepsTitle: "Cara belajar tafsir",
+    steps: [
+      { title: "Pilih satu surah", body: "Mulakan dengan surah pendek yang anda sudah kenal bunyinya." },
+      { title: "Dengar bacaan ayat", body: "Dengar satu ayat sambil melihat teks Arab." },
+      { title: "Baca terjemahan", body: "Fahami maksud umum ayat dalam bahasa anda." },
+      { title: "Baca tafsir", body: "Lihat penjelasan konteks dan kaitan dengan ayat lain." },
+      { title: "Catat dan ulang", body: "Tulis satu perkara yang anda faham, dan ulang pada hari berikutnya." },
+    ],
+    faqTitle: "Soalan lazim tentang tafsir Quran",
+    faq: [
+      { q: "Apakah beza terjemahan dan tafsir?", a: "Terjemahan menukar makna perkataan kepada bahasa lain. Tafsir menjelaskan maksud, konteks dan kaitan ayat berdasarkan huraian ulama." },
+      { q: "Adakah saya perlu tahu bahasa Arab untuk membaca tafsir?", a: "Tidak. Anda boleh membaca terjemahan dan tafsir dalam bahasa anda sambil belajar bahasa Arab secara beransur-ansur." },
+      { q: "Mengapakah tafsir berbeza antara ulama?", a: "Ulama menggunakan kaedah, sumber dan mazhab yang berbeza. Kerana itu, anda boleh menemui perbezaan huraian bagi sesetengah ayat." },
+      { q: "Dari mana sebaiknya saya mula?", a: "Mulakan dengan surah pendek seperti yang terdapat dalam Juzuk Amma, kemudian beralih kepada surah yang lebih panjang." },
+      { q: "Adakah tafsir di sini boleh dijadikan fatwa?", a: "Tidak. Laman ini bertujuan pembelajaran. Untuk persoalan hukum, rujuk ulama atau guru yang anda percayai." },
+      { q: "Adakah ia percuma?", a: "Ya, laman web ini percuma digunakan." },
+    ],
+    linksTitle: "Pautan berkaitan",
+    links: [["/quran", "Baca Quran"], ["/guides/understanding-the-quran-tafsir", "Panduan tafsir"], ["/vocab", "Kosa kata Quran"], ["/arabic", "Belajar Arab"], ["/surah/1", "Surah al-Fatihah"], ["/surah/36", "Surah Yasin"], ["/islam/quran", "Tentang Quran"], ["/listen-quran", "Dengar Quran"]],
+    cta: ["/quran", "Baca dengan tafsir"],
+  },
+  "tajweed-online": {
+    title: "Belajar Tajwid Online Percuma | Quran Masterclass",
+    description: "Belajar tajwid online dengan pelajaran dan latihan: makhraj, nun sakinah, mim sakinah, qalqalah dan mad. Percuma untuk pemula.",
+    kicker: "Tajwid",
+    h1: "Belajar tajwid online, hukum demi hukum",
+    intro: "Tajwid menjadikan bacaan Quran tepat dan indah. Dengan belajar tajwid online di sini, anda mengambil satu hukum pada satu masa, melihat contohnya, dan terus berlatih.",
+    answer: "Tajwid ialah peraturan menyebut huruf dan bunyi Quran dengan betul. Cara mudah untuk belajar ialah satu hukum sahaja setiap kali: makhraj, nun sakinah dan tanwin, mim sakinah, qalqalah, kemudian mad. Quran Masterclass menyediakan pelajaran dan latihan tajwid percuma mengikut riwayat Hafs dari Asim.",
+    sections: [
+      {
+        h2: "Mulakan dengan makhraj huruf",
+        p: [
+          "Makhraj ialah tempat keluar huruf. Sebutan yang betul bermula di sini, kerana banyak kesalahan bacaan datang daripada huruf yang tersilap tempat.",
+          "Latih huruf yang bunyinya hampir sama secara berpasangan dan dengar bacaan qari sebagai rujukan.",
+        ],
+        links: [["/tajweed/makharij", "Makhraj huruf"]],
+      },
+      {
+        h2: "Hukum yang kerap dijumpai",
+        p: [
+          "Nun sakinah dan tanwin, serta mim sakinah, muncul hampir pada setiap halaman. Menguasainya memberi kesan besar pada kualiti bacaan anda.",
+          "Qalqalah dan mad pula memberi irama yang khas pada bacaan. Pelajari satu demi satu dengan contoh ayat.",
+        ],
+        links: [["/tajweed/nun-sakinah-izhar", "Nun sakinah"], ["/tajweed/mim-sakinah", "Mim sakinah"], ["/tajweed/qalqalah", "Qalqalah"], ["/tajweed/madd", "Mad"]],
+      },
+      {
+        h2: "Berlatih sehingga menjadi tabiat",
+        p: [
+          "Membaca peraturan sahaja tidak mencukupi. Gunakan latihan untuk menguji sama ada anda boleh mengenal hukum dalam ayat sebenar.",
+          "Ulang latihan pendek pada hari-hari yang berbeza supaya hukum itu melekat.",
+        ],
+        links: [["/tajweed/practice", "Latihan tajwid"], ["/tajweed", "Semua pelajaran tajwid"]],
+      },
+    ],
+    stepsTitle: "Urutan belajar tajwid",
+    steps: [
+      { title: "Dengar bacaan yang jelas", body: "Pilih qari yang bacaannya perlahan dan jelas sebagai rujukan." },
+      { title: "Belajar makhraj", body: "Sebut huruf satu persatu dan bandingkan dengan audio." },
+      { title: "Pelajari nun dan mim sakinah", body: "Kenal pasti hukum dalam ayat pendek." },
+      { title: "Tambah qalqalah dan mad", body: "Latih panjang dan pantulan bunyi pada contoh." },
+      { title: "Uji dengan latihan", body: "Jawab latihan dan ulang bahagian yang masih lemah." },
+    ],
+    faqTitle: "Soalan lazim tentang tajwid",
+    faq: [
+      { q: "Mengapa tajwid penting?", a: "Tajwid memastikan huruf dan bunyi disebut dengan betul, kerana perubahan sebutan boleh mengubah bacaan. Ia juga menjadikan bacaan lebih tenang dan indah." },
+      { q: "Bolehkah belajar tajwid tanpa guru?", a: "Anda boleh membina asas dengan pelajaran dan audio. Guru yang mendengar bacaan anda tetap berguna untuk membetulkan sebutan." },
+      { q: "Tajwid mengikut riwayat yang mana?", a: "Pelajaran di sini mengikut riwayat Hafs dari Asim, iaitu riwayat yang lazim digunakan di Malaysia dan banyak negara lain." },
+      { q: "Berapa lama masa belajar tajwid?", a: "Ia bergantung pada masa latihan anda. Tiada tempoh tetap; ambil satu hukum pada satu masa dan ulang secara berkala." },
+      { q: "Adakah saya perlu mendaftar?", a: "Pelajaran boleh dimulakan tanpa mendaftar. Akaun berguna untuk menyimpan kemajuan." },
+      { q: "Adakah tajwid sesuai untuk kanak-kanak?", a: "Ya, dengan peringkat yang sesuai. Mulakan dengan bunyi dan huruf, kemudian tambah hukum satu demi satu." },
+    ],
+    linksTitle: "Teruskan belajar",
+    links: [["/tajweed", "Pelajaran tajwid"], ["/tajweed/practice", "Latihan tajwid"], ["/tajweed/makharij", "Makhraj"], ["/tajweed/madd", "Mad"], ["/tajweed/qalqalah", "Qalqalah"], ["/guides/tajweed-for-beginners", "Panduan tajwid pemula"], ["/reciters", "Qari"], ["/learn-quran", "Belajar Quran"]],
+    cta: ["/tajweed", "Mulakan pelajaran tajwid"],
+  },
+  "memorize-quran": {
+    title: "Hafaz Quran: Kaedah dan Pelan Ulang Kaji Harian",
+    description: "Hafaz Quran dengan Kaedah Shams: dengar, bina dari hujung ayat dan ulang kaji setiap hari. Percuma, sesuai untuk orang dewasa dan pemula.",
+    kicker: "Hafazan",
+    h1: "Hafaz Quran dengan kaedah yang boleh diikuti setiap hari",
+    intro: "Menghafaz Quran ialah perjalanan panjang yang bergantung pada ulangan, bukan bakat semata-mata. Di sini anda boleh mendengar, membina ayat langkah demi langkah dan mengulang kaji dengan pelan harian.",
+    answer: "Untuk menghafaz Quran, dengar ayat beberapa kali, hafaz dalam bahagian kecil, kemudian ulang kaji pada hari berikutnya. Kaedah Shams membina ayat dari hujungnya supaya bahagian akhir, yang biasanya paling lemah, dihafaz dahulu. Konsistensi harian lebih penting daripada jumlah ayat.",
+    sections: [
+      {
+        h2: "Mulakan dengan kecil dan stabil",
+        p: [
+          "Pilih surah pendek dan tetapkan jumlah ayat yang realistik untuk satu sesi. Lebih baik hafaz sedikit tetapi kuat daripada banyak tetapi mudah lupa.",
+          "Setiap kali menambah ayat baharu, ulang dahulu apa yang telah dihafaz.",
+        ],
+        links: [["/surah/1", "Surah al-Fatihah"], ["/surah/112", "Surah al-Ikhlas"], ["/guides/juz-amma-learning-plan", "Pelan Juzuk Amma"]],
+      },
+      {
+        h2: "Kaedah Shams",
+        p: [
+          "Kaedah Shams membimbing anda melalui urutan yang jelas: dengar ayat, bina bermula dari hujung, ulang dari hafalan, kemudian nilai diri. Ia dibangunkan oleh Nami Shams.",
+          "Anda boleh membaca penjelasan lengkap, adab menghafaz, dan senarai ayat yang mirip supaya tidak tertukar.",
+        ],
+        links: [["/shams", "Kaedah Shams"], ["/shams/method", "Penerangan kaedah"], ["/shams/adab", "Adab menghafaz"], ["/shams/mutashabihat", "Ayat mutasyabihat"]],
+      },
+      {
+        h2: "Ulang kaji supaya tidak lupa",
+        p: [
+          "Hafalan yang tidak diulang akan pudar. Jadualkan ulang kaji ringkas setiap hari, dan beri lebih masa kepada bahagian yang paling sering tersilap.",
+          "Perancang khatam dan pelan harian membantu anda mengekalkan rutin.",
+        ],
+        links: [["/plan", "Pelan harian"], ["/khatm", "Perancang khatam"]],
+      },
+    ],
+    stepsTitle: "Langkah menghafaz",
+    steps: [
+      { title: "Dengar ayat", body: "Dengar tiga kali sambil memandang teks Arab, tanpa menterjemah dahulu." },
+      { title: "Bina dari hujung", body: "Hafaz bahagian akhir ayat dahulu, kemudian tambah ke arah permulaan." },
+      { title: "Sebut dari hafalan", body: "Baca tanpa melihat teks, kemudian semak dan nilai diri." },
+      { title: "Sambung ke ayat berikutnya", body: "Gabungkan dengan ayat sebelumnya supaya mengalir." },
+      { title: "Ulang kaji esok", body: "Mulakan sesi seterusnya dengan mengulang apa yang telah dihafaz." },
+    ],
+    faqTitle: "Soalan lazim tentang hafazan",
+    faq: [
+      { q: "Bolehkah orang dewasa menghafaz Quran?", a: "Boleh. Orang dewasa mungkin mempunyai masa terhad, tetapi kefahaman dan disiplin membantu. Mulakan kecil dan jaga konsistensi." },
+      { q: "Berapa ayat patut dihafaz sehari?", a: "Tiada angka yang sesuai untuk semua orang. Pilih jumlah yang dapat anda ulang kaji dengan tenang esoknya." },
+      { q: "Bagaimana mengelakkan hafalan hilang?", a: "Ulang kaji secara berkala dan beri perhatian kepada bahagian yang lemah. Mendengar bacaan qari juga membantu mengekalkan hafalan." },
+      { q: "Perlukah faham makna sebelum menghafaz?", a: "Tidak wajib, tetapi memahami makna memudahkan ingatan. Baca terjemahan dan beberapa perkataan utama." },
+      { q: "Apakah ayat mutasyabihat?", a: "Ayat yang hampir serupa tetapi berbeza sedikit. Senarai mutasyabihat di sini membantu anda mengelakkan ayat daripada tertukar." },
+      { q: "Adakah ini mengambil tempat guru?", a: "Tidak. Ia ialah bantuan latihan. Guru yang mendengar hafalan anda tetap sangat bernilai." },
+    ],
+    linksTitle: "Alat untuk menghafaz",
+    links: [["/shams", "Kaedah Shams"], ["/shams/method", "Cara kaedah berfungsi"], ["/shams/adab", "Adab menghafaz"], ["/shams/mutashabihat", "Mutasyabihat"], ["/guides/how-to-memorize-the-quran", "Panduan menghafaz"], ["/guides/juz-amma-learning-plan", "Pelan Juzuk Amma"], ["/plan", "Pelan harian"], ["/khatm", "Perancang khatam"]],
+    cta: ["/shams", "Mulakan Kaedah Shams"],
+  },
+  "quran-radio": {
+    title: "Radio Quran Online 24 Jam | Quran Masterclass",
+    description: "Dengar radio Quran online tanpa gangguan: Quran lengkap, Juzuk Amma atau surah pilihan dengan teks pada skrin. Pilih qari dan pemasa tidur.",
+    kicker: "Radio",
+    h1: "Radio Quran online untuk didengar sepanjang hari",
+    intro: "Radio Quran memainkan bacaan secara berterusan supaya anda boleh mendengar di rumah, semasa bekerja atau sebelum tidur. Pilih stesen, qari dan, jika mahu, tunjuk teks serta terjemahan pada skrin.",
+    answer: "Radio Quran di Quran Masterclass memainkan bacaan tanpa henti: Quran lengkap, Juzuk Amma atau surah pilihan. Anda boleh memilih qari, menetapkan pemasa tidur dan melihat teks dengan terjemahan semasa mendengar. Ia percuma di laman web.",
+    sections: [
+      {
+        h2: "Pilih stesen dan qari",
+        p: [
+          "Stesen yang ada merangkumi Quran lengkap bermula dari surah pertama, Juzuk Amma, dan surah kegemaran. Anda boleh menukar qari mengikut cita rasa.",
+          "Mendengar qari yang berlainan membantu anda mengenal gaya bacaan yang paling sesuai.",
+        ],
+        links: [["/radio", "Buka radio"], ["/reciters", "Senarai qari"]],
+      },
+      {
+        h2: "Dengar sambil mengikut teks",
+        p: [
+          "Anda boleh memaparkan teks Arab dan terjemahan ketika bacaan dimainkan. Ini bagus untuk mengenal perkataan dan memahami maksud sedikit demi sedikit.",
+          "Sekiranya anda hanya mahu mendengar, matikan teks dan biarkan bacaan berjalan.",
+        ],
+        links: [["/quran", "Baca Quran"]],
+      },
+      {
+        h2: "Pemasa tidur dan dengar di latar belakang",
+        p: [
+          "Tetapkan pemasa tidur supaya bacaan berhenti sendiri selepas beberapa minit. Radio juga boleh dimainkan walaupun skrin dikunci.",
+          "Kegunaan lain: mendengar semasa memandu perlahan-lahan di rumah, bekerja atau melakukan kerja rumah.",
+        ],
+        links: [["/listen-quran", "Dengar Quran"]],
+      },
+    ],
+    stepsTitle: "Cara menggunakan radio",
+    steps: [
+      { title: "Buka radio", body: "Pergi ke halaman Radio dan pilih stesen." },
+      { title: "Pilih qari", body: "Tukar qari sehingga anda menemui bacaan yang selesa." },
+      { title: "Tunjuk teks jika mahu", body: "Aktifkan paparan teks dan terjemahan untuk mengikuti bacaan." },
+      { title: "Tetapkan pemasa tidur", body: "Pilih beberapa minit supaya bacaan berhenti sendiri." },
+      { title: "Biarkan dimainkan", body: "Kunci skrin dan teruskan aktiviti anda." },
+    ],
+    faqTitle: "Soalan lazim tentang radio Quran",
+    faq: [
+      { q: "Adakah radio ini percuma?", a: "Ya, ia percuma di laman web Quran Masterclass." },
+      { q: "Adakah radio berjalan 24 jam?", a: "Bacaan dimainkan secara berterusan selagi anda membukanya dan stesen terus berjalan dari satu surah ke surah seterusnya." },
+      { q: "Bolehkah saya memilih qari?", a: "Ya. Anda boleh menukar qari dan mendengar bacaan yang paling anda selesa." },
+      { q: "Bolehkah radio dimainkan semasa skrin dikunci?", a: "Ya, radio direka untuk terus dimainkan di latar belakang." },
+      { q: "Bolehkah saya mendengar sambil membaca terjemahan?", a: "Boleh. Aktifkan paparan teks dan terjemahan di halaman radio." },
+      { q: "Adakah mendengar radio menggantikan belajar membaca?", a: "Tidak sepenuhnya. Mendengar membantu sebutan dan hafalan, tetapi belajar membaca tetap perlu." },
+    ],
+    linksTitle: "Dengar dan belajar",
+    links: [["/radio", "Radio Quran"], ["/reciters", "Qari"], ["/listen-quran", "Dengar Quran"], ["/quran", "Baca Quran"], ["/surah/1", "Surah al-Fatihah"], ["/surah/67", "Surah al-Mulk"], ["/memorize-quran", "Hafaz Quran"], ["/app", "Aplikasi iOS"]],
+    cta: ["/radio", "Buka radio Quran"],
+  },
+  "listen-quran": {
+    title: "Dengar Quran Online: Audio Ayat Demi Ayat",
+    description: "Dengar Quran online mengikut surah dan qari, ayat demi ayat dengan teks dan terjemahan. Sesuai untuk belajar, menghafaz dan ketenangan. Percuma.",
+    kicker: "Audio",
+    h1: "Dengar Quran online, surah demi surah",
+    intro: "Mendengar Quran membantu sebutan, hafalan dan ketenangan. Di sini anda boleh memilih mana-mana daripada 114 surah, memilih qari dan mendengar ayat demi ayat sambil melihat teks.",
+    answer: "Anda boleh mendengar Quran online di Quran Masterclass dengan memilih surah dan qari, lalu memainkan bacaan ayat demi ayat bersama teks Arab dan terjemahan. Semua 114 surah tersedia secara percuma tanpa perlu memuat turun apa-apa.",
+    sections: [
+      {
+        h2: "Dengar mengikut surah atau ayat",
+        p: [
+          "Buka surah yang anda mahu dan mainkan seluruh surah atau ulang satu ayat sahaja. Ulangan ayat berguna apabila anda belajar sebutan atau menghafaz.",
+          "Ini berbeza daripada sekadar fail audio, kerana setiap ayat dikaitkan dengan teksnya.",
+        ],
+        links: [["/quran", "Senarai surah"], ["/surah/18", "Surah al-Kahf"]],
+      },
+      {
+        h2: "Bandingkan beberapa qari",
+        p: [
+          "Setiap qari mempunyai gaya sendiri. Ada yang perlahan dan jelas, sesuai untuk belajar; ada yang lebih berirama.",
+          "Cuba beberapa qari dan pilih yang membuat anda paling mudah mengikut.",
+        ],
+        links: [["/reciters", "Senarai qari"], ["/mishary", "Mishary"]],
+      },
+      {
+        h2: "Dengar tanpa henti",
+        p: [
+          "Jika anda mahu mendengar berterusan tanpa memilih surah satu persatu, gunakan radio Quran dengan pemasa tidur.",
+          "Anda juga boleh menggunakan aplikasi iOS dengan akaun yang sama.",
+        ],
+        links: [["/radio", "Radio Quran"], ["/app", "Aplikasi iOS"]],
+      },
+    ],
+    stepsTitle: "Cara mendengar",
+    steps: [
+      { title: "Pilih surah", body: "Buka senarai surah dan pilih yang anda mahu dengar." },
+      { title: "Pilih qari", body: "Tukar qari mengikut kesesuaian anda." },
+      { title: "Mainkan ayat", body: "Dengar seluruh surah atau ulang satu ayat." },
+      { title: "Ikuti teks", body: "Lihat teks Arab dan terjemahan semasa mendengar." },
+    ],
+    faqTitle: "Soalan lazim tentang mendengar Quran",
+    faq: [
+      { q: "Adakah saya perlu memuat turun fail?", a: "Tidak. Anda boleh mendengar terus di laman web." },
+      { q: "Adakah semua 114 surah ada audio?", a: "Ya, setiap surah boleh didengar ayat demi ayat." },
+      { q: "Bolehkah saya mengulang satu ayat?", a: "Boleh. Ini berguna untuk belajar sebutan dan menghafaz." },
+      { q: "Qari mana yang sesuai untuk pemula?", a: "Pilih qari yang bacaannya jelas dan tidak terlalu laju. Cuba beberapa qari dan pilih yang paling selesa." },
+      { q: "Adakah ia percuma?", a: "Ya, laman web percuma digunakan." },
+      { q: "Bolehkah saya mendengar tanpa melihat skrin?", a: "Boleh, gunakan radio Quran yang boleh dimainkan walaupun skrin dikunci." },
+    ],
+    linksTitle: "Pautan berkaitan",
+    links: [["/quran", "Semua surah"], ["/reciters", "Qari"], ["/radio", "Radio Quran"], ["/surah/36", "Surah Yasin"], ["/surah/55", "Surah ar-Rahman"], ["/memorize-quran", "Hafaz Quran"], ["/tajweed", "Tajwid"], ["/learn-quran", "Belajar Quran"]],
+    cta: ["/quran", "Pilih surah"],
+  },
+  tawbah: {
+    title: "Cara Bertaubat dan Kembali kepada Allah",
+    description: "Panduan tenang untuk kembali kepada Allah: mula semula dengan solat, wuduk, doa dan belajar. Tanpa menghakimi, langkah kecil yang praktikal.",
+    kicker: "Kembali dengan tenang",
+    h1: "Cara bertaubat: mulakan semula dengan langkah kecil",
+    intro: "Jika anda rasa jauh dan ingin kembali, tiada kata yang terlalu lewat untuk bermula. Halaman ini bukan untuk menghakimi; ia hanya menunjukkan beberapa langkah praktikal untuk membina semula hubungan anda dengan Allah.",
+    answer: "Taubat bermakna kembali kepada Allah dengan penyesalan dan tekad untuk memperbaiki diri. Secara praktikal, anda boleh bermula dengan perkara kecil seperti menunaikan solat, belajar semula wuduk, berdoa dan membaca Quran. Syarat dan butiran taubat berbeza mengikut mazhab, jadi rujuklah ulama yang anda percayai.",
+    sections: [
+      {
+        h2: "Anda tidak perlu menunggu menjadi sempurna",
+        p: [
+          "Ramai orang menangguhkan kerana merasa tidak layak. Namun, kembali itu sendiri sudah satu langkah. Mulakan dari mana-mana yang anda mampu hari ini.",
+          "Pilih satu perkara kecil, seperti satu solat sehari, dan jaga ia dengan tenang.",
+        ],
+        links: [["/islam/daily", "Rutin harian seorang Muslim"]],
+      },
+      {
+        h2: "Kembali kepada solat dan wuduk",
+        p: [
+          "Jika anda sudah lama tidak bersolat, tidak mengapa jika anda lupa tertibnya. Belajar semula wuduk dan solat langkah demi langkah di sini.",
+          "Semak juga waktu solat dan arah kiblat untuk lokasi anda.",
+        ],
+        links: [["/wudu", "Latihan wuduk"], ["/salah", "Belajar solat"], ["/prayer", "Waktu solat"]],
+      },
+      {
+        h2: "Doa dan hubungan peribadi dengan Allah",
+        p: [
+          "Berdoa dengan bahasa sendiri atau menggunakan doa yang dipelajari ialah cara yang mudah untuk berbicara dengan Allah. Anda boleh membaca doa dengan terjemahan atau menyusun doa peribadi.",
+          "Menyebut nama-nama Allah juga membantu mengingatkan sifat rahmat dan keampunan-Nya.",
+        ],
+        links: [["/duas", "Doa"], ["/dua-generator", "Penjana doa"], ["/names", "99 Nama Allah"]],
+      },
+      {
+        h2: "Belajar dan teruskan perlahan-lahan",
+        p: [
+          "Baca Quran sedikit setiap hari, dengar bacaan yang menenangkan, dan belajar asas Islam pada rentak anda sendiri.",
+          "Jika anda ada persoalan hukum atau keadaan peribadi, bercakap dengan ulama atau guru yang anda percayai mengikut mazhab yang anda ikuti.",
+        ],
+        links: [["/radio", "Radio Quran"], ["/islam", "Belajar tentang Islam"]],
+      },
+    ],
+    stepsTitle: "Langkah praktikal untuk mula semula",
+    steps: [
+      { title: "Berniat dan berhenti sejenak", body: "Niatkan untuk kembali dan sedari bahawa hari ini ialah permulaan." },
+      { title: "Berwuduk", body: "Jika anda lupa caranya, ikuti latihan wuduk langkah demi langkah." },
+      { title: "Tunaikan satu solat", body: "Mulakan dengan satu waktu solat dan tambah apabila anda bersedia." },
+      { title: "Berdoa", body: "Mohon keampunan dan petunjuk dengan bahasa yang anda faham." },
+      { title: "Baca atau dengar Quran", body: "Beberapa minit sehari sudah cukup untuk membina tabiat." },
+      { title: "Cari sokongan", body: "Berbincang dengan seseorang yang anda percayai atau seorang guru." },
+    ],
+    faqTitle: "Soalan lazim tentang taubat",
+    faq: [
+      { q: "Adakah terlalu lewat untuk bertaubat?", a: "Tiada kata terlalu lewat untuk bermula semula. Tradisi Islam menekankan rahmat Allah, dan anda boleh bermula hari ini." },
+      { q: "Apakah syarat taubat?", a: "Butiran syarat taubat disebut oleh ulama dan berbeza sedikit mengikut mazhab. Rujuklah guru atau ulama yang anda percayai." },
+      { q: "Saya sudah lama tinggal solat. Bagaimana mula?", a: "Mulakan dengan satu solat, belajar semula wuduk dan bacaan secara beransur-ansur. Gunakan panduan langkah demi langkah di laman ini." },
+      { q: "Adakah saya perlu menceritakan dosa saya kepada orang lain?", a: "Itu bukan perkara yang disarankan di sini. Untuk persoalan peribadi, bincang dengan ulama atau guru yang anda percayai." },
+      { q: "Adakah ada doa khas untuk taubat?", a: "Terdapat banyak doa memohon keampunan. Anda boleh mencarinya di halaman doa, atau berdoa dengan bahasa sendiri." },
+      { q: "Adakah laman ini memberi hukum atau fatwa?", a: "Tidak. Ia hanya menyediakan bahan pembelajaran dan rujukan praktikal." },
+    ],
+    linksTitle: "Langkah seterusnya",
+    links: [["/wudu", "Belajar wuduk"], ["/salah", "Belajar solat"], ["/prayer", "Waktu solat"], ["/duas", "Doa"], ["/dua-generator", "Penjana doa"], ["/names", "99 Nama Allah"], ["/radio", "Radio Quran"], ["/islam", "Asas Islam"]],
+    cta: ["/wudu", "Mulakan dengan wuduk"],
+  },
+  "learn-salah": {
+    title: "Belajar Solat Langkah Demi Langkah untuk Pemula",
+    description: "Belajar solat dari asas: urutan gerakan, bacaan, waktu dan arah kiblat. Panduan percuma untuk pemula dan mualaf, Sunni dan Syiah.",
+    kicker: "Solat",
+    h1: "Belajar solat langkah demi langkah",
+    intro: "Solat ialah amalan harian yang boleh dipelajari secara perlahan-lahan. Halaman ini menerangkan apa yang perlu disediakan, urutan umum dan di mana anda boleh berlatih.",
+    answer: "Untuk belajar solat, anda perlu tahu waktu solat, arah kiblat, cara berwuduk, urutan gerakan dan bacaan. Mulakan dengan satu solat pendek seperti Subuh, kemudian tambah waktu lain. Cara tertentu berbeza sedikit antara mazhab Sunni dan Syiah, jadi ikut panduan mazhab yang anda anuti.",
+    sections: [
+      {
+        h2: "Sediakan perkara asas",
+        p: [
+          "Sebelum bersolat, pastikan anda berwuduk, mengetahui waktu solat dan menghadap kiblat. Tempat yang bersih dan pakaian yang menutup aurat juga disediakan.",
+          "Aplikasi waktu solat di sini dikira pada peranti anda tanpa penjejakan.",
+        ],
+        links: [["/wudu", "Wuduk"], ["/prayer", "Waktu solat dan kiblat"]],
+      },
+      {
+        h2: "Urutan dan bacaan",
+        p: [
+          "Pelajari urutan gerakan dahulu, kemudian bacaan satu demi satu. Anda boleh membaca dari teks sehingga hafal.",
+          "Halaman solat dan panduan Islam menerangkan urutan secara berperingkat.",
+        ],
+        links: [["/salah", "Belajar solat"], ["/islam/prayer-sunni", "Solat menurut Sunni"], ["/islam/prayer-shia", "Solat menurut Syiah"]],
+      },
+      {
+        h2: "Perbezaan mazhab",
+        p: [
+          "Terdapat perbezaan kecil dalam cara menunaikan solat antara mazhab. Laman ini menyediakan kedua-dua panduan Sunni dan Syiah secara neutral.",
+          "Jika ragu, tanya guru atau ulama yang anda percayai dan ikuti mazhab yang anda anuti.",
+        ],
+        links: [["/islam/madhahib", "Mazhab dalam Islam"]],
+      },
+      {
+        h2: "Hafal bacaan dengan mudah",
+        p: [
+          "Bacaan dalam solat biasanya terdiri daripada surah pendek. Dengar dan hafal satu surah pendek, kemudian tambah yang lain.",
+          "Gunakan audio dan kaedah hafazan untuk membantu.",
+        ],
+        links: [["/surah/1", "Surah al-Fatihah"], ["/surah/112", "Surah al-Ikhlas"], ["/memorize-quran", "Hafaz Quran"]],
+      },
+    ],
+    stepsTitle: "Dari mana hendak bermula",
+    steps: [
+      { title: "Belajar berwuduk", body: "Latih wuduk sehingga tertibnya lancar." },
+      { title: "Ketahui waktu dan kiblat", body: "Semak waktu solat dan arah kiblat untuk lokasi anda." },
+      { title: "Pelajari urutan gerakan", body: "Ikuti panduan solat mengikut mazhab anda." },
+      { title: "Hafal bacaan", body: "Mulakan dengan al-Fatihah dan satu surah pendek." },
+      { title: "Tunaikan satu solat", body: "Mulakan dengan satu waktu, kemudian tambah apabila selesa." },
+    ],
+    faqTitle: "Soalan lazim tentang belajar solat",
+    faq: [
+      { q: "Bolehkah mualaf belajar solat dari awal?", a: "Boleh. Mulakan dengan wuduk, waktu solat dan urutan asas, kemudian tambah bacaan perlahan-lahan." },
+      { q: "Perlukah menghafal semua bacaan dahulu?", a: "Tidak semestinya. Banyak orang bermula dengan bacaan yang paling asas dan menambah secara beransur-ansur. Tanya guru anda untuk panduan." },
+      { q: "Mengapa terdapat perbezaan antara Sunni dan Syiah?", a: "Perbezaan berpunca daripada rujukan fiqh yang berlainan. Ikut panduan mazhab yang anda anuti." },
+      { q: "Bagaimana menentukan arah kiblat?", a: "Gunakan halaman waktu solat untuk lokasi anda. Ia mengira arah pada peranti anda." },
+      { q: "Bagaimana mengajar anak solat?", a: "Mulakan dengan wuduk dan contoh yang mudah, dan jadikan ia aktiviti keluarga yang tenang." },
+      { q: "Adakah laman ini memberi hukum?", a: "Tidak. Untuk persoalan hukum, rujuk ulama atau guru yang anda percayai." },
+    ],
+    linksTitle: "Pautan berkaitan",
+    links: [["/salah", "Belajar solat"], ["/wudu", "Wuduk"], ["/prayer", "Waktu solat"], ["/duas", "Doa"], ["/islam/prayer-sunni", "Solat Sunni"], ["/islam/prayer-shia", "Solat Syiah"], ["/surah/1", "Surah al-Fatihah"], ["/learn-wudu", "Cara berwuduk"]],
+    cta: ["/salah", "Mula belajar solat"],
+  },
+  "learn-wudu": {
+    title: "Cara Berwuduk yang Betul Langkah Demi Langkah",
+    description: "Belajar cara berwuduk dengan latihan interaktif dan langkah yang jelas. Sesuai untuk kanak-kanak, pemula dan mualaf. Percuma dan mudah.",
+    kicker: "Bersuci",
+    h1: "Cara berwuduk yang betul, langkah demi langkah",
+    intro: "Wuduk ialah persediaan sebelum solat. Dengan latihan interaktif, anda boleh mempelajari tertibnya dan mengulang sehingga lancar, tanpa perlu menghafal sekali gus.",
+    answer: "Wuduk dilakukan dengan membasuh anggota tertentu mengikut urutan sebelum bersolat. Cara terbaik untuk mempelajarinya ialah mengikut langkah demi langkah dan berlatih beberapa kali. Perincian wuduk berbeza sedikit mengikut mazhab, jadi ikut panduan mazhab yang anda anuti.",
+    sections: [
+      {
+        h2: "Mengapa belajar dengan latihan",
+        p: [
+          "Wuduk ialah amalan fizikal, jadi ia lebih mudah dipelajari dengan melakukannya daripada sekadar membaca. Pelatih wuduk memandu anda satu langkah pada satu masa.",
+          "Ulang beberapa kali sehingga urutan terasa semula jadi.",
+        ],
+        links: [["/wudu", "Pelatih wuduk"]],
+      },
+      {
+        h2: "Wuduk dalam rutin solat",
+        p: [
+          "Selepas wuduk, anda sedia untuk bersolat. Semak waktu solat dan pelajari urutan solat jika anda baru bermula.",
+          "Wuduk juga sesuai diajar kepada kanak-kanak dengan cara yang menyeronokkan.",
+        ],
+        links: [["/prayer", "Waktu solat"], ["/salah", "Belajar solat"], ["/guides/quran-for-kids", "Panduan untuk kanak-kanak"]],
+      },
+      {
+        h2: "Perbezaan antara mazhab",
+        p: [
+          "Mazhab Sunni dan Syiah mempunyai perincian yang sedikit berlainan dalam wuduk. Pelatih wuduk dan laman Islam menyediakan maklumat secara neutral.",
+          "Jika ada keraguan, tanya guru atau ulama yang anda percayai.",
+        ],
+        links: [["/islam/madhahib", "Mazhab dalam Islam"], ["/islam", "Asas Islam"]],
+      },
+    ],
+    stepsTitle: "Cara menggunakan pelatih wuduk",
+    steps: [
+      { title: "Buka pelatih wuduk", body: "Pilih mod belajar dan ikuti arahan pada skrin." },
+      { title: "Ikuti setiap langkah", body: "Lakukan satu langkah, kemudian teruskan ke langkah berikutnya." },
+      { title: "Ulang urutan", body: "Latih beberapa kali sehingga anda ingat tanpa panduan." },
+      { title: "Uji diri", body: "Cuba lakukan tanpa petunjuk dan semak sama ada urutan betul." },
+    ],
+    faqTitle: "Soalan lazim tentang wuduk",
+    faq: [
+      { q: "Bolehkah kanak-kanak belajar wuduk di sini?", a: "Boleh. Latihan yang ringkas dan visual sesuai bagi kanak-kanak, dengan bimbingan ibu bapa." },
+      { q: "Adakah wuduk sama untuk semua mazhab?", a: "Asasnya serupa, tetapi ada perbezaan kecil. Ikut panduan mazhab yang anda anuti." },
+      { q: "Adakah saya perlu menghafal doa wuduk?", a: "Tidak semestinya sekali gus. Anda boleh belajar doa di halaman doa apabila bersedia." },
+      { q: "Bagaimana jika saya lupa urutan?", a: "Buka pelatih wuduk dan ikut semula. Ia dibuat untuk diulang." },
+      { q: "Apakah yang membatalkan wuduk?", a: "Perkara ini berbeza mengikut mazhab. Rujuk guru atau ulama yang anda percayai." },
+      { q: "Adakah ia percuma?", a: "Ya, pelatih wuduk percuma di laman web." },
+    ],
+    linksTitle: "Langkah seterusnya",
+    links: [["/wudu", "Pelatih wuduk"], ["/salah", "Belajar solat"], ["/prayer", "Waktu solat"], ["/duas", "Doa"], ["/islam/prayer-sunni", "Solat Sunni"], ["/islam/prayer-shia", "Solat Syiah"], ["/learn-salah", "Panduan belajar solat"], ["/tawbah", "Kembali dengan tenang"]],
+    cta: ["/wudu", "Mula berlatih wuduk"],
+  },
+  "learn-islam": {
+    title: "Belajar Tentang Islam untuk Pemula dan Mualaf",
+    description: "Pengenalan Islam yang tenang: Quran, Nabi, iman, solat, Ramadan dan kehidupan harian. Pandangan Sunni dan Syiah dijelaskan secara neutral.",
+    kicker: "Asas Islam",
+    h1: "Belajar tentang Islam dari asas",
+    intro: "Sama ada anda baru mengenali Islam, baru memeluknya atau ingin menyegarkan semula asas, halaman ini membantu anda memulakan dengan tenang dan mengikut rentak anda sendiri.",
+    answer: "Untuk belajar tentang Islam, mulakan dengan asas: kepercayaan kepada Allah, Nabi Muhammad, Quran, serta amalan seperti solat, puasa Ramadan dan haji. Quran Masterclass menyediakan pengenalan dalam bahasa mudah, dengan penerangan Sunni dan Syiah secara neutral.",
+    sections: [
+      {
+        h2: "Kenali asas keimanan dan amalan",
+        p: [
+          "Mulakan dengan apa yang dimaksudkan dengan Islam, rukun iman dan rukun amalan. Setiap topik diterangkan dengan ringkas supaya mudah difahami.",
+          "Anda boleh membaca satu topik pada satu masa tanpa tergesa-gesa.",
+        ],
+        links: [["/islam/islam", "Apa itu Islam"], ["/islam/iman", "Iman"], ["/islam/prophet", "Nabi Muhammad"], ["/islam/quran", "Quran"]],
+      },
+      {
+        h2: "Sunni dan Syiah, dijelaskan secara neutral",
+        p: [
+          "Laman ini menawarkan kandungan untuk dua aliran utama. Apabila ada perbezaan, ia dinyatakan dengan jelas supaya anda boleh mengikut mazhab yang anda anuti.",
+          "Untuk hukum yang khusus, rujuk ulama atau guru yang anda percayai.",
+        ],
+        links: [["/islam/madhahib", "Mazhab"], ["/islam/prayer-sunni", "Solat Sunni"], ["/islam/prayer-shia", "Solat Syiah"]],
+      },
+      {
+        h2: "Kehidupan harian dan hari-hari istimewa",
+        p: [
+          "Pelajari rutin harian, Ramadan, Aidilfitri, haji dan apa yang halal serta haram dalam bahasa yang mudah.",
+          "Kalendar Islam dan waktu solat membantu anda mengikuti hari-hari penting.",
+        ],
+        links: [["/islam/daily", "Rutin harian"], ["/islam/ramadan", "Ramadan"], ["/islam/hajj", "Haji"], ["/islam/eid", "Hari raya"], ["/islam/halal-haram", "Halal dan haram"], ["/calendar", "Kalendar Islam"]],
+      },
+      {
+        h2: "Kemudian belajar amalan",
+        p: [
+          "Selepas asas, anda boleh belajar berwuduk, bersolat, membaca Quran dan berdoa. Semua ini ada di laman ini dan boleh dipelajari secara beransur-ansur.",
+        ],
+        links: [["/wudu", "Wuduk"], ["/salah", "Solat"], ["/learn-quran", "Belajar Quran"], ["/duas", "Doa"]],
+      },
+    ],
+    stepsTitle: "Cadangan urutan belajar",
+    steps: [
+      { title: "Baca pengenalan", body: "Mulakan dengan apa itu Islam dan asas keimanan." },
+      { title: "Kenali Nabi dan Quran", body: "Baca ringkasan kehidupan Nabi dan tentang Quran." },
+      { title: "Pelajari wuduk dan solat", body: "Latih langkah-langkahnya mengikut mazhab anda." },
+      { title: "Mulakan membaca Quran", body: "Dengar dan baca surah pendek dengan terjemahan." },
+      { title: "Bina rutin harian", body: "Gunakan waktu solat dan doa harian untuk membentuk rutin." },
+    ],
+    faqTitle: "Soalan lazim tentang belajar Islam",
+    faq: [
+      { q: "Dari mana sebaiknya saya mula?", a: "Mulakan dengan pengenalan Islam, iman dan Nabi, kemudian belajar wuduk, solat dan bacaan Quran secara beransur-ansur." },
+      { q: "Adakah laman ini sesuai untuk mualaf?", a: "Ya. Kandungan ditulis dalam bahasa yang mudah dan tidak mengandaikan pengetahuan awal." },
+      { q: "Apakah perbezaan Sunni dan Syiah?", a: "Perbezaan terletak pada sejarah, kepimpinan dan sebahagian amalan fiqh. Laman ini menjelaskan kedua-duanya secara neutral." },
+      { q: "Adakah saya perlu belajar bahasa Arab dahulu?", a: "Tidak. Anda boleh mula dengan terjemahan dan belajar bahasa Arab Quran kemudian." },
+      { q: "Adakah laman ini memberi fatwa?", a: "Tidak. Ia bertujuan pembelajaran. Untuk persoalan hukum, rujuk ulama atau guru yang anda percayai." },
+      { q: "Adakah semuanya percuma?", a: "Ya, laman web ini percuma digunakan." },
+    ],
+    linksTitle: "Bahan untuk dibaca",
+    links: [["/islam", "Semua topik Islam"], ["/islam/islam", "Apa itu Islam"], ["/islam/prophet", "Nabi Muhammad"], ["/islam/iman", "Iman"], ["/islam/madhahib", "Mazhab"], ["/islam/ramadan", "Ramadan"], ["/learn-salah", "Belajar solat"], ["/learn-quran", "Belajar Quran"], ["/names", "99 Nama Allah"]],
+    cta: ["/islam", "Mulakan belajar"],
+  },
+};
+
+export default hubs;

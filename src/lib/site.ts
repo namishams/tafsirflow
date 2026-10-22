@@ -1,4 +1,5 @@
 import { routing } from "@/i18n/routing";
+import { pageSeo } from "./seo/pages";
 
 // The public domain. A production build always uses it as canonical address, even if SITE_URL on the server
 // still holds the bare IP; SITE_URL only overrides it with another https address.
@@ -27,6 +28,9 @@ const OG_LOCALE: Record<string, string> = { de: "de_DE", en: "en_US", ar: "ar_AR
 const shareImage = (locale: string) => ({ url: abs(`/${locale}/opengraph-image`), width: 1200, height: 630, type: "image/png", alt: "Quran Masterclass" });
 
 export function pageMeta(locale: string, path: string, title: string, description: string, keywords?: string) {
+  // researched, localized title/description (src/lib/seo/pages/<locale>.json) win over the page's own text
+  const o = pageSeo(locale, path);
+  if (o) { title = o.title; description = o.desc; }
   return {
     title,
     description,
