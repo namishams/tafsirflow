@@ -1,4 +1,5 @@
 import { useCallback, useState } from "react";
+import { ProMark } from "@/features/talents/ProMark";
 import { Pressable, Text, View } from "react-native";
 import { Stack, router, useFocusEffect, type Href } from "expo-router";
 import { FONT, goldButton, useTheme } from "@/lib/theme";
@@ -60,6 +61,7 @@ export default function Notifications() {
                           <View style={{ flexDirection: "row", alignItems: "center", gap: 5 }}>
                             <Text style={{ flexShrink: 1, fontFamily: n.read ? FONT.regular : FONT.semibold, fontSize: 14.5, lineHeight: 20, color: t.ink }}>{text}</Text>
                             {n.actor ? <BadgeButton badge={n.actor.badge} size={13} /> : null}
+                            {n.actor ? <ProMark pro={n.actor.pro} size={12} /> : null}
                           </View>
                           <Text style={{ fontFamily: FONT.regular, fontSize: 12, color: t.muted }}>{when(n.at)}</Text>
                         </View>

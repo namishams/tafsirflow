@@ -120,12 +120,42 @@ export const STARS: [string, string, string, string][] = [
   ["ragheb.ghalwash", "ragheb-mustafa-ghalwash", "raghebghalwash raghebmustafaghalwash", "ghalwash"],
   ["kamel.albahtimi", "kamel-yousef-al-bahtimi", "kamelalbahtimi kamelalbahtimy kamelbahtimi kamelbahtimy kamelelbahtimi kamelelbahtimy kamelyousefalbahtimi kamelyousefalbahtimy kamelyousefbahtimi kamelyousefbahtimy kamelyousefelbahtimi kamelyousefelbahtimy kamelyusefalbahtimi kamelyusefalbahtimy kamelyusefbahtimi kamelyusefbahtimy kamelyusefelbahtimi kamelyusefelbahtimy", "albahtimi albahtimy bahtimi bahtimy elbahtimi elbahtimy"],
 ];
+// More well-known qurra (owner 22.10.2026) without a biography in the reciters data: the name is reserved and can be
+// taken over (same invite link and admin assignment, "star" badge), but there is no public page. [username, name,
+// full-name forms, surname forms].
+export const STARS_EXTRA: [string, string, string, string][] = [
+  ["hazza.albalushi", "Hazza Al-Balushi", "hazabalushi hazabalushy hazaelbalushi hazaelbalushy hazalbalushi hazalbalushy", ""],
+  ["abdulrahman.alossi", "Abdulrahman Al-Ossi", "abdelrahmanalosi abdelrahmanalosy abdelrahmanelosi abdelrahmanelosy abdelrahmanosi abdelrahmanosy abdulrahmanalosi abdulrahmanalosy abdulrahmanelosi abdulrahmanelosy abdulrahmanosi abdulrahmanosy", "alosi"],
+  ["mohammad.almuhaisni", "Mohammad Al-Muhaisni", "mohamadalmuhaisni mohamadalmuhaisny mohamadelmuhaisni mohamadelmuhaisny mohamadmuhaisni mohamadmuhaisny mohamedalmuhaisni mohamedalmuhaisny mohamedelmuhaisni mohamedelmuhaisny mohamedmuhaisni mohamedmuhaisny muhamadalmuhaisni muhamadalmuhaisny muhamadelmuhaisni muhamadelmuhaisny muhamadmuhaisni muhamadmuhaisny muhamedalmuhaisni muhamedalmuhaisny muhamedelmuhaisni muhamedelmuhaisny muhamedmuhaisni muhamedmuhaisny", "almuhaisni muhaisni"],
+  ["wadih.alyamani", "Wadih Al-Yamani", "wadihalyamani wadihalyamany wadihelyamani wadihelyamany wadihyamani wadihyamany", ""],
+  ["mansour.alsalimi", "Mansour Al-Salimi", "mansouralsalimi mansouralsalimy mansourelsalimi mansourelsalimy mansoursalimi mansoursalimy mansuralsalimi mansuralsalimy mansurelsalimi mansurelsalimy mansursalimi mansursalimy", ""],
+  ["omar.hisham", "Omar Hisham Al-Arabi", "omarhisham omarhishamalarabi omarhishamalaraby omarhishamarabi omarhishamaraby omarhishamelarabi omarhishamelaraby", ""],
+  ["khalid.alqahtani", "Khalid Al-Qahtani", "khalidalkahtani khalidalqahtani khalidalqahtany khalidelkahtani khalidelqahtani khalidelqahtany khalidkahtani khalidqahtani khalidqahtany", ""],
+  ["hatem.fareed", "Hatem Fareed Al-Waer", "hatemfared hatemfaredalwaer hatemfaredelwaer hatemfaredwaer hatemfarid hatemfaridalwaer hatemfaridelwaer hatemfaridwaer", ""],
+  ["tawfeeq.assayegh", "Tawfeeq As-Sayegh", "tawfekalsayegh tawfekasayegh tawfekelsayegh tawfeksayegh tawfeqalsayegh tawfeqasayegh tawfeqelsayegh tawfeqsayegh tawfiqalsayegh tawfiqasayegh tawfiqelsayegh tawfiqsayegh", ""],
+  ["abdulwadud.haneef", "Abdulwadud Haneef", "abdelwadudhanef abdelwadudhanif abdulwadudhanef abdulwadudhanif", ""],
+  ["sahl.yasin", "Sahl Yasin", "sahlyasin", ""],
+  ["ibrahim.aljibrin", "Ibrahim Al-Jibrin", "ibrahimaljibrin ibrahimeljibrin ibrahimjibrin", ""],
+  ["sherif.mostafa", "Sherif Mostafa", "sherifmostafa", ""],
+  ["ahmad.alnufais", "Ahmad Al-Nufais", "ahmadalnufais ahmadelnufais ahmadnufais", ""],
+  ["salman.alutaybi", "Salman Al-Utaybi", "salmanalutaybi salmanalutayby salmanelutaybi salmanelutayby salmanutaybi salmanutayby", ""],
+  ["adel.alkalbani", "Adel Al-Kalbani", "adelalkalbani adelalkalbany adelelkalbani adelelkalbany adelkalbani adelkalbany", "alkalbani kalbani"],
+  ["khalid.alghamdi", "Khalid Al-Ghamdi", "khalidalghamdi khalidalghamdy khalidelghamdi khalidelghamdy khalidghamdi khalidghamdy", ""],
+  ["yasser.alqurashi", "Yasser Al-Qurashi", "yaseralkurashi yaseralqurashi yaseralqurashy yaserelkurashi yaserelqurashi yaserelqurashy yaserkurashi yaserqurashi yaserqurashy", ""],
+  ["abdulaziz.alzahrani", "Abdulaziz Al-Zahrani", "abdelazizahrani abdelazizahrany abdelazizalzahrani abdelazizalzahrany abdelazizelzahrani abdelazizelzahrany abdulazizahrani abdulazizahrany abdulazizalzahrani abdulazizalzahrany abdulazizelzahrani abdulazizelzahrany", ""],
+  ["abdullah.almousa", "Abdullah Al-Mousa", "abdelahalmousa abdelahalmusa abdelahelmousa abdelahelmusa abdelahmousa abdelahmusa abdulahalmousa abdulahalmusa abdulahelmousa abdulahelmusa abdulahmousa abdulahmusa", ""],
+  ["karim.mansouri", "Karim Mansouri", "karimansouri karimansoury karimansuri", ""],
+  ["hamed.shakernejad", "Hamed Shakernejad", "hamedshakernejad", "shakernejad"],
+  ["shahriar.parhizgar", "Shahriar Parhizgar", "shahriarparhizgar", "parhizgar"],
+  ["saeed.toosi", "Saeed Toosi", "saedtosi saedtosy saedtusi saidtosi saidtosy saidtusi", ""],
+  ["abdullah.kamel", "Abdullah Kamel", "abdelahkamel abdulahkamel", ""],
+];
 const STAR_AFFIX = /^(?:real|the|oficial|ofical|qari|qary|sheikh|shaikh|shaykh|imam|quran|tv|chanel|fan|fans|page)+|(?:real|oficial|ofical|qari|qary|sheikh|shaikh|shaykh|imam|quran|tv|chanel|fan|fans|page)+$/g;
 let STAR_INDEX: { full: Map<string, string>; solo: Map<string, string> } | null = null;
 function starIndex() {
   if (STAR_INDEX) return STAR_INDEX;
   const full = new Map<string, string>(), solo = new Map<string, string>();
-  for (const [u, , f, s] of STARS) {
+  for (const [u, , f, s] of [...STARS, ...STARS_EXTRA]) {
     for (const x of f.split(" ").filter(Boolean)) if (!full.has(x)) full.set(x, u);
     for (const x of s.split(" ").filter(Boolean)) if (!solo.has(x)) solo.set(x, u);
   }

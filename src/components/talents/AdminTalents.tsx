@@ -1,12 +1,13 @@
 "use client";
 import { useCallback, useEffect, useState } from "react";
 import { BadgeIcon, type WebBadge } from "./BadgeIcon";
+import { starText } from "@/lib/starText";
 
 // Web moderation for Quran Talents (admins only; every API call checks the role): reports, clip approval, members
 // (level, official star, admin check, badge block, suspend), invitation codes, old verification requests.
 const DE = {
   title: "Quran Talents · Moderation", forbidden: "Nur für Administratoren. Bitte mit dem Admin-Konto anmelden.", reports: "Meldungen", posts: "Rezitationen", members: "Mitglieder", invites: "Einladungen", verify: "Anträge", stars: "Stars",
-  starClaims: "Übernahme-Anfragen", starAll: "Star-Profile", starInvite: "Einladungslink kopieren", starCopied: "Link kopiert (30 Tage gültig).", starClaimed: "übernommen von", starOpen: "nicht übernommen", starInvited: "über Einladung", roleSelf: "Rezitator selbst", roleTeam: "Offizielles Team",
+  starClaims: "Übernahme-Anfragen", starAll: "Star-Profile", starInvite: "Einladungslink kopieren", starCopied: "Link kopiert (einmalig, 30 Tage gültig).", starClaimed: "übernommen von", starOpen: "nicht übernommen", starInvited: "über Einladung", roleSelf: "Rezitator selbst", roleTeam: "Offizielles Team",
   none: "Nichts offen.", dismiss: "Verwerfen", resolve: "Erledigt", removeMsg: "Nachricht/Kommentar entfernen", removePost: "Rezitation entfernen", suspend: "Sperren", unsuspend: "Sperre aufheben",
   approve: "Freigeben", reject: "Ablehnen", reason: "Grund", search: "Mitglied suchen", official: "Offizieller Stern", officialOn: "Stern vergeben", officialOff: "Stern entziehen",
   verifyOn: "Gold (Admin) vergeben", verifyOff: "Gold (Admin) entziehen", block: "Automatische Abzeichen sperren", create: "Einladung erstellen", uses: "Nutzungen", days: "Gültig (Tage)", note: "Notiz",
@@ -14,7 +15,7 @@ const DE = {
 };
 const EN: typeof DE = {
   title: "Quran Talents · Moderation", forbidden: "Admins only. Please sign in with the admin account.", reports: "Reports", posts: "Recitations", members: "Members", invites: "Invitations", verify: "Requests", stars: "Stars",
-  starClaims: "Takeover requests", starAll: "Star profiles", starInvite: "Copy invite link", starCopied: "Link copied (valid for 30 days).", starClaimed: "taken over by", starOpen: "not taken over", starInvited: "via invitation", roleSelf: "The reciter", roleTeam: "Official team",
+  starClaims: "Takeover requests", starAll: "Star profiles", starInvite: "Copy invite link", starCopied: "Link copied (single use, valid for 30 days).", starClaimed: "taken over by", starOpen: "not taken over", starInvited: "via invitation", roleSelf: "The reciter", roleTeam: "Official team",
   none: "Nothing open.", dismiss: "Dismiss", resolve: "Resolved", removeMsg: "Remove message/comment", removePost: "Remove recitation", suspend: "Suspend", unsuspend: "Lift suspension",
   approve: "Approve", reject: "Reject", reason: "Reason", search: "Search members", official: "Official star", officialOn: "Grant star", officialOff: "Revoke star",
   verifyOn: "Grant gold (admin)", verifyOff: "Remove gold (admin)", block: "Block automatic badges", create: "Create invitation", uses: "Uses", days: "Valid (days)", note: "Note",
@@ -185,12 +186,18 @@ function Verify({ t, run, btn }: P) {
 // link (signed, 30 days) to send with the owner's message.
 type StarClaim = { id: string; star: string; starName: string; role: "self" | "team"; channel: string; message: string; invited: boolean; at: string; username: string | null; name: string | null };
 type StarRow = { username: string; name: string; country: string | null; claimedBy: string | null };
+type StarAssignment = { id: string; star: string; via: string; at: string; undoneAt: string | null; previous: string | null; username: string | null };
 function Stars({ t, run, btn, locale }: P & { locale: string }) {
   const [claims, setClaims] = useState<StarClaim[] | null>(null);
   const [stars, setStars] = useState<StarRow[]>([]);
   const [reason, setReason] = useState("");
   const [copied, setCopied] = useState("");
-  const load = useCallback(() => run(async () => { const d = await api<{ claims: StarClaim[]; stars: StarRow[] }>("/api/community/admin/stars"); setClaims(d.claims); setStars(d.stars); }), [run]);
+  const [log, setLog] = useState<StarAssignment[]>([]);
+  const [email, setEmail] = useState<Record<string, string>>({});
+  const sx = starText(locale);
+  const load = useCallback(() => run(async () => { const d = await api<{ claims: StarClaim[]; stars: StarRow[]; assignments: StarAssignment[] }>("/api/community/admin/stars"); setClaims(d.claims); setStars(d.stars); setLog(d.assignments); }), [run]);
+  const assign = (u: string) => run(async () => { await api("/api/community/admin/stars", { assign: u, email: email[u] ?? "" }); setEmail((e) => ({ ...e, [u]: "" })); await load(); });
+  const undo = (id: string) => run(async () => { await api("/api/community/admin/stars", { undo: id }); await load(); });
   useEffect(() => { void load(); }, [load]);
   const act = (id: string, action: string) => run(async () => { await api("/api/community/admin/stars", { id, action, reason }); setReason(""); await load(); });
   const invite = (username: string) => run(async () => {
@@ -214,6 +221,15 @@ function Stars({ t, run, btn, locale }: P & { locale: string }) {
       ))}
     </section>
     <section className="grid gap-2">
+      <h2 className="text-lg font-bold">{sx.adminLog}</h2>
+      {!log.length ? <p className="text-muted">{t.none}</p> : log.map((a) => (
+        <div key={a.id} className="flex flex-wrap items-center justify-between gap-2 rounded-lg border border-line bg-surface px-4 py-3 text-[14px]">
+          <span dir="ltr">@{a.star} → @{a.username ?? "?"} · {a.via} · {new Date(a.at).toLocaleString(locale)}{a.undoneAt ? ` · ${sx.adminUndone}` : ""}</span>
+          {!a.undoneAt ? <button className={btn} onClick={() => void undo(a.id)}>{sx.adminUndo}</button> : null}
+        </div>
+      ))}
+    </section>
+    <section className="grid gap-2">
       <h2 className="text-lg font-bold">{t.starAll}</h2>
       {stars.map((s) => (
         <div key={s.username} className="flex flex-wrap items-center justify-between gap-2 rounded-lg border border-line bg-surface px-4 py-3">
@@ -222,6 +238,8 @@ function Stars({ t, run, btn, locale }: P & { locale: string }) {
             {s.claimedBy ? <span>{t.starClaimed} @{s.claimedBy}</span> : <>
               <span>{copied === s.username ? t.starCopied : t.starOpen}</span>
               <button className={btn} onClick={() => void invite(s.username)}>{t.starInvite}</button>
+              <input type="email" className="h-9 w-48 rounded-md border border-line bg-surface px-2" placeholder={sx.adminEmail} value={email[s.username] ?? ""} onChange={(e) => setEmail((m) => ({ ...m, [s.username]: e.target.value }))} />
+              <button className={`${btn} btn-gold`} disabled={!(email[s.username] ?? "").includes("@")} onClick={() => void assign(s.username)}>{sx.adminAssign}</button>
             </>}
           </div>
         </div>

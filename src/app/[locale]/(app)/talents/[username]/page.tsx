@@ -24,7 +24,8 @@ import { fillRw, rankingsText } from "@/lib/rankingsWeb";
 import { rankOf } from "@/lib/rankings";
 import TalentProfileWeb, { type WebProfile } from "@/components/talents/TalentProfileWeb";
 import StarProfileWeb from "@/components/talents/StarProfileWeb";
-import { starByUsername, starClaimed } from "@/lib/stars";
+import { reservedByUsername, starClaimed } from "@/lib/stars";
+import StarClaimWeb from "@/components/talents/StarClaimWeb";
 import { starText } from "@/lib/starText";
 
 // Public talent profile on the website (same structure as the app profile): avatar, badge, level, stats, bio, follow /
@@ -44,8 +45,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const tx = talentsText(locale);
   if (!p) {
     // unclaimed star profile (owner 22.10.2026): only public facts, clearly labelled, not indexed
-    const star = starByUsername(username.toLowerCase());
-    if (star && !(await starClaimed(star.username))) return { title: `${star.reciter.name} (@${star.username}) | Quran Masterclass Talents`, description: starText(locale).label, robots: { index: false, follow: true } };
+    const star = reservedByUsername(username.toLowerCase());
+    if (star && !(await starClaimed(star.username))) return { title: `${star.name} (@${star.username}) | Quran Masterclass Talents`, description: starText(locale).label, robots: { index: false, follow: true } };
     return { title: "Quran Masterclass Talents", robots: { index: false, follow: false } };
   }
   const meta = pageMeta(locale, `/talents/${p.username}`, `${p.name} (@${p.username}) | Quran Masterclass Talents`, fill(tx.metaDesc, { u: p.name }));
@@ -57,8 +58,18 @@ export default async function TalentPage({ params }: { params: Promise<{ locale:
   setRequestLocale(locale);
   const p = await publicProfile(username.toLowerCase());
   if (!p) {
-    const star = starByUsername(username.toLowerCase());
-    if (star && !(await starClaimed(star.username))) return <StarProfileWeb locale={locale} username={star.username} reciter={star.reciter} />;
+    const star = reservedByUsername(username.toLowerCase());
+    if (star && !(await starClaimed(star.username))) {
+      if (star.reciter) return <StarProfileWeb locale={locale} username={star.username} reciter={star.reciter} />;
+      // a reciter without biography in the data: no profile page, only the reserved name and the takeover form
+      return (
+        <div className="mx-auto grid max-w-lg gap-4 px-5 py-12">
+          <h1 className="font-display text-3xl" dir="ltr">@{star.username}</h1>
+          <p className="text-muted">{starText(locale).reserved}</p>
+          <StarClaimWeb locale={locale} username={star.username} died={false} />
+        </div>
+      );
+    }
     notFound();
   }
   const tx = talentsText(locale);

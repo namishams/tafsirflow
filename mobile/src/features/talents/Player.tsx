@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react";
+import { ProMark } from "./ProMark";
 import { ActivityIndicator, Alert, FlatList, KeyboardAvoidingView, Modal, Platform, Pressable, Share, Text, TextInput, View, type ListViewToken } from "react-native";
 import { router, useFocusEffect, type Href } from "expo-router";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
@@ -154,6 +155,7 @@ function ClipPage({ post, height, active, bottomSpace, audio, onPatch, onBlocked
         <Pressable onPress={() => router.push(`/talents/u/${post.author.username}` as Href)} accessibilityRole="link" style={{ flexDirection: "row", alignItems: "center", gap: 8 }}>
           <Text numberOfLines={1} style={{ flexShrink: 1, fontFamily: FONT.bold, fontSize: 16, color: "#fff" }}>{post.author.name}</Text>
           <BadgeButton badge={post.author.badge} size={16} />
+          <ProMark pro={post.author.pro} size={14} />
           <Text style={{ fontFamily: FONT.semibold, fontSize: 12, color: stage.gold }}>{tt(`level_${post.author.level}` as TKey)}</Text>
         </Pressable>
         <Text style={{ fontFamily: FONT.semibold, fontSize: 13, color: stage.textSoft }}>{post.verseKey}{post.type === "story" ? ` · ${tt("typeStory")}` : ""}</Text>
@@ -230,6 +232,7 @@ export function CommentsSheet({ visible, post, onClose, onCount }: { visible: bo
                   <View style={{ flexDirection: "row", alignItems: "center", gap: 6 }}>
                     <Text style={{ fontFamily: FONT.bold, fontSize: 13.5, color: t.ink }}>{c.author?.name ?? tt("you")}</Text>
                     <BadgeButton badge={c.author?.badge} size={13} />
+                    <ProMark pro={c.author?.pro} size={12} />
                   </View>
                   <Text style={{ fontFamily: FONT.regular, fontSize: 14.5, lineHeight: 21, color: t.ink }}>{c.text}</Text>
                 </View>

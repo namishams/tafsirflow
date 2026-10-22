@@ -22,17 +22,25 @@ import { starText, type StarKey } from "./starText";
 // country, the short biography from the reciters data, the recitations in the reader's player and the biography. A
 // clear label says that the reciter does not run this profile (App Store 5.2: no impersonation); no posts, messages or
 // follower counts. "Is this you?" opens the takeover form (signed in, Quran Talents profile, link to an official channel).
-export function StarProfileScreen({ username, reciterSlug, invite, state }: { username: string; reciterSlug: string; invite?: string; state: StarState | null }) {
+export function StarProfileScreen({ username, reciterSlug, invite, state }: { username: string; reciterSlug: string | null; invite?: string; state: StarState | null }) {
   const t = useTheme();
   const insets = useSafeAreaInsets();
   const { lang } = useLang();
   const s = starText(lang);
   const more = useBioTexts();
   const tr = useT();
-  const r = reciterBio(reciterSlug);
+  const r = reciterSlug ? reciterBio(reciterSlug) : undefined;
   const [open, setOpen] = useState(!!state?.invited);
   useEffect(() => { if (state?.invited) setOpen(true); }, [state?.invited]);
-  if (!r) return null;
+  // a reciter without a biography in the data: no profile page, only the reserved name and the takeover
+  if (!r) return (
+    <ScrollView keyboardShouldPersistTaps="handled" style={{ flex: 1, backgroundColor: t.bg }} contentContainerStyle={{ paddingTop: insets.top + 12, paddingBottom: insets.bottom + 40, paddingHorizontal: 20, gap: 14 }}>
+      <Pressable onPress={goBack} accessibilityRole="button" accessibilityLabel={tr("common.back")} hitSlop={8} style={{ width: 44, height: 44, justifyContent: "center" }}><Icon name="chevronLeft" color={t.ink} size={26} weight={2.2} /></Pressable>
+      <Text accessibilityRole="header" style={{ fontFamily: FONT.display, fontSize: 28, color: t.ink, writingDirection: "ltr" }}>@{username}</Text>
+      <Text style={{ fontFamily: FONT.regular, fontSize: 15, lineHeight: 22, color: t.muted }}>{s.reserved}</Text>
+      {state?.invited && invite ? <AcceptInvite username={username} invite={invite} s={s} /> : state?.pending ? <Note text={s.sent} /> : open ? <ClaimForm username={username} died={false} s={s} /> : <OutlineButton title={s.claim} onPress={() => setOpen(true)} />}
+    </ScrollView>
+  );
   const tx = bioText(r, lang, more);
   const player = r.playerSlug ? RECITERS.find((x) => x.slug === r.playerSlug) : undefined;
   const life = r.born || r.died ? `${r.born ?? "?"}${r.died ? ` – ${r.died}` : ""}` : "";
@@ -73,12 +81,36 @@ export function StarProfileScreen({ username, reciterSlug, invite, state }: { us
             <OutlineButton title={s.biography} onPress={() => router.push(`/reciters/${r.slug}` as Href)} />
           </View>
           <Text style={{ fontFamily: FONT.regular, fontSize: 13.5, lineHeight: 19, color: t.muted }}>{s.labelNote}</Text>
-          {state?.pending ? <Note text={s.sent} /> : open ? <ClaimForm username={username} died={!!r.died} invite={state?.invited ? invite : undefined} s={s} /> : (
+          {state?.invited && invite ? <AcceptInvite username={username} invite={invite} s={s} /> : state?.pending ? <Note text={s.sent} /> : open ? <ClaimForm username={username} died={!!r.died} invite={state?.invited ? invite : undefined} s={s} /> : (
             <OutlineButton title={s.claim} onPress={() => setOpen(true)} />
           )}
         </View>
       </ScrollView>
     </KeyboardAvoidingView>
+  );
+}
+
+/** personal invite link (pre-approved): one gold button moves the name and the badge at once */
+function AcceptInvite({ username, invite, s }: { username: string; invite: string; s: Record<StarKey, string> }) {
+  const t = useTheme();
+  const { user } = useAuth();
+  const [busy, setBusy] = useState(false);
+  const [done, setDone] = useState(false);
+  const [err, setErr] = useState("");
+  if (done) return <Note text={s.acceptDone} />;
+  const go = async () => {
+    setBusy(true); setErr("");
+    try { await STAR_API.accept(username, invite); setDone(true); setTimeout(() => router.replace(`/talents/u/${username}` as Href), 900); }
+    catch (e) { const c = e instanceof ApiError ? e.code : ""; setErr(c === "invite_invalid" ? s.inviteInvalid : c === "login" || c === "verify" ? s.acceptSignin : s.error); }
+    finally { setBusy(false); }
+  };
+  return (
+    <View style={{ borderRadius: R.lg, borderWidth: 1, borderColor: goldButton.line, backgroundColor: t.surface, padding: 16, gap: 12 }}>
+      <Text style={{ alignSelf: "flex-start", fontFamily: FONT.semibold, fontSize: 13, color: t.ink, backgroundColor: "rgba(201,166,94,0.15)", paddingHorizontal: 12, paddingVertical: 5, borderRadius: 999, overflow: "hidden" }}>{s.invited}</Text>
+      {!user ? <Text style={{ fontFamily: FONT.regular, fontSize: 15, lineHeight: 22, color: t.ink }}>{s.acceptSignin}</Text> : null}
+      {err ? <Text accessibilityLiveRegion="polite" style={{ fontFamily: FONT.semibold, fontSize: 14, color: t.danger }}>{err}</Text> : null}
+      <GoldButton title={s.accept} busy={busy} disabled={busy} onPress={() => (user ? void go() : router.push("/account" as Href))} />
+    </View>
   );
 }
 

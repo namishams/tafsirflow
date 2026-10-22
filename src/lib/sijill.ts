@@ -1,7 +1,7 @@
 import { pool } from "./db";
 import raw from "./feed/config.json";
 import { mondayDay, sharerTier } from "./communityProfiles";
-import { displayBadge, type Badge } from "./talentBadges";
+import { displayBadge, proOf, type Badge } from "./talentBadges";
 import { courseName, verifyUrl } from "@/app/api/certificates/lib";
 
 // Sijill (السجل, the academic record) of the Quran Talents network (owner decision 21.10.2026): the social side shows
@@ -205,7 +205,7 @@ type ProfileRow = {
   user_id: string; achievements: Partial<Summary> | null; achievements_updated_at: string | null; sijill_privacy: unknown; leaderboard_opt_in: boolean;
   level: string; badge: string | null; official: boolean; verified: boolean; shares_total: number;
 };
-export const SIJILL_COLS = "c.user_id, c.achievements, c.achievements_updated_at, c.sijill_privacy, c.leaderboard_opt_in, c.level, c.badge, c.official, c.founder, c.verified, c.shares_total";
+export const SIJILL_COLS = "c.user_id, c.achievements, c.achievements_updated_at, c.sijill_privacy, c.leaderboard_opt_in, c.level, c.badge, c.official, c.founder, c.verified, c.shares_total, c.pro_until";
 
 /** the Sijill of a profile row; `full` = the owner (every section and the privacy settings), otherwise only the sections switched on */
 export async function sijillOf(r: ProfileRow, full: boolean, locale: string): Promise<Sijill> {
@@ -279,7 +279,7 @@ export const MOMENT_COLS = `m.id, m.kind, m.ref, m.data, m.created_at, m.reactio
   (SELECT count(*)::int FROM community_moment_reactions x WHERE x.moment_id = m.id AND x.reaction = 'mashallah') AS r_mashallah,
   (SELECT count(*)::int FROM community_moment_reactions x WHERE x.moment_id = m.id AND x.reaction = 'barakallah') AS r_barakallah,
   (SELECT count(*)::int FROM community_moment_reactions x WHERE x.moment_id = m.id AND x.reaction = 'barik') AS r_barik,
-  c.username, c.display_name, c.verified, c.badge, c.official, c.founder, c.avatar_path, c.avatar_version, (m.user_id = $1) AS own`;
+  c.username, c.display_name, c.verified, c.badge, c.official, c.founder, c.pro_until, c.avatar_path, c.avatar_version, (m.user_id = $1) AS own`;
 export function momentJson(x: MomentRow, locale: string) {
   const data = (x.data ?? {}) as Record<string, unknown>;
   return {
@@ -288,7 +288,7 @@ export function momentJson(x: MomentRow, locale: string) {
     title: x.kind === "certificate" && typeof data.course === "string" ? courseName(data.course, locale) : null,
     total: Number(x.reaction_count ?? 0), mine: x.mine ?? null, own: !!x.own,
     counts: { like: Number(x.r_like ?? 0), mashallah: Number(x.r_mashallah ?? 0), barakallah: Number(x.r_barakallah ?? 0), barik: Number(x.r_barik ?? 0) },
-    author: { username: x.username, name: x.display_name, badge: displayBadge(x), avatar: x.avatar_path ? `/api/community/avatar/${x.username}?v=${Number(x.avatar_version ?? 0)}` : null },
+    author: { username: x.username, name: x.display_name, badge: displayBadge(x), pro: proOf(x), avatar: x.avatar_path ? `/api/community/avatar/${x.username}?v=${Number(x.avatar_version ?? 0)}` : null },
   };
 }
 

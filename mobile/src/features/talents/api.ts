@@ -8,7 +8,7 @@ import type { Badge } from "./badges";
 export type Level = "talent" | "rising" | "master" | "sheikh";
 export const LEVELS: Level[] = ["talent", "rising", "master", "sheikh"];
 export type Connection = "none" | "outgoing" | "incoming" | "connected";
-export type TalentCard = { username: string; name: string; country: string | null; role: string; rewaya: string; level: Level; verified: boolean; badge?: Badge | null; sharerTier: number; followers: number; avatar?: string | null; followed?: boolean; mine?: boolean; followsMe?: boolean;
+export type TalentCard = { username: string; name: string; country: string | null; role: string; rewaya: string; level: Level; verified: boolean; badge?: Badge | null; pro?: boolean; sharerTier: number; followers: number; avatar?: string | null; followed?: boolean; mine?: boolean; followsMe?: boolean;
   /** lists and suggestions (22.10.2026): a follow request to this private account is pending */ requested?: boolean; private?: boolean };
 export type TalentProfile = TalentCard & {
   /** the one founder account (server flag) */
@@ -38,15 +38,15 @@ export type OwnExtras = { goals: string[]; city: string; travel: { on: boolean; 
 export type Post = {
   id: string; type: "story" | "post"; verseKey: string | null; durationMs: number | null; hasVideo: boolean; waveform: number[]; caption: string;
   at: string; expiresAt: string | null; likes: number; liked: boolean; comments: number; saved: boolean; media: string | null;
-  author: { username: string; name: string; verified: boolean; badge?: Badge | null; level: Level; sharerTier: number; followed?: boolean; mine?: boolean };
+  author: { username: string; name: string; verified: boolean; badge?: Badge | null; pro?: boolean; level: Level; sharerTier: number; followed?: boolean; mine?: boolean };
   status?: "pending" | "approved" | "rejected" | "removed"; rejectReason?: string;
 };
-export type Comment = { id: string; text: string; at: string; mine: boolean; canDelete: boolean; author?: { username: string; name: string; verified: boolean; badge?: Badge | null; level: Level; sharerTier: number } };
+export type Comment = { id: string; text: string; at: string; mine: boolean; canDelete: boolean; author?: { username: string; name: string; verified: boolean; badge?: Badge | null; pro?: boolean; level: Level; sharerTier: number } };
 export type Highlight = { id: string; title: string; posts: Post[] };
 export type NotificationKind = "moment_reaction" | "follow" | "follow_request" | "like" | "comment" | "post_approved" | "post_rejected" | "connect_request" | "connect_accepted" | "verified" | "verification_rejected";
 export type Notification = { id: string; kind: NotificationKind; at: string; read: boolean; postId: string | null; verseKey: string | null;
   /** Sijill: the moment a reaction was given to and the preset reaction */
-  moment?: { id: string; kind: import("@/features/sijill/api").MomentKind; ref: string; data: Record<string, unknown>; title: string | null }; reaction?: import("@/features/sijill/api").Reaction; actor: { username: string; name: string; verified: boolean; badge?: Badge | null; sharerTier: number } | null };
+  moment?: { id: string; kind: import("@/features/sijill/api").MomentKind; ref: string; data: Record<string, unknown>; title: string | null }; reaction?: import("@/features/sijill/api").Reaction; actor: { username: string; name: string; verified: boolean; badge?: Badge | null; pro?: boolean; sharerTier: number } | null };
 export type BadgeState = {
   badge: Badge | null;
   emerald: { ok: boolean; email: boolean; phone: boolean | null; age: boolean; profile: boolean; guidelines: boolean };
@@ -60,7 +60,7 @@ export type PostingStatus = {
   verified: { ok: boolean; required: boolean; badge: Badge | null; application: "none" | "pending" | "approved" | "rejected"; reason?: string };
 };
 export type ConnItem = TalentCard & { note: string; since: string };
-export type Conversation = { id: string; username: string; name: string; level: Level; verified: boolean; badge?: Badge | null; sharerTier: number; last: { text: string; mine: boolean } | null; at: string; unread: number };
+export type Conversation = { id: string; username: string; name: string; level: Level; verified: boolean; badge?: Badge | null; pro?: boolean; sharerTier: number; last: { text: string; mine: boolean } | null; at: string; unread: number };
 export type Message = { id: string; mine: boolean; text: string | null; removed: boolean; at: string };
 export type ReportCategory = "spam" | "harassment" | "inappropriate" | "impersonation" | "minor_safety" | "other";
 export const REPORT_CATEGORIES: ReportCategory[] = ["spam", "harassment", "inappropriate", "impersonation", "minor_safety", "other"];
@@ -180,13 +180,17 @@ export async function upload<T>(path: string, fields: Record<string, string>, fi
 
 // Star profiles (owner 22.10.2026, website src/app/api/community/stars and admin/stars): the public state of an
 // unclaimed star profile, the takeover request and, for admins, one-click decisions and personal invite links.
-export type StarState = { username: string; reciter: string; claimed: boolean; invited: boolean; pending: boolean };
+export type StarState = { username: string; name?: string; reciter: string | null; claimed: boolean; invited: boolean; pending: boolean };
+export type AdminStarAssignment = { id: string; star: string; via: string; at: string; undoneAt: string | null; previous: string | null; username: string | null };
 export type AdminStarClaim = { id: string; star: string; starName: string; role: "self" | "team"; channel: string; message: string; invited: boolean; at: string; username: string | null; name: string | null };
 export type AdminStarRow = { username: string; name: string; country: string | null; claimedBy: string | null };
 export const STAR_API = {
   state: (username: string, invite?: string) => api<StarState>(`/api/community/stars/${encodeURIComponent(username)}${invite ? `?invite=${encodeURIComponent(invite)}` : ""}`),
   claim: (username: string, body: { role: "self" | "team"; channel: string; message: string; invite?: string }) => api<{ ok: true }>(`/api/community/stars/${encodeURIComponent(username)}`, { method: "POST", body }),
-  adminList: () => api<{ claims: AdminStarClaim[]; stars: AdminStarRow[] }>("/api/community/admin/stars"),
+  accept: (username: string, invite: string) => api<{ ok: true; username: string }>(`/api/community/stars/${encodeURIComponent(username)}/accept`, { method: "POST", body: { invite } }),
+  adminList: () => api<{ claims: AdminStarClaim[]; stars: AdminStarRow[]; assignments: AdminStarAssignment[] }>("/api/community/admin/stars"),
+  adminAssign: (username: string, email: string) => api<{ ok: true }>("/api/community/admin/stars", { method: "POST", body: { assign: username, email } }),
+  adminUndo: (id: string) => api<{ ok: true }>("/api/community/admin/stars", { method: "POST", body: { undo: id } }),
   adminDecide: (id: string, action: "approve" | "reject", reason = "") => api<{ ok: true }>("/api/community/admin/stars", { method: "POST", body: { id, action, reason } }),
   adminInvite: (username: string, locale: string) => api<{ link: string; days: number }>("/api/community/admin/stars", { method: "POST", body: { invite: username, locale } }),
 };

@@ -4,7 +4,7 @@ import { removeMedia } from "./media";
 import { ageOf, MIN_POST_AGE } from "./talents";
 import { VERSE_COUNTS } from "./counts";
 import raw from "./feed/config.json";
-import { certifiedReciterLevel, displayBadge, refreshBadges } from "./talentBadges";
+import { certifiedReciterLevel, displayBadge, proOf, refreshBadges } from "./talentBadges";
 
 // Who may post recitation clips (owner decisions 21.10.2026): ALL of 16+, a learning level (Reciter Path level,
 // reported by the app) and a verified profile (application approved by an admin). Pro only when requirePro is
@@ -84,13 +84,13 @@ export type PostRow = {
   username: string; display_name: string; verified: boolean; level: string; shares_total: number; media_path: string | null; badge?: string; official?: boolean;
 };
 export const POST_COLS = `p.id, p.type, p.verse_key, p.duration_ms, p.has_video, p.waveform, p.caption, p.status, p.created_at, p.expires_at, p.like_count,
-  p.reject_reason, p.media_path, p.comment_count, c.username, c.display_name, c.verified, c.level, c.shares_total, c.badge, c.official, c.founder`;
+  p.reject_reason, p.media_path, p.comment_count, c.username, c.display_name, c.verified, c.level, c.shares_total, c.badge, c.official, c.founder, c.pro_until`;
 export function postJson(r: PostRow, own = false) {
   return {
     id: String(r.id), type: r.type, verseKey: r.verse_key, durationMs: r.duration_ms, hasVideo: !!r.has_video, waveform: (r.waveform ?? []).map(Number),
     caption: r.caption, at: r.created_at, expiresAt: r.expires_at, likes: Number(r.like_count), liked: !!r.liked, comments: Number(r.comment_count ?? 0), saved: !!r.saved,
     media: r.media_path ? `/api/community/media/${r.id}` : null,
-    author: { username: r.username, name: r.display_name, verified: !!displayBadge(r), badge: displayBadge(r), level: r.level, sharerTier: 0 },
+    author: { username: r.username, name: r.display_name, verified: !!displayBadge(r), badge: displayBadge(r), pro: proOf(r), level: r.level, sharerTier: 0 },
     ...(own ? { status: r.status, rejectReason: r.reject_reason || "" } : {}),
   };
 }

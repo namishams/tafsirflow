@@ -23,7 +23,7 @@ export const NO_STORE = { "Cache-Control": "private, no-store" };
 /** the full select of a profile row plus follower counts (alias c) */
 export const PROFILE_COLS = `c.user_id, c.username, c.display_name, c.bio, c.country, c.role, c.style, c.has_ijaza, c.public, c.shares_total,
   c.rewaya, c.maqam, c.ijazah_chain, c.level, c.verified, c.show_progress, c.tree_stage, c.tree_type, c.cert_juz, c.suspended,
-  c.avatar_path, c.avatar_version, c.private, c.message_policy, c.badge, c.official, c.official_channel, c.founder,
+  c.avatar_path, c.avatar_version, c.private, c.message_policy, c.badge, c.official, c.official_channel, c.founder, c.pro_until,
   (SELECT count(*)::int FROM community_follows f WHERE f.followee_id = c.user_id) AS followers,
   (SELECT count(*)::int FROM community_follows f WHERE f.follower_id = c.user_id) AS following`;
 

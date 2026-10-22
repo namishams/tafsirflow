@@ -60,7 +60,7 @@ export type MomentKind = "certificate" | "exam" | "level" | "juz" | "tree" | "st
 export type Moment = {
   id: string; kind: MomentKind; ref: string; data: Record<string, unknown>; at: string; title: string | null;
   total: number; mine: Reaction | null; own: boolean; counts: Record<Reaction, number>;
-  author: { username: string; name: string; badge: Badge | null; avatar: string | null };
+  author: { username: string; name: string; badge: Badge | null; pro?: boolean; avatar: string | null };
 };
 export type LbRow = TalentCard & { rank: number; score: number; streak: number; me: boolean };
 export type Buddy = TalentCard & { match: { stage: boolean; focus: boolean; stageId: string; focusId: string } };

@@ -37,6 +37,12 @@ export function displayBadge(r: { badge?: string | null; official?: boolean | nu
   return null;
 }
 
+/** PRO mark (owner 22.10.2026): the Pro entitlement mirrored on community_profiles.pro_until, shown while in the future */
+export const proOf = (r: unknown) => {
+  const v = (r as { pro_until?: string | Date | null } | null)?.pro_until;
+  return !!v && new Date(v).getTime() > Date.now();
+};
+
 /** highest Reciter Path level with a valid certificate from the exam module (0 when the module has no tables yet) */
 export async function certifiedReciterLevel(userId: number): Promise<number> {
   try {

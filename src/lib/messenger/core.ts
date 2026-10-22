@@ -1,7 +1,7 @@
 import crypto from "node:crypto";
 import { pool } from "../db";
 import { badText } from "../communityProfiles";
-import { displayBadge } from "../talentBadges";
+import { displayBadge, proOf } from "../talentBadges";
 import { AGE16, FRIEND, settingsOf, shareCircle, type Gender } from "../together";
 import { MIN_POST_AGE, NOT_BLOCKED, ageOf, birthYearOf } from "../talents";
 import { newSalt, open, openText, seal } from "./crypto";
@@ -57,9 +57,9 @@ export async function pairProblem(a: number, b: number): Promise<string | null> 
 }
 
 type Profile = { user_id: string; username: string; display_name: string; level: string; verified: boolean; badge: string; official: boolean; founder: boolean; avatar_path: string | null; avatar_version: number; suspended: boolean; message_policy: string };
-const PROFILE = "c.user_id, c.username, c.display_name, c.level, c.verified, c.badge, c.official, c.founder, c.avatar_path, c.avatar_version, c.suspended, c.message_policy";
+const PROFILE = "c.user_id, c.username, c.display_name, c.level, c.verified, c.badge, c.official, c.founder, c.pro_until, c.avatar_path, c.avatar_version, c.suspended, c.message_policy";
 export const person = (c: Partial<Profile> | null | undefined) => c?.username ? {
-  username: c.username, name: c.display_name ?? c.username, level: c.level ?? "talent", badge: displayBadge(c as never), verified: !!displayBadge(c as never),
+  username: c.username, name: c.display_name ?? c.username, level: c.level ?? "talent", badge: displayBadge(c as never), pro: proOf(c as never), verified: !!displayBadge(c as never),
   avatar: c.avatar_path ? `/api/community/avatar/${c.username}?v=${Number(c.avatar_version ?? 0)}` : null,
 } : null;
 

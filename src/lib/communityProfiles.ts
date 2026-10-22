@@ -3,7 +3,7 @@ import { currentUser, type User } from "./auth";
 import { pool } from "./db";
 import { json, rateLimited, sameOrigin } from "./http";
 import { moderate } from "./moderation";
-import { displayBadge } from "./talentBadges";
+import { displayBadge, proOf } from "./talentBadges";
 
 // Reciters community (mini): shared helpers for /api/community/*
 export const ROLES = ["learner", "reciter", "teacher"] as const;
@@ -27,7 +27,7 @@ export type Row = {
   rewaya?: string; maqam?: string; ijazah_chain?: string; level?: string; verified?: boolean;
   show_progress?: boolean; tree_stage?: number; tree_type?: string; cert_juz?: number[] | null;
   avatar_path?: string | null; avatar_version?: number; private?: boolean; message_policy?: string;
-  badge?: string | null; official?: boolean; official_channel?: string | null; founder?: boolean;
+  badge?: string | null; official?: boolean; official_channel?: string | null; founder?: boolean; pro_until?: string | Date | null;
 };
 
 /** sharer ("Verbreiter") tiers, same thresholds as the app (mobile/src/features/share/sharer.ts) */
@@ -40,7 +40,7 @@ export const shape = (r: Row & { followers?: number; following?: number }) => ({
   followers: Number(r.followers ?? 0), following: Number(r.following ?? 0),
   shares: Number(r.shares_total ?? 0), sharerTier: sharerTier(Number(r.shares_total ?? 0)),
   rewaya: r.rewaya ?? "", maqam: r.maqam ?? "", ijazahChain: r.ijazah_chain ?? "", level: r.level ?? "talent", verified: !!displayBadge(r),
-  badge: displayBadge(r), officialChannel: r.official ? r.official_channel ?? null : null, founder: !!r.founder,
+  badge: displayBadge(r), pro: proOf(r), officialChannel: r.official ? r.official_channel ?? null : null, founder: !!r.founder,
   avatar: r.avatar_path ? `/api/community/avatar/${r.username}?v=${Number(r.avatar_version ?? 0)}` : null,
   private: !!r.private, messagePolicy: r.message_policy ?? "connections",
   progress: r.show_progress ? { treeStage: Number(r.tree_stage ?? 0), treeType: r.tree_type ?? "", certJuz: (r.cert_juz ?? []).map(Number) } : null,
@@ -69,7 +69,7 @@ export async function badText(text: string): Promise<string | null> {
 export async function findByName(username: string) {
   const r = await pool()!.query(`SELECT user_id, username, display_name, bio, country, role, style, has_ijaza, public, shares_total,
             rewaya, maqam, ijazah_chain, level, verified, show_progress, tree_stage, tree_type, cert_juz, suspended,
-            avatar_path, avatar_version, private, message_policy, badge, official, official_channel, founder
+            avatar_path, avatar_version, private, message_policy, badge, official, official_channel, founder, pro_until
        FROM community_profiles WHERE username = $1`, [username.toLowerCase()]);
   return r.rows[0] as (Row & { user_id: string; suspended?: boolean }) | undefined;
 }

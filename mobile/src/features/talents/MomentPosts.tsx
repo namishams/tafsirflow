@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { ProMark } from "./ProMark";
 import { AccessibilityInfo, Animated, FlatList, Modal, Pressable, Text, View, useWindowDimensions, type ListRenderItemInfo } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import * as Haptics from "expo-haptics";
@@ -226,6 +227,7 @@ function FeedItem({ m, width, height, top, bottom, label, onChange, current, onC
           <View style={{ flexDirection: "row", alignItems: "center", gap: 5 }}>
             <Text numberOfLines={1} style={{ flexShrink: 1, fontFamily: FONT.bold, fontSize: 15, color: "#fff" }}>{m.author.username ? `@${m.author.username}` : m.author.name}</Text>
             <BadgeButton badge={m.author.badge} size={14} />
+            <ProMark pro={m.author.pro} size={13} />
           </View>
           {/* achievements of this device (no community profile yet) have no date */}
           {m.at ? <Text style={{ fontFamily: FONT.regular, fontSize: 12.5, color: stage.textMuted }}>{new Date(m.at).toLocaleDateString(lang, { day: "numeric", month: "long", year: "numeric" })}</Text> : null}

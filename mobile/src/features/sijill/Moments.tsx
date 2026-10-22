@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react";
+import { ProMark } from "@/features/talents/ProMark";
 import { Pressable, Text, View } from "react-native";
 import { router, type Href } from "expo-router";
 import { FONT, R, goldButton, useTheme } from "@/lib/theme";
@@ -77,6 +78,7 @@ export function MomentCard({ m, onChange, showAuthor = true }: { m: Moment; onCh
             <View style={{ flexDirection: "row", alignItems: "center", gap: 5 }}>
               <Text numberOfLines={1} style={{ flexShrink: 1, fontFamily: FONT.bold, fontSize: 14.5, color: t.ink }}>{m.own ? st("yourMoment") : m.author.name}</Text>
               {!m.own ? <BadgeButton badge={m.author.badge} size={13} /> : null}
+              {!m.own ? <ProMark pro={m.author.pro} size={12} /> : null}
             </View>
             <Text numberOfLines={1} style={{ fontFamily: FONT.regular, fontSize: 12, color: t.muted }}>{`@${m.author.username} · ${new Date(m.at).toLocaleDateString(lang, { day: "numeric", month: "short" })}`}</Text>
           </View>

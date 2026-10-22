@@ -10,7 +10,7 @@ import { useAuth } from "@/lib/auth";
 import { AccessGate, useTalentAccess } from "@/features/talents/ui";
 export { TalentsRouteError as ErrorBoundary } from "@/features/talents/ui";
 import { ProfileScreenView, useProfileData } from "@/features/talents/ProfileScreen";
-import { STARS } from "@/features/talents/usernameFilter";
+import { STARS, STARS_EXTRA } from "@/features/talents/usernameFilter";
 import { STAR_API, type StarState } from "@/features/talents/api";
 import { StarProfileScreen } from "@/features/talents/StarProfile";
 
@@ -30,7 +30,10 @@ const SCREEN = { headerShown: false } as const;
 // until the reciter has taken it over; then the normal profile of his account opens here.
 export default function TalentProfileRoute() {
   const { username, invite } = useLocalSearchParams<{ username: string; invite?: string }>();
-  const star = STARS.find((s) => s[0] === String(username ?? "").toLowerCase());
+  const un = String(username ?? "").toLowerCase();
+  const found = STARS.find((s) => s[0] === un);
+  const extra = found ? undefined : STARS_EXTRA.find((s) => s[0] === un);
+  const star: [string, string | null] | undefined = found ? [found[0], found[1]] : extra ? [extra[0], null] : undefined;
   const [st, setSt] = useState<StarState | null | "load">(star ? "load" : null);
   useEffect(() => {
     if (!star) { setSt(null); return; }

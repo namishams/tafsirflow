@@ -6,6 +6,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { FONT, R, goldButton, useTheme } from "@/lib/theme";
 import { GoldButton } from "@/components/brand";
 import { useTT, type TKey } from "./text";
+import { ARABESQUE, BADGE_STYLE, CHECK, CHECK_FOUNDER, CROWN, KHATAM, KHATAM_INNER } from "./badgeShape";
 
 // The badges of Quran Talents (granted automatically, see the website's src/lib/talentBadges.ts): "emerald" = confirmed
 // and complete profile, "gold" = Masterclass Reciter (Reciter Path certificate, the top tier), official star (proven
@@ -15,28 +16,20 @@ import { useTT, type TKey } from "./text";
 // "star" (owner 22.10.2026): a well-known reciter who took over his star profile; emerald disc, light ring, white tick.
 export type Badge = "emerald" | "gold" | "official" | "founder" | "star";
 
-export const BADGE_COLORS = { founder: goldButton.to, gold: "#8E959E", emerald: "#2F7FD8", star: "#0B7A55" } as const;
-const GOLD = goldButton.to;
-const DEEP = "rgb(8,58,44)";
+export { BADGE_COLORS } from "./badgeShape";
 
-/** the badge mark; `label` for VoiceOver */
+/** the badge mark (khatam with arabesque ring and check, shared path data in ./badgeShape.ts, same as the website) */
 export function BadgeMark({ badge, size = 16 }: { badge: Badge; size?: number }) {
-  if (badge === "official") {
-    // radiant gold star on a deep emerald disc
-    return (
-      <Svg width={size} height={size} viewBox="0 0 24 24">
-        <Circle cx={12} cy={12} r={12} fill={DEEP} />
-        <Circle cx={12} cy={12} r={11} fill="none" stroke={GOLD} strokeWidth={1.2} />
-        <Path d="M12 4.2l2.2 4.7 5.1.6-3.8 3.5 1 5.1L12 15.6l-4.5 2.5 1-5.1-3.8-3.5 5.1-.6z" fill="#F3E2B6" stroke={GOLD} strokeWidth={0.8} strokeLinejoin="round" />
-      </Svg>
-    );
-  }
-  const fill = BADGE_COLORS[badge];
+  const s = BADGE_STYLE[badge];
+  const fine = size < 18 ? 0.9 : 0.6;
   return (
     <Svg width={size} height={size} viewBox="0 0 24 24">
-      <Circle cx={12} cy={12} r={12} fill={fill} />
-      {badge === "founder" ? <Circle cx={12} cy={12} r={10.6} fill="none" stroke="#F3E2B6" strokeWidth={1} /> : badge === "star" ? <Circle cx={12} cy={12} r={10.6} fill="none" stroke="#9FE3C7" strokeWidth={1} /> : null}
-      <Path d="M7 12.4l3.2 3.2L17.2 8.6" fill="none" stroke={badge === "founder" ? goldButton.text : "#FFFFFF"} strokeWidth={2.6} strokeLinecap="round" strokeLinejoin="round" />
+      {s.doubleRing ? <Circle cx={12} cy={12} r={11.4} fill="none" stroke={s.doubleRing} strokeWidth={0.8} /> : null}
+      <Path d={KHATAM} fill={s.fill} stroke={s.edge} strokeWidth={1} strokeLinejoin="round" />
+      {size >= 18 ? <Path d={KHATAM_INNER} fill="none" stroke={s.inner} strokeWidth={0.5} /> : null}
+      <Path d={ARABESQUE} fill="none" stroke={s.ring} strokeWidth={fine} opacity={0.85} />
+      {s.crown ? <Path d={CROWN} fill={s.crown} /> : null}
+      <Path d={s.crown ? CHECK_FOUNDER : CHECK} fill="none" stroke={s.check} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
     </Svg>
   );
 }

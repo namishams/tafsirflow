@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState, type Dispatch, type ReactNode, type SetStateAction } from "react";
+import { ProMark } from "./ProMark";
 import { LinearGradient } from "expo-linear-gradient";
 import { ActionSheetIOS, Alert, Modal, Platform, Pressable, RefreshControl, ScrollView, Share, StyleSheet, Text, View, useWindowDimensions, type ScrollViewInstance } from "react-native";
 import { router, useGlobalSearchParams, type Href } from "expo-router";
@@ -38,6 +39,9 @@ import * as Haptics from "expo-haptics";
 import { ExtrasChips } from "./ExtrasEditor";
 import { useGoalLabels, useTravel } from "./travel";
 import { readV2 } from "@/features/plan/v2";
+import { PremiumBand, PremiumRing } from "./Premium";
+import { STARS } from "./usernameFilter";
+import { starText } from "./starText";
 import { CareerStats } from "@/features/stats/CareerStats";
 import { ProfileStrip } from "@/features/stats/ProfileStrip";
 import { CountryBadge } from "@/features/rankings/Flag";
@@ -372,14 +376,19 @@ export function ProfileScreenView({ d, variant, title, canInteract, signedIn, re
   // the device's travel mode
   const ext = mode === "local" ? { goals: readV2()?.goals ?? [], city: "", travel: trip.on ? { on: true, city: trip.city } : undefined } : (p.extras ?? {});
   const ownish = mode === "own" || mode === "local";
+  // founder and claimed reciters: premium band, ornamental ring, role line (owner 22.10.2026, same as the website)
+  const premium: "founder" | "star" | null = p.founder ? "founder" : p.badge === "star" ? "star" : null;
+  const starReciter = STARS.find((s) => s[0] === p.username)?.[1] ?? null;
   const header = (
-    <View style={{ alignItems: "center", paddingTop: 10, paddingHorizontal: 16 }}>
+    <View style={{ alignItems: "center", paddingTop: premium ? 26 : 10, paddingHorizontal: 16 }}>
+      {premium ? <PremiumBand kind={premium} /> : null}
       {d.source === "cache" ? <Text accessibilityLiveRegion="polite" style={{ fontFamily: FONT.semibold, fontSize: 12.5, color: t.muted, marginBottom: 8 }}>{pt("offlineNote")}</Text> : null}
       <Pressable onPress={p.liveStory && postingOn ? () => router.push(`/talents/player?src=user&u=${p.username}&type=story` as Href) : ownish && d.source !== "cache" ? changePhoto : undefined}
         disabled={!(p.liveStory && postingOn) && !(ownish && d.source !== "cache")} accessibilityRole={ownish || p.liveStory ? "button" : "image"}
         accessibilityLabel={p.liveStory && postingOn ? tt("watchStory") : mode === "local" ? pt("createProfile") : ownish ? pt("changePhoto") : p.name}
         style={{ padding: p.liveStory && postingOn ? 3 : 0, borderRadius: 70, borderWidth: p.liveStory && postingOn ? 2.5 : 0, borderColor: goldButton.from }}>
-        <SharerRing tier={p.sharerTier} size={96}><TalentAvatar name={p.name} size={96} uri={p.avatar} badge={p.badge} /></SharerRing>
+        {premium ? <PremiumRing kind={premium} size={96} /> : null}
+        {premium ? <TalentAvatar name={p.name} size={96} uri={p.avatar} badge={null} /> : <SharerRing tier={p.sharerTier} size={96}><TalentAvatar name={p.name} size={96} uri={p.avatar} badge={p.badge} /></SharerRing>}
         {ownish ? (
           <View style={{ position: "absolute", right: 0, bottom: 0, width: 28, height: 28, borderRadius: 14, backgroundColor: goldButton.to, borderWidth: 2.5, borderColor: bg, alignItems: "center", justifyContent: "center" }}>
             <Icon name="plus" color={goldButton.text} size={15} weight={2.8} />
@@ -393,6 +402,7 @@ export function ProfileScreenView({ d, variant, title, canInteract, signedIn, re
         {/* no @username yet (this device only): the name, unless it is just the tab's title */}
         {handle || p.name !== title ? <Text numberOfLines={1} style={{ flexShrink: 1, fontFamily: FONT.bold, fontSize: 17, color: t.ink, writingDirection: handle ? "ltr" : undefined }}>{handle || p.name}</Text> : null}
         <BadgeButton badge={p.badge} size={17} />
+        <ProMark pro={p.pro} size={15} />
         {p.country ? <CountryBadge code={p.country} size={17} /> : null}
         {p.private && variant === "stack" ? <Icon name="lock" color={t.muted} size={14} /> : null}
       </View>
@@ -459,6 +469,13 @@ export function ProfileScreenView({ d, variant, title, canInteract, signedIn, re
         {/* founder (one account, set on the server): the line and the place */}
         {p.founder ? <Text style={{ fontFamily: FONT.semibold, fontSize: 14, color: t.gold, textAlign: "center" }}>{tt("founderLine" as TKey)}</Text> : null}
         {p.founder ? <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "center", gap: 6 }}><CountryBadge code="AE" size={16} /><Text style={{ fontFamily: FONT.regular, fontSize: 13, color: t.muted }}>{tt("founderPlace" as TKey)}</Text></View> : null}
+        {premium === "star" ? <Text style={{ fontFamily: FONT.semibold, fontSize: 14, color: t.dark ? "#7fd1ad" : "#0E7A57", textAlign: "center" }}>{starText(lang).roleLine}{p.country ? ` · ${countryName(p.country, lang)}` : ""}</Text> : null}
+        {premium === "star" && starReciter ? (
+          <Pressable onPress={() => router.push(`/reciters/${starReciter}` as Href)} accessibilityRole="link" style={{ alignSelf: "center", flexDirection: "row", alignItems: "center", gap: 6, marginTop: 4, paddingHorizontal: 14, minHeight: 36, borderRadius: 999, borderWidth: 1, borderColor: "rgba(217,185,112,0.7)", backgroundColor: "rgba(14,122,87,0.08)" }}>
+            <Icon name="play" color={t.ink} size={13} />
+            <Text style={{ fontFamily: FONT.bold, fontSize: 13.5, color: t.ink }}>{starText(lang).recitations}</Text>
+          </Pressable>
+        ) : null}
         {/* chips centred in their own row (owner 22.10.2026: the sharer chip sat left under the centred stage line) */}
         <View style={{ flexDirection: "row", flexWrap: "wrap", justifyContent: "center", alignSelf: "stretch", gap: 6 }}><SharerBadge tier={p.sharerTier} /></View>
         {!p.private && p.username && live ? <View style={{ flexDirection: "row", justifyContent: "center" }}><RankLine username={p.username} /></View> : null}

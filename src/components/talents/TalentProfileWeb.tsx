@@ -1,4 +1,5 @@
 "use client";
+import { ProMark } from "./ProMark";
 import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { Link } from "@/i18n/navigation";
 import { BadgeIcon, type WebBadge } from "./BadgeIcon";
@@ -16,6 +17,9 @@ import CareerStatsWeb from "@/components/stats/CareerStatsWeb";
 import ProfileStripWeb from "@/components/stats/ProfileStripWeb";
 import CountryBadge from "@/components/rankings/CountryBadge";
 import { careerText } from "@/lib/careerWeb";
+import { GIRIH_TILE, PREMIUM, archRing } from "@/lib/badgeShape";
+import { STARS } from "@/lib/usernameFilter";
+import { starText } from "@/lib/starText";
 
 // The talent profile on the website, 1:1 with the app (owner, 21.10.2026; mobile/src/features/talents/ProfileScreen.tsx):
 // TikTok structure in emerald and gold. Top bar (own: name with a chevron menu, "+" to share with the QR code, the menu
@@ -36,6 +40,8 @@ export type WebProfile = {
   mine?: boolean; followed?: boolean; requested?: boolean; followsMe?: boolean; canMessage?: boolean; restricted?: boolean; blocked?: boolean; connection?: Conn;
   /** the one founder account (server flag) */
   founder?: boolean;
+  /** PRO mark: an active Pro subscription (server) */
+  pro?: boolean;
   followedBy?: { total: number; users: { username: string; name: string; avatar: string | null }[] } | null;
   shareUrl?: string; shareQr?: string[]; moments?: GridMoment[]; momentCount?: number;
   /** learning goals, city, travel the viewer may see (profileExtras.ts) */
@@ -195,6 +201,8 @@ export default function TalentProfileWeb({ locale, initial, username, own, place
     try { if (navigator.share) await navigator.share({ url, title: `${p.name} (@${p.username}) · Quran Masterclass Talents` }); else { await navigator.clipboard.writeText(url); setMsg(t.copied); } } catch { /* cancelled */ }
   };
 
+  const premium: "founder" | "star" | null = p.founder ? "founder" : p.badge === "star" ? "star" : null;
+  const starReciter = STARS.find((s) => s[0] === p.username)?.[1] ?? null;
   const facts = [p.rewaya, p.country ? countryName(p.country, locale) : "", level?.stage ? sx[`stage_${level.stage}`] ?? "" : ""].filter(Boolean).join(" · ");
   const ma = p.mashaallahTotal ?? 0;
   const lists = (k: "followers" | "following") => (!p.restricted ? `/talents/${p.username}/${k}` : undefined);
@@ -281,20 +289,29 @@ export default function TalentProfileWeb({ locale, initial, username, own, place
         )}
       </div>
 
-      {/* header */}
-      <div className="flex flex-col items-center px-4 pt-3 text-center">
+      {/* header; founder and claimed reciters get the premium band and ornamental ring (owner 22.10.2026) */}
+      <div className={`relative isolate flex flex-col items-center px-4 text-center ${premium ? "pt-7" : "pt-3"}`}>
+        {premium ? <PremiumBand kind={premium} /> : null}
         <span className="relative">
-          <Avatar src={p.avatar} size={96} badge={p.badge} />
+          {premium ? <PremiumRing kind={premium} size={96} /> : null}
+          <Avatar src={p.avatar} size={96} badge={premium ? null : p.badge} />
           {mode === "own" ? <Link href="/talents/me/edit" aria-label={t.editProfile} className="absolute bottom-0 end-0 grid h-7 w-7 place-items-center rounded-full border-[2.5px] border-surface bg-[#c6a65e] text-[rgb(8,38,29)]"><Ico n="plus" size={15} sw={2.8} /></Link> : null}
         </span>
         <h1 className="mt-3 flex items-center justify-center gap-1.5 text-[17px] font-bold text-ink">
           <span dir="ltr">@{p.username}</span>
           {p.badge ? <a href="#badges" aria-label={`${tx[`badge_${p.badge}`]}. ${tx.badgeWhat}`}><BadgeIcon badge={p.badge} size={17} title={tx[`badge_${p.badge}`]} /></a> : null}
+          {p.pro ? <ProMark size={15} /> : null}
           {p.country ? <CountryBadge code={p.country} size={17} /> : null}
           {p.private && mode === "other" ? <span className="text-muted"><Ico n="lock" size={14} /></span> : null}
         </h1>
         {p.founder ? <p className="mt-1 text-[14px] font-semibold text-gold">{tx.founderLine}</p> : null}
         {p.founder ? <p className="mt-0.5 flex items-center justify-center gap-1.5 text-[13px] text-muted"><CountryBadge code="AE" size={16} />{tx.founderPlace}</p> : null}
+        {premium === "star" ? <p className="mt-1 text-[14px] font-semibold text-[#0E7A57] dark:text-[#7fd1ad]">{starText(locale).roleLine}{p.country ? ` · ${countryName(p.country, locale)}` : ""}</p> : null}
+        {premium === "star" && starReciter ? (
+          <Link href={`/reciters/${starReciter}`} className="mt-3 inline-flex items-center gap-2 rounded-full border border-[#D9B970]/70 bg-[rgba(14,122,87,0.08)] px-4 py-1.5 text-[13.5px] font-bold text-ink">
+            <svg aria-hidden viewBox="0 0 24 24" className="h-3.5 w-3.5"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor" /></svg>{starText(locale).recitations}
+          </Link>
+        ) : null}
         <p className="sr-only">{p.name}</p>
         <div className="mt-1.5 flex items-center gap-2">
           <span className={`rounded-full px-2.5 py-0.5 text-[12px] font-semibold ${p.level === "master" || p.level === "sheikh" ? "border border-[#c6a65e] bg-[rgba(201,166,94,0.14)] text-gold" : "bg-accent-soft text-accent"}`}>{tx[`level_${p.level}`] ?? p.level}</span>
@@ -607,5 +624,27 @@ function ReportDialog({ username, t, onClose }: { username: string; t: Record<Tp
         </div>
       )}
     </Dialog>
+  );
+}
+
+/** emerald-to-gold band with a quiet girih pattern behind the avatar (founder and claimed reciters) */
+function PremiumBand({ kind }: { kind: "founder" | "star" }) {
+  const c = PREMIUM[kind].band;
+  return (
+    <span aria-hidden className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[92px] overflow-hidden" style={{ background: `linear-gradient(115deg, ${c[0]} 0%, ${c[1]} 55%, ${c[2]} 100%)`, maskImage: "linear-gradient(to bottom, #000 55%, transparent)", WebkitMaskImage: "linear-gradient(to bottom, #000 55%, transparent)" }}>
+      <svg className="h-full w-full opacity-[0.16]"><defs><pattern id={`girih-${kind}`} width="40" height="40" patternUnits="userSpaceOnUse"><path d={GIRIH_TILE} fill="none" stroke="#F3E2B6" strokeWidth="0.8" /></pattern></defs><rect width="100%" height="100%" fill={`url(#girih-${kind})`} /></svg>
+    </span>
+  );
+}
+/** ornamental ring: founder double gold ring with small arches, reciters emerald and gold */
+function PremiumRing({ kind, size }: { kind: "founder" | "star"; size: number }) {
+  const k = PREMIUM[kind];
+  const s = size * 1.25;
+  return (
+    <svg aria-hidden viewBox="0 0 120 120" width={s} height={s} className="pointer-events-none absolute" style={{ left: (size - s) / 2, top: (size - s) / 2 }}>
+      <circle cx="60" cy="60" r="55.5" fill="none" stroke={k.outer} strokeWidth="2.4" />
+      <circle cx="60" cy="60" r="51.5" fill="none" stroke={k.inner} strokeWidth="1.4" />
+      {k.arches ? <path d={archRing(12, 55.5, 2.6, 0.17)} fill="none" stroke={k.outer} strokeWidth="1.6" strokeLinecap="round" /> : <path d={archRing(16, 55.5, 1.4, 0.08)} fill="none" stroke={k.inner} strokeWidth="1.2" strokeLinecap="round" />}
+    </svg>
   );
 }

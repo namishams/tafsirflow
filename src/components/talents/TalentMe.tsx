@@ -1,4 +1,5 @@
 "use client";
+import { ProMark } from "./ProMark";
 import { useCallback, useEffect, useState } from "react";
 import { Link } from "@/i18n/navigation";
 import { BadgeIcon, type WebBadge } from "./BadgeIcon";
@@ -231,7 +232,7 @@ export default function TalentMe({ locale, tx, countries, official }: { locale: 
                   <span className="flex-1">{n.kind === "moment_reaction" && n.moment
                     ? (() => { const sx = sijillText(locale); const m = momentLine(n.moment, sx); return n.reaction && n.reaction !== "like" ? f(sx.n_moment_reaction, { u: n.actor?.name ?? "", r: sx[`react_${n.reaction}` as SwKey] ?? n.reaction, m }) : f(sx.n_moment_like, { u: n.actor?.name ?? "", m }); })()
                     : f(tx[`n_${n.kind}`] ?? n.kind, { u: n.actor?.name ?? "", v: n.verseKey ?? "" })}</span>
-                  {n.actor?.badge ? <BadgeIcon badge={n.actor.badge} size={14} /> : null}
+                  {n.actor?.badge ? <BadgeIcon badge={n.actor.badge} size={14} /> : null}{(n.actor as { pro?: boolean } | null)?.pro ? <ProMark size={13} /> : null}
                   <time className="text-[12.5px] text-muted" dateTime={n.at}>{new Date(n.at).toLocaleDateString(locale)}</time>
                 </li>
               ))}

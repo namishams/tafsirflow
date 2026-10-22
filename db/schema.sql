@@ -1628,3 +1628,85 @@ SELECT t.id, u.uid, COALESCE((SELECT max(x.id) FROM msg_messages x WHERE x.threa
 ON CONFLICT (thread_id, user_id) DO NOTHING;
 GRANT ALL ON ALL TABLES IN SCHEMA public TO tafsirflow;
 GRANT ALL ON ALL SEQUENCES IN SCHEMA public TO tafsirflow;
+
+-- More well-known qurra without a biography in the data (STARS_EXTRA in src/lib/usernameFilter.ts): the name is
+-- reserved and can be taken over, but there is no public page (reciter_id stays NULL).
+ALTER TABLE star_profiles ALTER COLUMN reciter_id DROP NOT NULL;
+INSERT INTO star_profiles (slug, reciter_id, display_name, country) VALUES
+  ('hazza.albalushi', NULL, 'Hazza Al-Balushi', NULL),
+  ('abdulrahman.alossi', NULL, 'Abdulrahman Al-Ossi', NULL),
+  ('mohammad.almuhaisni', NULL, 'Mohammad Al-Muhaisni', NULL),
+  ('wadih.alyamani', NULL, 'Wadih Al-Yamani', NULL),
+  ('mansour.alsalimi', NULL, 'Mansour Al-Salimi', NULL),
+  ('omar.hisham', NULL, 'Omar Hisham Al-Arabi', NULL),
+  ('khalid.alqahtani', NULL, 'Khalid Al-Qahtani', NULL),
+  ('hatem.fareed', NULL, 'Hatem Fareed Al-Waer', NULL),
+  ('tawfeeq.assayegh', NULL, 'Tawfeeq As-Sayegh', NULL),
+  ('abdulwadud.haneef', NULL, 'Abdulwadud Haneef', NULL),
+  ('sahl.yasin', NULL, 'Sahl Yasin', NULL),
+  ('ibrahim.aljibrin', NULL, 'Ibrahim Al-Jibrin', NULL),
+  ('sherif.mostafa', NULL, 'Sherif Mostafa', NULL),
+  ('ahmad.alnufais', NULL, 'Ahmad Al-Nufais', NULL),
+  ('salman.alutaybi', NULL, 'Salman Al-Utaybi', NULL),
+  ('adel.alkalbani', NULL, 'Adel Al-Kalbani', NULL),
+  ('khalid.alghamdi', NULL, 'Khalid Al-Ghamdi', NULL),
+  ('yasser.alqurashi', NULL, 'Yasser Al-Qurashi', NULL),
+  ('abdulaziz.alzahrani', NULL, 'Abdulaziz Al-Zahrani', NULL),
+  ('abdullah.almousa', NULL, 'Abdullah Al-Mousa', NULL),
+  ('karim.mansouri', NULL, 'Karim Mansouri', NULL),
+  ('hamed.shakernejad', NULL, 'Hamed Shakernejad', NULL),
+  ('shahriar.parhizgar', NULL, 'Shahriar Parhizgar', NULL),
+  ('saeed.toosi', NULL, 'Saeed Toosi', NULL),
+  ('abdullah.kamel', NULL, 'Abdullah Kamel', NULL)
+ON CONFLICT (slug) DO NOTHING;
+
+-- Star and personality takeover in one step (owner 22.10.2026): a personal invite link is pre-approved (random token,
+-- only its SHA-256 stored, single use, 30 days); the admin can also assign a reserved name directly to an existing
+-- account by e-mail. Every assignment is logged in star_assignments and can be undone (previous username restored).
+CREATE TABLE IF NOT EXISTS star_invites (
+  id          bigserial PRIMARY KEY,
+  star_slug   text NOT NULL REFERENCES star_profiles(slug) ON DELETE CASCADE,
+  token_hash  text NOT NULL UNIQUE,
+  created_by  bigint REFERENCES users(id) ON DELETE SET NULL,
+  expires_at  timestamptz NOT NULL,
+  used_at     timestamptz,
+  used_by     bigint REFERENCES users(id) ON DELETE SET NULL,
+  created_at  timestamptz NOT NULL DEFAULT now()
+);
+CREATE TABLE IF NOT EXISTS star_assignments (
+  id                bigserial PRIMARY KEY,
+  star_slug         text NOT NULL REFERENCES star_profiles(slug) ON DELETE CASCADE,
+  user_id           bigint REFERENCES users(id) ON DELETE SET NULL,
+  via               text NOT NULL CHECK (via IN ('invite','admin','claim')),
+  admin_id          bigint REFERENCES users(id) ON DELETE SET NULL,
+  previous_username text,
+  created_at        timestamptz NOT NULL DEFAULT now(),
+  undone_at         timestamptz,
+  undone_by         bigint REFERENCES users(id) ON DELETE SET NULL
+);
+CREATE INDEX IF NOT EXISTS star_assignments_created ON star_assignments(created_at DESC);
+GRANT ALL ON ALL TABLES IN SCHEMA public TO tafsirflow;
+GRANT ALL ON ALL SEQUENCES IN SCHEMA public TO tafsirflow;
+
+-- PRO mark (owner 22.10.2026): a small gold "PRO" capsule next to the name of every Pro subscriber (cannot be hidden).
+-- community_profiles mirrors the entitlement (kept by triggers, like founder) so every profile select can show it
+-- without a join: pro_until is the end of Pro, 9999-12-31 for a lasting Premium, NULL without Pro. Shown while > now().
+ALTER TABLE community_profiles ADD COLUMN IF NOT EXISTS pro_until timestamptz;
+CREATE OR REPLACE FUNCTION community_profiles_pro_sync() RETURNS trigger LANGUAGE plpgsql AS $$
+BEGIN
+  NEW.pro_until := (SELECT CASE WHEN u.plan = 'premium' THEN COALESCE(u.pro_until, '9999-12-31'::timestamptz) END FROM users u WHERE u.id = NEW.user_id);
+  RETURN NEW;
+END $$;
+DROP TRIGGER IF EXISTS community_profiles_pro ON community_profiles;
+CREATE TRIGGER community_profiles_pro BEFORE INSERT OR UPDATE ON community_profiles FOR EACH ROW EXECUTE FUNCTION community_profiles_pro_sync();
+CREATE OR REPLACE FUNCTION users_pro_sync() RETURNS trigger LANGUAGE plpgsql AS $$
+BEGIN
+  IF NEW.plan IS DISTINCT FROM OLD.plan OR NEW.pro_until IS DISTINCT FROM OLD.pro_until THEN
+    UPDATE community_profiles SET pro_until = NULL WHERE user_id = NEW.id; -- the BEFORE trigger recomputes it
+  END IF;
+  RETURN NEW;
+END $$;
+DROP TRIGGER IF EXISTS users_pro ON users;
+CREATE TRIGGER users_pro AFTER UPDATE OF plan, pro_until ON users FOR EACH ROW EXECUTE FUNCTION users_pro_sync();
+UPDATE community_profiles c SET pro_until = NULL
+ WHERE c.pro_until IS DISTINCT FROM (SELECT CASE WHEN u.plan = 'premium' THEN COALESCE(u.pro_until, '9999-12-31'::timestamptz) END FROM users u WHERE u.id = c.user_id);

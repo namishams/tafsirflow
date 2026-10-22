@@ -15,7 +15,7 @@ import { ClipVisual } from "@/features/talents/ClipVisual";
 import { BadgeSheetHost } from "@/features/talents/badges";
 import { usePostingOn } from "@/features/sijill/config";
 import { useTT, type TKey } from "@/features/talents/text";
-import { STAR_API, type AdminStarClaim, type AdminStarRow } from "@/features/talents/api";
+import { STAR_API, type AdminStarAssignment, type AdminStarClaim, type AdminStarRow } from "@/features/talents/api";
 import { starText } from "@/features/talents/starText";
 import { BadgeMark } from "@/features/talents/badges";
 import { LevelBadge, ListBox, Muted, SmallButton, TalentRow, useTalentErr } from "@/features/talents/ui";
@@ -295,9 +295,14 @@ function Stars() {
   const [stars, setStars] = useState<AdminStarRow[]>([]);
   const [reason, setReason] = useState("");
   const [copied, setCopied] = useState("");
-  const load = useCallback(() => run(async () => { const d = await STAR_API.adminList(); setClaims(d.claims); setStars(d.stars); }), []); // eslint-disable-line react-hooks/exhaustive-deps
+  const [log, setLog] = useState<AdminStarAssignment[]>([]);
+  const [email, setEmail] = useState<Record<string, string>>({});
+  const apply = (d: { claims: AdminStarClaim[]; stars: AdminStarRow[]; assignments: AdminStarAssignment[] }) => { setClaims(d.claims); setStars(d.stars); setLog(d.assignments); };
+  const load = useCallback(() => run(async () => apply(await STAR_API.adminList())), []); // eslint-disable-line react-hooks/exhaustive-deps
   useEffect(() => { void load(); }, [load]);
-  const decide = (id: string, a: "approve" | "reject") => run(async () => { await STAR_API.adminDecide(id, a, reason); setReason(""); await STAR_API.adminList().then((d) => { setClaims(d.claims); setStars(d.stars); }); });
+  const decide = (id: string, a: "approve" | "reject") => run(async () => { await STAR_API.adminDecide(id, a, reason); setReason(""); apply(await STAR_API.adminList()); });
+  const assign = (u: string) => run(async () => { await STAR_API.adminAssign(u, email[u] ?? ""); setEmail((e) => ({ ...e, [u]: "" })); apply(await STAR_API.adminList()); });
+  const undo = (id: string) => run(async () => { await STAR_API.adminUndo(id); apply(await STAR_API.adminList()); });
   const invite = (u: string) => run(async () => { const d = await STAR_API.adminInvite(u, lang); await Clipboard.setStringAsync(d.link); setCopied(u); });
   return (
     <View style={{ gap: 10 }}>
@@ -317,6 +322,15 @@ function Stars() {
           </View>
         </Box>
       ))}
+      <Text accessibilityRole="header" style={{ fontFamily: FONT.bold, fontSize: 16, color: t.ink, marginTop: 8 }}>{s.adminLog}</Text>
+      {!log.length ? <Muted>{s.none}</Muted> : null}
+      {log.map((a) => (
+        <Box key={a.id}>
+          <Text style={{ fontFamily: FONT.semibold, fontSize: 14, color: t.ink, writingDirection: "ltr" }}>@{a.star} → @{a.username ?? "?"}</Text>
+          <Text style={{ fontFamily: FONT.regular, fontSize: 13, color: t.muted }}>{[a.via, new Date(a.at).toLocaleString(lang), a.undoneAt ? s.adminUndone : ""].filter(Boolean).join(" · ")}</Text>
+          {!a.undoneAt ? <SmallButton title={s.adminUndo} tone="danger" disabled={busy} onPress={() => void undo(a.id)} /> : null}
+        </Box>
+      ))}
       <Text accessibilityRole="header" style={{ fontFamily: FONT.bold, fontSize: 16, color: t.ink, marginTop: 8 }}>{s.adminAll}</Text>
       {stars.map((x) => (
         <Box key={x.username}>
@@ -326,6 +340,12 @@ function Stars() {
           </View>
           <Text style={{ fontFamily: FONT.regular, fontSize: 13, color: t.muted, writingDirection: "ltr" }}>@{x.username}{x.claimedBy ? ` · ${s.adminClaimedBy} @${x.claimedBy}` : ` · ${copied === x.username ? s.adminCopied : s.adminOpen}`}</Text>
           {!x.claimedBy ? <SmallButton title={s.adminInvite} tone="plain" disabled={busy} onPress={() => void invite(x.username)} /> : null}
+          {!x.claimedBy ? (
+            <View style={{ gap: 8 }}>
+              <LabeledField label={s.adminEmail} value={email[x.username] ?? ""} onChangeText={(v) => setEmail((m) => ({ ...m, [x.username]: v }))} autoCapitalize="none" autoCorrect={false} keyboardType="email-address" maxLength={254} />
+              <SmallButton title={s.adminAssign} tone="gold" disabled={busy || !(email[x.username] ?? "").includes("@")} onPress={() => void assign(x.username)} />
+            </View>
+          ) : null}
         </Box>
       ))}
     </View>
