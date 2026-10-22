@@ -155,6 +155,9 @@
       "map": "Carte du Coran",
       "about": "À propos",
       "changelog": "Nouveautés",
+      "rateApp": "Évaluer l’application",
+      "recommendApp": "Recommander l’application",
+      "recommendText": "J’apprends avec l’application Quran Masterclass et je me ferais un plaisir de vous la recommander :",
       "deleted": "Votre compte et ses données ont été supprimés."
     },
     "auth": {
@@ -1330,6 +1333,8 @@
     "badge_gold_text": "Coche émeraude et certificat du Parcours du récitant réussi à partir du niveau défini, avec un examen contrôlé.",
     "badge_official": "Étoile officielle",
     "badge_official_text": "Récitants connus et personnalités publiques : chaîne personnelle avérée avec un large public, ou invitation de Quran Masterclass.",
+    "badge_star": "Récitateur vérifié",
+    "badge_star_text": "Un récitateur connu qui a repris son profil officiel, vérifié par une chaîne officielle.",
     "noBadge": "Aucun badge pour l'instant.",
     "noBadgeMine": "Aucun badge pour l'instant. « Mes badges » indique ce qu'il manque encore.",
     "reqEmail": "Adresse e-mail confirmée",

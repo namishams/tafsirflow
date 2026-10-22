@@ -15,6 +15,7 @@ import { AuthProvider } from "@/lib/auth";
 import { SettingsProvider } from "@/lib/settings";
 import { ProProvider } from "@/lib/pro";
 import { hydrateStore } from "@/lib/store";
+import { noteActiveDay } from "@/lib/review";
 import { SyncBridge } from "@/lib/sync";
 import { GardenCelebrate } from "@/features/garden/widgets";
 import { stackOptions } from "@/components/page";
@@ -66,7 +67,7 @@ export default function RootLayout() {
     PlusJakartaSans_400Regular, PlusJakartaSans_400Regular_Italic, PlusJakartaSans_500Medium, PlusJakartaSans_600SemiBold, PlusJakartaSans_700Bold, PlusJakartaSans_800ExtraBold,
   });
   const [store, setStore] = useState(false);
-  useEffect(() => { hydrateStore().finally(() => setStore(true)); }, []);
+  useEffect(() => { hydrateStore().finally(() => { noteActiveDay(); setStore(true); }); }, []);
   const ready = fonts && store;
   useEffect(() => { if (ready) SplashScreen.hideAsync().catch(() => undefined); }, [ready]);
   if (!ready) return null;

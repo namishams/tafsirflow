@@ -177,3 +177,16 @@ export async function upload<T>(path: string, fields: Record<string, string>, fi
   }
   return (await res.json()) as T;
 }
+
+// Star profiles (owner 22.10.2026, website src/app/api/community/stars and admin/stars): the public state of an
+// unclaimed star profile, the takeover request and, for admins, one-click decisions and personal invite links.
+export type StarState = { username: string; reciter: string; claimed: boolean; invited: boolean; pending: boolean };
+export type AdminStarClaim = { id: string; star: string; starName: string; role: "self" | "team"; channel: string; message: string; invited: boolean; at: string; username: string | null; name: string | null };
+export type AdminStarRow = { username: string; name: string; country: string | null; claimedBy: string | null };
+export const STAR_API = {
+  state: (username: string, invite?: string) => api<StarState>(`/api/community/stars/${encodeURIComponent(username)}${invite ? `?invite=${encodeURIComponent(invite)}` : ""}`),
+  claim: (username: string, body: { role: "self" | "team"; channel: string; message: string; invite?: string }) => api<{ ok: true }>(`/api/community/stars/${encodeURIComponent(username)}`, { method: "POST", body }),
+  adminList: () => api<{ claims: AdminStarClaim[]; stars: AdminStarRow[] }>("/api/community/admin/stars"),
+  adminDecide: (id: string, action: "approve" | "reject", reason = "") => api<{ ok: true }>("/api/community/admin/stars", { method: "POST", body: { id, action, reason } }),
+  adminInvite: (username: string, locale: string) => api<{ link: string; days: number }>("/api/community/admin/stars", { method: "POST", body: { invite: username, locale } }),
+};

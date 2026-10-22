@@ -1291,3 +1291,112 @@ DROP TRIGGER IF EXISTS users_founder ON users;
 CREATE TRIGGER users_founder AFTER UPDATE OF founder ON users FOR EACH ROW EXECUTE FUNCTION users_founder_sync();
 UPDATE community_profiles c SET founder = u.founder FROM users u WHERE u.id = c.user_id AND c.founder IS DISTINCT FROM u.founder;
 GRANT ALL ON ALL TABLES IN SCHEMA public TO tafsirflow;
+
+-- Supporters list (owner 22.10.2026): voluntary support payments via Ziina whose payers chose to be named publicly.
+-- A row is written as "pending" when the Ziina payment intent is created; only the server's own status check with Ziina
+-- (return ?pi= or the webhook) sets it "paid". Only paid, listed and not hidden rows are public. No card data, no email.
+CREATE TABLE IF NOT EXISTS supporters (
+  id                bigserial PRIMARY KEY,
+  payment_intent_id text NOT NULL UNIQUE,
+  display_name      text,
+  company           text,
+  listed            boolean NOT NULL DEFAULT false,
+  hidden            boolean NOT NULL DEFAULT false,
+  amount_minor      integer NOT NULL,
+  currency          text NOT NULL DEFAULT 'AED',
+  status            text NOT NULL DEFAULT 'pending',
+  created_at        timestamptz NOT NULL DEFAULT now(),
+  paid_at           timestamptz
+);
+ALTER TABLE supporters ADD COLUMN IF NOT EXISTS hidden boolean NOT NULL DEFAULT false;
+CREATE INDEX IF NOT EXISTS supporters_public ON supporters(paid_at DESC) WHERE status = 'paid' AND listed AND NOT hidden;
+GRANT ALL ON ALL TABLES IN SCHEMA public TO tafsirflow;
+GRANT ALL ON ALL SEQUENCES IN SCHEMA public TO tafsirflow;
+
+-- Star profiles (owner 22.10.2026): the well-known reciters of the reciters data (src/lib/reciters) each own a reserved
+-- username (STARS in src/lib/usernameFilter.ts) and a public profile that is clearly marked as not run by the reciter.
+-- The reciter or his official team asks to take it over (star_claims, signed-in account, link to an official channel);
+-- an admin approves with one click: claimed_by is set, the reserved username moves to that account and the profile gets
+-- the "star" badge (community_profiles.badge = 'star'). Seeded from the reciters data, idempotent.
+CREATE TABLE IF NOT EXISTS star_profiles (
+  slug         text PRIMARY KEY,                       -- the reserved username, e.g. mishary.alafasy
+  reciter_id   text NOT NULL UNIQUE,                   -- slug in src/lib/reciters
+  display_name text NOT NULL,
+  country      text,
+  claimed_by   bigint REFERENCES users(id) ON DELETE SET NULL,
+  verified_at  timestamptz,
+  created_at   timestamptz NOT NULL DEFAULT now()
+);
+CREATE UNIQUE INDEX IF NOT EXISTS star_profiles_claimed_by ON star_profiles(claimed_by) WHERE claimed_by IS NOT NULL;
+CREATE TABLE IF NOT EXISTS star_claims (
+  id            bigserial PRIMARY KEY,
+  star_slug     text NOT NULL REFERENCES star_profiles(slug) ON DELETE CASCADE,
+  user_id       bigint NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  role          text NOT NULL CHECK (role IN ('self','team')),
+  channel_url   text NOT NULL,                         -- link to the verified Instagram / X / YouTube / website
+  message       text NOT NULL DEFAULT '',
+  invited       boolean NOT NULL DEFAULT false,        -- came through the owner's signed invite link
+  status        text NOT NULL DEFAULT 'pending' CHECK (status IN ('pending','approved','rejected')),
+  reject_reason text,
+  reviewed_by   bigint REFERENCES users(id) ON DELETE SET NULL,
+  reviewed_at   timestamptz,
+  created_at    timestamptz NOT NULL DEFAULT now()
+);
+CREATE UNIQUE INDEX IF NOT EXISTS star_claims_open ON star_claims(star_slug, user_id) WHERE status = 'pending';
+CREATE INDEX IF NOT EXISTS star_claims_status ON star_claims(status, created_at);
+INSERT INTO star_profiles (slug, reciter_id, display_name, country) VALUES
+  ('mahmoud.alhusary', 'mahmoud-khalil-al-husary', 'Mahmoud Khalil Al-Husary', 'Egypt'),
+  ('mohamed.alminshawi', 'mohamed-siddiq-al-minshawi', 'Mohamed Siddiq Al-Minshawi', 'Egypt'),
+  ('abdulbasitabdulsamad', 'abdul-basit-abdul-samad', 'Abdul Basit Abdul Samad', 'Egypt'),
+  ('mustafa.ismail', 'mustafa-ismail', 'Mustafa Ismail', 'Egypt'),
+  ('muhammad.rifat', 'muhammad-rifat', 'Muhammad Rifat', 'Egypt'),
+  ('abdelfattah.shaashai', 'abdel-fattah-al-shaashai', 'Abdel Fattah Al-Shaasha''i', 'Egypt'),
+  ('mahmoud.albanna', 'mahmoud-ali-al-banna', 'Mahmoud Ali Al-Banna', 'Egypt'),
+  ('mishary.alafasy', 'mishary-rashid-alafasy', 'Mishary Rashid Alafasy', 'Kuwait'),
+  ('abdulrahman.alsudais', 'abdul-rahman-al-sudais', 'Abdul Rahman Al-Sudais', 'Saudi Arabia'),
+  ('saud.alshuraim', 'saud-al-shuraim', 'Saud Al-Shuraim', 'Saudi Arabia'),
+  ('maher.almuaiqly', 'maher-al-muaiqly', 'Maher Al-Muaiqly', 'Saudi Arabia'),
+  ('yasser.aldosari', 'yasser-al-dosari', 'Yasser Al-Dosari', 'Saudi Arabia'),
+  ('abdullah.aljuhany', 'abdullah-awad-al-juhany', 'Abdullah Awad Al-Juhany', 'Saudi Arabia'),
+  ('bandar.baleela', 'bandar-baleela', 'Bandar Baleela', 'Saudi Arabia'),
+  ('ali.alhudhaify', 'ali-al-hudhaify', 'Ali Al-Hudhaify', 'Saudi Arabia'),
+  ('muhammad.ayyub', 'muhammad-ayyub', 'Muhammad Ayyub', 'Saudi Arabia'),
+  ('ali.jaber', 'ali-jaber', 'Ali Jaber', 'Saudi Arabia'),
+  ('abdullah.basfar', 'abdullah-basfar', 'Abdullah Basfar', 'Saudi Arabia'),
+  ('saad.alghamdi', 'saad-al-ghamdi', 'Saad Al-Ghamdi', 'Saudi Arabia'),
+  ('ahmed.alajmi', 'ahmed-al-ajmi', 'Ahmed Al-Ajmi', 'Saudi Arabia'),
+  ('abubakr.alshatri', 'abu-bakr-al-shatri', 'Abu Bakr Al-Shatri', 'Saudi Arabia'),
+  ('hani.arrifai', 'hani-ar-rifai', 'Hani Ar-Rifai', 'Saudi Arabia'),
+  ('fares.abbad', 'fares-abbad', 'Fares Abbad', 'Yemen'),
+  ('nasser.alqatami', 'nasser-al-qatami', 'Nasser Al-Qatami', 'Saudi Arabia'),
+  ('idris.abkar', 'idris-abkar', 'Idris Abkar', 'Saudi Arabia'),
+  ('muhammad.alluhaidan', 'muhammad-al-luhaidan', 'Muhammad Al-Luhaidan', 'Saudi Arabia'),
+  ('salah.albudair', 'salah-al-budair', 'Salah Al-Budair', 'Saudi Arabia'),
+  ('ibrahim.alakhdar', 'ibrahim-al-akhdar', 'Ibrahim Al-Akhdar', 'Saudi Arabia'),
+  ('abdulbari.thubaity', 'abdulbari-ath-thubaity', 'Abdulbari Ath-Thubaity', 'Saudi Arabia'),
+  ('salah.bukhatir', 'salah-bukhatir', 'Salah Bukhatir', 'United Arab Emirates'),
+  ('khalifa.altunaiji', 'khalifa-al-tunaiji', 'Khalifa Al-Tunaiji', 'United Arab Emirates'),
+  ('abdullah.almatroud', 'abdullah-al-matroud', 'Abdullah Al-Matroud', 'Saudi Arabia'),
+  ('mohamed.altablawi', 'mohamed-mahmoud-al-tablawi', 'Mohamed Mahmoud Al-Tablawi', 'Egypt'),
+  ('ahmed.naina', 'ahmed-naina', 'Ahmed Naina', 'Egypt'),
+  ('muhammad.jibreel', 'muhammad-jibreel', 'Muhammad Jibreel', 'Egypt'),
+  ('raad.alkurdi', 'raad-al-kurdi', 'Raad Al-Kurdi', 'Iraq'),
+  ('islam.sobhi', 'islam-sobhi', 'Islam Sobhi', 'Egypt'),
+  ('muhammad.assubayyil', 'muhammad-as-subayyil', 'Muhammad As-Subayyil', 'Saudi Arabia'),
+  ('abdulmuhsin.alqasim', 'abdul-muhsin-al-qasim', 'Abdul Muhsin Al-Qasim', 'Saudi Arabia'),
+  ('abdullah.khayyat', 'abdullah-khayyat', 'Abdullah Khayyat', 'Saudi Arabia'),
+  ('ali.mahmoud', 'ali-mahmoud', 'Ali Mahmoud', 'Egypt'),
+  ('taha.alfashni', 'taha-al-fashni', 'Taha Al-Fashni', 'Egypt'),
+  ('shahat.anwar', 'shahat-muhammad-anwar', 'Shahat Muhammad Anwar', 'Egypt'),
+  ('abdurrashid.sufi', 'abdur-rashid-sufi', 'Abdur-Rashid Sufi', 'Somalia'),
+  ('mahmoud.anwar', 'mahmoud-shahat-anwar', 'Mahmoud Shahat Anwar', 'Egypt'),
+  ('abulaynayn.shuaysha', 'abu-al-aynayn-shuaysha', 'Abu Al-Aynayn Shuaysha', 'Egypt'),
+  ('khalid.aljalil', 'khalid-al-jalil', 'Khalid Al-Jalil', 'Saudi Arabia'),
+  ('alzain.ahmad', 'al-zain-muhammad-ahmad', 'Al-Zain Muhammad Ahmad', 'Sudan'),
+  ('ragheb.ghalwash', 'ragheb-mustafa-ghalwash', 'Ragheb Mustafa Ghalwash', 'Egypt'),
+  ('kamel.albahtimi', 'kamel-yousef-al-bahtimi', 'Kamel Yousef Al-Bahtimi', 'Egypt')
+ON CONFLICT (slug) DO NOTHING;
+ALTER TABLE community_profiles DROP CONSTRAINT IF EXISTS community_profiles_badge;
+ALTER TABLE community_profiles ADD CONSTRAINT community_profiles_badge CHECK (badge IN ('none','emerald','gold','star'));
+GRANT ALL ON ALL TABLES IN SCHEMA public TO tafsirflow;
+GRANT ALL ON ALL SEQUENCES IN SCHEMA public TO tafsirflow;

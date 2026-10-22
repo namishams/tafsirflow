@@ -1,4 +1,4 @@
-import { useCallback } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Pressable, View } from "react-native";
 import { Stack, useFocusEffect, useLocalSearchParams } from "expo-router";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
@@ -10,6 +10,9 @@ import { useAuth } from "@/lib/auth";
 import { AccessGate, useTalentAccess } from "@/features/talents/ui";
 export { TalentsRouteError as ErrorBoundary } from "@/features/talents/ui";
 import { ProfileScreenView, useProfileData } from "@/features/talents/ProfileScreen";
+import { STARS } from "@/features/talents/usernameFilter";
+import { STAR_API, type StarState } from "@/features/talents/api";
+import { StarProfileScreen } from "@/features/talents/StarProfile";
 
 // /talents/u/[username] – a talent profile. Owner 21.10.2026: the same TikTok-style layout as the own profile in the
 // Account tab (features/talents/ProfileScreen.tsx): centred avatar, @username with badge and level, the counters
@@ -23,7 +26,24 @@ import { ProfileScreenView, useProfileData } from "@/features/talents/ProfileScr
 // navigation.setOptions run on every render and could end in "Maximum update depth exceeded"
 const SCREEN = { headerShown: false } as const;
 
-export default function TalentProfileScreen() {
+// Star profiles (owner 22.10.2026): a reserved star username shows the unclaimed star profile (public, no age gate)
+// until the reciter has taken it over; then the normal profile of his account opens here.
+export default function TalentProfileRoute() {
+  const { username, invite } = useLocalSearchParams<{ username: string; invite?: string }>();
+  const star = STARS.find((s) => s[0] === String(username ?? "").toLowerCase());
+  const [st, setSt] = useState<StarState | null | "load">(star ? "load" : null);
+  useEffect(() => {
+    if (!star) { setSt(null); return; }
+    let live = true;
+    STAR_API.state(star[0], invite).then((d) => { if (live) setSt(d); }).catch(() => { if (live) setSt({ username: star[0], reciter: star[1], claimed: false, invited: false, pending: false }); });
+    return () => { live = false; };
+  }, [star?.[0], invite]); // eslint-disable-line react-hooks/exhaustive-deps
+  if (star && st === "load") return <><Stack.Screen options={SCREEN} /><Loading /></>;
+  if (star && st && st !== "load" && !st.claimed) return <><Stack.Screen options={SCREEN} /><StarProfileScreen username={star[0]} reciterSlug={star[1]} invite={invite} state={st} /></>;
+  return <TalentProfileScreen />;
+}
+
+function TalentProfileScreen() {
   const t = useTheme();
   const tr = useT();
   const insets = useSafeAreaInsets();

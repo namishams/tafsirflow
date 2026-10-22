@@ -155,6 +155,9 @@
       "map": "Peta Al-Qur'an",
       "about": "Tentang kami",
       "changelog": "Catatan perubahan",
+      "rateApp": "Beri ulasan aplikasi",
+      "recommendApp": "Rekomendasikan aplikasi",
+      "recommendText": "Saya belajar dengan aplikasi Quran Masterclass dan dengan senang hati merekomendasikannya kepada Anda:",
       "deleted": "Akun Anda beserta datanya telah dihapus."
     },
     "auth": {
@@ -1330,6 +1333,8 @@
     "badge_gold_text": "Centang zamrud ditambah sertifikat Jalur Qari yang lulus dari tingkat yang ditetapkan, dengan ujian yang diperiksa.",
     "badge_official": "Bintang resmi",
     "badge_official_text": "Qari terkenal dan tokoh publik: kanal sendiri yang terbukti dengan audiens besar, atau undangan dari Quran Masterclass.",
+    "badge_star": "Qari terverifikasi",
+    "badge_star_text": "Qari terkenal yang telah mengambil alih profil resminya, diperiksa melalui kanal resmi.",
     "noBadge": "Belum ada lencana.",
     "noBadgeMine": "Belum ada lencana. \"Lencana saya\" menunjukkan apa yang masih kurang.",
     "reqEmail": "Alamat e-mail terkonfirmasi",

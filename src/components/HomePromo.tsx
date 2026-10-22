@@ -1,6 +1,8 @@
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { AppStoreButton } from "@/components/AppShowcase";
+import { ShareAppButton } from "@/components/ShareAppButton";
+import { appStoreUrl } from "@/lib/appstore";
 import { CoverTile } from "@/components/carousel/CarouselParts";
 import { carouselList } from "@/lib/feed/carousels/store";
 
@@ -22,6 +24,7 @@ export async function SyncSection({ locale }: { locale: string }) {
         <div className="flex flex-col items-start gap-4 lg:items-center">
           <AppStoreButton label={t("appStore")} />
           <Link href="/app" className="text-[15px] font-semibold text-[rgb(var(--gold))] underline-offset-4 hover:underline">{t("appCta")} →</Link>
+          <ShareAppButton label={t("shareApp")} text={t("shareText")} copied={t("shareCopied")} url={appStoreUrl()} className="text-[15px] font-semibold text-white/80 underline-offset-4 hover:underline" />
         </div>
       </div>
     </section>

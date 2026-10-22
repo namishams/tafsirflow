@@ -155,6 +155,9 @@
       "map": "Kur’an haritası",
       "about": "Hakkımızda",
       "changelog": "Değişiklikler",
+      "rateApp": "Uygulamayı değerlendirin",
+      "recommendApp": "Uygulamayı önerin",
+      "recommendText": "Quran Masterclass uygulamasıyla öğreniyorum ve size memnuniyetle tavsiye ederim:",
       "deleted": "Hesabınız ve verileri silindi."
     },
     "auth": {
@@ -1330,6 +1333,8 @@
     "badge_gold_text": "Zümrüt onay ve belirlenen seviyeden itibaren, denetlenen bir sınavla alınmış Kâri Yolu sertifikası.",
     "badge_official": "Resmî yıldız",
     "badge_official_text": "Tanınmış kâriler ve kamu figürleri için: geniş bir kitleye sahip doğrulanmış kendi kanalı veya Quran Masterclass'tan davet.",
+    "badge_star": "Doğrulanmış kâri",
+    "badge_star_text": "Resmî profilini devralmış, resmî bir kanal üzerinden doğrulanmış tanınmış bir kâri.",
     "noBadge": "Henüz rozet yok.",
     "noBadgeMine": "Henüz rozet yok. \"Rozetlerim\" eksik olanları gösterir.",
     "reqEmail": "E-posta adresi onaylandı",

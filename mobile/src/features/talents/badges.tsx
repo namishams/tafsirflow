@@ -12,9 +12,10 @@ import { useTT, type TKey } from "./text";
 // public channel or invitation) and "founder" (exactly one account, set on the server). Colours (owner 22.10.2026, the
 // same on the website's BadgeIcon): founder gold, Masterclass Reciter grey, confirmed learners blue, official star as
 // before. The stored values keep their names. Tapping a badge explains what it means.
-export type Badge = "emerald" | "gold" | "official" | "founder";
+// "star" (owner 22.10.2026): a well-known reciter who took over his star profile; emerald disc, light ring, white tick.
+export type Badge = "emerald" | "gold" | "official" | "founder" | "star";
 
-export const BADGE_COLORS = { founder: goldButton.to, gold: "#8E959E", emerald: "#2F7FD8" } as const;
+export const BADGE_COLORS = { founder: goldButton.to, gold: "#8E959E", emerald: "#2F7FD8", star: "#0B7A55" } as const;
 const GOLD = goldButton.to;
 const DEEP = "rgb(8,58,44)";
 
@@ -34,7 +35,7 @@ export function BadgeMark({ badge, size = 16 }: { badge: Badge; size?: number })
   return (
     <Svg width={size} height={size} viewBox="0 0 24 24">
       <Circle cx={12} cy={12} r={12} fill={fill} />
-      {badge === "founder" ? <Circle cx={12} cy={12} r={10.6} fill="none" stroke="#F3E2B6" strokeWidth={1} /> : null}
+      {badge === "founder" ? <Circle cx={12} cy={12} r={10.6} fill="none" stroke="#F3E2B6" strokeWidth={1} /> : badge === "star" ? <Circle cx={12} cy={12} r={10.6} fill="none" stroke="#9FE3C7" strokeWidth={1} /> : null}
       <Path d="M7 12.4l3.2 3.2L17.2 8.6" fill="none" stroke={badge === "founder" ? goldButton.text : "#FFFFFF"} strokeWidth={2.6} strokeLinecap="round" strokeLinejoin="round" />
     </Svg>
   );
@@ -48,7 +49,7 @@ export function BadgeSheetHost({ children }: { children: ReactNode }) {
   const tt = useTT();
   const insets = useSafeAreaInsets();
   const [open, setOpen] = useState<Badge | null>(null);
-  const rows: Badge[] = open === "founder" ? ["founder", "official", "gold", "emerald"] : ["official", "gold", "emerald"];
+  const rows: Badge[] = open === "founder" ? ["founder", "official", "gold", "emerald"] : open === "star" ? ["star", "official", "gold", "emerald"] : ["official", "gold", "emerald"];
   return (
     <Ctx.Provider value={setOpen}>
       {children}

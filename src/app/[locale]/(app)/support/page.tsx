@@ -3,6 +3,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Suspense } from "react";
 import { Link } from "@/i18n/navigation";
 import SupportZiina from "@/components/SupportZiina";
+import SupportersList from "@/components/SupportersList";
 import JsonLd from "@/components/JsonLd";
 import { abs, pageMeta } from "@/lib/site";
 import { ArrowNext, ArrowBack } from "@/components/Icons";
@@ -12,6 +13,7 @@ import { COMPANY } from "@/lib/company";
 
 // Voluntary support payment to ICSL FZE for running Quran Masterclass – expressly not a charitable donation (UAE rules on
 // collecting donations). The website stays free; supporting unlocks nothing. Texts: messages/*.json → "support", "donate".
+export const revalidate = 300; // the supporters list refreshes every five minutes
 const FOR = [1, 2, 3, 4] as const;
 const PROMISES = [1, 2, 3, 4] as const;
 const FAQ = [1, 2, 3, 4, 5, 6] as const;
@@ -58,6 +60,8 @@ export default async function SupportPage({ params }: { params: Promise<{ locale
           <h2 className="relative text-xs font-bold uppercase tracking-[0.18em] text-gold rtl:tracking-normal">{t("legalTitle")}</h2>
           <p className="relative mx-auto mt-4 max-w-2xl text-[17px] leading-relaxed text-ink/85 sm:text-[18px]">{d("legal")}</p>
         </aside>
+
+        <SupportersList />
 
         <section className="mt-16">
           <h2 className="font-display text-3xl sm:text-4xl">{t("forTitle")}</h2>

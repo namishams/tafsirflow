@@ -15,13 +15,17 @@ import { ClipVisual } from "@/features/talents/ClipVisual";
 import { BadgeSheetHost } from "@/features/talents/badges";
 import { usePostingOn } from "@/features/sijill/config";
 import { useTT, type TKey } from "@/features/talents/text";
+import { STAR_API, type AdminStarClaim, type AdminStarRow } from "@/features/talents/api";
+import { starText } from "@/features/talents/starText";
+import { BadgeMark } from "@/features/talents/badges";
 import { LevelBadge, ListBox, Muted, SmallButton, TalentRow, useTalentErr } from "@/features/talents/ui";
 
 // /talents/admin – moderation for admins only (the server checks the role on every call): reports queue, members
 // (verify, level, suspend), master invite codes, post/story approval queue.
-type Tab = "reports" | "posts" | "members" | "invites" | "verify";
+type Tab = "reports" | "posts" | "members" | "invites" | "verify" | "stars";
 export default function Moderation() {
   const tt = useTT();
+  const { lang } = useLang();
   const { user } = useAuth();
   const [tab, setTab] = useState<Tab>("reports");
   const postingOn = usePostingOn(); // clip moderation only while posting is switched on (config.json)
@@ -34,9 +38,9 @@ export default function Moderation() {
         {user?.role !== "admin" ? <Muted>{tt("e_forbidden")}</Muted> : (
           <View style={{ padding: 16, gap: 16 }}>
             <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-              <Segmented<Tab> value={tab} onChange={setTab} options={[["reports", tt("tabReports")], ...(postingOn ? [["posts", tt("tabPosts")] as [Tab, string]] : []), ["members", tt("tabMembers")], ["invites", tt("tabInvites")], ["verify", tt("tabVerify")]]} />
+              <Segmented<Tab> value={tab} onChange={setTab} options={[["reports", tt("tabReports")], ...(postingOn ? [["posts", tt("tabPosts")] as [Tab, string]] : []), ["members", tt("tabMembers")], ["invites", tt("tabInvites")], ["verify", tt("tabVerify")], ["stars", starText(lang).adminTab]]} />
             </ScrollView>
-            {tab === "reports" ? <Reports /> : tab === "members" ? <Members /> : tab === "invites" ? <Invites /> : tab === "verify" ? <Verifications /> : <Posts />}
+            {tab === "reports" ? <Reports /> : tab === "members" ? <Members /> : tab === "invites" ? <Invites /> : tab === "verify" ? <Verifications /> : tab === "stars" ? <Stars /> : <Posts />}
           </View>
         )}
       </Page>
@@ -274,6 +278,54 @@ function Verifications() {
             <SmallButton title={tt("approve")} tone="gold" disabled={busy} onPress={() => void decide(v.id, "approve")} />
             <SmallButton title={tt("reject")} tone="danger" disabled={busy} onPress={() => void decide(v.id, "reject")} />
           </View>
+        </Box>
+      ))}
+    </View>
+  );
+}
+
+// Star profiles (owner 22.10.2026): takeover requests with one-click approve / reject; per unclaimed star a personal
+// invite link (signed, 30 days) copied for the owner's message. The same as the website's admin tab "Stars".
+function Stars() {
+  const t = useTheme();
+  const { lang } = useLang();
+  const s = starText(lang);
+  const { busy, msg, run } = useRun();
+  const [claims, setClaims] = useState<AdminStarClaim[] | null>(null);
+  const [stars, setStars] = useState<AdminStarRow[]>([]);
+  const [reason, setReason] = useState("");
+  const [copied, setCopied] = useState("");
+  const load = useCallback(() => run(async () => { const d = await STAR_API.adminList(); setClaims(d.claims); setStars(d.stars); }), []); // eslint-disable-line react-hooks/exhaustive-deps
+  useEffect(() => { void load(); }, [load]);
+  const decide = (id: string, a: "approve" | "reject") => run(async () => { await STAR_API.adminDecide(id, a, reason); setReason(""); await STAR_API.adminList().then((d) => { setClaims(d.claims); setStars(d.stars); }); });
+  const invite = (u: string) => run(async () => { const d = await STAR_API.adminInvite(u, lang); await Clipboard.setStringAsync(d.link); setCopied(u); });
+  return (
+    <View style={{ gap: 10 }}>
+      {msg ? <Muted>{msg}</Muted> : null}
+      <Text accessibilityRole="header" style={{ fontFamily: FONT.bold, fontSize: 16, color: t.ink }}>{s.adminClaims}</Text>
+      {claims && !claims.length ? <Muted>{s.none}</Muted> : null}
+      {claims?.map((c) => (
+        <Box key={c.id}>
+          <Text style={{ fontFamily: FONT.bold, fontSize: 15, color: t.ink }}>{c.starName} · @{c.star}</Text>
+          <Text style={{ fontFamily: FONT.regular, fontSize: 13, color: t.muted }}>{[`@${c.username ?? "?"}`, c.role === "self" ? s.roleSelf : s.roleTeam, c.invited ? s.adminInvited : "", new Date(c.at).toLocaleDateString(lang)].filter(Boolean).join(" · ")}</Text>
+          <Text selectable style={{ fontFamily: FONT.semibold, fontSize: 14, color: t.accent, writingDirection: "ltr" }}>{c.channel}</Text>
+          {c.message ? <Text style={{ fontFamily: FONT.regular, fontSize: 14, lineHeight: 20, color: t.ink }}>{c.message}</Text> : null}
+          <LabeledField label={s.adminReason} value={reason} onChangeText={setReason} maxLength={200} />
+          <View style={{ flexDirection: "row", gap: 8 }}>
+            <SmallButton title={s.approve} tone="gold" disabled={busy} onPress={() => void decide(c.id, "approve")} />
+            <SmallButton title={s.reject} tone="danger" disabled={busy} onPress={() => void decide(c.id, "reject")} />
+          </View>
+        </Box>
+      ))}
+      <Text accessibilityRole="header" style={{ fontFamily: FONT.bold, fontSize: 16, color: t.ink, marginTop: 8 }}>{s.adminAll}</Text>
+      {stars.map((x) => (
+        <Box key={x.username}>
+          <View style={{ flexDirection: "row", alignItems: "center", gap: 6 }}>
+            <Text style={{ fontFamily: FONT.bold, fontSize: 15, color: t.ink, flexShrink: 1 }}>{x.name}</Text>
+            {x.claimedBy ? <BadgeMark badge="star" size={15} /> : null}
+          </View>
+          <Text style={{ fontFamily: FONT.regular, fontSize: 13, color: t.muted, writingDirection: "ltr" }}>@{x.username}{x.claimedBy ? ` · ${s.adminClaimedBy} @${x.claimedBy}` : ` · ${copied === x.username ? s.adminCopied : s.adminOpen}`}</Text>
+          {!x.claimedBy ? <SmallButton title={s.adminInvite} tone="plain" disabled={busy} onPress={() => void invite(x.username)} /> : null}
         </Box>
       ))}
     </View>

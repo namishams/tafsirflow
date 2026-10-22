@@ -1,4 +1,5 @@
 import { readJSON, useStored, writeJSON } from "@/lib/store";
+import { askForReviewAfterSuccess } from "@/lib/review";
 
 // Progress of the academy courses on this device (new key; no existing key is read or changed): best score per
 // lesson ("course/lesson") and the day each course was completed.
@@ -21,5 +22,6 @@ export function saveCourseLesson(course: string, lesson: string, score: number, 
   let complete = false;
   if (!next.complete[course] && all.every((id) => isPassed(next, course, id))) { next.complete = { ...next.complete, [course]: Date.now() }; complete = true; }
   writeJSON(KEY, next);
+  if (score >= PASS) askForReviewAfterSuccess(); // a passed lesson (lib/review.ts decides)
   return { first: !before && score >= PASS, complete };
 }

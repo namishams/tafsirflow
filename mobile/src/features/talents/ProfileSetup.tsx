@@ -10,6 +10,8 @@ import { readPending, savePending, syncPendingProfile } from "./pendingProfile";
 import { useUsernameCheck, usernameBlocked } from "./UsernameCheck";
 import { usePT, type PKey } from "./profileText";
 import { useTT } from "./text";
+import { starText } from "./starText";
+import { useLang } from "@/i18n";
 
 // Onboarding step "Your profile" (inserted into the first-run funnel after the name question; the funnel's scene
 // stays as it is): display name (prefilled), @username with the live check, an optional photo (library or camera),
@@ -20,6 +22,7 @@ const ascii = (s: string) => s.normalize("NFKD").replace(/[̀-ͯ]/g, "").toLower
 
 export function ProfileSetupStep({ name: firstName, onDone }: { name: string; onDone: () => void }) {
   const pt = usePT();
+  const { lang } = useLang();
   const tt = useTT();
   const { user } = useAuth();
   const pending = readPending();
@@ -47,7 +50,7 @@ export function ProfileSetupStep({ name: firstName, onDone }: { name: string; on
   };
   const field = { borderRadius: R.lg, borderWidth: 1, borderColor: "rgba(214,180,108,0.4)", color: "#fff", fontFamily: FONT.regular, fontSize: 17, paddingHorizontal: 14, paddingVertical: 12, backgroundColor: "rgba(255,255,255,0.05)" } as const;
   const label = (s: string) => <Text style={{ fontFamily: FONT.semibold, fontSize: 14, color: stage.textSoft, marginBottom: 6 }}>{s}</Text>;
-  const status = check === "ok" ? pt("usernameFree") : check === "checking" ? pt("usernameChecking") : check === "idle" ? (user ? "" : pt("usernameOffline")) : pt(`username_${check}` as PKey);
+  const status = check === "ok" ? pt("usernameFree") : check === "checking" ? pt("usernameChecking") : check === "idle" ? (user ? "" : pt("usernameOffline")) : check === "star" ? starText(lang).reserved : pt(`username_${check}` as PKey);
 
   return (
     <View>

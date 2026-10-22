@@ -408,7 +408,7 @@ function Insights({ de }: { de: boolean }) {
 
 // ---------- Controls: switches, limits, point rules, announcement ----------
 type Feat = { ranking: boolean; community: boolean; likes: boolean; comments: boolean; assistant: boolean; duaAi: boolean; sideArt: boolean; celebrations: boolean; donateCta: boolean };
-type Donation = { on: boolean; goal: number; raised: number; currency: string; label: string };
+type Donation = { on: boolean; goal: number; raised: number; currency: string; label: string; showTiers?: boolean };
 type Cfg = { anonTafsirLimit: number; commentsAutoApprove: boolean; features: Feat; limits: { assistantAnonPerDay: number; assistantPerUserPerDay: number; duaAiAnonPerDay: number; rankingDailyCap: number }; points: Record<string, { pts: number; cap?: number }>; announcement: { on: boolean; id: string; de: string; en: string; ar: string; href: string }; premium: { gateWeb: boolean; freeOffline: number; assistantPerDay: number }; donation: Donation };
 const POINT_DEFAULTS: Record<string, { pts: number; cap?: number }> = { time: { pts: 1, cap: 120 }, listen: { pts: 2, cap: 400 }, verse: { pts: 1, cap: 300 }, review: { pts: 5 }, new: { pts: 10 }, session: { pts: 30 }, lesson: { pts: 20 }, quiz: { pts: 10 }, vocab: { pts: 2, cap: 200 }, wudu: { pts: 25, cap: 25 } };
 function Control({ de }: { de: boolean }) {
@@ -507,7 +507,7 @@ function Control({ de }: { de: boolean }) {
   );
 }
 
-// Voluntary support (sadaqa): payment status of Ziina and the optional monthly meter of the lantern
+// Voluntary support payment (not a donation): payment status of Ziina and the optional monthly meter of the lantern
 function DonationAdmin({ de, d, set, save }: { de: boolean; d: Donation; set: (d: Donation) => void; save: () => void }) {
   const [z, setZ] = useState<{ api: boolean; link: string } | null>(null);
   useEffect(() => { fetch("/api/support").then((r) => r.json()).then((s) => setZ({ api: !!s.api, link: String(s.link ?? "") })).catch(() => setZ({ api: false, link: "" })); }, []);
@@ -515,7 +515,7 @@ function DonationAdmin({ de, d, set, save }: { de: boolean; d: Donation; set: (d
   const warn = "rounded-lg border border-[rgb(var(--gold))]/50 bg-[rgb(var(--gold))]/10 px-3 py-2 text-xs font-semibold text-ink";
   return (
     <section className={card}>
-      <h3 className="text-lg font-bold">{de ? "Spenden (Sadaqa) über Ziina" : "Donations (sadaqa) via Ziina"}</h3>
+      <h3 className="text-lg font-bold">{de ? "Projekt unterstützen über Ziina" : "Project support via Ziina"}</h3>
       {z === null ? <div className="mt-3 h-9 animate-pulse rounded-lg bg-line/40" /> : z.api ? (
         <p className={`mt-3 ${ok}`}>{de ? "Ziina ist eingerichtet: Besucher wählen auf /support einen Betrag und zahlen bei Ziina." : "Ziina is set up: visitors choose an amount on /support and pay at Ziina."}</p>
       ) : (
@@ -533,8 +533,35 @@ function DonationAdmin({ de, d, set, save }: { de: boolean; d: Donation; set: (d
         <label className="grid gap-1 text-sm"><span>{de ? "Hinweis (optional), z. B. „Serverkosten Oktober“" : "Note (optional), e.g. “Server costs October”"}</span><input className={field} value={d.label} onChange={(e) => set({ ...d, label: e.target.value })} /></label>
         <label className="flex items-center gap-2 text-sm"><input type="checkbox" checked={d.on} onChange={(e) => set({ ...d, on: e.target.checked })} />{de ? "Füllstand anzeigen" : "Show the meter"}</label>
       </div>
+      <label className="mt-4 flex items-center gap-2 text-sm"><input type="checkbox" checked={d.showTiers === true} onChange={(e) => set({ ...d, showTiers: e.target.checked })} />{de ? "Unterstützerliste: Stufen anzeigen (unter 100 / ab 100 / ab 500 AED, nie Beträge)" : "Supporters list: show tiers (under 100 / from 100 / from 500 AED, never amounts)"}</label>
       <button className={`${btnP} mt-4`} onClick={save}>{de ? "Speichern" : "Save"}</button>
+      <SupportersAdmin de={de} api={!!z?.api} />
     </section>
+  );
+}
+
+// Supporters list: paid Ziina support payments; entries can be hidden on request (and shown again)
+type Sup = { id: number; display_name: string | null; company: string | null; listed: boolean; hidden: boolean; amount_minor: number; currency: string; paid_at: string | null };
+function SupportersAdmin({ de, api: apiOn }: { de: boolean; api: boolean }) {
+  const [list, setList] = useState<Sup[] | null>(null);
+  const load = useCallback(() => api<{ supporters: Sup[] }>("/api/admin/supporters").then((d) => setList(d.supporters)).catch(() => setList([])), []);
+  useEffect(() => { load(); }, [load]);
+  const toggle = async (s: Sup) => { await api("/api/admin/supporters", "POST", { id: s.id, hidden: !s.hidden }); load(); };
+  return (
+    <div className="mt-6">
+      <h4 className="text-sm font-bold">{de ? "Unterstützerliste" : "Supporters list"}</h4>
+      <p className="mt-1 text-xs text-muted">{de ? `Öffentlich erscheinen nur von Ziina bestätigte Zahlungen mit Zustimmung zur Nennung. Gründer und Betreiber stehen fest oben. Auf Wunsch einen Eintrag verbergen.${apiOn ? "" : " Ohne ZIINA_API_KEY gibt es keine automatische Liste."}` : `Only payments confirmed by Ziina whose payers opted in are public. Founder and operator are pinned. Hide an entry on request.${apiOn ? "" : " Without ZIINA_API_KEY there is no automatic list."}`}</p>
+      {list === null ? <div className="mt-3 h-9 animate-pulse rounded-lg bg-line/40" /> : list.length === 0 ? <p className="mt-3 text-sm text-muted">–</p> : (
+        <ul className="mt-3 grid gap-2">
+          {list.map((s) => (
+            <li key={s.id} className="flex flex-wrap items-center gap-3 rounded-lg border border-line px-3 py-2 text-sm">
+              <span className="min-w-0 flex-1"><b>{s.display_name || s.company || (de ? "(ohne Namen)" : "(no name)")}</b>{s.display_name && s.company ? ` · ${s.company}` : ""}<span className="ms-2 text-xs text-muted">{(s.amount_minor / 100).toFixed(2)} {s.currency} · {s.paid_at ? new Date(s.paid_at).toLocaleDateString() : ""} · {s.listed ? (s.hidden ? (de ? "verborgen" : "hidden") : (de ? "öffentlich" : "public")) : (de ? "nicht genannt" : "not listed")}</span></span>
+              {s.listed && <button className={btn} onClick={() => toggle(s)}>{s.hidden ? (de ? "Wieder zeigen" : "Show again") : (de ? "Verbergen" : "Hide")}</button>}
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
   );
 }
 

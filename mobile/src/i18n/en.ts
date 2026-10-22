@@ -54,6 +54,7 @@ const en = {
     version: "Version {v}", chooseLanguage: "Choose language",
     dailyTitle: "Daily reminder", dailyQuestion: "Have you remembered Allah today?", dailyLead: "One notification a day, including suggestions for personal duas.",
     profile: "My profile and achievements", stats: "Statistics", map: "Quran map", about: "About us", changelog: "Changelog",
+    rateApp: "Rate the app", recommendApp: "Recommend the app", recommendText: "I am learning with the Quran Masterclass app and would be glad to recommend it to you:",
   },
   auth: {
     email: "Email", password: "Password", firstName: "First name", lastName: "Last name", country: "Country",

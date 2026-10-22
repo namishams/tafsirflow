@@ -116,7 +116,7 @@ async function build(c: PoolClient, cur: number) {
   await c.query(
     `CREATE TEMP TABLE rk_src ON COMMIT DROP AS
      SELECT c.user_id, c.username, c.display_name, c.avatar_path, c.avatar_version, upper(NULLIF(c.country, '')) AS country,
-            CASE WHEN c.founder THEN 'founder' WHEN c.official THEN 'official' WHEN c.badge = 'gold' OR c.verified THEN 'gold' WHEN c.badge = 'emerald' THEN 'emerald' END AS badge,
+            CASE WHEN c.founder THEN 'founder' WHEN c.badge = 'star' THEN 'star' WHEN c.official THEN 'official' WHEN c.badge = 'gold' OR c.verified THEN 'gold' WHEN c.badge = 'emerald' THEN 'emerald' END AS badge,
             c.level, ${named} AS named, ${circle} AS circle, c.public AS is_public, ${counted} AS counted,
             (CASE WHEN c.week_monday >= ${cur0} - 1 THEN c.week_xp ELSE 0 END)::int AS xp_week,
             COALESCE(NULLIF(c.achievements #>> '{level,xp}', '')::bigint, 0) AS xp_total,
@@ -400,7 +400,7 @@ export async function seasons(kind: SeasonKind, limit = 60): Promise<SeasonInfo[
 export async function seasonRows(kind: SeasonKind, key: string, metric: SeasonMetric, limit = LIST_SIZE, meId?: number): Promise<RankRow[]> {
   const r = await pool()!.query(
     `SELECT r.rank AS rk, r.user_id, r.score, r.country, c.username, c.display_name, c.avatar_path, c.avatar_version, c.level, s.streak,
-            CASE WHEN c.founder THEN 'founder' WHEN c.official THEN 'official' WHEN c.badge = 'gold' OR c.verified THEN 'gold' WHEN c.badge = 'emerald' THEN 'emerald' END AS badge
+            CASE WHEN c.founder THEN 'founder' WHEN c.badge = 'star' THEN 'star' WHEN c.official THEN 'official' WHEN c.badge = 'gold' OR c.verified THEN 'gold' WHEN c.badge = 'emerald' THEN 'emerald' END AS badge
        FROM ranking_results r JOIN ranking_seasons z ON z.id = r.season_id
        JOIN community_profiles c ON c.user_id = r.user_id JOIN users u ON u.id = r.user_id
        LEFT JOIN ranking_snapshot s ON s.user_id = r.user_id

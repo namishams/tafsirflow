@@ -10,7 +10,7 @@ import { usernameProblem } from "@/lib/usernameFilter";
 export const dynamic = "force-dynamic";
 
 // GET ?u=<username>: live availability check for Edit profile (app and /talents/me) while typing.
-// { ok: true } or { ok: false, reason: "format" | "reserved" | "taken" | "inappropriate" }; "mine" counts as ok.
+// { ok: true } or { ok: false, reason: "format" | "reserved" | "star" | "taken" | "inappropriate" }; "mine" counts as ok.
 // Signed-in members only, rate limited; the final check stays in PUT /api/community/me (unique index).
 export async function GET(req: NextRequest) {
   const me = await currentUser();

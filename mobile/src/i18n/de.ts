@@ -55,6 +55,7 @@ const de: Dict = {
     version: "Version {v}", chooseLanguage: "Sprache wählen",
     dailyTitle: "Tägliche Erinnerung", dailyQuestion: "Heute schon an Allah gedacht?", dailyLead: "Eine Mitteilung pro Tag, auch mit Hinweisen auf persönliche Duas.",
     profile: "Mein Profil und Auszeichnungen", stats: "Statistik", map: "Koran-Landkarte", about: "Über uns", changelog: "Änderungen",
+    rateApp: "App bewerten", recommendApp: "App empfehlen", recommendText: "Ich lerne mit der App Quran Masterclass und kann sie Ihnen gern empfehlen:",
   },
   auth: {
     email: "E-Mail", password: "Passwort", firstName: "Vorname", lastName: "Nachname", country: "Land",

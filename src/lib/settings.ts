@@ -7,7 +7,7 @@ export type Features = {
   assistant: boolean; duaAi: boolean; sideArt: boolean; celebrations: boolean; donateCta: boolean;
 };
 // optional monthly support meter shown in the donation invitations (only real numbers entered by the owner)
-export type Donation = { on: boolean; goal: number; raised: number; currency: string; label: string };
+export type Donation = { on: boolean; goal: number; raised: number; currency: string; label: string; showTiers?: boolean };
 export type Limits = { assistantAnonPerDay: number; assistantPerUserPerDay: number; duaAiAnonPerDay: number; rankingDailyCap: number };
 export type PointRules = Partial<Record<PointKind, { pts: number; cap?: number }>>;
 // Quran Masterclass Pro (subscription in the app; earlier one-time Premium stays valid): what stays free, and whether the web asks for Pro too
@@ -93,6 +93,6 @@ export function sanitize(input: unknown, current: Settings): Settings {
       href: href.startsWith("/") || href.startsWith("https://") ? href : "",
     },
     premium: { gateWeb: pr.gateWeb === true, freeOffline: int(pr.freeOffline, 0, 114, 3), assistantPerDay: int(pr.assistantPerDay, 1, 10000, 200) },
-    donation: { on: dn.on === true, goal: int(dn.goal, 0, 100_000_000, 0), raised: int(dn.raised, 0, 100_000_000, 0), currency: str(dn.currency, 6) || "AED", label: str(dn.label, 80) },
+    donation: { on: dn.on === true, goal: int(dn.goal, 0, 100_000_000, 0), raised: int(dn.raised, 0, 100_000_000, 0), currency: str(dn.currency, 6) || "AED", label: str(dn.label, 80), showTiers: dn.showTiers === true },
   };
 }

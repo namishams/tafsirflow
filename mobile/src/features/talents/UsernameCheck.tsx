@@ -4,10 +4,12 @@ import { FONT, useTheme } from "@/lib/theme";
 import { api } from "@/lib/api";
 import { usePT, type PKey } from "./profileText";
 import { usernameProblem } from "./usernameFilter";
+import { starText } from "./starText";
+import { useLang } from "@/i18n";
 
 // Live check of the unique @username while typing in Edit profile (GET /api/community/username, debounced):
 // format (3–20 of a-z 0-9 . _), reserved route and team names, the word filter, taken by someone else.
-type State = "idle" | "checking" | "ok" | "format" | "reserved" | "taken" | "inappropriate";
+type State = "idle" | "checking" | "ok" | "format" | "reserved" | "star" | "taken" | "inappropriate";
 /** `online` false (not signed in yet): only the format is checked here, the rest after sign-in */
 export function useUsernameCheck(username: string, current: string | null, online = true) {
   const [s, setS] = useState<State>("idle");
@@ -34,12 +36,13 @@ export function useUsernameCheck(username: string, current: string | null, onlin
 export function UsernameStatus({ state }: { state: State }) {
   const t = useTheme();
   const pt = usePT();
+  const { lang } = useLang();
   if (state === "idle") return null;
-  const key: PKey = state === "ok" ? "usernameFree" : state === "checking" ? "usernameChecking" : (`username_${state}` as PKey);
+  const key: PKey = state === "ok" ? "usernameFree" : state === "checking" ? "usernameChecking" : (`username_${state === "star" ? "reserved" : state}` as PKey);
   return (
     <Text accessibilityLiveRegion="polite" style={{ marginTop: -8, fontFamily: FONT.semibold, fontSize: 13, color: state === "ok" ? t.accent : state === "checking" ? t.muted : t.danger }}>
-      {pt(key)}
+      {state === "star" ? starText(lang).reserved : pt(key)}
     </Text>
   );
 }
-export const usernameBlocked = (s: State) => s === "format" || s === "reserved" || s === "taken" || s === "inappropriate";
+export const usernameBlocked = (s: State) => s === "format" || s === "reserved" || s === "star" || s === "taken" || s === "inappropriate";

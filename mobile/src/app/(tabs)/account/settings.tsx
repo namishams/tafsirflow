@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { AccessibilityInfo, Alert, Platform, Switch, Text, TextInput, View } from "react-native";
+import { AccessibilityInfo, Alert, Platform, Share, Switch, Text, TextInput, View } from "react-native";
 import { Stack, router, type Href } from "expo-router";
 import Constants from "expo-constants";
 import { FONT, R, useTheme } from "@/lib/theme";
@@ -34,6 +34,7 @@ import { useAuthT } from "@/features/auth/text";
 import { TravelSetting } from "@/features/talents/TravelCard";
 import { IdentitySetting } from "@/features/identity/IdentityStep";
 import { TutorSetting } from "@/features/tutor/Settings";
+import { APP_STORE_URL, rateApp } from "@/lib/review";
 
 // /account/settings – everything the Account tab showed before it became the own profile (owner, 21.10.2026: the last tab
 // is the Instagram/TikTok profile; the menu button opens this screen). Unchanged content: Pro, sign-in, confirm the
@@ -193,6 +194,8 @@ export default function AccountSettingsScreen() {
               <LinkRow title={t("account.support")} onPress={() => go("/feedback")} />
               <LinkRow title={t("account.about")} onPress={() => go("/about")} />
               <LinkRow title={t("account.changelog")} onPress={() => go("/changelog")} />
+              <LinkRow title={t("account.rateApp")} icon="heart" onPress={() => void rateApp()} />
+              <LinkRow title={t("account.recommendApp")} icon="share" onPress={() => void Share.share({ message: `${t("account.recommendText")} ${APP_STORE_URL}`, url: APP_STORE_URL }).catch(() => undefined)} />
             </RowGroup>
           </Section>
 

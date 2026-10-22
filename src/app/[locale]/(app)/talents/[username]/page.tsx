@@ -23,6 +23,9 @@ import { DefaultAvatar } from "@/components/talents/DefaultAvatar";
 import { fillRw, rankingsText } from "@/lib/rankingsWeb";
 import { rankOf } from "@/lib/rankings";
 import TalentProfileWeb, { type WebProfile } from "@/components/talents/TalentProfileWeb";
+import StarProfileWeb from "@/components/talents/StarProfileWeb";
+import { starByUsername, starClaimed } from "@/lib/stars";
+import { starText } from "@/lib/starText";
 
 // Public talent profile on the website (same structure as the app profile): avatar, badge, level, stats, bio, follow /
 // message, highlights, recitations, achievements. Only public members aged 16+; badged profiles are indexed.
@@ -39,7 +42,12 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { locale, username } = await params;
   const p = await publicProfile(username.toLowerCase());
   const tx = talentsText(locale);
-  if (!p) return { title: "Quran Masterclass Talents", robots: { index: false, follow: false } };
+  if (!p) {
+    // unclaimed star profile (owner 22.10.2026): only public facts, clearly labelled, not indexed
+    const star = starByUsername(username.toLowerCase());
+    if (star && !(await starClaimed(star.username))) return { title: `${star.reciter.name} (@${star.username}) | Quran Masterclass Talents`, description: starText(locale).label, robots: { index: false, follow: true } };
+    return { title: "Quran Masterclass Talents", robots: { index: false, follow: false } };
+  }
   const meta = pageMeta(locale, `/talents/${p.username}`, `${p.name} (@${p.username}) | Quran Masterclass Talents`, fill(tx.metaDesc, { u: p.name }));
   return p.badge && !p.private ? meta : { ...meta, robots: { index: false, follow: true } };
 }
@@ -48,7 +56,11 @@ export default async function TalentPage({ params }: { params: Promise<{ locale:
   const { locale, username } = await params;
   setRequestLocale(locale);
   const p = await publicProfile(username.toLowerCase());
-  if (!p) notFound();
+  if (!p) {
+    const star = starByUsername(username.toLowerCase());
+    if (star && !(await starClaimed(star.username))) return <StarProfileWeb locale={locale} username={star.username} reciter={star.reciter} />;
+    notFound();
+  }
   const tx = talentsText(locale);
   const sx = sijillText(locale);
   const sj = p.private ? null : await publicSijill(p.username, locale);
@@ -96,7 +108,7 @@ export default async function TalentPage({ params }: { params: Promise<{ locale:
           <details className="rounded-lg border border-line bg-surface p-5" open={!!p.badge}>
             <summary className="cursor-pointer font-bold">{tx.badgeWhat}</summary>
             <ul className="mt-4 grid gap-4">
-              {(["emerald", "gold", "official"] as const).map((b) => (
+              {(p.badge === "star" ? (["star", "emerald", "gold", "official"] as const) : (["emerald", "gold", "official"] as const)).map((b) => (
                 <li key={b} className={`flex gap-3 rounded-md p-3 ${p.badge === b ? "bg-[rgb(var(--hm-gold))]/10 ring-1 ring-[rgb(var(--hm-gold))]/50" : ""}`}>
                   <BadgeIcon badge={b} size={26} />
                   <div><p className="font-semibold">{tx[`badge_${b}` as TwKey]}</p><p className="text-[14px] leading-relaxed text-muted">{tx[`badge_${b}_text` as TwKey]}</p></div>

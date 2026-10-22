@@ -21,6 +21,7 @@ import { quoteRing, verseQuote } from "@/lib/verseQuotes";
 import VerseOfTheDay from "@/components/VerseOfTheDay";
 import Featured from "@/components/Featured";
 import DonateCTA from "@/components/DonateCTA";
+import SupportersList from "@/components/SupportersList";
 import Sticker from "@/components/Sticker";
 import { LOCALE_META } from "@/i18n/locales";
 import { routing } from "@/i18n/routing";
@@ -429,6 +430,7 @@ export default async function Landing({ params }: { params: Promise<{ locale: st
 
         {/* 13b Voluntary support – one calm illuminated panel */}
         <div className="mx-auto max-w-6xl px-4 sm:px-5"><DonateCTA className="my-14 sm:my-20" /></div>
+        <div className="mx-auto mb-14 max-w-6xl px-4 sm:mb-20 sm:px-5"><SupportersList compact /></div>
 
         {/* 14 Final CTA – under the lattice dome, in a mihrab of light */}
         <section className="stage girih relative overflow-hidden text-[#eef0f3]">

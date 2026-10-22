@@ -3,12 +3,13 @@ import { useEffect, useState } from "react";
 import { Link, useRouter } from "@/i18n/navigation";
 import { usernameProblem } from "@/lib/usernameFilter";
 import { usernameText } from "@/lib/usernameWeb";
+import { starText } from "@/lib/starText";
 
 // /username on the website, like the app's /username (owner 22.10.2026): choose the unique @username before the profile
 // and the social features. Instant check with the shared word filter, then the server check (taken, reserved), then
 // PUT /api/community/me creates the profile with the accepted guidelines.
-type St = "idle" | "checking" | "ok" | "format" | "reserved" | "taken" | "inappropriate";
-const MSG: Record<string, Record<Exclude<St, "idle" | "checking" | "ok">, string>> = {
+type St = "idle" | "checking" | "ok" | "format" | "reserved" | "star" | "taken" | "inappropriate";
+const MSG: Record<string, Record<Exclude<St, "idle" | "checking" | "ok" | "star">, string>> = {
   de: { format: "3 bis 20 Zeichen: a–z, 0–9, Punkt und Unterstrich.", reserved: "Dieser Benutzername ist reserviert.", taken: "Dieser Benutzername ist schon vergeben.", inappropriate: "Bitte wählen Sie einen anderen Benutzernamen." },
   en: { format: "3 to 20 characters: a–z, 0–9, dot and underscore.", reserved: "This username is reserved.", taken: "This username is already taken.", inappropriate: "Please choose a different username." },
 };
@@ -41,9 +42,9 @@ export default function UsernameWeb({ locale }: { locale: string }) {
     setBusy(false);
     if (r?.ok) { try { sessionStorage.setItem("qm-has-username", "1"); } catch { /* ignore */ } router.replace("/talents/me"); return; }
     const d = r ? ((await r.json().catch(() => ({}))) as { error?: string }) : {};
-    setMsg(d.error === "username_taken" ? m.taken : d.error === "username_reserved" ? m.reserved : d.error === "username_inappropriate" ? m.inappropriate : d.error === "login" ? u.needed : m.format);
+    setMsg(d.error === "username_taken" ? m.taken : d.error === "username_reserved" ? m.reserved : d.error === "username_star" ? starText(locale).reserved : d.error === "username_inappropriate" ? m.inappropriate : d.error === "login" ? u.needed : m.format);
   };
-  const hint = st === "idle" || st === "checking" || st === "ok" ? "" : m[st];
+  const hint = st === "idle" || st === "checking" || st === "ok" ? "" : st === "star" ? starText(locale).reserved : m[st];
   return (
     <div className="mx-auto max-w-lg px-5 py-10">
       <h1 className="font-display text-4xl">{u.title}</h1>

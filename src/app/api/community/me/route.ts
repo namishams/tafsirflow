@@ -39,7 +39,10 @@ export async function PUT(req: NextRequest) {
     // the same word filter as GET /api/community/username; an unchanged existing name stays allowed
     const bad = usernameProblem(username);
     const same = bad ? (await pool()!.query("SELECT 1 FROM community_profiles WHERE user_id = $1 AND username = $2", [me.id, username])).rows[0] : null;
-    if (bad && !same) return json({ error: bad === "reserved" ? "username_reserved" : "username_inappropriate" }, 400);
+    if (bad && !same) return json({ error: bad === "reserved" ? "username_reserved" : bad === "star" ? "username_star" : "username_inappropriate" }, 400);
+    // a verified star account keeps its reserved username (the star profile lives at that name)
+    const star = (await pool()!.query("SELECT slug FROM star_profiles WHERE claimed_by = $1", [me.id]).catch(() => ({ rows: [] as { slug: string }[] }))).rows[0];
+    if (star && star.slug !== username) return json({ error: "username_star" }, 400);
   }
   if (!name) return json({ error: "name_required" }, 400);
   if (bio.length > 160) return json({ error: "bio_long" }, 400);

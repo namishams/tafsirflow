@@ -155,6 +155,9 @@
       "map": "古兰经地图",
       "about": "关于我们",
       "changelog": "更新日志",
+      "rateApp": "为应用评分",
+      "recommendApp": "推荐此应用",
+      "recommendText": "我正在使用 Quran Masterclass 应用学习，很乐意向您推荐：",
       "deleted": "您的账户及其数据已被删除。"
     },
     "auth": {
@@ -1330,6 +1333,8 @@
     "badge_gold_text": "翠绿认证，并通过诵读者之路指定级别起的证书，且考试经过审核。",
     "badge_official": "官方星标",
     "badge_official_text": "知名诵读者和公众人物：拥有经证实的自有频道且受众众多，或受 Quran Masterclass 邀请。",
+    "badge_star": "认证诵读者",
+    "badge_star_text": "已接管其官方主页的知名诵读者，经官方渠道核实。",
     "noBadge": "暂无徽章。",
     "noBadgeMine": "暂无徽章。“我的徽章”会显示还缺少什么。",
     "reqEmail": "邮箱地址已验证",

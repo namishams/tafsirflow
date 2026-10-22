@@ -5,20 +5,22 @@ import { BadgeIcon, type WebBadge } from "./BadgeIcon";
 // Web moderation for Quran Talents (admins only; every API call checks the role): reports, clip approval, members
 // (level, official star, admin check, badge block, suspend), invitation codes, old verification requests.
 const DE = {
-  title: "Quran Talents · Moderation", forbidden: "Nur für Administratoren. Bitte mit dem Admin-Konto anmelden.", reports: "Meldungen", posts: "Rezitationen", members: "Mitglieder", invites: "Einladungen", verify: "Anträge",
+  title: "Quran Talents · Moderation", forbidden: "Nur für Administratoren. Bitte mit dem Admin-Konto anmelden.", reports: "Meldungen", posts: "Rezitationen", members: "Mitglieder", invites: "Einladungen", verify: "Anträge", stars: "Stars",
+  starClaims: "Übernahme-Anfragen", starAll: "Star-Profile", starInvite: "Einladungslink kopieren", starCopied: "Link kopiert (30 Tage gültig).", starClaimed: "übernommen von", starOpen: "nicht übernommen", starInvited: "über Einladung", roleSelf: "Rezitator selbst", roleTeam: "Offizielles Team",
   none: "Nichts offen.", dismiss: "Verwerfen", resolve: "Erledigt", removeMsg: "Nachricht/Kommentar entfernen", removePost: "Rezitation entfernen", suspend: "Sperren", unsuspend: "Sperre aufheben",
   approve: "Freigeben", reject: "Ablehnen", reason: "Grund", search: "Mitglied suchen", official: "Offizieller Stern", officialOn: "Stern vergeben", officialOff: "Stern entziehen",
   verifyOn: "Gold (Admin) vergeben", verifyOff: "Gold (Admin) entziehen", block: "Automatische Abzeichen sperren", create: "Einladung erstellen", uses: "Nutzungen", days: "Gültig (Tage)", note: "Notiz",
   newCode: "Neuer Code, nur jetzt sichtbar:", revoke: "Widerrufen", revoked: "widerrufen", by: "gemeldet von", total: "Meldungen insgesamt", noMedia: "Datei fehlt (MEDIA_DIR auf dem Server einrichten).", error: "Das hat nicht geklappt.",
 };
 const EN: typeof DE = {
-  title: "Quran Talents · Moderation", forbidden: "Admins only. Please sign in with the admin account.", reports: "Reports", posts: "Recitations", members: "Members", invites: "Invitations", verify: "Requests",
+  title: "Quran Talents · Moderation", forbidden: "Admins only. Please sign in with the admin account.", reports: "Reports", posts: "Recitations", members: "Members", invites: "Invitations", verify: "Requests", stars: "Stars",
+  starClaims: "Takeover requests", starAll: "Star profiles", starInvite: "Copy invite link", starCopied: "Link copied (valid for 30 days).", starClaimed: "taken over by", starOpen: "not taken over", starInvited: "via invitation", roleSelf: "The reciter", roleTeam: "Official team",
   none: "Nothing open.", dismiss: "Dismiss", resolve: "Resolved", removeMsg: "Remove message/comment", removePost: "Remove recitation", suspend: "Suspend", unsuspend: "Lift suspension",
   approve: "Approve", reject: "Reject", reason: "Reason", search: "Search members", official: "Official star", officialOn: "Grant star", officialOff: "Revoke star",
   verifyOn: "Grant gold (admin)", verifyOff: "Remove gold (admin)", block: "Block automatic badges", create: "Create invitation", uses: "Uses", days: "Valid (days)", note: "Note",
   newCode: "New code, visible only now:", revoke: "Revoke", revoked: "revoked", by: "reported by", total: "reports in total", noMedia: "File missing (set up MEDIA_DIR on the server).", error: "That did not work.",
 };
-type Tab = "reports" | "posts" | "members" | "invites" | "verify";
+type Tab = "reports" | "posts" | "members" | "invites" | "verify" | "stars";
 const LEVELS = ["talent", "rising", "master", "sheikh"];
 
 async function api<T>(url: string, body?: unknown, method?: string): Promise<T> {
@@ -42,13 +44,13 @@ export default function AdminTalents({ locale, posting = true }: { locale: strin
   return (
     <div className="mt-6">
       <div role="tablist" className="flex flex-wrap gap-2">
-        {(["reports", "posts", "members", "invites", "verify"] as Tab[]).filter((k) => posting || k !== "posts").map((k) => (
+        {(["reports", "posts", "members", "invites", "verify", "stars"] as Tab[]).filter((k) => posting || k !== "posts").map((k) => (
           <button key={k} role="tab" aria-selected={tab === k} onClick={() => setTab(k)} className={`h-10 rounded-full px-4 text-sm font-semibold ${tab === k ? "btn-gold" : "border border-line"}`}>{t[k]}</button>
         ))}
       </div>
       {msg ? <p role="alert" className="mt-4 text-red-700 dark:text-red-400">{msg}</p> : null}
       <div className="mt-6">
-        {tab === "reports" ? <Reports t={t} run={run} btn={btn} /> : tab === "posts" ? <Posts t={t} run={run} btn={btn} /> : tab === "members" ? <Members t={t} run={run} btn={btn} /> : tab === "invites" ? <Invites t={t} run={run} btn={btn} locale={locale} /> : <Verify t={t} run={run} btn={btn} />}
+        {tab === "reports" ? <Reports t={t} run={run} btn={btn} /> : tab === "posts" ? <Posts t={t} run={run} btn={btn} /> : tab === "members" ? <Members t={t} run={run} btn={btn} /> : tab === "invites" ? <Invites t={t} run={run} btn={btn} locale={locale} /> : tab === "stars" ? <Stars t={t} run={run} btn={btn} locale={locale} /> : <Verify t={t} run={run} btn={btn} />}
       </div>
     </div>
   );
@@ -177,4 +179,53 @@ function Verify({ t, run, btn }: P) {
       <div className="flex gap-2"><button className={`${btn} btn-gold`} onClick={() => void act(v.id, "approve")}>{t.approve}</button><button className={btn} onClick={() => void act(v.id, "reject")}>{t.reject}</button></div>
     </Box>
   ))}</div>;
+}
+
+// Star profiles (owner 22.10.2026): takeover requests with one-click approve / reject, and per star a personal invite
+// link (signed, 30 days) to send with the owner's message.
+type StarClaim = { id: string; star: string; starName: string; role: "self" | "team"; channel: string; message: string; invited: boolean; at: string; username: string | null; name: string | null };
+type StarRow = { username: string; name: string; country: string | null; claimedBy: string | null };
+function Stars({ t, run, btn, locale }: P & { locale: string }) {
+  const [claims, setClaims] = useState<StarClaim[] | null>(null);
+  const [stars, setStars] = useState<StarRow[]>([]);
+  const [reason, setReason] = useState("");
+  const [copied, setCopied] = useState("");
+  const load = useCallback(() => run(async () => { const d = await api<{ claims: StarClaim[]; stars: StarRow[] }>("/api/community/admin/stars"); setClaims(d.claims); setStars(d.stars); }), [run]);
+  useEffect(() => { void load(); }, [load]);
+  const act = (id: string, action: string) => run(async () => { await api("/api/community/admin/stars", { id, action, reason }); setReason(""); await load(); });
+  const invite = (username: string) => run(async () => {
+    const d = await api<{ link: string }>("/api/community/admin/stars", { invite: username, locale });
+    await navigator.clipboard.writeText(d.link).catch(() => window.prompt("", d.link));
+    setCopied(username);
+  });
+  if (!claims) return <div className="h-32 animate-pulse rounded-lg bg-line/40" />;
+  return <div className="grid gap-6">
+    <section className="grid gap-3">
+      <h2 className="text-lg font-bold">{t.starClaims}</h2>
+      {!claims.length ? <p className="text-muted">{t.none}</p> : claims.map((c) => (
+        <Box key={c.id}>
+          <p className="font-bold">{c.starName} · @{c.star}</p>
+          <p className="text-[13px] text-muted">@{c.username ?? "?"} · {c.role === "self" ? t.roleSelf : t.roleTeam}{c.invited ? ` · ${t.starInvited}` : ""} · {new Date(c.at).toLocaleDateString(locale)}</p>
+          <a href={c.channel} target="_blank" rel="noopener noreferrer nofollow" className="break-all font-semibold text-accent hover:underline" dir="ltr">{c.channel}</a>
+          {c.message ? <p className="whitespace-pre-line">{c.message}</p> : null}
+          <input className="h-10 rounded-md border border-line bg-surface px-3" placeholder={t.reason} value={reason} onChange={(e) => setReason(e.target.value)} />
+          <div className="flex gap-2"><button className={`${btn} btn-gold`} onClick={() => void act(c.id, "approve")}>{t.approve}</button><button className={btn} onClick={() => void act(c.id, "reject")}>{t.reject}</button></div>
+        </Box>
+      ))}
+    </section>
+    <section className="grid gap-2">
+      <h2 className="text-lg font-bold">{t.starAll}</h2>
+      {stars.map((s) => (
+        <div key={s.username} className="flex flex-wrap items-center justify-between gap-2 rounded-lg border border-line bg-surface px-4 py-3">
+          <div className="flex items-center gap-2"><a href={`/${locale}/talents/${s.username}`} className="font-semibold hover:underline">{s.name}</a><span className="text-[13px] text-muted" dir="ltr">@{s.username}</span>{s.claimedBy ? <BadgeIcon badge="star" size={16} /> : null}</div>
+          <div className="flex items-center gap-2 text-[13px] text-muted">
+            {s.claimedBy ? <span>{t.starClaimed} @{s.claimedBy}</span> : <>
+              <span>{copied === s.username ? t.starCopied : t.starOpen}</span>
+              <button className={btn} onClick={() => void invite(s.username)}>{t.starInvite}</button>
+            </>}
+          </div>
+        </div>
+      ))}
+    </section>
+  </div>;
 }

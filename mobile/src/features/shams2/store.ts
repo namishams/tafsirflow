@@ -2,6 +2,7 @@ import { useMemo } from "react";
 import { readJSON, useStored, writeJSON } from "@/lib/store";
 import { readGoal } from "@/web/coach";
 import { today } from "@/web/learning";
+import { askForReviewAfterSuccess } from "@/lib/review";
 
 // Shams Method 2.0 – its own local keys (the existing Shams keys "tf:srs", "tf:days", "qmc.shams-program.v1" … are
 // only read, never replaced). Every key is versioned; new fields are added, never renamed.
@@ -46,6 +47,7 @@ export function markBlock(b: Block, day = today()) {
   const next: Log = { ...l, [day]: { ...cur, [b]: Date.now() } };
   for (const d of Object.keys(next).map(Number).sort((a, x) => a - x).slice(0, Math.max(0, Object.keys(next).length - LOG_DAYS))) delete next[d];
   writeJSON(K.log, next);
+  askForReviewAfterSuccess(); // a finished Shams block is a positive moment (lib/review.ts decides)
   return true;
 }
 /** a listening and understanding day is done (listenDays.ts); false when it was already marked today */

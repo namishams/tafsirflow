@@ -5,6 +5,7 @@ import { BadgeIcon, type WebBadge } from "./BadgeIcon";
 import { sijillText, type SwKey } from "@/lib/sijillWeb";
 import { momentLine } from "@/lib/sijillMoment";
 import { profileText } from "@/lib/profileWeb";
+import { starText } from "@/lib/starText";
 import { DefaultAvatar } from "./DefaultAvatar";
 
 // /talents/me on the website: the signed-in member's talent profile (create or edit), age confirmation, badges with the
@@ -32,7 +33,7 @@ export default function TalentMe({ locale, tx, countries, official }: { locale: 
   const [saved, setSaved] = useState(false);
   const [year, setYear] = useState("");
   const [yearOk, setYearOk] = useState(false);
-  const err = (code?: string) => tx[`e_${code}`] ?? tx.error;
+  const err = (code?: string) => (code === "username_star" ? starText(locale).reserved : tx[`e_${code}`] ?? tx.error);
 
   const load = useCallback(async () => {
     const a = await call<{ known: boolean; community: boolean }>("/api/community/age").catch(() => null);
@@ -103,7 +104,7 @@ export default function TalentMe({ locale, tx, countries, official }: { locale: 
     setMe({ ...me, avatar: null });
   };
   // live check of the @username while typing (format, reserved, word filter, taken)
-  const [nameState, setNameState] = useState<"" | "checking" | "ok" | "format" | "reserved" | "taken" | "inappropriate">("");
+  const [nameState, setNameState] = useState<"" | "checking" | "ok" | "format" | "reserved" | "star" | "taken" | "inappropriate">("");
   useEffect(() => {
     const u = form.username;
     if (!u || u === me?.username) { setNameState(""); return; }
@@ -111,12 +112,12 @@ export default function TalentMe({ locale, tx, countries, official }: { locale: 
     setNameState("checking");
     let live = true;
     const h = setTimeout(() => {
-      call<{ ok: boolean; reason?: "format" | "reserved" | "taken" | "inappropriate" }>(`/api/community/username?u=${encodeURIComponent(u)}`)
+      call<{ ok: boolean; reason?: "format" | "reserved" | "star" | "taken" | "inappropriate" }>(`/api/community/username?u=${encodeURIComponent(u)}`)
         .then((r) => { if (live) setNameState(r.ok ? (r.data.ok ? "ok" : r.data.reason ?? "taken") : ""); }).catch(() => live && setNameState(""));
     }, 400);
     return () => { live = false; clearTimeout(h); };
   }, [form.username, me?.username]);
-  const nameBad = nameState === "format" || nameState === "reserved" || nameState === "taken" || nameState === "inappropriate";
+  const nameBad = nameState === "format" || nameState === "reserved" || nameState === "star" || nameState === "taken" || nameState === "inappropriate";
   const youtube = async () => {
     const r = await call<{ url: string }>("/api/community/official", { method: "POST", body: JSON.stringify({ target: "web", locale }) });
     if (!r.ok) { setMsg(err(r.data.error)); return; }
@@ -170,7 +171,7 @@ export default function TalentMe({ locale, tx, countries, official }: { locale: 
       <section className="grid gap-4 rounded-lg border border-line bg-surface p-6">
         <h2 className="font-display text-2xl">{tx.edit}</h2>
         <label className="grid gap-1.5 font-semibold">{tx.username}<input className={input} dir="ltr" maxLength={20} value={form.username} onChange={(e) => setForm({ ...form, username: e.target.value.toLowerCase().replace(/[^a-z0-9_.]/g, "") })} /><span className="text-[13px] font-normal text-muted">{tx.usernameHint}</span>
-          {nameState ? <span role="status" className={`text-[13px] font-semibold ${nameState === "ok" ? "text-accent" : nameState === "checking" ? "text-muted" : "text-red-700 dark:text-red-400"}`}>{px[nameState === "ok" ? "usernameFree" : nameState === "checking" ? "usernameChecking" : (`username_${nameState}` as const)]}</span> : null}</label>
+          {nameState ? <span role="status" className={`text-[13px] font-semibold ${nameState === "ok" ? "text-accent" : nameState === "checking" ? "text-muted" : "text-red-700 dark:text-red-400"}`}>{nameState === "star" ? starText(locale).reserved : px[nameState === "ok" ? "usernameFree" : nameState === "checking" ? "usernameChecking" : (`username_${nameState}` as const)]}</span> : null}</label>
         <label className="grid gap-1.5 font-semibold">{tx.name}<input className={input} maxLength={40} value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} /></label>
         <label className="grid gap-1.5 font-semibold">{tx.bio}<textarea className="min-h-24 w-full rounded-md border border-line bg-surface p-3 text-[16px]" maxLength={160} value={form.bio} onChange={(e) => setForm({ ...form, bio: e.target.value })} /></label>
         <label className="grid gap-1.5 font-semibold">{tx.country}

@@ -13,6 +13,7 @@ import { useLang } from "@/i18n";
 import { useGamify } from "@/features/feed/gamify";
 import { success, tick } from "@/features/feed/haptics";
 import { useReducedMotion } from "@/features/library/motion";
+import { askForReviewAfterSuccess } from "@/lib/review";
 import { FREE_STAGE, MAX_STAGE, gatedStage, activeTree, markFlourishSeen, onSeriesReward, onStageUp, progressOf, readGarden, resting, stageOf, seasonNow, shamsGrow, takeBurst, tickGarden, useGarden, type SeriesReward, type StageUp } from "./garden";
 import { onDrops, type Drop } from "./catalog";
 import { readGardenNotify, rescheduleGarden, setGardenNotify } from "./notify";
@@ -100,7 +101,7 @@ export function GardenCelebrate() {
   const [series, setSeries] = useState<SeriesReward | null>(null);
   const [drops, setDrops] = useState<Drop[]>([]);
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
-  useEffect(() => onStageUp((e) => { chime(); setEv(e); }), []);
+  useEffect(() => onStageUp((e) => { chime(); setEv(e); askForReviewAfterSuccess(9000); }), []); // after the cinematic
   useEffect(() => onSeriesReward((r) => { chime(); setSeries(r); }), []);
   useEffect(() => onDrops((d) => {
     const fresh = d.filter((x) => x.fresh);
