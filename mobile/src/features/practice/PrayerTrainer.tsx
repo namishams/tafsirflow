@@ -125,8 +125,8 @@ export default function PrayerTrainer() {
       {/* the picture, with the glass controls floating over its sky and its terrace */}
       <View>
         <Figure posture={step.posture} qibla={u.qibla} label={tx(step.title)} kind={kind} set={set} />
-        <View style={{ position: "absolute", left: 12, right: 12, top: 12, flexDirection: "row", flexWrap: "wrap", alignItems: "flex-start", justifyContent: "space-between", gap: 8, rowGap: 8 }}>
-          <Segmented options={(["sunni", "shia"] as const).map((t) => ({ id: t, label: u[t] }))} value={tradition} onChange={setTradition} />
+        <View style={{ position: "absolute", left: 12, right: 12, top: 12, flexDirection: "row", flexWrap: "nowrap", alignItems: "center", justifyContent: "space-between", gap: 8, rowGap: 8 }}>
+          <Segmented options={(["sunni", "shia"] as const).map((t) => ({ id: t, label: u[t].replace(/\s*\(.*\)/, "") }))} value={tradition} onChange={setTradition} />
           <Glass dark radius={18} style={{ marginStart: "auto", paddingHorizontal: 10, paddingVertical: 7, alignItems: "center", gap: 4 }}>
             <Text style={{ fontFamily: FONT.bold, fontSize: 11, color: "#f3e2b6" }}>{u.rakah} {Math.min(step.rakah, rakat)} {u.of} {rakat}</Text>
             <View style={{ flexDirection: "row", gap: 4 }} accessibilityElementsHidden importantForAccessibility="no-hide-descendants">

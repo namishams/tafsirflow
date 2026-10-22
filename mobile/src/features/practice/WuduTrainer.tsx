@@ -533,7 +533,7 @@ export default function WuduTrainer() {
   const kindLabel = (s: WuduStep) => (tradition === "sunni" ? u[s.kind] : u[s.kind === "fard" ? "wajib" : "mustahabb"]);
   const byId = (id: string) => steps.find((s) => s.id === id)!;
   const flip = rtl ? { transform: [{ scaleX: -1 }] } : null;
-  const traditions = (["sunni", "shia"] as const).map((t) => ({ id: t, label: u[t] }));
+  const traditions = (["sunni", "shia"] as const).map((t) => ({ id: t, label: u[t].replace(/\s*\(.*\)/, "") })); // short labels keep the switch and the quiz button on one row
   // the figure follows the learner's identity (a sister sees the headscarf); anyone can switch it
   const tu = trainerUi(l);
   const rawIdentity = useStored<unknown>(IDENTITY_KEY, null);
@@ -556,7 +556,7 @@ export default function WuduTrainer() {
         <>
           <View>
             <Scene scene={step.scene} tradition={tradition} label={tx(step.title)} kind={kind} />
-            <View style={{ position: "absolute", left: 12, right: 12, top: 12, flexDirection: "row", flexWrap: "wrap", alignItems: "flex-start", justifyContent: "space-between", gap: 8, rowGap: 8 }}>
+            <View style={{ position: "absolute", left: 12, right: 12, top: 12, flexDirection: "row", flexWrap: "nowrap", alignItems: "center", justifyContent: "space-between", gap: 8, rowGap: 8 }}>
               <Segmented options={traditions} value={tradition} onChange={chooseTradition} />
               <View style={{ marginStart: "auto" }}><GlassPill title={u.quiz} onPress={() => startQuiz()} height={42} icon={passed ? <Icon name="checkCircle" color={stage.gold} size={16} /> : undefined} /></View>
             </View>
