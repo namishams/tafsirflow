@@ -570,7 +570,7 @@ export async function purgeViewOnce(force = false) {
 }
 
 /** the sender edits a text (or the note of a shared card) within 15 minutes */
-export async function editMessage(meId: number, messageId: string, textRaw: string) {
+export async function editMessage(meId: number, messageId: string, textRaw: string, pro = false) {
   const m = (await q<{ thread_id: string; kind: string; created_at: Date; body_enc: Buffer | null; body_legacy: string | null }>(
     "SELECT thread_id, kind, created_at, body_enc, body_legacy FROM msg_messages WHERE id = $1 AND sender_id = $2 AND deleted_at IS NULL AND removed_at IS NULL", [messageId, meId]))[0];
   if (!m || (m.kind !== "text" && m.kind !== "share")) return { error: "not_found", status: 404 } as const;
@@ -579,6 +579,7 @@ export async function editMessage(meId: number, messageId: string, textRaw: stri
   if (!t) return { error: "not_found", status: 404 } as const;
   const problem = await sendProblem(meId, t, "text");
   if (problem && problem !== "request_wait") return { error: problem, status: 403 } as const;
+  if (!pro && proProblem(meId, t, false)) return { error: "pro_required", status: 403 } as const;
   const text = textRaw.trim();
   if (!text && m.kind === "text") return { error: "empty", status: 400 } as const;
   if (text.length > MAX_TEXT) return { error: "too_long", status: 400 } as const;
@@ -640,4 +641,16 @@ export async function newSince(meId: number, after: string) {
     latest,
     items: rows.map((r) => ({ id: String(r.id), threadId: String(r.thread_id), from: r.display_name ?? r.username ?? "", group: r.kind !== "direct" ? r.title : null })),
   };
+}
+
+// ---------- Pro (owner 22.10.2026) ----------
+// Sending, starting chats, creating and joining groups and adding members are Pro (users.plan premium, checked on the
+// server so the website cannot bypass it). Without Pro a member still receives message requests, reads everything,
+// accepts or declines, reacts, reports and blocks, and replies in a one-to-one chat the other person started (or an
+// old chat from before this rule).
+export const isPro = (plan: string | undefined | null) => plan === "premium";
+export function proProblem(meId: number, t: Pick<Thread, "kind" | "created_by">, pro: boolean): string | null {
+  if (pro) return null;
+  if (t.kind === "direct" && (t.created_by === null || Number(t.created_by) !== meId)) return null;
+  return "pro_required";
 }

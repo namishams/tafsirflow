@@ -55,6 +55,9 @@ const de = {
   perm_title: "Berechtigungen", perm_photos: "Fotos", perm_camera: "Kamera", perm_mic: "Mikrofon", perm_speech: "Spracherkennung", perm_notif: "Mitteilungen",
   perm_location: "Standort", perm_on: "Erlaubt", perm_off: "Nicht erlaubt", perm_ask: "Noch nicht gefragt", perm_limited: "Eingeschränkt",
   openSettings: "In iOS-Einstellungen öffnen", permHint: "Ändern können Sie das in den iOS-Einstellungen unter Quran Masterclass.",
+  e_pro: "Chats beginnen, Gruppen gründen und Nachrichten senden gehört zu Pro. Auf Nachrichten, die Ihnen jemand schreibt, können Sie jederzeit antworten.", proCta: "Pro ansehen",
+  scanQr: "QR scannen", searchPeople: "Personen suchen", scanHint: "Halten Sie die Kamera auf den QR-Code eines Profils.",
+  cameraDenied: "Bitte erlauben Sie den Zugriff auf die Kamera.", scanWrong: "Das ist kein Profil-Code von Quran Masterclass.",
 };
 export type MessengerText = typeof de;
 
@@ -108,6 +111,9 @@ const en: MessengerText = {
   cat_minor_safety: "Endangering minors", cat_other: "Other", perm_title: "Permissions", perm_photos: "Photos", perm_camera: "Camera", perm_mic: "Microphone",
   perm_speech: "Speech recognition", perm_notif: "Notifications", perm_location: "Location", perm_on: "Allowed", perm_off: "Not allowed", perm_ask: "Not asked yet",
   perm_limited: "Limited", openSettings: "Open in iOS Settings", permHint: "You can change this in iOS Settings under Quran Masterclass.",
+  e_pro: "Starting chats, creating groups and sending messages are part of Pro. You can always reply when someone writes to you.", proCta: "See Pro",
+  scanQr: "Scan QR", searchPeople: "Search people", scanHint: "Point the camera at the QR code of a profile.", cameraDenied: "Please allow access to the camera.",
+  scanWrong: "This is not a Quran Masterclass profile code.",
 };
 
 const ar: Partial<MessengerText> = {
@@ -157,6 +163,9 @@ const ar: Partial<MessengerText> = {
   perm_title: "الأذونات", perm_photos: "الصور", perm_camera: "الكاميرا", perm_mic: "الميكروفون", perm_speech: "التعرّف على الكلام", perm_notif: "الإشعارات", perm_location: "الموقع",
   perm_on: "مسموح", perm_off: "غير مسموح", perm_ask: "لم يُطلب بعد", perm_limited: "محدود", openSettings: "فتح في إعدادات iOS",
   permHint: "يمكنكم تغيير ذلك في إعدادات iOS ضمن Quran Masterclass.",
+  e_pro: "بدء المحادثات وإنشاء المجموعات وإرسال الرسائل جزء من Pro. يمكنكم دائمًا الرد عندما يراسلكم أحد.", proCta: "عرض Pro",
+  scanQr: "مسح رمز QR", searchPeople: "البحث عن أشخاص", scanHint: "وجّهوا الكاميرا إلى رمز QR لملف شخصي.", cameraDenied: "يرجى السماح بالوصول إلى الكاميرا.",
+  scanWrong: "هذا ليس رمز ملف شخصي من Quran Masterclass.",
 };
 
 const tr: Partial<MessengerText> = {
@@ -207,6 +216,9 @@ const tr: Partial<MessengerText> = {
   perm_photos: "Fotoğraflar", perm_camera: "Kamera", perm_mic: "Mikrofon", perm_speech: "Konuşma tanıma", perm_notif: "Bildirimler", perm_location: "Konum", perm_on: "İzin verildi",
   perm_off: "İzin verilmedi", perm_ask: "Henüz sorulmadı", perm_limited: "Sınırlı", openSettings: "iOS Ayarlarında aç",
   permHint: "Bunu iOS Ayarlarında Quran Masterclass altında değiştirebilirsiniz.",
+  e_pro: "Sohbet başlatmak, grup kurmak ve mesaj göndermek Pro'nun parçasıdır. Biri size yazdığında her zaman yanıt verebilirsiniz.", proCta: "Pro'yu görün",
+  scanQr: "QR tara", searchPeople: "Kişi ara", scanHint: "Kamerayı bir profilin QR koduna tutun.", cameraDenied: "Lütfen kameraya erişime izin verin.",
+  scanWrong: "Bu bir Quran Masterclass profil kodu değil.",
 };
 
 const ur: Partial<MessengerText> = {
@@ -257,6 +269,9 @@ const ur: Partial<MessengerText> = {
   perm_photos: "تصاویر", perm_camera: "کیمرا", perm_mic: "مائیکروفون", perm_speech: "آواز کی شناخت", perm_notif: "اطلاعات", perm_location: "مقام", perm_on: "اجازت ہے",
   perm_off: "اجازت نہیں", perm_ask: "ابھی نہیں پوچھا گیا", perm_limited: "محدود", openSettings: "iOS ترتیبات میں کھولیں",
   permHint: "آپ اسے iOS ترتیبات میں Quran Masterclass کے تحت بدل سکتے ہیں۔",
+  e_pro: "چیٹ شروع کرنا، گروپ بنانا اور پیغام بھیجنا Pro کا حصہ ہے۔ جب کوئی آپ کو لکھے تو آپ ہمیشہ جواب دے سکتے ہیں۔", proCta: "Pro دیکھیں",
+  scanQr: "QR اسکین کریں", searchPeople: "لوگ تلاش کریں", scanHint: "کیمرا کسی پروفائل کے QR کوڈ کی طرف کریں۔", cameraDenied: "براہ کرم کیمرے تک رسائی کی اجازت دیں۔",
+  scanWrong: "یہ Quran Masterclass کا پروفائل کوڈ نہیں ہے۔",
 };
 
 const fa: Partial<MessengerText> = {
@@ -306,6 +321,9 @@ const fa: Partial<MessengerText> = {
   cat_inappropriate: "محتوای نامناسب", cat_impersonation: "جعل هویت", cat_minor_safety: "به خطر انداختن خردسالان", cat_other: "سایر", perm_title: "مجوزها", perm_photos: "عکس‌ها",
   perm_camera: "دوربین", perm_mic: "میکروفون", perm_speech: "تشخیص گفتار", perm_notif: "اعلان‌ها", perm_location: "مکان", perm_on: "مجاز", perm_off: "غیرمجاز",
   perm_ask: "هنوز پرسیده نشده", perm_limited: "محدود", openSettings: "باز کردن در تنظیمات iOS", permHint: "می‌توانید این را در تنظیمات iOS زیر Quran Masterclass تغییر دهید.",
+  e_pro: "آغاز گفتگو، ساختن گروه و فرستادن پیام بخشی از Pro است. وقتی کسی برایتان می‌نویسد، همیشه می‌توانید پاسخ دهید.", proCta: "دیدن Pro",
+  scanQr: "اسکن QR", searchPeople: "جستجوی افراد", scanHint: "دوربین را روی کد QR یک نمایه بگیرید.", cameraDenied: "لطفاً اجازهٔ دسترسی به دوربین را بدهید.",
+  scanWrong: "این کد نمایهٔ Quran Masterclass نیست.",
 };
 
 const ps: Partial<MessengerText> = {
@@ -356,6 +374,9 @@ const ps: Partial<MessengerText> = {
   perm_photos: "انځورونه", perm_camera: "کمره", perm_mic: "مایکروفون", perm_speech: "د وینا پېژندنه", perm_notif: "خبرتیاوې", perm_location: "ځای", perm_on: "اجازه ده",
   perm_off: "اجازه نشته", perm_ask: "لا نه دی پوښتل شوی", perm_limited: "محدود", openSettings: "په iOS تنظیماتو کې پرانیستل",
   permHint: "تاسو کولای شئ دا د iOS په تنظیماتو کې د Quran Masterclass لاندې بدل کړئ.",
+  e_pro: "د چټ پیلول، د ډلې جوړول او د پیغام لېږل د Pro برخه ده. کله چې څوک تاسو ته ولیکي، تل ځواب ورکولای شئ.", proCta: "Pro وګورئ",
+  scanQr: "QR سکین کړئ", searchPeople: "خلک ولټوئ", scanHint: "کمره د یوه پروفایل QR کوډ ته ونیسئ.", cameraDenied: "مهرباني وکړئ کمرې ته د لاسرسي اجازه ورکړئ.",
+  scanWrong: "دا د Quran Masterclass د پروفایل کوډ نه دی.",
 };
 
 const fr: Partial<MessengerText> = {
@@ -407,6 +428,9 @@ const fr: Partial<MessengerText> = {
   cat_other: "Autre", perm_title: "Autorisations", perm_photos: "Photos", perm_camera: "Appareil photo", perm_mic: "Micro", perm_speech: "Reconnaissance vocale",
   perm_notif: "Notifications", perm_location: "Localisation", perm_on: "Autorisé", perm_off: "Non autorisé", perm_ask: "Pas encore demandé", perm_limited: "Limité",
   openSettings: "Ouvrir dans les Réglages iOS", permHint: "Vous pouvez le modifier dans les Réglages iOS, sous Quran Masterclass.",
+  e_pro: "Démarrer des discussions, créer des groupes et envoyer des messages font partie de Pro. Vous pouvez toujours répondre lorsque quelqu'un vous écrit.", proCta: "Voir Pro",
+  scanQr: "Scanner un QR", searchPeople: "Rechercher des personnes", scanHint: "Dirigez l'appareil photo vers le code QR d'un profil.",
+  cameraDenied: "Veuillez autoriser l'accès à l'appareil photo.", scanWrong: "Ce n'est pas un code de profil Quran Masterclass.",
 };
 
 const es: Partial<MessengerText> = {
@@ -458,6 +482,9 @@ const es: Partial<MessengerText> = {
   perm_photos: "Fotos", perm_camera: "Cámara", perm_mic: "Micrófono", perm_speech: "Reconocimiento de voz", perm_notif: "Notificaciones", perm_location: "Ubicación",
   perm_on: "Permitido", perm_off: "No permitido", perm_ask: "Aún no preguntado", perm_limited: "Limitado", openSettings: "Abrir en Ajustes de iOS",
   permHint: "Puede cambiarlo en Ajustes de iOS, en Quran Masterclass.",
+  e_pro: "Iniciar chats, crear grupos y enviar mensajes forman parte de Pro. Siempre puede responder cuando alguien le escribe.", proCta: "Ver Pro",
+  scanQr: "Escanear QR", searchPeople: "Buscar personas", scanHint: "Apunte la cámara al código QR de un perfil.", cameraDenied: "Permita el acceso a la cámara.",
+  scanWrong: "No es un código de perfil de Quran Masterclass.",
 };
 
 const id: Partial<MessengerText> = {
@@ -508,6 +535,9 @@ const id: Partial<MessengerText> = {
   perm_title: "Izin", perm_photos: "Foto", perm_camera: "Kamera", perm_mic: "Mikrofon", perm_speech: "Pengenalan ucapan", perm_notif: "Notifikasi", perm_location: "Lokasi",
   perm_on: "Diizinkan", perm_off: "Tidak diizinkan", perm_ask: "Belum ditanyakan", perm_limited: "Terbatas", openSettings: "Buka di Pengaturan iOS",
   permHint: "Anda dapat mengubahnya di Pengaturan iOS pada Quran Masterclass.",
+  e_pro: "Memulai obrolan, membuat grup, dan mengirim pesan adalah bagian dari Pro. Anda selalu dapat membalas saat seseorang menulis kepada Anda.", proCta: "Lihat Pro",
+  scanQr: "Pindai QR", searchPeople: "Cari orang", scanHint: "Arahkan kamera ke kode QR sebuah profil.", cameraDenied: "Izinkan akses ke kamera.",
+  scanWrong: "Ini bukan kode profil Quran Masterclass.",
 };
 
 const ms: Partial<MessengerText> = {
@@ -544,6 +574,10 @@ const ms: Partial<MessengerText> = {
   perm_title: "Kebenaran", perm_photos: "Foto", perm_camera: "Kamera", perm_mic: "Mikrofon", perm_speech: "Pengecaman pertuturan", perm_notif: "Pemberitahuan",
   perm_location: "Lokasi", perm_on: "Dibenarkan", perm_off: "Tidak dibenarkan", perm_ask: "Belum ditanya", perm_limited: "Terhad", openSettings: "Buka dalam Tetapan iOS",
   permHint: "Anda boleh mengubahnya dalam Tetapan iOS di bawah Quran Masterclass.",
+  e_pro: "Memulakan sembang, mencipta kumpulan dan menghantar mesej ialah sebahagian daripada Pro. Anda sentiasa boleh membalas apabila seseorang menulis kepada anda.",
+  proCta: "Lihat Pro",
+  scanQr: "Imbas QR", searchPeople: "Cari orang", scanHint: "Halakan kamera ke kod QR sesuatu profil.", cameraDenied: "Sila benarkan akses kepada kamera.",
+  scanWrong: "Ini bukan kod profil Quran Masterclass.",
 };
 
 const bn: Partial<MessengerText> = {
@@ -594,6 +628,9 @@ const bn: Partial<MessengerText> = {
   perm_photos: "ছবি", perm_camera: "ক্যামেরা", perm_mic: "মাইক্রোফোন", perm_speech: "কথা শনাক্তকরণ", perm_notif: "বিজ্ঞপ্তি", perm_location: "অবস্থান", perm_on: "অনুমোদিত",
   perm_off: "অনুমোদিত নয়", perm_ask: "এখনও জিজ্ঞাসা করা হয়নি", perm_limited: "সীমিত", openSettings: "iOS সেটিংসে খুলুন",
   permHint: "আপনি iOS সেটিংসে Quran Masterclass-এর অধীনে এটি বদলাতে পারেন।",
+  e_pro: "চ্যাট শুরু করা, গ্রুপ তৈরি করা ও বার্তা পাঠানো Pro-এর অংশ। কেউ আপনাকে লিখলে আপনি সবসময় উত্তর দিতে পারেন।", proCta: "Pro দেখুন",
+  scanQr: "QR স্ক্যান করুন", searchPeople: "মানুষ খুঁজুন", scanHint: "কোনো প্রোফাইলের QR কোডের দিকে ক্যামেরা ধরুন।", cameraDenied: "অনুগ্রহ করে ক্যামেরায় অ্যাক্সেসের অনুমতি দিন।",
+  scanWrong: "এটি Quran Masterclass-এর প্রোফাইল কোড নয়।",
 };
 
 const ru: Partial<MessengerText> = {
@@ -644,6 +681,9 @@ const ru: Partial<MessengerText> = {
   cat_other: "Другое", perm_title: "Разрешения", perm_photos: "Фото", perm_camera: "Камера", perm_mic: "Микрофон", perm_speech: "Распознавание речи", perm_notif: "Уведомления",
   perm_location: "Геопозиция", perm_on: "Разрешено", perm_off: "Не разрешено", perm_ask: "Ещё не запрашивалось", perm_limited: "Ограничено",
   openSettings: "Открыть в настройках iOS", permHint: "Изменить это можно в настройках iOS в разделе Quran Masterclass.",
+  e_pro: "Начинать чаты, создавать группы и отправлять сообщения можно с Pro. Отвечать, когда вам пишут, можно всегда.", proCta: "Посмотреть Pro",
+  scanQr: "Сканировать QR", searchPeople: "Поиск людей", scanHint: "Наведите камеру на QR-код профиля.", cameraDenied: "Разрешите доступ к камере.",
+  scanWrong: "Это не код профиля Quran Masterclass.",
 };
 
 const zh: Partial<MessengerText> = {
@@ -689,6 +729,8 @@ const zh: Partial<MessengerText> = {
   cat_inappropriate: "不当内容", cat_impersonation: "冒充他人", cat_minor_safety: "危害未成年人", cat_other: "其他", perm_title: "权限", perm_photos: "照片", perm_camera: "相机", perm_mic: "麦克风",
   perm_speech: "语音识别", perm_notif: "通知", perm_location: "位置", perm_on: "已允许", perm_off: "未允许", perm_ask: "尚未询问", perm_limited: "受限", openSettings: "在 iOS 设置中打开",
   permHint: "您可以在 iOS 设置的 Quran Masterclass 下更改。",
+  e_pro: "发起聊天、创建群组和发送消息属于 Pro 功能。有人给您写信时，您随时可以回复。", proCta: "查看 Pro",
+  scanQr: "扫描二维码", searchPeople: "搜索用户", scanHint: "将相机对准个人资料的二维码。", cameraDenied: "请允许访问相机。", scanWrong: "这不是 Quran Masterclass 的个人资料二维码。",
 };
 
 const TABLE: Record<string, Partial<MessengerText>> = { de, en, ar, tr, ur, fa, ps, fr, es, id, ms, bn, ru, zh };
@@ -724,6 +766,7 @@ export function errorText(t: MessengerText, code: string | undefined | null): st
     case "view_once_age": case "view_once_direct": return t.e_view_once_age;
     case "view_once_opened": return t.e_view_once_opened;
     case "edit_window": return t.e_edit_window;
+    case "pro_required": return t.e_pro;
     case "login": return t.signIn;
     default: return t.e_generic;
   }

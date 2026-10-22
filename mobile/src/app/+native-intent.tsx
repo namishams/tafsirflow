@@ -13,7 +13,7 @@ export function redirectSystemPath({ path }: { path: string; initial: boolean })
     if (p === "/account") return "/account";
     // Quran Talents: website profiles /talents/<username>(/followers|/following) open the app's profile screens
     const tal = /^\/talents\/([a-z0-9_.]{3,20})(?:\/(followers|following))?\/?$/.exec(p);
-    const APP_TALENT_ROUTES = new Set(["me", "record", "player", "badges", "notifications", "blocked", "settings", "list", "requests", "messages", "guidelines", "admin", "invite", "search"]);
+    const APP_TALENT_ROUTES = new Set(["me", "record", "player", "badges", "notifications", "blocked", "settings", "list", "requests", "messages", "guidelines", "admin", "invite", "search", "scan"]);
     if (tal && !APP_TALENT_ROUTES.has(tal[1])) return tal[2] ? `/talents/list?u=${tal[1]}&kind=${tal[2]}` : `/talents/u/${tal[1]}`;
     // own profile (21.10.2026: the Account tab is the own profile) and its edit view
     if (p === "/talents/me") return "/account";

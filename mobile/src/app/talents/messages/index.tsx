@@ -6,7 +6,9 @@ import { Page, PageHero } from "@/components/page";
 import { Chip, GlassButton, GlassCard, Segmented } from "@/components/brand";
 import { Icon } from "@/components/icons";
 import { useLang } from "@/i18n";
-import { errCode } from "@/features/talents/api";
+import { T, errCode, type SearchCard } from "@/features/talents/api";
+import { BadgeButton } from "@/features/talents/badges";
+import { TalentAvatar } from "@/features/talents/ui";
 import { AccessGate, ListBox, Muted, SafetyBar, useTalentAccess } from "@/features/talents/ui";
 import { M, type SearchHit, type ThreadRow, type Unread } from "@/features/messenger/api";
 import { errorText, fill, systemLine } from "@/features/messenger/text";
@@ -26,10 +28,18 @@ export default function Inbox() {
   const [list, setList] = useState<ThreadRow[] | null>(null);
   const [unread, setUnread] = useState<Unread>({ inbox: 0, requests: 0 });
   const [msg, setMsg] = useState("");
+  const [needPro, setNeedPro] = useState(false);
   const [q, setQ] = useState("");
   const [hits, setHits] = useState<SearchHit[] | null>(null);
   const [panel, setPanel] = useState<"new" | "join" | null>(params.join ? "join" : null);
   const [field, setField] = useState(params.join ?? "");
+  const [people, setPeople] = useState<SearchCard[]>([]);
+  // "Neuer Chat": people by @username and name as you type (the server leaves out blocked and suspended members)
+  useEffect(() => {
+    if (panel !== "new" || field.trim().replace(/^@/, "").length < 2) { setPeople([]); return; }
+    const h = setTimeout(() => { void T.search(field.trim().replace(/^@/, "")).then((d) => setPeople(d.talents.filter((p) => !p.mine).slice(0, 8))).catch(() => setPeople([])); }, 250);
+    return () => clearTimeout(h);
+  }, [panel, field]);
   const [busy, setBusy] = useState(false);
   const [receipts, setReceipts] = useState<boolean | null>(null);
   const [active, setActive] = useState(false);
@@ -69,7 +79,7 @@ export default function Inbox() {
       const d = panel === "join" ? await M.join(v) : await M.open(v.replace(/^@/, ""));
       setPanel(null); setField("");
       router.push(`/talents/messages/${d.id}` as Href);
-    } catch (e) { setMsg(errorText(mt, errCode(e))); } finally { setBusy(false); }
+    } catch (e) { setMsg(errorText(mt, errCode(e))); setNeedPro(errCode(e) === "pro_required"); } finally { setBusy(false); }
   };
   const when = (iso: string | null) => {
     if (!iso) return "";
@@ -121,6 +131,25 @@ export default function Inbox() {
                     <TextInput value={field} onChangeText={setField} autoCapitalize="none" autoCorrect={false} autoFocus placeholder={panel === "join" ? mt.joinPh : mt.newChatHint}
                       placeholderTextColor={t.muted} accessibilityLabel={panel === "join" ? mt.joinPh : mt.newChatHint} onSubmitEditing={() => void submit()}
                       style={{ minHeight: 44, borderRadius: R.md, borderWidth: 1, borderColor: t.line, backgroundColor: t.bg, paddingHorizontal: 12, fontFamily: FONT.regular, fontSize: 16, color: t.ink }} />
+                    {panel === "new" && people.length ? (
+                      <ListBox>
+                        {people.map((p, i) => (
+                          <Pressable key={p.username} onPress={() => { setField(p.username); void (async () => { setBusy(true); setMsg(""); try { const d = await M.open(p.username); setPanel(null); setField(""); router.push(`/talents/messages/${d.id}` as Href); } catch (e) { setMsg(errorText(mt, errCode(e))); setNeedPro(errCode(e) === "pro_required"); } finally { setBusy(false); } })(); }}
+                            accessibilityRole="button" accessibilityLabel={`${mt.open}: ${p.name}, @${p.username}`}
+                            style={({ pressed }) => ({ flexDirection: "row", alignItems: "center", gap: 10, padding: 10, minHeight: 56, backgroundColor: pressed ? t.bg : t.surface, borderTopWidth: i ? 1 : 0, borderTopColor: t.line })}>
+                            <TalentAvatar name={p.name} uri={p.avatar ?? null} size={38} />
+                            <View style={{ flex: 1 }}>
+                              <View style={{ flexDirection: "row", alignItems: "center", gap: 5 }}>
+                                <Text numberOfLines={1} style={{ flexShrink: 1, fontFamily: FONT.semibold, fontSize: 15, color: t.ink }}>{p.name}</Text>
+                                <BadgeButton badge={p.badge ?? (p.verified ? "gold" : null)} size={14} />
+                                {p.country ? <Text style={{ fontFamily: FONT.semibold, fontSize: 10, color: t.muted, borderWidth: 1, borderColor: t.line, borderRadius: 3, paddingHorizontal: 4 }}>{p.country}</Text> : null}
+                              </View>
+                              <Text numberOfLines={1} style={{ fontFamily: FONT.regular, fontSize: 13, color: t.muted }}>@{p.username}</Text>
+                            </View>
+                          </Pressable>
+                        ))}
+                      </ListBox>
+                    ) : null}
                     <GlassButton title={panel === "join" ? mt.join : mt.open} onPress={() => void submit()} disabled={busy || !field.trim()} />
                   </GlassCard>
                 ) : null}
@@ -130,7 +159,8 @@ export default function Inbox() {
                     <Text style={{ flex: 1, fontFamily: FONT.regular, fontSize: 13.5, color: t.ink }}>{fill(mt.unansweredHint, openCount)}</Text>
                   </Pressable>
                 ) : null}
-                {msg ? <Text accessibilityLiveRegion="polite" style={{ fontFamily: FONT.semibold, fontSize: 13.5, color: t.danger }}>{msg}</Text> : null}
+                {msg ? <Text accessibilityLiveRegion="polite" style={{ fontFamily: FONT.semibold, fontSize: 13.5, color: needPro ? t.ink : t.danger }}>{msg}</Text> : null}
+                {needPro && msg ? <GlassButton title={mt.proCta} icon="starBig" onPress={() => router.push("/pro" as Href)} /> : null}
                 {box === "requests" ? <Text style={{ fontFamily: FONT.regular, fontSize: 13.5, lineHeight: 19, color: t.muted }}>{mt.requestsHint}</Text> : null}
 
                 {hits ? (

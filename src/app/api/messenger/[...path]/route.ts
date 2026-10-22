@@ -8,7 +8,7 @@ import { cleanImage, cleanVideo, cleanVoice } from "@/lib/messenger/media";
 import {
   MAX_TEXT, REACTIONS, addMember, createGroup, inviteHash, isId, joinByCode, leave, listThreads, mediaOf, memberCount, messagesOf, newInvite,
   openDirect, otherOf, pairProblem, person, readReceiptsOn, report, reportedMedia, search, sendProblem, systemNote, threadFor, unreadTotals, insertMessage,
-  activeNow, cleanCard, editMessage, hideMessage, newSince, openViewOnce, prefsOf, profileCard, purgeViewOnce, touchActive, viewOnceProblem,
+  activeNow, cleanCard, isPro, proProblem, editMessage, hideMessage, newSince, openViewOnce, prefsOf, profileCard, purgeViewOnce, touchActive, viewOnceProblem,
   type MsgKind, type ShareCard, type Thread,
 } from "@/lib/messenger/core";
 
@@ -153,8 +153,8 @@ export async function GET(req: NextRequest, ctx: Ctx) {
     // reading marks as read (an incoming request only once it is opened; accepting is separate)
     const newest = page.messages.length ? page.messages[page.messages.length - 1].id : null;
     if (!before && newest) await pool()!.query("UPDATE msg_members SET read_id = GREATEST(read_id, $3) WHERE thread_id = $1 AND user_id = $2", [t.id, g.me.id, newest]);
-    const problem = await sendProblem(g.me.id, t, "text");
-    return json({ thread: await threadInfo(g.me.id, t), ...page, canSend: !problem || problem === "request_text_only", sendProblem: problem }, 200, NO_STORE);
+    const problem = (await sendProblem(g.me.id, t, "text")) ?? proProblem(g.me.id, t, isPro(g.me.plan));
+    return json({ thread: await threadInfo(g.me.id, t), ...page, canSend: !problem || problem === "request_text_only", sendProblem: problem, pro: isPro(g.me.plan) }, 200, NO_STORE);
   }
   return NOT_FOUND();
 }
@@ -167,6 +167,7 @@ export async function POST(req: NextRequest, ctx: Ctx) {
     if (g.res) return g.res;
     const body = (await req.json().catch(() => ({}))) as { username?: unknown };
     if (typeof body.username !== "string") return json({ error: "bad_request" }, 400);
+    if (!isPro(g.me.plan)) return json({ error: "pro_required" }, 403);
     // message requests to strangers: at most 20 a day
     const r = await openDirect(g.me.id, body.username);
     if ("error" in r) return json({ error: r.error }, r.status);
@@ -176,6 +177,7 @@ export async function POST(req: NextRequest, ctx: Ctx) {
   if (a === "groups") {
     const g = await gate(req, "group", 10, true);
     if (g.res) return g.res;
+    if (!isPro(g.me.plan)) return json({ error: "pro_required" }, 403);
     const body = (await req.json().catch(() => ({}))) as { name?: unknown; audience?: unknown };
     const r = await createGroup(g.me.id, body.name, body.audience);
     return "error" in r ? json({ error: r.error }, r.status) : json(r, 200, NO_STORE);
@@ -183,6 +185,7 @@ export async function POST(req: NextRequest, ctx: Ctx) {
   if (a === "join") {
     const g = await gate(req, "join", 20, true);
     if (g.res) return g.res;
+    if (!isPro(g.me.plan)) return json({ error: "pro_required" }, 403);
     const body = (await req.json().catch(() => ({}))) as { code?: unknown };
     const code = typeof body.code === "string" ? body.code.trim().split(/[/=]/).pop() ?? "" : "";
     if (!/^[A-Za-z0-9]{8,32}$/.test(code)) return json({ error: "invite_invalid" }, 400);
@@ -235,8 +238,11 @@ export async function POST(req: NextRequest, ctx: Ctx) {
   const me = g.me.id;
   const t = await threadFor(me, b);
   if (!t) return NOT_FOUND();
+  const noPro = proProblem(me, t, isPro(g.me.plan));
+  if (noPro && (c === "messages" || c === "members" || c === "invite" || c === "photo")) return json({ error: noPro }, 403);
 
   if (c === "typing") {
+    if (noPro) return json({ ok: false }, 200, NO_STORE);
     if (await sendProblem(me, t, "text")) return json({ ok: false }, 200, NO_STORE);
     await p!.query("UPDATE msg_members SET typing_at = now() WHERE thread_id = $1 AND user_id = $2", [t.id, me]);
     return json({ ok: true }, 200, NO_STORE);
@@ -354,7 +360,7 @@ export async function PATCH(req: NextRequest, ctx: Ctx) {
     const g = await gate(req, "edit", 30, true);
     if (g.res) return g.res;
     const body = (await req.json().catch(() => ({}))) as { text?: unknown };
-    const r = await editMessage(g.me.id, b, para(body.text, MAX_TEXT + 1));
+    const r = await editMessage(g.me.id, b, para(body.text, MAX_TEXT + 1), isPro(g.me.plan));
     if ("error" in r) return json({ error: r.error }, r.status);
     const m = (await pool()!.query("SELECT thread_id FROM msg_messages WHERE id = $1", [b])).rows[0];
     const t = m ? await threadFor(g.me.id, String(m.thread_id)) : null;

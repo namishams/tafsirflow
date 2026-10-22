@@ -3,6 +3,7 @@ import { ProMark } from "./ProMark";
 import { LinearGradient } from "expo-linear-gradient";
 import { ActionSheetIOS, Alert, Modal, Platform, Pressable, RefreshControl, ScrollView, Share, StyleSheet, Text, View, useWindowDimensions, type ScrollViewInstance } from "react-native";
 import { router, useGlobalSearchParams, type Href } from "expo-router";
+import { useMT } from "@/features/messenger/ui";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { FONT, R, goldButton, stage, useTheme, type Theme } from "@/lib/theme";
 import { Loading, READ_WIDTH, goBack } from "@/components/page";
@@ -188,6 +189,7 @@ export function ProfileScreenView({ d, variant, title, canInteract, signedIn, re
   const t = useTheme();
   const tt = useTT();
   const pt = usePT();
+  const mt = useMT();
   const st = useST();
   const tr = useT();
   const ct = useCT();
@@ -341,6 +343,7 @@ export function ProfileScreenView({ d, variant, title, canInteract, signedIn, re
           <Icon name="chevronDown" color={t.ink} size={15} weight={2.6} />
         </Pressable>
         <View style={{ flex: 1 }} />
+        <BarBtn icon="search" label={mt.searchPeople} onPress={() => router.push("/talents/search" as Href)} />
         <BarBtn icon="plusSquare" label={pt("shareQr")} onPress={share} />
         <BarBtn icon="menu" label={unread > 0 ? `${pt("menuLabel")}, ${tt("unread", { n: unread })}` : pt("menuLabel")} onPress={openSettings} dot={unread > 0} />
       </View>

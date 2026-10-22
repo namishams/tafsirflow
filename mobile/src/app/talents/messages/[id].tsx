@@ -384,9 +384,11 @@ export default function Chat() {
                   </GlassSurface>
                 </View>
               ) : (
-                <Text style={{ fontFamily: FONT.regular, fontSize: 13.5, lineHeight: 20, color: t.muted, padding: 16, paddingBottom: insets.bottom + 16, borderTopWidth: 1, borderTopColor: t.line }}>
-                  {errorText(mt, problem)}
-                </Text>
+                <View style={{ padding: 16, paddingBottom: insets.bottom + 16, gap: 10, borderTopWidth: 1, borderTopColor: t.line }}>
+                  <Text style={{ fontFamily: FONT.regular, fontSize: 13.5, lineHeight: 20, color: t.muted }}>{errorText(mt, problem)}</Text>
+                  {problem === "pro_required" ? <GoldButton compact title={mt.proCta} onPress={() => router.push("/pro" as Href)} /> : null}
+                  {info.kind === "direct" ? <SafetyBar onReport={() => setReport({ messageId: null })} onBlock={block} /> : null}
+                </View>
               )}
             </>
           )}

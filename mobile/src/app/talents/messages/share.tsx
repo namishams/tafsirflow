@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Pressable, Text, TextInput, View } from "react-native";
-import { Stack, useLocalSearchParams } from "expo-router";
+import { Stack, router, useLocalSearchParams, type Href } from "expo-router";
 import { FONT, R, useTheme } from "@/lib/theme";
 import { Page, PageHero } from "@/components/page";
 import { Icon } from "@/components/icons";
@@ -56,6 +56,7 @@ export default function ShareToChat() {
                     style={{ flex: 1, fontFamily: FONT.regular, fontSize: 15.5, color: t.ink, paddingVertical: 10 }} />
                 </View>
                 {msg ? <Text accessibilityLiveRegion="polite" style={{ fontFamily: FONT.semibold, fontSize: 13.5, color: t.accent }}>{msg}</Text> : null}
+                {msg === mt.e_pro ? <Pressable onPress={() => router.push("/pro" as Href)} accessibilityRole="link" style={{ minHeight: 44, justifyContent: "center" }}><Text style={{ fontFamily: FONT.semibold, fontSize: 15, color: t.gold }}>{mt.proCta}</Text></Pressable> : null}
                 {list && !shown.length ? <Muted>{mt.noResults}</Muted> : (
                   <ListBox>
                     {shown.map((c, i) => (
