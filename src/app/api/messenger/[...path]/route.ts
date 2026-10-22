@@ -102,7 +102,8 @@ export async function GET(req: NextRequest, ctx: Ctx) {
     void purgeViewOnce();
     void touchActive(g.me.id);
     const [threads, unread] = await Promise.all([listThreads(g.me.id, box), unreadTotals(g.me.id)]);
-    return json({ threads, unread }, 200, NO_STORE);
+    const me = (await pool()!.query("SELECT username, display_name, badge, verified, official, founder FROM community_profiles WHERE user_id = $1", [g.me.id])).rows[0];
+    return json({ threads, unread, me: me ? { ...person(me), pro: isPro(g.me.plan) } : null }, 200, NO_STORE);
   }
   if (a === "unread") {
     const g = await gate(req, "unread", 120);

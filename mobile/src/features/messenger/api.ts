@@ -16,7 +16,7 @@ export type ThreadRow = {
   id: string; kind: ThreadKind; title: string; with: Person | null; photo: string | null; audience: Audience;
   request: { status: "pending" | "declined"; incoming: boolean } | null;
   last: { kind: string; text: string | null; mine: boolean; name: string; gone: boolean; viewOnce?: boolean; system?: { what: string; who: string } | null } | null;
-  at: string | null; unread: number; quiet: boolean;
+  at: string | null; unread: number; quiet: boolean; pro?: boolean; active?: boolean; seen?: boolean;
 };
 export type Unread = { inbox: number; requests: number };
 export type ShareType = "verse" | "surah" | "course" | "carousel" | "profile" | "post";
@@ -44,7 +44,7 @@ export type SearchHit = { threadId: string; messageId: string | null; title: str
 const u = encodeURIComponent;
 const B = "/api/messenger";
 export const M = {
-  threads: (box: "inbox" | "requests" = "inbox") => api<{ threads: ThreadRow[]; unread: Unread }>(`${B}/threads?box=${box}`),
+  threads: (box: "inbox" | "requests" = "inbox") => api<{ threads: ThreadRow[]; unread: Unread; me?: (Person & { pro: boolean }) | null }>(`${B}/threads?box=${box}`),
   unread: () => api<Unread>(`${B}/unread`),
   open: (username: string) => api<{ id: string; request: boolean }>(`${B}/threads`, { method: "POST", body: { username } }),
   createGroup: (name: string, audience: Audience) => api<{ id: string }>(`${B}/groups`, { method: "POST", body: { name, audience } }),

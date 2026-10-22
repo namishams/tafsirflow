@@ -395,10 +395,11 @@ export async function mediaOf(meId: number, messageId: string) {
 // ---------- list ----------
 export async function listThreads(meId: number, box: "inbox" | "requests") {
   await syncMyCircles(meId);
-  const rows = await q<Thread & { last_message_at: Date | null; unread: number; other_user: string | null; last_id: string | null }>(
+  const rows = await q<Thread & { last_message_at: Date | null; unread: number; other_user: string | null; last_id: string | null; other_read: string | null }>(
     `SELECT ${THREAD}, t.last_message_at,
             CASE WHEN t.kind = 'direct' THEN (CASE WHEN t.direct_a = $1 THEN t.direct_b ELSE t.direct_a END) END AS other_user,
             (SELECT max(x.id) FROM msg_messages x WHERE x.thread_id = t.id) AS last_id,
+            (SELECT max(om.read_id) FROM msg_members om LEFT JOIN msg_prefs op ON op.user_id = om.user_id WHERE om.thread_id = t.id AND om.user_id <> $1 AND COALESCE(op.read_receipts, true)) AS other_read,
             (SELECT count(*)::int FROM msg_messages x WHERE x.thread_id = t.id AND x.id > m.read_id AND x.sender_id IS DISTINCT FROM $1 AND x.sender_id IS NOT NULL
                AND x.deleted_at IS NULL AND x.removed_at IS NULL AND NOT EXISTS (SELECT 1 FROM community_blocks b WHERE b.blocker_id = $1 AND b.blocked_id = x.sender_id)) AS unread
        FROM msg_threads t JOIN msg_members m ON m.thread_id = t.id AND m.user_id = $1
@@ -412,6 +413,13 @@ export async function listThreads(meId: number, box: "inbox" | "requests") {
   const others = rows.filter((r) => r.other_user).map((r) => String(r.other_user));
   const profiles = others.length ? await q<Profile>(`SELECT ${PROFILE} FROM community_profiles c WHERE c.user_id = ANY($1::bigint[])`, [others]) : [];
   const pmap = new Map(profiles.map((p) => [String(p.user_id), p]));
+  // Pro (gold ring) and "active now" (both sides opted in, active in the last three minutes)
+  const flags = others.length ? await q<{ id: string; pro: boolean; active: boolean }>(
+    `SELECT u.id, (u.plan = 'premium' AND (u.pro_until IS NULL OR u.pro_until > now())) AS pro,
+            COALESCE(pr.active_status AND pr.last_active_at > now() - interval '3 minutes' AND (SELECT active_status FROM msg_prefs WHERE user_id = $2), false) AS active
+       FROM users u LEFT JOIN msg_prefs pr ON pr.user_id = u.id WHERE u.id = ANY($1::bigint[])`, [others, meId]) : [];
+  const fmap = new Map(flags.map((f) => [String(f.id), f]));
+  const myReceipts = await readReceiptsOn(meId);
   const lastIds = rows.map((r) => r.last_id).filter(Boolean) as string[];
   const lasts = lastIds.length ? await q<Row & { thread_id: string }>(
     `SELECT x.id, x.thread_id, x.sender_id, x.kind, x.body_enc, x.body_legacy, x.deleted_at, x.removed_at, x.created_at, x.view_once, c.display_name, c.username
@@ -435,6 +443,8 @@ export async function listThreads(meId: number, box: "inbox" | "requests") {
       photo: r.kind !== "direct" && r.has_photo ? `/api/messenger/threads/${r.id}/photo?v=${r.photo_version}` : null,
       audience: r.audience, request: r.kind === "direct" && r.request_status !== "accepted" ? { status: r.request_status, incoming: Number(r.requested_by) !== meId } : null,
       last, at: r.last_message_at, unread: r.quiet ? 0 : Number(r.unread), quiet: r.quiet,
+      pro: r.other_user ? !!fmap.get(String(r.other_user))?.pro : false, active: r.other_user ? !!fmap.get(String(r.other_user))?.active : false,
+      seen: !!(myReceipts && l && Number(l.sender_id) === meId && r.other_read && Number(r.other_read) >= Number(l.id)),
     });
   }
   return out;

@@ -58,6 +58,8 @@ const de = {
   e_pro: "Chats beginnen, Gruppen gründen und Nachrichten senden gehört zu Pro. Auf Nachrichten, die Ihnen jemand schreibt, können Sie jederzeit antworten.", proCta: "Pro ansehen",
   scanQr: "QR scannen", searchPeople: "Personen suchen", scanHint: "Halten Sie die Kamera auf den QR-Code eines Profils.",
   cameraDenied: "Bitte erlauben Sie den Zugriff auf die Kamera.", scanWrong: "Das ist kein Profil-Code von Quran Masterclass.",
+  compose: "Neue Nachricht", startChat: "Neuen Chat beginnen", emptyLine: "Ihre Gespräche erscheinen hier.", primary: "Chats", seenShort: "Gesehen", sentShort: "Gesendet",
+  activeRow: "Gerade aktiv",
 };
 export type MessengerText = typeof de;
 
@@ -114,6 +116,8 @@ const en: MessengerText = {
   e_pro: "Starting chats, creating groups and sending messages are part of Pro. You can always reply when someone writes to you.", proCta: "See Pro",
   scanQr: "Scan QR", searchPeople: "Search people", scanHint: "Point the camera at the QR code of a profile.", cameraDenied: "Please allow access to the camera.",
   scanWrong: "This is not a Quran Masterclass profile code.",
+  compose: "New message", startChat: "Start a new chat", emptyLine: "Your conversations will appear here.", primary: "Primary", seenShort: "Seen", sentShort: "Sent",
+  activeRow: "Active now",
 };
 
 const ar: Partial<MessengerText> = {
@@ -166,6 +170,7 @@ const ar: Partial<MessengerText> = {
   e_pro: "بدء المحادثات وإنشاء المجموعات وإرسال الرسائل جزء من Pro. يمكنكم دائمًا الرد عندما يراسلكم أحد.", proCta: "عرض Pro",
   scanQr: "مسح رمز QR", searchPeople: "البحث عن أشخاص", scanHint: "وجّهوا الكاميرا إلى رمز QR لملف شخصي.", cameraDenied: "يرجى السماح بالوصول إلى الكاميرا.",
   scanWrong: "هذا ليس رمز ملف شخصي من Quran Masterclass.",
+  compose: "رسالة جديدة", startChat: "بدء محادثة جديدة", emptyLine: "ستظهر محادثاتكم هنا.", primary: "الرئيسية", seenShort: "شوهدت", sentShort: "أُرسلت", activeRow: "نشطون الآن",
 };
 
 const tr: Partial<MessengerText> = {
@@ -219,6 +224,8 @@ const tr: Partial<MessengerText> = {
   e_pro: "Sohbet başlatmak, grup kurmak ve mesaj göndermek Pro'nun parçasıdır. Biri size yazdığında her zaman yanıt verebilirsiniz.", proCta: "Pro'yu görün",
   scanQr: "QR tara", searchPeople: "Kişi ara", scanHint: "Kamerayı bir profilin QR koduna tutun.", cameraDenied: "Lütfen kameraya erişime izin verin.",
   scanWrong: "Bu bir Quran Masterclass profil kodu değil.",
+  compose: "Yeni mesaj", startChat: "Yeni sohbet başlat", emptyLine: "Sohbetleriniz burada görünecek.", primary: "Birincil", seenShort: "Görüldü", sentShort: "Gönderildi",
+  activeRow: "Şu an aktif",
 };
 
 const ur: Partial<MessengerText> = {
@@ -272,6 +279,8 @@ const ur: Partial<MessengerText> = {
   e_pro: "چیٹ شروع کرنا، گروپ بنانا اور پیغام بھیجنا Pro کا حصہ ہے۔ جب کوئی آپ کو لکھے تو آپ ہمیشہ جواب دے سکتے ہیں۔", proCta: "Pro دیکھیں",
   scanQr: "QR اسکین کریں", searchPeople: "لوگ تلاش کریں", scanHint: "کیمرا کسی پروفائل کے QR کوڈ کی طرف کریں۔", cameraDenied: "براہ کرم کیمرے تک رسائی کی اجازت دیں۔",
   scanWrong: "یہ Quran Masterclass کا پروفائل کوڈ نہیں ہے۔",
+  compose: "نیا پیغام", startChat: "نئی چیٹ شروع کریں", emptyLine: "آپ کی گفتگو یہاں نظر آئے گی۔", primary: "بنیادی", seenShort: "دیکھ لیا", sentShort: "بھیج دیا",
+  activeRow: "ابھی فعال",
 };
 
 const fa: Partial<MessengerText> = {
@@ -324,6 +333,8 @@ const fa: Partial<MessengerText> = {
   e_pro: "آغاز گفتگو، ساختن گروه و فرستادن پیام بخشی از Pro است. وقتی کسی برایتان می‌نویسد، همیشه می‌توانید پاسخ دهید.", proCta: "دیدن Pro",
   scanQr: "اسکن QR", searchPeople: "جستجوی افراد", scanHint: "دوربین را روی کد QR یک نمایه بگیرید.", cameraDenied: "لطفاً اجازهٔ دسترسی به دوربین را بدهید.",
   scanWrong: "این کد نمایهٔ Quran Masterclass نیست.",
+  compose: "پیام تازه", startChat: "آغاز گفتگوی تازه", emptyLine: "گفتگوهای شما اینجا نمایش داده می‌شود.", primary: "اصلی", seenShort: "دیده شد", sentShort: "فرستاده شد",
+  activeRow: "اکنون فعال",
 };
 
 const ps: Partial<MessengerText> = {
@@ -377,6 +388,8 @@ const ps: Partial<MessengerText> = {
   e_pro: "د چټ پیلول، د ډلې جوړول او د پیغام لېږل د Pro برخه ده. کله چې څوک تاسو ته ولیکي، تل ځواب ورکولای شئ.", proCta: "Pro وګورئ",
   scanQr: "QR سکین کړئ", searchPeople: "خلک ولټوئ", scanHint: "کمره د یوه پروفایل QR کوډ ته ونیسئ.", cameraDenied: "مهرباني وکړئ کمرې ته د لاسرسي اجازه ورکړئ.",
   scanWrong: "دا د Quran Masterclass د پروفایل کوډ نه دی.",
+  compose: "نوی پیغام", startChat: "نوی چټ پیل کړئ", emptyLine: "ستاسو خبرې اترې به دلته ښکاره شي.", primary: "اصلي", seenShort: "ولیدل شو", sentShort: "ولېږل شو",
+  activeRow: "اوس فعال",
 };
 
 const fr: Partial<MessengerText> = {
@@ -431,6 +444,8 @@ const fr: Partial<MessengerText> = {
   e_pro: "Démarrer des discussions, créer des groupes et envoyer des messages font partie de Pro. Vous pouvez toujours répondre lorsque quelqu'un vous écrit.", proCta: "Voir Pro",
   scanQr: "Scanner un QR", searchPeople: "Rechercher des personnes", scanHint: "Dirigez l'appareil photo vers le code QR d'un profil.",
   cameraDenied: "Veuillez autoriser l'accès à l'appareil photo.", scanWrong: "Ce n'est pas un code de profil Quran Masterclass.",
+  compose: "Nouveau message", startChat: "Démarrer une discussion", emptyLine: "Vos conversations apparaîtront ici.", primary: "Principal", seenShort: "Vu", sentShort: "Envoyé",
+  activeRow: "En ligne",
 };
 
 const es: Partial<MessengerText> = {
@@ -485,6 +500,8 @@ const es: Partial<MessengerText> = {
   e_pro: "Iniciar chats, crear grupos y enviar mensajes forman parte de Pro. Siempre puede responder cuando alguien le escribe.", proCta: "Ver Pro",
   scanQr: "Escanear QR", searchPeople: "Buscar personas", scanHint: "Apunte la cámara al código QR de un perfil.", cameraDenied: "Permita el acceso a la cámara.",
   scanWrong: "No es un código de perfil de Quran Masterclass.",
+  compose: "Nuevo mensaje", startChat: "Iniciar un chat", emptyLine: "Sus conversaciones aparecerán aquí.", primary: "Principal", seenShort: "Visto", sentShort: "Enviado",
+  activeRow: "Activos ahora",
 };
 
 const id: Partial<MessengerText> = {
@@ -538,6 +555,8 @@ const id: Partial<MessengerText> = {
   e_pro: "Memulai obrolan, membuat grup, dan mengirim pesan adalah bagian dari Pro. Anda selalu dapat membalas saat seseorang menulis kepada Anda.", proCta: "Lihat Pro",
   scanQr: "Pindai QR", searchPeople: "Cari orang", scanHint: "Arahkan kamera ke kode QR sebuah profil.", cameraDenied: "Izinkan akses ke kamera.",
   scanWrong: "Ini bukan kode profil Quran Masterclass.",
+  compose: "Pesan baru", startChat: "Mulai obrolan baru", emptyLine: "Percakapan Anda akan muncul di sini.", primary: "Utama", seenShort: "Dilihat", sentShort: "Terkirim",
+  activeRow: "Aktif sekarang",
 };
 
 const ms: Partial<MessengerText> = {
@@ -578,6 +597,8 @@ const ms: Partial<MessengerText> = {
   proCta: "Lihat Pro",
   scanQr: "Imbas QR", searchPeople: "Cari orang", scanHint: "Halakan kamera ke kod QR sesuatu profil.", cameraDenied: "Sila benarkan akses kepada kamera.",
   scanWrong: "Ini bukan kod profil Quran Masterclass.",
+  compose: "Mesej baharu", startChat: "Mulakan sembang baharu", emptyLine: "Perbualan anda akan dipaparkan di sini.", primary: "Utama", seenShort: "Dilihat", sentShort: "Dihantar",
+  activeRow: "Aktif sekarang",
 };
 
 const bn: Partial<MessengerText> = {
@@ -631,6 +652,8 @@ const bn: Partial<MessengerText> = {
   e_pro: "চ্যাট শুরু করা, গ্রুপ তৈরি করা ও বার্তা পাঠানো Pro-এর অংশ। কেউ আপনাকে লিখলে আপনি সবসময় উত্তর দিতে পারেন।", proCta: "Pro দেখুন",
   scanQr: "QR স্ক্যান করুন", searchPeople: "মানুষ খুঁজুন", scanHint: "কোনো প্রোফাইলের QR কোডের দিকে ক্যামেরা ধরুন।", cameraDenied: "অনুগ্রহ করে ক্যামেরায় অ্যাক্সেসের অনুমতি দিন।",
   scanWrong: "এটি Quran Masterclass-এর প্রোফাইল কোড নয়।",
+  compose: "নতুন বার্তা", startChat: "নতুন চ্যাট শুরু করুন", emptyLine: "আপনার কথোপকথন এখানে দেখা যাবে।", primary: "প্রধান", seenShort: "দেখা হয়েছে", sentShort: "পাঠানো হয়েছে",
+  activeRow: "এখন সক্রিয়",
 };
 
 const ru: Partial<MessengerText> = {
@@ -684,6 +707,8 @@ const ru: Partial<MessengerText> = {
   e_pro: "Начинать чаты, создавать группы и отправлять сообщения можно с Pro. Отвечать, когда вам пишут, можно всегда.", proCta: "Посмотреть Pro",
   scanQr: "Сканировать QR", searchPeople: "Поиск людей", scanHint: "Наведите камеру на QR-код профиля.", cameraDenied: "Разрешите доступ к камере.",
   scanWrong: "Это не код профиля Quran Masterclass.",
+  compose: "Новое сообщение", startChat: "Начать новый чат", emptyLine: "Здесь появятся ваши переписки.", primary: "Основные", seenShort: "Просмотрено", sentShort: "Отправлено",
+  activeRow: "Сейчас в сети",
 };
 
 const zh: Partial<MessengerText> = {
@@ -731,6 +756,7 @@ const zh: Partial<MessengerText> = {
   permHint: "您可以在 iOS 设置的 Quran Masterclass 下更改。",
   e_pro: "发起聊天、创建群组和发送消息属于 Pro 功能。有人给您写信时，您随时可以回复。", proCta: "查看 Pro",
   scanQr: "扫描二维码", searchPeople: "搜索用户", scanHint: "将相机对准个人资料的二维码。", cameraDenied: "请允许访问相机。", scanWrong: "这不是 Quran Masterclass 的个人资料二维码。",
+  compose: "新消息", startChat: "开始新聊天", emptyLine: "您的对话将显示在这里。", primary: "主要", seenShort: "已读", sentShort: "已发送", activeRow: "当前在线",
 };
 
 const TABLE: Record<string, Partial<MessengerText>> = { de, en, ar, tr, ur, fa, ps, fr, es, id, ms, bn, ru, zh };
