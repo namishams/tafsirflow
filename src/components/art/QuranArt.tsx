@@ -1,4 +1,5 @@
 import "@/styles/art-quran.css";
+import Segmented from "@/components/ui/Segmented";
 import type { Place } from "./QuranMeta";
 
 // Shared ornaments of the Quran browsing pages: the eight-pointed star medallion with a gold progress ring, the small
@@ -99,14 +100,9 @@ export function QuranShamsa({ ring, lines = ["القرآن", "الكريم"], si
 }
 
 // Segmented control in gold and emerald
-export function QuranSegmented<T extends string>({ value, options, onChange, label, className = "" }: { value: T; options: { id: T; label: React.ReactNode }[]; onChange: (v: T) => void; label: string; className?: string }) {
-  return (
-    <div role="group" aria-label={label} className={`q-seg ${className}`}>
-      {options.map((o) => (
-        <button key={o.id} type="button" aria-pressed={value === o.id} onClick={() => onChange(o.id)}>{o.label}</button>
-      ))}
-    </div>
-  );
+// kept for existing imports: the shared segmented control lives in components/ui/Segmented.tsx
+export function QuranSegmented<T extends string>(p: { value: T; options: { id: T; label: React.ReactNode }[]; onChange: (v: T) => void; label: string; className?: string }) {
+  return <Segmented {...p} />;
 }
 
 // Floral inlay after the pietra dura of the Grand Mosque: a vine with a rosette flower, a tulip and leaves

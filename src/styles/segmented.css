@@ -1,0 +1,15 @@
+/* THE segmented control (components/ui/Segmented.tsx): cream track, thin gold hairline, dark-green active pill */
+.q-seg { display: inline-flex; min-width: 0; max-width: 100%; padding: 3px; gap: 2px; border-radius: 9999px; border: 1px solid rgb(201 166 94 / .35); background: rgb(var(--surface)); }
+.q-seg button { display: inline-flex; flex-shrink: 0; min-width: 0; align-items: center; justify-content: center; gap: 6px; height: 34px; padding-inline: 13px; border-radius: 9999px; font-size: 13px; font-weight: 600; color: rgb(var(--muted)); white-space: nowrap; transition: color .2s, background-color .3s, box-shadow .3s; }
+.q-seg button:hover { color: rgb(var(--ink)); }
+.q-seg button:disabled { opacity: .45; pointer-events: none; }
+.q-seg button[data-on] { color: #f3e2b6; background: linear-gradient(180deg, rgb(13 68 52), rgb(6 36 27)); box-shadow: inset 0 0 0 1px rgb(214 180 108 / .5), 0 6px 14px -8px rgb(6 36 27 / .7); }
+.q-seg button:focus-visible { outline: 2px solid rgb(201 166 94); outline-offset: 1px; }
+.q-seg-sm button { height: 30px; padding-inline: 11px; font-size: 12.5px; }
+.q-seg-full { display: flex; width: 100%; }
+.q-seg-full button { flex: 1 1 0; }
+.q-seg-scroll { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: 16px; scrollbar-width: none; -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 12px, #000 calc(100% - 12px), transparent 100%); mask-image: linear-gradient(90deg, transparent 0, #000 12px, #000 calc(100% - 12px), transparent 100%); }
+.q-seg-scroll::-webkit-scrollbar { display: none; }
+.q-seg-scroll button { scroll-snap-align: start; }
+.q-seg-scroll button:first-child { margin-inline-start: 6px; } .q-seg-scroll button:last-child { margin-inline-end: 6px; }
+@media (max-width: 440px) { .q-seg button { padding-inline: 10px; gap: 4px; font-size: 12.5px; } }

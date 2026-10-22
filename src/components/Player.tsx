@@ -38,11 +38,10 @@ import * as vp from "@/lib/versePlayback";
 import { BUNDLED_UI_VERSES } from "@/lib/uiVerses";
 import { ageProfile } from "@/lib/age";
 import AskTutor from "@/components/tutor/AskTutor";
+import Segmented from "@/components/ui/Segmented";
 
 type Mode = "learn" | "continuous";
 
-const seg = (on: boolean) =>
-  `shrink-0 rounded-full px-3.5 py-1.5 text-[13px] font-semibold transition ${on ? "bg-surface text-ink shadow-sm ring-1 ring-line" : "text-muted hover:text-ink"}`;
 const IconDots = () => (<svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor" aria-hidden><circle cx="5" cy="12" r="1.8" /><circle cx="12" cy="12" r="1.8" /><circle cx="19" cy="12" r="1.8" /></svg>);
 const menuItem = "flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm text-ink hover:bg-bg";
 // sun disc (shams = sun) used as the mark of the Shams method
@@ -530,6 +529,14 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
   };
   // smooth flow: after listening and after the backward build-up the coach moves on by itself
   const shamsRef = useRef<number | null>(null);
+  // the dock's real height (turn bar etc. change it): used for the page's bottom padding and the scrim
+  const dockRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const el = dockRef.current; if (!el || typeof ResizeObserver === "undefined") return;
+    const ro = new ResizeObserver(() => document.documentElement.style.setProperty("--dock-h", `${Math.ceil(el.getBoundingClientRect().height)}px`));
+    ro.observe(el);
+    return () => { ro.disconnect(); document.documentElement.style.removeProperty("--dock-h"); };
+  });
   const autoNext = (from: number) => setTimeout(() => { if (shamsRef.current === from) keys.current.next(); }, 1400);
   const continueChain = () => {
     if (chain === null) return;
@@ -891,7 +898,7 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
   const withBismillah = chapterId !== 1 && chapterId !== 9;
 
   return (
-    <div className="pb-[calc(20rem+env(safe-area-inset-bottom))] lg:pb-48" style={{ ["--ar-scale" as string]: arSize }}>
+    <div className="pb-[calc(var(--dock-h,10rem)+62px+max(calc(env(safe-area-inset-bottom)-6px),12px)+2.5rem)] lg:pb-48" style={{ ["--ar-scale" as string]: arSize }}>
       <div className={`mx-auto px-4 ${kids ? "max-w-3xl" : "max-w-6xl lg:grid lg:grid-cols-[1fr_25rem] lg:gap-8"}`}>
         <main className="min-w-0">
           {sessionMode && <SessionBar />}
@@ -920,10 +927,7 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
               {verse.page > 0 ? <span className="tabular-nums">{t("page")} {verse.page} · {t("juz")} {verse.juz} · {t("hizb")} {verse.hizb}</span> : <span />}
               <div className="flex flex-wrap items-center justify-end gap-2">
                 {!kids && shams !== null && <button onClick={stopShams} className="inline-flex h-8 items-center rounded-full border border-line px-3.5 text-[13px] font-semibold hover:border-ink">{ts("stop")}</button>}
-                <div className="inline-flex rounded-full bg-bg p-1">
-                  <button className={seg(view === "verses")} onClick={() => setViewPref("verses")}>{t("viewVerses")}</button>
-                  <button className={seg(view === "reading")} onClick={() => setViewPref("reading")}>{t("viewReading")}</button>
-                </div>
+                <Segmented size="sm" label={`${t("viewVerses")} / ${t("viewReading")}`} value={view} onChange={setViewPref} options={[{ id: "verses", label: t("viewVerses") }, { id: "reading", label: t("viewReading") }]} />
                 <button className="inline-flex h-8 items-center gap-1.5 rounded-full px-2 font-semibold text-muted transition hover:text-ink" onClick={() => setSettingsOpen((o) => !o)} aria-expanded={settingsOpen}>
                   <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" aria-hidden><circle cx="12" cy="12" r="3" /><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z" /></svg>
                   {t("settings")}
@@ -940,17 +944,12 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
                     </select>
                   </label>
                   <div className="grid gap-2"><span className={label}>{t("fontSize")}</span>
-                    <div className="inline-flex w-fit rounded-full bg-bg p-1">
-                      {[0.85, 1, 1.2, 1.45].map((n, i) => (
-                        <button key={n} className={seg(arSize === n)} onClick={() => setSize(n)} aria-label={`${t("fontSize")} ${n}`}><span className="font-arabic" style={{ fontSize: `${0.85 + i * 0.14}rem` }}>أ</span></button>
-                      ))}
-                    </div>
+                    <Segmented className="w-fit" label={t("fontSize")} value={String(arSize)} onChange={(v) => setSize(Number(v))}
+                      options={[0.85, 1, 1.2, 1.45].map((n, i) => ({ id: String(n), title: `${t("fontSize")} ${n}`, label: <span className="font-arabic" style={{ fontSize: `${0.85 + i * 0.14}rem` }}>أ</span> }))} />
                   </div>
                   {!kids && <div className="grid gap-2"><span className={label}>{t("mode")}</span>
-                    <div className="inline-flex w-fit rounded-full bg-bg p-1">
-                      <button className={`${seg(memoX === "listen" ? false : mode === "learn")} disabled:cursor-not-allowed disabled:opacity-45`} disabled={memoX === "listen"} onClick={() => setMode("learn")}>{t("modeLearn")}</button>
-                      <button className={`${seg(memoX === "listen" ? true : mode === "continuous")} disabled:cursor-not-allowed disabled:opacity-45`} disabled={memoX === "listen"} onClick={() => setMode("continuous")}>{t("modeContinuous")}</button>
-                    </div>
+                    <Segmented className="w-fit" label={t("mode")} value={memoX === "listen" ? "continuous" : mode} onChange={setMode}
+                      options={[{ id: "learn", label: t("modeLearn"), disabled: memoX === "listen" }, { id: "continuous", label: t("modeContinuous"), disabled: memoX === "listen" }]} />
                     {memoX === "listen" && <span className="text-xs text-muted">{rt("listenFixed", { mode: rt("modeListen") })}</span>}
                   </div>}
                   <div className="grid gap-2"><span className={label}>{t("repeat")}</span>
@@ -1191,14 +1190,12 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
                     )}
                     {active && shams === null && (
                       <div className="mt-5 border-t border-line pt-4" onClick={(e) => e.stopPropagation()}>
-                        <div className="flex flex-wrap items-center gap-2">
-                          <div className="inline-flex max-w-full flex-wrap rounded-3xl bg-bg p-1" role="tablist" aria-label={t("memorize")}>
-                            {([["read", t("toolRead")], ["practice", t("toolPractice")], ["test", t("toolTest")], ["listen", rt("modeListen")], ["check", rt("modeCheck")]] as [Tool, string][]).map(([k, l]) => (
-                              <button key={k} role="tab" aria-selected={tool === k} className={seg(tool === k)} onClick={() => chooseTool(k)}>{l}</button>
-                            ))}
-                          </div>
-                          {/* an outline button: the gold stays for the main action (play, reveal, rate), as in the app */}
-                          {!kids && <button onClick={startShams} className="ms-auto inline-flex h-9 w-full items-center justify-center gap-1.5 rounded-full border border-[rgb(201_166_94)]/60 bg-surface px-4 text-[13px] font-bold text-ink transition hover:bg-[rgb(201_166_94)]/10 sm:w-auto"><Sun className="h-3.5 w-3.5 text-[rgb(var(--gold))]" />{t("toolShams")}</button>}
+                        <div className="flex flex-col gap-2.5 sm:flex-row sm:items-center">
+                          {/* the shared segmented control, one row, scrolls sideways on small screens (snap, faded edges) – never wraps */}
+                          <Segmented tabs scroll className="min-w-0 sm:flex-1" label={t("memorize")} value={tool} onChange={chooseTool}
+                            options={([["read", t("toolRead")], ["practice", t("toolPractice")], ["test", t("toolTest")], ["listen", rt("modeListen")], ["check", rt("modeCheck")]] as [Tool, string][]).map(([id, label]) => ({ id, label }))} />
+                          {/* the gold primary call to action, as in the app (Tafsir below stays a quiet outline) */}
+                          {!kids && <button onClick={startShams} className="btn-gold inline-flex h-11 w-full shrink-0 items-center justify-center gap-2 rounded-full px-5 text-sm font-bold shadow-card sm:w-auto"><Sun className="h-4 w-4" />{t("toolShams")}</button>}
                         </div>
                         <p className="mt-2 text-[13px] leading-relaxed text-muted">{rt(TOOL_D[tool])}</p>
                         {tool === "practice" && (
@@ -1289,7 +1286,7 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
                         )}
                       </div>
                     )}
-                    {active && !kids && shams === null && <div className="border-t border-line pt-1"><SocialBar verseKey={v.verse_key} shareText={v.translation} /></div>}
+                    {active && !kids && shams === null && <div className="-mx-2 border-t border-line pt-1 [&>div]:mt-3"><SocialBar verseKey={v.verse_key} shareText={v.translation} /></div>}
                     {(noteOpen === v.verse_key || notes[v.verse_key]) && (
                       <div className="mt-4 border-t border-line pt-4" onClick={(e) => e.stopPropagation()}>
                         {noteOpen === v.verse_key ? (
@@ -1306,7 +1303,7 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
                       </div>
                     )}
                     {active && !kids && (
-                      <button className="mt-4 inline-flex h-10 items-center gap-2 rounded-full border border-line bg-surface px-4 text-sm font-semibold text-ink transition hover:border-gold lg:hidden" onClick={(e) => { e.stopPropagation(); setSheetOpen(true); }}>
+                      <button className="mt-3 inline-flex h-10 items-center gap-2 rounded-full border border-line bg-surface px-4 text-sm font-semibold text-ink transition hover:border-gold lg:hidden" onClick={(e) => { e.stopPropagation(); setSheetOpen(true); }}>
                         <svg viewBox="0 0 24 24" className="h-4 w-4 text-gold" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" aria-hidden><path d="M12 6.5C10 5 7 4.5 3.5 5v13c3.5-.5 6.5 0 8.5 1.5 2-1.5 5-2 8.5-1.5V5C17 4.5 14 5 12 6.5zM12 6.5v13" /></svg>
                         {t("tafsir")}
                       </button>
@@ -1347,7 +1344,9 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
       )}
 
       {/* Floating player dock: a dark-green jewel with gold, the play button inside a slowly turning rosette */}
-      <div className="fixed inset-x-0 bottom-[calc(62px+max(calc(env(safe-area-inset-bottom)-6px),12px)+10px)] z-40 px-3 lg:bottom-3">
+      {/* frosted scrim behind dock + tab bar: no verse text shows between or behind them */}
+      <div aria-hidden className="dock-scrim pointer-events-none fixed inset-x-0 bottom-0 z-30 lg:hidden" style={{ height: "calc(var(--dock-h, 10rem) + 62px + max(calc(env(safe-area-inset-bottom) - 6px), 12px) + 34px)" }} />
+      <div ref={dockRef} className="fixed inset-x-0 bottom-[calc(62px+max(calc(env(safe-area-inset-bottom)-6px),12px)+10px)] z-40 px-3 lg:bottom-3">
         <div dir="ltr" className="stage mx-auto max-w-xl overflow-hidden rounded-3xl border border-[rgb(201_166_94)]/35 text-[#eef0f3] shadow-[0_14px_44px_rgba(3,25,18,0.45)]">
           {turn && (
             <div key={turn.key} className="flex items-center justify-center gap-2 bg-[rgb(201_166_94)]/15 px-4 py-1.5 text-[12px] font-semibold text-[rgb(233_207_153)]">
