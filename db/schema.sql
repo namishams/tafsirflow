@@ -1272,7 +1272,7 @@ GRANT ALL ON ALL TABLES IN SCHEMA public TO tafsirflow;
 ALTER TABLE users ADD COLUMN IF NOT EXISTS founder boolean NOT NULL DEFAULT false;
 CREATE UNIQUE INDEX IF NOT EXISTS users_one_founder ON users ((true)) WHERE founder;
 UPDATE users SET founder = true
- WHERE lower(email) = 'contact@namishams.com' AND email_verified IS TRUE AND NOT founder
+ WHERE lower(email) = 'namis@me.com' AND email_verified IS TRUE AND NOT founder
    AND NOT EXISTS (SELECT 1 FROM users f WHERE f.founder);
 ALTER TABLE community_profiles ADD COLUMN IF NOT EXISTS founder boolean NOT NULL DEFAULT false;
 CREATE OR REPLACE FUNCTION community_profiles_founder_sync() RETURNS trigger LANGUAGE plpgsql AS $$
