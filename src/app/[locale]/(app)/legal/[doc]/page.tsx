@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
@@ -6,6 +7,7 @@ import { pageMeta } from "@/lib/site";
 import { COMPANY, founderName } from "@/lib/company";
 import { ArrowBack } from "@/components/Icons";
 import { messengerText } from "@/lib/messenger/text";
+import EmailText, { withEmail } from "@/components/EmailText";
 
 const DOCS = ["privacy", "terms", "imprint"] as const;
 type Doc = (typeof DOCS)[number];
@@ -23,8 +25,11 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
 // Very small markdown subset: "## heading", "**bold**" and blank-line separated paragraphs.
 // A heading line may be followed directly by its first paragraph ("## 1. Title\nText …"): only the first line is the heading.
+// (no raw HTML: **bold** becomes <strong>, and the e-mail markers in the texts become click-to-reveal controls)
 const para = (text: string, key: string) => (
-  <p key={key} className="mt-3 leading-relaxed text-muted" dangerouslySetInnerHTML={{ __html: text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/\*\*(.+?)\*\*/g, '<strong class="text-ink">$1</strong>') }} />
+  <p key={key} className="mt-3 leading-relaxed text-muted">
+    {text.split(/\*\*(.+?)\*\*/).map((piece, i) => (i % 2 ? <strong key={i} className="text-ink">{withEmail(piece)}</strong> : <Fragment key={i}>{withEmail(piece)}</Fragment>))}
+  </p>
 );
 function Body({ text }: { text: string }) {
   return (
@@ -75,7 +80,7 @@ export default async function LegalPage({ params }: { params: Promise<{ locale: 
             </section>
             <section>
               <h2 className="text-lg font-bold">{t("imprintContact")}</h2>
-              <p className="mt-2 text-muted"><a href={`mailto:${COMPANY.email}`} className="hover:text-ink" dir="ltr">{COMPANY.email}</a></p>
+              <p className="mt-2 text-muted"><EmailText text={COMPANY.email} /></p>
             </section>
           </div>
         )}

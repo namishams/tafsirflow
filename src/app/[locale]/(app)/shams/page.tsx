@@ -5,6 +5,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import JsonLd from "@/components/JsonLd";
 import Markdown from "@/components/Markdown";
+import EmailText from "@/components/EmailText";
 import ShamsPlanner from "@/components/ShamsPlanner";
 import { GUIDES, guideText } from "@/lib/guides";
 import { SHAMS_WHY, shamsContent, type ShamsContent } from "@/lib/shamsContent";
@@ -444,7 +445,7 @@ export default async function ShamsPage({ params }: { params: Promise<{ locale: 
               </li>
             ))}
           </ol>
-          <p className="mt-6 max-w-3xl text-[15px] text-white/70">{c.teachNote}</p>
+          <p className="mt-6 max-w-3xl text-[15px] text-white/70"><EmailText text={c.teachNote} /></p>
         </div>
       </section>
 

@@ -5,6 +5,7 @@ import { currentUser, isAdminEmail, markConfirmed, NO_PASSWORD, startSession } f
 import { checkCaptcha } from "@/lib/captcha";
 import { checkCode, dropTicket, EMAIL_RE, issueCode, issueTicket, normEmail, peekTicket, RESEND_SECONDS, type CodePurpose } from "@/lib/emailCode";
 import { readSignupProfile } from "@/lib/signup";
+import { emailRateLimited, honeypotTripped, isDisposableEmail } from "@/lib/botguard";
 
 export const dynamic = "force-dynamic";
 
@@ -29,6 +30,8 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ ste
   const body = (await req.json().catch(() => ({}))) as Record<string, unknown>;
 
   if (step === "request") {
+    // honeypot: a bot filled the hidden field – answer as if the code was sent
+    if (honeypotTripped(body)) return json({ ok: true, resendIn: RESEND_SECONDS });
     const purpose: CodePurpose = body.purpose === "confirm" ? "confirm" : "signin";
     let email = normEmail(body.email);
     if (purpose === "confirm") {
@@ -40,6 +43,9 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ ste
       // per address the limits live in the database (5 an hour, one every 30 s); per IP generous enough for shared
       // mobile-network addresses, tight enough against mail bombing
       if (rateLimited(`code-req:${ip}`, 15, 10 * 60_000) || rateLimited(`code-req-h:${ip}`, 40, 60 * 60_000)) return json({ error: "rate" }, 429);
+      // throw-away mail domains cannot open an account; an address that already has one may still sign in
+      if (isDisposableEmail(email) && !(await p.query("SELECT 1 FROM users WHERE email = $1", [email])).rowCount) return json({ error: "email" }, 400);
+      if (emailRateLimited("code-req", email, 8, 60 * 60_000)) return json({ error: "rate" }, 429);
       // bots like to hammer mail forms: reCAPTCHA on the website (the native app cannot show it; tighter limits above)
       if (!app) {
         const c = await checkCaptcha(body, "code", ip);

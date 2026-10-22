@@ -4,6 +4,7 @@ import { clientIp, json, rateLimited, sameOrigin } from "@/lib/http";
 import { checkCaptchaStrict } from "@/lib/captcha";
 import { moderate } from "@/lib/moderation";
 import { sendMail } from "@/lib/mail";
+import { emailRateLimited, isDisposableEmail } from "@/lib/botguard";
 
 export const dynamic = "force-dynamic";
 
@@ -44,6 +45,9 @@ export async function POST(req: NextRequest) {
 
   const name = oneLine(clean(b.name, 120)), email = oneLine(clean(b.email, 254)), message = clean(b.message, 2000);
   if (email && !EMAIL.test(email)) return json({ error: "email" }, 400);
+  // throw-away addresses and one address sending again and again (3 an hour), one visitor sending all day (15 a day)
+  if (email && isDisposableEmail(email)) return json({ error: "email" }, 400);
+  if ((email && emailRateLimited("contact", email, 3, 60 * 60_000)) || rateLimited(`contact-d:${ip}`, 15, 24 * 60 * 60_000)) return json({ error: "rate" }, 429);
   if (message.length < 5) return json({ error: "invalid" }, 400);
 
   let category = "", extra: Record<string, unknown> = {};

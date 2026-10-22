@@ -1,4 +1,5 @@
 "use client";
+import EmailText from "@/components/EmailText";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { useLocale, useTranslations } from "next-intl";
@@ -93,7 +94,7 @@ export default function SunnahDuas() {
           })}
         </ul>
       )}
-      <p className="mt-6 text-xs leading-relaxed text-muted">{t("sunnahNote")}</p>
+      <p className="mt-6 text-xs leading-relaxed text-muted"><EmailText text={t("sunnahNote")} /></p>
       {read !== null && list[read] && (
         <Reader list={list} i={read} setI={setRead} close={() => setRead(null)} showTr={showTr && !ar} meaning={meaning} srcOf={srcOf} catLabel={(c) => t(`c_${c}`)} sourceLbl={t("source")}
           count={count} tap={tap} counterLbl={t("counter")} ui={ui} />

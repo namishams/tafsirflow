@@ -1,4 +1,5 @@
 import { Link } from "@/i18n/navigation";
+import { withEmail } from "@/components/EmailText";
 import { IslamFloral, IslamNum, IslamStarMark, saw, starPath } from "@/components/art/IslamArt";
 
 // Small Markdown renderer for our own content: ## / ### headings, - and 1. lists, > quotes, **bold**, [links](/path)
@@ -10,14 +11,14 @@ function inline(text: string, k: string, dark = false) {
   const re = /\*\*(.+?)\*\*|\[([^\]]+)\]\(([^)\s]+)\)|\*([^*\s][^*]*?)\*/g;
   let last = 0, m: RegExpExecArray | null, i = 0;
   while ((m = re.exec(text))) {
-    if (m.index > last) parts.push(text.slice(last, m.index));
-    if (m[1]) parts.push(<strong key={`${k}b${i++}`} className={`font-semibold ${dark ? "text-white" : "text-ink"}`}>{m[1]}</strong>);
+    if (m.index > last) parts.push(...withEmail(text.slice(last, m.index)));
+    if (m[1]) parts.push(<strong key={`${k}b${i++}`} className={`font-semibold ${dark ? "text-white" : "text-ink"}`}>{withEmail(m[1])}</strong>);
     else if (m[4]) parts.push(<em key={`${k}i${i++}`}>{m[4]}</em>);
     else if (m[3].startsWith("/")) parts.push(<Link key={`${k}l${i++}`} href={m[3]} className={`font-semibold underline-offset-2 hover:underline ${dark ? "text-[rgb(var(--gold))]" : "text-accent"}`}>{m[2]}</Link>);
     else parts.push(<a key={`${k}a${i++}`} href={m[3]} target="_blank" rel="noopener noreferrer" className="font-semibold text-accent hover:underline">{m[2]}</a>);
     last = m.index + m[0].length;
   }
-  if (last < text.length) parts.push(text.slice(last));
+  if (last < text.length) parts.push(...withEmail(text.slice(last)));
   return parts;
 }
 

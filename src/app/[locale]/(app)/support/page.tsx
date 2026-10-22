@@ -10,7 +10,8 @@ import { abs, pageMeta } from "@/lib/site";
 import { ArrowNext, ArrowBack } from "@/components/Icons";
 import { Lantern } from "@/components/DonateCTA";
 import { PracticeStar, PracticeStarNum } from "@/components/art/PracticeArt";
-import { COMPANY } from "@/lib/company";
+import { noEmails } from "@/lib/protectEmail";
+import EmailText from "@/components/EmailText";
 
 // Voluntary support payment to ICSL FZE for running Quran Masterclass – expressly not a charitable donation (UAE rules on
 // collecting donations). The website stays free; supporting unlocks nothing. Texts: messages/*.json → "support", "donate".
@@ -18,7 +19,7 @@ export const revalidate = 300; // the supporters list refreshes every five minut
 const FOR = [1, 2, 3, 4, 5, 6, 7, 8] as const;
 const PROMISES = [1, 2, 3, 4] as const;
 const FAQ = [1, 2, 3, 4, 5, 6] as const;
-const WAYS: { n: number; href: string }[] = [{ n: 1, href: "" }, { n: 2, href: "/how" }, { n: 3, href: "/feedback" }, { n: 4, href: `mailto:${COMPANY.email}` }];
+const WAYS: { n: number; href: string }[] = [{ n: 1, href: "" }, { n: 2, href: "/how" }, { n: 3, href: "/feedback" }, { n: 4, href: "/suggestions" }];
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -31,7 +32,7 @@ export default async function SupportPage({ params }: { params: Promise<{ locale
   setRequestLocale(locale);
   const t = await getTranslations("support");
   const d = await getTranslations("donate");
-  const ld = { "@context": "https://schema.org", "@type": "FAQPage", url: abs(`/${locale}/support`), inLanguage: locale, mainEntity: FAQ.map((i) => ({ "@type": "Question", name: t(`q${i}`), acceptedAnswer: { "@type": "Answer", text: t(`a${i}`) } })) };
+  const ld = { "@context": "https://schema.org", "@type": "FAQPage", url: abs(`/${locale}/support`), inLanguage: locale, mainEntity: FAQ.map((i) => ({ "@type": "Question", name: t(`q${i}`), acceptedAnswer: { "@type": "Answer", text: noEmails(t(`a${i}`), abs(`/${locale}/suggestions`)) } })) };
   return (
     <div>
       <JsonLd data={ld} />
@@ -103,14 +104,14 @@ export default async function SupportPage({ params }: { params: Promise<{ locale
             {FAQ.map((i) => (
               <details key={i} className="pa-card pa-plain group px-5 py-4">
                 <summary className="flex cursor-pointer list-none items-start justify-between gap-4 text-[17px] font-bold">{t(`q${i}`)}<span aria-hidden className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full border border-[rgb(var(--gold))]/50 text-gold transition group-open:rotate-45">+</span></summary>
-                <p className="mt-3 text-[15px] leading-relaxed text-muted">{t(`a${i}`)}</p>
+                <p className="mt-3 text-[15px] leading-relaxed text-muted"><EmailText text={t(`a${i}`)} /></p>
               </details>
             ))}
           </div>
         </section>
 
         <div className="mt-12 flex flex-col items-center gap-3 text-sm text-muted">
-          <p>{t("contact")}</p>
+          <p><EmailText text={t("contact")} /></p>
           <Link href="/" className="font-semibold text-accent"><ArrowBack /> {t("back")}</Link>
         </div>
       </main>

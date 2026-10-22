@@ -2,6 +2,8 @@
 // (src/lib/pagecontent/<locale>/shams.ts) translate the parts on the app's Shams tab and the core of the page, the rest
 // falls back to English. Quran and hadith are never typed here: only verse keys and hadith numbers, the texts are
 // loaded from the Quran API and the hadith API and shown with their source (BLUEPRINT §4).
+import { hideAny } from "./protectEmail";
+
 /** `verse`: key of a verse shown under "why" (Arabic and translation from the Quran API) */
 export type StepDetail = { what: string; why: string; platform: string; time: string; verse?: string };
 export type ShamsContent = {
@@ -398,7 +400,7 @@ const PARTS: Record<string, ShamsPart> = { fr: frPart, tr: trPart, ur: urPart, f
 const merged = new Map<string, ShamsContent>();
 /** the content in this language: de, en and ar in full; the other languages translate the parts on the app's Shams tab
  *  and the core of the page over the English text (merged once per language) */
-export const shamsContent = (locale: string): ShamsContent => {
+const shamsContentRaw = (locale: string): ShamsContent => {
   if (locale === "de") return de;
   if (locale === "ar") return ar;
   const part = PARTS[locale];
@@ -409,5 +411,16 @@ export const shamsContent = (locale: string): ShamsContent => {
     c = { ...en, ...rest, steps: en.steps.map((s, i) => ({ ...s, ...(steps?.[i] ?? {}) })) };
     merged.set(locale, c);
   }
+  return c;
+};
+
+// The content goes to the browser as well (client components of the Shams page): addresses in it become markers
+// (src/lib/protectEmail.ts), which the page shows as a click-to-reveal control.
+const protectedContent = new Map<string, ShamsContent>();
+export const shamsContent = (locale: string): ShamsContent => {
+  const hit = protectedContent.get(locale);
+  if (hit) return hit;
+  const c = hideAny(shamsContentRaw(locale));
+  protectedContent.set(locale, c);
   return c;
 };

@@ -4,6 +4,8 @@ import { clientIp, isHttps, json, rateLimited, sameOrigin } from "@/lib/http";
 import { MAX_AED, MIN_AED, createPaymentIntent, supportLink, ziinaConfigured } from "@/lib/ziina";
 import { cleanName, confirmFromZiina, createPending, emailHash, nameRejected } from "@/lib/supporters";
 import { currentUser } from "@/lib/auth";
+import { checkCaptcha } from "@/lib/captcha";
+import { honeypotTripped } from "@/lib/botguard";
 
 export const dynamic = "force-dynamic";
 
@@ -39,7 +41,12 @@ export async function POST(req: NextRequest) {
   if (!sameOrigin(req)) return json({ error: "origin" }, 403);
   if (!ziinaConfigured()) return json({ error: "not_configured", message: "Card payment via Ziina is not set up on this server (ZIINA_API_KEY missing)." }, 503);
   if (rateLimited(`ziina:${clientIp(req)}`, 10, 10 * 60_000)) return json({ error: "rate" }, 429);
-  const b = (await req.json().catch(() => ({}))) as { amount?: number; locale?: string; name?: string; company?: string; listed?: boolean };
+  const b = (await req.json().catch(() => ({}))) as { amount?: number; locale?: string; name?: string; company?: string; listed?: boolean; captcha?: string; captchaV2?: string; website?: string };
+  // honeypot: a bot filled the hidden field – send it back to the support page as if a payment had been started
+  if (honeypotTripped(b)) return json({ url: `/${/^[a-z]{2}$/.test(String(b.locale)) ? b.locale : "en"}/support` });
+  // reCAPTCHA v3 (invisible); a doubtful score asks for the "I'm not a robot" checkbox (v2) like the sign-in does
+  const human = await checkCaptcha(b, "support", clientIp(req));
+  if (human !== "ok") return json({ error: "captcha", challenge: human === "challenge" }, 403);
   const displayName = cleanName(b.name, 60);
   const company = cleanName(b.company, 80);
   const listed = b.listed === true;

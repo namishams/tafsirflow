@@ -49,23 +49,34 @@ function paramsFor(s: Spot, st: PrayerSettings = DEFAULT_SETTINGS) {
   return p;
 }
 
-// Local calendar date at the spot (not the viewer's): prayer times must be computed for that day
+// Calendar day at the spot (not the viewer's) as year/month/day: prayer times are computed for that day. Read with
+// formatToParts so no locale's date pattern matters.
+function ymdIn(now: Date, tz: string) {
+  const parts = new Intl.DateTimeFormat("en-US", { timeZone: tz, year: "numeric", month: "numeric", day: "numeric" }).formatToParts(now);
+  const num = (type: string) => Number(parts.find((x) => x.type === type)?.value);
+  return { y: num("year"), m: num("month") - 1, d: num("day") };
+}
+// adhan reads only year, month and day of the date it is given (as local components), so a plain local date is enough
 function localDate(now: Date, tz: string): Date {
-  const [y, m, d] = new Intl.DateTimeFormat("en-CA", { timeZone: tz, year: "numeric", month: "2-digit", day: "2-digit" }).format(now).split("-").map(Number);
-  return new Date(y, m - 1, d);
+  const { y, m, d } = ymdIn(now, tz);
+  return new Date(y, m, d);
 }
 
 export type Day = { times: Record<Prayer, Date>; next: Prayer; nextAt: Date };
 
+// The prayer times are pure maths on the date, the place and the settings (adhan): nothing is stored on the server and
+// nothing needs updating. Callers pass the current time again every second, so the next prayer, the countdown and the
+// day itself roll over by themselves: once a prayer time has passed the next one is picked, after Isha the next
+// Fajr (of the following calendar day at the spot), and the day changes at midnight at the spot.
 export function dayFor(s: Spot, now: Date, st?: PrayerSettings): Day {
   const coords = new Coordinates(s.lat, s.lon);
   const params = paramsFor(s, st);
-  const today = new PrayerTimes(coords, localDate(now, s.tz), params);
+  const day = localDate(now, s.tz);
+  const today = new PrayerTimes(coords, day, params);
   const times = { fajr: today.fajr, sunrise: today.sunrise, dhuhr: today.dhuhr, asr: today.asr, maghrib: today.maghrib, isha: today.isha } as Record<Prayer, Date>;
   const upcoming = PRAYERS.find((p) => times[p].getTime() > now.getTime());
   if (upcoming) return { times, next: upcoming, nextAt: times[upcoming] };
-  const tomorrow = new Date(localDate(now, s.tz).getTime() + 86400000 + 3600000);
-  const t2 = new PrayerTimes(coords, new Date(tomorrow.getFullYear(), tomorrow.getMonth(), tomorrow.getDate()), params);
+  const t2 = new PrayerTimes(coords, new Date(day.getFullYear(), day.getMonth(), day.getDate() + 1), params);
   return { times, next: "fajr", nextAt: t2.fajr };
 }
 
@@ -82,6 +93,12 @@ export function hijriDate(now: Date, locale: string, tz = "Asia/Riyadh"): string
   } catch {
     return "";
   }
+}
+
+// Hijri date of a Gregorian calendar day (year, month 0-11, day): noon UTC of that day, so the viewer's time zone cannot
+// move it to the neighbouring day
+export function hijriOfDay(y: number, m: number, d: number, locale: string): string {
+  return hijriDate(new Date(Date.UTC(y, m, d, 12)), locale, "UTC");
 }
 
 export function countdown(to: Date, now: Date): string {
@@ -111,4 +128,25 @@ export function monthOf(s: Spot, year: number, month: number, st?: PrayerSetting
   });
 }
 // the local calendar day at the spot as y/m/d
-export function spotToday(now: Date, tz: string) { const d = localDate(now, tz); return { y: d.getFullYear(), m: d.getMonth(), d: d.getDate() }; }
+export function spotToday(now: Date, tz: string) { return ymdIn(now, tz); }
+
+// The city whose time zone is the viewer's own (first visit without a saved place), else Makkah
+export function cityForTimeZone(tz: string): string {
+  return CITIES.find((c) => c.tz === tz)?.id ?? "makkah";
+}
+
+const rad = (x: number) => (x * Math.PI) / 180;
+export function distanceKm(a: { lat: number; lon: number }, b: { lat: number; lon: number }) {
+  const h = Math.sin(rad(b.lat - a.lat) / 2) ** 2 + Math.cos(rad(a.lat)) * Math.cos(rad(b.lat)) * Math.sin(rad(b.lon - a.lon) / 2) ** 2;
+  return 2 * 6371 * Math.asin(Math.min(1, Math.sqrt(h)));
+}
+
+// The viewer's own position (geolocation, only after consent): method and Asr school of the nearest listed city when one is
+// within 1,500 km; North America uses ISNA, anywhere else the Muslim World League. Settings can always override it.
+export function spotFromPosition(lat: number, lon: number, tz: string): Spot {
+  let best: City | null = null, bestKm = Infinity;
+  for (const c of CITIES) { const km = distanceKm({ lat, lon }, c); if (km < bestKm) { best = c; bestKm = km; } }
+  const near = best && bestKm <= 1500 ? best : null;
+  const method: MethodKey = near ? near.method : tz.startsWith("America/") ? "NorthAmerica" : "MuslimWorldLeague";
+  return { id: "mine", lat, lon, tz, method, ...(near?.hanafi ? { hanafi: true } : {}) };
+}

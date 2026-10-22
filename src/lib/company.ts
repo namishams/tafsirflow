@@ -16,6 +16,7 @@ export const COMPANY = {
   /** where Quran Masterclass was founded and is developed (not the company seat) */
   foundedIn: "Dubai",
   founderAr: "نامي شمس",
+  /** server-side only (mail routes, contact form target): never printed into a page, structured data or llms.txt – pages show it as a click-to-reveal control (src/components/EmailText.tsx) */
   email: "info@quranmasterclass.com",
 } as const;
 
@@ -85,7 +86,6 @@ export function organizationLd(abs: (p: string) => string) {
     legalName: COMPANY.legalName,
     url: abs("/"),
     logo: abs("/icon-512.png"),
-    email: COMPANY.email,
     founder: { "@type": "Person", "@id": abs("/#founder"), name: COMPANY.founder },
     foundingLocation: COMPANY.foundedIn,
     address: { "@type": "PostalAddress", addressLocality: COMPANY.city, addressCountry: COMPANY.countryCode },

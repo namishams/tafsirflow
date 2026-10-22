@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
-import { CITIES, DEFAULT_SETTINGS, METHODS, PRAYERS, cityName, countdown, dayFor, fmtClock, fmtTime, hijriDate, monthOf, nightOf, qiblaOf, spotToday, type Prayer, type PrayerSettings, type Spot } from "@/lib/prayer";
+import { CITIES, DEFAULT_SETTINGS, METHODS, PRAYERS, cityForTimeZone, cityName, countdown, dayFor, fmtClock, fmtTime, hijriDate, hijriOfDay, monthOf, nightOf, qiblaOf, spotFromPosition, spotToday, type Prayer, type PrayerSettings, type Spot } from "@/lib/prayer";
 import { readJSON, writeJSON } from "@/lib/storage";
 import { adhanList, adhanUrl, pickAdhan, type AdhanFile } from "@/lib/adhan";
 import { ArrowNext, ArrowBack } from "./Icons";
@@ -30,16 +30,49 @@ export default function PrayerBoard() {
   const adhanEl = useRef<HTMLAudioElement>(null);
 
   useEffect(() => {
-    setNow(new Date());
-    const id = setInterval(() => setNow(new Date()), 1000);
-    setCityId(readJSON<string>("tf:city", "makkah"));
-    setMine(readJSON<Spot | null>("tf:myspot", null));
+    // The clock: one tick per second, always read from the system clock (never counted), each aligned to the next full
+    // second. Everything on the page is derived from it, so the countdown, the next prayer, the date and the Hijri date
+    // roll over by themselves. A tab that slept in the background (timers are throttled there) catches up at once when it
+    // is shown again, the device wakes up or the network returns.
+    let timer: ReturnType<typeof setTimeout>;
+    const tick = () => { setNow(new Date()); timer = setTimeout(tick, 1000 - (Date.now() % 1000) + 5); };
+    const resync = () => { clearTimeout(timer); tick(); };
+    const onVisible = () => { if (document.visibilityState === "visible") resync(); };
+    tick();
+    document.addEventListener("visibilitychange", onVisible);
+    window.addEventListener("focus", resync);
+    window.addEventListener("pageshow", resync);
+    window.addEventListener("online", resync);
+    // first visit without a saved place: the city in the visitor's own time zone (else Makkah)
+    let stored: string | null = null;
+    try { stored = localStorage.getItem("tf:city"); } catch { /* storage unavailable */ }
+    setCityId(stored ? readJSON<string>("tf:city", "makkah") : cityForTimeZone(Intl.DateTimeFormat().resolvedOptions().timeZone));
+    const saved = readJSON<Spot | null>("tf:myspot", null);
+    setMine(saved);
     setSt({ ...DEFAULT_SETTINGS, ...readJSON<Partial<PrayerSettings>>("tf:prayerSettings", {}) });
     setRemind(readJSON<boolean>("tf:prayerRemind", false));
     setAutoAdhan(readJSON<boolean>("tf:prayerAutoAdhan", false));
     adhanList().then((f) => { setFiles(f); setPlaying(pickAdhan(readJSON<string>("tf:adhanVoice", "random"), f)); });
     setVoice(readJSON<string>("tf:adhanVoice", "random"));
-    return () => clearInterval(id);
+    // a saved own position is renewed quietly when the browser already has the permission (never asks again)
+    if (saved && navigator.geolocation && navigator.permissions) {
+      navigator.permissions.query({ name: "geolocation" }).then((p) => {
+        if (p.state !== "granted") return;
+        navigator.geolocation.getCurrentPosition((pos) => {
+          const moved = Math.abs(pos.coords.latitude - saved.lat) + Math.abs(pos.coords.longitude - saved.lon) > 0.05;
+          if (!moved) return;
+          const spot = spotFromPosition(pos.coords.latitude, pos.coords.longitude, Intl.DateTimeFormat().resolvedOptions().timeZone);
+          setMine(spot); writeJSON("tf:myspot", spot, true);
+        }, () => undefined, { timeout: 10000, maximumAge: 600_000 });
+      }).catch(() => undefined);
+    }
+    return () => {
+      clearTimeout(timer);
+      document.removeEventListener("visibilitychange", onVisible);
+      window.removeEventListener("focus", resync);
+      window.removeEventListener("pageshow", resync);
+      window.removeEventListener("online", resync);
+    };
   }, []);
 
   const spots: Spot[] = useMemo(() => (mine ? [mine, ...CITIES] : CITIES), [mine]);
@@ -68,7 +101,7 @@ export default function PrayerBoard() {
     setGeoMsg(t("locating"));
     navigator.geolocation.getCurrentPosition(
       (pos) => {
-        const spot: Spot = { id: "mine", lat: pos.coords.latitude, lon: pos.coords.longitude, tz: Intl.DateTimeFormat().resolvedOptions().timeZone, method: "MuslimWorldLeague" };
+        const spot = spotFromPosition(pos.coords.latitude, pos.coords.longitude, Intl.DateTimeFormat().resolvedOptions().timeZone);
         setMine(spot); writeJSON("tf:myspot", spot, true); pick("mine"); setGeoMsg("");
       },
       () => setGeoMsg(t("locationDenied")),
@@ -225,7 +258,7 @@ export default function PrayerBoard() {
                   const fri = r.date.getDay() === 5;
                   return (
                     <tr key={r.date.getDate()} className={isToday ? "bg-[rgb(201_166_94)]/15 font-bold" : fri ? "bg-[rgb(var(--gold))]/[0.04]" : ""}>
-                      <td className="p-3"><span className="inline-flex items-center gap-1.5">{isToday && <svg viewBox="0 0 12 12" className="h-3 w-3 text-gold" aria-hidden><path d="M6 .5l1.4 3.1L10.5 5 7.4 6.4 6 9.5 4.6 6.4 1.5 5l3.1-1.4z" fill="currentColor" /></svg>}{r.date.toLocaleDateString(locale, { calendar: "gregory", weekday: "short", day: "numeric" })}</span><span className="ms-2 text-xs font-normal text-muted">{hijriDate(new Date(r.date.getTime() + 12 * 3600000), locale, main.tz).replace(/\s*\d{4}.*$/, "")}</span></td>
+                      <td className="p-3"><span className="inline-flex items-center gap-1.5">{isToday && <svg viewBox="0 0 12 12" className="h-3 w-3 text-gold" aria-hidden><path d="M6 .5l1.4 3.1L10.5 5 7.4 6.4 6 9.5 4.6 6.4 1.5 5l3.1-1.4z" fill="currentColor" /></svg>}{r.date.toLocaleDateString(locale, { calendar: "gregory", weekday: "short", day: "numeric" })}</span><span className="ms-2 text-xs font-normal text-muted">{hijriOfDay(r.date.getFullYear(), r.date.getMonth(), r.date.getDate(), locale).replace(/\s*\d{4}.*$/, "")}</span></td>
                       {PRAYERS.map((p) => <td key={p} className="p-3" dir="ltr">{fmtTime(r.times[p], main.tz, locale)}</td>)}
                     </tr>
                   );

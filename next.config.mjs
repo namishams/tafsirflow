@@ -73,9 +73,10 @@ export default withNextIntl({
     return [
       { source: "/:path*", headers: security },
       // personal data is never cached by browsers or proxies – except the public, read-only community figures and the
-      // public feed (config, new, page, web: no personal data), which set their own Cache-Control (a header here would
+      // public feed (config, new, page, web: no personal data) and the Nahj al-Balagha files (nahj/<file>: the same for everyone, 1.3 MB for
+      // the Arabic text alone, so the browser keeps them for an hour), which set their own Cache-Control (a header here would
       // override the route's own)
-      { source: "/api/:path((?!social/community$|feed/config$|feed/new$|feed/page$|feed/web$|feed/stories$).*)", headers: [{ key: "Cache-Control", value: "private, no-store" }] },
+      { source: "/api/:path((?!social/community$|feed/config$|feed/new$|feed/page$|feed/web$|feed/stories$|nahj/(?:ar|de|en|study-de|study-en|study-course)$).*)", headers: [{ key: "Cache-Control", value: "private, no-store" }] },
       // pictures from public/ (garden, brand, lesson images, app screenshots, icons): Next.js serves them with max-age=0, so
       // every visit asked for each one again. Their names are not hashed, so a day plus a week of background refresh –
       // a replaced file shows within a day.

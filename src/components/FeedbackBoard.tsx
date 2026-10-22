@@ -4,6 +4,7 @@ import { useLocale, useTranslations } from "next-intl";
 import AuthGate from "./AuthGate";
 import { CaptchaNotice } from "./CaptchaBox";
 import { captchaToken } from "@/lib/captchaClient";
+import Honeypot from "./Honeypot";
 
 type Post = { id: number; category: string; title: string; body: string; status: string; approved: boolean; created_at: string; author: string; country: string | null; votes: number; voted: boolean; mine: boolean };
 const CATS = ["feature", "tafsir", "translation", "reciter", "bug", "content"] as const;
@@ -20,6 +21,7 @@ export default function FeedbackBoard() {
   const [open, setOpen] = useState(false);
   const [form, setForm] = useState({ category: "feature", title: "", body: "" });
   const [msg, setMsg] = useState("");
+  const [hp, setHp] = useState(""); // honeypot
   const [gate, setGate] = useState<"register" | "verify" | null>(null);
 
   const load = useCallback(() => fetch(`/api/feedback?sort=${sort}${cat ? `&cat=${cat}` : ""}`, { cache: "no-store" }).then((r) => r.json()).then((d) => setPosts(d.posts ?? [])).catch(() => setPosts([])), [cat, sort]);
@@ -28,7 +30,7 @@ export default function FeedbackBoard() {
   const auth = (s: number) => (s === 401 ? (setGate("register"), true) : s === 403 ? (setGate("verify"), true) : false);
   const vote = async (id: number) => { const r = await post({ action: "vote", id }); if (!auth(r.status)) load(); };
   const submit = async () => {
-    const r = await post({ ...form, captcha: await captchaToken("feedback") });
+    const r = await post({ ...form, captcha: await captchaToken("feedback"), website: hp });
     if (auth(r.status)) return;
     if (r.ok) { setMsg(t("thanks")); setForm({ category: form.category, title: "", body: "" }); setOpen(false); load(); }
     else setMsg(r.status === 422 ? t("rejected") : r.status === 429 ? t("rate") : (await r.json().catch(() => ({}))).error === "captcha" ? tt("captchaFailed") : t("invalid"));
@@ -51,7 +53,8 @@ export default function FeedbackBoard() {
       </div>
       {msg && <p role="status" className="mt-3 rounded-md bg-accent-soft p-3 text-sm">{msg}</p>}
       {open && (
-        <div className="mt-4 grid gap-3 rounded-lg border border-line bg-surface p-5">
+        <div className="relative mt-4 grid gap-3 rounded-lg border border-line bg-surface p-5">
+          <Honeypot value={hp} onChange={setHp} />
           <select value={form.category} onChange={(e) => setForm({ ...form, category: e.target.value })} className="h-11 rounded-md border border-line bg-bg px-3 text-[15px]">
             {CATS.map((c) => <option key={c} value={c}>{t(`c_${c}`)}</option>)}
           </select>

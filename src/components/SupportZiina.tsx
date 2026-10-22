@@ -5,6 +5,11 @@ import { useLocale, useTranslations } from "next-intl";
 import { useSearchParams } from "next/navigation";
 import { Rosette } from "./Ornaments";
 import { inIosApp } from "@/lib/premium";
+import ZiinaMark from "./ZiinaMark";
+import CaptchaBox from "./CaptchaBox";
+import Honeypot from "./Honeypot";
+import { captchaToken } from "@/lib/captchaClient";
+import EmailText from "./EmailText";
 
 const AMOUNTS = [25, 50, 100, 250];
 
@@ -16,6 +21,7 @@ export default function SupportZiina() {
   const t = useTranslations("ziina");
   const td = useTranslations("donate");
   const ts = useTranslations("supporters");
+  const tt = useTranslations("trust");
   const [pubName, setPubName] = useState("");
   const [company, setCompany] = useState("");
   const [mode, setMode] = useState<"none" | "name" | "company">("none"); // default: not listed
@@ -25,7 +31,11 @@ export default function SupportZiina() {
   const [amount, setAmount] = useState(50);
   const [custom, setCustom] = useState("");
   const [busy, setBusy] = useState(false);
-  const [err, setErr] = useState<"" | "err" | "off" | "name">("");
+  const [err, setErr] = useState<"" | "err" | "off" | "name" | "captcha">("");
+  const [hp, setHp] = useState(""); // honeypot
+  const [challenge, setChallenge] = useState(false);
+  const [captchaV2, setCaptchaV2] = useState("");
+  const [tries, setTries] = useState(0);
   const [copied, setCopied] = useState(false);
   const [paid, setPaid] = useState<"" | "checking" | "completed" | "pending" | "failed">("");
   const [app, setApp] = useState(false);
@@ -46,9 +56,12 @@ export default function SupportZiina() {
   const pay = async () => {
     setBusy(true); setErr("");
     try {
-      const r = await fetch("/api/support", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ amount: value, locale, listed, name: listed ? pubName : "", company: mode === "company" ? company : "" }) });
+      const captcha = captchaV2 ? "" : await captchaToken("support");
+      const r = await fetch("/api/support", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ amount: value, locale, listed, name: listed ? pubName : "", company: mode === "company" ? company : "", captcha, captchaV2, website: hp }) });
       const d = await r.json();
+      if (captchaV2) { setCaptchaV2(""); setTries((n) => n + 1); }
       if (d.url) { window.location.href = d.url; return; }
+      if (d.error === "captcha") { setChallenge(!!d.challenge); if (!d.challenge) setErr("captcha"); return; }
       setErr(d.error === "not_configured" ? "off" : d.error === "name" ? "name" : "err");
     } catch { setErr("err"); } finally { setBusy(false); }
   };
@@ -65,7 +78,7 @@ export default function SupportZiina() {
       {(paid === "failed" || back === "failed") && <p role="status" className={`${note} font-normal text-white/75`}>{t("failed")}</p>}
       {back === "cancelled" && <p role="status" className={`${note} font-normal text-white/75`}>{t("cancelled")}</p>}
       <div className="relative mt-4 flex items-center justify-center gap-3">
-        <span className="grid h-9 w-9 place-items-center rounded-lg bg-white text-base font-black text-[#7b2cf5]">Z</span>
+        <ZiinaMark size={36} label="Ziina" />
         <h2 className="font-display text-2xl">{t("title")}</h2>
       </div>
       <p className="relative mx-auto mt-3 max-w-md text-center text-[15px] leading-relaxed text-white/70">{t("lead")}</p>
@@ -75,6 +88,7 @@ export default function SupportZiina() {
         <p className="relative mt-6 rounded-xl bg-white/[0.06] p-4 text-center text-[15px] leading-relaxed text-white/75">{t("inApp")}</p>
       ) : !cfg ? <div className="relative mt-6 h-24 animate-pulse rounded-lg bg-white/5" /> : cfg.api ? (
         <div className="relative mt-6">
+          <Honeypot value={hp} onChange={setHp} />
           <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-4">
             {AMOUNTS.map((a) => <button key={a} onClick={() => { setAmount(a); setCustom(""); }} className={`h-12 rounded-full border text-[15px] font-bold tabular-nums transition ${!custom && amount === a ? "border-transparent bg-gradient-to-b from-[#ecd7a2] to-[#c6a65e] text-[rgb(8_38_29)]" : "border-white/15 hover:border-[rgb(214_180_108)]/60"}`}>{a} AED</button>)}
           </div>
@@ -88,11 +102,12 @@ export default function SupportZiina() {
             {listed && (<>
               <input value={pubName} onChange={(e) => setPubName(e.target.value.slice(0, 60))} maxLength={60} autoComplete="name" placeholder={ts("nameLabel")} aria-label={ts("nameLabel")} className="h-11 rounded-full border border-white/15 bg-transparent px-5 text-[16px] outline-none placeholder:text-white/40" />
               {mode === "company" && <input value={company} onChange={(e) => setCompany(e.target.value.slice(0, 80))} maxLength={80} autoComplete="organization" placeholder={ts("companyField")} aria-label={ts("companyField")} className="h-11 rounded-full border border-white/15 bg-transparent px-5 text-[16px] outline-none placeholder:text-white/40" />}
-              <p className="text-xs leading-relaxed text-white/50">{ts("listHint")}</p>
+              <p className="text-xs leading-relaxed text-white/50"><EmailText text={ts("listHint")} /></p>
             </>)}
           </fieldset>
-          <button onClick={pay} disabled={busy || !value || value < 5 || (listed && !pubName.trim()) || (mode === "company" && !company.trim())} className="btn-gold mt-5 h-12 w-full rounded-full text-[15px] font-bold disabled:opacity-50">{busy ? "…" : `${t("pay")} · ${value || 0} AED`}</button>
-          {err && <p role="alert" className="mt-3 text-sm text-red-300">{err === "name" ? ts("nameErr") : t(err === "off" ? "off" : "err")}</p>}
+          <div className="mt-4 [&_a]:text-white/75 [&_p]:text-white/55"><CaptchaBox key={tries} challenge={challenge} onToken={setCaptchaV2} /></div>
+          <button onClick={pay} disabled={busy || (challenge && !captchaV2) || !value || value < 5 || (listed && !pubName.trim()) || (mode === "company" && !company.trim())} className="btn-gold mt-5 h-12 w-full rounded-full text-[15px] font-bold disabled:opacity-50">{busy ? "…" : `${t("pay")} · ${value || 0} AED`}</button>
+          {err && <p role="alert" className="mt-3 text-sm text-red-300">{err === "name" ? ts("nameErr") : err === "captcha" ? tt("captchaFailed") : t(err === "off" ? "off" : "err")}</p>}
         </div>
       ) : cfg.link ? (
         <div className="relative mt-6 grid gap-6 sm:grid-cols-[1fr_auto] sm:items-start">
@@ -118,6 +133,7 @@ export default function SupportZiina() {
         </div>
       ) : <p className="relative mt-6 rounded-xl bg-white/[0.06] p-4 text-center text-sm text-white/70">{t("soon")}</p>}
       <p className="relative mt-6 flex items-center justify-center gap-1.5 text-center text-xs text-white/50"><IconLock /> {t("safe")}</p>
+      {!app && <p className="relative mt-2 flex items-center justify-center gap-2 text-center text-xs text-white/60"><ZiinaMark size={16} /> {t("via")}</p>}
       <p className="relative mt-2 text-center text-xs leading-relaxed text-white/60">{td("legal")}</p>
     </section>
   );

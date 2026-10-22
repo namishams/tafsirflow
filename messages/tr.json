@@ -1504,6 +1504,7 @@
     "brandLabel": "Marka"
   },
   "ziina": {
+    "via": "Ziina ile ödeme",
     "title": "Ziina ile destek olun",
     "lead": "Apple Pay, Google Pay veya kartla güvenle ödeyin – Emirlikler’in ödeme uygulaması Ziina üzerinden.",
     "custom": "Başka tutar",

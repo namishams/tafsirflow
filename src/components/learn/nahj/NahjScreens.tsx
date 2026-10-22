@@ -10,7 +10,7 @@ import { isRTL, useLang } from "@/lib/learn/i18n";
 import { useStored } from "@/lib/learn/store";
 import { NAHJ_OPTIN_KEY, readTradition, setNahjOptIn, useNahjVisible } from "@/lib/learn/tradition";
 import { useNahjContent, type NahjStatus } from "@/lib/learn/hadith/nahjContent";
-import { NAHJ_EDITION_KEY, NAHJ_MACHINE, nahjAt, nahjCount, nahjEdition, nahjPosition, nahjRef, saveNahjPosition, setNahjEdition, type NahjEdition, type NahjPassage } from "@/lib/learn/hadith/nahj";
+import { NAHJ_EDITION_KEY, NAHJ_MACHINE, nahjArabicWork, nahjAt, nahjCount, nahjEdition, nahjPosition, nahjRef, saveNahjPosition, setNahjEdition, type NahjEdition, type NahjPassage } from "@/lib/learn/hadith/nahj";
 import {
   PASS_LESSON, PASS_UNIT, courseState, courseUnits, lessonById, lessonQuiz, markLesson, markUnit, nextLesson, sayingOfTheDay, setFont, setLast, studyNote, studyOf, unitById, unitTest,
   useNahjProgress, type Lesson, type Qn, type Unit,
@@ -19,8 +19,8 @@ import { fill, useNahjText, type NahjCourseText } from "@/lib/learn/nahj-course/
 
 // the reader's own words (the app keeps them in features/hadith/texts.ts)
 const R = {
-  de: { reader: "Nahjul-Balagha", readerLead: "Predigten, Briefe und Aussprüche von Imam Ali (عليه السلام) – ein Abschnitt nach dem anderen.", next: "Nächster Abschnitt", prev: "Vorheriger Abschnitt", loading: "Inhalt wird geladen …", missing: "Der Inhalt ist gerade nicht verfügbar. Bitte versuchen Sie es später noch einmal.", retry: "Erneut versuchen", copied: "Kopiert", course: "Zum Studium", of: "Abschnitt {n} von {m}" },
-  en: { reader: "Nahj al-Balagha", readerLead: "Sermons, letters and sayings of Imam Ali (عليه السلام) – one passage at a time.", next: "Next passage", prev: "Previous passage", loading: "Loading the content …", missing: "The content is not available right now. Please try again later.", retry: "Try again", copied: "Copied", course: "Study course", of: "Passage {n} of {m}" },
+  de: { reader: "Nahjul-Balagha", readerLead: "Predigten, Briefe und Aussprüche von Imam Ali (عليه السلام) – ein Abschnitt nach dem anderen.", next: "Nächster Abschnitt", prev: "Vorheriger Abschnitt", loading: "Inhalt wird geladen …", missing: "Der Inhalt ist gerade nicht verfügbar. Bitte versuchen Sie es später noch einmal.", retry: "Erneut versuchen", copied: "Kopiert", course: "Zum Studium", of: "Abschnitt {n} von {m}", arWhole: { sermon: "Arabischer Text der ganzen Predigt", letter: "Arabischer Text des ganzen Briefes", saying: "Arabischer Text des ganzen Ausspruchs" } },
+  en: { reader: "Nahj al-Balagha", readerLead: "Sermons, letters and sayings of Imam Ali (عليه السلام) – one passage at a time.", next: "Next passage", prev: "Previous passage", loading: "Loading the content …", missing: "The content is not available right now. Please try again later.", retry: "Try again", copied: "Copied", course: "Study course", of: "Passage {n} of {m}", arWhole: { sermon: "Arabic text of the whole sermon", letter: "Arabic text of the whole letter", saying: "Arabic text of the whole saying" } },
 };
 const useR = () => { const { lang } = useLang(); return lang === "de" ? R.de : R.en; };
 
@@ -46,13 +46,22 @@ function EditionSwitch({ ed }: { ed: NahjEdition }) {
 
 /** one passage: reference, Arabic, translation, machine note, attribution (compiler and translator) */
 function PassageText({ p, size = 1 }: { p: NahjPassage; size?: number }) {
+  const r = useR();
   const sz = ["text-[16px]", "text-[18px]", "text-[20px]", "text-[23px]"][size] ?? "text-[18px]";
   const arSz = ["text-[22px]", "text-[25px]", "text-[28px]", "text-[32px]"][size] ?? "text-[25px]";
+  // an excerpt whose exact Arabic passage is not known shows the whole Arabic text of the sermon or letter, folded away
+  const whole = p.arabic ? undefined : nahjArabicWork(p);
   return (
     <div className="space-y-4">
       <p className="text-[12px] font-semibold uppercase tracking-[0.18em] text-[rgb(var(--hm-gold-d))]">{p.ref}</p>
       {p.arabic && <p className="text-end"><Ar size={arSz}>{p.arabic}</Ar></p>}
       <p lang={p.edition} className={`${sz} leading-relaxed`}>{p.text}</p>
+      {whole && (
+        <details className="rounded-xl border border-line px-4 py-3">
+          <summary className="cursor-pointer text-[14px] font-semibold text-[rgb(var(--hm-gold-d))]">{r.arWhole[p.kind]}</summary>
+          <p className="mt-3 whitespace-pre-line text-end"><Ar size={arSz}>{whole}</Ar></p>
+        </details>
+      )}
       {p.machine && <p className="text-[13px] font-semibold text-[rgb(var(--hm-gold-d))]">{NAHJ_MACHINE[p.edition]}</p>}
       <p className="text-[12.5px] text-muted">{p.credit}</p>
     </div>

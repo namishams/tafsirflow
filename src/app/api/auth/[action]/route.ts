@@ -8,6 +8,7 @@ import { mailConfigured, sendMail } from "@/lib/mail";
 import { NextResponse } from "next/server";
 import { COUNTRY_CODES, GOALS } from "@/lib/countries";
 import { checkCaptcha } from "@/lib/captcha";
+import { emailRateLimited, honeypotTripped, isDisposableEmail } from "@/lib/botguard";
 
 export const dynamic = "force-dynamic";
 
@@ -55,6 +56,9 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ act
 
   const body = (await req.json().catch(() => ({}))) as { email?: string; password?: string; name?: string; firstName?: string; lastName?: string; country?: string; city?: string; goal?: string; marketing?: boolean; acceptTerms?: boolean; token?: string; locale?: string; birthYear?: number; captcha?: string; captchaV2?: string };
 
+  // honeypot: a bot filled the hidden field – answer as if it worked
+  if (honeypotTripped(body)) return json({ ok: true });
+
   // bot protection (Google reCAPTCHA) on the forms bots like to hammer
   if (action === "login" || action === "register" || action === "forgot") {
     if (req.headers.get("x-qmc-app")) {
@@ -76,7 +80,7 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ act
   if (action === "forgot") {
     // Always answers "ok" so nobody can find out which e-mails have an account
     const email = String(body.email ?? "").trim().toLowerCase();
-    if (EMAIL.test(email)) {
+    if (EMAIL.test(email) && !emailRateLimited("auth-forgot", email, 4, 60 * 60_000)) {
       const u = (await p.query("SELECT id FROM users WHERE email = $1", [email])).rows[0];
       if (u) {
         const token = crypto.randomBytes(32).toString("base64url");
@@ -107,6 +111,8 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ act
   if (password.length > 200) return json({ error: "invalid" }, 400);
 
   if (action === "register") {
+    if (isDisposableEmail(email)) return json({ error: "email" }, 400);
+    if (emailRateLimited("auth-register", email, 4, 60 * 60_000)) return json({ error: "rate" }, 429);
     if (passwordProblem(password, email)) return json({ error: "weak" }, 400);
     const clean = (v: unknown, max: number) => String(v ?? "").replace(/\s+/g, " ").trim().slice(0, max);
     const firstName = clean(body.firstName, 60), lastName = clean(body.lastName, 60);

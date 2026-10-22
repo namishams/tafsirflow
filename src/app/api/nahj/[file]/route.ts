@@ -13,7 +13,8 @@ export const dynamic = "force-dynamic";
 export async function GET(req: NextRequest, { params }: { params: Promise<{ file: string }> }) {
   const { file } = await params;
   if (!isNahjFile(file)) return json({ error: "not_found" }, 404);
-  if (rateLimited(`nahj:${clientIp(req)}`, 120, 60 * 60_000)) return json({ error: "rate" }, 429);
+  // (a reader page loads up to four files; classes and mosques share one address, so the limit is generous – the browser also keeps the files for an hour)
+  if (rateLimited(`nahj:${clientIp(req)}`, 600, 60 * 60_000)) return json({ error: "rate" }, 429);
   const full = await readNahj(file);
   if (full === null) return json({ error: "unavailable" }, 404);
   if (fromApp(req)) {

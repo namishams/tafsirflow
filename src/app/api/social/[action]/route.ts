@@ -7,6 +7,7 @@ import { clientIp, json, rateLimited, sameOrigin } from "@/lib/http";
 import { MAX_STRIKES, aiReview, moderate } from "@/lib/moderation";
 import { getSettings } from "@/lib/settings";
 import { checkCaptcha } from "@/lib/captcha";
+import { honeypotTripped } from "@/lib/botguard";
 import { appRateLimited, fromApp } from "@/lib/appRequest";
 import { myLikes, surahCounts } from "@/lib/community";
 import { MIN_POST_AGE, ageOf } from "@/lib/talents";
@@ -147,7 +148,10 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ act
       if (age !== null && age < MIN_POST_AGE) return json({ error: "age16" }, 403);
       const u = (await p.query("SELECT comment_banned FROM users WHERE id = $1", [me.id])).rows[0];
       if (u?.comment_banned) return json({ error: "banned" }, 403);
+      // honeypot: a bot filled the hidden field – answer as if the comment was accepted (and waits for review)
+      if (honeypotTripped(b)) return reply({ ok: true, id: 0, pending: true }, 201);
       if (rateLimited(`soc:comment:${me.id}`, 5, 10 * 60_000)) return json({ error: "rate" }, 429);
+      if (rateLimited(`soc:comment-ip:${ip}`, 20, 10 * 60_000)) return json({ error: "rate" }, 429); // per address as well as per account
       if (fromApp(req)) {
         // the native app cannot show reCAPTCHA: signed in with a confirmed e-mail (checked above) and stricter limits instead
         if (appRateLimited("comment", me.id, ip)) return json({ error: "rate" }, 429);

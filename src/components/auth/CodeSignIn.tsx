@@ -6,6 +6,7 @@ import type { Me } from "@/lib/sync";
 import { GOALS, sortedCountries } from "@/lib/countries";
 import { captchaToken } from "@/lib/captchaClient";
 import CaptchaBox from "../CaptchaBox";
+import Honeypot from "../Honeypot";
 import CodeInput from "./CodeInput";
 import { inputCls, postJSON, useCountdown, usePasskeySupport } from "./shared";
 import { passkeySignIn } from "./passkeyClient";
@@ -38,6 +39,7 @@ export default function CodeSignIn({ fresh = false, bare = false, secure = true,
   const [challenge, setChallenge] = useState(false);
   const [captchaV2, setCaptchaV2] = useState("");
   const [tries, setTries] = useState(0);
+  const [hp, setHp] = useState(""); // honeypot
   const [f, setF] = useState({ firstName: "", lastName: "", country: "", city: "", birthYear: "", goal: "" });
   const [terms, setTerms] = useState(false);
   const [marketing, setMarketing] = useState(false);
@@ -48,7 +50,7 @@ export default function CodeSignIn({ fresh = false, bare = false, secure = true,
     setBusy(true); setErr(""); setInfo("");
     try {
       const captcha = captchaV2 ? "" : await captchaToken("code");
-      const r = await postJSON<{ error?: string; retryAfter?: number; resendIn?: number; challenge?: boolean }>("/api/auth/code/request", { email: email.trim(), locale, captcha, captchaV2 });
+      const r = await postJSON<{ error?: string; retryAfter?: number; resendIn?: number; challenge?: boolean }>("/api/auth/code/request", { email: email.trim(), locale, captcha, captchaV2, website: hp });
       if (captchaV2) { setCaptchaV2(""); setTries((n) => n + 1); }
       if (r.ok) {
         setChallenge(false); setStep("code"); setCode(""); start(r.data.resendIn ?? 30);
@@ -170,7 +172,8 @@ export default function CodeSignIn({ fresh = false, bare = false, secure = true,
     );
 
   return (
-    <form onSubmit={(e) => { e.preventDefault(); void requestCode(); }} className="grid gap-5">
+    <form onSubmit={(e) => { e.preventDefault(); void requestCode(); }} className="relative grid gap-5">
+      <Honeypot value={hp} onChange={setHp} />
       {!bare && (
         <div>
           <h2 className="font-display text-[28px] font-semibold leading-tight">{fresh ? t("titleNew") : t("title")}</h2>

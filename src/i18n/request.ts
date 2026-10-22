@@ -1,6 +1,7 @@
 import { getRequestConfig } from "next-intl/server";
 import { routing } from "./routing";
 import en from "../../messages/en.json";
+import { hideDeep } from "@/lib/protectEmail";
 
 type Tree = { [k: string]: string | Tree };
 
@@ -14,9 +15,18 @@ function merge(base: Tree, over: Tree): Tree {
   return out;
 }
 
+// E-mail addresses in the texts become markers once per language (src/lib/protectEmail.ts), so neither the server-rendered
+// HTML nor the texts sent to the browser contain an address; the pages show a click-to-reveal control instead.
+const protectedMessages = new Map<string, Tree>();
+
 export default getRequestConfig(async ({ requestLocale }) => {
   const requested = await requestLocale;
   const locale = routing.locales.includes(requested as never) ? requested! : routing.defaultLocale;
   const own = (await import(`../../messages/${locale}.json`)).default as Tree;
-  return { locale, messages: locale === "en" ? own : merge(en as Tree, own) };
+  let messages = protectedMessages.get(locale);
+  if (!messages) {
+    messages = hideDeep(locale === "en" ? own : merge(en as Tree, own));
+    if (process.env.NODE_ENV === "production") protectedMessages.set(locale, messages);
+  }
+  return { locale, messages };
 });

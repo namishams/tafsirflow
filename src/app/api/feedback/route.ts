@@ -3,6 +3,7 @@ import { pool } from "@/lib/db";
 import { currentUser } from "@/lib/auth";
 import { clientIp, json, rateLimited, sameOrigin } from "@/lib/http";
 import { checkCaptcha } from "@/lib/captcha";
+import { honeypotTripped } from "@/lib/botguard";
 import { appRateLimited, fromApp } from "@/lib/appRequest";
 import { aiReview, moderate } from "@/lib/moderation";
 
@@ -36,6 +37,8 @@ export async function POST(req: NextRequest) {
   if (!me) return json({ error: "login" }, 401);
   if (!me.emailVerified) return json({ error: "verify" }, 403);
   const b = (await req.json().catch(() => ({}))) as { action?: string; id?: number; category?: string; title?: string; body?: string; captcha?: string };
+  // honeypot: a bot filled the hidden field – answer as if the post was accepted
+  if (honeypotTripped(b)) return json({ ok: true, pending: true }, 201);
   if (b.action === "vote") {
     if (!b.id || rateLimited(`fbvote:${me.id}`, 60, 60_000)) return json({ error: "bad request" }, 400);
     const del = await p.query("DELETE FROM feedback_votes WHERE post_id = $1 AND user_id = $2", [b.id, me.id]);
@@ -46,6 +49,7 @@ export async function POST(req: NextRequest) {
   const title = String(b.title ?? "").trim(), body = String(b.body ?? "").trim();
   if (!CATS.includes(String(b.category)) || title.length < 6 || title.length > 120 || body.length > 1500) return json({ error: "invalid" }, 400);
   if (rateLimited(`fbpost:${me.id}`, 5, 60 * 60_000)) return json({ error: "rate" }, 429);
+  if (rateLimited(`fbpost-ip:${clientIp(req)}`, 10, 60 * 60_000)) return json({ error: "rate" }, 429); // per address as well as per account
   if (fromApp(req)) {
     // the native app cannot show reCAPTCHA: signed in with a confirmed e-mail (checked above) and stricter limits instead
     if (appRateLimited("feedback", me.id, clientIp(req))) return json({ error: "rate" }, 429);

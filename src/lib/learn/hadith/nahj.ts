@@ -11,15 +11,37 @@ export type NahjEdition = "de" | "en";
 export type NahjKind = "sermon" | "letter" | "saying";
 type RawItem = { id: string; kind: NahjKind; n: number; part?: number; text: string; /** machine-translated, not yet reviewed */ machine?: boolean };
 type RawBook = { title: string; credit: string; lang: NahjEdition; items: RawItem[] };
-/** arabic: the Arabic original of the same passage (from nahj-ar.json), when it is here */
+/** arabic: the Arabic original of the same passage (from nahj-ar.json), when it is here and the pairing is certain (see arabicFor) */
 export type NahjPassage = RawItem & { edition: NahjEdition; ref: string; title: string; credit: string; link: string; arabic?: string };
-type ArabicBook = { items: { id: string; text: string }[] };
-let arabicIndex: { src: ArabicBook; map: Map<string, string> } | null = null;
-function arabicOf(id: string): string | undefined {
+type ArabicItem = { id: string; kind?: NahjKind; n?: number; part?: number; text: string };
+type ArabicBook = { items: ArabicItem[] };
+let arabicIndex: { src: ArabicBook; map: Map<string, string>; works: Map<string, string> } | null = null;
+function arabicIdx() {
   const src = nahjFile<ArabicBook>("ar");
-  if (!src) return undefined;
-  if (arabicIndex?.src !== src) arabicIndex = { src, map: new Map(src.items.map((x) => [x.id, x.text])) };
-  return arabicIndex.map.get(id);
+  if (!src) return null;
+  if (arabicIndex?.src !== src) {
+    const parts = new Map<string, ArabicItem[]>();
+    for (const x of src.items) { if (x.kind && x.n) { const k = `${x.kind}:${x.n}`; parts.set(k, [...(parts.get(k) ?? []), x]); } }
+    const works = new Map([...parts].map(([k, v]) => [k, v.sort((a, b) => (a.part ?? 0) - (b.part ?? 0)).map((x) => x.text).join("\n\n")]));
+    arabicIndex = { src, map: new Map(src.items.map((x) => [x.id, x.text])), works };
+  }
+  return arabicIndex;
+}
+
+// The Arabic is paired with a translation by id only where that pairing is certain: sayings (the Arabic file follows the
+// numbering of the German and English files) and the passages that were translated from the Arabic part with the same id
+// (machine: true). The excerpts of sermons and letters from the licensed editions are cut differently from the Arabic parts
+// (k2.1 in the German edition is the second paragraph, in the Arabic file the first), so pairing them by id would put the
+// wrong Arabic beside a translation. For these the whole Arabic text of the sermon or letter is offered instead
+// (nahjArabicWork): the numbering of the sermons and letters is the same in all three files, so it is the right work
+// (known exception: the licensed German edition's letters 73 and 74 are numbered the other way round).
+function arabicFor(it: RawItem): string | undefined {
+  const certain = !!it.machine || (it.kind === "saying" && !it.part);
+  return certain ? arabicIdx()?.map.get(it.id) : undefined;
+}
+/** the complete Arabic text of the sermon, letter or saying a passage belongs to (all its parts in order), when the Arabic file is here */
+export function nahjArabicWork(p: Pick<RawItem, "kind" | "n">): string | undefined {
+  return arabicIdx()?.works.get(`${p.kind}:${p.n}`);
 }
 
 const EMPTY_BOOK = (ed: NahjEdition): RawBook => ({ title: NAHJ_TITLE[ed], credit: NAHJ_CREDIT[ed], lang: ed, items: [] });
@@ -54,7 +76,7 @@ export function nahjRef(ed: NahjEdition, it: Pick<RawItem, "kind" | "n" | "part"
   return `${r[it.kind]} ${it.n}${excerpt ? ` · ${r.excerpt}` : ""}`;
 }
 
-const passage = (ed: NahjEdition, it: RawItem): NahjPassage => ({ ...it, arabic: arabicOf(it.id), edition: ed, ref: nahjRef(ed, it), title: book(ed).title || NAHJ_TITLE[ed], credit: nahjCredit(ed), link: LINK[ed] });
+const passage = (ed: NahjEdition, it: RawItem): NahjPassage => ({ ...it, arabic: arabicFor(it), edition: ed, ref: nahjRef(ed, it), title: book(ed).title || NAHJ_TITLE[ed], credit: nahjCredit(ed), link: LINK[ed] });
 
 /** the edition for an app language: German for German, the English edition for every other language,
  *  unless the reader switched it (Deutsch / English) */

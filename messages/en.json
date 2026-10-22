@@ -1504,6 +1504,7 @@
     "captchaFailed": "The security check did not work. Please reload the page and try again."
   },
   "ziina": {
+    "via": "Payment via Ziina",
     "title": "Support with Ziina",
     "lead": "Pay securely with Apple Pay, Google Pay or card – through Ziina, the payment app from the Emirates.",
     "custom": "Other amount",

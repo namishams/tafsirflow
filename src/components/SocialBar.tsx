@@ -4,6 +4,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { CaptchaNotice } from "./CaptchaBox";
 import { captchaToken, warmCaptcha } from "@/lib/captchaClient";
 import AuthGate from "./AuthGate";
+import Honeypot from "./Honeypot";
 import { useConfig } from "@/lib/config";
 import { Link } from "@/i18n/navigation";
 import { IconComment, IconEye, IconFlag, IconHeart, IconShare } from "./Icons";
@@ -89,6 +90,7 @@ function CommentsSheet({ verseKey, onClose, onAuth, onCount }: { verseKey: strin
   const [reply, setReply] = useState<Comment | null>(null);
   const [msg, setMsg] = useState<{ kind: "ok" | "err"; text: string } | null>(null);
   const [busy, setBusy] = useState(false);
+  const [hp, setHp] = useState(""); // honeypot
 
   const load = useCallback(async () => {
     const r = await fetch(`/api/social/comments?key=${verseKey}`);
@@ -105,7 +107,7 @@ function CommentsSheet({ verseKey, onClose, onAuth, onCount }: { verseKey: strin
   const send = async () => {
     setBusy(true); setMsg(null);
     try {
-      const r = await post("comment", { key: verseKey, body: text, parentId: reply?.id, captcha: await captchaToken("comment") });
+      const r = await post("comment", { key: verseKey, body: text, parentId: reply?.id, captcha: await captchaToken("comment"), website: hp });
       const d = await r.json().catch(() => ({}));
       // the community's age rule (writing from 16) is a 403 of its own, not the e-mail confirmation
       if (r.status === 403 && d.error === "age16") { setMsg({ kind: "err", text: t("age16") }); return; }
@@ -170,7 +172,8 @@ function CommentsSheet({ verseKey, onClose, onAuth, onCount }: { verseKey: strin
             </ul>
           )}
         </div>
-        <div className="border-t border-line p-4">
+        <div className="relative border-t border-line p-4">
+          <Honeypot value={hp} onChange={setHp} />
           {reply && <p className="mb-2 flex items-center justify-between text-xs text-muted"><span>{t("replyTo", { name: reply.author })}</span><button onClick={() => setReply(null)} className="hover:text-ink">✕</button></p>}
           <textarea value={text} onChange={(e) => setText(e.target.value)} maxLength={500} rows={3} placeholder={t("placeholder")} className="w-full resize-none rounded-md border border-line bg-bg px-3 py-2 text-[15px] focus:border-ink focus:outline-none" />
           <CaptchaNotice />
