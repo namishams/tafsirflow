@@ -105,7 +105,7 @@ ${DE_END}
 - **Hanafi:** erlaubt ist nur Fisch; Muscheln, Tintenfisch und Krebse sind nicht erlaubt. Bei Garnelen sind sich hanafitische Gelehrte uneins, ob sie als Fisch gelten.
 - **Maliki:** grundsätzlich alles, was nur im Meer lebt, ist erlaubt.
 - **Schafiʿi:** nach der bekannten Ansicht ist alles erlaubt, was nur im Wasser lebt.
-- **Hanbali:** alles aus dem Meer ist erlaubt, mit wenigen Ausnahmen wie dem Frosch und dem Krokodil.
+- **Hanbali:** nach der gewählten Ansicht der Schule ist alles aus dem Meer erlaubt außer Frosch, Schlange und Krokodil.
 - **Dschaʿfari:** erlaubt ist Fisch mit Schuppen und die Garnele; Fische ohne Schuppen, Muscheln und andere Meerestiere sind nicht erlaubt.
 
 ${DE_END}
@@ -134,10 +134,10 @@ ${DE_END}
 
 **Belege:** (Koran 2:275–279), (Koran 3:130); der Prophet ﷺ verfluchte den, der Riba nimmt, den, der sie gibt, den Schreiber und die Zeugen (Sahih Muslim 1598).
 
-- **Hanafi, Maliki, Schafiʿi, Hanbali:** jede vorher festgelegte Mehrleistung auf ein Darlehen ist Riba. Die Internationale Islamische Fiqh-Akademie (OIC) hat 1985 Bankzinsen als Riba eingestuft.
+- **Hanafi, Maliki, Schafiʿi, Hanbali:** jede vorher festgelegte Mehrleistung auf ein Darlehen ist Riba. Die Internationale Islamische Fiqh-Akademie (OIC) hat 1985 (Beschluss Nr. 10 (10/2)) Zinsen auf ein Darlehen von Anfang an und Aufschläge für das Verlängern einer fälligen Schuld als Riba eingestuft.
 - **Dschaʿfari:** Riba ist ebenso verboten. Für Konten und Kredite bei Banken in nichtmuslimischen Ländern enthalten die Rechtsgutachten von Ayatollah al-Sistani eigene Regeln; lesen Sie diese auf [sistani.org](${SI}) nach.
 
-**Heute:** Einzelne Stimmen, etwa Gutachten der Dar al-Ifta Ägypten, haben feste Erträge bei Banken als Investition statt als Darlehen bewertet; die Mehrheit der Gelehrten folgt dem nicht. Islamische Banken arbeiten nach den Standards der [AAOIFI](${AA}).
+**Heute:** Die Dar al-Ifta Ägypten bewertet Bankeinlagen als neue Form des Finanzvertrags (Investition), nicht als Darlehen, und hält die Erträge daher für erlaubt; sie nennt selbst die Gegenansicht, die das Verhältnis als Darlehen sieht und die Erträge als Riba verbietet. Diese Gegenansicht vertreten die OIC-Akademie und viele andere Fatwa-Stellen. Islamische Banken arbeiten nach den Standards der [AAOIFI](${AA}).
 
 ${DE_END}
 
@@ -170,7 +170,7 @@ ${DE_END}
 
 **Belege:** kein ausdrücklicher Text; die Frage hängt an *Gharar* (übermäßige Ungewissheit) und Riba.
 
-- **Hanafi, Maliki, Schafiʿi, Hanbali:** die Internationale Islamische Fiqh-Akademie (OIC) hat 1985 die gewerbliche Versicherung für unzulässig erklärt und die gegenseitige, gemeinschaftliche Versicherung (*Takaful*) erlaubt; die [AAOIFI](${AA}) hat dafür einen eigenen Standard (Nr. 26). Gesetzlich vorgeschriebene Versicherungen (etwa die Kfz-Haftpflicht) halten viele Gelehrte für erlaubt.
+- **Hanafi, Maliki, Schafiʿi, Hanbali:** die Internationale Islamische Fiqh-Akademie (OIC) hat 1985 (Beschluss Nr. 9 (9/2)) die gewerbliche Versicherung mit festen Prämien wegen *Gharar* für unzulässig erklärt und die gegenseitige, auf Spende beruhende Versicherung (*Takaful*) als Alternative genannt; die [AAOIFI](${AA}) regelt sie im Standard Nr. 26 „Islamic Insurance“ (2006). Gesetzlich vorgeschriebene Versicherungen (etwa die Kfz-Haftpflicht) halten viele Gelehrte für erlaubt.
 - **Dschaʿfari:** nach den Rechtsgutachten von Ayatollah al-Sistani ist ein Versicherungsvertrag grundsätzlich gültig; Einzelheiten auf [sistani.org](${SI}).
 
 ${DE_END}
@@ -204,7 +204,7 @@ ${DE_END}
 **Belege:** (Koran 7:26), (Koran 24:30–31), (Koran 33:59).
 
 - **Hanafi, Maliki, Schafiʿi, Hanbali:** beim Mann vom Nabel bis zum Knie (mit Unterschieden, ob Nabel und Knie dazugehören); bei der Frau gegenüber fremden Männern der ganze Körper außer Gesicht und Händen nach der Mehrheit, die Hanafi-Schule nimmt die Füße teilweise aus, eine Ansicht bei den Hanbaliten schließt das Gesicht ein.
-- **Dschaʿfari:** beim Mann mindestens die Scham, empfohlen bis zum Knie; bei der Frau der ganze Körper außer Gesicht und Händen bis zum Handgelenk.
+- **Dschaʿfari:** beim Mann mindestens die Scham, empfohlen bis zum Knie; bei der Frau gegenüber fremden Männern der ganze Körper; Gesicht und Hände bis zum Handgelenk darf sie nach Ayatollah al-Sistani frei lassen, solange das nicht zu verbotenen Blicken führt. Im Gebet bleiben Gesicht, Hände bis zum Handgelenk und Füße bis zum Knöchel frei.
 
 ${DE_END}
 
@@ -226,7 +226,7 @@ ${DE_END}
 **Belege:** der Prophet ﷺ verfluchte die, die tätowiert, und die, die sich tätowieren lässt (Sahih al-Bukhari 5937, Sahih Muslim 2125).
 
 - **Hanafi, Maliki, Schafiʿi, Hanbali:** dauerhafte Tätowierungen sind verboten. Wer eine Tätowierung aus der Zeit vor seiner Reue hat, muss sie nicht entfernen, wenn das schadet.
-- **Dschaʿfari:** nach den Rechtsgutachten von Ayatollah al-Sistani ist eine Tätowierung an sich nicht verboten, solange nichts Verbotenes dargestellt wird; die Gebetswaschung ist gültig, weil die Farbe unter der Haut liegt.
+- **Dschaʿfari:** nach den Antworten des Büros von Ayatollah al-Sistani ist eine Tätowierung unter der Haut an sich erlaubt, ob dauerhaft oder nicht, solange sie nichts Falsches fördert und nichts sonst Verbotenes dabei geschieht; Gebetswaschung, Ghusl und Gebet bleiben gültig, weil die Farbe keine Schicht bildet.
 
 ${DE_END}
 
@@ -248,7 +248,7 @@ ${DE_END}
 
 - **Hanafi:** viele heutige hanafitische Gelehrte halten Alkohol, der nicht aus Trauben oder Datteln gewonnen wird, für nicht unrein; Parfum mit solchem Alkohol ist danach erlaubt.
 - **Maliki, Schafiʿi, Hanbali:** wer Alkohol als Khamr und damit als unrein ansieht, meidet solches Parfum; andere heutige Gelehrte unterscheiden technischen Alkohol vom Getränk und erlauben es.
-- **Dschaʿfari:** nach den Rechtsgutachten von Ayatollah al-Sistani ist Alkohol, der nicht ursprünglich ein berauschendes Getränk ist, rein; Einzelheiten auf [sistani.org](${SI}).
+- **Dschaʿfari:** nach den Antworten des Büros von Ayatollah al-Sistani sind alle Arten von Alkohol rein (aber nicht trinkbar), außer Wein und – aus Vorsicht – Bier; Parfum und Medikamente mit Alkohol dürfen benutzt werden; Einzelheiten auf [sistani.org](${SI}).
 
 **Praktisch:** Wer sicher gehen will, nimmt alkoholfreie Öle (*ʿAttar*).
 
@@ -274,7 +274,7 @@ ${DE_END}
 
 **Belege:** am strengsten bestraft werden die Bildermacher (Sahih al-Bukhari 5950); die Engel betreten kein Haus, in dem ein Hund oder Bilder sind (Sahih al-Bukhari 5949).
 
-- **Hanafi, Maliki, Schafiʿi, Hanbali:** Statuen von Lebewesen sind verboten; bei gezeichneten Bildern sind die Ansichten verschieden. Fotografie erlauben viele heutige Gelehrte, darunter die Dar al-Ifta Ägypten, weil sie ein Abbild festhält und nichts erschafft; andere erlauben sie nur bei Bedarf.
+- **Hanafi, Maliki, Schafiʿi, Hanbali:** Statuen von Lebewesen sind verboten; bei gezeichneten Bildern sind die Ansichten verschieden. Fotografie erlauben viele heutige Gelehrte, darunter die Dar al-Ifta Ägypten, weil sie nur ein festgehaltenes Abbild ist und das Verbot nur dreidimensionale Bilder betrifft; andere erlauben sie nur bei Bedarf.
 - **Dschaʿfari:** nach den Rechtsgutachten von Ayatollah al-Sistani sind Zeichnen und Fotografieren erlaubt; das Herstellen von Statuen von Lebewesen ist aus Vorsicht zu meiden.
 
 ${DE_END}
@@ -283,7 +283,7 @@ ${DE_END}
 
 **Einordnung:** grundsätzlich halal; was verboten ist, ergibt sich aus dem Inhalt und den Folgen.
 
-**Grundsatz:** Spiele sind erlaubt, solange sie keine Pflichten verdrängen (vor allem das Gebet), nichts Verbotenes zeigen oder verherrlichen und kein Glücksspiel enthalten. Der Prophet ﷺ lief mit ʿAʾischa um die Wette und ließ die Abessinier in der Moschee mit Speeren spielen (Sahih al-Bukhari 950).
+**Grundsatz:** Spiele sind erlaubt, solange sie keine Pflichten verdrängen (vor allem das Gebet), nichts Verbotenes zeigen oder verherrlichen und kein Glücksspiel enthalten. Der Prophet ﷺ lief mit ʿAʾischa um die Wette (Sunan Abi Dawud 2578) und ließ die Abessinier in der Moschee mit Speeren spielen (Sahih al-Bukhari 454).
 
 ${DE_END}
 
@@ -347,7 +347,7 @@ ${DE_END}
 
 **Einordnung:** haram.
 
-**Belege:** Allah und Sein Gesandter haben den Verkauf von Wein, Aas, Schweinen und Götzenbildern verboten (Sahih al-Bukhari 2236); wenn Allah etwas verbietet, verbietet Er auch seinen Preis (Sunan Abi Dawud 3488).
+**Belege:** Allah und Sein Gesandter haben den Verkauf von Wein, Aas, Schweinen und Götzenbildern verboten (Sahih al-Bukhari 2236); wenn Allah einem Volk verbietet, etwas zu essen, verbietet Er ihm auch dessen Preis (Sunan Abi Dawud 3488).
 
 - **Alle fünf Schulen:** Verkauf, Ausschank und Lieferung von Alkohol und Schweinefleisch sind verboten, ebenso der Handel mit Dingen, die nur für Verbotenes taugen.
 
@@ -373,11 +373,11 @@ Mehr zum Lebensstil im Kapitel [Islamischer Lebensstil](/islam/daily) und zum Ve
     ],
     sources: [
       "Koran 2:29, 2:168, 2:172, 2:173, 2:219, 2:245, 2:275–280, 2:282, 3:130, 5:3, 5:5, 5:90–91, 5:96, 6:118, 6:121, 6:145, 7:26, 9:119, 16:115, 24:30–31, 31:6, 33:53, 33:59, 49:12",
-      "Sahih al-Bukhari 52, 950, 952, 2068, 2236, 3462, 5233, 5590, 5937, 5949, 5950, 6094",
+      "Sahih al-Bukhari 52, 454, 952, 2068, 2236, 3462, 5233, 5590, 5937, 5949, 5950, 6094",
       "Sahih Muslim 1015, 1598, 1599, 2003, 2102, 2125, 2589, 2605",
-      "Sunan Abi Dawud 83, 3488, 3681, 4057; Dschamiʿ at-Tirmidhi 69, 1720, 1865, 2518",
-      "Internationale Islamische Fiqh-Akademie (OIC), Beschlüsse von 1985 zu Bankzinsen und Versicherung",
-      "AAOIFI Shariah Standards (aaoifi.com), u. a. Nr. 26 Islamische Versicherung",
+      "Sunan Abi Dawud 83, 2578, 3488, 3681, 4057; Dschamiʿ at-Tirmidhi 69, 1720, 1865, 2518",
+      "Internationale Islamische Fiqh-Akademie (OIC), Beschlüsse Nr. 9 (9/2) zur Versicherung und Nr. 10 (10/2) zu Bankzinsen, Dschidda 1985",
+      "AAOIFI Shariah Standards (aaoifi.com), u. a. Nr. 26 Islamische Versicherung (2006)",
       "islamqa.org · dar-alifta.org · sistani.org",
     ],
   },
@@ -466,7 +466,7 @@ ${EN_END}
 - **Hanafi:** only fish is permitted; mussels, squid and crabs are not. Hanafi scholars differ on whether prawns count as fish.
 - **Maliki:** in principle everything that lives only in the sea is permitted.
 - **Shafiʿi:** according to the well-known view, everything that lives only in water is permitted.
-- **Hanbali:** everything from the sea is permitted, with a few exceptions such as the frog and the crocodile.
+- **Hanbali:** according to the school's chosen view, everything from the sea is permitted except the frog, the snake and the crocodile.
 - **Jaʿfari:** fish with scales and prawns are permitted; fish without scales, mussels and other sea creatures are not.
 
 ${EN_END}
@@ -495,10 +495,10 @@ ${EN_END}
 
 **Evidence:** (Quran 2:275–279), (Quran 3:130); the Prophet ﷺ cursed the one who takes riba, the one who gives it, the scribe and the witnesses (Sahih Muslim 1598).
 
-- **Hanafi, Maliki, Shafiʿi, Hanbali:** any pre-agreed increase on a loan is riba. The International Islamic Fiqh Academy (OIC) classified bank interest as riba in 1985.
+- **Hanafi, Maliki, Shafiʿi, Hanbali:** any pre-agreed increase on a loan is riba. In 1985 (Resolution No. 10 (10/2)) the International Islamic Fiqh Academy (OIC) classified interest on a loan from the start and any increase for extending a matured debt as riba.
 - **Jaʿfari:** riba is equally forbidden. For accounts and loans at banks in non-Muslim countries, the rulings of Ayatollah al-Sistani contain specific rules; please read them on [sistani.org](${SI}).
 
-**Today:** individual voices, such as opinions of Dar al-Ifta Egypt, have treated fixed bank returns as investment rather than loan; most scholars do not follow this. Islamic banks work by the [AAOIFI](${AA}) standards.
+**Today:** Dar al-Ifta Egypt treats bank deposits as a new kind of financial contract (investment), not a loan, and therefore considers the returns permissible; it names the opposing view itself, which sees the relationship as a loan and forbids the returns as riba. That opposing view is held by the OIC Academy and many other fatwa bodies. Islamic banks work by the [AAOIFI](${AA}) standards.
 
 ${EN_END}
 
@@ -531,7 +531,7 @@ ${EN_END}
 
 **Evidence:** no explicit text; the question rests on *gharar* (excessive uncertainty) and riba.
 
-- **Hanafi, Maliki, Shafiʿi, Hanbali:** the International Islamic Fiqh Academy (OIC) declared commercial insurance impermissible in 1985 and permitted mutual, cooperative insurance (*takaful*); the [AAOIFI](${AA}) has its own standard for it (No. 26). Insurance required by law (such as third-party car insurance) is considered permissible by many scholars.
+- **Hanafi, Maliki, Shafiʿi, Hanbali:** the International Islamic Fiqh Academy (OIC) declared fixed-premium commercial insurance impermissible because of *gharar* in 1985 (Resolution No. 9 (9/2)) and named mutual insurance based on donation (*takaful*) as the alternative; the [AAOIFI](${AA}) sets its rules in Standard No. 26 "Islamic Insurance" (2006). Insurance required by law (such as third-party car insurance) is considered permissible by many scholars.
 - **Jaʿfari:** according to the rulings of Ayatollah al-Sistani, an insurance contract is valid in principle; details on [sistani.org](${SI}).
 
 ${EN_END}
@@ -565,7 +565,7 @@ ${EN_END}
 **Evidence:** (Quran 7:26), (Quran 24:30–31), (Quran 33:59).
 
 - **Hanafi, Maliki, Shafiʿi, Hanbali:** for men from the navel to the knee (with differences on whether navel and knee are included); for women before unrelated men the whole body except face and hands according to the majority; the Hanafi school partly excepts the feet, one Hanbali view includes the face.
-- **Jaʿfari:** for men at least the private parts, recommended to the knee; for women the whole body except the face and the hands up to the wrist.
+- **Jaʿfari:** for men at least the private parts, recommended to the knee; for women before unrelated men the whole body; according to Ayatollah al-Sistani she may leave the face and the hands up to the wrist uncovered as long as this does not lead to forbidden looks. In prayer the face, the hands up to the wrist and the feet up to the ankle may stay uncovered.
 
 ${EN_END}
 
@@ -587,7 +587,7 @@ ${EN_END}
 **Evidence:** the Prophet ﷺ cursed the one who tattoos and the one who has herself tattooed (Sahih al-Bukhari 5937, Sahih Muslim 2125).
 
 - **Hanafi, Maliki, Shafiʿi, Hanbali:** permanent tattoos are forbidden. Someone with a tattoo from before their repentance need not remove it if that causes harm.
-- **Jaʿfari:** according to the rulings of Ayatollah al-Sistani, a tattoo is not forbidden in itself as long as nothing forbidden is shown; ablution is valid because the colour lies under the skin.
+- **Jaʿfari:** according to the answers of Ayatollah al-Sistani's office, a tattoo under the skin is permissible in itself, permanent or not, as long as it does not promote falsehood and involves nothing else forbidden; wudu, ghusl and prayer remain valid because the ink forms no layer.
 
 ${EN_END}
 
@@ -609,7 +609,7 @@ ${EN_END}
 
 - **Hanafi:** many contemporary Hanafi scholars consider alcohol not derived from grapes or dates not impure; perfume with such alcohol is then permitted.
 - **Maliki, Shafiʿi, Hanbali:** those who regard alcohol as khamr and therefore impure avoid such perfume; other contemporary scholars distinguish technical alcohol from the drink and permit it.
-- **Jaʿfari:** according to the rulings of Ayatollah al-Sistani, alcohol that was not originally an intoxicating drink is pure; details on [sistani.org](${SI}).
+- **Jaʿfari:** according to the answers of Ayatollah al-Sistani's office, all kinds of alcohol are pure (though not drinkable), except wine and, as a precaution, beer; perfumes and medicines containing alcohol may be used; details on [sistani.org](${SI}).
 
 **In practice:** to be safe, use alcohol-free oils (*ʿattar*).
 
@@ -635,7 +635,7 @@ ${EN_END}
 
 **Evidence:** the most severely punished are the image-makers (Sahih al-Bukhari 5950); angels do not enter a house with a dog or images (Sahih al-Bukhari 5949).
 
-- **Hanafi, Maliki, Shafiʿi, Hanbali:** statues of living beings are forbidden; views on drawn images differ. Many contemporary scholars, including Dar al-Ifta Egypt, permit photography because it captures an image rather than creating one; others permit it only when needed.
+- **Hanafi, Maliki, Shafiʿi, Hanbali:** statues of living beings are forbidden; views on drawn images differ. Many contemporary scholars, including Dar al-Ifta Egypt, permit photography because it is merely a captured image and the prohibition applies only to three-dimensional images; others permit it only when needed.
 - **Jaʿfari:** according to the rulings of Ayatollah al-Sistani, drawing and photography are permitted; making statues of living beings is to be avoided as a precaution.
 
 ${EN_END}
@@ -644,7 +644,7 @@ ${EN_END}
 
 **Category:** halal in principle; what is forbidden follows from the content and the consequences.
 
-**Principle:** games are permitted as long as they do not crowd out duties (above all prayer), do not show or glorify what is forbidden and contain no gambling. The Prophet ﷺ raced with ʿAʾisha and let the Abyssinians play with spears in the mosque (Sahih al-Bukhari 950).
+**Principle:** games are permitted as long as they do not crowd out duties (above all prayer), do not show or glorify what is forbidden and contain no gambling. The Prophet ﷺ raced with ʿAʾisha (Sunan Abi Dawud 2578) and let the Abyssinians play with spears in the mosque (Sahih al-Bukhari 454).
 
 ${EN_END}
 
@@ -708,7 +708,7 @@ ${EN_END}
 
 **Category:** haram.
 
-**Evidence:** Allah and His Messenger forbade the sale of wine, carrion, pigs and idols (Sahih al-Bukhari 2236); when Allah forbids something, He also forbids its price (Sunan Abi Dawud 3488).
+**Evidence:** Allah and His Messenger forbade the sale of wine, carrion, pigs and idols (Sahih al-Bukhari 2236); when Allah forbids a people to eat something, He also forbids them its price (Sunan Abi Dawud 3488).
 
 - **All five schools:** selling, serving and delivering alcohol and pork are forbidden, as is trading in things that serve only what is forbidden.
 
@@ -734,11 +734,11 @@ More on lifestyle in the chapter [Islamic lifestyle](/islam/daily), and on earni
     ],
     sources: [
       "Quran 2:29, 2:168, 2:172, 2:173, 2:219, 2:245, 2:275–280, 2:282, 3:130, 5:3, 5:5, 5:90–91, 5:96, 6:118, 6:121, 6:145, 7:26, 9:119, 16:115, 24:30–31, 31:6, 33:53, 33:59, 49:12",
-      "Sahih al-Bukhari 52, 950, 952, 2068, 2236, 3462, 5233, 5590, 5937, 5949, 5950, 6094",
+      "Sahih al-Bukhari 52, 454, 952, 2068, 2236, 3462, 5233, 5590, 5937, 5949, 5950, 6094",
       "Sahih Muslim 1015, 1598, 1599, 2003, 2102, 2125, 2589, 2605",
-      "Sunan Abi Dawud 83, 3488, 3681, 4057; Jamiʿ at-Tirmidhi 69, 1720, 1865, 2518",
-      "International Islamic Fiqh Academy (OIC), resolutions of 1985 on bank interest and insurance",
-      "AAOIFI Shariah Standards (aaoifi.com), incl. No. 26 Islamic Insurance",
+      "Sunan Abi Dawud 83, 2578, 3488, 3681, 4057; Jamiʿ at-Tirmidhi 69, 1720, 1865, 2518",
+      "International Islamic Fiqh Academy (OIC), Resolutions No. 9 (9/2) on insurance and No. 10 (10/2) on bank interest, Jeddah 1985",
+      "AAOIFI Shariah Standards (aaoifi.com), incl. No. 26 Islamic Insurance (2006)",
       "islamqa.org · dar-alifta.org · sistani.org",
     ],
   },
