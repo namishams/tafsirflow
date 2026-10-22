@@ -1,4 +1,5 @@
 import { spawn } from "node:child_process";
+import { imageFlagged } from "./imageSafety";
 import crypto from "node:crypto";
 import { constants, createReadStream } from "node:fs";
 import fs from "node:fs/promises";
@@ -74,6 +75,15 @@ export async function storeUpload(buf: Buffer, kind: MediaKind, name: string, op
     : ["-y", "-i", tmp, "-t", t, "-map_metadata", "-1", "-vn", "-c:a", "aac", "-b:a", "128k", "-movflags", "+faststart", out];
   if (await run(ff, args, 120_000)) {
     await fs.rm(tmp, { force: true });
+    // a video is checked on one frame (thumbnail); a flagged one is not kept
+    if (video) {
+      const frame = path.join(dir, kind, `.${safe}-${crypto.randomBytes(6).toString("hex")}.jpg`);
+      const got = (await run(ff, ["-y", "-ss", "1", "-i", out, "-frames:v", "1", "-vf", "scale='min(768,iw)':-2", "-q:v", "5", frame], 30_000))
+        || (await run(ff, ["-y", "-i", out, "-frames:v", "1", "-vf", "scale='min(768,iw)':-2", "-q:v", "5", frame], 30_000));
+      const flagged = got ? await imageFlagged(await fs.readFile(frame).catch(() => Buffer.alloc(0))) : false;
+      await fs.rm(frame, { force: true });
+      if (flagged) { await fs.rm(out, { force: true }); return { error: "media_unsafe" }; }
+    }
     return { rel: `${kind}/${safe}.${outExt}`, mime: video ? "video/mp4" : "audio/mp4" };
   }
   // no ffmpeg (or it failed): keep the checked original
@@ -145,6 +155,7 @@ export async function storeAvatar(buf: Buffer, name: string): Promise<{ rel: str
   const ff = process.env.FFMPEG_PATH || "ffmpeg";
   if (await run(ff, ["-y", "-i", tmp, "-map_metadata", "-1", "-vf", "scale=512:512:force_original_aspect_ratio=increase,crop=512:512", "-q:v", "4", "-frames:v", "1", out], 30_000)) {
     await fs.rm(tmp, { force: true });
+    if (await imageFlagged(await fs.readFile(out).catch(() => Buffer.alloc(0)))) { await fs.rm(out, { force: true }); return { error: "media_unsafe" }; }
     return { rel: `avatars/${safe}.jpg`, mime: "image/jpeg" };
   }
   await fs.rm(tmp, { force: true });

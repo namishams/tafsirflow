@@ -4,6 +4,7 @@
 // Placeholders: {n} name or number.
 
 const de = {
+  e_unsafe: "Dieses Bild oder Video kann leider nicht gesendet werden, weil unsere automatische Prüfung es als unangemessen erkannt hat. Bitte wählen Sie eine andere Datei.",
   unreadOnly: "Ungelesen", unanswered: "Unbeantwortet", unansweredHint: "{n} Chats warten seit über einem Tag auf Ihre Antwort.", doubleTapHint: "Doppelt tippen: MashaAllah. Lange drücken: weitere Aktionen.",
   title: "Nachrichten", inbox: "Chats", requests: "Anfragen", searchPh: "Chats und Nachrichten durchsuchen", noResults: "Keine Treffer.",
   newChat: "Neuer Chat", newChatHint: "Benutzername der Person", open: "Chat öffnen", newGroup: "Neue Gruppe", join: "Beitreten", joinPh: "Einladungslink oder Code",
@@ -66,6 +67,7 @@ const de = {
 export type MessengerText = typeof de;
 
 const en: MessengerText = {
+  e_unsafe: "Sorry, this picture or video cannot be sent because our automatic check found it inappropriate. Please choose another file.",
   unreadOnly: "Unread", unanswered: "Unanswered", unansweredHint: "{n} chats have been waiting more than a day for your reply.", doubleTapHint: "Double-tap: MashaAllah. Long press: more actions.",
   title: "Messages", inbox: "Chats", requests: "Requests", searchPh: "Search chats and messages", noResults: "No results.",
   newChat: "New chat", newChatHint: "The person's username", open: "Open chat", newGroup: "New group", join: "Join", joinPh: "Invite link or code",
@@ -125,6 +127,7 @@ const en: MessengerText = {
 };
 
 const ar: Partial<MessengerText> = {
+  e_unsafe: "عذرًا، لا يمكن إرسال هذه الصورة أو هذا الفيديو لأن الفحص التلقائي وجده غير لائق. يرجى اختيار ملف آخر.",
   title: "الرسائل", inbox: "المحادثات", requests: "الطلبات", searchPh: "ابحث في المحادثات والرسائل", noResults: "لا توجد نتائج.",
   newChat: "محادثة جديدة", newChatHint: "اسم المستخدم", open: "افتح المحادثة", newGroup: "مجموعة جديدة", join: "انضمام", joinPh: "رابط الدعوة أو الرمز",
   empty: "لا توجد محادثات بعد. راسلوا من تتابعونهم ويتابعونكم، أو أنشئوا مجموعة تعلّم.", emptyRequests: "لا توجد طلبات مراسلة.",
@@ -180,6 +183,7 @@ const ar: Partial<MessengerText> = {
 };
 
 const tr: Partial<MessengerText> = {
+  e_unsafe: "Üzgünüz, bu resim veya video otomatik kontrolümüz tarafından uygunsuz bulunduğu için gönderilemiyor. Lütfen başka bir dosya seçin.",
   title: "Mesajlar", inbox: "Sohbetler", requests: "İstekler", searchPh: "Sohbetlerde ve mesajlarda arayın", noResults: "Sonuç yok.",
   newChat: "Yeni sohbet", newChatHint: "Kişinin kullanıcı adı", open: "Sohbeti açın", newGroup: "Yeni grup", join: "Katılın", joinPh: "Davet bağlantısı veya kod",
   empty: "Henüz sohbet yok. Karşılıklı takipleştiğiniz kişilere yazın veya bir öğrenme grubu kurun.", emptyRequests: "Mesaj isteği yok.",
@@ -237,6 +241,7 @@ const tr: Partial<MessengerText> = {
 };
 
 const ur: Partial<MessengerText> = {
+  e_unsafe: "معذرت، یہ تصویر یا ویڈیو نہیں بھیجی جا سکتی کیونکہ ہماری خودکار جانچ نے اسے نامناسب پایا۔ براہِ کرم کوئی اور فائل منتخب کریں۔",
   title: "پیغامات", inbox: "چیٹس", requests: "درخواستیں", searchPh: "چیٹس اور پیغامات میں تلاش کریں", noResults: "کوئی نتیجہ نہیں۔",
   newChat: "نئی چیٹ", newChatHint: "اس شخص کا یوزر نیم", open: "چیٹ کھولیں", newGroup: "نیا گروپ", join: "شامل ہوں", joinPh: "دعوتی لنک یا کوڈ",
   empty: "ابھی کوئی چیٹ نہیں۔ ان لوگوں کو لکھیں جنہیں آپ باہمی طور پر فالو کرتے ہیں، یا سیکھنے کا گروپ بنائیں۔", emptyRequests: "کوئی پیغام کی درخواست نہیں۔",
@@ -294,6 +299,7 @@ const ur: Partial<MessengerText> = {
 };
 
 const fa: Partial<MessengerText> = {
+  e_unsafe: "متأسفانه این تصویر یا ویدیو ارسال نمی‌شود، چون بررسی خودکار ما آن را نامناسب تشخیص داد. لطفاً پروندهٔ دیگری انتخاب کنید.",
   title: "پیام‌ها", inbox: "گفتگوها", requests: "درخواست‌ها", searchPh: "جست‌وجو در گفتگوها و پیام‌ها", noResults: "نتیجه‌ای نیست.",
   newChat: "گفتگوی تازه", newChatHint: "نام کاربری شخص", open: "باز کردن گفتگو", newGroup: "گروه تازه", join: "پیوستن", joinPh: "پیوند دعوت یا کد",
   empty: "هنوز گفتگویی ندارید. به کسانی که دنبال‌کننده‌ی متقابل شما هستند بنویسید یا یک گروه آموزشی بسازید.", emptyRequests: "درخواست پیامی نیست.",
@@ -350,6 +356,7 @@ const fa: Partial<MessengerText> = {
 };
 
 const ps: Partial<MessengerText> = {
+  e_unsafe: "بښنه غواړو، دا انځور یا ویډیو نه شي لېږل کېدای، ځکه زموږ اتومات کتنې نامناسب وموند. مهرباني وکړئ بله دوتنه وټاکئ.",
   title: "پیغامونه", inbox: "خبرې اترې", requests: "غوښتنې", searchPh: "په خبرو او پیغامونو کې ولټوئ", noResults: "هیڅ پایله نشته.",
   newChat: "نوې خبرې اترې", newChatHint: "د کس کارن نوم", open: "خبرې پرانیزئ", newGroup: "نوې ډله", join: "ګډون وکړئ", joinPh: "د بلنې لینک یا کوډ",
   empty: "تر اوسه خبرې اترې نشته. هغو خلکو ته ولیکئ چې یو بل تعقیبوئ، یا د زده کړې ډله جوړه کړئ.", emptyRequests: "د پیغام غوښتنه نشته.",
@@ -407,6 +414,7 @@ const ps: Partial<MessengerText> = {
 };
 
 const fr: Partial<MessengerText> = {
+  e_unsafe: "Désolés, cette image ou vidéo ne peut pas être envoyée, car notre contrôle automatique l’a jugée inappropriée. Veuillez choisir un autre fichier.",
   title: "Messages", inbox: "Discussions", requests: "Demandes", searchPh: "Rechercher dans les discussions et messages", noResults: "Aucun résultat.",
   newChat: "Nouvelle discussion", newChatHint: "Nom d’utilisateur de la personne", open: "Ouvrir la discussion", newGroup: "Nouveau groupe", join: "Rejoindre", joinPh: "Lien d’invitation ou code",
   empty: "Aucune discussion pour l’instant. Écrivez aux personnes que vous suivez mutuellement, ou créez un groupe d’étude.", emptyRequests: "Aucune demande de message.",
@@ -466,6 +474,7 @@ const fr: Partial<MessengerText> = {
 };
 
 const es: Partial<MessengerText> = {
+  e_unsafe: "Lo sentimos, esta imagen o vídeo no se puede enviar porque nuestra revisión automática lo consideró inapropiado. Elija otro archivo.",
   title: "Mensajes", inbox: "Chats", requests: "Solicitudes", searchPh: "Buscar en chats y mensajes", noResults: "Sin resultados.",
   newChat: "Nuevo chat", newChatHint: "Nombre de usuario de la persona", open: "Abrir chat", newGroup: "Nuevo grupo", join: "Unirse", joinPh: "Enlace de invitación o código",
   empty: "Aún no hay chats. Escriba a personas con las que se siguen mutuamente o cree un grupo de estudio.", emptyRequests: "No hay solicitudes de mensaje.",
@@ -524,6 +533,7 @@ const es: Partial<MessengerText> = {
 };
 
 const id: Partial<MessengerText> = {
+  e_unsafe: "Maaf, gambar atau video ini tidak dapat dikirim karena pemeriksaan otomatis kami menilainya tidak pantas. Silakan pilih berkas lain.",
   title: "Pesan", inbox: "Obrolan", requests: "Permintaan", searchPh: "Cari obrolan dan pesan", noResults: "Tidak ada hasil.",
   newChat: "Obrolan baru", newChatHint: "Nama pengguna orang tersebut", open: "Buka obrolan", newGroup: "Grup baru", join: "Gabung", joinPh: "Tautan undangan atau kode",
   empty: "Belum ada obrolan. Kirim pesan kepada orang yang saling mengikuti dengan Anda, atau buat grup belajar.", emptyRequests: "Tidak ada permintaan pesan.",
@@ -581,6 +591,7 @@ const id: Partial<MessengerText> = {
 };
 
 const ms: Partial<MessengerText> = {
+  e_unsafe: "Maaf, gambar atau video ini tidak dapat dihantar kerana semakan automatik kami mendapatinya tidak sesuai. Sila pilih fail lain.",
   ...id,
   title: "Mesej", inbox: "Sembang", requests: "Permintaan", searchPh: "Cari sembang dan mesej", noResults: "Tiada hasil.",
   newChat: "Sembang baharu", open: "Buka sembang", newGroup: "Kumpulan baharu", join: "Sertai", joinPh: "Pautan jemputan atau kod",
@@ -625,6 +636,7 @@ const ms: Partial<MessengerText> = {
 };
 
 const bn: Partial<MessengerText> = {
+  e_unsafe: "দুঃখিত, এই ছবি বা ভিডিওটি পাঠানো যাবে না, কারণ আমাদের স্বয়ংক্রিয় যাচাই এটিকে অনুপযুক্ত পেয়েছে। অনুগ্রহ করে অন্য একটি ফাইল বেছে নিন।",
   title: "বার্তা", inbox: "চ্যাট", requests: "অনুরোধ", searchPh: "চ্যাট ও বার্তায় খুঁজুন", noResults: "কোনো ফল নেই।",
   newChat: "নতুন চ্যাট", newChatHint: "ব্যক্তির ইউজারনেম", open: "চ্যাট খুলুন", newGroup: "নতুন গ্রুপ", join: "যোগ দিন", joinPh: "আমন্ত্রণ লিংক বা কোড",
   empty: "এখনো কোনো চ্যাট নেই। যাদের সাথে পারস্পরিক ফলো আছে তাদের লিখুন, অথবা একটি শেখার গ্রুপ খুলুন।", emptyRequests: "কোনো বার্তার অনুরোধ নেই।",
@@ -682,6 +694,7 @@ const bn: Partial<MessengerText> = {
 };
 
 const ru: Partial<MessengerText> = {
+  e_unsafe: "К сожалению, это изображение или видео нельзя отправить: автоматическая проверка сочла его неприемлемым. Пожалуйста, выберите другой файл.",
   title: "Сообщения", inbox: "Чаты", requests: "Запросы", searchPh: "Поиск по чатам и сообщениям", noResults: "Ничего не найдено.",
   newChat: "Новый чат", newChatHint: "Имя пользователя", open: "Открыть чат", newGroup: "Новая группа", join: "Вступить", joinPh: "Ссылка-приглашение или код",
   empty: "Чатов пока нет. Напишите тем, с кем вы взаимно подписаны, или создайте учебную группу.", emptyRequests: "Запросов на сообщения нет.",
@@ -739,6 +752,7 @@ const ru: Partial<MessengerText> = {
 };
 
 const zh: Partial<MessengerText> = {
+  e_unsafe: "抱歉，此图片或视频无法发送，因为我们的自动检查认为其内容不当。请选择其他文件。",
   title: "消息", inbox: "聊天", requests: "请求", searchPh: "搜索聊天和消息", noResults: "没有结果。",
   newChat: "新聊天", newChatHint: "对方的用户名", open: "打开聊天", newGroup: "新群组", join: "加入", joinPh: "邀请链接或代码",
   empty: "还没有聊天。请给与您互相关注的人发消息，或创建一个学习小组。", emptyRequests: "没有消息请求。",
@@ -811,6 +825,7 @@ export function errorText(t: MessengerText, code: string | undefined | null): st
     case "invite_invalid": return t.e_invite_invalid;
     case "muted": return t.e_muted;
     case "media_format": case "media_unavailable": return t.e_media;
+    case "media_unsafe": return t.e_unsafe;
     case "media_too_large": return t.e_too_large;
     case "text_not_allowed": return t.e_text;
     case "age16": case "age": case "age_required": return t.e_age16;

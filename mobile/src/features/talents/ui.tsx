@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState, type ReactNode } from "react";
+import { messengerText } from "@/features/messenger/text";
 import { SafetyContact } from "@/components/SafetyContact";
 import { Image, KeyboardAvoidingView, Modal, Platform, Pressable, ScrollView, Text, View } from "react-native";
 import { SITE } from "@/lib/api";
@@ -26,8 +27,10 @@ import { useUsernameText } from "./usernameText";
 
 export function useTalentErr() {
   const tt = useTT();
+  const { lang } = useLang();
   return (e: unknown) => {
     const code = errCode(e);
+    if (code === "media_unsafe") return messengerText(lang).e_unsafe;
     if (code === "age") return tt("ageUnder13");
     if (code === "age16") return tt("age16");
     if (code === "profile_required") return tt("needProfile");

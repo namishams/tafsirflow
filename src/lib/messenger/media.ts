@@ -4,10 +4,15 @@ import fs from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
 import { sniff, stripJpeg } from "../media";
+import { imageFlagged } from "../imageSafety";
 
 // Images and voice notes of the messenger. Both are re-encoded with ffmpeg (FFMPEG_PATH or "ffmpeg") without any
 // metadata (EXIF, GPS, device) before they are sealed and stored in the database; nothing is kept on disk.
 // Without ffmpeg a JPEG is stored with its metadata segments removed, and a recognised audio file as it is.
+// Images and videos (one frame) are checked by OpenAI's moderation endpoint (omni-moderation, accepts images) with the
+// server's OPENAI_API_KEY before they are stored; flagged ones are refused with "media_unsafe". Only the cleaned,
+// metadata-free JPEG leaves the server, never a name or account. Without a key or when OpenAI does not answer, the
+// upload goes through (the report flow and the moderators remain the safety net).
 
 export const IMAGE_IN_MAX = 8 * 1024 * 1024;
 export const IMAGE_OUT_MAX = 3 * 1024 * 1024;
@@ -45,6 +50,12 @@ const isPng = (b: Buffer) => b.length > 8 && b.toString("latin1", 1, 4) === "PNG
 const isWebp = (b: Buffer) => b.length > 12 && b.toString("latin1", 0, 4) === "RIFF" && b.toString("latin1", 8, 12) === "WEBP";
 const isHeic = (b: Buffer) => b.length > 12 && b.toString("latin1", 4, 8) === "ftyp" && /^(heic|heix|mif1|msf1|hevc)/.test(b.toString("latin1", 8, 12));
 
+/** one frame of a video (after one second, or the first one for very short clips) as a small JPEG */
+async function videoFrame(mp4: Buffer): Promise<Buffer | null> {
+  return (await viaFfmpeg(mp4, "mp4", "jpg", ["-ss", "1", "-frames:v", "1", "-vf", "scale='min(768,iw)':-2", "-q:v", "5"], 30_000))
+    ?? viaFfmpeg(mp4, "mp4", "jpg", ["-frames:v", "1", "-vf", "scale='min(768,iw)':-2", "-q:v", "5"], 30_000);
+}
+
 /** a JPEG of at most 1600 px without metadata, or an error code */
 export async function cleanImage(buf: Buffer): Promise<{ data: Buffer; mime: string } | { error: string }> {
   if (buf.length > IMAGE_IN_MAX) return { error: "media_too_large" };
@@ -54,6 +65,7 @@ export async function cleanImage(buf: Buffer): Promise<{ data: Buffer; mime: str
   const data = out ?? (ext === "jpg" ? stripJpeg(buf) : null);
   if (!data) return { error: "media_format" };
   if (data.length > IMAGE_OUT_MAX) return { error: "media_too_large" };
+  if (await imageFlagged(data)) return { error: "media_unsafe" };
   return { data, mime: "image/jpeg" };
 }
 
@@ -86,5 +98,7 @@ export async function cleanVideo(buf: Buffer): Promise<{ data: Buffer; mime: str
     "-c:v", "libx264", "-preset", "veryfast", "-crf", "28", "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "96k", "-movflags", "+faststart"], 180_000);
   if (!out) return { error: "media_format" };
   if (out.length > VIDEO_OUT_MAX) return { error: "media_too_large" };
+  const frame = await videoFrame(out);
+  if (frame && (await imageFlagged(frame))) return { error: "media_unsafe" };
   return { data: out, mime: "video/mp4" };
 }
