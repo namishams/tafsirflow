@@ -19,7 +19,7 @@ export function useUsernameCheck(username: string, current: string | null, onlin
     if (!/^[a-z0-9_.]{3,20}$/.test(u)) { setS("format"); return; }
     // instant answer from the same word filter as the server (src/lib/usernameFilter.ts)
     const bad = usernameProblem(u);
-    if (bad) { setS(bad); return; }
+    if (bad && bad !== "reserved") { setS(bad); return; } // reserved names: the server decides (the founder may use his own)
     if (!online) { setS("idle"); return; }
     setS("checking");
     let live = true;

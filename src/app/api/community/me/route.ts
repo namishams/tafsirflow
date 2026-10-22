@@ -5,6 +5,15 @@ import { json } from "@/lib/http";
 import { ROLES, USERNAME_RE, adultEnough, badText, gate, reserved, shape, type CRole } from "@/lib/communityProfiles";
 import { refreshBadges } from "@/lib/talentBadges";
 
+// the founder's own names (namishams, nami.shams, nami_shams, shams) are reserved for everyone else; only the
+// single account with users.founder = true may take them
+const FOUNDER_NAMES = /^(nami[._]?shams|namishams|shams)$/;
+async function founderMayUse(userId: number, u: string) {
+  if (!FOUNDER_NAMES.test(u)) return false;
+  const r = await pool()?.query("SELECT founder FROM users WHERE id = $1", [userId]).catch(() => null);
+  return !!r?.rows[0]?.founder;
+}
+
 export const dynamic = "force-dynamic";
 const NO = { "Cache-Control": "private, no-store" };
 
@@ -34,10 +43,11 @@ export async function PUT(req: NextRequest) {
   const role = ROLES.includes(b.role as CRole) ? (b.role as CRole) : null;
   const country = typeof b.country === "string" && /^[A-Za-z]{2}$/.test(b.country) ? b.country.toUpperCase() : null;
   if (!USERNAME_RE.test(username)) return json({ error: "username_format" }, 400);
-  if (reserved(username)) return json({ error: "username_reserved" }, 400);
+  const founderName = await founderMayUse(me.id, username);
+  if (reserved(username) && !founderName) return json({ error: "username_reserved" }, 400);
   {
     // the same word filter as GET /api/community/username; an unchanged existing name stays allowed
-    const bad = usernameProblem(username);
+    const bad = founderName ? null : usernameProblem(username);
     const same = bad ? (await pool()!.query("SELECT 1 FROM community_profiles WHERE user_id = $1 AND username = $2", [me.id, username])).rows[0] : null;
     if (bad && !same) return json({ error: bad === "reserved" ? "username_reserved" : bad === "star" ? "username_star" : "username_inappropriate" }, 400);
     // a verified star account keeps its reserved username (the star profile lives at that name)

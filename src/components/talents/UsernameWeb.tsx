@@ -28,7 +28,7 @@ export default function UsernameWeb({ locale }: { locale: string }) {
     if (!v) { setSt("idle"); return; }
     if (!/^[a-z0-9_.]{3,20}$/.test(v)) { setSt("format"); return; }
     const bad = usernameProblem(v);
-    if (bad) { setSt(bad); return; }
+    if (bad && bad !== "reserved") { setSt(bad); return; } // reserved names: the server decides (the founder may use his own)
     setSt("checking");
     let live = true;
     const h = setTimeout(() => {
