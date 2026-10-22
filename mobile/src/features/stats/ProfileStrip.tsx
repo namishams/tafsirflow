@@ -25,7 +25,15 @@ export function ProfileStrip({ username, own, local, name, demo, onOpen }: { use
   useEffect(() => {
     if (__DEV__ && demo) { setS(demoStats(own)); return; }
     if (!username || local) { setS(localStats(name, username ?? "", pro)); return; }
-    statsApi.of(username, lang).then((d) => setS(d.stats ?? null)).catch(() => setS(own ? localStats(name, username, pro) : null));
+    statsApi.of(username, lang).then((d) => {
+      // own profile: the server hides private sections from everyone except a signed-in owner; never show the
+      // "kept private" text or empty tiles to the owner, fall back to the device's own record instead
+      const st = d.stats ?? null;
+      if (own && (!st || !st.career || !st.sijill?.memorised)) {
+        const l = localStats(name, username, pro);
+        setS(st ? { ...l, ...st, career: st.career ?? l.career, sijill: { ...l.sijill, ...st.sijill, memorised: st.sijill?.memorised ?? l.sijill.memorised, time: st.sijill?.time ?? l.sijill.time } } : l);
+      } else setS(st);
+    }).catch(() => setS(own ? localStats(name, username, pro) : null));
   }, [username, local, lang, demo]); // eslint-disable-line react-hooks/exhaustive-deps
   const nf = useMemo(() => { try { return new Intl.NumberFormat(lang); } catch { return new Intl.NumberFormat("en"); } }, [lang]);
   if (!s) return null;
@@ -51,7 +59,7 @@ export function ProfileStrip({ username, own, local, name, demo, onOpen }: { use
           {c ? <TierEmblem tier={c.tier} division={c.division} size={62} progress={c.into} label={tierName} /> : null}
           <View style={{ flex: 1, gap: 2 }}>
             <Text style={{ fontFamily: FONT.semibold, fontSize: 11.5, letterSpacing: 1, color: stage.gold }}>{ct("careerCard")}</Text>
-            <Text numberOfLines={1} style={{ fontFamily: FONT.display, fontSize: 21, color: stage.cream }}>{tierName || ct("hidden")}</Text>
+            <Text numberOfLines={1} style={{ fontFamily: FONT.display, fontSize: 21, color: stage.cream }}>{tierName || (own ? ct("careerCard") : ct("hidden"))}</Text>
             {c ? <Text style={{ fontFamily: FONT.medium, fontSize: 12.5, color: stage.textSoft }}>{ct("levelN", { n: nf.format(c.level.level) })}</Text> : null}
           </View>
         </View>
@@ -62,9 +70,9 @@ export function ProfileStrip({ username, own, local, name, demo, onOpen }: { use
         </View>
         <View style={{ flexDirection: "row", gap: 6 }}>
           {cells.map(([v, l]) => (
-            <View key={l} style={{ flex: 1, alignItems: "center", paddingVertical: 8, borderRadius: R.md, backgroundColor: "rgba(255,255,255,0.07)" }}>
+            <View key={l} style={{ flex: 1, minWidth: 0, alignItems: "center", justifyContent: "center", paddingVertical: 8, paddingHorizontal: 3, borderRadius: R.md, backgroundColor: "rgba(255,255,255,0.07)" }}>
               <Text style={{ fontFamily: FONT.bold, fontSize: 15, color: stage.cream }}>{v}</Text>
-              <Text numberOfLines={1} style={{ fontFamily: FONT.regular, fontSize: 10.5, color: stage.textMuted }}>{l}</Text>
+              <Text numberOfLines={2} adjustsFontSizeToFit minimumFontScale={0.8} style={{ fontFamily: FONT.regular, fontSize: 10.5, lineHeight: 13, textAlign: "center", color: stage.textMuted }}>{l}</Text>
             </View>
           ))}
         </View>

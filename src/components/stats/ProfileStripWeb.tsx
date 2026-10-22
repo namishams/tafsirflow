@@ -47,7 +47,7 @@ export default function ProfileStripWeb({ username, locale }: { username: string
         {s.country ? <span className={chip}><CountryBadge code={s.country} size={15} />{countryName(s.country, locale)}</span> : null}
       </span>
       <span className="mt-3 grid grid-cols-4 gap-1.5">
-        {cells.map(([v, l]) => <span key={l} className="rounded-lg bg-white/[0.07] py-2 text-center"><span className="block text-[15px] font-bold text-[#f3e2b6]">{v}</span><span className="block truncate text-[10.5px] text-white/60">{l}</span></span>)}
+        {cells.map(([v, l]) => <span key={l} className="flex min-w-0 flex-col justify-center rounded-lg bg-white/[0.07] py-2 text-center"><span className="block text-[15px] font-bold text-[#f3e2b6]">{v}</span><span className="block px-0.5 text-[10.5px] leading-[13px] text-white/60 [overflow-wrap:anywhere] [hyphens:auto]">{l}</span></span>)}
       </span>
     </button>
   );
