@@ -22,7 +22,8 @@ export const freeNewPerDay = () => { try { return freeLimits().cardsPerDay; } ca
 const EMPTY: SrsState = { cards: {}, decks: ["juzamma"], log: {} };
 
 export const readSrsState = (): SrsState => readJSON<SrsState>(KEY, EMPTY);
-const writeState = (s: SrsState) => writeJSON(KEY, s, true);
+// website: not silent, so the account sync (src/lib/learn/sync.ts) uploads the cards
+const writeState = (s: SrsState) => writeJSON(KEY, s);
 export const useSrsState = () => useStored<SrsState>(KEY, EMPTY);
 
 function trim(s: SrsState): SrsState {
