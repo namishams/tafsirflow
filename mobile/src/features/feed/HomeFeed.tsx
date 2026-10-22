@@ -1,4 +1,5 @@
 import { memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { APP_STORE_URL } from "@/lib/review";
 import { Animated, AppState, Easing, FlatList, Linking, Modal, Platform, Pressable, RefreshControl, ScrollView, StyleSheet, Text, View, useWindowDimensions, type ListViewToken } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { BlurView } from "expo-blur";
@@ -519,7 +520,7 @@ export function HomeFeed({ tab, onTab, inTab, bottomSpace = 0, onOpen }: { tab: 
           <Text style={{ fontFamily: FONT.regular, fontSize: 13.5, lineHeight: 19, color: t.muted }}>{tx.updateBody}</Text>
           <View style={{ flexDirection: "row", justifyContent: "flex-end", gap: 18 }}>
             <Text onPress={() => setUpdateHidden(true)} accessibilityRole="button" style={{ fontFamily: FONT.semibold, fontSize: 14, color: t.muted, paddingVertical: 4 }}>{tx.gotIt}</Text>
-            <Text onPress={() => { const pkg = Constants.expoConfig?.android?.package; void Linking.openURL(Platform.OS === "android" && pkg ? `market://details?id=${pkg}` : SITE).catch(() => undefined); }} accessibilityRole="button" style={{ fontFamily: FONT.semibold, fontSize: 14, color: t.accent, paddingVertical: 4 }}>{tx.updateCta}</Text>
+            <Text onPress={() => { const pkg = Constants.expoConfig?.android?.package; void Linking.openURL(Platform.OS === "android" && pkg ? `market://details?id=${pkg}` : Platform.OS === "ios" ? APP_STORE_URL : SITE).catch(() => undefined); }} accessibilityRole="button" style={{ fontFamily: FONT.semibold, fontSize: 14, color: t.accent, paddingVertical: 4 }}>{tx.updateCta}</Text>
           </View>
         </View>
       ) : null}
