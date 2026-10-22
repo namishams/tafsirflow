@@ -25,8 +25,10 @@ function inventedQuotes(answer: string, docs: Doc[]): string[] {
   const hay = fold(docs.map((d) => d.text).join("\n")).replace(/[^\p{L}\p{N}]+/gu, " ");
   const out: string[] = [];
   const re = /["“„«»‚‘]([^"“”„«»‚‘’]{30,})["”“»«’‘]/g;
+  // an apostrophe or ʿayn sign inside a word ("Eid’s", "Sal‘at", "Qur’an") is not a quotation mark
+  const text = answer.replace(/(\p{L}\p{M}*)[’‘](?=\p{L})/gu, "$1");
   let m: RegExpExecArray | null;
-  while ((m = re.exec(answer))) {
+  while ((m = re.exec(text))) {
     const q = m[1];
     if (q.trim().split(/\s+/).length < 8) continue;
     const f = fold(q).replace(/[^\p{L}\p{N}]+/gu, " ").trim();

@@ -70,6 +70,8 @@ type Body = {
   address?: string; tradition?: string; persona?: string; consent?: { v?: number; age?: string };
   /** the learner's own progress from the device (lib/tutor/learner.ts LEARNER_FIELDS) */
   progress?: unknown;
+  /** goals and preferences the learner confirmed in the app (lib/tutor/next.ts); only sent when they allow it, never stored */
+  memory?: unknown;
 };
 
 const str = (x: unknown, n: number) => (typeof x === "string" ? x.slice(0, n) : undefined);
@@ -128,11 +130,12 @@ export async function POST(req: NextRequest) {
       learner = { ...fromTogether(await togetherSummary(me.id)), ...(learner ?? {}) };
     } catch { /* no community profile or no "Together" yet: the device's figures are enough */ }
   }
+  const memory = Array.isArray(b.memory) ? b.memory.filter((x): x is string => typeof x === "string").slice(0, 8).map((x) => x.slice(0, 120)) : [];
   const started = Date.now();
   let r: TutorResult;
   try {
     r = await askTutor(
-      { question, history, lang: locale, address, tradition, context, names: [me?.name, me?.email?.split("@")[0]], learner, persona: personaFor(b.persona, address) },
+      { question, history, lang: locale, address, tradition, context, names: [me?.name, me?.email?.split("@")[0]], learner, persona: personaFor(b.persona, address), memory },
       { chat: openAiChat(key), moderate: openAiModeration(key), corpus, verseDocs },
     );
   } catch (e) {

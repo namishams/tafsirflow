@@ -1,12 +1,13 @@
 import type { Doc } from "./corpus";
 import type { LearnerData } from "./config";
+import { verseRefsIn } from "./text";
 
 // The learner's own progress as one more "source" for the tutor: streak, verses, the weakest mastery dimension, today's
 // wird, the next best step (all computed on the device from the learner's own data) and, for signed-in members of
 // "Together", counts about friends and circles (togetherSummary – never names, nothing others did not share).
 // The tutor may use ONLY these figures about the learner (validate.ts rejects numbers that appear nowhere in the sources).
 
-type Field = { label: string; kind: "int" | "pct" | "bool" | "text" };
+type Field = { label: string; kind: "int" | "pct" | "bool" | "text"; max?: number };
 export const LEARNER_FIELDS: Record<string, Field> = {
   streak: { label: "Days in a row with learning (streak)", kind: "int" },
   bestStreak: { label: "Longest streak (days)", kind: "int" },
@@ -32,6 +33,11 @@ export const LEARNER_FIELDS: Record<string, Field> = {
   courseTotal: { label: "Lessons in that course", kind: "int" },
   khatmPct: { label: "Quran read in the khatm plan (%)", kind: "pct" },
   milestone: { label: "Milestone just reached", kind: "text" },
+  // the recitation coach (lib/tutor/next.ts coachFacts, computed on the device from the learner's own practice)
+  weakSpots: { label: "Weak spots in recitation (verse key and why: slipped in review, recall fading, missed words, confused with a similar verse, transition stalls)", kind: "text", max: 240 },
+  weakLetters: { label: "Letters with weak articulation (own rating low or listening quiz missed)", kind: "text", max: 20 },
+  mutDue: { label: "Groups of similar verses (mutashabihat) due for practice", kind: "int" },
+  practicePlan: { label: "The app's 10-minute practice plan for today (minutes, drill and verse; the app shows it as links)", kind: "text", max: 240 },
   // from "Together" (server)
   friendsSharing: { label: "Friends who share their activity", kind: "int" },
   friendsLearnedToday: { label: "Friends who learned today", kind: "int" },
@@ -57,7 +63,7 @@ export function cleanLearner(raw: unknown): LearnerData | null {
     if (v === undefined || v === null) continue;
     if (f.kind === "bool" && typeof v === "boolean") out[k] = v;
     else if ((f.kind === "int" || f.kind === "pct") && typeof v === "number" && Number.isFinite(v)) out[k] = Math.round(Math.max(f.kind === "pct" ? 0 : -100000, Math.min(f.kind === "pct" ? 100 : 1e7, v)));
-    else if (f.kind === "text" && typeof v === "string" && v.trim()) out[k] = v.replace(/[\n\r]+/g, " ").replace(/[^\p{L}\p{N} '’:,.()/–-]/gu, "").slice(0, 80);
+    else if (f.kind === "text" && typeof v === "string" && v.trim()) out[k] = v.replace(/[\n\r]+/g, " ").replace(/[^\p{L}\p{N} '’:,.()/–-]/gu, "").slice(0, f.max ?? 80);
   }
   return Object.keys(out).length ? out : null;
 }
@@ -85,5 +91,5 @@ export function fromTogether(t: unknown): LearnerData {
 /** the learner's data as a passage the model can cite */
 export function learnerDoc(d: LearnerData): Doc {
   const lines = Object.entries(d).map(([k, v]) => `${LEARNER_FIELDS[k]?.label ?? k}: ${typeof v === "boolean" ? (v ? "yes" : "no") : v}`);
-  return { id: "learner@en", base: "learner", kind: "progress", lang: "en", title: "The learner's own progress (from their device and their study circle)", text: lines.join("\n"), link: "/stats", verses: [], hadith: [], tradition: "all" };
+  return { id: "learner@en", base: "learner", kind: "progress", lang: "en", title: "The learner's own progress (from their device and their study circle)", text: lines.join("\n"), link: "/stats", verses: verseRefsIn(lines.join("\n")), hadith: [], tradition: "all" };
 }

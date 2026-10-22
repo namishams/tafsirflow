@@ -16,6 +16,7 @@ import { useOnboarded } from "./Guide";
 import { ShamsModeChooser } from "./ModeChooser";
 import { AdabMethodLine, AdabPillarCard, AdabTodayCard, useAdabTile } from "./Adab";
 import { ListenDaysCard, SistersEntryCard } from "@/components/sisters/Sisters";
+import CoachCard from "@/components/tutor/CoachCard";
 
 function Today() {
   const { s, nf } = useS2();
@@ -96,6 +97,8 @@ export function HubScreen() {
         <ShamsModeChooser className="pb-2" />
         <Live fallback={null}><Onboard /><DueChecks /><ListenDaysCard compact /><SistersEntryCard always /></Live>
         <Live><Today /></Live>
+        {/* the tutor's daily check-in from the learner's own figures (one calm message, hidden for the day on request) */}
+        <Live fallback={null}><CoachCard /></Live>
         {/* pillar "Adab des Qurʾān-Trägers" (Shams 3.0): one adab of the day next to today's wird */}
         <AdabTodayCard />
         <Live><GradeCard compact /></Live>

@@ -6,6 +6,11 @@ import Markdown from "@/components/Markdown";
 import { readTradition } from "@/lib/learn/tradition";
 import TutorAvatar from "./TutorAvatar";
 import TutorAvatarHidaya from "./TutorAvatarHidaya";
+import { readJSON, writeJSON } from "@/lib/storage";
+import { BUBBLE_KEY, bubbleSetting, addMemory, appChips, coachFacts, fillNext, goalIn, memoryForServer, nextUi, removeMemory, type MemoryState } from "@/lib/tutor/next";
+import { useCoachInput } from "./coach";
+import { readMemory, saveMemory } from "./memory";
+import { useDictation, useSpeak } from "./voice";
 import {
   clearChat, giveConsent, hasConsent, readChat, readPrefs, saveAddress, saveChat, savePersona, useTutor, useTutorProgress, withdrawConsent,
   type ChatMsg, type Consent, type Persona, type TutorContext,
@@ -18,8 +23,30 @@ import {
 type Status = { enabled: boolean; quota: { limit: number; left: number; pro: boolean; signedIn: boolean } };
 type Err = "offline" | "off" | "busy" | "limit" | "pro" | "login" | "verify" | "consent" | "age" | "rate" | "error";
 
-export function TutorFace({ persona, size = 40, speaking, still }: { persona: Persona; size?: number; speaking?: boolean; still?: boolean }) {
-  return persona === "hidaya" ? <TutorAvatarHidaya size={size} speaking={speaking} still={still} /> : <TutorAvatar size={size} speaking={speaking} still={still} />;
+// a slow, small nod while the tutor is thinking; only with prefers-reduced-motion: no-preference (app: Face.tsx)
+const NOD = "@media (prefers-reduced-motion: no-preference){.tutor-nod{animation:tutor-nod 2.6s ease-in-out infinite;transform-origin:50% 85%}}@keyframes tutor-nod{0%,55%,100%{transform:translateY(0) rotate(0)}18%{transform:translateY(1.6px) rotate(1.5deg)}32%{transform:translateY(0) rotate(0)}44%{transform:translateY(1px) rotate(1deg)}}";
+export function TutorFace({ persona, size = 40, speaking, still, thinking }: { persona: Persona; size?: number; speaking?: boolean; still?: boolean; thinking?: boolean }) {
+  const art = persona === "hidaya" ? <TutorAvatarHidaya size={size} speaking={speaking} still={still} /> : <TutorAvatar size={size} speaking={speaking} still={still} />;
+  const face = <span className="relative inline-flex" style={{ width: size, height: size }}>{art}<FaceSheen size={size} /></span>;
+  if (!thinking) return face;
+  return <span className="tutor-nod inline-flex"><style>{NOD}</style>{face}</span>;
+}
+
+/** the premium finish over both portraits (same geometry as the app's Face.tsx Sheen): a soft rim light from the
+ *  upper left, a gold ornament halo of sixteen small lozenges inside the ring, and a gentle vignette */
+const HALO = Array.from({ length: 16 }, (_, i) => { const a = (i / 16) * Math.PI * 2, r = 88.5, x = 100 + r * Math.cos(a), y = 100 + r * Math.sin(a); return `M${x.toFixed(1)} ${(y - 2.4).toFixed(1)}L${(x + 1.6).toFixed(1)} ${y.toFixed(1)}L${x.toFixed(1)} ${(y + 2.4).toFixed(1)}L${(x - 1.6).toFixed(1)} ${y.toFixed(1)}Z`; }).join("");
+function FaceSheen({ size }: { size: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 200 200" aria-hidden className="pointer-events-none absolute inset-0">
+      <defs>
+        <radialGradient id="tutor-sheen-v" cx="50%" cy="45%" r="55%"><stop offset="0.72" stopColor="#04201a" stopOpacity="0" /><stop offset="1" stopColor="#04201a" stopOpacity="0.28" /></radialGradient>
+        <linearGradient id="tutor-sheen-rim" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#fff6dc" stopOpacity="0.55" /><stop offset="0.45" stopColor="#fff6dc" stopOpacity="0" /></linearGradient>
+      </defs>
+      <circle cx="100" cy="100" r="94" fill="url(#tutor-sheen-v)" />
+      <path d="M22 100A78 78 0 0 1 100 22" fill="none" stroke="url(#tutor-sheen-rim)" strokeWidth={5} strokeLinecap="round" />
+      {size >= 40 ? <path d={HALO} fill="#e8c877" opacity={0.55} /> : null}
+    </svg>
+  );
 }
 
 const glass = "border border-[rgb(var(--gold)/0.35)] bg-[rgb(var(--surface)/0.72)] backdrop-blur-xl shadow-[0_8px_30px_rgba(6,40,30,0.08)]";
@@ -40,8 +67,22 @@ export default function TutorChat({ context, initial }: { context?: TutorContext
   const asked = useRef(false);
   const end = useRef<HTMLDivElement>(null);
   const consented = mounted && hasConsent(prefs);
+  const nx = nextUi(locale);
+  const coach = useCoachInput();
+  const [memory, setMemory] = useState<MemoryState | null>(null);
+  const [goal, setGoal] = useState<string | null>(null);
+  const [typing, setTyping] = useState(0);
+  const dictation = useDictation(locale, (t) => setText(t));
+  const updateMemory = (m: MemoryState) => { saveMemory(m); setMemory(m); };
 
-  useEffect(() => { setMounted(true); setMsgs(readChat()); }, []);
+  useEffect(() => { setMounted(true); setMsgs(readChat()); setMemory(readMemory()); }, []);
+  // a calm typing state: the answer is checked against its sources before it is shown, so it cannot stream
+  useEffect(() => {
+    if (!busy) { setTyping(0); return; }
+    const id = setInterval(() => setTyping((n) => Math.min(n + 1, 2)), 2600);
+    return () => clearInterval(id);
+  }, [busy]);
+  const thinkingText = fillNext(nx.typing[typing], { name });
   const check = useCallback(() => {
     setNet("loading");
     fetch("/api/assistant").then((r) => r.json()).then((s: Status) => { setStatus(s); setNet("ok"); }).catch(() => setNet("offline"));
@@ -56,13 +97,18 @@ export default function TutorChat({ context, initial }: { context?: TutorContext
     const before = readChat();
     const next: ChatMsg[] = [...before, { role: "user", content: question, at: Date.now() }];
     setMsgs(next); saveChat(next); setText(""); setBusy(true); setErr(null);
+    if (dictation.listening) dictation.stop();
+    const g = goalIn(question);
+    const mem = readMemory();
+    setGoal(g && !mem.items.some((x) => x.text.toLowerCase() === g.toLowerCase()) ? g : null);
     const t = readTradition();
     try {
       const r = await fetch("/api/assistant", {
         method: "POST", headers: { "content-type": "application/json" },
         body: JSON.stringify({
           v: 2, question, locale, context: ctx, address, persona, tradition: t === "sunni" || t === "shia" ? t : "all",
-          consent: { v: p.consent.v, age: p.consent.age }, progress,
+          consent: { v: p.consent.v, age: p.consent.age }, progress: { ...(progress ?? {}), ...(coach ? coachFacts(coach) : {}) },
+          memory: memoryForServer(mem),
           history: before.filter((m) => !m.local).slice(-6).map((m) => ({ role: m.role, content: m.content.slice(0, 600) })),
         }),
       });
@@ -76,7 +122,7 @@ export default function TutorChat({ context, initial }: { context?: TutorContext
       setMsgs(all); saveChat(all);
       setStatus((s) => (s ? { ...s, quota: { ...s.quota, ...d.quota } } : s));
     } catch { setErr("offline"); } finally { setBusy(false); }
-  }, [busy, locale, address, persona, progress]);
+  }, [busy, locale, address, persona, progress, coach, dictation]);
 
   useEffect(() => {
     if (asked.current || !initial || net !== "ok" || !status?.enabled || !consented) return;
@@ -92,10 +138,10 @@ export default function TutorChat({ context, initial }: { context?: TutorContext
   return (
     <div className="flex min-h-[70dvh] flex-col overflow-hidden rounded-[28px] border border-line bg-[rgb(var(--bg))]">
       <header className={`sticky top-0 z-10 flex items-center gap-3 px-4 py-3 ${glass} rounded-none border-x-0 border-t-0`}>
-        <TutorFace persona={persona} size={44} speaking={busy} />
+        <TutorFace persona={persona} size={44} speaking={busy} thinking={busy} />
         <div className="min-w-0 flex-1">
           <p className="flex items-center gap-2 text-lg font-semibold">{name}<span className="rounded-full border border-[rgb(var(--gold)/0.7)] px-2 text-[10.5px] font-bold tracking-wider text-[rgb(var(--gold))]">{ui.ai}</span></p>
-          <p className="truncate text-[12.5px] text-muted">{busy ? f(ui.thinking) : context?.title ?? f(ui.title)}</p>
+          <p className="truncate text-[12.5px] text-muted">{busy ? thinkingText : context?.title ?? f(ui.title)}</p>
         </div>
         <button type="button" onClick={() => setSettings((v) => !v)} aria-expanded={settings} className={pill}>{ui.tutor}</button>
       </header>
@@ -129,6 +175,11 @@ export default function TutorChat({ context, initial }: { context?: TutorContext
               {msgs.length ? <button type="button" className={pill} onClick={() => { if (confirm(ui.clearAsk)) { clearChat(); setMsgs([]); setErr(null); } }}>{ui.clear}</button> : null}
               {hasConsent(prefs) ? <button type="button" className={pill} onClick={() => { if (confirm(ui.withdraw)) { withdrawConsent(); clearChat(); setMsgs([]); } }}>{ui.withdraw}</button> : null}
             </div>
+            <label className="mt-4 flex cursor-pointer items-center gap-3 text-[14px]">
+              <input type="checkbox" defaultChecked={readJSON<{ hidden?: boolean }>(BUBBLE_KEY, {}).hidden !== true} onChange={(e) => writeJSON(BUBBLE_KEY, { hidden: !e.target.checked }, true)} className="h-5 w-5 accent-[rgb(var(--gold))]" />
+              {bubbleSetting(locale)}
+            </label>
+            {memory ? <MemoryPanel m={memory} onChange={updateMemory} /> : null}
           </section>
         ) : null}
 
@@ -154,10 +205,17 @@ export default function TutorChat({ context, initial }: { context?: TutorContext
         ) : (
           <div key={i} className="flex gap-3">
             <div className="shrink-0"><TutorFace persona={m.persona ?? persona} size={34} still /></div>
-            <AnswerView m={m} question={lastQ(i)} onFollow={(q) => void send(q, null)} />
+            <AnswerView m={m} id={`${i}`} question={lastQ(i)} onFollow={(q) => void send(q, null)} />
           </div>
         ))}
-        {busy ? <p className="flex items-center gap-3 ps-12 text-sm text-muted"><TutorFace persona={persona} size={28} speaking />{f(ui.thinking)}</p> : null}
+        {busy ? <p role="status" aria-live="polite" className="flex items-center gap-3 ps-12 text-sm text-muted"><TutorFace persona={persona} size={28} speaking thinking />{thinkingText}</p> : null}
+        {goal && !busy && memory ? (
+          <div className="ms-12 flex flex-wrap items-center gap-2 rounded-2xl border border-[rgb(var(--gold)/0.45)] p-3 text-sm">
+            <span>{fillNext(nx.memSuggest, { name })} <em className="not-italic font-semibold">{goal}</em></span>
+            <button type="button" className={pill} onClick={() => { updateMemory(addMemory(readMemory(), goal)); setGoal(null); }}>{nx.memSave}</button>
+            <button type="button" className="text-muted hover:text-ink" onClick={() => setGoal(null)}>{ui.later}</button>
+          </div>
+        ) : null}
         {err ? (
           <div role="alert" className="ms-12 rounded-2xl border border-[rgb(var(--gold)/0.45)] bg-[rgb(var(--gold)/0.06)] p-4 text-sm">
             <p>{f(errorText)}</p>
@@ -174,7 +232,13 @@ export default function TutorChat({ context, initial }: { context?: TutorContext
         <form onSubmit={(e) => { e.preventDefault(); void send(text, context ?? null); }} className="p-3 sm:p-4">
           <div className={`flex items-end gap-2 rounded-[26px] p-1.5 ${glass}`}>
             <textarea value={text} onChange={(e) => setText(e.target.value)} onKeyDown={(e) => { if (e.key === "Enter" && !e.shiftKey && !e.nativeEvent.isComposing) { e.preventDefault(); void send(text, context ?? null); } }}
-              maxLength={800} rows={1} placeholder={ui.ph} aria-label={ui.ph} className="min-h-[44px] min-w-0 flex-1 resize-none bg-transparent px-3 py-2.5 text-[16px] outline-none" />
+              maxLength={800} rows={1} placeholder={dictation.listening ? nx.listening : ui.ph} aria-label={ui.ph} className="min-h-[44px] min-w-0 flex-1 resize-none bg-transparent px-3 py-2.5 text-[16px] outline-none" />
+            {dictation.can ? (
+              <button type="button" onClick={() => (dictation.listening ? dictation.stop() : dictation.start())} aria-pressed={dictation.listening} aria-label={dictation.listening ? nx.stop : nx.speakAsk} title={nx.voiceNote}
+                className={`grid h-11 w-11 shrink-0 place-items-center rounded-full border ${dictation.listening ? "border-[rgb(var(--gold))] bg-[rgb(var(--gold)/0.18)]" : "border-line"}`}>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden><rect x="9" y="3" width="6" height="11" rx="3" /><path d="M5 11a7 7 0 0 0 14 0M12 18v3" /></svg>
+              </button>
+            ) : null}
             <button disabled={busy || text.trim().length < 2 || net !== "ok" || !status?.enabled} aria-label={ui.send} className="btn-gold grid h-11 w-11 shrink-0 place-items-center rounded-full font-bold disabled:opacity-40">→</button>
           </div>
           <p className="mt-2 text-[11.5px] leading-snug text-muted">
@@ -199,6 +263,40 @@ export default function TutorChat({ context, initial }: { context?: TutorContext
 
 }
 
+/** what the tutor remembers: only items the learner added or confirmed; on this device, synced only when allowed */
+function MemoryPanel({ m, onChange }: { m: MemoryState; onChange: (m: MemoryState) => void }) {
+  const locale = useLocale();
+  const nx = nextUi(locale);
+  const { name } = useTutor();
+  const [draft, setDraft] = useState("");
+  const toggle = (label: string, on: boolean, set: (v: boolean) => void) => (
+    <label className="flex cursor-pointer items-center gap-3 text-[14px]"><input type="checkbox" checked={on} onChange={(e) => set(e.target.checked)} className="h-5 w-5 accent-[rgb(var(--gold))]" />{label}</label>
+  );
+  return (
+    <div className="mt-5 border-t border-line pt-4">
+      <p className="font-semibold">{fillNext(nx.memTitle, { name })}</p>
+      <p className="mt-1 text-xs text-muted">{nx.memLead}</p>
+      {m.items.length ? (
+        <ul className="mt-3 grid gap-2">{m.items.map((x) => (
+          <li key={x.id} className="flex items-center justify-between gap-3 rounded-2xl border border-line px-3 py-2 text-[14px]">
+            <span className="min-w-0 break-words">{x.text}</span>
+            <button type="button" onClick={() => onChange(removeMemory(m, x.id))} className="shrink-0 text-[12.5px] text-muted hover:text-ink">{nx.memDelete}</button>
+          </li>
+        ))}</ul>
+      ) : <p className="mt-3 text-sm text-muted">{nx.memEmpty}</p>}
+      <form className="mt-3 flex gap-2" onSubmit={(e) => { e.preventDefault(); const n = addMemory(m, draft); if (n !== m) { onChange(n); setDraft(""); } }}>
+        <input value={draft} onChange={(e) => setDraft(e.target.value)} maxLength={120} placeholder={nx.memPh} aria-label={nx.memPh} className="min-w-0 flex-1 rounded-full border border-line bg-bg px-4 py-2 text-[15px] outline-none focus:border-[rgb(var(--gold))]" />
+        <button type="submit" disabled={draft.trim().length < 3} className={`${pill} disabled:opacity-40`}>{nx.memAdd}</button>
+      </form>
+      <div className="mt-3 grid gap-2">
+        {toggle(nx.memUse, m.use, (v) => onChange({ ...m, use: v }))}
+        {toggle(nx.memSync, m.sync, (v) => onChange({ ...m, sync: v }))}
+      </div>
+      {m.items.length ? <button type="button" className={`${pill} mt-3`} onClick={() => onChange({ ...m, items: [] })}>{nx.memDeleteAll}</button> : null}
+    </div>
+  );
+}
+
 function ConsentBox({ onDone }: { onDone: () => void }) {
   const { ui, f, persona } = useTutor();
   const [age, setAge] = useState<Consent["age"] | null>(null);
@@ -220,12 +318,16 @@ function ConsentBox({ onDone }: { onDone: () => void }) {
   );
 }
 
-function AnswerView({ m, question, onFollow }: { m: ChatMsg; question?: string; onFollow: (q: string) => void }) {
+function AnswerView({ m, id, question, onFollow }: { m: ChatMsg; id: string; question?: string; onFollow: (q: string) => void }) {
   const locale = useLocale();
   const { ui } = useTutor();
+  const nx = nextUi(locale);
+  const voice = useSpeak(locale);
   const [copied, setCopied] = useState(false);
   const [report, setReport] = useState(false);
   const cites = m.sources?.length ? m.sources : m.related ?? [];
+  const chips = appChips(cites, nx);
+  const reading = voice.speaking === id;
   return (
     <div className="min-w-0 max-w-[88%] flex-1 space-y-3">
       <div className="rounded-3xl rounded-ss-md border border-line bg-surface px-4 py-1 [&>div>p:first-child]:mt-2">
@@ -236,7 +338,7 @@ function AnswerView({ m, question, onFollow }: { m: ChatMsg; question?: string; 
         <Link key={v.key} href={`/surah/${v.key.split(":")[0]}?v=${v.key.split(":")[1]}`} className={`block rounded-3xl p-4 ${glass}`}>
           <p dir="rtl" lang="ar" className="font-arabic text-[22px] leading-[2]">{v.arabic}</p>
           {v.translation ? <p className="mt-1 text-[14px] leading-relaxed">{v.translation}</p> : null}
-          <p className="mt-2 text-xs font-semibold text-[rgb(var(--gold))]">{ui.quran} {v.key} · {v.chapter}</p>
+          <p className="mt-2 text-xs font-semibold text-[rgb(var(--gold))]">{ui.quran} {v.key} · {v.chapter} · {nx.playVerse}</p>
         </Link>
       ))}
       {m.scripture?.hadith.map((h) => (
@@ -252,9 +354,15 @@ function AnswerView({ m, question, onFollow }: { m: ChatMsg; question?: string; 
           <ol className="mt-1 space-y-1">{cites.map((c) => <li key={`${c.n}${c.link}`} className="flex gap-2 text-[13.5px]"><span className="font-semibold text-[rgb(var(--gold))]">{c.n}</span><Link href={c.link} className="font-medium text-accent hover:underline">{c.title}</Link></li>)}</ol>
         </div>
       ) : null}
-      {m.followups?.length ? <div className="flex flex-wrap gap-2">{m.followups.map((q) => <button key={q} type="button" className={pill} onClick={() => onFollow(q)}>{q}</button>)}</div> : null}
+      {m.followups?.length || chips.length ? (
+        <div className="flex flex-wrap gap-2">
+          {chips.map((c) => <Link key={c.href} href={c.href} className={`${pill} border-[rgb(var(--gold)/0.6)]`}>{c.label}</Link>)}
+          {m.followups?.map((q) => <button key={q} type="button" className={pill} onClick={() => onFollow(q)}>{q}</button>)}
+        </div>
+      ) : null}
       {!m.local ? (
         <div className="flex gap-4 text-[12.5px] text-muted">
+          {voice.can && m.content ? <button type="button" onClick={() => voice.speak(id, m.content)} aria-pressed={reading} title={nx.voiceNote} className="hover:text-ink">{reading ? nx.stop : `${nx.listen} (${ui.ai})`}</button> : null}
           <button type="button" onClick={() => { void navigator.clipboard?.writeText(m.content); setCopied(true); setTimeout(() => setCopied(false), 1500); }} className="hover:text-ink">{copied ? ui.copied : ui.copy}</button>
           {m.id ? <button type="button" onClick={() => setReport((v) => !v)} className="hover:text-ink" aria-expanded={report}>⚑ {ui.report}</button> : null}
         </div>

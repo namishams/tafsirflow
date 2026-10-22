@@ -12,6 +12,8 @@ import { TutorFace } from "./Face";
 import { useTutor } from "./hooks";
 import { giveConsent, saveAddress, savePersona, type ChatMsg, type Consent, type Persona } from "./prefs";
 import type { Progress } from "./progress";
+import { appChips, nextUi } from "./next";
+import { useSpeak } from "./voice";
 
 // The parts of the tutor's chat: consent card, tutor and address choice, today's card, an answer with its sources and
 // scripture, the report sheet. Emerald and gold, Liquid Glass surfaces on current iOS (hairline cards elsewhere).
@@ -119,8 +121,14 @@ export function Answer({ m, question, onFollow, md }: { m: ChatMsg; question?: s
   const { ui } = useTutor();
   const [copied, setCopied] = useState(false);
   const [report, setReport] = useState(false);
+  const { lang } = useLang();
+  const nx = nextUi(lang);
+  const voice = useSpeak(lang);
   const cites = m.sources?.length ? m.sources : m.related ?? [];
+  const chips = appChips(cites, nx);
   const canReport = !!m.id && !m.local;
+  const sid = `${m.at}`;
+  const reading = voice.speaking === sid;
   return (
     <View style={{ flex: 1, gap: 10 }}>
       <View style={{ borderRadius: 18, borderTopLeftRadius: 6, backgroundColor: t.surface, borderWidth: StyleSheet.hairlineWidth, borderColor: t.line, paddingHorizontal: 16, paddingVertical: 12 }}>
@@ -132,7 +140,7 @@ export function Answer({ m, question, onFollow, md }: { m: ChatMsg; question?: s
           <GlassCard>
             <Text style={{ fontFamily: ARABIC_FONT, fontSize: 22, lineHeight: 44, color: t.arabic, textAlign: "right", writingDirection: "rtl" }}>{v.arabic}</Text>
             {v.translation ? <Text style={{ fontFamily: FONT.regular, fontSize: 14, lineHeight: 21, color: t.ink, marginTop: 6 }}>{v.translation}</Text> : null}
-            <Text style={{ fontFamily: FONT.semibold, fontSize: 12, color: goldButton.line, marginTop: 8 }}>{ui.quran} {v.key} · {v.chapter}</Text>
+            <Text style={{ fontFamily: FONT.semibold, fontSize: 12, color: goldButton.line, marginTop: 8 }}>{ui.quran} {v.key} · {v.chapter} · {nx.playVerse}</Text>
           </GlassCard>
         </Pressable>
       ))}
@@ -156,13 +164,19 @@ export function Answer({ m, question, onFollow, md }: { m: ChatMsg; question?: s
           ))}
         </View>
       ) : null}
-      {m.followups?.length ? (
+      {m.followups?.length || chips.length ? (
         <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 8 }}>
-          {m.followups.map((q) => <OutlineButton key={q} title={q} compact onPress={() => onFollow(q)} />)}
+          {chips.map((c) => <OutlineButton key={c.href} title={c.label} icon="chevronRight" compact onPress={() => openHref(c.href)} />)}
+          {m.followups?.map((q) => <OutlineButton key={q} title={q} compact onPress={() => onFollow(q)} />)}
         </View>
       ) : null}
       {!m.local ? (
         <View style={{ flexDirection: "row", gap: 18 }}>
+          {voice.can && m.content ? (
+            <Pressable onPress={() => voice.speak(sid, m.content)} accessibilityRole="button" accessibilityHint={nx.voiceNote} accessibilityState={{ selected: reading }} hitSlop={8} style={{ flexDirection: "row", gap: 6, alignItems: "center" }}>
+              <Icon name={reading ? "stop" : "speaker"} size={14} color={t.muted} /><Text style={{ fontFamily: FONT.medium, fontSize: 12.5, color: t.muted }}>{reading ? nx.stop : `${nx.listen} (${ui.ai})`}</Text>
+            </Pressable>
+          ) : null}
           <Pressable onPress={() => { void Clipboard.setStringAsync(m.content); setCopied(true); setTimeout(() => setCopied(false), 1500); }} accessibilityRole="button" hitSlop={8} style={{ flexDirection: "row", gap: 6, alignItems: "center" }}>
             <Icon name="copy" size={14} color={t.muted} /><Text style={{ fontFamily: FONT.medium, fontSize: 12.5, color: t.muted }}>{copied ? ui.copied : ui.copy}</Text>
           </Pressable>

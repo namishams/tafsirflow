@@ -22,6 +22,7 @@ import { stackOptions } from "@/components/page";
 import { useTheme } from "@/lib/theme";
 import { RewardsHost } from "@/features/progress";
 import { NowPlayingBar } from "@/features/radio/MiniPlayer";
+import { TutorBubble } from "@/features/tutor/TutorBubble";
 import { NotificationsBridge } from "@/features/daily/NotificationsBridge";
 import { UsernamePromptBridge } from "@/features/talents/usernamePrompt";
 import { DailyMoment } from "@/features/daily/DailyMoment";
@@ -82,6 +83,7 @@ export default function RootLayout() {
               <RewardsHost>
                 <PerfProbe><Routes /></PerfProbe>
                 <NowPlayingBar />
+                <TutorBubble />
                 <NotificationsBridge />
       <UsernamePromptBridge />
                 <DailyMoment />

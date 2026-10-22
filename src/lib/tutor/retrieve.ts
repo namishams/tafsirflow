@@ -46,7 +46,8 @@ export function search(docs: Doc[], query: string, o: { lang: string; tradition:
     }
     if (s <= 0) continue;
     const d = ix.docs[i];
-    if (o.tradition !== "all" && d.tradition !== "all") s *= d.tradition === o.tradition ? 1.15 : 0.9;
+    // the learner's tradition setting: their own school's passages first, the other side's still findable (for comparison)
+    if (o.tradition !== "all" && d.tradition !== "all") s *= d.tradition === o.tradition ? 1.45 : 0.7;
     if (ctxLink && d.link === ctxLink) s *= 1.4;
     if (o.context?.verse && d.verses.includes(o.context.verse)) s *= 1.3;
     scores.push({ doc: d, score: s });

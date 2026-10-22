@@ -30,6 +30,8 @@ export type TutorInput = {
   learner?: LearnerData | null;
   /** Dalil (default) or Hidaya (sisters only, checked by the route) */
   persona?: Persona;
+  /** goals and preferences the learner confirmed (lib/tutor/next.ts, sent only when they allow it); tone and focus only */
+  memory?: string[];
 };
 export type TutorSource = { n: number; title: string; link: string; kind: string };
 export type TutorStatus = "answered" | "views" | "not_found" | "greeting" | "refused" | "crisis" | "flagged";
@@ -93,6 +95,7 @@ export async function askTutor(i: TutorInput, deps: TutorDeps): Promise<TutorRes
   const m = tutorMsg(i.lang, who.name, who.ar);
   const asked = scrub(i.question.trim().slice(0, TUTOR_LIMITS.maxInput), i.names);
   const history = i.history.slice(-TUTOR_LIMITS.maxHistory).map((h) => ({ role: h.role, content: scrub(h.content.slice(0, TUTOR_LIMITS.maxHistoryChars), i.names) }));
+  const memory = (i.memory ?? []).slice(0, 8).map((x) => scrub(String(x).slice(0, 120), i.names).replace(/[\n\r]+/g, " ").trim()).filter((x) => x.length >= 3);
   let tokensIn = 0, tokensOut = 0;
 
   // 1. moderation of the question (OpenAI moderation; without an answer from it the pipeline goes on, the model rules still hold)
@@ -101,7 +104,7 @@ export async function askTutor(i: TutorInput, deps: TutorDeps): Promise<TutorRes
   if (mod?.flagged) return fixed("refused", m.harmful, asked, { category: "harmful" });
 
   // 2. cache (first questions only: a follow-up depends on the conversation)
-  const key = history.length || i.learner ? null : cacheKey(i, asked);
+  const key = history.length || i.learner || memory.length ? null : cacheKey(i, asked);
   const hit = key ? fromCache(key) : null;
   if (hit) return hit;
 
@@ -129,8 +132,10 @@ export async function askTutor(i: TutorInput, deps: TutorDeps): Promise<TutorRes
   // 4. retrieval
   const docs = await deps.corpus();
   const ctx = i.context;
-  const progressAsk = ctx?.kind === "progress" || plan.category === "app_help";
-  const query = [asked, progressAsk ? "daily wird sabaq sabqi manzil review plan streak" : "", plan.query_en, plan.query_local, ctx?.title, ctx?.question, ctx?.correct, history.filter((h) => h.role === "user").slice(-1)[0]?.content].filter(Boolean).join(" ");
+  // the recitation coach asks from a Shams step: the learner's weak spots and the method's passages on fixing them
+  const coachAsk = ctx?.kind === "shams" && !!i.learner?.weakSpots;
+  const progressAsk = ctx?.kind === "progress" || plan.category === "app_help" || (ctx?.kind === "shams" && !!i.learner);
+  const query = [asked, progressAsk ? "daily wird sabaq sabqi manzil review plan streak" : "", coachAsk ? "weak spots tathbit consolidate drill transition rabt mutashabihat makhraj articulation" : "", plan.query_en, plan.query_local, ctx?.title, ctx?.question, ctx?.correct, history.filter((h) => h.role === "user").slice(-1)[0]?.content].filter(Boolean).join(" ");
   const hits = search(docs, query, { lang: i.lang, tradition: i.tradition, k: TUTOR_LIMITS.passages, context: ctx });
   const strong = hits.filter((h) => h.score >= MIN_SCORE).map((h) => h.doc);
   const own = contextDocs(docs, ctx, i.lang);
@@ -146,14 +151,15 @@ export async function askTutor(i: TutorInput, deps: TutorDeps): Promise<TutorRes
 
   // 5. the answer, from the passages only (one more try when the server rejects the first one)
   const system = answerRules({ lang: i.lang, address: i.address, tradition: i.tradition, persona: i.persona });
-  const userMsg = [contextBlock(ctx), `SOURCES:\n${sourcesBlock(passages, TUTOR_LIMITS.passageChars)}`, `QUESTION: ${asked}`].filter(Boolean).join("\n\n");
+  const notes = memory.length ? `LEARNER NOTES (goals and preferences the learner confirmed; use them only to shape focus and tone, never as a source of facts):\n${memory.map((x) => `- ${x}`).join("\n")}` : "";
+  const userMsg = [contextBlock(ctx), notes, `SOURCES:\n${sourcesBlock(passages, TUTOR_LIMITS.passageChars)}`, `QUESTION: ${asked}`].filter(Boolean).join("\n\n");
   const extra = namedVerse ? [namedVerse] : [];
   let checked = null as ReturnType<typeof checkAnswer> | null;
   let note = "";
   for (let attempt = 0; attempt < 2; attempt++) {
     const a = await deps.chat({ system, messages: [...history, { role: "user", content: note ? `${userMsg}\n\n${note}` : userMsg }], schema: ANSWER_SCHEMA, maxTokens: TUTOR_LIMITS.answerTokens });
     tokensIn += a.tokensIn; tokensOut += a.tokensOut;
-    checked = checkAnswer(a.json, passages, extra, [asked, ctx?.question, ctx?.chosen, ctx?.correct, ctx?.explain, ...history.map((h) => h.content)].filter(Boolean).join(" "));
+    checked = checkAnswer(a.json, passages, extra, [asked, ...memory, ctx?.question, ctx?.chosen, ctx?.correct, ctx?.explain, ...history.map((h) => h.content)].filter(Boolean).join(" "));
     if (process.env.TUTOR_DEBUG && !checked.ok) console.log("   [tutor] rejected:", checked.reason, checked.notes.join("; "));
     if (checked.ok || checked.reason === "not_found" || checked.reason === "no_sources") break;
     note = `IMPORTANT: your previous answer was rejected (${checked.reason}: ${checked.notes.join("; ").slice(0, 200)}). Use only the passages and only the references listed with them; never quote scripture; use only numbers that appear in the passages.`;

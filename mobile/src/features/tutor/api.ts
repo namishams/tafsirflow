@@ -20,6 +20,8 @@ export const tutorStatus = () => api<TutorStatus>("/api/assistant");
 export async function askTutor(o: {
   question: string; history: ChatMsg[]; lang: string; context: TutorContext | null; address: string | null; persona: Persona; consent: Consent;
   progress?: Record<string, unknown> | null;
+  /** goals and preferences the learner confirmed, only when they allow it (next.ts memoryForServer) */
+  memory?: string[];
 }): Promise<TutorAnswer> {
   const t = readTradition();
   return api<TutorAnswer>("/api/assistant", {
@@ -29,6 +31,7 @@ export async function askTutor(o: {
       tradition: t === "sunni" || t === "shia" ? t : "all",
       consent: { v: o.consent.v, age: o.consent.age },
       progress: o.progress ?? undefined,
+      memory: o.memory?.length ? o.memory : undefined,
       history: o.history.filter((m) => !m.local).slice(-6).map((m) => ({ role: m.role, content: m.content.slice(0, 600) })),
     },
   });

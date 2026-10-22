@@ -23,7 +23,10 @@ const KEYS = new Set(["tf:last", "tf:bookmarks", "tf:srs", "tf:days", "tf:notes"
   // the long path of the app (journey seals, endless daily plans, qirāʾāt marks); merged on the device (mobile/src/features/journey/store.ts)
   "qmc.journey",
   // brother/sister and age band of the onboarding (src/lib/identity.ts), newer choice wins on the device
-  "qmc.identity.v1"]);
+  "qmc.identity.v1",
+  // the tutor's memory (goals and preferences the learner confirmed): only while the learner allows syncing; emptied
+  // (with a newer time) when they stop, so the account copy goes too (src/lib/tutor/next.ts)
+  "qmc.tutor.memory.sync.v1"]);
 
 export async function GET() {
   const u = await currentUser();
