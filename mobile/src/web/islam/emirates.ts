@@ -180,7 +180,7 @@ Wenn Sie weiterlesen möchten:
 - [Islam im Alltag](/islam/daily) – ein Tag mit dem Koran und der Sunnah
 - [Ramadan und das Fasten](/islam/ramadan) – der Monat des Korans
 - [Gebetszeiten](/prayer) – für Ihren Ort
-- [Dua-Generator](/dua-generator) – Ihr persönliches Bittgebet
+- [Persönliche Dua](/dua-generator) – Ihr persönliches Bittgebet
 
 Der Prophet ﷺ sagte: „Erleichtert und erschwert nicht, verkündet frohe Botschaft und schreckt nicht ab“ (al-Bukhari und Muslim). In diesem Geist laden wir Sie ein: Fangen Sie heute an – mit einem Vers.`,
     faq: [
@@ -378,7 +378,7 @@ If you would like to read on:
 - [Islam in daily life](/islam/daily) – a day with the Quran and the Sunnah
 - [Ramadan and fasting](/islam/ramadan) – the month of the Quran
 - [Prayer times](/prayer) – for wherever you are
-- [Dua generator](/dua-generator) – your personal supplication
+- [Personal dua](/dua-generator) – your personal supplication
 
 The Prophet ﷺ said: "Make things easy and do not make them difficult; give glad tidings and do not drive people away" (al-Bukhari and Muslim). In that spirit we invite you: begin today – with a single verse.`,
     faq: [

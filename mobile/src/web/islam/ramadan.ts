@@ -146,7 +146,7 @@ Kein Programm, das Sie unter Druck setzt, sondern ein Geländer, an dem Sie sich
 
 - zu Ihrem Tagesabschnitt einige Verse mit Tafsir lesen,
 - jede Woche jemanden zum Iftar einladen oder ein Essen spenden,
-- Ihre persönlichen Anliegen sammeln: Mit dem [Dua-Generator](/dua-generator) stellen Sie sich ein Bittgebet in Ihren eigenen Worten zusammen,
+- Ihre persönlichen Anliegen sammeln: Mit der [persönlichen Dua](/dua-generator) stellen Sie sich ein Bittgebet in Ihren eigenen Worten zusammen,
 - eine Gewohnheit bewusst ablegen – zum Beispiel das Handy beim Iftar weglegen.
 
 **Tage 21–30 – die letzten zehn Nächte:**
@@ -330,7 +330,7 @@ Not a programme that puts you under pressure, but a handrail to hold on to. Take
 
 - read a few verses of your daily portion with tafsir,
 - invite someone to iftar or donate a meal every week,
-- gather your personal concerns: with the [Dua generator](/dua-generator) you can put together a supplication in your own words,
+- gather your personal concerns: with the [personal dua](/dua-generator) you can put together a supplication in your own words,
 - consciously drop one habit – for example, putting the phone away at iftar.
 
 **Days 21–30 – the last ten nights:**

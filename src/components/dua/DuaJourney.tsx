@@ -7,7 +7,7 @@ import { SUNNAH_DUAS, type SunnahDua } from "@/lib/sunnahDuas";
 import { SUNNAH_DUAS_2 } from "@/lib/sunnahDuas2";
 import {
   ARABIC_SCRIPT, DIRECTIONS, DIRECTION_AR, DUA_AI_CONSENT_KEY, DUA_AI_CONSENT_VERSION, DUA_LANGS, LANTERN, LEAF_PATH, LENGTHS, MY_DUAS_KEY, MY_DUAS_MAX, NICHE_INNER, NICHE_LEN, NICHE_PATH,
-  OCCASIONS, QUESTION_STEPS, REVEAL, REVEAL_TREE, WHO_J, anchorsFor, dawnOf, directionFor, isDuaLang, splitLines, topicFor,
+  OCCASIONS, QUESTION_STEPS, REVEAL, REVEAL_TREE, WHO_J, anchorsFor, decodeGift, type GiftDua, dawnOf, directionFor, isDuaLang, splitLines, topicFor,
   type Direction, type DuaLength, type Occasion, type SavedDua, type Step, type WhoJ,
 } from "@/lib/duaJourney";
 import { readJSON, storageVersion, subscribeStorage, writeJSON } from "@/lib/storage";
@@ -68,6 +68,9 @@ export default function DuaJourney({ initialTopic }: { initialTopic?: string }) 
   const consent = useStoredWeb<number>(DUA_AI_CONSENT_KEY, 0) >= DUA_AI_CONSENT_VERSION;
 
   const [step, setStep] = useState<Step>("intro");
+  // a dua received as a gift: the card travels in the link fragment (#g=…), never sent to the server
+  const [gift, setGift] = useState<GiftDua | null>(null);
+  useEffect(() => { const m = window.location.hash.match(/[#&]g=([^&]+)/); if (m) setGift(decodeGift(m[1])); }, []);
   const [occasion, setOccasion] = useState<Occasion | null>(null);
   const [who, setWho] = useState<WhoJ | null>(null);
   const [direction, setDirection] = useState<Direction | null>(directionFor(initialTopic));
@@ -204,7 +207,23 @@ export default function DuaJourney({ initialTopic }: { initialTopic?: string }) 
         ) : null}
 
         <div key={step} className="dj-in flex flex-1 flex-col">
-          {step === "intro" ? (
+          {step === "intro" && gift ? (
+            <div className="flex flex-1 flex-col justify-end gap-3.5 pt-32 text-center">
+              <p lang="ar" className="font-callig text-[58px] leading-[1.5]" style={{ color: GOLD, textShadow: "0 0 18px rgba(255,214,130,.55)" }}>هدية</p>
+              <h2 className="font-display text-[30px] leading-tight">{t("g_title")}</h2>
+              <p className="text-[15px] leading-relaxed text-white/75">{t("g_from")}</p>
+              <div className="dj-glass grid gap-2.5 rounded-[18px] p-5">
+                {gift.q ? <p className="text-[12px] font-semibold" style={{ color: GOLD }}>{t("j_quranRef", { ref: gift.q })}</p> : null}
+                <p className="text-[10.5px] font-semibold uppercase tracking-[0.16em]" style={{ color: GOLD }}>{t("j_personalAi")}</p>
+                <p className="text-[16.5px] leading-relaxed text-[#f6ead0]" lang={gift.l} dir={ARABIC_SCRIPT.has(gift.l) ? "rtl" : "ltr"}>{gift.p}</p>
+                {gift.a ? <p lang="ar" dir="rtl" className="font-arabic text-[19px] leading-[1.9] text-[#f3e2b6]">{gift.a}</p> : null}
+                <p className="text-[11.5px] leading-relaxed text-white/60">{t("j_disclosure")}</p>
+              </div>
+              <GoldButton className="w-full" onClick={() => { setGift(null); setWho("loved"); go("why"); }}>{t("g_cta")}</GoldButton>
+              <OutlineButton dark className="w-full" onClick={() => setGift(null)}>{t("j_next")}</OutlineButton>
+            </div>
+          ) : null}
+          {step === "intro" && !gift ? (
             <div className="flex flex-1 flex-col justify-end pt-40 text-center">
               <p lang="ar" className="font-callig text-[64px] leading-[1.4]" style={{ color: GOLD, textShadow: "0 0 18px rgba(255,214,130,.45)" }}>دعاء</p>
               <p className={kicker} style={{ color: GOLD }}>{t("j_kicker")}</p>

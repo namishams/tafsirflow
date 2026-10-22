@@ -43,7 +43,7 @@ function Niche({ color }: { color: string }) {
 
 /**
  * "Today and this month" of the website's home page (Featured.tsx): surah of the day (al-Kahf on Fridays), surah of
- * the month and dua of the month chosen by the Hijri month, and the door to the dua generator. The dua's Arabic and
+ * the month and dua of the month chosen by the Hijri month, and the door to the personal dua. The dua's Arabic and
  * translation come from the server (Quran) or the website's hadith collection (Sunnah).
  * Props: layout "carousel" (default, swipeable cards for the Today tab) or "stack" (one under the other);
  * title (default true: the section heading "Today and this month").

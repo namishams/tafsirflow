@@ -118,7 +118,55 @@ export type SavedDua = {
   quran: string;
   sunnah: string | null;
   names: string[];
+  /** marked "answered, Alhamdulillah" by the person (time), with an optional private note */
+  answeredAt?: number;
+  note?: string;
 };
+
+// ---- gentle occasion moments (opt-in, in the app only, at most one a week) ----
+export const DUA_MOMENTS_KEY = "qmc.dua.moments";
+export const MOMENT_TOPICS = ["times", "exams", "travel", "job", "baby", "illness"] as const;
+export type MomentTopic = (typeof MOMENT_TOPICS)[number];
+export type MomentPrefs = { on: boolean; topics: MomentTopic[]; lastShown: number; dismissed: number };
+export const MOMENTS_DEFAULT: MomentPrefs = { on: false, topics: [], lastShown: 0, dismissed: 0 };
+export const WEEK_MS = 7 * 86_400_000;
+/** the occasion and the direction it suggests */
+export type Moment = { id: "fridayEve" | "friday" | "ramadan10" | "arafah" | "exams" | "travel" | "job" | "baby" | "illness"; direction: Direction; who?: WhoJ };
+const PERSONAL: Record<Exclude<MomentTopic, "times">, Moment> = {
+  exams: { id: "exams", direction: "exams" }, travel: { id: "travel", direction: "travel" }, job: { id: "job", direction: "provision" },
+  baby: { id: "baby", direction: "family", who: "child" }, illness: { id: "illness", direction: "health", who: "loved" },
+};
+/** the moment for now (null: none, or one was shown less than a week ago). `hijri` is today's Hijri month and day,
+ *  `weekday` 0 = Sunday … 5 = Friday. Times of the year come before the personal topics. */
+export function momentFor(p: MomentPrefs, now: number, weekday: number, hijri: { m: number; d: number }): Moment | null {
+  if (!p.on || now - Math.max(p.lastShown, p.dismissed) < WEEK_MS) return null;
+  if (p.topics.includes("times")) {
+    if (hijri.m === 12 && hijri.d === 8) return { id: "arafah", direction: "forgiveness" };
+    if (hijri.m === 9 && hijri.d >= 20) return { id: "ramadan10", direction: "forgiveness" };
+    if (weekday === 4) return { id: "fridayEve", direction: "family", who: "parents" };
+    if (weekday === 5) return { id: "friday", direction: "family", who: "parents" };
+  }
+  const t = p.topics.find((x) => x !== "times") as Exclude<MomentTopic, "times"> | undefined;
+  return t ? PERSONAL[t] : null;
+}
+
+// ---- purchases: after the second single dua the pack is shown once ----
+export const DUA_BUYS_KEY = "qmc.dua.buys";
+export type BuyStats = { singles: number; packShown: boolean };
+
+// ---- a dua as a gift: the card travels in the link (fragment, never sent to a server) ----
+export type GiftDua = { p: string; a?: string; d: Direction; w: WhoJ; q: string; s: string | null; l: string };
+const b64 = (s: string) => btoa(unescape(encodeURIComponent(s))).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+const unb64 = (s: string) => decodeURIComponent(escape(atob(s.replace(/-/g, "+").replace(/_/g, "/"))));
+export const encodeGift = (g: GiftDua) => b64(JSON.stringify(g));
+export function decodeGift(s: string | null | undefined): GiftDua | null {
+  if (!s) return null;
+  try {
+    const g = JSON.parse(unb64(s)) as GiftDua;
+    if (typeof g.p !== "string" || !g.p.trim() || g.p.length > 2000 || !(DIRECTIONS as readonly string[]).includes(g.d) || !(WHO_J as readonly string[]).includes(g.w)) return null;
+    return { p: g.p, a: typeof g.a === "string" ? g.a.slice(0, 2000) : undefined, d: g.d, w: g.w, q: String(g.q ?? "").slice(0, 8), s: g.s ? String(g.s).slice(0, 60) : null, l: isDuaLang(String(g.l)) ? String(g.l) : "en" };
+  } catch { return null; }
+}
 
 // ---- checks of the personal words (server; kept here so they can be tested and read next to the rules) ----
 /** text as the checks see it: one apostrophe, no Latin accents, Arabic without harakat and tatweel, one alef */
