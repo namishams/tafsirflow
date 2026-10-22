@@ -3,6 +3,151 @@
 export type LocalRelease = { date: string; tr: Record<string, { title: string; items: string[] }> };
 export const RECENT: LocalRelease[] = [
  {
+  "date": "2026-10-23",
+  "tr": {
+   "en": {
+    "title": "New guides, Shams 4.0 and ways to take part",
+    "items": [
+     "Ten new guides in all 14 languages: learning the Quran, tafsir, tajweed, memorising, Quran radio, listening, tawbah, learning to pray, wudu and Islam – plus guides on the benefits of the Quran and on a fresh start.",
+     "The Shams Method explained with animations and a step-by-step verse walkthrough.",
+     "Blueprint Shams 4.0: our plans for video lessons, live classes and a reciter academy, with a page for partners.",
+     "A suggestions form, a form for master and professional reciters, and a page listing our supporters.",
+     "Prayer times now update automatically, and the AI tutor is available to signed-in learners."
+    ]
+   },
+   "de": {
+    "title": "Neue Ratgeber, Shams 4.0 und Wege zum Mitmachen",
+    "items": [
+     "Zehn neue Ratgeber in allen 14 Sprachen: Quran lernen, Tafsir, Tajweed, Auswendiglernen, Quran-Radio, Quran hören, Tawbah, Beten lernen, Wudu und Islam – dazu Ratgeber zum Nutzen des Quran und zum Neuanfang.",
+     "Die Shams-Methode mit Animationen erklärt und als Schritt-für-Schritt-Übung an einem Vers.",
+     "Blueprint Shams 4.0: unsere Pläne für Video-Lektionen, Live-Unterricht und eine Rezitatoren-Akademie, mit einer Seite für Partner.",
+     "Ein Formular für Vorschläge, ein Formular für Meister- und Profi-Rezitatoren und eine Seite mit unseren Unterstützern.",
+     "Gebetszeiten aktualisieren sich jetzt automatisch, und der KI-Tutor steht angemeldeten Lernenden zur Verfügung."
+    ]
+   },
+   "ar": {
+    "title": "أدلة جديدة وشمس 4.0 وطرق للمشاركة",
+    "items": [
+     "عشرة أدلة جديدة بـ14 لغة: تعلّم القرآن، والتفسير، والتجويد، والحفظ، وإذاعة القرآن، والاستماع، والتوبة، وتعلّم الصلاة، والوضوء، والإسلام، مع أدلة عن فضل القرآن وعن البداية الجديدة.",
+     "منهج شمس مشروحًا بالرسوم المتحركة وبتمرين خطوة بخطوة على آية.",
+     "مخطط شمس 4.0: خططنا لدروس الفيديو والتعليم المباشر وأكاديمية القرّاء، مع صفحة للشركاء.",
+     "نموذج للاقتراحات، ونموذج للقرّاء المتقنين والمحترفين، وصفحة لداعمينا.",
+     "مواقيت الصلاة تتحدّث الآن تلقائيًا، والمعلّم الذكي متاح للمتعلّمين المسجّلين."
+    ]
+   },
+   "tr": {
+    "title": "Yeni rehberler, Shams 4.0 ve katılım yolları",
+    "items": [
+     "14 dilde on yeni rehber: Kur'an öğrenmek, tefsir, tecvid, hafızlık, Kur'an radyosu, dinlemek, tövbe, namaz, abdest ve İslam – ayrıca Kur'an'ın faydaları ve yeni bir başlangıç üzerine rehberler.",
+     "Shams Metodu animasyonlarla ve bir ayet üzerinde adım adım alıştırmayla anlatılıyor.",
+     "Blueprint Shams 4.0: video dersler, canlı dersler ve kurra akademisi planlarımız, ortaklar için bir sayfa.",
+     "Öneri formu, usta ve profesyonel kurralar için bir form ve destekçilerimizin listesi.",
+     "Namaz vakitleri artık otomatik güncelleniyor; yapay zekâ öğretmeni giriş yapmış öğrencilere açık."
+    ]
+   },
+   "ur": {
+    "title": "نئی رہنمائیاں، شمس 4.0 اور شرکت کے طریقے",
+    "items": [
+     "14 زبانوں میں دس نئی رہنمائیاں: قرآن سیکھنا، تفسیر، تجوید، حفظ، قرآن ریڈیو، سننا، توبہ، نماز، وضو اور اسلام – نیز قرآن کے فوائد اور نئی شروعات پر رہنمائیاں۔",
+     "شمس طریقہ اینیمیشن کے ساتھ اور ایک آیت پر قدم بہ قدم مشق کے ذریعے سمجھایا گیا۔",
+     "بلیو پرنٹ شمس 4.0: ویڈیو اسباق، براہِ راست کلاسوں اور قاری اکیڈمی کے منصوبے، شراکت داروں کے لیے ایک صفحہ۔",
+     "تجاویز کا فارم، ماہر اور پیشہ ور قاریوں کے لیے فارم، اور ہمارے معاونین کا صفحہ۔",
+     "نماز کے اوقات اب خودکار طور پر تازہ ہوتے ہیں، اور اے آئی استاد سائن اِن طلبہ کے لیے دستیاب ہے۔"
+    ]
+   },
+   "fa": {
+    "title": "راهنماهای تازه، شمس ۴.۰ و راه‌های مشارکت",
+    "items": [
+     "ده راهنمای تازه به ۱۴ زبان: یادگیری قرآن، تفسیر، تجوید، حفظ، رادیو قرآن، شنیدن، توبه، نماز، وضو و اسلام – و راهنماهایی درباره فواید قرآن و آغازی دوباره.",
+     "روش شمس با انیمیشن و تمرین گام‌به‌گام روی یک آیه توضیح داده شد.",
+     "طرح شمس ۴.۰: برنامه‌های ما برای درس‌های ویدیویی، کلاس زنده و آکادمی قاریان، با صفحه‌ای برای شرکا.",
+     "فرم پیشنهادها، فرمی برای قاریان استاد و حرفه‌ای و صفحه حامیان ما.",
+     "اوقات نماز اکنون خودکار به‌روز می‌شود و معلم هوش مصنوعی برای کاربران واردشده در دسترس است."
+    ]
+   },
+   "ps": {
+    "title": "نوې لارښوونې، شمس ۴.۰ او د ګډون لارې",
+    "items": [
+     "په ۱۴ ژبو کې لس نوې لارښوونې: قرآن زده کول، تفسیر، تجوید، حفظ، د قرآن راډیو، اورېدل، توبه، لمونځ، اودس او اسلام – همدارنګه د قرآن د ګټو او نوي پیل په اړه لارښوونې.",
+     "د شمس طریقه په انیمیشن او د یوه آیت پر سر ګام په ګام تمرین سره تشریح شوه.",
+     "د شمس ۴.۰ پلان: د ویډیو درسونو، ژوندیو ټولګیو او د قاریانو اکاډمۍ پلانونه، د شریکانو لپاره یوه پاڼه.",
+     "د وړاندیزونو فورمه، د ماهرو او مسلکي قاریانو لپاره فورمه، او زموږ د ملاتړو پاڼه.",
+     "د لمانځه وختونه اوس په خپله تازه کېږي، او د مصنوعي ځيرکتيا ښوونکی ننوتلو زده کوونکو ته شته."
+    ]
+   },
+   "fr": {
+    "title": "Nouveaux guides, Shams 4.0 et façons de participer",
+    "items": [
+     "Dix nouveaux guides dans les 14 langues : apprendre le Coran, tafsir, tajwid, mémorisation, radio Coran, écoute, tawba, apprendre la prière, les ablutions et l'islam – ainsi que des guides sur les bienfaits du Coran et un nouveau départ.",
+     "La méthode Shams expliquée en animations et par un exercice pas à pas sur un verset.",
+     "Blueprint Shams 4.0 : nos projets de leçons vidéo, de cours en direct et d'une académie de récitateurs, avec une page pour les partenaires.",
+     "Un formulaire de suggestions, un formulaire pour les récitateurs confirmés et une page de nos soutiens.",
+     "Les horaires de prière se mettent à jour automatiquement, et le tuteur IA est disponible pour les personnes connectées."
+    ]
+   },
+   "es": {
+    "title": "Nuevas guías, Shams 4.0 y formas de participar",
+    "items": [
+     "Diez guías nuevas en los 14 idiomas: aprender el Corán, tafsir, tajwid, memorizar, radio del Corán, escuchar, tawba, aprender a rezar, abluciones e islam – además de guías sobre los beneficios del Corán y un nuevo comienzo.",
+     "El Método Shams explicado con animaciones y un ejercicio paso a paso con una aleya.",
+     "Blueprint Shams 4.0: nuestros planes de clases en vídeo, clases en directo y una academia de recitadores, con una página para socios.",
+     "Un formulario de sugerencias, un formulario para recitadores maestros y profesionales, y una página con nuestros colaboradores.",
+     "Los horarios de oración se actualizan automáticamente y el tutor de IA está disponible para quienes inician sesión."
+    ]
+   },
+   "id": {
+    "title": "Panduan baru, Shams 4.0 dan cara ikut serta",
+    "items": [
+     "Sepuluh panduan baru dalam 14 bahasa: belajar Al-Qur'an, tafsir, tajwid, menghafal, radio Al-Qur'an, mendengarkan, taubat, belajar salat, wudu dan Islam – serta panduan tentang manfaat Al-Qur'an dan awal yang baru.",
+     "Metode Shams dijelaskan dengan animasi dan latihan langkah demi langkah pada satu ayat.",
+     "Blueprint Shams 4.0: rencana kami untuk pelajaran video, kelas langsung dan akademi qari, dengan halaman untuk mitra.",
+     "Formulir saran, formulir untuk qari ahli dan profesional, serta halaman para pendukung kami.",
+     "Waktu salat kini diperbarui otomatis, dan tutor AI tersedia bagi pelajar yang masuk."
+    ]
+   },
+   "ms": {
+    "title": "Panduan baharu, Shams 4.0 dan cara untuk menyertai",
+    "items": [
+     "Sepuluh panduan baharu dalam 14 bahasa: belajar al-Quran, tafsir, tajwid, menghafal, radio al-Quran, mendengar, taubat, belajar solat, wuduk dan Islam – serta panduan tentang manfaat al-Quran dan permulaan baharu.",
+     "Kaedah Shams diterangkan dengan animasi dan latihan langkah demi langkah pada satu ayat.",
+     "Blueprint Shams 4.0: rancangan kami untuk pelajaran video, kelas langsung dan akademi qari, dengan halaman untuk rakan kongsi.",
+     "Borang cadangan, borang untuk qari mahir dan profesional, serta halaman penyokong kami.",
+     "Waktu solat kini dikemas kini secara automatik, dan tutor AI tersedia untuk pelajar yang log masuk."
+    ]
+   },
+   "bn": {
+    "title": "নতুন গাইড, শামস ৪.০ এবং অংশ নেওয়ার উপায়",
+    "items": [
+     "১৪টি ভাষায় দশটি নতুন গাইড: কুরআন শেখা, তাফসির, তাজবিদ, হিফজ, কুরআন রেডিও, শোনা, তওবা, নামাজ শেখা, অজু ও ইসলাম – সঙ্গে কুরআনের উপকারিতা ও নতুন শুরু নিয়ে গাইড।",
+     "শামস পদ্ধতি অ্যানিমেশন ও একটি আয়াতে ধাপে ধাপে অনুশীলনের মাধ্যমে ব্যাখ্যা করা হয়েছে।",
+     "ব্লুপ্রিন্ট শামস ৪.০: ভিডিও পাঠ, সরাসরি ক্লাস ও কারি একাডেমির পরিকল্পনা, অংশীদারদের জন্য একটি পাতা।",
+     "পরামর্শ ফর্ম, দক্ষ ও পেশাদার কারিদের জন্য ফর্ম এবং আমাদের সমর্থকদের পাতা।",
+     "নামাজের সময় এখন স্বয়ংক্রিয়ভাবে হালনাগাদ হয়, আর এআই শিক্ষক লগ-ইন করা শিক্ষার্থীদের জন্য উপলব্ধ।"
+    ]
+   },
+   "ru": {
+    "title": "Новые руководства, Shams 4.0 и как поучаствовать",
+    "items": [
+     "Десять новых руководств на 14 языках: изучение Корана, тафсир, таджвид, заучивание, радио Корана, слушание, тауба, как совершать намаз, омовение и ислам – а также о пользе Корана и новом начале.",
+     "Метод Shams объяснён с анимацией и пошаговым упражнением на одном аяте.",
+     "Blueprint Shams 4.0: наши планы видеоуроков, живых занятий и академии чтецов, со страницей для партнёров.",
+     "Форма предложений, форма для мастеров и профессиональных чтецов и страница наших сторонников.",
+     "Время намаза теперь обновляется автоматически, а ИИ-наставник доступен вошедшим в аккаунт."
+    ]
+   },
+   "zh": {
+    "title": "新指南、Shams 4.0 与参与方式",
+    "items": [
+     "14 种语言的十份新指南：学习古兰经、经注、诵读规则、背诵、古兰经电台、聆听、忏悔、学习礼拜、小净与伊斯兰——以及关于古兰经益处和重新开始的指南。",
+     "用动画和一节经文的分步练习讲解 Shams 方法。",
+     "Blueprint Shams 4.0：视频课程、直播课堂和诵读者学院的计划，并设有合作伙伴页面。",
+     "建议表单、面向资深与专业诵读者的表单，以及支持者名单页面。",
+     "礼拜时间现在自动更新，AI 导师向已登录的学习者开放。"
+    ]
+   }
+  }
+ },
+ {
   "date": "2026-10-22",
   "tr": {
    "en": {
