@@ -44,9 +44,14 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const p = await publicProfile(username.toLowerCase());
   const tx = talentsText(locale);
   if (!p) {
-    // unclaimed star profile (owner 22.10.2026): only public facts, clearly labelled, not indexed
+    // unclaimed star profile (owner 22.10.2026): only public facts, clearly labelled
     const star = reservedByUsername(username.toLowerCase());
-    if (star && !(await starClaimed(star.username))) return { title: `${star.name} (@${star.username}) | Quran Masterclass Talents`, description: starText(locale).label, robots: { index: false, follow: true } };
+    // an unclaimed star profile with a biography is a public page (indexed, in the sitemap); a reserved name without
+    // biography has no page of its own
+    if (star && !(await starClaimed(star.username))) {
+      const m = pageMeta(locale, `/talents/${star.username}`, `${star.name} (@${star.username}) | Quran Masterclass Talents`, starText(locale).label);
+      return star.reciter ? m : { ...m, robots: { index: false, follow: true } };
+    }
     return { title: "Quran Masterclass Talents", robots: { index: false, follow: false } };
   }
   const meta = pageMeta(locale, `/talents/${p.username}`, `${p.name} (@${p.username}) | Quran Masterclass Talents`, fill(tx.metaDesc, { u: p.name }));

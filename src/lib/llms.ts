@@ -42,6 +42,11 @@ Quran Masterclass is built for three goals: memorizing the Quran (hifz), underst
 - [Surah 2 – Al-Baqarah](${base}/en/surah/2)
 - [Surah 36 – Ya-Sin](${base}/en/surah/36)
 - [Surah 112 – Al-Ikhlas](${base}/en/surah/112)
+- [Shams Method – Adab](${base}/en/shams/adab): the etiquette of learning and reciting the Quran
+- [Nahj al-Balagha – reader](${base}/en/nahj) and [studies](${base}/en/nahj-studies): sermons, letters and sayings attributed to Imam Ali, Arabic with translation
+- [For sisters](${base}/en/sisters): learning paths and content for women
+- [Islamic calendar](${base}/en/calendar) and [the 99 Names of Allah](${base}/en/names)
+- [Reciter profiles on Quran Masterclass Talents](${base}/en/talents): public profiles of well-known reciters (e.g. ${base}/en/talents/<username>), facts and recitations only
 
 ## Languages
 Every page exists in each language by changing the first path segment (/de, /en, /ar, /fr, /es, /zh, /id, /fa): ${langs}
@@ -95,7 +100,7 @@ ${routing.locales.map((l) => `- [${LOCALE_META[l as AppLocale].label}](${base}/l
 
 type Ch = { id: number; name_simple: string; name_arabic: string; verses_count: number; translated_name: { name: string } };
 
-const PAGES: [string, string][] = [["", "Home"], ["/shams", "The Shams Method – a learning method by Nami Shams"], ["/academy", "Academy – learning path through all 114 surahs"], ["/masterclass", "The Masterclass – curriculum: four school stages (Ibtidaʾi to ʿAli), Reciter Path to the Masterclass recital, Arabic A1–C1, tajweed, hifz"], ["/talents", "Quran Masterclass Talents – verified reciter community"], ["/premium", "Quran Masterclass Pro – free vs Pro"], ["/tajweed", "Tajweed course"], ["/vocab", "Quran vocabulary"], ["/khatm", "Khatm planner"], ["/guides", "Guides"], ["/islam", "Understanding Islam – Islam, the Quran, the Prophet, holy cities, Sunni and Shia, how to pray"], ["/quran", "All surahs"], ["/today", "Today (review plan and streak)"], ["/search", "Search"], ["/prayer", "Prayer times"], ["/radio", "Quran radio"], ["/duas", "Duas from the Quran"], ["/support", "Support the project (voluntary)"], ["/carousels", "Carousels – short swipeable posts on verses, tajweed and hadith"], ["/app", "The iOS app – same account as the website"], ["/courses", "Courses"], ["/legal/privacy", "Privacy"], ["/legal/terms", "Terms"], ["/legal/imprint", "Imprint"]];
+const PAGES: [string, string][] = [["", "Home"], ["/shams", "The Shams Method – a learning method by Nami Shams"], ["/academy", "Academy – learning path through all 114 surahs"], ["/masterclass", "The Masterclass – curriculum: four school stages (Ibtidaʾi to ʿAli), Reciter Path to the Masterclass recital, Arabic A1–C1, tajweed, hifz"], ["/talents", "Quran Masterclass Talents – verified reciter community"], ["/premium", "Quran Masterclass Pro – free vs Pro"], ["/tajweed", "Tajweed course"], ["/vocab", "Quran vocabulary"], ["/khatm", "Khatm planner"], ["/guides", "Guides"], ["/islam", "Understanding Islam – Islam, the Quran, the Prophet, holy cities, Sunni and Shia, how to pray"], ["/quran", "All surahs"], ["/today", "Today (review plan and streak)"], ["/search", "Search"], ["/prayer", "Prayer times"], ["/radio", "Quran radio"], ["/duas", "Duas from the Quran"], ["/support", "Support the project (voluntary)"], ["/shams/adab", "Shams Method – Adab (etiquette of learning)"], ["/nahj", "Nahj al-Balagha – reader"], ["/nahj-studies", "Nahj al-Balagha – studies"], ["/sisters", "For sisters"], ["/calendar", "Islamic calendar"], ["/names", "The 99 Names of Allah"], ["/carousels", "Carousels – short swipeable posts on verses, tajweed and hadith"], ["/app", "The iOS app – same account as the website"], ["/courses", "Courses"], ["/legal/privacy", "Privacy"], ["/legal/terms", "Terms"], ["/legal/imprint", "Imprint"]];
 
 export function llmsFullTxt(base: string, chapters: Ch[]) {
   const list = chapters

@@ -7,7 +7,7 @@ import { NahjReader } from "@/components/learn/nahj/NahjScreens";
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const de = locale === "de";
-  return { ...pageMeta(locale, "/nahj", de ? "Nahjul-Balagha – Lesen | Quran Masterclass" : "Nahj al-Balagha – Reader | Quran Masterclass", de ? "Predigten, Briefe und Aussprüche, die Imam Ali zugeschrieben werden, gesammelt von asch-Scharif ar-Radi: arabisch und übersetzt." : "Sermons, letters and sayings attributed to Imam Ali, compiled by ash-Sharif ar-Radi: Arabic and translation."), robots: { index: false } };
+  return { ...pageMeta(locale, "/nahj", de ? "Nahjul-Balagha – Lesen | Quran Masterclass" : "Nahj al-Balagha – Reader | Quran Masterclass", de ? "Predigten, Briefe und Aussprüche, die Imam Ali zugeschrieben werden, gesammelt von asch-Scharif ar-Radi: arabisch und übersetzt." : "Sermons, letters and sayings attributed to Imam Ali, compiled by ash-Sharif ar-Radi: Arabic and translation.") };
 }
 
 export default async function Page({ params }: { params: Promise<{ locale: string }> }) {

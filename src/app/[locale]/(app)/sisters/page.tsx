@@ -8,7 +8,7 @@ import { SistersPage } from "@/components/sisters/Sisters";
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const t = sistersText(locale);
-  return { ...pageMeta(locale, "/sisters", `${t.title} | Quran Masterclass`, t.lead), robots: { index: false, follow: true } };
+  return { ...pageMeta(locale, "/sisters", `${t.title} | Quran Masterclass`, t.lead) };
 }
 
 export default async function Page({ params }: { params: Promise<{ locale: string }> }) {
