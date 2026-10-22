@@ -89,7 +89,7 @@ export function VerseShare({ verseKey, onClose, onShared, kicker }: { verseKey: 
   return (
     <ShareSheet visible onClose={onClose} onShared={onShared} link={`${SITE}/quran/${verseKey.split(":")[0]}`} message={`${v.arabic}\n${v.translation}\n— ${v.reference}`}
       video={{ key: verseKey, lang }} templated seed={verseKey}
-      chat={{ type: "verse", ref: verseKey, title: v.reference, subtitle: v.translation.slice(0, 200), url: `/surah/${verseKey.split(":")[0]}?v=${verseKey.split(":")[1]}` }}
+      chatCard={{ type: "verse", ref: verseKey, title: v.reference, subtitle: v.translation.slice(0, 200), url: `/surah/${verseKey.split(":")[0]}?v=${verseKey.split(":")[1]}` }}
       renderCard={(f, o) => <VerseTemplate format={f} opts={o} arabic={v.arabic} translation={v.translation} reference={v.reference} verseKey={verseKey} />} />
   );
 }

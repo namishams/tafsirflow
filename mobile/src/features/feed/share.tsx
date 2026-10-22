@@ -93,10 +93,10 @@ async function installedTargets(): Promise<Set<TargetId>> {
   return out;
 }
 
-export function ShareSheet({ visible, onClose, renderCard, link, message, onShared, video, noDecoration, templated, quick, seed, chat }: {
+export function ShareSheet({ visible, onClose, renderCard, link, message, onShared, video, noDecoration, templated, quick, seed, chatCard }: {
   visible: boolean; onClose: () => void;
   /** also offer "In Chat senden": the card as a message in the messenger (16+, the server checks the rules) */
-  chat?: ShareCard | null;
+  chatCard?: ShareCard | null;
   /** no sticker picker (the card is a sticker itself) */
   noDecoration?: boolean;
   /** verses only: offer a video (verse card + recitation, made on the server) for Reels / Stories */
@@ -112,7 +112,7 @@ export function ShareSheet({ visible, onClose, renderCard, link, message, onShar
   seed?: string;
 }) {
   const tx = useFeedText();
-  const mt = useMT();
+  const msgT = useMT();
   const stx = useShareText();
   const tt = useTemplateText();
   // every message carries the brand line and the app download link
@@ -390,11 +390,11 @@ export function ShareSheet({ visible, onClose, renderCard, link, message, onShar
             </LinearGradient>
           </Pressable>
 
-          {chat ? (
-            <Pressable onPress={() => { onClose(); router.push(shareHref(chat) as Href); }} accessibilityRole="button" accessibilityLabel={mt.shareToChat}
+          {chatCard ? (
+            <Pressable onPress={() => { onClose(); router.push(shareHref(chatCard) as Href); }} accessibilityRole="button" accessibilityLabel={msgT.shareToChat}
               style={({ pressed }) => ({ flexDirection: "row", alignItems: "center", justifyContent: "center", gap: 8, marginHorizontal: 16, marginTop: 10, minHeight: 44, borderRadius: 22, borderWidth: 1, borderColor: stage.gold, opacity: pressed ? 0.7 : 1 })}>
               <Icon name="comment" color={stage.gold} size={17} />
-              <Text style={{ fontFamily: FONT.semibold, fontSize: 15, color: stage.cream }}>{mt.shareToChat}</Text>
+              <Text style={{ fontFamily: FONT.semibold, fontSize: 15, color: stage.cream }}>{msgT.shareToChat}</Text>
             </Pressable>
           ) : null}
 
