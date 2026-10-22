@@ -89,7 +89,7 @@ export default async function SiteFooter() {
             <p className="mt-1">{t("nav.fSupportBody")}</p>
             <div className="mt-3 flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
               <Link href="/support" className="inline-flex h-9 items-center rounded-full border border-[rgb(201_166_94)] px-5 text-[13px] font-bold text-ink transition hover:bg-[rgb(201_166_94)]/15">{t("nav.fSupportCta")}</Link>
-              <Link href={{ pathname: "/support", hash: "supporters-title" }} className="text-[13px] font-semibold text-accent hover:underline">{t("nav.fSupportList")}</Link>
+              <Link href="/supporters" className="text-[13px] font-semibold text-accent hover:underline">{t("nav.fSupportList")}</Link>
             </div>
           </div>
           <p className="mt-3 flex flex-col items-center gap-1 sm:flex-row sm:justify-center sm:gap-2">

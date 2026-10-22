@@ -172,8 +172,8 @@ export default function AccountDashboard({ user, demo = false, verifiedNow = fal
                 </p>
                 {career && tierName && (
                   <div className="mt-3 flex items-center gap-3">
-                    <div className="h-1.5 w-40 overflow-hidden rounded-full bg-line"><div className="h-full rounded-full bg-[linear-gradient(90deg,#c6a65e,#e9cf99)]" style={{ width: `${Math.round(career.into * 100)}%` }} /></div>
-                    <span className="text-[12.5px] font-semibold text-ink">{tierName}{career.division ? ` ${["", "I", "II", "III"][career.division]}` : ""}</span>
+                    <div className="h-1.5 w-28 overflow-hidden sm:w-40 rounded-full bg-line"><div className="h-full rounded-full bg-[linear-gradient(90deg,#c6a65e,#e9cf99)]" style={{ width: `${Math.round(career.into * 100)}%` }} /></div>
+                    <span className="whitespace-nowrap text-[12.5px] font-semibold text-ink">{tierName}{career.division ? ` ${["", "I", "II", "III"][career.division]}` : ""}</span>
                   </div>
                 )}
               </div>
@@ -319,10 +319,10 @@ function TodayCell({ label, value, sub, loading, accent, small }: { label: strin
 }
 function Quick({ href, icon, label, badge, hint }: { href: string; icon: ReactNode; label: string; badge?: number | null; hint?: string }) {
   return (
-    <Link href={href} className="group relative flex items-center gap-3 rounded-xl border border-transparent p-3 transition hover:border-line hover:bg-bg">
+    <Link href={href} className="group relative flex items-center gap-2.5 rounded-xl border border-transparent p-2.5 sm:gap-3 sm:p-3 transition hover:border-line hover:bg-bg">
       <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-accent-soft text-accent transition group-hover:bg-accent group-hover:text-white">{icon}</span>
       <span className="min-w-0">
-        <span className="block truncate text-[13.5px] font-semibold text-ink">{label}</span>
+        <span className="block text-[13.5px] font-semibold leading-tight text-ink [overflow-wrap:anywhere]">{label}</span>
         {hint && <span className="block truncate text-[11.5px] text-muted">{hint}</span>}
       </span>
       {badge ? <span className="ms-auto min-w-[20px] rounded-full border-[1.5px] border-[#E2C77F] bg-[rgb(196,43,52)] px-1.5 text-center text-[11px] font-bold leading-[17px] text-white">{badge > 99 ? "99+" : badge}</span> : null}
