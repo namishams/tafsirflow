@@ -3,7 +3,7 @@
 # the site is updated with scripts/deploy.sh. One run at a time; the log is /var/log/tafsirflow-autodeploy.log.
 set -uo pipefail
 APP=/srv/tafsirflow/app
-BRANCH=${BRANCH:-claude/tafsir-projekt-letzter-chat-73j3xi}
+BRANCH=${BRANCH:-main}
 exec 9>/run/tafsirflow-autodeploy.lock
 flock -n 9 || exit 0
 cd "$APP" || exit 0

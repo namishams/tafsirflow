@@ -18,3 +18,10 @@ ios/.team-id
 # Nahj al-Balagha passages (app bundle only, never committed or published)
 mobile/assets/content/nahj-*.json
 app-wuensche-nami.md
+
+# temporary build folders of parallel checks
+/.next-*/
+
+# local notes, never in the public repo
+CLAUDE.md
+docs/HANDOFF.md

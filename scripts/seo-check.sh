@@ -3,7 +3,7 @@
 # Run on the server:   bash /srv/tafsirflow/app/scripts/seo-check.sh
 APP=/srv/tafsirflow/app
 DOMAIN=${1:-quranmasterclass.com}
-BRANCH=${BRANCH:-claude/tafsir-projekt-letzter-chat-73j3xi}
+BRANCH=${BRANCH:-main}
 UA="Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
 ok=1
 say() { printf '%s\n' "$*"; }

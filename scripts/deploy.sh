@@ -5,7 +5,7 @@ set -euo pipefail
 
 APP=/srv/tafsirflow/app
 ENV_APP=/srv/tafsirflow/.env.app
-BRANCH=${BRANCH:-claude/tafsir-projekt-letzter-chat-73j3xi}
+BRANCH=${BRANCH:-main}
 
 echo "==> Fetch latest code ($BRANCH)"
 cd "$APP"
