@@ -5,6 +5,7 @@ import { rateGrade, today, type Rating4, type Srs } from "@/lib/learning";
 import { trimLinks } from "@/lib/learn/syncExtra";
 import { LINK_BOX_DAYS } from "./mastery";
 import { rateRange, readLog } from "./store";
+import { strictRating } from "./level";
 
 // Shams Method 3.0 – the new local keys next to store.ts (which stays as it is). Every key is versioned and bounded;
 // new fields are added, never renamed. Synced with the account (merge rules in syncExtra.ts): links, understand,
@@ -109,7 +110,7 @@ export function rateVerseToday(key: string, grade: Rating4) {
     pre.srs[key] = srs[key] ?? null;
     writeDayPre(pre);
   }
-  rateGrade(key, grade);
+  rateGrade(key, strictRating(grade)); // the level decides how strictly a mark counts (level.ts)
 }
 /** today's mark of a range, verse or transition (log[day].r) */
 export const markOfToday = (id: string): string | undefined => readLog()[today()]?.r?.[id];

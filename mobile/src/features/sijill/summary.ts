@@ -1,5 +1,4 @@
 import { readShamsMode } from "@/features/shams2/mode";
-import { readFlex } from "@/features/shams2/store2";
 import { readJSON, writeJSON } from "@/lib/store";
 import { readSrs, today } from "@/web/learning";
 import { VERSE_COUNTS } from "@/web/counts";
@@ -117,13 +116,10 @@ export function buildSummary(pro: boolean): Summary {
   };
 }
 
-/** the Shams method in use for the profile badge: 2.0 (madrasa system), else the classic path, which is Shams 3.0 for
- *  learners on the short tafsir (the 3.0 default) and "classic" for those who kept the detailed tafsir from before 3.0 */
+/** the Shams method in use for the profile badge: the learner's method ("classic", "v2" = Shams 2.0, "v3" = Shams 3.0;
+ *  the server accepts exactly these, src/lib/sijill.ts METHODS) */
 function shamsMethod(): "classic" | "v2" | "v3" {
-  try {
-    if (readShamsMode() === "v2") return "v2";
-    return readFlex().tafsir === "full" ? "classic" : "v3";
-  } catch { return "classic"; }
+  try { return readShamsMode(); } catch { return "classic"; }
 }
 
 // ---------- sending ----------

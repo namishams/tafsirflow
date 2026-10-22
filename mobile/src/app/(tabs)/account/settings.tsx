@@ -33,6 +33,8 @@ import { securityApi } from "@/features/auth/api";
 import { useAuthT } from "@/features/auth/text";
 import { TravelSetting } from "@/features/talents/TravelCard";
 import { IdentitySetting } from "@/features/identity/IdentityStep";
+import { ShamsMethodSetting } from "@/features/shams2/ModeChooser";
+import { useModeT } from "@/features/shams2/modeText";
 import { TutorSetting } from "@/features/tutor/Settings";
 import { APP_STORE_URL, rateApp } from "@/lib/review";
 
@@ -77,6 +79,7 @@ export default function AccountSettingsScreen() {
   const updateDaily = async (next: DailyReminder) => { const ok = await setDaily(next, lang); setDailyState(ok ? next : { ...next, on: false }); };
 
   const go = (href: string) => router.push(href as Href);
+  const mt = useModeT();
   const sct = useSchoolT();
   const confirmDelete = async () => {
     setBusy(true); setError("");
@@ -147,6 +150,9 @@ export default function AccountSettingsScreen() {
             <RowGroup>
               <LinkRow first title={setting === "system" ? `${t("account.languageSystem")} · ${langLabel(lang)}` : langLabel(setting)} icon="globe" onPress={() => go("/language")} />
             </RowGroup>
+          </Section>
+          <Section title={mt("chooserTitle")}>
+            <ShamsMethodSetting />
           </Section>
           <Section title={hx.tradTitle}>
             <TraditionSetting />

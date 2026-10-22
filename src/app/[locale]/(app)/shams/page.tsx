@@ -12,7 +12,7 @@ import { IslamArcadeLine, IslamBreak, IslamCorners, IslamNum, IslamRain, IslamSt
 import { IslamStepIcon, IslamSun, STEP_AR } from "@/components/art/IslamShams";
 import { Shams2EntryCard } from "@/components/learn/shams2/EntryCard";
 import { AdabClassicLink } from "@/components/learn/shams2/Adab";
-import { ShamsModeChooser } from "@/components/learn/shams2/ModeChooser";
+import { ShamsModeChooser, ShamsVersions } from "@/components/learn/shams2/ModeChooser";
 import DonateCTA from "@/components/DonateCTA";
 import { ShamsDemoLive, ShamsNameVerse, ShamsStepVerse, ShamsWhyList } from "@/components/learn/shams2/Sources";
 import { ShamsEntries } from "@/components/learn/shams2/Extensions";
@@ -161,7 +161,7 @@ export default async function ShamsPage({ params }: { params: Promise<{ locale: 
 
       <div className="isl-marble isl-under">
         {/* the two ways to learn with Shams: classic and 2.0 */}
-        <section className="mx-auto max-w-6xl px-5 pt-14 sm:pt-20"><ShamsModeChooser /><div className="mt-6"><ShamsEntries /></div></section>
+        <section className="mx-auto max-w-6xl px-5 pt-14 sm:pt-20"><ShamsVersions className="mb-10" /><ShamsModeChooser /><div className="mt-6"><ShamsEntries /></div></section>
 
         {/* Why "Shams" */}
         {c.name && (

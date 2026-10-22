@@ -59,9 +59,9 @@ export const EXTRA_KEYS = [
 export const EXTRA_MERGE: Record<(typeof EXTRA_KEYS)[number], (a: unknown, b: unknown) => unknown> = {
   // settings carry no timestamp: this device's choice wins, missing fields come from the account
   "qmc.shams2.settings.v1": (a, b) => ({ ...o(b), ...o(a) }),
-  // the chosen Shams method ("classic" | "v2"), stored as { mode, at } (a plain string counts as at = 0): the newer choice wins, a tie keeps this device's
+  // the chosen Shams method ("classic" | "v2" | "v3"), stored as { mode, at } (a plain string counts as at = 0): the newer choice wins, a tie keeps this device's
   "qmc.shamsMode.v1": (a, b) => {
-    const pick = (x: unknown) => { const m = typeof x === "string" ? x : o(x).mode; return m === "classic" || m === "v2" ? { mode: m, at: n(o(x).at) } : null; };
+    const pick = (x: unknown) => { const m = typeof x === "string" ? x : o(x).mode; return m === "classic" || m === "v2" || m === "v3" ? { mode: m, at: n(o(x).at) } : null; };
     const x = pick(a), y = pick(b);
     return x && y ? (x.at >= y.at ? x : y) : x ?? y ?? a ?? b;
   },

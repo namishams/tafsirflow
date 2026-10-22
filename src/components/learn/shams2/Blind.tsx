@@ -24,6 +24,7 @@ import { announceAudio } from "@/components/learn/media";
 import { Card, LearnHero, LearnMain, Spinner } from "@/components/learn/ui";
 import { Chip, Live, Segmented, useBack, useNames, useWebT } from "./ui";
 import { Capsule, Dock, MarkedWords, Pill, RateChips, Stepper } from "./RecUi";
+import { blindOkShare } from "@/lib/learn/shams2/level";
 
 type Src = "today" | "surah" | "page" | "section";
 type Phase = "pick" | "ready" | "result" | "manual";
@@ -131,7 +132,7 @@ function Session({ range, phase, setPhase }: { range: Range; phase: Phase; setPh
     setAligning(true);
     let gone = false;
     // in slices with pauses, so a long passage does not freeze the page
-    void blindAlignAsync(ref, take.result.words, {}, () => gone).then((x) => { if (gone || !x) return; setRes(x); setAligning(false); setPhase("result"); });
+    void blindAlignAsync(ref, take.result.words, { okShare: blindOkShare() }, () => gone).then((x) => { if (gone || !x) return; setRes(x); setAligning(false); setPhase("result"); });
     return () => { gone = true; };
   }, [take.result]); // eslint-disable-line react-hooks/exhaustive-deps
   useEffect(() => { if (take.state === "unavailable" || take.state === "denied") setPhase("manual"); }, [take.state]); // eslint-disable-line react-hooks/exhaustive-deps

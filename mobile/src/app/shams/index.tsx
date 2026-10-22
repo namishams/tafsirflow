@@ -19,8 +19,8 @@ import { openHref } from "@/features/library/links";
 import { Curve, DayIcon, Ladder, PrincipleIcon, ShamsPlanner, StepIcon, Sun } from "@/features/library/shamsArt";
 import { ShamsDemoLive, ShamsNameVerse, ShamsStepVerse, ShamsWhyList } from "@/features/library/shamsSources";
 import { ShamsEntries } from "@/features/courses/Shams";
-import { ShamsModeChooser } from "@/features/shams2/ModeChooser";
-import { readShamsMode } from "@/features/shams2/mode";
+import { ShamsModeChooser, ShamsVersions } from "@/features/shams2/ModeChooser";
+import { readShamsMode, usesWird } from "@/features/shams2/mode";
 import { ReciterPathCard } from "@/features/reciter-path/Screens";
 
 // /shams – the Shams Method: hero with the sun over the arcade, why "Shams", problems and solution, the seven steps as
@@ -31,7 +31,7 @@ import { ReciterPathCard } from "@/features/reciter-path/Screens";
 // the teachers' note and the closing line use the app's wording (faqApp, teachNoteApp, whyCloseApp; the website is free).
 const minutesOf = (s: string) => { const m = s.match(/\d+/); return m ? Number(m[0]) : 1; };
 // "Start": the first classic session, or today's wird for those who use Shams Method 2.0
-const startShams = () => router.push((readShamsMode() === "v2" ? "/shams/wird" : "/shams/1") as Href);
+const startShams = () => router.push((usesWird(readShamsMode()) ? "/shams/wird" : "/shams/1") as Href);
 
 function H2({ children, center, onStage }: { children: string; center?: boolean; onStage?: boolean }) {
   const isl = useIsl();
@@ -76,7 +76,7 @@ export default function ShamsPage() {
           </View>
         ) : null}
       </IslHero>
-      <View style={{ paddingHorizontal: 16, paddingTop: 24, paddingBottom: 8 }}><ShamsModeChooser /><ShamsEntries /></View>
+      <View style={{ paddingHorizontal: 16, paddingTop: 24, paddingBottom: 8 }}><ShamsVersions /><ShamsModeChooser /><ShamsEntries /></View>
       <View style={{ paddingHorizontal: 16, marginTop: 24, gap: 14 }}><GardenWidget lead={gtx.shamsCard} /><ReciterPathCard /></View>
 
       <Marble>

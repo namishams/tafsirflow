@@ -8,7 +8,7 @@ import { ARABIC_FONT, CALLIG_FONT, FONT, R, stage, useTheme } from "@/lib/theme"
 import { Sun } from "@/features/library/shamsArt";
 import { Arcade, Eyebrow, GoldButton, GoldCard, GoldProgress, OutlineButton, Poster, PosterGrid, SectionTitle, Stage, StarNumber, SurahBanner, TextButton, gradientColors } from "@/components/brand";
 import { ShamsModeChooser } from "@/features/shams2/ModeChooser";
-import { continueHref, useShamsMode } from "@/features/shams2/mode";
+import { continueHref, useShamsMode, usesWird } from "@/features/shams2/mode";
 import { useModeT } from "@/features/shams2/modeText";
 import { tile, routeOf } from "@/lib/features";
 import { Icon } from "@/components/icons";
@@ -90,7 +90,7 @@ export default function Masterclass() {
                   ))}
                 </View>
               ) : null}
-              <GoldButton title={mode === "v2" ? mt("continueWird") : next ? lt("continue") : w("shams.cta")} icon="sun" onPress={() => (mode === "v2" ? router.push(continueHref("v2") as Href) : next ? open(next.surah, next.verse) : open(1))} />
+              <GoldButton title={usesWird(mode) ? mt("continueWird") : next ? lt("continue") : w("shams.cta")} icon="sun" onPress={() => (usesWird(mode) ? router.push(continueHref(mode) as Href) : next ? open(next.surah, next.verse) : open(1))} />
               <OutlineButton title={lt("about")} onStage onPress={() => router.push("/shams" as Href)} />
               <ShamsModeChooser tone="stage" collapsible />
             </View>

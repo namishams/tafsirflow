@@ -23,6 +23,7 @@ export type Settings = {
   sabqiDays: number; // how long a portion counts as "recent" (sabqi) before it moves to the manzil
   manzilDays: number; // the manzil is completed once in this many days (0 = by grade; classically 7)
   name?: string; // name shown to a teacher (optional, never required)
+  level?: "easy" | "medium" | "hard" | "veryHard"; // difficulty (level.ts); absent = medium with the settings as they are
 };
 export const defaultSettings = (): Settings => ({ minutes: readGoal()?.minutes ?? 20, newPerDay: 0, sabqiDays: 30, manzilDays: 0 });
 export const readSettings = (): Settings => ({ ...defaultSettings(), ...readJSON<Partial<Settings>>(K.settings, {}) });

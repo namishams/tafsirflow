@@ -22,6 +22,21 @@ import { StripToggle, TathbitCard, TodayMinutes, gapMarkId } from "./review/Wird
 import { AdabTodayCard } from "./Adab";
 import { ListenDaysCard } from "@/components/sisters/Sisters";
 import CoachCard from "@/components/tutor/CoachCard";
+import { isV3, useShamsMode } from "@/lib/learn/shams2/mode";
+import { useModeT } from "@/lib/learn/shams2/modeText";
+import { LevelChooser } from "./ModeChooser";
+
+/** Shams 3.0 in the daily wird: recite from memory (blind) and practise one point of articulation (makhraj) */
+function V3Steps() {
+  const m = useModeT();
+  return (
+    <Card className="grid gap-3">
+      <h2 className="text-[17px] font-bold">{m("todayV3")}</h2>
+      <p className="text-[14.5px] leading-relaxed text-muted">{m("todayV3Lead")}</p>
+      <div className="flex flex-wrap gap-2"><SmallBtn href="/shams/blind">{m("blindStep")}</SmallBtn><SmallBtn href="/shams/makhraj">{m("makhrajStep")}</SmallBtn></div>
+    </Card>
+  );
+}
 
 const BLOCKS = ["sabaq", "sabqi", "manzil"] as const;
 /** where a portion is recited on the website: new verses with the Shams method, reviews in the reader */
@@ -99,6 +114,7 @@ function Body() {
   const { s, nf } = useS2();
   const m = useShams2();
   const { wird, settings, day, grade } = m;
+  const v3 = isV3(useShamsMode().mode);
   const log = useLog();
   const today = log[day] ?? {};
   const streak = Math.max(wirdStreak(log, day), 0);
@@ -130,11 +146,14 @@ function Body() {
       {BLOCKS.map((k) => <BlockCard key={k} b={wird[k]} done={done(k)} onDone={() => finish(wird[k])} ratings={today.r ?? {}} primary={k === firstOpen} />)}
       <TathbitCard tb={wird.tathbit} marks={today.r ?? {}} />
       {/* after a step: the recitation coach (own weak spots, a 10-minute plan with drill links, ask the tutor) */}
-      {BLOCKS.some((k) => done(k)) ? <CoachCard after /> : null}
-      <AdabTodayCard />
+      {/* Shams 3.0 (mode.ts): coach, blind recitation and makhraj, adab of the day in the wird; 2.0 keeps its wird as it was */}
+      {v3 && BLOCKS.some((k) => done(k)) ? <CoachCard after /> : null}
+      {v3 ? <V3Steps /> : null}
+      {v3 ? <AdabTodayCard /> : null}
       {allDone && <Card className="grid gap-4"><p className="text-[18px] font-bold">{s("wirdDone")}</p><ContinueNext /></Card>}
       <Card className="grid gap-3.5">
         <h2 className="text-[17px] font-bold">{s("settings")}</h2>
+        <LevelChooser />
         {opt(s("setMinutes"), [10, 20, 30, 45, 60, 90], settings.minutes, (m) => s("minN", { n: nf(m) }), (m) => saveSettings({ minutes: m }))}
         {opt(s("setNew"), [0, 1, 2, 3, 5, 7, 10], settings.newPerDay, (m) => (m ? nf(m) : s("auto")), (m) => saveSettings({ newPerDay: m }))}
         {opt(s("setManzil"), [0, 3, 5, 7, 10, 14, 30], settings.manzilDays, (m) => (m ? s("daysN", { n: nf(m) }) : s("byGrade")), (m) => saveSettings({ manzilDays: m }))}

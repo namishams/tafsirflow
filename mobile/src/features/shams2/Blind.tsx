@@ -25,6 +25,7 @@ import { useS2 } from "./text";
 import { useRec } from "./rec/text";
 import { Capsule, DOCK_SPACE, Dock, MarkedWords, Pill, RateChips, Stepper } from "./rec/ui";
 import { Card } from "./ui";
+import { blindOkShare } from "./level";
 
 // /shams/blind?s=&from=&to= – blind recitation (Shams 3.0): a whole passage from memory with the text hidden. One take
 // with on-device recognition (take.ts), aligned with the verses (blindAlign.ts): words heard and possibly missed per
@@ -168,7 +169,7 @@ function Session({ range, phase, setPhase }: { range: Range; phase: Phase; setPh
     setAligning(true);
     let gone = false;
     // in slices with pauses, so a long passage does not freeze the screen
-    void blindAlignAsync(ref, take.result.words, {}, () => gone).then((x) => { if (gone || !x) return; setRes(x); setAligning(false); setPhase("result"); });
+    void blindAlignAsync(ref, take.result.words, { okShare: blindOkShare() }, () => gone).then((x) => { if (gone || !x) return; setRes(x); setAligning(false); setPhase("result"); });
     return () => { gone = true; };
   }, [take.result]); // eslint-disable-line react-hooks/exhaustive-deps
   const onDevice = useOnDeviceArabic();

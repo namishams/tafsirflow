@@ -149,7 +149,7 @@ export function MadrasaHero({ eyebrow, topInset = true }: { eyebrow?: string; to
               value={data.nextDone} onPress={() => go(hrefOf(data.next!))} />
           ) : <HeroRow icon="checkCircle" kicker={ct("nextStep")} title={ct("allDone")} sub={st("stageDone")} onPress={() => go(`/school/${data.stage}`)} />}
           {/* the Shams method the learner chose: today's wird (2.0) or the next classic session */}
-          {sc.mode === "v2"
+          {sc.mode !== "classic"
             ? <HeroRow icon="sun" kicker={ct("todayWird")} title={s("hubTitle")} sub={s("entryToday", { a: wird.sabaq.verses, b: wird.sabqi.verses, c: wird.manzil.verses })} onPress={() => go(sc.href)} />
             : <HeroRow icon="sun" kicker={sc.kicker} title={sc.title} sub={sc.line} onPress={() => go(sc.href)} />}
         </View>

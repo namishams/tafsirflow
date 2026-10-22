@@ -28,6 +28,25 @@ import { StripToggle, TathbitCard, TodayMinutes, gapMarkId } from "./review/Wird
 import { AdabTodayCard } from "./adab/Adab";
 import { ListenDaysCard } from "@/features/sisters/ui";
 import { CoachCard } from "@/features/tutor/CoachCard";
+import { isV3, useShamsMode } from "./mode";
+import { useModeT } from "./modeText";
+import { LevelChooser } from "./ModeChooser";
+
+/** Shams 3.0 in the daily wird: recite from memory (blind) and practise one point of articulation (makhraj) */
+function V3Steps() {
+  const t = useTheme();
+  const m = useModeT();
+  return (
+    <Card>
+      <Text accessibilityRole="header" style={{ fontFamily: FONT.bold, fontSize: 16, color: t.ink, textAlign: "left" }}>{m("todayV3")}</Text>
+      <Text style={{ fontFamily: FONT.regular, fontSize: 13.5, lineHeight: 20, color: t.muted, textAlign: "left" }}>{m("todayV3Lead")}</Text>
+      <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 8 }}>
+        <Btn title={m("blindStep")} icon="mic" onPress={() => router.push("/shams/blind" as Href)} />
+        <Btn title={m("makhrajStep")} icon="speaker" onPress={() => router.push("/shams/makhraj" as Href)} />
+      </View>
+    </Card>
+  );
+}
 
 // /shams/wird – today's wird: sabaq (new), sabqi (recent), manzil (long term), one tap opens the existing Shams session
 // or the reader at the right verse; after reciting, a self-assessment (tathbīt) updates the verse reviews. Shams 3.0:
@@ -116,6 +135,7 @@ export function WirdScreen() {
   const { pro } = usePro();
   const m = useShams2();
   const { wird, settings, day, grade, known } = m;
+  const v3 = isV3(useShamsMode().mode);
   const log = useLog();
   const today = log[day] ?? {};
   const streak = Math.max(wirdStreak(log, day), 0);
@@ -150,11 +170,15 @@ export function WirdScreen() {
           ))}
           <StepIn delay={180}><TathbitCard tb={wird.tathbit} marks={today.r ?? {}} /></StepIn>
           {/* after a step: the recitation coach (own weak spots, a 10-minute plan with drill links, ask the tutor) */}
-          {(["sabaq", "sabqi", "manzil"] as const).some((k) => done(k)) ? <CoachCard after /> : null}
-          <StepIn delay={240}><AdabTodayCard /></StepIn>
+          {/* Shams 3.0 (mode.ts): the coach, the blind recitation and makhraj step and the adab of the day belong to the
+              daily wird; Shams 2.0 keeps its wird as it was (the 3.0 screens stay open from the hub) */}
+          {v3 && (["sabaq", "sabqi", "manzil"] as const).some((k) => done(k)) ? <CoachCard after /> : null}
+          {v3 ? <StepIn delay={210}><V3Steps /></StepIn> : null}
+          {v3 ? <StepIn delay={240}><AdabTodayCard /></StepIn> : null}
           {allDone ? <Card gold><Text style={{ fontFamily: FONT.bold, fontSize: 17, color: t.ink }}>{s("wirdDone")}</Text><ContinueNext /></Card> : null}
           <Card>
             <Text accessibilityRole="header" style={{ fontFamily: FONT.bold, fontSize: 16, color: t.ink }}>{s("settings")}</Text>
+            <LevelChooser light />
             <Text style={{ fontFamily: FONT.semibold, fontSize: 13, color: t.muted }}>{s("setMinutes")}</Text>
             <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 6 }}>{[10, 20, 30, 45, 60, 90].map((m) => <Chip key={m} label={s("minN", { n: nf(m) })} selected={settings.minutes === m} onPress={() => saveSettings({ minutes: m })} />)}</View>
             <Text style={{ fontFamily: FONT.semibold, fontSize: 13, color: t.muted }}>{s("setNew")}</Text>

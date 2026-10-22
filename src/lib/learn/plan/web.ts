@@ -5,7 +5,7 @@
 import type { ShamsMode } from "@/lib/learn/shams2/mode";
 
 export function planWebHref(id: string, href: string, mode: ShamsMode): string {
-  if (mode === "v2" && (id === "shams" || id === "shamsShort" || id === "shamsLong")) return "/shams/wird";
+  if (mode !== "classic" && (id === "shams" || id === "shamsShort" || id === "shamsLong")) return "/shams/wird";
   const shams = href.match(/^\/shams\/(\d+)$/);
   if (shams) return `/surah/${shams[1]}?shams=1`;
   const quran = href.match(/^\/quran\/(\d+)(?:\?m=(\w+))?$/);
