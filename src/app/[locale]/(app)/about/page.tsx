@@ -5,7 +5,8 @@ import Markdown from "@/components/Markdown";
 import JsonLd from "@/components/JsonLd";
 import { aboutContent } from "@/lib/aboutContent";
 import { abs, pageMeta } from "@/lib/site";
-import { organizationLd } from "@/lib/company";
+import { founderBookLd, founderLd, organizationLd } from "@/lib/company";
+import FounderAbout from "@/components/FounderAbout";
 import { MoreTiles } from "@/components/PosterTiles";
 import { CalligraphyDraw } from "@/components/Ornaments";
 import { IslamArcadeLine, IslamBreak, IslamCorners, IslamMosque, IslamNum, IslamRain } from "@/components/art/IslamArt";
@@ -26,9 +27,11 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
   const tn = await getTranslations("nav");
   const tl = await getTranslations("legal");
   const ld = { "@context": "https://schema.org", "@type": "AboutPage", url: abs(`/${locale}/about`), inLanguage: locale, mainEntity: organizationLd(abs) };
+  const founder = { "@context": "https://schema.org", "@graph": [founderLd(abs), founderBookLd(abs)] };
   return (
     <div>
       <JsonLd data={ld} />
+      <JsonLd data={founder} />
 
       {/* Hero */}
       <section className={`${dark} girih isl-arcade relative z-[1] overflow-hidden`}>
@@ -52,6 +55,9 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
       <section className="mx-auto max-w-3xl px-5 pb-12 pt-14 sm:pb-16 sm:pt-20">
         <article><Markdown text={c.story} variant="article" numbered={false} /></article>
       </section>
+
+      {/* The founder: Nami Shams, his book and Mishary Alafasy (owner 22.10.2026) */}
+      <FounderAbout />
 
       {/* Values */}
       <section className="mx-auto max-w-6xl px-5 pb-16 sm:pb-24">

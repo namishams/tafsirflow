@@ -2461,5 +2461,28 @@
     "companyLabel": "公司（可选）",
     "listHint": "公开显示的仅为姓名或公司以及年月，绝不显示金额。您可随时通过 info@quranmasterclass.com 撤回署名。",
     "nameErr": "此名称无法显示。请选择其他名称。"
+  },
+  "founderAbout": {
+    "eyebrow": "创始人",
+    "title": "Nami Shams",
+    "lead": "Shams 学习法与 Quran Masterclass 的创始人。他的道路贯穿伊斯兰研究、伊斯兰世界的各个国家，以及服务于《古兰经》的应用。",
+    "focusTitle": "驱动他的是什么",
+    "focus": "他的工作致力于伊斯兰研究、伊斯兰国家和伊斯兰应用。最打动他的是《古兰经》本身：聆听它、学习它，尤其是一个人如何成为《古兰经》诵读者这一问题。",
+    "bookEyebrow": "译作",
+    "bookTitle": "Nahjul Balagha",
+    "bookSub": "伊玛目阿里的言辞——Nami Shams 德文译本",
+    "bookText": "Nami Shams 将伊玛目阿里的讲道、书信与箴言集《辞章之道》（Nahj al-Balagha）译成德文。该书可在亚马逊购买。",
+    "bookCta": "在亚马逊查看",
+    "whyTitle": "为什么创建 Quran Masterclass",
+    "why": "Quran Masterclass 正是源于这个问题：一个人如何成为《古兰经》诵读者？Nami Shams 希望打造一个地方，让每个人都能聆听、理解并逐节学习《古兰经》，直到自己的诵读扎实稳健。",
+    "misharyTitle": "陪伴他的声音",
+    "mishary": "他最喜爱的诵读者是 Mishary Rashid Alafasy。他整天聆听他的诵读，并从中不断获得启发。您也可以在这里聆听 Mishary Alafasy 的诵读并向他学习。",
+    "linkStar": "Mishary Alafasy 的主页",
+    "linkReciter": "诵读者简介",
+    "linkListen": "聆听他诵读的《古兰经》",
+    "linkPath": "Mishary 之路",
+    "profileTitle": "关于创始人",
+    "profileShort": "Nami Shams 创立了 Shams 学习法和 Quran Masterclass。他致力于伊斯兰研究、伊斯兰国家和伊斯兰应用，将《辞章之道》译成德文，最喜爱的诵读者是 Mishary Rashid Alafasy。",
+    "more": "了解更多关于创始人"
   }
 }

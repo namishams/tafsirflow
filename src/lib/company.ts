@@ -19,6 +19,45 @@ export const COMPANY = {
 
 export const founderName = (locale: string) => (locale === "ar" ? COMPANY.founderAr : COMPANY.founder);
 
+// The founder (owner's own statements, 22.10.2026): founder of the Shams Method and of Quran Masterclass; focus on
+// Islamic research, the Islamic countries and Islamic apps; translated Nahj al-Balagha into German; favourite reciter
+// Mishary Rashid Alafasy. Texts: messages → founderAbout. The book link stays exactly this clean URL (no tracking).
+export const FOUNDER_BOOK = {
+  name: "Nahjul Balagha",
+  url: "https://www.amazon.com/dp/B0D13DKT9T",
+  author: "Imam Ali ibn Abi Talib",
+} as const;
+/** Mishary Rashid Alafasy on the platform: star profile (reserved username), reciter biography, the player in his voice */
+export const FOUNDER_RECITER = {
+  star: "/talents/mishary.alafasy",
+  reciter: "/reciters/mishary-rashid-alafasy",
+  listen: "/surah/1?reciter=Alafasy",
+  path: "/mishary",
+} as const;
+
+/** schema.org Person for the founder */
+export function founderLd(abs: (p: string) => string) {
+  return {
+    "@type": "Person",
+    "@id": abs("/#founder"),
+    name: COMPANY.founder,
+    jobTitle: "Founder of Quran Masterclass and of the Shams Method",
+    worksFor: { "@id": abs("/#org") },
+    sameAs: [FOUNDER_BOOK.url],
+  };
+}
+/** schema.org Book for the German translation of Nahj al-Balagha */
+export function founderBookLd(abs: (p: string) => string) {
+  return {
+    "@type": "Book",
+    name: FOUNDER_BOOK.name,
+    inLanguage: "de",
+    url: FOUNDER_BOOK.url,
+    author: { "@type": "Person", name: FOUNDER_BOOK.author },
+    translator: { "@id": abs("/#founder"), "@type": "Person", name: COMPANY.founder },
+  };
+}
+
 /** schema.org Organization for Quran Masterclass (pass the site's absolute-URL helper) */
 export function organizationLd(abs: (p: string) => string) {
   return {
@@ -29,7 +68,7 @@ export function organizationLd(abs: (p: string) => string) {
     url: abs("/"),
     logo: abs("/icon-512.png"),
     email: COMPANY.email,
-    founder: { "@type": "Person", name: COMPANY.founder },
+    founder: { "@type": "Person", "@id": abs("/#founder"), name: COMPANY.founder },
     foundingLocation: COMPANY.foundedIn,
     address: { "@type": "PostalAddress", addressLocality: COMPANY.city, addressCountry: COMPANY.countryCode },
   };

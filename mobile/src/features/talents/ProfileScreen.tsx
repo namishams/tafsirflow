@@ -2,6 +2,7 @@ import { RareBadge } from "@/features/cosmetics/RareBadge";
 import { ProfileShowcase } from "@/features/cosmetics/ProfileShowcase";
 import { useCallback, useEffect, useRef, useState, type Dispatch, type ReactNode, type SetStateAction } from "react";
 import { ProMark } from "./ProMark";
+import FounderAbout from "@/features/library/FounderAbout";
 import { LinearGradient } from "expo-linear-gradient";
 import { ActionSheetIOS, Alert, Modal, Platform, Pressable, RefreshControl, ScrollView, Share, StyleSheet, Text, View, useWindowDimensions, type ScrollViewInstance } from "react-native";
 import { router, useGlobalSearchParams, type Href } from "expo-router";
@@ -476,6 +477,8 @@ export function ProfileScreenView({ d, variant, title, canInteract, signedIn, re
         {/* founder (one account, set on the server): the line and the place */}
         {p.founder ? <Text style={{ fontFamily: FONT.semibold, fontSize: 14, color: t.gold, textAlign: "center" }}>{tt("founderLine" as TKey)}</Text> : null}
         {p.founder ? <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "center", gap: 6 }}><CountryBadge code="AE" size={16} /><Text style={{ fontFamily: FONT.regular, fontSize: 13, color: t.muted }}>{tt("founderPlace" as TKey)}</Text></View> : null}
+        {/* founder account: "About the founder" with the book and Mishary Alafasy (owner 22.10.2026) */}
+        {p.founder ? <FounderAbout variant="compact" /> : null}
         {premium === "star" ? <Text style={{ fontFamily: FONT.semibold, fontSize: 14, color: t.dark ? "#7fd1ad" : "#0E7A57", textAlign: "center" }}>{starText(lang).roleLine}{p.country ? ` · ${countryName(p.country, lang)}` : ""}</Text> : null}
         {premium === "star" && starReciter ? (
           <Pressable onPress={() => router.push(`/reciters/${starReciter}` as Href)} accessibilityRole="link" style={{ alignSelf: "center", flexDirection: "row", alignItems: "center", gap: 6, marginTop: 4, paddingHorizontal: 14, minHeight: 36, borderRadius: 999, borderWidth: 1, borderColor: "rgba(217,185,112,0.7)", backgroundColor: "rgba(14,122,87,0.08)" }}>

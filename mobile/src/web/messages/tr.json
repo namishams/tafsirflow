@@ -2461,5 +2461,28 @@
     "companyLabel": "Firma (isteğe bağlı)",
     "listHint": "Yalnızca ad veya firma ile ay ve yıl gösterilir, tutar asla gösterilmez. İzninizi istediğiniz zaman info@quranmasterclass.com üzerinden geri alabilirsiniz.",
     "nameErr": "Bu ad gösterilemez. Lütfen başka bir ad seçin."
+  },
+  "founderAbout": {
+    "eyebrow": "Kurucu",
+    "title": "Nami Shams",
+    "lead": "Shams Yöntemi'nin ve Quran Masterclass'ın kurucusu. Yolu İslami araştırmalardan, İslam dünyasının ülkelerinden ve Kur'an'a hizmet eden uygulamalardan geçiyor.",
+    "focusTitle": "Onu harekete geçiren",
+    "focus": "Çalışmaları İslami araştırmalara, İslam ülkelerine ve İslami uygulamalara adanmıştır. Onu en çok etkileyen Kur'an'ın kendisidir: onu dinlemek, öğrenmek ve her şeyden önce insanın nasıl bir Kur'an kârii olduğu sorusu.",
+    "bookEyebrow": "Çeviri",
+    "bookTitle": "Nahjul Balagha",
+    "bookSub": "İmam Ali'nin sözleri – Nami Shams tarafından Almancaya çevrildi",
+    "bookText": "Nami Shams, İmam Ali'nin hutbelerini, mektuplarını ve hikmetli sözlerini içeren Nehcü'l-Belağa'yı Almancaya çevirdi. Kitap Amazon'da mevcuttur.",
+    "bookCta": "Amazon'da görüntüleyin",
+    "whyTitle": "Neden Quran Masterclass",
+    "why": "Quran Masterclass tam da bu sorudan doğdu: İnsan nasıl bir Kur'an kârii olur? Nami Shams, herkesin Kur'an'ı dinleyebileceği, anlayabileceği ve kendi tilaveti sağlamlaşana kadar ayet ayet öğrenebileceği bir yer kurmak istedi.",
+    "misharyTitle": "Ona eşlik eden ses",
+    "mishary": "En sevdiği kâri Mişari Raşid el-Afasi'dir. Onu bütün gün dinler ve tilaveti ona sürekli ilham verir. Siz de Mişari el-Afasi'yi burada dinleyebilir ve ondan öğrenebilirsiniz.",
+    "linkStar": "Mişari el-Afasi'nin profili",
+    "linkReciter": "Kârinin biyografisi",
+    "linkListen": "Kur'an'ı onun sesinden dinleyin",
+    "linkPath": "Mişari yolu",
+    "profileTitle": "Kurucu hakkında",
+    "profileShort": "Nami Shams, Shams Yöntemi'ni ve Quran Masterclass'ı kurdu. İslami araştırmalara, İslam ülkelerine ve İslami uygulamalara kendini adamıştır; Nehcü'l-Belağa'yı Almancaya çevirmiştir ve en sevdiği kâri Mişari Raşid el-Afasi'dir.",
+    "more": "Kurucu hakkında daha fazlası"
   }
 }

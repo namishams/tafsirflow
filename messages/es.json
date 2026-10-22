@@ -2461,5 +2461,28 @@
     "companyLabel": "Empresa (opcional)",
     "listHint": "Solo se muestran el nombre o la empresa y el mes y año, nunca el importe. Puede retirar la mención en cualquier momento escribiendo a info@quranmasterclass.com.",
     "nameErr": "Este nombre no se puede mostrar. Elija otro, por favor."
+  },
+  "founderAbout": {
+    "eyebrow": "El fundador",
+    "title": "Nami Shams",
+    "lead": "Fundador del Método Shams y de Quran Masterclass. Su camino pasa por la investigación islámica, los países del mundo islámico y aplicaciones al servicio del Corán.",
+    "focusTitle": "Lo que le mueve",
+    "focus": "Su trabajo está dedicado a la investigación islámica, a los países islámicos y a las aplicaciones islámicas. Lo que más le conmueve es el propio Corán: escucharlo, aprenderlo y, sobre todo, la pregunta de cómo se llega a ser recitador del Corán.",
+    "bookEyebrow": "Traducción",
+    "bookTitle": "Nahjul Balagha",
+    "bookSub": "Las palabras del Imam Ali, traducidas al alemán por Nami Shams",
+    "bookText": "Nami Shams tradujo al alemán Nahj al-Balagha, la colección de sermones, cartas y dichos del Imam Ali. El libro está disponible en Amazon.",
+    "bookCta": "Ver en Amazon",
+    "whyTitle": "Por qué Quran Masterclass",
+    "why": "Quran Masterclass nació precisamente de esa pregunta: ¿cómo se llega a ser recitador del Corán? Nami Shams quería un lugar donde cualquiera pueda escuchar el Corán, comprenderlo y aprenderlo versículo a versículo, hasta que su propia recitación se sostenga.",
+    "misharyTitle": "La voz que le acompaña",
+    "mishary": "Su recitador favorito es Mishary Rashid Alafasy. Lo escucha todo el día y su recitación es para él una inspiración constante. Usted también puede escuchar aquí a Mishary Alafasy y aprender de él.",
+    "linkStar": "Perfil de Mishary Alafasy",
+    "linkReciter": "Biografía del recitador",
+    "linkListen": "Escuchar el Corán con su voz",
+    "linkPath": "El camino de Mishary",
+    "profileTitle": "Sobre el fundador",
+    "profileShort": "Nami Shams fundó el Método Shams y Quran Masterclass. Se dedica a la investigación islámica, a los países islámicos y a las aplicaciones islámicas, tradujo Nahj al-Balagha al alemán y su recitador favorito es Mishary Rashid Alafasy.",
+    "more": "Más sobre el fundador"
   }
 }

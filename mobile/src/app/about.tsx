@@ -10,6 +10,7 @@ import { IslScreen } from "@/features/library/screen";
 import { SERIF, SERIF_ITALIC, STAGE_GOLD, useIsl } from "@/features/library/palette";
 import { useAbout } from "@/features/library/content";
 import { openHref } from "@/features/library/links";
+import FounderAbout from "@/features/library/FounderAbout";
 
 // /about – the story behind Quran Masterclass, values, Dubai and the Quran, thanks, the letter and contact
 // (website: src/app/[locale]/(app)/about/page.tsx, texts from src/lib/aboutContent.ts)
@@ -49,6 +50,9 @@ function About({ c }: { c: AboutContent }) {
         <View style={{ paddingHorizontal: 20, paddingTop: 56, paddingBottom: 48 }}>
           <Article text={c.story} numbered={false} />
         </View>
+
+        {/* The founder: Nami Shams, his book and Mishary Alafasy (owner 22.10.2026) */}
+        <FounderAbout />
 
         {/* Values */}
         <View style={{ paddingHorizontal: 20, paddingBottom: 64 }}>

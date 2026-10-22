@@ -27,6 +27,7 @@
   ],
   "@root": [
    "donate",
+   "founderAbout",
    "player",
    "premium",
    "security",
@@ -34,7 +35,9 @@
    "social",
    "trust"
   ],
-  "about": [],
+  "about": [
+   "founderAbout"
+  ],
   "abrahamic": [],
   "academy": [
    "academy",
@@ -127,6 +130,7 @@
   ],
   "prayer": [
    "donate",
+   "founderAbout",
    "prayer"
   ],
   "premium": [
@@ -135,6 +139,7 @@
   "profile": [
    "coach",
    "donate",
+   "founderAbout",
    "free",
    "premium",
    "profile",
@@ -205,6 +210,7 @@
    "tajweed"
   ],
   "talents": [
+   "founderAbout",
    "premium"
   ],
   "teacher": [],
@@ -219,7 +225,9 @@
    "session",
    "today"
   ],
-  "together": [],
+  "together": [
+   "founderAbout"
+  ],
   "u": [],
   "username": [],
   "verify": [],

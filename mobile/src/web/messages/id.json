@@ -2461,5 +2461,28 @@
     "companyLabel": "Perusahaan (opsional)",
     "listHint": "Yang tampil hanya nama atau perusahaan serta bulan dan tahun, tidak pernah jumlahnya. Anda dapat menarik penyebutan kapan saja melalui info@quranmasterclass.com.",
     "nameErr": "Nama ini tidak dapat ditampilkan. Silakan pilih nama lain."
+  },
+  "founderAbout": {
+    "eyebrow": "Pendiri",
+    "title": "Nami Shams",
+    "lead": "Pendiri Metode Shams dan Quran Masterclass. Jalannya melewati riset Islam, negara-negara dunia Islam, dan aplikasi yang melayani Al-Qur'an.",
+    "focusTitle": "Yang menggerakkannya",
+    "focus": "Karyanya didedikasikan untuk riset Islam, negara-negara Islam, dan aplikasi Islami. Yang paling menyentuhnya adalah Al-Qur'an itu sendiri: mendengarkannya, mempelajarinya, dan terutama pertanyaan bagaimana seseorang menjadi qari Al-Qur'an.",
+    "bookEyebrow": "Terjemahan",
+    "bookTitle": "Nahjul Balagha",
+    "bookSub": "Kata-kata Imam Ali – diterjemahkan ke bahasa Jerman oleh Nami Shams",
+    "bookText": "Nami Shams menerjemahkan Nahj al-Balagha, kumpulan khutbah, surat, dan mutiara hikmah Imam Ali, ke dalam bahasa Jerman. Buku ini tersedia di Amazon.",
+    "bookCta": "Lihat di Amazon",
+    "whyTitle": "Mengapa Quran Masterclass",
+    "why": "Quran Masterclass lahir dari pertanyaan itu: bagaimana seseorang menjadi qari Al-Qur'an? Nami Shams ingin menghadirkan tempat di mana siapa pun dapat mendengarkan Al-Qur'an, memahaminya, dan mempelajarinya ayat demi ayat, hingga bacaannya sendiri mantap.",
+    "misharyTitle": "Suara yang menemaninya",
+    "mishary": "Qari favoritnya adalah Mishary Rashid Alafasy. Ia mendengarkannya sepanjang hari, dan bacaannya menjadi inspirasi yang tak pernah putus. Anda juga dapat mendengarkan Mishary Alafasy di sini dan belajar darinya.",
+    "linkStar": "Profil Mishary Alafasy",
+    "linkReciter": "Biografi sang qari",
+    "linkListen": "Dengarkan Al-Qur'an dengan suaranya",
+    "linkPath": "Jalur Mishary",
+    "profileTitle": "Tentang pendiri",
+    "profileShort": "Nami Shams mendirikan Metode Shams dan Quran Masterclass. Ia menekuni riset Islam, negara-negara Islam, dan aplikasi Islami, menerjemahkan Nahj al-Balagha ke bahasa Jerman, dan qari favoritnya adalah Mishary Rashid Alafasy.",
+    "more": "Selengkapnya tentang pendiri"
   }
 }

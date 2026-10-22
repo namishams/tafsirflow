@@ -1,4 +1,5 @@
 "use client";
+import FounderAbout from "@/components/FounderAbout";
 import { ProMark } from "./ProMark";
 import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { Link } from "@/i18n/navigation";
@@ -363,6 +364,8 @@ export default function TalentProfileWeb({ locale, initial, username, own, place
           {p.bio ? <p className="max-w-xl whitespace-pre-line text-[14.5px] leading-relaxed text-ink">{p.bio}</p> : null}
           {p.maqam ? <p className="text-[13px] text-muted">{`${tx.maqam}: ${p.maqam}`}</p> : null}
           {p.officialChannel ? <p className="text-[13px] text-gold">{fill(tx.officialChannel, { c: p.officialChannel })}</p> : null}
+          {/* founder account: "About the founder" with the book and Mishary Alafasy (owner 22.10.2026) */}
+          {p.founder ? <div className="w-full max-w-xl"><FounderAbout variant="compact" /></div> : null}
           {placeText ? <Link href="/ranking" className="mt-1 inline-flex rounded-full border border-[#c6a65e] bg-[rgba(214,180,108,0.12)] px-3 py-1.5 text-[13px] font-semibold text-gold hover:opacity-85">{placeText}</Link> : null}
           {/* goals as chips, the city and the travel badge */}
           {p.extras?.city || p.extras?.travel?.on ? (

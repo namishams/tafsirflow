@@ -2461,5 +2461,28 @@
     "companyLabel": "Company (optional)",
     "listHint": "Only the name or company and the month and year are shown publicly, never the amount. You can withdraw the listing at any time via info@quranmasterclass.com.",
     "nameErr": "This name cannot be shown. Please choose another one."
+  },
+  "founderAbout": {
+    "eyebrow": "The founder",
+    "title": "Nami Shams",
+    "lead": "Founder of the Shams Method and of Quran Masterclass. His path runs through Islamic research, the countries of the Islamic world and apps that serve the Quran.",
+    "focusTitle": "What drives him",
+    "focus": "His work is devoted to Islamic research, the Islamic countries and Islamic apps. What moves him most is the Quran itself: listening to it, learning it and, above all, the question of how one becomes a reciter of the Quran.",
+    "bookEyebrow": "Translation",
+    "bookTitle": "Nahjul Balagha",
+    "bookSub": "The words of Imam Ali – translated into German by Nami Shams",
+    "bookText": "Nami Shams translated Nahj al-Balagha, the collection of sermons, letters and sayings of Imam Ali, into German. The book is available on Amazon.",
+    "bookCta": "View on Amazon",
+    "whyTitle": "Why Quran Masterclass",
+    "why": "Quran Masterclass grew out of exactly that question: how does one become a reciter of the Quran? Nami Shams wanted a place where anyone can listen to the Quran, understand it and learn it verse by verse, until their own recitation carries.",
+    "misharyTitle": "The voice that accompanies him",
+    "mishary": "His favourite reciter is Mishary Rashid Alafasy. He listens to him all day, and his recitation is a constant inspiration. You can listen to Mishary Alafasy here too and learn from him.",
+    "linkStar": "Mishary Alafasy's profile",
+    "linkReciter": "The reciter's biography",
+    "linkListen": "Listen to the Quran in his voice",
+    "linkPath": "The Mishary path",
+    "profileTitle": "About the founder",
+    "profileShort": "Nami Shams founded the Shams Method and Quran Masterclass. He is devoted to Islamic research, the Islamic countries and Islamic apps, translated Nahj al-Balagha into German, and his favourite reciter is Mishary Rashid Alafasy.",
+    "more": "More about the founder"
   }
 }

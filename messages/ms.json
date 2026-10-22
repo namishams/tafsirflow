@@ -2461,5 +2461,28 @@
     "companyLabel": "Syarikat (pilihan)",
     "listHint": "Hanya nama atau syarikat serta bulan dan tahun dipaparkan, bukan jumlahnya. Anda boleh menarik balik penyebutan pada bila-bila masa melalui info@quranmasterclass.com.",
     "nameErr": "Nama ini tidak boleh dipaparkan. Sila pilih nama lain."
+  },
+  "founderAbout": {
+    "eyebrow": "Pengasas",
+    "title": "Nami Shams",
+    "lead": "Pengasas Kaedah Shams dan Quran Masterclass. Perjalanannya merentasi penyelidikan Islam, negara-negara dunia Islam dan aplikasi yang berkhidmat kepada al-Quran.",
+    "focusTitle": "Apa yang menggerakkannya",
+    "focus": "Kerjanya ditumpukan kepada penyelidikan Islam, negara-negara Islam dan aplikasi Islam. Yang paling menyentuh hatinya ialah al-Quran itu sendiri: mendengarnya, mempelajarinya dan terutamanya persoalan bagaimana seseorang menjadi qari al-Quran.",
+    "bookEyebrow": "Terjemahan",
+    "bookTitle": "Nahjul Balagha",
+    "bookSub": "Kata-kata Imam Ali – diterjemahkan ke bahasa Jerman oleh Nami Shams",
+    "bookText": "Nami Shams menterjemahkan Nahj al-Balagha, himpunan khutbah, surat dan kata-kata hikmah Imam Ali, ke dalam bahasa Jerman. Buku ini boleh didapati di Amazon.",
+    "bookCta": "Lihat di Amazon",
+    "whyTitle": "Mengapa Quran Masterclass",
+    "why": "Quran Masterclass lahir daripada persoalan itu: bagaimana seseorang menjadi qari al-Quran? Nami Shams mahu mewujudkan tempat di mana sesiapa sahaja boleh mendengar al-Quran, memahaminya dan mempelajarinya ayat demi ayat, sehingga bacaan sendiri menjadi mantap.",
+    "misharyTitle": "Suara yang menemaninya",
+    "mishary": "Qari kegemarannya ialah Mishary Rashid Alafasy. Beliau mendengarnya sepanjang hari, dan bacaannya menjadi inspirasi yang berterusan. Anda juga boleh mendengar Mishary Alafasy di sini dan belajar daripadanya.",
+    "linkStar": "Profil Mishary Alafasy",
+    "linkReciter": "Biografi qari",
+    "linkListen": "Dengar al-Quran dengan suaranya",
+    "linkPath": "Laluan Mishary",
+    "profileTitle": "Tentang pengasas",
+    "profileShort": "Nami Shams mengasaskan Kaedah Shams dan Quran Masterclass. Beliau menumpukan diri kepada penyelidikan Islam, negara-negara Islam dan aplikasi Islam, menterjemahkan Nahj al-Balagha ke bahasa Jerman, dan qari kegemarannya ialah Mishary Rashid Alafasy.",
+    "more": "Lagi tentang pengasas"
   }
 }
