@@ -68,6 +68,7 @@
   ],
   "assistant": [],
   "blog": [],
+  "blueprint": [],
   "calendar": [
    "donate"
   ],
@@ -145,6 +146,10 @@
    "donate"
   ],
   "new-beginning": [],
+  "partners": [
+   "contactForms",
+   "trust"
+  ],
   "plan": [
    "free",
    "plan",
@@ -222,6 +227,7 @@
   "support": [
    "donate",
    "supporters",
+   "trust",
    "ziina"
   ],
   "supporters": [],
