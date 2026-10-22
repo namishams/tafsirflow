@@ -115,7 +115,7 @@ export async function streamMedia(req: NextRequest, rel: string, mime: string): 
 }
 
 /** JPEG without APP1..APP15 segments (EXIF, GPS, XMP) – used when ffmpeg is not there to re-encode */
-function stripJpeg(buf: Buffer): Buffer {
+export function stripJpeg(buf: Buffer): Buffer {
   if (buf[0] !== 0xff || buf[1] !== 0xd8) return buf;
   const out: Buffer[] = [buf.subarray(0, 2)];
   let i = 2;

@@ -4,6 +4,7 @@ import { json } from "@/lib/http";
 import { NO_STORE, adminGate, logAdmin } from "@/lib/talents";
 import { dropPostMedia } from "@/lib/talentPosting";
 import { removeMedia } from "@/lib/media";
+import { reportItems } from "@/lib/messenger/core";
 
 export const dynamic = "force-dynamic";
 
@@ -35,11 +36,15 @@ export async function GET(req: NextRequest) {
       WHERE ${status === "open" ? "r.status = 'open'" : "r.status <> 'open'"}
       ORDER BY r.created_at ${status === "open" ? "ASC" : "DESC"} LIMIT 100`,
   );
+  // messenger reports: the server decrypts the copies stored with the report (encryption at rest, not end-to-end)
+  const items = await reportItems(r.rows.filter((x) => x.target_type === "msg_message" || x.target_type === "msg_thread").map((x) => String(x.id)));
+  const msgText = (id: string) => (items.get(id) ?? []).map((i) => `${i.reported ? ">> " : ""}@${i.sender || "?"}: ${i.kind === "text" || i.kind === "image" ? (i.kind === "image" ? "[image] " : "") + (i.text ?? "") : `[${i.kind}]`}${i.media ? ` ${i.media}` : ""}`).join("\n") || null;
   return json({
     reports: r.rows.map((x) => ({
       id: String(x.id), reason: x.reason, category: x.category, type: x.target_type, status: x.status, at: x.created_at,
       reported: x.reported ?? null, reportedName: x.reported_name ?? null, suspended: !!x.suspended, reporter: x.reporter ?? null, total: Number(x.reports_total),
-      message: x.target_type === "message" ? { text: x.message ?? null, removed: !!x.message_removed }
+      message: x.target_type === "msg_message" || x.target_type === "msg_thread" ? { text: msgText(String(x.id)), removed: false }
+        : x.target_type === "message" ? { text: x.message ?? null, removed: !!x.message_removed }
         : x.target_type === "comment" ? { text: x.comment ?? null, removed: !!x.comment_removed }
         // Mishary mentoring: the review text, or the recording's verse and note (removing deletes the note and the audio)
         : x.target_type === "mentoring_review" ? { text: x.review_body ?? null, removed: !x.review_body }
@@ -65,6 +70,7 @@ export async function POST(req: NextRequest) {
   if (action === "remove_message") {
     // the reported message or comment
     if (rep.target_type === "message") await p.query("UPDATE community_messages SET removed_at = now() WHERE id = $1 AND removed_at IS NULL", [rep.target_id]);
+    else if (rep.target_type === "msg_message") await p.query("UPDATE msg_messages SET removed_at = now() WHERE id = $1 AND removed_at IS NULL", [rep.target_id]);
     else if (rep.target_type === "comment") {
       const c = await p.query("UPDATE community_post_comments SET removed_at = now() WHERE id = $1 AND removed_at IS NULL RETURNING post_id", [rep.target_id]);
       if (c.rows[0]) await p.query("UPDATE community_posts SET comment_count = GREATEST(0, comment_count - 1) WHERE id = $1", [c.rows[0].post_id]);

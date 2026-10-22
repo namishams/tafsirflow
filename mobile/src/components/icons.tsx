@@ -2,8 +2,8 @@
 import { I18nManager } from "react-native";
 import Svg, { Circle, Path, Rect } from "react-native-svg";
 
-export type IconName = "play" | "pause" | "prev" | "next" | "playSm" | "copy" | "share" | "note" | "bookmark" | "volume" | "grid" | "book" | "search" | "menu" | "lock" | "repeat" | "user" | "cap" | "shield" | "logout" | "close" | "clock" | "radio" | "hands" | "heart" | "comment" | "eye" | "flag" | "flame" | "starBig" | "trophy" | "speaker" | "moon" | "checkCircle" | "chevronRight" | "chevronLeft" | "chevronDown" | "check" | "plus" | "sun" | "map" | "compass" | "calendar" | "download" | "settings" | "globe" | "mosque" | "list" | "pen" | "speed" | "stop" | "reels" | "send";
-const KIND: Record<IconName, "ln" | "sm" | "fill"> = {play: "fill", pause: "fill", prev: "fill", next: "fill", playSm: "sm", copy: "sm", share: "sm", note: "sm", bookmark: "sm", volume: "sm", grid: "ln", book: "ln", search: "ln", menu: "ln", lock: "ln", repeat: "ln", user: "ln", cap: "ln", shield: "ln", logout: "ln", close: "ln", clock: "ln", radio: "ln", hands: "ln", heart: "sm", comment: "sm", eye: "sm", flag: "sm", flame: "ln", starBig: "fill", trophy: "ln", speaker: "ln", moon: "ln", checkCircle: "ln", chevronRight: "ln", chevronLeft: "ln", chevronDown: "ln", check: "ln", plus: "ln", sun: "ln", map: "ln", compass: "ln", calendar: "ln", download: "ln", settings: "ln", globe: "ln", mosque: "ln", list: "ln", pen: "sm", speed: "ln", stop: "fill", reels: "ln", send: "ln"};
+export type IconName = "play" | "pause" | "prev" | "next" | "playSm" | "copy" | "share" | "note" | "bookmark" | "volume" | "grid" | "book" | "search" | "menu" | "lock" | "repeat" | "user" | "cap" | "shield" | "logout" | "close" | "clock" | "radio" | "hands" | "heart" | "comment" | "eye" | "flag" | "flame" | "starBig" | "trophy" | "speaker" | "moon" | "checkCircle" | "chevronRight" | "chevronLeft" | "chevronDown" | "check" | "plus" | "sun" | "map" | "compass" | "calendar" | "download" | "settings" | "globe" | "mosque" | "list" | "pen" | "speed" | "stop" | "reels" | "send" | "image" | "mic" | "users" | "reply" | "trash";
+const KIND: Record<IconName, "ln" | "sm" | "fill"> = {play: "fill", pause: "fill", prev: "fill", next: "fill", playSm: "sm", copy: "sm", share: "sm", note: "sm", bookmark: "sm", volume: "sm", grid: "ln", book: "ln", search: "ln", menu: "ln", lock: "ln", repeat: "ln", user: "ln", cap: "ln", shield: "ln", logout: "ln", close: "ln", clock: "ln", radio: "ln", hands: "ln", heart: "sm", comment: "sm", eye: "sm", flag: "sm", flame: "ln", starBig: "fill", trophy: "ln", speaker: "ln", moon: "ln", checkCircle: "ln", chevronRight: "ln", chevronLeft: "ln", chevronDown: "ln", check: "ln", plus: "ln", sun: "ln", map: "ln", compass: "ln", calendar: "ln", download: "ln", settings: "ln", globe: "ln", mosque: "ln", list: "ln", pen: "sm", speed: "ln", stop: "fill", reels: "ln", send: "ln", image: "ln", mic: "ln", users: "ln", reply: "ln", trash: "ln"};
 
 function shape(name: IconName) {
   switch (name) {
@@ -15,6 +15,11 @@ function shape(name: IconName) {
     case "playSm": return <><Path d="M8 5.5v13l11-6.5z" /></>;
     case "copy": return <><Rect x="9" y="9" width="11" height="11" rx="2" /><Path d="M5 15V6a2 2 0 0 1 2-2h9" /></>;
     case "share": return <><Path d="M12 15V4M8 8l4-4 4 4" /><Path d="M5 13v5a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-5" /></>;
+    case "image": return <><Rect x="3.5" y="4.5" width="17" height="15" rx="2.5" /><Circle cx="9" cy="10" r="1.8" /><Path d="M20.5 16l-5-5-8.5 8.5" /></>;
+    case "mic": return <><Rect x="9" y="3" width="6" height="11" rx="3" /><Path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21" /></>;
+    case "users": return <><Circle cx="9" cy="8.5" r="3.3" /><Path d="M3 19.5c.6-3.2 3-5 6-5s5.4 1.8 6 5" /><Path d="M15.5 5.5a3.2 3.2 0 0 1 0 6.2M17.5 14.7c2 .6 3.2 2.3 3.5 4.8" /></>;
+    case "reply": return <><Path d="M9.5 6.5 4 12l5.5 5.5" /><Path d="M4.5 12H14a6 6 0 0 1 6 6v.5" /></>;
+    case "trash": return <><Path d="M4.5 7h15M9.5 7V4.5h5V7M6.5 7l.9 12.2a1.5 1.5 0 0 0 1.5 1.3h6.2a1.5 1.5 0 0 0 1.5-1.3L17.5 7" /></>;
     case "send": return <><Path d="M21.5 3 3 10.2l7.4 3.1L21.5 3z" /><Path d="M21.5 3 15 21l-4.6-7.7" /></>;
     case "note": return <><Path d="M4 20h4L19 9a2.8 2.8 0 0 0-4-4L4 16v4z" /><Path d="M13.5 6.5l4 4" /></>;
     case "bookmark": return <><Path d="M6 4h12v17l-6-4-6 4z" /></>;
