@@ -40,6 +40,21 @@ const de = {
   e_age16: "Nachrichten gibt es ab 16 Jahren.", e_slow: "Bitte etwas langsamer.", e_not_found: "Nicht gefunden.", e_generic: "Das hat nicht geklappt. Bitte versuchen Sie es erneut.",
   e_name: "Bitte geben Sie einen Namen mit mindestens 2 Zeichen ein.", micDenied: "Bitte erlauben Sie den Zugriff auf das Mikrofon.", photoDenied: "Bitte erlauben Sie den Zugriff auf Ihre Fotos.",
   signIn: "Bitte melden Sie sich an, um Nachrichten zu nutzen.",
+  viewOnce: "Einmal ansehen", viewOncePhoto: "Foto zum einmaligen Ansehen", viewOnceVideo: "Video zum einmaligen Ansehen", tapToView: "Tippen zum Ansehen", opened: "Geöffnet",
+  viewOnceHint: "Nach dem Öffnen wird es nicht mehr angezeigt und vom Server gelöscht. Bildschirmfotos und Bildschirmaufnahmen lassen sich nicht verhindern.",
+  e_view_once_age: "Einmal ansehen gibt es nur in Einzelchats zwischen Mitgliedern ab 18 Jahren.", e_view_once_opened: "Dieses Foto oder Video wurde bereits geöffnet.",
+  e_edit_window: "Nachrichten lassen sich nur innerhalb von 15 Minuten bearbeiten.", video: "Video senden", videoMsg: "Video", close: "Schließen", edit: "Bearbeiten",
+  edited: "bearbeitet", editing: "Nachricht bearbeiten", deleteForMe: "Für mich löschen",
+  deleteForMeConfirm: "Diese Nachricht nur bei Ihnen löschen? Die anderen sehen sie weiterhin.", activeNow: "Jetzt aktiv", activeStatus: "Aktivitätsstatus zeigen",
+  activeStatusHint: "Eingeschaltet sehen Ihre Chatpartner, wenn Sie gerade aktiv sind, und Sie sehen es bei ihnen. Standardmäßig ausgeschaltet.", mutual: "{n} gemeinsame Freunde",
+  viewProfile: "Profil ansehen", shareToChat: "In Chat senden", chooseChat: "Chat auswählen", shareNote: "Nachricht hinzufügen (freiwillig)", sentTo: "Gesendet an {n}",
+  replyPost: "Im Chat antworten", card_verse: "Vers", card_surah: "Sure", card_course: "Kurs", card_carousel: "Karussell", card_profile: "Profil", card_post: "Beitrag",
+  sharedMsg: "Geteilter Inhalt", notifTitle: "Neue Nachricht von {n}", notifBody: "Tippen Sie, um die Nachricht zu lesen.", notifSetting: "Benachrichtigungen für Nachrichten",
+  notifHint: "Sie erfahren, wer Ihnen geschrieben hat. Der Inhalt wird nicht angezeigt.", category: "Grund", cat_spam: "Spam", cat_harassment: "Belästigung oder Mobbing",
+  cat_inappropriate: "Unangemessener Inhalt", cat_impersonation: "Gibt sich als jemand anderes aus", cat_minor_safety: "Gefährdung von Minderjährigen", cat_other: "Sonstiges",
+  perm_title: "Berechtigungen", perm_photos: "Fotos", perm_camera: "Kamera", perm_mic: "Mikrofon", perm_speech: "Spracherkennung", perm_notif: "Mitteilungen",
+  perm_location: "Standort", perm_on: "Erlaubt", perm_off: "Nicht erlaubt", perm_ask: "Noch nicht gefragt", perm_limited: "Eingeschränkt",
+  openSettings: "In iOS-Einstellungen öffnen", permHint: "Ändern können Sie das in den iOS-Einstellungen unter Quran Masterclass.",
 };
 export type MessengerText = typeof de;
 
@@ -80,6 +95,19 @@ const en: MessengerText = {
   e_age16: "Messages are available from age 16.", e_slow: "Please slow down a little.", e_not_found: "Not found.", e_generic: "That did not work. Please try again.",
   e_name: "Please enter a name with at least 2 characters.", micDenied: "Please allow access to the microphone.", photoDenied: "Please allow access to your photos.",
   signIn: "Please sign in to use messages.",
+  viewOnce: "View once", viewOncePhoto: "View-once photo", viewOnceVideo: "View-once video", tapToView: "Tap to view", opened: "Opened",
+  viewOnceHint: "After it is opened, it is no longer shown and is deleted from the server. Screenshots and screen recordings cannot be prevented.",
+  e_view_once_age: "View once is only available in one-to-one chats between members aged 18 or older.", e_view_once_opened: "This photo or video has already been opened.",
+  e_edit_window: "Messages can only be edited within 15 minutes.", video: "Send a video", videoMsg: "Video", close: "Close", edit: "Edit", edited: "edited", editing: "Edit message",
+  deleteForMe: "Delete for me", deleteForMeConfirm: "Delete this message only for you? The others will still see it.", activeNow: "Active now", activeStatus: "Show activity status",
+  activeStatusHint: "When on, the people you chat with see when you are active, and you see it for them. Off by default.", mutual: "{n} mutual friends", viewProfile: "View profile",
+  shareToChat: "Send in a chat", chooseChat: "Choose a chat", shareNote: "Add a message (optional)", sentTo: "Sent to {n}", replyPost: "Reply in a chat", card_verse: "Verse",
+  card_surah: "Surah", card_course: "Course", card_carousel: "Carousel", card_profile: "Profile", card_post: "Post", sharedMsg: "Shared content", notifTitle: "New message from {n}",
+  notifBody: "Tap to read the message.", notifSetting: "Notifications for messages", notifHint: "You see who wrote to you. The content is not shown.", category: "Reason",
+  cat_spam: "Spam", cat_harassment: "Harassment or bullying", cat_inappropriate: "Inappropriate content", cat_impersonation: "Pretending to be someone else",
+  cat_minor_safety: "Endangering minors", cat_other: "Other", perm_title: "Permissions", perm_photos: "Photos", perm_camera: "Camera", perm_mic: "Microphone",
+  perm_speech: "Speech recognition", perm_notif: "Notifications", perm_location: "Location", perm_on: "Allowed", perm_off: "Not allowed", perm_ask: "Not asked yet",
+  perm_limited: "Limited", openSettings: "Open in iOS Settings", permHint: "You can change this in iOS Settings under Quran Masterclass.",
 };
 
 const ar: Partial<MessengerText> = {
@@ -116,6 +144,19 @@ const ar: Partial<MessengerText> = {
   e_age16: "الرسائل متاحة من عمر 16 عامًا.", e_slow: "يرجى التمهّل قليلًا.", e_not_found: "غير موجود.", e_generic: "لم ينجح ذلك. يرجى المحاولة مرة أخرى.",
   e_name: "يرجى إدخال اسم من حرفين على الأقل.", micDenied: "يرجى السماح بالوصول إلى الميكروفون.", photoDenied: "يرجى السماح بالوصول إلى الصور.",
   signIn: "يرجى تسجيل الدخول لاستخدام الرسائل.",
+  viewOnce: "عرض مرة واحدة", viewOncePhoto: "صورة للعرض مرة واحدة", viewOnceVideo: "فيديو للعرض مرة واحدة", tapToView: "انقروا للعرض", opened: "تم الفتح",
+  viewOnceHint: "بعد فتحه لا يُعرض مرة أخرى ويُحذف من الخادم. لا يمكن منع لقطات الشاشة وتسجيل الشاشة.",
+  e_view_once_age: "العرض مرة واحدة متاح فقط في المحادثات الفردية بين أعضاء بعمر 18 عامًا فأكثر.", e_view_once_opened: "تم فتح هذه الصورة أو هذا الفيديو من قبل.",
+  e_edit_window: "يمكن تعديل الرسائل خلال 15 دقيقة فقط.", video: "إرسال فيديو", videoMsg: "فيديو", close: "إغلاق", edit: "تعديل", edited: "معدّلة", editing: "تعديل الرسالة",
+  deleteForMe: "حذف لديّ", deleteForMeConfirm: "حذف هذه الرسالة لديكم فقط؟ سيظل الآخرون يرونها.", activeNow: "نشط الآن", activeStatus: "إظهار حالة النشاط",
+  activeStatusHint: "عند التشغيل يرى من تحادثونهم متى تكونون نشطين، وترون ذلك لديهم. متوقف افتراضيًا.", mutual: "{n} أصدقاء مشتركون", viewProfile: "عرض الملف الشخصي",
+  shareToChat: "إرسال في محادثة", chooseChat: "اختيار محادثة", shareNote: "إضافة رسالة (اختياري)", sentTo: "أُرسلت إلى {n}", replyPost: "الرد في محادثة", card_verse: "آية",
+  card_surah: "سورة", card_course: "دورة", card_carousel: "عرض شرائح", card_profile: "ملف شخصي", card_post: "منشور", sharedMsg: "محتوى مشترك", notifTitle: "رسالة جديدة من {n}",
+  notifBody: "انقروا لقراءة الرسالة.", notifSetting: "إشعارات الرسائل", notifHint: "تعرفون من راسلكم. لا يُعرض المحتوى.", category: "السبب", cat_spam: "رسائل مزعجة",
+  cat_harassment: "مضايقة أو تنمّر", cat_inappropriate: "محتوى غير لائق", cat_impersonation: "انتحال شخصية", cat_minor_safety: "تعريض القاصرين للخطر", cat_other: "أخرى",
+  perm_title: "الأذونات", perm_photos: "الصور", perm_camera: "الكاميرا", perm_mic: "الميكروفون", perm_speech: "التعرّف على الكلام", perm_notif: "الإشعارات", perm_location: "الموقع",
+  perm_on: "مسموح", perm_off: "غير مسموح", perm_ask: "لم يُطلب بعد", perm_limited: "محدود", openSettings: "فتح في إعدادات iOS",
+  permHint: "يمكنكم تغيير ذلك في إعدادات iOS ضمن Quran Masterclass.",
 };
 
 const tr: Partial<MessengerText> = {
@@ -152,6 +193,20 @@ const tr: Partial<MessengerText> = {
   e_age16: "Mesajlar 16 yaşından itibaren kullanılabilir.", e_slow: "Lütfen biraz yavaşlayın.", e_not_found: "Bulunamadı.", e_generic: "Bu işe yaramadı. Lütfen tekrar deneyin.",
   e_name: "Lütfen en az 2 karakterlik bir ad girin.", micDenied: "Lütfen mikrofona erişime izin verin.", photoDenied: "Lütfen fotoğraflarınıza erişime izin verin.",
   signIn: "Mesajları kullanmak için lütfen giriş yapın.",
+  viewOnce: "Bir kez görüntüle", viewOncePhoto: "Bir kez görüntülenen fotoğraf", viewOnceVideo: "Bir kez görüntülenen video", tapToView: "Görüntülemek için dokunun",
+  opened: "Açıldı", viewOnceHint: "Açıldıktan sonra artık gösterilmez ve sunucudan silinir. Ekran görüntüsü ve ekran kaydı engellenemez.",
+  e_view_once_age: "Bir kez görüntüleme yalnızca 18 yaş ve üzeri üyeler arasındaki bire bir sohbetlerde kullanılabilir.", e_view_once_opened: "Bu fotoğraf veya video zaten açıldı.",
+  e_edit_window: "Mesajlar yalnızca 15 dakika içinde düzenlenebilir.", video: "Video gönder", videoMsg: "Video", close: "Kapat", edit: "Düzenle", edited: "düzenlendi",
+  editing: "Mesajı düzenle", deleteForMe: "Benden sil", deleteForMeConfirm: "Bu mesaj yalnızca sizden silinsin mi? Diğerleri görmeye devam eder.", activeNow: "Şu an aktif",
+  activeStatus: "Etkinlik durumunu göster", activeStatusHint: "Açıkken sohbet ettiğiniz kişiler aktif olduğunuzu görür, siz de onlarınkini görürsünüz. Varsayılan olarak kapalıdır.",
+  mutual: "{n} ortak arkadaş", viewProfile: "Profili görüntüle", shareToChat: "Sohbette gönder", chooseChat: "Sohbet seçin", shareNote: "Mesaj ekleyin (isteğe bağlı)",
+  sentTo: "{n} kişisine gönderildi", replyPost: "Sohbette yanıtla", card_verse: "Ayet", card_surah: "Sure", card_course: "Kurs", card_carousel: "Karusel", card_profile: "Profil",
+  card_post: "Gönderi", sharedMsg: "Paylaşılan içerik", notifTitle: "{n} kişisinden yeni mesaj", notifBody: "Mesajı okumak için dokunun.", notifSetting: "Mesaj bildirimleri",
+  notifHint: "Size kimin yazdığını görürsünüz. İçerik gösterilmez.", category: "Neden", cat_spam: "Spam", cat_harassment: "Taciz veya zorbalık",
+  cat_inappropriate: "Uygunsuz içerik", cat_impersonation: "Başkası gibi davranma", cat_minor_safety: "Reşit olmayanları tehlikeye atma", cat_other: "Diğer", perm_title: "İzinler",
+  perm_photos: "Fotoğraflar", perm_camera: "Kamera", perm_mic: "Mikrofon", perm_speech: "Konuşma tanıma", perm_notif: "Bildirimler", perm_location: "Konum", perm_on: "İzin verildi",
+  perm_off: "İzin verilmedi", perm_ask: "Henüz sorulmadı", perm_limited: "Sınırlı", openSettings: "iOS Ayarlarında aç",
+  permHint: "Bunu iOS Ayarlarında Quran Masterclass altında değiştirebilirsiniz.",
 };
 
 const ur: Partial<MessengerText> = {
@@ -188,6 +243,20 @@ const ur: Partial<MessengerText> = {
   e_age16: "پیغامات 16 سال کی عمر سے دستیاب ہیں۔", e_slow: "براہِ کرم تھوڑا آہستہ۔", e_not_found: "نہیں ملا۔", e_generic: "یہ کام نہیں ہوا۔ براہِ کرم دوبارہ کوشش کریں۔",
   e_name: "براہِ کرم کم از کم 2 حروف کا نام درج کریں۔", micDenied: "براہِ کرم مائیکروفون تک رسائی کی اجازت دیں۔", photoDenied: "براہِ کرم تصاویر تک رسائی کی اجازت دیں۔",
   signIn: "پیغامات استعمال کرنے کے لیے براہِ کرم سائن اِن کریں۔",
+  viewOnce: "ایک بار دیکھیں", viewOncePhoto: "ایک بار دیکھنے والی تصویر", viewOnceVideo: "ایک بار دیکھنے والی ویڈیو", tapToView: "دیکھنے کے لیے تھپتھپائیں", opened: "کھولی گئی",
+  viewOnceHint: "کھولنے کے بعد یہ دوبارہ نہیں دکھائی جاتی اور سرور سے حذف ہو جاتی ہے۔ اسکرین شاٹ اور اسکرین ریکارڈنگ کو روکا نہیں جا سکتا۔",
+  e_view_once_age: "ایک بار دیکھنا صرف 18 سال یا اس سے زیادہ عمر کے اراکین کی انفرادی چیٹ میں دستیاب ہے۔", e_view_once_opened: "یہ تصویر یا ویڈیو پہلے ہی کھولی جا چکی ہے۔",
+  e_edit_window: "پیغامات میں صرف 15 منٹ کے اندر ترمیم کی جا سکتی ہے۔", video: "ویڈیو بھیجیں", videoMsg: "ویڈیو", close: "بند کریں", edit: "ترمیم کریں", edited: "ترمیم شدہ",
+  editing: "پیغام میں ترمیم", deleteForMe: "میرے لیے حذف کریں", deleteForMeConfirm: "یہ پیغام صرف آپ کے لیے حذف کریں؟ دوسرے اسے دیکھتے رہیں گے۔", activeNow: "ابھی فعال",
+  activeStatus: "سرگرمی کی حالت دکھائیں", activeStatusHint: "آن ہونے پر آپ کے چیٹ کے ساتھی دیکھتے ہیں کہ آپ کب فعال ہیں، اور آپ ان کی حالت دیکھتے ہیں۔ پہلے سے بند ہے۔",
+  mutual: "{n} مشترکہ دوست", viewProfile: "پروفائل دیکھیں", shareToChat: "چیٹ میں بھیجیں", chooseChat: "چیٹ منتخب کریں", shareNote: "پیغام شامل کریں (اختیاری)",
+  sentTo: "{n} کو بھیج دیا گیا", replyPost: "چیٹ میں جواب دیں", card_verse: "آیت", card_surah: "سورت", card_course: "کورس", card_carousel: "کیروسل", card_profile: "پروفائل",
+  card_post: "پوسٹ", sharedMsg: "شیئر کیا گیا مواد", notifTitle: "{n} کی طرف سے نیا پیغام", notifBody: "پیغام پڑھنے کے لیے تھپتھپائیں۔", notifSetting: "پیغامات کی اطلاعات",
+  notifHint: "آپ کو معلوم ہوتا ہے کہ کس نے لکھا۔ مواد نہیں دکھایا جاتا۔", category: "وجہ", cat_spam: "اسپام", cat_harassment: "ہراسانی یا دھمکانا",
+  cat_inappropriate: "نامناسب مواد", cat_impersonation: "کسی اور کا روپ دھارنا", cat_minor_safety: "نابالغوں کو خطرے میں ڈالنا", cat_other: "دیگر", perm_title: "اجازتیں",
+  perm_photos: "تصاویر", perm_camera: "کیمرا", perm_mic: "مائیکروفون", perm_speech: "آواز کی شناخت", perm_notif: "اطلاعات", perm_location: "مقام", perm_on: "اجازت ہے",
+  perm_off: "اجازت نہیں", perm_ask: "ابھی نہیں پوچھا گیا", perm_limited: "محدود", openSettings: "iOS ترتیبات میں کھولیں",
+  permHint: "آپ اسے iOS ترتیبات میں Quran Masterclass کے تحت بدل سکتے ہیں۔",
 };
 
 const fa: Partial<MessengerText> = {
@@ -224,6 +293,19 @@ const fa: Partial<MessengerText> = {
   e_age16: "پیام‌ها از ۱۶ سالگی در دسترس است.", e_slow: "لطفاً کمی آهسته‌تر.", e_not_found: "پیدا نشد.", e_generic: "انجام نشد. لطفاً دوباره بکوشید.",
   e_name: "لطفاً نامی با دست‌کم ۲ نویسه وارد کنید.", micDenied: "لطفاً اجازه‌ی دسترسی به میکروفون را بدهید.", photoDenied: "لطفاً اجازه‌ی دسترسی به عکس‌ها را بدهید.",
   signIn: "برای استفاده از پیام‌ها لطفاً وارد شوید.",
+  viewOnce: "یک‌بار دیدن", viewOncePhoto: "عکس یک‌بار دیدنی", viewOnceVideo: "ویدیوی یک‌بار دیدنی", tapToView: "برای دیدن ضربه بزنید", opened: "باز شد",
+  viewOnceHint: "پس از باز شدن دیگر نمایش داده نمی‌شود و از سرور حذف می‌شود. جلوی عکس از صفحه و ضبط صفحه را نمی‌توان گرفت.",
+  e_view_once_age: "یک‌بار دیدن فقط در گفتگوهای دونفره میان اعضای ۱۸ سال به بالا در دسترس است.", e_view_once_opened: "این عکس یا ویدیو قبلاً باز شده است.",
+  e_edit_window: "پیام‌ها را فقط تا ۱۵ دقیقه می‌توان ویرایش کرد.", video: "ارسال ویدیو", videoMsg: "ویدیو", close: "بستن", edit: "ویرایش", edited: "ویرایش‌شده",
+  editing: "ویرایش پیام", deleteForMe: "حذف برای من", deleteForMeConfirm: "این پیام فقط برای شما حذف شود؟ دیگران همچنان آن را می‌بینند.", activeNow: "اکنون فعال",
+  activeStatus: "نمایش وضعیت فعالیت", activeStatusHint: "اگر روشن باشد، هم‌صحبت‌های شما می‌بینند چه زمانی فعال هستید و شما هم وضعیت آن‌ها را می‌بینید. به‌طور پیش‌فرض خاموش است.",
+  mutual: "{n} دوست مشترک", viewProfile: "دیدن نمایه", shareToChat: "ارسال در گفتگو", chooseChat: "انتخاب گفتگو", shareNote: "افزودن پیام (اختیاری)", sentTo: "به {n} فرستاده شد",
+  replyPost: "پاسخ در گفتگو", card_verse: "آیه", card_surah: "سوره", card_course: "دوره", card_carousel: "کاروسل", card_profile: "نمایه", card_post: "پست",
+  sharedMsg: "محتوای هم‌رسانی‌شده", notifTitle: "پیام تازه از {n}", notifBody: "برای خواندن پیام ضربه بزنید.", notifSetting: "اعلان‌های پیام",
+  notifHint: "می‌بینید چه کسی برایتان نوشته است. محتوا نمایش داده نمی‌شود.", category: "دلیل", cat_spam: "هرزنامه", cat_harassment: "آزار یا قلدری",
+  cat_inappropriate: "محتوای نامناسب", cat_impersonation: "جعل هویت", cat_minor_safety: "به خطر انداختن خردسالان", cat_other: "سایر", perm_title: "مجوزها", perm_photos: "عکس‌ها",
+  perm_camera: "دوربین", perm_mic: "میکروفون", perm_speech: "تشخیص گفتار", perm_notif: "اعلان‌ها", perm_location: "مکان", perm_on: "مجاز", perm_off: "غیرمجاز",
+  perm_ask: "هنوز پرسیده نشده", perm_limited: "محدود", openSettings: "باز کردن در تنظیمات iOS", permHint: "می‌توانید این را در تنظیمات iOS زیر Quran Masterclass تغییر دهید.",
 };
 
 const ps: Partial<MessengerText> = {
@@ -260,6 +342,20 @@ const ps: Partial<MessengerText> = {
   e_age16: "پیغامونه له ۱۶ کلنۍ شته.", e_slow: "مهرباني وکړئ لږ ورو.", e_not_found: "ونه موندل شو.", e_generic: "ونه شو. مهرباني وکړئ بیا هڅه وکړئ.",
   e_name: "مهرباني وکړئ لږ تر لږه ۲ توري نوم ولیکئ.", micDenied: "مهرباني وکړئ مایکروفون ته اجازه ورکړئ.", photoDenied: "مهرباني وکړئ انځورونو ته اجازه ورکړئ.",
   signIn: "د پیغامونو لپاره مهرباني وکړئ ننوځئ.",
+  viewOnce: "یو ځل لیدل", viewOncePhoto: "د یو ځل لیدو انځور", viewOnceVideo: "د یو ځل لیدو ویډیو", tapToView: "د لیدو لپاره ټک وکړئ", opened: "پرانیستل شو",
+  viewOnceHint: "له پرانیستلو وروسته نور نه ښودل کېږي او له سرور څخه ړنګېږي. د پردې انځور او د پردې ثبت نه شي مخنیول کېدای.",
+  e_view_once_age: "یو ځل لیدل یوازې د ۱۸ کلنو او له هغه پورته غړو ترمنځ په دوه کسیزو چټونو کې شته.", e_view_once_opened: "دا انځور یا ویډیو مخکې پرانیستل شوې ده.",
+  e_edit_window: "پیغامونه یوازې په ۱۵ دقیقو کې سمولای شئ.", video: "ویډیو ولېږئ", videoMsg: "ویډیو", close: "بندول", edit: "سمول", edited: "سم شوی", editing: "پیغام سمول",
+  deleteForMe: "زما لپاره ړنګول", deleteForMeConfirm: "دا پیغام یوازې ستاسو لپاره ړنګ شي؟ نور به یې لا هم ویني.", activeNow: "اوس فعال", activeStatus: "د فعالیت حالت ښودل",
+  activeStatusHint: "کله چې روښانه وي، ستاسو د چټ ملګري ویني چې تاسو کله فعال یاست، او تاسو د هغوی حالت وینئ. په ډیفالټ ډول بند دی.", mutual: "{n} ګډ ملګري",
+  viewProfile: "پروفایل وګورئ", shareToChat: "په چټ کې ولېږئ", chooseChat: "چټ وټاکئ", shareNote: "پیغام زیات کړئ (اختیاري)", sentTo: "{n} ته ولېږل شو", replyPost: "په چټ کې ځواب",
+  card_verse: "آیت", card_surah: "سورت", card_course: "کورس", card_carousel: "کاروسل", card_profile: "پروفایل", card_post: "پوسټ", sharedMsg: "شریک شوی منځپانګه",
+  notifTitle: "له {n} څخه نوی پیغام", notifBody: "د پیغام لوستلو لپاره ټک وکړئ.", notifSetting: "د پیغامونو خبرتیاوې",
+  notifHint: "تاسو پوهېږئ چې چا درته لیکلي. منځپانګه نه ښودل کېږي.", category: "لامل", cat_spam: "سپام", cat_harassment: "ځورونه یا تاوتریخوالی",
+  cat_inappropriate: "نامناسبه منځپانګه", cat_impersonation: "د بل چا په نوم ځان ښودل", cat_minor_safety: "کم عمرو ته خطر", cat_other: "نور", perm_title: "اجازې",
+  perm_photos: "انځورونه", perm_camera: "کمره", perm_mic: "مایکروفون", perm_speech: "د وینا پېژندنه", perm_notif: "خبرتیاوې", perm_location: "ځای", perm_on: "اجازه ده",
+  perm_off: "اجازه نشته", perm_ask: "لا نه دی پوښتل شوی", perm_limited: "محدود", openSettings: "په iOS تنظیماتو کې پرانیستل",
+  permHint: "تاسو کولای شئ دا د iOS په تنظیماتو کې د Quran Masterclass لاندې بدل کړئ.",
 };
 
 const fr: Partial<MessengerText> = {
@@ -296,6 +392,21 @@ const fr: Partial<MessengerText> = {
   e_age16: "Les messages sont disponibles à partir de 16 ans.", e_slow: "Veuillez ralentir un peu.", e_not_found: "Introuvable.", e_generic: "Cela n’a pas fonctionné. Veuillez réessayer.",
   e_name: "Veuillez saisir un nom d’au moins 2 caractères.", micDenied: "Veuillez autoriser l’accès au microphone.", photoDenied: "Veuillez autoriser l’accès à vos photos.",
   signIn: "Veuillez vous connecter pour utiliser les messages.",
+  viewOnce: "Voir une fois", viewOncePhoto: "Photo à voir une fois", viewOnceVideo: "Vidéo à voir une fois", tapToView: "Touchez pour voir", opened: "Ouvert",
+  viewOnceHint: "Une fois ouvert, il n'est plus affiché et il est supprimé du serveur. Les captures et enregistrements d'écran ne peuvent pas être empêchés.",
+  e_view_once_age: "La vue unique n'est disponible que dans les discussions privées entre membres de 18 ans ou plus.",
+  e_view_once_opened: "Cette photo ou vidéo a déjà été ouverte.", e_edit_window: "Les messages ne peuvent être modifiés que pendant 15 minutes.", video: "Envoyer une vidéo",
+  videoMsg: "Vidéo", close: "Fermer", edit: "Modifier", edited: "modifié", editing: "Modifier le message", deleteForMe: "Supprimer pour moi",
+  deleteForMeConfirm: "Supprimer ce message uniquement pour vous ? Les autres le verront toujours.", activeNow: "En ligne", activeStatus: "Afficher le statut d'activité",
+  activeStatusHint: "Activé, vos interlocuteurs voient quand vous êtes actif, et vous le voyez pour eux. Désactivé par défaut.", mutual: "{n} amis en commun",
+  viewProfile: "Voir le profil", shareToChat: "Envoyer dans une discussion", chooseChat: "Choisir une discussion", shareNote: "Ajouter un message (facultatif)",
+  sentTo: "Envoyé à {n}", replyPost: "Répondre en discussion", card_verse: "Verset", card_surah: "Sourate", card_course: "Cours", card_carousel: "Carrousel", card_profile: "Profil",
+  card_post: "Publication", sharedMsg: "Contenu partagé", notifTitle: "Nouveau message de {n}", notifBody: "Touchez pour lire le message.",
+  notifSetting: "Notifications des messages", notifHint: "Vous voyez qui vous a écrit. Le contenu n'est pas affiché.", category: "Motif", cat_spam: "Spam",
+  cat_harassment: "Harcèlement ou intimidation", cat_inappropriate: "Contenu inapproprié", cat_impersonation: "Usurpation d'identité", cat_minor_safety: "Mise en danger de mineurs",
+  cat_other: "Autre", perm_title: "Autorisations", perm_photos: "Photos", perm_camera: "Appareil photo", perm_mic: "Micro", perm_speech: "Reconnaissance vocale",
+  perm_notif: "Notifications", perm_location: "Localisation", perm_on: "Autorisé", perm_off: "Non autorisé", perm_ask: "Pas encore demandé", perm_limited: "Limité",
+  openSettings: "Ouvrir dans les Réglages iOS", permHint: "Vous pouvez le modifier dans les Réglages iOS, sous Quran Masterclass.",
 };
 
 const es: Partial<MessengerText> = {
@@ -332,6 +443,21 @@ const es: Partial<MessengerText> = {
   e_age16: "Los mensajes están disponibles a partir de los 16 años.", e_slow: "Vaya un poco más despacio.", e_not_found: "No encontrado.", e_generic: "No ha funcionado. Inténtelo de nuevo.",
   e_name: "Introduzca un nombre de al menos 2 caracteres.", micDenied: "Permita el acceso al micrófono.", photoDenied: "Permita el acceso a sus fotos.",
   signIn: "Inicie sesión para usar los mensajes.",
+  viewOnce: "Ver una vez", viewOncePhoto: "Foto de una sola vista", viewOnceVideo: "Vídeo de una sola vista", tapToView: "Toque para ver", opened: "Abierto",
+  viewOnceHint: "Una vez abierto, ya no se muestra y se elimina del servidor. No se pueden impedir las capturas ni las grabaciones de pantalla.",
+  e_view_once_age: "La vista única solo está disponible en chats individuales entre miembros de 18 años o más.", e_view_once_opened: "Esta foto o vídeo ya se ha abierto.",
+  e_edit_window: "Los mensajes solo se pueden editar durante 15 minutos.", video: "Enviar un vídeo", videoMsg: "Vídeo", close: "Cerrar", edit: "Editar", edited: "editado",
+  editing: "Editar mensaje", deleteForMe: "Eliminar para mí", deleteForMeConfirm: "¿Eliminar este mensaje solo para usted? Los demás lo seguirán viendo.", activeNow: "Activo ahora",
+  activeStatus: "Mostrar estado de actividad",
+  activeStatusHint: "Si está activado, las personas con las que chatea ven cuándo está activo, y usted lo ve de ellas. Desactivado por defecto.", mutual: "{n} amigos en común",
+  viewProfile: "Ver perfil", shareToChat: "Enviar en un chat", chooseChat: "Elegir un chat", shareNote: "Añadir un mensaje (opcional)", sentTo: "Enviado a {n}",
+  replyPost: "Responder en un chat", card_verse: "Versículo", card_surah: "Sura", card_course: "Curso", card_carousel: "Carrusel", card_profile: "Perfil", card_post: "Publicación",
+  sharedMsg: "Contenido compartido", notifTitle: "Nuevo mensaje de {n}", notifBody: "Toque para leer el mensaje.", notifSetting: "Notificaciones de mensajes",
+  notifHint: "Verá quién le ha escrito. El contenido no se muestra.", category: "Motivo", cat_spam: "Spam", cat_harassment: "Acoso o intimidación",
+  cat_inappropriate: "Contenido inapropiado", cat_impersonation: "Suplantación de identidad", cat_minor_safety: "Riesgo para menores", cat_other: "Otro", perm_title: "Permisos",
+  perm_photos: "Fotos", perm_camera: "Cámara", perm_mic: "Micrófono", perm_speech: "Reconocimiento de voz", perm_notif: "Notificaciones", perm_location: "Ubicación",
+  perm_on: "Permitido", perm_off: "No permitido", perm_ask: "Aún no preguntado", perm_limited: "Limitado", openSettings: "Abrir en Ajustes de iOS",
+  permHint: "Puede cambiarlo en Ajustes de iOS, en Quran Masterclass.",
 };
 
 const id: Partial<MessengerText> = {
@@ -368,6 +494,20 @@ const id: Partial<MessengerText> = {
   e_age16: "Pesan tersedia mulai usia 16 tahun.", e_slow: "Mohon sedikit lebih pelan.", e_not_found: "Tidak ditemukan.", e_generic: "Tidak berhasil. Silakan coba lagi.",
   e_name: "Mohon masukkan nama minimal 2 karakter.", micDenied: "Mohon izinkan akses ke mikrofon.", photoDenied: "Mohon izinkan akses ke foto Anda.",
   signIn: "Silakan masuk untuk menggunakan pesan.",
+  viewOnce: "Lihat sekali", viewOncePhoto: "Foto sekali lihat", viewOnceVideo: "Video sekali lihat", tapToView: "Ketuk untuk melihat", opened: "Dibuka",
+  viewOnceHint: "Setelah dibuka, tidak ditampilkan lagi dan dihapus dari server. Tangkapan layar dan rekaman layar tidak dapat dicegah.",
+  e_view_once_age: "Lihat sekali hanya tersedia di obrolan pribadi antara anggota berusia 18 tahun ke atas.", e_view_once_opened: "Foto atau video ini sudah dibuka.",
+  e_edit_window: "Pesan hanya dapat diedit dalam 15 menit.", video: "Kirim video", videoMsg: "Video", close: "Tutup", edit: "Edit", edited: "diedit", editing: "Edit pesan",
+  deleteForMe: "Hapus untuk saya", deleteForMeConfirm: "Hapus pesan ini hanya untuk Anda? Yang lain tetap dapat melihatnya.", activeNow: "Aktif sekarang",
+  activeStatus: "Tampilkan status aktivitas", activeStatusHint: "Jika aktif, lawan obrolan Anda melihat saat Anda aktif, dan Anda melihatnya pada mereka. Nonaktif secara bawaan.",
+  mutual: "{n} teman bersama", viewProfile: "Lihat profil", shareToChat: "Kirim ke obrolan", chooseChat: "Pilih obrolan", shareNote: "Tambahkan pesan (opsional)",
+  sentTo: "Terkirim ke {n}", replyPost: "Balas di obrolan", card_verse: "Ayat", card_surah: "Surah", card_course: "Kursus", card_carousel: "Karosel", card_profile: "Profil",
+  card_post: "Postingan", sharedMsg: "Konten yang dibagikan", notifTitle: "Pesan baru dari {n}", notifBody: "Ketuk untuk membaca pesan.", notifSetting: "Notifikasi pesan",
+  notifHint: "Anda melihat siapa yang menulis kepada Anda. Isinya tidak ditampilkan.", category: "Alasan", cat_spam: "Spam", cat_harassment: "Pelecehan atau perundungan",
+  cat_inappropriate: "Konten tidak pantas", cat_impersonation: "Menyamar sebagai orang lain", cat_minor_safety: "Membahayakan anak di bawah umur", cat_other: "Lainnya",
+  perm_title: "Izin", perm_photos: "Foto", perm_camera: "Kamera", perm_mic: "Mikrofon", perm_speech: "Pengenalan ucapan", perm_notif: "Notifikasi", perm_location: "Lokasi",
+  perm_on: "Diizinkan", perm_off: "Tidak diizinkan", perm_ask: "Belum ditanyakan", perm_limited: "Terbatas", openSettings: "Buka di Pengaturan iOS",
+  permHint: "Anda dapat mengubahnya di Pengaturan iOS pada Quran Masterclass.",
 };
 
 const ms: Partial<MessengerText> = {
@@ -379,7 +519,7 @@ const ms: Partial<MessengerText> = {
   requestIncoming: "{n} ingin menghantar mesej kepada anda.", accept: "Terima", decline: "Tolak", requestWait: "Permintaan anda telah dihantar. Anda boleh menulis lagi selepas ia diterima.",
   write: "Tulis mesej", send: "Hantar", photo: "Hantar foto", voice: "Rakam mesej suara", recording: "Sedang merakam", stopSend: "Henti dan hantar", cancel: "Batal",
   photoMsg: "Foto", voiceMsg: "Mesej suara", play: "Main", pause: "Jeda", you: "Anda", react: "Beri reaksi",
-  delete: "Padam", deleteConfirm: "Padam mesej ini untuk semua?", deleted: "Mesej dipadam", removed: "Mesej ini telah dibuang.",
+  delete: "Tarik balik", deleteConfirm: "Tarik balik mesej ini untuk semua?", deleted: "Mesej telah ditarik balik", removed: "Mesej ini telah dibuang.",
   reportMsg: "Laporkan mesej", reportChat: "Laporkan sembang", reportGroup: "Laporkan kumpulan", block: "Sekat", confirmBlock: "Sekat orang ini? Anda tidak akan melihat satu sama lain lagi.",
   reported: "Terima kasih. Kami akan menyemak laporan secepat mungkin.", reportReason: "Butiran (pilihan)", sendReport: "Hantar laporan",
   seen: "Dibaca", seenBy: "Dibaca oleh {n}", sent: "Dihantar", typing: "{n} sedang menaip", typingMany: "Beberapa orang sedang menaip",
@@ -389,6 +529,21 @@ const ms: Partial<MessengerText> = {
   circleChat: "Kumpulan belajar", loadOlder: "Muat mesej lama", settings: "Tetapan",
   privacy: "Mesej dihantar secara disulitkan dan disimpan secara disulitkan di pelayan kami. Jika anda melaporkan mesej, pasukan moderasi kami boleh membaca mesej yang dilaporkan untuk melindungi semua.",
   e_generic: "Tidak berjaya. Sila cuba lagi.", e_age16: "Mesej tersedia mulai umur 16 tahun.", signIn: "Sila log masuk untuk menggunakan mesej.",
+  viewOnce: "Lihat sekali", viewOncePhoto: "Foto lihat sekali", viewOnceVideo: "Video lihat sekali", tapToView: "Ketik untuk melihat", opened: "Dibuka",
+  viewOnceHint: "Selepas dibuka, ia tidak dipaparkan lagi dan dipadam daripada pelayan. Tangkapan skrin dan rakaman skrin tidak dapat dihalang.",
+  e_view_once_age: "Lihat sekali hanya tersedia dalam sembang peribadi antara ahli berumur 18 tahun ke atas.", e_view_once_opened: "Foto atau video ini sudah dibuka.",
+  e_edit_window: "Mesej hanya boleh disunting dalam masa 15 minit.", video: "Hantar video", videoMsg: "Video", close: "Tutup", edit: "Sunting", edited: "disunting",
+  editing: "Sunting mesej", deleteForMe: "Padam untuk saya", deleteForMeConfirm: "Padam mesej ini untuk anda sahaja? Orang lain masih dapat melihatnya.",
+  activeNow: "Aktif sekarang", activeStatus: "Tunjukkan status aktiviti",
+  activeStatusHint: "Apabila dihidupkan, rakan sembang anda melihat bila anda aktif, dan anda melihatnya pada mereka. Dimatikan secara lalai.", mutual: "{n} rakan bersama",
+  viewProfile: "Lihat profil", shareToChat: "Hantar dalam sembang", chooseChat: "Pilih sembang", shareNote: "Tambah mesej (pilihan)", sentTo: "Dihantar kepada {n}",
+  replyPost: "Balas dalam sembang", card_verse: "Ayat", card_surah: "Surah", card_course: "Kursus", card_carousel: "Karusel", card_profile: "Profil", card_post: "Hantaran",
+  sharedMsg: "Kandungan dikongsi", notifTitle: "Mesej baharu daripada {n}", notifBody: "Ketik untuk membaca mesej.", notifSetting: "Pemberitahuan mesej",
+  notifHint: "Anda melihat siapa yang menulis kepada anda. Kandungan tidak dipaparkan.", category: "Sebab", cat_spam: "Spam", cat_harassment: "Gangguan atau buli",
+  cat_inappropriate: "Kandungan tidak sesuai", cat_impersonation: "Menyamar sebagai orang lain", cat_minor_safety: "Membahayakan kanak-kanak", cat_other: "Lain-lain",
+  perm_title: "Kebenaran", perm_photos: "Foto", perm_camera: "Kamera", perm_mic: "Mikrofon", perm_speech: "Pengecaman pertuturan", perm_notif: "Pemberitahuan",
+  perm_location: "Lokasi", perm_on: "Dibenarkan", perm_off: "Tidak dibenarkan", perm_ask: "Belum ditanya", perm_limited: "Terhad", openSettings: "Buka dalam Tetapan iOS",
+  permHint: "Anda boleh mengubahnya dalam Tetapan iOS di bawah Quran Masterclass.",
 };
 
 const bn: Partial<MessengerText> = {
@@ -425,6 +580,20 @@ const bn: Partial<MessengerText> = {
   e_age16: "১৬ বছর বয়স থেকে বার্তা পাওয়া যায়।", e_slow: "অনুগ্রহ করে একটু ধীরে।", e_not_found: "পাওয়া যায়নি।", e_generic: "কাজ হয়নি। আবার চেষ্টা করুন।",
   e_name: "অন্তত ২ অক্ষরের একটি নাম লিখুন।", micDenied: "মাইক্রোফোনে প্রবেশের অনুমতি দিন।", photoDenied: "আপনার ছবিতে প্রবেশের অনুমতি দিন।",
   signIn: "বার্তা ব্যবহার করতে অনুগ্রহ করে সাইন ইন করুন।",
+  viewOnce: "একবার দেখুন", viewOncePhoto: "একবার দেখার ছবি", viewOnceVideo: "একবার দেখার ভিডিও", tapToView: "দেখতে ট্যাপ করুন", opened: "খোলা হয়েছে",
+  viewOnceHint: "খোলার পরে এটি আর দেখানো হয় না এবং সার্ভার থেকে মুছে ফেলা হয়। স্ক্রিনশট ও স্ক্রিন রেকর্ডিং আটকানো যায় না।",
+  e_view_once_age: "একবার দেখা শুধু ১৮ বছর বা তার বেশি বয়সী সদস্যদের মধ্যে একক চ্যাটে পাওয়া যায়।", e_view_once_opened: "এই ছবি বা ভিডিওটি আগেই খোলা হয়েছে।",
+  e_edit_window: "বার্তা শুধু ১৫ মিনিটের মধ্যে সম্পাদনা করা যায়।", video: "ভিডিও পাঠান", videoMsg: "ভিডিও", close: "বন্ধ করুন", edit: "সম্পাদনা", edited: "সম্পাদিত",
+  editing: "বার্তা সম্পাদনা", deleteForMe: "আমার জন্য মুছুন", deleteForMeConfirm: "এই বার্তাটি শুধু আপনার জন্য মুছবেন? অন্যরা এটি দেখতে থাকবেন।", activeNow: "এখন সক্রিয়",
+  activeStatus: "সক্রিয়তার অবস্থা দেখান", activeStatusHint: "চালু থাকলে আপনার চ্যাটের সঙ্গীরা দেখেন আপনি কখন সক্রিয়, আর আপনিও তাঁদেরটা দেখেন। ডিফল্টভাবে বন্ধ।",
+  mutual: "{n} জন পারস্পরিক বন্ধু", viewProfile: "প্রোফাইল দেখুন", shareToChat: "চ্যাটে পাঠান", chooseChat: "চ্যাট বেছে নিন", shareNote: "বার্তা যোগ করুন (ঐচ্ছিক)",
+  sentTo: "{n}-কে পাঠানো হয়েছে", replyPost: "চ্যাটে উত্তর দিন", card_verse: "আয়াত", card_surah: "সূরা", card_course: "কোর্স", card_carousel: "ক্যারোসেল", card_profile: "প্রোফাইল",
+  card_post: "পোস্ট", sharedMsg: "শেয়ার করা বিষয়বস্তু", notifTitle: "{n}-এর কাছ থেকে নতুন বার্তা", notifBody: "বার্তা পড়তে ট্যাপ করুন।", notifSetting: "বার্তার বিজ্ঞপ্তি",
+  notifHint: "আপনি দেখবেন কে আপনাকে লিখেছেন। বিষয়বস্তু দেখানো হয় না।", category: "কারণ", cat_spam: "স্প্যাম", cat_harassment: "হয়রানি বা উৎপীড়ন",
+  cat_inappropriate: "অনুপযুক্ত বিষয়বস্তু", cat_impersonation: "অন্য কারও ছদ্মবেশ", cat_minor_safety: "অপ্রাপ্তবয়স্কদের ঝুঁকি", cat_other: "অন্যান্য", perm_title: "অনুমতি",
+  perm_photos: "ছবি", perm_camera: "ক্যামেরা", perm_mic: "মাইক্রোফোন", perm_speech: "কথা শনাক্তকরণ", perm_notif: "বিজ্ঞপ্তি", perm_location: "অবস্থান", perm_on: "অনুমোদিত",
+  perm_off: "অনুমোদিত নয়", perm_ask: "এখনও জিজ্ঞাসা করা হয়নি", perm_limited: "সীমিত", openSettings: "iOS সেটিংসে খুলুন",
+  permHint: "আপনি iOS সেটিংসে Quran Masterclass-এর অধীনে এটি বদলাতে পারেন।",
 };
 
 const ru: Partial<MessengerText> = {
@@ -461,6 +630,20 @@ const ru: Partial<MessengerText> = {
   e_age16: "Сообщения доступны с 16 лет.", e_slow: "Пожалуйста, чуть медленнее.", e_not_found: "Не найдено.", e_generic: "Не получилось. Попробуйте ещё раз.",
   e_name: "Введите название не короче 2 символов.", micDenied: "Разрешите доступ к микрофону.", photoDenied: "Разрешите доступ к фотографиям.",
   signIn: "Войдите, чтобы пользоваться сообщениями.",
+  viewOnce: "Просмотр один раз", viewOncePhoto: "Фото для одного просмотра", viewOnceVideo: "Видео для одного просмотра", tapToView: "Нажмите, чтобы посмотреть", opened: "Открыто",
+  viewOnceHint: "После открытия оно больше не показывается и удаляется с сервера. Снимки и запись экрана предотвратить нельзя.",
+  e_view_once_age: "Одноразовый просмотр доступен только в личных чатах между участниками от 18 лет.", e_view_once_opened: "Это фото или видео уже открыто.",
+  e_edit_window: "Сообщения можно изменить только в течение 15 минут.", video: "Отправить видео", videoMsg: "Видео", close: "Закрыть", edit: "Изменить", edited: "изменено",
+  editing: "Изменение сообщения", deleteForMe: "Удалить у меня", deleteForMeConfirm: "Удалить это сообщение только у вас? Остальные будут его видеть.", activeNow: "Сейчас в сети",
+  activeStatus: "Показывать статус активности", activeStatusHint: "Если включено, собеседники видят, когда вы активны, а вы видите это у них. По умолчанию выключено.",
+  mutual: "Общих друзей: {n}", viewProfile: "Открыть профиль", shareToChat: "Отправить в чат", chooseChat: "Выберите чат", shareNote: "Добавить сообщение (необязательно)",
+  sentTo: "Отправлено: {n}", replyPost: "Ответить в чате", card_verse: "Аят", card_surah: "Сура", card_course: "Курс", card_carousel: "Карусель", card_profile: "Профиль",
+  card_post: "Публикация", sharedMsg: "Общий материал", notifTitle: "Новое сообщение от {n}", notifBody: "Нажмите, чтобы прочитать сообщение.",
+  notifSetting: "Уведомления о сообщениях", notifHint: "Вы видите, кто вам написал. Содержание не показывается.", category: "Причина", cat_spam: "Спам",
+  cat_harassment: "Преследование или травля", cat_inappropriate: "Неприемлемый контент", cat_impersonation: "Выдаёт себя за другого", cat_minor_safety: "Угроза несовершеннолетним",
+  cat_other: "Другое", perm_title: "Разрешения", perm_photos: "Фото", perm_camera: "Камера", perm_mic: "Микрофон", perm_speech: "Распознавание речи", perm_notif: "Уведомления",
+  perm_location: "Геопозиция", perm_on: "Разрешено", perm_off: "Не разрешено", perm_ask: "Ещё не запрашивалось", perm_limited: "Ограничено",
+  openSettings: "Открыть в настройках iOS", permHint: "Изменить это можно в настройках iOS в разделе Quran Masterclass.",
 };
 
 const zh: Partial<MessengerText> = {
@@ -497,6 +680,15 @@ const zh: Partial<MessengerText> = {
   e_age16: "年满 16 岁才可使用消息。", e_slow: "请稍慢一些。", e_not_found: "未找到。", e_generic: "操作未成功，请重试。",
   e_name: "请输入至少 2 个字符的名称。", micDenied: "请允许访问麦克风。", photoDenied: "请允许访问您的照片。",
   signIn: "请登录以使用消息。",
+  viewOnce: "仅看一次", viewOncePhoto: "仅看一次的照片", viewOnceVideo: "仅看一次的视频", tapToView: "轻点查看", opened: "已打开", viewOnceHint: "打开后将不再显示，并从服务器删除。无法阻止截屏和屏幕录制。",
+  e_view_once_age: "仅看一次只能在年满 18 岁的成员之间的私聊中使用。", e_view_once_opened: "此照片或视频已被打开。", e_edit_window: "消息只能在 15 分钟内编辑。", video: "发送视频", videoMsg: "视频", close: "关闭", edit: "编辑",
+  edited: "已编辑", editing: "编辑消息", deleteForMe: "仅为我删除", deleteForMeConfirm: "仅为您删除此消息？其他人仍会看到它。", activeNow: "当前在线", activeStatus: "显示活动状态",
+  activeStatusHint: "开启后，与您聊天的人能看到您何时在线，您也能看到他们的状态。默认关闭。", mutual: "{n} 位共同好友", viewProfile: "查看资料", shareToChat: "发送到聊天", chooseChat: "选择聊天", shareNote: "添加消息（可选）",
+  sentTo: "已发送给 {n}", replyPost: "在聊天中回复", card_verse: "经文", card_surah: "章", card_course: "课程", card_carousel: "轮播", card_profile: "资料", card_post: "帖子", sharedMsg: "分享的内容",
+  notifTitle: "来自 {n} 的新消息", notifBody: "轻点阅读消息。", notifSetting: "消息通知", notifHint: "您会看到是谁给您写了消息。内容不会显示。", category: "原因", cat_spam: "垃圾信息", cat_harassment: "骚扰或欺凌",
+  cat_inappropriate: "不当内容", cat_impersonation: "冒充他人", cat_minor_safety: "危害未成年人", cat_other: "其他", perm_title: "权限", perm_photos: "照片", perm_camera: "相机", perm_mic: "麦克风",
+  perm_speech: "语音识别", perm_notif: "通知", perm_location: "位置", perm_on: "已允许", perm_off: "未允许", perm_ask: "尚未询问", perm_limited: "受限", openSettings: "在 iOS 设置中打开",
+  permHint: "您可以在 iOS 设置的 Quran Masterclass 下更改。",
 };
 
 const TABLE: Record<string, Partial<MessengerText>> = { de, en, ar, tr, ur, fa, ps, fr, es, id, ms, bn, ru, zh };
@@ -529,6 +721,9 @@ export function errorText(t: MessengerText, code: string | undefined | null): st
     case "slow_down": return t.e_slow;
     case "not_found": case "not_available": return t.e_not_found;
     case "name_required": return t.e_name;
+    case "view_once_age": case "view_once_direct": return t.e_view_once_age;
+    case "view_once_opened": return t.e_view_once_opened;
+    case "edit_window": return t.e_edit_window;
     case "login": return t.signIn;
     default: return t.e_generic;
   }

@@ -4,11 +4,12 @@ import { json, rateLimited } from "@/lib/http";
 import { badText } from "@/lib/communityProfiles";
 import { MIN_POST_AGE, NO_STORE, REPORT_CATEGORIES, line, para, talentGate } from "@/lib/talents";
 import { messengerReady, open, seal } from "@/lib/messenger/crypto";
-import { cleanImage, cleanVoice } from "@/lib/messenger/media";
+import { cleanImage, cleanVideo, cleanVoice } from "@/lib/messenger/media";
 import {
   MAX_TEXT, REACTIONS, addMember, createGroup, inviteHash, isId, joinByCode, leave, listThreads, mediaOf, memberCount, messagesOf, newInvite,
   openDirect, otherOf, pairProblem, person, readReceiptsOn, report, reportedMedia, search, sendProblem, systemNote, threadFor, unreadTotals, insertMessage,
-  type Thread,
+  activeNow, cleanCard, editMessage, hideMessage, newSince, openViewOnce, prefsOf, profileCard, purgeViewOnce, touchActive, viewOnceProblem,
+  type MsgKind, type ShareCard, type Thread,
 } from "@/lib/messenger/core";
 
 export const dynamic = "force-dynamic";
@@ -28,7 +29,11 @@ export const dynamic = "force-dynamic";
 //   POST threads/:id/report { messageId?, category, reason }
 //   GET  messages/:id/media                    image or voice note (decrypted for members, Range supported)
 //   POST messages/:id/react { kind|null }      DELETE messages/:id (own message)
-//   POST join { code }   GET search?q=   GET unread   GET/POST prefs { readReceipts }
+//   POST join { code }   GET search?q=   GET unread   GET/POST prefs { readReceipts?, activeStatus? }
+//   POST messages/:id/open                     a view-once photo or video, exactly once (recipient only)
+//   POST messages/:id/hide                     delete for me      PATCH messages/:id { text }   edit within 15 minutes
+//   GET  notify?after=                         new unread messages (sender names only) for the app's local notifications
+//   POST threads/:id/messages JSON { share: { type, ref, title, subtitle, url }, text? }   a card (verse, surah, course, ...)
 
 type Ctx = { params: Promise<{ path: string[] }> };
 const NOT_FOUND = () => json({ error: "not_found" }, 404);
@@ -53,7 +58,10 @@ async function threadInfo(meId: number, t: Thread) {
   // read receipts: shown only when both sides have them switched on (like the common messengers)
   const readers = myReceipts ? others.filter((m) => m.receipts).map((m) => Number(m.read_id)) : [];
   const other = t.kind === "direct" ? others.find((m) => Number(m.user_id) === otherOf(t, meId)) : null;
+  const direct = t.kind === "direct" && other ? Number(other.user_id) : null;
+  const [card, active, viewOnce] = direct ? await Promise.all([profileCard(meId, direct), activeNow(meId, direct), viewOnceProblem(meId, t)]) : [null, false, "view_once_direct"];
   return {
+    card, active, canViewOnce: !viewOnce,
     id: t.id, kind: t.kind, title: t.kind === "direct" ? other?.display_name ?? "" : t.name, audience: t.audience,
     with: t.kind === "direct" ? person(other) : null,
     photo: t.kind !== "direct" && t.has_photo ? `/api/messenger/threads/${t.id}/photo?v=${t.photo_version}` : null,
@@ -91,6 +99,8 @@ export async function GET(req: NextRequest, ctx: Ctx) {
     const g = await gate(req, "list", 120);
     if (g.res) return g.res;
     const box = sp.get("box") === "requests" ? "requests" : "inbox";
+    void purgeViewOnce();
+    void touchActive(g.me.id);
     const [threads, unread] = await Promise.all([listThreads(g.me.id, box), unreadTotals(g.me.id)]);
     return json({ threads, unread }, 200, NO_STORE);
   }
@@ -98,6 +108,12 @@ export async function GET(req: NextRequest, ctx: Ctx) {
     const g = await gate(req, "unread", 120);
     if (g.res) return g.res;
     return json(await unreadTotals(g.me.id), 200, NO_STORE);
+  }
+  if (a === "notify") {
+    const g = await gate(req, "notify", 60);
+    if (g.res) return g.res;
+    const after = sp.get("after");
+    return json(await newSince(g.me.id, isId(after) ? after : "0"), 200, NO_STORE);
   }
   if (a === "search") {
     const g = await gate(req, "search", 30);
@@ -107,7 +123,7 @@ export async function GET(req: NextRequest, ctx: Ctx) {
   if (a === "prefs") {
     const g = await gate(req, "prefs", 60);
     if (g.res) return g.res;
-    return json({ readReceipts: await readReceiptsOn(g.me.id) }, 200, NO_STORE);
+    return json(await prefsOf(g.me.id), 200, NO_STORE);
   }
   if (a === "messages" && isId(b) && c === "media") {
     const g = await gate(req, "media", 600);
@@ -130,6 +146,7 @@ export async function GET(req: NextRequest, ctx: Ctx) {
     if (g.res) return g.res;
     const t = await threadFor(g.me.id, b);
     if (!t) return NOT_FOUND();
+    void touchActive(g.me.id);
     const before = isId(sp.get("before")) ? sp.get("before") : null;
     const after = isId(sp.get("after")) ? sp.get("after") : null;
     const page = await messagesOf(g.me.id, t, { before, after });
@@ -175,10 +192,26 @@ export async function POST(req: NextRequest, ctx: Ctx) {
   if (a === "prefs") {
     const g = await gate(req, "prefs-set", 30, true);
     if (g.res) return g.res;
-    const body = (await req.json().catch(() => ({}))) as { readReceipts?: unknown };
-    if (typeof body.readReceipts !== "boolean") return json({ error: "bad_request" }, 400);
-    await p!.query("INSERT INTO msg_prefs (user_id, read_receipts) VALUES ($1,$2) ON CONFLICT (user_id) DO UPDATE SET read_receipts = $2", [g.me.id, body.readReceipts]);
-    return json({ readReceipts: body.readReceipts }, 200, NO_STORE);
+    const body = (await req.json().catch(() => ({}))) as { readReceipts?: unknown; activeStatus?: unknown };
+    const rr = typeof body.readReceipts === "boolean" ? body.readReceipts : null;
+    const as = typeof body.activeStatus === "boolean" ? body.activeStatus : null;
+    if (rr === null && as === null) return json({ error: "bad_request" }, 400);
+    await p!.query(`INSERT INTO msg_prefs (user_id, read_receipts, active_status) VALUES ($1, coalesce($2, true), coalesce($3, false))
+                    ON CONFLICT (user_id) DO UPDATE SET read_receipts = coalesce($2, msg_prefs.read_receipts), active_status = coalesce($3, msg_prefs.active_status),
+                      last_active_at = CASE WHEN coalesce($3, msg_prefs.active_status) THEN msg_prefs.last_active_at END`, [g.me.id, rr, as]);
+    return json(await prefsOf(g.me.id), 200, NO_STORE);
+  }
+  if (a === "messages" && isId(b) && c === "open") {
+    const g = await gate(req, "open-once", 60, true);
+    if (g.res) return g.res;
+    const m = await openViewOnce(g.me.id, b);
+    if (!m) return json({ error: "view_once_opened" }, 410);
+    return new Response(new Uint8Array(m.data), { status: 200, headers: { "Content-Type": m.mime, "Content-Length": String(m.data.length), "Cache-Control": "private, no-store", "X-Content-Type-Options": "nosniff" } });
+  }
+  if (a === "messages" && isId(b) && c === "hide") {
+    const g = await gate(req, "hide", 120, true);
+    if (g.res) return g.res;
+    return (await hideMessage(g.me.id, b)) ? json({ ok: true }, 200, NO_STORE) : NOT_FOUND();
   }
   if (a === "messages" && isId(b) && c === "react") {
     const g = await gate(req, "react", 120, true);
@@ -218,38 +251,48 @@ export async function POST(req: NextRequest, ctx: Ctx) {
     // two windows: 40 a minute (gate) and 600 an hour
     if (rateLimited(`m-send-h:${me}`, 600, 3600_000)) return json({ error: "slow_down" }, 429);
     const isForm = (req.headers.get("content-type") ?? "").includes("multipart/form-data");
-    let kind: "text" | "image" | "voice" = "text";
+    let kind: MsgKind = "text";
     let text = "";
     let replyTo: string | null = null;
     let durationMs: number | null = null;
     let media: { data: Buffer; mime: string } | undefined;
+    let viewOnce = false;
+    let card: ShareCard | null = null;
     if (isForm) {
       const f = await req.formData().catch(() => null);
       if (!f) return json({ error: "bad_request" }, 400);
-      kind = f.get("kind") === "voice" ? "voice" : "image";
-      text = kind === "image" ? para(f.get("text"), MAX_TEXT + 1) : "";
+      kind = f.get("kind") === "voice" ? "voice" : f.get("kind") === "video" ? "video" : "image";
+      viewOnce = kind !== "voice" && f.get("viewOnce") === "1";
+      text = kind !== "voice" && !viewOnce ? para(f.get("text"), MAX_TEXT + 1) : "";
       replyTo = typeof f.get("replyTo") === "string" ? String(f.get("replyTo")) : null;
       durationMs = Number(f.get("durationMs")) || null;
       const problem = await sendProblem(me, t, kind);
       if (problem) return json({ error: problem }, 403);
+      if (viewOnce) { const vp = await viewOnceProblem(me, t); if (vp) return json({ error: vp }, 403); }
       if (rateLimited(`m-media:${me}`, 30, 3600_000)) return json({ error: "slow_down" }, 429);
       const file = f.get("file");
       if (!file || typeof file === "string") return json({ error: "bad_request" }, 400);
       const buf = Buffer.from(await file.arrayBuffer());
-      const clean = kind === "image" ? await cleanImage(buf) : await cleanVoice(buf);
+      const clean = kind === "image" ? await cleanImage(buf) : kind === "video" ? await cleanVideo(buf) : await cleanVoice(buf);
       if ("error" in clean) return json({ error: clean.error }, 400);
       media = clean;
     } else {
-      const body = (await req.json().catch(() => ({}))) as { text?: unknown; replyTo?: unknown };
+      const body = (await req.json().catch(() => ({}))) as { text?: unknown; replyTo?: unknown; share?: unknown };
       text = para(body.text, MAX_TEXT + 1);
       replyTo = typeof body.replyTo === "string" ? body.replyTo : null;
-      if (!text) return json({ error: "empty" }, 400);
-      const problem = await sendProblem(me, t, "text");
+      if (body.share !== undefined) {
+        card = cleanCard(body.share);
+        if (!card) return json({ error: "bad_request" }, 400);
+        kind = "share";
+      }
+      if (!text && !card) return json({ error: "empty" }, 400);
+      const problem = await sendProblem(me, t, card ? "share" : "text");
       if (problem) return json({ error: problem }, 403);
     }
     if (text.length > MAX_TEXT) return json({ error: "too_long" }, 400);
     if (text) { const bad = await badText(text); if (bad) return json({ error: bad }, 400); }
-    const r = await insertMessage(me, t, { kind, text: text || undefined, media, durationMs, replyTo });
+    if (card) { const bad = await badText(`${card.title} ${card.subtitle}`); if (bad) return json({ error: bad }, 400); }
+    const r = await insertMessage(me, t, { kind, text: text || undefined, card, media, durationMs, replyTo, viewOnce });
     const page = await messagesOf(me, t, { after: String(Number(r.id) - 1), limit: 1 });
     return json({ message: page.messages[0] ?? null }, 200, NO_STORE);
   }
@@ -305,6 +348,17 @@ export async function POST(req: NextRequest, ctx: Ctx) {
 
 export async function PATCH(req: NextRequest, ctx: Ctx) {
   const [a, b, c] = (await ctx.params).path ?? [];
+  if (a === "messages" && isId(b) && !c) {
+    const g = await gate(req, "edit", 30, true);
+    if (g.res) return g.res;
+    const body = (await req.json().catch(() => ({}))) as { text?: unknown };
+    const r = await editMessage(g.me.id, b, para(body.text, MAX_TEXT + 1));
+    if ("error" in r) return json({ error: r.error }, r.status);
+    const m = (await pool()!.query("SELECT thread_id FROM msg_messages WHERE id = $1", [b])).rows[0];
+    const t = m ? await threadFor(g.me.id, String(m.thread_id)) : null;
+    const page = t ? await messagesOf(g.me.id, t, { after: String(Number(b) - 1), limit: 1 }) : null;
+    return json({ message: page?.messages[0] ?? null }, 200, NO_STORE);
+  }
   if (a !== "threads" || !isId(b)) return NOT_FOUND();
   const g = await gate(req, "manage", 60, true);
   if (g.res) return g.res;

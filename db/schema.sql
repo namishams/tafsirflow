@@ -1718,3 +1718,29 @@ ALTER TABLE community_profiles DROP CONSTRAINT IF EXISTS community_profiles_badg
 ALTER TABLE community_profiles ADD CONSTRAINT community_profiles_badge CHECK (badge IN ('none','emerald','gold','star','personality'));
 ALTER TABLE star_assignments ALTER COLUMN star_slug DROP NOT NULL;
 ALTER TABLE star_assignments ADD COLUMN IF NOT EXISTS badge text NOT NULL DEFAULT 'star';
+-- Messenger 2 (owner 22.10.2026): view-once photos and videos, editing, delete for me, sharing cards, active status.
+-- View once: only in one-to-one chats between members aged 18+. The recipient opens it once (opened_at); the media
+-- is no longer served to anyone after that and is wiped 24 hours after opening (the window to report it) or 14 days
+-- after sending if never opened. A report copies the media sealed into msg_report_items for the moderator.
+ALTER TABLE msg_messages ADD COLUMN IF NOT EXISTS view_once boolean NOT NULL DEFAULT false;
+ALTER TABLE msg_messages ADD COLUMN IF NOT EXISTS opened_at timestamptz;
+ALTER TABLE msg_messages ADD COLUMN IF NOT EXISTS edited_at timestamptz;
+DO $$ BEGIN
+  IF NOT EXISTS (SELECT 1 FROM pg_constraint WHERE conname = 'msg_messages_kind_v2') THEN
+    ALTER TABLE msg_messages DROP CONSTRAINT IF EXISTS msg_messages_kind_check;
+    ALTER TABLE msg_messages ADD CONSTRAINT msg_messages_kind_v2 CHECK (kind IN ('text','image','voice','video','share','system'));
+  END IF;
+END $$;
+CREATE INDEX IF NOT EXISTS msg_messages_view_once ON msg_messages(created_at) WHERE view_once AND media_enc IS NOT NULL;
+-- "delete for me": the message stays for everyone else
+CREATE TABLE IF NOT EXISTS msg_hidden (
+  message_id bigint NOT NULL REFERENCES msg_messages(id) ON DELETE CASCADE,
+  user_id    bigint NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  PRIMARY KEY (user_id, message_id)
+);
+-- "active now": off by default; shown only when both sides switched it on
+ALTER TABLE msg_prefs ADD COLUMN IF NOT EXISTS active_status boolean NOT NULL DEFAULT false;
+ALTER TABLE msg_prefs ADD COLUMN IF NOT EXISTS last_active_at timestamptz;
+ALTER TABLE msg_report_items ADD COLUMN IF NOT EXISTS media_enc bytea;
+ALTER TABLE msg_report_items ADD COLUMN IF NOT EXISTS media_mime text;
+GRANT ALL ON ALL TABLES IN SCHEMA public TO tafsirflow;

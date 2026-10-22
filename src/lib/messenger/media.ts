@@ -71,3 +71,20 @@ export async function cleanVoice(buf: Buffer): Promise<{ data: Buffer; mime: str
   const mime = s ? (s.mime.startsWith("video/") ? "audio/mp4" : s.mime) : ext === "webm" ? "audio/webm" : "audio/ogg";
   return { data: buf, mime };
 }
+
+export const VIDEO_IN_MAX = 60 * 1024 * 1024;
+export const VIDEO_OUT_MAX = 25 * 1024 * 1024;
+export const VIDEO_SECONDS = 60;
+
+/** H.264/AAC .mp4 of at most 720 px and one minute, without metadata (GPS, device); never stored without ffmpeg */
+export async function cleanVideo(buf: Buffer): Promise<{ data: Buffer; mime: string } | { error: string }> {
+  if (buf.length > VIDEO_IN_MAX) return { error: "media_too_large" };
+  const s = sniff(buf);
+  if (!s || !s.video) return { error: "media_format" };
+  const out = await viaFfmpeg(buf, s.ext, "mp4", ["-t", String(VIDEO_SECONDS), "-map_metadata", "-1", "-map_chapters", "-1",
+    "-vf", "scale='min(720,iw)':'min(720,ih)':force_original_aspect_ratio=decrease,scale=trunc(iw/2)*2:trunc(ih/2)*2",
+    "-c:v", "libx264", "-preset", "veryfast", "-crf", "28", "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "96k", "-movflags", "+faststart"], 180_000);
+  if (!out) return { error: "media_format" };
+  if (out.length > VIDEO_OUT_MAX) return { error: "media_too_large" };
+  return { data: out, mime: "video/mp4" };
+}
