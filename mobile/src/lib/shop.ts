@@ -132,9 +132,10 @@ export async function setShowcase(slugs: string[]) {
   await api("/api/app/store/profile", { body: { showcase: slugs.slice(0, 3) } });
   await refreshShop();
 }
-/** hold a one-of-one before the App Store sheet opens: null when reserved for this account, else the reason */
-export async function reserveUnique(product: string): Promise<string | null> {
-  try { await api("/api/app/store/reserve", { body: { product } }); return null; } catch (e) { return (e as { code?: string }).code ?? "failed"; }
+/** hold a one-of-one before the App Store sheet opens (10 minutes; pending = 72 hours for Ask to Buy): null when
+ *  reserved for this account, else the reason */
+export async function reserveUnique(product: string, pending = false): Promise<string | null> {
+  try { await api("/api/app/store/reserve", { body: { product, pending } }); return null; } catch (e) { return (e as { code?: string }).code ?? "failed"; }
 }
 export async function setBoardOptIn(show: boolean) {
   await api("/api/app/store/board", { body: { show } });

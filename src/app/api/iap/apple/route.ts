@@ -50,9 +50,10 @@ export async function POST(req: NextRequest) {
     const c = await p.connect();
     let g: boolean | "conflict" = false;
     try { g = await grant(c, me.id, tx.productId, "apple", tx.originalTransactionId, tx.environment); } finally { c.release(); }
-    // a one-of-one someone else got first (should not happen thanks to the reservation): kept on record, revoked,
-    // for a refund by the owner; the app finishes the transaction and says so
-    return json({ premium: me.plan === "premium", owned: (await ownedOf(me.id)).products, ...(g === "conflict" ? { conflict: true } : {}) });
+    // a one-of-one someone else owns or holds (should not happen thanks to the reservation): not granted, kept on
+    // record as revoked, the buyer gets one month of Pro instead; the app finishes the transaction and explains how
+    // to request a refund from Apple (reportaproblem.apple.com)
+    return json({ premium: g === "conflict" ? true : me.plan === "premium", owned: (await ownedOf(me.id)).products, ...(g === "conflict" ? { conflict: true, compensation: "pro_month" } : {}) });
   }
 
   // personal duas and name reports: a transaction id is credited once, whoever sends it

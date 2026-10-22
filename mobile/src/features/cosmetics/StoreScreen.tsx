@@ -219,7 +219,7 @@ function AlbumModal({ pack, shop, onClose }: { pack: ShopPack | null; shop: Shop
   );
 }
 
-function RareCard({ r, shop, prices, buy, busy }: { r: ShopRare; shop: Shop; prices: Record<string, string>; buy: (sku: string) => Promise<boolean>; busy: boolean }) {
+function RareCard({ r, shop, prices, buy, busy }: { r: ShopRare; shop: Shop; prices: Record<string, string>; buy: (sku: string, hold?: boolean) => Promise<boolean>; busy: boolean }) {
   const t = useTheme();
   const { lang } = useLang();
   const x = useCosmeticsText();
@@ -234,7 +234,7 @@ function RareCard({ r, shop, prices, buy, busy }: { r: ShopRare; shop: Shop; pri
   const buyUnique = async () => {
     const why = await reserveUnique(r.product);
     if (why) { setNote(why === "taken" ? null : l.reserved); void refreshShop(); return; }
-    await buy(r.product);
+    await buy(r.product, true);
   };
   return (
     <GlassCard>

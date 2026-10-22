@@ -46,14 +46,24 @@ export async function grant(c: PoolClient, userId: number, productId: string, so
     if (next <= (founder ? FOUNDER_MAX : EDITION)) edition = next;
   }
   if (uniq) {
+    // never accept a one-of-one owned by someone else, or held right now for someone else's open purchase sheet
+    // or pending (Ask to Buy) purchase
     const other = (await c.query("SELECT user_id FROM iap_entitlements WHERE product_id = $1 AND revoked_at IS NULL", [productId])).rows[0];
-    if (other && Number(other.user_id) !== userId) revoked = true;
+    const held = (await c.query("SELECT user_id FROM store_reservations WHERE product_id = $1 AND until > now()", [productId])).rows[0];
+    if ((other && Number(other.user_id) !== userId) || (!other && held && Number(held.user_id) !== userId)) revoked = true;
     else edition = 1;
   }
   const r = await c.query(
     `INSERT INTO iap_entitlements (user_id, product_id, source, transaction_id, environment, edition, revoked_at) VALUES ($1,$2,$3,$4,$5,$6, CASE WHEN $7 THEN now() END)
      ON CONFLICT DO NOTHING RETURNING product_id`, [userId, productId, source, tx, env, edition, revoked]);
-  if (uniq) await c.query("DELETE FROM store_reservations WHERE product_id = $1", [productId]);
+  if (uniq && !revoked) await c.query("DELETE FROM store_reservations WHERE product_id = $1", [productId]);
+  // the buyer is never left empty-handed: one month of Pro, once per transaction (lasting Premium stays lasting);
+  // the app also says how to ask Apple for a refund (reportaproblem.apple.com)
+  if (revoked && r.rowCount) {
+    await c.query(
+      `UPDATE users SET plan = 'premium', pro_until = CASE WHEN plan = 'premium' AND pro_until IS NULL THEN NULL
+         ELSE GREATEST(COALESCE(pro_until, now()), now()) + interval '30 days' END WHERE id = $1`, [userId]);
+  }
   return revoked ? "conflict" : !!r.rowCount;
 }
 
@@ -82,8 +92,10 @@ export async function editionsLeft(meId: number | null = null): Promise<Record<s
   return out;
 }
 
-/** reserve a one-of-one for 10 minutes before the purchase sheet opens; false when it is taken or reserved */
-export async function reserve(userId: number, productId: string): Promise<"ok" | "taken" | "reserved" | "input"> {
+/** reserve a one-of-one before the purchase sheet opens: 10 minutes, refreshed by the app while the sheet is open;
+ *  72 hours once the store reports the purchase as pending (Ask to Buy, delayed payment) so it stays held until the
+ *  transaction is final. "taken" or "reserved" when someone else owns or holds it. */
+export async function reserve(userId: number, productId: string, pending = false): Promise<"ok" | "taken" | "reserved" | "input"> {
   const p = pool();
   if (!p || !UNIQUE.some((u) => uniqueProduct(u.slug) === productId)) return "input";
   const c = await p.connect();
@@ -92,9 +104,9 @@ export async function reserve(userId: number, productId: string): Promise<"ok" |
     await c.query("SELECT pg_advisory_xact_lock(hashtext($1))", [productId]);
     if ((await c.query("SELECT 1 FROM iap_entitlements WHERE product_id = $1 AND revoked_at IS NULL", [productId])).rowCount) { await c.query("ROLLBACK"); return "taken"; }
     const r = await c.query(
-      `INSERT INTO store_reservations (product_id, user_id, until) VALUES ($1, $2, now() + interval '10 minutes')
-       ON CONFLICT (product_id) DO UPDATE SET user_id = EXCLUDED.user_id, until = EXCLUDED.until
-       WHERE store_reservations.until < now() OR store_reservations.user_id = EXCLUDED.user_id RETURNING product_id`, [productId, userId]);
+      `INSERT INTO store_reservations (product_id, user_id, until) VALUES ($1, $2, now() + ($3::text)::interval)
+       ON CONFLICT (product_id) DO UPDATE SET user_id = EXCLUDED.user_id, until = GREATEST(CASE WHEN store_reservations.user_id = EXCLUDED.user_id THEN store_reservations.until END, EXCLUDED.until)
+       WHERE store_reservations.until < now() OR store_reservations.user_id = EXCLUDED.user_id RETURNING product_id`, [productId, userId, pending ? "72 hours" : "10 minutes"]);
     await c.query("COMMIT");
     return r.rowCount ? "ok" : "reserved";
   } catch {

@@ -88,6 +88,10 @@ export async function loadPrices(): Promise<StorePrices> {
 }
 
 type Verified = { ok: boolean; pro?: boolean; until?: number | null; dua?: number; guest?: boolean; gift?: string | null };
+// one-of-ones the server did not grant because someone else owned or held them (the buyer got a Pro month instead)
+const conflicts = new Set<string>();
+/** true once when the last purchase of this product was a one-of-one conflict */
+export function takeConflict(sku: string): boolean { return conflicts.delete(sku); }
 /** send the signed transaction to the server; returns what the account has now */
 async function verify(p: Purchase): Promise<Verified> {
   const token = p.purchaseToken;
@@ -105,8 +109,9 @@ async function verify(p: Purchase): Promise<Verified> {
   }
   try {
     const path = Platform.OS === "ios" ? "/api/iap/apple" : "/api/iap/google";
-    const d = await api<{ premium?: boolean; until?: number | null; dua?: number; gift?: string | null }>(path, { body: Platform.OS === "ios" ? { jws: token } : { token, productId: p.productId } });
+    const d = await api<{ premium?: boolean; until?: number | null; dua?: number; gift?: string | null; conflict?: boolean }>(path, { body: Platform.OS === "ios" ? { jws: token } : { token, productId: p.productId } });
     if (d.premium && d.until) writeJSON("qmc.pro", { until: d.until, source: Platform.OS === "ios" ? "apple" : "google" }, true);
+    if (d.conflict) conflicts.add(p.productId);
     if (isStoreProduct(p.productId)) void refreshShop();
     return { ok: true, pro: !!d.premium, until: d.until ?? null, dua: d.dua, gift: d.gift ?? null };
   } catch {
