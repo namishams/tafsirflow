@@ -151,10 +151,10 @@ const gold = "btn-gold inline-flex min-h-11 items-center justify-center gap-2 ro
 const iconBtn = "inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-[rgb(var(--ink))] transition hover:bg-[rgb(var(--accent-soft))] hover:text-[rgb(var(--accent))]";
 const shell = "md:rounded-2xl md:border md:border-[rgb(var(--line))] md:bg-[rgb(var(--surface))] md:shadow-[0_1px_2px_rgb(0_0_0/0.04),0_8px_24px_-12px_rgb(6_60_44/0.14)]";
 
-export default function MessengerWeb({ locale, demo = false }: { locale: string; demo?: boolean }) {
+export default function MessengerWeb({ locale, demo = false }: { locale: string; demo?: boolean | "empty" }) {
   const t = useMemo(() => messengerText(locale), [locale]);
   const [box, setBox] = useState<"inbox" | "requests" | "unread" | "unanswered">("inbox");
-  const [rows, setRows] = useState<Row[] | null>(demo ? DEMO_ROWS : null);
+  const [rows, setRows] = useState<Row[] | null>(demo === "empty" ? [] : demo ? DEMO_ROWS : null);
   const [me, setMe] = useState<Me | null>(demo ? { ...DP("amina.k", "Amina Karimi", "gold"), pro: true } : null);
   const [unread, setUnread] = useState(demo ? { inbox: 7, requests: 1 } : { inbox: 0, requests: 0 });
   const [state, setState] = useState<"load" | "ok" | "out">(demo ? "ok" : "load");
@@ -167,7 +167,7 @@ export default function MessengerWeb({ locale, demo = false }: { locale: string;
   const [aud, setAud] = useState("all");
   const [people, setPeople] = useState<(Person & { country?: string | null; mine?: boolean })[]>([]);
   const [needPro, setNeedPro] = useState(false);
-  const [active, setActive] = useState<string | null>(demo ? "d1" : null);
+  const [active, setActive] = useState<string | null>(demo === true ? "d1" : null);
   const [prefs, setPrefs] = useState<{ readReceipts: boolean; activeStatus: boolean } | null>(null);
 
   const loadList = useCallback(async () => {
@@ -287,7 +287,7 @@ export default function MessengerWeb({ locale, demo = false }: { locale: string;
                   <span className="block">{t.emptyHint}</span>
                   <button className="mt-3 font-semibold text-[rgb(var(--accent))] hover:underline" onClick={() => setCompose("new")}>{t.startChat}</button>
                 </li>
-                <li className="flex md:hidden"><Welcome t={t} onCompose={() => setCompose("new")} onMessage={(u) => void go(() => call<{ id: string }>("threads", { method: "POST", json: { username: u } }))} /></li>
+                <li className="flex md:hidden [&>div]:w-full [&>div]:px-2"><Welcome t={t} onCompose={() => setCompose("new")} onMessage={(u) => void go(() => call<{ id: string }>("threads", { method: "POST", json: { username: u } }))} /></li>
               </>
             ) : <li className="m-2 rounded-xl border border-dashed border-[rgb(var(--line))] p-5 text-center text-sm text-muted">{box === "requests" ? t.emptyRequests : t.noResults}</li>)
             : (shown ?? []).map((c) => (
@@ -306,7 +306,7 @@ export default function MessengerWeb({ locale, demo = false }: { locale: string;
         </ul>
       </aside>
       <section className={`${active ? "flex" : "hidden md:flex"} min-h-[100dvh] min-w-0 flex-col overflow-hidden md:sticky md:top-6 md:h-[calc(100dvh-3rem)] md:min-h-[560px] ${shell}`}>
-        {active ? <ChatPane key={active} id={active} demo={demo} t={t} locale={locale} pro={!!rows?.find((r) => r.id === active)?.pro} onBack={() => { setActive(null); void loadList(); }} />
+        {active ? <ChatPane key={active} id={active} demo={!!demo} t={t} locale={locale} pro={!!rows?.find((r) => r.id === active)?.pro} onBack={() => { setActive(null); void loadList(); }} />
           : <Welcome t={t} onCompose={() => setCompose("new")} onMessage={(u) => void go(() => call<{ id: string }>("threads", { method: "POST", json: { username: u } }))} />}
       </section>
 

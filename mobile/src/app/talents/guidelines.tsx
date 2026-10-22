@@ -1,4 +1,5 @@
-import { Linking, Text, View } from "react-native";
+import { Text, View } from "react-native";
+import { SafetyContact } from "@/components/SafetyContact";
 import { Stack } from "expo-router";
 import { FONT, R, goldButton, useTheme } from "@/lib/theme";
 import { Page, PageHero } from "@/components/page";
@@ -24,9 +25,8 @@ export default function Guidelines() {
               <Text style={{ flex: 1, fontFamily: FONT.regular, fontSize: 15, lineHeight: 22, color: t.ink }}>{tt(k)}</Text>
             </View>
           ))}
-          {/* published contact for safety and moderation (App Store guideline 1.2) */}
-          <Text onPress={() => void Linking.openURL("mailto:info@quranmasterclass.com").catch(() => undefined)} accessibilityRole="link"
-            style={{ fontFamily: FONT.semibold, fontSize: 14.5, lineHeight: 21, color: t.accent, paddingVertical: 8 }}>{tt("contactMod")}</Text>
+          {/* published contact for safety and moderation with the response time (App Store guideline 1.2) */}
+          <SafetyContact />
         </View>
       </Page>
     </>

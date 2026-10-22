@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { SafetyContact } from "@/components/SafetyContact";
 import { AccessibilityInfo, Alert, Platform, Share, Switch, Text, TextInput, View } from "react-native";
 import { Stack, router, type Href } from "expo-router";
 import Constants from "expo-constants";
@@ -206,6 +207,7 @@ export default function AccountSettingsScreen() {
               <LinkRow title={t("account.rateApp")} icon="heart" onPress={() => void rateApp()} />
               <LinkRow title={t("account.recommendApp")} icon="share" onPress={() => void Share.share({ message: `${t("account.recommendText")} ${APP_STORE_URL}`, url: APP_STORE_URL }).catch(() => undefined)} />
             </RowGroup>
+            <View style={{ paddingHorizontal: 4 }}><SafetyContact /></View>
           </Section>
 
           {user ? (

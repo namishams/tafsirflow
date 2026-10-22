@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { SafetyContact } from "@/components/SafetyContact";
 import { Switch, Text, View } from "react-native";
 import { Stack, router, type Href } from "expo-router";
 import { FONT, useTheme } from "@/lib/theme";
@@ -58,6 +59,7 @@ export default function TalentSettings() {
               <LinkRow icon="shield" title={tt("blockedTitle")} onPress={() => router.push("/talents/blocked" as Href)} />
               <LinkRow icon="flag" title={tt("guidelines")} onPress={() => router.push("/talents/guidelines" as Href)} />
             </RowGroup>
+            <SafetyContact />
             <RowGroup>
               <LinkRow first icon="logout" title={tt("deleteAccount")} subtitle={tt("deleteAccountHint")} onPress={() => router.push("/account/settings" as Href)} />
             </RowGroup>

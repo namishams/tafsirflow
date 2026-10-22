@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { SafetyContact } from "@/components/SafetyContact";
 import { KeyboardAvoidingView, Modal, Platform, Pressable, StyleSheet, Text, TextInput, View } from "react-native";
 import * as Clipboard from "expo-clipboard";
 import { GlassView, isLiquidGlassAvailable } from "expo-glass-effect";
@@ -228,6 +229,7 @@ function ReportSheet({ m, question, onClose }: { m: ChatMsg; question?: string; 
               <GoldButton title={ui.reportSend} disabled={!reason} busy={state === "busy"} onPress={() => void send()} />
             </>
           )}
+          <SafetyContact compact />
         </View>
       </KeyboardAvoidingView>
     </Modal>

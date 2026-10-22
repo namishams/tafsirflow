@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState, type ReactNode } from "react";
+import { SafetyContact } from "@/components/SafetyContact";
 import { Image, KeyboardAvoidingView, Modal, Platform, Pressable, ScrollView, Text, View } from "react-native";
 import { SITE } from "@/lib/api";
 import { BadgeButton, type Badge } from "./badges";
@@ -197,6 +198,7 @@ export function ReportSheet({ visible, title, onClose, onSubmit }: { visible: bo
               <GoldButton title={tt("sendReport")} onPress={send} busy={busy} disabled={!cat || busy} />
             </>
           )}
+          <SafetyContact compact />
         </ScrollView>
       </KeyboardAvoidingView>
     </Modal>
