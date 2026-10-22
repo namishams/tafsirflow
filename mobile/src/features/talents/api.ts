@@ -181,7 +181,7 @@ export async function upload<T>(path: string, fields: Record<string, string>, fi
 // Star profiles (owner 22.10.2026, website src/app/api/community/stars and admin/stars): the public state of an
 // unclaimed star profile, the takeover request and, for admins, one-click decisions and personal invite links.
 export type StarState = { username: string; name?: string; reciter: string | null; claimed: boolean; invited: boolean; pending: boolean };
-export type AdminStarAssignment = { id: string; star: string; via: string; at: string; undoneAt: string | null; previous: string | null; username: string | null };
+export type AdminStarAssignment = { id: string; star: string | null; badge?: string; via: string; at: string; undoneAt: string | null; previous: string | null; username: string | null };
 export type AdminStarClaim = { id: string; star: string; starName: string; role: "self" | "team"; channel: string; message: string; invited: boolean; at: string; username: string | null; name: string | null };
 export type AdminStarRow = { username: string; name: string; country: string | null; claimedBy: string | null };
 export const STAR_API = {
@@ -189,7 +189,7 @@ export const STAR_API = {
   claim: (username: string, body: { role: "self" | "team"; channel: string; message: string; invite?: string }) => api<{ ok: true }>(`/api/community/stars/${encodeURIComponent(username)}`, { method: "POST", body }),
   accept: (username: string, invite: string) => api<{ ok: true; username: string }>(`/api/community/stars/${encodeURIComponent(username)}/accept`, { method: "POST", body: { invite } }),
   adminList: () => api<{ claims: AdminStarClaim[]; stars: AdminStarRow[]; assignments: AdminStarAssignment[] }>("/api/community/admin/stars"),
-  adminAssign: (username: string, email: string) => api<{ ok: true }>("/api/community/admin/stars", { method: "POST", body: { assign: username, email } }),
+  adminAssign: (username: string, email: string, badge: "star" | "personality" = "star") => api<{ ok: true }>("/api/community/admin/stars", { method: "POST", body: { assign: username, email, badge } }),
   adminUndo: (id: string) => api<{ ok: true }>("/api/community/admin/stars", { method: "POST", body: { undo: id } }),
   adminDecide: (id: string, action: "approve" | "reject", reason = "") => api<{ ok: true }>("/api/community/admin/stars", { method: "POST", body: { id, action, reason } }),
   adminInvite: (username: string, locale: string) => api<{ link: string; days: number }>("/api/community/admin/stars", { method: "POST", body: { invite: username, locale } }),

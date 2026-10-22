@@ -1710,3 +1710,11 @@ DROP TRIGGER IF EXISTS users_pro ON users;
 CREATE TRIGGER users_pro AFTER UPDATE OF plan, pro_until ON users FOR EACH ROW EXECUTE FUNCTION users_pro_sync();
 UPDATE community_profiles c SET pro_until = NULL
  WHERE c.pro_until IS DISTINCT FROM (SELECT CASE WHEN u.plan = 'premium' THEN COALESCE(u.pro_until, '9999-12-31'::timestamptz) END FROM users u WHERE u.id = c.user_id);
+
+-- "Persönlichkeit (Gold)" (owner 22.10.2026): a gold khatam with a single ring (the founder's stays unique), assigned
+-- only by an admin by e-mail once the person has proved who they are; no reserved name, nobody is listed. Logged in
+-- star_assignments (star_slug NULL) and undoable like the reciter assignments.
+ALTER TABLE community_profiles DROP CONSTRAINT IF EXISTS community_profiles_badge;
+ALTER TABLE community_profiles ADD CONSTRAINT community_profiles_badge CHECK (badge IN ('none','emerald','gold','star','personality'));
+ALTER TABLE star_assignments ALTER COLUMN star_slug DROP NOT NULL;
+ALTER TABLE star_assignments ADD COLUMN IF NOT EXISTS badge text NOT NULL DEFAULT 'star';

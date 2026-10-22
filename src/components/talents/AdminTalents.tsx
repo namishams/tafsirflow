@@ -186,7 +186,7 @@ function Verify({ t, run, btn }: P) {
 // link (signed, 30 days) to send with the owner's message.
 type StarClaim = { id: string; star: string; starName: string; role: "self" | "team"; channel: string; message: string; invited: boolean; at: string; username: string | null; name: string | null };
 type StarRow = { username: string; name: string; country: string | null; claimedBy: string | null };
-type StarAssignment = { id: string; star: string; via: string; at: string; undoneAt: string | null; previous: string | null; username: string | null };
+type StarAssignment = { id: string; star: string | null; badge?: string; via: string; at: string; undoneAt: string | null; previous: string | null; username: string | null };
 function Stars({ t, run, btn, locale }: P & { locale: string }) {
   const [claims, setClaims] = useState<StarClaim[] | null>(null);
   const [stars, setStars] = useState<StarRow[]>([]);
@@ -196,7 +196,8 @@ function Stars({ t, run, btn, locale }: P & { locale: string }) {
   const [email, setEmail] = useState<Record<string, string>>({});
   const sx = starText(locale);
   const load = useCallback(() => run(async () => { const d = await api<{ claims: StarClaim[]; stars: StarRow[]; assignments: StarAssignment[] }>("/api/community/admin/stars"); setClaims(d.claims); setStars(d.stars); setLog(d.assignments); }), [run]);
-  const assign = (u: string) => run(async () => { await api("/api/community/admin/stars", { assign: u, email: email[u] ?? "" }); setEmail((e) => ({ ...e, [u]: "" })); await load(); });
+  const [pick, setPick] = useState<"star" | "personality">("star");
+  const assign = (u: string) => run(async () => { await api("/api/community/admin/stars", { assign: u, email: email[u] ?? "", badge: pick }); setEmail((e) => ({ ...e, [u]: "" })); await load(); });
   const undo = (id: string) => run(async () => { await api("/api/community/admin/stars", { undo: id }); await load(); });
   useEffect(() => { void load(); }, [load]);
   const act = (id: string, action: string) => run(async () => { await api("/api/community/admin/stars", { id, action, reason }); setReason(""); await load(); });
@@ -224,13 +225,24 @@ function Stars({ t, run, btn, locale }: P & { locale: string }) {
       <h2 className="text-lg font-bold">{sx.adminLog}</h2>
       {!log.length ? <p className="text-muted">{t.none}</p> : log.map((a) => (
         <div key={a.id} className="flex flex-wrap items-center justify-between gap-2 rounded-lg border border-line bg-surface px-4 py-3 text-[14px]">
-          <span dir="ltr">@{a.star} → @{a.username ?? "?"} · {a.via} · {new Date(a.at).toLocaleString(locale)}{a.undoneAt ? ` · ${sx.adminUndone}` : ""}</span>
+          <span dir="ltr">{a.star ? `@${a.star}` : (a.badge === "personality" ? sx.adminBadgePerson : sx.adminBadgeStar)} → @{a.username ?? "?"} · {a.via} · {new Date(a.at).toLocaleString(locale)}{a.undoneAt ? ` · ${sx.adminUndone}` : ""}</span>
           {!a.undoneAt ? <button className={btn} onClick={() => void undo(a.id)}>{sx.adminUndo}</button> : null}
         </div>
       ))}
     </section>
     <section className="grid gap-2">
-      <h2 className="text-lg font-bold">{t.starAll}</h2>
+      <h2 className="text-lg font-bold">{sx.adminAssign}</h2>
+      <div role="radiogroup" className="flex flex-wrap gap-2">
+        {(["star", "personality"] as const).map((k) => (
+          <button key={k} type="button" role="radio" aria-checked={pick === k} onClick={() => setPick(k)} className={`inline-flex h-10 items-center gap-2 rounded-full px-4 text-sm font-semibold ${pick === k ? "btn-gold" : "border border-line"}`}><BadgeIcon badge={k} size={16} />{k === "star" ? sx.adminBadgeStar : sx.adminBadgePerson}</button>
+        ))}
+      </div>
+      <div className="flex flex-wrap items-center gap-2 rounded-lg border border-line bg-surface px-4 py-3 text-[13px]">
+        <span className="font-semibold">{sx.adminNoName}</span>
+        <input type="email" className="h-9 w-56 rounded-md border border-line bg-surface px-2" placeholder={sx.adminEmail} value={email[""] ?? ""} onChange={(e) => setEmail((m) => ({ ...m, "": e.target.value }))} />
+        <button className={`${btn} btn-gold`} disabled={!(email[""] ?? "").includes("@")} onClick={() => void assign("")}>{sx.adminAssign}</button>
+      </div>
+      <h2 className="mt-4 text-lg font-bold">{t.starAll}</h2>
       {stars.map((s) => (
         <div key={s.username} className="flex flex-wrap items-center justify-between gap-2 rounded-lg border border-line bg-surface px-4 py-3">
           <div className="flex items-center gap-2"><a href={`/${locale}/talents/${s.username}`} className="font-semibold hover:underline">{s.name}</a><span className="text-[13px] text-muted" dir="ltr">@{s.username}</span>{s.claimedBy ? <BadgeIcon badge="star" size={16} /> : null}</div>

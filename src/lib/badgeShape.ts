@@ -2,8 +2,9 @@
 // Rub el Hizb style) with a fine arabesque ring and a check inside, drawn on a 24 x 24 grid so it stays crisp at 14–28 px.
 // Pure data, no imports; the app keeps an identical copy (mobile/src/features/talents/badgeShape.ts).
 // Tiers: founder gold with a double gold ring and a small crown of arches; official / star reciter emerald with a gold
-// edge; Masterclass Reciter ("gold" stored) silver; confirmed learner ("emerald" stored) blue.
-export type BadgeTier = "emerald" | "gold" | "official" | "founder" | "star";
+// edge; Masterclass Reciter ("gold" stored) silver; confirmed learner ("emerald" stored) blue; "personality" (assigned by
+// an admin after the person proved who they are) a gold khatam with a single ring and no crown, so the founder stays unique.
+export type BadgeTier = "emerald" | "gold" | "official" | "founder" | "star" | "personality";
 
 /** the khatam: two squares turned by 45 degrees, outline of their union (outer radius 10.6) */
 export const KHATAM = "M12 1.4 L15.1 4.5 L19.5 4.5 L19.5 8.9 L22.6 12 L19.5 15.1 L19.5 19.5 L15.1 19.5 L12 22.6 L8.9 19.5 L4.5 19.5 L4.5 15.1 L1.4 12 L4.5 8.9 L4.5 4.5 L8.9 4.5Z";
@@ -17,16 +18,17 @@ export const CHECK_FOUNDER = "M8.8 13.1l2.2 2.2 4.4-4.6";
 /** small crown of three arches (founder) */
 export const CROWN = "M9.3 8.4 Q9.9 6.1 10.5 8.4 Q12 5.2 13.5 8.4 Q14.1 6.1 14.7 8.4 Z";
 
-export type BadgeStyle = { fill: string; edge: string; inner: string; ring: string; check: string; doubleRing?: string; crown?: string };
+export type BadgeStyle = { fill: string; edge: string; inner: string; ring: string; check: string; doubleRing?: string; crown?: string; singleRing?: string };
 export const BADGE_STYLE: Record<BadgeTier, BadgeStyle> = {
   founder: { fill: "#C6A65E", edge: "#F3E2B6", inner: "rgba(255,255,255,0.28)", ring: "#FBF1D3", check: "rgb(8,38,29)", doubleRing: "#C6A65E", crown: "rgb(8,38,29)" },
   official: { fill: "#0B6B4C", edge: "#D9B970", inner: "rgba(243,226,182,0.30)", ring: "#E9D9A6", check: "#FFFFFF" },
   star: { fill: "#0B6B4C", edge: "#D9B970", inner: "rgba(243,226,182,0.30)", ring: "#E9D9A6", check: "#FFFFFF" },
+  personality: { fill: "#C9A44E", edge: "#8A6A22", inner: "rgba(255,255,255,0.30)", ring: "#FBF1D3", check: "#FFFFFF", singleRing: "#C9A44E" },
   gold: { fill: "#8E959E", edge: "#E3E6EA", inner: "rgba(255,255,255,0.28)", ring: "#F1F3F5", check: "#FFFFFF" },
   emerald: { fill: "#2F7FD8", edge: "#B9D6F6", inner: "rgba(255,255,255,0.26)", ring: "#E3EEFB", check: "#FFFFFF" },
 };
 /** main colour per tier, for rings and accents next to the badge */
-export const BADGE_COLORS = { founder: "#C6A65E", gold: "#8E959E", emerald: "#2F7FD8", star: "#0B6B4C", official: "#0B6B4C" } as const;
+export const BADGE_COLORS = { founder: "#C6A65E", gold: "#8E959E", emerald: "#2F7FD8", star: "#0B6B4C", official: "#0B6B4C", personality: "#C9A44E" } as const;
 
 // ---------- premium profile header (founder and claimed reciters) ----------
 /** arches around a ring on a 120 x 120 grid (founder: twelve small arches on the outer gold ring) */

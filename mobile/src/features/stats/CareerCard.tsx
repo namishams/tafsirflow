@@ -14,7 +14,7 @@ import type { Career } from "./career";
 // career points, four big numbers, place and member since, and the profile link. Same content as the website's canvas
 // card (src/components/stats/careerCard.ts).
 export type CareerCardData = {
-  name: string; username: string; avatar: string | null; badge: "emerald" | "gold" | "official" | "founder" | "star" | null; country: string | null;
+  name: string; username: string; avatar: string | null; badge: "emerald" | "gold" | "official" | "founder" | "star" | "personality" | null; country: string | null;
   title: string; tierLabel: string; pointsLabel: string; career: Career;
   stats: { value: string; label: string }[]; place: string; since: string; url: string;
 };

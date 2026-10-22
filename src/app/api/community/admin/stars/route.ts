@@ -2,7 +2,7 @@ import { NextRequest } from "next/server";
 import { pool } from "@/lib/db";
 import { json } from "@/lib/http";
 import { NO_STORE, adminGate, line, logAdmin } from "@/lib/talents";
-import { INVITE_DAYS, assignStar, createStarInvite, inTx, reservedByUsername, undoStarAssignment } from "@/lib/stars";
+import { INVITE_DAYS, assignStar, createStarInvite, grantBadge, inTx, reservedByUsername, undoStarAssignment, type StarBadge } from "@/lib/stars";
 import { refreshBadges } from "@/lib/talentBadges";
 import { SITE } from "@/lib/site";
 
@@ -30,9 +30,9 @@ export async function GET(req: NextRequest) {
       message: x.message, invited: !!x.invited, at: x.created_at, username: x.username, name: x.display_name,
     })),
     assignments: (await p.query(
-      `SELECT a.id, a.star_slug, a.via, a.created_at, a.undone_at, a.previous_username, c.username FROM star_assignments a
+      `SELECT a.id, a.star_slug, a.via, a.badge, a.created_at, a.undone_at, a.previous_username, c.username FROM star_assignments a
          LEFT JOIN community_profiles c ON c.user_id = a.user_id ORDER BY a.created_at DESC LIMIT 100`,
-    )).rows.map((x) => ({ id: String(x.id), star: x.star_slug, via: x.via, at: x.created_at, undoneAt: x.undone_at, previous: x.previous_username, username: x.username })),
+    )).rows.map((x) => ({ id: String(x.id), star: x.star_slug, badge: x.badge, via: x.via, at: x.created_at, undoneAt: x.undone_at, previous: x.previous_username, username: x.username })),
     stars: stars.rows.map((x) => ({ username: x.slug, name: x.display_name, country: x.country, claimedBy: x.claimed_username ?? null, verifiedAt: x.verified_at })),
   }, 200, NO_STORE);
 }
@@ -40,7 +40,7 @@ export async function GET(req: NextRequest) {
 export async function POST(req: NextRequest) {
   const g = await adminGate(req, true);
   if (g.res) return g.res;
-  const b = (await req.json().catch(() => ({}))) as { id?: unknown; action?: unknown; reason?: unknown; invite?: unknown; locale?: unknown; assign?: unknown; email?: unknown; undo?: unknown };
+  const b = (await req.json().catch(() => ({}))) as { id?: unknown; action?: unknown; reason?: unknown; invite?: unknown; locale?: unknown; assign?: unknown; email?: unknown; undo?: unknown; badge?: unknown };
   if (typeof b.invite === "string") {
     const s = reservedByUsername(b.invite);
     if (!s) return json({ error: "not_found" }, 404);
@@ -50,15 +50,17 @@ export async function POST(req: NextRequest) {
     return json({ link, days: INVITE_DAYS }, 200, NO_STORE);
   }
   if (typeof b.assign === "string") {
-    const s = reservedByUsername(b.assign);
+    // "Direkt zuweisen": with a reserved name (assign = username) or without (assign = "") for "Persönlichkeit (Gold)"
+    const badge: StarBadge = b.badge === "personality" ? "personality" : "star";
+    const s = b.assign ? reservedByUsername(b.assign) : null;
     const email = typeof b.email === "string" ? b.email.trim().toLowerCase().slice(0, 254) : "";
-    if (!s || !email) return json({ error: "bad_request" }, 400);
+    if ((b.assign && !s) || !email) return json({ error: "bad_request" }, 400);
     const u = (await pool()!.query("SELECT id FROM users WHERE lower(email) = $1", [email])).rows[0];
     if (!u) return json({ error: "no_account" }, 404);
-    const err = await inTx((c) => assignStar(c, s.username, Number(u.id), "admin", g.me.id));
+    const err = await inTx((c) => (s ? assignStar(c, s.username, Number(u.id), "admin", g.me.id, badge) : grantBadge(c, Number(u.id), badge, g.me.id)));
     if (err) return json({ error: err }, 409);
     await refreshBadges(Number(u.id)).catch(() => null);
-    await logAdmin(g.me.id, "star_assign", Number(u.id), { star: s.username });
+    await logAdmin(g.me.id, "star_assign", Number(u.id), { star: s?.username ?? null, badge });
     return json({ ok: true }, 200, NO_STORE);
   }
   if (typeof b.undo === "string" && /^\d{1,18}$/.test(b.undo)) {

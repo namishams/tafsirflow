@@ -1,6 +1,7 @@
 // Star profiles (owner 22.10.2026): texts in all 14 app languages, polite address, no emojis. Pure module, the app keeps
 // an identical copy (mobile/src/features/talents/starText.ts). Missing languages fall back to English.
 const en = {
+  adminBadgeStar: "Official reciter", adminBadgePerson: "Public figure (gold)", adminNoName: "Without a reserved name",
   roleLine: "Official reciter", recitations: "Recitations", accept: "Take over the profile", acceptDone: "Welcome. The profile is now yours.", acceptSignin: "Please sign in with your e-mail address first. You will receive a code.", inviteInvalid: "This invite link is no longer valid.", adminAssign: "Assign directly", adminEmail: "E-mail of the account", adminLog: "Assignments", adminUndo: "Undo", adminUndone: "undone",
   adminTab: "Stars", adminClaims: "Takeover requests", adminAll: "Star profiles", adminInvite: "Copy invite link", adminCopied: "Link copied (valid for 30 days).", adminClaimedBy: "taken over by", adminOpen: "not taken over", adminInvited: "via invitation", adminReason: "Reason (optional)", approve: "Approve", reject: "Reject", none: "Nothing open.",
   reserved: "This name is reserved for a well-known personality.",
@@ -27,6 +28,7 @@ const en = {
 };
 export type StarKey = keyof typeof en;
 const de: Record<StarKey, string> = {
+  adminBadgeStar: "Offizieller Rezitator", adminBadgePerson: "Persönlichkeit (Gold)", adminNoName: "Ohne reservierten Namen",
   roleLine: "Offizieller Rezitator", recitations: "Rezitationen", accept: "Profil übernehmen", acceptDone: "Willkommen. Das Profil gehört jetzt Ihnen.", acceptSignin: "Bitte melden Sie sich zuerst mit Ihrer E-Mail-Adresse an. Sie erhalten einen Code.", inviteInvalid: "Dieser Einladungslink ist nicht mehr gültig.", adminAssign: "Direkt zuweisen", adminEmail: "E-Mail des Kontos", adminLog: "Zuweisungen", adminUndo: "Rückgängig", adminUndone: "rückgängig gemacht",
   adminTab: "Stars", adminClaims: "Übernahme-Anfragen", adminAll: "Star-Profile", adminInvite: "Einladungslink kopieren", adminCopied: "Link kopiert (30 Tage gültig).", adminClaimedBy: "übernommen von", adminOpen: "nicht übernommen", adminInvited: "über Einladung", adminReason: "Grund (optional)", approve: "Freigeben", reject: "Ablehnen", none: "Nichts offen.",
   reserved: "Dieser Name ist für eine bekannte Persönlichkeit reserviert.",
@@ -52,6 +54,7 @@ const de: Record<StarKey, string> = {
   badgeText: "Ein bekannter Rezitator, der sein offizielles Profil übernommen hat, geprüft über einen offiziellen Kanal.",
 };
 const ar: Record<StarKey, string> = {
+  adminBadgeStar: "قارئ رسمي", adminBadgePerson: "شخصية (ذهبي)", adminNoName: "دون اسم محجوز",
   roleLine: "قارئ رسمي", recitations: "التلاوات", accept: "تسلّم الملف", acceptDone: "أهلًا بكم. الملف الآن لكم.", acceptSignin: "يرجى تسجيل الدخول أولًا بعنوان بريدكم الإلكتروني. ستصلكم رسالة برمز.", inviteInvalid: "رابط الدعوة هذا لم يعد صالحًا.", adminAssign: "تعيين مباشر", adminEmail: "البريد الإلكتروني للحساب", adminLog: "التعيينات", adminUndo: "تراجع", adminUndone: "تم التراجع",
   adminTab: "النجوم", adminClaims: "طلبات التسلّم", adminAll: "ملفات النجوم", adminInvite: "نسخ رابط الدعوة", adminCopied: "تم نسخ الرابط (صالح لمدة 30 يومًا).", adminClaimedBy: "تسلّمه", adminOpen: "لم يُتسلَّم", adminInvited: "عبر دعوة", adminReason: "السبب (اختياري)", approve: "موافقة", reject: "رفض", none: "لا شيء مفتوح.",
   reserved: "هذا الاسم محجوز لشخصية معروفة.",

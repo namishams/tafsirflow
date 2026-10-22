@@ -14,7 +14,7 @@ import { PUBLIC_SITE, SITE } from "./site";
 // tier) grey, "emerald" (confirmed learner) blue, official star unchanged. Stored values stay as they are.
 // Star (owner 22.10.2026): a well-known reciter who took over his star profile (src/lib/stars.ts), stored as badge 'star';
 // an emerald disc with a white tick and a light emerald ring (gold stays the founder's).
-export type Badge = "emerald" | "gold" | "official" | "founder" | "star";
+export type Badge = "emerald" | "gold" | "official" | "founder" | "star" | "personality";
 export type BadgeRules = { requirePhone: boolean; goldMinLevel: number; officialMinSubscribers: number };
 
 export function badgeRules(): BadgeRules {
@@ -30,7 +30,7 @@ export function badgeRules(): BadgeRules {
 /** the badge shown for a profile row */
 export function displayBadge(r: { badge?: string | null; official?: boolean | null; verified?: boolean | null; founder?: boolean | null }): Badge | null {
   if (r.founder) return "founder";
-  if (r.badge === "star") return "star";
+  if (r.badge === "star" || r.badge === "personality") return r.badge;
   if (r.official) return "official";
   if (r.badge === "gold" || r.verified) return "gold"; // an admin verification counts as gold
   if (r.badge === "emerald") return "emerald";
@@ -88,7 +88,7 @@ export async function refreshBadges(userId: number): Promise<BadgeState | null> 
   const level = await certifiedReciterLevel(userId);
   const gold = { ok: emerald.ok && level >= rules.goldMinLevel, level, need: rules.goldMinLevel };
   const blocked = r.badge_override === "none";
-  const stored = r.badge === "star" ? "star" : blocked ? "none" : gold.ok ? "gold" : emerald.ok ? "emerald" : "none";
+  const stored = r.badge === "star" || r.badge === "personality" ? r.badge : blocked ? "none" : gold.ok ? "gold" : emerald.ok ? "emerald" : "none";
   if (stored !== r.badge) await p.query("UPDATE community_profiles SET badge = $2 WHERE user_id = $1", [userId, stored]);
   const official = {
     ok: !!r.official, source: r.official_source ?? null, channel: r.official_channel ?? null, minSubscribers: rules.officialMinSubscribers,

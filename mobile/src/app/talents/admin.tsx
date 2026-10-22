@@ -301,7 +301,8 @@ function Stars() {
   const load = useCallback(() => run(async () => apply(await STAR_API.adminList())), []); // eslint-disable-line react-hooks/exhaustive-deps
   useEffect(() => { void load(); }, [load]);
   const decide = (id: string, a: "approve" | "reject") => run(async () => { await STAR_API.adminDecide(id, a, reason); setReason(""); apply(await STAR_API.adminList()); });
-  const assign = (u: string) => run(async () => { await STAR_API.adminAssign(u, email[u] ?? ""); setEmail((e) => ({ ...e, [u]: "" })); apply(await STAR_API.adminList()); });
+  const [pick, setPick] = useState<"star" | "personality">("star");
+  const assign = (u: string) => run(async () => { await STAR_API.adminAssign(u, email[u] ?? "", pick); setEmail((e) => ({ ...e, [u]: "" })); apply(await STAR_API.adminList()); });
   const undo = (id: string) => run(async () => { await STAR_API.adminUndo(id); apply(await STAR_API.adminList()); });
   const invite = (u: string) => run(async () => { const d = await STAR_API.adminInvite(u, lang); await Clipboard.setStringAsync(d.link); setCopied(u); });
   return (
@@ -326,11 +327,18 @@ function Stars() {
       {!log.length ? <Muted>{s.none}</Muted> : null}
       {log.map((a) => (
         <Box key={a.id}>
-          <Text style={{ fontFamily: FONT.semibold, fontSize: 14, color: t.ink, writingDirection: "ltr" }}>@{a.star} → @{a.username ?? "?"}</Text>
+          <Text style={{ fontFamily: FONT.semibold, fontSize: 14, color: t.ink, writingDirection: "ltr" }}>{a.star ? `@${a.star}` : a.badge === "personality" ? s.adminBadgePerson : s.adminBadgeStar} → @{a.username ?? "?"}</Text>
           <Text style={{ fontFamily: FONT.regular, fontSize: 13, color: t.muted }}>{[a.via, new Date(a.at).toLocaleString(lang), a.undoneAt ? s.adminUndone : ""].filter(Boolean).join(" · ")}</Text>
           {!a.undoneAt ? <SmallButton title={s.adminUndo} tone="danger" disabled={busy} onPress={() => void undo(a.id)} /> : null}
         </Box>
       ))}
+      <Text accessibilityRole="header" style={{ fontFamily: FONT.bold, fontSize: 16, color: t.ink, marginTop: 8 }}>{s.adminAssign}</Text>
+      <Segmented<"star" | "personality"> value={pick} onChange={setPick} options={[["star", s.adminBadgeStar], ["personality", s.adminBadgePerson]]} />
+      <Box>
+        <View style={{ flexDirection: "row", alignItems: "center", gap: 6 }}><BadgeMark badge={pick} size={18} /><Text style={{ fontFamily: FONT.bold, fontSize: 15, color: t.ink }}>{s.adminNoName}</Text></View>
+        <LabeledField label={s.adminEmail} value={email[""] ?? ""} onChangeText={(v) => setEmail((m) => ({ ...m, "": v }))} autoCapitalize="none" autoCorrect={false} keyboardType="email-address" maxLength={254} />
+        <SmallButton title={s.adminAssign} tone="gold" disabled={busy || !(email[""] ?? "").includes("@")} onPress={() => void assign("")} />
+      </Box>
       <Text accessibilityRole="header" style={{ fontFamily: FONT.bold, fontSize: 16, color: t.ink, marginTop: 8 }}>{s.adminAll}</Text>
       {stars.map((x) => (
         <Box key={x.username}>

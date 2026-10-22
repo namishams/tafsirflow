@@ -124,4 +124,4 @@ export const CONTENT_VISIBLE = (col: string) =>
 /** SQL: the member shows a badge (alias c) */
 export const HAS_BADGE = "(c.verified OR c.official OR c.founder OR c.badge <> 'none')";
 /** SQL rank for ordering: official, gold, emerald, none */
-export const BADGE_RANK = "(CASE WHEN c.founder THEN 4 WHEN c.official OR c.badge = 'star' THEN 3 WHEN c.verified OR c.badge = 'gold' THEN 2 WHEN c.badge = 'emerald' THEN 1 ELSE 0 END)";
+export const BADGE_RANK = "(CASE WHEN c.founder THEN 4 WHEN c.official OR c.badge IN ('star','personality') THEN 3 WHEN c.verified OR c.badge = 'gold' THEN 2 WHEN c.badge = 'emerald' THEN 1 ELSE 0 END)";

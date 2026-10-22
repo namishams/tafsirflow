@@ -14,7 +14,7 @@ import { ARABESQUE, BADGE_STYLE, CHECK, CHECK_FOUNDER, CROWN, KHATAM, KHATAM_INN
 // same on the website's BadgeIcon): founder gold, Masterclass Reciter grey, confirmed learners blue, official star as
 // before. The stored values keep their names. Tapping a badge explains what it means.
 // "star" (owner 22.10.2026): a well-known reciter who took over his star profile; emerald disc, light ring, white tick.
-export type Badge = "emerald" | "gold" | "official" | "founder" | "star";
+export type Badge = "emerald" | "gold" | "official" | "founder" | "star" | "personality";
 
 export { BADGE_COLORS } from "./badgeShape";
 
@@ -25,6 +25,7 @@ export function BadgeMark({ badge, size = 16 }: { badge: Badge; size?: number })
   return (
     <Svg width={size} height={size} viewBox="0 0 24 24">
       {s.doubleRing ? <Circle cx={12} cy={12} r={11.4} fill="none" stroke={s.doubleRing} strokeWidth={0.8} /> : null}
+      {s.singleRing ? <Circle cx={12} cy={12} r={11.4} fill="none" stroke={s.singleRing} strokeWidth={0.6} opacity={0.8} /> : null}
       <Path d={KHATAM} fill={s.fill} stroke={s.edge} strokeWidth={1} strokeLinejoin="round" />
       {size >= 18 ? <Path d={KHATAM_INNER} fill="none" stroke={s.inner} strokeWidth={0.5} /> : null}
       <Path d={ARABESQUE} fill="none" stroke={s.ring} strokeWidth={fine} opacity={0.85} />
@@ -42,7 +43,7 @@ export function BadgeSheetHost({ children }: { children: ReactNode }) {
   const tt = useTT();
   const insets = useSafeAreaInsets();
   const [open, setOpen] = useState<Badge | null>(null);
-  const rows: Badge[] = open === "founder" ? ["founder", "official", "gold", "emerald"] : open === "star" ? ["star", "official", "gold", "emerald"] : ["official", "gold", "emerald"];
+  const rows: Badge[] = open === "founder" ? ["founder", "official", "gold", "emerald"] : open === "star" || open === "personality" ? [open, "official", "gold", "emerald"] : ["official", "gold", "emerald"];
   return (
     <Ctx.Provider value={setOpen}>
       {children}
