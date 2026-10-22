@@ -332,7 +332,8 @@
     "haramain": "Haramain",
     "certificates": "Sijil saya",
     "masterclass": "Masterclass",
-    "talents": "Talents"
+    "talents": "Talents",
+    "halal": "Halal and Haram"
   },
   "today": {
     "title": "Hari ini",
@@ -578,7 +579,8 @@
     "wuduD": "Wudhu langkah demi langkah, dengan kuiz tentang susunan.",
     "communityD": "Ayat yang paling disukai, komen terkini dan apa yang didengar hari ini.",
     "badge_social": "Komuniti",
-    "duagenD": "Doa peribadi anda dengan nama-nama Allah yang sesuai – serta doa-doa sebenar daripada Quran dan Sunnah."
+    "duagenD": "Doa peribadi anda dengan nama-nama Allah yang sesuai – serta doa-doa sebenar daripada Quran dan Sunnah.",
+    "halalD": "Food, money, clothing, media, work: what is permitted, forbidden or disputed – with evidence and the five schools of law."
   },
   "legal": {
     "back": "Kembali ke laman utama",

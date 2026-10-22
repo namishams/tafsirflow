@@ -4,6 +4,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { searchVerses, type SearchHit } from "@/lib/quran";
 import { QuranInlay } from "./art/QuranArt";
+import { searchTopics, type TopicHit } from "@/lib/topicSearch";
 
 // keeps the <em> highlight of the search API, drops every other tag
 function Highlighted({ html }: { html: string }) {
@@ -20,9 +21,11 @@ export default function SearchView() {
   const [q, setQ] = useState("");
   const [hits, setHits] = useState<SearchHit[] | null>(null);
   const [busy, setBusy] = useState(false);
+  const [topics, setTopics] = useState<TopicHit[]>([]);
 
   const run = async (text: string) => {
     if (text.trim().length < 2) return;
+    setTopics(searchTopics(text));
     setBusy(true);
     try { setHits(await searchVerses(text.trim(), locale)); } catch { setHits([]); } finally { setBusy(false); }
   };
@@ -59,7 +62,20 @@ export default function SearchView() {
       </section>
 
       <div className="mx-auto max-w-3xl px-4 pt-8 sm:px-6">
-        {hits && hits.length === 0 && <p className="py-6 text-center text-muted">{t("noResults")}</p>}
+        {topics.length > 0 && (
+          <ul className="mb-4 grid gap-3">
+            {topics.map((tp) => (
+              <li key={tp.href} className="min-w-0">
+                <Link href={tp.href} className="q-tile block p-4 sm:p-5">
+                  <span className="font-arabic block text-[22px] leading-[1.8] text-[rgb(var(--q-ink-gold))]" dir="rtl" lang="ar">{tp.ar}</span>
+                  <span className="font-display mt-1 block text-[20px]">{locale === "de" ? tp.title.de : tp.title.en}</span>
+                  <span className="mt-1 block text-[15px] leading-relaxed text-muted">{locale === "de" ? tp.lead.de : tp.lead.en}</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        )}
+        {hits && hits.length === 0 && topics.length === 0 && <p className="py-6 text-center text-muted">{t("noResults")}</p>}
         <ul className="grid gap-3" aria-busy={busy}>
           {hits?.map((h, i) => {
             const [s, v] = h.verse_key.split(":");

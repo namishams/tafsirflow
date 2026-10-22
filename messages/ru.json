@@ -332,7 +332,8 @@
     "haramain": "Харамейн",
     "certificates": "Мои сертификаты",
     "masterclass": "Мастер-класс",
-    "talents": "Таланты"
+    "talents": "Таланты",
+    "halal": "Halal and Haram"
   },
   "today": {
     "title": "Сегодня",
@@ -578,7 +579,8 @@
     "wuduD": "Омовение (вуду) шаг за шагом, с тестом на порядок.",
     "communityD": "Самые любимые аяты, свежие комментарии и то, что слушают сегодня.",
     "badge_social": "Сообщество",
-    "duagenD": "Ваше личное дуа с подходящими именами Аллаха – и настоящие дуа из Корана и Сунны."
+    "duagenD": "Ваше личное дуа с подходящими именами Аллаха – и настоящие дуа из Корана и Сунны.",
+    "halalD": "Food, money, clothing, media, work: what is permitted, forbidden or disputed – with evidence and the five schools of law."
   },
   "legal": {
     "back": "На главную",

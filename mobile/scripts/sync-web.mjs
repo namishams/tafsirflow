@@ -29,6 +29,7 @@ const APP_TILE_BG = {
   arabic: "linear-gradient(160deg,#1d3b2c 0%,#081a12 100%)",
   salah: "linear-gradient(160deg,#173a35 0%,#06171a 100%)",
   islam: "linear-gradient(160deg,#0f3b2e 0%,#05170f 100%)",
+  halal: "linear-gradient(160deg,#3a3014 0%,#0a1a12 100%)",
   tajweed: "linear-gradient(160deg,#3b321f 0%,#160b10 100%)",
   plan: "linear-gradient(160deg,#1f4439 0%,#0b101b 100%)",
   vocab: "linear-gradient(160deg,#2c3a1a 0%,#10160a 100%)",
@@ -68,7 +69,7 @@ const ADAPT = { "tiles.ts": appTileColours };
 const FILES = [
   "aboutContent", "academy", "adhan", "age", "arabic", "arabicQuran", "changelog", "coach", "counts", "countries", "duaGenerator", "duaJourney",
   "duas", "featured", "guides", "hadithNumber", "hijri", "identity", "identityText", "journey", "learning", "listen", "mapContent", "plans", "points", "prayer", "quranIndex",
-  "recite", "salah", "session", "shamsContent", "stickers", "sunnahDuas", "sunnahDuas2", "tajweed", "tiles",
+  "recite", "salah", "session", "shamsContent", "stickers", "sunnahDuas", "sunnahDuas2", "tajweed", "tiles", "tutorArt",
   "verseQuotes", "verseTime", "vocab", "vocabI18n", "vocabStudy", "votd", "wudu",
 ];
 // Folders copied whole, with the translations of every language the website speaks

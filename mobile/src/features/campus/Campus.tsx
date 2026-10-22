@@ -332,6 +332,7 @@ export function useCampusRails(): CampusRailsData {
       item("salah", ct("salah"), ct("salahD"), "صلاة", "/salah", null, 4),
       item("wudu", ct("wudu"), ct("wuduD"), "وضوء", "/wudu", null, 5),
       item("duas", ct("duas"), ct("duasD"), "دعاء", "/duas", null, 6),
+      item("halal", lang === "de" ? "Halal und Haram" : "Halal and Haram", lang === "de" ? "Essen, Geld, Kleidung, Medien, Arbeit – mit Belegen" : "Food, money, clothing, media, work – with evidence", "حلال", "/islam/halal-haram", null, 7),
     ];
     const heritage: CampusItem[] = [
       item("abrahamic", ABRAHAMIC_COURSE.title[lang as "en"] ?? ABRAHAMIC_COURSE.title.en, ct("abrahamicD"), "إبراهيم", ABRAHAMIC_COURSE.route, progressOf({ k: "kit", def: ABRAHAMIC_COURSE }), 1),

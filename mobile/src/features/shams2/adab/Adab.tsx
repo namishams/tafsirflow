@@ -229,6 +229,7 @@ export function AdabScreen({ initial }: { initial?: string }) {
               <Text style={{ fontFamily: ARABIC_FONT, fontSize: 18, lineHeight: 32, color: t.gold, textAlign: "left" }}>{tp.ar}</Text>
               <Text accessibilityRole="header" style={{ fontFamily: FONT.display, fontSize: 21, color: t.ink, textAlign: "left" }}>{tp.title[cl]}</Text>
               <Text style={{ fontFamily: FONT.regular, fontSize: 14, lineHeight: 21, color: t.muted, textAlign: "left" }}>{tp.lead[cl]}</Text>
+              {tp.link ? <TextLink title={tp.link.label[cl]} onPress={() => router.push(tp.link!.href as Href)} /> : null}
               {ADAB_ITEMS.filter((i) => i.topic === tp.id).map((i) => <ItemFold key={i.id} item={i} openId={openId} setOpen={setOpen} />)}
               <Text style={{ fontFamily: FONT.regular, fontSize: 12.5, lineHeight: 18, color: t.muted, fontStyle: "italic", textAlign: "left" }}>{a("notFatwa")}</Text>
             </View>

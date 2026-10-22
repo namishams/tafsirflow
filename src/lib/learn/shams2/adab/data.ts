@@ -45,7 +45,7 @@ export type AdabItem = {
   /** a route of the app and the website this practice leads to */
   href?: string;
 };
-export type AdabTopic = { id: AdabTopicId; ar: string; title: L2; lead: L2 };
+export type AdabTopic = { id: AdabTopicId; ar: string; title: L2; lead: L2; /** a deeper page on the topic */ link?: { href: string; label: L2 } };
 
 export const ADAB_REVIEW = { needs_review: true, reviewedBy: null as string | null, version: 1 };
 
@@ -84,7 +84,7 @@ export const ADAB_TOPICS: AdabTopic[] = [
   { id: "mushaf", ar: "آداب المصحف", title: { de: "Umgang mit dem Muṣḥaf", en: "Adab with the muṣḥaf" }, lead: { de: "Die Achtung vor dem geschriebenen Wort Allahs zeigt sich in den Händen.", en: "Respect for the written word of Allah shows in the hands." } },
   { id: "session", ar: "آداب التلاوة", title: { de: "Die Rezitationssitzung", en: "The recitation session" }, lead: { de: "Wuḍūʾ, Qibla, Istiʿādha, Tartīl und Khushūʿ – so sitzt man vor dem Wort Allahs.", en: "Wuḍūʾ, qibla, istiʿādha, tartīl and khushūʿ – this is how one sits before the word of Allah." } },
   { id: "character", ar: "أخلاق حامل القرآن", title: { de: "Der Charakter des Rezitators", en: "The reciter's character" }, lead: { de: "Aufrichtigkeit, Wahrhaftigkeit, Demut, eine bewahrte Zunge und ein bewahrter Blick.", en: "Sincerity, truthfulness, humility, a guarded tongue and a guarded gaze." } },
-  { id: "halal", ar: "الكسب الحلال", title: { de: "Halal verdienen und essen", en: "Halal earnings and food" }, lead: { de: "Was in den Körper geht, gehört zur Rezitation, die aus ihm kommt.", en: "What goes into the body belongs to the recitation that comes out of it." } },
+  { id: "halal", ar: "الكسب الحلال", title: { de: "Halal verdienen und essen", en: "Halal earnings and food" }, lead: { de: "Was in den Körper geht, gehört zur Rezitation, die aus ihm kommt.", en: "What goes into the body belongs to the recitation that comes out of it." }, link: { href: "/islam/halal-haram", label: { de: "Wegweiser Halal und Haram: Essen, Geld, Kleidung, Medien, Arbeit", en: "Guide to halal and haram: food, money, clothing, media, work" } } },
   { id: "carrier", ar: "ما لا يليق بحامل القرآن", title: { de: "Was zum Qurʾān-Träger nicht passt", en: "What does not befit a carrier of the Qurʾān" }, lead: { de: "al-Ājurrī und al-Nawawī nennen, wovon sich der Träger des Qurʾān fernhält.", en: "al-Ājurrī and al-Nawawī name what the carrier of the Qurʾān keeps away from." } },
 ];
 

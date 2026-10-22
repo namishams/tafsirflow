@@ -332,7 +332,8 @@
     "haramain": "حرمین",
     "certificates": "زما سندونه",
     "masterclass": "ماسټرکلاس",
-    "talents": "استعدادونه"
+    "talents": "استعدادونه",
+    "halal": "Halal and Haram"
   },
   "today": {
     "title": "نن",
@@ -578,7 +579,8 @@
     "wuduD": "اودس ګام په ګام، د ترتیب پر اړه د پوښتنو سره.",
     "communityD": "تر ټولو خوښ شوي آیتونه، وروستي نظرونه او نن څه اوريدل کېږي.",
     "badge_social": "ټولنه",
-    "duagenD": "ستاسو شخصي دعا د الله له مناسبو نومونو سره – او د قرآن او سنتو رښتینې دعاګانې."
+    "duagenD": "ستاسو شخصي دعا د الله له مناسبو نومونو سره – او د قرآن او سنتو رښتینې دعاګانې.",
+    "halalD": "Food, money, clothing, media, work: what is permitted, forbidden or disputed – with evidence and the five schools of law."
   },
   "legal": {
     "back": "کور پاڼې ته ستنېدل",

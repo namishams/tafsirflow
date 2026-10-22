@@ -332,7 +332,8 @@
     "tests": "Tests and exams",
     "abrahamic": "Abraham in the Quran",
     "haramain": "The Haramain",
-    "certificates": "My certificates"
+    "certificates": "My certificates",
+    "halal": "Halal and Haram"
   },
   "today": {
     "title": "Today",
@@ -578,7 +579,8 @@
     "wuduD": "The ritual washing step by step, with a quiz on the order.",
     "communityD": "The most loved verses, the latest comments and what is being heard today.",
     "badge_social": "Community",
-    "duagenD": "Your personal dua with the fitting names of Allah – and the real duas of the Quran and the Sunnah."
+    "duagenD": "Your personal dua with the fitting names of Allah – and the real duas of the Quran and the Sunnah.",
+    "halalD": "Food, money, clothing, media, work: what is permitted, forbidden or disputed – with evidence and the five schools of law."
   },
   "legal": {
     "back": "Back to home",

@@ -4,7 +4,8 @@ import { Redirect, router, useLocalSearchParams, type Href } from "expo-router";
 import Svg, { Path } from "react-native-svg";
 import { BACK, FONT, stage } from "@/lib/theme";
 import { useLang } from "@/i18n";
-import { ISLAM, islamDoc, readingMinutes, tradUi } from "@/web/islam";
+import { ISLAM, islamDoc, orderSchools, readingMinutes, tradUi } from "@/web/islam";
+import { useTradition } from "@/lib/tradition";
 import { FactCartouche, HeroLead, HeroTitle, IslBreak, IslH2, IslHero, IslamNum, Marble, Rosette, StageBackPill, Rain, StageBackground, useSaw } from "@/features/library/art";
 import { Article, mdHeadings } from "@/features/library/markdown";
 import { Doorway, FaqItem, GoldPill, MoreTiles } from "@/features/library/ui";
@@ -31,6 +32,7 @@ function Chapter({ slug }: { slug: string }) {
   const sw = useSaw();
   const d = islamDoc(slug)!;
   const all = useChapters();
+  const { tradition } = useTradition();
   const i = ISLAM.indexOf(d);
   const c = all[i];
   const prev = ISLAM[i - 1], next = ISLAM[i + 1];
@@ -72,7 +74,8 @@ function Chapter({ slug }: { slug: string }) {
           <View style={{ paddingHorizontal: 20, paddingTop: 48, paddingBottom: 48 }}>
             <View onLayout={(e) => { inner.current = { y: e.nativeEvent.layout.y, h: e.nativeEvent.layout.height }; place(); }}>
               {d.needs_review ? <Text accessibilityRole="text" style={{ alignSelf: "flex-start", marginBottom: 20, borderRadius: 999, borderWidth: 1, borderColor: isl.a("goldSoft", 0.5), paddingHorizontal: 12, paddingVertical: 5, fontFamily: FONT.semibold, fontSize: 12.5, color: isl.gold }}>{tradUi(lang).review}</Text> : null}
-              <Article text={c.body} onHeading={reader.model.setHeading} />
+              {d.en_only && lang !== "de" && lang !== "en" ? <Text style={{ marginBottom: 16, fontFamily: FONT.regular, fontStyle: "italic", fontSize: 13.5, color: isl.a("goldSoft", 0.85) }}>{tradUi(lang).enOnly}</Text> : null}
+              <Article text={orderSchools(c.body, tradition)} onHeading={reader.model.setHeading} />
             </View>
 
             <IslBreak />

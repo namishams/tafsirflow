@@ -332,7 +332,8 @@
     "haramain": "হারামাইন",
     "certificates": "আমার সনদ",
     "masterclass": "মাস্টারক্লাস",
-    "talents": "ট্যালেন্টস"
+    "talents": "ট্যালেন্টস",
+    "halal": "Halal and Haram"
   },
   "today": {
     "title": "আজ",
@@ -578,7 +579,8 @@
     "wuduD": "ওযু ধাপে ধাপে, ক্রম নিয়ে একটি কুইজসহ।",
     "communityD": "সবচেয়ে প্রিয় আয়াত, সর্বশেষ মন্তব্য এবং আজ কী শোনা হচ্ছে।",
     "badge_social": "কমিউনিটি",
-    "duagenD": "আপনার নিজের দোয়া, আল্লাহর উপযুক্ত নামসহ – আর কুরআন ও সুন্নাহর প্রকৃত দোয়া।"
+    "duagenD": "আপনার নিজের দোয়া, আল্লাহর উপযুক্ত নামসহ – আর কুরআন ও সুন্নাহর প্রকৃত দোয়া।",
+    "halalD": "Food, money, clothing, media, work: what is permitted, forbidden or disputed – with evidence and the five schools of law."
   },
   "legal": {
     "back": "হোমে ফিরে যান",

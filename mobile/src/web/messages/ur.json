@@ -332,7 +332,8 @@
     "haramain": "حرمین شریفین",
     "certificates": "میرے سرٹیفکیٹ",
     "masterclass": "ماسٹرکلاس",
-    "talents": "ٹیلنٹس"
+    "talents": "ٹیلنٹس",
+    "halal": "Halal and Haram"
   },
   "today": {
     "title": "آج",
@@ -578,7 +579,8 @@
     "wuduD": "وضو قدم بہ قدم، ترتیب پر کوئز کے ساتھ۔",
     "communityD": "سب سے پسندیدہ آیات، تازہ ترین تبصرے اور آج کیا سنا جا رہا ہے۔",
     "badge_social": "کمیونٹی",
-    "duagenD": "آپ کی اپنی دعا، اللہ کے موزوں ناموں کے ساتھ – اور قرآن و سنت کی حقیقی دعائیں۔"
+    "duagenD": "آپ کی اپنی دعا، اللہ کے موزوں ناموں کے ساتھ – اور قرآن و سنت کی حقیقی دعائیں۔",
+    "halalD": "Food, money, clothing, media, work: what is permitted, forbidden or disputed – with evidence and the five schools of law."
   },
   "legal": {
     "back": "ہوم پیج پر واپس",

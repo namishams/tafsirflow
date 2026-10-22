@@ -222,6 +222,7 @@ export function AdabScreen() {
             <p lang="ar" dir="rtl" className="font-arabic text-start text-[19px] leading-[1.7] text-[rgb(var(--hm-gold-d))]">{tp.ar}</p>
             <h2 className="font-display text-[24px]">{tp.title[cl]}</h2>
             <p className="text-[15px] leading-relaxed text-muted">{tp.lead[cl]}</p>
+            {tp.link && <Link href={tp.link.href} className="text-[15px] font-semibold text-accent hover:underline">{tp.link.label[cl]}</Link>}
             {ADAB_ITEMS.filter((i) => i.topic === tp.id).map((i) => (
               <div key={i.id} id={i.id} className="scroll-mt-20">
                 <Fold title={i.title[cl]}><ItemBody item={i} /></Fold>

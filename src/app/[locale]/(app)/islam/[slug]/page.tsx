@@ -14,6 +14,7 @@ import { ArrowBack } from "@/components/Icons";
 import { CalligraphyDraw, Rosette } from "@/components/Ornaments";
 import { IslamArcadeLine, IslamBreak, IslamDome, IslamNum, IslamRain, IslamStarMark, saw } from "@/components/art/IslamArt";
 import IslamReader, { IslamToc } from "@/components/art/IslamReader";
+import SchoolOrderedBody from "@/components/islam/SchoolOrderedBody";
 
 export function generateStaticParams() {
   return ISLAM.map((d) => ({ slug: d.slug }));
@@ -91,7 +92,8 @@ export default async function IslamChapterPage({ params }: { params: Promise<{ l
         <div className="mx-auto grid max-w-6xl gap-12 px-5 pb-12 pt-12 sm:pt-16 lg:grid-cols-[minmax(0,1fr)_260px]">
           <article id="chapter" className="min-w-0 max-w-[44rem]">
             {d.needs_review && <p className="mb-5 inline-block rounded-full border border-[rgb(var(--isl-gold-soft))]/50 px-3 py-1 text-[12.5px] font-semibold text-[rgb(var(--isl-gold))]">{tradUi(locale).review}</p>}
-            <Markdown text={c.body} variant="article" />
+            {d.en_only && locale !== "de" && locale !== "en" && <p className="mb-5 text-[13.5px] italic text-muted">{tradUi(locale).enOnly}</p>}
+            {d.slug === "halal-haram" ? <SchoolOrderedBody text={c.body} /> : <Markdown text={c.body} variant="article" />}
 
             <IslamBreak />
             <section>

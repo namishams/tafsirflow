@@ -332,7 +332,8 @@
     "haramain": "Les Haramain",
     "certificates": "Mes certificats",
     "masterclass": "Masterclass",
-    "talents": "Talents"
+    "talents": "Talents",
+    "halal": "Halal and Haram"
   },
   "today": {
     "title": "Aujourd'hui",
@@ -578,7 +579,8 @@
     "wuduD": "Les ablutions (wudu) pas à pas, avec un quiz sur l’ordre.",
     "communityD": "Les versets les plus aimés, les derniers commentaires et ce qui s’écoute aujourd’hui.",
     "badge_social": "Communauté",
-    "duagenD": "Votre invocation personnelle avec les beaux noms d'Allah qui conviennent – et les véritables invocations du Coran et de la Sunna."
+    "duagenD": "Votre invocation personnelle avec les beaux noms d'Allah qui conviennent – et les véritables invocations du Coran et de la Sunna.",
+    "halalD": "Food, money, clothing, media, work: what is permitted, forbidden or disputed – with evidence and the five schools of law."
   },
   "legal": {
     "back": "Retour à l'accueil",

@@ -332,7 +332,8 @@
     "haramain": "两圣寺",
     "certificates": "我的证书",
     "masterclass": "大师课",
-    "talents": "才艺"
+    "talents": "才艺",
+    "halal": "Halal and Haram"
   },
   "today": {
     "title": "今天",
@@ -578,7 +579,8 @@
     "wuduD": "小净一步一步学，并附有顺序小测验。",
     "communityD": "最受喜爱的经文、最新评论，以及今天大家在听什么。",
     "badge_social": "社区",
-    "duagenD": "您的专属祈祷词，配以合适的安拉尊名——以及古兰经和圣训中的真实祈祷词。"
+    "duagenD": "您的专属祈祷词，配以合适的安拉尊名——以及古兰经和圣训中的真实祈祷词。",
+    "halalD": "Food, money, clothing, media, work: what is permitted, forbidden or disputed – with evidence and the five schools of law."
   },
   "legal": {
     "back": "返回首页",

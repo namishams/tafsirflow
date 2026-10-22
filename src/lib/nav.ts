@@ -30,7 +30,7 @@ export const GROUPS: NavGroup[] = [
     { href: "/khatm", key: "khatm" }, { href: "/duas", key: "duas" }, { href: "/dua-generator", key: "duagen" }, { href: "/prayer", key: "prayer" }, { href: "/community", key: "community" }, { href: "/talents", key: "talents" },
   ] },
   { title: "islam", items: [
-    { href: "/islam", key: "islam" }, { href: "/secrets", key: "secrets" }, { href: "/world", key: "world" }, { href: "/assistant", key: "assistant" }, { href: "/guides", key: "guides" },
+    { href: "/islam", key: "islam" }, { href: "/islam/halal-haram", key: "halal" }, { href: "/secrets", key: "secrets" }, { href: "/world", key: "world" }, { href: "/assistant", key: "assistant" }, { href: "/guides", key: "guides" },
   ] },
   { title: "groupMore", items: [
     { href: "/how", key: "how" }, { href: "/app", key: "app" }, { href: "/premium", key: "premium" }, { href: "/about", key: "about" }, { href: "/support", key: "support" }, { href: "/feedback", key: "feedback" }, { href: "/changelog", key: "changelog" },

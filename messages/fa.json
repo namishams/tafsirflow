@@ -332,7 +332,8 @@
     "haramain": "حرمین",
     "certificates": "گواهی‌های من",
     "masterclass": "مسترکلاس",
-    "talents": "استعدادها"
+    "talents": "استعدادها",
+    "halal": "Halal and Haram"
   },
   "today": {
     "title": "امروز",
@@ -578,7 +579,8 @@
     "wuduD": "وضو گام به گام، با آزمونی درباره ترتیب.",
     "communityD": "دوست‌داشتنی‌ترین آیه‌ها، تازه‌ترین نظرها و آنچه امروز شنیده می‌شود.",
     "badge_social": "جامعه",
-    "duagenD": "دعای شخصی شما با نام‌های زیبای مناسب الله – و دعاهای اصیل قرآن و سنت."
+    "duagenD": "دعای شخصی شما با نام‌های زیبای مناسب الله – و دعاهای اصیل قرآن و سنت.",
+    "halalD": "Food, money, clothing, media, work: what is permitted, forbidden or disputed – with evidence and the five schools of law."
   },
   "legal": {
     "back": "بازگشت به صفحه اصلی",

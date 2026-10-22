@@ -12,4 +12,6 @@ export type IslamDoc = {
   slug: string; arabic: string; de: IslamChapter; en: IslamChapter;
   /** new religious content not yet checked: the chapter shows "Inhalt wird von Gelehrten geprüft" */
   needs_review?: boolean;
+  /** written in German and English only: other languages show the English text with a short note */
+  en_only?: boolean;
 };

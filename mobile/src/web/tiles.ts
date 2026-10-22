@@ -26,9 +26,10 @@ export const TILES: Record<string, Tile> = {
   ranking: { key: "ranking", href: "/ranking", ar: "تنافس", desc: "rankingD", badge: "social", bg: "linear-gradient(160deg,#402a1a 0%,#140c07 100%)" },
   duagen: { key: "duagen", href: "/dua-generator", ar: "دعاء", desc: "duagenD", badge: "help", bg: "linear-gradient(160deg,#2a443c 0%,#0e0c18 100%)" },
   community: { key: "community", href: "/community", ar: "معًا", desc: "communityD", badge: "social", bg: "linear-gradient(160deg,#3b2a33 0%,#120b0f 100%)" },
+  halal: { key: "halal", href: "/islam/halal-haram", ar: "حلال", desc: "halalD", badge: "library", bg: "linear-gradient(160deg,#3a3014 0%,#0a1a12 100%)" },
   wudu: { key: "wudu", href: "/wudu", ar: "وضوء", desc: "wuduD", badge: "course", bg: "linear-gradient(160deg,#134334 0%,#06161b 100%)" },
 };
 
-export const HOME_TILES = ["shams", "courses", "arabic", "salah", "wudu", "islam", "secrets", "tajweed", "plan", "reciters", "radio", "duas", "duagen", "map", "stats", "ranking"];
+export const HOME_TILES = ["shams", "courses", "arabic", "salah", "wudu", "islam", "halal", "secrets", "tajweed", "plan", "reciters", "radio", "duas", "duagen", "map", "stats", "ranking"];
 
 export const tileFor = (href: string) => Object.values(TILES).find((t) => t.href === href || href.startsWith(`${t.href}/`) || href.startsWith(`${t.href}?`));

@@ -332,7 +332,8 @@
     "haramain": "Harameyn",
     "certificates": "Sertifikalarım",
     "masterclass": "Masterclass",
-    "talents": "Talents"
+    "talents": "Talents",
+    "halal": "Halal and Haram"
   },
   "today": {
     "title": "Bugün",
@@ -578,7 +579,8 @@
     "wuduD": "Abdest adım adım, sıra üzerine bir quizle.",
     "communityD": "En çok sevilen ayetler, son yorumlar ve bugün neler dinleniyor.",
     "badge_social": "Topluluk",
-    "duagenD": "Size özel dua – Allah'ın uygun güzel isimleriyle ve Kur'an ile Sünnet'teki gerçek dualarla birlikte."
+    "duagenD": "Size özel dua – Allah'ın uygun güzel isimleriyle ve Kur'an ile Sünnet'teki gerçek dualarla birlikte.",
+    "halalD": "Food, money, clothing, media, work: what is permitted, forbidden or disputed – with evidence and the five schools of law."
   },
   "legal": {
     "back": "Ana sayfaya dön",

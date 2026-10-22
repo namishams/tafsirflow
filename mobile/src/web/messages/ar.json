@@ -332,7 +332,8 @@
     "tests": "الاختبارات",
     "abrahamic": "إبراهيم في القرآن",
     "haramain": "الحرمان الشريفان",
-    "certificates": "شهاداتي"
+    "certificates": "شهاداتي",
+    "halal": "Halal and Haram"
   },
   "today": {
     "title": "اليوم",
@@ -578,7 +579,8 @@
     "wuduD": "الوضوء خطوةً خطوة مع اختبار في الترتيب.",
     "communityD": "أحبّ الآيات وأحدث التعليقات وما يُسمع اليوم.",
     "badge_social": "المجتمع",
-    "duagenD": "دعاؤك الشخصي بأسماء الله الحسنى المناسبة، ومعه الأدعية الثابتة من القرآن والسنة."
+    "duagenD": "دعاؤك الشخصي بأسماء الله الحسنى المناسبة، ومعه الأدعية الثابتة من القرآن والسنة.",
+    "halalD": "Food, money, clothing, media, work: what is permitted, forbidden or disputed – with evidence and the five schools of law."
   },
   "legal": {
     "back": "العودة إلى الرئيسية",
