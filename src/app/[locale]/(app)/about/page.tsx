@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { COMPANY } from "@/lib/company";
 import { Link } from "@/i18n/navigation";
 import Markdown from "@/components/Markdown";
 import JsonLd from "@/components/JsonLd";
@@ -140,7 +141,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
         </figure>
         <h2 className="font-display mt-14 text-3xl">{c.contactTitle}</h2>
         <Markdown text={c.contact} />
-        <p className="mt-4 text-[15px] leading-relaxed text-muted">{tc("operatedBy", { place: tc("place") })} <Link href="/legal/imprint" className="font-semibold text-accent hover:underline">{tl("imprintTitle")}</Link></p>
+        <p className="mt-4 text-[15px] leading-relaxed text-muted">{tc("operatedBy", { company: `${COMPANY.legalName} – ${COMPANY.brand}`, place: tc("place") })} <Link href="/legal/imprint" className="font-semibold text-accent hover:underline">{tl("imprintTitle")}</Link></p>
         <div className="mt-8 flex flex-wrap gap-3">
           <Link href="/shams" className="btn-gold inline-flex h-11 items-center rounded-full px-5 text-sm font-bold">{t("ctaShams")}</Link>
           <Link href="/feedback" className="inline-flex h-11 items-center rounded-full border border-[rgb(var(--isl-gold-soft))]/50 px-5 text-sm font-bold hover:border-[rgb(var(--isl-gold-soft))]">{t("ctaFeedback")}</Link>

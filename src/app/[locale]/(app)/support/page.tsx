@@ -4,6 +4,7 @@ import { Suspense } from "react";
 import { Link } from "@/i18n/navigation";
 import SupportZiina from "@/components/SupportZiina";
 import SupportersList from "@/components/SupportersList";
+import SupportRoadmap from "@/components/SupportRoadmap";
 import JsonLd from "@/components/JsonLd";
 import { abs, pageMeta } from "@/lib/site";
 import { ArrowNext, ArrowBack } from "@/components/Icons";
@@ -60,6 +61,8 @@ export default async function SupportPage({ params }: { params: Promise<{ locale
           <h2 className="relative text-xs font-bold uppercase tracking-[0.18em] text-gold rtl:tracking-normal">{t("legalTitle")}</h2>
           <p className="relative mx-auto mt-4 max-w-2xl text-[17px] leading-relaxed text-ink/85 sm:text-[18px]">{d("legal")}</p>
         </aside>
+
+        <SupportRoadmap />
 
         <SupportersList />
 

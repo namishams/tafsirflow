@@ -67,6 +67,7 @@ export default async function LegalPage({ params }: { params: Promise<{ locale: 
             <section>
               <h2 className="text-lg font-bold">{t("imprintProvider")}</h2>
               <p className="mt-2 whitespace-pre-line text-muted"><span dir="ltr">{COMPANY.legalName}</span>{`\n${tc("place")}`}</p>
+              <p className="mt-1 text-muted">{tc("brandLabel")}: <span dir="ltr">{COMPANY.brand}</span></p>
             </section>
             <section>
               <h2 className="text-lg font-bold">{tc("founder")}</h2>

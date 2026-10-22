@@ -2,7 +2,8 @@ import { NextRequest } from "next/server";
 import QRCode from "qrcode";
 import { clientIp, isHttps, json, rateLimited, sameOrigin } from "@/lib/http";
 import { MAX_AED, MIN_AED, createPaymentIntent, supportLink, ziinaConfigured } from "@/lib/ziina";
-import { cleanName, confirmFromZiina, createPending, nameRejected } from "@/lib/supporters";
+import { cleanName, confirmFromZiina, createPending, emailHash, nameRejected } from "@/lib/supporters";
+import { currentUser } from "@/lib/auth";
 
 export const dynamic = "force-dynamic";
 
@@ -56,6 +57,7 @@ export async function POST(req: NextRequest) {
     failureUrl: `${page}?payment=failed`,
   });
   if (!r.ok) { console.error("Support: Ziina payment could not be created –", r.reason); return json({ error: "ziina" }, 502); }
-  await createPending({ paymentIntentId: r.value.id, displayName: listed ? displayName : "", company: listed ? company : "", listed, amountMinor: r.value.amount || aed * 100, currency: r.value.currencyCode || "AED" });
+  const me = listed ? await currentUser().catch(() => null) : null; // only to recognise repeat supporters; the address itself is not stored
+  await createPending({ userId: me?.id ? Number(me.id) : null, emailHash: me?.email ? emailHash(me.email) : null, paymentIntentId: r.value.id, displayName: listed ? displayName : "", company: listed ? company : "", listed, amountMinor: r.value.amount || aed * 100, currency: r.value.currencyCode || "AED" });
   return json({ url: r.value.redirectUrl });
 }

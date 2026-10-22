@@ -6,6 +6,8 @@
 export const COMPANY = {
   /** registered company that operates the platform */
   legalName: "ICSL FZE",
+  /** brand descriptor chosen by the owner (22.10.2026); English in every locale, never replaces legalName */
+  brand: "Islamic Coding & Software Lab",
   /** seat of the company (owner, 2026-10-20) */
   city: "Sharjah",
   countryCode: "AE",

@@ -1,4 +1,5 @@
 "use client";
+import SupportNudge from "@/components/SupportNudge";
 import { useEffect, useState, type ReactNode } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { Link, useRouter } from "@/i18n/navigation";
@@ -159,6 +160,7 @@ export default function AccountDashboard({ user, demo = false, verifiedNow = fal
 
       <main className="relative z-10 mx-auto -mt-16 grid grid-cols-1 max-w-6xl gap-5 px-4 pb-16 sm:px-6 lg:grid-cols-[minmax(0,1fr)_320px]">
         <div className="grid min-w-0 content-start gap-5">
+          {!demo && <SupportNudge variant="dashboard" />}
           {/* header card */}
           <Card className="p-5 sm:p-6">
             <div className="flex flex-wrap items-center gap-5">

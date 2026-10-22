@@ -3,6 +3,7 @@
 // is stored with the Ziina payment intent id. Only a status asked from Ziina itself (the ?pi= return check or the
 // webhook, which also re-asks Ziina) marks it "paid". Public: paid + listed + not hidden, name/company and month only.
 // Without ZIINA_API_KEY no intents are created, so nothing is ever listed automatically – and nothing is invented.
+import crypto from "node:crypto";
 import { pool } from "./db";
 import { usernameProblem } from "./usernameFilter";
 import { getPaymentIntent } from "./ziina";
@@ -29,19 +30,22 @@ export function nameRejected(name: string): boolean {
   return p === "inappropriate" || p === "reserved" || p === "star";
 }
 
-export type PublicSupporter = { name: string; company: string; month: string; tier: 1 | 2 | 3 | null };
+export type PublicSupporter = { name: string; company: string; month: string; tier: 1 | 2 | 3 | null; times: number };
+
+/** HMAC of the normalised e-mail, to recognise the same supporter without storing the address */
+export const emailHash = (email: string) => crypto.createHmac("sha256", process.env.AUTH_CODE_SECRET || process.env.CERT_SECRET || "quran-masterclass-supporters").update(email.trim().toLowerCase()).digest("hex");
 
 /** amount tier (only shown when the owner switches tiers on): 1 under 100 AED, 2 under 500, 3 from 500 */
 const tierOf = (minor: number): 1 | 2 | 3 => (minor >= 50_000 ? 3 : minor >= 10_000 ? 2 : 1);
 
-export async function createPending(input: { paymentIntentId: string; displayName: string; company: string; listed: boolean; amountMinor: number; currency: string }) {
+export async function createPending(input: { paymentIntentId: string; displayName: string; company: string; listed: boolean; amountMinor: number; currency: string; userId?: number | null; emailHash?: string | null }) {
   const p = pool();
   if (!p) return;
   try {
     await p.query(
-      `INSERT INTO supporters (payment_intent_id, display_name, company, listed, amount_minor, currency)
-       VALUES ($1, $2, $3, $4, $5, $6) ON CONFLICT (payment_intent_id) DO NOTHING`,
-      [input.paymentIntentId, input.displayName || null, input.company || null, input.listed && !!(input.displayName || input.company), input.amountMinor, input.currency],
+      `INSERT INTO supporters (payment_intent_id, display_name, company, listed, amount_minor, currency, user_id, email_hash)
+       VALUES ($1, $2, $3, $4, $5, $6, $7, $8) ON CONFLICT (payment_intent_id) DO NOTHING`,
+      [input.paymentIntentId, input.displayName || null, input.company || null, input.listed && !!(input.displayName || input.company), input.amountMinor, input.currency, input.userId ?? null, input.emailHash ?? null],
     );
   } catch (e) { console.error("Supporters: pending row not stored –", (e as Error)?.message); }
 }
@@ -62,14 +66,21 @@ export async function confirmFromZiina(id: string): Promise<"completed" | "pendi
   return norm;
 }
 
+/** one card per supporter: paid, listed, non-hidden payments of the same account (else same e-mail hash) are grouped;
+ *  the card carries the newest listing and the number of payments, never an amount or an address. Newest support first. */
 export async function publicSupporters(limit = 200, showTiers = false, offset = 0): Promise<PublicSupporter[]> {
   const p = pool();
   if (!p) return [];
   try {
     const r = await p.query(
-      `SELECT display_name, company, amount_minor, to_char(paid_at AT TIME ZONE 'Asia/Dubai', 'YYYY-MM') AS month
-         FROM supporters WHERE status = 'paid' AND listed AND NOT hidden ORDER BY paid_at DESC, id DESC LIMIT $1 OFFSET $2`, [limit, offset]);
-    return r.rows.map((x) => ({ name: x.display_name ?? "", company: x.company ?? "", month: x.month, tier: showTiers ? tierOf(Number(x.amount_minor)) : null }));
+      `SELECT DISTINCT ON (k) display_name, company, amount_minor, paid_at, id,
+              to_char(paid_at AT TIME ZONE 'Asia/Dubai', 'YYYY-MM') AS month,
+              count(*) OVER (PARTITION BY k)::int AS times
+         FROM (SELECT s.*, COALESCE('u' || user_id::text, 'e' || email_hash, 'i' || id::text) AS k
+                 FROM supporters s WHERE status = 'paid' AND listed AND NOT hidden) g
+        ORDER BY k, paid_at DESC, id DESC`);
+    const rows = r.rows.sort((x, y) => +new Date(y.paid_at) - +new Date(x.paid_at) || Number(y.id) - Number(x.id)).slice(offset, offset + limit);
+    return rows.map((x) => ({ name: x.display_name ?? "", company: x.company ?? "", month: x.month, tier: showTiers ? tierOf(Number(x.amount_minor)) : null, times: x.times }));
   } catch { return []; }
 }
 

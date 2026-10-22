@@ -6,6 +6,7 @@ import TrustStrip from "./TrustStrip";
 import { CookieSettingsLink } from "./analytics/Analytics";
 import MadeInDubai from "./MadeInDubai";
 import Skyline from "./Skyline";
+import { COMPANY } from "@/lib/company";
 
 // Footer columns (owner 22.10.2026): six balanced groups, no duplicates; labels from "nav"
 const FOOTER: { title: string; items: { href: string; key: string }[] }[] = [
@@ -94,11 +95,11 @@ export default async function SiteFooter() {
             </div>
           </div>
           <p className="mt-3 flex flex-col items-center gap-1 sm:flex-row sm:justify-center sm:gap-2">
-            <span>© {year} ICSL FZE, Sharjah · Quran Masterclass · Nami Shams</span>
+            <span>© {year} {COMPANY.legalName} – {COMPANY.brand}, {COMPANY.city} · Quran Masterclass · Nami Shams</span>
             <span aria-hidden className="hidden sm:inline">·</span>
             <MadeInDubai />
           </p>
-          <p className="mt-2 text-xs">{t("company.operatedBy", { place: t("company.place") })}</p>
+          <p className="mt-2 text-xs">{t("company.operatedBy", { company: COMPANY.legalName, place: t("company.place") })}</p>
           <p className="mt-4 flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-xs">
             <Link href="/legal/privacy" className="hover:text-ink">{t("free.privacy")}</Link>
             <Link href="/legal/terms" className="hover:text-ink">{t("home2.terms")}</Link>

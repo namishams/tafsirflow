@@ -1,3 +1,6 @@
+import { HUB_IDS } from "./seo/types";
+import { loadHub } from "./seo/hubs";
+import { pageSeo } from "./seo/pages";
 import en from "../../messages/en.json";
 import de from "../../messages/de.json";
 import ar from "../../messages/ar.json";
@@ -100,7 +103,7 @@ ${routing.locales.map((l) => `- [${LOCALE_META[l as AppLocale].label}](${base}/l
 
 type Ch = { id: number; name_simple: string; name_arabic: string; verses_count: number; translated_name: { name: string } };
 
-const PAGES: [string, string][] = [["", "Home"], ["/shams", "The Shams Method – a learning method by Nami Shams"], ["/academy", "Academy – learning path through all 114 surahs"], ["/masterclass", "The Masterclass – curriculum: four school stages (Ibtidaʾi to ʿAli), Reciter Path to the Masterclass recital, Arabic A1–C1, tajweed, hifz"], ["/talents", "Quran Masterclass Talents – verified reciter community"], ["/premium", "Quran Masterclass Pro – free vs Pro"], ["/tajweed", "Tajweed course"], ["/vocab", "Quran vocabulary"], ["/khatm", "Khatm planner"], ["/guides", "Guides"], ["/islam", "Understanding Islam – Islam, the Quran, the Prophet, holy cities, Sunni and Shia, how to pray"], ["/quran", "All surahs"], ["/today", "Today (review plan and streak)"], ["/search", "Search"], ["/prayer", "Prayer times"], ["/radio", "Quran radio"], ["/duas", "Duas from the Quran"], ["/support", "Support the project (voluntary)"], ["/shams/adab", "Shams Method – Adab (etiquette of learning)"], ["/nahj", "Nahj al-Balagha – reader"], ["/nahj-studies", "Nahj al-Balagha – studies"], ["/sisters", "For sisters"], ["/calendar", "Islamic calendar"], ["/names", "The 99 Names of Allah"], ["/carousels", "Carousels – short swipeable posts on verses, tajweed and hadith"], ["/app", "The iOS app – same account as the website"], ["/courses", "Courses"], ["/legal/privacy", "Privacy"], ["/legal/terms", "Terms"], ["/legal/imprint", "Imprint"]];
+const PAGES: [string, string][] = [["", "Home"], ["/shams", "The Shams Method – a learning method by Nami Shams"], ["/academy", "Academy – learning path through all 114 surahs"], ["/masterclass", "The Masterclass – curriculum: four school stages (Ibtidaʾi to ʿAli), Reciter Path to the Masterclass recital, Arabic A1–C1, tajweed, hifz"], ["/talents", "Quran Masterclass Talents – verified reciter community"], ["/premium", "Quran Masterclass Pro – free vs Pro"], ["/tajweed", "Tajweed course"], ["/vocab", "Quran vocabulary"], ["/khatm", "Khatm planner"], ["/guides", "Guides"], ["/islam", "Understanding Islam – Islam, the Quran, the Prophet, holy cities, Sunni and Shia, how to pray"], ["/quran", "All surahs"], ["/today", "Today (review plan and streak)"], ["/search", "Search"], ["/prayer", "Prayer times"], ["/radio", "Quran radio"], ["/duas", "Duas from the Quran"], ["/support", "Support the project (voluntary)"], ["/shams/adab", "Shams Method – Adab (etiquette of learning)"], ["/nahj", "Nahj al-Balagha – reader"], ["/nahj-studies", "Nahj al-Balagha – studies"], ["/sisters", "For sisters"], ["/calendar", "Islamic calendar"], ["/names", "The 99 Names of Allah"], ["/carousels", "Carousels – short swipeable posts on verses, tajweed and hadith"], ["/learn-quran", "Learn the Quran online – start here"], ["/quran-tafsir", "Quran tafsir – how to study it"], ["/tajweed-online", "Tajweed online"], ["/memorize-quran", "Memorize the Quran (hifz)"], ["/quran-radio", "Quran radio"], ["/listen-quran", "Listen to the Quran by reciter and surah"], ["/tawbah", "Tawbah – returning to Allah"], ["/learn-salah", "Learn the prayer (salah) step by step"], ["/learn-wudu", "Learn wudu"], ["/learn-islam", "New to Islam – the basics"], ["/app", "The iOS app – same account as the website"], ["/courses", "Courses"], ["/legal/privacy", "Privacy"], ["/legal/terms", "Terms"], ["/legal/imprint", "Imprint"]];
 
 export function llmsFullTxt(base: string, chapters: Ch[]) {
   const list = chapters
@@ -148,6 +151,10 @@ export async function llmsLocaleTxt(base: string, locale: string, chapters: Ch[]
   const sh = ((m as unknown as Record<string, Record<string, string>>).shams ?? (en as unknown as Record<string, Record<string, string>>).shams);
   const label = LOCALE_META[locale as AppLocale].label;
   const co = (m as Partial<typeof en>).company ?? en.company;
+  // answer-first summaries of every landing hub and localized descriptions of the tool pages (AI search / citations)
+  const hubLines = (await Promise.all(HUB_IDS.map(async (id) => { const h = await loadHub(locale, id); return `- [${h.h1}](${base}/${locale}/${id}) – ${h.answer}`; }))).join("\n");
+  const toolLines = ["/radio", "/prayer", "/wudu", "/calendar", "/names", "/duas", "/reciters", "/tajweed", "/arabic", "/academy", "/courses", "/nahj", "/app"]
+    .map((p) => { const x = pageSeo(locale, p); return x ? `- [${x.title}](${base}/${locale}${p}) – ${x.desc}` : ""; }).filter(Boolean).join("\n");
   const list = chapters.map((c) => `- [${c.id}. ${c.name_simple} (${c.name_arabic}) – ${c.translated_name.name}, ${c.verses_count}](${base}/${locale}/surah/${c.id})`).join("\n");
   return `# Quran Masterclass – ${label}
 
@@ -162,7 +169,13 @@ ${[1, 2, 3, 4, 5, 6, 7].map((n) => `${n}. ${sh[`s${n}`]} – ${sh[`d${n}`]}`).jo
 ${sh.note}
 ${base}/${locale}/shams
 
-${co.operatedBy.replace("{place}", co.place)} ${base}/${locale}/legal/imprint · ${base}/${locale}/support
+${co.operatedBy.replace("{company}", "ICSL FZE").replace("{place}", co.place)} ${base}/${locale}/legal/imprint · ${base}/${locale}/support
+
+## ${label}: guides
+${hubLines}
+
+## ${label}: tools
+${toolLines}
 
 ## ${label}: pages
 ${PAGES.map(([p, n]) => `- [${n}](${base}/${locale}${p})`).join("\n")}

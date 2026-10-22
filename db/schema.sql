@@ -1309,6 +1309,9 @@ CREATE TABLE IF NOT EXISTS supporters (
   paid_at           timestamptz
 );
 ALTER TABLE supporters ADD COLUMN IF NOT EXISTS hidden boolean NOT NULL DEFAULT false;
+-- same supporter across payments: signed-in account, else HMAC of the normalised e-mail (never the e-mail itself)
+ALTER TABLE supporters ADD COLUMN IF NOT EXISTS user_id bigint;
+ALTER TABLE supporters ADD COLUMN IF NOT EXISTS email_hash text;
 CREATE INDEX IF NOT EXISTS supporters_public ON supporters(paid_at DESC) WHERE status = 'paid' AND listed AND NOT hidden;
 GRANT ALL ON ALL TABLES IN SCHEMA public TO tafsirflow;
 GRANT ALL ON ALL SEQUENCES IN SCHEMA public TO tafsirflow;

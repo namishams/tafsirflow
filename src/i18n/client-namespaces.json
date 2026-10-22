@@ -9,11 +9,14 @@
   "rewards"
  ],
  "routes": {
+  "[...rest]": [],
   "@account": [
    "dashboard",
+   "donate",
    "free",
    "security",
    "signin",
+   "supporters",
    "trust"
   ],
   "@admin": [],
@@ -22,8 +25,10 @@
    "player",
    "premium",
    "security",
+   "shamsWhy",
    "signin",
    "social",
+   "supporters",
    "trust"
   ],
   "@root": [
@@ -32,11 +37,12 @@
    "player",
    "premium",
    "security",
+   "shamsWhy",
    "signin",
    "social",
+   "supporters",
    "trust"
   ],
-  "[...rest]": [],
   "about": [
    "founderAbout"
   ],
@@ -47,6 +53,7 @@
    "free",
    "security",
    "signin",
+   "supporters",
    "trust"
   ],
   "app": [
@@ -66,14 +73,17 @@
   ],
   "cards": [],
   "carousels": [
-   "donate"
+   "donate",
+   "supporters"
   ],
   "changelog": [],
   "community": [
    "community"
   ],
   "courses": [
-   "donate"
+   "donate",
+   "shamsWhy",
+   "supporters"
   ],
   "dua-generator": [
    "duagen"
@@ -87,7 +97,8 @@
    "donate",
    "player",
    "prayer",
-   "social"
+   "social",
+   "supporters"
   ],
   "feedback": [
    "feedback",
@@ -98,7 +109,9 @@
   "garden": [],
   "guides": [],
   "haramain": [],
-  "how": [],
+  "how": [
+   "shamsWhy"
+  ],
   "islam": [
    "donate"
   ],
@@ -110,7 +123,12 @@
    "signin",
    "trust"
   ],
+  "learn-islam": [],
+  "learn-quran": [],
+  "learn-salah": [],
+  "learn-wudu": [],
   "legal": [],
+  "listen-quran": [],
   "map": [
    "coach",
    "map"
@@ -118,6 +136,7 @@
   "masterclass": [
    "premium"
   ],
+  "memorize-quran": [],
   "messages": [],
   "mishary": [],
   "nahj": [],
@@ -125,6 +144,7 @@
   "names": [
    "donate"
   ],
+  "new-beginning": [],
   "plan": [
    "free",
    "plan",
@@ -158,6 +178,8 @@
    "map",
    "player"
   ],
+  "quran-radio": [],
+  "quran-tafsir": [],
   "radio": [
    "donate",
    "social"
@@ -183,7 +205,8 @@
   ],
   "shams": [
    "donate",
-   "shams"
+   "shams",
+   "shamsWhy"
   ],
   "sisters": [],
   "start": [
@@ -212,6 +235,7 @@
    "security",
    "session",
    "shams",
+   "shamsWhy",
    "signin",
    "social",
    "trust"
@@ -220,11 +244,13 @@
   "tajweed": [
    "tajweed"
   ],
+  "tajweed-online": [],
   "talents": [
    "contactForms",
    "founderAbout",
    "premium"
   ],
+  "tawbah": [],
   "teacher": [],
   "tests": [],
   "today": [
@@ -251,6 +277,7 @@
    "vocab"
   ],
   "vocab-decks": [],
+  "why": [],
   "world": [],
   "wudu": []
  }
