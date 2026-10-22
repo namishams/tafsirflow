@@ -5,13 +5,19 @@ import { ISLAM } from "../islam";
 import { PRINCIPLES } from "../learn/shams2/handbook";
 import { SOURCES, TERMS } from "../learn/shams2/sources";
 import { carouselPayload, carouselStore } from "../feed/carousels/store";
+import { CHAPTER_TRADITION } from "../islam/hub";
+import { ADAB_ITEMS, ADAB_SOURCES, ADAB_TOPICS, type AdabRef } from "../learn/shams2/adab/data";
+import sistersDe from "../sisters/de";
+import sistersEn from "../sisters/en";
+import { SOURCES as SISTER_SOURCES } from "../sisters/sources";
+import type { Position, SistersText } from "../sisters/types";
 import { hadithRefsIn, isHadithRef, isVerseKey, verseRefsIn } from "./text";
 
 // The tutor's library: only the platform's own reviewed content. Every passage knows where it comes from (a link inside
 // the platform), which verses and hadith it names, and for which tradition it was written. The model may only explain
 // with these passages; scripture is shown from its source by reference (feed/resolve.ts), never written by the model.
 
-export type DocKind = "course" | "tajweed" | "guide" | "islam" | "handbook" | "glossary" | "carousel" | "tafsir" | "progress";
+export type DocKind = "course" | "tajweed" | "guide" | "islam" | "handbook" | "glossary" | "carousel" | "tafsir" | "progress" | "adab" | "sisters";
 export type Lang = "en" | "de" | "ar";
 export type Doc = {
   /** unique per passage ("course:aqidah:a01#0@en") */
@@ -111,11 +117,13 @@ function guideDocs(out: Doc[]) {
   }
 }
 
-const SHIA_DOCS = new Set(["prayer-shia", "jafari", "zaydi"]);
-const SUNNI_DOCS = new Set(["prayer-sunni", "hanafi", "maliki", "shafii", "hanbali", "zahiri"]);
+// the hub's tradition of each chapter (islam/hub.ts: prayers-special-shia, ziyarat, reciter-path-shia, the Ja'fari
+// school are Shia; the special Sunni prayers and the four schools Sunni), plus two the hub leaves to everyone
+const SHIA_DOCS = new Set(["zaydi"]);
+const SUNNI_DOCS = new Set(["zahiri"]);
 function islamDocs(out: Doc[]) {
   for (const d of ISLAM) {
-    const tradition = SHIA_DOCS.has(d.slug) ? "shia" : SUNNI_DOCS.has(d.slug) ? "sunni" : "all";
+    const tradition = CHAPTER_TRADITION[d.slug] ?? (SHIA_DOCS.has(d.slug) ? "shia" : SUNNI_DOCS.has(d.slug) ? "sunni" : "all");
     for (const lang of ["en", "de"] as const) {
       const ch = d[lang];
       const link = d.slug === "names" ? "/names" : `/islam/${d.slug}`;
@@ -170,6 +178,68 @@ async function carouselDocs(out: Doc[]) {
   }
 }
 
+// ---- the pillar "Adab des Qurʾān-Trägers" (Shams 3.0): one passage per practice, the Jaʿfarī note as its own passage
+const STATUS: Record<string, { de: string; en: string }> = {
+  fard: { de: "Pflicht (farḍ)", en: "obligatory (farḍ)" }, wajib: { de: "Pflicht (wājib)", en: "obligatory (wājib)" }, sunnah: { de: "Sunna", en: "sunnah" },
+  mustahabb: { de: "empfohlen (mustaḥabb)", en: "recommended (mustaḥabb)" }, adab: { de: "Anstand (adab)", en: "good manners (adab)" },
+  makruh: { de: "verpönt (makrūh)", en: "disliked (makrūh)" }, haram: { de: "verboten (ḥarām)", en: "forbidden (ḥarām)" },
+};
+function adabRefs(refs: AdabRef[]) {
+  const verses: string[] = [], names: string[] = [];
+  for (const r of refs) {
+    if (r.k === "verse") verses.push(r.key);
+    else if (r.k === "hadith" || r.k === "kafi") names.push(r.cite);
+    else if (r.k === "src") names.push(ADAB_SOURCES[r.id]?.label ?? "");
+  }
+  return { verses, names: names.filter(Boolean) };
+}
+function adabDocs(out: Doc[]) {
+  for (const it of ADAB_ITEMS) {
+    const topic = ADAB_TOPICS.find((x) => x.id === it.topic);
+    for (const lang of ["en", "de"] as const) {
+      const pillar = lang === "de" ? "Adab des Qurʾān-Trägers" : "Adab of the carrier of the Qurʾān";
+      const title = `${pillar} – ${topic ? topic.title[lang] : it.topic} – ${it.title[lang]}`;
+      const { verses, names } = adabRefs(it.refs);
+      const status = it.status.map((x) => STATUS[x]?.[lang] ?? x).join(" / ");
+      const srcLabel = lang === "de" ? "Quellen" : "Sources";
+      const text = `${it.practice[lang]}\n${lang === "de" ? "Stellung" : "Status"}: ${status}.${it.note ? `\n${it.note[lang]}` : ""}${names.length ? `\n${srcLabel}: ${names.join("; ")}` : ""}`;
+      push(out, { base: `adab:${it.id}`, kind: "adab", lang, title, text, link: "/shams/adab", verses, tradition: "all" });
+      if (it.jafari) {
+        const j = adabRefs(it.jafari.refs);
+        push(out, {
+          base: `adab:${it.id}#jafari`, kind: "adab", lang, title: `${title} (Jaʿfarī)`,
+          text: `${it.practice[lang]}\n${lang === "de" ? "Dschaʿfari-Position" : "Jaʿfarī position"}: ${it.jafari.note[lang]}${j.names.length ? `\n${srcLabel}: ${j.names.join("; ")}` : ""}`,
+          link: "/shams/adab", verses: j.verses, tradition: "shia",
+        });
+      }
+    }
+  }
+}
+
+// ---- "Für Schwestern": per block the Sunni positions and the Jaʿfarī position as separate passages, so the learner's
+// tradition setting can prefer one; the listening days and the women of the Quran as their own passages
+function sistersDocs(out: Doc[]) {
+  const src = (ids: string[] = []) => ids.map((i) => SISTER_SOURCES[i]?.title).filter(Boolean).join("; ");
+  for (const [lang, T] of [["en", sistersEn], ["de", sistersDe]] as [Lang, SistersText][]) {
+    const head = T.kicker;
+    const line = (p: Position) => `${T.schools[p.school]}: ${p.text}${p.src.length ? ` (${src(p.src)})` : ""}`;
+    const split = (base: string, title: string, lead: string | undefined, positions: Position[], extra: string[] = []) => {
+      const sunni = positions.filter((p) => p.school !== "jafari"), jafari = positions.filter((p) => p.school === "jafari");
+      push(out, { base, kind: "sisters", lang, title, text: [lead, ...sunni.map(line), ...extra, T.notFatwa].filter(Boolean).join("\n"), link: "/sisters", tradition: jafari.length ? "sunni" : "all" });
+      if (jafari.length) push(out, { base: `${base}#jafari`, kind: "sisters", lang, title: `${title} (${T.schools.jafari})`, text: [lead, ...jafari.map(line), T.notFatwa].filter(Boolean).join("\n"), link: "/sisters", tradition: "shia" });
+    };
+    for (const b of T.partRecite.blocks) split(`sisters:${b.id}`, `${head} – ${T.partRecite.title} – ${b.title}`, b.lead, b.positions ?? [], (b.points ?? []).map((p) => `${p.text}${p.src?.length ? ` (${src(p.src)})` : ""}`));
+    split("sisters:sajda", `${head} – ${T.partSajda.title}`, T.partSajda.lead, T.partSajda.positions);
+    push(out, { base: "sisters:shams", kind: "sisters", lang, title: `${head} – ${T.partShams.title}`, text: [T.partShams.lead, ...T.partShams.steps.map((s) => `${s.title}: ${s.text}`), ...T.partShams.notes.map((n) => n.text)].join("\n"), link: "/sisters", tradition: "all" });
+    const w = T.partWomen;
+    push(out, {
+      base: "sisters:women", kind: "sisters", lang, title: `${head} – ${w.title}`,
+      text: [w.lead, `${w.versesTitle}: ${w.verses.map((v) => `${v.ref} (${v.topic})`).join("; ")}`, `${w.companionsTitle}: ${w.companions.map((p) => p.text).join(" ")}`, `${w.scholarsTitle}: ${w.scholars.map((p) => p.text).join(" ")}`, `${w.recitersTitle}: ${w.reciters.map((p) => p.text).join(" ")}`].join("\n").slice(0, 3000),
+      link: "/sisters", verses: w.verses.map((v) => v.ref), tradition: "all",
+    });
+  }
+}
+
 let built: Promise<Doc[]> | null = null;
 let builtAt = 0;
 /** the whole library (built once, refreshed every 6 hours so new carousels and courses are found) */
@@ -178,7 +248,7 @@ export function corpus(): Promise<Doc[]> {
   builtAt = Date.now();
   built = (async () => {
     const out: Doc[] = [];
-    courseDocs(out); tajweedDocs(out); guideDocs(out); islamDocs(out); handbookDocs(out);
+    courseDocs(out); tajweedDocs(out); guideDocs(out); islamDocs(out); handbookDocs(out); adabDocs(out); sistersDocs(out);
     await carouselDocs(out);
     return out;
   })().catch((e) => { built = null; throw e; });

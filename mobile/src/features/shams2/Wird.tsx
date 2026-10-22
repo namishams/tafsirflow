@@ -27,6 +27,7 @@ import { markToday, noteLinks, rateVerseToday, readLinks, undoLinksToday } from 
 import { StripToggle, TathbitCard, TodayMinutes, gapMarkId } from "./review/WirdExtras";
 import { AdabTodayCard } from "./adab/Adab";
 import { ListenDaysCard } from "@/features/sisters/ui";
+import { CoachCard } from "@/features/tutor/CoachCard";
 
 // /shams/wird – today's wird: sabaq (new), sabqi (recent), manzil (long term), one tap opens the existing Shams session
 // or the reader at the right verse; after reciting, a self-assessment (tathbīt) updates the verse reviews. Shams 3.0:
@@ -148,6 +149,8 @@ export function WirdScreen() {
             <StepIn key={k} delay={i * 60}><BlockCard b={wird[k]} done={done(k)} onDone={() => finish(wird[k])} ratings={today.r ?? {}} known={known} locked={k === "sabaq" ? wird.locked : null} /></StepIn>
           ))}
           <StepIn delay={180}><TathbitCard tb={wird.tathbit} marks={today.r ?? {}} /></StepIn>
+          {/* after a step: the recitation coach (own weak spots, a 10-minute plan with drill links, ask the tutor) */}
+          {(["sabaq", "sabqi", "manzil"] as const).some((k) => done(k)) ? <CoachCard after /> : null}
           <StepIn delay={240}><AdabTodayCard /></StepIn>
           {allDone ? <Card gold><Text style={{ fontFamily: FONT.bold, fontSize: 17, color: t.ink }}>{s("wirdDone")}</Text><ContinueNext /></Card> : null}
           <Card>

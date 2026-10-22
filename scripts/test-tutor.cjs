@@ -114,6 +114,14 @@ const SAMPLES = [
   ["Recite surah al-Fatiha for me in Arabic", "en", null, ["answered", "not_found"]],
   ["Wie spreche ich den Buchstaben Ḍād richtig aus?", "de", null, ["answered", "not_found"], null, "hidaya"],
   ["As-salamu alaykum", "ar", null, ["greeting"], null, "hidaya"],
+  // next level: adab pillar, sisters section, Shia chapters, special prayers by tradition, the recitation coach
+  ["What is the adab of using siwak before reciting the Quran?", "en", null, ["answered"]],
+  ["Darf ich während meiner Menstruation den Koran aus dem Gedächtnis rezitieren?", "de", null, ["views", "answered", "not_found"], null, "hidaya", "sunni"],
+  ["Can I recite Quran from memory during my period?", "en", null, ["views", "answered", "not_found"], null, "hidaya", "shia"],
+  ["How do I perform the ziyarah of Imam Husain in Karbala?", "en", null, ["answered"], null, null, "shia"],
+  ["How is salat al-ayat performed?", "en", null, ["answered"], null, null, "shia"],
+  ["How is the Eid prayer performed?", "en", null, ["answered"], null, null, "sunni"],
+  ["Please explain my weak spots in recitation and how I can practise them today.", "en", { kind: "shams", title: "Recitation coach" }, ["answered"], { versesMemorised: 40, todayReview: 12, weakestDim: "links", weakestPct: 41, weakSpots: "2:255 (missed words, words 3 5) / 67:3 (transition stalls)", weakLetters: "ض ظ", mutDue: 1, practicePlan: "3 min word 2:255 / 2 min link 67:3 / 2 min makhraj ض / 3 min review" }],
 ];
 
 (async () => {
@@ -134,6 +142,69 @@ const SAMPLES = [
     ok(h.some((x) => want.split("|").some((w) => x.doc.link.startsWith(w))), `"${q}" finds ${want}`, h.slice(0, 3).map((x) => `${x.doc.link} ${x.score.toFixed(1)}`).join(", "));
   }
 
+  console.log("\n# retrieval – adab, sisters, Shia chapters, special prayers, tradition");
+  for (const [q, want, trad, kinds] of [
+    ["siwak before recitation adab of the reciter", "/shams/adab", "all"],
+    ["entering the bathroom left foot", "/shams/adab", "all"],
+    ["reciting quran from memory during menstruation hayd", "/sisters", "sunni"],
+    ["Rezitieren während der Menstruation Hayd", "/sisters", "all"],
+    ["ziyarah karbala najaf shrine visit", "/islam/ziyarat", "shia"],
+    ["salat al-ayat prayer of signs eclipse", "/islam/prayers-special-shia", "shia"],
+    ["eid prayer takbirat janazah funeral prayer", "/islam/prayers-special-sunni", "sunni"],
+    ["reciter path shia recitation teachers", "/islam/reciter-path-shia", "shia"],
+  ]) {
+    const h = search(docs, q, { lang: /[äöüß]|während/i.test(q) ? "de" : "en", tradition: trad, k: 5 });
+    ok(h.some((x) => x.doc.link.startsWith(want)), `"${q}" (${trad}) finds ${want}`, h.slice(0, 3).map((x) => `${x.doc.link} ${x.doc.tradition} ${x.score.toFixed(1)}`).join(", "));
+  }
+  {
+    const q = "menstruation reciting quran from memory hayd";
+    const shia = search(docs, q, { lang: "en", tradition: "shia", k: 6 }).filter((x) => x.doc.kind === "sisters");
+    const sunni = search(docs, q, { lang: "en", tradition: "sunni", k: 6 }).filter((x) => x.doc.kind === "sisters");
+    ok(shia[0]?.doc.tradition === "shia", "Shia setting puts the Ja'fari position of the sisters section first", shia.slice(0, 2).map((x) => x.doc.base).join(", "));
+    ok(sunni[0]?.doc.tradition !== "shia", "Sunni setting puts the schools' positions first", sunni.slice(0, 2).map((x) => x.doc.base).join(", "));
+    const kinds = new Set(docs.map((d) => d.kind));
+    ok(kinds.has("adab") && kinds.has("sisters"), "corpus has the adab pillar and the sisters section");
+    ok(["prayers-special-shia", "ziyarat", "reciter-path-shia"].every((s) => docs.some((d) => d.link === `/islam/${s}` && d.tradition === "shia")), "Shia chapters are tagged shia");
+    ok(docs.some((d) => d.link === "/islam/prayers-special-sunni" && d.tradition === "sunni"), "special Sunni prayers are tagged sunni");
+  }
+
+  console.log("\n# next level: voice, coach, check-in, memory, chips");
+  {
+    const N = require("../src/lib/tutor/next.ts");
+    const sp = N.speakable("MashaAllah, see 2:255 [1]. **Tajweed** matters: بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ [2] and [the lesson](/courses/x).", "en");
+    ok(!/[؀-ۿ]/.test(sp) && !/\[\d\]|\*\*|\(\/courses/.test(sp) && /the lesson/.test(sp), "speakable: no Arabic script, markers or links in a non-Arabic answer", sp);
+    const spAr = N.speakable("هذا شرح جميل. بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ الرحيم [1]", "ar");
+    ok(/شرح جميل/.test(spAr) && !/[ً-ْٰ]/.test(spAr), "speakable: Arabic answer keeps plain words, drops every vowelled (Quranic) word", spAr);
+    ok(Object.keys(N.NEXT_UI).length === 14 && Object.keys(N.VOICE_LANG).length === 14, "next texts and voices in 14 languages");
+    const keysOf = (o, p = "") => Object.entries(o).flatMap(([k, v]) => (v && typeof v === "object" && !Array.isArray(v) ? keysOf(v, `${p}${k}.`) : [`${p}${k}`])).sort().join(",");
+    const ref = keysOf(N.NEXT_UI.en);
+    ok(Object.values(N.NEXT_UI).every((u) => keysOf(u) === ref), "every language has every next-level text");
+    ok(!/\b(du|dir|dich|dein|deine)\b/i.test(JSON.stringify(N.NEXT_UI.de)), "German next-level texts in the Sie form");
+    ok(!/[\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}]/u.test(JSON.stringify(N.NEXT_UI)), "no emojis in the next-level texts");
+    const input = {
+      spots: [{ key: "2:255", words: [3, 5], reason: ["words"] }, { key: "67:3", words: [], reason: ["transition"] }, { key: "112:2", words: [], reason: ["lapses"] }],
+      mutDue: [{ id: "baqara-a", keys: ["2:35", "7:19"] }], makhraj: { "ض": { ok: 1, miss: 4 }, "ق": { ok: 5, miss: 0, self: 4 }, "ظ": { ok: 0, miss: 0, self: 2 } },
+      weakestDim: "links", weakestPct: 41, todayNew: 3, todayReview: 12, testsDue: 0, learnedToday: false, known: 40,
+    };
+    const plan = N.practicePlan(input);
+    const total = plan.reduce((a, s) => a + s.minutes, 0);
+    ok(total === 10 && plan[0].href === "/shams/drill?s=2&v=255&w=3,5&mode=word" && plan.some((s) => s.href.startsWith("/shams/drill?s=67&v=3") && s.href.endsWith("mode=link")) && plan.some((s) => s.href.startsWith("/shams/makhraj?l=")) && plan.some((s) => s.href.startsWith("/shams/mutashabihat?g=")), "10-minute plan links the drills, makhraj and mutashabihat", plan.map((s) => `${s.minutes}m ${s.kind} ${s.href}`).join(" | "));
+    ok(N.weakLetters(input.makhraj).join("") === "ضظ", "weak letters from own ratings and missed listening quiz only");
+    const ci = N.dailyCheckIn(input);
+    ok(ci.kind === "weak" && ci.ref === "2:255", "check-in names the weakest verse first", JSON.stringify(ci));
+    ok(N.dailyCheckIn({ ...input, testsDue: 1 }).kind === "test" && N.dailyCheckIn({ ...input, learnedToday: true }).kind === "done" && N.dailyCheckIn({ ...input, spots: [], known: 0, todayReview: 0 }).kind === "start", "check-in: test first, calm when done, a start for beginners");
+    const facts = require("../src/lib/tutor/learner.ts").cleanLearner(N.coachFacts(input));
+    ok(!!facts && /2:255/.test(String(facts.weakSpots)) && /ض/.test(String(facts.weakLetters)) && facts.mutDue === 1, "coach facts pass the learner whitelist", JSON.stringify(facts));
+    ok(N.screenContext("/de/surah/2", { v: "255" })?.verse === "2:255" && N.screenContext("/courses/aqidah/a01")?.lesson === "a01" && N.screenContext("/shams/drill", { s: "67", v: "3" })?.verse === "67:3" && N.screenContext("/islam/ziyarat")?.kind === "general" && N.screenContext("/account") === null && N.screenContext("/assistant") === null, "bubble: learning screens pre-fill their context, other screens show no bubble");
+    let mem = N.addMemory(N.EMPTY_MEMORY, "Ziel: Juz Amma bis Ramadan, mail me at a@b.com");
+    mem = N.addMemory(mem, "ziel: juz amma bis ramadan, mail me at");
+    ok(mem.items.length === 1 && !/@/.test(mem.items[0].text), "memory: no contact data, no duplicates", mem.items.map((x) => x.text).join(" | "));
+    ok(N.memoryForServer({ ...mem, use: false }).length === 0 && N.memoryForServer(mem).length === 1 && N.removeMemory(mem, mem.items[0].id).items.length === 0, "memory goes to the tutor only when allowed; can be deleted");
+    ok(N.goalIn("Ziel: Juz Amma bis Ramadan") === "Ziel: Juz Amma bis Ramadan" && N.goalIn("What breaks wudu?") === null, "a written goal is offered to remember");
+    const chips = N.appChips([{ title: "Tajweed · Ikhfa – Rules", link: "/tajweed/ikhfa", kind: "tajweed" }, { title: "x", link: "/tajweed/ikhfa", kind: "tajweed" }, { title: "Ext", link: "https://x.y", kind: "guide" }], N.nextUi("de"));
+    ok(chips.length === 1 && chips[0].href === "/tajweed/ikhfa" && chips[0].label.startsWith("Tajwid üben"), "chips link into the app, one per page, no outside links", JSON.stringify(chips));
+  }
+
   console.log("\n# validation");
   const d0 = docs.find((d) => d.verses.length && d.kind === "course");
   ok(!checkAnswer({ status: "answered", answer: "Something without any source marker at all.", sources: [], verses: [], hadith: [], followups: [] }, [d0]).ok, "answer without sources is rejected");
@@ -143,15 +214,17 @@ const SAMPLES = [
   ok(!checkAnswer({ status: "answered", answer: `The Prophet said "whoever walks a path seeking knowledge Allah makes easy a path to the moon" [S1].`, sources: ["S1"], verses: [], hadith: [], followups: [] }, [d0]).ok, "invented quote is rejected");
   const good = checkAnswer({ status: "answered", answer: `Good explanation [S1]. See ${d0.verses[0]}.`, sources: ["S1"], verses: [d0.verses[0]], hadith: [], followups: ["x?"] }, [d0]);
   ok(good.ok, "grounded answer passes");
+  ok(checkAnswer({ status: "answered", answer: "The Sal‘at al-Eid has two rak‘ahs with extra takbirs, and it is followed by a sermon, as the lesson explains carefully [S1].", sources: ["S1"], verses: [], hadith: [], followups: [] }, [d0]).ok, "an ʿayn apostrophe inside a word is not taken for a quotation mark");
+  ok(!checkAnswer({ status: "answered", answer: "The Prophet said ‘whoever walks a path seeking knowledge Allah makes easy a path to the moon’ [S1].", sources: ["S1"], verses: [], hadith: [], followups: [] }, [d0]).ok, "an invented quote in single quotation marks is still rejected");
   ok(!checkAnswer({ status: "answered", answer: "You have memorised 4711 verses, MashaAllah [S1].", sources: ["S1"], verses: [], hadith: [], followups: [] }, [d0]).ok, "invented number is rejected");
   ok(checkAnswer({ status: "answered", answer: "Fajr at 5:30 am is early [S1].", sources: ["S1"], verses: [], hadith: [], followups: [] }, [d0]).ok, "clock times are not taken for verse keys");
 
-  console.log(`\n# pipeline – 22 sample questions (${live ? "LIVE model via ssh" : "mocked model"})`);
+  console.log(`\n# pipeline – ${SAMPLES.length} sample questions (${live ? "LIVE model via ssh" : "mocked model"})`);
   const deps = live ? { ...liveChat(), corpus, verseDocs: require("../src/lib/tutor/scripture.ts").verseDocs } : { chat: mockChat(), moderate: mockModeration, corpus };
   const only = process.argv.find((a) => a.startsWith("--only="))?.slice(7);
-  for (const [q, lang, ctx, want, learner, persona] of SAMPLES) {
+  for (const [q, lang, ctx, want, learner, persona, tradition] of SAMPLES) {
     if (only && !q.toLowerCase().includes(only.toLowerCase())) continue;
-    const r = await askTutor({ question: q, history: [], lang, address: q.includes("husband") || persona ? "sister" : learner ? "brother" : null, tradition: "all", context: ctx, learner, persona: persona ?? "dalil" }, deps);
+    const r = await askTutor({ question: q, history: [], lang, address: q.includes("husband") || persona ? "sister" : learner ? "brother" : null, tradition: tradition ?? "all", context: ctx, learner, persona: persona ?? "dalil" }, deps);
     const grounded = r.status !== "answered" && r.status !== "views" ? true : r.sources.length > 0 && /\[\d\]/.test(r.answer);
     ok(want.includes(r.status) && grounded, `${r.status.padEnd(9)} ${q.slice(0, 60)}`, `${r.sources.map((x) => x.link).join(" ")}${r.verses.length ? ` verses ${r.verses.join(",")}` : ""}${r.notice ? " +scholar note" : ""}`);
     if (live && process.argv.includes("--show")) console.log(`        ${r.answer.replace(/\n/g, "\n        ")}\n`);
@@ -174,6 +247,8 @@ const SAMPLES = [
     const a1 = await askTutor({ question: "What is sabaq?", history: [], lang: "en", address: null, tradition: "all", context: null }, deps);
     const a2 = await askTutor({ question: "what is  sabaq ?", history: [], lang: "en", address: null, tradition: "all", context: null }, deps);
     ok(!a1.cached && a2.cached && a2.tokensIn === 0, "identical question answered from the cache");
+    const mm = await askTutor({ question: "What is sabaq?", history: [], lang: "en", address: null, tradition: "all", context: null, memory: ["Ziel: Juz Amma bis Ramadan"] }, { ...deps, chat: async (a) => { if (a.schema.name === "answer") { const u = a.messages[a.messages.length - 1].content; ok(/LEARNER NOTES[\s\S]*Juz Amma/.test(u) && u.indexOf("LEARNER NOTES") < u.indexOf("SOURCES:"), "confirmed memory reaches the model as notes, not as a source"); } return mockChat()(a); } });
+    ok(!mm.cached, "an answer shaped by memory is not served from the shared cache");
     const f = await askTutor({ question: "fuck this", history: [], lang: "en", address: null, tradition: "all", context: null }, deps);
     ok(f.status === "refused" && f.tokensIn === 0, "input moderation stops before the model");
   }

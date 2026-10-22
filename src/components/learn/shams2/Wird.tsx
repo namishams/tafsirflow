@@ -21,6 +21,7 @@ import { markToday, noteLinks, rateVerseToday, readLinks, undoLinksToday } from 
 import { StripToggle, TathbitCard, TodayMinutes, gapMarkId } from "./review/WirdExtras";
 import { AdabTodayCard } from "./Adab";
 import { ListenDaysCard } from "@/components/sisters/Sisters";
+import CoachCard from "@/components/tutor/CoachCard";
 
 const BLOCKS = ["sabaq", "sabqi", "manzil"] as const;
 /** where a portion is recited on the website: new verses with the Shams method, reviews in the reader */
@@ -128,6 +129,8 @@ function Body() {
       {reasonKey && <p className="text-[14.5px] leading-relaxed text-muted">{s(reasonKey)}</p>}
       {BLOCKS.map((k) => <BlockCard key={k} b={wird[k]} done={done(k)} onDone={() => finish(wird[k])} ratings={today.r ?? {}} primary={k === firstOpen} />)}
       <TathbitCard tb={wird.tathbit} marks={today.r ?? {}} />
+      {/* after a step: the recitation coach (own weak spots, a 10-minute plan with drill links, ask the tutor) */}
+      {BLOCKS.some((k) => done(k)) ? <CoachCard after /> : null}
       <AdabTodayCard />
       {allDone && <Card className="grid gap-4"><p className="text-[18px] font-bold">{s("wirdDone")}</p><ContinueNext /></Card>}
       <Card className="grid gap-3.5">

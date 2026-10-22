@@ -16,6 +16,11 @@ import { useTutor } from "./hooks";
 import { AiSeal, Answer, ConsentCard, GOLD, GlassCard, TodayCard, TutorChoice, alpha } from "./Parts";
 import { clearChat, hasConsent, readChat, readPrefs, saveChat, useChat, useTutorPrefs, type ChatMsg } from "./prefs";
 import { useTutorProgress } from "./progress";
+import { useCoachInput } from "./coach";
+import { readMemory, saveMemory, useMemory } from "./memory";
+import { useStored, writeJSON } from "@/lib/store";
+import { BUBBLE_KEY, bubbleSetting, addMemory, coachFacts, fillNext, goalIn, memoryForServer, nextUi, removeMemory, type MemoryState } from "./next";
+import { useDictation } from "./voice";
 
 // Dalil / Hidaya – the tutor's one chat screen (app). The conversation is kept only on this device (prefs.ts). Entry
 // points pass a context (lesson, quiz, verse, carousel …) and optionally a first question; the server answers only
@@ -43,6 +48,19 @@ export function TutorChat({ context, initial }: { context?: TutorContext | null;
   const [settings, setSettings] = useState(false);
   const scroll = useRef<ScrollViewInstance>(null);
   const asked = useRef(false);
+  const nx = nextUi(lang);
+  const coach = useCoachInput();
+  const memory = useMemory();
+  const [goal, setGoal] = useState<string | null>(null);
+  const [typing, setTyping] = useState(0);
+  const dictation = useDictation(lang, (s) => setText(s));
+  // a calm typing state: the answer is checked against its sources before it is shown, so it cannot stream
+  useEffect(() => {
+    if (!busy) { setTyping(0); return; }
+    const id = setInterval(() => setTyping((n) => Math.min(n + 1, 2)), 2600);
+    return () => clearInterval(id);
+  }, [busy]);
+  const thinkingText = fillNext(nx.typing[typing], { name });
 
   const check = useCallback(() => {
     setNet("loading");
@@ -57,8 +75,12 @@ export function TutorChat({ context, initial }: { context?: TutorContext | null;
     const before = readChat();
     const next: ChatMsg[] = [...before, { role: "user", content: question, at: Date.now() }];
     saveChat(next); setText(""); setBusy(true); setErr(null);
+    if (dictation.listening) dictation.stop();
+    const mem = readMemory();
+    const g = goalIn(question);
+    setGoal(g && !mem.items.some((x) => x.text.toLowerCase() === g.toLowerCase()) ? g : null);
     try {
-      const a = await askTutor({ question, history: before, lang, context: ctx, address, persona, consent: p.consent, progress });
+      const a = await askTutor({ question, history: before, lang, context: ctx, address, persona, consent: p.consent, progress: { ...(progress ?? {}), ...(coach ? coachFacts(coach) : {}) }, memory: memoryForServer(mem) });
       saveChat([...next, {
         role: "assistant", content: a.answer, at: Date.now(), id: a.id, status: a.status, notice: a.notice, sources: a.sources, related: a.related,
         followups: a.followups, scripture: a.scripture, persona,
@@ -69,7 +91,7 @@ export function TutorChat({ context, initial }: { context?: TutorContext | null;
       setErr(k);
       if (k === "offline") setNet("offline");
     } finally { setBusy(false); }
-  }, [busy, lang, address, persona, progress]);
+  }, [busy, lang, address, persona, progress, coach, dictation]);
 
   // an entry point's question is asked once, as soon as the tutor is reachable and the consent is given
   useEffect(() => {
@@ -92,13 +114,13 @@ export function TutorChat({ context, initial }: { context?: TutorContext | null;
           {GLASS ? <GlassView glassEffectStyle="regular" isInteractive style={StyleSheet.absoluteFill} /> : null}
           <Text style={{ fontSize: 20, color: t.ink }}>{BACK}</Text>
         </Pressable>
-        <TutorFace persona={persona} size={44} speaking={busy} />
+        <TutorFace persona={persona} size={44} speaking={busy} thinking={busy} />
         <View style={{ flex: 1 }}>
           <View style={{ flexDirection: "row", alignItems: "center", gap: 8 }}>
             <Text accessibilityRole="header" style={{ fontFamily: FONT.semibold, fontSize: 18, color: t.ink }}>{name}</Text>
             <AiSeal />
           </View>
-          <Text numberOfLines={1} style={{ fontFamily: FONT.regular, fontSize: 12.5, color: t.muted }}>{busy ? f(ui.thinking) : context?.title ?? f(ui.title)}</Text>
+          <Text numberOfLines={1} style={{ fontFamily: FONT.regular, fontSize: 12.5, color: t.muted }}>{busy ? thinkingText : context?.title ?? f(ui.title)}</Text>
         </View>
         <Pressable onPress={() => setSettings((v) => !v)} accessibilityRole="button" accessibilityLabel={ui.tutor} hitSlop={10}
           style={{ width: 40, height: 40, borderRadius: 20, alignItems: "center", justifyContent: "center", overflow: "hidden" }}>
@@ -119,6 +141,7 @@ export function TutorChat({ context, initial }: { context?: TutorContext | null;
             <TutorChoice />
             {msgs.length ? <OutlineButton title={ui.clear} icon="close" compact style={{ marginTop: 14 }}
               onPress={() => Alert.alert(ui.clear, ui.clearAsk, [{ text: ui.later, style: "cancel" }, { text: ui.clear, style: "destructive", onPress: () => { clearChat(); setErr(null); } }])} /> : null}
+            <MemoryPanel m={memory} />
           </GlassCard>
         ) : null}
 
@@ -152,10 +175,19 @@ export function TutorChat({ context, initial }: { context?: TutorContext | null;
 
         {busy ? (
           <View style={{ flexDirection: "row", gap: 10, alignItems: "center" }}>
-            <TutorFace persona={persona} size={34} speaking />
+            <TutorFace persona={persona} size={34} speaking thinking />
             <ActivityIndicator color={GOLD} />
-            <Text style={{ fontFamily: FONT.regular, fontSize: 14, color: t.muted }}>{f(ui.thinking)}</Text>
+            <Text accessibilityLiveRegion="polite" style={{ flex: 1, fontFamily: FONT.regular, fontSize: 14, color: t.muted }}>{thinkingText}</Text>
           </View>
+        ) : null}
+        {goal && !busy ? (
+          <GlassCard gold>
+            <Text style={{ fontFamily: FONT.regular, fontSize: 14, lineHeight: 20, color: t.ink }}>{fillNext(nx.memSuggest, { name })} <Text style={{ fontFamily: FONT.semibold }}>{goal}</Text></Text>
+            <View style={{ flexDirection: "row", gap: 10, marginTop: 10 }}>
+              <OutlineButton title={ui.later} compact onPress={() => setGoal(null)} />
+              <GoldButton title={nx.memSave} compact onPress={() => { saveMemory(addMemory(readMemory(), goal)); setGoal(null); }} />
+            </View>
+          </GlassCard>
         ) : null}
 
         {err ? (
@@ -172,7 +204,8 @@ export function TutorChat({ context, initial }: { context?: TutorContext | null;
 
       {consented ? (
         <View style={{ paddingHorizontal: 12, paddingTop: 8, paddingBottom: Math.max(insets.bottom, 10) }}>
-          <Composer value={text} onChange={setText} onSend={() => void send(text, context ?? null)} disabled={busy || net !== "ok" || !status?.enabled} placeholder={ui.ph} send={ui.send} />
+          <Composer value={text} onChange={setText} onSend={() => void send(text, context ?? null)} disabled={busy || net !== "ok" || !status?.enabled} placeholder={dictation.listening ? nx.listening : ui.ph} send={ui.send}
+            mic={dictation.can ? { on: dictation.listening, label: dictation.listening ? nx.stop : nx.speakAsk, hint: nx.voiceNote, press: () => (dictation.listening ? dictation.stop() : void dictation.start()) } : null} />
           <Text style={{ marginTop: 6, fontFamily: FONT.regular, fontSize: 11.5, lineHeight: 16, color: t.muted }}>
             {typeof left === "number" ? <Text style={{ fontFamily: FONT.semibold, color: goldButton.line }}>{left === 1 ? ui.leftOne : f(ui.left, { n: left })} · </Text> : null}
             {f(ui.note)}
@@ -184,13 +217,63 @@ export function TutorChat({ context, initial }: { context?: TutorContext | null;
 }
 
 /** the composer: a glass capsule with the text field and a gold send button */
-function Composer({ value, onChange, onSend, disabled, placeholder, send }: { value: string; onChange: (s: string) => void; onSend: () => void; disabled: boolean; placeholder: string; send: string }) {
+/** what the tutor remembers: only items the learner added or confirmed; on this device, synced only when allowed */
+function MemoryPanel({ m }: { m: MemoryState }) {
+  const t = useTheme();
+  const { lang } = useLang();
+  const nx = nextUi(lang);
+  const { name } = useTutor();
+  const [draft, setDraft] = useState("");
+  const bubble = useStored<{ hidden?: boolean }>(BUBBLE_KEY, {});
+  const set = (n: MemoryState) => saveMemory(n);
+  const toggle = (label: string, on: boolean, flip: () => void) => (
+    <Pressable onPress={flip} accessibilityRole="switch" accessibilityState={{ checked: on }} style={{ flexDirection: "row", alignItems: "center", gap: 10, paddingVertical: 6 }}>
+      <View style={{ width: 22, height: 22, borderRadius: 6, borderWidth: 2, borderColor: on ? GOLD : t.line, backgroundColor: on ? GOLD : "transparent", alignItems: "center", justifyContent: "center" }}>
+        {on ? <Icon name="check" size={13} color={goldButton.text} /> : null}
+      </View>
+      <Text style={{ flex: 1, fontFamily: FONT.regular, fontSize: 14, color: t.ink }}>{label}</Text>
+    </Pressable>
+  );
+  const add = () => { const n = addMemory(m, draft); if (n !== m) { set(n); setDraft(""); } };
+  return (
+    <View style={{ marginTop: 18, paddingTop: 14, borderTopWidth: StyleSheet.hairlineWidth, borderTopColor: t.line, gap: 8 }}>
+      <Text style={{ fontFamily: FONT.semibold, fontSize: 14, color: t.ink }}>{fillNext(nx.memTitle, { name })}</Text>
+      <Text style={{ fontFamily: FONT.regular, fontSize: 12.5, lineHeight: 18, color: t.muted }}>{nx.memLead}</Text>
+      {m.items.length ? m.items.map((x) => (
+        <View key={x.id} style={{ flexDirection: "row", alignItems: "center", gap: 10, paddingHorizontal: 12, paddingVertical: 9, borderRadius: R.md, borderWidth: StyleSheet.hairlineWidth, borderColor: t.line }}>
+          <Text style={{ flex: 1, fontFamily: FONT.regular, fontSize: 14, color: t.ink }}>{x.text}</Text>
+          <Pressable onPress={() => set(removeMemory(m, x.id))} accessibilityRole="button" accessibilityLabel={`${nx.memDelete}: ${x.text}`} hitSlop={8}>
+            <Text style={{ fontFamily: FONT.medium, fontSize: 12.5, color: t.muted }}>{nx.memDelete}</Text>
+          </Pressable>
+        </View>
+      )) : <Text style={{ fontFamily: FONT.regular, fontSize: 13.5, color: t.muted }}>{nx.memEmpty}</Text>}
+      <View style={{ flexDirection: "row", gap: 8, alignItems: "center" }}>
+        <TextInput value={draft} onChangeText={setDraft} placeholder={nx.memPh} placeholderTextColor={t.muted} maxLength={120} onSubmitEditing={add} accessibilityLabel={nx.memPh}
+          style={{ flex: 1, minHeight: 42, paddingHorizontal: 14, borderRadius: 21, borderWidth: StyleSheet.hairlineWidth, borderColor: t.line, fontFamily: FONT.regular, fontSize: 15, color: t.ink }} />
+        <OutlineButton title={nx.memAdd} compact disabled={draft.trim().length < 3} onPress={add} />
+      </View>
+      {toggle(bubbleSetting(lang), !bubble.hidden, () => writeJSON(BUBBLE_KEY, { hidden: !bubble.hidden }, true))}
+      {toggle(nx.memUse, m.use, () => set({ ...m, use: !m.use }))}
+      {toggle(nx.memSync, m.sync, () => set({ ...m, sync: !m.sync }))}
+      {m.items.length ? <OutlineButton title={nx.memDeleteAll} icon="close" compact onPress={() => set({ ...m, items: [] })} /> : null}
+    </View>
+  );
+}
+
+type Mic = { on: boolean; label: string; hint: string; press: () => void } | null;
+function Composer({ value, onChange, onSend, disabled, placeholder, send, mic }: { value: string; onChange: (s: string) => void; onSend: () => void; disabled: boolean; placeholder: string; send: string; mic?: Mic }) {
   const t = useTheme();
   const can = !disabled && value.trim().length > 1;
   const inner: ReactNode = (
     <View style={{ flexDirection: "row", alignItems: "flex-end", gap: 8, padding: 6 }}>
       <TextInput value={value} onChangeText={onChange} placeholder={placeholder} placeholderTextColor={t.muted} multiline maxLength={800} accessibilityLabel={placeholder}
         style={{ flex: 1, minHeight: 44, maxHeight: 140, paddingHorizontal: 12, paddingTop: 12, paddingBottom: 10, fontFamily: FONT.regular, fontSize: 16, color: t.ink }} />
+      {mic ? (
+        <Pressable onPress={mic.press} accessibilityRole="button" accessibilityLabel={mic.label} accessibilityHint={mic.hint} accessibilityState={{ selected: mic.on }}
+          style={({ pressed }) => ({ width: 44, height: 44, borderRadius: 22, alignItems: "center", justifyContent: "center", borderWidth: 1, borderColor: mic.on ? GOLD : t.line, backgroundColor: mic.on ? alpha(GOLD, 0.18) : "transparent", transform: [{ scale: pressed ? 0.94 : 1 }] })}>
+          <Icon name="mic" size={18} color={t.ink} />
+        </Pressable>
+      ) : null}
       <Pressable onPress={onSend} disabled={!can} accessibilityRole="button" accessibilityLabel={send}
         style={({ pressed }) => ({ width: 44, height: 44, borderRadius: 22, alignItems: "center", justifyContent: "center", backgroundColor: can ? goldButton.to : alpha(GOLD, 0.25), transform: [{ scale: pressed ? 0.94 : 1 }] })}>
         <Icon name="send" size={18} color={goldButton.text} />

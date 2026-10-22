@@ -49,6 +49,8 @@ export const EXTRA_KEYS = [
   "qmc.shams.flex.v1",
   // brother/sister and age band of the onboarding (src/lib/identity.ts)
   "qmc.identity.v1",
+  // the tutor's memory, only the copy the learner allowed to sync (lib/tutor/next.ts MEMORY_SYNC_KEY)
+  "qmc.tutor.memory.sync.v1",
 ] as const;
 // Not synced on purpose: qmc.shams2.teacher.v1 (links and other people's student snapshots stay on the device),
 // qmc.shams2.pages.v1 (cache from the Quran API), qmc.shams2.onboarded.v1 (per device), qmc.shams.listenDays.v1 (listening days on/off: on this device only, nothing about it leaves the device), qmc.shams2.takes.v1 (index of
@@ -109,6 +111,8 @@ export const EXTRA_MERGE: Record<(typeof EXTRA_KEYS)[number], (a: unknown, b: un
   // a tie keeps this device's), missing fields come from the other copy
   "qmc.shams.flex.v1": (a, b) => (n(o(a).at) >= n(o(b).at) ? { ...o(b), ...o(a) } : { ...o(a), ...o(b) }),
   // brother/sister and age band (src/lib/identity.ts mergeIdentity): the newer choice wins, "asked" is kept from either side
+  // { items, at }: the newer write wins (an emptied copy after "stop syncing" removes the items on the other devices too)
+  "qmc.tutor.memory.sync.v1": (a, b) => (n(o(a).at) >= n(o(b).at) ? a ?? b : b),
   "qmc.identity.v1": (a, b) => { const x = o(a), y = o(b); const w = n(x.at) >= n(y.at) ? x : y; return { ...w, asked: x.asked === true || y.asked === true }; },
   "qmc.shams2.weeks.v1": (a, b) => { const out: Record<string, Obj> = { ...(o(b) as Record<string, Obj>) }; for (const [k, v] of Object.entries(o(a))) out[k] = out[k] ? higher(v, out[k], "count") : o(v); return out; },
   "qmc.shams2.grade.v1": (a, b) => {

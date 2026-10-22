@@ -18,6 +18,7 @@ import { AdabPillarCard, AdabTodayCard } from "./adab/Adab";
 import { useAdabText } from "./adab/text";
 import { ListenDaysCard } from "@/features/sisters/ui";
 import { useSis } from "@/features/sisters/state";
+import { CoachCard } from "@/features/tutor/CoachCard";
 
 // /shams/method – Shams Method 2.0: the classical hifz system (sabaq, sabqī, manzil, talaqqī, ʿarḍ, mutashābihāt,
 // darajāt) joined with learning science (spaced retrieval, interleaving), never ending. Everything here extends the
@@ -91,6 +92,8 @@ export function HubScreen() {
             {first ? <Briefing s={first.s} v={first.from} /> : null}
             <GoldButton title={s("openWird", { m: nf(m.wird.minutes) })} onPress={() => router.push("/shams/wird" as Href)} />
           </Card>
+          {/* the tutor's daily check-in from the learner's own figures (one calm message, hidden for the day on request) */}
+          <CoachCard />
           {/* pillar "Adab des Qurʾān-Trägers" (Shams 3.0): one adab of the day next to today's wird */}
           <AdabTodayCard />
           <GradeCard compact />
