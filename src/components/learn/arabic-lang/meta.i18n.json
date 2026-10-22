@@ -1,0 +1,211 @@
+{
+  "tr": {
+    "home": {
+      "title": "Arapçayı anlayın: A1–C1 dil kursu | Quran Masterclass",
+      "description": "Kur'an Arapçasını ve Modern Standart Arapçayı ilk cümlenizden ayetleri anlayarak okumaya kadar öğrenin: A1'den C1'e on yedi ünite, dilbilgisi, kökler, diyaloglar, Kur'an'ın en sık geçen 500 kelimesi, ünite testleri ve sertifikalar. Ücretsiz."
+    },
+    "certificate": {
+      "title": "Arapça dil kursu sertifikaları | Quran Masterclass",
+      "description": "Arapça dil kursunun A1, A2, B1, B2 ve C1 sertifikalarınız; her seviyenin doğrulanabilir sertifikasıyla birlikte."
+    },
+    "roots": {
+      "title": "Arapça kök gezgini: Kur'an'ın kelime aileleri | Quran Masterclass",
+      "description": "Bir Arapça kök girin ve Kur'an kelimeleri arasından kelime ailesini, her biri bir örnek ayetle birlikte görün."
+    },
+    "lesson": {
+      "title": "{title} (ünite {unit}, {level}) | Quran Masterclass",
+      "description": "“Arapçayı anlayın” Arapça dil kursunun {unit}. ünitesinden ({level}) bir ders; açıklama ve alıştırmalarla."
+    },
+    "testTitle": "Ünite testi {n}"
+  },
+  "ur": {
+    "home": {
+      "title": "عربی سمجھیں: A1 سے C1 تک زبان کا کورس | Quran Masterclass",
+      "description": "قرآنی اور جدید معیاری عربی سیکھیں، پہلے جملے سے آیات کو سمجھ کر پڑھنے تک: A1 سے C1 تک سترہ یونٹ، گرامر، جڑیں، مکالمے، قرآن کے 500 سب سے زیادہ استعمال ہونے والے الفاظ، یونٹ ٹیسٹ اور سرٹیفکیٹ۔ مفت۔"
+    },
+    "certificate": {
+      "title": "عربی زبان کے کورس کے سرٹیفکیٹ | Quran Masterclass",
+      "description": "عربی زبان کے کورس کے آپ کے A1، A2، B1، B2 اور C1 سرٹیفکیٹ، ہر سطح کے قابلِ تصدیق سرٹیفکیٹ کے ساتھ۔"
+    },
+    "roots": {
+      "title": "عربی جڑوں کا ایکسپلورر: قرآن کے الفاظ کے خاندان | Quran Masterclass",
+      "description": "کوئی عربی جڑ لکھیں اور قرآن کے ذخیرۂ الفاظ سے اس کے الفاظ کا خاندان دیکھیں، ہر لفظ کے ساتھ ایک مثالی آیت۔"
+    },
+    "lesson": {
+      "title": "{title} (یونٹ {unit}، {level}) | Quran Masterclass",
+      "description": "عربی زبان کے کورس “عربی سمجھیں” کے یونٹ {unit} ({level}) کا ایک سبق، وضاحت اور مشقوں کے ساتھ۔"
+    },
+    "testTitle": "یونٹ ٹیسٹ {n}"
+  },
+  "fa": {
+    "home": {
+      "title": "عربی را بفهمید: دورهٔ زبان A1 تا C1 | Quran Masterclass",
+      "description": "عربی قرآنی و عربی فصیح معاصر را از نخستین جمله تا خواندن آیات با فهم بیاموزید: هفده واحد از A1 تا C1، دستور، ریشه‌ها، گفت‌وگوها، 500 واژهٔ پرتکرار قرآن، آزمون‌های واحد و گواهی‌ها. رایگان."
+    },
+    "certificate": {
+      "title": "گواهی‌های دورهٔ زبان عربی | Quran Masterclass",
+      "description": "گواهی‌های A1، A2، B1، B2 و C1 شما در دورهٔ زبان عربی، همراه با گواهی قابل تأیید هر سطح."
+    },
+    "roots": {
+      "title": "کاوشگر ریشه‌های عربی: خانوادهٔ واژه‌های قرآن | Quran Masterclass",
+      "description": "یک ریشهٔ عربی وارد کنید و خانوادهٔ واژه‌های آن را از واژگان قرآن ببینید، هر یک با آیه‌ای نمونه."
+    },
+    "lesson": {
+      "title": "{title} (واحد {unit}، {level}) | Quran Masterclass",
+      "description": "یک درس از واحد {unit} ({level}) دورهٔ زبان عربی «عربی را بفهمید»، با توضیح و تمرین."
+    },
+    "testTitle": "آزمون واحد {n}"
+  },
+  "ps": {
+    "home": {
+      "title": "عربي ژبه وپوهېږئ: د ژبې کورس له A1 تر C1 | Quran Masterclass",
+      "description": "قرآني او نوې معیاري عربي له لومړۍ جملې تر هغه زده کړئ چې آیتونه په پوهې ولولئ: له A1 تر C1 اوولس برخې، ګرامر، ریښې، ډیالوګونه، د قرآن 500 تر ټولو ډېر کارېدونکې کلمې، د برخو ازموینې او سندونه. وړیا."
+    },
+    "certificate": {
+      "title": "د عربي ژبې کورس سندونه | Quran Masterclass",
+      "description": "ستاسو د عربي ژبې کورس A1، A2، B1، B2 او C1 سندونه، د هرې کچې د تایید وړ سند سره."
+    },
+    "roots": {
+      "title": "د عربي ریښو سپړنه: د قرآن د کلمو کورنۍ | Quran Masterclass",
+      "description": "یوه عربي ریښه ولیکئ او د قرآن د لغتونو له ډلې یې د کلمو کورنۍ وګورئ، هره د بېلګې آیت سره."
+    },
+    "lesson": {
+      "title": "{title} (برخه {unit}، {level}) | Quran Masterclass",
+      "description": "د «عربي ژبه وپوهېږئ» د عربي ژبې کورس د برخې {unit} ({level}) لوست، له تشریح او تمرینونو سره."
+    },
+    "testTitle": "د برخې ازموینه {n}"
+  },
+  "fr": {
+    "home": {
+      "title": "Comprendre l'arabe : cours de langue de A1 à C1 | Quran Masterclass",
+      "description": "Apprenez l'arabe coranique et l'arabe standard moderne, de votre première phrase à la lecture des versets avec compréhension : dix-sept unités de A1 à C1, grammaire, racines, dialogues, les 500 mots les plus fréquents du Coran, tests d'unité et certificats. Gratuit."
+    },
+    "certificate": {
+      "title": "Certificats du cours de langue arabe | Quran Masterclass",
+      "description": "Vos certificats A1, A2, B1, B2 et C1 du cours de langue arabe, avec le certificat vérifiable de chaque niveau."
+    },
+    "roots": {
+      "title": "Explorateur de racines arabes : les familles de mots du Coran | Quran Masterclass",
+      "description": "Saisissez une racine arabe et découvrez sa famille de mots tirée du vocabulaire du Coran, chaque mot avec un verset d'exemple."
+    },
+    "lesson": {
+      "title": "{title} (unité {unit}, {level}) | Quran Masterclass",
+      "description": "Une leçon de l'unité {unit} ({level}) du cours de langue arabe « Comprendre l'arabe », avec explications et exercices."
+    },
+    "testTitle": "Test d'unité {n}"
+  },
+  "es": {
+    "home": {
+      "title": "Comprenda el árabe: curso de idioma de A1 a C1 | Quran Masterclass",
+      "description": "Aprenda árabe coránico y árabe estándar moderno desde su primera frase hasta leer aleyas con comprensión: diecisiete unidades de A1 a C1, gramática, raíces, diálogos, las 500 palabras más frecuentes del Corán, pruebas de unidad y certificados. Gratis."
+    },
+    "certificate": {
+      "title": "Certificados del curso de árabe | Quran Masterclass",
+      "description": "Sus certificados A1, A2, B1, B2 y C1 del curso de árabe, con el certificado verificable de cada nivel."
+    },
+    "roots": {
+      "title": "Explorador de raíces árabes: familias de palabras del Corán | Quran Masterclass",
+      "description": "Introduzca una raíz árabe y vea su familia de palabras del vocabulario del Corán, cada una con una aleya de ejemplo."
+    },
+    "lesson": {
+      "title": "{title} (unidad {unit}, {level}) | Quran Masterclass",
+      "description": "Una lección de la unidad {unit} ({level}) del curso de árabe «Comprenda el árabe», con explicación y ejercicios."
+    },
+    "testTitle": "Prueba de unidad {n}"
+  },
+  "id": {
+    "home": {
+      "title": "Memahami bahasa Arab: kursus bahasa A1 sampai C1 | Quran Masterclass",
+      "description": "Belajar bahasa Arab Al-Qur’an dan Arab Standar Modern dari kalimat pertama hingga membaca ayat dengan pemahaman: tujuh belas unit dari A1 sampai C1, tata bahasa, akar kata, dialog, 500 kata Al-Qur’an yang paling sering muncul, tes unit, dan sertifikat. Gratis."
+    },
+    "certificate": {
+      "title": "Sertifikat kursus bahasa Arab | Quran Masterclass",
+      "description": "Sertifikat A1, A2, B1, B2, dan C1 dari kursus bahasa Arab Anda, beserta sertifikat yang dapat diverifikasi untuk setiap level."
+    },
+    "roots": {
+      "title": "Penjelajah akar kata Arab: keluarga kata Al-Qur’an | Quran Masterclass",
+      "description": "Masukkan akar kata Arab dan lihat keluarga katanya dari kosakata Al-Qur’an, masing-masing dengan contoh ayat."
+    },
+    "lesson": {
+      "title": "{title} (unit {unit}, {level}) | Quran Masterclass",
+      "description": "Satu pelajaran unit {unit} ({level}) dari kursus bahasa Arab “Memahami bahasa Arab”, dengan penjelasan dan latihan."
+    },
+    "testTitle": "Tes unit {n}"
+  },
+  "ms": {
+    "home": {
+      "title": "Fahami bahasa Arab: kursus bahasa A1 hingga C1 | Quran Masterclass",
+      "description": "Pelajari bahasa Arab al-Quran dan Bahasa Arab Moden Standard dari ayat Arab pertama anda hingga membaca ayat al-Quran dengan faham: tujuh belas unit dari A1 hingga C1, tatabahasa, kata akar, dialog, 500 perkataan al-Quran yang paling kerap muncul, ujian unit dan sijil. Percuma."
+    },
+    "certificate": {
+      "title": "Sijil kursus bahasa Arab | Quran Masterclass",
+      "description": "Sijil A1, A2, B1, B2 dan C1 kursus bahasa Arab anda, dengan sijil yang boleh disahkan bagi setiap tahap."
+    },
+    "roots": {
+      "title": "Penjelajah kata akar Arab: keluarga perkataan al-Quran | Quran Masterclass",
+      "description": "Masukkan satu kata akar Arab dan lihat keluarga perkataannya daripada kosa kata al-Quran, setiap satu dengan contoh ayat."
+    },
+    "lesson": {
+      "title": "{title} (unit {unit}, {level}) | Quran Masterclass",
+      "description": "Satu pelajaran unit {unit} ({level}) kursus bahasa Arab “Fahami bahasa Arab”, dengan penerangan dan latihan."
+    },
+    "testTitle": "Ujian unit {n}"
+  },
+  "bn": {
+    "home": {
+      "title": "আরবি বুঝুন: A1 থেকে C1 ভাষা কোর্স | Quran Masterclass",
+      "description": "প্রথম বাক্য থেকে বুঝে আয়াত পড়া পর্যন্ত কুরআনি ও আধুনিক প্রমিত আরবি শিখুন: A1 থেকে C1 পর্যন্ত সতেরোটি ইউনিট, ব্যাকরণ, শব্দমূল, সংলাপ, কুরআনের সবচেয়ে বেশি ব্যবহৃত 500 শব্দ, ইউনিট পরীক্ষা ও সার্টিফিকেট। বিনামূল্যে।"
+    },
+    "certificate": {
+      "title": "আরবি ভাষা কোর্সের সার্টিফিকেট | Quran Masterclass",
+      "description": "আরবি ভাষা কোর্সের আপনার A1, A2, B1, B2 ও C1 সার্টিফিকেট, প্রতিটি স্তরের যাচাইযোগ্য সার্টিফিকেটসহ।"
+    },
+    "roots": {
+      "title": "আরবি শব্দমূল অনুসন্ধান: কুরআনের শব্দ-পরিবার | Quran Masterclass",
+      "description": "একটি আরবি শব্দমূল লিখুন এবং কুরআনের শব্দভান্ডার থেকে তার শব্দ-পরিবার দেখুন, প্রতিটির সঙ্গে একটি উদাহরণ আয়াত।"
+    },
+    "lesson": {
+      "title": "{title} (ইউনিট {unit}, {level}) | Quran Masterclass",
+      "description": "আরবি ভাষা কোর্স «আরবি বুঝুন» – ইউনিট {unit} ({level}): ব্যাখ্যা ও অনুশীলনীসহ একটি পাঠ।"
+    },
+    "testTitle": "ইউনিট পরীক্ষা {n}"
+  },
+  "ru": {
+    "home": {
+      "title": "Понимать арабский: языковой курс от A1 до C1 | Quran Masterclass",
+      "description": "Изучайте арабский Корана и современный литературный арабский от первого предложения до чтения аятов с пониманием: семнадцать разделов от A1 до C1, грамматика, корни, диалоги, 500 самых частых слов Корана, тесты и сертификаты. Бесплатно."
+    },
+    "certificate": {
+      "title": "Сертификаты курса арабского языка | Quran Masterclass",
+      "description": "Ваши сертификаты A1, A2, B1, B2 и C1 курса арабского языка, с проверяемым сертификатом каждого уровня."
+    },
+    "roots": {
+      "title": "Поиск арабских корней: семьи слов Корана | Quran Masterclass",
+      "description": "Введите арабский корень и увидите его семью слов из лексики Корана, у каждого слова – пример аята."
+    },
+    "lesson": {
+      "title": "{title} (раздел {unit}, {level}) | Quran Masterclass",
+      "description": "Урок раздела {unit} ({level}) курса арабского языка «Понимать арабский» с объяснением и упражнениями."
+    },
+    "testTitle": "Тест по разделу {n}"
+  },
+  "zh": {
+    "home": {
+      "title": "理解阿拉伯语：A1 至 C1 语言课程 | Quran Masterclass",
+      "description": "从第一个句子到读懂经文，学习古兰经阿拉伯语与现代标准阿拉伯语：A1 至 C1 共十七个单元，含语法、词根、对话、最常见的 500 个古兰经词语、单元测验与证书。免费。"
+    },
+    "certificate": {
+      "title": "阿拉伯语课程证书 | Quran Masterclass",
+      "description": "您在阿拉伯语课程中获得的 A1、A2、B1、B2 与 C1 证书，每个级别均附可验证的证书。"
+    },
+    "roots": {
+      "title": "阿拉伯语词根查询：古兰经的词族 | Quran Masterclass",
+      "description": "输入一个阿拉伯语词根，即可看到古兰经词汇中该词根的词族，每个词都附一节例句经文。"
+    },
+    "lesson": {
+      "title": "{title}（第 {unit} 单元，{level}） | Quran Masterclass",
+      "description": "阿拉伯语课程“理解阿拉伯语”第 {unit} 单元（{level}）的一课，含讲解与练习。"
+    },
+    "testTitle": "第 {n} 单元测验"
+  }
+}

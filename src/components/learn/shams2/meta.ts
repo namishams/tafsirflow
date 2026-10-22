@@ -1,5 +1,8 @@
 // SEO texts of the Shams Method 2.0 pages (server-safe). German (Sie-form), English and Arabic; other languages use
 // English. {s} is a surah name where the page has one.
+// Further languages: meta.i18n.json next to this file (see ../seoI18n.ts), English for every key they lack.
+import I18N from "./meta.i18n.json";
+import { seoOver } from "@/components/learn/seoI18n";
 type M = { title: string; description: string };
 export type S2Page = "method" | "wird" | "quality" | "mutashabihat" | "weak" | "tadabbur" | "darajat" | "ard" | "week" | "handbook" | "welcome" | "next" | "talaqqi" | "teacher"
   | "program" | "plans" | "review";
@@ -64,6 +67,7 @@ const T: Record<"en" | "de" | "ar", Record<S2Page, M>> = {
   },
 };
 export function s2Meta(locale: string, page: S2Page, v: { s?: string } = {}): M {
-  const m = T[locale === "de" || locale === "ar" ? locale : "en"][page];
+  const own = locale === "de" || locale === "ar" ? null : seoOver(T.en, I18N, locale);
+  const m = (own ?? T[locale === "de" || locale === "ar" ? locale : "en"])[page];
   return { title: m.title.replaceAll("{s}", v.s ?? ""), description: m.description.replaceAll("{s}", v.s ?? "") };
 }

@@ -2506,5 +2506,2252 @@
     "proLater": "Ayetlere dönün",
     "readMore": "Devamını okuyun",
     "railsTitle": "Hikâyeler"
+  },
+  "reciterPathContent": {
+    "levels": {
+      "1": {
+        "title": "Temeller",
+        "lead": "Her harfin nereden çıktığı, nitelikleri ve hareke işaretleri."
+      },
+      "2": {
+        "title": "Sakin nun ve tenvin",
+        "lead": "Sakin nun ve tenvin için dört kural."
+      },
+      "3": {
+        "title": "Sakin mim ve gunne",
+        "lead": "Sakin mim ile şeddeli nun ve mimin genizden gelen sesi."
+      },
+      "4": {
+        "title": "Med: uzatma",
+        "lead": "Tabii uzatma ve hemze ya da sükûndan doğan daha uzun med çeşitleri."
+      },
+      "5": {
+        "title": "Kalkale, lam ve ra",
+        "lead": "Yankı harfleri, harf-i tarifin ve Allah isminin lamı, kalın ve ince ra."
+      },
+      "6": {
+        "title": "Vakıf ve uygulamalı tilavet",
+        "lead": "İyi durmak ve iyi başlamak, ardından Amme cüzünden tam sureler."
+      }
+    },
+    "rules": {
+      "makharij": {
+        "name": "Mahreç",
+        "short": "Harflerin çıkış yerleri"
+      },
+      "sifat": {
+        "name": "Sıfatlar",
+        "short": "Harflerin nitelikleri"
+      },
+      "harakat": {
+        "name": "Hareke",
+        "short": "Kısa ünlüler"
+      },
+      "shadda": {
+        "name": "Şedde",
+        "short": "İkilenmiş harf"
+      },
+      "sukun": {
+        "name": "Sükûn",
+        "short": "Ünlü yok"
+      },
+      "izhar": {
+        "name": "İzhar",
+        "short": "Açık nun"
+      },
+      "idgham": {
+        "name": "Gunneli idğam",
+        "short": "Genizden sesle birleşme"
+      },
+      "idghamNoGhunnah": {
+        "name": "Gunnesiz idğam",
+        "short": "Genizden ses olmadan birleşme"
+      },
+      "iqlab": {
+        "name": "İklâb",
+        "short": "Nun, mim sesine dönüşür"
+      },
+      "ikhfa": {
+        "name": "İhfâ",
+        "short": "Gizlenen nun"
+      },
+      "idghamShafawi": {
+        "name": "İdğâm-ı şefevî",
+        "short": "Mim, mim ile birleşir"
+      },
+      "ikhfaShafawi": {
+        "name": "İhfâ-i şefevî",
+        "short": "Ba harfinden önce gizli mim"
+      },
+      "izharShafawi": {
+        "name": "İzhâr-ı şefevî",
+        "short": "Açık mim"
+      },
+      "ghunnah": {
+        "name": "Gunne",
+        "short": "Şeddeli nun veya mim"
+      },
+      "maddTabii": {
+        "name": "Med-i tabîî",
+        "short": "Tabii med, 2 hareke"
+      },
+      "maddMuttasil": {
+        "name": "Med-i muttasıl",
+        "short": "Hemze aynı kelimede"
+      },
+      "maddMunfasil": {
+        "name": "Med-i munfasıl",
+        "short": "Hemze sonraki kelimede"
+      },
+      "maddLazim": {
+        "name": "Med-i lâzım",
+        "short": "Kalıcı sükûn, 6 hareke"
+      },
+      "maddArid": {
+        "name": "Med-i ârız li's-sükûn",
+        "short": "Sükûn yalnızca durunca"
+      },
+      "qalqalah": {
+        "name": "Kalkale",
+        "short": "ق ط ب ج د yankısı"
+      },
+      "lamShamsiyyah": {
+        "name": "Şemsî lam",
+        "short": "Harf-i tarifin okunmayan lamı"
+      },
+      "lamQamariyyah": {
+        "name": "Kamerî lam",
+        "short": "Harf-i tarifin okunan lamı"
+      },
+      "lamAllahHeavy": {
+        "name": "Allah lafzında kalın lam",
+        "short": "Üstün veya ötreden sonra"
+      },
+      "lamAllahLight": {
+        "name": "Allah lafzında ince lam",
+        "short": "Esreden sonra"
+      },
+      "raHeavy": {
+        "name": "Kalın ra",
+        "short": "Tefhîm"
+      },
+      "raLight": {
+        "name": "İnce ra",
+        "short": "Terkîk"
+      },
+      "waqf": {
+        "name": "Vakıf",
+        "short": "Durma"
+      }
+    },
+    "units": {
+      "1-1": {
+        "title": "Arapça harfler ve mahreçleri",
+        "intro": "Her harfin çıktığı bir yer vardır: ağız ve boğazdaki boşluk (med harfleri için), boğaz, dil, dudaklar ve geniz. Bir harf doğru yerinden çıktığında kendi sesini korur ve komşusuyla karışmaz.",
+        "points": [
+          "Boğaz: ء ه boğazın en derin yerinden, ع ح orta kısmından, غ خ üst kısmından çıkar.",
+          "Dil: ق ve ك arka kısımdan, ج ش ي orta kısımdan; ت د ط, ث ذ ظ, س ص ز ve ل ن ر için dil ucu kullanılır.",
+          "Dudaklar: ف (alt dudak ve üst dişler), ب م و ise iki dudakla çıkar.",
+          "Geniz: nun ile mimin gunnesi.",
+          "Her örnek kelimeyi birkaç kez dinleyin; önce yalnızca hedef harfi söyleyin, sonra kelimenin tamamını."
+        ],
+        "check": [
+          "Beş mahreç bölgesinin adını söyleyebiliyorum.",
+          "ح ile ه, ع ile ء harflerini ayırt ediyorum.",
+          "ق harfini ك harfinden daha derin okuyorum."
+        ],
+        "mcq": [
+          {
+            "q": "Boğazın en derininden hangi harf çıkar?",
+            "options": [
+              "ء",
+              "خ",
+              "ق",
+              "ك"
+            ],
+            "answer": 0
+          },
+          {
+            "q": "Hangi harfler iki dudakla çıkar?",
+            "options": [
+              "ب م و",
+              "ف ث ذ",
+              "ت د ط",
+              "س ص ز"
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "1-2": {
+        "title": "Sıfatlar: harflerin nitelikleri",
+        "intro": "İki harf aynı mahrece sahip olsa da nitelikleri yüzünden farklı ses verebilir. Bazı harfler nefesin akmasına izin verir, bazıları nefesi tutar; bazıları dilin arkasını yükselterek dolgun, bazıları ise hafif okunur.",
+        "points": [
+          "Hems (nefes akar): ف ح ث ه ش خ ص س ك ت. Cehr (nefes tutulur): geri kalan harfler.",
+          "İstiʿlâ (kalın, dilin arkası yükselir): خ ص ض غ ط ق ظ. Bu harfler her zaman dolgun okunur.",
+          "Safîr (ıslık sesi): ص ز س.",
+          "Kalkale (sakin olunca yankı): ق ط ب ج د, 5. seviyede çalışılır."
+        ],
+        "check": [
+          "Yedi kalın harfi esreli olsa bile dolgun okuyorum.",
+          "ه ve ح harflerinde nefesi akıtıyorum.",
+          "س ve ص harflerinin ıslık sesini duyabiliyorum."
+        ],
+        "mcq": [
+          {
+            "q": "Yedi kalın harften (istiʿlâ) biri hangisidir?",
+            "options": [
+              "ق",
+              "ك",
+              "ت",
+              "س"
+            ],
+            "answer": 0
+          },
+          {
+            "q": "Hangi harfler ıslık niteliğine (safîr) sahiptir?",
+            "options": [
+              "ص ز س",
+              "ق ط ب",
+              "ء ه ع",
+              "ل ن ر"
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "1-3": {
+        "title": "Harekeler, sükûn ve şedde",
+        "intro": "Üstün, esre ve ötre, bir hareke uzunluğunda kısa ünlülerdir. Sükûn, harfin ünlüsüz olduğunu ve önceki harfe bağlandığını gösterir. Şedde bir harfi ikiler: birincisi sakindir, ikincisi ünlüyü taşır.",
+        "points": [
+          "Kısa ünlüleri kısa tutun; onları med gibi uzatmayın.",
+          "Sükûnlu harfi, fazladan ünlü katmadan temiz bir şekilde kapatın.",
+          "Şeddeli harfte harfi kısa bir an tutun, sonra ünlüsüyle serbest bırakın."
+        ],
+        "check": [
+          "Kısa ünlülerim kısa kalıyor.",
+          "Sükûnlu harfleri fazladan ünlü katmadan kapatıyorum.",
+          "Şeddeli her harfi tutuyorum."
+        ],
+        "mcq": [
+          {
+            "q": "Şedde ne anlama gelir?",
+            "options": [
+              "Harf ikilenir",
+              "Harf sessizdir",
+              "Ünlü uzatılır",
+              "Harf atlanır"
+            ],
+            "answer": 0
+          },
+          {
+            "q": "Kısa bir ünlü ne kadar sürer?",
+            "options": [
+              "Bir hareke",
+              "İki hareke",
+              "Dört hareke",
+              "Altı hareke"
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "2-1": {
+        "title": "İzhar: açık nun",
+        "intro": "Sakin nun veya tenvinden sonra altı boğaz harfinden biri (ء ه ع ح غ خ) geldiğinde nun, fazladan genizden ses katılmadan açıkça okunur.",
+        "points": [
+          "Boğaz harfleri dil ucundan uzaktır; bu yüzden nun kendiliğinden açık kalır.",
+          "Nun ile sonraki harf arasında durmayın."
+        ],
+        "check": [
+          "Nundan sonra gelen altı boğaz harfini tanıyorum.",
+          "Nunum açık ve kısa; gunne katmıyorum."
+        ],
+        "mcq": [
+          {
+            "q": "Sakin nundan sonra hangi harf izhara yol açar?",
+            "options": [
+              "ح",
+              "ب",
+              "ي",
+              "ت"
+            ],
+            "answer": 0
+          },
+          {
+            "q": "Kaç harf izhara yol açar?",
+            "options": [
+              "Altı",
+              "Dört",
+              "On beş",
+              "Bir"
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "2-2": {
+        "title": "İdğam: birleşme",
+        "intro": "Sakin nun veya tenvinden sonra, sonraki kelimede ي ر م ل و ن harflerinden biri geldiğinde nun o harfle birleşir. ي ن م و ile iki hareke süren genizden bir ses kalır; ل ve ر ile tamamen birleşir.",
+        "points": [
+          "İdğam iki kelime arasında olur; tek kelimenin içinde nun açık kalır.",
+          "Gunneli: ي ن م و. Gunnesiz: ل ر."
+        ],
+        "check": [
+          "ي ن م و harflerinden önce gunneyi iki hareke tutuyorum.",
+          "ل ve ر harflerinde nunu tamamen birleştiriyorum."
+        ],
+        "mcq": [
+          {
+            "q": "Hangi harfler gunnesiz birleşir?",
+            "options": [
+              "ل ر",
+              "ي و",
+              "م ن",
+              "ب ت"
+            ],
+            "answer": 0
+          },
+          {
+            "q": "İdğamdaki gunne ne kadar sürer?",
+            "options": [
+              "İki hareke",
+              "Bir hareke",
+              "Dört hareke",
+              "Hiç yoktur"
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "2-3": {
+        "title": "İklâb ve ihfâ",
+        "intro": "ب harfinden önce nun, gunneli gizli bir mime dönüşür (iklâb). Geri kalan on beş harften önce nun gizlenir: dil sonraki harfe hazırlanırken iki hareke süren genizden bir ses kalır (ihfâ).",
+        "points": [
+          "İklâb: dudaklar bastırmadan, yumuşakça kapanır.",
+          "İhfâ: ses açık ile birleşik arasında durur ve sonraki harfin rengini alır."
+        ],
+        "check": [
+          "ب harfinden önce nunu hafif bir mime çeviriyorum.",
+          "İhfâ harflerinden önce nunu gizliyor ve iki hareke tutuyorum."
+        ],
+        "mcq": [
+          {
+            "q": "Hangi harf iklâba yol açar?",
+            "options": [
+              "ب",
+              "ق",
+              "ل",
+              "ه"
+            ],
+            "answer": 0
+          },
+          {
+            "q": "Kaç harf ihfâya yol açar?",
+            "options": [
+              "On beş",
+              "Altı",
+              "İki",
+              "Dört"
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "3-1": {
+        "title": "Sakin mimin kuralları",
+        "intro": "Sakin mimin üç kuralı vardır: kendisinden sonra gelen mimle gunneyle birleşir (idğâm-ı şefevî), ب harfinden önce gunneyle gizlenir (ihfâ-i şefevî), diğer tüm harflerden önce açık kalır (izhâr-ı şefevî).",
+        "points": [
+          "Mimi و ve ف harflerinden önce açık tutmaya özellikle dikkat edin.",
+          "İhfâ-i şefevîde dudaklar hafifçe birbirine değer."
+        ],
+        "check": [
+          "Mim mimle buluştuğunda gunneyi tutuyorum.",
+          "Mimi و ve ف harflerinden önce açık tutuyorum."
+        ],
+        "mcq": [
+          {
+            "q": "Sakin mim ب harfinden önce ne olur?",
+            "options": [
+              "İhfâ-i şefevî",
+              "İzhâr-ı şefevî",
+              "İklâb",
+              "Kalkale"
+            ],
+            "answer": 0
+          },
+          {
+            "q": "Sakin mim hangi harflerden önce açık okunur?",
+            "options": [
+              "م ve ب dışındaki tüm harfler",
+              "Yalnızca boğaz harfleri",
+              "Yalnızca ل ve ر",
+              "Hiçbirinden önce"
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "3-2": {
+        "title": "Şeddeli nun ve mimin gunnesi",
+        "intro": "Şeddeli her nun veya mim, iki hareke süren tam bir gunne taşır. Tilavetteki en güçlü genizden sestir.",
+        "points": [
+          "Sesi iki hareke boyunca genizde bekletin.",
+          "Hızlı okumada onu kısaltmayın."
+        ],
+        "check": [
+          "Her نّ ve مّ üzerinde iki hareke tutuyorum."
+        ],
+        "mcq": [
+          {
+            "q": "Şeddeli nunun gunnesi ne kadar sürer?",
+            "options": [
+              "İki hareke",
+              "Altı hareke",
+              "Bir hareke",
+              "Hiç yoktur"
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "4-1": {
+        "title": "Med-i tabîî: doğal uzatma",
+        "intro": "Med harfleri; üstünlü harften sonra gelen elif, ötreli harften sonra gelen sakin vav ve esreli harften sonra gelen sakin yâ harfidir. Arkalarından hemze veya sükûn gelmezse iki hareke uzatılırlar, ne fazla ne eksik.",
+        "points": [
+          "Eşit aralıklarla sayın; iki hareke, yaklaşık iki kısa ünlünün süresi kadardır.",
+          "Tilavet boyunca aynı uzunluğu koruyun."
+        ],
+        "check": [
+          "Med-i tabîîyi tam iki hareke uzatıyorum."
+        ],
+        "mcq": [
+          {
+            "q": "Med-i tabîî ne kadar uzatılır?",
+            "options": [
+              "İki hareke",
+              "Dört hareke",
+              "Altı hareke",
+              "Bir hareke"
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "4-2": {
+        "title": "Med-i muttasıl ve munfasıl",
+        "intro": "Aynı kelimede med harfinden sonra hemze gelirse med bitişiktir (muttasıl) ve dört veya beş hareke uzatılır. Hemze sonraki kelimeyi başlatıyorsa med ayrıktır (munfasıl); Şâtıbiyye yoluyla Hafs rivayetinde bu da dört veya beş hareke uzatılır.",
+        "points": [
+          "Bir uzunluk seçin ve baştan sona koruyun.",
+          "Muttasıl vaciptir; munfasılın diğer rivayet yollarında kısaltılmasına izin verilmiştir."
+        ],
+        "check": [
+          "Hemzenin aynı kelimede mi, sonraki kelimede mi olduğunu görebiliyorum.",
+          "Seçtiğim uzunluğu tutarlı biçimde koruyorum."
+        ],
+        "mcq": [
+          {
+            "q": "Med-i muttasılda hemze …",
+            "options": [
+              "aynı kelimededir",
+              "sonraki kelimededir",
+              "yoktur",
+              "ayetin başındadır"
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "4-3": {
+        "title": "Med-i lâzım ve med-i ârız",
+        "intro": "Med harfinden sonra kalıcı bir sükûn veya şedde gelirse med lâzımdır ve her zaman altı hareke uzatılır. Sükûn yalnızca kelimenin sonunda durmaktan kaynaklanıyorsa med ârız li's-sükûndur: iki, dört veya altı hareke.",
+        "points": [
+          "Med-i lâzım: her zaman altı hareke.",
+          "Med-i ârız: yalnızca durduğunuzda; devam ederseniz tabii med olur."
+        ],
+        "check": [
+          "Med-i lâzımı altı hareke uzatıyorum.",
+          "Med-i ârız için iki, dört veya altı harekeden birini seçiyor ve onu koruyorum."
+        ],
+        "mcq": [
+          {
+            "q": "Med-i lâzım ne kadar uzatılır?",
+            "options": [
+              "Altı hareke",
+              "İki hareke",
+              "Dört hareke",
+              "Bir hareke"
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "5-1": {
+        "title": "Kalkale: yankı",
+        "intro": "ق ط ب ج د harfleri sükûnlu olduklarında hafif bir yankı yapar. Yankı kelimenin ortasında daha hafif, ayet sonunda harfin üzerinde dururken daha güçlüdür.",
+        "points": [
+          "Harfi ünlü katmadan bırakın.",
+          "Yankı kendinden önceki ünlüye doğru yönelir, asla tam bir üstüne dönüşmez."
+        ],
+        "check": [
+          "Beş harfi sakin olduklarında yankılıyorum.",
+          "Durduğumda yankım daha güçlü oluyor."
+        ],
+        "mcq": [
+          {
+            "q": "Kalkale harfleri hangi gruptur?",
+            "options": [
+              "ق ط ب ج د",
+              "ي ر م ل و ن",
+              "ء ه ع ح غ خ",
+              "ص ز س"
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "5-2": {
+        "title": "Lam kuralları",
+        "intro": "Belirlilik takısının (harf-i tarif) lamı on dört harften önce okunur (kamerî), diğer on dört harften önce sonraki harfe katılır (şemsî). Allah lafzındaki lam, üstün veya ötreden sonra kalın, esreden sonra ince okunur.",
+        "points": [
+          "Şemsî: sonraki harf şedde taşır.",
+          "Esreden sonra Allah: ince lam."
+        ],
+        "check": [
+          "Şemsî harflerden önce lamı sessiz bırakıyorum.",
+          "Allah lafzındaki lamı doğru biçimde kalın veya ince okuyorum."
+        ],
+        "mcq": [
+          {
+            "q": "Esreden sonra gelen Allah lafzındaki lam …",
+            "options": [
+              "ince okunur",
+              "kalın okunur",
+              "hiç okunmaz",
+              "şeddeli okunur"
+            ],
+            "answer": 0
+          },
+          {
+            "q": "Şemsî lamda lam …",
+            "options": [
+              "okunmaz",
+              "açık okunur",
+              "uzatılır",
+              "yankılanır"
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "5-3": {
+        "title": "Kalın ve ince ra",
+        "intro": "Ra, üstün veya ötreyle kalın, esreyle ince okunur. Sakin ra, kendinden önceki ünlüyü izler; kendinden sonra kalın bir harfin gelmesi gibi birkaç istisna vardır.",
+        "points": [
+          "Kalın: dilin arkası yükselir, ses dolgundur.",
+          "İnce: dil aşağıda kalır, ses incedir."
+        ],
+        "check": [
+          "Üstünlü ve ötreli ra harfini kalın okuyorum.",
+          "Esreli ra harfini ince okuyorum."
+        ],
+        "mcq": [
+          {
+            "q": "Esreli ra …",
+            "options": [
+              "ince okunur",
+              "kalın okunur",
+              "okunmaz",
+              "yankılanır"
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "6-1": {
+        "title": "Vakıf ve ibtidâ: durmak ve başlamak",
+        "intro": "Ayetin sonunda veya bir vakıf işaretinde durun, anlamın tamamlandığı yerden yeniden başlayın. Durunca son ünlü sükûna döner; üstün tenvin kısa bir elife dönüşür.",
+        "points": [
+          "Nefesiniz tükenmedikçe bir cümlenin ortasında durmayın; tükenirse geri dönüp anlamlı bir yerden başlayın.",
+          "Mushafınızda basılı vakıf işaretlerine uyun."
+        ],
+        "check": [
+          "Son harfte sükûnla duruyorum.",
+          "Nefesim tükendiğinde anlamlı bir yerden yeniden başlıyorum."
+        ],
+        "mcq": [
+          {
+            "q": "Durulurken son hareke genellikle …",
+            "options": [
+              "sükûna dönüşür",
+              "şeddeye dönüşür",
+              "meddeye dönüşür",
+              "tenvine dönüşür"
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "6-2": {
+        "title": "Uygulama: İhlâs, Felak, Nâs",
+        "intro": "Koruyucu üç sureyi ayet ayet okuyun: dinleyin, tekrarlayın, kendinizi kaydedip karşılaştırın. Öğrendiğiniz her kurala dikkat edin.",
+        "points": [
+          "Önce ayetin tamamını iki kez dinleyin.",
+          "Sonra kelime kelime, daha yavaş tekrarlayın.",
+          "Son olarak ayeti kaydedin ve kâri ile karşılaştırın."
+        ],
+        "check": [
+          "Her ayeti öğrendiğim kurallarla okuyorum.",
+          "Vakıflarım ayet sonlarına denk geliyor."
+        ],
+        "mcq": []
+      },
+      "6-3": {
+        "title": "Uygulama: Asr, Kevser, Fîl",
+        "intro": "Birçok kuralın bir arada geçtiği üç kısa sure: ihfâ, idğam, med ve kalkale. Aynı adımlarla üzerlerinde çalışın.",
+        "points": [
+          "Okumadan önce her ayetteki kuralları işaretleyin.",
+          "Ezberinizi sınamak için kelime kontrolünü kullanın."
+        ],
+        "check": [
+          "Her sureyi bakmadan okuyorum.",
+          "Med uzunluklarını tutarlı biçimde koruyorum."
+        ],
+        "mcq": []
+      }
+    }
+  },
+  "reciterPathExtra": {
+    "levels": {
+      "7": {
+        "title": "Makamlar: melodik dizilimler",
+        "lead": "Tilavette en sık duyulan yedi makama kulakla giriş. Yalnızca açıklama ve dinleme vardır; tecvid her zaman önce gelir."
+      },
+      "8": {
+        "title": "Nefes ve uzun ayetler",
+        "lead": "Karından nefes alın, başlamadan önce duraklarınızı planlayın ve uzun ayetleri anlamı bölmeden sürdürün."
+      },
+      "9": {
+        "title": "Kıraatler ve müteşâbih ayetler",
+        "lead": "On kıraat ve râvilerine genel bakış; her hafızı yanıltan benzer ayetler."
+      },
+      "10": {
+        "title": "Daha uzun sureler ve Masterclass tilaveti",
+        "lead": "Mülk, Yâsîn, Rahmân, Vâkıa ve Kehf; ardından sertifikalı son Masterclass tilaveti."
+      }
+    },
+    "units": {
+      "7-1": {
+        "title": "Makam nedir: Beyâtî, Sabâ, Hicâz",
+        "intro": "Makam, melodik bir dizilimdir: bir ses dizisi, bu sesler arasındaki tipik bir yol ve bir hava. Kâriler makamları anlamı taşımak için kullanır; harfleri ya da uzunlukları değiştirmek için asla. Beyâtî sakin ve oturaklıdır; tilaveti açmak ve bitirmek için sık kullanılır. Sabâ derin ve hüzünlü duyulur; uyarı ve keder ayetlerine uygundur. Hicâz'ın karakteristik geniş bir aralığı vardır; özlem dolu ve vakur duyulur.",
+        "points": [
+          "Beyâtî: alçaktan başlar ve yerleşir; birçok kâri tilaveti onunla açar.",
+          "Sabâ: ağır ve içli; ses, cümle sonlarında sanki çöker.",
+          "Hicâz: geniş ikili aralık uzak, özlem dolu bir renk verir.",
+          "Âlimler melodi öğrenmek konusunda farklı görüştedir; tecvidin ve tevazunun her melodiden önce geldiği konusunda ise hepsi hemfikirdir."
+        ],
+        "check": [
+          "Beyâtî, Sabâ ve Hicâz'ı kendi cümlelerimle anlatabiliyorum.",
+          "Fâtiha'yı iki farklı kâriden dinleyip havalarını karşılaştırıyorum."
+        ],
+        "mcq": [
+          {
+            "q": "Makam nedir?",
+            "options": [
+              "Kendine özgü sesleri ve havası olan melodik dizilim",
+              "Bir tecvid kuralı",
+              "Bir med çeşidi",
+              "Bir vakıf işareti"
+            ],
+            "answer": 0
+          },
+          {
+            "q": "Hangi makam tilaveti açmak için sık kullanılır?",
+            "options": [
+              "Beyâtî",
+              "Sabâ",
+              "Segâh",
+              "Acem"
+            ],
+            "answer": 0
+          },
+          {
+            "q": "Bir makam, medi kuralının ötesine uzatabilir mi?",
+            "options": [
+              "Hayır, tecvid her zaman önce gelir",
+              "Evet, güzellik için",
+              "Yalnızca Sabâ'da",
+              "Yalnızca dururken"
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "7-2": {
+        "title": "Rast, Nihâvend, Segâh ve Acem",
+        "intro": "Rast parlak ve vakurdur; çoğu zaman makamların babası diye anılır. Nihâvend yumuşaktır ve minör dizisine yakındır. Segâh, Batı müziğinin iki notası arasında kalan bir sesin üzerinde durur; yumuşak ve içe dönük duyulur. Acem parlaktır ve majör dizisine yakındır; sevinçli ayetlerde kullanılır. İsme değil, renge kulak verin: makamlar kulakla, hocalardan ve kayıtlardan öğrenilir.",
+        "points": [
+          "Rast: sağlam ve asil, çeyrek tonlar kullanır.",
+          "Nihâvend: yumuşak, düşünceli, minöre yakın.",
+          "Segâh: çeyrek tonluk bir ses üzerinde kurulu, samimi.",
+          "Acem: parlak ve açık, majöre yakın."
+        ],
+        "check": [
+          "Yedi makamın her biri için bir hava söyleyebiliyorum.",
+          "Bir kârinin bir makamdan diğerine geçtiği anı fark ediyorum."
+        ],
+        "mcq": [
+          {
+            "q": "Hangi makam çoğu zaman makamların babası diye anılır?",
+            "options": [
+              "Rast",
+              "Hicâz",
+              "Sabâ",
+              "Nihâvend"
+            ],
+            "answer": 0
+          },
+          {
+            "q": "Hangi makam Batı müziğindeki majör dizisine yakındır?",
+            "options": [
+              "Acem",
+              "Sabâ",
+              "Segâh",
+              "Beyâtî"
+            ],
+            "answer": 0
+          },
+          {
+            "q": "Hangi makam çeyrek tonluk bir ses üzerinde durur?",
+            "options": [
+              "Segâh",
+              "Acem",
+              "Nihâvend",
+              "Hicâz"
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "7-3": {
+        "title": "Dinleme atölyesi: tek bölüm, birkaç ses",
+        "intro": "Ayarlardan bir kâri seçin, bu ayetleri çalın; sonra kâriyi değiştirip yeniden dinleyin. Sesin nerede yükseldiğine, nerede dinlendiğine ve nasıl bir hava kurduğuna dikkat edin. Kayıt, önceki seviyelerdeki gibidir: melodiyi ancak harfler ve uzunluklar doğru olduktan sonra taklit edin.",
+        "points": [
+          "Taklit etmeden önce iki kez dinleyin.",
+          "Önce yavaş hızda, her seferinde tek bir cümleyi taklit edin.",
+          "Kaydınızı önce yalnızca tecvid yönünden, sonra melodi yönünden karşılaştırın."
+        ],
+        "check": [
+          "Aynı ayetlerde en az iki kâriyi karşılaştırdım.",
+          "Bir ayeti sakin ve dengeli bir melodiyle kaydettim."
+        ],
+        "mcq": [
+          {
+            "q": "Bir kâriyi taklit ederken önce neyi kontrol edersiniz?",
+            "options": [
+              "Harfleri ve uzunlukları",
+              "En yüksek notayı",
+              "Makamın adını",
+              "Hızı"
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "8-1": {
+        "title": "Nefes kontrolü",
+        "intro": "Nefesi göğse değil, aşağıya, karna alın. Ayetten önce sessizce doldurun; okurken havayı yavaş ve eşit biçimde bırakın. Ayetin ortasında kısa bir nefes, yalnızca anlamın durmaya izin verdiği yerde alınabilir; devam ederken asla nefes almayın, çünkü nefes almak durmak demektir.",
+        "points": [
+          "Dik oturun veya ayakta durun; nefes alırken omuzlarınız yerinde kalsın.",
+          "Alıştırma: dört hareke boyunca nefes alın, uzun bir medi altı hareke boyunca dengeli okuyun.",
+          "Nefes almak her zaman vakıf sayılır: usulüne uygun durun, sonra anlamlı bir yerden yeniden başlayın."
+        ],
+        "check": [
+          "Her ayetten önce burnumdan veya ağzımdan sessizce nefes alıyorum.",
+          "Altı harekelik bir medi dengeli tutabiliyorum."
+        ],
+        "mcq": [
+          {
+            "q": "Okurken nefes almak şu anlama gelir: …",
+            "options": [
+              "durmak (vakıf)",
+              "vakıf yapmadan kısa bir duraklama (sekte)",
+              "hiçbir şey",
+              "bir med"
+            ],
+            "answer": 0
+          },
+          {
+            "q": "Nefes nereden gelmelidir?",
+            "options": [
+              "Aşağıdan, karından",
+              "Yukarıdan, omuzlardan",
+              "Yalnızca burundan",
+              "Fark etmez"
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "8-2": {
+        "title": "Uzun bir ayeti planlamak",
+        "intro": "Uzun bir ayeti okumadan önce bir kez okuyun ve nerede duracağınızı işaretleyin: buna izin veren bir vakıf işaretinde ya da tamamlanmış bir cümlenin sonunda. Uygunsuz bir yerde durmak zorunda kalırsanız bir iki kelime geri dönüp anlam bütün kalacak biçimde yeniden başlayın. Kur'an'ın en uzun ayeti olan borç ayeti klasik alıştırmadır.",
+        "points": [
+          "Önce vakıf işaretlerinin altını çizin, sonra nefes noktalarınıza karar verin.",
+          "Kendinden önceki kelimeye bağlı bir kelimeyle yeni bir nefese başlamayın.",
+          "Plan oturana kadar daha yavaş hızı kullanın."
+        ],
+        "check": [
+          "Borç ayetini okumadan önce duraklarımı planladım.",
+          "Uygunsuz bir yerde durduğumda geri dönüp düzgünce yeniden başladım."
+        ],
+        "mcq": [
+          {
+            "q": "Cümlenin ortasında nefesiniz tükendi. Ne yaparsınız?",
+            "options": [
+              "Geri dönüp anlamın tam olduğu yerden yeniden başlarım",
+              "Sonraki kelimeden devam ederim",
+              "Sureye baştan başlarım",
+              "Cümleyi atlarım"
+            ],
+            "answer": 0
+          },
+          {
+            "q": "Uzun bir ayeti planlarken önce neyi işaretlersiniz?",
+            "options": [
+              "Vakıf işaretlerini",
+              "Makamı",
+              "Tenvini",
+              "Sayfa numarasını"
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "8-3": {
+        "title": "Uygulama: Âyetü'l-Kürsî ve Bakara'nın sonu",
+        "intro": "Âyetü'l-Kürsî'yi ve Bakara'nın son iki ayetini bir nefes planıyla okuyun. Med uzunluklarını bütün bölüm boyunca sabit tutun: başta dört hareke olan bir med-i munfasıl sonda da dört hareke kalır.",
+        "points": [
+          "Med-i munfasıl için tek bir uzunluk seçin ve onu koruyun.",
+          "Âyetü'l-Kürsî'de iki veya üç nefes noktası planlayın."
+        ],
+        "check": [
+          "Med uzunluklarım tutarlı kaldı.",
+          "Âyetü'l-Kürsî'yi planlı bir nefesle okudum."
+        ],
+        "mcq": [
+          {
+            "q": "Med-i munfasıl için dört hareke seçtiyseniz …",
+            "options": [
+              "baştan sona dört hareke okursunuz",
+              "değiştirebilirsiniz",
+              "sonda iki hareke okursunuz",
+              "yorulunca altı hareke okursunuz"
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "9-1": {
+        "title": "Yedi ve on kıraat",
+        "intro": "Kur'an, her biri bir usta kâriye nispet edilen ve iki ana râvi (rivayet) aracılığıyla aktarılan birkaç sahih kıraatle nakledilmiştir. Yedi kıraat şunlardır: Nâfi' (Kâlûn, Verş), İbn Kesîr (el-Bezzî, Kunbul), Ebû Amr (ed-Dûrî, es-Sûsî), İbn Âmir (Hişâm, İbn Zekvân), Âsım (Şu'be, Hafs), Hamza (Halef, Hallâd) ve el-Kisâî (Ebü'l-Hâris, ed-Dûrî). Ebû Ca'fer, Yakub ve Halef el-Âşir ile birlikte on olur. Bu uygulama bugün en yaygın rivayet olan Hafs an Âsım ile okur; Verş Kuzey ve Batı Afrika'da, Kâlûn Libya ve Tunus'ta, ed-Dûrî an Ebî Amr ise Sudan'ın bazı bölgelerinde yaygındır.",
+        "points": [
+          "Kıraat bir üstadın okuyuşudur; rivayet ise bir râvinin ondan aktardığı yoldur.",
+          "Bütün sahih kıraatler Kur'an'dır; hiçbiri bir lehçe hatası ya da sonradan eklenmiş bir şey değildir.",
+          "Başka bir rivayeti öğrenmek için o rivayette senedi olan bir hoca gerekir."
+        ],
+        "check": [
+          "Yedi kâriyi ve Âsım'ın iki râvisini sayabiliyorum.",
+          "Hangi rivayetle okuduğumu biliyorum."
+        ],
+        "mcq": [
+          {
+            "q": "Hafs şu kâriden aktarır: …",
+            "options": [
+              "Âsım",
+              "Nâfi'",
+              "İbn Kesîr",
+              "Hamza"
+            ],
+            "answer": 0
+          },
+          {
+            "q": "Verş ve Kâlûn şu kâriden aktarır: …",
+            "options": [
+              "Nâfi'",
+              "Ebû Amr",
+              "el-Kisâî",
+              "İbn Âmir"
+            ],
+            "answer": 0
+          },
+          {
+            "q": "ed-Dûrî ve es-Sûsî şu kâriden aktarır: …",
+            "options": [
+              "Ebû Amr",
+              "Âsım",
+              "Hamza",
+              "Yakub"
+            ],
+            "answer": 0
+          },
+          {
+            "q": "Ebû Ca'fer, Yakub ve Halef ile birlikte kaç kıraat sayılır?",
+            "options": [
+              "On",
+              "Yedi",
+              "On dört",
+              "Dört"
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "9-2": {
+        "title": "Farkların açıklaması",
+        "intro": "Kıraatler arasındaki farklar iki türlüdür. Bir kısmı yalnızca sesle ilgilidir: Verş, med-i munfasılı altı hareke yapar, hemzeyi kendinden önceki sakin harfe aktarır (nakil) ve bazı elifleri ye sesine doğru yaklaştırır (takîl); Kâlûn çoğul mimini uzun bir u sesine bağlayabilir (sılet-i mim). Diğerleri kelimeyle ilgilidir: Fâtiha'nın 4. ayetinde Âsım ve el-Kisâî uzun a ile okur, anlamı “sahip” olur; Nâfi' ve diğerleri kısa okur, anlamı “hükümdar” olur; her iki anlam da doğrudur. Bakara'nın 9. ve 10. ayetlerinde diğer kâriler, Hafs'tan bir harf ya da kelimenin gövdesi bakımından farklı biçimler okur. Buradaki ayetleri Hafs rivayetiyle dinleyin, diğer kıraatler için açıklamayı okuyun.",
+        "points": [
+          "Ses farkları: med uzunlukları, hemze, imâle, râ'nın tefhîmi.",
+          "Kelime farkları: uzun bir ünlü, şeddeli bir harf, fiilin farklı bir şahsı.",
+          "Bunu yapacak bilgiye sahip olmadan tek bir tilavet içinde rivayetleri asla karıştırmayın."
+        ],
+        "check": [
+          "Fâtiha'nın 4. ayetindeki iki kıraati açıklayabiliyorum.",
+          "Verş'in iki ses özelliğini sayabiliyorum."
+        ],
+        "mcq": [
+          {
+            "q": "Verş'te med-i munfasılın uzunluğu: …",
+            "options": [
+              "altı hareke",
+              "iki hareke",
+              "med yok",
+              "bir hareke"
+            ],
+            "answer": 0
+          },
+          {
+            "q": "Fâtiha 1:4'te uzun a ile okunan şekil şu anlama gelir: …",
+            "options": [
+              "sahip",
+              "hükümdar",
+              "Rab",
+              "yargıç"
+            ],
+            "answer": 0
+          },
+          {
+            "q": "Verş'te nakil şu demektir: …",
+            "options": [
+              "hemzenin harekesini kendinden önceki sakin harfe aktarmak",
+              "bir harfi şeddelemek",
+              "erken vakfetmek",
+              "lamı kalın okumak"
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "9-3": {
+        "title": "Hıfz için müteşâbih ayetler: Hz. Âdem ve İsrâiloğulları",
+        "intro": "Müteşâbih ayetler, birbirine neredeyse benzeyen ayetlerdir. Ezberde yapılan hataların en yaygın sebebidir. Buradaki çiftleri karşılaştırın: Bakara'da Hz. Âdem'e vav ile “ve yiyin”, A'râf'ta fe ile “öyleyse yiyin” denir; “kapıdan girin” ile “deyin: hafiflik” sırası Bakara ile A'râf arasında terstir; Firavun'un kavmine verilen ceza ise Bakara'da ve İbrâhîm'de (İbrâhîm'de ek bir vav ile) bir fiille, A'râf'ta başka bir fiille anlatılır.",
+        "points": [
+          "Çiftleri birlikte öğrenin, birini ötekinden ayrı öğrenmeyin.",
+          "Bir ipucu bulun: bir harf, kelimelerin sırası, surenin konusu.",
+          "İki ayeti de sesli olarak art arda okuyun ve sure adını söyleyin."
+        ],
+        "check": [
+          "Her çifti karıştırmadan okuyorum.",
+          "Her çift için bir ipucum var."
+        ],
+        "mcq": [
+          {
+            "q": "Hıfzda müteşâbih ayetler nedir?",
+            "options": [
+              "Neredeyse birbirine benzeyen ayetler",
+              "Nesh edilen ayetler",
+              "Secde ayetleri",
+              "En uzun ayetler"
+            ],
+            "answer": 0
+          },
+          {
+            "q": "Benzer bir çifti en iyi şöyle öğrenirsiniz: …",
+            "options": [
+              "birlikte, farkı hatırlatan bir ipucuyla",
+              "yılda bir tane",
+              "yalnızca ilkini",
+              "dinlemeden"
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "9-4": {
+        "title": "Müteşâbih ayetler: iman edenlerin listesi",
+        "intro": "Bakara 2:62 ve Mâide 5:69 aynı grupları sayar; ancak sıra ve bir kelimenin dilbilgisel durumu farklıdır. İkisini de dinleyin, farkı kelime verilerinde işaretleyin ve geçiş kendiliğinden olana kadar ardı ardına okuyun.",
+        "points": [
+          "Yeri değişen kelimeyi işaretleyin.",
+          "Her ayeti okumadan önce sure adını söyleyin."
+        ],
+        "check": [
+          "2:62 ve 5:69'u sırayı karıştırmadan okuyorum."
+        ],
+        "mcq": [
+          {
+            "q": "İki benzer ayeti birbirinden ayırmanıza ne yardımcı olur?",
+            "options": [
+              "Sure adını ve farklı kelimeyi söylemek",
+              "Daha hızlı okumak",
+              "Birini atlamak",
+              "Makamı değiştirmek"
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "10-1": {
+        "title": "Mülk Suresi",
+        "intro": "Otuz ayet; çoğu zaman geceleri okunur. İki yarıda çalışın: dinleyin, yavaş hızda tekrar edin, kaydedin, karşılaştırın; ezber için ardından kelime kontrolünü kullanın.",
+        "points": [
+          "Çok sayıdaki kalkale harflerine ve med-i lâzıma dikkat edin.",
+          "Otuz ayetin tamamında hızı sabit tutun."
+        ],
+        "check": [
+          "1–15. ayetleri akıcı okuyorum.",
+          "16–30. ayetleri akıcı okuyorum."
+        ],
+        "mcq": [
+          {
+            "q": "Mülk Suresi kaç ayettir?",
+            "options": [
+              "30",
+              "40",
+              "29",
+              "83"
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "10-2": {
+        "title": "Yâsîn Suresi'nin başı",
+        "intro": "Yâsîn'in başlangıcı ayrı harflerle (hurûf-ı mukattaa) başlar; bu harfler harf adları olarak, medleriyle okunur. Ardından kasabanın ve elçilerin kıssaları gelir.",
+        "points": [
+          "Yâ-Sîn iki harfin adı olarak okunur; sîn üzerinde med-i lâzım vardır.",
+          "Daha uzun anlatı ayetleri için nefes noktalarını planlayın."
+        ],
+        "check": [
+          "Ayrı harfleri doğru medleriyle okuyorum.",
+          "İlk ayetleri bakmadan okuyorum."
+        ],
+        "mcq": [
+          {
+            "q": "Yâsîn'in başındaki ayrı harfler şu şekilde okunur: …",
+            "options": [
+              "medli harf adları",
+              "tek bir kelime",
+              "okunmayan harfler",
+              "tenvin"
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "10-3": {
+        "title": "Rahmân Suresi",
+        "intro": "“Rabbinizin nimetlerinden hangisini inkâr edeceksiniz?” nakaratı tekrar tekrar gelir. Her seferinde aynı tutun: aynı med, aynı melodi, aynı net gunne.",
+        "points": [
+          "Nakaratı her seferinde aynı biçimde okuyun.",
+          "Nakaratı nefesinizi denetlemek için kullanın: nakarat başına bir nefes."
+        ],
+        "check": [
+          "Nakaratım her seferinde aynı.",
+          "İlk bölümü bakmadan okuyorum."
+        ],
+        "mcq": [
+          {
+            "q": "Rahmân Suresi'nin nakaratında ne aynı kalır?",
+            "options": [
+              "Med, gunne ve melodi",
+              "Yalnızca hız",
+              "Hiçbir şey",
+              "Vakıf işareti"
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "10-4": {
+        "title": "Vâkıa Suresi ve Kehf'in ilk on ayeti",
+        "intro": "Vâkıa Suresi kısa ve ritimli ayetlerden oluşur; bunlar dengeli hızı sınar. Kehf'in ilk on ayetinin ezberlenmesi tavsiye edilir. Kehf'in 1. ayetindeki sekte için duraklarınızı planlayın: Hafs orada nefes almadan kısaca duraklar.",
+        "points": [
+          "Sekte: nefes almadan kısa bir duraklama, sonra devam.",
+          "Vâkıa'nın ritmini düzgün tutun."
+        ],
+        "check": [
+          "Kehf'in 1. ayetinin sonundaki sekteyi nefes almadan yapıyorum.",
+          "Kehf 1–10'u bakmadan okuyorum."
+        ],
+        "mcq": [
+          {
+            "q": "Sekte şudur: …",
+            "options": [
+              "nefes almadan kısa bir duraklama",
+              "nefesle uzun bir durma",
+              "kalın bir râ",
+              "şeddeli bir harf"
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "10-5": {
+        "title": "Masterclass tilaveti",
+        "intro": "Son tilavetiniz: Fâtiha, Âyetü'l-Kürsî ve Mülk Suresi'nin başı, sanki bir hocanın karşısındaymışsınız gibi. Bütün bölümü tek seferde kaydedin, geri dinleyin ve öz değerlendirmeyi dürüstçe işaretleyin. Ardından seviye sınavına girin: sınavı geçmek Kâri Yolu'nun Masterclass sertifikasını kazandırır. Bu bir uygulama sertifikasıdır, icazet değildir; icazet için yetkin bir hocaya okuyun.",
+        "points": [
+          "Nefes planınızla tek seferde okuyun.",
+          "Bir kez tecvid, bir kez vakıflar, bir kez melodi için geri dinleyin.",
+          "Geri bildirim için kaydınızı bir hocayla paylaşın."
+        ],
+        "check": [
+          "Bütün harfleri mahreçlerinden çıkarıyorum.",
+          "Her medi kendi uzunluğunda ve tutarlı okuyorum.",
+          "Nun, mim ve gunne kurallarını uyguluyorum.",
+          "Duraklarım ve yeniden başlayışlarım anlamı bütün tutuyor.",
+          "Melodim anlama hizmet ediyor ve harfleri asla değiştirmiyor."
+        ],
+        "mcq": [
+          {
+            "q": "Gunneli idğam şu harflerle olur: …",
+            "options": [
+              "ي ن م و",
+              "ء ه ع ح",
+              "ق ط ب ج د",
+              "ل ر"
+            ],
+            "answer": 0
+          },
+          {
+            "q": "Med-i lâzım: …",
+            "options": [
+              "altı hareke",
+              "iki hareke",
+              "dört veya beş hareke",
+              "isteğe bağlı"
+            ],
+            "answer": 0
+          },
+          {
+            "q": "Ötreden sonra Allah lafzındaki lam: …",
+            "options": [
+              "kalın okunur",
+              "ince okunur",
+              "okunmaz",
+              "yankılı okunur"
+            ],
+            "answer": 0
+          },
+          {
+            "q": "Okurken nefes almak şu anlama gelir: …",
+            "options": [
+              "vakıf",
+              "sekte",
+              "med",
+              "hiçbir şey"
+            ],
+            "answer": 0
+          },
+          {
+            "q": "Bu uygulama hangi rivayetle okur?",
+            "options": [
+              "Hafs an Âsım",
+              "Verş an Nâfi'",
+              "Kâlûn an Nâfi'",
+              "ed-Dûrî an Ebî Amr"
+            ],
+            "answer": 0
+          },
+          {
+            "q": "Uygulama sertifikası icazetin yerini tutabilir mi?",
+            "options": [
+              "Hayır",
+              "Evet",
+              "Yalnızca 10. seviyede",
+              "Yalnızca Pro ile"
+            ],
+            "answer": 0
+          }
+        ]
+      }
+    }
+  },
+  "abrahamic": {
+    "units": {
+      "ibrahim": {
+        "text": "Kur'an, İbrahim'i bir hanif olarak anlatır: tek Allah'a yönelmiş, sınanmış ve sadık çıkmış biri. Oğlu İsmail'le birlikte Mekke'deki Kâbe'nin temellerini yükseltti; güvenli bir şehir ve o şehrin halkından bir elçi için yaptığı dua, Bakara suresi ile İbrâhim suresinde yer alır. Yahudiler, Hıristiyanlar ve Müslümanlar inançlarını İbrahim'e dayandırır; her biri bunu kendi yoluyla yapar."
+      },
+      "family": {
+        "text": "Kur'an, İsmail ve İshak üzerinden bir peygamber silsilesini izler: oğullarına kendisinden sonra neye ibadet edeceklerini soran Yakub ve kıssası tek bir sure olarak anlatılan Yusuf. Âl-i İmrân suresi, anlatısına İbrahim ailesini ve İmran ailesini seçilmişler arasında anarak başlar. Bu isimlerin birçoğu İbranice Kitab-ı Mukaddes'te de merkezî bir yere sahiptir."
+      },
+      "musa": {
+        "text": "Kur'an'da adı en çok geçen peygamber Musa'dır. Kasas suresi, annesinin onu nehre emanet edişini, Firavun'un evinde geçen gençliğini ve mübarek vadideki çağrıyı anlatır; yanında Harun da vardır. Kur'an, Musa'ya verilen Tevrat'tan bir hidayet ve nur olarak söz eder; Yahudilikte Musa, Tevrat'ın merkezî öğretmenidir."
+      },
+      "maryam": {
+        "text": "Meryem, Kur'an'da adı geçen tek kadındır ve bir sure onun adını taşır. Âl-i İmrân ve Meryem sureleri, onun Zekeriya'nın gözetiminde büyümesini, Yahya'nın doğumunu ve Allah'tan bir kelime ve Mesih diye anılan İsa'nın müjdelenişini anlatır. Hıristiyanlar da Meryem'i ve İsa'yı en büyük saygıyla anar; İsa hakkındaki inançları Kur'an'daki anlatımdan farklıdır. Bu kurs ise Kur'an metnini, birini diğeriyle tartmadan anlatır."
+      },
+      "book": {
+        "text": "Kur'an, Yahudilere ve Hıristiyanlara Ehl-i Kitap der ve daha önceki kitapları da anar: Tevrat, Davud'a verilen Zebur ve İsa'ya verilen İncil. Âl-i İmrân 3:64 onları ortak bir söze çağırır. 2007'de Müslüman âlimler bu ayeti Hıristiyan liderlere yönelik bir açık mektubun başlığı olarak aldı; 2004 tarihli Amman Mesajı ise İslam'ın çeşitliliği konusunda ortak bir beyan ortaya koydu."
+      },
+      "abu-dhabi": {
+        "text": "Abu Dabi'deki Saadiyat Adası'nda İbrahimî Aile Evi 2023'te açıldı: İmam et-Tayyib Camii, Aziz Francis Kilisesi ve Moses Ben Maimon Sinagogu aynı alanda yan yana durur ve her biri ibadete açık, işleyen bir ibadethanedir. Bu proje, 2019'da Abu Dabi'de Ezher'in Büyük İmamı Ahmed et-Tayyib ile Papa Franciskus'un imzaladığı İnsani Kardeşlik Belgesi'nden doğmuştur. Kur'an, içlerinde Allah'ın adının anıldığı manastırlardan, kiliselerden, sinagoglardan ve camilerden (22:40), birbirini tanısınlar diye farklı kılınmış halklardan (49:13) söz eder."
+      },
+      "history": {
+        "text": "El-Halil, Kudüs, Sina Dağı ve Mekke, üç gelenekte de İbrahim'le ve soyundan gelenlerle bağlantılıdır. Tarihçiler ayrıca Müslümanların, Yahudilerin ve Hıristiyanların birlikte nasıl yaşadığını da inceler; örneğin Medine Vesikası çerçevesinde ya da Endülüs'te. Aşağıdaki maddeler bu yerleri ve dönemleri tarihçilerin bakışıyla anlatır."
+      }
+    },
+    "lessons": {
+      "ibrahim-idols": {
+        "title": "İbrahim'in arayışı ve putlar",
+        "text": "Kur'an, genç İbrahim'i bir yıldıza, aya ve güneşe bakarken gösterir; her biri batınca ondan yüz çevirir: kaybolan, Rabbi olamaz. Ardından hanif olarak, yani saf tevhide yönelmiş biri olarak, göklerin ve yerin Yaratıcısı'na yönelip ibadet eder (6:79).\nKavminin putlarını, en büyüğünü bırakarak kırar ve onlardan ona sormalarını ister. Onu ateşe atarlar; Allah da ateşe, onun için serin ve zararsız olmasını emreder (21:69).",
+        "note": "Müfessirler, yıldız sahnesinin İbrahim'in kendi arayışı mı yoksa kavmine yöneltilmiş bir delil mi olduğu konusunda farklı görüştedir. Putların kırılması ayrıca sonraki Yahudi geleneğinde (Midraş) yer alır; Kitab-ı Mukaddes'in kendisinde geçmez.",
+        "quiz": [
+          {
+            "q": "İbrahim yıldızdan, aydan ve güneşten neden yüz çevirir?",
+            "options": [
+              "Çünkü batıp kaybolurlar",
+              "Çünkü babası bunu yasaklamıştır",
+              "Çünkü çok küçüktürler"
+            ]
+          },
+          {
+            "q": "Allah, ateşe İbrahim için ne olmasını emretti?",
+            "options": [
+              "Eskisinden daha sıcak",
+              "Serin ve zararsız",
+              "Geceleyin sönmüş"
+            ],
+            "why": "Enbiyâ suresi 21:69."
+          }
+        ]
+      },
+      "ibrahim-trials": {
+        "title": "İbrahim'in imtihanları ve kurban",
+        "text": "Allah, İbrahim'i bir dizi emirle sınadı; o da bunları eksiksiz yerine getirdi. Bunun üzerine Allah onu imam, yani insanlara önder kıldı (2:124). En büyük imtihan Sâffât suresinde gelir: İbrahim rüyasında oğlunu kurban ettiğini görür. Oğul, babasına emredileni yapmasını söyler ve sabredeceğine söz verir (37:102). İkisi de teslim olur ve Allah, oğlunun yerine fidye olarak kurbanlık bir hayvan verir (37:107).\nKurban Bayramı ve hac sırasındaki kurban bu anı anar.",
+        "note": "Kur'an burada oğlun adını vermez. Sünni ve Şii Müslüman âlimlerin çoğu, İshak'ın müjdesi sonradan geldiği için (37:112) onun İsmail olduğu görüşündedir; bazı ilk dönem otoriteler İshak demiştir. Tekvin 22'de oğul İshak'tır. Şii tefsiri 2:124'ü ayrıca imametin kökü olarak okur.",
+        "quiz": [
+          {
+            "q": "Oğul babasına nasıl cevap verdi?",
+            "options": [
+              "Kaçmak istedi",
+              "Emredileni yapmasını söyledi ve sabır vaat etti",
+              "Ertesi güne kadar beklemesini istedi"
+            ],
+            "why": "Sâffât suresi 37:102."
+          },
+          {
+            "q": "Hangi bayram bu olayı anar?",
+            "options": [
+              "Ramazan Bayramı",
+              "Kurban Bayramı",
+              "Mevlid"
+            ]
+          }
+        ]
+      },
+      "hajar-ismail": {
+        "title": "Vadide Hacer ve İsmail",
+        "text": "İbrahim, Allah'ın kutsal Evi'nin yanında, kurak bir vadide bıraktığı aile için dua eder (14:37). Sahih-i Buhârî'deki (Enbiyâ bölümü) bir hadis, Hacer'in, Allah'ın bunu emredip emretmediğini ona sorduğunu anlatır; İbrahim evet deyince Hacer, Allah'ın onları yüzüstü bırakmayacağından emin olmuştur.\nSu ararken Safa ve Merve tepeleri arasında yedi kez koştu; sonunda Zemzem kaynağı belirdi. Her hacı onun bu yürüyüşünü sa'y ile tekrarlar.",
+        "note": "Tekvin 16 ve 21'de de Hacer ile İsmail'in çölde yaşadıkları ve bir kuyu anlatılır; olaylar Beer-Şeba ve Paran çölünde geçer.",
+        "quiz": [
+          {
+            "q": "Hacer, Safa ile Merve arasında kaç kez koştu?",
+            "options": [
+              "Üç",
+              "Yedi",
+              "Kırk"
+            ]
+          },
+          {
+            "q": "Hacer ve İsmail için hangi kaynak ortaya çıktı?",
+            "options": [
+              "Zemzem",
+              "Selsebil",
+              "Ürdün"
+            ]
+          }
+        ]
+      },
+      "kaaba-building": {
+        "title": "İbrahim ve İsmail Kâbe'yi inşa eder",
+        "text": "İbrahim ve İsmail Evin temellerini yükseltirken (2:127) kabul olunmaları, Allah'a bağlı bir ümmet ve soylarından bir elçi için dua ettiler. Müslümanlar 2:129'u, Peygamber Muhammed'de karşılık bulmuş bir dua olarak okur.\nAllah, İbrahim'e Evi, onu tavaf edenler ve orada namaz kılanlar için temiz tutmasını ve insanları hacca çağırmasını söyler: uzak yollardan yaya ve zayıf develerle gelirler (22:26-27). Makam-ı İbrahim, geleneğe göre onun üzerinde durduğu taşı gösterir.",
+        "quiz": [
+          {
+            "q": "İbrahim ile birlikte Evin temellerini kim yükseltti?",
+            "options": [
+              "İshak",
+              "İsmail",
+              "Lut"
+            ]
+          },
+          {
+            "q": "Makam-ı İbrahim neyi işaret eder?",
+            "options": [
+              "Mezarını",
+              "İnşa ederken üzerinde durduğu taşı",
+              "Bir kuyuyu"
+            ]
+          }
+        ]
+      },
+      "lut": {
+        "title": "Lut ve kavmi",
+        "text": "Lut, gelenekte İbrahim'in yeğeni sayılır; onunla birlikte iman etti ve hicret etti (29:26). Ağır kötülükleri açıkça işleyen ve misafirlere saldıran bir kavme gönderildi. Elçiler misafir olarak gelince Lut onları korumaya çalıştı. Ona, ailesiyle birlikte gece yola çıkmasını söylediler ve kentler altüst edildi.\nKur'an, Lut'u misafirperverlik ve edep için tek başına duran, dürüst bir peygamber olarak sunar.",
+        "note": "Kur'an'da, Tekvin 19'dan farklı olarak Lut bir peygamberdir ve ona herhangi bir kötü fiil isnat edilmez.",
+        "quiz": [
+          {
+            "q": "Lut neyi korumaya çalıştı?",
+            "options": [
+              "Misafirlerini",
+              "Sürülerini",
+              "Şehrin kapısını"
+            ]
+          },
+          {
+            "q": "Lut Kur'an'da nasıl tanıtılır?",
+            "options": [
+              "Kral olarak",
+              "Peygamber olarak",
+              "Tüccar olarak"
+            ]
+          }
+        ]
+      },
+      "yusuf-dream": {
+        "title": "Yusuf 1: rüya ve kuyu",
+        "text": "Yûsuf suresi, kendi anlatımını kıssaların en güzeli olarak niteler (12:3) ve tek bir hikâye çizgisini baştan sona anlatır. Küçük Yusuf, on bir yıldızın, güneşin ve ayın kendisine secde ettiğini görür. Yakub ona bunu kardeşlerine anlatmamasını söyler.\nKıskançlıktan kardeşleri onu bir kuyuya atar ve gömleğini sahte kanla geri getirirler. Yakub, şikâyetsiz bir sabırla, 12:18'deki sabr-ı cemîl ile karşılık verir.",
+        "quiz": [
+          {
+            "q": "Yusuf rüyasında ne gördü?",
+            "options": [
+              "Yedi inek",
+              "On bir yıldız, güneş ve ay",
+              "Bir gemi"
+            ]
+          },
+          {
+            "q": "Yakub bu kayba nasıl karşılık verdi?",
+            "options": [
+              "Güzel bir sabırla",
+              "İntikamla",
+              "Çekip giderek"
+            ]
+          }
+        ]
+      },
+      "yusuf-egypt": {
+        "title": "Yusuf 2: ayartma ve zindan",
+        "text": "Mısır'da satılan Yusuf, Azîz'in evinde büyür. Azîz'in karısı onu baştan çıkarmaya çalışır; Yusuf reddeder ve Allah'a sığınır (12:23). Masum olduğu halde zindana atılır ve zindanı kötü bir işe tercih ettiğini söyler.\nZindanda iki zindan arkadaşının rüyasını yorumlar, ama önce onlara, hükmün yalnızca O'na ait olduğu tek Allah'tan söz eder (12:40).",
+        "quiz": [
+          {
+            "q": "Yusuf ayartılınca nasıl karşılık verdi?",
+            "options": [
+              "Reddetti ve Allah'a sığındı",
+              "Daha sonra buluşmayı kabul etti",
+              "Efendisinden öğüt istedi"
+            ]
+          },
+          {
+            "q": "Yusuf, rüyaları yorumlamadan önce neden söz etti?",
+            "options": [
+              "Mısır krallarından",
+              "Tek Allah'tan",
+              "Kardeşlerinden"
+            ]
+          }
+        ]
+      },
+      "yusuf-reunion": {
+        "title": "Yusuf 3: af ve kavuşma",
+        "text": "Yusuf, kralın yedi semiz ve yedi cılız inek rüyasını yorumlar, aklanır ve ambarların başına getirilir. Kıtlıkta kardeşleri tahıl almaya gelir. Yusuf kendini tanıtınca en kötüsünden korkarlar; ama o onları hemen bağışlar ve kınamaz (12:92).\nGömleği Yakub'a görme gücünü geri verir, aile Mısır'a gelir ve çocukluk rüyası gerçekleşir.",
+        "quiz": [
+          {
+            "q": "Yusuf kardeşlerine nasıl davrandı?",
+            "options": [
+              "Onları kınamadan bağışladı",
+              "Onları Mısır'dan çıkardı",
+              "Onlara iki katını ödetti"
+            ],
+            "why": "Yûsuf suresi 12:92."
+          },
+          {
+            "q": "Yakub'un görme gücünü ne geri verdi?",
+            "options": [
+              "Zemzem suyu",
+              "Yusuf'un gömleği",
+              "Bir asa"
+            ]
+          }
+        ]
+      },
+      "musa-birth": {
+        "title": "Musa 1: nehir ve saray",
+        "text": "Firavun, İsrailoğulları'na zulmeder. Allah, Musa'nın annesine bebeği nehre bırakmasını ilham eder ve onu geri vereceğine söz verir. Firavun'un karısı bebeği yanına alır ve Firavun'dan çocuğu öldürmemesini ister; çocuk ikisi için de bir sevinç kaynağıdır (28:9). Musa her sütanneyi reddeder, ta ki kız kardeşi onları kendi annesine yönlendirene kadar.\nKur'an, gelenekte Asiye adıyla anılan Firavun'un karısını iman örneği olarak över (66:11).",
+        "note": "Çıkış 2'de Musa'yı evlat edinen Firavun'un kızıdır; Kur'an'da ise Firavun'un karısıdır.",
+        "quiz": [
+          {
+            "q": "Bebek Musa'yı saraya kim aldı?",
+            "options": [
+              "Firavun'un karısı",
+              "Firavun'un veziri",
+              "Bir tüccar"
+            ]
+          },
+          {
+            "q": "Musa annesine nasıl geri döndürüldü?",
+            "options": [
+              "Diğer bütün sütanneleri reddetti",
+              "Annesi onu satın aldı",
+              "Firavun onu uzaklaştırdı"
+            ]
+          }
+        ]
+      },
+      "musa-call": {
+        "title": "Musa 2: Medyen ve çağrı",
+        "text": "Bir Mısırlıyı istemeden öldürdükten sonra Musa, Medyen'e kaçar. Bir kuyu başında iki kadının sürüsünü sular, ardından Allah'a yönelip dua eder ve Allah'ın kendisine göndereceği her hayra muhtaç olduğunu dile getirir (28:24). Kadınlardan biriyle evlenir ve yıllarca onun babası için çalışır.\nDönüş yolunda bir ateş görür. Kutsal Tuvâ vadisinde Allah ona seslenir, O'ndan başka ilah olmadığını bildirir; yalnız O'na ibadet etmesini ve O'nu anmak için namaz kılmasını emreder (20:14).",
+        "note": "Pek çok klasik müfessir Medyen'deki babayı Şuayb peygamberle özdeşleştirmiştir; diğerleri ise farklı düşünmüştür. Kitab-ı Mukaddes ona Yitro (Reuel) adını verir.",
+        "quiz": [
+          {
+            "q": "Musa, Allah'ın çağrısını nerede işitti?",
+            "options": [
+              "Tuvâ vadisinde",
+              "Mısır sarayında",
+              "Denizde"
+            ]
+          },
+          {
+            "q": "Musa, Medyen'deki kuyu başında duasında ne dile getirdi?",
+            "options": [
+              "Zafer isteğini",
+              "Allah'ın göndereceği her hayra muhtaç olduğunu",
+              "Zenginlik isteğini"
+            ]
+          }
+        ]
+      },
+      "musa-exodus": {
+        "title": "Musa 3: Firavun'un karşısında ve deniz",
+        "text": "Firavun'a gönderilen Musa, Allah'tan gönlünü açmasını ve görevini kolaylaştırmasını diler, kardeşi Harun'u da yardımcı olarak ister (20:25-32). İkisine de Firavun'la yumuşak konuşmaları bildirilir (20:44). Sihirbazlar, mucizeleri görünce iman eder.\nFiravun, İsrailoğulları'nı denize kadar takip eder. Yakalanacaklarından korkarlar; Musa ise Rabbinin kendisiyle birlikte olduğunu ve ona yol göstereceğini söyler (26:61-62). Deniz yarılır ve Firavun'un ordusu boğulur.",
+        "quiz": [
+          {
+            "q": "Musa yardımcı olarak kimi istedi?",
+            "options": [
+              "Yuşa'yı",
+              "Kardeşi Harun'u",
+              "Sihirbazları"
+            ]
+          },
+          {
+            "q": "Musa'ya Firavun'la nasıl konuşması söylendi?",
+            "options": [
+              "Yumuşak bir dille",
+              "Tehditle",
+              "Hiç konuşmadan"
+            ]
+          }
+        ]
+      },
+      "musa-sinai": {
+        "title": "Musa 4: Sina ve Hızır",
+        "text": "Dağda Musa, Allah'ı görmek ister; dağ parçalanır, Musa ise bayılıp düşer. Öğüt ve ayrıntılı rehberlik içeren Levhalar ona verilir (7:145). O yokken kavmi buzağıya tapar.\nKehf suresi, Musa'nın Hızır diye bilinen bir Allah kuluyla yolculuğunu anlatır; Hızır, şaşırtıcı üç iş yapar. Ders şudur: İnsanın bilgisi sınırlıdır ve henüz anlayamadığımız şeyler karşısında sabır gerekir.",
+        "quiz": [
+          {
+            "q": "Musa, Allah'ı görmek isteyince ne oldu?",
+            "options": [
+              "Dağ parçalandı",
+              "Deniz yarıldı",
+              "Yağmur yağdı"
+            ]
+          },
+          {
+            "q": "Musa ile Hızır kıssasının ana dersi nedir?",
+            "options": [
+              "Yolculuk tehlikelidir",
+              "İnsanın bilgisi sınırlıdır; sabırlı olmak gerekir",
+              "Gemiler satılmalıdır"
+            ]
+          }
+        ]
+      },
+      "dawud-sulayman": {
+        "title": "Davud ve Süleyman",
+        "text": "Davud'a Zebur verilir (4:163); dağlar ve kuşlar onunla birlikte Allah'ı över, demir de zırh yapabilmesi için onun elinde yumuşatılır. Süleyman ona varis olur ve kendisine kuşların dili öğretilir.\nBir karınca topluluğunu Süleyman'ın ordusuna karşı uyardığında Süleyman gülümser ve Allah'tan, nimetlerine şükretmesi için kendisine yardım etmesini diler (27:19). Kur'an, ikisini de güç peşinde koşan yöneticiler olarak değil, âdil ve şükreden krallar olarak sunar.",
+        "quiz": [
+          {
+            "q": "Davud'a hangi kitap verildi?",
+            "options": [
+              "Tevrat",
+              "Zebur",
+              "İncil"
+            ]
+          },
+          {
+            "q": "Süleyman karıncayı duyunca ne yaptı?",
+            "options": [
+              "Gülümsedi ve Allah'a şükretti",
+              "Saldırı emri verdi",
+              "Aldırmadı"
+            ]
+          }
+        ]
+      },
+      "yunus": {
+        "title": "Balığın karnındaki Yunus",
+        "text": "Yunus, Allah izin vermeden önce kavmini öfkeyle bırakıp gider, bir gemiye biner ve büyük bir balık onu yutar. Karanlıklar içinde Allah'a yönelir; O'ndan başka ilah olmadığını söyler, O'nu tesbih eder ve kendi yanlışını itiraf eder (21:87).\nKıyıya atılır, bir kabak bitkisi ona gölge olur ve yüz binden fazla insandan oluşan, iman eden kavmine döner. Yalnızca onun kıssasında Kur'an, kavminin tamamının kurtarıldığını bildirir (10:98).",
+        "quiz": [
+          {
+            "q": "Yunus karanlıkta ne yaptı?",
+            "options": [
+              "Allah'ın birliğini dile getirdi ve yanlışını itiraf etti",
+              "Gemicilerden gemiyi kurtarmalarını istedi",
+              "Fırtına istedi"
+            ],
+            "why": "Enbiyâ suresi 21:87."
+          },
+          {
+            "q": "Kavmine ne oldu?",
+            "options": [
+              "Yok edildiler",
+              "İman ettiler ve kurtarıldılar",
+              "Başka yere göç ettiler"
+            ]
+          }
+        ]
+      },
+      "ayyub": {
+        "title": "Eyüp ve sabır",
+        "text": "Eyüp sağlığını, malını ve ailesini kaybeder. Allah'a karşı yakınmaz; O'na yönelir, kendisine dokunan sıkıntıyı dile getirir ve O'na merhametlilerin en merhametlisi olarak yalvarır (21:83). Ayağıyla yere vurması söylenir: yıkanıp içmesi için bir pınar çıkar.\nAllah onu eski haline kavuşturur ve onu sabırlı, çok iyi bir kul olarak över (38:44).",
+        "quiz": [
+          {
+            "q": "Eyüp, Allah'a nasıl yöneldi?",
+            "options": [
+              "Çektiği sıkıntıyı dile getirdi ve Allah'ın merhametine sığındı",
+              "Bunun adaletsiz olduğundan yakındı",
+              "Bir krallık diledi"
+            ],
+            "why": "Enbiyâ suresi 21:83."
+          },
+          {
+            "q": "Allah, Eyüp'ü nasıl tanımlar?",
+            "options": [
+              "Sabırlı, çok iyi bir kul",
+              "Zengin",
+              "Savaşçı"
+            ]
+          }
+        ]
+      },
+      "zakariya-yahya": {
+        "title": "Zekeriya ve Yahya",
+        "text": "Meryem suresi, Zekeriya'nın yaşlılığında yaptığı sessiz duayla başlar: bedeni zayıflamıştır ve Allah'tan bir varis ister (19:4-6). Ona, daha önce kimsenin taşımadığı bir isim olan Yahya'nın müjdesi verilir (19:7) ve bir işaret olarak üç gece insanlarla konuşmaz.\nYahya'ya çocukken hikmet verilir, anne babasına karşı iyi davranır; Allah ona doğduğu günde, öleceği günde ve diriltileceği günde esenlik verir (19:15).",
+        "note": "Hıristiyan geleneğinde Yahya, Vaftizci Yahya'dır (Luka 1).",
+        "quiz": [
+          {
+            "q": "Zekeriya'nın işareti neydi?",
+            "options": [
+              "Üç gece insanlarla konuşmamak",
+              "Bir yıldız",
+              "Yağmur"
+            ]
+          },
+          {
+            "q": "Hıristiyan geleneğinde Yahya kimdir?",
+            "options": [
+              "Pavlus",
+              "Vaftizci Yahya",
+              "Petrus"
+            ]
+          }
+        ]
+      },
+      "maryam-isa": {
+        "title": "Meryem ve İsa",
+        "text": "Meryem, Kur'an'da adı geçen tek kadındır ve bir sure onun adını taşır. Bir melek, tertemiz bir oğul müjdeler; Meryem, kendisine hiçbir erkek dokunmadığına göre bunun nasıl olacağını sorar ve bunun Allah için kolay olduğu söylenir (19:21). Bir hurma ağacının altında doğum yapar; bebek İsa beşikte konuşur ve kendisinin Allah'ın kulu olduğunu, kendisine Kitap verildiğini ve peygamber kılındığını bildirir (19:30).\nKur'an, İsa'yı Mesih, Allah'tan bir kelime ve O'ndan bir ruh olarak anar (3:45; 4:171) ve onu en büyük elçiler arasında sayarak yüceltir.",
+        "note": "Müslümanlar ve Hıristiyanlar bakire doğumu ve Mesih unvanını ortak kabul eder; İsa'nın ilahlığı ve çarmıha gerilme konusunda ise farklı görüştedir (4:157). Bu ders, Kur'an'ın bakışını karşılaştırma ve sıralama yapmadan aktarır.",
+        "quiz": [
+          {
+            "q": "Beşikteki bebek İsa ne bildirdi?",
+            "options": [
+              "Allah'ın kulu ve peygamber olduğunu",
+              "Kral olacağını",
+              "Aç olduğunu"
+            ],
+            "why": "Meryem suresi 19:30."
+          },
+          {
+            "q": "Kur'an'da hangi kadının adı geçer?",
+            "options": [
+              "Hacer",
+              "Asiye",
+              "Meryem"
+            ]
+          }
+        ]
+      },
+      "books": {
+        "title": "İndirilen kitaplar",
+        "text": "İndirilen kitaplara iman, Müslüman inancının bir parçasıdır. Kur'an, İbrahim ile Musa'nın Suhuf'unu (tomarlar) anar (87:19); ayrıca Musa'ya verilen Tevrat'ı, Davud'a verilen Zebur'u ve İsa'ya verilen İncil'i de anar. Tevrat'ı hidayet ve nur kaynağı olarak tanımlar (5:44); İncil için de aynısını söyler (5:46).\nKur'an kendisini, kendinden öncekini doğrulayan ve onun üzerinde bir müheymin, yani gözetici olarak niteler (5:48). Ayrıca Allah'ın her topluluğa kendi yasasını ve yolunu verdiğini belirtir ve herkesi hayırda yarışmaya çağırır (5:48).",
+        "note": "Müslüman âlimler, bugün kullanılan kutsal kitapların asıl vahiylerle ilişkisini tartışır (tahrif meselesi); görüşler, lafzın değiştirilmesinden yorumun değiştirilmesine kadar uzanan bir yelpaze oluşturur.",
+        "quiz": [
+          {
+            "q": "İsa'ya hangi kitap verildi?",
+            "options": [
+              "İncil",
+              "Zebur",
+              "Suhuf"
+            ]
+          },
+          {
+            "q": "'Müheymin' (5:48) ne demektir?",
+            "options": [
+              "Bir çevirmen",
+              "Önceki kitaplar üzerinde bir gözetici",
+              "Bir özet"
+            ]
+          }
+        ]
+      },
+      "ahl-al-kitab": {
+        "title": "Kur'an'da Ehl-i Kitap",
+        "text": "'Ehl-i Kitap' (ehlü'l-kitâb) esas olarak Yahudileri ve Hıristiyanları ifade eder. Kur'an onları ortak bir ilkeye, yalnızca Allah'a kulluk etmeye çağırır (3:64) ve Müslümanlara onlarla yalnızca en güzel yolla tartışmalarını söyler (29:46).\nOnlardan bazılarını iman ve tevazuları nedeniyle över (5:82-83); başka ayetlerde ise belirli tutumları eleştirir. İslam hukuku, Yahudi ve Hıristiyan kadınlarla evlenmeye ve onların yiyeceğinden yemeye izin vermiştir (5:5).",
+        "note": "Âlimler, 2:62'nin (daha önceki inananların kurtuluşu) nasıl anlaşılacağı ve Zerdüştlerin Ehl-i Kitap sayılıp sayılmayacağı konusunda farklı görüştedir. Şii fıkhı, Yahudi ve Hıristiyan kadınlarla evlilik konusunda çeşitli görüşler benimsemiştir.",
+        "quiz": [
+          {
+            "q": "3:64, Ehl-i Kitap'ı neye davet eder?",
+            "options": [
+              "Ortak bir ilkeye: yalnızca Allah'a kulluk etmeye",
+              "Bir ticaret anlaşmasına",
+              "Bir yarışmaya"
+            ]
+          },
+          {
+            "q": "29:46'ya göre Müslümanlar onlarla nasıl tartışmalıdır?",
+            "options": [
+              "Hiç tartışmamalı",
+              "Yalnızca en güzel yolla",
+              "Yüksek sesle"
+            ]
+          }
+        ]
+      },
+      "medina-charter": {
+        "title": "Dinler arası tarih 1: Medine",
+        "text": "622'deki Hicret'ten sonra Peygamberimiz, Medine'de yazılı bir antlaşma yaptı; bu metin Medine Vesikası ya da Medine Sözleşmesi (Sahîfetü'l-Medîne) olarak bilinir. Metin, Müslüman ve Yahudi kabilelerini savunma bakımından tek bir topluluk (ümmet) sayar; her biri kendi dinini korur.\nKur'an, dinde zorlama olmadığını bildirir (2:256) ve Müslümanlarla savaşmayanlara karşı iyi davranmaya ve adil olmaya izin verir (60:8). Bazı Yahudi kabileleriyle ilişki sonradan çatışmayla bozuldu; tarihçiler kaynakları farklı değerlendirir.",
+        "quiz": [
+          {
+            "q": "Medine Vesikası neyi oluşturdu?",
+            "options": [
+              "Savunma için tek bir topluluk; herkes kendi dinini korur",
+              "Tek bir din",
+              "Bir ticaret vergisi"
+            ]
+          },
+          {
+            "q": "Hangi ayet dinde zorlama olmadığını söyler?",
+            "options": [
+              "2:256",
+              "1:1",
+              "112:1"
+            ]
+          }
+        ]
+      },
+      "andalus-millet": {
+        "title": "Dinler arası tarih 2: Endülüs ve Osmanlılar",
+        "text": "Endülüs'te (711-1492) Müslümanlar, Yahudiler ve Hıristiyanlar yüzyıllar boyunca yan yana yaşadı. Kurtuba ve Toledo birer ilim merkezi oldu; İbn Rüşd ve Maimonides gibi âlimler orada eser verdi, Toledo'nun çevirmenleri eserleri Latinceye aktardı. Tarihçiler bu 'convivencia' dönemini hem başarılarıyla hem de gerilim dönemleriyle anlatır.\nOsmanlı Devleti gayrimüslim toplulukları 'millet' olarak örgütledi: Rum Ortodoks, Ermeni, Yahudi ve diğer topluluklar kendi dinî önderlerine, aile hukuku mahkemelerine ve okullarına sahipti. 1492'den sonra Osmanlılar İspanya'dan sürülen pek çok Yahudiyi kabul etti.",
+        "quiz": [
+          {
+            "q": "Kurtuba'da doğan Yahudi âlim kimdir?",
+            "options": [
+              "Maimonides",
+              "Rashi",
+              "Spinoza"
+            ]
+          },
+          {
+            "q": "Osmanlı millet sistemi neydi?",
+            "options": [
+              "Bir tahıl vergisi",
+              "Dinî toplulukların kendi kendini yönetmesi",
+              "Bir ordu birliği"
+            ]
+          }
+        ]
+      },
+      "abu-dhabi-today": {
+        "title": "Bugün: İnsanî Kardeşlik ve İbrahimî Aile Evi",
+        "text": "4 Şubat 2019'da Papa Franciskus ile Ezher Büyük İmamı Ahmed et-Tayyib, Abu Dabi'de Dünya Barışı ve Birlikte Yaşam için İnsanî Kardeşlik Belgesi'ni imzaladı. BM daha sonra 4 Şubat'ı Uluslararası İnsanî Kardeşlik Günü ilan etti.\n2023'te Abu Dabi'deki Saadiyat Adası'nda İbrahimî Aile Evi açıldı: aynı alanda eşit büyüklükte bir cami, bir kilise ve bir sinagog ile ortak bir forum. Kur'an, Allah'ın insanları milletlere ve kabilelere ayırdığını, bunun birbirlerini tanımaları için olduğunu açıklar (49:13).",
+        "quiz": [
+          {
+            "q": "İnsanî Kardeşlik Belgesi'ni kimler imzaladı?",
+            "options": [
+              "Papa Franciskus ve Ezher Büyük İmamı",
+              "İki kral",
+              "Yalnızca BM Genel Sekreteri"
+            ]
+          },
+          {
+            "q": "İbrahimî Aile Evi'nde neler var?",
+            "options": [
+              "Yalnızca bir müze",
+              "Bir cami, bir kilise ve bir sinagog",
+              "Bir üniversite"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "haramain": {
+    "lessons": {
+      "kaaba-origin": {
+        "title": "Hz. İbrahim'e dayanan Kâbe",
+        "text": "Kur'an, Bekke'deki Evi insanlar için kurulmuş ilk ibadet evi olarak, mübarek ve herkese yol gösteren bir yer olarak anar (3:96). Ona ayrıca el-Beytü'l-Atîk, yani Kadim Ev der ve temellerini Hz. İbrahim ile Hz. İsmail'e bağlar (2:127).\nKâbe, küpe yakın biçimli, yaklaşık 13 m yüksekliğinde bir yapıdır. Doğu köşesinde Hacerülesved bulunur; kuzeybatı yanında Hicr-i İsmail'in yarım daire biçimli duvarı yer alır. Dünyanın her yerindeki Müslümanlar namazda ona yönelir.",
+        "quiz": [
+          {
+            "q": "3:96, ilk Evin bulunduğu yeri ne olarak adlandırır?",
+            "options": [
+              "Bekke",
+              "Yesrib",
+              "Tâif"
+            ],
+            "why": "Bekke, Mekke'nin ya da Mekke vadisinin adı olarak anlaşılır."
+          },
+          {
+            "q": "Hacerülesved nerede yer alır?",
+            "options": [
+              "Doğu köşesinde",
+              "Çatıda",
+              "Zemzem'in içinde"
+            ]
+          }
+        ]
+      },
+      "kaaba-rebuilds": {
+        "title": "Tarih boyunca Kâbe",
+        "text": "Kureyş, Kâbe'yi 605 civarında yeniden inşa etti; Hz. Muhammed o sırada yaklaşık 35 yaşındaydı. Hacerülesved'i kimin yerine koyacağı konusundaki anlaşmazlığı, taşı bütün boyların birlikte taşıdığı bir örtünün üzerine koyarak çözdü. Helal kaynak yetersiz kaldığı için Hicr-i İsmail'i dışarıda bıraktılar.\nAbdullah b. Zübeyr, 683'te Kâbe'yi Hicr dahil olacak şekilde yeniden yaptı; Haccac, 693'te Kureyş'in verdiği biçimi geri getirdi. Seller sonrasında Sultan IV. Murad döneminde 1630'da yeniden inşa edildi, 1996'da da köklü biçimde onarıldı. Siyah örtüsü olan kisve her yıl yenilenir.",
+        "quiz": [
+          {
+            "q": "Hz. Muhammed, Hacerülesved anlaşmazlığını nasıl çözdü?",
+            "options": [
+              "Kura çekerek",
+              "Bütün boyların taşıdığı bir örtü üzerinde",
+              "Geceleyin tek başına yerleştirerek"
+            ]
+          },
+          {
+            "q": "683'te Kâbe'yi Hicr-i İsmail dahil olacak şekilde kim yeniden yaptı?",
+            "options": [
+              "Abdullah b. Zübeyr",
+              "IV. Murad",
+              "Kusay"
+            ]
+          }
+        ]
+      },
+      "pre-islamic-mecca": {
+        "title": "İslam'dan önce Mekke",
+        "text": "Arap tarihçilere göre Cürhüm kabilesi, Hz. Hacer ve Hz. İsmail ile birlikte Zemzem'in yakınına yerleşti; ardından Huzâa geldi. 5. yüzyılda Kusay b. Kilâb, Kureyş'i Mekke'de bir araya getirdi ve hacılar için görevler kurdu: su (sikâye), yiyecek (rifâde) ve Kâbe'nin anahtarları (hicâbe).\nZamanla Kâbe'nin çevresine putlar yerleştirildi; hünefâ adı verilen bazı kişiler ise Hz. İbrahim'in inancına bağlı kaldı. Mekke bir haremdi, yani içinde savaşmanın yasak olduğu dokunulmaz bir bölgeydi (29:67).",
+        "quiz": [
+          {
+            "q": "Mekke'de Kureyş'i kim bir araya getirdi?",
+            "options": [
+              "Kusay b. Kilâb",
+              "Ebrehe",
+              "Ebû Tâlib"
+            ]
+          },
+          {
+            "q": "Hünefâ kimlerdi?",
+            "options": [
+              "Suriye'den tüccarlar",
+              "Hz. İbrahim'in tevhidine bağlı kalanlar",
+              "Zemzem'in bekçileri"
+            ]
+          }
+        ]
+      },
+      "quraysh-trade": {
+        "title": "Kureyş ve kervanlar",
+        "text": "Kureyş Suresi, onların kış ve yaz yolculuklarından söz eder: kışın Yemen'e, yazın Suriye'ye giden kervanlar. Peygamberimizin büyük dedesi Haşim'in, bu yolları güvence altına alan anlaşmaları (îlâf) yaptığı kabul edilir.\nSure, Kureyş'i, onları açlıktan ve korkudan koruyan Kâbe'nin Rabbi'ne ibadet etmeye çağırır (106:3-4). Mekke'de ayrıca Ukâz gibi, şiir yarışmalarıyla tanınan mevsimlik panayırlar da vardı.",
+        "quiz": [
+          {
+            "q": "Kış kervanları nereye giderdi?",
+            "options": [
+              "Yemen",
+              "Suriye",
+              "Mısır"
+            ]
+          },
+          {
+            "q": "Hangi panayır şiirle ünlüydü?",
+            "options": [
+              "Ukâz",
+              "Dârü'n-Nedve",
+              "Kubâ"
+            ]
+          }
+        ]
+      },
+      "elephant": {
+        "title": "Fil Yılı",
+        "text": "Yemen'in Aksumlu hükümdarı Ebrehe, Kâbe'yi yıkmak için bir fille Mekke üzerine yürüdü. Kureyş tepelere çekildi; Abdülmuttalib'in, Evin bir Rabbi olduğunu ve onu O'nun koruyacağını söylediği rivayet edilir (İbn İshak).\nFil Suresi, sürü sürü kuşların (ebabil) orduya pişmiş çamurdan taşlar yağdırdığını anlatır. Müslüman gelenek, Peygamberimizin doğumunu bu yıla, yaklaşık 570'e tarihler.",
+        "note": "Bazı modern tarihçiler Ebrehe'nin seferini 570'ten daha erken bir tarihe yerleştirir; geleneksel tarihleme onu Peygamberimizin doğum yılına bağlar.",
+        "quiz": [
+          {
+            "q": "Fille gelen orduya kim komuta etti?",
+            "options": [
+              "Ebrehe",
+              "Kisra",
+              "Herakleios"
+            ]
+          },
+          {
+            "q": "“Ebabil” neyi anlatır?",
+            "options": [
+              "Sürü sürü kuşlar",
+              "Filler",
+              "Bulutlar"
+            ]
+          }
+        ]
+      },
+      "prophet-mecca": {
+        "title": "Peygamberimiz Mekke'de",
+        "text": "610'da, Nur Dağı'ndaki Hira Mağarası'nda ilk ayetler indirildi; bunlar, okuma emriyle başlayan Alak Suresi'nin başlangıcıdır (96:1-5). İlk iman eden Hz. Hatice'ydi. İlk Müslümanlar gizlice Erkam'ın evinde toplanıyordu.\nEziyetler arttı; 615'te bir grup Habeşistan'a hicret etti, orada Hristiyan Necâşî onları korudu. Boykottan ve “hüzün yılı”ndan (Hz. Hatice ile Ebû Tâlib'in vefatı) sonra Tâif yolculuğu ve Kudüs'e Gece Yolculuğu geldi (17:1).",
+        "quiz": [
+          {
+            "q": "İlk ayetler nerede indirildi?",
+            "options": [
+              "Hira Mağarası",
+              "Sevr Mağarası",
+              "Kubâ"
+            ]
+          },
+          {
+            "q": "Habeşistan'da muhacirleri kim korudu?",
+            "options": [
+              "Necâşî",
+              "Ebrehe",
+              "Ebû Cehil"
+            ]
+          }
+        ]
+      },
+      "hijra": {
+        "title": "Hicret",
+        "text": "Akabe'de Yesribli kişilerle yapılan biatlardan sonra Müslümanlar 622'de hicret etti. Peygamberimiz, Hz. Ebû Bekir ile yola çıktı ve üç gece Sevr Mağarası'nda saklandı; orada Allah'ın kendileriyle birlikte olduğunu söyleyerek Hz. Ebû Bekir'i teselli etti (9:40).\nKubâ'ya vardılar; ilk mescit orada yapıldı. Ardından Yesrib'e geldiler, burası el-Medine, yani “şehir” oldu. Hicret, Hz. Ömer döneminde uygulamaya konan hicri takvimin başlangıcıdır.",
+        "quiz": [
+          {
+            "q": "Peygamberimiz ile Hz. Ebû Bekir nerede saklandı?",
+            "options": [
+              "Sevr Mağarası",
+              "Hira Mağarası",
+              "Tâif"
+            ]
+          },
+          {
+            "q": "İlk mescit nerede yapıldı?",
+            "options": [
+              "Kubâ",
+              "Mekke",
+              "Kudüs"
+            ]
+          }
+        ]
+      },
+      "medina-society": {
+        "title": "Medine: muhacirler ve Ensar",
+        "text": "Peygamberimiz Medine'de, her göçmeni (muhacir) Medineli bir yardımcıyla (ensarî) kardeşlik (muâhât) bağıyla eşleştirdi. Kur'an, Ensar'ı kendileri muhtaç olsalar bile başkalarını kendilerine tercih etmeleri sebebiyle över (59:9).\nMedine Vesikası, Yahudi kabileler dahil olmak üzere kabileler için savunma bakımından tek bir topluluk olarak kurallar koydu. Medine genç topluluğun merkezi, sonraları da ilk halifelerin başkenti oldu.",
+        "quiz": [
+          {
+            "q": "Muâhât neydi?",
+            "options": [
+              "Muhacirlerle yardımcılar arasındaki kardeşlik",
+              "Bir savaş",
+              "Bir vergi"
+            ]
+          },
+          {
+            "q": "59:9, Ensar'ı nasıl anlatır?",
+            "options": [
+              "Başkalarını kendilerine tercih ederler",
+              "Zengindirler",
+              "Tüccardırlar"
+            ]
+          }
+        ]
+      },
+      "masjid-nabawi": {
+        "title": "Tarih boyunca Mescid-i Nebevî",
+        "text": "Mescid-i Nebevî 622'de kerpiç ve hurma kütüklerinden yapıldı; yanında Peygamberimizin evi vardı. Hz. Ömer ve Hz. Osman mescidi genişletti; Emevîlerden el-Velid onu 707 civarında yeniden inşa etti ve Peygamberimizin kabrini mescidin içine aldı.\nMemlûk Sultanı Kalavun, kabrin üzerine kubbeyi 1279'da ekledi; kubbe 1837'de yeşile boyandı. Osmanlılar mescidin büyük bölümünü 1840'lar ile 1860'lar arasında yeniden inşa etti. 1951'den bu yana Suudi genişletmeleri alanını kat kat artırdı; avlulardaki büyük gölgelik şemsiyeler 2010'dan kalmadır.",
+        "quiz": [
+          {
+            "q": "Yeşil Kubbe ne zaman yeşile boyandı?",
+            "options": [
+              "622",
+              "1837",
+              "2010"
+            ]
+          },
+          {
+            "q": "İlk duvarlar neyden yapılmıştı?",
+            "options": [
+              "Mermer",
+              "Kerpiç ve hurma kütükleri",
+              "Çelik"
+            ]
+          }
+        ]
+      },
+      "qibla": {
+        "title": "Kıblenin değişmesi",
+        "text": "Medine'de yaklaşık 16 ya da 17 ay boyunca Müslümanlar Kudüs'e doğru namaz kıldı. Sonra bir ayet, Mekke'deki Mescid-i Haram'a yönelmeyi emretti (2:144). Gelenek, değişikliği Benî Selime Mescidi'nde kılınan bir namaz sırasına yerleştirir; bu mescit o günden beri “iki kıble mescidi” anlamına gelen Kıbleteyn Mescidi adıyla bilinir.\nAynı bölümde Kur'an, Müslümanları orta yolu izleyen bir topluluk olarak tanımlar (2:143).",
+        "quiz": [
+          {
+            "q": "Müslümanlar önce hangi şehre doğru namaz kıldı?",
+            "options": [
+              "Kudüs",
+              "Şam",
+              "Medine"
+            ]
+          },
+          {
+            "q": "Kıbleteyn Mescidi ne demektir?",
+            "options": [
+              "İki kıble mescidi",
+              "İki halife mescidi",
+              "İki nehir mescidi"
+            ]
+          }
+        ]
+      },
+      "fath-makka": {
+        "title": "Mekke'ye dönüş (630)",
+        "text": "Hudeybiye Antlaşması (628) bozulduktan sonra Peygamberimiz 630'da Mekke'ye neredeyse hiç savaşmadan girdi. Kâbe'nin çevresindeki putları, hakkın gelip batılın yok olduğunu bildiren 17:81 ayetini okuyarak kaldırdı.\nMekke halkı için genel af ilan etti. Hz. Bilal, Kâbe'nin damından ezan okudu. Nasr Suresi, insanların akın akın Allah'ın dinine girmesinden söz eder (110:2).",
+        "quiz": [
+          {
+            "q": "Peygamberimiz putları kaldırırken hangi ayeti okudu?",
+            "options": [
+              "17:81, hakkın gelip batılın yok oluşu üzerine",
+              "96:1, okuma emri",
+              "112:1, Allah'ın birliği"
+            ]
+          },
+          {
+            "q": "Peygamberimiz Mekke halkına nasıl davrandı?",
+            "options": [
+              "Genel af",
+              "Sürgün",
+              "Ağır haraç"
+            ]
+          }
+        ]
+      },
+      "hajj-basics": {
+        "title": "Hac: anlamı, çeşitleri ve ihram",
+        "text": "Hac, İslam'ın şartlarından biridir; yolculuğu yapabilecek durumda olanlar için ömürde bir kez yerine getirilmesi gerekir (3:97) ve Zilhicce ayında yapılır. Üç şekli vardır: temettu (önce umre, sonra hac, bir kurbanla birlikte), kıran (ikisi birlikte) ve ifrad (yalnızca hac).\nHacılar, belirli bir sınır olan mîkatta niyet ve telbiye ile ihrama girer; telbiye, hacıların Allah'a icabet çağrısıdır. Erkekler dikişsiz iki beyaz örtü giyer; kadınlar mütevazı, olağan giysiler giyer. İhram sırasında koku sürünmek, saç kesmek ve tartışmak gibi bazı şeylerden kaçınılır (2:197).",
+        "note": "Dört Sünni mezhep ayrıntılarda farklı görüştedir (örneğin hangi fiillerin rükün, hangilerinin vacip olduğu konusunda). İsnâaşeriyye Şii uygulamasında Mekke'den uzakta yaşayanlar için temettu farzdır ve bazı ibadetlerin sırası farklıdır. Hacılar kendi mezheplerini ve grubunun rehberliğini takip eder.",
+        "quiz": [
+          {
+            "q": "Hangi hac şekli umreyle başlar, ardından bir ara gelir, sonra hac yapılır?",
+            "options": [
+              "Temettu",
+              "İfrad",
+              "Kıran"
+            ]
+          },
+          {
+            "q": "Hacılar ihrama nerede girer?",
+            "options": [
+              "Mîkatta",
+              "Arafat'ta",
+              "Yalnızca evde"
+            ]
+          }
+        ]
+      },
+      "hajj-8-9": {
+        "title": "Haccın 8. ve 9. günleri: Mina, Arafat, Müzdelife",
+        "text": "Zilhicce'nin 8. günü (terviye günü) hacılar Mina'ya gider ve günü ve geceyi ibadetle geçirir. 9. günde öğleden gün batımına kadar Arafat'ta dua ederek durur: haccın kalbi olan vakfe; bir hadis (Ebû Dâvûd, Tirmizî) Arafat'ta durmayı haccın özü olarak niteler.\nGün batımından sonra Müzdelife'ye geçer, akşam ve yatsı namazlarını birlikte kılar, Meş'ar-i Haram'da Allah'ı anar (2:198), açık gök altında dinlenir ve küçük taşlar toplar.",
+        "quiz": [
+          {
+            "q": "Hadise göre haccın kalbi nedir?",
+            "options": [
+              "Arafat'ta durmak",
+              "Taşlama",
+              "Alışveriş"
+            ]
+          },
+          {
+            "q": "Hacılar Arafat'tan sonra geceyi nerede geçirir?",
+            "options": [
+              "Müzdelife",
+              "Medine",
+              "Cidde"
+            ]
+          }
+        ]
+      },
+      "hajj-10-13": {
+        "title": "Haccın 10. ila 13. günleri: bayram, taşlama, tavaf",
+        "text": "10. gün, yani Kurban Bayramı günü, hacılar Akabe cemresine yedi taş atar, kurban (hedy) keser, saçlarını tıraş eder ya da kısaltır ve ifâza tavafını yapar; ardından sa'y gelir. Kur'an, hacılara kurbanın eti ya da kanının değil, takvalarının Allah'a ulaştığını hatırlatır (22:37).\nTeşrik günlerinde (11. günden 12. ya da 13. güne kadar) Mina'da kalır ve her gün üç cemrenin her birine yedi taş atar. Mekke'den ayrılmadan önce veda tavafını yapar.",
+        "note": "Mezhepler 10. gündeki fiillerin tam sırası ve sıranın değişmesi hâlinde neyin gerektiği konusunda farklı görüştedir; pek çok âlim, Peygamberimizin sırayı değiştirip durumu kendisine soran hacıların bu davranışını kabul ettiği hadislere dayanarak esneklik tanır (Buhârî, Müslim).",
+        "quiz": [
+          {
+            "q": "10. gün hangi cemre taşlanır?",
+            "options": [
+              "Akabe cemresi",
+              "Üçü de",
+              "Hiçbiri"
+            ]
+          },
+          {
+            "q": "22:37'ye göre kurbandan Allah'a ne ulaşır?",
+            "options": [
+              "Etleri",
+              "Takvaları",
+              "Kanları"
+            ]
+          }
+        ]
+      },
+      "umrah": {
+        "title": "Adım adım umre",
+        "text": "Umre, yani 'küçük hac', yılın her zamanında yapılabilir. Adımları şunlardır: mîkatta niyet ve telbiye ile ihrama girmek; Kâbe'nin çevresinde Hacerülesved'den başlayarak saat yönünün tersine yedi kez dönmek (tavaf); mümkünse Makam-ı İbrahim'in arkasında iki rekât namaz kılmak; Zemzem içmek.\nArdından Safa'dan başlayarak Safa ile Merve arasında yedi kez yürümek (sa'y); Kur'an, Safa ile Merve'yi Allah'ın şiarları arasında sayar (2:158). Son olarak saçı tıraş etmek ya da kısaltmak ve ihram sona erer.",
+        "note": "İsnâaşeriyye Şii uygulamasında müfrede umre, saç kesildikten sonra nisâ tavafını ve onun namazını da içerir.",
+        "quiz": [
+          {
+            "q": "Tavaf nerede başlar?",
+            "options": [
+              "Hacerülesved'de",
+              "Merve'de",
+              "Kapıda"
+            ]
+          },
+          {
+            "q": "Sa'y nerede başlar?",
+            "options": [
+              "Safa'da",
+              "Merve'de",
+              "Zemzem'de"
+            ]
+          }
+        ]
+      },
+      "farewell-hajj": {
+        "title": "Veda Haccı (632)",
+        "text": "632'de Peygamberimiz, çok sayıda sahabiyle birlikte tek haccını yaptı. Arafat'ta Veda Hutbesi'ni verdi: can, mal ve ırz dokunulmazdır; insanlar soy ya da renk bakımından değil, yalnızca takva bakımından birbirinden üstündür; kadınlara iyi davranılmalıdır (Müslim'de ve Ahmed'in Müsned'inde yer alan rivayetler).\nDinin tamamlanmasına dair ayet (5:3), rivayetlerin çoğuna göre Arefe günü nazil oldu. Haccın ibadetlerinin çoğu, onun bu haccında gösterdiği örneğe dayanır.",
+        "note": "Şii gelenek bu yolculuğu dönüşteki Gadir-i Hum ile de ilişkilendirir ve pek çok Şii müfessir 5:3'ü bu olayla bağlantılandırır.",
+        "quiz": [
+          {
+            "q": "Veda Hutbesi nerede verildi?",
+            "options": [
+              "Arafat'ta",
+              "Medine'de",
+              "Bedir'de"
+            ]
+          },
+          {
+            "q": "Peygamberimiz kaç kez hac yaptı?",
+            "options": [
+              "Bir kez",
+              "Üç kez",
+              "Her yıl"
+            ]
+          }
+        ]
+      },
+      "medina-adab": {
+        "title": "Medine ziyaretinin âdâbı",
+        "text": "Medine'yi ziyaret etmek haccın bir parçası değildir, ancak pek çok hacı oraya gider. Mescid-i Nebevî'de namaz kılmanın büyük bir fazileti vardır. Peygamberimizin evi ile minberi arasındaki Ravza, bir hadiste (Buhârî, Müslim) cennet bahçelerinden biri olarak anılır; girişler artık zaman dilimlerine göre rezerve edilir.\nKabir başında ziyaretçiler Peygamberimize, Hz. Ebû Bekir'e ve Hz. Ömer'e sessizce selam verir; Kur'an'ın seslerin Peygamberimizin sesinden yüksek çıkarılmamasına dair emrini gözetir (49:2). Ona salavat getirin (33:56), kalabalıkta sabırlı, diğer ziyaretçilere karşı nazik olun.",
+        "note": "Âlimler, yolculuğa kabri ziyaret niyetiyle mi yoksa mescidi ziyaret niyetiyle mi çıkılacağı konusunda ve orada yapılacak duanın ayrıntıları hakkında farklı görüştedir. Şii ziyaretçiler Cennetü'l-Bakî'de İmamların kabirlerini de ziyaret eder.",
+        "quiz": [
+          {
+            "q": "Ravza nerededir?",
+            "options": [
+              "Peygamberimizin evi ile minberi arasında",
+              "Kubâ'da",
+              "Uhud'da"
+            ]
+          },
+          {
+            "q": "Medine'yi ziyaret, haccın ibadetlerinden biri midir?",
+            "options": [
+              "Evet, bir rükün",
+              "Hayır, ama pek çok hacı gider",
+              "Yalnızca umre için"
+            ]
+          }
+        ]
+      },
+      "ziyarah-medina": {
+        "title": "Medine'deki yerler: Kubâ, Uhud, Cennetü'l-Bakî",
+        "text": "İlk mescit olan Kubâ Mescidi, genellikle ilk gününden itibaren takva üzerine kurulan mescitle ilişkilendirilir (9:108); bir hadis (Tirmizî, İbn Mâce), orada namaz kılmanın bir umre sevabı taşıdığını söyler. Uhud Dağı, 625 yılındaki savaşın (3:121) yapıldığı ve aralarında Hz. Hamza'nın da bulunduğu şehitlerinin kabirlerinin yer aldığı yerdir.\nCennetü'l-Bakî, Medine'nin başlıca kabristanıdır; burada pek çok sahabinin ve Peygamberimizin ailesinden kişilerin kabirleri bulunur. Diğer yerler arasında Kıbleteyn Mescidi ile 627 yılındaki hendeğin yakınındaki Yedi Mescit de vardır.",
+        "note": "Bazı müfessirler 9:108'i Kubâ'ya değil, Mescid-i Nebevî'ye atfeder. Kabir başındaki uygulamalar (örneğin hangi duaların yapıldığı) Sünni mezhepler ile Şii gelenek arasında farklılık gösterir.",
+        "quiz": [
+          {
+            "q": "Uhud'da hangi savaş yapıldı?",
+            "options": [
+              "625 yılındaki savaş",
+              "Bedir",
+              "Huneyn"
+            ]
+          },
+          {
+            "q": "Cennetü'l-Bakî nedir?",
+            "options": [
+              "Medine'nin ana kabristanı",
+              "Bir pazar",
+              "Bir kuyu"
+            ]
+          }
+        ]
+      },
+      "ziyarah-mecca": {
+        "title": "Mekke çevresindeki yerler",
+        "text": "Vahyin başladığı Hira Mağarası'nın bulunduğu Nur Dağı; Peygamberimizin hicret sırasında saklandığı Sevr Dağı (9:40); Arafat'taki Rahmet Tepesi, hacıların sık sık çıktığı bir tepedir, ancak Arafat sınırları içinde herhangi bir yerde durmak geçerlidir.\nAyrıca: Arafat'taki Nemire Mescidi, Mina'daki Hayf Mescidi, Hz. Hatice'nin defnedildiği Ma'lâ Kabristanı (Cennetü'l-Muallâ) ve şimdi mescit alanının içinde kalan Dârü'l-Erkam'ın yeri. Tarihî yapıların çoğunun yerini genişletmeler almıştır.",
+        "quiz": [
+          {
+            "q": "Hz. Hatice nerede defnedilmiştir?",
+            "options": [
+              "Cennetü'l-Muallâ",
+              "Cennetü'l-Bakî",
+              "Uhud"
+            ]
+          },
+          {
+            "q": "Arafat'ta Rahmet Tepesi'nde durmak zorunlu mudur?",
+            "options": [
+              "Evet",
+              "Hayır, Arafat'ın tamamı geçerlidir",
+              "Yalnızca erkekler için"
+            ]
+          }
+        ]
+      },
+      "modern": {
+        "title": "Modern genişletmeler",
+        "text": "Mescid-i Haram'ın ilk Suudi genişletmesi 1955'te başladı, ikincisi Kral Fahd döneminde 1988'de, en büyüğü olan üçüncüsü ise 2011'den itibaren yapıldı. Safa ile Merve arasındaki mes'â birkaç kata çıkarıldı; mataf ek halkalar kazandı. Saatli Abraj al-Bait kuleleri 2012 civarında açıldı.\nUlaşım: Mashaaer metrosu Mina, Müzdelife ve Arafat'ı birbirine bağlar (2010); Haremeyn hızlı treni Mekke, Cidde ve Medine'yi bağlar (2018). Hac izinleri ve Ravza ziyaretleri Nusuk gibi resmî platformlar üzerinden rezerve edilir.",
+        "quiz": [
+          {
+            "q": "Mekke ile Medine'yi hangi demiryolu bağlar?",
+            "options": [
+              "Haremeyn hızlı treni",
+              "Hicaz Demiryolu (hâlâ işliyor)",
+              "Hiçbiri"
+            ]
+          },
+          {
+            "q": "En büyük (üçüncü) Suudi genişletmesi ne zaman başladı?",
+            "options": [
+              "2011",
+              "1955",
+              "1630"
+            ]
+          }
+        ]
+      }
+    },
+    "units": {
+      "kaaba": {
+        "text": "Kur'an, Evi Hz. İbrahim ile Hz. İsmail'e bağlar. Yapı birçok kez yeniden inşa edildi; bunların arasında vahiyden az önce Kureyş, 683'te Abdullah b. Zübeyr ve 1629/1630 sellerinin ardından yapılanlar yer alır. Çevresinde Hacerülesved, Hicr-i İsmail, Makam-ı İbrahim ve Zemzem kuyusu bulunur."
+      },
+      "mecca": {
+        "text": "İslam'dan önce Mekke, Yemen ile Suriye arasındaki kervan yolları üzerinde Kureyş'in ticaret kentiydi. Yazılar Fil Yılı'nı, Hilfü'l-Fudûl'ü, Kâbe'nin putlarını ve 630'da kaldırılmalarını, Dârülerkam'ı, hicreti ve Mescid-i Haram'ın bugüne kadarki genişletmelerini ele alır."
+      },
+      "medina": {
+        "text": "Yesrib, Evs ve Hazrec kabilelerinin ve Yahudi kabilelerin yaşadığı bir vahaydı. 622'deki hicretten sonra Medînetü'n-Nebî oldu. Yazılar Medine Vesikası'nı, Mescid-i Nebevî'yi ve genişletmelerini, Yeşil Kubbe'yi, Kubâ'yı, Kıbleteyn'i, savaş alanlarını ve bugünkü şehri ele alır."
+      },
+      "hejaz": {
+        "text": "Hicaz, Kızıldeniz kıyısı (Tihame) ile Sarawat Dağları arasında yer alır. Vadiler, Harrat Rahat gibi lav alanları ve sıcak bir çöl iklimi Mekke, Medine ve Tâif bölgesini şekillendirir."
+      }
+    },
+    "guide": {
+      "umrah": [
+        {
+          "title": "Mîkatta ihram",
+          "text": "Yıkanın, ihram giysilerini giyin, umre niyetini edin ve telbiyeye başlayın."
+        },
+        {
+          "title": "Tavaf: yedi tur",
+          "text": "Hacerülesved hizasından başlayın, Kâbe'yi solunuzda tutarak yedi kez dönün."
+        },
+        {
+          "title": "İki rekât ve Zemzem",
+          "text": "İki rekât namaz kılın, mümkünse Makam-ı İbrahim'in arkasında, sonra Zemzem için."
+        },
+        {
+          "title": "Sa'y: Safa'dan Merve'ye",
+          "text": "Safa'da başlayıp Merve'de biten yedi gidiş; Hz. Hacer'in arayışını hatırlayarak."
+        },
+        {
+          "title": "Saçı tıraş etme veya kısaltma",
+          "text": "Erkekler tıraş olur veya saçını kısaltır, kadınlar bir parmak ucu kadar keser. İhram sona erer."
+        }
+      ],
+      "hajj": [
+        {
+          "day": "8 Zilhicce",
+          "title": "Hac için ihram",
+          "text": "Temettu yapan hacılar yeniden ihrama girer; genellikle Mekke'de kaldıkları yerden."
+        },
+        {
+          "day": "8 Zilhicce",
+          "title": "Mina'ya",
+          "text": "Günü ve geceyi Mina'da ibadetle geçirin (terviye günü)."
+        },
+        {
+          "day": "9 Zilhicce",
+          "title": "Arafat'ta vakfe",
+          "text": "Öğleden gün batımına kadar dua ile. Haccın kalbi."
+        },
+        {
+          "day": "9 Zilhicce",
+          "title": "Müzdelife'de gece",
+          "text": "Akşam ve yatsıyı birlikte kılın, dinlenin, taş toplayın."
+        },
+        {
+          "day": "10 Zilhicce",
+          "title": "Akabe cemresini taşlama",
+          "text": "Yedi taş, birer birer, tekbir getirerek."
+        },
+        {
+          "day": "10 Zilhicce",
+          "title": "Kurban",
+          "text": "Temettu ve kıran için; bugün genellikle kupon ile ayarlanır."
+        },
+        {
+          "day": "10 Zilhicce",
+          "title": "Tıraş veya kısaltma",
+          "text": "İhramdan ilk çıkış."
+        },
+        {
+          "day": "10 Zilhicce",
+          "title": "İfâza tavafı ve sa'y",
+          "text": "Haccın bir rüknüdür; sonraki günlerde de yapılabilir."
+        },
+        {
+          "day": "11-13 Zilhicce",
+          "title": "Mina'da teşrik günleri",
+          "text": "Üç cemreyi her gün taşlayın, her birine yedi taş; küçükten büyüğe."
+        },
+        {
+          "title": "Veda tavafı",
+          "text": "Mekke'den ayrılmadan önceki son ibadet."
+        }
+      ]
+    }
   }
 }

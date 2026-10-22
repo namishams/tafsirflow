@@ -1,0 +1,200 @@
+{
+  "tr": {
+    "home": {
+      "title": "Riḥlat al-ʿIlm – öğrenmenin uzun yolu | Quran Masterclass",
+      "description": "Hıfz, tecvid, Arapça, tefsir ve hadis, Marāḥil (duraklar) boyunca tek bir yolda: son durağı olmayan bir harita, uygulama içi rütbeler, toplanacak mühürler ve hiç bitmeyen günlük planlar. Web sitesinde ücretsiz."
+    },
+    "today": {
+      "title": "Bugünün planları – Riḥlat al-ʿIlm | Quran Masterclass",
+      "description": "Bitmeyen günlük planlar: Kur'an hatmi, hıfz tekrarı, ayet ayet tefsir, hadis külliyatlarını baştan sona okuma, Kur'an'daki her lemma ve benzer ayetler."
+    },
+    "stats": {
+      "title": "İstatistikler – Riḥlat al-ʿIlm | Quran Masterclass",
+      "description": "Saymaya devam eden toplamlar, her zaman geçilebilen kişisel rekorlar ve bir sonrakini açan hedefler."
+    },
+    "year": {
+      "title": "Yıl değerlendirmesi – Riḥlat al-ʿIlm | Quran Masterclass",
+      "description": "Bir hicri yıldaki öğreniminiz: öğrenme günleri, puanlar, rekorlar, tamamlanan döngüler, mühürler ve sertifikalar."
+    }
+  },
+  "ur": {
+    "home": {
+      "title": "رحلة العلم – سیکھنے کا طویل راستہ | Quran Masterclass",
+      "description": "حفظ، تجوید، عربی، تفسیر اور حدیث ایک ہی راستے کے مراحل کی صورت میں: بغیر آخری مرحلے کا نقشہ، ایپ رینک، جمع کرنے کے لیے مہریں اور کبھی ختم نہ ہونے والے روزانہ منصوبے۔ ویب سائٹ پر مفت۔"
+    },
+    "today": {
+      "title": "آج کے منصوبے – رحلة العلم | Quran Masterclass",
+      "description": "کبھی ختم نہ ہونے والے روزانہ منصوبے: ختمِ قرآن، حفظ کی دہرائی، آیت بہ آیت تفسیر، پورے مجموعوں کے ساتھ حدیث، قرآن کا ہر بنیادی لفظ (لیمہ) اور ملتی جلتی آیات۔"
+    },
+    "stats": {
+      "title": "اعداد و شمار – رحلة العلم | Quran Masterclass",
+      "description": "مسلسل بڑھتے ہوئے کل اعداد، ذاتی ریکارڈ جنہیں ہمیشہ بہتر کیا جا سکتا ہے، اور ایسے اہداف جو مکمل ہوتے ہی اگلا ہدف کھول دیتے ہیں۔"
+    },
+    "year": {
+      "title": "سال کا جائزہ – رحلة العلم | Quran Masterclass",
+      "description": "ایک ہجری سال میں آپ کی تعلیم: سیکھنے کے دن، پوائنٹس، ریکارڈ، مکمل ہونے والے دور، مہریں اور سرٹیفکیٹ۔"
+    }
+  },
+  "fa": {
+    "home": {
+      "title": "رحلة العلم – مسیر بلند آموختن | Quran Masterclass",
+      "description": "حفظ، تجوید، عربی، تفسیر و حدیث در یک مسیر از مراحل: نقشه‌ای بدون آخرین ایستگاه، رتبه‌های برنامه، مهرهای قابل جمع‌آوری و برنامه‌های روزانه‌ای که تمام نمی‌شوند. رایگان در وب‌سایت."
+    },
+    "today": {
+      "title": "برنامه‌های امروز – رحلة العلم | Quran Masterclass",
+      "description": "برنامه‌های روزانهٔ بی‌پایان: ختم قرآن، مرور حفظ، تفسیر آیه‌به‌آیه، حدیث در مجموعه‌های کامل، هر سرواژهٔ قرآنی و آیات مشابه."
+    },
+    "stats": {
+      "title": "آمار – رحلة العلم | Quran Masterclass",
+      "description": "مجموع‌هایی که همچنان افزوده می‌شوند، رکوردهای شخصی که همیشه می‌توان شکستشان و هدف‌هایی که هدف بعدی را باز می‌کنند."
+    },
+    "year": {
+      "title": "مرور سال – رحلة العلم | Quran Masterclass",
+      "description": "آموختن شما در یک سال هجری: روزهای یادگیری، امتیازها، رکوردها، دوره‌های کامل‌شده، مهرها و گواهی‌ها."
+    }
+  },
+  "ps": {
+    "home": {
+      "title": "رحلة العلم – د زده کړې اوږده لار | Quran Masterclass",
+      "description": "حفظ، تجوید، عربي، تفسیر او حدیث د مراحلو په یوه لار کې: د وروستۍ مرحلې پرته نقشه، د اپ رتبې، د راټولولو مهرونه او ورځني پلانونه چې هېڅکله نه پای ته رسېږي. په ویب پاڼه کې وړیا."
+    },
+    "today": {
+      "title": "د نن پلانونه – رحلة العلم | Quran Masterclass",
+      "description": "نه ختمېدونکي ورځني پلانونه: د قرآن ختم، د حفظ تکرار، آیت په آیت تفسیر، د حدیثو بشپړې ټولګې، د قرآن هره لیما او ورته آیتونه."
+    },
+    "stats": {
+      "title": "احصایې – رحلة العلم | Quran Masterclass",
+      "description": "ټولیزې شمېرې چې تل ډېرېږي، شخصي ریکارډونه چې تل ماتېدلی شي او هدفونه چې بل هدف پرانیزي."
+    },
+    "year": {
+      "title": "د کال بیاکتنه – رحلة العلم | Quran Masterclass",
+      "description": "ستاسو زده کړه په یوه هجري کال کې: د زده کړې ورځې، نمرې، ریکارډونه، بشپړې شوې دورې، مهرونه او سندونه."
+    }
+  },
+  "fr": {
+    "home": {
+      "title": "Riḥlat al-ʿIlm – le long chemin du savoir | Quran Masterclass",
+      "description": "Hifz, tajwid, arabe, tafsir et hadith réunis en un seul chemin de Marāḥil : une carte sans dernière étape, des rangs dans l'application, des sceaux à collectionner et des plans quotidiens qui ne s'épuisent jamais. Gratuit sur le site web."
+    },
+    "today": {
+      "title": "Plans du jour – Riḥlat al-ʿIlm | Quran Masterclass",
+      "description": "Des plans quotidiens sans fin : un khatm du Coran, la révision du hifz, le tafsir verset par verset, le hadith à travers des recueils entiers, chaque lemme coranique et les versets semblables."
+    },
+    "stats": {
+      "title": "Statistiques – Riḥlat al-ʿIlm | Quran Masterclass",
+      "description": "Des totaux qui continuent de compter, des records personnels toujours à battre et des objectifs dont chacun ouvre le suivant."
+    },
+    "year": {
+      "title": "Année en revue – Riḥlat al-ʿIlm | Quran Masterclass",
+      "description": "Votre apprentissage sur une année hégirienne : jours d'étude, points, records, cycles achevés, sceaux et certificats."
+    }
+  },
+  "es": {
+    "home": {
+      "title": "Riḥlat al-ʿIlm – el largo camino del saber | Quran Masterclass",
+      "description": "Hifz, tajwid, árabe, tafsir y hadiz como un único camino de Marāḥil: un mapa sin última estación, rangos en la app, sellos que coleccionar y planes diarios que nunca se agotan. Gratis en el sitio web."
+    },
+    "today": {
+      "title": "Planes de hoy – Riḥlat al-ʿIlm | Quran Masterclass",
+      "description": "Planes diarios sin fin: una jatma del Corán, repaso de hifz, tafsir aleya por aleya, hadiz a lo largo de colecciones completas, cada lema coránico y las aleyas semejantes."
+    },
+    "stats": {
+      "title": "Estadísticas – Riḥlat al-ʿIlm | Quran Masterclass",
+      "description": "Totales que no dejan de crecer, marcas personales que siempre se pueden superar y metas que abren la siguiente."
+    },
+    "year": {
+      "title": "Resumen del año – Riḥlat al-ʿIlm | Quran Masterclass",
+      "description": "Su aprendizaje en un año hijri: días de estudio, puntos, marcas personales, ciclos completados, sellos y certificados."
+    }
+  },
+  "id": {
+    "home": {
+      "title": "Riḥlat al-ʿIlm – jalan panjang menuntut ilmu | Quran Masterclass",
+      "description": "Hifz, tajwid, bahasa Arab, tafsir, dan hadis dalam satu jalur Marāḥil: peta tanpa perhentian terakhir, peringkat dalam aplikasi, segel untuk dikumpulkan, dan rencana harian yang tak pernah habis. Gratis di situs web."
+    },
+    "today": {
+      "title": "Rencana hari ini – Riḥlat al-ʿIlm | Quran Masterclass",
+      "description": "Rencana harian tanpa akhir: khatam Al-Qur’an, ulangan hafalan, tafsir ayat demi ayat, hadis dari koleksi kitab secara utuh, setiap lemma Al-Qur’an, dan ayat-ayat yang mirip."
+    },
+    "stats": {
+      "title": "Statistik – Riḥlat al-ʿIlm | Quran Masterclass",
+      "description": "Total yang terus bertambah, rekor pribadi yang selalu bisa dipecahkan, dan target yang membuka target berikutnya."
+    },
+    "year": {
+      "title": "Rangkuman tahun – Riḥlat al-ʿIlm | Quran Masterclass",
+      "description": "Belajar Anda dalam satu tahun Hijriah: hari belajar, poin, rekor, siklus yang selesai, segel, dan sertifikat."
+    }
+  },
+  "ms": {
+    "home": {
+      "title": "Riḥlat al-ʿIlm – laluan panjang menuntut ilmu | Quran Masterclass",
+      "description": "Hafazan, tajwid, bahasa Arab, tafsir dan hadis dalam satu laluan Marāḥil: peta tanpa perhentian terakhir, pangkat aplikasi, meterai untuk dikumpul dan pelan harian yang tidak pernah habis. Percuma di laman web."
+    },
+    "today": {
+      "title": "Pelan hari ini – Riḥlat al-ʿIlm | Quran Masterclass",
+      "description": "Pelan harian tanpa had: khatam al-Quran, ulang kaji hafazan, tafsir ayat demi ayat, hadis daripada koleksi yang lengkap, setiap lema al-Quran dan ayat mirip."
+    },
+    "stats": {
+      "title": "Statistik – Riḥlat al-ʿIlm | Quran Masterclass",
+      "description": "Jumlah yang terus bertambah, rekod peribadi yang sentiasa boleh dipecahkan dan matlamat yang membuka matlamat seterusnya."
+    },
+    "year": {
+      "title": "Rumusan tahun – Riḥlat al-ʿIlm | Quran Masterclass",
+      "description": "Pembelajaran anda dalam satu tahun Hijrah: hari belajar, mata, rekod, kitaran yang selesai, meterai dan sijil."
+    }
+  },
+  "bn": {
+    "home": {
+      "title": "Riḥlat al-ʿIlm – শেখার দীর্ঘ পথ | Quran Masterclass",
+      "description": "হিফজ, তাজবিদ, আরবি, তাফসির ও হাদিস – মারাহিলের (ধাপসমূহের) একটি পথ: শেষ স্টেশনহীন মানচিত্র, অ্যাপের র‍্যাঙ্ক, সংগ্রহের সিল এবং কখনো না ফুরানো দৈনিক পরিকল্পনা। ওয়েবসাইটে বিনামূল্যে।"
+    },
+    "today": {
+      "title": "আজকের পরিকল্পনা – Riḥlat al-ʿIlm | Quran Masterclass",
+      "description": "অফুরন্ত দৈনিক পরিকল্পনা: কুরআনের খতম, হিফজ রিভিউ, আয়াত ধরে ধরে তাফসির, পুরো সংকলন জুড়ে হাদিস, কুরআনের প্রতিটি লেমা এবং সাদৃশ্যপূর্ণ আয়াত।"
+    },
+    "stats": {
+      "title": "পরিসংখ্যান – Riḥlat al-ʿIlm | Quran Masterclass",
+      "description": "যে মোট সংখ্যা বাড়তেই থাকে, যে ব্যক্তিগত রেকর্ড সবসময় ভাঙা যায় এবং যে লক্ষ্য পরেরটির দরজা খুলে দেয়।"
+    },
+    "year": {
+      "title": "বছরের পর্যালোচনা – Riḥlat al-ʿIlm | Quran Masterclass",
+      "description": "এক হিজরি বছরে আপনার শেখা: শেখার দিন, পয়েন্ট, রেকর্ড, সম্পন্ন চক্র, সিল ও সার্টিফিকেট।"
+    }
+  },
+  "ru": {
+    "home": {
+      "title": "Riḥlat al-ʿIlm – долгий путь знаний | Quran Masterclass",
+      "description": "Хифз, таджвид, арабский, тафсир и хадисы как один путь из этапов Marāḥil: карта без последней станции, ранги приложения, печати для коллекции и ежедневные планы, которые не кончаются. Бесплатно на сайте."
+    },
+    "today": {
+      "title": "Планы на сегодня – Riḥlat al-ʿIlm | Quran Masterclass",
+      "description": "Бесконечные ежедневные планы: хатм Корана, повторение хифза, тафсир аят за аятом, хадисы по целым сборникам, каждая лемма Корана и схожие аяты."
+    },
+    "stats": {
+      "title": "Статистика – Riḥlat al-ʿIlm | Quran Masterclass",
+      "description": "Итоги, которые продолжают расти, личные рекорды, которые всегда можно побить, и цели, открывающие следующую."
+    },
+    "year": {
+      "title": "Итоги года – Riḥlat al-ʿIlm | Quran Masterclass",
+      "description": "Ваше обучение за один год хиджры: дни занятий, баллы, рекорды, завершённые циклы, печати и сертификаты."
+    }
+  },
+  "zh": {
+    "home": {
+      "title": "Riḥlat al-ʿIlm – 漫长的求知之路 | Quran Masterclass",
+      "description": "背诵、泰吉威德、阿拉伯语、经注与圣训汇成一条由 Marāḥil（各站）相连的路：没有终点站的地图、应用内等级、可收集的印章，以及用不完的每日计划。网站免费。"
+    },
+    "today": {
+      "title": "今日计划 – Riḥlat al-ʿIlm | Quran Masterclass",
+      "description": "无尽的每日计划：古兰经通读（khatm）、背诵复习、逐节经注、通读整部圣训集、古兰经的每个词元，以及相似经文。"
+    },
+    "stats": {
+      "title": "统计 – Riḥlat al-ʿIlm | Quran Masterclass",
+      "description": "不断累计的总数、随时可以刷新的个人纪录，以及一个接一个开启的目标。"
+    },
+    "year": {
+      "title": "年度回顾 – Riḥlat al-ʿIlm | Quran Masterclass",
+      "description": "您在一个伊历年中的学习：学习天数、积分、纪录、完成的周期、印章与证书。"
+    }
+  }
+}

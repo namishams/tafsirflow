@@ -1,4 +1,7 @@
 // SEO texts of the Reciter Path pages (server-safe). German, English and Arabic; other languages use English.
+// Further languages: meta.i18n.json next to this file (see ../seoI18n.ts), English for every key they lack.
+import I18N from "./meta.i18n.json";
+import { seoOver, seoString } from "@/components/learn/seoI18n";
 type M = { title: string; description: string };
 type Page = "home" | "unit" | "exam" | "teacher";
 const T: Record<"en" | "de" | "ar", Record<Page, M>> = {
@@ -22,6 +25,13 @@ const T: Record<"en" | "de" | "ar", Record<Page, M>> = {
   },
 };
 export function rpMeta(locale: string, page: Page, v: { t?: string; n?: number } = {}): M {
-  const m = T[locale === "de" || locale === "ar" ? locale : "en"][page];
+  const own = locale === "de" || locale === "ar" ? null : seoOver(T.en, I18N, locale);
+  const m = (own ?? T[locale === "de" || locale === "ar" ? locale : "en"])[page];
   return { title: m.title.replace("{t}", v.t ?? "").replace("{n}", String(v.n ?? "")), description: m.description };
+}
+/** the word before a level number in a unit title ("Level 3 · …"), in this locale */
+export const LEVEL_WORD: Record<"en" | "de" | "ar", string> = { en: "Level", de: "Stufe", ar: "المستوى" };
+export function rpLevelWord(locale: string): string {
+  if (locale === "de" || locale === "ar") return LEVEL_WORD[locale];
+  return seoString(I18N, locale, "levelWord") ?? LEVEL_WORD.en;
 }

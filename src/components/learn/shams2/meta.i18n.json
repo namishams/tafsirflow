@@ -1,0 +1,772 @@
+{
+  "tr": {
+    "method": {
+      "title": "Shams Yöntemi 2.0 – öğrenme bilimiyle klasik hıfz sistemi | Quran Masterclass",
+      "description": "Her gün sabaq, sabqi ve manzil; her sayfanın hıfz kalitesi, benzer ayetler, usta bir kâriyle talaqqi, hıfz dereceleri ve tilavet testleri – ezberlediklerinizden hesaplanır. Ücretsiz."
+    },
+    "wird": {
+      "title": "Bugünkü vird – sabaq, sabqi, manzil | Quran Masterclass",
+      "description": "Ezberinize göre planlanan günlük virdiniz: yeni ayetler, yakın bölüm ve uzun vadeli tekrar."
+    },
+    "quality": {
+      "title": "Hıfz kalitesi – her sayfa, sure ve cüz için ısı haritası | Quran Masterclass",
+      "description": "Mushafın 604 sayfasında, 114 surede veya 30 cüzde ezberinizin itkanı (sağlamlığı), en zayıf ayetlerle birlikte."
+    },
+    "mutashabihat": {
+      "title": "Müteşâbih ayetler – benzer ayetler için çalıştırıcı | Quran Masterclass",
+      "description": "Neredeyse aynı ifadeli ayetler yan yana, farklı kelimeler işaretli ve birbirinden ayırmak için karışık bir alıştırma. Ücretsiz."
+    },
+    "weak": {
+      "title": "Zayıf noktalar – tathbit çalışması | Quran Masterclass",
+      "description": "Tekrar tekrar hata yapılan ayet ve kelimeler otomatik toplanır ve oturana kadar çalışılır."
+    },
+    "tadabbur": {
+      "title": "{s} Suresi'nin tedebbürü ve makasıdı | Quran Masterclass",
+      "description": "{s} Suresi'nin öğretmek istedikleri: ana tema, bağlam, yapı, dersler, tefekkür soruları ve her ayetin tefsiri."
+    },
+    "darajat": {
+      "title": "Darajat al-hifz – hıfz dereceleri | Quran Masterclass",
+      "description": "Gereklilikleriyle yedi hıfz derecesi: istemler, geçme notları, hız, manzil döngüsü ve haftalık ile aylık tilavet testleri."
+    },
+    "ard": {
+      "title": "ʿArd – ezberden tilavet testi | Quran Masterclass",
+      "description": "Klasik hoca sorusu: ezberlediğiniz bölümden bir ayet verilir, buradan devam edin."
+    },
+    "week": {
+      "title": "Haftalık değerlendirme – murajaʿat al-usbuʿ | Quran Masterclass",
+      "description": "Ezber haftanız bir bakışta: düzenlilik, yeni ve tekrar edilen ayetler, kalite ve sırada nelere odaklanmanız gerektiği."
+    },
+    "handbook": {
+      "title": "Shams Yöntemi el kitabı – ilkeler, uygulama, dereceler ve terimler | Quran Masterclass",
+      "description": "Shams Yöntemi'nin medreseden ve öğrenme biliminden gelen ilkeleri, günlük uygulama, hıfz dereceleri ve terimler sözlüğü; kaynaklarıyla birlikte."
+    },
+    "welcome": {
+      "title": "Shams Yöntemi'ne hoş geldiniz | Quran Masterclass",
+      "description": "Kur'an ezberlemenin sekiz ilkesi iki dakikada, ardından günlük süreniz."
+    },
+    "next": {
+      "title": "Sonraki adımlar – Shams Yöntemi | Quran Masterclass",
+      "description": "Her sure, cüz ve testten sonraki anlamlı adımlar."
+    },
+    "talaqqi": {
+      "title": "Talaqqi – usta bir kâriyle cümle cümle okuyun | Quran Masterclass",
+      "description": "Cümle cümle dinleyin, ezberden okuyun, kelimeleri kontrol edin ve kaydınızı kâriyle karşılaştırın."
+    },
+    "teacher": {
+      "title": "Hoca görünümü – hıfz ilerlemenizi paylaşın | Quran Masterclass",
+      "description": "Virdinizi, kalitenizi ve serinizi hocanızla bir kod aracılığıyla, salt okunur ve hesap gerektirmeden paylaşın."
+    },
+    "program": {
+      "title": "30 günlük program – Shams Yöntemi | Quran Masterclass",
+      "description": "Shams Yöntemi ile rehberli bir ay: günde küçük bir bölüm, tekrar programın içinde."
+    },
+    "plans": {
+      "title": "Her sure için ezber planları – Shams Yöntemi | Quran Masterclass",
+      "description": "Her sure için bir plan: hızınızı seçin ve her günün ayetlerini görün."
+    },
+    "review": {
+      "title": "Shams tekrarı – önce en zayıf ayetleriniz | Quran Masterclass",
+      "description": "En zayıf ayetleriniz önce, Shams Yöntemi'nin adımlarıyla."
+    }
+  },
+  "ur": {
+    "method": {
+      "title": "شمس طریقہ 2.0 – سیکھنے کی سائنس کے ساتھ حفظ کا روایتی نظام | Quran Masterclass",
+      "description": "ہر روز سبق، سبقی اور منزل، ہر صفحے کے حفظ کا معیار، ملتی جلتی آیات، ماہر قاری کے ساتھ تلقی، حفظ کے درجات اور تلاوت کے امتحانات – سب کچھ آپ کے حفظ کیے ہوئے حصے سے ترتیب پاتا ہے۔ مفت۔"
+    },
+    "wird": {
+      "title": "آج کا ورد – سبق، سبقی، منزل | Quran Masterclass",
+      "description": "نئی آیات، حالیہ حصے اور طویل مدتی دہرائی پر مشتمل آپ کا روزانہ ورد، آپ کے حفظ کے مطابق ترتیب دیا گیا۔"
+    },
+    "quality": {
+      "title": "حفظ کا معیار – ہر صفحے، سورت اور پارے کا ہیٹ میپ | Quran Masterclass",
+      "description": "مصحف کے 604 صفحات، 114 سورتوں یا 30 پاروں میں آپ کے حفظ کا اتقان، کمزور ترین آیات کے ساتھ۔"
+    },
+    "mutashabihat": {
+      "title": "متشابہات – قرآن کی ملتی جلتی آیات کی مشق | Quran Masterclass",
+      "description": "تقریباً ایک جیسے الفاظ والی آیات ساتھ ساتھ، مختلف الفاظ نمایاں، اور انہیں الگ پہچاننے کے لیے ملی جلی مشق۔ مفت۔"
+    },
+    "weak": {
+      "title": "کمزور مقامات – تثبیت کی مشق | Quran Masterclass",
+      "description": "بار بار غلطی والی آیات اور الفاظ خودکار طور پر جمع کیے جاتے ہیں اور پختہ ہونے تک ان کی مشق کرائی جاتی ہے۔"
+    },
+    "tadabbur": {
+      "title": "سورۃ {s}: تدبر اور مقاصد | Quran Masterclass",
+      "description": "سورۃ {s} کیا سکھانا چاہتی ہے: مرکزی موضوع، پس منظر، ساخت، اسباق، غور و فکر کے سوالات اور ہر آیت کی تفسیر۔"
+    },
+    "darajat": {
+      "title": "درجات الحفظ – حفظ کے درجے | Quran Masterclass",
+      "description": "حفظ کے سات درجے اور ان کے تقاضے: اشارے، پاس نمبر، رفتار، منزل کا دور، اور ہفتہ وار و ماہانہ تلاوت کے امتحانات۔"
+    },
+    "ard": {
+      "title": "عرض – یادداشت سے تلاوت کا امتحان | Quran Masterclass",
+      "description": "استاد کا روایتی سوال: آپ کے یاد کیے ہوئے حصے سے ایک آیت دی جاتی ہے – یہاں سے آگے پڑھیں۔"
+    },
+    "week": {
+      "title": "ہفتہ وار جائزہ – مراجعة الأسبوع | Quran Masterclass",
+      "description": "آپ کے حفظ کا ایک ہفتہ: تسلسل، نئی اور دہرائی گئی آیات، معیار، اور آگے کس چیز پر توجہ دینی ہے۔"
+    },
+    "handbook": {
+      "title": "شمس طریقہ ہینڈبک – اصول، مشق، درجات اور اصطلاحات | Quran Masterclass",
+      "description": "مدرسے کی روایت اور سیکھنے کی سائنس سے لیے گئے شمس طریقہ کے اصول، روزانہ کی مشق، حفظ کے درجات اور اصطلاحات کی فہرست، ماخذ کے ساتھ۔"
+    },
+    "welcome": {
+      "title": "شمس طریقہ میں خوش آمدید | Quran Masterclass",
+      "description": "قرآن حفظ کرنے کے آٹھ اصول دو منٹ میں، پھر آپ کا روزانہ وقت۔"
+    },
+    "next": {
+      "title": "اگلے اقدامات – شمس طریقہ | Quran Masterclass",
+      "description": "ہر سورت، پارے اور ٹیسٹ کے بعد اگلے بامعنی قدم۔"
+    },
+    "talaqqi": {
+      "title": "تلقی – ماہر قاری کے ساتھ فقرہ بہ فقرہ تلاوت | Quran Masterclass",
+      "description": "فقرہ بہ فقرہ سنیں، یادداشت سے پڑھیں، الفاظ جانچیں اور اپنی ریکارڈنگ کا قاری سے موازنہ کریں۔"
+    },
+    "teacher": {
+      "title": "استاد کا منظر – اپنی حفظ کی پیش رفت شیئر کریں | Quran Masterclass",
+      "description": "اپنا ورد، معیار اور تسلسل کوڈ کے ذریعے اپنے استاد کے ساتھ شیئر کریں، صرف دیکھنے کے لیے، بغیر اکاؤنٹ کے۔"
+    },
+    "program": {
+      "title": "30 دن کا پروگرام – شمس طریقہ | Quran Masterclass",
+      "description": "شمس طریقہ کے ساتھ رہنمائی میں ایک ماہ: روزانہ ایک چھوٹا حصہ، دہرائی شامل۔"
+    },
+    "plans": {
+      "title": "ہر سورت کے لیے حفظ کے منصوبے – شمس طریقہ | Quran Masterclass",
+      "description": "کسی بھی سورت کا منصوبہ: اپنی رفتار چنیں اور ہر دن کی آیات دیکھیں۔"
+    },
+    "review": {
+      "title": "شمس دہرائی – پہلے آپ کی کمزور ترین آیات | Quran Masterclass",
+      "description": "پہلے آپ کی کمزور ترین آیات، شمس طریقہ کے مراحل کے ساتھ۔"
+    }
+  },
+  "fa": {
+    "method": {
+      "title": "روش شمس 2.0 – نظام کلاسیک حفظ با علم یادگیری | Quran Masterclass",
+      "description": "هر روز سبق، سبقی و منزل، کیفیت حفظ هر صفحه، آیات مشابه، تلقی با یک قاری استاد، درجات حفظ و آزمون‌های تلاوت – محاسبه‌شده از آنچه حفظ کرده‌اید. رایگان."
+    },
+    "wird": {
+      "title": "ورد امروز – سبق، سبقی، منزل | Quran Masterclass",
+      "description": "ورد روزانهٔ شما از آیه‌های تازه، بخش اخیر و مرور بلندمدت، برنامه‌ریزی‌شده بر پایهٔ حفظ شما."
+    },
+    "quality": {
+      "title": "کیفیت حفظ – نقشهٔ حرارتی هر صفحه، سوره و جزء | Quran Masterclass",
+      "description": "اتقان حفظ شما در 604 صفحهٔ مصحف، 114 سوره یا 30 جزء، همراه با ضعیف‌ترین آیه‌ها."
+    },
+    "mutashabihat": {
+      "title": "متشابهات – تمرین آیات مشابه قرآن | Quran Masterclass",
+      "description": "آیه‌هایی با عبارت‌های تقریباً یکسان کنار هم، واژه‌های متفاوت علامت‌گذاری‌شده و تمرین درهم‌آمیخته برای تشخیص‌شان. رایگان."
+    },
+    "weak": {
+      "title": "نقطه‌های ضعف – تمرین تثبیت | Quran Masterclass",
+      "description": "آیه‌ها و واژه‌هایی که بارها در آن‌ها خطا داشته‌اید، به‌طور خودکار جمع می‌شوند و تا استوار شدن تمرین می‌شوند."
+    },
+    "tadabbur": {
+      "title": "تدبّر و مقاصد سوره {s} | Quran Masterclass",
+      "description": "سوره {s} می‌خواهد چه بیاموزد: موضوع محوری، فضای نزول، ساختار، درس‌ها، پرسش‌هایی برای تأمل و تفسیر هر آیه."
+    },
+    "darajat": {
+      "title": "درجات الحفظ – درجه‌های حفظ | Quran Masterclass",
+      "description": "هفت درجهٔ حفظ با الزام‌هایشان: یادآورها، نمرهٔ قبولی، سرعت، چرخهٔ منزل و آزمون‌های تلاوت هفتگی و ماهانه."
+    },
+    "ard": {
+      "title": "عرض – آزمون تلاوت از حفظ | Quran Masterclass",
+      "description": "پرسش کلاسیک استاد: آیه‌ای از بخش حفظ‌شدهٔ شما داده می‌شود – از همین‌جا ادامه دهید."
+    },
+    "week": {
+      "title": "مرور هفتگی – مراجعة الأسبوع | Quran Masterclass",
+      "description": "هفتهٔ حفظ شما در یک نگاه: پیوستگی، آیه‌های تازه و مرورشده، کیفیت و آنچه بعد باید به آن بپردازید."
+    },
+    "handbook": {
+      "title": "راهنمای روش شمس – اصول، تمرین، درجات و اصطلاحات | Quran Masterclass",
+      "description": "اصول روش شمس برگرفته از مدرسهٔ سنتی و علم یادگیری، تمرین روزانه، درجات حفظ و واژه‌نامهٔ اصطلاحات، همراه با منابع."
+    },
+    "welcome": {
+      "title": "به روش شمس خوش آمدید | Quran Masterclass",
+      "description": "هشت اصل حفظ قرآن در دو دقیقه، سپس زمان روزانهٔ شما."
+    },
+    "next": {
+      "title": "گام‌های بعدی – روش شمس | Quran Masterclass",
+      "description": "گام‌های بعدیِ مفید پس از هر سوره، جزء و آزمون."
+    },
+    "talaqqi": {
+      "title": "تلقی – عبارت‌به‌عبارت با یک قاری استاد بخوانید | Quran Masterclass",
+      "description": "عبارت‌به‌عبارت گوش دهید، از حفظ بخوانید، واژه‌ها را بررسی کنید و ضبط خود را با قاری مقایسه کنید."
+    },
+    "teacher": {
+      "title": "نمای استاد – پیشرفت حفظ خود را به اشتراک بگذارید | Quran Masterclass",
+      "description": "ورد، کیفیت و روزهای پیاپی خود را با یک کد در اختیار استادتان بگذارید، فقط‌خواندنی و بدون حساب کاربری."
+    },
+    "program": {
+      "title": "برنامهٔ 30 روزه – روش شمس | Quran Masterclass",
+      "description": "یک ماه راهنمایی‌شده با روش شمس: هر روز یک بخش کوچک، با مرور درون‌ساخته."
+    },
+    "plans": {
+      "title": "برنامه‌های حفظ برای هر سوره – روش شمس | Quran Masterclass",
+      "description": "برنامه‌ای برای هر سوره: سرعت خود را انتخاب کنید و آیه‌های هر روز را ببینید."
+    },
+    "review": {
+      "title": "مرور شمس – ضعیف‌ترین آیه‌هایتان نخست | Quran Masterclass",
+      "description": "ضعیف‌ترین آیه‌هایتان نخست، با گام‌های روش شمس."
+    }
+  },
+  "ps": {
+    "method": {
+      "title": "د شمس طریقه 2.0 – د حفظ کلاسیک نظام د زده کړې له علم سره | Quran Masterclass",
+      "description": "هره ورځ سبق، سبقي او منزل، د هرې پاڼې د حفظ کیفیت، ورته آیتونه، د استاد قاري سره تلقي، د حفظ درجې او د تلاوت ازموینې – ستاسو له حفظ شویو برخو محاسبه شوي. وړیا."
+    },
+    "wird": {
+      "title": "د نن ورد – سبق، سبقي، منزل | Quran Masterclass",
+      "description": "ستاسو ورځنی ورد د نویو آیتونو، وروستۍ برخې او اوږدمهاله تکرار، ستاسو له حفظ څخه پلان شوی."
+    },
+    "quality": {
+      "title": "د حفظ کیفیت – د هرې پاڼې، سورت او پارې د تودوخې نقشه | Quran Masterclass",
+      "description": "ستاسو د حفظ اتقان د مصحف په 604 پاڼو، 114 سورتونو یا 30 پارو کې، د تر ټولو کمزورو آیتونو سره."
+    },
+    "mutashabihat": {
+      "title": "متشابهات – د قرآن د ورته آیتونو روزونکی | Quran Masterclass",
+      "description": "د تقریباً یو شان الفاظو لرونکي آیتونه څنګ په څنګ، توپیر لرونکې کلمې نښه شوې، او ګډ تمرین چې سره یې جلا کړئ. وړیا."
+    },
+    "weak": {
+      "title": "کمزوري ځایونه – د تثبیت تمرین | Quran Masterclass",
+      "description": "هغه آیتونه او کلمې چې تکراري تېروتنې پکې شوې، په اتومات ډول راټولېږي او تر ټینګېدو پورې تمرین کېږي."
+    },
+    "tadabbur": {
+      "title": "تدبر او مقاصد – سورت {s} | Quran Masterclass",
+      "description": "سورت {s} څه ښوول غواړي: مرکزي موضوع، شاليد، جوړښت، درسونه، د غور پوښتنې او د هر آیت تفسیر."
+    },
+    "darajat": {
+      "title": "درجات الحفظ – د حفظ درجې | Quran Masterclass",
+      "description": "د حفظ اوه درجې او د هغوی غوښتنې: اشارې، د بریا حد، چټکتیا، د منزل دور او اونیزې او میاشتنۍ د تلاوت ازموینې."
+    },
+    "ard": {
+      "title": "عرض – له یاده د تلاوت ازموینه | Quran Masterclass",
+      "description": "د استاد کلاسیکه پوښتنه: ستاسو له حفظ شوې برخې یو آیت ورکول کېږي – له دې ځایه دوام ورکړئ."
+    },
+    "week": {
+      "title": "اونیزه بیاکتنه – مراجعة الأسبوع | Quran Masterclass",
+      "description": "ستاسو د حفظ اونۍ بیاکتنه: دوام، نوي او تکرار شوي آیتونه، کیفیت او راتلونکی تمرکز."
+    },
+    "handbook": {
+      "title": "د شمس طریقې لارښود – اصول، تمرین، درجې او اصطلاحات | Quran Masterclass",
+      "description": "د شمس طریقې اصول د مدرسې او د زده کړې له علم څخه، ورځنی تمرین، د حفظ درجې او د اصطلاحاتو لغتنامه، د سرچینو سره."
+    },
+    "welcome": {
+      "title": "د شمس طریقې ته ښه راغلاست | Quran Masterclass",
+      "description": "د قرآن د حفظ اته اصول په دوو دقیقو کې، بیا ستاسو ورځنی وخت."
+    },
+    "next": {
+      "title": "راتلونکي ګامونه – د شمس طریقه | Quran Masterclass",
+      "description": "د هر سورت، پارې او ازموینې وروسته راتلونکي معنادار ګامونه."
+    },
+    "talaqqi": {
+      "title": "تلقي – له استاد قاري سره جمله په جمله تلاوت | Quran Masterclass",
+      "description": "جمله په جمله واورئ، له یاده تلاوت وکړئ، کلمې وګورئ او خپل ثبت د قاري سره پرتله کړئ."
+    },
+    "teacher": {
+      "title": "د استاد لید – خپل د حفظ پرمختګ شریک کړئ | Quran Masterclass",
+      "description": "خپل ورد، کیفیت او پرلپسې ورځې د یوه کوډ له لارې له خپل استاد سره شریک کړئ، یوازې د لیدو لپاره، پرته له حسابه."
+    },
+    "program": {
+      "title": "د 30 ورځو پروګرام – د شمس طریقه | Quran Masterclass",
+      "description": "د شمس طریقې سره یوه لارښوونه شوې میاشت: هره ورځ یوه کوچنۍ برخه، له تکرار سره."
+    },
+    "plans": {
+      "title": "د هر سورت د حفظ پلانونه – د شمس طریقه | Quran Masterclass",
+      "description": "د هر سورت لپاره پلان: خپل چټکتیا وټاکئ او د هرې ورځې آیتونه وګورئ."
+    },
+    "review": {
+      "title": "د شمس بیاکتنه – لومړی ستاسو تر ټولو کمزوري آیتونه | Quran Masterclass",
+      "description": "لومړی ستاسو تر ټولو کمزوري آیتونه، د شمس طریقې له ګامونو سره."
+    }
+  },
+  "fr": {
+    "method": {
+      "title": "Méthode Shams 2.0 – le hifz classique et les sciences de l'apprentissage | Quran Masterclass",
+      "description": "Sabaq, sabqī et manzil chaque jour, qualité du hifz de chaque page, versets semblables, talaqqī avec un maître récitateur, degrés de hifz et tests de récitation – calculés d'après ce que vous avez mémorisé. Gratuit."
+    },
+    "wird": {
+      "title": "Wird du jour – sabaq, sabqī, manzil | Quran Masterclass",
+      "description": "Votre wird quotidien de nouveaux versets, de la portion récente et de la révision à long terme, planifié d'après votre mémorisation."
+    },
+    "quality": {
+      "title": "Qualité du hifz – carte thermique de chaque page, sourate et juz | Quran Masterclass",
+      "description": "L'itqān de votre mémorisation sur les 604 pages du mushaf, les 114 sourates ou les 30 juz, avec les versets les plus faibles."
+    },
+    "mutashabihat": {
+      "title": "Mutashabihat – entraînement aux versets semblables du Coran | Quran Masterclass",
+      "description": "Des versets presque identiques côte à côte, les mots qui diffèrent signalés, et un exercice entrelacé pour les distinguer. Gratuit."
+    },
+    "weak": {
+      "title": "Points faibles – exercices de tathbīt | Quran Masterclass",
+      "description": "Les versets et les mots aux erreurs répétées, recensés automatiquement et travaillés jusqu'à ce qu'ils tiennent."
+    },
+    "tadabbur": {
+      "title": "Tadabbur et maqāṣid de la sourate {s} | Quran Masterclass",
+      "description": "Ce que la sourate {s} veut enseigner : thème central, contexte, structure, enseignements, questions de réflexion et tafsir de chaque verset."
+    },
+    "darajat": {
+      "title": "Darajāt al-Ḥifẓ – les degrés de mémorisation | Quran Masterclass",
+      "description": "Sept degrés de hifz et leurs exigences : aides pendant la récitation, seuils de réussite, rythme, cycle de manzil et tests de récitation hebdomadaires et mensuels."
+    },
+    "ard": {
+      "title": "ʿArḍ – test de récitation de mémoire | Quran Masterclass",
+      "description": "La question classique de l'enseignant : un verset de votre portion mémorisée vous est donné – continuez à partir de là."
+    },
+    "week": {
+      "title": "Révision hebdomadaire – murājaʿat al-usbūʿ | Quran Masterclass",
+      "description": "Votre semaine de mémorisation en revue : régularité, versets nouveaux et révisés, qualité et ce sur quoi vous concentrer ensuite."
+    },
+    "handbook": {
+      "title": "Manuel de la Méthode Shams – principes, pratique, degrés et termes | Quran Masterclass",
+      "description": "Les principes de la Méthode Shams issus de la madrasa et des sciences de l'apprentissage, la pratique quotidienne, les degrés du hifz et un glossaire des termes, avec les sources."
+    },
+    "welcome": {
+      "title": "Bienvenue dans la Méthode Shams | Quran Masterclass",
+      "description": "Huit principes de la mémorisation du Coran en deux minutes, puis votre temps quotidien."
+    },
+    "next": {
+      "title": "Prochaines étapes – Méthode Shams | Quran Masterclass",
+      "description": "Les prochaines étapes utiles après chaque sourate, chaque juz et chaque test."
+    },
+    "talaqqi": {
+      "title": "Talaqqī – récitez phrase par phrase avec un maître récitateur | Quran Masterclass",
+      "description": "Écoutez phrase par phrase, récitez de mémoire, vérifiez les mots et comparez votre enregistrement avec celui du récitateur."
+    },
+    "teacher": {
+      "title": "Vue de l'enseignant – partagez votre progression en hifz | Quran Masterclass",
+      "description": "Partagez votre wird, votre qualité et votre série avec votre enseignant grâce à un code, en lecture seule, sans compte."
+    },
+    "program": {
+      "title": "Programme de 30 jours – Méthode Shams | Quran Masterclass",
+      "description": "Un mois guidé avec la Méthode Shams : une petite portion par jour, avec la révision intégrée."
+    },
+    "plans": {
+      "title": "Plans de mémorisation pour chaque sourate – Méthode Shams | Quran Masterclass",
+      "description": "Un plan pour n'importe quelle sourate : choisissez votre rythme et voyez les versets de chaque jour."
+    },
+    "review": {
+      "title": "Révision Shams – vos versets les plus faibles d'abord | Quran Masterclass",
+      "description": "Vos versets les plus faibles d'abord, avec les étapes de la Méthode Shams."
+    }
+  },
+  "es": {
+    "method": {
+      "title": "Método Shams 2.0 – hifz clásico con ciencia del aprendizaje | Quran Masterclass",
+      "description": "Sabaq, sabqi y manzil cada día, calidad del hifz de cada página, aleyas semejantes, talaqqi con un maestro recitador, grados de hifz y pruebas de recitación, calculados a partir de lo que usted ha memorizado. Gratis."
+    },
+    "wird": {
+      "title": "El wird de hoy – sabaq, sabqi, manzil | Quran Masterclass",
+      "description": "Su wird diario de aleyas nuevas, la porción reciente y el repaso a largo plazo, planificado según su memorización."
+    },
+    "quality": {
+      "title": "Calidad del hifz – mapa de calor de cada página, sura y juz | Quran Masterclass",
+      "description": "El itqan (dominio) de su memorización en las 604 páginas del mushaf, las 114 suras o los 30 juz, con las aleyas más débiles."
+    },
+    "mutashabihat": {
+      "title": "Mutashabihat – entrenador de aleyas semejantes del Corán | Quran Masterclass",
+      "description": "Aleyas de redacción casi idéntica una junto a otra, con las palabras distintas marcadas, y un ejercicio intercalado para distinguirlas. Gratis."
+    },
+    "weak": {
+      "title": "Puntos débiles – práctica de tathbit | Quran Masterclass",
+      "description": "Las aleyas y palabras con errores repetidos, reunidas automáticamente y practicadas hasta que se afirman."
+    },
+    "tadabbur": {
+      "title": "Tadabbur y maqasid de la sura {s} | Quran Masterclass",
+      "description": "Lo que la sura {s} quiere enseñar: tema central, contexto, estructura, lecciones, preguntas de reflexión y tafsir de cada aleya."
+    },
+    "darajat": {
+      "title": "Darajat al-hifz – los grados de memorización | Quran Masterclass",
+      "description": "Siete grados de hifz con sus exigencias: pistas, nota mínima de aprobado, ritmo, ciclo de manzil y pruebas de recitación semanales y mensuales."
+    },
+    "ard": {
+      "title": "ʿArd – prueba de recitación de memoria | Quran Masterclass",
+      "description": "La pregunta clásica del maestro: se le da una aleya de su porción memorizada – continúe desde aquí."
+    },
+    "week": {
+      "title": "Repaso semanal – murajaʿat al-usbuʿ | Quran Masterclass",
+      "description": "Su semana de memorización en revisión: constancia, aleyas nuevas y repasadas, calidad y en qué centrarse a continuación."
+    },
+    "handbook": {
+      "title": "Manual del Método Shams – principios, práctica, grados y términos | Quran Masterclass",
+      "description": "Los principios del Método Shams, de la madrasa y de la ciencia del aprendizaje, la práctica diaria, los grados de hifz y un glosario de términos, con fuentes."
+    },
+    "welcome": {
+      "title": "Bienvenida al Método Shams | Quran Masterclass",
+      "description": "Ocho principios para memorizar el Corán en dos minutos, y después su tiempo diario."
+    },
+    "next": {
+      "title": "Próximos pasos – Método Shams | Quran Masterclass",
+      "description": "Los siguientes pasos con sentido después de cada sura, juz y prueba."
+    },
+    "talaqqi": {
+      "title": "Talaqqi – recite frase por frase con un maestro recitador | Quran Masterclass",
+      "description": "Escuche frase por frase, recite de memoria, compruebe las palabras y compare su grabación con la del recitador."
+    },
+    "teacher": {
+      "title": "Vista del maestro – comparta su progreso de hifz | Quran Masterclass",
+      "description": "Comparta con su maestro su wird, su calidad y su racha mediante un código, en modo de solo lectura y sin cuenta."
+    },
+    "program": {
+      "title": "Programa de 30 días – Método Shams | Quran Masterclass",
+      "description": "Un mes guiado con el Método Shams: una pequeña porción al día, con el repaso incluido."
+    },
+    "plans": {
+      "title": "Planes de memorización para cada sura – Método Shams | Quran Masterclass",
+      "description": "Un plan para cualquier sura: elija su ritmo y vea las aleyas de cada día."
+    },
+    "review": {
+      "title": "Repaso Shams – primero sus aleyas más débiles | Quran Masterclass",
+      "description": "Primero sus aleyas más débiles, con los pasos del Método Shams."
+    }
+  },
+  "id": {
+    "method": {
+      "title": "Metode Shams 2.0 – sistem hifz klasik dengan ilmu belajar | Quran Masterclass",
+      "description": "Sabaq, sabqi, dan manzil setiap hari, kualitas hifz setiap halaman, ayat mirip, talaqqi bersama qari ahli, tingkatan hifz, dan tes bacaan – dihitung dari hafalan Anda. Gratis."
+    },
+    "wird": {
+      "title": "Wirid hari ini – sabaq, sabqi, manzil | Quran Masterclass",
+      "description": "Wirid harian Anda berupa ayat baru, bagian yang baru dihafal, dan ulangan jangka panjang, direncanakan dari hafalan Anda."
+    },
+    "quality": {
+      "title": "Kualitas hifz – peta panas setiap halaman, surah, dan juz | Quran Masterclass",
+      "description": "Itqan hafalan Anda pada 604 halaman mushaf, 114 surah, atau 30 juz, beserta ayat-ayat yang paling lemah."
+    },
+    "mutashabihat": {
+      "title": "Mutashabihat – latihan ayat mirip dalam Al-Qur’an | Quran Masterclass",
+      "description": "Ayat dengan redaksi hampir sama berdampingan, kata yang berbeda ditandai, dan latihan selang-seling untuk membedakannya. Gratis."
+    },
+    "weak": {
+      "title": "Titik lemah – latihan tathbit | Quran Masterclass",
+      "description": "Ayat dan kata yang berulang kali salah, dikumpulkan otomatis dan dilatih sampai mantap."
+    },
+    "tadabbur": {
+      "title": "Tadabbur dan maqashid Surah {s} | Quran Masterclass",
+      "description": "Apa yang ingin diajarkan Surah {s}: tema utama, latar, struktur, pelajaran, pertanyaan untuk perenungan, dan tafsir setiap ayat."
+    },
+    "darajat": {
+      "title": "Darajat al-Hifzh – tingkatan hafalan | Quran Masterclass",
+      "description": "Tujuh tingkatan hifz beserta tuntutannya: petunjuk, nilai lulus, tempo, siklus manzil, serta tes bacaan mingguan dan bulanan."
+    },
+    "ard": {
+      "title": "ʿArd – tes bacaan dari hafalan | Quran Masterclass",
+      "description": "Pertanyaan klasik seorang guru: sebuah ayat dari bagian hafalan Anda diberikan – lanjutkan dari sini."
+    },
+    "week": {
+      "title": "Ulasan mingguan – murajaʿat al-usbuʿ | Quran Masterclass",
+      "description": "Sepekan hafalan Anda dalam tinjauan: konsistensi, ayat baru dan yang diulang, kualitas, dan apa yang perlu difokuskan berikutnya."
+    },
+    "handbook": {
+      "title": "Panduan Metode Shams – prinsip, praktik, tingkatan, istilah | Quran Masterclass",
+      "description": "Prinsip Metode Shams dari madrasah dan ilmu belajar, praktik harian, tingkatan hifz, dan daftar istilah, lengkap dengan sumbernya."
+    },
+    "welcome": {
+      "title": "Selamat datang di Metode Shams | Quran Masterclass",
+      "description": "Delapan prinsip menghafal Al-Qur’an dalam dua menit, lalu waktu harian Anda."
+    },
+    "next": {
+      "title": "Langkah berikutnya – Metode Shams | Quran Masterclass",
+      "description": "Langkah berikutnya yang bermakna setelah setiap surah, juz, dan tes."
+    },
+    "talaqqi": {
+      "title": "Talaqqi – membaca frasa demi frasa bersama qari ahli | Quran Masterclass",
+      "description": "Dengarkan frasa demi frasa, baca dari hafalan, periksa kata-katanya, dan bandingkan rekaman Anda dengan sang qari."
+    },
+    "teacher": {
+      "title": "Tampilan guru – bagikan kemajuan hifz Anda | Quran Masterclass",
+      "description": "Bagikan wirid, kualitas, dan runtunan Anda kepada guru lewat sebuah kode, hanya untuk dibaca, tanpa akun."
+    },
+    "program": {
+      "title": "Program 30 hari – Metode Shams | Quran Masterclass",
+      "description": "Satu bulan terpandu dengan Metode Shams: satu porsi kecil setiap hari, dengan ulangan yang sudah termasuk."
+    },
+    "plans": {
+      "title": "Rencana menghafal untuk setiap surah – Metode Shams | Quran Masterclass",
+      "description": "Rencana untuk surah mana pun: pilih tempo Anda dan lihat ayat-ayat setiap hari."
+    },
+    "review": {
+      "title": "Ulasan Shams – ayat terlemah Anda lebih dulu | Quran Masterclass",
+      "description": "Ayat terlemah Anda lebih dulu, dengan langkah-langkah Metode Shams."
+    }
+  },
+  "ms": {
+    "method": {
+      "title": "Kaedah Shams 2.0 – sistem hafazan klasik dengan sains pembelajaran | Quran Masterclass",
+      "description": "Sabaq, sabqi dan manzil setiap hari, kualiti hafazan setiap halaman, ayat mirip, talaqqi bersama qari ahli, tingkatan hafazan dan ujian bacaan – dikira daripada apa yang telah anda hafal. Percuma."
+    },
+    "wird": {
+      "title": "Wirid hari ini – sabaq, sabqi, manzil | Quran Masterclass",
+      "description": "Wirid harian anda yang terdiri daripada ayat baharu, bahagian terkini dan ulang kaji jangka panjang, dirancang berdasarkan hafazan anda."
+    },
+    "quality": {
+      "title": "Kualiti hafazan – peta haba setiap halaman, surah dan juz | Quran Masterclass",
+      "description": "Itqan hafazan anda merentasi 604 halaman mushaf, 114 surah atau 30 juz, beserta ayat yang paling lemah."
+    },
+    "mutashabihat": {
+      "title": "Mutasyabihat – latihan ayat mirip dalam al-Quran | Quran Masterclass",
+      "description": "Ayat yang hampir sama lafaznya diletakkan bersebelahan, perkataan yang berbeza ditandakan, dan latihan selang-seli untuk membezakannya. Percuma."
+    },
+    "weak": {
+      "title": "Titik lemah – latihan tathbit | Quran Masterclass",
+      "description": "Ayat dan perkataan yang berulang kali salah, dikumpulkan secara automatik dan dilatih sehingga melekat."
+    },
+    "tadabbur": {
+      "title": "Tadabbur dan maqasid Surah {s} | Quran Masterclass",
+      "description": "Apa yang ingin diajarkan oleh Surah {s}: tema utama, latar, struktur, pengajaran, soalan untuk renungan dan tafsir setiap ayat."
+    },
+    "darajat": {
+      "title": "Darajat al-hifz – tingkatan hafazan | Quran Masterclass",
+      "description": "Tujuh tingkatan hafazan beserta tuntutannya: petunjuk, markah lulus, kadar, kitaran manzil serta ujian bacaan mingguan dan bulanan."
+    },
+    "ard": {
+      "title": "ʿArd – ujian bacaan dari hafalan | Quran Masterclass",
+      "description": "Soalan klasik seorang guru: satu ayat daripada bahagian hafalan anda diberikan – teruskan dari situ."
+    },
+    "week": {
+      "title": "Ulang kaji mingguan – murajaʿat al-usbuʿ | Quran Masterclass",
+      "description": "Rumusan minggu hafazan anda: konsistensi, ayat baharu dan yang diulang kaji, kualiti, serta perkara yang patut ditumpukan seterusnya."
+    },
+    "handbook": {
+      "title": "Panduan Kaedah Shams – prinsip, amalan, tingkatan dan istilah | Quran Masterclass",
+      "description": "Prinsip Kaedah Shams daripada madrasah dan sains pembelajaran, amalan harian, tingkatan hafazan dan glosari istilah, beserta sumber."
+    },
+    "welcome": {
+      "title": "Selamat datang ke Kaedah Shams | Quran Masterclass",
+      "description": "Lapan prinsip menghafal al-Quran dalam dua minit, kemudian masa harian anda."
+    },
+    "next": {
+      "title": "Langkah seterusnya – Kaedah Shams | Quran Masterclass",
+      "description": "Langkah seterusnya yang bermakna selepas setiap surah, juz dan ujian."
+    },
+    "talaqqi": {
+      "title": "Talaqqi – baca frasa demi frasa bersama qari ahli | Quran Masterclass",
+      "description": "Dengarlah frasa demi frasa, bacalah dari hafalan, semak perkataan dan bandingkan rakaman anda dengan qari."
+    },
+    "teacher": {
+      "title": "Paparan guru – kongsi kemajuan hafazan anda | Quran Masterclass",
+      "description": "Kongsikan wirid, kualiti dan rentetan anda dengan guru melalui kod, untuk dibaca sahaja, tanpa akaun."
+    },
+    "program": {
+      "title": "Program 30 hari – Kaedah Shams | Quran Masterclass",
+      "description": "Sebulan berpandu dengan Kaedah Shams: satu bahagian kecil sehari, dengan ulang kaji yang sudah terbina di dalamnya."
+    },
+    "plans": {
+      "title": "Pelan hafazan untuk setiap surah – Kaedah Shams | Quran Masterclass",
+      "description": "Pelan untuk mana-mana surah: pilih kadar anda dan lihat ayat bagi setiap hari."
+    },
+    "review": {
+      "title": "Ulang kaji Shams – ayat paling lemah dahulu | Quran Masterclass",
+      "description": "Ayat paling lemah anda dahulu, mengikut langkah Kaedah Shams."
+    }
+  },
+  "bn": {
+    "method": {
+      "title": "শামস পদ্ধতি 2.0 – শেখার বিজ্ঞানসহ ধ্রুপদী হিফজ ব্যবস্থা | Quran Masterclass",
+      "description": "প্রতিদিন সাবাক, সাবকী ও মানযিল, প্রতিটি পৃষ্ঠার হিফজের মান, সাদৃশ্যপূর্ণ আয়াত, দক্ষ ক্বারীর সাথে তালাক্কী, হিফজের স্তর ও তিলাওয়াত পরীক্ষা – সবই আপনার মুখস্থ অংশ থেকে হিসাব করা। বিনামূল্যে।"
+    },
+    "wird": {
+      "title": "আজকের বির্দ – সাবাক, সাবকী, মানযিল | Quran Masterclass",
+      "description": "নতুন আয়াত, সাম্প্রতিক অংশ ও দীর্ঘমেয়াদি রিভিউ নিয়ে আপনার দৈনিক বির্দ, আপনার মুখস্থ অংশ থেকে সাজানো।"
+    },
+    "quality": {
+      "title": "হিফজের মান – প্রতিটি পৃষ্ঠা, সূরা ও পারার হিটম্যাপ | Quran Masterclass",
+      "description": "মুসহাফের 604টি পৃষ্ঠা, 114টি সূরা বা 30টি পারা জুড়ে আপনার মুখস্থের ইতকান, সবচেয়ে দুর্বল আয়াতগুলোসহ।"
+    },
+    "mutashabihat": {
+      "title": "মুতাশাবিহাত – কুরআনের সাদৃশ্যপূর্ণ আয়াতের অনুশীলন | Quran Masterclass",
+      "description": "প্রায় একই শব্দের আয়াত পাশাপাশি, ভিন্ন শব্দগুলো চিহ্নিত, এবং আলাদা করে চেনার জন্য মিশ্রিত অনুশীলন। বিনামূল্যে।"
+    },
+    "weak": {
+      "title": "দুর্বল জায়গা – মজবুত করার অনুশীলন | Quran Masterclass",
+      "description": "বারবার ভুল হওয়া আয়াত ও শব্দ, স্বয়ংক্রিয়ভাবে সংগৃহীত এবং মজবুত না হওয়া পর্যন্ত অনুশীলন।"
+    },
+    "tadabbur": {
+      "title": "তাদাব্বুর ও মাকাসিদ: সূরা {s} | Quran Masterclass",
+      "description": "সূরা {s} কী শেখাতে চায়: কেন্দ্রীয় বিষয়, প্রেক্ষাপট, কাঠামো, শিক্ষা, চিন্তার প্রশ্ন এবং প্রতিটি আয়াতের তাফসির।"
+    },
+    "darajat": {
+      "title": "দারাজাতুল হিফজ – মুখস্থের স্তর | Quran Masterclass",
+      "description": "হিফজের সাতটি স্তর ও তাদের দাবি: সংকেত, পাস নম্বর, গতি, মানযিল চক্র এবং সাপ্তাহিক ও মাসিক তিলাওয়াত পরীক্ষা।"
+    },
+    "ard": {
+      "title": "আরদ – মুখস্থ তিলাওয়াতের পরীক্ষা | Quran Masterclass",
+      "description": "ধ্রুপদী শিক্ষকের প্রশ্ন: আপনার মুখস্থ অংশ থেকে একটি আয়াত দেওয়া হলো – এখান থেকে এগিয়ে যান।"
+    },
+    "week": {
+      "title": "সাপ্তাহিক রিভিউ – মুরাজাআতুল উসবূ | Quran Masterclass",
+      "description": "আপনার মুখস্থ করার সপ্তাহের পর্যালোচনা: নিয়মিততা, নতুন ও পুনরাবৃত্ত আয়াত, মান এবং এরপর কীসে মনোযোগ দেবেন।"
+    },
+    "handbook": {
+      "title": "শামস পদ্ধতির নির্দেশিকা – মূলনীতি, অনুশীলন, স্তর ও পরিভাষা | Quran Masterclass",
+      "description": "মাদ্রাসা ও শেখার বিজ্ঞান থেকে শামস পদ্ধতির মূলনীতি, দৈনিক অনুশীলন, হিফজের স্তর এবং পরিভাষার তালিকা, উৎসসহ।"
+    },
+    "welcome": {
+      "title": "শামস পদ্ধতিতে স্বাগতম | Quran Masterclass",
+      "description": "দুই মিনিটে কুরআন মুখস্থ করার আটটি মূলনীতি, তারপর আপনার দৈনিক সময়।"
+    },
+    "next": {
+      "title": "পরবর্তী ধাপ – শামস পদ্ধতি | Quran Masterclass",
+      "description": "প্রতিটি সূরা, পারা ও পরীক্ষার পর অর্থপূর্ণ পরবর্তী ধাপগুলো।"
+    },
+    "talaqqi": {
+      "title": "তালাক্কী – দক্ষ ক্বারীর সাথে বাক্যাংশ ধরে তিলাওয়াত | Quran Masterclass",
+      "description": "বাক্যাংশ ধরে শুনুন, মুখস্থ তিলাওয়াত করুন, শব্দগুলো যাচাই করুন এবং আপনার রেকর্ডিং ক্বারীর সাথে মিলিয়ে দেখুন।"
+    },
+    "teacher": {
+      "title": "শিক্ষকের ভিউ – আপনার হিফজের অগ্রগতি শেয়ার করুন | Quran Masterclass",
+      "description": "একটি কোডের মাধ্যমে আপনার বির্দ, মান ও ধারাবাহিকতা শিক্ষকের সাথে শেয়ার করুন, শুধু দেখার অনুমতিসহ, অ্যাকাউন্ট ছাড়াই।"
+    },
+    "program": {
+      "title": "30 দিনের কর্মসূচি – শামস পদ্ধতি | Quran Masterclass",
+      "description": "শামস পদ্ধতিতে একটি নির্দেশিত মাস: দিনে একটি ছোট অংশ, রিভিউসহ।"
+    },
+    "plans": {
+      "title": "প্রতিটি সূরার মুখস্থ পরিকল্পনা – শামস পদ্ধতি | Quran Masterclass",
+      "description": "যেকোনো সূরার জন্য পরিকল্পনা: আপনার গতি বেছে নিন এবং প্রতিদিনের আয়াত দেখুন।"
+    },
+    "review": {
+      "title": "শামস রিভিউ – আপনার সবচেয়ে দুর্বল আয়াত আগে | Quran Masterclass",
+      "description": "আপনার সবচেয়ে দুর্বল আয়াত আগে, শামস পদ্ধতির ধাপসহ।"
+    }
+  },
+  "ru": {
+    "method": {
+      "title": "Метод Шамс 2.0 – классическая система хифза и наука об обучении | Quran Masterclass",
+      "description": "Сабак, сабки и манзиль каждый день, качество хифза каждой страницы, схожие аяты, талякки с мастером-чтецом, ступени хифза и проверки чтения – всё рассчитывается по выученному вами. Бесплатно."
+    },
+    "wird": {
+      "title": "Вирд на сегодня – сабак, сабки, манзиль | Quran Masterclass",
+      "description": "Ваш ежедневный вирд из новых аятов, недавней части и долгосрочного повторения, составленный по выученному вами."
+    },
+    "quality": {
+      "title": "Качество хифза – тепловая карта каждой страницы, суры и джуза | Quran Masterclass",
+      "description": "Иткан вашего хифза по 604 страницам мусхафа, 114 сурам или 30 джузам, со слабейшими аятами."
+    },
+    "mutashabihat": {
+      "title": "Муташабихат – тренажёр схожих аятов Корана | Quran Masterclass",
+      "description": "Аяты с почти одинаковой формулировкой рядом, отличающиеся слова отмечены, и тренировка вперемешку, чтобы научиться их различать. Бесплатно."
+    },
+    "weak": {
+      "title": "Слабые места – практика тасбита | Quran Masterclass",
+      "description": "Аяты и слова с повторяющимися ошибками собираются автоматически, и вы тренируете их, пока они не закрепятся."
+    },
+    "tadabbur": {
+      "title": "Тадаббур и макасид – сура {s} | Quran Masterclass",
+      "description": "Чему хочет научить сура {s}: главная тема, контекст, структура, уроки, вопросы для размышления и тафсир каждого аята."
+    },
+    "darajat": {
+      "title": "Дараджат аль-хифз – ступени заучивания | Quran Masterclass",
+      "description": "Семь ступеней хифза и их требования: подсказки, проходные баллы, темп, цикл манзиля, недельные и месячные проверки чтения."
+    },
+    "ard": {
+      "title": "Ард – проверка чтения по памяти | Quran Masterclass",
+      "description": "Классический вопрос учителя: вам даётся аят из выученной части – продолжайте с этого места."
+    },
+    "week": {
+      "title": "Недельный обзор – Мураджаат аль-усбу | Quran Masterclass",
+      "description": "Ваша неделя хифза: регулярность, новые и повторённые аяты, качество и на чём сосредоточиться дальше."
+    },
+    "handbook": {
+      "title": "Руководство по методу Шамс – принципы, практика, ступени и термины | Quran Masterclass",
+      "description": "Принципы метода Шамс из медресе и науки об обучении, ежедневная практика, ступени хифза и словарь терминов – с источниками."
+    },
+    "welcome": {
+      "title": "Добро пожаловать в метод Шамс | Quran Masterclass",
+      "description": "Восемь принципов заучивания Корана за две минуты, затем выбор вашего времени на каждый день."
+    },
+    "next": {
+      "title": "Следующие шаги – метод Шамс | Quran Masterclass",
+      "description": "Следующие осмысленные шаги после каждой суры, джуза и теста."
+    },
+    "talaqqi": {
+      "title": "Талякки – чтение фраза за фразой с мастером-чтецом | Quran Masterclass",
+      "description": "Слушайте фразу за фразой, читайте по памяти, проверяйте слова и сравнивайте свою запись с чтецом."
+    },
+    "teacher": {
+      "title": "Страница учителя – делитесь прогрессом хифза | Quran Masterclass",
+      "description": "Поделитесь с учителем вирдом, качеством и серией по коду – только для чтения, без аккаунта."
+    },
+    "program": {
+      "title": "30-дневная программа – метод Шамс | Quran Masterclass",
+      "description": "Месяц под руководством метода Шамс: по небольшой части в день, повторение уже встроено."
+    },
+    "plans": {
+      "title": "Планы заучивания для каждой суры – метод Шамс | Quran Masterclass",
+      "description": "План для любой суры: выберите свой темп и увидите аяты на каждый день."
+    },
+    "review": {
+      "title": "Повторение по Шамс – сначала самые слабые аяты | Quran Masterclass",
+      "description": "Сначала самые слабые аяты, по шагам метода Шамс."
+    }
+  },
+  "zh": {
+    "method": {
+      "title": "Shams 方法 2.0 – 融合学习科学的经典背诵体系 | Quran Masterclass",
+      "description": "每日 sabaq、sabqi 与 manzil，每一页的背诵质量，相似经文，跟随诵读大师的 talaqqi，背诵等级与诵读测试——均依据您已背诵的内容计算。免费。"
+    },
+    "wird": {
+      "title": "今日 wird – sabaq、sabqi、manzil | Quran Masterclass",
+      "description": "您的每日 wird：新经文、近期部分与长期复习，依据您的背诵情况安排。"
+    },
+    "quality": {
+      "title": "背诵质量 – 每页、每章与每个朱兹的热力图 | Quran Masterclass",
+      "description": "您的背诵在经本 604 页、114 章或 30 个朱兹上的 itqan（精熟度），并列出最薄弱的经文。"
+    },
+    "mutashabihat": {
+      "title": "Mutashabihat – 古兰经相似经文训练 | Quran Masterclass",
+      "description": "措辞几乎相同的经文并排对照，标出不同的词，并以交错练习帮助区分。免费。"
+    },
+    "weak": {
+      "title": "薄弱之处 – tathbit 巩固练习 | Quran Masterclass",
+      "description": "反复出错的经文与词语会被自动收集，并练习至牢固为止。"
+    },
+    "tadabbur": {
+      "title": "第 {s} 章的 tadabbur 与 maqasid | Quran Masterclass",
+      "description": "第 {s} 章想要教导什么：中心主题、背景、结构、启示、思考题与逐节经注。"
+    },
+    "darajat": {
+      "title": "Darajat al-hifz – 背诵的等级 | Quran Masterclass",
+      "description": "七个背诵等级及其要求：提示、及格线、进度、manzil 周期，以及每周与每月的诵读测试。"
+    },
+    "ard": {
+      "title": "ʿArd – 凭记忆的诵读测试 | Quran Masterclass",
+      "description": "传统老师的提问方式：给出您已背诵部分中的一节经文——请从这里接着背。"
+    },
+    "week": {
+      "title": "每周回顾 – murajaʿat al-usbuʿ | Quran Masterclass",
+      "description": "回顾您这一周的背诵：坚持情况、新背与复习的经文、质量，以及接下来的重点。"
+    },
+    "handbook": {
+      "title": "Shams 方法手册 – 原则、实践、等级与术语 | Quran Masterclass",
+      "description": "Shams 方法的原则（源自经学院传统与学习科学）、日常实践、背诵等级与术语表，附出处。"
+    },
+    "welcome": {
+      "title": "欢迎来到 Shams 方法 | Quran Masterclass",
+      "description": "两分钟了解背诵古兰经的八项原则，然后确定您每日的学习时间。"
+    },
+    "next": {
+      "title": "下一步 – Shams 方法 | Quran Masterclass",
+      "description": "每完成一章、一个朱兹或一次测验后，值得迈出的下一步。"
+    },
+    "talaqqi": {
+      "title": "Talaqqi – 跟随诵读大师逐句诵读 | Quran Masterclass",
+      "description": "逐句聆听，凭记忆诵读，检查词语，并把您的录音与诵读者对照。"
+    },
+    "teacher": {
+      "title": "老师视图 – 分享您的背诵进度 | Quran Masterclass",
+      "description": "通过一个代码，把您的 wird、质量和连续天数分享给老师；仅供查看，无需账户。"
+    },
+    "program": {
+      "title": "30 天计划 – Shams 方法 | Quran Masterclass",
+      "description": "跟随 Shams 方法度过有人引导的一个月：每天一小段，并内置复习。"
+    },
+    "plans": {
+      "title": "每一章的背诵计划 – Shams 方法 | Quran Masterclass",
+      "description": "任何一章都有计划：选择您的节奏，查看每天要背的经文。"
+    },
+    "review": {
+      "title": "Shams 复习 – 先复习最薄弱的经文 | Quran Masterclass",
+      "description": "最薄弱的经文优先，并按 Shams 方法的步骤进行。"
+    }
+  }
+}

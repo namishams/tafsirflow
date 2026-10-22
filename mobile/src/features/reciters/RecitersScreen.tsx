@@ -10,6 +10,7 @@ import { usePro } from "@/lib/pro";
 import { RECITERS } from "@/lib/quran";
 import { useLang, pick } from "@/i18n";
 import { RECITER_BIOS, bioText } from "@/web/reciters";
+import { useBioTexts } from "@/features/library/content";
 import { Pill, QuranSeal, useQ } from "@/features/radio/art";
 import { isFreeReciter, useRadioSelect } from "@/features/radio/engine";
 import { RadioMiniPlayer, MINI_SPACE } from "@/features/radio/MiniPlayer";
@@ -27,6 +28,7 @@ export default function RecitersScreen() {
   const started = useRadioSelect((s) => s.started);
   const a = useAppT();
   const insets = useSafeAreaInsets();
+  const more = useBioTexts();
   const c = pick(C, lang);
 
   return (
@@ -55,7 +57,7 @@ export default function RecitersScreen() {
           <QPageWash />
           <View style={{ paddingHorizontal: 16, paddingTop: 28, paddingBottom: 36, gap: 14 }}>
             {RECITER_BIOS.map((r, i) => {
-              const tx = bioText(r, lang);
+              const tx = bioText(r, lang, more);
               const player = r.playerSlug ? RECITERS.find((x) => x.slug === r.playerSlug) : undefined;
               const locked = !!player && !pro && !isFreeReciter(player);
               const years = r.born || r.died ? ` · ${r.born ?? "?"}${r.died ? `–${r.died}` : ""}` : "";

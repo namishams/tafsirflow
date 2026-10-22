@@ -1,4 +1,7 @@
 // SEO texts of the Masār al-Qurrāʾ pages (server-safe). German, English and Arabic; other languages use English.
+// Further languages: meta.i18n.json next to this file (see ../seoI18n.ts), English for every key they lack.
+import I18N from "./meta.i18n.json";
+import { seoOver } from "@/components/learn/seoI18n";
 type M = { title: string; description: string };
 export type MisharyPage = "home" | "ear" | "masters" | "master" | "journal" | "mentoring" | "submission" | "send" | "seasons" | "season" | "hof";
 const T: Record<"en" | "de" | "ar", Record<MisharyPage, M>> = {
@@ -43,6 +46,7 @@ const T: Record<"en" | "de" | "ar", Record<MisharyPage, M>> = {
   },
 };
 export function misharyMeta(locale: string, page: MisharyPage, v: { t?: string } = {}): M {
-  const m = T[locale === "de" || locale === "ar" ? locale : "en"][page];
+  const own = locale === "de" || locale === "ar" ? null : seoOver(T.en, I18N, locale);
+  const m = (own ?? T[locale === "de" || locale === "ar" ? locale : "en"])[page];
   return { title: m.title.replaceAll("{t}", v.t ?? ""), description: m.description.replaceAll("{t}", v.t ?? "") };
 }

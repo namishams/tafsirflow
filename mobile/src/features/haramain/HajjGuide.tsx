@@ -12,9 +12,15 @@ import { useEntitlement } from "@/lib/entitlements";
 import { useStored, writeJSON } from "@/lib/store";
 import { StepIn } from "@/features/coursekit/motion";
 import { L14, L3, useCK, type L } from "@/features/abrahamic/courseKit";
+import { courseTr } from "@/features/abrahamic/courseText";
 
 type Step = { arabic: string; day?: L; title: L; text: L };
 const GUIDE_KEY = "qmc.haramain.guide.v1";
+
+// texts of a step in the languages the tables above lack: src/i18n/app/<lang>.json, module "haramain", guide.umrah[i] /
+// guide.hajj[i] ({ day?, title, text }, in the order of the lists above); the own table wins, English stays the fallback
+type GuideTr = { guide?: Partial<Record<"umrah" | "hajj", { day?: string; title?: string; text?: string }[]>> };
+const stepText = (own: L, lang: string, tr: string | undefined) => (own as Record<string, string | undefined>)[lang] || tr || own.en;
 
 const UMRAH: Step[] = [
   { arabic: "الإحرام", title: L3("Ihram at the miqat", "Ihram am Miqat", "الإحرام من الميقات"), text: L3("Wash, put on the ihram clothing, make the intention for Umrah and begin the talbiya.", "Waschen, Ihram-Kleidung anlegen, die Absicht zur Umra fassen und mit der Talbiya beginnen.", "الاغتسال ولبس ثياب الإحرام ونية العمرة والبدء بالتلبية.") },
@@ -53,7 +59,7 @@ const G: Record<string, L> = {
 type GuideState = { umrah: number[]; hajj: number[] };
 export function HajjGuideScreen() {
   const t = useTheme();
-  const { lang, rtl } = useCK();
+  const { lang, rtl, c } = useCK();
   const g = (k: string, v?: Record<string, number>) => pick(G[k], lang).replace(/\{(\w+)\}/g, (_, x) => String(v?.[x] ?? ""));
   const ent = useEntitlement("haramain");
   const st = useStored<GuideState>(GUIDE_KEY, { umrah: [], hajj: [] });
@@ -63,6 +69,7 @@ export function HajjGuideScreen() {
   const locked = mode === "hajj" && !ent.allowed;
   const done = st[mode] ?? [];
   const s = steps[i];
+  const tr = (courseTr("haramain", lang) as GuideTr).guide?.[mode]?.[i];
   const tick = () => {
     const next = done.includes(i) ? done : [...done, i];
     writeJSON(GUIDE_KEY, { ...st, [mode]: next });
@@ -84,7 +91,7 @@ export function HajjGuideScreen() {
               </Pressable>
             ))}
           </View>
-          {locked ? <GoldButton title={pick({ en: "Unlock with Pro", de: "Mit Pro freischalten", ar: "افتح مع Pro" }, lang)} icon="lock" onPress={ent.upsell} /> : (
+          {locked ? <GoldButton title={c("unlock")} icon="lock" onPress={ent.upsell} /> : (
             <>
               <View style={{ flexDirection: "row", gap: 4 }} accessibilityLabel={g("step", { n: i + 1, m: steps.length })}>
                 {steps.map((_, k) => (
@@ -93,10 +100,10 @@ export function HajjGuideScreen() {
                 ))}
               </View>
               <StepIn key={`${mode}${i}`} style={{ backgroundColor: t.surface, borderRadius: 14, borderWidth: 1, borderColor: t.line, padding: 18, gap: 10 }}>
-                <Eyebrow>{`${g("step", { n: i + 1, m: steps.length })}${s.day ? ` · ${pick(s.day, lang)}` : ""}`}</Eyebrow>
+                <Eyebrow>{`${g("step", { n: i + 1, m: steps.length })}${s.day ? ` · ${stepText(s.day, lang, tr?.day)}` : ""}`}</Eyebrow>
                 <Text style={{ fontFamily: ARABIC_FONT, fontSize: 26, color: t.gold, textAlign: "center" }}>{s.arabic}</Text>
-                <Text accessibilityRole="header" style={{ fontFamily: FONT.display, fontSize: 21, color: t.ink, writingDirection: dir }}>{pick(s.title, lang)}</Text>
-                <Text style={{ fontFamily: FONT.regular, fontSize: 15.5, lineHeight: 24, color: t.ink, writingDirection: dir }}>{pick(s.text, lang)}</Text>
+                <Text accessibilityRole="header" style={{ fontFamily: FONT.display, fontSize: 21, color: t.ink, writingDirection: dir }}>{stepText(s.title, lang, tr?.title)}</Text>
+                <Text style={{ fontFamily: FONT.regular, fontSize: 15.5, lineHeight: 24, color: t.ink, writingDirection: dir }}>{stepText(s.text, lang, tr?.text)}</Text>
                 {done.includes(i) ? <Icon name="checkCircle" size={20} color={t.gold} /> : null}
               </StepIn>
               <GoldButton title={g("doneStep")} icon="check" onPress={tick} />

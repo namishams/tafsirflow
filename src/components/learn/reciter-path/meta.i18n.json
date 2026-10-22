@@ -1,0 +1,211 @@
+{
+  "tr": {
+    "home": {
+      "title": "Kâri Yolu – on seviyede tecvid ve tilavet | Quran Masterclass",
+      "description": "Adım adım kâri olun: mahreçlerden makamlara, kıraatlere ve tam surelere on seviye; örnek tilavet, kendi kayıtlarınız, testler ve sertifikalarla. Web sitesinde ücretsiz."
+    },
+    "unit": {
+      "title": "{t} – Kâri Yolu | Quran Masterclass",
+      "description": "Açıklama, Kur'an'dan örnekler ve örnek tilavet, kendi kaydınızla alıştırma, bir öz değerlendirme ve ünite testi."
+    },
+    "exam": {
+      "title": "{n}. seviye sınavı – Kâri Yolu | Quran Masterclass",
+      "description": "Kâri Yolu'nun seviye sınavı: süre sınırlarıyla ve giriş yapmış öğrenciler için doğrulanabilir sertifikayla."
+    },
+    "teacher": {
+      "title": "İcazet için hoca bulun – Kâri Yolu | Quran Masterclass",
+      "description": "İcazeti, sened zinciri olan yetkin bir hoca bizzat verir. Hoca nasıl bulunur?"
+    },
+    "levelWord": "Seviye"
+  },
+  "ur": {
+    "home": {
+      "title": "قاری کا راستہ – تجوید اور تلاوت کے دس مراحل | Quran Masterclass",
+      "description": "قدم بہ قدم قاری بنیں: مخارج سے مقامات، قراءات اور مکمل سورتوں تک دس مراحل، نمونہ تلاوت، اپنی ریکارڈنگ، ٹیسٹ اور سرٹیفکیٹ کے ساتھ۔ ویب سائٹ پر مفت۔"
+    },
+    "unit": {
+      "title": "{t} – قاری کا راستہ | Quran Masterclass",
+      "description": "وضاحت، قرآن سے مثالیں نمونہ تلاوت کے ساتھ، اپنی ریکارڈنگ کے ساتھ مشق، خود جانچ اور یونٹ ٹیسٹ۔"
+    },
+    "exam": {
+      "title": "مرحلہ {n} کا امتحان – قاری کا راستہ | Quran Masterclass",
+      "description": "قاری کے راستے کا مرحلہ وار امتحان، وقت کی حد کے ساتھ، اور لاگ اِن سیکھنے والوں کے لیے قابلِ تصدیق سرٹیفکیٹ۔"
+    },
+    "teacher": {
+      "title": "اجازہ کے لیے استاد تلاش کریں – قاری کا راستہ | Quran Masterclass",
+      "description": "اجازہ ایک اہل استاد ذاتی طور پر سند کے ساتھ دیتا ہے۔ استاد تلاش کرنے کا طریقہ۔"
+    },
+    "levelWord": "مرحلہ"
+  },
+  "fa": {
+    "home": {
+      "title": "مسیر قاری – ده سطح تجوید و تلاوت | Quran Masterclass",
+      "description": "گام‌به‌گام قاری شوید: ده سطح از مخارج تا مقامات، قراءات و سوره‌های کامل، با تلاوت نمونه، ضبط‌های خودتان، آزمون‌ها و گواهی‌ها. رایگان در وب‌سایت."
+    },
+    "unit": {
+      "title": "{t} – مسیر قاری | Quran Masterclass",
+      "description": "توضیح، نمونه‌هایی از قرآن با تلاوت نمونه، تمرین با ضبط خودتان، خودآزمایی و آزمون واحد."
+    },
+    "exam": {
+      "title": "آزمون سطح {n} – مسیر قاری | Quran Masterclass",
+      "description": "آزمون سطح در مسیر قاری با محدودیت زمانی و گواهی قابل تأیید برای یادگیرندگانی که وارد حساب خود شده‌اند."
+    },
+    "teacher": {
+      "title": "یافتن استاد برای اجازه – مسیر قاری | Quran Masterclass",
+      "description": "اجازه را استادی شایسته شخصاً و با سند می‌دهد. راه یافتن استاد."
+    },
+    "levelWord": "سطح"
+  },
+  "ps": {
+    "home": {
+      "title": "د قاري لار – د تجوید او تلاوت لس پړاوونه | Quran Masterclass",
+      "description": "ګام په ګام قاري شئ: لس پړاوونه له مخارجو تر مقاماتو، قراءتونو او بشپړو سورتونو، د نمونې تلاوت، ستاسو د ثبتونو، ازموینو او سندونو سره. په ویب پاڼه کې وړیا."
+    },
+    "unit": {
+      "title": "{t} – د قاري لار | Quran Masterclass",
+      "description": "تشریح، له قرآنه بېلګې د نمونې تلاوت سره، د خپل ثبت په مرسته تمرین، ځان ارزونه او د برخې ازموینه."
+    },
+    "exam": {
+      "title": "د پړاو ازموینه {n} – د قاري لار | Quran Masterclass",
+      "description": "د قاري لار د پړاو ازموینه د وخت محدودیتونو سره، او هغو زده کوونکو ته د تایید وړ سند چې حساب ته ننوتي وي."
+    },
+    "teacher": {
+      "title": "د اجازې لپاره استاد ومومئ – د قاري لار | Quran Masterclass",
+      "description": "اجازه یو وړ استاد پخپله د سند له لړۍ سره ورکوي. استاد څنګه ومومئ."
+    },
+    "levelWord": "پړاو"
+  },
+  "fr": {
+    "home": {
+      "title": "Parcours du récitateur – dix niveaux de tajwid et de récitation | Quran Masterclass",
+      "description": "Devenez récitateur pas à pas : dix niveaux, des makhārij aux maqamat, aux qirāʾāt et aux sourates entières, avec récitation modèle, vos propres enregistrements, tests et certificats. Gratuit sur le site web."
+    },
+    "unit": {
+      "title": "{t} – Parcours du récitateur | Quran Masterclass",
+      "description": "Explication, exemples tirés du Coran avec récitation modèle, exercice avec votre propre enregistrement, auto-évaluation et test d'unité."
+    },
+    "exam": {
+      "title": "Examen du niveau {n} – Parcours du récitateur | Quran Masterclass",
+      "description": "L'examen de niveau du Parcours du récitateur, avec limites de temps et un certificat vérifiable pour les apprenants connectés."
+    },
+    "teacher": {
+      "title": "Trouver un enseignant pour l'ijaza – Parcours du récitateur | Quran Masterclass",
+      "description": "Une ijaza est délivrée personnellement par un enseignant qualifié, avec une chaîne de transmission. Comment trouver un enseignant."
+    },
+    "levelWord": "Niveau"
+  },
+  "es": {
+    "home": {
+      "title": "Camino del recitador – diez niveles de tajwid y recitación | Quran Masterclass",
+      "description": "Conviértase en recitador paso a paso: diez niveles, de los makharij a los maqamat, las qira'at y suras completas, con recitación modelo, sus propias grabaciones, pruebas y certificados. Gratis en el sitio web."
+    },
+    "unit": {
+      "title": "{t} – Camino del recitador | Quran Masterclass",
+      "description": "Explicación, ejemplos del Corán con recitación modelo, práctica con su propia grabación, una autoevaluación y una prueba de la unidad."
+    },
+    "exam": {
+      "title": "Examen del nivel {n} – Camino del recitador | Quran Masterclass",
+      "description": "El examen de nivel del Camino del recitador, con límites de tiempo y un certificado verificable para los estudiantes con sesión iniciada."
+    },
+    "teacher": {
+      "title": "Encuentre un maestro para la ijaza – Camino del recitador | Quran Masterclass",
+      "description": "Una ijaza la concede personalmente un maestro cualificado, con una cadena de transmisión. Cómo encontrar un maestro."
+    },
+    "levelWord": "Nivel"
+  },
+  "id": {
+    "home": {
+      "title": "Jalur Qari – sepuluh level tajwid dan bacaan | Quran Masterclass",
+      "description": "Menjadi qari selangkah demi selangkah: sepuluh level dari makharij hingga maqamat, qiraat, dan surah utuh, dengan bacaan teladan, rekaman Anda sendiri, tes, dan sertifikat. Gratis di situs web."
+    },
+    "unit": {
+      "title": "{t} – Jalur Qari | Quran Masterclass",
+      "description": "Penjelasan, contoh dari Al-Qur’an dengan bacaan teladan, latihan dengan rekaman Anda sendiri, pemeriksaan mandiri, dan tes unit."
+    },
+    "exam": {
+      "title": "Ujian level {n} – Jalur Qari | Quran Masterclass",
+      "description": "Ujian level Jalur Qari dengan batas waktu dan sertifikat yang dapat diverifikasi bagi pelajar yang sudah masuk ke akunnya."
+    },
+    "teacher": {
+      "title": "Cari guru untuk ijazah – Jalur Qari | Quran Masterclass",
+      "description": "Ijazah diberikan langsung oleh guru yang berkualifikasi dengan rantai sanad. Begini cara menemukan guru."
+    },
+    "levelWord": "Level"
+  },
+  "ms": {
+    "home": {
+      "title": "Laluan Qari – sepuluh tahap tajwid dan bacaan | Quran Masterclass",
+      "description": "Jadilah qari langkah demi langkah: sepuluh tahap dari makharij hingga maqamat, qiraat dan surah penuh, dengan bacaan contoh, rakaman anda sendiri, ujian dan sijil. Percuma di laman web."
+    },
+    "unit": {
+      "title": "{t} – Laluan Qari | Quran Masterclass",
+      "description": "Penerangan, contoh daripada al-Quran dengan bacaan contoh, latihan dengan rakaman anda sendiri, semakan kendiri dan ujian unit."
+    },
+    "exam": {
+      "title": "Peperiksaan tahap {n} – Laluan Qari | Quran Masterclass",
+      "description": "Peperiksaan tahap Laluan Qari dengan had masa dan sijil yang boleh disahkan untuk pelajar yang telah log masuk."
+    },
+    "teacher": {
+      "title": "Cari guru untuk ijazah – Laluan Qari | Quran Masterclass",
+      "description": "Ijazah diberikan sendiri oleh guru yang berkelayakan dengan sanad yang bersambung. Inilah cara mencari guru."
+    },
+    "levelWord": "Tahap"
+  },
+  "bn": {
+    "home": {
+      "title": "ক্বারী পথ – তাজবিদ ও তিলাওয়াতের দশটি স্তর | Quran Masterclass",
+      "description": "ধাপে ধাপে ক্বারী হোন: মাখারিজ থেকে মাকামাত, কিরাআত ও পূর্ণ সূরা পর্যন্ত দশটি স্তর, আদর্শ তিলাওয়াত, আপনার নিজের রেকর্ডিং, পরীক্ষা ও সার্টিফিকেটসহ। ওয়েবসাইটে বিনামূল্যে।"
+    },
+    "unit": {
+      "title": "{t} – ক্বারী পথ | Quran Masterclass",
+      "description": "ব্যাখ্যা, আদর্শ তিলাওয়াতসহ কুরআন থেকে উদাহরণ, নিজের রেকর্ডিং দিয়ে অনুশীলন, আত্মমূল্যায়ন এবং একটি ইউনিট পরীক্ষা।"
+    },
+    "exam": {
+      "title": "স্তর পরীক্ষা {n} – ক্বারী পথ | Quran Masterclass",
+      "description": "ক্বারী পথের স্তর পরীক্ষা, সময়সীমাসহ, এবং সাইন-ইন করা শিক্ষার্থীদের জন্য যাচাইযোগ্য সার্টিফিকেট।"
+    },
+    "teacher": {
+      "title": "ইজাযাহর জন্য শিক্ষক খুঁজুন – ক্বারী পথ | Quran Masterclass",
+      "description": "ইজাযাহ কোনো যোগ্য শিক্ষক ব্যক্তিগতভাবে দেন, সনদের ধারাবাহিকতাসহ। কীভাবে শিক্ষক খুঁজবেন।"
+    },
+    "levelWord": "স্তর"
+  },
+  "ru": {
+    "home": {
+      "title": "Путь чтеца – десять уровней таджвида и чтения | Quran Masterclass",
+      "description": "Станьте чтецом шаг за шагом: десять уровней от махаридж до макамов, кираатов и целых сур, с образцовым чтением, вашими записями, тестами и сертификатами. Бесплатно на сайте."
+    },
+    "unit": {
+      "title": "{t} – Путь чтеца | Quran Masterclass",
+      "description": "Объяснение, примеры из Корана с образцовым чтением, практика с вашей записью, самопроверка и тест по разделу."
+    },
+    "exam": {
+      "title": "Экзамен уровня {n} – Путь чтеца | Quran Masterclass",
+      "description": "Экзамен уровня Пути чтеца с ограничением по времени и проверяемым сертификатом для вошедших в аккаунт учащихся."
+    },
+    "teacher": {
+      "title": "Найти учителя для иджазы – Путь чтеца | Quran Masterclass",
+      "description": "Иджазу лично выдаёт квалифицированный учитель с цепью передачи (иснадом). Как найти учителя."
+    },
+    "levelWord": "Уровень"
+  },
+  "zh": {
+    "home": {
+      "title": "诵读者之路 – 泰吉威德与诵读的十个级别 | Quran Masterclass",
+      "description": "循序渐进成为诵读者：十个级别，从发音部位（makharij）到玛卡姆、诵读法（qira'at）与整章诵读，配有示范诵读、您自己的录音、测验与证书。网站免费。"
+    },
+    "unit": {
+      "title": "{t} – 诵读者之路 | Quran Masterclass",
+      "description": "讲解、配示范诵读的古兰经例子、用您自己的录音练习、自我检查与单元测验。"
+    },
+    "exam": {
+      "title": "级别 {n} 考试 – 诵读者之路 | Quran Masterclass",
+      "description": "诵读者之路的级别考试，限时作答；已登录的学习者可获得可验证的证书。"
+    },
+    "teacher": {
+      "title": "寻找授予 ijazah 的老师 – 诵读者之路 | Quran Masterclass",
+      "description": "Ijazah（传授许可）由具备传述世系的合格老师亲自授予。这里说明如何找到老师。"
+    },
+    "levelWord": "级别"
+  }
+}

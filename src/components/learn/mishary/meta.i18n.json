@@ -1,0 +1,508 @@
+{
+  "tr": {
+    "home": {
+      "title": "Masâr el-Kurrâ – yeni kâri kuşağını yetiştirmek | Quran Masterclass",
+      "description": "Kâri Yolu'ndan sonra: makam kulak eğitimi, ustaların üslup çalışmaları, günlük kayıt defteri, doğrulanmış ustalarla mentorluk ve yetenek sezonları."
+    },
+    "ear": {
+      "title": "Makam kulak eğitimi – Beyâtî, Sabâ, Hicaz, Rast ve dahası | Quran Masterclass",
+      "description": "Yedi ana makamı alt cinsleriyle, çeyrek tonlar dahil, dinleyin ve beş alıştırma aşamasında tanımayı öğrenin."
+    },
+    "masters": {
+      "title": "Ustaların üslup çalışmaları – Alafasy, Abdul Basit, Minshawi | Quran Masterclass",
+      "description": "Cümle cümle dinleyin, kelime zamanlamalarından hızı ve duraklamaları görün, ustayla yan yana kendinizi kaydedin."
+    },
+    "master": {
+      "title": "{t} – üslup çalışması | Quran Masterclass",
+      "description": "{t}: kelime zamanlamalarından cümleler, hız ve duraklamalar, üslup notları ve kendi A/B kaydınız."
+    },
+    "journal": {
+      "title": "Günlük kayıt defteri – Masâr el-Kurrâ | Quran Masterclass",
+      "description": "Günde bir tilavet, tarayıcınızda size özel; ses şiddeti, hız ve doğruluk için haftalık grafiklerle."
+    },
+    "mentoring": {
+      "title": "Doğrulanmış ustalarla mentorluk – Masâr el-Kurrâ | Quran Masterclass",
+      "description": "Doğrulanmış bir usta, kısa kayıtlarınızı bir değerlendirme ölçeğiyle ve yazılı olarak inceler."
+    },
+    "submission": {
+      "title": "Kayıt ve geri bildirim – Masâr el-Kurrâ | Quran Masterclass",
+      "description": "Bir mentorluk kaydı ve geri bildirimi."
+    },
+    "send": {
+      "title": "Kayıt gönderin – Masâr el-Kurrâ | Quran Masterclass",
+      "description": "30–60 saniyelik bir kayıt yapın ve mentorunuza gönderin."
+    },
+    "seasons": {
+      "title": "Yetenek sezonları – aylık ve Ramazan yarışmaları | Quran Masterclass",
+      "description": "Ustaların değerlendirdiği aylık ve Ramazan tilavet yarışmaları; kazananlar Şeref Salonu'na girer."
+    },
+    "season": {
+      "title": "Yetenek sezonu – Masâr el-Kurrâ | Quran Masterclass",
+      "description": "Bir yetenek sezonu: katılım, jüri ve sonuçlar."
+    },
+    "hof": {
+      "title": "Yetenek sezonlarının Şeref Salonu | Quran Masterclass",
+      "description": "Masâr el-Kurrâ'daki her yetenek sezonunun podyumu."
+    }
+  },
+  "ur": {
+    "home": {
+      "title": "مسار القرّاء – قاریوں کی اگلی نسل کی تیاری | Quran Masterclass",
+      "description": "قاری کے راستے کے بعد: مقامات کی سماعتی تربیت، ماہر قاریوں کے اسلوب کا مطالعہ، روزانہ ریکارڈنگ کی ڈائری، تصدیق شدہ ماہرین کی رہنمائی اور ٹیلنٹ سیزن۔"
+    },
+    "ear": {
+      "title": "مقامات کی سماعتی تربیت – بیاتی، صبا، حجاز، رست اور مزید | Quran Masterclass",
+      "description": "سات بنیادی مقامات کو ان کے نچلے جنس کے ساتھ سنیں، چوتھائی سُر سمیت، اور مشق کے پانچ مراحل میں انہیں پہچاننا سیکھیں۔"
+    },
+    "masters": {
+      "title": "ماہر قاریوں کے اسلوب کا مطالعہ – عفاسی، عبدالباسط، منشاوی | Quran Masterclass",
+      "description": "فقرہ بہ فقرہ سنیں، الفاظ کے اوقات سے رفتار اور وقفے دیکھیں اور ماہر قاری کے ساتھ ساتھ اپنی ریکارڈنگ کریں۔"
+    },
+    "master": {
+      "title": "{t} – اسلوب کا مطالعہ | Quran Masterclass",
+      "description": "قاری {t}: الفاظ کے اوقات سے فقرے، رفتار اور وقفے، اسلوب کے نوٹس اور آپ کی اپنی A/B ریکارڈنگ۔"
+    },
+    "journal": {
+      "title": "روزانہ ریکارڈنگ کی ڈائری – مسار القرّاء | Quran Masterclass",
+      "description": "روزانہ ایک تلاوت، آپ کے براؤزر میں نجی، آواز کی بلندی، رفتار اور درستی کے ہفتہ وار چارٹس کے ساتھ۔"
+    },
+    "mentoring": {
+      "title": "تصدیق شدہ ماہرین کی رہنمائی – مسار القرّاء | Quran Masterclass",
+      "description": "ایک تصدیق شدہ ماہر آپ کی مختصر ریکارڈنگز کو جانچ کے پیمانے اور تحریری رائے کے ساتھ دیکھتا ہے۔"
+    },
+    "submission": {
+      "title": "ریکارڈنگ اور رائے – مسار القرّاء | Quran Masterclass",
+      "description": "رہنمائی کے لیے بھیجی گئی ایک ریکارڈنگ اور اس پر رائے۔"
+    },
+    "send": {
+      "title": "ریکارڈنگ بھیجیں – مسار القرّاء | Quran Masterclass",
+      "description": "30–60 سیکنڈ ریکارڈ کریں اور اپنے رہنما کو بھیجیں۔"
+    },
+    "seasons": {
+      "title": "ٹیلنٹ سیزن – ماہانہ اور رمضان کے مقابلے | Quran Masterclass",
+      "description": "ماہانہ اور رمضان کے تلاوت مقابلے جنہیں ماہر قاری جانچتے ہیں؛ فاتحین ہال آف فیم میں شامل ہوتے ہیں۔"
+    },
+    "season": {
+      "title": "ٹیلنٹ سیزن – مسار القرّاء | Quran Masterclass",
+      "description": "ایک ٹیلنٹ سیزن: شمولیت، جیوری اور نتائج۔"
+    },
+    "hof": {
+      "title": "ٹیلنٹ سیزن کا ہال آف فیم | Quran Masterclass",
+      "description": "مسار القرّاء کے ہر ٹیلنٹ سیزن کا پوڈیم۔"
+    }
+  },
+  "fa": {
+    "home": {
+      "title": "مسار القرّاء – پرورش نسل بعدی قاریان | Quran Masterclass",
+      "description": "پس از مسیر قاری: تمرین شنیداری مقامات، مطالعهٔ سبک استادان، دفتر ضبط روزانه، راهنمایی استادان تأییدشده و فصل‌های استعدادیابی."
+    },
+    "ear": {
+      "title": "تمرین شنیداری مقامات – بیاتی، صبا، حجاز، رست و بیشتر | Quran Masterclass",
+      "description": "هفت مقام اصلی را با جنس پایین و ربع‌پرده‌ها بشنوید و در پنج مرحلهٔ تمرین، شناختنشان را بیاموزید."
+    },
+    "masters": {
+      "title": "مطالعهٔ سبک استادان – العفاسی، عبدالباسط، منشاوی | Quran Masterclass",
+      "description": "عبارت‌به‌عبارت گوش دهید، سرعت و درنگ‌ها را از زمان‌بندی واژه‌ها ببینید و کنار استاد خودتان را ضبط کنید."
+    },
+    "master": {
+      "title": "{t} – مطالعهٔ سبک | Quran Masterclass",
+      "description": "عبارت‌ها، سرعت و درنگ‌های {t} بر پایهٔ زمان‌بندی واژه‌ها، نکته‌های سبک و ضبط A/B خودتان."
+    },
+    "journal": {
+      "title": "دفتر ضبط روزانه – مسار القرّاء | Quran Masterclass",
+      "description": "هر روز یک تلاوت، خصوصی و در مرورگر خودتان، با نمودارهای هفتگی بلندی صدا، سرعت و دقت."
+    },
+    "mentoring": {
+      "title": "راهنمایی استادان تأییدشده – مسار القرّاء | Quran Masterclass",
+      "description": "یک استاد تأییدشده ضبط‌های کوتاه شما را با جدول معیارها و بازخورد نوشتاری بررسی می‌کند."
+    },
+    "submission": {
+      "title": "ضبط و بازخورد – مسار القرّاء | Quran Masterclass",
+      "description": "یک ضبط راهنمایی همراه با بازخورد آن."
+    },
+    "send": {
+      "title": "ارسال ضبط – مسار القرّاء | Quran Masterclass",
+      "description": "30 تا 60 ثانیه ضبط کنید و برای استاد راهنمای خود بفرستید."
+    },
+    "seasons": {
+      "title": "فصل‌های استعدادیابی – چالش‌های ماهانه و رمضان | Quran Masterclass",
+      "description": "چالش‌های تلاوت ماهانه و رمضان که استادان داوری می‌کنند؛ برندگان وارد تالار افتخار می‌شوند."
+    },
+    "season": {
+      "title": "فصل استعدادیابی – مسار القرّاء | Quran Masterclass",
+      "description": "یک فصل استعدادیابی: نام‌نویسی، هیئت داوران و نتایج."
+    },
+    "hof": {
+      "title": "تالار افتخار فصل‌های استعدادیابی | Quran Masterclass",
+      "description": "سکوی برندگان هر فصل استعدادیابی مسار القرّاء."
+    }
+  },
+  "ps": {
+    "home": {
+      "title": "مسار القرّاء – د قاريانو د راتلونکي نسل روزنه | Quran Masterclass",
+      "description": "د قاري لار وروسته: د مقام د غوږ روزنه، د استادانو د سبک مطالعې، د ثبتونو ورځنی ژورنال، د تایید شویو استادانو لارښوونه او د استعداد فصلونه."
+    },
+    "ear": {
+      "title": "د مقام د غوږ روزنه – بیاتي، صبا، حجاز، رست او نور | Quran Masterclass",
+      "description": "اوه اصلي مقامات د ټیټ جنس سره واورئ، د څلورمې برخې ټنونو په ګډون، او په پنځو تمریني پړاوونو کې یې پېژندل زده کړئ."
+    },
+    "masters": {
+      "title": "د استادانو د سبک مطالعې – العفاسي، عبدالباسط، منشاوي | Quran Masterclass",
+      "description": "جمله په جمله واورئ، د کلمو له وختونو د چټکتیا او وقفو لید ترلاسه کړئ او د استاد تر څنګ خپل تلاوت ثبت کړئ."
+    },
+    "master": {
+      "title": "{t} – د سبک مطالعه | Quran Masterclass",
+      "description": "د {t} جملې، چټکتیا او وقفې د کلمو له وختونو، د سبک یادښتونه او ستاسو خپل A/B ثبت."
+    },
+    "journal": {
+      "title": "د ثبتونو ورځنی ژورنال – مسار القرّاء | Quran Masterclass",
+      "description": "هره ورځ یو تلاوت، په ستاسو براوزر کې خصوصي، د غږ د لوړوالي، چټکتیا او دقت اونیزو چارټونو سره."
+    },
+    "mentoring": {
+      "title": "د تایید شویو استادانو لارښوونه – مسار القرّاء | Quran Masterclass",
+      "description": "یو تایید شوی استاد ستاسو لنډ ثبتونه د ارزونې معیار او متن سره ارزوي."
+    },
+    "submission": {
+      "title": "ثبت او نظر – مسار القرّاء | Quran Masterclass",
+      "description": "د لارښوونې یو ثبت له خپل نظر سره."
+    },
+    "send": {
+      "title": "ثبت ولېږئ – مسار القرّاء | Quran Masterclass",
+      "description": "30–60 ثانیې ثبت کړئ او خپل لارښود ته یې ولېږئ."
+    },
+    "seasons": {
+      "title": "د استعداد فصلونه – میاشتنۍ او د رمضان ننګونې | Quran Masterclass",
+      "description": "میاشتنۍ او د رمضان د تلاوت ننګونې چې استادان یې قضاوت کوي؛ ګټونکي د ویاړ تالار ته ورننوځي."
+    },
+    "season": {
+      "title": "د استعداد فصل – مسار القرّاء | Quran Masterclass",
+      "description": "د استعداد یو فصل: ګډون، د ارزونکو هیئت او پایلې."
+    },
+    "hof": {
+      "title": "د استعداد د فصلونو د ویاړ تالار | Quran Masterclass",
+      "description": "د مسار القرّاء د هر استعداد فصل د ګټونکو منصه."
+    }
+  },
+  "fr": {
+    "home": {
+      "title": "Masār al-Qurrāʾ – former la prochaine génération de récitateurs | Quran Masterclass",
+      "description": "Après le Parcours du récitateur : entraînement de l'oreille aux maqamat, études de style des maîtres, journal d'enregistrement quotidien, mentorat par des maîtres vérifiés et saisons des talents."
+    },
+    "ear": {
+      "title": "Entraînement de l'oreille aux maqamat – Bayati, Saba, Hijaz, Rast et plus | Quran Masterclass",
+      "description": "Écoutez les sept maqamat principaux avec leur jins inférieur, quarts de ton compris, et apprenez à les reconnaître en cinq étapes d'exercices."
+    },
+    "masters": {
+      "title": "Études de style des maîtres – Alafasy, Abdul Basit, Minshawi | Quran Masterclass",
+      "description": "Écoutez phrase par phrase, observez le rythme et les pauses grâce aux minutages des mots, et enregistrez-vous à côté du maître."
+    },
+    "master": {
+      "title": "{t} – étude de style | Quran Masterclass",
+      "description": "{t} : phrases, rythme et pauses d'après les minutages des mots, notes de style et votre propre enregistrement A/B."
+    },
+    "journal": {
+      "title": "Journal d'enregistrement quotidien – Masār al-Qurrāʾ | Quran Masterclass",
+      "description": "Une récitation par jour, privée dans votre navigateur, avec des graphiques hebdomadaires du volume sonore, du rythme et de la précision."
+    },
+    "mentoring": {
+      "title": "Mentorat par des maîtres vérifiés – Masār al-Qurrāʾ | Quran Masterclass",
+      "description": "Un maître vérifié évalue vos courts enregistrements avec une grille d'évaluation et un texte."
+    },
+    "submission": {
+      "title": "Enregistrement et retour – Masār al-Qurrāʾ | Quran Masterclass",
+      "description": "Un enregistrement de mentorat et le retour qui l'accompagne."
+    },
+    "send": {
+      "title": "Envoyer un enregistrement – Masār al-Qurrāʾ | Quran Masterclass",
+      "description": "Enregistrez 30 à 60 secondes et envoyez-les à votre mentor."
+    },
+    "seasons": {
+      "title": "Saisons des talents – défis mensuels et du Ramadan | Quran Masterclass",
+      "description": "Des défis de récitation mensuels et du Ramadan, évalués par des maîtres ; les gagnants entrent au Hall of Fame."
+    },
+    "season": {
+      "title": "Saison des talents – Masār al-Qurrāʾ | Quran Masterclass",
+      "description": "Une saison des talents : inscription, jury et résultats."
+    },
+    "hof": {
+      "title": "Hall of Fame des saisons des talents | Quran Masterclass",
+      "description": "Le podium de chaque saison des talents du Masār al-Qurrāʾ."
+    }
+  },
+  "es": {
+    "home": {
+      "title": "Masār al-Qurrāʾ – formar a la próxima generación de recitadores | Quran Masterclass",
+      "description": "Después del Camino del recitador: entrenamiento auditivo de maqamat, estudios de estilo de los maestros, un diario de grabaciones diarias, mentoría de maestros verificados y temporadas de talento."
+    },
+    "ear": {
+      "title": "Entrenamiento auditivo de maqam: Bayati, Saba, Hijaz, Rast y más | Quran Masterclass",
+      "description": "Escuche los siete maqamat principales con su jins inferior, cuartos de tono incluidos, y aprenda a reconocerlos en cinco etapas de ejercicios."
+    },
+    "masters": {
+      "title": "Estudios de estilo – Alafasy, Abdul Basit, Minshawi | Quran Masterclass",
+      "description": "Escuche frase por frase, vea el ritmo y las pausas a partir de los tiempos de cada palabra y grábese junto al maestro."
+    },
+    "master": {
+      "title": "{t} – estudio de estilo | Quran Masterclass",
+      "description": "Frases, ritmo y pausas de {t} a partir de los tiempos de las palabras, notas de estilo y su propia grabación A/B."
+    },
+    "journal": {
+      "title": "Diario de grabaciones diarias – Masār al-Qurrāʾ | Quran Masterclass",
+      "description": "Una recitación al día, privada en su navegador, con gráficos semanales de volumen, ritmo y precisión."
+    },
+    "mentoring": {
+      "title": "Mentoría de maestros verificados – Masār al-Qurrāʾ | Quran Masterclass",
+      "description": "Un maestro verificado revisa sus grabaciones breves con una rúbrica y un texto."
+    },
+    "submission": {
+      "title": "Grabación y comentarios – Masār al-Qurrāʾ | Quran Masterclass",
+      "description": "Una grabación de mentoría con sus comentarios."
+    },
+    "send": {
+      "title": "Enviar una grabación – Masār al-Qurrāʾ | Quran Masterclass",
+      "description": "Grabe de 30 a 60 segundos y envíe la grabación a su mentor."
+    },
+    "seasons": {
+      "title": "Temporadas de talento – retos mensuales y de Ramadán | Quran Masterclass",
+      "description": "Retos de recitación mensuales y de Ramadán juzgados por maestros; los ganadores entran en el Salón de la Fama."
+    },
+    "season": {
+      "title": "Temporada de talento – Masār al-Qurrāʾ | Quran Masterclass",
+      "description": "Una temporada de talento: inscripción, jurado y resultados."
+    },
+    "hof": {
+      "title": "Salón de la Fama de las temporadas de talento | Quran Masterclass",
+      "description": "El podio de cada temporada de talento del Masār al-Qurrāʾ."
+    }
+  },
+  "id": {
+    "home": {
+      "title": "Masār al-Qurrāʾ – membentuk generasi qari berikutnya | Quran Masterclass",
+      "description": "Setelah Jalur Qari: latihan telinga maqam, kajian gaya para qari ahli, jurnal rekaman harian, bimbingan dari qari ahli terverifikasi, dan musim bakat."
+    },
+    "ear": {
+      "title": "Latihan telinga maqam – Bayati, Saba, Hijaz, Rast, dan lainnya | Quran Masterclass",
+      "description": "Dengarkan tujuh maqamat utama beserta jins bawahnya, termasuk seperempat nada, dan belajar mengenalinya dalam lima tahap latihan."
+    },
+    "masters": {
+      "title": "Kajian gaya para qari ahli – Alafasy, Abdul Basit, Minshawi | Quran Masterclass",
+      "description": "Dengarkan frasa demi frasa, lihat tempo dan jeda dari waktu setiap kata, dan rekam bacaan Anda berdampingan dengan sang qari."
+    },
+    "master": {
+      "title": "{t} – kajian gaya | Quran Masterclass",
+      "description": "Frasa, tempo, dan jeda {t} dari waktu setiap kata, catatan gaya, dan rekaman A/B Anda sendiri."
+    },
+    "journal": {
+      "title": "Jurnal rekaman harian – Masār al-Qurrāʾ | Quran Masterclass",
+      "description": "Satu bacaan setiap hari, bersifat pribadi di browser Anda, dengan grafik mingguan untuk volume, tempo, dan ketepatan."
+    },
+    "mentoring": {
+      "title": "Bimbingan qari ahli terverifikasi – Masār al-Qurrāʾ | Quran Masterclass",
+      "description": "Seorang qari ahli terverifikasi menilai rekaman singkat Anda dengan rubrik dan catatan tertulis."
+    },
+    "submission": {
+      "title": "Rekaman dan umpan balik – Masār al-Qurrāʾ | Quran Masterclass",
+      "description": "Sebuah rekaman bimbingan beserta umpan baliknya."
+    },
+    "send": {
+      "title": "Kirim rekaman – Masār al-Qurrāʾ | Quran Masterclass",
+      "description": "Rekam 30–60 detik dan kirimkan kepada pembimbing Anda."
+    },
+    "seasons": {
+      "title": "Musim bakat – tantangan bulanan dan Ramadan | Quran Masterclass",
+      "description": "Tantangan bacaan bulanan dan Ramadan yang dinilai oleh para qari ahli; para pemenang masuk ke Hall of Fame."
+    },
+    "season": {
+      "title": "Musim bakat – Masār al-Qurrāʾ | Quran Masterclass",
+      "description": "Satu musim bakat: pendaftaran, juri, dan hasil."
+    },
+    "hof": {
+      "title": "Hall of Fame musim bakat | Quran Masterclass",
+      "description": "Podium dari setiap musim bakat Masār al-Qurrāʾ."
+    }
+  },
+  "ms": {
+    "home": {
+      "title": "Masār al-Qurrāʾ – membentuk generasi qari seterusnya | Quran Masterclass",
+      "description": "Selepas Laluan Qari: latihan pendengaran maqam, kajian gaya para qari ulung, jurnal rakaman harian, bimbingan oleh qari ulung yang disahkan dan musim bakat."
+    },
+    "ear": {
+      "title": "Latihan pendengaran maqam – Bayati, Saba, Hijaz, Rast dan lain-lain | Quran Masterclass",
+      "description": "Dengarlah tujuh maqam utama beserta jins bawahnya, termasuk suku nada, dan belajar mengenalinya dalam lima peringkat latihan."
+    },
+    "masters": {
+      "title": "Kajian gaya para qari ulung – Alafasy, Abdul Basit, Minshawi | Quran Masterclass",
+      "description": "Dengarlah frasa demi frasa, lihat kelajuan dan jeda daripada masa perkataan, dan rakamlah diri anda di samping qari ulung."
+    },
+    "master": {
+      "title": "{t} – kajian gaya | Quran Masterclass",
+      "description": "Frasa, kelajuan dan jeda {t} berdasarkan masa perkataan, nota gaya dan rakaman A/B anda sendiri."
+    },
+    "journal": {
+      "title": "Jurnal rakaman harian – Masār al-Qurrāʾ | Quran Masterclass",
+      "description": "Satu bacaan sehari, peribadi dalam pelayar anda, dengan carta mingguan bagi kekuatan suara, kelajuan dan ketepatan."
+    },
+    "mentoring": {
+      "title": "Bimbingan oleh qari ulung yang disahkan – Masār al-Qurrāʾ | Quran Masterclass",
+      "description": "Seorang qari ulung yang disahkan menyemak rakaman ringkas anda dengan rubrik dan ulasan bertulis."
+    },
+    "submission": {
+      "title": "Rakaman dan maklum balas – Masār al-Qurrāʾ | Quran Masterclass",
+      "description": "Satu rakaman bimbingan beserta maklum balasnya."
+    },
+    "send": {
+      "title": "Hantar rakaman – Masār al-Qurrāʾ | Quran Masterclass",
+      "description": "Rakamlah 30–60 saat dan hantarkan kepada mentor anda."
+    },
+    "seasons": {
+      "title": "Musim bakat – cabaran bulanan dan Ramadan | Quran Masterclass",
+      "description": "Cabaran bacaan bulanan dan Ramadan yang dinilai oleh para qari ulung; para pemenang memasuki Dewan Kemasyhuran."
+    },
+    "season": {
+      "title": "Musim bakat – Masār al-Qurrāʾ | Quran Masterclass",
+      "description": "Satu musim bakat: penyertaan, juri dan keputusan."
+    },
+    "hof": {
+      "title": "Dewan Kemasyhuran musim bakat | Quran Masterclass",
+      "description": "Podium bagi setiap musim bakat Masār al-Qurrāʾ."
+    }
+  },
+  "bn": {
+    "home": {
+      "title": "মাসার আল-কুররা – ক্বারীদের পরবর্তী প্রজন্ম গড়ে তোলা | Quran Masterclass",
+      "description": "ক্বারী পথের পর: মাকামের শ্রবণ-প্রশিক্ষণ, উস্তাদদের শৈলী-অধ্যয়ন, দৈনিক রেকর্ডিং জার্নাল, যাচাইকৃত উস্তাদদের মেন্টরিং এবং প্রতিভা-মৌসুম।"
+    },
+    "ear": {
+      "title": "মাকাম শ্রবণ-প্রশিক্ষণ – বায়াতি, সাবা, হিজাজ, রাস্ত ও আরও | Quran Masterclass",
+      "description": "সাতটি প্রধান মাকামাত তাদের নিচের জিনসসহ শুনুন, কোয়ার্টার টোন-সহ, এবং পাঁচটি অনুশীলন-ধাপে সেগুলো চিনতে শিখুন।"
+    },
+    "masters": {
+      "title": "উস্তাদদের শৈলী-অধ্যয়ন – আফাসি, আব্দুল বাসিত, মিনশাভি | Quran Masterclass",
+      "description": "বাক্যাংশ ধরে ধরে শুনুন, শব্দের সময় থেকে গতি ও বিরতি দেখুন এবং উস্তাদের পাশাপাশি নিজেকে রেকর্ড করুন।"
+    },
+    "master": {
+      "title": "{t} – শৈলী-অধ্যয়ন | Quran Masterclass",
+      "description": "{t}: শব্দের সময় থেকে বাক্যাংশ, গতি ও বিরতি, শৈলী-টীকা এবং আপনার নিজের A/B রেকর্ডিং।"
+    },
+    "journal": {
+      "title": "দৈনিক রেকর্ডিং জার্নাল – মাসার আল-কুররা | Quran Masterclass",
+      "description": "দিনে একটি তিলাওয়াত, আপনার ব্রাউজারেই ব্যক্তিগত, সঙ্গে সাপ্তাহিক চার্ট: আওয়াজের মাত্রা, গতি ও নির্ভুলতা।"
+    },
+    "mentoring": {
+      "title": "যাচাইকৃত উস্তাদদের মেন্টরিং – মাসার আল-কুররা | Quran Masterclass",
+      "description": "যাচাইকৃত একজন উস্তাদ মূল্যায়ন-ছক ও লিখিত মন্তব্যসহ আপনার ছোট রেকর্ডিং দেখেন।"
+    },
+    "submission": {
+      "title": "রেকর্ডিং ও মতামত – মাসার আল-কুররা | Quran Masterclass",
+      "description": "মেন্টরিংয়ের একটি রেকর্ডিং ও তার মতামত।"
+    },
+    "send": {
+      "title": "রেকর্ডিং পাঠান – মাসার আল-কুররা | Quran Masterclass",
+      "description": "30–60 সেকেন্ড রেকর্ড করে আপনার মেন্টরকে পাঠান।"
+    },
+    "seasons": {
+      "title": "প্রতিভা-মৌসুম – মাসিক ও রমজানের চ্যালেঞ্জ | Quran Masterclass",
+      "description": "উস্তাদদের বিচারে মাসিক ও রমজানের তিলাওয়াত চ্যালেঞ্জ; বিজয়ীরা হল অব ফেমে স্থান পান।"
+    },
+    "season": {
+      "title": "প্রতিভা-মৌসুম – মাসার আল-কুররা | Quran Masterclass",
+      "description": "একটি প্রতিভা-মৌসুম: অংশগ্রহণ, জুরি ও ফল।"
+    },
+    "hof": {
+      "title": "প্রতিভা-মৌসুমের হল অব ফেম | Quran Masterclass",
+      "description": "মাসার আল-কুররার প্রতিটি প্রতিভা-মৌসুমের পডিয়াম।"
+    }
+  },
+  "ru": {
+    "home": {
+      "title": "Масар аль-Курра – воспитание нового поколения чтецов | Quran Masterclass",
+      "description": "После Пути чтеца: тренировка слуха на макамы, изучение стилей мастеров, ежедневный журнал записей, наставничество проверенных мастеров и сезоны талантов."
+    },
+    "ear": {
+      "title": "Тренировка слуха на макамы – Баяти, Саба, Хиджаз, Раст и другие | Quran Masterclass",
+      "description": "Услышьте семь основных макамов с нижним джинсом (тетрахордом) каждого, включая четвертитоны, и научитесь узнавать их за пять этапов упражнений."
+    },
+    "masters": {
+      "title": "Стили мастеров – аль-Афаси, Абдул-Басит, аль-Миншави | Quran Masterclass",
+      "description": "Слушайте фразу за фразой, смотрите на темп и паузы по меткам времени слов и записывайте себя рядом с мастером."
+    },
+    "master": {
+      "title": "{t} – изучение стиля | Quran Masterclass",
+      "description": "Фразы, темп и паузы чтеца {t} по меткам времени слов, заметки о стиле и ваша собственная запись A/B."
+    },
+    "journal": {
+      "title": "Ежедневный журнал записей – Масар аль-Курра | Quran Masterclass",
+      "description": "Одно чтение в день, приватно в вашем браузере, с еженедельными графиками громкости, темпа и точности."
+    },
+    "mentoring": {
+      "title": "Наставничество проверенных мастеров – Масар аль-Курра | Quran Masterclass",
+      "description": "Проверенный мастер оценивает ваши короткие записи по критериям и с письменным отзывом."
+    },
+    "submission": {
+      "title": "Запись и отзыв – Масар аль-Курра | Quran Masterclass",
+      "description": "Запись для наставника и отзыв на неё."
+    },
+    "send": {
+      "title": "Отправить запись – Масар аль-Курра | Quran Masterclass",
+      "description": "Запишите 30–60 секунд и отправьте наставнику."
+    },
+    "seasons": {
+      "title": "Сезоны талантов – ежемесячные и рамаданские состязания | Quran Masterclass",
+      "description": "Ежемесячные и рамаданские состязания в чтении, которые оценивают мастера; победители попадают в Зал славы."
+    },
+    "season": {
+      "title": "Сезон талантов – Масар аль-Курра | Quran Masterclass",
+      "description": "Один сезон талантов: участие, жюри и результаты."
+    },
+    "hof": {
+      "title": "Зал славы сезонов талантов | Quran Masterclass",
+      "description": "Пьедестал каждого сезона талантов Масар аль-Курра."
+    }
+  },
+  "zh": {
+    "home": {
+      "title": "Masār al-Qurrāʾ – 培养新一代诵读家 | Quran Masterclass",
+      "description": "诵读者之路之后：玛卡姆听辨训练、大师风格研习、每日录音日志、经认证大师的指导，以及才艺赛季。"
+    },
+    "ear": {
+      "title": "玛卡姆听辨训练 – 巴亚提、萨巴、希贾兹、拉斯特等 | Quran Masterclass",
+      "description": "聆听七种主要玛卡姆及其下方的 jins（含四分音），并在五个练习阶段中学会辨认。"
+    },
+    "masters": {
+      "title": "大师风格研习 – Alafasy、Abdul Basit、Minshawi | Quran Masterclass",
+      "description": "逐句聆听，从逐词时间标记看出节奏与停顿，并录下自己的诵读，与大师的诵读并排对照。"
+    },
+    "master": {
+      "title": "{t} – 风格研习 | Quran Masterclass",
+      "description": "依据逐词时间标记呈现 {t} 的短语、节奏与停顿，附风格笔记和您自己的 A/B 录音。"
+    },
+    "journal": {
+      "title": "每日录音日志 – Masār al-Qurrāʾ | Quran Masterclass",
+      "description": "每天一段诵读，在您的浏览器中私密保存，附音量、节奏与准确度的每周图表。"
+    },
+    "mentoring": {
+      "title": "经认证大师的指导 – Masār al-Qurrāʾ | Quran Masterclass",
+      "description": "经认证的大师依据评分标准，以文字点评您的短录音。"
+    },
+    "submission": {
+      "title": "录音与反馈 – Masār al-Qurrāʾ | Quran Masterclass",
+      "description": "一份指导录音及其反馈。"
+    },
+    "send": {
+      "title": "发送录音 – Masār al-Qurrāʾ | Quran Masterclass",
+      "description": "请录制 30–60 秒，并发送给您的导师。"
+    },
+    "seasons": {
+      "title": "才艺赛季 – 每月与莱麦丹月挑战 | Quran Masterclass",
+      "description": "由大师评审的每月与莱麦丹月诵读挑战；获胜者进入名人堂。"
+    },
+    "season": {
+      "title": "才艺赛季 – Masār al-Qurrāʾ | Quran Masterclass",
+      "description": "一个才艺赛季：报名、评审团与结果。"
+    },
+    "hof": {
+      "title": "才艺赛季名人堂 | Quran Masterclass",
+      "description": "Masār al-Qurrāʾ 历届才艺赛季的领奖台。"
+    }
+  }
+}

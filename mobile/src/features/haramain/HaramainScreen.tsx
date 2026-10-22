@@ -15,6 +15,7 @@ import { BrandFoot, CARD_SIZE, ShareSheet, type ShareFormat } from "@/features/f
 import { SECTIONS, TIMELINE, UI, expandRange, type Section } from "./content";
 import { router } from "expo-router";
 import { CourseList } from "@/features/abrahamic/courseKit";
+import { unitText } from "@/features/abrahamic/courseText";
 import { HARAMAIN_COURSE } from "./lessons";
 import { GUIDE_LABEL } from "./HajjGuide";
 
@@ -114,7 +115,7 @@ function SectionBody({ sec, s, lang }: { sec: Section; s: (k: string) => string;
   }, [sec, lang]);
   return (
     <View style={{ marginTop: 14, gap: 14 }}>
-      <Text style={{ fontFamily: FONT.regular, fontSize: 15, lineHeight: 23, color: t.ink }}>{pick(sec.text, lang)}</Text>
+      <Text style={{ fontFamily: FONT.regular, fontSize: 15, lineHeight: 23, color: t.ink }}>{unitText("haramain", sec.id, "text", sec.text, lang)}</Text>
       <Eyebrow>{s("read")}</Eyebrow>
       {items === null ? <Text style={{ color: t.muted, fontFamily: FONT.regular }}>{s("loading")}</Text>
         : items.length === 0 ? <Text style={{ color: t.muted, fontFamily: FONT.regular }}>{s("offline")}</Text>

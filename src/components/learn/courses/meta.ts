@@ -1,4 +1,8 @@
 // SEO titles and descriptions of the course routes (server-safe; de, en, ar written, other locales use en).
+// Further languages: meta.i18n.json next to this file ({ "<lang>": { home, tajweed, vocab, deck, lessonWord, nameWord } },
+// titles without the suffix, see ../seoI18n.ts), English for every key they lack.
+import I18N from "./meta.i18n.json";
+import { seoOver, seoString } from "@/components/learn/seoI18n";
 type M = { title: string; description: string };
 type Key = "home" | "tajweed" | "vocab" | "deck";
 const SFX = " | Quran Masterclass";
@@ -24,13 +28,14 @@ const T: Record<"en" | "de" | "ar", Record<Key, M>> = {
 };
 const lk = (locale: string) => (locale === "de" || locale === "ar" ? locale : "en");
 export function metaFor(locale: string, key: Key): M {
-  const m = T[lk(locale)][key];
+  const x = lk(locale) === "en" ? seoOver(T.en, I18N, locale) : null;
+  const m = (x ?? T[lk(locale)])[key];
   return { title: m.title + SFX, description: m.description };
 }
 /** "<title> | Quran Masterclass" */
 export const withSuffix = (title: string) => title + SFX;
 /** kicker words for lesson titles */
 export const LESSON_WORD: Record<"en" | "de" | "ar", string> = { en: "Lesson", de: "Lektion", ar: "درس" };
-export const lessonWord = (locale: string) => LESSON_WORD[lk(locale)];
+export const lessonWord = (locale: string) => (lk(locale) === "en" ? seoString(I18N, locale, "lessonWord") : undefined) ?? LESSON_WORD[lk(locale)];
 export const NAME_WORD: Record<"en" | "de" | "ar", string> = { en: "Name", de: "Name", ar: "الاسم" };
-export const nameWord = (locale: string) => NAME_WORD[lk(locale)];
+export const nameWord = (locale: string) => (lk(locale) === "en" ? seoString(I18N, locale, "nameWord") : undefined) ?? NAME_WORD[lk(locale)];

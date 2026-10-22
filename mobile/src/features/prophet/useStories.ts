@@ -4,7 +4,7 @@ import { useWebT } from "@/i18n/web";
 import { usePro } from "@/lib/pro";
 import { readJSON, useStored, writeJSON } from "@/lib/store";
 import { ISLAM } from "@/web/islam";
-import { useChapters, useSecrets } from "@/features/library/content";
+import { useBioTexts, useChapters, useSecrets } from "@/features/library/content";
 import { ISLAM_SLUGS, PROPHET_SLUGS, allahNames, chapterGroup, reciterGroups, secretGroups, tipGroups, type AllahName, type Story, type StoryCat, type StoryGroup } from "./stories";
 import { useProphetText } from "./texts";
 
@@ -16,6 +16,7 @@ export function useStories(): StoryLibrary {
   const { lang } = useLang();
   const chapters = useChapters();
   const secrets = useSecrets();
+  const bios = useBioTexts();
   const ws = useWebT("shams");
   const tx = useProphetText();
   return useMemo(() => {
@@ -24,14 +25,14 @@ export function useStories(): StoryLibrary {
     const groups: Record<StoryCat, StoryGroup[]> = {
       prophet: lib(PROPHET_SLUGS, "prophet"),
       islam: lib(ISLAM_SLUGS, "islam"),
-      reciters: reciterGroups(lang, tx.knownFor),
+      reciters: reciterGroups(lang, tx.knownFor, bios),
       tips: tipGroups(ws, { method: ws("title"), day: ws("dayTitle") }),
       secrets: secrets ? secretGroups(secrets) : [],
     };
     const byId = new Map<string, Story>();
     for (const list of Object.values(groups)) for (const g of list) for (const s of g.stories) byId.set(s.id, s);
     return { groups, byId, names: allahNames(chapter("names")?.c) };
-  }, [chapters, secrets, lang, ws, tx.knownFor]);
+  }, [chapters, secrets, bios, lang, ws, tx.knownFor]);
 }
 
 // ---------- the free daily allowance of story cards ----------

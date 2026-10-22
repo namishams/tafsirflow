@@ -6,6 +6,7 @@ import { useState } from "react";
 import { pick, useLang } from "@/lib/learn/i18n";
 import { UI, UNITS, type AbrahamicUnit } from "@/lib/learn/abrahamic/content";
 import { ABRAHAMIC_COURSE } from "@/lib/learn/abrahamic/lessons";
+import { unitText } from "@/lib/learn/abrahamic/courseText";
 import QuranVerse from "@/components/learn/QuranVerse";
 import { Kicker, LearnHero, LearnMain, StageStats } from "@/components/learn/ui";
 import { HomeCorners } from "@/components/art/HomeOrnaments";
@@ -55,7 +56,7 @@ function UnitCard({ unit, n, expanded, onToggle, s, lang }: {
       </h2>
       {expanded && (
         <div id={bodyId} className="mt-5 space-y-5">
-          <p className="text-[16px] leading-[1.75]">{pick(unit.text, lang)}</p>
+          <p className="text-[16px] leading-[1.75]">{unitText("abrahamic", unit.id, "text", unit.text, lang)}</p>
           {unit.verses.length > 0 && (
             <section className="space-y-3">
               <Kicker>{s("verses")}</Kicker>

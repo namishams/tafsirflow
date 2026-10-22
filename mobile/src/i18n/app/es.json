@@ -2506,5 +2506,2252 @@
     "proLater": "Volver a las aleyas",
     "readMore": "Seguir leyendo",
     "railsTitle": "Historias"
+  },
+  "reciterPathContent": {
+    "levels": {
+      "1": {
+        "title": "Fundamentos",
+        "lead": "De dónde sale cada letra, sus cualidades y los signos de las vocales."
+      },
+      "2": {
+        "title": "Nun sakina y tanwin",
+        "lead": "Las cuatro reglas de la nun sakina y del tanwin."
+      },
+      "3": {
+        "title": "Mim sakina y ghunna",
+        "lead": "La mim sakina y el sonido nasal de la nun y la mim con shadda."
+      },
+      "4": {
+        "title": "Madd: el alargamiento",
+        "lead": "El alargamiento natural y los tipos de madd más largos causados por una hamza o un sukun."
+      },
+      "5": {
+        "title": "Qalqala, lam y ra",
+        "lead": "Las letras del eco, la lam del artículo y la del nombre de Allah, y la ra pesada o ligera."
+      },
+      "6": {
+        "title": "Waqf y recitación aplicada",
+        "lead": "Cómo detenerse y comenzar bien, y luego suras completas del Juz ʿAmma."
+      }
+    },
+    "rules": {
+      "makharij": {
+        "name": "Makharij",
+        "short": "Puntos de articulación"
+      },
+      "sifat": {
+        "name": "Sifat",
+        "short": "Cualidades de las letras"
+      },
+      "harakat": {
+        "name": "Harakat",
+        "short": "Vocales breves"
+      },
+      "shadda": {
+        "name": "Shadda",
+        "short": "Letra doblada"
+      },
+      "sukun": {
+        "name": "Sukun",
+        "short": "Sin vocal"
+      },
+      "izhar": {
+        "name": "Izhar",
+        "short": "Nun clara"
+      },
+      "idgham": {
+        "name": "Idgham con ghunna",
+        "short": "Fusión con sonido nasal"
+      },
+      "idghamNoGhunnah": {
+        "name": "Idgham sin ghunna",
+        "short": "Fusión sin sonido nasal"
+      },
+      "iqlab": {
+        "name": "Iqlab",
+        "short": "La nun se convierte en mim"
+      },
+      "ikhfa": {
+        "name": "Ikhfa'",
+        "short": "Nun oculta"
+      },
+      "idghamShafawi": {
+        "name": "Idgham shafawi",
+        "short": "La mim se fusiona con la mim"
+      },
+      "ikhfaShafawi": {
+        "name": "Ikhfa' shafawi",
+        "short": "Mim oculta ante ba"
+      },
+      "izharShafawi": {
+        "name": "Izhar shafawi",
+        "short": "Mim clara"
+      },
+      "ghunnah": {
+        "name": "Ghunna",
+        "short": "Nun o mim con shadda"
+      },
+      "maddTabii": {
+        "name": "Madd tabiʿi",
+        "short": "Madd natural, 2 tiempos"
+      },
+      "maddMuttasil": {
+        "name": "Madd muttasil",
+        "short": "Hamza en la misma palabra"
+      },
+      "maddMunfasil": {
+        "name": "Madd munfasil",
+        "short": "Hamza en la palabra siguiente"
+      },
+      "maddLazim": {
+        "name": "Madd lazim",
+        "short": "Sukun permanente, 6 tiempos"
+      },
+      "maddArid": {
+        "name": "Madd ʿarid lis-sukun",
+        "short": "Sukun solo al detenerse"
+      },
+      "qalqalah": {
+        "name": "Qalqala",
+        "short": "Eco de ق ط ب ج د"
+      },
+      "lamShamsiyyah": {
+        "name": "Lam shamsiyyah",
+        "short": "Lam del artículo que no se pronuncia"
+      },
+      "lamQamariyyah": {
+        "name": "Lam qamariyyah",
+        "short": "Lam del artículo que se pronuncia"
+      },
+      "lamAllahHeavy": {
+        "name": "Lam pesada de Allah",
+        "short": "Tras fatha o damma"
+      },
+      "lamAllahLight": {
+        "name": "Lam ligera de Allah",
+        "short": "Tras kasra"
+      },
+      "raHeavy": {
+        "name": "Ra pesada",
+        "short": "Tafjim"
+      },
+      "raLight": {
+        "name": "Ra ligera",
+        "short": "Tarqiq"
+      },
+      "waqf": {
+        "name": "Waqf",
+        "short": "Detenerse"
+      }
+    },
+    "units": {
+      "1-1": {
+        "title": "Las letras árabes y sus makharij",
+        "intro": "Cada letra tiene un lugar donde se produce: el espacio vacío de la boca y la garganta (para las letras de madd), la garganta, la lengua, los labios y la cavidad nasal. Cuando una letra sale de su lugar correcto, conserva su propio sonido y no se confunde con la vecina.",
+        "points": [
+          "Garganta: ء ه de la parte más honda, ع ح de la parte media, غ خ de la parte alta.",
+          "Lengua: ق y ك al fondo, ج ش ي en el medio, y la punta de la lengua para ت د ط, ث ذ ظ, س ص ز y ل ن ر.",
+          "Labios: ف (labio inferior y dientes superiores), ب م و con ambos labios.",
+          "Nariz: la ghunna de la nun y la mim.",
+          "Escuche cada palabra de ejemplo varias veces y diga solo la letra indicada antes de decir la palabra entera."
+        ],
+        "check": [
+          "Puedo nombrar las cinco zonas de articulación.",
+          "Distingo ح de ه y ع de ء.",
+          "Pronuncio ق más al fondo que ك."
+        ],
+        "mcq": [
+          {
+            "q": "¿Qué letra sale de la parte más honda de la garganta?",
+            "options": [
+              "ء",
+              "خ",
+              "ق",
+              "ك"
+            ],
+            "answer": 0
+          },
+          {
+            "q": "¿Qué letras se producen con ambos labios?",
+            "options": [
+              "ب م و",
+              "ف ث ذ",
+              "ت د ط",
+              "س ص ز"
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "1-2": {
+        "title": "Sifat: las cualidades de las letras",
+        "intro": "Dos letras pueden compartir el mismo punto de articulación y sonar distinto por sus cualidades. Algunas letras dejan fluir el aire y otras lo retienen; algunas elevan la parte posterior de la lengua y suenan plenas, otras se mantienen ligeras.",
+        "points": [
+          "Hams (el aire fluye): ف ح ث ه ش خ ص س ك ت. Jahr (el aire se retiene): las demás letras.",
+          "Istiʿla (pesadas, la parte posterior de la lengua se eleva): خ ص ض غ ط ق ظ. Estas letras son siempre plenas.",
+          "Safir (un silbido): ص ز س.",
+          "Qalqala (un eco cuando la letra queda sin vocal): ق ط ب ج د, que se practica en el nivel 5."
+        ],
+        "check": [
+          "Mantengo plenas las siete letras pesadas, incluso con kasra.",
+          "Dejo fluir el aire con ه y ح.",
+          "Oigo el silbido de س y ص."
+        ],
+        "mcq": [
+          {
+            "q": "¿Cuál de estas letras es una de las siete letras pesadas (istiʿla)?",
+            "options": [
+              "ق",
+              "ك",
+              "ت",
+              "س"
+            ],
+            "answer": 0
+          },
+          {
+            "q": "¿Qué letras tienen la cualidad del silbido (safir)?",
+            "options": [
+              "ص ز س",
+              "ق ط ب",
+              "ء ه ع",
+              "ل ن ر"
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "1-3": {
+        "title": "Harakat, sukun y shadda",
+        "intro": "Fatha, kasra y damma son vocales breves de un tiempo. El sukun indica que la letra no lleva vocal y se une a la letra anterior. La shadda dobla una letra: la primera queda sin vocal y la segunda lleva la vocal.",
+        "points": [
+          "Mantenga breves las vocales cortas; no las alargue hasta convertirlas en madd.",
+          "Con sukun, cierre la letra con limpieza, sin añadir una vocal.",
+          "Con shadda, sostenga la letra un instante antes de soltarla con su vocal."
+        ],
+        "check": [
+          "Mis vocales breves se mantienen breves.",
+          "Cierro las letras con sukun sin añadir una vocal.",
+          "Sostengo cada letra con shadda."
+        ],
+        "mcq": [
+          {
+            "q": "¿Qué indica una shadda?",
+            "options": [
+              "La letra se dobla",
+              "La letra queda en silencio",
+              "La vocal se alarga",
+              "La letra se omite"
+            ],
+            "answer": 0
+          },
+          {
+            "q": "¿Cuánto dura una vocal breve?",
+            "options": [
+              "Un tiempo",
+              "Dos tiempos",
+              "Cuatro tiempos",
+              "Seis tiempos"
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "2-1": {
+        "title": "Izhar: la nun clara",
+        "intro": "Cuando una nun sakina o un tanwin va seguido de una de las seis letras de la garganta (ء ه ع ح غ خ), la nun se pronuncia con claridad, sin sonido nasal adicional.",
+        "points": [
+          "Las letras de la garganta están lejos de la punta de la lengua, así que la nun simplemente permanece clara.",
+          "No haga una pausa entre la nun y la letra siguiente."
+        ],
+        "check": [
+          "Reconozco las seis letras de la garganta después de una nun.",
+          "Mi nun es clara y breve, sin ghunna."
+        ],
+        "mcq": [
+          {
+            "q": "¿Qué letra después de la nun sakina provoca izhar?",
+            "options": [
+              "ح",
+              "ب",
+              "ي",
+              "ت"
+            ],
+            "answer": 0
+          },
+          {
+            "q": "¿Cuántas letras provocan izhar?",
+            "options": [
+              "Seis",
+              "Cuatro",
+              "Quince",
+              "Una"
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "2-2": {
+        "title": "Idgham: la fusión",
+        "intro": "Cuando una nun sakina o un tanwin va seguido, en la palabra siguiente, de una de las letras ي ر م ل و ن, la nun se fusiona con esa letra. Con ي ن م و queda un sonido nasal de dos tiempos; con ل y ر la fusión es completa.",
+        "points": [
+          "El idgham se da entre dos palabras; dentro de una misma palabra la nun permanece clara.",
+          "Con ghunna: ي ن م و. Sin ghunna: ل ر."
+        ],
+        "check": [
+          "Sostengo la ghunna durante dos tiempos ante ي ن م و.",
+          "Fusiono por completo con ل y ر."
+        ],
+        "mcq": [
+          {
+            "q": "¿Qué letras se fusionan sin ghunna?",
+            "options": [
+              "ل ر",
+              "ي و",
+              "م ن",
+              "ب ت"
+            ],
+            "answer": 0
+          },
+          {
+            "q": "¿Cuánto dura la ghunna en el idgham?",
+            "options": [
+              "Dos tiempos",
+              "Un tiempo",
+              "Cuatro tiempos",
+              "Ninguno"
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "2-3": {
+        "title": "Iqlab e ikhfa'",
+        "intro": "Ante ب, la nun se convierte en una mim oculta con ghunna (iqlab). Ante las quince letras restantes, la nun se oculta: la lengua prepara la letra siguiente mientras queda un sonido nasal de dos tiempos (ikhfa').",
+        "points": [
+          "Iqlab: los labios se cierran con suavidad, sin presionar.",
+          "Ikhfa': el sonido queda entre claro y fusionado, coloreado por la letra siguiente."
+        ],
+        "check": [
+          "Cambio la nun en una mim ligera ante ب.",
+          "Oculto la nun ante las letras del ikhfa' y mantengo dos tiempos."
+        ],
+        "mcq": [
+          {
+            "q": "¿Qué letra provoca iqlab?",
+            "options": [
+              "ب",
+              "ق",
+              "ل",
+              "ه"
+            ],
+            "answer": 0
+          },
+          {
+            "q": "¿Cuántas letras provocan ikhfa'?",
+            "options": [
+              "Quince",
+              "Seis",
+              "Dos",
+              "Cuatro"
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "3-1": {
+        "title": "Las reglas de la mim sakina",
+        "intro": "Una mim sakina tiene tres reglas: se fusiona con una mim siguiente con ghunna (idgham shafawi), se oculta ante ب con ghunna (ikhfa' shafawi) y permanece clara ante cualquier otra letra (izhar shafawi).",
+        "points": [
+          "Tenga especial cuidado en mantener la mim clara ante و y ف.",
+          "En el ikhfa' shafawi los labios se tocan ligeramente."
+        ],
+        "check": [
+          "Sostengo la ghunna si una mim sigue a otra.",
+          "Mantengo la mim clara ante و y ف."
+        ],
+        "mcq": [
+          {
+            "q": "¿Qué le ocurre a la mim sakina ante ب?",
+            "options": [
+              "Ikhfa' shafawi",
+              "Izhar shafawi",
+              "Iqlab",
+              "Qalqala"
+            ],
+            "answer": 0
+          },
+          {
+            "q": "¿Ante qué letras es clara la mim sakina?",
+            "options": [
+              "Todas las letras excepto م y ب",
+              "Solo las letras de la garganta",
+              "Solo ل y ر",
+              "Ninguna"
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "3-2": {
+        "title": "Ghunna de la nun y la mim con shadda",
+        "intro": "Toda nun o mim con shadda lleva una ghunna completa de dos tiempos. Es el sonido nasal más fuerte de la recitación.",
+        "points": [
+          "Deje que el sonido descanse en la nariz durante dos tiempos.",
+          "No lo acorte en la recitación rápida."
+        ],
+        "check": [
+          "Sostengo dos tiempos en cada نّ y مّ."
+        ],
+        "mcq": [
+          {
+            "q": "¿Cuánto dura la ghunna de la nun con shadda?",
+            "options": [
+              "Dos tiempos",
+              "Seis tiempos",
+              "Un tiempo",
+              "Ninguno"
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "4-1": {
+        "title": "Madd tabiʿi: el alargamiento natural",
+        "intro": "Las letras de madd son la alif tras fatha, la waw sakina tras damma y la ya sakina tras kasra. Cuando no les sigue una hamza ni un sukun, se alargan dos tiempos, ni más ni menos.",
+        "points": [
+          "Cuente con regularidad; dos tiempos equivalen aproximadamente a la duración de dos vocales breves.",
+          "Mantenga la misma duración en toda la recitación."
+        ],
+        "check": [
+          "Alargo el madd natural exactamente dos tiempos."
+        ],
+        "mcq": [
+          {
+            "q": "¿Cuánto dura el madd natural?",
+            "options": [
+              "Dos tiempos",
+              "Cuatro tiempos",
+              "Seis tiempos",
+              "Un tiempo"
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "4-2": {
+        "title": "Madd muttasil y munfasil",
+        "intro": "Cuando una hamza sigue a una letra de madd dentro de la misma palabra, el madd es conectado (muttasil) y se alarga cuatro o cinco tiempos. Cuando la hamza comienza la palabra siguiente, es separado (munfasil); en Hafs por la vía de ash-Shatibiyya también se alarga cuatro o cinco tiempos.",
+        "points": [
+          "Elija una duración y manténgala en todo momento.",
+          "El muttasil es obligatorio; en el munfasil se permite el acortamiento en otras vías de transmisión."
+        ],
+        "check": [
+          "Veo si la hamza está en la misma palabra o en la siguiente.",
+          "Mantengo constante la duración que he elegido."
+        ],
+        "mcq": [
+          {
+            "q": "En el madd muttasil la hamza está …",
+            "options": [
+              "en la misma palabra",
+              "en la palabra siguiente",
+              "ausente",
+              "al comienzo de la aleya"
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "4-3": {
+        "title": "Madd lazim y madd ʿarid",
+        "intro": "Cuando a una letra de madd le sigue un sukun permanente o una shadda, el madd es lazim y dura siempre seis tiempos. Cuando el sukun surge solo al detenerse al final de una palabra, el madd es ʿarid lis-sukun: dos, cuatro o seis tiempos.",
+        "points": [
+          "Madd lazim: seis tiempos, siempre.",
+          "Madd ʿarid: solo al detenerse; al continuar, es madd natural."
+        ],
+        "check": [
+          "Alargo el madd lazim seis tiempos.",
+          "Elijo dos, cuatro o seis tiempos para el madd ʿarid y los mantengo."
+        ],
+        "mcq": [
+          {
+            "q": "¿Cuánto dura el madd lazim?",
+            "options": [
+              "Seis tiempos",
+              "Dos tiempos",
+              "Cuatro tiempos",
+              "Un tiempo"
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "5-1": {
+        "title": "Qalqala: el eco",
+        "intro": "Las letras ق ط ب ج د producen un ligero eco cuando llevan sukun. El eco es más suave en medio de una palabra y más fuerte cuando se detiene sobre la letra al final de una aleya.",
+        "points": [
+          "Suelte la letra sin añadir una vocal.",
+          "El eco se inclina hacia la vocal anterior, nunca hacia una fatha plena."
+        ],
+        "check": [
+          "Hago eco en las cinco letras cuando están sin vocal.",
+          "Mi eco es más fuerte al detenerme."
+        ],
+        "mcq": [
+          {
+            "q": "¿Qué grupo forman las letras de la qalqala?",
+            "options": [
+              "ق ط ب ج د",
+              "ي ر م ل و ن",
+              "ء ه ع ح غ خ",
+              "ص ز س"
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "5-2": {
+        "title": "Reglas de la lam",
+        "intro": "La lam del artículo se pronuncia ante catorce letras (qamariyyah) y se fusiona con la letra siguiente ante las otras catorce (shamsiyyah). La lam del nombre Allah es pesada tras fatha o damma y ligera tras kasra.",
+        "points": [
+          "Shamsiyyah: la letra siguiente lleva una shadda.",
+          "Allah tras kasra: lam ligera."
+        ],
+        "check": [
+          "Silencio la lam ante las letras solares.",
+          "Hago la lam de Allah pesada o ligera correctamente."
+        ],
+        "mcq": [
+          {
+            "q": "La lam de Allah tras una kasra es …",
+            "options": [
+              "ligera",
+              "pesada",
+              "muda",
+              "doblada"
+            ],
+            "answer": 0
+          },
+          {
+            "q": "En la lam shamsiyyah, la lam …",
+            "options": [
+              "no se pronuncia",
+              "se pronuncia con claridad",
+              "se alarga",
+              "hace eco"
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "5-3": {
+        "title": "Ra pesada y ligera",
+        "intro": "La ra es pesada con fatha o damma y ligera con kasra. Una ra sakina sigue la vocal que la precede, con unas pocas excepciones, como cuando le sigue una letra pesada.",
+        "points": [
+          "Pesada: la parte posterior de la lengua se eleva y el sonido es pleno.",
+          "Ligera: la lengua se mantiene baja y el sonido es fino."
+        ],
+        "check": [
+          "Hago la ra pesada con fatha y damma.",
+          "Hago la ra ligera con kasra."
+        ],
+        "mcq": [
+          {
+            "q": "La ra con kasra es …",
+            "options": [
+              "ligera",
+              "pesada",
+              "muda",
+              "con eco"
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "6-1": {
+        "title": "Waqf e ibtida: detenerse y comenzar",
+        "intro": "Deténgase al final de una aleya o en un signo de pausa, y comience de nuevo donde el sentido esté completo. Al detenerse, la última vocal se convierte en sukun; el tanwin con fatha se convierte en una alif breve.",
+        "points": [
+          "No se detenga en medio de una frase a menos que se quede sin aire; entonces vuelva atrás y comience en un lugar con sentido.",
+          "Siga los signos de pausa impresos en su mushaf."
+        ],
+        "check": [
+          "Me detengo con sukun en la última letra.",
+          "Cuando me quedo sin aire, vuelvo a comenzar en un lugar con sentido."
+        ],
+        "mcq": [
+          {
+            "q": "Al detenerse, la última vocal suele convertirse en …",
+            "options": [
+              "sukun",
+              "shadda",
+              "madd",
+              "tanwin"
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "6-2": {
+        "title": "Aplicación: al-Ijlas, al-Falaq, an-Nas",
+        "intro": "Recite las tres suras protectoras aleya por aleya: escuche, repita, grábese y compare. Preste atención a cada regla que ha aprendido.",
+        "points": [
+          "Primero escuche la aleya completa dos veces.",
+          "Después repita palabra por palabra, a una velocidad menor.",
+          "Por último, grabe la aleya y compárela con la del recitador."
+        ],
+        "check": [
+          "Recito cada aleya con las reglas que he aprendido.",
+          "Mis pausas caen al final de las aleyas."
+        ],
+        "mcq": []
+      },
+      "6-3": {
+        "title": "Aplicación: al-Asr, al-Kawzar, al-Fil",
+        "intro": "Tres suras cortas con muchas reglas muy próximas entre sí: ikhfa', idgham, madd y qalqala. Trabájelas con los mismos pasos.",
+        "points": [
+          "Marque las reglas de cada aleya antes de recitar.",
+          "Utilice la comprobación de palabras para poner a prueba su memorización."
+        ],
+        "check": [
+          "Recito cada sura sin mirar.",
+          "Mantengo constantes las duraciones del madd."
+        ],
+        "mcq": []
+      }
+    }
+  },
+  "reciterPathExtra": {
+    "levels": {
+      "7": {
+        "title": "Maqamat: los modos melódicos",
+        "lead": "Una introducción, guiada por el oído, a los siete modos que más se escuchan en la recitación. Solo explicación y escucha; el taywid va siempre primero."
+      },
+      "8": {
+        "title": "Respiración y aleyas largas",
+        "lead": "Respire desde el vientre, planifique sus paradas antes de empezar y recite las aleyas largas sin romper el sentido."
+      },
+      "9": {
+        "title": "Qira'at y mutashabihat",
+        "lead": "Visión general de las diez lecturas y sus transmisores, y de las aleyas semejantes que hacen tropezar a todo hafiz."
+      },
+      "10": {
+        "title": "Suras más largas y recitación Masterclass",
+        "lead": "al-Mulk, Ya-Sin, ar-Rahman, al-Waqiʿa y al-Kahf; después, la recitación final Masterclass con certificado."
+      }
+    },
+    "units": {
+      "7-1": {
+        "title": "Qué es un maqam: Bayati, Saba, Hijaz",
+        "intro": "Un maqam es un modo melódico: un conjunto de notas, un recorrido típico por ellas y un carácter propio. Los recitadores emplean los maqamat para transmitir el sentido, nunca para cambiar letras ni duraciones. Bayati es sereno y asentado, y suele usarse para abrir y cerrar una recitación. Saba suena profundo y doliente, y conviene a las aleyas de advertencia y de pena. Hijaz tiene un intervalo ancho característico que suena anhelante y solemne.",
+        "points": [
+          "Bayati: arranca grave y se asienta; muchos recitadores abren con él.",
+          "Saba: denso y tierno; la voz parece hundirse al final de las frases.",
+          "Hijaz: la segunda ancha da un color lejano y anhelante.",
+          "Los sabios difieren sobre el estudio de las melodías; todos coinciden en que el taywid y la humildad van antes que cualquier melodía."
+        ],
+        "check": [
+          "Sé describir Bayati, Saba y Hijaz con mis propias palabras.",
+          "Escucho al-Fatiha con dos recitadores distintos y comparo el carácter."
+        ],
+        "mcq": [
+          {
+            "q": "¿Qué es un maqam?",
+            "options": [
+              "Un modo melódico con notas y carácter propios",
+              "Una regla de taywid",
+              "Un tipo de madd",
+              "Un signo de parada"
+            ],
+            "answer": 0
+          },
+          {
+            "q": "¿Qué maqam se usa a menudo para abrir una recitación?",
+            "options": [
+              "Bayati",
+              "Saba",
+              "Sika",
+              "Ajam"
+            ],
+            "answer": 0
+          },
+          {
+            "q": "¿Puede un maqam alargar un madd más allá de su regla?",
+            "options": [
+              "No, el taywid va siempre primero",
+              "Sí, por belleza",
+              "Solo en Saba",
+              "Solo al detenerse"
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "7-2": {
+        "title": "Rast, Nahawand, Sika y Ajam",
+        "intro": "Rast es luminoso y majestuoso, y a menudo se le llama el padre de los maqamat. Nahawand es suave y se acerca a una escala menor. Sika se apoya en una nota situada entre dos notas occidentales y suena tenue e interior. Ajam es luminoso y se acerca a una escala mayor; se usa para aleyas alegres. Escuche el color, no el nombre: los maqamat se aprenden de oído, con maestros y grabaciones.",
+        "points": [
+          "Rast: firme y noble, emplea cuartos de tono.",
+          "Nahawand: suave, reflexivo, cercano al modo menor.",
+          "Sika: centrado en una nota de cuarto de tono, íntimo.",
+          "Ajam: luminoso y abierto, cercano al modo mayor."
+        ],
+        "check": [
+          "Sé nombrar un carácter para cada uno de los siete maqamat.",
+          "Noto cuándo un recitador pasa de un maqam a otro."
+        ],
+        "mcq": [
+          {
+            "q": "¿A qué maqam se le llama a menudo el padre de los maqamat?",
+            "options": [
+              "Rast",
+              "Hijaz",
+              "Saba",
+              "Nahawand"
+            ],
+            "answer": 0
+          },
+          {
+            "q": "¿Qué maqam se acerca a una escala mayor occidental?",
+            "options": [
+              "Ajam",
+              "Saba",
+              "Sika",
+              "Bayati"
+            ],
+            "answer": 0
+          },
+          {
+            "q": "¿Qué maqam se apoya en una nota de cuarto de tono?",
+            "options": [
+              "Sika",
+              "Ajam",
+              "Nahawand",
+              "Hijaz"
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "7-3": {
+        "title": "Taller de escucha: un pasaje, varias voces",
+        "intro": "Elija un recitador en los ajustes, reproduzca estas aleyas, cambie después de recitador y vuelva a escuchar. Observe dónde sube la voz, dónde descansa y qué carácter va construyendo. La grabación es igual que en los niveles anteriores: imite la melodía solo cuando las letras y las duraciones sean correctas.",
+        "points": [
+          "Escuche dos veces antes de imitar.",
+          "Imite una frase cada vez, primero a velocidad lenta.",
+          "Compare su grabación solo en cuanto al taywid; después, en cuanto a la melodía."
+        ],
+        "check": [
+          "Comparé al menos dos recitadores en las mismas aleyas.",
+          "Grabé una aleya con una melodía serena y constante."
+        ],
+        "mcq": [
+          {
+            "q": "¿Qué comprueba primero al imitar a un recitador?",
+            "options": [
+              "Las letras y las duraciones",
+              "La nota más alta",
+              "El nombre del maqam",
+              "La velocidad"
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "8-1": {
+        "title": "Control del aliento",
+        "intro": "Respire hacia abajo, hacia el vientre, no en lo alto del pecho. Llene los pulmones sin ruido antes de la aleya y deje salir el aire despacio y de forma pareja mientras recita. Una respiración breve a mitad de aleya solo se permite donde el sentido admite una parada; nunca tome aire mientras sigue adelante, pues tomar aire equivale a detenerse.",
+        "points": [
+          "Siéntese o permanezca de pie con la espalda recta; los hombros no se mueven al inspirar.",
+          "Practique: inspire durante cuatro tiempos y recite un madd largo de forma constante durante seis tiempos.",
+          "Tomar aire cuenta siempre como waqf: deténgase como corresponde y reanude en un lugar con sentido."
+        ],
+        "check": [
+          "Tomo aire en silencio por la nariz o por la boca antes de cada aleya.",
+          "Puedo mantener un madd de seis tiempos con regularidad."
+        ],
+        "mcq": [
+          {
+            "q": "Tomar aire durante la recitación cuenta como …",
+            "options": [
+              "una parada (waqf)",
+              "una pausa sin detenerse (sakt)",
+              "nada",
+              "un madd"
+            ],
+            "answer": 0
+          },
+          {
+            "q": "¿De dónde debe venir la respiración?",
+            "options": [
+              "De abajo, del vientre",
+              "De arriba, de los hombros",
+              "Solo de la nariz",
+              "Da igual"
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "8-2": {
+        "title": "Planificar una aleya larga",
+        "intro": "Antes de recitar una aleya larga, léala una vez y marque dónde se detendrá: en un signo de parada que lo permita o al final de una frase completa. Si tiene que detenerse en un lugar inadecuado, retroceda una o dos palabras y vuelva a empezar para que el sentido quede completo. La aleya más larga del Corán, la de la deuda, es el ejercicio clásico.",
+        "points": [
+          "Marque primero los signos de parada y luego decida sus puntos de respiración.",
+          "Nunca inicie una nueva respiración en una palabra que depende de la anterior.",
+          "Use la velocidad lenta hasta que el plan se afiance."
+        ],
+        "check": [
+          "Planifiqué mis paradas de la aleya de la deuda antes de recitarla.",
+          "Cuando me detuve en un lugar inadecuado, retrocedí y reanudé bien."
+        ],
+        "mcq": [
+          {
+            "q": "Se quedó sin aire a mitad de una frase. ¿Qué hace?",
+            "options": [
+              "Retroceder y reanudar donde el sentido queda completo",
+              "Continuar desde la palabra siguiente",
+              "Empezar la sura de nuevo",
+              "Saltarse la frase"
+            ],
+            "answer": 0
+          },
+          {
+            "q": "¿Qué marca primero al planificar una aleya larga?",
+            "options": [
+              "Los signos de parada",
+              "El maqam",
+              "El tanwin",
+              "El número de página"
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "8-3": {
+        "title": "En la práctica: Ayat al-Kursi y el final de al-Baqara",
+        "intro": "Recite Ayat al-Kursi y las dos últimas aleyas de al-Baqara con un plan de respiración. Mantenga constantes las duraciones del madd en todo el pasaje: un madd munfasil de cuatro tiempos al principio sigue siendo de cuatro tiempos al final.",
+        "points": [
+          "Elija una sola duración para el madd munfasil y respétela.",
+          "Planifique dos o tres puntos de respiración en Ayat al-Kursi."
+        ],
+        "check": [
+          "Las duraciones de mis madd se mantuvieron constantes.",
+          "Recité Ayat al-Kursi con una respiración planificada."
+        ],
+        "mcq": [
+          {
+            "q": "Una vez que eligió cuatro tiempos para el madd munfasil, usted …",
+            "options": [
+              "mantiene cuatro tiempos en todo momento",
+              "cambia a su gusto",
+              "usa dos tiempos al final",
+              "usa seis tiempos cuando se cansa"
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "9-1": {
+        "title": "Las siete y las diez qira'at",
+        "intro": "El Corán se transmitió en varias lecturas auténticas (qira'at), cada una con el nombre de un maestro lector y transmitida por dos transmisores principales (riwayat). Las siete: Nafiʿ (Qalun, Warsh), Ibn Kazir (al-Bazzi, Qunbul), Abu ʿAmr (ad-Duri, as-Susi), Ibn ʿAmir (Hisham, Ibn Dhakwan), ʿAsim (Shuʿba, Hafs), Hamza (Jalaf, Jallad) y al-Kisaʾi (Abu l-Hariz, ad-Duri). Con Abu Yaʿfar, Yaʿqub y Jalaf al-ʿAshir son diez. Esta app recita en Hafs ʿan ʿAsim, la riwaya más extendida hoy; Warsh es habitual en el norte y el oeste de África, Qalun en Libia y Túnez, y ad-Duri ʿan Abi ʿAmr en partes de Sudán.",
+        "points": [
+          "Una qira'a es la lectura de un maestro; una riwaya es la línea de un transmisor que procede de él.",
+          "Todas las lecturas auténticas son Corán; ninguna es un error de dialecto ni un añadido posterior.",
+          "Aprender otra riwaya requiere un maestro con sanad en esa riwaya."
+        ],
+        "check": [
+          "Sé nombrar a los siete lectores y a los dos transmisores de ʿAsim.",
+          "Sé qué riwaya recito."
+        ],
+        "mcq": [
+          {
+            "q": "Hafs transmite la lectura de …",
+            "options": [
+              "ʿAsim",
+              "Nafiʿ",
+              "Ibn Kazir",
+              "Hamza"
+            ],
+            "answer": 0
+          },
+          {
+            "q": "Warsh y Qalun transmiten la lectura de …",
+            "options": [
+              "Nafiʿ",
+              "Abu ʿAmr",
+              "al-Kisaʾi",
+              "Ibn ʿAmir"
+            ],
+            "answer": 0
+          },
+          {
+            "q": "ad-Duri y as-Susi transmiten de …",
+            "options": [
+              "Abu ʿAmr",
+              "ʿAsim",
+              "Hamza",
+              "Yaʿqub"
+            ],
+            "answer": 0
+          },
+          {
+            "q": "¿Cuántas lecturas se cuentan con Abu Yaʿfar, Yaʿqub y Jalaf?",
+            "options": [
+              "Diez",
+              "Siete",
+              "Catorce",
+              "Cuatro"
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "9-2": {
+        "title": "Las diferencias, explicadas",
+        "intro": "Las diferencias entre lecturas son de dos tipos. Unas afectan solo al sonido: Warsh alarga el madd munfasil a seis tiempos, traslada la hamza a una letra silenciosa que la precede (naql) e inclina algunas alif hacia la ya (taqlil); Qalun puede unir la mim del plural a una u larga (silat al-mim). Otras afectan a la palabra: en al-Fatiha, aleya 4, ʿAsim y al-Kisaʾi leen con una a larga, con el sentido de «Dueño», mientras que Nafiʿ y otros la leen corta, con el sentido de «Rey»; ambos sentidos son verdaderos. En al-Baqara, aleyas 9 y 10, otros lectores tienen formas que difieren de Hafs en una letra o en la forma de la palabra. Escuche aquí las aleyas en Hafs y lea la explicación de las otras lecturas.",
+        "points": [
+          "Diferencias de sonido: duración del madd, hamza, imala, tafkhim de la ra.",
+          "Diferencias de palabra: una vocal larga, una letra doblada, otra persona del verbo.",
+          "Nunca mezcle riwayat en una misma recitación sin los conocimientos para hacerlo."
+        ],
+        "check": [
+          "Sé explicar las dos lecturas de al-Fatiha, aleya 4.",
+          "Sé nombrar dos rasgos de sonido de Warsh."
+        ],
+        "mcq": [
+          {
+            "q": "Warsh recita el madd munfasil …",
+            "options": [
+              "con seis tiempos",
+              "con dos tiempos",
+              "sin madd",
+              "con un tiempo"
+            ],
+            "answer": 0
+          },
+          {
+            "q": "En al-Fatiha 1:4, la lectura con una a larga significa …",
+            "options": [
+              "Dueño",
+              "Rey",
+              "Señor",
+              "Juez"
+            ],
+            "answer": 0
+          },
+          {
+            "q": "El naql en Warsh significa …",
+            "options": [
+              "trasladar la vocal de la hamza a la letra silenciosa que la precede",
+              "doblar una letra",
+              "detenerse antes",
+              "una lam gruesa"
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "9-3": {
+        "title": "Mutashabihat para el hifz: Adán y los Hijos de Israel",
+        "intro": "Las mutashabihat son aleyas que se parecen casi por completo. Son la causa más frecuente de errores en la memorización. Compare aquí los pares: en al-Baqara, a Adán se le dice «y coman», con waw; en al-Aʿraf, «entonces coman», con fa; el orden de «entren por la puerta» y «digan: alivio» está invertido entre al-Baqara y al-Aʿraf; y el castigo del pueblo del Faraón usa un verbo en al-Baqara e Ibrahim (con una waw añadida en Ibrahim) y otro en al-Aʿraf.",
+        "points": [
+          "Aprenda los pares juntos, nunca uno sin el otro.",
+          "Busque un punto de apoyo: una letra, el orden de las palabras, el tema de la sura.",
+          "Recite ambas aleyas en voz alta, una tras otra, y diga el nombre de la sura."
+        ],
+        "check": [
+          "Recito cada par sin mezclarlos.",
+          "Tengo un punto de apoyo para cada par."
+        ],
+        "mcq": [
+          {
+            "q": "¿Qué son las mutashabihat en el hifz?",
+            "options": [
+              "Aleyas que se parecen casi por completo",
+              "Aleyas abrogadas",
+              "Aleyas de postración",
+              "Las aleyas más largas"
+            ],
+            "answer": 0
+          },
+          {
+            "q": "Un par de aleyas semejantes se aprende mejor …",
+            "options": [
+              "juntas, con un punto de apoyo para la diferencia",
+              "una por año",
+              "solo la primera",
+              "sin escuchar"
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "9-4": {
+        "title": "Mutashabihat: la lista de los creyentes",
+        "intro": "al-Baqara 2:62 y al-Maʾida 5:69 enumeran los mismos grupos, pero difieren el orden y el caso gramatical de una palabra. Escuche ambas, marque la diferencia en los datos de la palabra y recítelas una tras otra hasta que el cambio sea automático.",
+        "points": [
+          "Marque la palabra que cambia de posición.",
+          "Diga el nombre de la sura antes de recitar cada aleya."
+        ],
+        "check": [
+          "Recito 2:62 y 5:69 sin confundir el orden."
+        ],
+        "mcq": [
+          {
+            "q": "¿Qué le ayuda a distinguir dos aleyas semejantes?",
+            "options": [
+              "Decir el nombre de la sura y la palabra distinta",
+              "Recitar más rápido",
+              "Omitir una",
+              "Cambiar de maqam"
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "10-1": {
+        "title": "Sura al-Mulk",
+        "intro": "Treinta aleyas, que a menudo se recitan por la noche. Trabaje en dos mitades: escuche, repita a velocidad lenta, grabe, compare y use después la comprobación de palabras para memorizar.",
+        "points": [
+          "Atienda a las muchas letras de qalqala y al madd lazim.",
+          "Mantenga una velocidad constante en las treinta aleyas."
+        ],
+        "check": [
+          "Recito las aleyas 1–15 con fluidez.",
+          "Recito las aleyas 16–30 con fluidez."
+        ],
+        "mcq": [
+          {
+            "q": "¿Cuántas aleyas tiene al-Mulk?",
+            "options": [
+              "30",
+              "40",
+              "29",
+              "83"
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "10-2": {
+        "title": "Sura Ya-Sin, el comienzo",
+        "intro": "El comienzo de Ya-Sin se abre con letras separadas (huruf muqattaʿa), que se recitan como nombres de letras con su madd. Después vienen los relatos de la ciudad y de los mensajeros.",
+        "points": [
+          "Ya-Sin se lee como los nombres de dos letras, con madd lazim en la sin.",
+          "Planifique las respiraciones para las aleyas narrativas más largas."
+        ],
+        "check": [
+          "Recito las letras separadas con su madd correcto.",
+          "Recito las primeras aleyas sin mirar."
+        ],
+        "mcq": [
+          {
+            "q": "Las letras separadas del comienzo de Ya-Sin se recitan como …",
+            "options": [
+              "nombres de letras con madd",
+              "una sola palabra",
+              "letras silenciosas",
+              "tanwin"
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "10-3": {
+        "title": "Sura ar-Rahman",
+        "intro": "El estribillo «¿Cuáles de los favores de su Señor negarán?» vuelve una y otra vez. Manténgalo idéntico cada vez: el mismo madd, la misma melodía, la misma ghunna clara.",
+        "points": [
+          "Recite el estribillo de la misma manera cada vez.",
+          "Use el estribillo para comprobar su respiración: una respiración por estribillo."
+        ],
+        "check": [
+          "Mi estribillo es idéntico cada vez.",
+          "Recito la primera sección sin mirar."
+        ],
+        "mcq": [
+          {
+            "q": "¿Qué permanece idéntico en el estribillo de ar-Rahman?",
+            "options": [
+              "El madd, la ghunna y la melodía",
+              "Solo la velocidad",
+              "Nada",
+              "El signo de parada"
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "10-4": {
+        "title": "Sura al-Waqiʿa y las diez primeras aleyas de al-Kahf",
+        "intro": "al-Waqiʿa tiene aleyas breves y rítmicas que ponen a prueba la constancia de la velocidad; se recomienda memorizar las diez primeras aleyas de al-Kahf. Planifique sus paradas en el sakt de al-Kahf, aleya 1, donde Hafs hace una pausa breve sin tomar aire.",
+        "points": [
+          "Sakt: una pausa breve sin tomar aire; después se continúa.",
+          "Mantenga parejo el ritmo de al-Waqiʿa."
+        ],
+        "check": [
+          "Hago el sakt al final de al-Kahf, aleya 1, sin tomar aire.",
+          "Recito al-Kahf 1–10 sin mirar."
+        ],
+        "mcq": [
+          {
+            "q": "Sakt significa …",
+            "options": [
+              "una pausa breve sin tomar aire",
+              "una parada larga con respiración",
+              "una ra gruesa",
+              "una letra doblada"
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      "10-5": {
+        "title": "Recitación Masterclass",
+        "intro": "Su recitación final: al-Fatiha, Ayat al-Kursi y el comienzo de al-Mulk, como si estuviera ante un maestro. Grabe todo el pasaje de una sola vez, escúchelo y marque la autoevaluación con sinceridad. Después haga el examen del nivel: al aprobarlo obtiene el certificado Masterclass del Camino del recitador. Es un certificado de la app, no una iyaza; para obtener una iyaza, recite ante un maestro cualificado.",
+        "points": [
+          "Recite de una sola vez, con su plan de respiración.",
+          "Escuche la grabación una vez por el taywid, otra por las paradas y otra por la melodía.",
+          "Comparta su grabación con un maestro para recibir sus comentarios."
+        ],
+        "check": [
+          "Todas las letras salen de sus makharij.",
+          "Cada madd tiene su duración y se mantiene constante.",
+          "Aplico las reglas de la nun, la mim y la ghunna.",
+          "Mis paradas y reanudaciones mantienen el sentido completo.",
+          "Mi melodía está al servicio del sentido y nunca cambia las letras."
+        ],
+        "mcq": [
+          {
+            "q": "El idgham con ghunna se da con las letras …",
+            "options": [
+              "ي ن م و",
+              "ء ه ع ح",
+              "ق ط ب ج د",
+              "ل ر"
+            ],
+            "answer": 0
+          },
+          {
+            "q": "¿Cómo es el madd lazim?",
+            "options": [
+              "De seis tiempos",
+              "De dos tiempos",
+              "De cuatro o cinco tiempos",
+              "Opcional"
+            ],
+            "answer": 0
+          },
+          {
+            "q": "La lam de Allah después de una damma es …",
+            "options": [
+              "gruesa",
+              "fina",
+              "silenciosa",
+              "con eco"
+            ],
+            "answer": 0
+          },
+          {
+            "q": "Tomar aire durante la recitación cuenta como …",
+            "options": [
+              "una parada",
+              "un sakt",
+              "un madd",
+              "nada"
+            ],
+            "answer": 0
+          },
+          {
+            "q": "¿Qué riwaya recita esta app?",
+            "options": [
+              "Hafs ʿan ʿAsim",
+              "Warsh ʿan Nafiʿ",
+              "Qalun ʿan Nafiʿ",
+              "ad-Duri ʿan Abi ʿAmr"
+            ],
+            "answer": 0
+          },
+          {
+            "q": "¿Puede el certificado de la app sustituir a una iyaza?",
+            "options": [
+              "No",
+              "Sí",
+              "Solo en el nivel 10",
+              "Solo con Pro"
+            ],
+            "answer": 0
+          }
+        ]
+      }
+    }
+  },
+  "abrahamic": {
+    "units": {
+      "ibrahim": {
+        "text": "El Corán presenta a Ibrahim como un hanif: alguien que se volvió hacia el Dios único, puesto a prueba y hallado fiel. Junto con su hijo Ismail levantó los cimientos de la Casa en La Meca, y su súplica por una ciudad segura y por un mensajero surgido de entre su gente forma parte de la sura al-Baqara y de la sura Ibrahim. Judíos, cristianos y musulmanes hacen remontar su fe a Abraham, cada uno a su manera."
+      },
+      "family": {
+        "text": "A través de Ismail y de Ishaq, el Corán sigue una línea de profetas: Yaqub, que preguntó a sus hijos qué adorarían después de él, y Yusuf, cuya historia se cuenta como una sura entera. La sura Al Imran abre su relato nombrando a la familia de Ibrahim y a la familia de Imran entre los elegidos. Muchas de estas figuras también son centrales en la Biblia hebrea."
+      },
+      "musa": {
+        "text": "Musa es el profeta más mencionado en el Corán. La sura al-Qasas relata cómo su madre lo confió al río, su juventud en la casa del Faraón y la llamada en el valle bendito, con Harún a su lado. El Corán habla de la Torá dada a Musa como guía y luz; en el judaísmo, Moisés es el maestro central de la Torá."
+      },
+      "maryam": {
+        "text": "Maryam es la única mujer nombrada en el Corán, y una sura lleva su nombre. La sura Al Imran y la sura Maryam relatan su crianza al cuidado de Zakariya, el nacimiento de Yahya y el anuncio de Isa, a quien se llama una palabra de Dios y el Mesías. También los cristianos tienen en la más alta estima a María y a Jesús; sus creencias sobre Jesús difieren del relato coránico, y este curso describe el texto coránico sin sopesar lo uno frente a lo otro."
+      },
+      "book": {
+        "text": "El Corán llama a judíos y cristianos la Gente del Libro y nombra escrituras anteriores: la Torá, el Zabur dado a Dawud y el Injil dado a Isa. Al Imran 3:64 los invita a una palabra común. En 2007, sabios musulmanes tomaron esta aleya como título de una carta abierta a los dirigentes cristianos, y el Mensaje de Amán de 2004 formuló una declaración común sobre la diversidad del islam."
+      },
+      "abu-dhabi": {
+        "text": "En la isla de Saadiyat, en Abu Dabi, la Casa de la Familia Abrahámica abrió sus puertas en 2023: la Mezquita Imam al-Tayeb, la Iglesia de San Francisco y la Sinagoga Moses Ben Maimon se alzan lado a lado en un mismo recinto, y cada una es un lugar de culto en activo. Surgió del Documento sobre la Fraternidad Humana, firmado en Abu Dabi en 2019 por el gran imam de al-Azhar, Ahmad al-Tayeb, y el papa Francisco. El Corán habla de monasterios, iglesias, sinagogas y mezquitas en los que se recuerda el nombre de Dios (22:40), y de pueblos hechos diferentes para que se conozcan unos a otros (49:13)."
+      },
+      "history": {
+        "text": "Hebrón, Jerusalén, el monte Sinaí y La Meca están vinculados con Abraham y sus descendientes en las tres tradiciones. Los historiadores estudian también cómo convivieron musulmanes, judíos y cristianos, por ejemplo bajo la Constitución de Medina o en al-Andalus. Los artículos de abajo describen estos lugares y estos períodos tal como los ven los historiadores."
+      }
+    },
+    "lessons": {
+      "ibrahim-idols": {
+        "title": "La búsqueda de Ibrahim y los ídolos",
+        "text": "El Corán muestra al joven Ibrahim mirando una estrella, la luna y el sol, y apartándose de cada uno cuando se pone: lo que desaparece no puede ser su Señor. Entonces se vuelve en adoración hacia el Creador de los cielos y de la tierra, como un hanif, alguien inclinado al monoteísmo puro (6:79).\nRompe los ídolos de su pueblo, dejando intacto el más grande, y les pide que le pregunten a este. Lo arrojan a un fuego, y Dios ordena al fuego que sea fresco e inofensivo para él (21:69).",
+        "note": "Los comentaristas difieren sobre si la escena de la estrella fue la búsqueda personal de Ibrahim o un argumento dirigido a su pueblo. La rotura de los ídolos aparece también en la tradición judía posterior (Midrash), no en la Biblia misma.",
+        "quiz": [
+          {
+            "q": "¿Por qué Ibrahim se aparta de la estrella, la luna y el sol?",
+            "options": [
+              "Porque se ponen y desaparecen",
+              "Porque su padre se lo prohibió",
+              "Porque eran demasiado pequeños"
+            ]
+          },
+          {
+            "q": "¿Qué ordenó Dios que fuera el fuego para Ibrahim?",
+            "options": [
+              "Más caliente que antes",
+              "Fresco e inofensivo",
+              "Apagado durante la noche"
+            ],
+            "why": "Sura al-Anbiya 21:69."
+          }
+        ]
+      },
+      "ibrahim-trials": {
+        "title": "Las pruebas de Ibrahim y el sacrificio",
+        "text": "Dios puso a prueba a Ibrahim con mandatos, y él los cumplió por completo; entonces Dios lo hizo imam, un guía para la gente (2:124). La mayor prueba llega en la sura as-Saffat: Ibrahim ve en un sueño que sacrifica a su hijo. El hijo le dice a su padre que haga lo que se le ha ordenado y promete ser paciente (37:102). Ambos se someten, y Dios rescata al hijo mediante un animal de sacrificio (37:107).\nEl Eid al-Adha y el sacrificio durante el Hajj conmemoran este momento.",
+        "note": "El Corán no nombra aquí al hijo. La mayoría de los sabios musulmanes, suníes y chiíes, sostiene que fue Ismail, ya que las buenas nuevas de Ishaq vienen después (37:112); algunas autoridades tempranas nombraron a Ishaq. En Génesis 22 el hijo es Isaac. El tafsir chií lee además 2:124 como la raíz del imamato.",
+        "quiz": [
+          {
+            "q": "¿Cómo respondió el hijo a su padre?",
+            "options": [
+              "Quiso huir",
+              "Le dijo que hiciera lo ordenado y prometió paciencia",
+              "Pidió esperar hasta el día siguiente"
+            ],
+            "why": "Sura as-Saffat 37:102."
+          },
+          {
+            "q": "¿Qué fiesta conmemora este acontecimiento?",
+            "options": [
+              "Eid al-Fitr",
+              "Eid al-Adha",
+              "Mawlid"
+            ]
+          }
+        ]
+      },
+      "hajar-ismail": {
+        "title": "Hajar e Ismail en el valle",
+        "text": "Ibrahim ruega por la familia que deja en un valle árido junto a la Casa sagrada de Dios (14:37). Un hadiz en el Sahih al-Bujari (Libro de los Profetas) cuenta cómo Hajar le preguntó si Dios se lo había ordenado; cuando él dijo que sí, ella tuvo la certeza de que Dios no permitiría que se perdieran.\nBuscando agua, corrió siete veces entre las colinas de Safa y Marwa, hasta que brotó la fuente de Zamzam. Cada peregrino repite su recorrido en el sa'i.",
+        "note": "Génesis 16 y 21 relatan también la historia de Agar e Ismael en el desierto y la de un pozo, ambientadas en el desierto de Berseba y de Parán.",
+        "quiz": [
+          {
+            "q": "¿Cuántas veces corrió Hajar entre Safa y Marwa?",
+            "options": [
+              "Tres",
+              "Siete",
+              "Cuarenta"
+            ]
+          },
+          {
+            "q": "¿Qué fuente brotó para Hajar e Ismail?",
+            "options": [
+              "Zamzam",
+              "Salsabil",
+              "Jordán"
+            ]
+          }
+        ]
+      },
+      "kaaba-building": {
+        "title": "Ibrahim e Ismail construyen la Kaaba",
+        "text": "Mientras Ibrahim e Ismail levantaban los cimientos de la Casa (2:127), oraron por su aceptación, por una comunidad entregada a Dios y por un mensajero de entre sus descendientes. Los musulmanes leen 2:129 como una súplica que halló respuesta en el Profeta Muhammad.\nDios le dice a Ibrahim que mantenga la Casa pura para todos los que la circunvalan y oran en ella, y que llame a la gente a la peregrinación: vendrían a pie y en camellos flacos por caminos lejanos (22:26-27). El Maqam Ibrahim señala la piedra sobre la que, según la tradición, él estuvo de pie.",
+        "quiz": [
+          {
+            "q": "¿Quién levantó los cimientos de la Casa junto con Ibrahim?",
+            "options": [
+              "Ishaq",
+              "Ismail",
+              "Lut"
+            ]
+          },
+          {
+            "q": "¿Qué señala el Maqam Ibrahim?",
+            "options": [
+              "Su tumba",
+              "La piedra sobre la que estuvo mientras construía",
+              "Un pozo"
+            ]
+          }
+        ]
+      },
+      "lut": {
+        "title": "Lut y su pueblo",
+        "text": "Lut, que en la tradición es sobrino de Ibrahim, creyó junto a él y emigró (29:26). Fue enviado a un pueblo que cometía abiertamente graves injusticias y agredía a los huéspedes. Cuando unos mensajeros llegaron como huéspedes, Lut intentó protegerlos. Le dijeron que partiera de noche con su familia, y las ciudades fueron volcadas.\nEl Corán presenta a Lut como un profeta íntegro que se mantuvo solo en defensa de la hospitalidad y la decencia.",
+        "note": "En el Corán, a diferencia de Génesis 19, Lut es un profeta, y no se le atribuye ninguna falta.",
+        "quiz": [
+          {
+            "q": "¿Qué intentó proteger Lut?",
+            "options": [
+              "A sus huéspedes",
+              "Sus rebaños",
+              "La puerta del pueblo"
+            ]
+          },
+          {
+            "q": "¿Cómo se describe a Lut en el Corán?",
+            "options": [
+              "Como un rey",
+              "Como un profeta",
+              "Como un comerciante"
+            ]
+          }
+        ]
+      },
+      "yusuf-dream": {
+        "title": "Yusuf 1: el sueño y el pozo",
+        "text": "La sura Yusuf describe su propia narración como la mejor de las historias (12:3) y cuenta un solo arco de principio a fin. El niño Yusuf ve once estrellas, el sol y la luna postrándose ante él. Yaqub le dice que no se lo cuente a sus hermanos.\nPor celos, los hermanos lo arrojan a un pozo y traen su camisa manchada con sangre falsa. Yaqub responde con una paciencia sin queja, el sabr jamil de 12:18.",
+        "quiz": [
+          {
+            "q": "¿Qué vio Yusuf en su sueño?",
+            "options": [
+              "Siete vacas",
+              "Once estrellas, el sol y la luna",
+              "Un barco"
+            ]
+          },
+          {
+            "q": "¿Cómo respondió Yaqub a la pérdida?",
+            "options": [
+              "Con paciencia hermosa",
+              "Con venganza",
+              "Marchándose"
+            ]
+          }
+        ]
+      },
+      "yusuf-egypt": {
+        "title": "Yusuf 2: la tentación y la cárcel",
+        "text": "Vendido en Egipto, Yusuf crece en la casa del 'Aziz. La esposa del 'Aziz intenta seducirlo; él se niega y busca refugio en Dios (12:23). Aunque inocente, es encarcelado y dice que prefiere la cárcel a obrar mal.\nEn la cárcel interpreta los sueños de dos compañeros de prisión, pero antes les habla del Dios único, a quien solo pertenece el juicio (12:40).",
+        "quiz": [
+          {
+            "q": "¿Cómo respondió Yusuf cuando fue tentado?",
+            "options": [
+              "Se negó y buscó refugio en Dios",
+              "Aceptó verse más tarde",
+              "Pidió consejo a su amo"
+            ]
+          },
+          {
+            "q": "¿De qué habló Yusuf antes de interpretar los sueños?",
+            "options": [
+              "De los reyes de Egipto",
+              "Del Dios único",
+              "De sus hermanos"
+            ]
+          }
+        ]
+      },
+      "yusuf-reunion": {
+        "title": "Yusuf 3: el perdón y el reencuentro",
+        "text": "Yusuf interpreta el sueño del rey sobre siete vacas gordas y siete flacas, es exculpado y puesto a cargo de los almacenes. En la hambruna sus hermanos llegan a comprar grano. Cuando se da a conocer, ellos temen lo peor, pero él los perdona de inmediato y no les reprocha nada (12:92).\nSu camisa devuelve la vista a Yaqub, la familia llega a Egipto y el sueño de la infancia se cumple.",
+        "quiz": [
+          {
+            "q": "¿Cómo trató Yusuf a sus hermanos?",
+            "options": [
+              "Los perdonó sin reproches",
+              "Los expulsó de Egipto",
+              "Les hizo pagar el doble"
+            ],
+            "why": "Sura Yusuf 12:92."
+          },
+          {
+            "q": "¿Qué devolvió la vista a Yaqub?",
+            "options": [
+              "El agua de Zamzam",
+              "La camisa de Yusuf",
+              "Un bastón"
+            ]
+          }
+        ]
+      },
+      "musa-birth": {
+        "title": "Musa 1: el río y el palacio",
+        "text": "El Faraón oprime a los Hijos de Israel. Dios inspira a la madre de Musa que ponga al bebé en el río y le promete devolvérselo. La esposa del Faraón lo acoge y le pide al Faraón que le perdone la vida al niño, una alegría para ambos (28:9). Musa rechaza a todas las nodrizas hasta que su hermana los conduce a su propia madre.\nEl Corán honra a la esposa del Faraón, llamada Asiya en la tradición, como ejemplo de fe (66:11).",
+        "note": "En Éxodo 2 es la hija del Faraón quien adopta a Moisés; en el Corán es la esposa del Faraón.",
+        "quiz": [
+          {
+            "q": "¿Quién llevó al bebé Musa al palacio?",
+            "options": [
+              "La esposa del Faraón",
+              "El visir del Faraón",
+              "Un comerciante"
+            ]
+          },
+          {
+            "q": "¿Cómo fue devuelto Musa a su madre?",
+            "options": [
+              "Rechazó a todas las demás nodrizas",
+              "Ella lo compró",
+              "El Faraón lo envió lejos"
+            ]
+          }
+        ]
+      },
+      "musa-call": {
+        "title": "Musa 2: Madyan y la llamada",
+        "text": "Tras matar sin querer a un egipcio, Musa huye a Madyan. En un pozo da de beber al rebaño de dos mujeres y se dirige a Dios en oración, reconociendo que necesita cualquier bien que Dios le envíe (28:24). Se casa con una de ellas y trabaja para su padre durante años.\nDe regreso ve un fuego. En el valle sagrado de Tuwa, Dios lo llama, le dice que no hay más dios que Él y le ordena adorarle solo a Él y orar para recordarle (20:14).",
+        "note": "Muchos comentaristas clásicos identificaron al padre en Madyan con el profeta Shuayb; otros discreparon. La Biblia lo llama Jetro (Reuel).",
+        "quiz": [
+          {
+            "q": "¿Dónde oyó Musa la llamada de Dios?",
+            "options": [
+              "En el valle de Tuwa",
+              "En el palacio de Egipto",
+              "En el mar"
+            ]
+          },
+          {
+            "q": "¿Qué oró Musa en el pozo de Madyan?",
+            "options": [
+              "Pidió la victoria",
+              "Dijo que necesitaba cualquier bien que Dios le enviara",
+              "Pidió riqueza"
+            ]
+          }
+        ]
+      },
+      "musa-exodus": {
+        "title": "Musa 3: ante el Faraón y el mar",
+        "text": "Enviado al Faraón, Musa pide a Dios que le abra el corazón y le facilite su tarea, y pide a su hermano Harún como ayudante (20:25-32). A ambos se les dice que hablen al Faraón con suavidad (20:44). Los magos, una vez que ven las señales, creen.\nEl Faraón persigue a los israelitas hasta el mar. Temen ser alcanzados; Musa responde que su Señor está con él y lo guiará (26:61-62). El mar se parte y el ejército del Faraón se ahoga.",
+        "quiz": [
+          {
+            "q": "¿A quién pidió Musa como ayudante?",
+            "options": [
+              "A Yusha'",
+              "A su hermano Harún",
+              "A los magos"
+            ]
+          },
+          {
+            "q": "¿Cómo se le dijo a Musa que hablara al Faraón?",
+            "options": [
+              "Con suavidad",
+              "Con amenazas",
+              "Sin decirle nada"
+            ]
+          }
+        ]
+      },
+      "musa-sinai": {
+        "title": "Musa 4: el Sinaí y al-Jidr",
+        "text": "En la montaña, Musa pide ver a Dios; la montaña se desmorona y él cae sin sentido. Recibe las Tablas, que contienen exhortación y guía detallada (7:145). En su ausencia, el pueblo adora al becerro.\nLa sura al-Kahf relata que Musa viaja con un siervo de Dios, conocido como al-Jidr, que hace tres cosas desconcertantes. La lección: el conocimiento humano es limitado, y hace falta paciencia con lo que todavía no se puede comprender.",
+        "quiz": [
+          {
+            "q": "¿Qué ocurrió cuando Musa pidió ver a Dios?",
+            "options": [
+              "La montaña se desmoronó",
+              "El mar se abrió",
+              "Llovió"
+            ]
+          },
+          {
+            "q": "¿Cuál es la enseñanza principal de Musa y al-Jidr?",
+            "options": [
+              "Viajar es peligroso",
+              "El conocimiento humano es limitado; hay que ser paciente",
+              "Los barcos deben venderse"
+            ]
+          }
+        ]
+      },
+      "dawud-sulayman": {
+        "title": "Dawud y Sulaymán",
+        "text": "Dawud recibe el Zabur (4:163), las montañas y las aves alaban a Dios junto con él, y el hierro se le ablanda para que forje armaduras. Sulaymán hereda de él y se le enseña el lenguaje de las aves.\nCuando una hormiga advierte a su colonia del ejército de Sulaymán, él sonríe y pide a Dios que le ayude a ser agradecido por Sus favores (27:19). El Corán presenta a ambos como reyes justos y agradecidos, no como gobernantes que buscan el poder.",
+        "quiz": [
+          {
+            "q": "¿Qué libro se dio a Dawud?",
+            "options": [
+              "La Tawrat",
+              "El Zabur",
+              "El Injil"
+            ]
+          },
+          {
+            "q": "¿Qué hizo Sulaymán al oír a la hormiga?",
+            "options": [
+              "Sonrió y dio gracias a Dios",
+              "Ordenó un ataque",
+              "La ignoró"
+            ]
+          }
+        ]
+      },
+      "yunus": {
+        "title": "Yunus en la ballena",
+        "text": "Yunus abandona a su pueblo con enojo antes de que Dios se lo permita, se embarca en un barco y un gran pez se lo traga. En la oscuridad invoca a Dios, afirmando que no hay más dios que Él, glorificándolo y reconociendo su propia falta (21:87).\nEs arrojado a la orilla, una calabacera le da sombra y regresa junto a un pueblo de más de cien mil personas que creen. De modo singular, el Corán dice que todo su pueblo se salvó (10:98).",
+        "quiz": [
+          {
+            "q": "¿Qué hizo Yunus en la oscuridad?",
+            "options": [
+              "Afirmó la unicidad de Dios y reconoció su falta",
+              "Pidió a los marineros que salvaran el barco",
+              "Pidió una tormenta"
+            ],
+            "why": "Sura al-Anbiya 21:87."
+          },
+          {
+            "q": "¿Qué ocurrió con su pueblo?",
+            "options": [
+              "Fue destruido",
+              "Creyó y se salvó",
+              "Emigró"
+            ]
+          }
+        ]
+      },
+      "ayyub": {
+        "title": "Ayyub y la paciencia",
+        "text": "Ayyub pierde la salud, la riqueza y a su familia. No protesta contra Dios, sino que lo invoca, nombrando el mal que le ha alcanzado e implorándole como el Más Misericordioso (21:83). Se le dice que golpee el suelo con el pie: brota un manantial para lavarse y beber.\nDios lo restablece y lo elogia como paciente y excelente siervo (38:44).",
+        "quiz": [
+          {
+            "q": "¿Cómo invocó Ayyub a Dios?",
+            "options": [
+              "Expuso su aflicción e imploró la misericordia de Dios",
+              "Se quejó de que era injusto",
+              "Pidió un reino"
+            ],
+            "why": "Sura al-Anbiya 21:83."
+          },
+          {
+            "q": "¿Cómo describe Dios a Ayyub?",
+            "options": [
+              "Paciente, un excelente siervo",
+              "Rico",
+              "Un guerrero"
+            ]
+          }
+        ]
+      },
+      "zakariya-yahya": {
+        "title": "Zakariya y Yahya",
+        "text": "La sura Maryam se abre con la plegaria silenciosa de Zakariya en su vejez: su cuerpo se ha debilitado y pide a Dios un heredero (19:4-6). Se le da la buena nueva de Yahya, un nombre que nadie había llevado antes (19:7), y como señal no habla con la gente durante tres noches.\nA Yahya se le concede sabiduría siendo niño y es bondadoso con sus padres; Dios le concede paz el día de su nacimiento, el de su muerte y el de su resurrección (19:15).",
+        "note": "En la tradición cristiana, Yahya es Juan el Bautista (Lucas 1).",
+        "quiz": [
+          {
+            "q": "¿Cuál fue la señal de Zakariya?",
+            "options": [
+              "No hablar con la gente durante tres noches",
+              "Una estrella",
+              "Lluvia"
+            ]
+          },
+          {
+            "q": "¿Quién es Yahya en la tradición cristiana?",
+            "options": [
+              "Pablo",
+              "Juan el Bautista",
+              "Pedro"
+            ]
+          }
+        ]
+      },
+      "maryam-isa": {
+        "title": "Maryam e Isa",
+        "text": "Maryam es la única mujer nombrada en el Corán, y una sura lleva su nombre. Un ángel anuncia un hijo puro; ella pregunta cómo, si ningún hombre la ha tocado, y se le dice que eso es fácil para Dios (19:21). Bajo una palmera da a luz; el bebé Isa habla en la cuna y declara que es siervo de Dios, que se le ha dado la Escritura y que ha sido hecho profeta (19:30).\nEl Corán llama a Isa el Mesías, una palabra de Dios y un espíritu procedente de Él (3:45; 4:171), y lo honra entre los mayores mensajeros.",
+        "note": "Musulmanes y cristianos comparten el nacimiento virginal y el título de Mesías; difieren en cuanto a la divinidad de Isa y a la crucifixión (4:157). Esta lección expone la visión coránica sin establecer comparaciones ni jerarquías.",
+        "quiz": [
+          {
+            "q": "¿Qué declaró el bebé Isa en la cuna?",
+            "options": [
+              "Que es siervo de Dios y profeta",
+              "Que llegaría a ser rey",
+              "Que tenía hambre"
+            ],
+            "why": "Sura Maryam 19:30."
+          },
+          {
+            "q": "¿Qué mujer se nombra en el Corán?",
+            "options": [
+              "Hajar",
+              "Asiya",
+              "Maryam"
+            ]
+          }
+        ]
+      },
+      "books": {
+        "title": "Los libros revelados",
+        "text": "La creencia en los libros revelados forma parte de la fe musulmana. El Corán nombra los Suhuf (rollos) de Ibrahim y de Musa (87:19), la Tawrat dada a Musa, el Zabur a Dawud y el Injil a Isa. Describe la Tawrat como fuente de guía y luz (5:44), y del mismo modo el Injil (5:46).\nEl Corán se presenta a sí mismo como confirmación de lo que vino antes y como muhaymin, un guardián de ello (5:48). Añade que Dios dio a cada comunidad su propia ley y su propio camino, y llama a todos a competir en hacer el bien (5:48).",
+        "note": "Los sabios musulmanes analizan cómo se relacionan las escrituras que hoy se usan con las revelaciones originales (la cuestión del tahrif), con una gama de opiniones que va desde una redacción alterada hasta una interpretación alterada.",
+        "quiz": [
+          {
+            "q": "¿Qué libro se dio a Isa?",
+            "options": [
+              "El Injil",
+              "El Zabur",
+              "Los Suhuf"
+            ]
+          },
+          {
+            "q": "¿Qué significa «muhaymin» (5:48)?",
+            "options": [
+              "Un traductor",
+              "Un guardián de los libros anteriores",
+              "Un resumen"
+            ]
+          }
+        ]
+      },
+      "ahl-al-kitab": {
+        "title": "La Gente del Libro en el Corán",
+        "text": "«Gente del Libro» (ahl al-kitab) se refiere principalmente a judíos y cristianos. El Corán los invita a un principio compartido, la adoración de Dios solo (3:64), e indica a los musulmanes que debatan con ellos únicamente de la mejor manera (29:46).\nElogia a algunos de ellos por su fe y su humildad (5:82-83) y critica ciertas actitudes en otros pasajes. La ley islámica permitió el matrimonio con mujeres judías y cristianas y comer sus alimentos (5:5).",
+        "note": "Los sabios difieren en cómo leer 2:62 (la salvación de los creyentes anteriores) y en si los zoroastrianos cuentan como Gente del Libro. La jurisprudencia chií ha sostenido una gama de posiciones sobre el matrimonio con mujeres judías y cristianas.",
+        "quiz": [
+          {
+            "q": "¿A qué invita 3:64 a la Gente del Libro?",
+            "options": [
+              "A un principio compartido: adorar solo a Dios",
+              "A un acuerdo comercial",
+              "A una competición"
+            ]
+          },
+          {
+            "q": "Según 29:46, ¿cómo deben debatir los musulmanes con ellos?",
+            "options": [
+              "De ningún modo",
+              "Solo de la mejor manera",
+              "A gritos"
+            ]
+          }
+        ]
+      },
+      "medina-charter": {
+        "title": "Historia interreligiosa 1: Medina",
+        "text": "Tras la Hégira, en el 622, el Profeta acordó en Medina un pacto escrito, conocido como la Constitución o Carta de Medina (Sahifat al-Madina). Nombra a las tribus musulmanas y judías como una sola comunidad (umma) para la defensa, conservando cada una su propia religión.\nEl Corán afirma que no hay coacción en la religión (2:256) y permite la bondad y la justicia hacia quienes no combaten a los musulmanes (60:8). La relación con algunas tribus judías se rompió más tarde en un conflicto; los historiadores sopesan las fuentes de manera distinta.",
+        "quiz": [
+          {
+            "q": "¿Qué estableció la Carta de Medina?",
+            "options": [
+              "Una comunidad para la defensa, conservando cada grupo su religión",
+              "Una única religión",
+              "Un impuesto comercial"
+            ]
+          },
+          {
+            "q": "¿Qué aleya dice que no hay coacción en la religión?",
+            "options": [
+              "2:256",
+              "1:1",
+              "112:1"
+            ]
+          }
+        ]
+      },
+      "andalus-millet": {
+        "title": "Historia interreligiosa 2: al-Andalus y los otomanos",
+        "text": "En al-Andalus (711-1492), musulmanes, judíos y cristianos vivieron codo con codo durante siglos. Córdoba y Toledo se convirtieron en centros del saber; sabios como Ibn Rushd y Maimónides escribieron allí, y los traductores de Toledo llevaron obras al latín. Los historiadores describen esta «convivencia» con sus logros y también con sus períodos de tensión.\nEl Imperio otomano organizó a las comunidades no musulmanas como millets: los griegos ortodoxos, los armenios, los judíos y otros tenían sus propios dirigentes religiosos, tribunales de derecho de familia y escuelas. Después de 1492, los otomanos acogieron a muchos judíos expulsados de España.",
+        "quiz": [
+          {
+            "q": "¿Qué sabio judío nació en Córdoba?",
+            "options": [
+              "Maimónides",
+              "Rashi",
+              "Spinoza"
+            ]
+          },
+          {
+            "q": "¿Qué era el sistema de millets otomano?",
+            "options": [
+              "Un impuesto al grano",
+              "La autoadministración de las comunidades religiosas",
+              "Una unidad militar"
+            ]
+          }
+        ]
+      },
+      "abu-dhabi-today": {
+        "title": "Hoy: la Fraternidad Humana y la Casa de la Familia Abrahámica",
+        "text": "El 4 de febrero de 2019, el papa Francisco y el gran imam de al-Azhar, Ahmad al-Tayeb, firmaron en Abu Dabi el Documento sobre la Fraternidad Humana por la Paz Mundial y la Convivencia Común. Más tarde, la ONU declaró el 4 de febrero Día Internacional de la Fraternidad Humana.\nEn 2023 se inauguró en la isla de Saadiyat, en Abu Dabi, la Casa de la Familia Abrahámica: una mezquita, una iglesia y una sinagoga de igual tamaño en un mismo recinto, con un foro compartido. El Corán explica que Dios hizo a los seres humanos en naciones y tribus para que lleguen a conocerse unos a otros (49:13).",
+        "quiz": [
+          {
+            "q": "¿Quiénes firmaron el Documento sobre la Fraternidad Humana?",
+            "options": [
+              "El papa Francisco y el gran imam de al-Azhar",
+              "Dos reyes",
+              "Solo el secretario general de la ONU"
+            ]
+          },
+          {
+            "q": "¿Qué contiene la Casa de la Familia Abrahámica?",
+            "options": [
+              "Solo un museo",
+              "Una mezquita, una iglesia y una sinagoga",
+              "Una universidad"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "haramain": {
+    "lessons": {
+      "kaaba-origin": {
+        "title": "La Kaaba desde Ibrahim",
+        "text": "El Corán nombra la Casa de Bakka como la primera casa de culto establecida para las personas, bendecida y una guía para todos (3:96). También la llama al-Bayt al-'Atiq, la Casa Antigua, y vincula sus cimientos con Ibrahim e Ismail (2:127).\nLa Kaaba es un edificio de forma casi cúbica, de unos 13 m de altura. En su esquina oriental se encuentra la Piedra Negra; el muro semicircular del Hiyr Ismail se alza en su lado noroeste. Los musulmanes de todo el mundo se orientan hacia ella en la oración.",
+        "quiz": [
+          {
+            "q": "¿Cómo llama 3:96 al lugar de la primera Casa?",
+            "options": [
+              "Bakka",
+              "Yathrib",
+              "Taif"
+            ],
+            "why": "Se entiende que Bakka es un nombre de La Meca o de su valle."
+          },
+          {
+            "q": "¿Dónde está colocada la Piedra Negra?",
+            "options": [
+              "En la esquina oriental",
+              "En el techo",
+              "Dentro de Zamzam"
+            ]
+          }
+        ]
+      },
+      "kaaba-rebuilds": {
+        "title": "La Kaaba a lo largo de la historia",
+        "text": "Los Quraysh reconstruyeron la Kaaba hacia el 605, cuando Muhammad tenía unos 35 años; él resolvió la disputa sobre quién colocaría la Piedra Negra poniéndola sobre un paño sostenido por todos los clanes. Al faltarles fondos lícitos, dejaron fuera el Hiyr Ismail.\nAbd Allah ibn az-Zubayr la reconstruyó en 683 incluyendo el Hiyr; al-Hayyay restauró la forma de los Quraysh en 693. Tras las inundaciones, fue reconstruida bajo el sultán Murad IV en 1630 y restaurada a fondo en 1996. La kiswa, su cubierta negra, se renueva cada año.",
+        "quiz": [
+          {
+            "q": "¿Cómo resolvió Muhammad la disputa por la Piedra Negra?",
+            "options": [
+              "Echando a suertes",
+              "En un paño llevado por todos los clanes",
+              "La colocó él solo, de noche"
+            ]
+          },
+          {
+            "q": "¿Quién reconstruyó la Kaaba incluyendo el Hiyr Ismail en 683?",
+            "options": [
+              "Abd Allah ibn az-Zubayr",
+              "Murad IV",
+              "Qusayy"
+            ]
+          }
+        ]
+      },
+      "pre-islamic-mecca": {
+        "title": "La Meca antes del islam",
+        "text": "Según los historiadores árabes, la tribu de Yurhum se asentó cerca de Zamzam con Hayar e Ismail, y más tarde llegaron los Juza'a. En el siglo V, Qusayy ibn Kilab reunió a los Quraysh en La Meca y estableció cargos para los peregrinos: el agua (siqaya), la comida (rifada) y las llaves de la Kaaba (hiyaba).\nCon el tiempo se colocaron ídolos alrededor de la Kaaba, mientras que algunas personas, los hunafa', se mantuvieron en la fe de Ibrahim. La Meca era un haram, un santuario en el que estaba prohibido combatir (29:67).",
+        "quiz": [
+          {
+            "q": "¿Quién unió a los Quraysh en La Meca?",
+            "options": [
+              "Qusayy ibn Kilab",
+              "Abraha",
+              "Abu Talib"
+            ]
+          },
+          {
+            "q": "¿Quiénes eran los hunafa'?",
+            "options": [
+              "Comerciantes de Siria",
+              "Quienes seguían el monoteísmo de Ibrahim",
+              "Guardianes de Zamzam"
+            ]
+          }
+        ]
+      },
+      "quraysh-trade": {
+        "title": "Los Quraysh y las caravanas",
+        "text": "La sura Quraysh habla de sus viajes de invierno y de verano: caravanas a Yemen en invierno y a Siria en verano. A Hashim, bisabuelo del Profeta, se le atribuyen unos acuerdos (ilaf) que aseguraron estas rutas.\nLa sura llama a los Quraysh a adorar al Señor de la Kaaba, que los protegió del hambre y del miedo (106:3-4). La Meca tenía también mercados estacionales, como Ukaz, conocido por sus certámenes de poesía.",
+        "quiz": [
+          {
+            "q": "¿Adónde iban las caravanas de invierno?",
+            "options": [
+              "Yemen",
+              "Siria",
+              "Egipto"
+            ]
+          },
+          {
+            "q": "¿Qué mercado era famoso por su poesía?",
+            "options": [
+              "Ukaz",
+              "Dar an-Nadwa",
+              "Quba"
+            ]
+          }
+        ]
+      },
+      "elephant": {
+        "title": "El Año del Elefante",
+        "text": "Abraha, el gobernante aksumita de Yemen, marchó sobre La Meca con un elefante para destruir la Kaaba. Los Quraysh se retiraron a las colinas; se transmite (Ibn Ishaq) que Abd al-Muttalib dijo que la Casa tenía un Señor que la protegería.\nLa sura al-Fil relata cómo unas aves en bandadas (ababil) lanzaron contra el ejército piedras de arcilla cocida. La tradición musulmana sitúa el nacimiento del Profeta en este año, hacia el 570.",
+        "note": "Algunos historiadores modernos sitúan la campaña de Abraha antes del 570; la datación tradicional la vincula con el año del nacimiento del Profeta.",
+        "quiz": [
+          {
+            "q": "¿Quién dirigía el ejército con el elefante?",
+            "options": [
+              "Abraha",
+              "Cosroes",
+              "Heraclio"
+            ]
+          },
+          {
+            "q": "¿Qué describe «ababil»?",
+            "options": [
+              "Aves en bandadas",
+              "Elefantes",
+              "Nubes"
+            ]
+          }
+        ]
+      },
+      "prophet-mecca": {
+        "title": "El Profeta en La Meca",
+        "text": "En 610, en la cueva de Hira, en Yabal an-Nur, se revelaron las primeras aleyas, el comienzo de la sura al-'Alaq con la orden de leer (96:1-5). Jadiya fue la primera en creer. Los primeros musulmanes se reunían en secreto en la casa de al-Arqam.\nLa persecución aumentó; en 615 un grupo emigró a Abisinia, donde el Negus cristiano los protegió. Tras el boicot y el «año de la tristeza» (las muertes de Jadiya y Abu Talib) llegaron el viaje a Taif y el Viaje Nocturno a Jerusalén (17:1).",
+        "quiz": [
+          {
+            "q": "¿Dónde se revelaron las primeras aleyas?",
+            "options": [
+              "Cueva de Hira",
+              "Cueva de Zawr",
+              "Quba"
+            ]
+          },
+          {
+            "q": "¿Quién protegió a los emigrantes en Abisinia?",
+            "options": [
+              "El Negus",
+              "Abraha",
+              "Abu Yahl"
+            ]
+          }
+        ]
+      },
+      "hijra": {
+        "title": "La Hégira",
+        "text": "Tras los compromisos con gente de Yathrib en Aqaba, los musulmanes emigraron en 622. El Profeta partió con Abu Bakr y se ocultó tres noches en la cueva de Zawr, donde tranquilizó a Abu Bakr diciéndole que Allah estaba con ellos (9:40).\nLlegaron a Quba, donde se construyó la primera mezquita, y después a Yathrib, que pasó a llamarse al-Madina, «la ciudad». La Hégira marca el comienzo del calendario islámico, introducido en tiempos de Umar.",
+        "quiz": [
+          {
+            "q": "¿Dónde se ocultaron el Profeta y Abu Bakr?",
+            "options": [
+              "Cueva de Zawr",
+              "Cueva de Hira",
+              "Taif"
+            ]
+          },
+          {
+            "q": "¿Dónde se construyó la primera mezquita?",
+            "options": [
+              "Quba",
+              "La Meca",
+              "Jerusalén"
+            ]
+          }
+        ]
+      },
+      "medina-society": {
+        "title": "Medina: Muhayirun y Ansar",
+        "text": "En Medina, el Profeta emparejó a cada emigrante (muhayir) con un auxiliar de Medina (ansari) en una hermandad (mu'ajat). El Corán elogia a los Ansar por anteponer a los demás a sí mismos, aun cuando ellos pasaban necesidad (59:9).\nLa Carta de Medina fijó normas para las tribus, incluidas las tribus judías, como una sola comunidad para la defensa. Medina se convirtió en el centro de la joven comunidad y, más tarde, en la capital de los primeros califas.",
+        "quiz": [
+          {
+            "q": "¿Qué fue la mu'ajat?",
+            "options": [
+              "Hermandad entre emigrantes y auxiliares",
+              "Una batalla",
+              "Un impuesto"
+            ]
+          },
+          {
+            "q": "¿Cómo describe 59:9 a los Ansar?",
+            "options": [
+              "Anteponen a los demás a sí mismos",
+              "Son ricos",
+              "Son comerciantes"
+            ]
+          }
+        ]
+      },
+      "masjid-nabawi": {
+        "title": "Masjid an-Nabawi a lo largo de la historia",
+        "text": "La Mezquita del Profeta se construyó en 622 con adobe y troncos de palmera, junto a la casa del Profeta. Umar y Uzman la ampliaron; el omeya al-Walid la reconstruyó hacia el 707 e incorporó la tumba del Profeta al recinto de la mezquita.\nEl sultán mameluco Qalawun añadió la cúpula sobre la tumba en 1279; se pintó de verde en 1837. Los otomanos reconstruyeron gran parte de la mezquita en las décadas de 1840 a 1860. Las ampliaciones saudíes desde 1951 multiplicaron su superficie; las grandes sombrillas de los patios datan de 2010.",
+        "quiz": [
+          {
+            "q": "¿Cuándo se pintó de verde la Cúpula Verde?",
+            "options": [
+              "622",
+              "1837",
+              "2010"
+            ]
+          },
+          {
+            "q": "¿De qué estaban hechos los primeros muros?",
+            "options": [
+              "Mármol",
+              "Adobe y troncos de palmera",
+              "Acero"
+            ]
+          }
+        ]
+      },
+      "qibla": {
+        "title": "El cambio de la alquibla",
+        "text": "Durante unos 16 o 17 meses en Medina, los musulmanes oraron en dirección a Jerusalén. Después, una aleya ordenó volverse hacia al-Masjid al-Haram, en La Meca (2:144). La tradición sitúa el cambio durante una oración en la mezquita de los Banu Salima, desde entonces conocida como Masjid al-Qiblatayn, «la mezquita de las dos alquiblas».\nEn el mismo pasaje, el Corán describe a los musulmanes como una comunidad del camino medio (2:143).",
+        "quiz": [
+          {
+            "q": "¿Hacia qué ciudad oraron primero los musulmanes?",
+            "options": [
+              "Jerusalén",
+              "Damasco",
+              "Medina"
+            ]
+          },
+          {
+            "q": "¿Qué significa Masjid al-Qiblatayn?",
+            "options": [
+              "Mezquita de las dos alquiblas",
+              "Mezquita de los dos califas",
+              "Mezquita de los dos ríos"
+            ]
+          }
+        ]
+      },
+      "fath-makka": {
+        "title": "El regreso a La Meca (630)",
+        "text": "Tras romperse el Tratado de Hudaybiya (628), el Profeta entró en La Meca en 630 casi sin combate. Retiró los ídolos de alrededor de la Kaaba mientras recitaba 17:81, la aleya sobre la llegada de la verdad y la desaparición de la falsedad.\nDeclaró una amnistía general para la gente de La Meca. Bilal pronunció el adhan desde el techo de la Kaaba. La sura an-Nasr habla de personas que entran en la religión de Allah en gran número (110:2).",
+        "quiz": [
+          {
+            "q": "¿Qué aleya recitó el Profeta mientras retiraba los ídolos?",
+            "options": [
+              "17:81, sobre la verdad que llega y lo falso que desaparece",
+              "96:1, la orden de leer",
+              "112:1, la unicidad de Allah"
+            ]
+          },
+          {
+            "q": "¿Cómo trató el Profeta a la gente de La Meca?",
+            "options": [
+              "Amnistía general",
+              "Exilio",
+              "Un tributo elevado"
+            ]
+          }
+        ]
+      },
+      "hajj-basics": {
+        "title": "Hajj: significado, tipos e ihram",
+        "text": "El Hajj es un pilar del islam, que debe cumplirse una vez en la vida por quienes pueden emprender el viaje (3:97), en el mes de Dhul-Hiyyah. Hay tres formas: tamattu' (primero la Umrah y luego el Hajj, con una ofrenda), qiran (ambos juntos) e ifrad (solo el Hajj).\nLos peregrinos entran en ihram en el miqat, un límite fijo, con la intención y la talbiya, la llamada de los peregrinos en respuesta a Allah. Los hombres visten dos telas blancas sin coser; las mujeres, ropa normal y discreta. Durante el ihram se evitan ciertas cosas, como el perfume, cortarse el cabello y las disputas (2:197).",
+        "note": "Las cuatro escuelas suníes difieren en los detalles (por ejemplo, qué actos son pilares y cuáles son obligaciones). En la práctica de los chiíes duodecimanos, el tamattu' es obligatorio para quienes viven lejos de La Meca, y el orden de algunos ritos es distinto. Los peregrinos siguen su propia escuela y la orientación de su grupo.",
+        "quiz": [
+          {
+            "q": "¿Qué forma del Hajj comienza con una Umrah, luego una pausa y después el Hajj?",
+            "options": [
+              "Tamattu'",
+              "Ifrad",
+              "Qiran"
+            ]
+          },
+          {
+            "q": "¿Dónde entran los peregrinos en ihram?",
+            "options": [
+              "En el miqat",
+              "En Arafat",
+              "Solo en casa"
+            ]
+          }
+        ]
+      },
+      "hajj-8-9": {
+        "title": "Días 8 y 9 del Hajj: Mina, Arafat, Muzdalifa",
+        "text": "El 8 de Dhul-Hiyyah (yawm al-tarwiya) los peregrinos van a Mina y pasan el día y la noche en oración. El día 9 permanecen en Arafat desde el mediodía hasta la puesta del sol, en súplica: el wuquf, el corazón del Hajj; un hadiz (Abu Dawud, at-Tirmidhi) describe la permanencia en Arafat como el núcleo del Hajj.\nTras la puesta del sol se trasladan a Muzdalifa, rezan juntos el Maghrib y el Isha, recuerdan a Allah en al-Mash'ar al-Haram (2:198), descansan bajo el cielo abierto y recogen pequeñas piedras.",
+        "quiz": [
+          {
+            "q": "Según el hadiz, ¿cuál es el corazón del Hajj?",
+            "options": [
+              "Permanecer en Arafat",
+              "El apedreo",
+              "Ir de compras"
+            ]
+          },
+          {
+            "q": "¿Dónde pasan la noche los peregrinos después de Arafat?",
+            "options": [
+              "Muzdalifa",
+              "Medina",
+              "Yeda"
+            ]
+          }
+        ]
+      },
+      "hajj-10-13": {
+        "title": "Días 10 a 13 del Hajj: Eid, apedreo, tawaf",
+        "text": "El día 10, día de Eid al-Adha, los peregrinos lanzan siete piedrecitas a Yamrat al-Aqaba, ofrecen el sacrificio (hady), se afeitan o se acortan el cabello y realizan el tawaf al-ifada, seguido del sa'i. El Corán recuerda a los peregrinos que no son la carne ni la sangre del sacrificio lo que llega a Allah, sino su piedad (22:37).\nEn los días de tashriq (del 11 al 12 o al 13) permanecen en Mina y lanzan cada día siete piedrecitas a cada una de las tres yamarat. Antes de salir de La Meca realizan el tawaf de despedida (tawaf al-wada').",
+        "note": "Las escuelas difieren sobre el orden exacto de los actos del día 10 y sobre lo que se requiere si el orden cambia; muchos sabios permiten flexibilidad, basándose en hadices en los que el Profeta aceptó un orden distinto de peregrinos que se lo preguntaron (al-Bujari, Muslim).",
+        "quiz": [
+          {
+            "q": "¿Qué yamra se apedrea el día 10?",
+            "options": [
+              "Yamrat al-Aqaba",
+              "Las tres",
+              "Ninguna"
+            ]
+          },
+          {
+            "q": "Según 22:37, ¿qué llega a Allah del sacrificio?",
+            "options": [
+              "La carne",
+              "La piedad",
+              "La sangre"
+            ]
+          }
+        ]
+      },
+      "umrah": {
+        "title": "La Umrah paso a paso",
+        "text": "La Umrah, la «peregrinación menor», puede realizarse en cualquier época del año. Sus pasos: entrar en ihram en el miqat con la intención y la talbiya; dar siete vueltas a la Kaaba en sentido contrario a las agujas del reloj, comenzando en la Piedra Negra (tawaf); rezar dos rak'as detrás de Maqam Ibrahim, si es posible; beber Zamzam.\nDespués, caminar siete veces entre Safa y Marwa (sa'i), comenzando en Safa; el Corán cuenta a Safa y Marwa entre los símbolos de Allah (2:158). Por último, afeitarse o acortarse el cabello, y el ihram termina.",
+        "note": "En la práctica de los chiíes duodecimanos, la Umrah mufrada incluye además el tawaf an-nisa' con su oración, una vez cortado el cabello.",
+        "quiz": [
+          {
+            "q": "¿Dónde comienza el tawaf?",
+            "options": [
+              "En la Piedra Negra",
+              "En Marwa",
+              "En la puerta"
+            ]
+          },
+          {
+            "q": "¿Dónde comienza el sa'i?",
+            "options": [
+              "Safa",
+              "Marwa",
+              "Zamzam"
+            ]
+          }
+        ]
+      },
+      "farewell-hajj": {
+        "title": "La Peregrinación de Despedida (632)",
+        "text": "En el 632 el Profeta realizó su único Hajj, con un número muy grande de Compañeros. En Arafat pronunció el Sermón de Despedida: las vidas, los bienes y el honor son sagrados; nadie está por encima de otro por su origen o su color, solo por la piedad; se debe tratar bien a las mujeres (relatos en Muslim y en el Musnad de Ahmad).\nLa aleya sobre la culminación de la religión (5:3) fue revelada el día de Arafat, según la mayoría de los relatos. La mayoría de los ritos del Hajj siguen su ejemplo en esta peregrinación.",
+        "note": "La tradición chií también relaciona este viaje con Ghadir Jum, en el camino de regreso, y muchos comentaristas chiíes vinculan 5:3 con ese acontecimiento.",
+        "quiz": [
+          {
+            "q": "¿Dónde se pronunció el Sermón de Despedida?",
+            "options": [
+              "En Arafat",
+              "En Medina",
+              "En Badr"
+            ]
+          },
+          {
+            "q": "¿Cuántas veces realizó el Profeta el Hajj?",
+            "options": [
+              "Una vez",
+              "Tres veces",
+              "Cada año"
+            ]
+          }
+        ]
+      },
+      "medina-adab": {
+        "title": "Etiqueta al visitar Medina",
+        "text": "Visitar Medina no forma parte del Hajj, pero muchos peregrinos viajan allí. La oración en la Mezquita del Profeta tiene un gran mérito. La Rawda, entre la casa del Profeta y su minbar, se describe en un hadiz (al-Bujari, Muslim) como uno de los jardines del Paraíso; hoy el acceso se reserva por franjas horarias.\nAnte la tumba, los visitantes saludan con la paz al Profeta, a Abu Bakr y a Umar, en voz baja, recordando el mandato del Corán de no alzar la voz por encima de la del Profeta (49:2). Pida bendiciones para él (33:56), tenga paciencia entre la multitud y sea amable con los demás visitantes.",
+        "note": "Los sabios difieren sobre si se debe viajar con la intención de visitar la tumba o la mezquita, y sobre los detalles de la súplica allí. Los visitantes chiíes también visitan las tumbas de los Imames en al-Baqi'.",
+        "quiz": [
+          {
+            "q": "¿Dónde está la Rawda?",
+            "options": [
+              "Entre la casa del Profeta y su minbar",
+              "En Quba",
+              "En Uhud"
+            ]
+          },
+          {
+            "q": "¿Forma parte de los ritos del Hajj la visita a Medina?",
+            "options": [
+              "Sí, es un pilar",
+              "No, pero muchos peregrinos la visitan",
+              "Solo para la Umrah"
+            ]
+          }
+        ]
+      },
+      "ziyarah-medina": {
+        "title": "Lugares de Medina: Quba, Uhud, al-Baqi'",
+        "text": "Masjid Quba, la primera mezquita, se vincula comúnmente con la mezquita fundada sobre la piedad desde su primer día (9:108); un hadiz (at-Tirmidhi, Ibn Mayah) dice que rezar allí tiene la recompensa de una Umrah. El monte Uhud es el lugar de la batalla del 625 (3:121) y de las tumbas de sus mártires, entre ellos Hamza.\nAl-Baqi' es el cementerio principal de Medina, con muchos Compañeros y miembros de la familia del Profeta. Otros lugares son Masjid al-Qiblatayn y las Siete Mezquitas, cerca del foso del 627.",
+        "note": "Algunos comentaristas aplican 9:108 a la Mezquita del Profeta y no a Quba. Las prácticas junto a las tumbas (como las súplicas que se hacen) difieren entre las escuelas suníes y la tradición chií.",
+        "quiz": [
+          {
+            "q": "¿Qué batalla tuvo lugar en Uhud?",
+            "options": [
+              "La batalla del 625",
+              "Badr",
+              "Hunayn"
+            ]
+          },
+          {
+            "q": "¿Qué es al-Baqi'?",
+            "options": [
+              "El cementerio principal de Medina",
+              "Un mercado",
+              "Un pozo"
+            ]
+          }
+        ]
+      },
+      "ziyarah-mecca": {
+        "title": "Lugares en torno a La Meca",
+        "text": "Yabal an-Nur, con la cueva de Hira, donde comenzó la revelación; Yabal Zawr, donde el Profeta se ocultó durante la Hégira (9:40); Yabal ar-Rahma, en Arafat, una colina que los peregrinos suelen subir, aunque permanecer en cualquier punto de Arafat es válido.\nTambién: Masjid Nimra, en Arafat; Masjid al-Jayf, en Mina; el cementerio de al-Ma'la (Yannat al-Mu'alla), donde está enterrada Jadiya, y el lugar de Dar al-Arqam, hoy dentro de la zona de la mezquita. Muchos edificios históricos han sido sustituidos por las ampliaciones.",
+        "quiz": [
+          {
+            "q": "¿Dónde está enterrada Jadiya?",
+            "options": [
+              "Yannat al-Mu'alla",
+              "Al-Baqi'",
+              "Uhud"
+            ]
+          },
+          {
+            "q": "¿Hay que permanecer en Yabal ar-Rahma, en Arafat?",
+            "options": [
+              "Sí",
+              "No, todo Arafat es válido",
+              "Solo los hombres"
+            ]
+          }
+        ]
+      },
+      "modern": {
+        "title": "Ampliaciones modernas",
+        "text": "La primera ampliación saudí de al-Masjid al-Haram comenzó en 1955, la segunda, bajo el rey Fahd, en 1988, y la tercera, la mayor, a partir de 2011. El mas'a entre Safa y Marwa se amplió a varios niveles; el mataf ganó anillos adicionales. Las torres Abraj al-Bait, con el reloj, se inauguraron hacia el 2012.\nTransporte: el metro de Mashaaer une Mina, Muzdalifa y Arafat (2010); el tren de alta velocidad Haramain une La Meca, Yeda y Medina (2018). Los permisos del Hajj y las visitas a la Rawda se reservan a través de plataformas oficiales como Nusuk.",
+        "quiz": [
+          {
+            "q": "¿Qué ferrocarril une La Meca y Medina?",
+            "options": [
+              "Tren de alta velocidad Haramain",
+              "Ferrocarril del Hiyaz (aún en servicio)",
+              "Ninguno"
+            ]
+          },
+          {
+            "q": "¿Cuándo comenzó la mayor (tercera) ampliación saudí?",
+            "options": [
+              "2011",
+              "1955",
+              "1630"
+            ]
+          }
+        ]
+      }
+    },
+    "units": {
+      "kaaba": {
+        "text": "El Corán vincula la Casa con Ibrahim e Ismail. El edificio fue reconstruido varias veces, entre otros por los Quraysh poco antes de la revelación, por Abd Allah ibn az-Zubayr en 683 y tras las inundaciones de 1629/1630. A su alrededor se encuentran la Piedra Negra, el Hiyr Ismail, el Maqam Ibrahim y el pozo de Zamzam."
+      },
+      "mecca": {
+        "text": "Antes del islam, La Meca era una ciudad comercial de los Quraysh en las rutas de caravanas entre Yemen y Siria. Los artículos tratan el Año del Elefante, el Hilf al-Fudul, los ídolos de la Kaaba y su retirada en 630, Dar al-Arqam, la Hégira y las ampliaciones de al-Masjid al-Haram hasta la actualidad."
+      },
+      "medina": {
+        "text": "Yathrib era un oasis de los Aws y Jazrach y de tribus judías. Tras la Hégira, en 622, pasó a ser Madinat an-Nabi. Los artículos tratan la Constitución de Medina, la Mezquita del Profeta y sus ampliaciones, la Cúpula Verde, Quba, Qiblatayn, los escenarios de las batallas y la ciudad en la actualidad."
+      },
+      "hejaz": {
+        "text": "El Hiyaz se extiende entre la costa del Mar Rojo (Tihamah) y los montes Sarawat. Los uadis, los campos de lava como Harrat Rahat y un clima desértico cálido dan forma a la región de La Meca, Medina y Taif."
+      }
+    },
+    "guide": {
+      "umrah": [
+        {
+          "title": "Ihram en el miqat",
+          "text": "Lávese, póngase la ropa del ihram, formule la intención de la Umrah y comience la talbiya."
+        },
+        {
+          "title": "Tawaf: siete vueltas",
+          "text": "Comience en la línea de la Piedra Negra, mantenga la Kaaba a su izquierda y dé siete vueltas."
+        },
+        {
+          "title": "Dos rak'as y Zamzam",
+          "text": "Rece dos rak'as, detrás de Maqam Ibrahim si es posible, y luego beba Zamzam."
+        },
+        {
+          "title": "Sa'i: de Safa a Marwa",
+          "text": "Siete recorridos, de Safa a Marwa, recordando la búsqueda de Hayar."
+        },
+        {
+          "title": "Afeitar o acortar el cabello",
+          "text": "Los hombres se afeitan o acortan el cabello; las mujeres, el largo de la punta de un dedo. El ihram termina."
+        }
+      ],
+      "hajj": [
+        {
+          "day": "8 Dhul-Hiyyah",
+          "title": "Ihram para el Hajj",
+          "text": "Los peregrinos que hacen el tamattu' entran de nuevo en ihram, normalmente desde donde se alojan en La Meca."
+        },
+        {
+          "day": "8 Dhul-Hiyyah",
+          "title": "Hacia Mina",
+          "text": "Pase el día y la noche en Mina en oración (yawm al-tarwiya)."
+        },
+        {
+          "day": "9 Dhul-Hiyyah",
+          "title": "Permanencia en Arafat",
+          "text": "Desde el mediodía hasta la puesta del sol, en súplica. El corazón del Hajj."
+        },
+        {
+          "day": "9 Dhul-Hiyyah",
+          "title": "Noche en Muzdalifa",
+          "text": "Rece juntos el Maghrib y el Isha, descanse y recoja piedrecitas."
+        },
+        {
+          "day": "10 Dhul-Hiyyah",
+          "title": "Apedreo de Yamrat al-Aqaba",
+          "text": "Siete piedrecitas, una por una, con takbir."
+        },
+        {
+          "day": "10 Dhul-Hiyyah",
+          "title": "Sacrificio",
+          "text": "Para el tamattu' y el qiran; hoy suele gestionarse mediante un vale."
+        },
+        {
+          "day": "10 Dhul-Hiyyah",
+          "title": "Afeitar o acortar",
+          "text": "La primera liberación del ihram."
+        },
+        {
+          "day": "10 Dhul-Hiyyah",
+          "title": "Tawaf al-ifada y sa'i",
+          "text": "Un pilar del Hajj; también puede hacerse en los días siguientes."
+        },
+        {
+          "day": "11-13 Dhul-Hiyyah",
+          "title": "Días de tashriq en Mina",
+          "text": "Apedree cada día las tres yamarat, siete piedrecitas en cada una, de la pequeña a la grande."
+        },
+        {
+          "title": "Tawaf de despedida",
+          "text": "El último acto antes de salir de La Meca."
+        }
+      ]
+    }
   }
 }

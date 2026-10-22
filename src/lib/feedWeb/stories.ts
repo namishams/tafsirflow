@@ -5,6 +5,7 @@
 import { getTranslations } from "next-intl/server";
 import { ISLAM, loadChapters } from "@/lib/islam";
 import { secretsContent } from "@/lib/secrets/content";
+import { loadBioTexts } from "@/lib/reciters";
 import { ISLAM_SLUGS, PROPHET_SLUGS, allahNames, chapterGroup, reciterGroups, secretGroups, tipGroups, type AllahName, type Story, type StoryCat, type StoryGroup } from "@/lib/learn/prophet/stories";
 
 export type StoryLibrary = { groups: Record<StoryCat, StoryGroup[]>; names: AllahName[] };
@@ -14,7 +15,7 @@ export type StoryRailGroup = { id: string; cat: StoryCat; title: string; arabic:
 export const STORY_CATS: StoryCat[] = ["prophet", "reciters", "islam", "tips", "secrets"];
 
 export async function buildStories(locale: string, knownFor: string): Promise<StoryLibrary> {
-  const [chapters, secrets, ws] = await Promise.all([loadChapters(locale), secretsContent(locale).catch(() => null), getTranslations({ locale, namespace: "shams" })]);
+  const [chapters, secrets, ws, bios] = await Promise.all([loadChapters(locale), secretsContent(locale).catch(() => null), getTranslations({ locale, namespace: "shams" }), loadBioTexts(locale)]);
   const chapter = (slug: string) => { const i = ISLAM.findIndex((d) => d.slug === slug); return i >= 0 ? { doc: ISLAM[i], c: chapters[i] } : null; };
   const lib = (slugs: readonly string[], cat: StoryCat) => slugs.map((s) => chapter(s)).filter((x) => !!x?.c).map((x) => chapterGroup(x!.doc.slug, x!.doc.arabic, x!.c, cat)).filter((g) => g.stories.length);
   const t = (k: string) => (ws.has(k) ? ws(k) : k);
@@ -22,7 +23,7 @@ export async function buildStories(locale: string, knownFor: string): Promise<St
   const groups: Record<StoryCat, StoryGroup[]> = {
     prophet: lib(PROPHET_SLUGS, "prophet"),
     islam: lib(ISLAM_SLUGS, "islam"),
-    reciters: reciterGroups(locale, knownFor).map(strip),
+    reciters: reciterGroups(locale, knownFor, bios).map(strip),
     tips: tipGroups(t, { method: t("title"), day: t("dayTitle") }),
     secrets: secrets ? secretGroups(secrets) : [],
   };

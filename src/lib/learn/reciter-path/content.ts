@@ -2,7 +2,7 @@
 import { useLang } from "@/lib/learn/i18n";
 import { moduleText } from "@/lib/learn/i18n";
 import type { RuleId } from "./curriculum";
-import { EXTRA } from "./content2";
+import { EXTRA, type ExtraContent } from "./content2";
 
 // Course content of the Reciter Path, written in our own words (established tajweed of the riwaya of Hafs ʿan ʿAsim).
 // English and German here; the other languages can add a "reciterPathContent" entry to src/i18n/app/<lang>.json and
@@ -416,11 +416,11 @@ const mergedCache = new Map<string, Content>();
 export function useContent(): Content {
   const { lang } = useLang();
   const base = moduleText("reciterPathContent", { en, de }, lang);
-  const hit = mergedCache.get(lang);
-  if (hit && (hit as Content & { _base?: Content })._base === base) return hit;
-  // levels 7–10 (content2.ts): the learner's language, else English
-  const x = EXTRA[lang] ?? EXTRA.en;
-  const m = { ...base, levels: { ...base.levels, ...x.levels }, units: { ...base.units, ...x.units }, _base: base } as Content;
+  // levels 7–10 (content2.ts): the learner's language (inline, else "reciterPathExtra" in the language file), else English
+  const x = moduleText("reciterPathExtra", EXTRA as { en: ExtraContent } & Record<string, ExtraContent | undefined>, lang);
+  const hit = mergedCache.get(lang) as (Content & { _base?: Content; _x?: ExtraContent }) | undefined;
+  if (hit && hit._base === base && hit._x === x) return hit;
+  const m = { ...base, levels: { ...base.levels, ...x.levels }, units: { ...base.units, ...x.units }, _base: base, _x: x } as Content;
   mergedCache.set(lang, m);
   return m;
 }

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import JsonLd from "@/components/JsonLd";
-import { COUNTRIES_AR, COUNTRIES_DE, RECITER_BIOS, STYLE, bioText } from "@/lib/reciters";
+import { COUNTRIES_AR, COUNTRIES_DE, RECITER_BIOS, STYLE, bioText, loadBioTexts } from "@/lib/reciters";
 import type { AppLocale } from "@/i18n/locales";
 import { abs, pageMeta } from "@/lib/site";
 import { MoreTiles } from "@/components/PosterTiles";
@@ -71,6 +71,7 @@ export default async function RecitersPage({ params }: { params: Promise<{ local
   const { locale } = await params;
   setRequestLocale(locale);
   const c = content(locale);
+  const more = await loadBioTexts(locale);
   const ld = { "@context": "https://schema.org", "@type": "ItemList", name: c.title, itemListElement: RECITER_BIOS.map((r, i) => ({ "@type": "ListItem", position: i + 1, url: abs(`/${locale}/reciters/${r.slug}`), name: r.name })) };
   return (
     <div>
@@ -92,7 +93,7 @@ export default async function RecitersPage({ params }: { params: Promise<{ local
         <div className="mx-auto max-w-6xl px-4 py-14 sm:px-5">
         <ol className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {RECITER_BIOS.map((r, i) => {
-            const t = bioText(r, locale);
+            const t = bioText(r, locale, more);
             const initials = locale === "ar" ? r.arabic.split(/\s+/).filter((w) => !["أبو", "عبد", "ابن"].includes(w)).slice(0, 2).map((w) => w[0]).join("") : r.name.split(/[\s-]+/).filter((w) => /^[A-Z]/.test(w) && !["Al", "Ash", "As", "Ar", "Ad", "At", "Az", "An", "Abu"].includes(w)).slice(0, 2).map((w) => w[0]).join("");
             return (
               <li key={r.slug} className="min-w-0">

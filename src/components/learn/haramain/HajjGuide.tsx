@@ -6,6 +6,8 @@ import { useEffect, useRef, useState } from "react";
 import { pick } from "@/lib/learn/i18n";
 import { useStored, writeJSON } from "@/lib/learn/store";
 import { useCK } from "@/lib/learn/abrahamic/kit";
+import { courseTr } from "@/lib/learn/abrahamic/courseText";
+import type { L } from "@/lib/learn/abrahamic/core";
 import { G, GUIDE_KEY, HAJJ, UMRAH, type GuideState } from "@/lib/learn/haramain/guide";
 import { UI } from "@/lib/learn/haramain/content";
 import { GoldButton, Kicker, LearnHero, LearnMain, OutlineButton } from "@/components/learn/ui";
@@ -13,6 +15,12 @@ import { IconCheckCircle } from "@/components/Icons";
 
 const cx = (...c: (string | false | null | undefined)[]) => c.filter(Boolean).join(" ");
 const EMPTY: GuideState = { umrah: [], hajj: [] };
+
+// texts of a step in the languages the tables in guide.ts lack: src/lib/learn/i18n/<lang>.json, module "haramain",
+// guide.umrah[i] / guide.hajj[i] ({ day?, title, text }, in the order of UMRAH / HAJJ); the own table wins, English stays
+// the fallback (as in the app's HajjGuide.tsx)
+type GuideTr = { guide?: Partial<Record<"umrah" | "hajj", { day?: string; title?: string; text?: string }[]>> };
+const stepText = (own: L, lang: string, tr: string | undefined) => (own as Record<string, string | undefined>)[lang] || tr || own.en;
 
 export default function HajjGuide() {
   const { lang, rtl } = useCK();
@@ -26,6 +34,7 @@ export default function HajjGuide() {
   const steps = mode === "umrah" ? UMRAH : HAJJ;
   const done = st[mode] ?? [];
   const s = steps[i];
+  const tr = (courseTr("haramain", lang) as GuideTr).guide?.[mode]?.[i];
   const tick = () => {
     const next = done.includes(i) ? done : [...done, i];
     writeJSON(GUIDE_KEY, { ...EMPTY, ...st, [mode]: next });
@@ -68,10 +77,10 @@ export default function HajjGuide() {
             ))}
           </ol>
           <article key={`${mode}${i}`} className="hm-card relative space-y-3 p-6">
-            <Kicker>{`${g("step", { n: i + 1, m: steps.length })}${s.day ? ` · ${pick(s.day, lang)}` : ""}`}</Kicker>
+            <Kicker>{`${g("step", { n: i + 1, m: steps.length })}${s.day ? ` · ${stepText(s.day, lang, tr?.day)}` : ""}`}</Kicker>
             <p lang="ar" dir="rtl" className="font-arabic text-center text-[30px] leading-[1.8] text-[rgb(var(--hm-gold-d))]">{s.arabic}</p>
-            <h2 ref={head} tabIndex={-1} dir={dir} className="font-display text-[23px] leading-snug outline-none">{pick(s.title, lang)}</h2>
-            <p dir={dir} className="text-[16px] leading-[1.75]">{pick(s.text, lang)}</p>
+            <h2 ref={head} tabIndex={-1} dir={dir} className="font-display text-[23px] leading-snug outline-none">{stepText(s.title, lang, tr?.title)}</h2>
+            <p dir={dir} className="text-[16px] leading-[1.75]">{stepText(s.text, lang, tr?.text)}</p>
             {done.includes(i) && <IconCheckCircle className="h-6 w-6 text-[rgb(var(--hm-gold))]" />}
           </article>
           <GoldButton onClick={tick} className="w-full">{g("doneStep")}</GoldButton>

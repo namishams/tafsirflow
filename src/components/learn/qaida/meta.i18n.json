@@ -1,0 +1,156 @@
+{
+  "tr": {
+    "home": {
+      "title": "Kur’an’ı Arapça okuyun: 20 aşamalı okuma kursu | Quran Masterclass",
+      "description": "Arapça okumayı ilk harften tüm mushafa kadar öğrenin: Kur'an okullarının sırasıyla (Kaide) yirmi aşama; gerçek Kur'an kelimeleri, kelime kayıtları, hız alıştırmaları ve tarayıcınızda okuma kontrolü. Ücretsiz."
+    },
+    "review": {
+      "title": "En zor harflerinizin ve kelimelerinizin tekrarı | Quran Masterclass",
+      "description": "En sık kaçırdığınız harfler, heceler ve Kur'an kelimeleri oturana kadar geri gelir."
+    },
+    "lesson": {
+      "title": "Aşama {n}: {stage} | Quran Masterclass",
+      "description": "“Kur’an’ı Arapça okuyun” okuma kursunun {n}. aşamasından ({stage}) bir ders; gerçek Kur'an kelimeleri ve kayıtlarla."
+    }
+  },
+  "ur": {
+    "home": {
+      "title": "قرآن عربی میں پڑھیں: 20 مراحل کا پڑھنے کا کورس | Quran Masterclass",
+      "description": "عربی پڑھنا سیکھیں، پہلے حرف سے پورے مصحف تک: قرآنی مدارس کی ترتیب (قاعدہ) میں بیس مراحل، قرآن کے حقیقی الفاظ، الفاظ کی ریکارڈنگز، رفتار کی مشقیں اور آپ کے براؤزر میں پڑھنے کی جانچ۔ مفت۔"
+    },
+    "review": {
+      "title": "آپ کے مشکل ترین حروف اور الفاظ کی دہرائی | Quran Masterclass",
+      "description": "جن حروف، حروف کے جوڑ اور قرآنی الفاظ میں آپ سب سے زیادہ چوکے، وہ پختہ ہونے تک بار بار سامنے آتے ہیں۔"
+    },
+    "lesson": {
+      "title": "مرحلہ {n}: {stage} | Quran Masterclass",
+      "description": "پڑھنے کے کورس “قرآن عربی میں پڑھیں” کے مرحلہ {n} ({stage}) کا ایک سبق، قرآن کے حقیقی الفاظ اور ریکارڈنگز کے ساتھ۔"
+    }
+  },
+  "fa": {
+    "home": {
+      "title": "قرآن را به عربی بخوانید: دورهٔ خواندن در 20 مرحله | Quran Masterclass",
+      "description": "خواندن عربی را از نخستین حرف تا کل مصحف بیاموزید: بیست مرحله به ترتیب مکتب‌خانه‌های قرآنی (قاعده)، با واژه‌های واقعی قرآن، ضبط واژه‌ها، تمرین سرعت و سنجش خواندن در مرورگر شما. رایگان."
+    },
+    "review": {
+      "title": "مرور سخت‌ترین حرف‌ها و واژه‌های شما | Quran Masterclass",
+      "description": "حرف‌ها، هجاها و واژه‌های قرآنی که بیشتر اشتباه کرده‌اید برمی‌گردند تا جا بیفتند."
+    },
+    "lesson": {
+      "title": "مرحلهٔ {n}: {stage} | Quran Masterclass",
+      "description": "یک درس از مرحلهٔ {n} ({stage}) دورهٔ خواندن «قرآن را به عربی بخوانید»، با واژه‌های واقعی قرآن و ضبط‌ها."
+    }
+  },
+  "ps": {
+    "home": {
+      "title": "قرآن په عربي ولولئ: د 20 پړاوونو د لوستلو کورس | Quran Masterclass",
+      "description": "له لومړي توري تر بشپړ مصحف عربي لوستل زده کړئ: شل پړاوونه د قرآني مدرسو (قاعدې) په ترتیب، د قرآن ریښتینې کلمې، د کلمو غږونه، د چټکتیا تمرینونه او په براوزر کې د لوستلو ازموینه. وړیا."
+    },
+    "review": {
+      "title": "ستاسو د تر ټولو ستونزمنو تورو او کلمو تکرار | Quran Masterclass",
+      "description": "هغه توري، هجاګانې او قرآني کلمې چې تر ټولو ډېر مو پکې تېروتنه کړې، بېرته راځي تر هغه چې ټینګې شي."
+    },
+    "lesson": {
+      "title": "پړاو {n}: {stage} | Quran Masterclass",
+      "description": "د «قرآن په عربي ولولئ» د لوستلو کورس د پړاو {n} ({stage}) لوست، د قرآن ریښتینو کلمو او غږونو سره."
+    }
+  },
+  "fr": {
+    "home": {
+      "title": "Lire le Coran en arabe : cours de lecture en 20 étapes | Quran Masterclass",
+      "description": "Apprenez à lire l'arabe de la première lettre au mushaf entier : vingt étapes dans l'ordre des écoles coraniques (Qaida), de vrais mots du Coran, des enregistrements de mots, des exercices de vitesse et un contrôle de lecture dans votre navigateur. Gratuit."
+    },
+    "review": {
+      "title": "Révision de vos lettres et mots les plus difficiles | Quran Masterclass",
+      "description": "Les lettres, syllabes et mots du Coran que vous avez le plus souvent manqués reviennent jusqu'à ce qu'ils soient acquis."
+    },
+    "lesson": {
+      "title": "Étape {n} : {stage} | Quran Masterclass",
+      "description": "Une leçon de l'étape {n} ({stage}) du cours de lecture « Lire le Coran en arabe », avec de vrais mots du Coran et des enregistrements."
+    }
+  },
+  "es": {
+    "home": {
+      "title": "Lea el Corán en árabe: curso de lectura de 20 etapas | Quran Masterclass",
+      "description": "Aprenda a leer árabe desde la primera letra hasta todo el mushaf: veinte etapas en el orden de las escuelas coránicas (Qaida), con palabras reales del Corán, grabaciones de palabras, ejercicios de velocidad y una comprobación de lectura en su navegador. Gratis."
+    },
+    "review": {
+      "title": "Repaso de sus letras y palabras más difíciles | Quran Masterclass",
+      "description": "Las letras, sílabas y palabras del Corán que más ha fallado vuelven hasta que se asientan."
+    },
+    "lesson": {
+      "title": "Etapa {n}: {stage} | Quran Masterclass",
+      "description": "Una lección de la etapa {n} ({stage}) del curso de lectura «Lea el Corán en árabe», con palabras reales del Corán y grabaciones."
+    }
+  },
+  "id": {
+    "home": {
+      "title": "Membaca Al-Qur’an dalam bahasa Arab: kursus 20 tahap | Quran Masterclass",
+      "description": "Belajar membaca bahasa Arab dari huruf pertama hingga seluruh mushaf: dua puluh tahap sesuai urutan TPQ (Qaida), dengan kata-kata Al-Qur’an asli, rekaman kata, latihan kecepatan, dan pemeriksaan bacaan di browser Anda. Gratis."
+    },
+    "review": {
+      "title": "Ulangan huruf dan kata tersulit Anda | Quran Masterclass",
+      "description": "Huruf, suku kata, dan kata Al-Qur’an yang paling sering salah akan muncul kembali sampai melekat."
+    },
+    "lesson": {
+      "title": "Tahap {n}: {stage} | Quran Masterclass",
+      "description": "Satu pelajaran tahap {n} ({stage}) dari kursus membaca “Membaca Al-Qur’an dalam bahasa Arab”, dengan kata-kata Al-Qur’an asli dan rekaman."
+    }
+  },
+  "ms": {
+    "home": {
+      "title": "Baca al-Quran dalam bahasa Arab: kursus bacaan 20 peringkat | Quran Masterclass",
+      "description": "Belajar membaca bahasa Arab dari huruf pertama hingga seluruh mushaf: dua puluh peringkat mengikut susunan sekolah al-Quran (Qaida), dengan perkataan al-Quran sebenar, rakaman perkataan, latihan kelajuan dan semakan bacaan dalam pelayar anda. Percuma."
+    },
+    "review": {
+      "title": "Ulang kaji huruf dan perkataan yang paling sukar | Quran Masterclass",
+      "description": "Huruf, suku kata dan perkataan al-Quran yang paling kerap anda tersilap akan muncul semula sehingga melekat."
+    },
+    "lesson": {
+      "title": "Peringkat {n}: {stage} | Quran Masterclass",
+      "description": "Satu pelajaran peringkat {n} ({stage}) dalam kursus bacaan “Baca al-Quran dalam bahasa Arab”, dengan perkataan al-Quran sebenar dan rakaman."
+    }
+  },
+  "bn": {
+    "home": {
+      "title": "আরবিতে কুরআন পড়ুন: 20 ধাপের পড়ার কোর্স | Quran Masterclass",
+      "description": "প্রথম হরফ থেকে পুরো মুসহাফ পর্যন্ত আরবি পড়া শিখুন: কুরআন শেখার মাদ্রাসাগুলোর ক্রমে (কায়দা) বিশটি ধাপ, আসল কুরআনের শব্দ, শব্দের রেকর্ডিং, গতি-অনুশীলন এবং আপনার ব্রাউজারে পড়া যাচাই। বিনামূল্যে।"
+    },
+    "review": {
+      "title": "আপনার সবচেয়ে কঠিন হরফ ও শব্দের রিভিউ | Quran Masterclass",
+      "description": "যে হরফ, সিলেবল ও কুরআনের শব্দে সবচেয়ে বেশি ভুল হয়েছে, সেগুলো মনে না বসা পর্যন্ত ফিরে আসে।"
+    },
+    "lesson": {
+      "title": "ধাপ {n}: {stage} | Quran Masterclass",
+      "description": "পড়ার কোর্স «আরবিতে কুরআন পড়ুন» – ধাপ {n} ({stage}): আসল কুরআনের শব্দ ও রেকর্ডিংসহ একটি পাঠ।"
+    }
+  },
+  "ru": {
+    "home": {
+      "title": "Читайте Коран на арабском: курс чтения из 20 ступеней | Quran Masterclass",
+      "description": "Научитесь читать по-арабски от первой буквы до всего мусхафа: двадцать ступеней в порядке школ Корана (Каида), с настоящими словами Корана, записями слов, тренировкой скорости и проверкой чтения в браузере. Бесплатно."
+    },
+    "review": {
+      "title": "Повторение самых трудных букв и слов | Quran Masterclass",
+      "description": "Буквы, слоги и слова Корана, в которых вы чаще всего ошибались, возвращаются, пока не закрепятся."
+    },
+    "lesson": {
+      "title": "Ступень {n}: {stage} | Quran Masterclass",
+      "description": "Урок ступени {n} ({stage}) курса чтения «Читайте Коран на арабском» с настоящими словами Корана и записями."
+    }
+  },
+  "zh": {
+    "home": {
+      "title": "用阿拉伯语诵读古兰经：20 阶段阅读课程 | Quran Masterclass",
+      "description": "从第一个字母学到整部经本：二十个阶段，依古兰经学校（Qaida）的顺序，配有真实的古兰经词语、逐词录音、速度练习，以及在浏览器中进行的阅读检查。免费。"
+    },
+    "review": {
+      "title": "最难字母与词语的复习 | Quran Masterclass",
+      "description": "您最常出错的字母、音节与古兰经词语会反复出现，直到您牢牢掌握。"
+    },
+    "lesson": {
+      "title": "第 {n} 阶段：{stage} | Quran Masterclass",
+      "description": "阅读课程“用阿拉伯语诵读古兰经”第 {n} 阶段（{stage}）的一课，含真实的古兰经词语与录音。"
+    }
+  }
+}

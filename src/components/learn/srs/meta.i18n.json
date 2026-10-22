@@ -1,0 +1,508 @@
+{
+  "tr": {
+    "pages": {
+      "cards": {
+        "title": "Tekrar kartları: aralıklı tekrar yöntemi | Quran Masterclass",
+        "description": "Kur'an kelimeleri, ayetler, Allah'ın isimleri, tecvid kuralları ve dualar; her biri unutmadan hemen önce yeniden gösterilir (FSRS). 7 günlük tahmin ve kayıtlı ayetlerden oluşan kendi kartlarınızla. Ücretsiz."
+      },
+      "review": {
+        "title": "Tekrar turu | Quran Masterclass",
+        "description": "Kartı çevirin, sonra puanlayın: Tekrar, Zor, İyi veya Kolay."
+      },
+      "deck": {
+        "title": "{deck} – tekrar kartları | Quran Masterclass",
+        "description": "“{deck}” destesinin önizlemesi ve aralıklı tekrarla bir tekrar turu."
+      },
+      "hifz": {
+        "title": "Hıfz takibi: her sureyi ve cüzü ne kadar bildiğiniz | Quran Masterclass",
+        "description": "Tüm 30 cüzün ve 114 surenin haritası; tekrar ettiğiniz ayetlere ve bugün ne kadar hatırladığınıza göre renklendirilir."
+      },
+      "tests": {
+        "title": "Kur'an testleri ve sınavları: seviye, haftalık, cüz ve sure | Quran Masterclass",
+        "description": "Bir seviye testi, haftalık test, kelime sınavları ve Kur'an ayetleriyle her cüz ile sure için sınavlar. Web sitesinde ücretsiz."
+      },
+      "test": {
+        "description": "Adil sınav kurallarıyla bir Quran Masterclass testi: süre sınırları, geri dönüş yok, Kur'an'dan ayetler."
+      },
+      "certificate": {
+        "title": "Uygulama sertifikaları | Quran Masterclass",
+        "description": "Geçtiğiniz cüz sınavları için uygulama sertifikalarınız ve doğrulanabilir sertifika."
+      }
+    },
+    "decks": {
+      "juzamma": "Amme Cüzü kelimeleri",
+      "vocab": "Kur'an kelimeleri",
+      "names": "Allah'ın isimleri",
+      "tajweed": "Tecvid kuralları",
+      "duas": "Kur'an'dan dualar",
+      "mine": "Kartlarım"
+    },
+    "tests": {
+      "placement": "Seviye testi",
+      "weekly": "Haftalık test",
+      "juz": "Cüz sınavları",
+      "surah": "Sure sınavları",
+      "vocab": "Kelime sınavları"
+    }
+  },
+  "ur": {
+    "pages": {
+      "cards": {
+        "title": "وقفہ وار تکرار کے ساتھ دہرائی کارڈز | Quran Masterclass",
+        "description": "قرآنی الفاظ، آیات، اللہ کے نام، تجوید کے قواعد اور دعائیں، ہر ایک بھولنے سے ذرا پہلے دوبارہ سامنے آتا ہے (FSRS)۔ اگلے 7 دن کی پیش گوئی اور محفوظ آیات سے بنے آپ کے اپنے کارڈز کے ساتھ۔ مفت۔"
+      },
+      "review": {
+        "title": "دہرائی کا دور | Quran Masterclass",
+        "description": "کارڈ پلٹیں، پھر اسے درجہ دیں: دوبارہ، مشکل، اچھا یا آسان۔"
+      },
+      "deck": {
+        "title": "{deck} – دہرائی کارڈز | Quran Masterclass",
+        "description": "ڈیک “{deck}” کا پیش منظر اور وقفہ وار تکرار کے ساتھ دہرائی کا ایک دور۔"
+      },
+      "hifz": {
+        "title": "حفظ ٹریکر: ہر سورت اور پارہ آپ کو کتنا یاد ہے | Quran Masterclass",
+        "description": "تمام 30 پاروں اور 114 سورتوں کا نقشہ، جس کا رنگ آپ کی دہرائی گئی آیات اور آج انہیں یاد رکھنے کی پختگی سے طے ہوتا ہے۔"
+      },
+      "tests": {
+        "title": "قرآن کے ٹیسٹ اور امتحانات: سطح، ہفتہ وار، پارہ، سورت | Quran Masterclass",
+        "description": "سطح کا ٹیسٹ، ہفتہ وار ٹیسٹ، الفاظ کے امتحانات اور ہر پارے اور سورت کے امتحانات، قرآن کی آیات کے ساتھ۔ ویب سائٹ پر مفت۔"
+      },
+      "test": {
+        "description": "Quran Masterclass کا ایک ٹیسٹ منصفانہ امتحانی قواعد کے تحت: وقت کی حد، پیچھے جانے کی اجازت نہیں، قرآن کی آیات۔"
+      },
+      "certificate": {
+        "title": "ایپ سرٹیفکیٹ | Quran Masterclass",
+        "description": "کامیاب پارہ امتحانات کے آپ کے ایپ سرٹیفکیٹ اور قابلِ تصدیق سرٹیفکیٹ۔"
+      }
+    },
+    "decks": {
+      "juzamma": "پارہ عمّ کے الفاظ",
+      "vocab": "قرآنی الفاظ",
+      "names": "اللہ کے نام",
+      "tajweed": "تجوید کے قواعد",
+      "duas": "قرآن کی دعائیں",
+      "mine": "میرے کارڈز"
+    },
+    "tests": {
+      "placement": "سطح کا ٹیسٹ",
+      "weekly": "ہفتہ وار ٹیسٹ",
+      "juz": "پارہ امتحانات",
+      "surah": "سورت امتحانات",
+      "vocab": "الفاظ کے امتحانات"
+    }
+  },
+  "fa": {
+    "pages": {
+      "cards": {
+        "title": "کارت‌های مرور با تکرار فاصله‌دار | Quran Masterclass",
+        "description": "واژگان قرآن، آیه‌ها، نام‌های الله، قواعد تجوید و دعاها؛ هر مورد درست پیش از آن‌که فراموشش کنید دوباره نمایش داده می‌شود (FSRS). با پیش‌بینی 7 روزه و کارت‌های شخصی از آیه‌های ذخیره‌شده. رایگان."
+      },
+      "review": {
+        "title": "دور مرور | Quran Masterclass",
+        "description": "کارت را برگردانید، سپس آن را ارزیابی کنید: دوباره، سخت، خوب یا آسان."
+      },
+      "deck": {
+        "title": "{deck} – کارت‌های مرور | Quran Masterclass",
+        "description": "پیش‌نمایش مجموعهٔ «{deck}» و یک دور مرور با تکرار فاصله‌دار."
+      },
+      "hifz": {
+        "title": "پیگیری حفظ: میزان تسلط شما بر هر سوره و جزء | Quran Masterclass",
+        "description": "نقشهٔ همهٔ 30 جزء و 114 سوره، رنگ‌شده بر پایهٔ آیه‌هایی که مرور می‌کنید و میزان به یاد آوردن آن‌ها امروز."
+      },
+      "tests": {
+        "title": "آزمون‌های قرآن: تعیین سطح، هفتگی، جزء و سوره | Quran Masterclass",
+        "description": "آزمون تعیین سطح، آزمون هفتگی، آزمون‌های واژگان و آزمون برای هر جزء و هر سوره با آیه‌هایی از قرآن. رایگان در وب‌سایت."
+      },
+      "test": {
+        "description": "آزمونی از Quran Masterclass با قواعد منصفانهٔ امتحانی: محدودیت زمانی، بدون بازگشت، با آیه‌هایی از قرآن."
+      },
+      "certificate": {
+        "title": "گواهی‌های برنامه | Quran Masterclass",
+        "description": "گواهی‌های برنامهٔ شما برای آزمون‌های جزء قبول‌شده و گواهی قابل تأیید."
+      }
+    },
+    "decks": {
+      "juzamma": "واژگان جزء عمّ",
+      "vocab": "واژگان قرآن",
+      "names": "نام‌های الله",
+      "tajweed": "قواعد تجوید",
+      "duas": "دعاهای قرآن",
+      "mine": "کارت‌های من"
+    },
+    "tests": {
+      "placement": "آزمون تعیین سطح",
+      "weekly": "آزمون هفتگی",
+      "juz": "آزمون‌های جزء",
+      "surah": "آزمون‌های سوره",
+      "vocab": "آزمون‌های واژگان"
+    }
+  },
+  "ps": {
+    "pages": {
+      "cards": {
+        "title": "د بیاکتنې کارتونه د وقفه لرونکي تکرار سره | Quran Masterclass",
+        "description": "د قرآن کلمې، آیتونه، د الله نومونه، د تجوید قواعد او دعاګانې، هر یو بیا یوازې مخکې له هېرېدو ښودل کېږي (FSRS). د 7 ورځو وړاندوینې او له ساتل شویو آیتونو ستاسو د خپلو کارتونو سره. وړیا."
+      },
+      "review": {
+        "title": "د بیاکتنې دور | Quran Masterclass",
+        "description": "کارت واړوئ، بیا یې وارزوئ: «بیا»، «سخت»، «ښه» یا «اسانه»."
+      },
+      "deck": {
+        "title": "{deck} – د بیاکتنې کارتونه | Quran Masterclass",
+        "description": "د «{deck}» ډلې مخکتنه او د وقفه لرونکي تکرار سره د بیاکتنې دور."
+      },
+      "hifz": {
+        "title": "د حفظ څارنه: هر سورت او پاره څومره ښه پېژنئ | Quran Masterclass",
+        "description": "د ټولو 30 پارو او 114 سورتونو نقشه، د هغو آیتونو له مخې رنګ شوې چې تکرار یې کوئ او نن یې څومره په یاد لرئ."
+      },
+      "tests": {
+        "title": "د قرآن ازموینې: د کچې، اونیزې، د پارو او سورتونو | Quran Masterclass",
+        "description": "د کچې ازموینه، اونیزه ازموینه، د لغتونو ازموینې او د هرې پارې او هر سورت ازموینې د قرآن له آیتونو سره. په ویب پاڼه کې وړیا."
+      },
+      "test": {
+        "description": "د Quran Masterclass ازموینه د عادلانه امتحاني قواعدو سره: د وخت محدودیت، بېرته تګ نشته، د قرآن آیتونه."
+      },
+      "certificate": {
+        "title": "د اپ سندونه | Quran Masterclass",
+        "description": "د بریالیو پارو ازموینو لپاره ستاسو د اپ سندونه او د تایید وړ سند."
+      }
+    },
+    "decks": {
+      "juzamma": "د عمّ پارې لغتونه",
+      "vocab": "د قرآن لغتونه",
+      "names": "د الله نومونه",
+      "tajweed": "د تجوید قواعد",
+      "duas": "له قرآنه دعاګانې",
+      "mine": "زما کارتونه"
+    },
+    "tests": {
+      "placement": "د کچې ازموینه",
+      "weekly": "اونیزه ازموینه",
+      "juz": "د پارو ازموینې",
+      "surah": "د سورتونو ازموینې",
+      "vocab": "د لغتونو ازموینې"
+    }
+  },
+  "fr": {
+    "pages": {
+      "cards": {
+        "title": "Cartes de révision avec répétition espacée | Quran Masterclass",
+        "description": "Mots du Coran, versets, noms d'Allah, règles de tajwid et douas : chaque carte revient juste avant que vous ne l'oubliiez (FSRS). Avec une prévision sur 7 jours et vos propres cartes tirées des versets enregistrés. Gratuit."
+      },
+      "review": {
+        "title": "Séance de révision | Quran Masterclass",
+        "description": "Retournez la carte, puis évaluez-la : À revoir, Difficile, Bien ou Facile."
+      },
+      "deck": {
+        "title": "{deck} – cartes de révision | Quran Masterclass",
+        "description": "Un aperçu du paquet « {deck} » et une séance de révision avec répétition espacée."
+      },
+      "hifz": {
+        "title": "Suivi du hifz : votre maîtrise de chaque sourate et juz | Quran Masterclass",
+        "description": "Une carte des 30 juz et des 114 sourates, colorée selon les versets que vous révisez et la façon dont vous les retenez aujourd'hui."
+      },
+      "tests": {
+        "title": "Tests et examens du Coran : niveau, hebdomadaire, juz et sourate | Quran Masterclass",
+        "description": "Un test de niveau, un test hebdomadaire, des examens de vocabulaire et des examens pour chaque juz et chaque sourate, avec des versets du Coran. Gratuit sur le site web."
+      },
+      "test": {
+        "description": "Un test de Quran Masterclass dans des conditions d'examen équitables : limites de temps, pas de retour en arrière, versets du Coran."
+      },
+      "certificate": {
+        "title": "Certificats de l'app | Quran Masterclass",
+        "description": "Vos certificats de l'application pour les examens de juz réussis et le certificat vérifiable."
+      }
+    },
+    "decks": {
+      "juzamma": "Vocabulaire de Juz ʿAmma",
+      "vocab": "Vocabulaire du Coran",
+      "names": "Noms d'Allah",
+      "tajweed": "Règles de tajwid",
+      "duas": "Douas du Coran",
+      "mine": "Mes cartes"
+    },
+    "tests": {
+      "placement": "Test de niveau",
+      "weekly": "Test hebdomadaire",
+      "juz": "Examens de juz",
+      "surah": "Examens de sourate",
+      "vocab": "Examens de vocabulaire"
+    }
+  },
+  "es": {
+    "pages": {
+      "cards": {
+        "title": "Tarjetas de repaso con repetición espaciada | Quran Masterclass",
+        "description": "Palabras del Corán, aleyas, nombres de Allah, reglas de tajwid y duas, cada una mostrada justo antes de que usted la olvide (FSRS). Con previsión de 7 días y sus propias tarjetas de aleyas guardadas. Gratis."
+      },
+      "review": {
+        "title": "Ronda de repaso | Quran Masterclass",
+        "description": "Dé la vuelta a la tarjeta y valórela: Otra vez, Difícil, Bien o Fácil."
+      },
+      "deck": {
+        "title": "{deck} – tarjetas de repaso | Quran Masterclass",
+        "description": "Una vista previa del mazo «{deck}» y una ronda de repaso con repetición espaciada."
+      },
+      "hifz": {
+        "title": "Seguimiento de hifz: cuánto conoce de cada sura y juz | Quran Masterclass",
+        "description": "Un mapa de los 30 juz y las 114 suras, coloreado según las aleyas que repasa y lo bien que las recuerda hoy."
+      },
+      "tests": {
+        "title": "Pruebas y exámenes del Corán: nivel, semanal, juz y sura | Quran Masterclass",
+        "description": "Una prueba de nivel, una prueba semanal, exámenes de vocabulario y exámenes de cada juz y sura con aleyas del Corán. Gratis en el sitio web."
+      },
+      "test": {
+        "description": "Una prueba de Quran Masterclass con reglas de examen justas: límites de tiempo, sin volver atrás, aleyas del Corán."
+      },
+      "certificate": {
+        "title": "Certificados de la app | Quran Masterclass",
+        "description": "Sus certificados de la app por los exámenes de juz aprobados y el certificado verificable."
+      }
+    },
+    "decks": {
+      "juzamma": "Vocabulario de Juz ʿAmma",
+      "vocab": "Vocabulario del Corán",
+      "names": "Nombres de Allah",
+      "tajweed": "Reglas de tajwid",
+      "duas": "Duas del Corán",
+      "mine": "Mis tarjetas"
+    },
+    "tests": {
+      "placement": "Prueba de nivel",
+      "weekly": "Prueba semanal",
+      "juz": "Exámenes de juz",
+      "surah": "Exámenes de sura",
+      "vocab": "Exámenes de vocabulario"
+    }
+  },
+  "id": {
+    "pages": {
+      "cards": {
+        "title": "Kartu ulasan dengan pengulangan berjarak | Quran Masterclass",
+        "description": "Kata-kata Al-Qur’an, ayat, nama-nama Allah, hukum tajwid, dan doa, masing-masing ditampilkan lagi tepat sebelum Anda lupa (FSRS). Dengan prakiraan 7 hari dan kartu Anda sendiri dari ayat tersimpan. Gratis."
+      },
+      "review": {
+        "title": "Putaran ulasan | Quran Masterclass",
+        "description": "Balikkan kartunya, lalu beri penilaian: Lagi, Sulit, Baik, atau Mudah."
+      },
+      "deck": {
+        "title": "{deck} – kartu ulasan | Quran Masterclass",
+        "description": "Pratinjau dek “{deck}” dan putaran ulasan dengan pengulangan berjarak."
+      },
+      "hifz": {
+        "title": "Pelacak hifz: penguasaan Anda atas setiap surah dan juz | Quran Masterclass",
+        "description": "Peta seluruh 30 juz dan 114 surah, diberi warna menurut ayat yang Anda ulang dan seberapa baik Anda mengingatnya hari ini."
+      },
+      "tests": {
+        "title": "Tes dan ujian Al-Qur’an: penempatan, mingguan, juz, surah | Quran Masterclass",
+        "description": "Tes penempatan, tes mingguan, ujian kosakata, serta ujian untuk setiap juz dan surah dengan ayat-ayat dari Al-Qur’an. Gratis di situs web."
+      },
+      "test": {
+        "description": "Sebuah tes Quran Masterclass dengan aturan ujian yang adil: batas waktu, tanpa kembali ke soal sebelumnya, ayat-ayat dari Al-Qur’an."
+      },
+      "certificate": {
+        "title": "Sertifikat aplikasi | Quran Masterclass",
+        "description": "Sertifikat aplikasi Anda untuk ujian juz yang lulus beserta sertifikat yang dapat diverifikasi."
+      }
+    },
+    "decks": {
+      "juzamma": "Kosakata Juz ʿAmma",
+      "vocab": "Kosakata Al-Qur'an",
+      "names": "Nama-nama Allah",
+      "tajweed": "Hukum tajwid",
+      "duas": "Doa dari Al-Qur'an",
+      "mine": "Kartu saya"
+    },
+    "tests": {
+      "placement": "Tes penempatan",
+      "weekly": "Tes mingguan",
+      "juz": "Ujian juz",
+      "surah": "Ujian surah",
+      "vocab": "Ujian kosakata"
+    }
+  },
+  "ms": {
+    "pages": {
+      "cards": {
+        "title": "Kad ulang kaji dengan ulangan berjarak | Quran Masterclass",
+        "description": "Perkataan al-Quran, ayat, nama-nama Allah, hukum tajwid dan doa, masing-masing dipaparkan semula sejurus sebelum anda lupa (FSRS). Dengan ramalan 7 hari dan kad anda sendiri daripada ayat yang disimpan. Percuma."
+      },
+      "review": {
+        "title": "Pusingan ulang kaji | Quran Masterclass",
+        "description": "Terbalikkan kad, kemudian nilaikannya: Lagi, Sukar, Baik atau Mudah."
+      },
+      "deck": {
+        "title": "{deck} – kad ulang kaji | Quran Masterclass",
+        "description": "Pratonton dek “{deck}” dan pusingan ulang kaji dengan ulangan berjarak."
+      },
+      "hifz": {
+        "title": "Penjejak hafazan: sejauh mana anda hafal setiap surah dan juz | Quran Masterclass",
+        "description": "Peta kesemua 30 juz dan 114 surah, diwarnakan mengikut ayat yang anda ulang kaji dan sejauh mana anda mengingatinya hari ini."
+      },
+      "tests": {
+        "title": "Ujian dan peperiksaan al-Quran: penempatan, mingguan, juz dan surah | Quran Masterclass",
+        "description": "Ujian penempatan, ujian mingguan, peperiksaan kosa kata dan peperiksaan bagi setiap juz dan surah dengan ayat daripada al-Quran. Percuma di laman web."
+      },
+      "test": {
+        "description": "Satu ujian Quran Masterclass di bawah peraturan peperiksaan yang adil: had masa, tidak boleh berpatah balik, ayat daripada al-Quran."
+      },
+      "certificate": {
+        "title": "Sijil aplikasi | Quran Masterclass",
+        "description": "Sijil aplikasi anda bagi peperiksaan juz yang lulus dan sijil yang boleh disahkan."
+      }
+    },
+    "decks": {
+      "juzamma": "Kosa kata Juz ʿAmma",
+      "vocab": "Kosa kata al-Quran",
+      "names": "Nama-nama Allah",
+      "tajweed": "Hukum tajwid",
+      "duas": "Doa daripada al-Quran",
+      "mine": "Kad saya"
+    },
+    "tests": {
+      "placement": "Ujian penempatan",
+      "weekly": "Ujian mingguan",
+      "juz": "Peperiksaan juz",
+      "surah": "Peperiksaan surah",
+      "vocab": "Peperiksaan kosa kata"
+    }
+  },
+  "bn": {
+    "pages": {
+      "cards": {
+        "title": "বিরতিযুক্ত পুনরাবৃত্তির রিভিউ কার্ড | Quran Masterclass",
+        "description": "কুরআনের শব্দ, আয়াত, আল্লাহর নামসমূহ, তাজবিদের নিয়ম ও দোয়া – প্রতিটি ভুলে যাওয়ার ঠিক আগে আবার দেখানো হয় (FSRS)। আগামী 7 দিনের পূর্বাভাস এবং সংরক্ষিত আয়াত থেকে আপনার নিজের কার্ডসহ। বিনামূল্যে।"
+      },
+      "review": {
+        "title": "রিভিউ রাউন্ড | Quran Masterclass",
+        "description": "কার্ডটি উল্টান, তারপর মূল্যায়ন করুন: আবার, কঠিন, ভালো বা সহজ।"
+      },
+      "deck": {
+        "title": "{deck} – রিভিউ কার্ড | Quran Masterclass",
+        "description": "ডেক «{deck}»-এর প্রিভিউ এবং বিরতিযুক্ত পুনরাবৃত্তির একটি রিভিউ রাউন্ড।"
+      },
+      "hifz": {
+        "title": "হিফজ ট্র্যাকার: প্রতিটি সূরা ও পারা আপনি কতটা জানেন | Quran Masterclass",
+        "description": "সব 30টি পারা ও 114টি সূরার মানচিত্র, আপনি যে আয়াতগুলো রিভিউ করেন এবং আজ সেগুলো কতটা মনে আছে, সেই অনুযায়ী রঙিন।"
+      },
+      "tests": {
+        "title": "কুরআনের পরীক্ষা: স্তর নির্ধারণী, সাপ্তাহিক, পারা ও সূরা | Quran Masterclass",
+        "description": "স্তর নির্ধারণী পরীক্ষা, সাপ্তাহিক পরীক্ষা, শব্দভান্ডার পরীক্ষা এবং কুরআনের আয়াতসহ প্রতিটি পারা ও সূরার পরীক্ষা। ওয়েবসাইটে বিনামূল্যে।"
+      },
+      "test": {
+        "description": "Quran Masterclass-এর একটি পরীক্ষা ন্যায্য পরীক্ষার নিয়মে: সময়সীমা, পেছনে ফেরা যায় না, কুরআনের আয়াত।"
+      },
+      "certificate": {
+        "title": "অ্যাপ সার্টিফিকেট | Quran Masterclass",
+        "description": "উত্তীর্ণ পারা পরীক্ষার জন্য আপনার অ্যাপ সার্টিফিকেট এবং যাচাইযোগ্য সার্টিফিকেট।"
+      }
+    },
+    "decks": {
+      "juzamma": "আম্মা পারার শব্দভান্ডার",
+      "vocab": "কুরআনের শব্দভান্ডার",
+      "names": "আল্লাহর নামসমূহ",
+      "tajweed": "তাজবিদের নিয়ম",
+      "duas": "কুরআনের দোয়া",
+      "mine": "আমার কার্ড"
+    },
+    "tests": {
+      "placement": "স্তর নির্ধারণী পরীক্ষা",
+      "weekly": "সাপ্তাহিক পরীক্ষা",
+      "juz": "পারা পরীক্ষা",
+      "surah": "সূরা পরীক্ষা",
+      "vocab": "শব্দভান্ডার পরীক্ষা"
+    }
+  },
+  "ru": {
+    "pages": {
+      "cards": {
+        "title": "Карточки с интервальным повторением | Quran Masterclass",
+        "description": "Слова Корана, аяты, имена Аллаха, правила таджвида и дуа: каждая карточка снова показывается незадолго до того, как вы её забудете (FSRS). С прогнозом на 7 дней и вашими карточками из сохранённых аятов. Бесплатно."
+      },
+      "review": {
+        "title": "Раунд повторения | Quran Masterclass",
+        "description": "Переверните карточку и оцените её: Снова, Трудно, Хорошо или Легко."
+      },
+      "deck": {
+        "title": "{deck} – карточки для повторения | Quran Masterclass",
+        "description": "Предпросмотр набора «{deck}» и раунд повторения с интервальным повторением."
+      },
+      "hifz": {
+        "title": "Трекер хифза: как хорошо вы знаете каждую суру и джуз | Quran Masterclass",
+        "description": "Карта всех 30 джузов и 114 сур, окрашенная по повторяемым вами аятам и по тому, насколько хорошо вы помните их сегодня."
+      },
+      "tests": {
+        "title": "Тесты и экзамены по Корану: входной, недельный, по джузам и сурам | Quran Masterclass",
+        "description": "Входной тест, недельный тест, экзамены по словам и экзамены по каждому джузу и каждой суре с аятами Корана. Бесплатно на сайте."
+      },
+      "test": {
+        "description": "Тест Quran Masterclass по честным правилам экзамена: ограничение по времени, без возврата к прошлым вопросам, аяты из Корана."
+      },
+      "certificate": {
+        "title": "Сертификаты приложения | Quran Masterclass",
+        "description": "Ваши сертификаты приложения за сданные экзамены по джузам и проверяемый сертификат."
+      }
+    },
+    "decks": {
+      "juzamma": "Слова Джуз Амма",
+      "vocab": "Слова Корана",
+      "names": "Имена Аллаха",
+      "tajweed": "Правила таджвида",
+      "duas": "Дуа из Корана",
+      "mine": "Мои карточки"
+    },
+    "tests": {
+      "placement": "Входной тест",
+      "weekly": "Недельный тест",
+      "juz": "Экзамены по джузам",
+      "surah": "Экзамены по сурам",
+      "vocab": "Экзамены по словам"
+    }
+  },
+  "zh": {
+    "pages": {
+      "cards": {
+        "title": "间隔重复复习卡片 | Quran Masterclass",
+        "description": "古兰经词汇、经文、真主的尊名、泰吉威德规则与杜阿，在您快要遗忘之前再次出现（FSRS）。附 7 天预测，以及由您保存的经文生成的专属卡片。免费。"
+      },
+      "review": {
+        "title": "一轮复习 | Quran Masterclass",
+        "description": "翻开卡片，然后评分：重来、困难、良好或简单。"
+      },
+      "deck": {
+        "title": "{deck} – 复习卡片 | Quran Masterclass",
+        "description": "卡组“{deck}”的预览，以及采用间隔重复的一轮复习。"
+      },
+      "hifz": {
+        "title": "背诵追踪：每章与每个朱兹的掌握程度 | Quran Masterclass",
+        "description": "30 个朱兹与 114 章的总览图，按您复习的经文以及您今天的记忆程度着色。"
+      },
+      "tests": {
+        "title": "古兰经测验与考试：定级、每周、朱兹与章节 | Quran Masterclass",
+        "description": "定级测验、每周测验、词汇考试，以及针对每个朱兹和每一章的考试，题目取自古兰经经文。网站免费。"
+      },
+      "test": {
+        "description": "Quran Masterclass 的测验，遵循公平的考试规则：限时作答、不可返回、题目取自古兰经经文。"
+      },
+      "certificate": {
+        "title": "应用证书 | Quran Masterclass",
+        "description": "您通过朱兹考试获得的应用证书，以及可验证的证书。"
+      }
+    },
+    "decks": {
+      "juzamma": "安玛朱兹词汇",
+      "vocab": "古兰经词汇",
+      "names": "真主的尊名",
+      "tajweed": "泰吉威德规则",
+      "duas": "古兰经中的杜阿",
+      "mine": "我的卡片"
+    },
+    "tests": {
+      "placement": "定级测验",
+      "weekly": "每周测验",
+      "juz": "朱兹考试",
+      "surah": "章节考试",
+      "vocab": "词汇考试"
+    }
+  }
+}

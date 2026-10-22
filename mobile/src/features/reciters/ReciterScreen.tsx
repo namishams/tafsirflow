@@ -10,6 +10,7 @@ import { openPro, usePro } from "@/lib/pro";
 import { RECITERS } from "@/lib/quran";
 import { useLang, pick } from "@/i18n";
 import { RECITER_BIOS, bioText, reciterBio } from "@/web/reciters";
+import { useBioTexts } from "@/features/library/content";
 import { Callout, Kicker, QuranSeal, StarBullet, useQ } from "@/features/radio/art";
 import { isFreeReciter, radio, useRadioSelect } from "@/features/radio/engine";
 import { RadioMiniPlayer, MINI_SPACE } from "@/features/radio/MiniPlayer";
@@ -33,10 +34,11 @@ export default function ReciterScreen() {
   const radioReciters = useRadioSelect((s) => s.reciters);
   const [, setReaderReciter] = useReciter();
   const insets = useSafeAreaInsets();
+  const more = useBioTexts();
   const r = reciterBio(String(slug ?? ""));
   if (!r) return <><Stack.Screen options={{ headerShown: true, title: "" }} /><ErrorState retry={() => router.replace("/reciters" as Href)} /></>;
 
-  const tx = bioText(r, lang);
+  const tx = bioText(r, lang, more);
   const L = pick(LBL, lang);
   const i = RECITER_BIOS.indexOf(r);
   const prev = RECITER_BIOS[i - 1], next = RECITER_BIOS[i + 1];

@@ -1,7 +1,7 @@
 // mirrors mobile/src/features/prophet/stories.ts (copied for the website; keep both in step)
 import type { IslamChapter } from "@/lib/islam";
 import type { SecretsContent } from "@/lib/secrets/content";
-import { RECITER_BIOS, bioText, type ReciterBio } from "@/lib/reciters";
+import { RECITER_BIOS, bioText, type BioTexts, type ReciterBio } from "@/lib/reciters";
 
 // Short story cards built ONLY from content that already exists and is vetted in the app: the Islam library
 // (web/islam, every language through its own translations), the reciter biographies (web/reciters), the Secrets of
@@ -102,10 +102,10 @@ export function chapterGroup(slug: string, arabic: string, c: IslamChapter, cat:
   return { id: slug, cat, title: c.title, arabic, stories };
 }
 
-/** one card per reciter: the short text, the first paragraphs of the biography, "known for" */
-export function reciterGroups(lang: string, knownFor: string): StoryGroup[] {
+/** one card per reciter: the short text, the first paragraphs of the biography, "known for" (`more`: loadBioTexts of the other languages) */
+export function reciterGroups(lang: string, knownFor: string, more?: BioTexts | null): StoryGroup[] {
   return RECITER_BIOS.map((r) => {
-    const b = bioText(r, lang);
+    const b = bioText(r, lang, more);
     const first = sections(b.body).flatMap((s) => s.paras);
     const ex = excerpt([b.short, ...first], 900);
     const story: Story = {

@@ -1,4 +1,5 @@
-// Biographies of famous Quran reciters (/reciters). German + English; other languages fall back to English.
+// Biographies of famous Quran reciters (/reciters). German + English here, Arabic in ./ar*.ts, the other languages in
+// ./i18n/<locale>.ts (see loadBioTexts in index.ts); whatever is missing falls back to English.
 export type ReciterBioText = {
   short: string;        // one sentence for the overview card
   body: string;         // 300–600 words in our Markdown subset (## headings, - lists, **bold**)

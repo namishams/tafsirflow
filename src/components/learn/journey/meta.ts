@@ -1,5 +1,8 @@
 // SEO texts of the Riḥlat al-ʿIlm pages (server-safe), mirrors the titles of mobile/src/features/journey/texts.ts.
 // German, English and Arabic; other languages use English. /journey is indexable; today, stats and year are personal.
+// Further languages: meta.i18n.json next to this file (see ../seoI18n.ts), English for every key they lack.
+import I18N from "./meta.i18n.json";
+import { seoOver } from "@/components/learn/seoI18n";
 type M = { title: string; description: string };
 export type JourneyPage = "home" | "today" | "stats" | "year";
 const T: Record<"en" | "de" | "ar", Record<JourneyPage, M>> = {
@@ -23,6 +26,7 @@ const T: Record<"en" | "de" | "ar", Record<JourneyPage, M>> = {
   },
 };
 export function journeyMeta(locale: string, page: JourneyPage): M {
+  if (locale !== "de" && locale !== "ar") { const x = seoOver(T.en, I18N, locale); if (x) return x[page]; }
   return T[locale === "de" || locale === "ar" ? locale : "en"][page];
 }
 export const JOURNEY_PATH: Record<JourneyPage, string> = { home: "/journey", today: "/journey/today", stats: "/journey/stats", year: "/journey/year" };

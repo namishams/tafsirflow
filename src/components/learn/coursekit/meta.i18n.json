@@ -1,0 +1,35 @@
+{
+  "tr": {
+    "certificate": "Sertifika"
+  },
+  "ur": {
+    "certificate": "سرٹیفکیٹ"
+  },
+  "fa": {
+    "certificate": "گواهی"
+  },
+  "ps": {
+    "certificate": "سند"
+  },
+  "fr": {
+    "certificate": "Certificat"
+  },
+  "es": {
+    "certificate": "Certificado"
+  },
+  "id": {
+    "certificate": "Sertifikat"
+  },
+  "ms": {
+    "certificate": "Sijil"
+  },
+  "bn": {
+    "certificate": "সার্টিফিকেট"
+  },
+  "ru": {
+    "certificate": "Сертификат"
+  },
+  "zh": {
+    "certificate": "证书"
+  }
+}

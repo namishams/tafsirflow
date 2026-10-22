@@ -15,6 +15,7 @@ import { openVerse } from "@/features/coursekit/links";
 import { UI, UNITS, type AbrahamicUnit } from "./content";
 import { CourseList } from "./courseKit";
 import { ABRAHAMIC_COURSE } from "./lessons";
+import { unitText } from "./courseText";
 
 // /abrahamic – "Abraham and the Abrahamic religions in the Quran". Unit 1 is free, the rest needs Pro ("abrahamic").
 export function AbrahamicScreen() {
@@ -75,7 +76,7 @@ function UnitBody({ unit, s, lang }: { unit: AbrahamicUnit; s: (k: string) => st
   }, [unit, lang]);
   return (
     <View style={{ marginTop: 14, gap: 14 }}>
-      <Text style={{ fontFamily: FONT.regular, fontSize: 15, lineHeight: 23, color: t.ink }}>{pick(unit.text, lang)}</Text>
+      <Text style={{ fontFamily: FONT.regular, fontSize: 15, lineHeight: 23, color: t.ink }}>{unitText("abrahamic", unit.id, "text", unit.text, lang)}</Text>
       <Eyebrow>{s("verses")}</Eyebrow>
       {verses === null ? <Text style={{ color: t.muted, fontFamily: FONT.regular }}>{s("loading")}</Text> : unit.verses.map((k, i) => {
         const v = verses[i];
@@ -98,7 +99,7 @@ function UnitBody({ unit, s, lang }: { unit: AbrahamicUnit; s: (k: string) => st
       {items === null ? <Text style={{ color: t.muted, fontFamily: FONT.regular }}>{s("loading")}</Text>
         : items.length === 0 ? <Text style={{ color: t.muted, fontFamily: FONT.regular }}>{s("offline")}</Text>
         : items.map((it) => <ItemCard key={it.id} item={it} />)}
-      <DoneShare kind="course" banner={false} arabic={unit.arabic} title={pick(unit.title, lang)} body={pick(unit.text, lang)} />
+      <DoneShare kind="course" banner={false} arabic={unit.arabic} title={pick(unit.title, lang)} body={unitText("abrahamic", unit.id, "text", unit.text, lang)} />
     </View>
   );
 }

@@ -2,6 +2,9 @@
 // description, and build the Course JSON-LD. Used by src/components/learn/{abrahamic,haramain}/meta.ts.
 import type { L, Lesson } from "@/lib/learn/abrahamic/core";
 import { PUBLIC_SITE, abs } from "@/lib/site";
+// Further languages of CERT: meta.i18n.json next to this file ({ "<lang>": { "certificate": "…" } }, see ../seoI18n.ts).
+import I18N from "./meta.i18n.json";
+import { seoWords } from "@/components/learn/seoI18n";
 
 export const SUFFIX = " | Quran Masterclass";
 export const pk = (t: L | undefined, locale: string): string => (t ? ((t as Record<string, string | undefined>)[locale] ?? t.en) : "");
@@ -11,7 +14,7 @@ export function cut(text: string, max = 158): string {
   const c = s.slice(0, max - 1);
   return `${c.slice(0, Math.max(c.lastIndexOf(" "), max - 30))} …`;
 }
-export const CERT: L = { en: "Certificate", de: "Zertifikat", ar: "الشهادة" };
+export const CERT: L = { ...seoWords(I18N, "certificate"), en: "Certificate", de: "Zertifikat", ar: "الشهادة" };
 
 export function lessonMeta(lesson: Lesson, course: L, locale: string) {
   return { title: `${pk(lesson.title, locale)} – ${pk(course, locale)}${SUFFIX}`, description: cut(pk(lesson.text, locale)) };

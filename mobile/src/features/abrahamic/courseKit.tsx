@@ -19,6 +19,7 @@ import { GoldRing, StepIn, useNudge } from "@/features/coursekit/motion";
 import { gEvent, useGamify } from "@/features/feed/gamify";
 import { award } from "@/web/points";
 import { takeBurst, tickGarden } from "@/features/garden/garden";
+import { localizeCourse } from "./courseText";
 
 export type L = { en: string } & Partial<Record<"de" | "ar" | "tr" | "ur" | "fa" | "ps" | "fr" | "es" | "id" | "ms" | "bn" | "ru" | "zh", string>>;
 export const L14 = (en: string, de: string, ar: string, tr: string, ur: string, fa: string, ps: string, fr: string, es: string, id: string, ms: string, bn: string, ru: string, zh: string): L =>
@@ -141,9 +142,10 @@ function Bar({ frac }: { frac: number }) {
 }
 
 /** the lesson list, for the course overview screens (first lesson free, the rest Pro) */
-export function CourseList({ def }: { def: CourseDef }) {
+export function CourseList({ def: base }: { def: CourseDef }) {
   const t = useTheme();
   const { c, lang, rtl } = useCK();
+  const def = localizeCourse(base, lang); // lesson texts of the language file (src/i18n/app/<lang>.json) where the tables lack them
   const ent = useEntitlement(def.id);
   const p = useCourseProgress(def);
   const n = def.lessons.filter((l) => p.done[l.id]).length, m = def.lessons.length;
@@ -275,9 +277,10 @@ function Quiz({ quiz, onDone }: { quiz: Q[]; onDone: (score: number) => void }) 
 }
 
 /** one lesson: explanation, Quran passages, tags, quiz, rewards */
-export function CourseLessonScreen({ def, id }: { def: CourseDef; id: string }) {
+export function CourseLessonScreen({ def: base, id }: { def: CourseDef; id: string }) {
   const t = useTheme();
   const { c, lang, rtl } = useCK();
+  const def = localizeCourse(base, lang);
   const ent = useEntitlement(def.id);
   const { pro } = usePro();
   const gm = useGamify();

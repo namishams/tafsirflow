@@ -4,7 +4,7 @@ import { setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import JsonLd from "@/components/JsonLd";
 import Markdown from "@/components/Markdown";
-import { COUNTRIES_AR, COUNTRIES_DE, RECITER_BIOS, STYLE, bioText, reciterBio } from "@/lib/reciters";
+import { COUNTRIES_AR, COUNTRIES_DE, RECITER_BIOS, STYLE, bioText, loadBioTexts, reciterBio } from "@/lib/reciters";
 import type { AppLocale } from "@/i18n/locales";
 import { abs, pageMeta } from "@/lib/site";
 import { ArrowNext, ArrowBack } from "@/components/Icons";
@@ -66,7 +66,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { locale, slug } = await params;
   const r = reciterBio(slug);
   if (!r) return {};
-  return pageMeta(locale, `/reciters/${slug}`, `${locale === "ar" ? r.arabic : r.name} – ${labelsOf(locale).bio} | Quran Masterclass`, bioText(r, locale).short);
+  return pageMeta(locale, `/reciters/${slug}`, `${locale === "ar" ? r.arabic : r.name} – ${labelsOf(locale).bio} | Quran Masterclass`, bioText(r, locale, await loadBioTexts(locale)).short);
 }
 
 export default async function ReciterPage({ params }: { params: Promise<{ locale: string; slug: string }> }) {
@@ -74,7 +74,7 @@ export default async function ReciterPage({ params }: { params: Promise<{ locale
   setRequestLocale(locale);
   const r = reciterBio(slug);
   if (!r) notFound();
-  const t = bioText(r, locale);
+  const t = bioText(r, locale, await loadBioTexts(locale));
   const ar = locale === "ar";
   const L = labelsOf(locale);
   const i = RECITER_BIOS.indexOf(r);

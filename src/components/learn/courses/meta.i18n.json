@@ -1,0 +1,222 @@
+{
+  "tr": {
+    "home": {
+      "title": "Akademi kursları: Siyer, akaid, fıkıh, 99 isim ve dahası",
+      "description": "Dersler, Kur'an ayetleri, hadis kaynakları ve kısa testlerle on iki yapılandırılmış kurs: Siyer, peygamberler, tefsir ve hadis ilimleri, akaid, fıkıh, ahlak, ezkâr, Allah'ın isimleri, Ramazan, hac ve tecvid. Ücretsiz."
+    },
+    "tajweed": {
+      "title": "Tecvid alıştırması: kuralı gerçek ayetlerde bulun",
+      "description": "Tecvid kurallarını Kur'an'daki gerçek yerlerde çalışın: kuralı bulun, sure başına bir test ve kapsamlı bir tecvid kursu. Ücretsiz."
+    },
+    "vocab": {
+      "title": "Sure ve konuya göre Kur'an kelime desteleri",
+      "description": "Herhangi bir surenin kelimeleri için, doğrudan Kur'an metninden alınan bilgi kartları ve testler; ayrıca kelime türüne ve kök ailesine göre konu desteleri. Ücretsiz."
+    },
+    "deck": {
+      "title": "Kelime destesi",
+      "description": "Bu destenin kelimeleri için bilgi kartları ve bir test."
+    },
+    "lessonWord": "Ders",
+    "nameWord": "İsim"
+  },
+  "ur": {
+    "home": {
+      "title": "اکیڈمی کورسز: سیرت، عقیدہ، فقہ، اللہ کے 99 نام اور مزید",
+      "description": "بارہ منظم کورس، اسباق، قرآنی آیات، حدیث کے حوالوں اور کوئز کے ساتھ: سیرت، انبیا، تفسیر اور علومِ حدیث، عقیدہ، فقہ، اخلاق، اذکار، اللہ کے نام، رمضان، حج اور تجوید۔ مفت۔"
+    },
+    "tajweed": {
+      "title": "تجوید کی مشق: حقیقی آیات میں قاعدہ تلاش کریں",
+      "description": "تجوید کے قواعد کی مشق قرآن کے حقیقی مقامات پر: قاعدہ تلاش کریں، ہر سورت کا کوئز اور تجوید کا تفصیلی کورس۔ مفت۔"
+    },
+    "vocab": {
+      "title": "سورت اور موضوع کے لحاظ سے قرآنی الفاظ کے ڈیک",
+      "description": "کسی بھی سورت کے الفاظ کے فلیش کارڈز اور کوئز، براہِ راست قرآن کے متن سے، نیز لفظ کی قسم اور جڑ کے خاندان کے لحاظ سے موضوعاتی ڈیک۔ مفت۔"
+    },
+    "deck": {
+      "title": "الفاظ کا ڈیک",
+      "description": "اس ڈیک کے الفاظ کے فلیش کارڈز اور کوئز۔"
+    },
+    "lessonWord": "سبق",
+    "nameWord": "نام"
+  },
+  "fa": {
+    "home": {
+      "title": "دوره‌های آکادمی: سیره، عقیده، فقه، 99 نام الله و بیشتر",
+      "description": "دوازده دورهٔ ساختارمند با درس‌ها، آیه‌های قرآن، ارجاع به حدیث و آزمونک‌ها: سیره، پیامبران، تفسیر و علوم حدیث، عقیده، فقه، اخلاق، اذکار، نام‌های الله، رمضان، حج و تجوید. رایگان."
+    },
+    "tajweed": {
+      "title": "تمرین تجوید: قاعده را در آیه‌های واقعی بیابید",
+      "description": "قواعد تجوید را روی جاهای واقعی قرآن تمرین کنید: یافتن قاعده، یک آزمونک برای هر سوره و یک دورهٔ تجوید تفصیلی. رایگان."
+    },
+    "vocab": {
+      "title": "مجموعه‌های واژگان قرآن بر پایهٔ سوره و موضوع",
+      "description": "فلش‌کارت و آزمونک برای واژه‌های هر سوره، برگرفته مستقیم از متن قرآن، به‌علاوهٔ مجموعه‌های موضوعی بر پایهٔ نوع واژه و خانوادهٔ ریشه. رایگان."
+    },
+    "deck": {
+      "title": "مجموعهٔ واژگان",
+      "description": "فلش‌کارت و آزمونک برای واژه‌های این مجموعه."
+    },
+    "lessonWord": "درس",
+    "nameWord": "نام"
+  },
+  "ps": {
+    "home": {
+      "title": "د اکاډمۍ کورسونه: سیرت، عقیده، فقه، د الله 99 نومونه او نور",
+      "description": "دولس منظم کورسونه له لوستونو، د قرآن آیتونو، د حدیث حوالو او لنډو ازموینو سره: سیرت، پیغمبران، د تفسیر او حدیث علوم، عقیده، فقه، اخلاق، اذکار، د الله نومونه، رمضان، حج او تجوید. وړیا."
+    },
+    "tajweed": {
+      "title": "د تجوید تمرین: په ریښتینو آیتونو کې قاعده ومومئ",
+      "description": "د تجوید قواعد د قرآن په ریښتینو ځایونو کې تمرین کړئ: قاعده ومومئ، د هر سورت لپاره لنډه ازموینه او ژور تجوید کورس. وړیا."
+    },
+    "vocab": {
+      "title": "د قرآن د لغتونو ډلې د سورت او موضوع له مخې",
+      "description": "د هر سورت د کلمو لپاره کارتونه او لنډې ازموینې، مستقیم د قرآن له متن څخه، او موضوعي ډلې د کلمې ډول او د ریښې کورنۍ له مخې. وړیا."
+    },
+    "deck": {
+      "title": "د لغتونو ډله",
+      "description": "د دې ډلې د کلمو لپاره کارتونه او لنډه ازموینه."
+    },
+    "lessonWord": "لوست",
+    "nameWord": "نوم"
+  },
+  "fr": {
+    "home": {
+      "title": "Cours de l'Académie : Sira, aqida, fiqh, les 99 Noms et plus",
+      "description": "Douze cours structurés avec leçons, versets du Coran, références de hadiths et quiz : Sira, les prophètes, tafsir et sciences du hadith, aqida, fiqh, éthique, adhkar, les Noms d'Allah, Ramadan, hajj et tajwid. Gratuit."
+    },
+    "tajweed": {
+      "title": "Pratique du tajwid : trouver la règle dans de vrais versets",
+      "description": "Exercez les règles du tajwid sur de vrais passages du Coran : trouver la règle, un quiz par sourate et un cours de tajwid approfondi. Gratuit."
+    },
+    "vocab": {
+      "title": "Paquets de vocabulaire du Coran par sourate et par thème",
+      "description": "Cartes mémoire et quiz pour les mots de n'importe quelle sourate, tirés directement du texte du Coran, plus des paquets thématiques par type de mot et par famille de racines. Gratuit."
+    },
+    "deck": {
+      "title": "Paquet de vocabulaire",
+      "description": "Cartes mémoire et un quiz pour les mots de ce paquet."
+    },
+    "lessonWord": "Leçon",
+    "nameWord": "Nom"
+  },
+  "es": {
+    "home": {
+      "title": "Cursos de la Academia: Sira, aqida, fiqh, los 99 Nombres y más",
+      "description": "Doce cursos estructurados con lecciones, aleyas del Corán, referencias de hadices y cuestionarios: Sira, los profetas, tafsir y ciencias del hadiz, aqida, fiqh, ética, adhkar, los Nombres de Allah, Ramadán, Hajj y tajwid. Gratis."
+    },
+    "tajweed": {
+      "title": "Práctica de tajwid: encuentre la regla en aleyas reales",
+      "description": "Practique las reglas de tajwid en pasajes reales del Corán: encuentre la regla, un cuestionario por sura y un curso de tajwid en profundidad. Gratis."
+    },
+    "vocab": {
+      "title": "Mazos de vocabulario del Corán por sura y por tema",
+      "description": "Tarjetas y cuestionarios con las palabras de cualquier sura, tomadas directamente del texto del Corán, y mazos temáticos por tipo de palabra y familia de raíces. Gratis."
+    },
+    "deck": {
+      "title": "Mazo de vocabulario",
+      "description": "Tarjetas y un cuestionario con las palabras de este mazo."
+    },
+    "lessonWord": "Lección",
+    "nameWord": "Nombre"
+  },
+  "id": {
+    "home": {
+      "title": "Kursus Akademi: Sirah, akidah, fikih, 99 Nama, dan lainnya",
+      "description": "Dua belas kursus terstruktur dengan pelajaran, ayat Al-Qur’an, rujukan hadis, dan kuis: Sirah, kisah para nabi, ilmu tafsir dan ilmu hadis, akidah, fikih, akhlak, zikir, Nama-nama Allah, Ramadan, haji, dan tajwid. Gratis."
+    },
+    "tajweed": {
+      "title": "Latihan tajwid: temukan hukumnya dalam ayat nyata",
+      "description": "Latih hukum tajwid pada tempat-tempat nyata di Al-Qur’an: temukan hukumnya, kuis per surah, dan kursus tajwid mendalam. Gratis."
+    },
+    "vocab": {
+      "title": "Dek kosakata Al-Qur’an per surah dan per tema",
+      "description": "Kartu belajar dan kuis untuk kata-kata setiap surah, diambil langsung dari teks Al-Qur’an, plus dek tema menurut jenis kata dan keluarga akar kata. Gratis."
+    },
+    "deck": {
+      "title": "Dek kosakata",
+      "description": "Kartu belajar dan kuis untuk kata-kata dalam dek ini."
+    },
+    "lessonWord": "Pelajaran",
+    "nameWord": "Nama"
+  },
+  "ms": {
+    "home": {
+      "title": "Kursus Akademi: sirah, akidah, fikah, 99 Nama Allah dan banyak lagi",
+      "description": "Dua belas kursus berstruktur dengan pelajaran, ayat al-Quran, rujukan hadis dan kuiz: sirah, para nabi, tafsir dan ilmu hadis, akidah, fikah, akhlak, zikir, Nama-nama Allah, Ramadan, haji dan tajwid. Percuma."
+    },
+    "tajweed": {
+      "title": "Latihan tajwid: cari hukum dalam ayat sebenar",
+      "description": "Latihlah hukum tajwid pada tempat sebenar dalam al-Quran: cari hukumnya, kuiz bagi setiap surah dan kursus tajwid yang mendalam. Percuma."
+    },
+    "vocab": {
+      "title": "Dek kosa kata al-Quran mengikut surah dan tema",
+      "description": "Kad imbas dan kuiz untuk perkataan mana-mana surah, diambil terus daripada teks al-Quran, serta dek tema mengikut golongan kata dan keluarga kata akar. Percuma."
+    },
+    "deck": {
+      "title": "Dek kosa kata",
+      "description": "Kad imbas dan kuiz untuk perkataan dalam dek ini."
+    },
+    "lessonWord": "Pelajaran",
+    "nameWord": "Nama"
+  },
+  "bn": {
+    "home": {
+      "title": "একাডেমি কোর্স: সীরাত, আকিদা, ফিকহ, 99 নাম ও আরও",
+      "description": "বারোটি সুসংগঠিত কোর্স, পাঠ, কুরআনের আয়াত, হাদিসের সূত্র ও কুইজসহ: সীরাত, নবীগণ, তাফসির ও হাদিসশাস্ত্র, আকিদা, ফিকহ, আখলাক, আযকার, আল্লাহর নামসমূহ, রমজান, হজ ও তাজবিদ। বিনামূল্যে।"
+    },
+    "tajweed": {
+      "title": "তাজবিদ অনুশীলন: আসল আয়াতে নিয়ম খুঁজে বের করুন",
+      "description": "কুরআনের আসল জায়গায় তাজবিদের নিয়ম অনুশীলন করুন: নিয়ম খুঁজে বের করা, প্রতিটি সূরার কুইজ এবং গভীর একটি তাজবিদ কোর্স। বিনামূল্যে।"
+    },
+    "vocab": {
+      "title": "সূরা ও বিষয় অনুযায়ী কুরআনের শব্দভান্ডার ডেক",
+      "description": "যেকোনো সূরার শব্দের জন্য ফ্ল্যাশকার্ড ও কুইজ, সরাসরি কুরআনের পাঠ থেকে নেওয়া, সঙ্গে শব্দের ধরন ও শব্দমূল-পরিবার অনুযায়ী বিষয়ভিত্তিক ডেক। বিনামূল্যে।"
+    },
+    "deck": {
+      "title": "শব্দভান্ডার ডেক",
+      "description": "এই ডেকের শব্দগুলোর জন্য ফ্ল্যাশকার্ড ও একটি কুইজ।"
+    },
+    "lessonWord": "পাঠ",
+    "nameWord": "নাম"
+  },
+  "ru": {
+    "home": {
+      "title": "Курсы академии: сира, акыда, фикх, 99 имён Аллаха и другое",
+      "description": "Двенадцать структурированных курсов с уроками, аятами Корана, ссылками на хадисы и викторинами: сира, пророки, тафсир и науки о хадисах, акыда, фикх, этика, азкары, имена Аллаха, Рамадан, хадж и таджвид. Бесплатно."
+    },
+    "tajweed": {
+      "title": "Практика таджвида: найдите правило в настоящих аятах",
+      "description": "Отрабатывайте правила таджвида на настоящих местах Корана: найдите правило, пройдите викторину по каждой суре и углублённый курс таджвида. Бесплатно."
+    },
+    "vocab": {
+      "title": "Наборы слов Корана по сурам и темам",
+      "description": "Карточки и викторины по словам любой суры, взятым прямо из текста Корана, а также тематические наборы по типам слов и семьям корней. Бесплатно."
+    },
+    "deck": {
+      "title": "Набор слов",
+      "description": "Карточки и викторина по словам этого набора."
+    },
+    "lessonWord": "Урок",
+    "nameWord": "Имя"
+  },
+  "zh": {
+    "home": {
+      "title": "学院课程：先知生平、信仰、教法、99 个尊名等",
+      "description": "十二门系统课程，配有课文、古兰经经文、圣训出处与测验：先知生平、众先知、经注与圣训学、信仰、教法、品德、记念词、安拉的尊名、莱麦丹月、朝觐与泰吉威德。免费。"
+    },
+    "tajweed": {
+      "title": "泰吉威德练习：在真实经文中找出规则",
+      "description": "在古兰经的真实位置上练习泰吉威德规则：找出规则，每章一套测验，另有深入的泰吉威德课程。免费。"
+    },
+    "vocab": {
+      "title": "按章与按主题的古兰经词汇卡组",
+      "description": "任意一章词语的单词卡与测验，直接取自古兰经文本；另有按词类和词根族划分的主题卡组。免费。"
+    },
+    "deck": {
+      "title": "词汇卡组",
+      "description": "本卡组词语的单词卡与测验。"
+    },
+    "lessonWord": "课程",
+    "nameWord": "尊名"
+  }
+}

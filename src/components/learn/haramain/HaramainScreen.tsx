@@ -7,6 +7,7 @@ import { useState } from "react";
 import { pick, useLang } from "@/lib/learn/i18n";
 import { SECTIONS, TIMELINE, UI, expandRange, type Section } from "@/lib/learn/haramain/content";
 import { HARAMAIN_COURSE } from "@/lib/learn/haramain/lessons";
+import { unitText } from "@/lib/learn/abrahamic/courseText";
 import { GUIDE_LABEL } from "@/lib/learn/haramain/guide";
 import { verseHref } from "@/lib/learn/coursekit/links";
 import { Link } from "@/i18n/navigation";
@@ -79,7 +80,7 @@ function SectionCard({ sec, highlight, expanded, onToggle, s, lang }: {
       </h2>
       {expanded && (
         <div id={bodyId} className="mt-5 space-y-5">
-          <p className="text-[16px] leading-[1.75]">{pick(sec.text, lang)}</p>
+          <p className="text-[16px] leading-[1.75]">{unitText("haramain", sec.id, "text", sec.text, lang)}</p>
           <ExtraBlock kind={sec.kind} titles={sec.items} label={s("read")} loading={s("loading")} />
           {sec.ranges.length > 0 && (
             <section className="space-y-4">

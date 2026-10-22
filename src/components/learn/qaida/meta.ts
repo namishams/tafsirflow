@@ -1,5 +1,9 @@
 // SEO texts of the reading course ("Read the Quran in Arabic", /arabic/read). Server-safe: plain objects, no hooks.
 // de, en, ar written; every other locale falls back to English.
+// Further languages: meta.i18n.json next to this file ({ "<lang>": { home, review, lesson } } with the lesson as
+// templates "{n}" / "{stage}", see ../seoI18n.ts), English for every key they lack.
+import I18N from "./meta.i18n.json";
+import { seoFill, seoOver, seoString } from "@/components/learn/seoI18n";
 import { STAGES, lessonOf, stageOf, txOf } from "@/lib/learn/qaida/curriculum";
 
 type Meta = { title: string; description: string };
@@ -32,6 +36,7 @@ const T: Record<"de" | "en" | "ar", { home: Meta; review: Meta; lesson: (stage: 
 const pickLang = (locale: string): "de" | "en" | "ar" => (locale === "de" || locale === "ar" ? locale : "en");
 
 export function metaFor(locale: string, page: "home" | "review"): Meta {
+  if (pickLang(locale) === "en") { const x = seoOver({ home: T.en.home, review: T.en.review }, I18N, locale); if (x) return x[page]; }
   return T[pickLang(locale)][page];
 }
 /** title and description of one lesson id (null for an unknown id) */
@@ -40,7 +45,11 @@ export function lessonMeta(locale: string, id: string): Meta | null {
   const s = stageOf(id);
   if (!s || !lessonOf(id)) return null;
   const lang = pickLang(locale);
-  return T[lang].lesson(txOf(s.title, locale), s.n);
+  const m = T[lang].lesson(txOf(s.title, locale), s.n);
+  if (lang !== "en") return m;
+  const v = { stage: txOf(s.title, locale), n: s.n };
+  const title = seoString(I18N, locale, "lesson", "title"), description = seoString(I18N, locale, "lesson", "description");
+  return { title: title ? seoFill(title, v) : m.title, description: description ? seoFill(description, v) : m.description };
 }
 export const allLessonIds = () => ["review", ...STAGES.flatMap((s) => s.lessons.map((l) => l.id))];
 export const STAGE_COUNT = STAGES.length;

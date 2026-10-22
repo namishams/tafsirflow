@@ -2,6 +2,7 @@ import { ISLAM, islamUi, loadChapters, type IslamChapter, type IslamUi } from "@
 import { guideText, type Guide, type GuideText } from "@/web/guides";
 import { secretsContent, type SecretsContent } from "@/web/secrets/content";
 import { aboutContent, type AboutContent } from "@/web/aboutContent";
+import { loadBioTexts, type BioTexts } from "@/web/reciters";
 import { useLang } from "@/i18n";
 import { useAsyncValue } from "./motion";
 
@@ -18,6 +19,16 @@ export function useChapters(): IslamChapter[] {
   return hit ?? loaded ?? chapters.get("en")!;
 }
 export const guideOf = (g: Guide, lang: string): GuideText => guideText(g, lang);
+
+// The reciter biographies beyond German, English and Arabic (web/reciters/i18n, the website's loadBioTexts), read the
+// first time the language is opened; pass the result to bioText. null = English (no translation, or not read yet).
+const bios = new Map<string, BioTexts | null>();
+export function useBioTexts(): BioTexts | null {
+  const { lang } = useLang();
+  const known = bios.has(lang);
+  const loaded = useAsyncValue(() => (known ? Promise.resolve({ lang, b: bios.get(lang) ?? null }) : loadBioTexts(lang).then((b) => { bios.set(lang, b); return { lang, b }; })), [lang]);
+  return known ? bios.get(lang) ?? null : loaded?.lang === lang ? loaded.b : null;
+}
 
 // The website's loaders for the hub texts, "Secrets" and "About" are async (other languages are imported on demand);
 // German and English answer at once. They are resolved when the app starts, so a page opens without an empty frame.

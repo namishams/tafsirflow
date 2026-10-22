@@ -1,5 +1,9 @@
 // SEO texts of the card trainer, the Hifz tracker and the tests (server-safe: plain objects, no hooks).
 // de, en, ar written in the polite form; every other locale falls back to English.
+// Further languages: meta.i18n.json next to this file ({ "<lang>": { pages, decks, tests } }, see ../seoI18n.ts),
+// English for every key they lack.
+import I18N from "./meta.i18n.json";
+import { seoOver } from "@/components/learn/seoI18n";
 import type { DeckId } from "@/lib/learn/srs/decks";
 import type { TestKind } from "@/lib/learn/srs/gate";
 
@@ -51,10 +55,16 @@ const TEST: Record<string, { en: string; de: string; ar: string }> = {
 };
 const L = (locale: string): "en" | "de" | "ar" => (locale === "de" || locale === "ar" ? locale : "en");
 
+const enNames = (t: Record<string, { en: string }>) => Object.fromEntries(Object.entries(t).map(([k, v]) => [k, v.en])) as Record<string, string>;
+const own = (t: Record<string, string>, k: string | undefined) => (k && Object.hasOwn(t, k) ? t[k] : undefined);
+
 export function srsMeta(locale: string, page: SrsPage, arg?: string): M {
   const l = L(locale);
-  const m = T[l][page];
-  const name = page === "deck" ? DECK[arg ?? ""]?.[l] : page === "test" ? TEST[arg ?? ""]?.[l] : undefined;
+  const x = l === "en" ? seoOver({ pages: T.en, decks: enNames(DECK), tests: enNames(TEST) }, I18N, locale) : null;
+  const m = x ? x.pages[page] : T[l][page];
+  const name = x
+    ? (page === "deck" ? own(x.decks, arg) : page === "test" ? own(x.tests, arg) : undefined)
+    : page === "deck" ? DECK[arg ?? ""]?.[l] : page === "test" ? TEST[arg ?? ""]?.[l] : undefined;
   if (!name) return m;
   return { title: m.title.replaceAll(page === "deck" ? "{deck}" : "{test}", name), description: m.description.replaceAll("{deck}", name) };
 }

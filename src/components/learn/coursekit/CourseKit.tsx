@@ -11,6 +11,7 @@ import { intlLocale, pick } from "@/lib/learn/i18n";
 import { useAuth } from "@/lib/learn/auth";
 import { award } from "@/lib/points";
 import { certHref, lessonHref, markDone, useCK, useCourseProgress, type CourseDef, type Q, type Tag } from "@/lib/learn/abrahamic/kit";
+import { localizeCourse } from "@/lib/learn/abrahamic/courseText";
 import QuranVerse from "@/components/learn/QuranVerse";
 import { getResources, translationFor } from "@/lib/learn/quran";
 import { Bar, Card, GoldButton, GoldLink, Kicker, LearnHero, LearnMain, OutlineButton, OutlineLink, Option, Pill } from "@/components/learn/ui";
@@ -53,8 +54,9 @@ export function useCourseCount(def: CourseDef) {
 }
 
 /** the lesson list for the course overview pages */
-export function CourseList({ def }: { def: CourseDef }) {
+export function CourseList({ def: base }: { def: CourseDef }) {
   const { c, lang, rtl } = useCK();
+  const def = localizeCourse(base, lang); // lesson texts of the language file (src/lib/learn/i18n/<lang>.json) where the tables lack them
   const p = useCourseProgress(def);
   const n = def.lessons.filter((l) => p.done[l.id]).length, m = def.lessons.length;
   const nextIdx = def.lessons.findIndex((l) => !p.done[l.id]);
@@ -135,8 +137,9 @@ function Quiz({ quiz, onDone }: { quiz: Q[]; onDone: (score: number) => void }) 
 }
 
 /** one lesson: tags, explanation, note, Quran passages, quiz, result */
-export function CourseLessonScreen({ def, id }: { def: CourseDef; id: string }) {
+export function CourseLessonScreen({ def: base, id }: { def: CourseDef; id: string }) {
   const { c, lang, rtl } = useCK();
+  const def = localizeCourse(base, lang);
   const idx = def.lessons.findIndex((l) => l.id === id);
   const lesson = def.lessons[idx];
   const p = useCourseProgress(def);
