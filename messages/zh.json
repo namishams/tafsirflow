@@ -643,14 +643,14 @@
     "back": "返回首页",
     "forLead": "您的支持仅用于 Quran Masterclass，不会用于其他任何用途：",
     "legalTitle": "这笔款项是什么",
-    "for5t": "AI tutors",
-    "for5d": "Dalil and Hidaya answer questions around the clock – every answer costs AI computing time.",
-    "for6t": "New knowledge",
-    "for6d": "Continuous new carousels, hadith collections, Nahj al-Balagha, courses and updates – reviewed and translated.",
-    "for7t": "Team & development",
-    "for7d": "Building the app and website, security, testing and the further development of the Shams Method.",
-    "for8t": "Outreach",
-    "for8d": "Advertising on Google and social media, so more people learn the Quran with the Shams Method."
+    "for5t": "AI 导师",
+    "for5d": "Dalil 和 Hidaya 全天候解答您的问题，每次回答都会消耗 AI 的计算时间。",
+    "for6t": "新知识",
+    "for6d": "持续推出新的轮播内容、圣训集、《辞章之道》（Nahj al-Balagha）、课程和更新，均经审核并翻译。",
+    "for7t": "团队与开发",
+    "for7d": "应用和网站的开发、安全、测试，以及 Shams 方法的持续完善。",
+    "for8t": "宣传推广",
+    "for8d": "在 Google 和社交媒体上投放广告，让更多人通过 Shams 方法学习古兰经。"
   },
   "prayer": {
     "title": "礼拜时间",
