@@ -25,20 +25,22 @@ export default function DonateCTA({ variant = "art", className = "" }: { variant
 
   if (variant === "slim") {
     return (
-      <aside className={`relative flex flex-wrap items-center gap-4 overflow-hidden rounded-2xl border border-[rgb(201_166_94)]/35 bg-surface p-4 sm:p-5 ${className}`} aria-label={t("aria")}>
-        <Lantern pct={pct} size={52} />
-        <p className="min-w-0 flex-1 text-[14px] leading-relaxed"><b>{t("slimTitle")}</b> <span className="text-muted">{t("slimLead")}</span><span className="mt-1 block text-[11.5px] text-muted">{t("legal")}</span></p>
-        <Link href="/support" className="btn-gold inline-flex h-10 items-center rounded-full px-5 text-sm font-bold">{t("cta")}</Link>
-        <button onClick={later} className="text-xs text-muted underline-offset-2 hover:underline">{t("later")}</button>
+      <aside className={`relative flex flex-col gap-3 overflow-hidden rounded-2xl border border-[rgb(201_166_94)]/35 bg-surface p-4 sm:flex-row sm:items-center sm:gap-4 sm:p-5 ${className}`} aria-label={t("aria")}>
+        <span className="hidden shrink-0 sm:block"><Lantern pct={pct} size={52} /></span>
+        <p className="w-full min-w-0 text-[14px] leading-relaxed sm:flex-1"><b>{t("slimTitle")}</b> <span className="text-muted">{t("slimLead")}</span><span className="mt-1 block text-[11.5px] text-muted">{t("legal")}</span></p>
+        <div className="flex w-full flex-col gap-1 sm:w-auto sm:shrink-0 sm:flex-row sm:items-center sm:gap-3">
+          <Link href="/support" className="btn-gold inline-flex h-11 w-full items-center justify-center whitespace-nowrap rounded-full px-5 text-sm font-bold sm:h-10 sm:w-auto">{t("cta")}</Link>
+          <button onClick={later} className="h-10 w-full text-xs text-muted underline-offset-2 hover:underline sm:w-auto">{t("later")}</button>
+        </div>
       </aside>
     );
   }
   return (
     <aside className={`stage relative overflow-hidden rounded-3xl text-[#eef0f3] ${className}`} aria-label={t("aria")}>
       <span aria-hidden className="illum-frame" />
-      <div className="relative grid items-center gap-8 px-6 py-10 sm:px-10 md:grid-cols-[auto_1fr]">
+      <div className="relative grid items-center gap-6 px-5 py-8 sm:gap-8 sm:px-10 sm:py-10 md:grid-cols-[auto_1fr]">
         <div className="mx-auto grid place-items-center">
-          <Lantern pct={pct} size={150} />
+          <span className="block w-[72px] sm:w-[150px] [&>svg]:h-auto [&>svg]:w-full"><Lantern pct={pct} size={150} /></span>
           {d && pct !== null && (
             <p className="mt-3 text-center text-xs text-white/60">{t("meter", { raised: nf(d.raised), goal: nf(d.goal), cur: d.currency })}{d.label ? <span className="block">{d.label}</span> : null}</p>
           )}
@@ -47,8 +49,8 @@ export default function DonateCTA({ variant = "art", className = "" }: { variant
           <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[rgb(var(--gold))]">{t("kicker")}</p>
           <h2 className="font-display mt-2 text-3xl leading-tight sm:text-4xl">{t("title")}</h2>
           <p className="mt-3 max-w-2xl text-[16px] leading-relaxed text-white/75">{t("lead")}</p>
-          <div className="mt-7 flex flex-wrap items-center gap-3">
-            <Link href="/support" className="btn-gold inline-flex h-12 items-center rounded-full px-7 text-[15px] font-bold">{t("cta")}</Link>
+          <div className="mt-7 flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:items-center sm:gap-3">
+            <Link href="/support" className="btn-gold inline-flex h-12 w-full items-center justify-center rounded-full px-7 sm:w-auto text-[15px] font-bold">{t("cta")}</Link>
             <button onClick={later} className="h-12 rounded-full px-4 text-sm text-white/60 hover:text-white">{t("later")}</button>
           </div>
           <p className="mt-4 text-xs text-white/55">{t("free")}</p>
