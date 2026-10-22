@@ -9,6 +9,7 @@ import { ReciterPathEntryCard } from "./reciter-path/EntryCard";
 import { CoursesEntryCard } from "./courses/EntryCard";
 import { AbrahamicEntryCard } from "./abrahamic/EntryCard";
 import { HaramainEntryCard } from "./haramain/EntryCard";
+import { NahjEntryCard } from "./nahj/NahjScreens";
 import { Shams2EntryCard } from "./shams2/EntryCard";
 import { JourneyEntryCard } from "./journey/EntryCard";
 import { GardenEntryCard } from "./garden/EntryCard";
@@ -58,6 +59,7 @@ export default function LearnHub({ labels }: { labels: Record<string, string> })
           <CoursesEntryCard />
           <AbrahamicEntryCard />
           <HaramainEntryCard />
+          <NahjEntryCard />
           <Shams2EntryCard />
           <JourneyEntryCard />
           <GardenEntryCard />

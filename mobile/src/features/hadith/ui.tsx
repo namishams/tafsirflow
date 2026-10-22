@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Linking, Pressable, Text, View, type StyleProp, type ViewStyle } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { GoldCard, StarLattice } from "@/components/brand";
+import { ProGate } from "@/components/page";
 import { Icon, type IconName } from "@/components/icons";
 import { useStored } from "@/lib/store";
 import { SITE } from "@/lib/api";
@@ -107,6 +108,27 @@ export function LoadState({ state, onRetry }: { state: "loading" | "error"; onRe
     <View style={{ paddingVertical: 24, alignItems: "center", gap: 12 }} accessibilityLiveRegion="polite">
       <Text style={{ fontFamily: FONT.regular, fontSize: 14.5, lineHeight: 21, color: t.muted, textAlign: "center" }}>{state === "loading" ? x.loading : x.offline}</Text>
       {state === "error" && onRetry ? <ActionButton icon="repeat" label={x.retry} onPress={onRetry} /> : null}
+    </View>
+  );
+}
+
+/** how many entries of each section (book, page, Nahj section) are free in the app; the rest needs Pro */
+export const HADITH_FREE_PREVIEW = 3;
+
+/** the Pro card under a free preview */
+export function HadithProCard() {
+  const x = useHadithText();
+  return <ProGate feature="general" title={x.proTitle} text={x.proText} />;
+}
+
+/** loading or "not available" while content from the server is not on the device yet */
+export function ContentState({ status, onRetry, onStage }: { status: "loading" | "missing"; onRetry: () => void; onStage?: boolean }) {
+  const x = useHadithText();
+  const t = useTheme();
+  return (
+    <View style={{ padding: 24, gap: 14, alignItems: "center" }} accessibilityLiveRegion="polite">
+      <Text style={{ fontFamily: FONT.regular, fontSize: 15, lineHeight: 22, color: onStage ? stage.textSoft : t.muted, textAlign: "center" }}>{status === "loading" ? x.contentLoading : x.contentMissing}</Text>
+      {status === "missing" ? <ActionButton icon="repeat" label={x.retry} onPress={onRetry} onStage={onStage} /> : null}
     </View>
   );
 }

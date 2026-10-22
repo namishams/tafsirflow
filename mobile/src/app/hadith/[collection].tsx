@@ -6,11 +6,13 @@ import { Icon } from "@/components/icons";
 import { FONT, R, useTheme } from "@/lib/theme";
 import { useLang } from "@/i18n";
 import { SUNNI_NAMES, shiaBook, shiaBookTitle, shiaPage, shiaPages, sunniCollection, sunniSection, type HadithItem } from "@/features/hadith/data";
-import { ActionButton, HadithCard, LoadState } from "@/features/hadith/ui";
+import { ActionButton, HADITH_FREE_PREVIEW, HadithCard, HadithProCard, LoadState } from "@/features/hadith/ui";
+import { usePro } from "@/lib/pro";
 import { fill, useHadithText } from "@/features/hadith/texts";
 
 // /hadith/[collection] – a Sunni collection (books → hadith of one book, ?book=n) or a Thaqalayn book (pages of ten,
-// ?page=n). Texts are loaded from the APIs and kept on the device after the first load.
+// ?page=n). Texts are loaded from the APIs and kept on the device after the first load. Pro: without it the first
+// HADITH_FREE_PREVIEW hadith of every book (Sunni) or of the first page (Thaqalayn) are shown, then the Pro card.
 export default function HadithCollection() {
   const { collection, book, page } = useLocalSearchParams<{ collection: string; book?: string; page?: string }>();
   const key = decodeURIComponent(String(collection));
@@ -74,6 +76,8 @@ function SunniBook({ k, section }: { k: string; section: number }) {
   const names = SUNNI_NAMES[k] ?? { en: c.name, ar: "" };
   const s = c.sections.find((y) => y.n === section);
   const data = useLoad(() => sunniSection(k, section, lang), [k, section, lang]);
+  const { pro } = usePro();
+  const shown = data.v ? (pro ? data.v : data.v.slice(0, HADITH_FREE_PREVIEW)) : [];
   const idx = c.sections.findIndex((y) => y.n === section);
   const prev = c.sections[idx - 1], next = c.sections[idx + 1];
   return (
@@ -83,13 +87,13 @@ function SunniBook({ k, section }: { k: string; section: number }) {
         style={{ flex: 1, backgroundColor: t.bg }}
         contentContainerStyle={{ paddingBottom: 130 }}
         ListHeaderComponent={<View style={{ marginBottom: 20 }}><PageHero topInset back eyebrow={names.en} title={s?.name ?? names.en} arabic={names.ar} lead={s ? `${s.first}–${s.last}` : undefined} /></View>}
-        data={data.v ?? []}
+        data={shown}
         keyExtractor={(h) => h.id}
         initialNumToRender={4}
         windowSize={7}
         renderItem={({ item }) => <View style={{ paddingHorizontal: 16, marginBottom: 14 }}><HadithCard item={item} /></View>}
         ListEmptyComponent={<LoadState state={data.status === "error" ? "error" : "loading"} onRetry={data.retry} />}
-        ListFooterComponent={data.v ? <Pager prev={prev ? () => router.replace(`/hadith/${k}?book=${prev.n}` as Href) : undefined} next={next ? () => router.replace(`/hadith/${k}?book=${next.n}` as Href) : undefined} label={s ? `${s.n} / ${c.sections[c.sections.length - 1].n}` : ""} /> : undefined}
+        ListFooterComponent={data.v ? <>{!pro && data.v.length > shown.length ? <View style={{ marginBottom: 16 }}><HadithProCard /></View> : null}<Pager prev={prev ? () => router.replace(`/hadith/${k}?book=${prev.n}` as Href) : undefined} next={next ? () => router.replace(`/hadith/${k}?book=${next.n}` as Href) : undefined} label={s ? `${s.n} / ${c.sections[c.sections.length - 1].n}` : ""} /></> : undefined}
       />
     </>
   );
@@ -102,7 +106,9 @@ function Shia({ id, page }: { id: string; page: number }) {
   const { lang } = useLang();
   const total = shiaPages(id);
   const p = Math.min(page, Math.max(0, total - 1));
-  const data = useLoad<HadithItem[]>(() => shiaPage(id, p, lang), [id, p, lang]);
+  const { pro } = usePro();
+  const data = useLoad<HadithItem[]>(() => (pro || p === 0 ? shiaPage(id, p, lang) : Promise.resolve([])), [id, p, lang, pro]);
+  const shown = data.v ? (pro ? data.v : data.v.slice(0, HADITH_FREE_PREVIEW)) : [];
   const list = useRef<FlatList<HadithItem>>(null);
   const to = (n: number) => router.replace(`/hadith/${encodeURIComponent(id)}?page=${n}` as Href);
   return (
@@ -121,12 +127,12 @@ function Shia({ id, page }: { id: string; page: number }) {
             </View>
           </View>
         }
-        data={data.v ?? []}
+        data={shown}
         keyExtractor={(h) => h.id}
         initialNumToRender={4}
         renderItem={({ item }) => <View style={{ paddingHorizontal: 16, marginBottom: 14 }}><HadithCard item={item} /></View>}
-        ListEmptyComponent={<LoadState state={data.status === "error" ? "error" : "loading"} onRetry={data.retry} />}
-        ListFooterComponent={data.v ? <Pager prev={p > 0 ? () => to(p - 1) : undefined} next={p < total - 1 ? () => to(p + 1) : undefined} label={fill(x.page, { n: p + 1, total })} /> : undefined}
+        ListEmptyComponent={!pro && p > 0 ? undefined : <LoadState state={data.status === "error" ? "error" : "loading"} onRetry={data.retry} />}
+        ListFooterComponent={data.v ? (pro ? <Pager prev={p > 0 ? () => to(p - 1) : undefined} next={p < total - 1 ? () => to(p + 1) : undefined} label={fill(x.page, { n: p + 1, total })} /> : <HadithProCard />) : undefined}
       />
     </>
   );

@@ -61,6 +61,13 @@ export function moduleText<T extends object>(module: string, table: { en: T } & 
   return merged.get(key) as T;
 }
 
+/** mirrors deviceLang() of the app: outside React, the language of the open page (<html lang>), English otherwise */
+export function deviceLang(): Lang {
+  if (typeof document === "undefined") return "en";
+  const l = (document.documentElement.lang || "").slice(0, 2);
+  return isLang(l) ? l : "en";
+}
+
 /** the page's language, like the app's useLang(); loads the language file of the app modules when needed */
 export function useLang(): { lang: Lang; rtl: boolean } {
   const locale = useLocale();

@@ -18,7 +18,9 @@ import { takeBurst, tickGarden } from "@/features/garden/garden";
 import { GoldRing, StepIn } from "@/features/coursekit/motion";
 import { nahjEdition, nahjRef, type NahjEdition, type NahjPassage } from "@/features/hadith/nahj";
 import { nahjItem, toggleSaved } from "@/features/hadith/data";
-import { HadithShare, useSavedState } from "@/features/hadith/ui";
+import { ArabicBlock, ContentState, HadithShare, useSavedState } from "@/features/hadith/ui";
+import { useNahjContent } from "@/features/hadith/nahjContent";
+import { useHadithText } from "@/features/hadith/texts";
 import {
   PASS_LESSON, PASS_UNIT, courseState, courseUnits, lessonById, lessonQuiz, markLesson, markUnit, nextLesson, sayingOfTheDay, setFont, setLast, studyNote, studyOf, unitById, unitTest,
   useNahjProgress, type Lesson, type Qn, type Unit,
@@ -33,6 +35,22 @@ function useEd(): NahjEdition {
   const { lang } = useLang();
   useStored<string | null>("qmc.nahjEdition", null); // follows the edition switch of the feed
   return nahjEdition(lang);
+}
+
+/** the course needs the edition, its study file and the lesson plan from the server; until then a loading state */
+function Gated({ children }: { children: React.ReactNode }) {
+  const ed = useEd();
+  const c = useNahjContent([ed, ed === "de" ? "study-de" : "study-en", "study-course"]);
+  if (c.status === "ready") return <>{children}</>;
+  return (
+    <>
+      <Stack.Screen options={{ headerShown: false }} />
+      <Page>
+        <PageHero back topInset title="نهج البلاغة" />
+        <ContentState status={c.status} onRetry={c.retry} />
+      </Page>
+    </>
+  );
 }
 
 function Bar({ frac }: { frac: number }) {
@@ -83,7 +101,7 @@ export function NahjOptInSetting() {
 export function NahjCourseHome() {
   const visible = useNahjVisible();
   if (!visible) return <OptIn />;
-  return <Home />;
+  return <Gated><Home /></Gated>;
 }
 
 function Home() {
@@ -165,6 +183,7 @@ const SIZES = [15.5, 17.5, 19.5, 22];
 
 function PassageBlock({ p, ed, open: initial = false }: { p: NahjPassage; ed: NahjEdition; open?: boolean }) {
   const x = useNahjText();
+  const hx = useHadithText();
   const t = useTheme();
   const { lang } = useLang();
   const rtl = isRTL(lang);
@@ -181,7 +200,9 @@ function PassageBlock({ p, ed, open: initial = false }: { p: NahjPassage; ed: Na
         <LinearGradient colors={[stage.bg, stage.deep]} style={{ padding: 18 }}>
           <StarLattice opacity={0.05} />
           <Text style={{ fontFamily: FONT.semibold, fontSize: 12, letterSpacing: 1.8, textTransform: "uppercase", color: stage.gold }}>{nahjRef(ed, p)}</Text>
+          {p.arabic ? <View style={{ marginTop: 10 }}><ArabicBlock text={p.arabic} size={size + 3} color={stage.cream} /></View> : null}
           <Text lang={p.edition} selectable style={{ fontFamily: FONT.regular, fontSize: size, lineHeight: size * 1.55, color: "#fff", marginTop: 10, writingDirection: rtl ? "rtl" : "ltr" }}>{p.text}</Text>
+          {p.machine ? <Text style={{ fontFamily: FONT.semibold, fontSize: 12, color: stage.gold, marginTop: 10 }}>{hx.machine}</Text> : null}
           <Text style={{ fontFamily: FONT.regular, fontSize: 12.5, color: stage.textMuted, marginTop: 12 }}>{p.credit}</Text>
           <View style={{ flexDirection: "row", gap: 10, marginTop: 14 }}>
             <Chip icon="bookmark" label={saved ? x.saved : x.save} on={saved} onPress={() => toggleSaved(item)} />
@@ -289,7 +310,7 @@ function useRewards() {
 export function NahjLessonScreen({ id }: { id: string }) {
   const visible = useNahjVisible();
   if (!visible) return <Redirect href={"/nahj-studies" as Href} />;
-  return <LessonBody id={id} />;
+  return <Gated><LessonBody id={id} /></Gated>;
 }
 
 function LessonBody({ id }: { id: string }) {
@@ -376,7 +397,7 @@ function SizeButton({ label, glyph, disabled, onPress }: { label: string; glyph:
 export function NahjUnitScreen({ id }: { id: string }) {
   const visible = useNahjVisible();
   if (!visible) return <Redirect href={"/nahj-studies" as Href} />;
-  return <UnitBody id={id} />;
+  return <Gated><UnitBody id={id} /></Gated>;
 }
 
 function UnitBody({ id }: { id: string }) {
@@ -433,6 +454,11 @@ function UnitBody({ id }: { id: string }) {
 // ---------- lesson library ----------
 export function NahjLibraryScreen() {
   const visible = useNahjVisible();
+  if (!visible) return <Redirect href={"/nahj-studies" as Href} />;
+  return <Gated><Library /></Gated>;
+}
+
+function Library() {
   const x = useNahjText();
   const t = useTheme();
   const ed = useEd();
@@ -440,7 +466,6 @@ export function NahjLibraryScreen() {
   const rtl = isRTL(lang);
   const ent = useEntitlement("nahj");
   const prog = useNahjProgress();
-  if (!visible) return <Redirect href={"/nahj-studies" as Href} />;
   const units = courseUnits(ed);
   return (
     <>
@@ -478,11 +503,15 @@ export function NahjLibraryScreen() {
 // ---------- certificate ----------
 export function NahjCertificateScreen() {
   const visible = useNahjVisible();
+  if (!visible) return <Redirect href={"/nahj-studies" as Href} />;
+  return <Gated><Certificate /></Gated>;
+}
+
+function Certificate() {
   const x = useNahjText();
   const t = useTheme();
   const ed = useEd();
   const p = useNahjProgress();
-  if (!visible) return <Redirect href={"/nahj-studies" as Href} />;
   const st = courseState(ed, p);
   return (
     <>

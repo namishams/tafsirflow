@@ -2,7 +2,7 @@ import { readJSON, writeJSON } from "@/lib/store";
 import type { TraditionChoice } from "@/lib/tradition";
 import { SHIA_BOOKS, SUNNI_COLLECTIONS, type ShiaBook, type SunniCollection } from "./catalog";
 import { cachedJSON, cachedValue } from "./cache";
-import { nahjAt, nahjEdition, nahjPosition, type NahjPassage } from "./nahj";
+import { NAHJ_MACHINE, nahjAt, nahjEdition, nahjPosition, type NahjPassage } from "./nahj";
 import { hadithLabel, hadithLink, usualHadithNumber } from "@/web/hadithNumber";
 
 // Hadith, only from published sources – nothing here is typed or generated:
@@ -242,7 +242,8 @@ export async function randomHadith(lang: string, tradition: TraditionChoice | nu
 export function nahjItem(p: NahjPassage): HadithItem {
   return {
     id: `nahj:${p.edition}:${p.id}`, source: "nahj", collection: `nahj-${p.edition}`, collectionName: p.title, number: p.id,
-    text: p.text, textLang: p.edition, grades: [], reference: p.ref, url: p.link || undefined, credit: p.credit,
+    arabic: p.arabic, text: p.text, textLang: p.edition, grades: [], reference: p.ref, url: p.link || undefined,
+    credit: p.machine ? `${p.credit} · ${NAHJ_MACHINE[p.edition]}` : p.credit,
   };
 }
 
@@ -270,7 +271,7 @@ export async function hadithFeedItems(lang: string, tradition: TraditionChoice |
   const jobs = Array.from({ length: size }, (_, j) => {
     const i = i0 + j;
     const p = plan[i % plan.length];
-    if (p.kind === "nahj") { const at = k++; return Promise.resolve(nahjItem(nahjAt(ed, nahjSeed, at))); }
+    if (p.kind === "nahj") { const at = k++; const np = nahjAt(ed, nahjSeed, at); return Promise.resolve(np ? nahjItem(np) : null); }
     return pickOne(p, hash(seed, i), lang).catch(() => null);
   });
   const got = (await Promise.all(jobs)).filter((x): x is HadithItem => !!x);

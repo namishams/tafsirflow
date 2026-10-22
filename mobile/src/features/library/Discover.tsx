@@ -58,7 +58,6 @@ function useCards(_tradition: TraditionChoice | null) {
   return ROWS.map((row) => ({
     title: d[row.title],
     cards: row.keys.flatMap((k): Card[] => {
-      if (k === "nahj" && !nahjOn) return [];
       if (k === "nahjStudy") {
         const nc = nahjCourseText(lang);
         return [{ key: k, href: "/nahj-studies", title: nahjOn ? nc.short : nc.optInTitle, desc: nahjOn ? nc.lead : nc.optInNote, badge: w("home2.badge_course"), ar: "نهج", colors: ["#1b4438", "#090d18"] }];

@@ -1,10 +1,11 @@
 import { readJSON, useStored, writeJSON } from "@/lib/store";
 import { nahjEdition, nahjPassageById, nahjAllPassages, type NahjEdition, type NahjPassage } from "@/features/hadith/nahj";
+import { nahjContentVersion, nahjFile } from "@/features/hadith/nahjContent";
 
 // "Nahj al-Balagha studies": thematic units and lessons built from passage ids, the prebuilt explanations, reflection
-// questions and quizzes (assets/content/nahj-study-<edition>.json), and the lesson plan (nahj-study-course.json).
-// All three files are derived from the owner's editions: bundled with the app, never committed (see mobile/.gitignore,
-// pattern assets/content/nahj-*.json). Nothing is generated at runtime; there is no AI and no network call.
+// questions and quizzes (nahj-study-<edition>.json), and the lesson plan (nahj-study-course.json). All three files are
+// derived from the owner's editions: never committed or bundled; the server serves them and the app keeps a copy
+// (features/hadith/nahjContent.ts). Nothing is generated at runtime; there is no AI.
 export type Qn = { q: string; o: string[]; a: number };
 export type Study = { e: string; r: string[]; z?: Qn[] };
 type StudyBook = { note: string; lang: NahjEdition; items: Record<string, Study> };
@@ -12,20 +13,9 @@ type RawLesson = { id: string; title: { en: string; de: string }; aim: { en: str
 type RawUnit = { id: string; theme: number; lessons: RawLesson[] };
 type RawCourse = { units: RawUnit[] };
 
-const books: Partial<Record<NahjEdition, StudyBook>> = {};
-function studyBook(ed: NahjEdition): StudyBook {
-  /* eslint-disable @typescript-eslint/no-require-imports */
-  books[ed] ??= (ed === "de" ? require("../../../assets/content/nahj-study-de.json") : require("../../../assets/content/nahj-study-en.json")) as StudyBook;
-  /* eslint-enable @typescript-eslint/no-require-imports */
-  return books[ed]!;
-}
-let rawCourse: RawCourse | null = null;
-function course(): RawCourse {
-  /* eslint-disable @typescript-eslint/no-require-imports */
-  rawCourse ??= require("../../../assets/content/nahj-study-course.json") as RawCourse;
-  /* eslint-enable @typescript-eslint/no-require-imports */
-  return rawCourse;
-}
+const EMPTY_STUDY = (ed: NahjEdition): StudyBook => ({ note: "", lang: ed, items: {} });
+const studyBook = (ed: NahjEdition): StudyBook => nahjFile<StudyBook>(ed === "de" ? "study-de" : "study-en") ?? EMPTY_STUDY(ed);
+const course = (): RawCourse => nahjFile<RawCourse>("study-course") ?? { units: [] };
 
 /** the prebuilt study content of one passage, or null */
 export const studyOf = (ed: NahjEdition, id: string): Study | null => studyBook(ed).items[id] ?? null;
@@ -36,7 +26,9 @@ export type Lesson = { id: string; unit: string; n: number; title: string; aim: 
 export type Unit = { id: string; theme: number; n: number; lessons: Lesson[] };
 const built = new Map<NahjEdition, Unit[]>();
 /** the units of the course for an edition (passages this edition does not carry are left out; empty lessons vanish) */
+let builtAt = -1;
 export function courseUnits(ed: NahjEdition): Unit[] {
+  if (builtAt !== nahjContentVersion()) { built.clear(); builtAt = nahjContentVersion(); }
   if (!built.has(ed)) {
     let n = 0;
     const units = course().units.map((u, ui): Unit => ({

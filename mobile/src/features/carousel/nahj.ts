@@ -10,7 +10,7 @@ import type { WisdomPayload } from "./types";
 let pool: { ed: string; list: NahjPassage[] } | null = null;
 function sayings(lang: string): NahjPassage[] {
   const ed = nahjEdition(lang);
-  if (pool?.ed !== ed) {
+  if (pool?.ed !== ed || !pool.list.length) { // an empty pool is built again once the edition has arrived
     let list: NahjPassage[] = [];
     try { list = nahjAllPassages(ed).filter((p) => p.kind === "saying" && !p.part && p.text.split(/\s+/).length <= 60); } catch { list = []; }
     pool = { ed, list };

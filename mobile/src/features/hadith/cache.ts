@@ -7,7 +7,7 @@ const fileOf = (name: string) => new File(dir(), `${name.replace(/[^A-Za-z0-9._-
 const mem = new Map<string, unknown>();
 const pending = new Map<string, Promise<unknown>>();
 
-async function readCached<T>(name: string): Promise<T | null> {
+export async function readCached<T>(name: string): Promise<T | null> {
   if (mem.has(name)) return mem.get(name) as T;
   try {
     const f = fileOf(name);
@@ -20,7 +20,7 @@ async function readCached<T>(name: string): Promise<T | null> {
   }
 }
 
-function writeCached(name: string, v: unknown) {
+export function writeCached(name: string, v: unknown) {
   mem.set(name, v);
   try {
     const d = dir();
