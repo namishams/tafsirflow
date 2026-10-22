@@ -18,6 +18,7 @@ import { usePT, type PKey } from "./profileText";
 import { useTT } from "./text";
 import { maOf } from "./MomentPosts";
 import type { Moment } from "@/features/sijill/api";
+import { ChatShareButton } from "@/features/messenger/ui";
 
 // Social parts of the talent profile around the header (owner, build 20: "real social media", content = achievements):
 // achievement highlights (Instagram highlights, built automatically from the member's moments, grouped by kind),
@@ -227,6 +228,7 @@ export function ShareSheet({ p, visible, onClose }: { p: TalentProfile; visible:
         <GoldButton title={pt("share")} icon="share" onPress={() => void Share.share({ message: `${p.name} (@${p.username}) · Quran Masterclass Talents\n${url}` }).catch(() => undefined)} />
         {/* the profile card as an image: story 9:16 (1080 × 1920), portrait 4:5 and square 1:1 (1080 × 1080) */}
         <OutlineButton title={pt("shareImage")} icon="send" onPress={() => setImage(true)} />
+        <ChatShareButton card={{ type: "profile", ref: p.username, title: `${p.name} (@${p.username})`, subtitle: "", url: `/talents/u/${p.username}` }} />
         <OutlineButton title={copied ? pt("copied") : pt("copyLink")} icon="copy" onPress={() => void Clipboard.setStringAsync(url).then(() => setCopied(true)).catch(() => undefined)} />
         <Text selectable style={{ fontFamily: FONT.regular, fontSize: 12.5, color: t.muted, textAlign: "center", writingDirection: "ltr" }}>{url}</Text>
       </ScrollView>

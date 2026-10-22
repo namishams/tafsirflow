@@ -258,6 +258,7 @@ export async function POST(req: NextRequest, ctx: Ctx) {
     let media: { data: Buffer; mime: string } | undefined;
     let viewOnce = false;
     let card: ShareCard | null = null;
+    let wave: string | null = null;
     if (isForm) {
       const f = await req.formData().catch(() => null);
       if (!f) return json({ error: "bad_request" }, 400);
@@ -266,6 +267,7 @@ export async function POST(req: NextRequest, ctx: Ctx) {
       text = kind !== "voice" && !viewOnce ? para(f.get("text"), MAX_TEXT + 1) : "";
       replyTo = typeof f.get("replyTo") === "string" ? String(f.get("replyTo")) : null;
       durationMs = Number(f.get("durationMs")) || null;
+      wave = kind === "voice" && typeof f.get("wave") === "string" ? String(f.get("wave")) : null;
       const problem = await sendProblem(me, t, kind);
       if (problem) return json({ error: problem }, 403);
       if (viewOnce) { const vp = await viewOnceProblem(me, t); if (vp) return json({ error: vp }, 403); }
@@ -292,7 +294,7 @@ export async function POST(req: NextRequest, ctx: Ctx) {
     if (text.length > MAX_TEXT) return json({ error: "too_long" }, 400);
     if (text) { const bad = await badText(text); if (bad) return json({ error: bad }, 400); }
     if (card) { const bad = await badText(`${card.title} ${card.subtitle}`); if (bad) return json({ error: bad }, 400); }
-    const r = await insertMessage(me, t, { kind, text: text || undefined, card, media, durationMs, replyTo, viewOnce });
+    const r = await insertMessage(me, t, { kind, text: text || undefined, card, media, durationMs, replyTo, viewOnce, wave });
     const page = await messagesOf(me, t, { after: String(Number(r.id) - 1), limit: 1 });
     return json({ message: page.messages[0] ?? null }, 200, NO_STORE);
   }

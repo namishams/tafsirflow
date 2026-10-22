@@ -256,7 +256,7 @@ export async function systemNote(t: Pick<Thread, "id" | "salt">, what: "added" |
 // ---------- messages ----------
 type Row = { id: string; sender_id: string | null; kind: string; body_enc: Buffer | null; body_legacy: string | null; reply_to: string | null; media_mime: string | null; duration_ms: number | null;
   created_at: Date; deleted_at: Date | null; removed_at: Date | null; username: string | null; display_name: string | null; avatar_path: string | null; avatar_version: number | null;
-  view_once?: boolean; opened_at?: Date | null; edited_at?: Date | null; has_media?: boolean; media_enc?: Buffer | null };
+  view_once?: boolean; opened_at?: Date | null; wave?: string | null; edited_at?: Date | null; has_media?: boolean; media_enc?: Buffer | null };
 
 /** text and card of a stored message (a share keeps both as JSON in the sealed body) */
 export function splitBody(kind: string, body: string | null): { text: string | null; card: ShareCard | null } {
@@ -280,7 +280,7 @@ export async function messagesOf(meId: number, t: Thread, opts: { before?: strin
   const limit = Math.min(Math.max(opts.limit ?? 40, 1), 80);
   const rows = await q<Row>(
     `SELECT x.id, x.sender_id, x.kind, x.body_enc, x.body_legacy, x.reply_to, x.media_mime, x.duration_ms, x.created_at, x.deleted_at, x.removed_at,
-            x.view_once, x.opened_at, x.edited_at, (x.media_enc IS NOT NULL) AS has_media,
+            x.view_once, x.opened_at, x.edited_at, x.wave, (x.media_enc IS NOT NULL) AS has_media,
             c.username, c.display_name, c.avatar_path, c.avatar_version
        FROM msg_messages x LEFT JOIN community_profiles c ON c.user_id = x.sender_id
       WHERE x.thread_id = $2 AND ($3::bigint IS NULL OR x.id < $3) AND ($4::bigint IS NULL OR x.id > $4)
@@ -325,7 +325,7 @@ export async function messagesOf(meId: number, t: Thread, opts: { before?: strin
       media: !gone && hasMedia && !m.view_once ? `/api/messenger/messages/${m.id}/media` : null,
       // view once: the recipient opens it once (POST messages/:id/open); afterwards everyone sees "opened"
       viewOnce: m.view_once ? { opened: !!m.opened_at, canOpen: !gone && !isMine && !m.opened_at && !!m.has_media } : null,
-      edited: !!m.edited_at,
+      edited: !!m.edited_at, wave: m.kind === "voice" ? m.wave ?? null : null,
       editable: isMine && !gone && (m.kind === "text" || m.kind === "share") && Date.now() - new Date(m.created_at).getTime() < EDIT_MS,
       durationMs: m.duration_ms, reply: m.reply_to ? replyMap.get(String(m.reply_to)) ?? { id: String(m.reply_to), name: "", kind: "text", text: null, gone: true } : null,
       reactions, myReaction: mine, at: m.created_at,
@@ -355,14 +355,15 @@ export async function sendProblem(meId: number, t: Thread, kind: string): Promis
   return null;
 }
 
-export async function insertMessage(meId: number, t: Thread, m: { kind: MsgKind; text?: string; card?: ShareCard | null; media?: { data: Buffer; mime: string }; durationMs?: number | null; replyTo?: string | null; viewOnce?: boolean }) {
+export async function insertMessage(meId: number, t: Thread, m: { kind: MsgKind; text?: string; card?: ShareCard | null; media?: { data: Buffer; mime: string }; durationMs?: number | null; replyTo?: string | null; viewOnce?: boolean; wave?: string | null }) {
   let reply: string | null = null;
   if (m.replyTo && isId(m.replyTo)) reply = (await q<{ id: string }>("SELECT id FROM msg_messages WHERE id = $1 AND thread_id = $2", [m.replyTo, t.id]))[0]?.id ?? null;
   const body = m.kind === "share" ? JSON.stringify({ card: m.card, text: m.text ?? "" }) : m.text;
   const r = await q<{ id: string; created_at: Date }>(
-    `INSERT INTO msg_messages (thread_id, sender_id, kind, body_enc, reply_to, media_enc, media_mime, duration_ms, view_once) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9) RETURNING id, created_at`,
+    `INSERT INTO msg_messages (thread_id, sender_id, kind, body_enc, reply_to, media_enc, media_mime, duration_ms, view_once, wave) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10) RETURNING id, created_at`,
     [t.id, meId, m.kind, body ? seal(t.id, t.salt, body) : null, reply, m.media ? seal(t.id, t.salt, m.media.data) : null, m.media?.mime ?? null,
-      m.kind === "voice" || m.kind === "video" ? Math.min(Math.max(Math.round(Number(m.durationMs) || 0), 0), 120_000) : null, !!m.viewOnce]);
+      m.kind === "voice" || m.kind === "video" ? Math.min(Math.max(Math.round(Number(m.durationMs) || 0), 0), 120_000) : null, !!m.viewOnce,
+      m.kind === "voice" && m.wave && /^[0-9]{1,64}$/.test(m.wave) ? m.wave : null]);
   await q("UPDATE msg_threads SET last_message_at = now() WHERE id = $1", [t.id]);
   await q("UPDATE msg_members SET read_id = GREATEST(read_id, $3), typing_at = NULL WHERE thread_id = $1 AND user_id = $2", [t.id, meId, r[0].id]);
   return r[0];

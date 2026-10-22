@@ -27,6 +27,7 @@ import type { CLesson, CQuestion, Course, Tag } from "./types";
 import { AskTutor } from "@/features/tutor/AskTutor";
 import { useTutor } from "@/features/tutor/hooks";
 import type { TutorContext } from "@/features/tutor/api";
+import { ChatShareButton } from "@/features/messenger/ui";
 
 // Screens of the academy courses: overview of all courses, one course (lesson path, sticker), one lesson (explanation,
 // verses by key from the Quran API, hadith references, tags, quiz, rewards). Rewards: a passed lesson counts as a
@@ -154,6 +155,7 @@ export function CourseScreen({ id }: { id: string }) {
             </View>
             {p.complete[course.id] ? <StickerArt def={courseSticker(course.id)} size={64} /> : null}
           </View>
+          <ChatShareButton card={{ type: "course", ref: course.id, title: tx(course.title, lang), subtitle: tx(course.lead, lang).slice(0, 200), url: `/courses/${course.id}` }} />
           {course.note ? <Callout><Text style={{ fontFamily: FONT.regular, fontSize: 14, lineHeight: 21, color: t.ink }}>{tx(course.note, lang)}</Text></Callout> : null}
           {next >= 0 ? <GoldButton title={`${d ? c("continue") : c("start")}: ${title(course.lessons[next], next)}`} onPress={() => open(next) ? router.push(`/courses/${course.id}/${course.lessons[next].id}` as Href) : upsell()} /> : null}
           <View style={{ gap: 8, marginTop: 6 }}>

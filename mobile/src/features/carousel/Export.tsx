@@ -210,6 +210,7 @@ export function SlideShareSheet({ c, index, texts, quick, onClose }: { c: Carous
   const message = `${c.cover.title}${c.cover.sub ? `\n${c.cover.sub}` : ""}`;
   return (
     <ShareSheet visible templated quick={quick} seed={`cr:${c.id}`} onClose={onClose} link={`${APP_LINK}`} message={message} noDecoration
+      chat={{ type: "carousel", ref: String(c.id), title: c.cover.title, subtitle: c.cover.sub ?? "", url: `/carousels/${c.id}` }}
       renderCard={(f, o) => <CarouselSlideView c={{ ...c, lang: c.lang || lang }} index={index} format={f} palette={o.palette} texts={texts} />} />
   );
 }

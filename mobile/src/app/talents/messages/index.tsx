@@ -11,6 +11,7 @@ import { AccessGate, ListBox, Muted, SafetyBar, useTalentAccess } from "@/featur
 import { M, type SearchHit, type ThreadRow, type Unread } from "@/features/messenger/api";
 import { errorText, fill, systemLine } from "@/features/messenger/text";
 import { ThreadAvatar, useMT } from "@/features/messenger/ui";
+import { notifyEnabled, setNotifyEnabled } from "@/features/messenger/useUnread";
 
 // /talents/messages – the inbox ("Postfach"): chats (one-to-one, groups, study-circle chats) and message requests
 // from people the member does not follow mutually, search over chats and messages, new chat, new group, join by
@@ -31,6 +32,8 @@ export default function Inbox() {
   const [field, setField] = useState(params.join ?? "");
   const [busy, setBusy] = useState(false);
   const [receipts, setReceipts] = useState<boolean | null>(null);
+  const [active, setActive] = useState(false);
+  const [notify, setNotify] = useState(notifyEnabled());
   const [onlyUnread, setOnlyUnread] = useState(false);
   const [unanswered, setUnanswered] = useState(false);
   const ok = a.state === "ok" && !!a.age?.interact;
@@ -48,7 +51,7 @@ export default function Inbox() {
     const h = setInterval(() => { void load(); }, 15_000);
     return () => clearInterval(h);
   }, [ok, load]));
-  useEffect(() => { if (ok) void M.prefs().then((p) => setReceipts(p.readReceipts)).catch(() => undefined); }, [ok]);
+  useEffect(() => { if (ok) void M.prefs().then((p) => { setReceipts(p.readReceipts); setActive(p.activeStatus); }).catch(() => undefined); }, [ok]);
 
   // search: chats by name and messages by text (the server decrypts the member's own recent messages)
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -81,6 +84,9 @@ export default function Inbox() {
     if (l.gone) return `${who}${mt.deleted}`;
     if (l.kind === "image") return `${who}${mt.photoMsg}${l.text ? ` · ${l.text}` : ""}`;
     if (l.kind === "voice") return `${who}${mt.voiceMsg}`;
+    if (l.viewOnce) return `${who}${l.kind === "video" ? mt.viewOnceVideo : mt.viewOncePhoto}`;
+    if (l.kind === "video") return `${who}${mt.videoMsg}${l.text ? ` · ${l.text}` : ""}`;
+    if (l.kind === "share") return `${who}${mt.sharedMsg}${l.text ? ` · ${l.text}` : ""}`;
     return `${who}${l.text ?? ""}`;
   };
 
@@ -172,9 +178,25 @@ export default function Inbox() {
                       <Text style={{ fontFamily: FONT.semibold, fontSize: 15, color: t.ink }}>{mt.readReceipts}</Text>
                       <Text style={{ fontFamily: FONT.regular, fontSize: 13, lineHeight: 18, color: t.muted }}>{mt.readReceiptsHint}</Text>
                     </View>
-                    <Switch value={receipts} accessibilityLabel={mt.readReceipts} onValueChange={(v) => { setReceipts(v); void M.setPrefs(v).catch(() => setReceipts(!v)); }} />
+                    <Switch value={receipts} accessibilityLabel={mt.readReceipts} onValueChange={(v) => { setReceipts(v); void M.setPrefs({ readReceipts: v }).catch(() => setReceipts(!v)); }} />
                   </View>
                 ) : null}
+                {receipts !== null ? (
+                  <View style={{ flexDirection: "row", alignItems: "center", gap: 12, paddingVertical: 6 }}>
+                    <View style={{ flex: 1, gap: 2 }}>
+                      <Text style={{ fontFamily: FONT.semibold, fontSize: 15, color: t.ink }}>{mt.activeStatus}</Text>
+                      <Text style={{ fontFamily: FONT.regular, fontSize: 13, lineHeight: 18, color: t.muted }}>{mt.activeStatusHint}</Text>
+                    </View>
+                    <Switch value={active} accessibilityLabel={mt.activeStatus} onValueChange={(v) => { setActive(v); void M.setPrefs({ activeStatus: v }).catch(() => setActive(!v)); }} />
+                  </View>
+                ) : null}
+                <View style={{ flexDirection: "row", alignItems: "center", gap: 12, paddingVertical: 6 }}>
+                  <View style={{ flex: 1, gap: 2 }}>
+                    <Text style={{ fontFamily: FONT.semibold, fontSize: 15, color: t.ink }}>{mt.notifSetting}</Text>
+                    <Text style={{ fontFamily: FONT.regular, fontSize: 13, lineHeight: 18, color: t.muted }}>{mt.notifHint}</Text>
+                  </View>
+                  <Switch value={notify} accessibilityLabel={mt.notifSetting} onValueChange={(v) => { setNotify(v); void setNotifyEnabled(v).then(setNotify); }} />
+                </View>
                 <Text style={{ fontFamily: FONT.regular, fontSize: 12.5, lineHeight: 18, color: t.muted }}>{mt.privacy}</Text>
               </>
             )}

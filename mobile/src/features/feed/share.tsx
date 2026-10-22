@@ -28,6 +28,9 @@ import { statShare } from "./statsStore";
 import { STICKER, STICKERS, useGamify } from "./gamify";
 import { useGameText } from "./gamifyTexts";
 import { StickerArt, stickerName } from "./Sticker";
+import { router, type Href } from "expo-router";
+import { shareHref, type ShareCard } from "@/features/messenger/api";
+import { useMT } from "@/features/messenger/ui";
 
 // The share sheet of every feed post (verses, hadith, stories, names), laid out like Instagram's: a bottom sheet with a
 // drag handle, the image as it will be shared (story by default), the format (story 9:16, portrait 4:5 and, for the
@@ -90,8 +93,10 @@ async function installedTargets(): Promise<Set<TargetId>> {
   return out;
 }
 
-export function ShareSheet({ visible, onClose, renderCard, link, message, onShared, video, noDecoration, templated, quick, seed }: {
+export function ShareSheet({ visible, onClose, renderCard, link, message, onShared, video, noDecoration, templated, quick, seed, chat }: {
   visible: boolean; onClose: () => void;
+  /** also offer "In Chat senden": the card as a message in the messenger (16+, the server checks the rules) */
+  chat?: ShareCard | null;
   /** no sticker picker (the card is a sticker itself) */
   noDecoration?: boolean;
   /** verses only: offer a video (verse card + recitation, made on the server) for Reels / Stories */
@@ -107,6 +112,7 @@ export function ShareSheet({ visible, onClose, renderCard, link, message, onShar
   seed?: string;
 }) {
   const tx = useFeedText();
+  const mt = useMT();
   const stx = useShareText();
   const tt = useTemplateText();
   // every message carries the brand line and the app download link
@@ -383,6 +389,14 @@ export function ShareSheet({ visible, onClose, renderCard, link, message, onShar
               <Text style={{ fontFamily: FONT.semibold, fontSize: 15.5, color: goldButton.text }}>{format === "story" ? tt.shareStory : tt.shareNow}</Text>
             </LinearGradient>
           </Pressable>
+
+          {chat ? (
+            <Pressable onPress={() => { onClose(); router.push(shareHref(chat) as Href); }} accessibilityRole="button" accessibilityLabel={mt.shareToChat}
+              style={({ pressed }) => ({ flexDirection: "row", alignItems: "center", justifyContent: "center", gap: 8, marginHorizontal: 16, marginTop: 10, minHeight: 44, borderRadius: 22, borderWidth: 1, borderColor: stage.gold, opacity: pressed ? 0.7 : 1 })}>
+              <Icon name="comment" color={stage.gold} size={17} />
+              <Text style={{ fontFamily: FONT.semibold, fontSize: 15, color: stage.cream }}>{mt.shareToChat}</Text>
+            </Pressable>
+          ) : null}
 
           <View style={{ flexDirection: "row", alignItems: "center", gap: 8, marginHorizontal: 16, marginTop: 14, height: 40, borderRadius: 12, paddingHorizontal: 12, backgroundColor: "rgba(255,255,255,0.08)" }}>
             <Icon name="search" color={stage.textMuted} size={16} />

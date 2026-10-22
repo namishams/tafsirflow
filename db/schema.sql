@@ -1744,3 +1744,5 @@ ALTER TABLE msg_prefs ADD COLUMN IF NOT EXISTS last_active_at timestamptz;
 ALTER TABLE msg_report_items ADD COLUMN IF NOT EXISTS media_enc bytea;
 ALTER TABLE msg_report_items ADD COLUMN IF NOT EXISTS media_mime text;
 GRANT ALL ON ALL TABLES IN SCHEMA public TO tafsirflow;
+-- the waveform of a voice note: up to 64 levels 0-9 measured on the device while recording (no audio content)
+ALTER TABLE msg_messages ADD COLUMN IF NOT EXISTS wave text CHECK (wave IS NULL OR wave ~ '^[0-9]{1,64}$');

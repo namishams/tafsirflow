@@ -1,26 +1,49 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import { Alert, Image, KeyboardAvoidingView, Modal, Platform, Pressable, ScrollView, Text, TextInput, View, type ScrollViewInstance } from "react-native";
+import { Alert, Image, KeyboardAvoidingView, Modal, Platform, Pressable, ScrollView, Text, TextInput, View, type ScrollViewInstance, type TextInputInstance } from "react-native";
 import { Stack, router, useLocalSearchParams, type Href } from "expo-router";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import * as ImagePicker from "expo-image-picker";
 import { ImageManipulator, SaveFormat } from "expo-image-manipulator";
 import { RecordingPresets, requestRecordingPermissionsAsync, setAudioModeAsync, useAudioRecorder, useAudioRecorderState } from "expo-audio";
+import { VideoView, useVideoPlayer } from "expo-video";
 import { FONT, R, useTheme } from "@/lib/theme";
 import { PageHero, Loading } from "@/components/page";
 import { GLASS_R, GlassButton, GlassIconButton, GlassSurface, GoldButton } from "@/components/brand";
 import { Icon } from "@/components/icons";
 import { useLang } from "@/i18n";
-import { T, errCode } from "@/features/talents/api";
+import { T, errCode, mediaSource } from "@/features/talents/api";
 import { AccessGate, ReportSheet, SafetyBar, useTalentAccess } from "@/features/talents/ui";
-import { M, REACTIONS, type ChatMessage, type Reaction, type ThreadInfo } from "@/features/messenger/api";
+import { M, REACTIONS, openViewOnce, type ChatMessage, type Reaction, type ThreadInfo } from "@/features/messenger/api";
 import { errorText, fill, systemLine } from "@/features/messenger/text";
-import { ImageBubble, REACTION_ICON, ReactionRow, ThreadAvatar, VoiceBubble, reactionLabel, useMT } from "@/features/messenger/ui";
+import {
+  ImageBubble, ProfileMiniCard, REACTION_ICON, ReactionRow, ShareCardBubble, SwipeToReply, ThreadAvatar, VideoTile, ViewOnceBubble, VoiceBubble, cardLabel, reactionLabel, useMT,
+} from "@/features/messenger/ui";
 
-// /talents/messages/[id] – one chat (one-to-one, group or study-circle chat). Text, replies, reactions (icons),
-// photos (re-encoded on the device and again on the server without metadata), voice notes up to two minutes,
-// read receipts, typing indicator. Long press on a message: react, reply, delete (own) or report (others).
-// Polls every 4 seconds while open. Incoming message requests show accept / decline / report / block first.
+// /talents/messages/[id] – one chat (one-to-one, group or study-circle chat). Text, replies (long press or swipe),
+// reactions (icons), photos and videos (re-encoded without metadata on the device and again on the server), view-once
+// photos and videos (one-to-one, both 18+; opened once, then wiped), voice notes with a waveform, shared cards (verse,
+// surah, course, carousel, profile, post), editing within 15 minutes, delete for me, unsend, read receipts, typing,
+// and the profile mini card with the opt-in "active now" dot. Polls every 4 seconds while open. Incoming message
+// requests show accept / decline / report / block first. Screenshots cannot be prevented (stated in the attach sheet).
 const MAX_VOICE_MS = 120_000;
+const MAX_VIDEO_MS = 60_000;
+type Src = { uri: string; headers?: Record<string, string> };
+
+/** full-screen video (a chat video with the sign-in header, or a view-once file from the cache) */
+function VideoModal({ src, onClose, label }: { src: Src | null; onClose: () => void; label: string }) {
+  const player = useVideoPlayer(src ? { uri: src.uri, headers: src.headers } : null, (p) => { p.loop = false; });
+  useEffect(() => { if (src) player.play(); }, [src, player]);
+  return (
+    <Modal visible={!!src} transparent animationType="fade" onRequestClose={onClose} supportedOrientations={["portrait", "landscape"]}>
+      <View style={{ flex: 1, backgroundColor: "#000" }}>
+        {src ? <VideoView player={player} style={{ flex: 1 }} nativeControls contentFit="contain" allowsPictureInPicture={false} /> : null}
+        <View style={{ position: "absolute", top: 54, right: 16 }}>
+          <GlassIconButton size={44} icon="close" label={label} onPress={onClose} />
+        </View>
+      </View>
+    </Modal>
+  );
+}
 
 export default function Chat() {
   const t = useTheme();
@@ -38,10 +61,15 @@ export default function Chat() {
   const [busy, setBusy] = useState(false);
   const [note, setNote] = useState("");
   const [replyTo, setReplyTo] = useState<ChatMessage | null>(null);
+  const [editing, setEditing] = useState<ChatMessage | null>(null);
   const [sheet, setSheet] = useState<ChatMessage | null>(null);
+  const [attach, setAttach] = useState(false);
   const [report, setReport] = useState<{ messageId: string | null } | null>(null);
-  const [full, setFull] = useState<{ uri: string; headers?: Record<string, string> } | null>(null);
+  const [full, setFull] = useState<Src | null>(null);
+  const [video, setVideo] = useState<Src | null>(null);
+  const once = useRef<(() => void) | null>(null);
   const scroll = useRef<ScrollViewInstance>(null);
+  const input = useRef<TextInputInstance>(null);
   const lastTyping = useRef(0);
   const atBottom = useRef(true);
   const lastTap = useRef<{ id: string; at: number }>({ id: "", at: 0 });
@@ -81,23 +109,34 @@ export default function Chat() {
     setReplyTo(null);
     setTimeout(() => scroll.current?.scrollToEnd({ animated: true }), 60);
   };
+  const replace = (m: ChatMessage | null) => { if (m) setMsgs((o) => (o ?? []).map((x) => (x.id === m.id ? m : x))); };
   const run = async (fn: () => Promise<void>) => {
     setBusy(true); setNote("");
     try { await fn(); } catch (e) { setNote(errorText(mt, errCode(e))); } finally { setBusy(false); }
   };
   const send = () => run(async () => {
     const body = text.trim();
-    if (!id || !body) return;
+    if (!id) return;
+    if (editing) {
+      if (!body && editing.kind === "text") return;
+      const d = await M.edit(editing.id, body);
+      replace(d.message); setEditing(null); setText("");
+      return;
+    }
+    if (!body) return;
     const d = await M.sendText(id, body, replyTo?.id);
     setText(""); appendMine(d.message);
   });
   const onType = (v: string) => {
     setText(v);
-    if (id && v && Date.now() - lastTyping.current > 3000) { lastTyping.current = Date.now(); void M.typing(id).catch(() => undefined); }
+    if (id && v && !editing && Date.now() - lastTyping.current > 3000) { lastTyping.current = Date.now(); void M.typing(id).catch(() => undefined); }
   };
+  const startReply = useCallback((m: ChatMessage) => { setEditing(null); setReplyTo(m); setTimeout(() => input.current?.focus(), 50); }, []);
+  const startEdit = (m: ChatMessage) => { setSheet(null); setReplyTo(null); setEditing(m); setText(m.text ?? ""); setTimeout(() => input.current?.focus(), 50); };
 
   // photo: the system picker (no access to the whole library), re-encoded as JPEG of at most 1600 px on the device
-  const pickPhoto = () => run(async () => {
+  const pickPhoto = (viewOnce = false) => run(async () => {
+    setAttach(false);
     if (!id) return;
     const r = await ImagePicker.launchImageLibraryAsync({ mediaTypes: ["images"], quality: 0.9, exif: false });
     if (r.canceled || !r.assets[0]) return;
@@ -105,19 +144,45 @@ export default function Chat() {
     const scale = Math.min(1, 1600 / Math.max(asset.width || 1600, asset.height || 1600));
     const ctx = ImageManipulator.manipulate(asset.uri).resize({ width: Math.round((asset.width || 1600) * scale), height: Math.round((asset.height || 1600) * scale) });
     const img = await (await ctx.renderAsync()).saveAsync({ format: SaveFormat.JPEG, compress: 0.8 });
-    const d = await M.sendImage(id, img.uri, replyTo?.id);
+    const d = await M.sendImage(id, img.uri, replyTo?.id, viewOnce);
     appendMine(d.message);
   });
+  // video: up to one minute from the system picker, converted to H.264 without metadata on the server
+  const pickVideo = (viewOnce = false) => run(async () => {
+    setAttach(false);
+    if (!id) return;
+    const r = await ImagePicker.launchImageLibraryAsync({ mediaTypes: ["videos"], videoMaxDuration: MAX_VIDEO_MS / 1000, allowsEditing: true, quality: 0.7, exif: false,
+      videoExportPreset: ImagePicker.VideoExportPreset.H264_1280x720 });
+    if (r.canceled || !r.assets[0]) return;
+    const asset = r.assets[0];
+    const d = await M.sendVideo(id, asset.uri, Math.min(asset.duration ?? 0, MAX_VIDEO_MS), replyTo?.id, viewOnce);
+    appendMine(d.message);
+  });
+  const openOnce = (m: ChatMessage) => run(async () => {
+    const f = await openViewOnce(m.id);
+    once.current = f.done;
+    setMsgs((o) => (o ?? []).map((x) => (x.id === m.id ? { ...x, viewOnce: { opened: true, canOpen: false } } : x)));
+    if (f.video) setVideo({ uri: f.uri }); else setFull({ uri: f.uri });
+  });
+  const closeMedia = () => { setFull(null); setVideo(null); once.current?.(); once.current = null; };
+  const openVideo = async (path: string) => setVideo(await mediaSource(path));
 
-  // voice note: tap to start, tap to send (at most two minutes, stops by itself)
-  const recorder = useAudioRecorder(RecordingPresets.HIGH_QUALITY);
-  const rec = useAudioRecorderState(recorder, 250);
+  // voice note: tap to start, tap to send (at most two minutes, stops by itself); levels are kept for the waveform
+  const recorder = useAudioRecorder({ ...RecordingPresets.HIGH_QUALITY, isMeteringEnabled: true });
+  const rec = useAudioRecorderState(recorder, 120);
   const [recording, setRecording] = useState(false);
+  const levels = useRef<number[]>([]);
+  useEffect(() => {
+    if (!recording || typeof rec.metering !== "number") return;
+    // metering is in dB (about -60 silent to 0 loud) -> 0..9
+    levels.current.push(Math.max(0, Math.min(9, Math.round(((rec.metering + 55) / 55) * 9))));
+  }, [recording, rec.metering]);
   const startRec = async () => {
     const p = await requestRecordingPermissionsAsync();
     if (!p.granted) { setNote(mt.micDenied); return; }
     await setAudioModeAsync({ allowsRecording: true, playsInSilentMode: true });
     await recorder.prepareToRecordAsync();
+    levels.current = [];
     recorder.record();
     setRecording(true);
   };
@@ -127,7 +192,9 @@ export default function Chat() {
     await setAudioModeAsync({ allowsRecording: false, playsInSilentMode: true }).catch(() => undefined);
     setRecording(false);
     if (!sendIt || !recorder.uri || !id || ms < 700) return;
-    await run(async () => { const d = await M.sendVoice(id, recorder.uri!, Math.min(ms, MAX_VOICE_MS), replyTo?.id); appendMine(d.message); });
+    const l = levels.current;
+    const wave = l.length ? Array.from({ length: Math.min(64, l.length) }, (_, i) => l[Math.floor((i / Math.min(64, l.length)) * l.length)]).join("") : undefined;
+    await run(async () => { const d = await M.sendVoice(id, recorder.uri!, Math.min(ms, MAX_VOICE_MS), replyTo?.id, wave); appendMine(d.message); });
   };
   useEffect(() => { if (recording && (rec.durationMillis ?? 0) >= MAX_VOICE_MS) void stopRec(true); }, [recording, rec.durationMillis]); // eslint-disable-line react-hooks/exhaustive-deps
 
@@ -147,7 +214,14 @@ export default function Chat() {
     setSheet(null);
     Alert.alert(mt.delete, mt.deleteConfirm, [{ text: mt.cancel, style: "cancel" }, { text: mt.delete, style: "destructive", onPress: () => void run(async () => {
       await M.remove(m.id);
-      setMsgs((o) => (o ?? []).map((x) => (x.id === m.id ? { ...x, deleted: true, text: null, media: null, reactions: {} } : x)));
+      setMsgs((o) => (o ?? []).map((x) => (x.id === m.id ? { ...x, deleted: true, text: null, media: null, card: null, viewOnce: null, reactions: {} } : x)));
+    }) }]);
+  };
+  const hide = (m: ChatMessage) => {
+    setSheet(null);
+    Alert.alert(mt.deleteForMe, mt.deleteForMeConfirm, [{ text: mt.cancel, style: "cancel" }, { text: mt.deleteForMe, style: "destructive", onPress: () => void run(async () => {
+      await M.hide(m.id);
+      setMsgs((o) => (o ?? []).filter((x) => x.id !== m.id));
     }) }]);
   };
   const block = () => info?.with && Alert.alert(mt.block, mt.confirmBlock, [{ text: mt.cancel, style: "cancel" }, {
@@ -169,23 +243,31 @@ export default function Chat() {
     return n ? fill(mt.seenBy, n) : mt.sent;
   })();
   const incoming = info?.request?.incoming && info.request.status === "pending";
+  const kindLabel = (m: Pick<ChatMessage, "kind" | "text" | "card" | "viewOnce">) =>
+    m.viewOnce ? (m.kind === "video" ? mt.viewOnceVideo : mt.viewOncePhoto)
+      : m.kind === "image" ? mt.photoMsg : m.kind === "voice" ? mt.voiceMsg : m.kind === "video" ? mt.videoMsg
+      : m.kind === "share" && m.card ? `${cardLabel(mt, m.card.type)}: ${m.card.title}` : m.text ?? "";
+  const live = (m: ChatMessage) => !m.deleted && !m.removed;
 
   return (
     <>
       <Stack.Screen options={{ headerShown: false }} />
       <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : undefined} style={{ flex: 1, backgroundColor: t.bg }}>
-        <PageHero back topInset arcade={false} eyebrow={info?.kind === "circle" ? mt.circleChat : isGroup ? fill(mt.members, info?.memberCount ?? 0) : mt.title} title={info?.title ?? ""} />
+        <PageHero back topInset arcade={false} eyebrow={info?.kind === "circle" ? mt.circleChat : isGroup ? fill(mt.members, info?.memberCount ?? 0) : mt.title} title={info?.kind === "direct" ? "" : info?.title ?? ""} />
         <AccessGate a={a}>
           {!msgs || !info ? <Loading /> : (
             <>
               <View style={{ flexDirection: "row", alignItems: "center", gap: 10, paddingHorizontal: 16, paddingTop: 8 }}>
-                <ThreadAvatar kind={info.kind} title={info.title} photo={info.photo} avatar={info.with?.avatar} size={36} />
-                <Pressable style={{ flex: 1, minHeight: 40, justifyContent: "center" }} accessibilityRole="link"
-                  onPress={() => router.push((info.kind === "direct" && info.with ? `/talents/u/${info.with.username}` : `/talents/messages/info/${info.id}`) as Href)}>
-                  <Text numberOfLines={1} style={{ fontFamily: FONT.semibold, fontSize: 13.5, color: t.accent }}>
-                    {info.kind === "direct" && info.with ? `@${info.with.username}` : mt.groupInfo}
-                  </Text>
-                </Pressable>
+                {info.kind === "direct" && info.with ? (
+                  <ProfileMiniCard who={info.with} card={info.card} active={!!info.active} t={mt} />
+                ) : (
+                  <>
+                    <ThreadAvatar kind={info.kind} title={info.title} photo={info.photo} size={36} />
+                    <Pressable style={{ flex: 1, minHeight: 40, justifyContent: "center" }} accessibilityRole="link" onPress={() => router.push(`/talents/messages/info/${info.id}` as Href)}>
+                      <Text numberOfLines={1} style={{ fontFamily: FONT.semibold, fontSize: 13.5, color: t.accent }}>{mt.groupInfo}</Text>
+                    </Pressable>
+                  </>
+                )}
                 {info.kind === "direct" ? (
                   <GlassIconButton size={38} icon="flag" label={mt.reportChat} onPress={() => setReport({ messageId: null })} />
                 ) : (
@@ -193,7 +275,7 @@ export default function Chat() {
                 )}
               </View>
 
-              <ScrollView ref={scroll} style={{ flex: 1 }} contentContainerStyle={{ padding: 16, gap: 6 }} keyboardDismissMode="interactive"
+              <ScrollView ref={scroll} style={{ flex: 1 }} contentContainerStyle={{ padding: 16, gap: 6 }} keyboardDismissMode="interactive" keyboardShouldPersistTaps="handled"
                 onScroll={(e) => { const n = e.nativeEvent; atBottom.current = n.contentOffset.y + n.layoutMeasurement.height >= n.contentSize.height - 80; }} scrollEventThrottle={100}
                 onContentSizeChange={() => { if (atBottom.current) scroll.current?.scrollToEnd({ animated: false }); }}>
                 {more ? <Pressable onPress={() => void older()} accessibilityRole="button" style={{ alignSelf: "center", minHeight: 40, justifyContent: "center" }}>
@@ -202,40 +284,50 @@ export default function Chat() {
                 {msgs.map((m) => m.kind === "system" ? (
                   <Text key={m.id} style={{ alignSelf: "center", fontFamily: FONT.regular, fontSize: 12.5, color: t.muted, paddingVertical: 4 }}>{systemLine(mt, m.system)}</Text>
                 ) : (
-                  <View key={m.id} style={{ alignSelf: m.mine ? "flex-end" : "flex-start", maxWidth: "84%", alignItems: m.mine ? "flex-end" : "flex-start" }}>
-                    {isGroup && !m.mine && m.sender ? <Text style={{ fontFamily: FONT.semibold, fontSize: 12, color: t.gold, marginBottom: 2, marginHorizontal: 6 }}>{m.sender.name}</Text> : null}
-                    <Pressable onPress={!m.deleted && !m.removed && m.kind !== "voice" ? () => tap(m) : undefined} onLongPress={!m.deleted && !m.removed ? () => setSheet(m) : undefined} delayLongPress={300}
-                      accessibilityRole="text" accessibilityHint={mt.doubleTapHint}
-                      accessibilityLabel={`${m.mine ? `${mt.you}: ` : m.sender ? `${m.sender.name}: ` : ""}${m.deleted ? mt.deleted : m.removed ? mt.removed : m.kind === "voice" ? mt.voiceMsg : m.kind === "image" ? `${mt.photoMsg} ${m.text ?? ""}` : m.text ?? ""}, ${time(m.at)}`}
-                      accessibilityActions={!m.deleted && !m.removed ? [{ name: "activate", label: mt.react }, { name: "reply", label: mt.reply }, ...(m.mine ? [{ name: "delete", label: mt.delete }] : [{ name: "report", label: mt.reportMsg }])] : undefined}
-                      onAccessibilityAction={(e) => {
-                        const n = e.nativeEvent.actionName;
-                        if (n === "reply") setReplyTo(m); else if (n === "delete") del(m); else if (n === "report") setReport({ messageId: m.id }); else setSheet(m);
-                      }}
-                      style={{ paddingHorizontal: m.kind === "image" ? 4 : 13, paddingVertical: m.kind === "image" ? 4 : 9, borderRadius: R.card,
-                        backgroundColor: m.mine ? "rgb(8,58,44)" : t.surface, borderWidth: m.mine ? 0 : 1, borderColor: t.line, gap: 6 }}>
-                      {m.reply ? (
-                        <View style={{ borderLeftWidth: 3, borderLeftColor: t.gold, paddingLeft: 8, paddingVertical: 2, marginHorizontal: m.kind === "image" ? 8 : 0, marginTop: m.kind === "image" ? 6 : 0 }}>
-                          <Text style={{ fontFamily: FONT.semibold, fontSize: 12, color: m.mine ? "#E2C77F" : t.gold }}>{m.reply.name || mt.you}</Text>
-                          <Text numberOfLines={2} style={{ fontFamily: FONT.regular, fontSize: 13, color: m.mine ? "rgba(255,255,255,0.75)" : t.muted }}>
-                            {m.reply.gone ? mt.deleted : m.reply.kind === "image" ? mt.photoMsg : m.reply.kind === "voice" ? mt.voiceMsg : m.reply.text ?? ""}
-                          </Text>
-                        </View>
-                      ) : null}
-                      {m.deleted || m.removed ? (
-                        <Text style={{ fontFamily: FONT.italic, fontSize: 14.5, color: m.mine ? "rgba(255,255,255,0.7)" : t.muted }}>{m.deleted ? mt.deleted : mt.removed}</Text>
-                      ) : (
-                        <>
-                          {m.kind === "image" && m.media ? <ImageBubble path={m.media} onOpen={setFull} /> : null}
-                          {m.kind === "voice" && m.media ? <VoiceBubble path={m.media} durationMs={m.durationMs} mine={m.mine} labels={{ play: mt.play, pause: mt.pause, voice: mt.voiceMsg }} /> : null}
-                          {m.text ? <Text selectable style={{ fontFamily: FONT.regular, fontSize: 15.5, lineHeight: 21, color: m.mine ? "#ffffff" : t.ink, paddingHorizontal: m.kind === "image" ? 8 : 0 }}>{m.text}</Text> : null}
-                        </>
-                      )}
-                      <Text style={{ fontFamily: FONT.regular, fontSize: 11, color: m.mine ? "rgba(255,255,255,0.6)" : t.muted, alignSelf: "flex-end", paddingHorizontal: m.kind === "image" ? 8 : 0, paddingBottom: m.kind === "image" ? 4 : 0 }}>{time(m.at)}</Text>
-                    </Pressable>
-                    <ReactionRow reactions={m.reactions} mine={m.myReaction} onPress={(r) => void react(m, r)} t={mt} />
-                    {lastMine && m.id === lastMine.id && seenLine ? <Text style={{ fontFamily: FONT.regular, fontSize: 11.5, color: t.muted, marginTop: 2 }}>{seenLine}</Text> : null}
-                  </View>
+                  <SwipeToReply key={m.id} mine={m.mine} enabled={canSend && live(m)} onReply={() => startReply(m)}>
+                    <View style={{ alignSelf: m.mine ? "flex-end" : "flex-start", maxWidth: "84%", alignItems: m.mine ? "flex-end" : "flex-start" }}>
+                      {isGroup && !m.mine && m.sender ? <Text style={{ fontFamily: FONT.semibold, fontSize: 12, color: t.gold, marginBottom: 2, marginHorizontal: 6 }}>{m.sender.name}</Text> : null}
+                      <Pressable onPress={live(m) && m.kind !== "voice" && !m.viewOnce ? () => tap(m) : undefined} onLongPress={live(m) ? () => setSheet(m) : undefined} delayLongPress={300}
+                        accessibilityRole="text" accessibilityHint={mt.doubleTapHint}
+                        accessibilityLabel={`${m.mine ? `${mt.you}: ` : m.sender ? `${m.sender.name}: ` : ""}${m.deleted ? mt.deleted : m.removed ? mt.removed : kindLabel(m)}${m.kind !== "text" && m.text ? ` ${m.text}` : ""}${m.edited ? `, ${mt.edited}` : ""}, ${time(m.at)}`}
+                        accessibilityActions={live(m) ? [{ name: "activate", label: mt.react }, { name: "reply", label: mt.reply }, ...(m.editable ? [{ name: "edit", label: mt.edit }] : []),
+                          { name: "hide", label: mt.deleteForMe }, ...(m.mine ? [{ name: "delete", label: mt.delete }] : [{ name: "report", label: mt.reportMsg }])] : undefined}
+                        onAccessibilityAction={(e) => {
+                          const n = e.nativeEvent.actionName;
+                          if (n === "reply") startReply(m); else if (n === "edit") startEdit(m); else if (n === "hide") hide(m); else if (n === "delete") del(m);
+                          else if (n === "report") setReport({ messageId: m.id }); else setSheet(m);
+                        }}
+                        style={{ paddingHorizontal: (m.kind === "image" || m.kind === "video") && !m.viewOnce ? 4 : 13, paddingVertical: (m.kind === "image" || m.kind === "video") && !m.viewOnce ? 4 : 9, borderRadius: R.card,
+                          backgroundColor: m.mine ? "rgb(8,58,44)" : t.surface, borderWidth: m.mine ? 0 : 1, borderColor: t.line, gap: 6 }}>
+                        {m.reply ? (
+                          <View style={{ borderLeftWidth: 3, borderLeftColor: t.gold, paddingLeft: 8, paddingVertical: 2, marginHorizontal: m.kind === "image" ? 8 : 0, marginTop: m.kind === "image" ? 6 : 0 }}>
+                            <Text style={{ fontFamily: FONT.semibold, fontSize: 12, color: m.mine ? "#E2C77F" : t.gold }}>{m.reply.name || mt.you}</Text>
+                            <Text numberOfLines={2} style={{ fontFamily: FONT.regular, fontSize: 13, color: m.mine ? "rgba(255,255,255,0.75)" : t.muted }}>
+                              {m.reply.gone ? mt.deleted : m.reply.kind === "image" ? mt.photoMsg : m.reply.kind === "voice" ? mt.voiceMsg : m.reply.kind === "video" ? mt.videoMsg : m.reply.kind === "share" ? mt.sharedMsg : m.reply.text ?? ""}
+                            </Text>
+                          </View>
+                        ) : null}
+                        {m.deleted || m.removed ? (
+                          <Text style={{ fontFamily: FONT.italic, fontSize: 14.5, color: m.mine ? "rgba(255,255,255,0.7)" : t.muted }}>{m.deleted ? mt.deleted : mt.removed}</Text>
+                        ) : m.viewOnce ? (
+                          <ViewOnceBubble video={m.kind === "video"} opened={m.viewOnce.opened} canOpen={m.viewOnce.canOpen} mine={m.mine} t={mt} onOpen={() => void openOnce(m)} />
+                        ) : (
+                          <>
+                            {m.kind === "image" && m.media ? <ImageBubble path={m.media} onOpen={setFull} /> : null}
+                            {m.kind === "video" && m.media ? <VideoTile durationMs={m.durationMs} label={mt.videoMsg} onOpen={() => void openVideo(m.media!)} /> : null}
+                            {m.kind === "voice" && m.media ? <VoiceBubble id={m.id} path={m.media} wave={m.wave} durationMs={m.durationMs} mine={m.mine} labels={{ play: mt.play, pause: mt.pause, voice: mt.voiceMsg }} /> : null}
+                            {m.kind === "share" && m.card ? <ShareCardBubble card={m.card} mine={m.mine} t={mt} /> : null}
+                            {m.text ? <Text selectable style={{ fontFamily: FONT.regular, fontSize: 15.5, lineHeight: 21, color: m.mine ? "#ffffff" : t.ink, paddingHorizontal: m.kind === "image" || m.kind === "video" ? 8 : 0 }}>{m.text}</Text> : null}
+                          </>
+                        )}
+                        <Text style={{ fontFamily: FONT.regular, fontSize: 11, color: m.mine ? "rgba(255,255,255,0.6)" : t.muted, alignSelf: "flex-end", paddingHorizontal: m.kind === "image" || m.kind === "video" ? 8 : 0, paddingBottom: m.kind === "image" || m.kind === "video" ? 4 : 0 }}>
+                          {m.edited && live(m) ? `${mt.edited} · ` : ""}{time(m.at)}
+                        </Text>
+                      </Pressable>
+                      <ReactionRow reactions={m.reactions} mine={m.myReaction} onPress={(r) => void react(m, r)} t={mt} />
+                      {lastMine && m.id === lastMine.id && seenLine ? <Text style={{ fontFamily: FONT.regular, fontSize: 11.5, color: t.muted, marginTop: 2 }}>{seenLine}</Text> : null}
+                    </View>
+                  </SwipeToReply>
                 ))}
                 {info.typing.length ? <Text accessibilityLiveRegion="polite" style={{ fontFamily: FONT.italic, fontSize: 13, color: t.muted }}>{info.typing.length > 1 ? mt.typingMany : fill(mt.typing, info.typing[0])}</Text> : null}
               </ScrollView>
@@ -255,13 +347,13 @@ export default function Chat() {
               ) : canSend ? (
                 <View style={{ paddingHorizontal: 10, paddingTop: 6, paddingBottom: Math.max(insets.bottom, 10) }}>
                   {problem === "request_text_only" || (info.request && !info.request.incoming) ? <Text style={{ fontFamily: FONT.regular, fontSize: 12.5, color: t.muted, paddingHorizontal: 8, paddingBottom: 6 }}>{mt.requestWait}</Text> : null}
-                  {replyTo ? (
+                  {replyTo || editing ? (
                     <View style={{ flexDirection: "row", alignItems: "center", gap: 8, paddingHorizontal: 10, paddingBottom: 6 }}>
-                      <Icon name="reply" size={15} color={t.gold} />
+                      <Icon name={editing ? "pen" : "reply"} size={15} color={t.gold} />
                       <Text numberOfLines={1} style={{ flex: 1, fontFamily: FONT.regular, fontSize: 13, color: t.muted }}>
-                        {fill(mt.replyingTo, replyTo.mine ? mt.you : replyTo.sender?.name ?? "")}: {replyTo.kind === "image" ? mt.photoMsg : replyTo.kind === "voice" ? mt.voiceMsg : replyTo.text}
+                        {editing ? mt.editing : `${fill(mt.replyingTo, replyTo!.mine ? mt.you : replyTo!.sender?.name ?? "")}: ${kindLabel(replyTo!)}`}
                       </Text>
-                      <Pressable onPress={() => setReplyTo(null)} accessibilityRole="button" accessibilityLabel={mt.cancel} hitSlop={10}><Icon name="close" size={15} color={t.muted} /></Pressable>
+                      <Pressable onPress={() => { if (editing) { setEditing(null); setText(""); } setReplyTo(null); }} accessibilityRole="button" accessibilityLabel={mt.cancel} hitSlop={10}><Icon name="close" size={15} color={t.muted} /></Pressable>
                     </View>
                   ) : null}
                   {/* glass composer dock: sits on the safe area and moves up with the keyboard */}
@@ -279,11 +371,11 @@ export default function Chat() {
                       </>
                     ) : (
                       <>
-                        {problem !== "request_text_only" ? <GlassIconButton size={42} icon="image" label={mt.photo} onPress={() => void pickPhoto()} disabled={busy} /> : null}
-                        <TextInput value={text} onChangeText={onType} placeholder={mt.write} placeholderTextColor={t.muted} accessibilityLabel={mt.write} multiline maxLength={2000}
+                        {problem !== "request_text_only" && !editing ? <GlassIconButton size={42} icon="plus" label={`${mt.photo}, ${mt.video}`} onPress={() => setAttach(true)} disabled={busy} /> : null}
+                        <TextInput ref={input} value={text} onChangeText={onType} placeholder={editing ? mt.editing : mt.write} placeholderTextColor={t.muted} accessibilityLabel={editing ? mt.editing : mt.write} multiline maxLength={2000}
                           style={{ flex: 1, minHeight: 42, maxHeight: 130, paddingHorizontal: 10, paddingTop: 11, paddingBottom: 11, fontFamily: FONT.regular, fontSize: 16, color: t.ink }} />
-                        {text.trim() ? (
-                          <GlassIconButton size={42} variant="gold" icon="send" label={mt.send} onPress={() => void send()} disabled={busy} />
+                        {text.trim() || editing ? (
+                          <GlassIconButton size={42} variant="gold" icon={editing ? "check" : "send"} label={editing ? mt.save : mt.send} onPress={() => void send()} disabled={busy} />
                         ) : problem !== "request_text_only" ? (
                           <GlassIconButton size={42} icon="mic" label={mt.voice} onPress={() => void startRec()} disabled={busy} />
                         ) : null}
@@ -301,12 +393,31 @@ export default function Chat() {
         </AccessGate>
       </KeyboardAvoidingView>
 
-      {/* long press: reactions as icons, reply, delete own, report others */}
+      {/* attach: photo, video, and view once (one-to-one, both 18+) with the screenshot note */}
+      <Modal visible={attach} transparent animationType="fade" onRequestClose={() => setAttach(false)}>
+        <Pressable style={{ flex: 1, backgroundColor: "rgba(0,0,0,0.35)", justifyContent: "flex-end", padding: 12, paddingBottom: insets.bottom + 12 }} onPress={() => setAttach(false)} accessibilityLabel={mt.cancel}>
+          <Pressable onPress={() => undefined}>
+            <GlassSurface strong style={{ borderRadius: GLASS_R.card, padding: 14, gap: 10, backgroundColor: t.surface }}>
+              <GlassButton icon="image" title={mt.photo} onPress={() => void pickPhoto(false)} />
+              <GlassButton icon="reels" title={mt.video} onPress={() => void pickVideo(false)} />
+              {info?.canViewOnce ? (
+                <>
+                  <GlassButton icon="eye" title={mt.viewOncePhoto} onPress={() => void pickPhoto(true)} />
+                  <GlassButton icon="eye" title={mt.viewOnceVideo} onPress={() => void pickVideo(true)} />
+                  <Text style={{ fontFamily: FONT.regular, fontSize: 12.5, lineHeight: 18, color: t.muted, paddingHorizontal: 4 }}>{mt.viewOnceHint}</Text>
+                </>
+              ) : null}
+            </GlassSurface>
+          </Pressable>
+        </Pressable>
+      </Modal>
+
+      {/* long press: reactions as icons, reply, edit (15 minutes), delete for me, unsend own, report others */}
       <Modal visible={!!sheet} transparent animationType="fade" onRequestClose={() => setSheet(null)}>
         <Pressable style={{ flex: 1, backgroundColor: "rgba(0,0,0,0.35)", justifyContent: "flex-end", padding: 12, paddingBottom: insets.bottom + 12 }} onPress={() => setSheet(null)} accessibilityLabel={mt.cancel}>
           {sheet ? (
             <Pressable onPress={() => undefined}>
-              <GlassSurface strong style={{ borderRadius: GLASS_R.card, padding: 14, gap: 12, backgroundColor: t.surface }}>
+              <GlassSurface strong style={{ borderRadius: GLASS_R.card, padding: 14, gap: 10, backgroundColor: t.surface }}>
                 <View style={{ flexDirection: "row", justifyContent: "space-around" }}>
                   {REACTIONS.map((r) => (
                     <Pressable key={r} onPress={() => void react(sheet, r)} accessibilityRole="button" accessibilityLabel={reactionLabel(mt, r)} accessibilityState={{ selected: sheet.myReaction === r }}
@@ -316,7 +427,9 @@ export default function Chat() {
                     </Pressable>
                   ))}
                 </View>
-                {canSend ? <GlassButton icon="reply" title={mt.reply} onPress={() => { setReplyTo(sheet); setSheet(null); }} /> : null}
+                {canSend ? <GlassButton icon="reply" title={mt.reply} onPress={() => { startReply(sheet); setSheet(null); }} /> : null}
+                {sheet.editable ? <GlassButton icon="pen" title={mt.edit} onPress={() => startEdit(sheet)} /> : null}
+                <GlassButton icon="close" title={mt.deleteForMe} onPress={() => hide(sheet)} />
                 {sheet.mine ? <GlassButton icon="trash" title={mt.delete} onPress={() => del(sheet)} />
                   : <GlassButton icon="flag" title={mt.reportMsg} onPress={() => { setReport({ messageId: sheet.id }); setSheet(null); }} />}
               </GlassSurface>
@@ -325,11 +438,12 @@ export default function Chat() {
         </Pressable>
       </Modal>
 
-      <Modal visible={!!full} transparent animationType="fade" onRequestClose={() => setFull(null)}>
-        <Pressable style={{ flex: 1, backgroundColor: "rgba(0,0,0,0.92)", alignItems: "center", justifyContent: "center" }} onPress={() => setFull(null)} accessibilityRole="button" accessibilityLabel={mt.cancel}>
+      <Modal visible={!!full} transparent animationType="fade" onRequestClose={closeMedia}>
+        <Pressable style={{ flex: 1, backgroundColor: "rgba(0,0,0,0.92)", alignItems: "center", justifyContent: "center" }} onPress={closeMedia} accessibilityRole="button" accessibilityLabel={mt.close}>
           {full ? <Image source={full} resizeMode="contain" style={{ width: "100%", height: "80%" }} /> : null}
         </Pressable>
       </Modal>
+      <VideoModal src={video} onClose={closeMedia} label={mt.close} />
 
       <ReportSheet visible={!!report} title={report?.messageId ? mt.reportMsg : info?.kind === "direct" ? mt.reportChat : mt.reportGroup} onClose={() => setReport(null)}
         onSubmit={(c, r) => (id ? M.report(id, c, r, report?.messageId).then(() => undefined) : Promise.resolve())} />

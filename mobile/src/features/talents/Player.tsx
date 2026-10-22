@@ -12,6 +12,8 @@ import { useLang } from "@/i18n";
 import { useAuth } from "@/lib/auth";
 import { T, mediaSource, type Comment, type Post } from "./api";
 import { useTT, type TKey } from "./text";
+import { shareHref } from "@/features/messenger/api";
+import { useMT } from "@/features/messenger/ui";
 import { BadgeButton, BadgeSheetHost } from "./badges";
 import { ClipVisual } from "./ClipVisual";
 import { ReportSheet, TalentAvatar, useTalentErr } from "./ui";
@@ -133,6 +135,7 @@ function ClipPage({ post, height, active, bottomSpace, audio, onPatch, onBlocked
     Alert.alert(tt("more"), undefined, [...opts, { text: tt("cancel"), style: "cancel" }]);
   };
   const progress = !post.hasVideo && active && st.duration ? st.currentTime / st.duration : 0;
+  const mt = useMT();
   const side = (icon: Parameters<typeof Icon>[0]["name"], label: string, count: string | null, onPress: () => void, on = false) => (
     <Pressable onPress={onPress} accessibilityRole="button" accessibilityLabel={`${label}${count ? `, ${count}` : ""}`} accessibilityState={{ selected: on }} hitSlop={6} style={{ alignItems: "center", gap: 3, minWidth: 48 }}>
       <View style={{ width: 46, height: 46, borderRadius: 23, alignItems: "center", justifyContent: "center", backgroundColor: "rgba(0,0,0,0.28)", borderWidth: 1, borderColor: on ? stage.gold : "rgba(255,255,255,0.14)" }}>
@@ -176,6 +179,7 @@ function ClipPage({ post, height, active, bottomSpace, audio, onPatch, onBlocked
         {side("heart", tt("like"), nf(post.likes), () => void like(), post.liked)}
         {side("comment", tt("comments"), nf(post.comments), () => setComments(true))}
         {side("bookmark", tt("saveClip"), null, () => void save(), post.saved)}
+        {side("send", mt.replyPost, null, () => router.push(shareHref({ type: "post", ref: post.id, title: `${post.author.name} (@${post.author.username})`, subtitle: [post.verseKey, post.caption].filter(Boolean).join(" · ").slice(0, 200), url: `/talents/u/${post.author.username}` }) as Href))}
         {side("share", tt("share"), null, share)}
         {side("menu", tt("more"), null, more)}
       </View>
