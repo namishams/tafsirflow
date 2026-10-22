@@ -63,7 +63,7 @@ export function GlobalBoardScreen() {
           <View style={{ padding: 16, gap: 12 }}>
             <ScrollView horizontal showsHorizontalScrollIndicator={false}><Segmented<BoardScope> value={scope} onChange={setScope} options={BOARD_SCOPES.map((x) => [x, ct(`scope_${x}` as CKey)])} /></ScrollView>
             <ScrollView horizontal showsHorizontalScrollIndicator={false}><Segmented<BoardPeriod> value={period} onChange={setPeriod} options={BOARD_PERIODS.map((x) => [x, ct(`period_${x}` as CKey)])} /></ScrollView>
-            <ScrollView horizontal showsHorizontalScrollIndicator={false}><Segmented<BoardCat> value={cat} onChange={setCat} options={BOARD_CATS.map((x) => [x, catLabel(x)])} /></ScrollView>
+            <ScrollView horizontal showsHorizontalScrollIndicator={false} style={{ marginHorizontal: -16 }} contentContainerStyle={{ paddingHorizontal: 16 }}><Segmented<BoardCat> value={cat} onChange={setCat} options={BOARD_CATS.map((x) => [x, catLabel(x)])} /></ScrollView>
             {scope === "country" ? (
               <Pressable onPress={() => setPicking(true)} accessibilityRole="button" accessibilityLabel={ct("pickCountry")}
                 style={({ pressed }) => ({ flexDirection: "row", alignItems: "center", gap: 10, minHeight: 46, paddingHorizontal: 12, borderRadius: R.lg, borderWidth: 1, borderColor: t.line, opacity: pressed ? 0.7 : 1 })}>

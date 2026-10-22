@@ -656,8 +656,8 @@ function BarBtn({ icon, label, onPress, dot }: { icon: ProfileIconName | IconNam
 function Btn({ title, onPress, tone = "soft", disabled, label, grow, max = 162 }: { title: string; onPress: () => void; tone?: "soft" | "gold"; disabled?: boolean; label?: string; grow?: boolean; max?: number }) {
   const t = useTheme();
   const gold = tone === "gold";
-  const face = { minHeight: 42, paddingHorizontal: 14, borderRadius: R.pill, alignItems: "center" as const, justifyContent: "center" as const, overflow: "hidden" as const };
-  const text = <Text numberOfLines={1} style={{ fontFamily: FONT.bold, fontSize: 15, color: gold ? goldButton.text : t.ink }}>{title}</Text>;
+  const face = { minHeight: 44, paddingHorizontal: 12, borderRadius: R.pill, alignItems: "center" as const, justifyContent: "center" as const, overflow: "hidden" as const };
+  const text = <Text numberOfLines={1} adjustsFontSizeToFit minimumFontScale={0.75} style={{ fontFamily: FONT.bold, fontSize: 15, color: gold ? goldButton.text : t.ink }}>{title}</Text>;
   return (
     <Pressable onPress={onPress} disabled={disabled} accessibilityRole="button" accessibilityLabel={label ?? title} accessibilityState={{ disabled: !!disabled }}
       style={({ pressed }) => ({ flexGrow: grow ? 1 : 0, flexBasis: grow ? 0 : undefined, maxWidth: max, opacity: disabled ? 0.55 : 1, transform: [{ scale: pressed ? 0.97 : 1 }] })}>
@@ -673,7 +673,7 @@ function Square({ icon, label, onPress, selected }: { icon: ProfileIconName | Ic
   return (
     <Pressable onPress={onPress} accessibilityRole="button" accessibilityLabel={label} accessibilityState={{ expanded: selected }}
       style={({ pressed }) => ({ transform: [{ scale: pressed ? 0.95 : 1 }] })}>
-      <GlassSurface interactive style={{ width: 44, minHeight: 42, borderRadius: 21, alignItems: "center", justifyContent: "center" }}>
+      <GlassSurface interactive style={{ width: 44, minHeight: 44, borderRadius: 22, alignItems: "center", justifyContent: "center" }}>
         <View style={{ transform: [{ rotate: selected && icon === "chevronDown" ? "180deg" : "0deg" }] }}>
           {isPIcon(icon) ? <PIcon name={icon} color={t.ink} size={20} weight={1.9} /> : <Icon name={icon} color={t.ink} size={18} weight={2.4} />}
         </View>

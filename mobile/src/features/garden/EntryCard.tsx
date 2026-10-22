@@ -61,7 +61,7 @@ export function GardenEntry({ lead }: { lead?: string }) {
               <View style={{ flex: 1, minWidth: 0 }}>
                 <Text style={{ fontFamily: FONT.semibold, fontSize: 10.5, letterSpacing: 1.4, textTransform: "uppercase", color: stageC.textMuted }}>{et.nextT}</Text>
                 <Text numberOfLines={1} style={{ fontFamily: FONT.bold, fontSize: 14, color: "#fff" }}>{nextName}</Text>
-                <Text numberOfLines={2} style={{ fontFamily: FONT.regular, fontSize: 11.5, lineHeight: 15, color: stageC.textMuted }}>{status}</Text>
+                <Text numberOfLines={3} style={{ fontFamily: FONT.regular, fontSize: 11.5, lineHeight: 15, color: stageC.textMuted }}>{status}</Text>
               </View>
             </View>
           </View>
