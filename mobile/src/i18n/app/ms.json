@@ -556,7 +556,50 @@
     "langDe": "Deutsch",
     "langEn": "English",
     "close": "Tutup",
-    "openSource": "Buka sumber"
+    "openSource": "Buka sumber",
+    "collections": {
+      "bukhari": {
+        "name": "Sahih al-Bukhari",
+        "desc": "Koleksi hadis sahih yang paling dipercayai, disusun oleh Imam al-Bukhari."
+      },
+      "muslim": {
+        "name": "Sahih Muslim",
+        "desc": "Satu daripada dua kitab Sahih bersama al-Bukhari, disusun oleh Imam Muslim."
+      },
+      "nawawi": {
+        "name": "Hadis Empat Puluh an-Nawawi",
+        "desc": "Empat puluh hadis pilihan Imam an-Nawawi sebagai asas agama."
+      },
+      "abudawud": {
+        "name": "Sunan Abi Dawud",
+        "desc": "Koleksi Abu Dawud yang berpusat pada hadis di sebalik hukum fiqh."
+      },
+      "tirmidhi": {
+        "name": "Jami' at-Tirmizi",
+        "desc": "Koleksi at-Tirmizi, dengan penilaian jika sumbernya menyediakan."
+      },
+      "nasai": {
+        "name": "Sunan an-Nasa'i",
+        "desc": "Koleksi an-Nasa'i, terkenal dengan pemilihan perawi yang ketat."
+      },
+      "ibnmajah": {
+        "name": "Sunan Ibn Majah",
+        "desc": "Kitab keenam daripada Kutub as-Sittah, disusun oleh Ibn Majah."
+      },
+      "malik": {
+        "name": "Muwatta Malik",
+        "desc": "Koleksi hadis tertua yang masih ada, disusun oleh Imam Malik di Madinah."
+      },
+      "qudsi": {
+        "name": "40 Hadis Qudsi",
+        "desc": "Empat puluh hadis ketika Nabi menyampaikan firman Allah."
+      },
+      "dehlawi": {
+        "name": "40 Hadis Dehlawi",
+        "desc": "Empat puluh hadis pilihan Shah Waliullah ad-Dehlawi."
+      }
+    },
+    "emptyBook": "Buku ini tiada entri. Sila teruskan ke buku seterusnya."
   },
   "reader": {
     "modeListen": "Dengar & ulang",

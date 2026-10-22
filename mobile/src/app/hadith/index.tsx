@@ -8,7 +8,7 @@ import { useStored } from "@/lib/store";
 import { showsShia, showsSunni, useNahjVisible, useTradition } from "@/lib/tradition";
 import { useNahjText } from "@/features/nahj-course/text";
 import { SUNNI_COLLECTIONS, SHIA_BOOKS } from "@/features/hadith/catalog";
-import { SAVED_KEY, SUNNI_NAMES, shiaBookTitle, type HadithItem } from "@/features/hadith/data";
+import { SAVED_KEY, collectionInfo, shiaBookTitle, type HadithItem } from "@/features/hadith/data";
 import { HadithCard, LoadState } from "@/features/hadith/ui";
 import { useDailyHadith } from "@/features/hadith/cards";
 import { fill, useHadithText } from "@/features/hadith/texts";
@@ -48,9 +48,9 @@ export default function HadithHome() {
             <View>
               <SectionTitle title={x.sunniGroup} />
               <View style={{ gap: 10 }}>
-                {SUNNI_COLLECTIONS.map((c) => (
-                  <Row key={c.key} title={SUNNI_NAMES[c.key]?.en ?? c.name} arabic={SUNNI_NAMES[c.key]?.ar} sub={`${fill(x.hadiths, { n: c.max.toLocaleString(lang) })}${c.sections.length > 1 ? ` · ${c.sections.length} ${x.books}` : ""}`} onPress={() => go(`/hadith/${c.key}`)} />
-                ))}
+                {SUNNI_COLLECTIONS.map((c) => { const info = collectionInfo(x, c.key, c.name); return (
+                  <Row key={c.key} title={info.name} arabic={info.arabic} sub={`${fill(x.hadiths, { n: (c.count ?? c.max).toLocaleString(lang) })}${c.sections.length > 1 ? ` · ${c.sections.length} ${x.books}` : ""}${info.desc ? `\n${info.desc}` : ""}`} onPress={() => go(`/hadith/${c.key}`)} />
+                ); })}
               </View>
             </View>
           ) : null}
@@ -93,7 +93,7 @@ function Row({ title, sub, arabic, onPress }: { title: string; sub: string; arab
       style={({ pressed }) => ({ flexDirection: "row", alignItems: "center", gap: 12, padding: 14, borderRadius: R.lg, borderWidth: 1, borderColor: pressed ? t.gold : t.line, backgroundColor: t.surface })}>
       <View style={{ flex: 1 }}>
         <Text style={{ fontFamily: FONT.bold, fontSize: 16, color: t.ink }}>{title}</Text>
-        <Text style={{ fontFamily: FONT.regular, fontSize: 13, color: t.muted, marginTop: 2 }} numberOfLines={2}>{sub}</Text>
+        <Text style={{ fontFamily: FONT.regular, fontSize: 13, color: t.muted, marginTop: 2 }} numberOfLines={4}>{sub}</Text>
       </View>
       {arabic ? <Text style={{ fontFamily: ARABIC_FONT, fontSize: 18, color: t.gold }}>{arabic}</Text> : null}
       <Icon name="chevronRight" color={t.gold} size={16} />

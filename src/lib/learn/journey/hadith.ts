@@ -35,7 +35,7 @@ function cachedJSON<T>(url: string): Promise<T> {
 }
 
 // ---------- Sunni ----------
-const SUNNI_NAMES: Record<string, string> = { bukhari: "Sahih al-Bukhari", muslim: "Sahih Muslim", nawawi: "The Forty Hadith of an-Nawawi" };
+const SUNNI_NAMES: Record<string, string> = { bukhari: "Sahih al-Bukhari", muslim: "Sahih Muslim", nawawi: "The Forty Hadith of an-Nawawi", abudawud: "Sunan Abi Dawud", tirmidhi: "Jami' at-Tirmidhi", nasai: "Sunan an-Nasa'i", ibnmajah: "Sunan Ibn Majah", malik: "Muwatta Malik", qudsi: "The 40 Hadith Qudsi", dehlawi: "Dehlawi's 40 Hadith" };
 const PREFIX: Record<string, string> = { en: "eng", tr: "tur", ur: "urd", bn: "ben", ru: "rus", fr: "fra", id: "ind" };
 const sunniCollection = (key: string): SunniCollection | undefined => SUNNI_COLLECTIONS.find((c) => c.key === key);
 function translationEdition(c: SunniCollection, lang: string): string | null {

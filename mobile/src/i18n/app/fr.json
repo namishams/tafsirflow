@@ -556,7 +556,50 @@
     "langDe": "Deutsch",
     "langEn": "English",
     "close": "Fermer",
-    "openSource": "Ouvrir la source"
+    "openSource": "Ouvrir la source",
+    "collections": {
+      "bukhari": {
+        "name": "Sahih al-Bukhari",
+        "desc": "Le recueil de hadiths authentiques le plus reconnu, compilé par l'imam al-Bukhari."
+      },
+      "muslim": {
+        "name": "Sahih Muslim",
+        "desc": "Avec al-Bukhari, l'un des deux recueils Sahih, compilé par l'imam Muslim."
+      },
+      "nawawi": {
+        "name": "Les Quarante Hadiths d'an-Nawawi",
+        "desc": "Quarante hadiths choisis par l'imam an-Nawawi comme fondement de la religion."
+      },
+      "abudawud": {
+        "name": "Sunan Abi Dawud",
+        "desc": "Recueil d'Abu Dawud, centré sur les hadiths à l'origine des règles juridiques."
+      },
+      "tirmidhi": {
+        "name": "Jami' at-Tirmidhi",
+        "desc": "Recueil d'at-Tirmidhi, avec les classements lorsque la source les fournit."
+      },
+      "nasai": {
+        "name": "Sunan an-Nasa'i",
+        "desc": "Recueil d'an-Nasa'i, connu pour sa sélection stricte des transmetteurs."
+      },
+      "ibnmajah": {
+        "name": "Sunan Ibn Majah",
+        "desc": "Le sixième des Six Livres, compilé par Ibn Majah."
+      },
+      "malik": {
+        "name": "Muwatta Malik",
+        "desc": "Le plus ancien recueil de hadiths conservé, compilé par l'imam Malik à Médine."
+      },
+      "qudsi": {
+        "name": "Les 40 hadiths qudsi",
+        "desc": "Quarante hadiths dans lesquels le Prophète rapporte des paroles d'Allah."
+      },
+      "dehlawi": {
+        "name": "Les 40 hadiths de Dehlawi",
+        "desc": "Quarante hadiths choisis par Shah Waliullah ad-Dehlawi."
+      }
+    },
+    "emptyBook": "Ce livre ne contient aucune entrée. Veuillez passer au livre suivant."
   },
   "reader": {
     "modeListen": "Écouter et répéter",

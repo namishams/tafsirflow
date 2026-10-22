@@ -5,7 +5,7 @@ import { PageHero } from "@/components/page";
 import { Icon } from "@/components/icons";
 import { FONT, R, useTheme } from "@/lib/theme";
 import { useLang } from "@/i18n";
-import { SUNNI_NAMES, shiaBook, shiaBookTitle, shiaPage, shiaPages, sunniCollection, sunniSection, type HadithItem } from "@/features/hadith/data";
+import { collectionInfo, shiaBook, shiaBookTitle, shiaPage, shiaPages, sunniCollection, sunniSection, type HadithItem } from "@/features/hadith/data";
 import { ActionButton, HADITH_FREE_PREVIEW, HadithCard, HadithProCard, LoadState } from "@/features/hadith/ui";
 import { usePro } from "@/lib/pro";
 import { fill, useHadithText } from "@/features/hadith/texts";
@@ -37,7 +37,7 @@ function Sunni({ k, book }: { k: string; book: number | null }) {
   const c = sunniCollection(k)!;
   const x = useHadithText();
   const t = useTheme();
-  const names = SUNNI_NAMES[k] ?? { en: c.name, ar: "" };
+  const info = collectionInfo(x, k, c.name);
   const single = c.sections.length === 1 ? c.sections[0].n : null;
   const section = book ?? single;
   if (section === null) {
@@ -47,7 +47,7 @@ function Sunni({ k, book }: { k: string; book: number | null }) {
         <FlatList
           style={{ flex: 1, backgroundColor: t.bg }}
           contentContainerStyle={{ paddingBottom: 130 }}
-          ListHeaderComponent={<View style={{ marginBottom: 20 }}><PageHero topInset back eyebrow={x.title} title={names.en} arabic={names.ar} lead={`${fill(x.hadiths, { n: c.max })} · ${c.sections.length} ${x.books}`} /></View>}
+          ListHeaderComponent={<View style={{ marginBottom: 20 }}><PageHero topInset back eyebrow={x.title} title={info.name} arabic={info.arabic} lead={`${fill(x.hadiths, { n: c.count ?? c.max })} · ${c.sections.length} ${x.books}${info.desc ? `\n${info.desc}` : ""}`} /></View>}
           data={c.sections}
           keyExtractor={(s) => String(s.n)}
           renderItem={({ item: s }) => (
@@ -73,7 +73,7 @@ function SunniBook({ k, section }: { k: string; section: number }) {
   const x = useHadithText();
   const t = useTheme();
   const { lang } = useLang();
-  const names = SUNNI_NAMES[k] ?? { en: c.name, ar: "" };
+  const info = collectionInfo(x, k, c.name);
   const s = c.sections.find((y) => y.n === section);
   const data = useLoad(() => sunniSection(k, section, lang), [k, section, lang]);
   const { pro } = usePro();
@@ -86,13 +86,13 @@ function SunniBook({ k, section }: { k: string; section: number }) {
       <FlatList
         style={{ flex: 1, backgroundColor: t.bg }}
         contentContainerStyle={{ paddingBottom: 130 }}
-        ListHeaderComponent={<View style={{ marginBottom: 20 }}><PageHero topInset back eyebrow={names.en} title={s?.name ?? names.en} arabic={names.ar} lead={s ? `${s.first}–${s.last}` : undefined} /></View>}
+        ListHeaderComponent={<View style={{ marginBottom: 20 }}><PageHero topInset back eyebrow={info.name} title={s?.name ?? info.name} arabic={info.arabic} lead={s ? `${s.first}–${s.last}` : undefined} /></View>}
         data={shown}
         keyExtractor={(h) => h.id}
         initialNumToRender={4}
         windowSize={7}
         renderItem={({ item }) => <View style={{ paddingHorizontal: 16, marginBottom: 14 }}><HadithCard item={item} /></View>}
-        ListEmptyComponent={<LoadState state={data.status === "error" ? "error" : "loading"} onRetry={data.retry} />}
+        ListEmptyComponent={data.status === "ok" ? <Text style={{ fontFamily: FONT.regular, fontSize: 14, color: t.muted, paddingHorizontal: 16, textAlign: "center" }}>{x.emptyBook}</Text> : <LoadState state={data.status === "error" ? "error" : "loading"} onRetry={data.retry} />}
         ListFooterComponent={data.v ? <>{!pro && data.v.length > shown.length ? <View style={{ marginBottom: 16 }}><HadithProCard /></View> : null}<Pager prev={prev ? () => router.replace(`/hadith/${k}?book=${prev.n}` as Href) : undefined} next={next ? () => router.replace(`/hadith/${k}?book=${next.n}` as Href) : undefined} label={s ? `${s.n} / ${c.sections[c.sections.length - 1].n}` : ""} /></> : undefined}
       />
     </>

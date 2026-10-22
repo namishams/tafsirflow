@@ -47,7 +47,19 @@ export const SUNNI_NAMES: Record<string, { en: string; ar: string }> = {
   bukhari: { en: "Sahih al-Bukhari", ar: "صحيح البخاري" },
   muslim: { en: "Sahih Muslim", ar: "صحيح مسلم" },
   nawawi: { en: "The Forty Hadith of an-Nawawi", ar: "الأربعون النووية" },
+  abudawud: { en: "Sunan Abi Dawud", ar: "سنن أبي داود" },
+  tirmidhi: { en: "Jami' at-Tirmidhi", ar: "جامع الترمذي" },
+  nasai: { en: "Sunan an-Nasa'i", ar: "سنن النسائي" },
+  ibnmajah: { en: "Sunan Ibn Majah", ar: "سنن ابن ماجه" },
+  malik: { en: "Muwatta Malik", ar: "موطأ مالك" },
+  qudsi: { en: "The 40 Hadith Qudsi", ar: "الأربعون القدسية" },
+  dehlawi: { en: "Dehlawi's 40 Hadith", ar: "أربعون الدهلوي" },
 };
+/** the collection's name and one-line description in the app language (texts.ts "collections"); English names as fallback */
+export function collectionInfo(x: { collections: Record<string, { name: string; desc: string }> }, key: string, fallback: string) {
+  const own = x.collections[key];
+  return { name: own?.name ?? SUNNI_NAMES[key]?.en ?? fallback, desc: own?.desc ?? "", arabic: SUNNI_NAMES[key]?.ar };
+}
 /** app language → edition prefix of the API (only languages the API publishes) */
 const PREFIX: Record<string, string> = { en: "eng", tr: "tur", ur: "urd", bn: "ben", ru: "rus", fr: "fra", id: "ind" };
 export const sunniCollection = (key: string): SunniCollection | undefined => SUNNI_COLLECTIONS.find((c) => c.key === key);
@@ -97,7 +109,10 @@ export async function sunniSection(key: string, section: number, lang: string): 
   const chapter = c.sections.find((s) => s.n === section)?.name;
   const byNum = new Map(ar.hadiths.map((h) => [h.hadithnumber, h]));
   const list = (tr ?? ar).hadiths;
-  return list.map((h) => sunniItem(c, byNum.get(h.hadithnumber), tr ? h : undefined, tr ? trEd : null, chapter)).filter((x): x is HadithItem => !!x);
+  // the API's book table has gaps and overlaps: a number twice in one file is shown once, a book without text gives []
+  const seen = new Set<number>();
+  return list.filter((h) => !seen.has(h.hadithnumber) && !!seen.add(h.hadithnumber))
+    .map((h) => sunniItem(c, byNum.get(h.hadithnumber), tr ? h : undefined, tr ? trEd : null, chapter)).filter((x): x is HadithItem => !!x);
 }
 
 /** one hadith by number */

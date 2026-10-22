@@ -556,7 +556,50 @@
     "langDe": "Deutsch",
     "langEn": "English",
     "close": "Kapat",
-    "openSource": "Kaynağı aç"
+    "openSource": "Kaynağı aç",
+    "collections": {
+      "bukhari": {
+        "name": "Sahih-i Buhari",
+        "desc": "İmam Buhârî'nin derlediği, en çok güvenilen sahih hadis külliyatı."
+      },
+      "muslim": {
+        "name": "Sahih-i Müslim",
+        "desc": "Buhârî ile birlikte iki Sahih'ten biri, İmam Müslim'in derlemesi."
+      },
+      "nawawi": {
+        "name": "Nevevî Kırk Hadis",
+        "desc": "İmam Nevevî'nin dinin temeli olarak seçtiği kırk hadis."
+      },
+      "abudawud": {
+        "name": "Sünen-i Ebu Davud",
+        "desc": "Ebu Davud'un fıkhî hükümlerin dayandığı hadislere odaklanan derlemesi."
+      },
+      "tirmidhi": {
+        "name": "Câmiu't-Tirmizî",
+        "desc": "Tirmizî'nin derlemesi; kaynağın sunduğu yerlerde hadis dereceleriyle."
+      },
+      "nasai": {
+        "name": "Sünen-i Nesâî",
+        "desc": "Nesâî'nin, ravi seçimindeki titizliğiyle bilinen derlemesi."
+      },
+      "ibnmajah": {
+        "name": "Sünen-i İbn Mâce",
+        "desc": "Kütüb-i Sitte'nin altıncısı, İbn Mâce'nin derlemesi."
+      },
+      "malik": {
+        "name": "Muvatta (Mâlik)",
+        "desc": "Günümüze ulaşan en eski hadis derlemesi, İmam Mâlik'in Medine'deki eseri."
+      },
+      "qudsi": {
+        "name": "40 Kudsî Hadis",
+        "desc": "Peygamberimizin Allah'ın sözlerini aktardığı kırk hadis."
+      },
+      "dehlawi": {
+        "name": "Dehlevî'nin Kırk Hadisi",
+        "desc": "Şah Veliyyullah ed-Dehlevî'nin seçtiği kırk hadis."
+      }
+    },
+    "emptyBook": "Bu bölümde kayıt yok. Lütfen sonraki bölümle devam edin."
   },
   "reader": {
     "modeListen": "Dinle ve tekrarla",

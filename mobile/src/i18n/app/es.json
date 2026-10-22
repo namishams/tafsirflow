@@ -556,7 +556,50 @@
     "langDe": "Deutsch",
     "langEn": "English",
     "close": "Cerrar",
-    "openSource": "Abrir la fuente"
+    "openSource": "Abrir la fuente",
+    "collections": {
+      "bukhari": {
+        "name": "Sahih al-Bujari",
+        "desc": "La colección de hadices auténticos más reconocida, compilada por el imán al-Bujari."
+      },
+      "muslim": {
+        "name": "Sahih Muslim",
+        "desc": "Junto a al-Bujari, una de las dos colecciones Sahih, compilada por el imán Muslim."
+      },
+      "nawawi": {
+        "name": "Los cuarenta hadices de an-Nawawi",
+        "desc": "Cuarenta hadices elegidos por el imán an-Nawawi como fundamento de la religión."
+      },
+      "abudawud": {
+        "name": "Sunan Abi Dawud",
+        "desc": "Colección de Abu Dawud, centrada en los hadices tras las normas jurídicas."
+      },
+      "tirmidhi": {
+        "name": "Yami' at-Tirmidhi",
+        "desc": "Colección de at-Tirmidhi, con las valoraciones que ofrece la fuente."
+      },
+      "nasai": {
+        "name": "Sunan an-Nasa'i",
+        "desc": "Colección de an-Nasa'i, conocida por su estricta selección de transmisores."
+      },
+      "ibnmajah": {
+        "name": "Sunan Ibn Maya",
+        "desc": "El sexto de los Seis Libros, compilado por Ibn Maya."
+      },
+      "malik": {
+        "name": "Muwatta Malik",
+        "desc": "La colección de hadices conservada más antigua, compilada por el imán Malik en Medina."
+      },
+      "qudsi": {
+        "name": "Los 40 hadices qudsi",
+        "desc": "Cuarenta hadices en los que el Profeta transmite palabras de Alá."
+      },
+      "dehlawi": {
+        "name": "Los 40 hadices de Dehlawi",
+        "desc": "Cuarenta hadices seleccionados por Shah Waliullah ad-Dehlawi."
+      }
+    },
+    "emptyBook": "Este libro no contiene entradas. Continúe con el libro siguiente."
   },
   "reader": {
     "modeListen": "Escuchar y repetir",
