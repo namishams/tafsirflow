@@ -5,6 +5,7 @@ import { PRIMARY, isActive } from "@/lib/nav";
 import LanguageSwitcher from "./LanguageSwitcher";
 import SiteMenu from "./SiteMenu";
 import AccountLink from "./AccountLink";
+import MessagesBadge from "./messenger/MessagesBadge";
 import Wordmark from "./Wordmark";
 
 // The header of every page: gold wordmark, main sections + "More" (desktop), language, account, menu (phones)
@@ -34,7 +35,7 @@ export default function AppHeader() {
             <SiteMenu variant="panel" />
           </nav>
         </div>
-        <div className="flex shrink-0 items-center gap-1.5 sm:gap-2"><LanguageSwitcher /><AccountLink /><span className="lg:hidden"><SiteMenu /></span></div>
+        <div className="flex shrink-0 items-center gap-1.5 sm:gap-2"><LanguageSwitcher /><MessagesBadge /><AccountLink /><span className="lg:hidden"><SiteMenu /></span></div>
       </div>
     </header>
   );

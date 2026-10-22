@@ -1400,3 +1400,102 @@ ALTER TABLE community_profiles DROP CONSTRAINT IF EXISTS community_profiles_badg
 ALTER TABLE community_profiles ADD CONSTRAINT community_profiles_badge CHECK (badge IN ('none','emerald','gold','star'));
 GRANT ALL ON ALL TABLES IN SCHEMA public TO tafsirflow;
 GRANT ALL ON ALL SEQUENCES IN SCHEMA public TO tafsirflow;
+
+-- Messenger (owner 22.10.2026): one-to-one chats, groups and learning-group chats linked to Together circles.
+-- Encryption at rest, NOT end-to-end: message bodies, media, group photos and report snapshots are AES-256-GCM
+-- encrypted on the server with a key per conversation, derived (HKDF-SHA256) from the server master key MESSENGER_KEY
+-- and the thread's random salt (src/lib/messenger/crypto.ts). The server can decrypt, so reported messages reach a
+-- moderator (Apple guideline 1.2: report and block; members aged 16-17). Account deletion cascades to all of it.
+CREATE TABLE IF NOT EXISTS msg_threads (
+  id              bigserial PRIMARY KEY,
+  kind            text NOT NULL CHECK (kind IN ('direct','group','circle')),
+  salt            bytea NOT NULL,
+  direct_a        bigint REFERENCES users(id) ON DELETE CASCADE,
+  direct_b        bigint REFERENCES users(id) ON DELETE CASCADE,
+  request_status  text NOT NULL DEFAULT 'accepted' CHECK (request_status IN ('accepted','pending','declined')),
+  requested_by    bigint REFERENCES users(id) ON DELETE SET NULL,
+  name            text NOT NULL DEFAULT '' CHECK (char_length(name) <= 60),
+  audience        text NOT NULL DEFAULT 'all' CHECK (audience IN ('all','brothers','sisters')),
+  photo_enc       bytea,
+  photo_version   integer NOT NULL DEFAULT 0,
+  circle_id       bigint UNIQUE REFERENCES together_circles(id) ON DELETE CASCADE,
+  invite_hash     text UNIQUE,
+  created_by      bigint REFERENCES users(id) ON DELETE SET NULL,
+  created_at      timestamptz NOT NULL DEFAULT now(),
+  last_message_at timestamptz,
+  legacy_id       bigint UNIQUE,
+  CHECK ((kind = 'direct') = (direct_a IS NOT NULL AND direct_b IS NOT NULL)),
+  CHECK (direct_a IS NULL OR direct_a < direct_b)
+);
+CREATE UNIQUE INDEX IF NOT EXISTS msg_threads_pair ON msg_threads(direct_a, direct_b) WHERE kind = 'direct';
+CREATE TABLE IF NOT EXISTS msg_members (
+  thread_id    bigint NOT NULL REFERENCES msg_threads(id) ON DELETE CASCADE,
+  user_id      bigint NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  role         text NOT NULL DEFAULT 'member' CHECK (role IN ('admin','member')),
+  read_id      bigint NOT NULL DEFAULT 0,
+  muted_until  timestamptz,                    -- muted by a group admin: cannot send until then
+  quiet        boolean NOT NULL DEFAULT false, -- the member silenced this chat (no badge count)
+  typing_at    timestamptz,
+  joined_at    timestamptz NOT NULL DEFAULT now(),
+  PRIMARY KEY (thread_id, user_id)
+);
+CREATE INDEX IF NOT EXISTS msg_members_user ON msg_members(user_id);
+CREATE TABLE IF NOT EXISTS msg_messages (
+  id          bigserial PRIMARY KEY,
+  thread_id   bigint NOT NULL REFERENCES msg_threads(id) ON DELETE CASCADE,
+  sender_id   bigint REFERENCES users(id) ON DELETE CASCADE,
+  kind        text NOT NULL DEFAULT 'text' CHECK (kind IN ('text','image','voice','system')),
+  body_enc    bytea,
+  body_legacy text,                         -- plain text of the old 1:1 messages, sealed on first read
+  reply_to    bigint REFERENCES msg_messages(id) ON DELETE SET NULL,
+  media_enc   bytea,
+  media_mime  text,
+  duration_ms integer CHECK (duration_ms IS NULL OR duration_ms BETWEEN 0 AND 121000),
+  created_at  timestamptz NOT NULL DEFAULT now(),
+  deleted_at  timestamptz,                  -- deleted by the sender (body and media are wiped)
+  removed_at  timestamptz,                  -- removed by an admin after a report
+  legacy_id   bigint UNIQUE
+);
+CREATE INDEX IF NOT EXISTS msg_messages_thread ON msg_messages(thread_id, id DESC);
+CREATE INDEX IF NOT EXISTS msg_messages_sender ON msg_messages(sender_id, created_at DESC);
+CREATE TABLE IF NOT EXISTS msg_reactions (
+  message_id bigint NOT NULL REFERENCES msg_messages(id) ON DELETE CASCADE,
+  user_id    bigint NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  kind       text NOT NULL CHECK (kind IN ('mashallah','heart','dua')),
+  created_at timestamptz NOT NULL DEFAULT now(),
+  PRIMARY KEY (message_id, user_id)
+);
+CREATE TABLE IF NOT EXISTS msg_prefs (
+  user_id       bigint PRIMARY KEY REFERENCES users(id) ON DELETE CASCADE,
+  read_receipts boolean NOT NULL DEFAULT true
+);
+-- what a report contained: encrypted copies of the reported message and the messages before it, for the moderator
+CREATE TABLE IF NOT EXISTS msg_report_items (
+  report_id  bigint NOT NULL REFERENCES community_reports(id) ON DELETE CASCADE,
+  message_id bigint REFERENCES msg_messages(id) ON DELETE SET NULL,
+  thread_id  bigint NOT NULL,
+  salt       bytea NOT NULL,
+  sender     text NOT NULL DEFAULT '',
+  kind       text NOT NULL DEFAULT 'text',
+  body_enc   bytea,
+  at         timestamptz NOT NULL,
+  reported   boolean NOT NULL DEFAULT false
+);
+CREATE INDEX IF NOT EXISTS msg_report_items_report ON msg_report_items(report_id);
+-- the old 1:1 conversations move over once (idempotent); their text is sealed on first read
+INSERT INTO msg_threads (kind, salt, direct_a, direct_b, created_at, last_message_at, legacy_id)
+SELECT 'direct', decode(md5(random()::text || v.id::text), 'hex'), v.user_a, v.user_b, v.created_at, v.last_message_at, v.id
+  FROM community_conversations v
+ WHERE NOT EXISTS (SELECT 1 FROM msg_threads t WHERE t.legacy_id = v.id)
+   AND NOT EXISTS (SELECT 1 FROM msg_threads t WHERE t.kind = 'direct' AND t.direct_a = v.user_a AND t.direct_b = v.user_b);
+INSERT INTO msg_messages (thread_id, sender_id, kind, body_legacy, created_at, removed_at, legacy_id)
+SELECT t.id, m.sender_id, 'text', m.body, m.created_at, m.removed_at, m.id
+  FROM community_messages m JOIN msg_threads t ON t.legacy_id = m.conversation_id
+ON CONFLICT (legacy_id) DO NOTHING;
+INSERT INTO msg_members (thread_id, user_id, read_id)
+SELECT t.id, u.uid, COALESCE((SELECT max(x.id) FROM msg_messages x WHERE x.thread_id = t.id AND x.legacy_id <= u.rid), 0)
+  FROM msg_threads t JOIN community_conversations v ON v.id = t.legacy_id
+  CROSS JOIN LATERAL (VALUES (v.user_a, v.a_read_id), (v.user_b, v.b_read_id)) AS u(uid, rid)
+ON CONFLICT (thread_id, user_id) DO NOTHING;
+GRANT ALL ON ALL TABLES IN SCHEMA public TO tafsirflow;
+GRANT ALL ON ALL SEQUENCES IN SCHEMA public TO tafsirflow;
