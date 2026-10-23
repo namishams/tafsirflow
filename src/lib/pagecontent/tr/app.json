@@ -1,0 +1,60 @@
+{
+ "kicker": "Uygulama",
+ "title": "Quran Masterclass telefonunuzda",
+ "lead": "Tüm Masterclass bir uygulama olarak: tarayıcı çubuğu olmadan tam ekran, ana ekranda kendi simgesi, çevrimdışı bile kaydedilmiş sureler – ve web sitesindeki her güncelleme uygulamada anında görünür.",
+ "buttons": {
+  "install": "Uygulamayı yükleyin",
+  "installed": "Uygulama yüklü",
+  "apk": "Android uygulamasını indirin (APK)",
+  "apkSoon": "Android uygulaması: yakında",
+  "play": "Google Play’den indir",
+  "samsung": "Samsung Internet kullanıyorsunuz. Lütfen yüklemeyi onun menüsünden yapmayın – Samsung, eski bir Android sürümü için kendi sarmalayıcısını oluşturuyor ve bunu Google Play Protect engelliyor. Bunun yerine sayfayı Chrome’da açın ve “Uygulamayı yükle” seçeneğini seçin ya da yukarıdaki Android uygulamasını indirin."
+ },
+ "waysTitle": "Nasıl yüklenir",
+ "ways": [
+  {
+   "t": "Android (Chrome)",
+   "steps": [
+    "quranmasterclass.com adresini Chrome’da açın.",
+    "“Uygulamayı yükle”ye dokunun – ya da ⋮ menüsünden “Uygulamayı yükle”yi seçin.",
+    "Simge ana ekranınızda görünür."
+   ]
+  },
+  {
+   "t": "iPhone ve iPad (Safari)",
+   "steps": [
+    "quranmasterclass.com adresini Safari’de açın.",
+    "Paylaş simgesine dokunun.",
+    "“Ana Ekrana Ekle” seçeneğini seçin."
+   ]
+  },
+  {
+   "t": "Bilgisayar (Chrome, Edge)",
+   "steps": [
+    "Siteyi açın.",
+    "Adres çubuğundaki yükleme simgesine tıklayın.",
+    "Masterclass kendi penceresinde açılır."
+   ]
+  }
+ ],
+ "featuresTitle": "Uygulamayla neler yapabilirsiniz",
+ "features": [
+  [
+   "Çevrimdışı öğrenme",
+   "Sureleri her surenin ayarlarından kaydedin; internet olmadan da oynatılırlar."
+  ],
+  [
+   "Tek ilerleme",
+   "Hesabınızla uygulama, telefonunuzun tarayıcısı ve bilgisayarınız her zaman eşzamanlı kalır."
+  ],
+  [
+   "Hızlı erişim",
+   "Simgeye uzun basın: doğrudan Bugün, Kur'an, Shams Metodu ya da Radyo’ya gidin."
+  ],
+  [
+   "Her zaman güncel",
+   "Yeni kurslar ve iyileştirmeler mağaza güncellemesi olmadan size ulaşır."
+  ]
+ ],
+ "note": "Web sitesinden web uygulaması olarak yüklendiğinde her şey, web sitesinde olduğu gibi, ücretsiz ve reklamsız kalır. App Store ve Google Play’deki uygulama da ücretsiz ve reklamsızdır; daha fazlasını isteyenler için Quran Masterclass Pro sunulur – aylık, her zaman iptal edilebilir, App Store’da veya Google Play’de."
+}

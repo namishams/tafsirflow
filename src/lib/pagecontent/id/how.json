@@ -1,0 +1,124 @@
+{
+ "kicker": "Susunannya",
+ "title": "Bagaimana Quran Masterclass disusun",
+ "lead": "Satu jalur dalam enam tahap – dari huruf pertama hingga tilawah yang mantap. Setiap tahap dibangun di atas tahap sebelumnya, dan Anda bisa memulai dari posisi Anda saat ini.",
+ "stepsTitle": "Jalurnya dalam enam tahap",
+ "steps": [
+  {
+   "n": "1",
+   "title": "Belajar membaca Arab",
+   "body": "Huruf, bentuk, harakat, syaddah, huruf syamsiyah dan qamariyah – sampai Anda sendiri bisa membaca Al-Fatihah dan surah-surah pendek. Pelajaran singkat dengan latihan; kesalahan sengaja dimunculkan kembali.",
+   "href": "/arabic",
+   "cta": "Kursus membaca",
+   "time": "sekitar 2–6 minggu"
+  },
+  {
+   "n": "2",
+   "title": "Belajar shalat",
+   "body": "Pelatih shalat memperlihatkan setiap gerakan dengan animasi – Sunni dan Syiah (Ja'fari), dengan teks Arab, transliterasi, dan artinya.",
+   "href": "/salah",
+   "cta": "Pelatih shalat",
+   "time": "sekitar 1–2 minggu"
+  },
+  {
+   "n": "3",
+   "title": "Ayat demi ayat dengan Metode Shams",
+   "body": "Tujuh langkah per ayat: mendengarkan, menyusun mundur, kata demi kata, makna dan pengait ingatan, tafsir, petunjuk yang memudar, perenungan. Model ingatan memunculkan setiap ayat kembali pada waktu yang tepat.",
+   "href": "/shams",
+   "cta": "Metodenya",
+   "time": "4 menit per ayat"
+  },
+  {
+   "n": "4",
+   "title": "Terus melangkah: rencana, kursus, peta",
+   "body": "Rencana 365 hari atau rencana tahfiz menentukan porsi harian Anda, kursus menguji Anda dengan batas waktu, dan peta Quran menunjukkan mana yang sudah kokoh dan mana yang masih goyah.",
+   "href": "/plan",
+   "cta": "Pilih rencana",
+   "time": "10–30 menit setiap hari"
+  },
+  {
+   "n": "5",
+   "title": "Membaca dengan indah: tajwid",
+   "body": "Kaidah bacaan selangkah demi selangkah dengan contoh dari Al-Qur'an dan kuis – serta para qari besar sebagai teladan untuk didengarkan.",
+   "href": "/tajweed",
+   "cta": "Kursus tajwid",
+   "time": "sekitar 2–3 bulan"
+  },
+  {
+   "n": "6",
+   "title": "Jalan menjadi qari",
+   "body": "Juz 'Amma, lalu seluruh Al-Qur'an, dengan sistem murajaah sabaq, sabqi, manzil – hingga setoran bacaan kepada guru dan ijazah.",
+   "href": "/islam/reciter-path",
+   "cta": "Jalur Qari",
+   "time": "bertahun-tahun – selangkah demi selangkah"
+  }
+ ],
+ "toolsTitle": "Pendamping di sepanjang jalan",
+ "tools": [
+  [
+   "/today",
+   "Hari ini",
+   "Rencana harian, streak, dan kemajuan Anda"
+  ],
+  [
+   "/map",
+   "Peta Quran",
+   "Mana yang kokoh, mana yang goyah – surah demi surah"
+  ],
+  [
+   "/khatm",
+   "Perencana khatam",
+   "Baca seluruh Al-Qur'an dengan porsi harian"
+  ],
+  [
+   "/vocab",
+   "Kosakata",
+   "Kata-kata yang paling sering muncul dalam Al-Qur'an"
+  ],
+  [
+   "/radio",
+   "Radio",
+   "Tilawah sepanjang waktu"
+  ],
+  [
+   "/prayer",
+   "Waktu salat",
+   "Dengan azan dan arah kiblat"
+  ],
+  [
+   "/duas",
+   "Doa",
+   "Dari Al-Qur'an dan Sunnah"
+  ],
+  [
+   "/islam",
+   "Memahami Islam",
+   "Akidah, shalat, hari raya, mazhab fikih"
+  ],
+  [
+   "/assistant",
+   "Asisten",
+   "Pertanyaan tentang Al-Qur'an dan Islam"
+  ]
+ ],
+ "dayTitle": "Satu hari belajar yang khas (20 menit)",
+ "day": [
+  [
+   "5 menit",
+   "Ulangi yang jatuh tempo hari ini – ayat merah dan emas lebih dulu."
+  ],
+  [
+   "10 menit",
+   "Ayat baru dari rencana Anda dengan Metode Shams."
+  ],
+  [
+   "3 menit",
+   "Satu pelajaran kursus atau satu pelajaran bahasa Arab."
+  ],
+  [
+   "2 menit",
+   "Satu catatan: apa yang Anda ambil dari ayat ini hari ini?"
+  ]
+ ],
+ "start": "Mulai sekarang"
+}

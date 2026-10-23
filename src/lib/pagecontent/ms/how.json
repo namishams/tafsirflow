@@ -1,0 +1,124 @@
+{
+ "kicker": "Strukturnya",
+ "title": "Cara Quran Masterclass dibina",
+ "lead": "Satu laluan dalam enam tahap – dari huruf pertama hingga bacaan yang yakin. Setiap tahap dibina atas tahap sebelumnya, dan anda boleh mula dari mana-mana kedudukan anda hari ini.",
+ "stepsTitle": "Laluan dalam enam tahap",
+ "steps": [
+  {
+   "n": "1",
+   "title": "Belajar membaca bahasa Arab",
+   "body": "Huruf, bentuk, tanda baris, syaddah, huruf syamsiyah dan qamariyah – sehingga anda sendiri membaca Al-Fatihah dan surah-surah pendek. Pelajaran ringkas dengan latihan; kesilapan sengaja diulang semula.",
+   "href": "/arabic",
+   "cta": "Kursus membaca",
+   "time": "kira-kira 2–6 minggu"
+  },
+  {
+   "n": "2",
+   "title": "Belajar solat",
+   "body": "Latihan solat menunjukkan setiap pergerakan solat dengan animasi – mengikut Sunni dan Syiah (Ja'fari), dengan teks Arab, transliterasi dan maknanya.",
+   "href": "/salah",
+   "cta": "Latihan solat",
+   "time": "kira-kira 1–2 minggu"
+  },
+  {
+   "n": "3",
+   "title": "Ayat demi ayat dengan Kaedah Shams",
+   "body": "Tujuh langkah setiap ayat: dengar, bina dari belakang, perkataan demi perkataan, makna dan petunjuk ingatan, tafsir, isyarat yang beransur hilang, renungan. Model ingatan membawa setiap ayat kembali pada masa yang tepat.",
+   "href": "/shams",
+   "cta": "Kaedahnya",
+   "time": "4 min setiap ayat"
+  },
+  {
+   "n": "4",
+   "title": "Teruskan: pelan, akademi, peta",
+   "body": "Pelan 365 hari atau pelan hafazan menetapkan bahagian harian anda, akademi menguji anda dengan ujian bermasa, dan peta Quran menunjukkan mana yang kukuh dan mana yang goyah.",
+   "href": "/plan",
+   "cta": "Pilih pelan",
+   "time": "10–30 min setiap hari"
+  },
+  {
+   "n": "5",
+   "title": "Bacaan yang indah: tajwid",
+   "body": "Hukum bacaan langkah demi langkah dengan contoh daripada Quran dan kuiz – serta qari-qari agung yang boleh didengar sebagai teladan.",
+   "href": "/tajweed",
+   "cta": "Kursus tajwid",
+   "time": "kira-kira 2–3 bulan"
+  },
+  {
+   "n": "6",
+   "title": "Laluan menjadi qari",
+   "body": "Juz 'Amma, kemudian seluruh Quran, dengan sistem ulang kaji sabak, sabqi, manzil – sehingga membaca di hadapan guru dan memperoleh ijazah.",
+   "href": "/islam/reciter-path",
+   "cta": "Laluan qari",
+   "time": "tahun – langkah demi langkah"
+  }
+ ],
+ "toolsTitle": "Teman sepanjang perjalanan",
+ "tools": [
+  [
+   "/today",
+   "Hari ini",
+   "Pelan harian, rentetan hari dan kemajuan anda"
+  ],
+  [
+   "/map",
+   "Peta Quran",
+   "Mana yang kukuh, mana yang goyah – surah demi surah"
+  ],
+  [
+   "/khatm",
+   "Perancang khatam",
+   "Baca seluruh Quran dengan bahagian harian"
+  ],
+  [
+   "/vocab",
+   "Kosa kata",
+   "Perkataan paling kerap dalam Quran"
+  ],
+  [
+   "/radio",
+   "Radio",
+   "Bacaan sepanjang masa"
+  ],
+  [
+   "/prayer",
+   "Waktu solat",
+   "Dengan azan dan kiblat"
+  ],
+  [
+   "/duas",
+   "Doa",
+   "Daripada Quran dan Sunnah"
+  ],
+  [
+   "/islam",
+   "Memahami Islam",
+   "Iman, solat, perayaan, mazhab"
+  ],
+  [
+   "/assistant",
+   "Pembantu",
+   "Soalan tentang Quran dan Islam"
+  ]
+ ],
+ "dayTitle": "Satu hari pembelajaran biasa (20 minit)",
+ "day": [
+  [
+   "5 min",
+   "Ulang kaji apa yang perlu hari ini – ayat merah dan emas dahulu."
+  ],
+  [
+   "10 min",
+   "Ayat baharu daripada pelan anda dengan Kaedah Shams."
+  ],
+  [
+   "3 min",
+   "Satu pelajaran akademi atau satu pelajaran bahasa Arab."
+  ],
+  [
+   "2 min",
+   "Satu nota: apakah yang saya pelajari daripada ayat hari ini?"
+  ]
+ ],
+ "start": "Mula sekarang"
+}

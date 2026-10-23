@@ -66,18 +66,20 @@ const ar: C = {
   day: [["٥ دقائق", "راجع ما حان موعده اليوم، الآيات الحمراء والذهبية أولًا."], ["١٠ دقائق", "آيات جديدة من خطتك بمنهج شمس."], ["٣ دقائق", "درس في الأكاديمية أو درس عربي."], ["دقيقتان", "ملاحظة واحدة: ماذا آخذ من الآية اليوم؟"]],
   start: "ابدأ الآن",
 };
-const content = (l: string) => (l === "de" ? de : l === "ar" ? ar : en);
+// other languages: src/lib/pagecontent/<locale>/how.json (same shape as the English text above)
+const content = async (l: string): Promise<C> =>
+  l === "de" ? de : l === "ar" ? ar : l === "en" ? en : (((await import(`../../../../lib/pagecontent/${l}/how.json`).catch(() => null))?.default as C | undefined) ?? en);
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
-  const c = content(locale);
+  const c = await content(locale);
   return pageMeta(locale, "/how", `${c.title} | Quran Masterclass`, c.lead);
 }
 
 export default async function HowPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   setRequestLocale(locale);
-  const c = content(locale);
+  const c = await content(locale);
   const tr = await getTranslations("home2");
   const tools = c.tools.map(([href, title, desc], i) => { const x = tileFor(href); return { href, title, desc, badge: tr(`badge_${x?.badge ?? "course"}`), ar: x?.ar ?? "علم", bg: x?.bg ?? TONES[i % TONES.length], cta: tr("open") }; });
   return (

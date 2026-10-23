@@ -1,0 +1,124 @@
+{
+ "kicker": "La estructura",
+ "title": "Cómo se construye Quran Masterclass",
+ "lead": "Un camino en seis etapas, desde la primera letra hasta la recitación con seguridad. Cada etapa se apoya en la anterior, y puede empezar por donde se encuentre hoy.",
+ "stepsTitle": "El camino en seis etapas",
+ "steps": [
+  {
+   "n": "1",
+   "title": "Aprender a leer árabe",
+   "body": "Letras, formas, signos vocálicos, shadda, letras solares y lunares, hasta que lea usted mismo Al-Fatiha y las suras cortas. Lecciones breves con ejercicios; los errores vuelven a aparecer a propósito.",
+   "href": "/arabic",
+   "cta": "Curso de lectura",
+   "time": "unas 2–6 semanas"
+  },
+  {
+   "n": "2",
+   "title": "Aprender a rezar",
+   "body": "El entrenador de oración muestra cada postura con animación: suní y chií (yafarí), con texto árabe, transliteración y significado.",
+   "href": "/salah",
+   "cta": "Entrenador de oración",
+   "time": "unas 1–2 semanas"
+  },
+  {
+   "n": "3",
+   "title": "Aleya por aleya con el Método Shams",
+   "body": "Siete pasos por aleya: escuchar, reconstruirla de atrás hacia delante, palabra por palabra, significado y ganchos de memoria, tafsir, pistas que se desvanecen y reflexión. Un modelo de memoria devuelve cada aleya en el momento oportuno.",
+   "href": "/shams",
+   "cta": "El método",
+   "time": "4 min por aleya"
+  },
+  {
+   "n": "4",
+   "title": "Siga adelante: plan, cursos y mapa",
+   "body": "Un plan de 365 días o de hifz fija su porción diaria, los cursos le someten a prueba contra el reloj y el mapa del Corán muestra qué está afianzado y qué flaquea.",
+   "href": "/plan",
+   "cta": "Elija un plan",
+   "time": "10–30 min al día"
+  },
+  {
+   "n": "5",
+   "title": "Recitar con belleza: tayuid",
+   "body": "Las reglas de la recitación paso a paso, con ejemplos del Corán y cuestionarios, y los grandes recitadores como modelos que escuchar.",
+   "href": "/tajweed",
+   "cta": "Curso de tayuid",
+   "time": "unos 2–3 meses"
+  },
+  {
+   "n": "6",
+   "title": "El camino para llegar a ser recitador",
+   "body": "Juz' Amma, luego el Corán completo, con un sistema de repaso de sabaq, sabqi y manzil, hasta recitar ante un maestro y obtener la ijaza.",
+   "href": "/islam/reciter-path",
+   "cta": "Camino del recitador",
+   "time": "años, paso a paso"
+  }
+ ],
+ "toolsTitle": "Compañeros en el camino",
+ "tools": [
+  [
+   "/today",
+   "Hoy",
+   "Su plan diario, racha y progreso"
+  ],
+  [
+   "/map",
+   "Mapa del Corán",
+   "Qué está afianzado y qué flaquea, sura a sura"
+  ],
+  [
+   "/khatm",
+   "Planificador de jatma",
+   "Lea todo el Corán con una porción diaria"
+  ],
+  [
+   "/vocab",
+   "Vocabulario",
+   "Las palabras más frecuentes del Corán"
+  ],
+  [
+   "/radio",
+   "Radio",
+   "Recitación las 24 horas"
+  ],
+  [
+   "/prayer",
+   "Horarios de oración",
+   "Con adhan y qibla"
+  ],
+  [
+   "/duas",
+   "Súplicas",
+   "Del Corán y de la Sunna"
+  ],
+  [
+   "/islam",
+   "Comprender el Islam",
+   "Fe, oración, fiestas, escuelas jurídicas"
+  ],
+  [
+   "/assistant",
+   "Asistente",
+   "Preguntas sobre el Corán y el Islam"
+  ]
+ ],
+ "dayTitle": "Un día típico de aprendizaje (20 minutos)",
+ "day": [
+  [
+   "5 min",
+   "Repase lo que toca hoy: primero las aleyas rojas y doradas."
+  ],
+  [
+   "10 min",
+   "Aleyas nuevas de su plan con el Método Shams."
+  ],
+  [
+   "3 min",
+   "Una lección de un curso o una lección de árabe."
+  ],
+  [
+   "2 min",
+   "Una nota: ¿qué me llevo hoy de la aleya?"
+  ]
+ ],
+ "start": "Empezar ahora"
+}

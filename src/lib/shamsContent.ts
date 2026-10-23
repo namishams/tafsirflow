@@ -396,7 +396,13 @@ import msPart from "./pagecontent/ms/shams";
 import bnPart from "./pagecontent/bn/shams";
 import ruPart from "./pagecontent/ru/shams";
 import zhPart from "./pagecontent/zh/shams";
+// the rest of the page (problem, curve, spacing, comparison, teachers, FAQ ...) and the remaining step fields, translated from English
+import frRest from "./pagecontent/fr/shams-rest"; import trRest from "./pagecontent/tr/shams-rest"; import urRest from "./pagecontent/ur/shams-rest";
+import faRest from "./pagecontent/fa/shams-rest"; import psRest from "./pagecontent/ps/shams-rest"; import esRest from "./pagecontent/es/shams-rest";
+import idRest from "./pagecontent/id/shams-rest"; import msRest from "./pagecontent/ms/shams-rest"; import bnRest from "./pagecontent/bn/shams-rest";
+import ruRest from "./pagecontent/ru/shams-rest"; import zhRest from "./pagecontent/zh/shams-rest";
 const PARTS: Record<string, ShamsPart> = { fr: frPart, tr: trPart, ur: urPart, fa: faPart, ps: psPart, es: esPart, id: idPart, ms: msPart, bn: bnPart, ru: ruPart, zh: zhPart };
+const RESTS: Record<string, ShamsPart> = { fr: frRest, tr: trRest, ur: urRest, fa: faRest, ps: psRest, es: esRest, id: idRest, ms: msRest, bn: bnRest, ru: ruRest, zh: zhRest };
 const merged = new Map<string, ShamsContent>();
 /** the content in this language: de, en and ar in full; the other languages translate the parts on the app's Shams tab
  *  and the core of the page over the English text (merged once per language) */
@@ -408,7 +414,8 @@ const shamsContentRaw = (locale: string): ShamsContent => {
   let c = merged.get(locale);
   if (!c) {
     const { steps, ...rest } = part;
-    c = { ...en, ...rest, steps: en.steps.map((s, i) => ({ ...s, ...(steps?.[i] ?? {}) })) };
+    const { steps: steps2, ...rest2 } = RESTS[locale] ?? {};
+    c = { ...en, ...rest2, ...rest, steps: en.steps.map((s, i) => ({ ...s, ...(steps2?.[i] ?? {}), ...(steps?.[i] ?? {}) })) };
     merged.set(locale, c);
   }
   return c;

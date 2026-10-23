@@ -59,20 +59,27 @@ const ar: C = {
   features: [["التعلّم دون اتصال", "احفظ السور من إعدادات السورة لتعمل دون إنترنت."], ["تقدّم واحد", "بحسابك يبقى التطبيق والمتصفح والحاسوب على المستوى نفسه دائمًا."], ["وصول سريع", "اضغط مطوّلًا على الأيقونة لتنتقل مباشرة إلى اليوم أو القرآن أو منهج شمس أو الإذاعة."], ["محدَّث دائمًا", "تصل الدورات الجديدة والتحسينات دون تحديث من المتجر."]],
   note: "عند تثبيته من الموقع كتطبيق ويب يبقى كل شيء مجانيًا بلا إعلانات، تمامًا كالموقع. والتطبيق من App Store وGoogle Play مجاني بلا إعلانات، وفيه لمن أراد المزيد اشتراك Quran Masterclass Pro الشهري الذي يمكن إلغاؤه في أي وقت عبر App Store أو Google Play.",
 };
-const content = (l: string) => (l === "de" ? de : l === "ar" ? ar : en);
+// other languages: src/lib/pagecontent/<locale>/app.json (same shape as the English text above)
+const content = async (l: string): Promise<C> =>
+  l === "de" ? de : l === "ar" ? ar : l === "en" ? en : (((await import(`../../../../lib/pagecontent/${l}/app.json`).catch(() => null))?.default as C | undefined) ?? en);
 
-const APP_STORE_LABEL: Record<string, string> = { de: "Im App Store laden", en: "Download on the App Store", ar: "حمّله من App Store" };
+const APP_STORE_LABEL: Record<string, string> = {
+  de: "Im App Store laden", en: "Download on the App Store", ar: "حمّله من App Store",
+  tr: "App Store'dan indirin", ur: "App Store سے ڈاؤن لوڈ کریں", fa: "دانلود از App Store", ps: "له App Store څخه ډاونلوډ کړئ",
+  fr: "Télécharger dans l'App Store", es: "Descargar en el App Store", id: "Unduh di App Store", ms: "Muat turun di App Store",
+  bn: "App Store থেকে ডাউনলোড করুন", ru: "Загрузите в App Store", zh: "在 App Store 下载",
+};
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
-  const c = content(locale);
+  const c = await content(locale);
   return pageMeta(locale, "/app", `${c.title} | Quran Masterclass`, c.lead.slice(0, 158));
 }
 
 export default async function AppPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   setRequestLocale(locale);
-  const c = content(locale);
+  const c = await content(locale);
   const m = mc(locale);
   const ld = { "@context": "https://schema.org", "@graph": [organizationLd(abs), mobileAppLd(locale, abs, appStoreLink(), c.lead)] };
   return (

@@ -1,6 +1,6 @@
 // Texts and structure of the Masterclass pages: the home sections (promise, pillars, school stages, talents, pricing,
 // testimonials), /masterclass (curriculum and school structure) and /talents (verified reciter profiles).
-// German, English and Arabic are written here; every other language falls back to English (like the rest of the site).
+// German, English and Arabic are written here; the other eleven languages live in src/lib/pagecontent/<locale>/masterclass.ts.
 // Facts only from the app's curriculum: Reciter Path 10 levels ending in the Masterclass recital, reading course in
 // 20 stages, language course A1–C1 with the 500 most frequent Quran words, Academy courses, garden, Talents (16+ to post).
 // Prices are NOT written here: they come from messages/<locale>.json "premium" (single source).
@@ -272,7 +272,13 @@ const ar: MC = {
   appPage: { title: "الماستركلاس كاملةً في التطبيق", lead: "المراحل الدراسية وطريق القارئ ودورتا العربية وبطاقات الحفظ وحديقتك، كلها في تطبيق واحد بالحساب نفسه الذي تستخدمه على الموقع.", cta: "اطّلع على المنهج" },
 };
 
-export const mc = (locale: string): MC => (locale === "de" ? de : locale === "ar" ? ar : en);
+import tr from "./pagecontent/tr/masterclass"; import ur from "./pagecontent/ur/masterclass"; import fa from "./pagecontent/fa/masterclass";
+import ps from "./pagecontent/ps/masterclass"; import fr from "./pagecontent/fr/masterclass"; import es from "./pagecontent/es/masterclass";
+import id from "./pagecontent/id/masterclass"; import ms from "./pagecontent/ms/masterclass"; import bn from "./pagecontent/bn/masterclass";
+import ru from "./pagecontent/ru/masterclass"; import zh from "./pagecontent/zh/masterclass";
+// every language has its own text (src/lib/pagecontent/<locale>/masterclass.ts, translated from the English text above)
+const TEXTS: Record<string, MC> = { en, de, ar, tr, ur, fa, ps, fr, es, id, ms, bn, ru, zh };
+export const mc = (locale: string): MC => TEXTS[locale] ?? en;
 
 // order and Arabic calligraphy of the pillars, with the page on the website that explains each one
 export const PILLARS: { k: PillarKey; ar: string; href: string }[] = [

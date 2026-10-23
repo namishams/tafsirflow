@@ -1,0 +1,124 @@
+{
+ "kicker": "La structure",
+ "title": "Comment Quran Masterclass est conçu",
+ "lead": "Un seul parcours en six étapes – de la première lettre à la récitation assurée. Chaque étape s’appuie sur la précédente, et vous pouvez commencer là où vous en êtes aujourd’hui.",
+ "stepsTitle": "Le parcours en six étapes",
+ "steps": [
+  {
+   "n": "1",
+   "title": "Apprendre à lire l’arabe",
+   "body": "Les lettres, leurs formes, les voyelles, la chadda, les lettres solaires et lunaires – jusqu’à lire vous-même Al-Fatiha et les courtes sourates. De courtes leçons avec des exercices ; les erreurs reviennent volontairement.",
+   "href": "/arabic",
+   "cta": "Cours de lecture",
+   "time": "environ 2–6 semaines"
+  },
+  {
+   "n": "2",
+   "title": "Apprendre la prière",
+   "body": "L’entraînement à la prière montre chaque posture en animation – sunnite et chiite (Ja'fari), avec le texte arabe, la translittération et le sens.",
+   "href": "/salah",
+   "cta": "Entraînement à la prière",
+   "time": "environ 1–2 semaines"
+  },
+  {
+   "n": "3",
+   "title": "Verset par verset avec la Méthode Shams",
+   "body": "Sept étapes par verset : écouter, reconstruire à rebours, mot à mot, sens et repères de mémorisation, tafsir, indices qui s’effacent, réflexion. Un modèle de mémoire fait revenir chaque verset au bon moment.",
+   "href": "/shams",
+   "cta": "La méthode",
+   "time": "4 min par verset"
+  },
+  {
+   "n": "4",
+   "title": "Poursuivre avec le plan, les cours et la carte",
+   "body": "Un plan sur 365 jours ou un plan de hifz fixe votre portion quotidienne, les cours vous font passer des tests contre la montre, la carte du Coran montre ce qui est acquis et ce qui vacille.",
+   "href": "/plan",
+   "cta": "Choisir un plan",
+   "time": "10–30 min par jour"
+  },
+  {
+   "n": "5",
+   "title": "Réciter avec beauté : le tajwid",
+   "body": "Les règles de la récitation pas à pas, avec des exemples tirés du Coran et des quiz – et les grands récitateurs comme modèles à écouter.",
+   "href": "/tajweed",
+   "cta": "Cours de tajwid",
+   "time": "environ 2–3 mois"
+  },
+  {
+   "n": "6",
+   "title": "Le chemin pour devenir récitant",
+   "body": "Le Juz Amma, puis le Coran entier, avec un système de révision : sabaq, sabqi, manzil – jusqu’à réciter devant un maître et obtenir l’ijaza.",
+   "href": "/islam/reciter-path",
+   "cta": "Le parcours du récitant",
+   "time": "des années – pas à pas"
+  }
+ ],
+ "toolsTitle": "Des compagnons sur le chemin",
+ "tools": [
+  [
+   "/today",
+   "Aujourd’hui",
+   "Votre plan du jour, votre série et votre progression"
+  ],
+  [
+   "/map",
+   "Carte du Coran",
+   "Ce qui est acquis, ce qui vacille – sourate par sourate"
+  ],
+  [
+   "/khatm",
+   "Planning de khatm",
+   "Lire tout le Coran avec une portion quotidienne"
+  ],
+  [
+   "/vocab",
+   "Vocabulaire",
+   "Les mots les plus fréquents du Coran"
+  ],
+  [
+   "/radio",
+   "Radio",
+   "Récitation 24 h sur 24"
+  ],
+  [
+   "/prayer",
+   "Heures de prière",
+   "Avec l’adhan et la qibla"
+  ],
+  [
+   "/duas",
+   "Invocations",
+   "Tirées du Coran et de la Sunna"
+  ],
+  [
+   "/islam",
+   "Comprendre l’islam",
+   "Foi, prière, fêtes, écoles juridiques"
+  ],
+  [
+   "/assistant",
+   "Assistant",
+   "Questions sur le Coran et l’islam"
+  ]
+ ],
+ "dayTitle": "Une journée d’apprentissage type (20 minutes)",
+ "day": [
+  [
+   "5 min",
+   "Révisez ce qui est dû aujourd’hui – d’abord les versets rouges et dorés."
+  ],
+  [
+   "10 min",
+   "De nouveaux versets de votre plan, avec la Méthode Shams."
+  ],
+  [
+   "3 min",
+   "Une leçon de cours ou une leçon d’arabe."
+  ],
+  [
+   "2 min",
+   "Une note : qu’est-ce que je retiens du verset aujourd’hui ?"
+  ]
+ ],
+ "start": "Commencer maintenant"
+}

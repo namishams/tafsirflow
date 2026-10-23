@@ -1,0 +1,124 @@
+{
+ "kicker": "Yapı",
+ "title": "Quran Masterclass nasıl yapılandırıldı",
+ "lead": "Altı aşamada tek bir yol – ilk harften özgüvenle okumaya kadar. Her aşama bir öncekinin üzerine kurulur ve bugün nerede olduğunuzdan başlayabilirsiniz.",
+ "stepsTitle": "Altı aşamada yol",
+ "steps": [
+  {
+   "n": "1",
+   "title": "Arapça okumayı öğrenin",
+   "body": "Harfler, şekilleri, harekeler, şedde, şemsî ve kamerî harfler – Fâtiha’yı ve kısa sureleri kendi başınıza okuyana kadar. Alıştırmalı kısa dersler; hatalar bilerek yeniden karşınıza çıkar.",
+   "href": "/arabic",
+   "cta": "Okuma kursu",
+   "time": "yaklaşık 2–6 hafta"
+  },
+  {
+   "n": "2",
+   "title": "Namaz öğrenin",
+   "body": "Namaz antrenörü her duruşu animasyonla gösterir – Sünni ve Şii (Caferî), Arapça metin, okunuş ve anlamıyla birlikte.",
+   "href": "/salah",
+   "cta": "Namaz antrenörü",
+   "time": "yaklaşık 1–2 hafta"
+  },
+  {
+   "n": "3",
+   "title": "Shams Metoduyla ayet ayet",
+   "body": "Ayet başına yedi adım: dinleyin, sondan başa doğru kurun, kelime kelime, anlam ve hafıza kancaları, tefsir, kademeli azalan ipuçları, tefekkür. Bir hafıza modeli her ayeti doğru zamanda geri getirir.",
+   "href": "/shams",
+   "cta": "Yöntem",
+   "time": "ayet başına 4 dk"
+  },
+  {
+   "n": "4",
+   "title": "Devam edin: plan, kurslar, harita",
+   "body": "365 günlük ya da hıfz planı günlük payınızı belirler, kurslar süreli testlerle sizi sınar, Kur'an haritası neyin sağlam, neyin sallantılı olduğunu gösterir.",
+   "href": "/plan",
+   "cta": "Bir plan seçin",
+   "time": "günde 10–30 dk"
+  },
+  {
+   "n": "5",
+   "title": "Güzel okuyun: tecvid",
+   "body": "Tecvid kuralları adım adım, Kur'an'dan örnekler ve quizlerle – ve dinleyip örnek alacağınız büyük kâriler.",
+   "href": "/tajweed",
+   "cta": "Tecvid kursu",
+   "time": "yaklaşık 2–3 ay"
+  },
+  {
+   "n": "6",
+   "title": "Kâri olmanın yolu",
+   "body": "Amme Cüzü, ardından tüm Kur'an; sebak, sebki ve manzil tekrar sistemiyle – bir hocaya okumaya ve icazete kadar.",
+   "href": "/islam/reciter-path",
+   "cta": "Kâri yolu",
+   "time": "yıllar – adım adım"
+  }
+ ],
+ "toolsTitle": "Yol arkadaşlarınız",
+ "tools": [
+  [
+   "/today",
+   "Bugün",
+   "Günlük planınız, seriniz ve ilerlemeniz"
+  ],
+  [
+   "/map",
+   "Kur'an haritası",
+   "Neyin sağlam, neyin sallantılı olduğu – sure sure"
+  ],
+  [
+   "/khatm",
+   "Hatim planı",
+   "Kur'an'ın tamamını günlük bölümlerle okuyun"
+  ],
+  [
+   "/vocab",
+   "Kelime hazinesi",
+   "Kur'an'ın en sık geçen kelimeleri"
+  ],
+  [
+   "/radio",
+   "Radyo",
+   "Gece gündüz tilavet"
+  ],
+  [
+   "/prayer",
+   "Namaz vakitleri",
+   "Ezan ve kıble ile"
+  ],
+  [
+   "/duas",
+   "Dualar",
+   "Kur'an ve Sünnet'ten"
+  ],
+  [
+   "/islam",
+   "İslam'ı anlamak",
+   "İman, namaz, bayramlar, fıkıh okulları"
+  ],
+  [
+   "/assistant",
+   "Asistan",
+   "Kur'an ve İslam hakkında sorular"
+  ]
+ ],
+ "dayTitle": "Tipik bir öğrenme günü (20 dakika)",
+ "day": [
+  [
+   "5 dk",
+   "Bugün tekrarı gereken ayetleri gözden geçirin – önce kırmızı ve altın renkli ayetler."
+  ],
+  [
+   "10 dk",
+   "Planınızdaki yeni ayetleri Shams Metoduyla çalışın."
+  ],
+  [
+   "3 dk",
+   "Bir kurs dersi ya da bir Arapça dersi."
+  ],
+  [
+   "2 dk",
+   "Bir not: bugün ayetten ne aldım?"
+  ]
+ ],
+ "start": "Hemen başlayın"
+}

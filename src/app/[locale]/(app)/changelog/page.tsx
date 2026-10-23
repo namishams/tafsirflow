@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
-import { CHANGELOG } from "@/lib/changelog";
+import { CHANGELOG, changelogIn } from "@/lib/changelog";
 import { RECENT } from "@/lib/changelog-recent";
 import { pageMeta } from "@/lib/site";
 
@@ -17,6 +17,7 @@ export default async function ChangelogPage({ params }: { params: Promise<{ loca
   const t = await getTranslations("feedback");
   const de = locale === "de";
   const ar = locale === "ar";
+  const loc = await changelogIn(locale);
   return (
     <main className="mx-auto max-w-3xl px-4 pb-24 pt-8">
       <h1 className="font-display text-[40px] leading-[1.05] sm:text-5xl">{t("changelog")}</h1>
@@ -30,12 +31,12 @@ export default async function ChangelogPage({ params }: { params: Promise<{ loca
             <ul className="mt-3 grid gap-2 text-[15px] leading-relaxed text-muted">{x.items.map((i, k) => <li key={k} className="flex gap-3"><span className="mt-2.5 h-px w-3 shrink-0 bg-gold" />{i}</li>)}</ul>
           </li>
         ); })}
-        {CHANGELOG.map((r) => (
+        {CHANGELOG.map((r, idx) => (
           <li key={r.date} className="mb-12">
             <span className="absolute -start-[5px] mt-2 h-2.5 w-2.5 rounded-full bg-accent" />
             <p className="text-sm font-semibold text-gold">{new Date(r.date).toLocaleDateString(locale, { calendar: "gregory", numberingSystem: "latn", day: "numeric", month: "long", year: "numeric" })}</p>
-            <h2 className="font-display mt-1 text-2xl leading-tight">{de ? r.title_de : (ar && r.title_ar) || r.title_en}</h2>
-            <ul className="mt-3 grid gap-2 text-[15px] leading-relaxed text-muted">{(de ? r.items_de : (ar && r.items_ar) || r.items_en).map((x, i) => <li key={i} className="flex gap-3"><span className="mt-2.5 h-px w-3 shrink-0 bg-gold" />{x}</li>)}</ul>
+            <h2 className="font-display mt-1 text-2xl leading-tight">{de ? r.title_de : (ar && r.title_ar) || loc?.[idx]?.title || r.title_en}</h2>
+            <ul className="mt-3 grid gap-2 text-[15px] leading-relaxed text-muted">{(de ? r.items_de : (ar && r.items_ar) || loc?.[idx]?.items || r.items_en).map((x, i) => <li key={i} className="flex gap-3"><span className="mt-2.5 h-px w-3 shrink-0 bg-gold" />{x}</li>)}</ul>
           </li>
         ))}
       </ol>

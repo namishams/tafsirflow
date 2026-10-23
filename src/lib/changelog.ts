@@ -132,3 +132,10 @@ export const CHANGELOG: Release[] = [
     items_de: ["Gebetszeiten für Ihren Ort und große Städte, mit Hidschri-Datum.", "Koran-Radio mit Sendern, Einschlaf-Timer und Adhan zur Gebetszeit.", "Oberfläche in 13 Sprachen, darunter Arabisch, Türkisch, Urdu, Persisch, Paschtu und Bengalisch."],
   },
 ];
+
+/** the older releases in the visitor's language (src/lib/pagecontent/<locale>/changelog.ts, aligned by index with CHANGELOG); null = English */
+const OTHER = ["bn", "es", "fa", "fr", "id", "ms", "ps", "ru", "tr", "ur", "zh"];
+export async function changelogIn(locale: string): Promise<{ title: string; items: string[] }[] | null> {
+  if (!OTHER.includes(locale)) return null;
+  try { return (await import(`./pagecontent/${locale}/changelog`)).default as { title: string; items: string[] }[]; } catch { return null; }
+}

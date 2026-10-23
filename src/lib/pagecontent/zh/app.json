@@ -1,0 +1,60 @@
+{
+ "kicker": "应用",
+ "title": "手机上的 Quran Masterclass",
+ "lead": "整个 Masterclass 以应用的形式呈现：全屏显示，没有浏览器地址栏，主屏幕上有专属图标，已保存的章即使离线也能学习——网站的每次更新都会立即体现在应用中。",
+ "buttons": {
+  "install": "安装应用",
+  "installed": "应用已安装",
+  "apk": "下载 Android 应用（APK）",
+  "apkSoon": "Android 应用：即将推出",
+  "play": "在 Google Play 上获取",
+  "samsung": "您正在使用 Samsung Internet。请不要通过它的菜单安装——三星为旧版 Android 制作了自己的封装程序，Google Play Protect 会将其拦截。请改用 Chrome 打开本页并选择“安装应用”，或下载上面的 Android 应用。"
+ },
+ "waysTitle": "安装方法",
+ "ways": [
+  {
+   "t": "Android（Chrome）",
+   "steps": [
+    "用 Chrome 打开 quranmasterclass.com。",
+    "点按“安装应用”，或在 ⋮ 菜单中选择“安装应用”。",
+    "图标会出现在您的主屏幕上。"
+   ]
+  },
+  {
+   "t": "iPhone 和 iPad（Safari）",
+   "steps": [
+    "用 Safari 打开 quranmasterclass.com。",
+    "点按分享图标。",
+    "选择“添加到主屏幕”。"
+   ]
+  },
+  {
+   "t": "电脑（Chrome、Edge）",
+   "steps": [
+    "打开本网站。",
+    "点击地址栏中的安装图标。",
+    "Masterclass 会在独立窗口中打开。"
+   ]
+  }
+ ],
+ "featuresTitle": "应用能做什么",
+ "features": [
+  [
+   "离线学习",
+   "在章的设置中保存该章——无需网络即可播放。"
+  ],
+  [
+   "进度统一",
+   "使用您的账户，应用、手机浏览器和电脑的进度始终保持同步。"
+  ],
+  [
+   "快速访问",
+   "长按图标，可直接进入“今天”“古兰经”“Shams 方法”或“电台”。"
+  ],
+  [
+   "始终最新",
+   "新课程和改进无需等待应用商店更新即可获得。"
+  ]
+ ],
+ "note": "通过网站以网页应用的形式安装，一切依然免费且没有广告，与网站一样。App Store 和 Google Play 上的应用同样免费且没有广告；如果您希望获得更多内容，可以订阅 Quran Masterclass Pro——按月计费，随时可以取消，可在 App Store 或 Google Play 中订阅。"
+}

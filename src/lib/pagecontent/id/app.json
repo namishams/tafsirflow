@@ -1,0 +1,60 @@
+{
+ "kicker": "Aplikasi",
+ "title": "Quran Masterclass di ponsel Anda",
+ "lead": "Seluruh Masterclass sebagai aplikasi: layar penuh tanpa bilah peramban, ikonnya sendiri di layar utama, surah yang tersimpan tetap bisa dipakai saat luring – dan setiap pembaruan situs langsung hadir di aplikasi.",
+ "buttons": {
+  "install": "Instal aplikasi",
+  "installed": "Aplikasi sudah terpasang",
+  "apk": "Unduh aplikasi Android (APK)",
+  "apkSoon": "Aplikasi Android: segera hadir",
+  "play": "Dapatkan di Google Play",
+  "samsung": "Anda menggunakan Samsung Internet. Mohon jangan memasang lewat menunya – Samsung membuat pembungkus sendiri untuk versi Android lama, yang diblokir oleh Google Play Protect. Silakan buka halaman ini di Chrome lalu pilih “Instal aplikasi”, atau unduh aplikasi Android di atas."
+ },
+ "waysTitle": "Cara memasangnya",
+ "ways": [
+  {
+   "t": "Android (Chrome)",
+   "steps": [
+    "Buka quranmasterclass.com di Chrome.",
+    "Ketuk “Instal aplikasi” – atau pilih “Instal aplikasi” di menu ⋮.",
+    "Ikonnya muncul di layar utama Anda."
+   ]
+  },
+  {
+   "t": "iPhone dan iPad (Safari)",
+   "steps": [
+    "Buka quranmasterclass.com di Safari.",
+    "Ketuk ikon bagikan.",
+    "Pilih “Tambahkan ke Layar Utama”."
+   ]
+  },
+  {
+   "t": "Komputer (Chrome, Edge)",
+   "steps": [
+    "Buka situsnya.",
+    "Klik ikon instal di bilah alamat.",
+    "Masterclass terbuka di jendelanya sendiri."
+   ]
+  }
+ ],
+ "featuresTitle": "Yang bisa dilakukan aplikasi ini",
+ "features": [
+  [
+   "Belajar luring",
+   "Simpan surah lewat pengaturan surah – surah tetap diputar tanpa internet."
+  ],
+  [
+   "Satu kemajuan",
+   "Dengan akun Anda, aplikasi, peramban ponsel, dan komputer Anda selalu tersinkron."
+  ],
+  [
+   "Akses cepat",
+   "Tekan lama ikonnya: langsung ke Hari ini, Al-Qur'an, Metode Shams, atau Radio."
+  ],
+  [
+   "Selalu mutakhir",
+   "Kursus baru dan perbaikan hadir tanpa pembaruan dari toko aplikasi."
+  ]
+ ],
+ "note": "Jika dipasang dari situs sebagai aplikasi web, semuanya tetap gratis dan tanpa iklan – sama seperti situsnya. Aplikasi dari App Store dan Google Play juga gratis dan tanpa iklan; bagi yang ingin lebih, tersedia Quran Masterclass Pro – bulanan, dapat dibatalkan kapan saja, di App Store atau Google Play."
+}

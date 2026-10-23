@@ -1,0 +1,60 @@
+{
+ "kicker": "L’application",
+ "title": "Quran Masterclass sur votre téléphone",
+ "lead": "Tout le Masterclass en application : plein écran sans barre de navigateur, sa propre icône sur l’écran d’accueil, des sourates enregistrées même hors connexion – et chaque mise à jour du site est aussitôt disponible dans l’application.",
+ "buttons": {
+  "install": "Installer l’application",
+  "installed": "L’application est installée",
+  "apk": "Télécharger l’application Android (APK)",
+  "apkSoon": "Application Android : bientôt disponible",
+  "play": "Disponible sur Google Play",
+  "samsung": "Vous utilisez Samsung Internet. Veuillez ne pas installer l’application depuis son menu : Samsung crée sa propre enveloppe pour une ancienne version d’Android, que Google Play Protect bloque. Ouvrez plutôt la page dans Chrome et choisissez « Installer l’application », ou téléchargez l’application Android ci-dessus."
+ },
+ "waysTitle": "Comment l’installer",
+ "ways": [
+  {
+   "t": "Android (Chrome)",
+   "steps": [
+    "Ouvrez quranmasterclass.com dans Chrome.",
+    "Appuyez sur « Installer l’application » – ou choisissez « Installer l’application » dans le menu ⋮.",
+    "L’icône apparaît sur votre écran d’accueil."
+   ]
+  },
+  {
+   "t": "iPhone et iPad (Safari)",
+   "steps": [
+    "Ouvrez quranmasterclass.com dans Safari.",
+    "Appuyez sur l’icône de partage.",
+    "Choisissez « Sur l’écran d’accueil »."
+   ]
+  },
+  {
+   "t": "Ordinateur (Chrome, Edge)",
+   "steps": [
+    "Ouvrez le site.",
+    "Cliquez sur l’icône d’installation dans la barre d’adresse.",
+    "Le Masterclass s’ouvre dans sa propre fenêtre."
+   ]
+  }
+ ],
+ "featuresTitle": "Ce que l’application permet",
+ "features": [
+  [
+   "Apprendre hors ligne",
+   "Enregistrez des sourates depuis les réglages d’une sourate : elles se lisent sans connexion internet."
+  ],
+  [
+   "Une seule progression",
+   "Avec votre compte, l’application, le navigateur de votre téléphone et votre ordinateur restent toujours synchronisés."
+  ],
+  [
+   "Accès rapide",
+   "Appuyez longuement sur l’icône : accès direct à Aujourd’hui, Coran, Méthode Shams ou Radio."
+  ],
+  [
+   "Toujours à jour",
+   "Les nouveaux cours et les améliorations arrivent sans mise à jour de la boutique d’applications."
+  ]
+ ],
+ "note": "Installée depuis le site en tant qu’application web, tout reste gratuit et sans publicité, comme sur le site. L’application de l’App Store et de Google Play est gratuite et sans publicité ; pour celles et ceux qui souhaitent davantage, elle propose Quran Masterclass Pro – mensuel, résiliable à tout moment, sur l’App Store ou sur Google Play."
+}
